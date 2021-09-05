@@ -104,17 +104,11 @@ web: copy_content $(ALGORITHM) $(READINGS) $(HTML) hugo
 ## Example: "markdown/topic/subtopic/lecture/index.md" becomes "topic/subtopic/lecture"
 ## 1. "make new_chapter TOPIC=topic"
 ## 2. "make new_chapter TOPIC=topic/subtopic"
-## 3. "make new_lecture-cy TOPIC=topic/subtopic/lecture"
+## 3. "make new_lecture-cg TOPIC=topic/subtopic/lecture"
 TOPIC ?=
 PHONY: new_chapter
 new_chapter:
 	$(HUGO) new -c "$(ORIG_CONTENT)/" -k chapter $(TOPIC)
-PHONY: new_lecture-cy
-new_lecture-cy:
-	$(HUGO) new -c "$(ORIG_CONTENT)/" -k lecture-cy $(TOPIC)
-PHONY: new_lecture-bc
-new_lecture-bc:
-	$(HUGO) new -c "$(ORIG_CONTENT)/" -k lecture-bc $(TOPIC)
 PHONY: new_lecture-cg
 new_lecture-cg:
 	$(HUGO) new -c "$(ORIG_CONTENT)/" -k lecture-cg $(TOPIC)
