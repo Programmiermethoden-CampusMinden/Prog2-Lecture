@@ -1,10 +1,11 @@
-baseURL: "https://pm-dungeon.github.io/Lecture/"
+#baseURL: "https://pm-dungeon.github.io/Lecture/"
+baseURL: "https://www.fh-bielefeld.de/elearning/data/FH-Bielefeld/lm_data/lm_1165993/"
 
 languageCode: "de-DE"
 metaDataFormat: "yaml"
 theme: "hugo-theme-learn"
 
-contentDir: content
+contentDir: temp/content
 publishDir: docs
 
 params:
