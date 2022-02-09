@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>100</y>
+      <w>390</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+r1=-anforderungen</panel_attributes>
+    <additional_attributes>370.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>80</y>
+      <w>310</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>AnforderungsVerwaltung
+--
+--
++AnforderungsVerwaltung()
++anforderungHinzufuegen(Anforderung)
++aenderungHinzufuegen(Aenderung)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>770</x>
+      <y>80</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>/Anforderung/
+{abstract}
+--
+#id: int
+#text: String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>240</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Aenderung
+--
+-datum: Date
+-grund: String
+--
++Aenderung()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>160</y>
+      <w>130</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+r1=-aenderungen</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>140</y>
+      <w>430</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+r1=-anforderung</panel_attributes>
+    <additional_attributes>410.0;20.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>240</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Author
+--
+-personalNummer: int
+-name: String
+--
++Author(int,String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>270</y>
+      <w>180</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+r1=-author</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>170</y>
+      <w>120</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+r1=#ersteller</panel_attributes>
+    <additional_attributes>10.0;70.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>340</y>
+      <w>270</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>FunktionaleAnfordung
+--
+--
++FunktionaleAnfordung(int,String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>170</y>
+      <w>50</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>240</y>
+      <w>310</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>NichtFunktionaleAnforderung
+--
+--
++NichtFunktionaleAnforderung(int,String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>170</y>
+      <w>140</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;70.0</additional_attributes>
+  </element>
+</diagram>

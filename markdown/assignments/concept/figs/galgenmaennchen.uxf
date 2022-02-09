@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text>Space for diagram notes</help_text>
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>459</x>
+      <y>63</y>
+      <w>288</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>WordQuiz
+--
+--
++addWordList(WordList): boolean
++deleteWordList(WordList): void
++setConsoleReader(ConsoleReader): void
++addWriter(Writer): void
++playGame(): void
++playGame(int): void
++playGame(Subject): void
++playGame(Difficulty): void
++playGame(int, Difficulty): void
++playGame(Subject, Difficulty): void
++playGame(int, Subject): void
++playGame(int, Subject, Difficulty): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>567</x>
+      <y>369</y>
+      <w>243</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>WordList
+--
+-subject: Subject
+--
++WordList(Subject)
+#readListFromFile(String): boolean
++getRandomWord(): String
++getWordOfLength(int): String
++getSubject(): Subject
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>882</x>
+      <y>162</y>
+      <w>225</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>ConsoleReader
+--
+-reader: BufferedReader
+--
++ConsoleReader(BufferedReader)
++readNextChar(): char
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>666</x>
+      <y>207</y>
+      <w>99</w>
+      <h>243</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+r2=#wordLists   
+m2=1..5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>738</x>
+      <y>180</y>
+      <w>162</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1
+r2=#reader 
+
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>954</x>
+      <y>378</y>
+      <w>153</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>QuizWord
+--
+word: String
+length: int
+--
++QuizWord(String)
++getWord(): String
++getLength(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>801</x>
+      <y>405</y>
+      <w>171</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1..*
+r2=#words</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>36</y>
+      <w>117</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Difficulty
+--
+Easy = 15
+Normal =10
+Hard = 5
+Extrem =1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>441</y>
+      <w>81</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>270</y>
+      <w>54</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;160.0;40.0;160.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>405</x>
+      <y>360</y>
+      <w>108</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Subject
+--
+Animals
+Cars
+Videogames
+Softdrinks
+Wuppi
+Fluppi
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>297</x>
+      <y>135</y>
+      <w>180</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>180.0;40.0;10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>189</y>
+      <w>252</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>/Writer/
+{abstract}
+--
+#subject: Subject
+#difficulty: Difficulty
+#word: String
+--
++setSubject(Subject): void
++setDifficulty(Difficulty): void
++setWord(String): void
+/+write(char[], char, int): boolean/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>378</y>
+      <w>225</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>ConsoleWriter
+--
+--
++write(char[], char, int): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>234</x>
+      <y>135</y>
+      <w>27</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>198</y>
+      <w>162</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+r2=#writer
+m2=1..* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>243</y>
+      <w>135</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0;130.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>162</x>
+      <y>441</y>
+      <w>225</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>ExcelWriter
+--
+--
++write(char[], char, int): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>297</x>
+      <y>333</y>
+      <w>27</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>162</x>
+      <y>333</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+</diagram>
