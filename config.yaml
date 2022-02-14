@@ -4,6 +4,7 @@ baseURL: "https://www.fh-bielefeld.de/elearning/data/FH-Bielefeld/lm_data/lm_116
 languageCode: "de-DE"
 metaDataFormat: "yaml"
 theme:
+  - "hugo-lecture"
   - "hugo-theme-learn"
 
 themesDir: ".hugo"
