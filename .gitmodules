@@ -1,12 +1,9 @@
-[submodule "themes/hugo-theme-learn"]
-	path = themes/hugo-theme-learn
+[submodule "hugo-theme-learn"]
+	path = .hugo/hugo-theme-learn
 	url = https://github.com/matcornic/hugo-theme-learn.git
 [submodule "pandoc"]
-	path = pandoc
+	path = .pandoc
 	url = https://github.com/cagix/pandoc-lecture
-[submodule "archetypes"]
-	path = archetypes
-	url = https://github.com/cagix/Hugo-Lecture-Archetypes
-[submodule "layouts"]
-	path = layouts
-	url = https://github.com/cagix/Hugo-Lecture-Layouts
+[submodule "hugo-lecture"]
+	path = .hugo/hugo-lecture
+	url = https://github.com/cagix/Hugo-Lecture

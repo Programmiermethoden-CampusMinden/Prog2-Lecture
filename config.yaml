@@ -3,13 +3,16 @@ baseURL: "https://www.fh-bielefeld.de/elearning/data/FH-Bielefeld/lm_data/lm_116
 
 languageCode: "de-DE"
 metaDataFormat: "yaml"
-theme: "hugo-theme-learn"
+theme:
+  - "hugo-lecture"
+  - "hugo-theme-learn"
 
-contentDir: temp/content
-publishDir: docs
+themesDir: ".hugo"
+contentDir: "temp/content"
+publishDir: "docs"
 
 params:
-  editURL: "https://github.com/PM-Dungeon/Lecture/edit/master/markdown/"
+  editURL: "https://github.com/PM-Dungeon/PM-Lecture/edit/master/markdown/"
   author: "cagix"
   themeVariant: "green"
   titleSeparator: " "

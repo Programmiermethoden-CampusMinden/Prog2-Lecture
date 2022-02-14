@@ -55,7 +55,7 @@ endif
 ## be mounted into the Docker container! References to a parent directory
 ## of the working directory therefore will not work when using a Docker
 ## container!
-PANDOC_DIRS = --data-dir=pandoc --resource-path=".:pandoc"
+PANDOC_DIRS = --data-dir=.pandoc --resource-path=".:.pandoc"
 
 ## Define options for generating images from ".tex" files
 LATEX_ARGS = -shell-escape
