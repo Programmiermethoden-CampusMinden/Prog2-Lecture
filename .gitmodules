@@ -2,7 +2,7 @@
 	path = themes/hugo-theme-learn
 	url = https://github.com/matcornic/hugo-theme-learn.git
 [submodule "pandoc"]
-	path = pandoc
+	path = .pandoc
 	url = https://github.com/cagix/pandoc-lecture
 [submodule "archetypes"]
 	path = archetypes
