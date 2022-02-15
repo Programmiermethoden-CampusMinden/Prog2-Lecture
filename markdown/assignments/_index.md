@@ -7,5 +7,8 @@ hidden: true
 
 # Praktikum
 
+Hier finden Sie die Praktikumsaufgaben.
 
-`{{< children description="true" showhidden="true" >}}`{=markdown}
+Um das Praktikum zu bestehen müssen Sie jeden Pool mindestens zu 50% erfolgreich bearbeitet haben. 
+
+`{{< children showhidden="true" >}}`{=markdown}
