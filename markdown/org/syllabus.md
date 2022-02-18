@@ -1,6 +1,7 @@
 ---
 title: "Syllabus"
 disableToc: true
+weight: 3
 hidden: true
 ---
 

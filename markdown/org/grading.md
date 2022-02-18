@@ -1,6 +1,7 @@
 ---
 title: "Note und Credits"
 disableToc: true
+weight: 2
 hidden: true
 ---
 
