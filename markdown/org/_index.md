@@ -1,6 +1,6 @@
 ---
 chapter: true
-title: "Praktikum"
+title: "Organisatorisches"
 hidden: true
 _build:
   render: always
@@ -9,7 +9,7 @@ _build:
 ---
 
 
-# Praktikum
+# Organisatorisches
 
 
 `{{< children showhidden="true" >}}`{=markdown}
