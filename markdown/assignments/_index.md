@@ -12,4 +12,4 @@ _build:
 # Praktikum
 
 
-`{{< children description="true" showhidden="true" >}}`{=markdown}
+`{{< children showhidden="true" >}}`{=markdown}
