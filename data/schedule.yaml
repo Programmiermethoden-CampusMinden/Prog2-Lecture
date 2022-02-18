@@ -1,19 +1,19 @@
 ---
 - week: "KW40"
   lecture:
-    - topic: "/misc/syllabus"
+    - topic: "/org/syllabus"
   misc:
-    - page: "/misc/resources"
+    - page: "/org/resources"
       notes: "Vortrag Thema I"
     - notes: "Coden mit Edmonton"
-    - page: "/misc/schedule"
+    - page: "/org/schedule"
 
 - week: "KW41"
   lecture:
-    - topic: "/misc/syllabus"
+    - topic: "/org/syllabus"
       leader: "cagi"
       notes: "Classes go all-virtual"
-    - topic: "/misc/syllabus"
+    - topic: "/org/syllabus"
   assignment:
     - topic: "sheet01"
       due: "14.10."

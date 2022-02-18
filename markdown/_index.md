@@ -19,8 +19,8 @@ Hier würde ein kurzer Begrüßungstext erscheinen ...
 
 ## Wichtige Seiten
 
-*   `[Fahrplan]({{<ref "/misc/schedule" >}})`{=markdown}
+*   `[Fahrplan]({{<ref "/org/schedule" >}})`{=markdown}
 *   `[Praktikum]({{<ref "/assignments" >}})`{=markdown}
-*   `[Note und Credits]({{<ref "/misc/grading" >}})`{=markdown}
-*   `[Syllabus]({{<ref "/misc/syllabus" >}})`{=markdown}
-*   `[Ressourcen]({{<ref "/misc/resources" >}})`{=markdown}
+*   `[Note und Credits]({{<ref "/org/grading" >}})`{=markdown}
+*   `[Syllabus]({{<ref "/org/syllabus" >}})`{=markdown}
+*   `[Ressourcen]({{<ref "/org/resources" >}})`{=markdown}
