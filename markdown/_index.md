@@ -16,11 +16,3 @@ Hier würde ein kurzer Begrüßungstext erscheinen ...
 ## Kursformat
 
 ...
-
-## Wichtige Seiten
-
-*   `[Fahrplan]({{<ref "/org/schedule" >}})`{=markdown}
-*   `[Praktikum]({{<ref "/assignments" >}})`{=markdown}
-*   `[Note und Credits]({{<ref "/org/grading" >}})`{=markdown}
-*   `[Syllabus]({{<ref "/org/syllabus" >}})`{=markdown}
-*   `[Ressourcen]({{<ref "/org/resources" >}})`{=markdown}
