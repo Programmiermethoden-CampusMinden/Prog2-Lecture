@@ -17,7 +17,8 @@ tbd
 tbd
 
 
+
 `{{% challenges %}}`{=markdown}
-## Bonus: Wuppie (2P)
+`## Bonus: Wuppie (2P)`{=markdown}
 Erstellen Sie ...
 `{{% /challenges %}}`{=markdown}
