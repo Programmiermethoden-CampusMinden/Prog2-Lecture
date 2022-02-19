@@ -1,7 +1,9 @@
 ---
+type: assignment
 title: "Blatt 01"
 author: "Carsten Gips (FH Bielefeld)"
-disableToc: true
+points: 10
+weight: 1
 hidden: true
 ---
 
