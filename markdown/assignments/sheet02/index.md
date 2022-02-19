@@ -1,6 +1,6 @@
 ---
 type: assignment
-title: "Blatt 01"
+title: "Blatt 02"
 author: "Carsten Gips (FH Bielefeld)"
 points: 10
 weight: 1
@@ -8,7 +8,7 @@ hidden: true
 ---
 
 
-Hier kommt der Inhalt für Blatt 01 hin ...
+Hier kommt der Inhalt für Blatt 02 hin ...
 
 ## Aufgabe 1: XYZ (2P)
 
