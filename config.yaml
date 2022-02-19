@@ -52,7 +52,7 @@ markup:
     renderer:
       unsafe: true
   tableOfContents:
-    startLevel: 1
+    startLevel: 2
 
 privacy:
   disqus:
