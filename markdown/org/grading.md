@@ -1,6 +1,7 @@
 ---
+type: lecture-cg
 title: "Note und Credits"
-disableToc: true
+author: "Carsten Gips (FH Bielefeld)"
 weight: 2
 hidden: true
 ---

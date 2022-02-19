@@ -1,6 +1,7 @@
 ---
+type: lecture-cg
 title: "Syllabus"
-disableToc: true
+author: "Carsten Gips (FH Bielefeld)"
 weight: 3
 hidden: true
 ---

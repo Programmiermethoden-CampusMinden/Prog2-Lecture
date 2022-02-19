@@ -1,7 +1,9 @@
 ---
+type: lecture-cg
 title: "Fahrplan"
-disableToc: true
+author: "Carsten Gips (FH Bielefeld)"
 weight: 1
+disableToc: true
 hidden: true
 ---
 
