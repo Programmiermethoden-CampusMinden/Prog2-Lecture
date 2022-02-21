@@ -137,8 +137,10 @@ WEB_STATIC_TARGETS = $(WEB_STATIC_SOURCES:$(SRC_DIR)%=$(WEB_INTERMEDIATE_DIR)%)
 SLIDES_EXCLUDE_DIRS            = $(dir $(shell find $(SRC_DIR) -type f -iname '.noslides'))
 SLIDES_BUNDLE_MARKDOWN_SOURCES = $(filter-out $(addsuffix %, $(SLIDES_EXCLUDE_DIRS)), $(shell find $(SRC_DIR) -type f -iname 'index.md'))
 SLIDES_BUNDLE_PDF_TARGETS      = $(addprefix $(SLIDES_OUTPUT_DIR)/,$(subst /,_, $(patsubst $(SRC_DIR)/%/index.md,%.pdf, $(SLIDES_BUNDLE_MARKDOWN_SOURCES))))
-SLIDES_MARKDOWN_TARGETS        = $(SLIDES_BUNDLE_MARKDOWN_SOURCES:$(SRC_DIR)%=$(SLIDES_INTERMEDIATE_DIR)%)
-SLIDES_SHORT_TARGETS           = $(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,%,$(SLIDES_BUNDLE_PDF_TARGETS))
+SLIDES_SINGLE_MARKDOWN_SOURCES = $(filter-out $(addsuffix %, $(SLIDES_EXCLUDE_DIRS)), $(shell find $(SRC_DIR) -type f -iname '*.md'  ! -iname '*index.md' ! -iname 'tldr.md' ! -iname 'outcomes.md'))
+SLIDES_SINGLE_PDF_TARGETS      = $(addprefix $(SLIDES_OUTPUT_DIR)/,$(subst /,_, $(patsubst $(SRC_DIR)/%.md,%.pdf, $(SLIDES_SINGLE_MARKDOWN_SOURCES))))
+SLIDES_MARKDOWN_TARGETS        = $(SLIDES_BUNDLE_MARKDOWN_SOURCES:$(SRC_DIR)%=$(SLIDES_INTERMEDIATE_DIR)%) $(SLIDES_SINGLE_MARKDOWN_SOURCES:$(SRC_DIR)%=$(SLIDES_INTERMEDIATE_DIR)%)
+SLIDES_SHORT_TARGETS           = $(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,%,$(SLIDES_BUNDLE_PDF_TARGETS)) $(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,%,$(SLIDES_SINGLE_PDF_TARGETS))
 
 ## Readings data template
 READINGS = data/readings.yaml
@@ -305,8 +307,14 @@ $(SLIDES_MARKDOWN_TARGETS): $(SLIDES_INTERMEDIATE_DIR)/%: $(SRC_DIR)/%
 ## subfolder.
 ## NOTE: The prerequisites for the images must be added after the 'index.md'
 ## so that '$<' contains the right input file for pandoc.
+## Page-Bundles
 $(SLIDES_BUNDLE_PDF_TARGETS): $$(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,$(SLIDES_INTERMEDIATE_DIR)/%/index.md, $$(subst _,/,$$@))
 	$(create-folder)
 	$(PANDOC) $(PANDOC_DIRS) -d slides $< -o $@
 $(SLIDES_BUNDLE_PDF_TARGETS): $$(filter $$(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,$(SLIDES_INTERMEDIATE_DIR)/%, $$(subst _,/,$$@))%, $(SLIDES_IMAGE_TARGETS))
+## Single Markdown Files
+$(SLIDES_SINGLE_PDF_TARGETS): $$(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,$(SLIDES_INTERMEDIATE_DIR)/%.md, $$(subst _,/,$$@))
+	$(create-folder)
+	$(PANDOC) $(PANDOC_DIRS) -d slides $< -o $@
+$(SLIDES_SINGLE_PDF_TARGETS): $$(filter $$(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,$(SLIDES_INTERMEDIATE_DIR)/%.images, $$(subst _,/,$$@))%, $(SLIDES_IMAGE_TARGETS))
 
