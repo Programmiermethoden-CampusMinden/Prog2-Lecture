@@ -184,7 +184,7 @@ all: slides web ## Make everything
 
 ## Create all slides
 .PHONY: slides
-slides: $(SLIDES_BUNDLE_PDF_TARGETS) ## Create all slides
+slides: $(SLIDES_BUNDLE_PDF_TARGETS) $(SLIDES_SINGLE_PDF_TARGETS) ## Create all slides
 
 ## Generate pdf slides (shortened target name for convenience)
 .PHONY: $(SLIDES_SHORT_TARGETS)
