@@ -312,12 +312,12 @@ $(SLIDES_MARKDOWN_TARGETS): $(SLIDES_INTERMEDIATE_DIR)/%: $(SRC_DIR)/%
 ## subfolder.
 ## NOTE: The prerequisites for the images must be added after the 'index.md'
 ## so that '$<' contains the right input file for pandoc.
-## Page-Bundles
+## Page-Bundles: path/name/index.md, path/name/images/, name.pdf
 $(SLIDES_BUNDLE_PDF_TARGETS): $$(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,$(SLIDES_INTERMEDIATE_DIR)/%/index.md, $$(subst _,/,$$@))
 	$(create-folder)
 	$(PANDOC) $(PANDOC_DIRS) -d slides $< -o $@
 $(SLIDES_BUNDLE_PDF_TARGETS): $$(filter $$(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,$(SLIDES_INTERMEDIATE_DIR)/%, $$(subst _,/,$$@))%, $(SLIDES_IMAGE_TARGETS))
-## Single Markdown Files
+## Single Markdown Files: path/name.md, path/name.images/, name.pdf
 $(SLIDES_SINGLE_PDF_TARGETS): $$(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,$(SLIDES_INTERMEDIATE_DIR)/%.md, $$(subst _,/,$$@))
 	$(create-folder)
 	$(PANDOC) $(PANDOC_DIRS) -d slides $< -o $@
