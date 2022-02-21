@@ -131,14 +131,19 @@ WEB_STATIC_SOURCES = $(shell find $(SRC_DIR) -type f \( -path '*files/*' ! -inam
 WEB_STATIC_TARGETS = $(WEB_STATIC_SOURCES:$(SRC_DIR)%=$(WEB_INTERMEDIATE_DIR)%)
 
 ## Source and target files for slides
-## NOTE: The name for the target pdf file is generated from the relative
-## path under $(SRC_DIR) with '/' substituted by '_'. Directories containing
-## a .noslides file will not be considerd for slides generation.
+## NOTES:
+## (1) The name for the target pdf file is generated from the relative
+##     path under $(SRC_DIR) with '/' substituted by '_'.
+## (2) Directories containing a .noslides file will not be considerd for slides generation.
+## Directories to be excluded
 SLIDES_EXCLUDE_DIRS            = $(dir $(shell find $(SRC_DIR) -type f -iname '.noslides'))
+## Page-bundles
 SLIDES_BUNDLE_MARKDOWN_SOURCES = $(filter-out $(addsuffix %, $(SLIDES_EXCLUDE_DIRS)), $(shell find $(SRC_DIR) -type f -iname 'index.md'))
 SLIDES_BUNDLE_PDF_TARGETS      = $(addprefix $(SLIDES_OUTPUT_DIR)/,$(subst /,_, $(patsubst $(SRC_DIR)/%/index.md,%.pdf, $(SLIDES_BUNDLE_MARKDOWN_SOURCES))))
+## Single markdown files
 SLIDES_SINGLE_MARKDOWN_SOURCES = $(filter-out $(addsuffix %, $(SLIDES_EXCLUDE_DIRS)), $(shell find $(SRC_DIR) -type f -iname '*.md'  ! -iname '*index.md' ! -iname 'tldr.md' ! -iname 'outcomes.md'))
 SLIDES_SINGLE_PDF_TARGETS      = $(addprefix $(SLIDES_OUTPUT_DIR)/,$(subst /,_, $(patsubst $(SRC_DIR)/%.md,%.pdf, $(SLIDES_SINGLE_MARKDOWN_SOURCES))))
+## Convenience targets
 SLIDES_MARKDOWN_TARGETS        = $(SLIDES_BUNDLE_MARKDOWN_SOURCES:$(SRC_DIR)%=$(SLIDES_INTERMEDIATE_DIR)%) $(SLIDES_SINGLE_MARKDOWN_SOURCES:$(SRC_DIR)%=$(SLIDES_INTERMEDIATE_DIR)%)
 SLIDES_SHORT_TARGETS           = $(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,%,$(SLIDES_BUNDLE_PDF_TARGETS)) $(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,%,$(SLIDES_SINGLE_PDF_TARGETS))
 
