@@ -326,4 +326,3 @@ $(SLIDES_SINGLE_PDF_TARGETS): $$(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,$(SLIDES_IN
 	$(create-folder)
 	$(PANDOC) $(PANDOC_DIRS) -d slides $< -o $@
 $(SLIDES_SINGLE_PDF_TARGETS): $$(filter $$(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,$(SLIDES_INTERMEDIATE_DIR)/%.images, $$(subst _,/,$$@))%, $(SLIDES_IMAGE_TARGETS))
-
