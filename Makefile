@@ -243,6 +243,10 @@ PHONY: new_lecture-cg
 new_lecture-cg: ## Create new lecture for Carsten
 	$(HUGO) new -c "$(ORIG_CONTENT)/" -k lecture-cg $(TOPIC)
 
+PHONY: new_lecture-cy
+new_lecture-cy: ## Create new lecture for Canan
+	$(HUGO) new -c "$(ORIG_CONTENT)/" -k lecture-cy $(TOPIC)
+
 PHONY: new_assignment
 new_assignment: ## Create new assignment
 	$(HUGO) new -c "$(ORIG_CONTENT)/" -k assignment $(TOPIC)
