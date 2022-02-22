@@ -66,5 +66,5 @@ privacy:
   vimeo:
     disable: true
   youtube:
-    disable: false
+    disable: true
     privacyEnhanced: true
