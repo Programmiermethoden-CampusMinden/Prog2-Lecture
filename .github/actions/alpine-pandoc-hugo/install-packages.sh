@@ -10,7 +10,7 @@ tlmgr install beamertheme-metropolis pgfopts tcolorbox environ || exit 1
 tlmgr install standalone filemod currfile || exit 1
 
 ## Install make and graphviz (dot)
-apk --no-cache add make bash graphviz ghostscript font-noto || exit 1
+apk --no-cache add make bash zip graphviz ghostscript font-noto || exit 1
 
 ## Install current Hugo (linux/64bit/tgz)
 ## https://github.com/gohugoio/hugo/releases/latest/
