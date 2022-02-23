@@ -203,7 +203,7 @@ web: $(WEB_MARKDOWN_TARGETS) $(WEB_IMAGE_TARGETS) $(WEB_STATIC_TARGETS) $(READIN
 ## Create website and archive
 .PHONY: web_zip
 web_zip: web ## Create website and archive
-	cd $(WEB_OUTPUT_DIR) && zip -r site.zip *
+	cd $(WEB_OUTPUT_DIR) && rm -rf site.zip && zip -r site.zip *
 
 ## Build Docker image "alpine-pandoc-hugo"
 .PHONY: docker
