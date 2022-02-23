@@ -25,8 +25,8 @@ params:
   disableLandingPageButton: true
   disableMermaid: true
   themeVariant:
-  - "relearn-dark"
   - "relearn-light"
+  - "relearn-dark"
   - "green"
 
 menu:
