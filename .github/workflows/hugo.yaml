@@ -18,7 +18,6 @@ jobs:
       - uses: ./.github/actions/alpine-pandoc-hugo
         with:
           make-target: 'make web'
-      - run: cd docs/ && zip -r pm.zip *
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
