@@ -1,6 +1,6 @@
 ---
 type: lecture-cg
-title: "Versionskontrolle in der Softwareentwicklung"
+title: "Intro: Versionskontrolle in der Softwareentwicklung"
 menuTitle: "Intro"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 1

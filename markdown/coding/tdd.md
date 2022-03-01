@@ -1,6 +1,6 @@
 ---
 type: lecture-cg
-title: "Testdriven Development"
+title: "Testdriven Development (TDD)"
 menuTitle: "TDD"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 6
