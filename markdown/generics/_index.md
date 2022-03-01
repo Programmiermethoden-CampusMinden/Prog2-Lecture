@@ -1,7 +1,7 @@
 ---
 chapter: true
 title: "Generics"
-weight: 5
+weight: 6
 ---
 
 

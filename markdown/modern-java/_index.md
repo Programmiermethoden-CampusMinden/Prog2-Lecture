@@ -1,7 +1,7 @@
 ---
 chapter: true
 title: "Modern Java"
-weight: 6
+weight: 8
 ---
 
 

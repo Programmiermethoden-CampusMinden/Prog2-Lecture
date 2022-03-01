@@ -1,7 +1,7 @@
 ---
 chapter: true
 title: "Pattern"
-weight: 2
+weight: 5
 ---
 
 
