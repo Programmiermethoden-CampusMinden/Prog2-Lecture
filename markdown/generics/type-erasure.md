@@ -1,7 +1,7 @@
 ---
 type: lecture-cg
-title: "Generics: Type Erasure"
-menuTitle: "Generics 3: Type Erasure"
+title: "Type Erasure"
+menuTitle: "Type Erasure"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 3
 readings:

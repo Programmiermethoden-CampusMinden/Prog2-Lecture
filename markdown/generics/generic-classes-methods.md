@@ -1,9 +1,9 @@
 ---
 type: lecture-cg
-title: "Generics: Bounds & Wildcards"
-menuTitle: "Generics 2: Bounds & Wildcards"
+title: "Generische Klassen & Methoden"
+menuTitle: "Klassen & Methoden"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 2
+weight: 1
 readings:
   - key: "Bloch2018"
   - key: "Java-11-documentation"

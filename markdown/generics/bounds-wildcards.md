@@ -1,9 +1,9 @@
 ---
 type: lecture-cg
-title: "Generics und Polymorphie"
-menuTitle: "Generics 4: Polymorphie"
+title: "Bounds & Wildcards"
+menuTitle: "Bounds & Wildcards"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 4
+weight: 2
 readings:
   - key: "Bloch2018"
   - key: "Java-11-documentation"

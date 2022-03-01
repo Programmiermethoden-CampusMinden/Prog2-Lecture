@@ -1,9 +1,9 @@
 ---
 type: lecture-cg
-title: "Generics: Klassen & Methoden"
-menuTitle: "Generics 1: Klassen und Methoden"
+title: "Generics und Polymorphie"
+menuTitle: "Polymorphie"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 1
+weight: 4
 readings:
   - key: "Bloch2018"
   - key: "Java-11-documentation"
