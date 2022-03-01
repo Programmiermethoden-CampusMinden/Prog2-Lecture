@@ -1,9 +1,9 @@
 ---
 type: lecture-cg
-title: "JUnit 2: Wie viel und was muss man testen?"
-menuTitle: "JUnit 2: Testfallermittlung"
+title: "Testen mit JUnit"
+menuTitle: "JUnit-Basics"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 2
+weight: 1
 readings:
   - key: "vogellaJUnit"
   - key: "junit4"
