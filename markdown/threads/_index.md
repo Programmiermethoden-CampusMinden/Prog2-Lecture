@@ -1,7 +1,7 @@
 ---
 chapter: true
-title: "Concurrency"
-weight: 10
+title: "Multi-Threading"
+weight: 9
 ---
 
 
