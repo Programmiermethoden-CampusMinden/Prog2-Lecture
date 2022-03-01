@@ -1,9 +1,9 @@
 ---
 type: lecture-cg
-title: "Git 6: Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests"
-menuTitle: "Git 6: Workflows"
+title: "Fehlersuche mit Git Bisect"
+menuTitle: "Bisect"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 6
+weight: 7
 readings:
   - key: "Chacon2014"
     comment: "Kapitel 2 und 3"

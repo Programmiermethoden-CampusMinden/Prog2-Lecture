@@ -1,9 +1,9 @@
 ---
 type: lecture-cg
-title: "Git 4: Branching-Strategien mit Git"
-menuTitle: "Git 4: Branching-Strategien"
+title: "Git Branches: Features unabhängig entwickeln und mit Git verwalten"
+menuTitle: "Branches"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 4
+weight: 3
 readings:
   - key: "Chacon2014"
     comment: "Kapitel 2 und 3"

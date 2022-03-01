@@ -1,9 +1,9 @@
 ---
 type: lecture-cg
-title: "Git 5: Arbeiten mit Git Remotes"
-menuTitle: "Git 5: Remotes"
+title: "Basics der Versionsverwaltung mit Git (lokale Repos)"
+menuTitle: "Basics"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 5
+weight: 2
 readings:
   - key: "Chacon2014"
     comment: "Kapitel 2 und 3"

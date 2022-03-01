@@ -1,9 +1,9 @@
 ---
 type: lecture-cg
-title: "Git 1: Versionskontrolle in der Softwareentwicklung"
-menuTitle: "Git 1: Intro"
+title: "Branching-Strategien mit Git"
+menuTitle: "Branching-Strategien"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 1
+weight: 4
 readings:
   - key: "Chacon2014"
     comment: "Kapitel 2 und 3"

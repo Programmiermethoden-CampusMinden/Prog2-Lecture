@@ -1,9 +1,9 @@
 ---
 type: lecture-cg
-title: "Git 3: Git Branches: Features unabhängig entwickeln und mit Git verwalten"
-menuTitle: "Git 3: Branches"
+title: "Versionskontrolle in der Softwareentwicklung"
+menuTitle: "Intro"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 3
+weight: 1
 readings:
   - key: "Chacon2014"
     comment: "Kapitel 2 und 3"
