@@ -1,6 +1,6 @@
 ---
 chapter: true
-title: "Build"
+title: "Building"
 weight: 4
 ---
 
