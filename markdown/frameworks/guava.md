@@ -1,7 +1,7 @@
 ---
 type: lecture-cg
-title: "Java und Datenbanken: JDBC"
-menuTitle: "JDBC"
+title: "Frameworks: Guava, Apache Commons, JSON"
+menuTitle: "Guava, Apache Commons"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 1
 readings:

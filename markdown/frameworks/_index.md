@@ -1,11 +1,11 @@
 ---
 chapter: true
-title: "Datenbanken"
-weight: 11
+title: "Frameworks"
+weight: 12
 ---
 
 
-# Zugriffe auf Datenbanken: JDBC
+# Umgang mit Frameworks
 
 
 `{{< children showhidden="true" >}}`{=markdown}
