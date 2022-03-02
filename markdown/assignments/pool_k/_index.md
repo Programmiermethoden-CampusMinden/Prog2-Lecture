@@ -1,11 +1,15 @@
 ---
 chapter: true
-title: "Praktikum"
+title: "Pool K"
 hidden: true
+weight: 5
 ---
+
 
 # Pool K
 
-Aufgaben aus diesem Pool müssen Sie im vorgegeben Zeitraum bearbeiten und durch einen Pull-Request in Ihrem Repository abgeben. 
+Aufgaben aus diesem Pool müssen Sie im jeweils vorgegeben Zeitraum bearbeiten und durch
+einen Pull-Request in Ihrem Repository abgeben.
 
-`{{< children description="true" showhidden="true" >}}`{=markdown}
+
+`{{< children showhidden="true" >}}`{=markdown}

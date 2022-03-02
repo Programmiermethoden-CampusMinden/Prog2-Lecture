@@ -1,12 +1,14 @@
 ---
 chapter: true
-title: "Praktikum"
+title: "Pool B"
 hidden: true
+weight: 2
 ---
+
 
 # Pool B
 
-Hier finden Sie die Praktikumsaufgaben aus dem Pool C.
+Hier finden Sie die Praktikumsaufgaben aus dem Pool B.
 
 
-`{{< children description="true" showhidden="true" >}}`{=markdown}
+`{{< children showhidden="true" >}}`{=markdown}
