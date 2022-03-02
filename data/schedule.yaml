@@ -57,8 +57,8 @@
 - week: "KW19"
   lecture:
     - topic: "/git/bisect"
-    - topic: "/java-vm/serialisation"
-    - topic: "/java-vm/collections"
+    - topic: "/java-jvm/serialisation"
+    - topic: "/java-jvm/collections"
     - topic: "/pattern/flyweight"
     - topic: "/pattern/type-object"
     - topic: "/pattern/observer"
@@ -68,8 +68,8 @@
 
 - week: "KW20"
   lecture:
-    - topic: "/java-vm/annotations"
-    - topic: "/java-vm/reflection"
+    - topic: "/java-jvm/annotations"
+    - topic: "/java-jvm/reflection"
     - topic: "/pattern/template-method"
   assignment:
     - topic: "sheet06"
@@ -90,7 +90,7 @@
     - topic: "/modern-java/lambdas"
     - topic: "/modern-java/methodreferences"
     - topic: "/modern-java/defaultmethods"
-    - topic: "/java-vm/regexp"
+    - topic: "/java-jvm/regexp"
   assignment:
     - topic: "sheet07"
       due: "02.06."
@@ -111,15 +111,15 @@
     - topic: "/threads/intro"
     - topic: "/threads/synchronisation"
     - topic: "/threads/highlevel"
-    - topic: "/java-vm/enums"
-    - topic: "/java-vm/exceptions"
+    - topic: "/java-jvm/enums"
+    - topic: "/java-jvm/exceptions"
   assignment:
     - topic: "sheet09"
       due: "16.06."
 
 - week: "KW25"
   lecture:
-    - topic: "/java-vm/configuration"
+    - topic: "/java-jvm/configuration"
     - topic: "/frameworks/guave"
     - topic: "gui/swing"
     - topic: "gui/java2d"
