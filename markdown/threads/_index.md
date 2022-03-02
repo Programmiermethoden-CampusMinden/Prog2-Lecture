@@ -1,6 +1,6 @@
 ---
 chapter: true
-title: "Multi-Threading"
+title: "Threads"
 weight: 9
 ---
 
