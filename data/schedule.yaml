@@ -57,7 +57,7 @@
 - week: "KW19"
   lecture:
     - topic: "/git/bisect"
-    - topic: "/java-vm/serialization"
+    - topic: "/java-vm/serialisation"
     - topic: "/java-vm/collections"
     - topic: "/pattern/flyweight"
     - topic: "/pattern/type-object"
