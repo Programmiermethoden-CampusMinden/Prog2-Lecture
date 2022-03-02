@@ -1,6 +1,6 @@
 ---
 chapter: true
-title: "Datenbank"
+title: "Datenbanken"
 weight: 11
 ---
 
