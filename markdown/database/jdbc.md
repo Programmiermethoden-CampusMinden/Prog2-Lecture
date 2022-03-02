@@ -1,6 +1,6 @@
 ---
 type: lecture-cg
-title: "JDBC"
+title: "Java und Datenbanken: JDBC"
 menuTitle: "JDBC"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 1
