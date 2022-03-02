@@ -1,6 +1,6 @@
 ---
 type: lecture-cg
-title: "Spring und JDBC"
+title: "JDBC"
 menuTitle: "JDBC"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 1
