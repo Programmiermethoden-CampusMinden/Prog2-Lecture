@@ -3,9 +3,10 @@ type: assignment
 title: "Inventar (text basiert)"
 author: "Andre Matutat (FH Bielefeld)"
 points: 3
-hidden: true
 weight: 2
+hidden: true
 ---
+
 
 ## Inventar (text basiert)
 
@@ -32,4 +33,3 @@ weight: 2
     werden. Dabei nutzen sich Waffen möglicherweise ab, Tränke und Sprüche
     werden verbraucht.
 -   Für diese Aufgabe reicht es, das Inventar über die Konsole auszugeben/zu steuern.
-

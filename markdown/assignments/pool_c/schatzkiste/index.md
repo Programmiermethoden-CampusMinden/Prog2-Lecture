@@ -3,9 +3,10 @@ type: assignment
 title: "Schatzkisten"
 author: "Andre Matutat (FH Bielefeld)"
 points: 1
-hidden: true
 weight: 1
+hidden: true
 ---
+
 
 ## Schatzkiste
 
@@ -14,5 +15,3 @@ weight: 1
 -   Schatzkisten beinhalten (zufällige) Items, die der Spieler aufsammeln
     kann. -- Schatzkisten haben damit auch ein Inventar.
 -   Schatzkisten sollen nur in der Nähe des Spielers aktivierbar sein.
-
-

@@ -2,10 +2,10 @@
 type: assignment
 title: ""
 author: "Andre Matutat (FH Bielefeld)"
-points: 
+points:
+weight: 10
 hidden: true
-weight: 1
 ---
 
 
-
+## XXX

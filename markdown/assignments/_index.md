@@ -13,7 +13,7 @@ _build:
 
 Hier finden Sie die Praktikumsaufgaben.
 
-Um das Praktikum zu bestehen müssen Sie jeden Pool mindestens zu 50% erfolgreich bearbeitet haben.
+Um das Praktikum zu bestehen, müssen Sie jeden Pool mindestens zu 50% erfolgreich bearbeitet haben.
 
 
 `{{< children showhidden="true" >}}`{=markdown}

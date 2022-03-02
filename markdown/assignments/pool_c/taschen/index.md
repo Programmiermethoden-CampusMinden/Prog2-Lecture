@@ -3,9 +3,10 @@ type: assignment
 title: "Taschen"
 author: "Andre Matutat (FH Bielefeld)"
 points: 1
-hidden: true
 weight: 1
+hidden: true
 ---
+
 
 ## Taschen
 

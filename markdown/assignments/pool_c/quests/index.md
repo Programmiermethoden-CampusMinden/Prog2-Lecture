@@ -3,9 +3,10 @@ type: assignment
 title: "Quests"
 author: "Andre Matutat (FH Bielefeld)"
 points: 4
-hidden: true
 weight: 1
+hidden: true
 ---
+
 
 ## Quests
 
