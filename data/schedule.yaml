@@ -120,7 +120,7 @@
 - week: "KW25"
   lecture:
     - topic: "/java-jvm/configuration"
-    - topic: "/frameworks/guave"
+    - topic: "/frameworks/guava"
     - topic: "gui/swing"
     - topic: "gui/java2d"
   assignment:
