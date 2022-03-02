@@ -1,20 +1,136 @@
 ---
-- week: "KW40"
+- week: "KW14"
   lecture:
     - topic: "/org/syllabus"
-  misc:
-    - page: "/org/resources"
-      notes: "Vortrag Thema I"
-    - notes: "Coden mit Edmonton"
-    - page: "/org/schedule"
+      notes: "Kick-Off (Zoom)"
+    - topic: "/git/intro"
+    - topic: "/git/basics"
+    - topic: "/git/branches"
+    - topic: "/git/branching-strategies"
+    - topic: "/coding/debugging"
+    - topic: "/database/jdbc"
+  misc_assignment:
+    - notes: "Zweiter Teil der VL in Praktikumszeit (kein Praktikum in Woche 1)"
 
-- week: "KW41"
+- week: "KW15"
   lecture:
-    - topic: "/org/syllabus"
-      leader: "cagi"
-      notes: "Classes go all-virtual"
-    - topic: "/org/syllabus"
+    - topic: "/git/remotes"
+    - topic: "/git/workflows"
+    - topic: "/coding/logging"
+    - topic: "/coding/javadoc"
+    - topic: "/pattern/factory-method"
   assignment:
     - topic: "sheet01"
-      due: "14.10."
+      due: "14.04."
+
+- week: "KW16"
+  lecture:
+    - topic: "/generics/classes-methods"
+    - topic: "/generics/bounds-wildcards"
+    - topic: "/generics/type-erasure"
+    - topic: "/generics/generics-polymorphism"
+    - topic: "/pattern/strategy"
+  assignment:
+    - topic: "sheet02"
+      due: "21.04."
+
+- week: "KW17"
+  lecture:
+    - topic: "/building/gradle"
+    - topic: "/building/ci"
+    - topic: "/testing/junit-basics"
+    - topic: "/testing/testcases"
+    - topic: "/coding/tdd"
+  assignment:
+    - topic: "sheet03"
+      due: "28.04."
+
+- week: "KW18"
+  lecture:
+    - topic: "/coding/smells"
+    - topic: "/coding/refactoring"
+    - topic: "/testing/mockito"
+  assignment:
+    - topic: "sheet04"
+      due: "05.05."
+
+- week: "KW19"
+  lecture:
+    - topic: "/git/bisect"
+    - topic: "/java-vm/serialization"
+    - topic: "/java-vm/collections"
+    - topic: "/pattern/flyweight"
+    - topic: "/pattern/type-object"
+    - topic: "/pattern/observer"
+  assignment:
+    - topic: "sheet05"
+      due: "12.05."
+
+- week: "KW20"
+  lecture:
+    - topic: "/java-vm/annotations"
+    - topic: "/java-vm/reflection"
+    - topic: "/pattern/template-method"
+  assignment:
+    - topic: "sheet06"
+      due: "19.05."
+
+- week: "KW21"
+  lecture:
+    - topic: "/building/ant"
+    - topic: "/building/maven"
+    - topic: "/building/docker"
+  misc_lecture:
+    - notes: ">> E1 (23.05.) in Vorlesungs-Slot"
+  misc_assignment:
+    - notes: "Kein Praktikum"
+
+- week: "KW22"
+  lecture:
+    - topic: "/modern-java/lambdas"
+    - topic: "/modern-java/methodreferences"
+    - topic: "/modern-java/defaultmethods"
+    - topic: "/java-vm/regexp"
+  assignment:
+    - topic: "sheet07"
+      due: "02.06."
+
+- week: "KW23"
+  lecture:
+    - topic: "/modern-java/stream-api"
+    - topic: "/modern-java/records"
+    - topic: "/modern-java/optional"
+    - topic: "/pattern/visitor"
+    - topic: "/pattern/command"
+  assignment:
+    - topic: "sheet08"
+      due: "09.06."
+
+- week: "KW24"
+  lecture:
+    - topic: "/threads/intro"
+    - topic: "/threads/synchronisation"
+    - topic: "/threads/highlevel"
+    - topic: "/java-vm/enums"
+    - topic: "/java-vm/exceptions"
+  assignment:
+    - topic: "sheet09"
+      due: "16.06."
+
+- week: "KW25"
+  lecture:
+    - topic: "/java-vm/configuration"
+    - topic: "/frameworks/guave"
+    - topic: "gui/swing"
+    - topic: "gui/java2d"
+  assignment:
+    - topic: "sheet10"
+      due: "16.06."
+
+- week: "KW26"
+  lecture:
+    - topic: "/org/syllabus"
+      notes: "Rückblick, Prüfungsvorbereitung (Zoom)"
+  misc_assignment:
+    - notes: "Kein Praktikum"
 ---
