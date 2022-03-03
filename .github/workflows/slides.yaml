@@ -1,14 +1,14 @@
 name: SLIDES
 on:
-  # push on master branch: build slides
+  # push on master branch: build slides (pandoc)
   push:
     branches: [master]
-  # manually triggered: build slides
+  # manually triggered: build slides (pandoc)
   workflow_dispatch:
 
 
 jobs:
-  # build slides: "make slides"
+  # build slides (pandoc): "make slides"
   slides:
     runs-on: ubuntu-latest
     steps:
