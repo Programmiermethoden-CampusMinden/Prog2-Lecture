@@ -17,7 +17,7 @@ tldr: |
   Befehl legt den Unterordner `.git/` im aktuellen Ordner an, darin befindet sich das lokale Repository und
   weitere von Git benötigte Dateien (FINGER WEG!). Die Dateien und anderen Unterordner im aktuellen Ordner
   können nun der Versionskontrolle hinzugefügt werden. Den lokal vorliegenden (Versions-) Stand der Dateien
-  im aktuellen Ordner nennt man auch "Working Copy". Ein bereits existierendes Repo kann mit `git clone <url>`
+  im aktuellen Ordner nennt man auch "Workingcopy". Ein bereits existierendes Repo kann mit `git clone <url>`
   geklont werden.
 outcomes:
   - k1: "Varianten der Versionierung"
@@ -65,7 +65,7 @@ fhmedia:
 :::::: columns
 ::: {.column width="48%"}
 
-![](intro.images/local.png){width="80%"}
+![](intro.images/local.png){width="80%" web_width="40%"}
 
 :::
 ::: {.column width="50%"}
@@ -86,12 +86,32 @@ fhmedia:
 
 ## Varianten: Zentrale Versionsverwaltung (Beispiel SVN)
 
-![](intro.images/centralized.png){width="80%"}
+![](intro.images/centralised.png){width="80%"}
+
+::: notes
+Es gibt ein zentrales Repository (typischerweise auf einem Server), von dem die Developer einen
+bestimmten Versionsstand "auschecken" (sich lokal kopieren) und in welches sie Änderungen wieder
+zurück "pushen".
+
+Zur Abfrage der Historie und zum Veröffentlichen von Änderungen benötigt man entsprechend immer
+eine Verbindung zum Server.
+:::
 
 
 ## Varianten: Verteilte Versionsverwaltung (Beispiel Git)
 
 ![](intro.images/distributed.png){width="80%"}
+
+::: notes
+In diesem Szenario hat jeder Developer nicht nur die Workingcopy, sondern auch noch eine Kopie
+des Repositories. Zusätzlich kann es einen oder mehrere Server geben, auf denen dann nur das
+Repository vorgehalten wird, d.h. dort gibt es normalerweise keine Workingcopy. Damit kann
+unabhängig voneinander gearbeitet werden.
+
+Allerdings besteht nun die Herausforderung, die geänderten Repositories miteinander abzugleichen.
+Das kann zwischen dem lokalen Rechner und dem Server passieren, aber auch zwischen zwei "normalen"
+Rechnern (also zwischen den Developern).
+:::
 
 
 ## Versionsverwaltung mit Git: Typische Arbeitsschritte
