@@ -65,8 +65,7 @@ fhmedia:
 :::::: columns
 ::: {.column width="48%"}
 
-![](figs/git/local)
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/local.png)]{.origin}
+![](intro.images/local.png){width="80%"}
 
 :::
 ::: {.column width="50%"}
@@ -87,18 +86,12 @@ fhmedia:
 
 ## Varianten: Zentrale Versionsverwaltung (Beispiel SVN)
 
-::: center
-![](figs/git/centralized){width=64mm}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/centralized.png)]{.origin}
-:::
+![](intro.images/centralized.png){width="80%"}
 
 
 ## Varianten: Verteilte Versionsverwaltung (Beispiel Git)
 
-::: center
-![](figs/git/distributed){width="58%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/distributed.png)]{.origin}
-:::
+![](intro.images/distributed.png){width="80%"}
 
 
 ## Versionsverwaltung mit Git: Typische Arbeitsschritte
@@ -196,9 +189,4 @@ oder per Befehl `git config --global -l`.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
