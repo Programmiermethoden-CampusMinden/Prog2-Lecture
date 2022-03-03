@@ -12,7 +12,7 @@ jobs:
   hugo:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: true
       - uses: ./.github/actions/alpine-pandoc-hugo
