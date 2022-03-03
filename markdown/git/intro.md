@@ -11,13 +11,14 @@ readings:
   - key: "GitCheatSheet"
 tldr: |
   In der Softwareentwicklung wird häufig ein Versionsmanagementsystem (VCS) eingesetzt, welches die Verwaltung
-  von Versionsständen und Änderungen ermöglicht. Ein Repository sammelt dabei die verschiedenen Änderungen.
-  Die Software *Git* ist verbreiteter Vertreter und arbeitet mit dezentralen Repositories. Ein neues lokales
-  Repository kann man mit `git init` anlegen. Der Befehl legt den Unterordner `.git/` im aktuellen Ordner an,
-  darin befindet sich das lokale Repository und weitere von Git benötigte Dateien (FINGER WEG!). Die Dateien
-  und anderen Unterordner im aktuellen Ordner können nun der Versionskontrolle hinzugefügt werden. Den lokal
-  vorliegenden (Versions-) Stand der Dateien im aktuellen Ordner nennt man auch "Working Copy". Ein bereits
-  existierendes Repo kann mit `git clone <url>` geklont werden.
+  von Versionsständen und Änderungen ermöglicht. Ein Repository sammelt dabei die verschiedenen Änderungen
+  (quasi wie eine Datenbank der Software-Versionsstände). Die Software *Git* ist verbreiteter Vertreter und
+  arbeitet mit dezentralen Repositories. Ein neues lokales Repository kann man mit `git init` anlegen. Der
+  Befehl legt den Unterordner `.git/` im aktuellen Ordner an, darin befindet sich das lokale Repository und
+  weitere von Git benötigte Dateien (FINGER WEG!). Die Dateien und anderen Unterordner im aktuellen Ordner
+  können nun der Versionskontrolle hinzugefügt werden. Den lokal vorliegenden (Versions-) Stand der Dateien
+  im aktuellen Ordner nennt man auch "Working Copy". Ein bereits existierendes Repo kann mit `git clone <url>`
+  geklont werden.
 outcomes:
   - k1: "Varianten der Versionierung"
   - k1: "Begriffe Workingcopy und Repository"
@@ -46,7 +47,7 @@ fhmedia:
 
 ## Folgen SW-Entwicklung ohne Versionsverwaltung
 
-![](intro.images/screenshot_zusammenarbeit_ohne_vcs.png)
+![](intro.images/screenshot_zusammenarbeit_ohne_vcs.png){width=80%}
 
 ::: notes
 *   Filesystem müllt voll mit manuell versionierten
