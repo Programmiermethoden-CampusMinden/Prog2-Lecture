@@ -10,8 +10,18 @@ readings:
   - key: "AtlassianGit"
   - key: "GitCheatSheet"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+  Änderungen an Dateien (in der Workingcopy) werden mit `git add` zum Staging hinzugefügt.
+  Dies ist eine Art Sammelbereich für Änderungen, die mit dem nächsten Commit in das Repository
+  überführt werden. Neue (bisher nicht versioniert Dateien) müssen ebenfalls zunächst mit
+  `git add` zum Staging hinzugefügt werden. Änderungen kann man mit `git log` betrachten, dabei
+  erhält man u.a. eine Liste der Commits und der jeweiligen Commmit-Messages. Mit `git diff`
+  kann man gezielt Änderungen zwischen Commits oder Branches betrachten. Mit `git tag` kann man
+  bestimmte Commits mit einem "Stempel" (zusätzlicher Name) versehen, um diese leichter finden
+  zu können. Wichtig sind die Commit-Messages: Diese sollten eine kurze Zusammenfassung haben,
+  die **aktiv** formuliert wird (was ändert dieser Commit: "Formatiere den Java-Code entsprechend
+  Style"; nicht aber "Java-Code nach Style formatiert"). Falls der Kommentar länger sein soll,
+  folgt eine Leerzeile auf die erste Zeile (Zusammenfassung) und danach ein Block mit der längeren
+  Erklärung.
 outcomes:
   - k3: "Umgang mit Dateien: Hinzufügen zum und Löschen aus Repo"
   - k3: "Umgang mit Änderungen: Hinzufügen zum Staging und Commit"
