@@ -18,10 +18,12 @@ tldr: |
   weitere von Git benötigte Dateien (FINGER WEG!). Die Dateien und anderen Unterordner im aktuellen Ordner
   können nun der Versionskontrolle hinzugefügt werden. Den lokal vorliegenden (Versions-) Stand der Dateien
   im aktuellen Ordner nennt man auch "Workingcopy". Ein bereits existierendes Repo kann mit `git clone <url>`
-  geklont werden.
+  geklont werden. [GitHub](https://github.com) ist nicht Git, sondern ein kommerzieller Anbieter, der das
+  Hosten von Git-Repositories und weitere Features anbietet.
 outcomes:
   - k1: "Varianten der Versionierung"
   - k1: "Begriffe Workingcopy und Repository"
+  - k2: "Github ist nicht Git"
   - k2: "Erstellung von lokalen Git-Repositories"
   - k3: "Umgang mit entsprechenden Git-Befehlen auf der Konsole"
 quizzes:
@@ -111,6 +113,15 @@ unabhängig voneinander gearbeitet werden.
 Allerdings besteht nun die Herausforderung, die geänderten Repositories miteinander abzugleichen.
 Das kann zwischen dem lokalen Rechner und dem Server passieren, aber auch zwischen zwei "normalen"
 Rechnern (also zwischen den Developern).
+
+
+**Hinweis**: _GitHub ain't no Git!_ Git ist ein Programm zur Versionsverwaltung. Es gibt verschiedene
+Implementierungen und Plugins für IDEs und Editoren. [GitHub](https://github.com) ist dagegen _ein_
+Dienstleister, wo man Git-Repositories ablegen kann und auf diese mit Git (von der Konsole oder aus der
+IDE) zugreifen kann. Darüber hinaus bietet der Service aber zusätzliche Features an, beispielsweise
+ein Issue-Management oder sogenannte _Pull-Requests_. Dies hat aber zunächst mit Git nichts zu tun.
+Weitere populäre Anbieter sind beispielsweise [Bitbucket](https://bitbucket.org/) oder [Gitlab](https://gitlab.com)
+oder [Gitea](https://gitea.io/en-us/), wobei einige auch selbst gehostet werden können.
 :::
 
 
