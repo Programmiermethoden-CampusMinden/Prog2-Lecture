@@ -195,13 +195,13 @@ oder per Befehl `git config --global -l`.
 
 *   `git init`
 
-    \blueArrow Erzeugt neues Repository im akt. Verzeichnis
+    => Erzeugt neues Repository im akt. Verzeichnis
 
 \bigskip
 
 *   `git clone <url>`
 
-    \blueArrow Erzeugt (verlinkte) Kopie [des Repos unter `<url>`]{.notes}
+    => Erzeugt (verlinkte) Kopie [des Repos unter `<url>`]{.notes}
 
 [Konsole]{.bsp}
 
