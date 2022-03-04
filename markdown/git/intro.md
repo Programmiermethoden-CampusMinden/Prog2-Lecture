@@ -169,6 +169,10 @@ Zusätzlich kann man weitere Einstellungen vornehmen, etwa auf bunte
 Ausgabe umschalten: `git config --global color.ui auto` oder Abkürzungen
 (Aliase) für Befehle definieren: `git config --global alias.ll 'log --all --oneline --graph --decorate'` ...
 
+Git (und auch GitHub) hat kürzlich den Namen des Default-Branches von `master`
+auf `main` geändert. Dies kann man in Git ebenfalls selbst einstellen:
+`git config --global init.defaultBranch <name>`.
+
 Anschauen kann man sich die Einstellungen in der Textdatei `~/.gitconfig`
 oder per Befehl `git config --global -l`.
 :::
