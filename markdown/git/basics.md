@@ -69,14 +69,14 @@ i.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
 ::: notes
 1.  `git add .` (oder `git add <file>`)
 
-    \blueArrow Stellt [alle]{.alert} Dateien (bzw. die Datei `<file>`)
+    => Stellt [alle]{.alert} Dateien (bzw. die Datei `<file>`)
     [im aktuellen Verzeichnis]{.notes} unter Versionskontrolle
 
 \bigskip
 
 2.  `git commit`
 
-    \blueArrow Fügt die Dateien dem Repository hinzu
+    => Fügt die Dateien dem Repository hinzu
 :::
 
 \bigskip
@@ -260,7 +260,7 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
     *   Änderungen in Stage: `git reset HEAD <file>`
 
     ::: notes
-    \blueArrow Hinweise von `git status` beachten!
+    => Hinweise von `git status` beachten!
     :::
 
 \bigskip
