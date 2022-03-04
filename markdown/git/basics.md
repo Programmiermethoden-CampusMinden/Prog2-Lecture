@@ -218,13 +218,13 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 *   Nicht alle Dateien gehören ins Repo:
     *   generierte Dateien: `.class`
     *   temporäre Dateien
-
 *   Datei `.gitignore` anlegen und committen
     *   Wirkt auch für Unterordner
     *   Inhalt: Reguläre Ausdrücke für zu ignorierende Dateien und Ordner
 :::
 
-```
+
+```{.gitignore}
     # Compiled source #
     *.class
     *.o
@@ -237,7 +237,7 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
     bin/**/*
 ```
 
-[vgl. `man 5 gitignore`]{.bsp}
+[man 5 gitignore]{.bsp}
 
 
 ## Zeitmaschine
