@@ -57,12 +57,13 @@ i.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
     \blueArrow Stellt [alle]{.alert} Dateien (bzw. die Datei `<file>`)
     [im aktuellen Verzeichnis]{.notes} unter Versionskontrolle
 
-\smallskip
+\bigskip
 
 2.  `git commit`
 
     \blueArrow Fügt die Dateien dem Repository hinzu
 
+\bigskip
 \bigskip
 
 Abfrage mit `git status`
@@ -342,9 +343,4 @@ automatisch von Git aufgezeichnet ...)
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
