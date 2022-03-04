@@ -40,9 +40,6 @@ fhmedia:
 
 ## Versionsverwaltung mit Git: Typische Arbeitsschritte
 
-![](basics.images/workflow.png){width="80%"}
-
-::: notes
 a.  Repository anlegen (oder clonen)
 
 \bigskip
@@ -61,11 +58,15 @@ h.  Entwicklungszweige zusammenführen ("mergen")
 \bigskip
 
 i.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
-:::
 
 
 ## Dateien unter Versionskontrolle stellen
 
+\bigskip
+
+![](basics.images/workflow.png){width="80%"}
+
+::: notes
 1.  `git add .` (oder `git add <file>`)
 
     \blueArrow Stellt [alle]{.alert} Dateien (bzw. die Datei `<file>`)
@@ -76,6 +77,7 @@ i.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
 2.  `git commit`
 
     \blueArrow Fügt die Dateien dem Repository hinzu
+:::
 
 \bigskip
 \bigskip
@@ -89,21 +91,18 @@ i.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
 
 \bigskip
 
-![](basics.images/lifecycle.png){width="80%"}
+![](basics.images/lifecycle.png){width="70%"}
 
 \bigskip
 
 *   Abfrage mit: `git status`
-
 *   "Staging" von modifizierten Dateien: `git add <file>`
-
 *   Committen der Änderungen im Stage: `git commit`
 
-    ::: notes
-    Alternativ auch mit `git commit -m "Kommentar"`, um das Öffnen
-    des Editors zu vermeiden ... geht einfach schneller ;)
-    :::
-
+::: notes
+*Anmerkung*: Alternativ auch mit `git commit -m "Kommentar"`, um das Öffnen
+des Editors zu vermeiden ... geht einfach schneller ;)
+:::
 
 ::: notes
 Das "staging area" stellt eine Art Zwischenebene zwischen Working Copy und
