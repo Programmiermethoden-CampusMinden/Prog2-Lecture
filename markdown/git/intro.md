@@ -115,7 +115,7 @@ Das kann zwischen dem lokalen Rechner und dem Server passieren, aber auch zwisch
 Rechnern (also zwischen den Developern).
 
 
-**Hinweis**: _GitHub ain't no Git!_ Git ist ein Programm zur Versionsverwaltung. Es gibt verschiedene
+**Hinweis**: _GitHub ain't no Git!_ Git ist eine Technologie zur Versionsverwaltung. Es gibt verschiedene
 Implementierungen und Plugins für IDEs und Editoren. [GitHub](https://github.com) ist dagegen _ein_
 Dienstleister, wo man Git-Repositories ablegen kann und auf diese mit Git (von der Konsole oder aus der
 IDE) zugreifen kann. Darüber hinaus bietet der Service aber zusätzliche Features an, beispielsweise
