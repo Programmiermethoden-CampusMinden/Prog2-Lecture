@@ -25,12 +25,47 @@ fhmedia:
 ---
 
 
-## Motivation
-Lorem Ipsum. Starte mit H2-Level.
-...
+## Versionsverwaltung mit Git: Typische Arbeitsschritte
 
-## Folie 2
-...
+a.  Repository anlegen (oder clonen)
+
+\bigskip
+
+b.  Dateien neu erstellen (und löschen, umbenennen, verschieben)
+c.  Änderungen einpflegen ("committen")
+d.  Änderungen und Logs betrachten
+e.  Änderungen rückgängig machen
+f.  Projektstand markieren ("taggen")
+
+\bigskip
+
+g.  Entwicklungszweige anlegen ("branchen")
+h.  Entwicklungszweige zusammenführen ("mergen")
+
+\bigskip
+
+i.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
+
+
+## Dateien unter Versionskontrolle stellen
+
+1.  `git add .` (oder `git add <file>`)
+
+    \blueArrow Stellt [alle]{.alert} Dateien (bzw. die Datei `<file>`)
+    [im aktuellen Verzeichnis]{.notes} unter Versionskontrolle
+
+\smallskip
+
+2.  `git commit`
+
+    \blueArrow Fügt die Dateien dem Repository hinzu
+
+\bigskip
+
+Abfrage mit `git status`
+
+[Konsole]{.bsp}
+
 
 ## Folie 3
 ...
@@ -45,7 +80,13 @@ Lorem Ipsum. Starte mit H2-Level.
 ...
 
 ## Wrap-Up
-...
+
+*   Änderungen einpflegen zweistufig (`add`, `commit`)
+*   Status der Workingcopy mit `status` ansehen
+*   Logmeldungen mit `log` ansehen
+*   Änderungen auf einem File mit `diff` bzw. `blame` ansehen
+*   Projektstand markieren mit `tag`
+*   Ignorieren von Dateien/Ordnern: Datei `.gitignore`
 
 
 
