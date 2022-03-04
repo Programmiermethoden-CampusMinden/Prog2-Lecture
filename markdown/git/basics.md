@@ -291,7 +291,9 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 
 [Typische Regeln:]{.notes}
 
-*   Kleinere "Häppchen" einchecken
+*   Kleinere "Häppchen" einchecken: ein Feature oder Task
+    [(das nennt man auch "atomic commit": das kleinste Set an Änderungen, die
+    gemeinsam Sinn machen und die ggf. gemeinsam zurückgesetzt werden können)]{.notes}
 *   Logisch zusammenhängende Änderungen gemeinsam einchecken
 *   Projekt muss nach Commit compilierbar sein
 *   Projekt sollte nach Commit lauffähig sein
@@ -330,6 +332,8 @@ in fünf Jahren liest!
 Vom Aufbau her hat eine E-Mail auch eine Summary und dann den eigentlichen Inhalt ...
 Erklären Sie das **"WARUM"** der Änderung! (Das "WER", "WAS", "WANN" wird bereits
 automatisch von Git aufgezeichnet ...)
+
+Siehe auch ["How to Write a Git Commit Message"](https://cbea.ms/git-commit/).
 :::
 
 [[Analogie E-Mail an zukünftigen Entwickler]{.bsp}]{.slides}
