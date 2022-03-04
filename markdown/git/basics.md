@@ -40,6 +40,9 @@ fhmedia:
 
 ## Versionsverwaltung mit Git: Typische Arbeitsschritte
 
+![](basics.images/workflow.png){width="80%"}
+
+::: notes
 a.  Repository anlegen (oder clonen)
 
 \bigskip
@@ -58,6 +61,7 @@ h.  Entwicklungszweige zusammenführen ("mergen")
 \bigskip
 
 i.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
+:::
 
 
 ## Dateien unter Versionskontrolle stellen
@@ -76,7 +80,7 @@ i.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
 \bigskip
 \bigskip
 
-Abfrage mit `git status`
+**Abfrage mit `git status`**
 
 [Konsole]{.bsp}
 
@@ -85,7 +89,7 @@ Abfrage mit `git status`
 
 \bigskip
 
-![](figs/git/lifecycle){width=72mm}
+![](basics.images/lifecycle.png){width="80%"}
 
 \bigskip
 
