@@ -124,9 +124,9 @@ bisherige Befehl "`checkout`" funktioniert aber weiterhin.
 Fix für `master` nötig:
 :::
 
-a)  `git checkout master`
-b)  `git checkout -b fix`
-c)  Änderungen vornehmen ...
+1.  `git checkout master`
+2.  `git checkout -b fix`
+3.  Änderungen vornehmen ...
 
 ::: notes
 `git checkout <branchname>` holt den aktuellen Stand des jeweiligen
@@ -146,9 +146,9 @@ auch Branches auf der Basis von `wuppie` anlegen ...
 
 \bigskip
 
-a)  `git checkout master`
-b)  `git merge fix` => [**fast forward**]{.alert} von `master`
-c)  `git branch -d fix`
+1.  `git checkout master`
+2.  `git merge fix` => [**fast forward**]{.alert} von `master`
+3.  `git branch -d fix`
 
 ::: notes
 Der letzte Schritt entfernt den Namen `fix`.
@@ -187,8 +187,8 @@ Der letzte Schritt entfernt den Namen `fix`.
 
 \bigskip
 
-a)  `git switch wuppie`
-b)  Weitere Änderungen im Branch `wuppie` ...
+1.  `git switch wuppie`
+2.  Weitere Änderungen im Branch `wuppie` ...
 
 ::: notes
 `git switch <branchname>` holt den aktuellen Stand des jeweiligen Branches in
@@ -211,8 +211,8 @@ einer Datei noch "`--`" nutzen: `git checkout -- <dateiname>`.
 
 \bigskip
 
-a)  `git checkout master`
-b)  `git merge wuppie` \newline => Kein *fast forward* möglich: Git sucht nach gemeinsamen Vorgänger
+1.  `git checkout master`
+2.  `git merge wuppie` \newline => Kein *fast forward* möglich: Git sucht nach gemeinsamen Vorgänger
 
 ::: notes
 Hier im Beispiel ist der Standardfall beim Mergen dargestellt: Die beiden
