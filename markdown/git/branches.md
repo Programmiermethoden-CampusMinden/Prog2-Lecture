@@ -10,7 +10,22 @@ readings:
   - key: "AtlassianGit"
   - key: "GitCheatSheet"
 tldr: |
-  TODO
+  Die Commits in Git bauen aufeinander auf und bilden dabei eine verkettete "Liste". Diese "Liste" nennt man
+  auch *Branch* (Entwicklungszweig). Beim Initialisieren eines Repositories wird automatisch ein Default-Branch
+  angelegt, auf dem die Commits dann eingefügt werden.
+
+  Weitere Branches kann man mit `git branch` anlegen, und die Workingcopy kann mit `git switch` oder `git checkout`
+  auf einen anderen Branch umgeschaltet werden. Auf diese Weise kann man an mehreren Features parallel arbeiten,
+  ohne dass die Arbeiten sich gegenseitig stören.
+
+  Zum Mergen (Vereinigen) von Branches gibt es `git merge`. Dabei werden die Änderungen im angegebenen Branch in
+  den aktuell in der Workingcopy ausgecheckten Branch integriert und hier ggf. ein neuer Merge-Commit erzeugt. Falls
+  es in beiden Branches inkompatible Änderungen an der selben Stelle gab, entsteht beim Mergen ein Merge-Konflikt.
+  Dabei zeigt Git in den betroffenen Dateien jeweils an, welche Änderung aus welchem Branch stammt und man muss
+  diesen Konflikt durch Editieren der Stellen manuell beheben.
+
+  Man kann mit `git rebase` die Wurzel eines Branches an eine andere Stelle bewegen. Dies wird später bei Workflows
+  eine Rolle spielen.
 outcomes:
   - k3: "Erzeugen von Branches"
   - k3: "Mergen von Branches, Auflösen möglicher Konflikte"
