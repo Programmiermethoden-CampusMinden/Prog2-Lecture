@@ -28,9 +28,7 @@ fhmedia:
 
 ## Aktueller Stand der Entwicklung
 
-```
-A---B---C  master
-```
+    A---B---C  master
 
 [[Konsole]{.bsp}]{.slides}
 
@@ -55,9 +53,7 @@ Repository in den Repo-Einstellungen (Abschnitt "Branches") ändern.
 :::::: columns
 ::: {.column width="55%"}
 
-```
-A---B---C  master, wuppie
-```
+    A---B---C  master, wuppie
 
 :::
 ::: {.column width="45%"}
@@ -99,11 +95,9 @@ bisherige Befehl "`checkout`" funktioniert aber weiterhin.
 
 ## Arbeiten im Entwicklungszweig ...
 
-```
-          D  wuppie
-         /
-A---B---C  master
-```
+              D  wuppie
+             /
+    A---B---C  master
 
 ::: notes
 *   Entwicklung des neuen Features erfolgt im eigenen Branch: beeinflusst den
@@ -118,17 +112,20 @@ A---B---C  master
 
 ## Problem: Fehler im ausgelieferten Produkt
 
-![](figs/git/basic-branching-4){width="60%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-branching-4.png)]{.origin}
+              D  wuppie
+             /
+    A---B---C  master
+             \
+              E  fix
 
 \bigskip
 
 ::: notes
-Hotfix für `master` nötig:
+Fix für `master` nötig:
 :::
 
 a)  `git checkout master`
-b)  `git checkout -b hotfix`
+b)  `git checkout -b fix`
 c)  Änderungen vornehmen ...
 
 ::: notes
@@ -136,37 +133,39 @@ c)  Änderungen vornehmen ...
 Branches in die Workingcopy.
 
 Man kann weitere Branches anlegen, d.h. hier im Beispiel ein neuer
-Feature-Branch `hotfix`, der auf dem `master` basiert. Analog könnte man
-auch Branches auf der Basis von `iss53` anlegen ...
+Feature-Branch `fix`, der auf dem `master` basiert. Analog könnte man
+auch Branches auf der Basis von `wuppie` anlegen ...
 :::
 
 
-## Hotfix ist stabil: Integration in *master*
+## Fix ist stabil: Integration in *master*
 
-![](figs/git/basic-branching-5){width="55%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-branching-5.png)]{.origin}
+              D  wuppie
+             /
+    A---B---C---E  master
 
 \bigskip
 
 a)  `git checkout master`
-b)  `git merge hotfix` =>\ [fast forward]{.alert} von `master`
-c)  `git branch -d hotfix`
+b)  `git merge fix` => [**fast forward**]{.alert} von `master`
+c)  `git branch -d fix`
 
 ::: notes
-Der letzte Schritt entfernt den Namen `hotfix` (nicht in Abbildung dargestellt!)
+Der letzte Schritt entfernt den Namen `fix`.
 :::
 
 ::: notes
-*   Allgemein: `git merge <branchname>` führt den angegebenen Branch mit dem
-    aktuell in der Workingcopy ausgecheckten Branch zusammen
+*   Allgemein: `git merge <branchname>` führt die Änderungen im angegebenen Branch
+    `<branchname>` in den aktuell in der Workingcopy ausgecheckten Branch ein. Daraus
+    resultiert für den aktuell ausgecheckten Branch ein neuer Commit, der Branch
+    `<branchname>` bleibt dagegen auf seinem bisherigen Stand.
 
     Beispiel:
-
     *   Die Workingcopy ist auf `A`
-    *   `git merge B` führt `A` und `B` zusammen
+    *   `git merge B` führt `A` und `B` zusammen: `B` wird **in** `A` gemergt
     *   Wichtig: Der Merge-Commit (sofern nötig) findet hierbei in `A` statt!
 
-    In der Abbildung ist `A` der `master` und `B` der `hotfix`.
+    In der Abbildung ist `A` der `master` und `B` der `fix`.
 
 *   Nach dem Merge existieren beide Branches weiter (sofern sie nicht explizit
     gelöscht werden)
@@ -182,35 +181,38 @@ Der letzte Schritt entfernt den Namen `hotfix` (nicht in Abbildung dargestellt!)
 
 ## Feature weiter entwickeln ...
 
-![](figs/git/basic-branching-6){width="70%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-branching-6.png)]{.origin}
+              D---F  wuppie
+             /
+    A---B---C---E  master
 
 \bigskip
 
-a)  `git checkout iss53`
-b)  Weitere Änderungen im Branch `iss53` ... \newline  <!-- XXX damit kommt die Abbildung auf die selbe Höhe wie in nächster Folie -->
+a)  `git switch wuppie`
+b)  Weitere Änderungen im Branch `wuppie` ...
 
 ::: notes
-`git checkout <branchname>` holt den aktuellen Stand des jeweiligen
-Branches in die Workingcopy. Man kann also jederzeit in der Workingcopy die
-Branches wechseln und entsprechend weiterarbeiten.
+`git switch <branchname>` holt den aktuellen Stand des jeweiligen Branches in
+die Workingcopy. Man kann also jederzeit in der Workingcopy die Branches wechseln
+und entsprechend weiterarbeiten.
 
-*Hinweis*: `git checkout` funktioniert mit Branchnamen und Dateinamen
-
-*Hinweis*: Falls gleiche Branch- und Dateinamen existieren, muss man für das
-Auschecken einer Datei noch "`--`" nutzen: `git checkout -- <dateiname>`
+*Hinweis*: Während der neue `git switch`-Befehl nur Branches umschalten kann,
+funktioniert `git checkout` sowohl mit Branchnamen und Dateinamen -- damit kann
+man also auch eine andere Version einer Datei in der Workingcopy "auschecken".
+Falls gleiche Branch- und Dateinamen existieren, muss man für das Auschecken
+einer Datei noch "`--`" nutzen: `git checkout -- <dateiname>`.
 :::
 
 
 ## Feature ist stabil: Integration in *master*
 
-![](figs/git/basic-merging-1){width="70%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-merging-1.png)]{.origin}
+              D---F  wuppie                                D---F  wuppie
+             /                     =>                     /     \
+    A---B---C---E  master                    A---B---C---E-------G  master
 
 \bigskip
 
 a)  `git checkout master`
-b)  `git merge iss53` \newline => Kein *fast forward* möglich: Git sucht nach gemeinsamen Vorgänger
+b)  `git merge wuppie` \newline => Kein *fast forward* möglich: Git sucht nach gemeinsamen Vorgänger
 
 ::: notes
 Hier im Beispiel ist der Standardfall beim Mergen dargestellt: Die beiden
@@ -219,33 +221,24 @@ parallel weitergearbeitet.
 
 Git sucht in diesem Fall nach dem gemeinsamen Vorgänger beider Branches und
 führt die jeweiligen Änderungen (Differenzen) seit diesem Vorgänger in einem
-Merge-Commit zusammen (vgl. nächste Folie/Abbildung).
+Merge-Commit zusammen.
 
-Beachten Sie dabei die "Merge-Richtung":
-
-*   Die Workingcopy ist auf `A`
-*   `git merge B` führt `A` und `B` zusammen
-*   Wichtig: Der Merge-Commit (sofern nötig) findet hierbei in `A` statt!
-
-In der Abbildung ist `A` der `master` und `B` der `iss53`.
-
-
-**Achtung**: Richtung beachten! `git checkout A; git merge B` führt beide Branches zusammen,
-genauer: führt die Änderungen von `B` in `A` ein, d.h. der entsprechende Commit ist in `A`!
-:::
-
-
-## Nach dem Merge von *iss53* in *master*
-
-![](figs/git/basic-merging-2){width="80%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-merging-2.png)]{.origin}
-
-::: notes
 Im `master` entsteht ein neuer Commit, da kein *fast forward* beim
 Zusammenführen der Branches möglich!
 
-*Anmerkung*: `git checkout iss53; git merge master` würde den `master` in den
-`iss53` mergen, d.h. der Merge-Commit wäre dann im `iss53`
+*Anmerkung*: `git checkout wuppie; git merge master` würde den `master` in den
+`wuppie` mergen, d.h. der Merge-Commit wäre dann in `wuppie`.
+
+
+Beachten Sie dabei die "Merge-Richtung":
+*   Die Workingcopy ist auf `A`
+*   `git merge B` führt `A` und `B` zusammen: `B` wird **in** `A` gemergt
+*   Wichtig: Der Merge-Commit (sofern nötig) findet hierbei in `A` statt!
+
+In der Abbildung ist `A` der `master` und `B` der `wuppie`.
+
+**Achtung**: Richtung beachten! `git checkout A; git merge B` führt beide Branches zusammen,
+genauer: führt die Änderungen von `B` in `A` ein, d.h. der entsprechende Merge-Commit ist in `A`!
 :::
 
 
@@ -256,7 +249,7 @@ Zusammenführen der Branches möglich!
 :::
 
 ```
-$ git merge iss53
+$ git merge wuppie
 Auto-merging index.html
 CONFLICT (content): Merge conflict in index.html
 Automatic merge failed; fix conflicts and then
@@ -277,13 +270,13 @@ Git fügt Konflikt-Marker in die Datei ein:
     <div id="footer">
       please contact us at support@github.com
     </div>
-    >>>>>>> iss53:index.html
+    >>>>>>> wuppie:index.html
 
 [(Beispiel aus: [git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging))]{.origin}
 
 ::: notes
 *   Der Teil mit `HEAD` ist aus dem aktuellen Branch in der Workingcopy (hier `master`)
-*   Der Teil aus dem zu mergenden Branch ist unter `iss53` notiert
+*   Der Teil aus dem zu mergenden Branch ist unter `wuppie` notiert
 *   Das `=======` trennt beide Bereiche
 :::
 
