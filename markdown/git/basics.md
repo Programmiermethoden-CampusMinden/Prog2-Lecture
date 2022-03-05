@@ -202,8 +202,8 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 
     ::: notes
     Das "staging area" wird beim Diff von Git behandelt, als wären die dort
-    hinzugefügten Änderungen bereits eingecheckt^[genauer: als letzter Commit
-    im aktuellen Branch im Repo vorhanden].
+    hinzugefügten Änderungen bereits eingecheckt (genauer: als letzter Commit
+    im aktuellen Branch im Repo vorhanden).
     D.h. wenn Änderungen in einer Datei mittels `git add <datei>` dem Stage
     hinzugefügt wurden, zeigt `git diff <datei>` keine Änderungen an!
     :::
