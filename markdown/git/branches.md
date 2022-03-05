@@ -299,26 +299,19 @@ Alternativ: Nutzung graphischer Oberflächen mittels `git mergetool`
 
 ## Rebasen: Verschieben von Branches
 
-:::::: columns
-:::  {.column width="40%"}
-![](figs/git/basic-rebase-1)
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-rebase-1.png)]{.origin}
-:::
-:::  {.column width="50%"}
-![](figs/git/basic-rebase-2)
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-rebase-2.png)]{.origin}
-:::
-::::::
+              D---F  wuppie                                D---F  wuppie
+             /                     =>                     /     \
+    A---B---C---E  master                    A---B---C---E-------G  master
 
 ::: notes
 Bisher haben wir Branches durch Mergen zusammengeführt. Dabei entsteht in der Regel ein extra
-Merge-Commit (im Beispiel `C5`), außer es handelt sich um ein *fast forward*. Außerdem erkennt
+Merge-Commit (im Beispiel `G`), außer es handelt sich um ein *fast forward*. Außerdem erkennt
 man in der Historie sehr gut, dass hier in einem separaten Branch gearbeitet wurde, der irgendwann
 in den `master` gemergt wurde.
 
 Leider wird dieses Vorgehen in großen Projekten recht schnell sehr unübersichtlich. Außerdem
 werden Merges in der Regeln nur von besonders berechtigten Personen (Manager) durchgeführt, die im
-Falle von Merge-Konflikten diese dann selbst auflösen müssen (ohne aber die fachliche Befähigung
+Falle von Merge-Konflikten diese dann selbst auflösen müssten (ohne aber die fachliche Befähigung
 zu haben). Hier greift man dann häufig zur Alternative *Rebase*. Dabei wird der Ursprung eines
 Branches auf einen bestimmten Commit verschoben. Im Anschluss ist dann ein Merge mit *fast forward*,
 also ohne die typischen rautenförmigen Ketten in der Historie und ohne extra Merge-Commit möglich.
@@ -327,7 +320,8 @@ mehr erkennt! Ein weiterer schwerwiegender Nachteil ist, dass alle Commits im ve
 umgeschrieben werden und damit neue Commit-IDs bekommen. Das verursacht bei der Zusammenarbeit in
 Projekten massive Probleme! Als Vorteil gilt, dass man mögliche Merge-Konflikte bereits beim Rebasen
 auflösen muss, d.h. hier muss derjenige, der den Merge "beantragt", durch einen vorherigen Rebase den
-konfliktfreien Merge sicherstellen. Mehr dazu nächste Woche (Branching-Strategien und Workflows).
+konfliktfreien Merge sicherstellen. Mehr dazu in `["Branching-Strategien"]({{<ref "/git/branching-strategies" >}})`{=markdown}
+und `["Workflows"]({{<ref "/git/workflows" >}})`{=markdown}.
 :::
 
 \pause
@@ -338,21 +332,24 @@ konfliktfreien Merge sicherstellen. Mehr dazu nächste Woche (Branching-Strategi
 :::::: columns
 :::  {.column width="40%"}
 \vspace{14mm}
-`git rebase master experiment`
+`git rebase master wuppie`
 :::
 :::  {.column width="50%"}
-![](figs/git/basic-rebase-3)
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-rebase-3.png)]{.origin}
+
+                  D'---F'  wuppie
+                 /
+    A---B---C---E  master
+
 :::
 ::::::
 
 ::: notes
-Nach dem Rebase von `experiment` auf `master` sieht es so aus, als ob der Branch `experiment`
-eben erst vom `master` abgezweigt wurde. Damit ist dann ein *fast forward* Merge von `experiment`
+Nach dem Rebase von `wuppie` auf `master` sieht es so aus, als ob der Branch `wuppie`
+eben erst vom `master` abgezweigt wurde. Damit ist dann ein *fast forward* Merge von `wuppie`
 in den `master` möglich, d.h. es gibt keine Raute und auch keinen extra Merge-Commit (hier nicht
 gezeigt).
 
-Man beachte aber die Änderung der Commit-IDs von `experiment`: Aus `C4` wird `C4'`! (Datum, Ersteller
+Man beachte aber die Änderung der Commit-IDs von `wuppie`: Aus `D` wird `D'`! (Datum, Ersteller
 und Message bleiben aber erhalten.)
 :::
 
