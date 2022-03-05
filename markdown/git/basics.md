@@ -263,7 +263,9 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 
 \bigskip
 
-*   Datei aus altem Stand holen: `git checkout <commit> <file>` oder `git restore --source <commit> <file>`
+*   Datei aus altem Stand holen:
+    *   `git checkout <commit> <file>`, oder
+    *   `git restore --source <commit> <file>`
 *   Commit verwerfen, Geschichte neu: `git revert <commit>`
 
 ::: notes
