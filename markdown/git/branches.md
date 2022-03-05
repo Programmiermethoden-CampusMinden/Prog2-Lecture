@@ -24,8 +24,8 @@ tldr: |
   Dabei zeigt Git in den betroffenen Dateien jeweils an, welche Änderung aus welchem Branch stammt und man muss
   diesen Konflikt durch Editieren der Stellen manuell beheben.
 
-  Man kann mit `git rebase` die Wurzel eines Branches an eine andere Stelle bewegen. Dies wird später bei Workflows
-  eine Rolle spielen.
+  Mit `git rebase` kann die Wurzel eines Branches an eine andere Stelle verschoben werden. Dies wird später bei
+  Workflows eine Rolle spielen.
 outcomes:
   - k3: "Erzeugen von Branches"
   - k3: "Mergen von Branches, Auflösen möglicher Konflikte"
