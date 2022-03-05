@@ -55,8 +55,9 @@ Repository in den Repo-Einstellungen (Abschnitt "Branches") ändern.
 :::::: columns
 ::: {.column width="55%"}
 
-![](figs/git/basic-branching-2){width="85%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-branching-2.png)]{.origin}
+```
+A---B---C  master, wuppie
+```
 
 :::
 ::: {.column width="45%"}
@@ -68,13 +69,13 @@ Entwicklung des neuen Features soll stabilen `master`-Branch nicht beeinflussen
 => Eigenen Entwicklungszweig für die Entwicklung des Features anlegen:
 :::
 
-*   `git branch iss53`
+*   `git branch wuppie`
 
-    `git checkout iss53`
+    `git checkout wuppie` oder `git switch wuppie`
 
 \bigskip
 
-*   [Alternativ:]{.notes} `git checkout -b iss53`
+*   [Alternativ:]{.notes} `git checkout -b wuppie` oder `git switch -c wuppie`
 
 :::
 ::::::
@@ -85,10 +86,14 @@ Startpunkt: prinzipiell beliebig (jeder Commit in der Historie möglich).
 Die gezeigten Beispiel zweigen den neuen Branch direkt vom aktuell ausgecheckten
 Commit/Branch ab. Also aufpassen, was gerade in der Workingcopy los ist!
 
-Alternativ nutzen Sie die Langform: `git branch iss53 master` (mit `master` als
+Alternativ nutzen Sie die Langform: `git branch wuppie master` (mit `master` als
 Startpunkt; hier kann jeder beliebige Branch, Tag oder Commit genutzt werden).
 
 Nach Anlegen des neuen Branches zeigen beide Pointer auf den selben Commit.
+
+*Anmerkung*: In neueren Git-Versionen wurde der Befehl "`switch`" eingeführt,
+mit dem Sie in der Workingcopy auf einen anderen Branch wechseln können. Der
+bisherige Befehl "`checkout`" funktioniert aber weiterhin.
 :::
 
 
