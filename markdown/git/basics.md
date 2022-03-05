@@ -70,9 +70,7 @@ i.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
 1.  `git add .` (oder `git add <file>`)
 
     => Stellt [alle]{.alert} Dateien (bzw. die Datei `<file>`)
-    [im aktuellen Verzeichnis]{.notes} unter Versionskontrolle
-
-\bigskip
+    im aktuellen Verzeichnis unter Versionskontrolle
 
 2.  `git commit`
 
