@@ -248,13 +248,11 @@ genauer: führt die Änderungen von `B` in `A` ein, d.h. der entsprechende Merge
 (Parallele) Änderungen an selber Stelle => Merge-Konflikte
 :::
 
-```
-$ git merge wuppie
-Auto-merging index.html
-CONFLICT (content): Merge conflict in index.html
-Automatic merge failed; fix conflicts and then
-commit the result.
-```
+    $ git merge wuppie
+    Auto-merging index.html
+    CONFLICT (content): Merge conflict in index.html
+    Automatic merge failed; fix conflicts and then
+    commit the result.
 
 \bigskip
 \smallskip
@@ -378,7 +376,7 @@ und Message bleiben aber erhalten.)
         anderen Branch auscheckt, wird der `HEAD` auf diesen anderen
         Branch gesetzt, so dass die eben gemachten Commits "in der
         Luft hängen". Sofern man die SHA's kennt, kommt man noch auf
-        die Commits zurück. Allerdings laufen von Zeit zu Zeit
+        die Commits zurück. Allerdings laufen von Zeit zu Zeit interne
         Aufräum-Aktionen, so dass die Chance gut steht, dass die
         "kopflosen" Commits irgendwann tatsächlich verschwinden.
         :::
@@ -389,8 +387,8 @@ und Message bleiben aber erhalten.)
 ## Wrap-Up
 
 *   Anlegen von Branches mit `git branch`
-*   Umschalten der Workingcopy auf anderen Branch (`git checkout`)
-*   Mergen von Branches und Auflösen von Konflikten (`git merge`)
+*   Umschalten der Workingcopy auf anderen Branch: `git checkout` oder `git switch`
+*   Mergen von Branches und Auflösen von Konflikten: `git merge`
 *   Verschieben von Branches mit `git rebase`
 
 
@@ -406,9 +404,4 @@ und Message bleiben aber erhalten.)
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
