@@ -254,8 +254,8 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 ## Zeitmaschine
 
 *   Änderungen in Workingcopy rückgängig machen
-    *   Änderungen nicht in Stage: `git checkout <file>`
-    *   Änderungen in Stage: `git reset HEAD <file>`
+    *   Änderungen nicht in Stage: `git checkout <file>` oder `git restore <file>`
+    *   Änderungen in Stage: `git reset HEAD <file>` oder `git restore --staged <file>`
 
     ::: notes
     => Hinweise von `git status` beachten!
@@ -263,8 +263,14 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 
 \bigskip
 
-*   Datei aus altem Stand holen: `git checkout <commit> <file>`
+*   Datei aus altem Stand holen: `git checkout <commit> <file>` oder `git restore --source <commit> <file>`
 *   Commit verwerfen, Geschichte neu: `git revert <commit>`
+
+::: notes
+*Hinweis*: In den neueren Versionen von Git ist der Befehl `git restore` hinzugekommen, mit
+dem Änderungen rückgängig gemacht werden können. Der bisherige Befehl `git checkout` steht
+immer noch zur Verfügung und bietet über `git restore` hinaus weitere Anwendungsmöglichkeiten.
+:::
 
 \bigskip
 
