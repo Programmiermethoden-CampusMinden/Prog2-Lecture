@@ -28,16 +28,25 @@ fhmedia:
 
 ## Aktueller Stand der Entwicklung
 
-![](figs/git/basic-branching-1){width="50%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-branching-1.png)]{.origin}
+```
+A---B---C  master
+```
 
 [[Konsole]{.bsp}]{.slides}
 
 ::: notes
-*   Bisher lineare Entwicklung: Commits bauen aufeinander auf (lineare Folge von Commits)
+*   Bisher nur lineare Entwicklung: Commits bauen aufeinander auf (lineare Folge von Commits)
 *   `master` ist der (Default-) Hauptentwicklungszweig
     *   Pointer auf letzten Commit
     *   Default-Name: "`master`" (muss aber nicht so sein bzw. kann geändert werden)
+
+*Anmerkung*: Git und auch Github haben den Namen für den Default-Branch von `master`
+auf `main`geändert. Der Name an sich ist aber für Git bedeutungslos und kann mittels
+`git config --global init.defaultBranch <name>` geändert werden. In Github hat der
+Default-Branch eine gewisse Bedeutung, beispielsweise ist der Default-Branch das
+automatische Ziel beim Anlegen von Pull-Requests. In Github kann man den Default-Namen
+global in den User-Einstellungen (Abschnitt "Repositories") und für jedes einzelne
+Repository in den Repo-Einstellungen (Abschnitt "Branches") ändern.
 :::
 
 
