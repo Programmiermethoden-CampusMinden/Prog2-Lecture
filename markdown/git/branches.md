@@ -99,8 +99,11 @@ bisherige Befehl "`checkout`" funktioniert aber weiterhin.
 
 ## Arbeiten im Entwicklungszweig ...
 
-![](figs/git/basic-branching-3){width="60%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-branching-3.png)]{.origin}
+```
+          D  wuppie
+         /
+A---B---C  master
+```
 
 ::: notes
 *   Entwicklung des neuen Features erfolgt im eigenen Branch: beeinflusst den
@@ -108,7 +111,7 @@ bisherige Befehl "`checkout`" funktioniert aber weiterhin.
 *   Wenn in der Workingcopy der Feature-Branch ausgecheckt ist, gehen die
     Commits in den Feature-Branch; der `master` bleibt auf dem alten Stand
 *   Wenn der `master` ausgecheckt wäre, würden die Änderungen in den `master`
-    gehen, d.h. der `master` würde sich ab Commit `C2` parallel zu `iss53`
+    gehen, d.h. der `master` würde sich ab Commit `C` parallel zu `wuppie`
     entwickeln
 :::
 
