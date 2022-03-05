@@ -26,11 +26,9 @@ fhmedia:
 ---
 
 
-## Aktueller Stand der Entwicklung
+## Neues Feature entwickeln/ausprobieren
 
     A---B---C  master
-
-[[Konsole]{.bsp}]{.slides}
 
 ::: notes
 *   Bisher nur lineare Entwicklung: Commits bauen aufeinander auf (lineare Folge von Commits)
@@ -47,34 +45,27 @@ global in den User-Einstellungen (Abschnitt "Repositories") und für jedes einze
 Repository in den Repo-Einstellungen (Abschnitt "Branches") ändern.
 :::
 
-
-## Neues Feature entwickeln/ausprobieren
-
-:::::: columns
-::: {.column width="55%"}
-
-    A---B---C  master, wuppie
-
-:::
-::: {.column width="45%"}
-
 \bigskip
+\pause
 
 ::: notes
 Entwicklung des neuen Features soll stabilen `master`-Branch nicht beeinflussen
 => Eigenen Entwicklungszweig für die Entwicklung des Features anlegen:
 :::
 
-*   `git branch wuppie`
-
-    `git checkout wuppie` oder `git switch wuppie`
+1.  [Neuen Branch erstellen:]{.notes} `git branch wuppie`
+2.  [Neuen Branch auschecken:]{.notes} `git checkout wuppie` oder `git switch wuppie`
 
 \bigskip
 
-*   [Alternativ:]{.notes} `git checkout -b wuppie` oder `git switch -c wuppie`
+Alternativ: `git checkout -b wuppie` oder `git switch -c wuppie` [(neuer Branch und auschecken in einem Schritt)]{.notes}
 
-:::
-::::::
+\bigskip
+\bigskip
+
+
+    A---B---C  master, wuppie
+
 
 ::: notes
 Startpunkt: prinzipiell beliebig (jeder Commit in der Historie möglich).
@@ -91,6 +82,8 @@ Nach Anlegen des neuen Branches zeigen beide Pointer auf den selben Commit.
 mit dem Sie in der Workingcopy auf einen anderen Branch wechseln können. Der
 bisherige Befehl "`checkout`" funktioniert aber weiterhin.
 :::
+
+[[Konsole]{.bsp}]{.slides}
 
 
 ## Arbeiten im Entwicklungszweig ...
@@ -115,8 +108,6 @@ bisherige Befehl "`checkout`" funktioniert aber weiterhin.
               D  wuppie
              /
     A---B---C  master
-             \
-              E  fix
 
 \bigskip
 
@@ -126,11 +117,25 @@ Fix für `master` nötig:
 
 1.  `git checkout master`
 2.  `git checkout -b fix`
-3.  Änderungen vornehmen ...
+3.  Änderungen in `fix` vornehmen ...
+
+\bigskip
+\bigskip
+
+::: notes
+Das führt zu dieser Situation:
+:::
+
+              D  wuppie
+             /
+    A---B---C  master
+             \
+              E  fix
 
 ::: notes
 `git checkout <branchname>` holt den aktuellen Stand des jeweiligen
-Branches in die Workingcopy.
+Branches in die Workingcopy. (Das geht in neueren Git-Versionen auch
+mit `git switch <branchname>`.)
 
 Man kann weitere Branches anlegen, d.h. hier im Beispiel ein neuer
 Feature-Branch `fix`, der auf dem `master` basiert. Analog könnte man
@@ -142,7 +147,9 @@ auch Branches auf der Basis von `wuppie` anlegen ...
 
               D  wuppie
              /
-    A---B---C---E  master
+    A---B---C  master
+             \
+              E  fix
 
 \bigskip
 
@@ -151,8 +158,16 @@ auch Branches auf der Basis von `wuppie` anlegen ...
 3.  `git branch -d fix`
 
 ::: notes
-Der letzte Schritt entfernt den Namen `fix`.
+Der letzte Schritt entfernt den Branch `fix`.
 :::
+
+\bigskip
+\bigskip
+
+              D  wuppie
+             /
+    A---B---C---E  master
+
 
 ::: notes
 *   Allgemein: `git merge <branchname>` führt die Änderungen im angegebenen Branch
@@ -209,6 +224,7 @@ einer Datei noch "`--`" nutzen: `git checkout -- <dateiname>`.
              /                     =>                     /     \
     A---B---C---E  master                    A---B---C---E-------G  master
 
+\bigskip
 \bigskip
 
 1.  `git checkout master`
@@ -328,10 +344,15 @@ und `["Workflows"]({{<ref "/git/workflows" >}})`{=markdown}.
 
 :::::: columns
 :::  {.column width="40%"}
-\vspace{14mm}
-`git rebase master wuppie`
+\vspace{4mm}
+
+    git rebase master wuppie
+
+::: notes
+führt zu
 :::
-:::  {.column width="50%"}
+:::
+:::  {.column width="40%"}
 
                   D'---F'  wuppie
                  /
