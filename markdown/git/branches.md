@@ -249,10 +249,9 @@ genauer: führt die Änderungen von `B` in `A` ein, d.h. der entsprechende Merge
 :::
 
     $ git merge wuppie
-    Auto-merging index.html
-    CONFLICT (content): Merge conflict in index.html
-    Automatic merge failed; fix conflicts and then
-    commit the result.
+    Auto-merging hero.java
+    CONFLICT (content): Merge conflict in hero.java
+    Automatic merge failed; fix conflicts and then commit the result.
 
 \bigskip
 \smallskip
@@ -262,18 +261,16 @@ genauer: führt die Änderungen von `B` in `A` ein, d.h. der entsprechende Merge
 Git fügt Konflikt-Marker in die Datei ein:
 :::
 
-    <<<<<<< HEAD:index.html
-    <div id="footer">contact : support@github.com</div>
+    <<<<<<< HEAD:hero.java
+    public void getActiveAnimation() {
+        return null;
     =======
-    <div id="footer">
-      please contact us at support@github.com
-    </div>
-    >>>>>>> wuppie:index.html
-
-[(Beispiel aus: [git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging))]{.origin}
+    public Animation getActiveAnimation() {
+        return this.idleAnimation;
+    >>>>>>> wuppie:hero.java
 
 ::: notes
-*   Der Teil mit `HEAD` ist aus dem aktuellen Branch in der Workingcopy (hier `master`)
+*   Der Teil mit `HEAD` ist aus dem aktuellen Branch in der Workingcopy
 *   Der Teil aus dem zu mergenden Branch ist unter `wuppie` notiert
 *   Das `=======` trennt beide Bereiche
 :::
