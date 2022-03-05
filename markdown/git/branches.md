@@ -6,14 +6,15 @@ author: "Carsten Gips (FH Bielefeld)"
 weight: 3
 readings:
   - key: "Chacon2014"
-    comment: "Kapitel 2 und 3"
+    comment: "Kapitel 3"
+  - key: "AtlassianGit"
+  - key: "GitCheatSheet"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+  TODO
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k3: "Erzeugen von Branches"
+  - k3: "Mergen von Branches, Auflösen möglicher Konflikte"
+  - k3: "Rebasen von Branches"
 quizzes:
   - link: "XYZ"
 assignments:
@@ -25,27 +26,363 @@ fhmedia:
 ---
 
 
-## Motivation
-Lorem Ipsum. Starte mit H2-Level.
-...
+## Aktueller Stand der Entwicklung
 
-## Folie 2
-...
+![](figs/git/basic-branching-1){width="50%"}
+[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-branching-1.png)]{.origin}
 
-## Folie 3
-...
+[[Konsole]{.bsp}]{.slides}
 
-## Folie 4
-...
+::: notes
+*   Bisher lineare Entwicklung: Commits bauen aufeinander auf (lineare Folge von Commits)
+*   `master` ist der (Default-) Hauptentwicklungszweig
+    *   Pointer auf letzten Commit
+    *   Default-Name: "`master`" (muss aber nicht so sein bzw. kann geändert werden)
+:::
 
-## Folie 5
-...
 
-## Folie 6
-...
+## Neues Feature entwickeln/ausprobieren
+
+:::::: columns
+::: {.column width="55%"}
+
+![](figs/git/basic-branching-2){width="85%"}
+[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-branching-2.png)]{.origin}
+
+:::
+::: {.column width="45%"}
+
+\bigskip
+
+::: notes
+Entwicklung des neuen Features soll stabilen `master`-Branch nicht beeinflussen
+=> Eigenen Entwicklungszweig für die Entwicklung des Features anlegen:
+:::
+
+*   `git branch iss53`
+
+    `git checkout iss53`
+
+\bigskip
+
+*   [Alternativ:]{.notes} `git checkout -b iss53`
+
+:::
+::::::
+
+::: notes
+Startpunkt: prinzipiell beliebig (jeder Commit in der Historie möglich).
+
+Die gezeigten Beispiel zweigen den neuen Branch direkt vom aktuell ausgecheckten
+Commit/Branch ab. Also aufpassen, was gerade in der Workingcopy los ist!
+
+Alternativ nutzen Sie die Langform: `git branch iss53 master` (mit `master` als
+Startpunkt; hier kann jeder beliebige Branch, Tag oder Commit genutzt werden).
+
+Nach Anlegen des neuen Branches zeigen beide Pointer auf den selben Commit.
+:::
+
+
+## Arbeiten im Entwicklungszweig ...
+
+![](figs/git/basic-branching-3){width="60%"}
+[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-branching-3.png)]{.origin}
+
+::: notes
+*   Entwicklung des neuen Features erfolgt im eigenen Branch: beeinflusst den
+    stabilen `master`-Branch nicht
+*   Wenn in der Workingcopy der Feature-Branch ausgecheckt ist, gehen die
+    Commits in den Feature-Branch; der `master` bleibt auf dem alten Stand
+*   Wenn der `master` ausgecheckt wäre, würden die Änderungen in den `master`
+    gehen, d.h. der `master` würde sich ab Commit `C2` parallel zu `iss53`
+    entwickeln
+:::
+
+
+## Problem: Fehler im ausgelieferten Produkt
+
+![](figs/git/basic-branching-4){width="60%"}
+[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-branching-4.png)]{.origin}
+
+\bigskip
+
+::: notes
+Hotfix für `master` nötig:
+:::
+
+a)  `git checkout master`
+b)  `git checkout -b hotfix`
+c)  Änderungen vornehmen ...
+
+::: notes
+`git checkout <branchname>` holt den aktuellen Stand des jeweiligen
+Branches in die Workingcopy.
+
+Man kann weitere Branches anlegen, d.h. hier im Beispiel ein neuer
+Feature-Branch `hotfix`, der auf dem `master` basiert. Analog könnte man
+auch Branches auf der Basis von `iss53` anlegen ...
+:::
+
+
+## Hotfix ist stabil: Integration in *master*
+
+![](figs/git/basic-branching-5){width="55%"}
+[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-branching-5.png)]{.origin}
+
+\bigskip
+
+a)  `git checkout master`
+b)  `git merge hotfix` =>\ [fast forward]{.alert} von `master`
+c)  `git branch -d hotfix`
+
+::: notes
+Der letzte Schritt entfernt den Namen `hotfix` (nicht in Abbildung dargestellt!)
+:::
+
+::: notes
+*   Allgemein: `git merge <branchname>` führt den angegebenen Branch mit dem
+    aktuell in der Workingcopy ausgecheckten Branch zusammen
+
+    Beispiel:
+
+    *   Die Workingcopy ist auf `A`
+    *   `git merge B` führt `A` und `B` zusammen
+    *   Wichtig: Der Merge-Commit (sofern nötig) findet hierbei in `A` statt!
+
+    In der Abbildung ist `A` der `master` und `B` der `hotfix`.
+
+*   Nach dem Merge existieren beide Branches weiter (sofern sie nicht explizit
+    gelöscht werden)
+
+*   Hier im Beispiel findet ein sogenannter "Fast forward" statt.
+
+    "Fast forward" ist ein günstiger Spezialfall beim Merge: Beide Branches
+    liegen in einer direkten Kette, d.h. der Zielbranch kann einfach
+    "weitergeschaltet" werden. Ein Merge-Commit ist in diesem Fall nicht
+    notwendig und wird auch nicht angelegt.
+:::
+
+
+## Feature weiter entwickeln ...
+
+![](figs/git/basic-branching-6){width="70%"}
+[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-branching-6.png)]{.origin}
+
+\bigskip
+
+a)  `git checkout iss53`
+b)  Weitere Änderungen im Branch `iss53` ... \newline  <!-- XXX damit kommt die Abbildung auf die selbe Höhe wie in nächster Folie -->
+
+::: notes
+`git checkout <branchname>` holt den aktuellen Stand des jeweiligen
+Branches in die Workingcopy. Man kann also jederzeit in der Workingcopy die
+Branches wechseln und entsprechend weiterarbeiten.
+
+*Hinweis*: `git checkout` funktioniert mit Branchnamen und Dateinamen
+
+*Hinweis*: Falls gleiche Branch- und Dateinamen existieren, muss man für das
+Auschecken einer Datei noch "`--`" nutzen: `git checkout -- <dateiname>`
+:::
+
+
+## Feature ist stabil: Integration in *master*
+
+![](figs/git/basic-merging-1){width="70%"}
+[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-merging-1.png)]{.origin}
+
+\bigskip
+
+a)  `git checkout master`
+b)  `git merge iss53` \newline => Kein *fast forward* möglich: Git sucht nach gemeinsamen Vorgänger
+
+::: notes
+Hier im Beispiel ist der Standardfall beim Mergen dargestellt: Die beiden
+Branches liegen nicht in einer direkten Kette von Commits, d.h. hier wurde
+parallel weitergearbeitet.
+
+Git sucht in diesem Fall nach dem gemeinsamen Vorgänger beider Branches und
+führt die jeweiligen Änderungen (Differenzen) seit diesem Vorgänger in einem
+Merge-Commit zusammen (vgl. nächste Folie/Abbildung).
+
+Beachten Sie dabei die "Merge-Richtung":
+
+*   Die Workingcopy ist auf `A`
+*   `git merge B` führt `A` und `B` zusammen
+*   Wichtig: Der Merge-Commit (sofern nötig) findet hierbei in `A` statt!
+
+In der Abbildung ist `A` der `master` und `B` der `iss53`.
+
+
+**Achtung**: Richtung beachten! `git checkout A; git merge B` führt beide Branches zusammen,
+genauer: führt die Änderungen von `B` in `A` ein, d.h. der entsprechende Commit ist in `A`!
+:::
+
+
+## Nach dem Merge von *iss53* in *master*
+
+![](figs/git/basic-merging-2){width="80%"}
+[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-merging-2.png)]{.origin}
+
+::: notes
+Im `master` entsteht ein neuer Commit, da kein *fast forward* beim
+Zusammenführen der Branches möglich!
+
+*Anmerkung*: `git checkout iss53; git merge master` würde den `master` in den
+`iss53` mergen, d.h. der Merge-Commit wäre dann im `iss53`
+:::
+
+
+## Konflikte beim Mergen
+
+::: notes
+(Parallele) Änderungen an selber Stelle => Merge-Konflikte
+:::
+
+```
+$ git merge iss53
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then
+commit the result.
+```
+
+\bigskip
+\smallskip
+\pause
+
+::: notes
+Git fügt Konflikt-Marker in die Datei ein:
+:::
+
+    <<<<<<< HEAD:index.html
+    <div id="footer">contact : support@github.com</div>
+    =======
+    <div id="footer">
+      please contact us at support@github.com
+    </div>
+    >>>>>>> iss53:index.html
+
+[(Beispiel aus: [git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging))]{.origin}
+
+::: notes
+*   Der Teil mit `HEAD` ist aus dem aktuellen Branch in der Workingcopy (hier `master`)
+*   Der Teil aus dem zu mergenden Branch ist unter `iss53` notiert
+*   Das `=======` trennt beide Bereiche
+:::
+
+
+::: notes
+## Merge-Konflikte auflösen
+
+Manuelles Editieren nötig (Auflösung des Konflikts):
+
+1)  Entfernen der Marker
+2)  Hinzufügen der Datei zum Index
+3)  Analog für restliche Dateien mit Konflikt
+4)  Commit zum Abschließen des Merge-Vorgangs
+
+\smallskip
+
+Alternativ: Nutzung graphischer Oberflächen mittels `git mergetool`
+:::
+
+[Konsole: Branchen und Mergen]{.bsp}
+
+
+## Rebasen: Verschieben von Branches
+
+:::::: columns
+:::  {.column width="40%"}
+![](figs/git/basic-rebase-1)
+[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-rebase-1.png)]{.origin}
+:::
+:::  {.column width="50%"}
+![](figs/git/basic-rebase-2)
+[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-rebase-2.png)]{.origin}
+:::
+::::::
+
+::: notes
+Bisher haben wir Branches durch Mergen zusammengeführt. Dabei entsteht in der Regel ein extra
+Merge-Commit (im Beispiel `C5`), außer es handelt sich um ein *fast forward*. Außerdem erkennt
+man in der Historie sehr gut, dass hier in einem separaten Branch gearbeitet wurde, der irgendwann
+in den `master` gemergt wurde.
+
+Leider wird dieses Vorgehen in großen Projekten recht schnell sehr unübersichtlich. Außerdem
+werden Merges in der Regeln nur von besonders berechtigten Personen (Manager) durchgeführt, die im
+Falle von Merge-Konflikten diese dann selbst auflösen müssen (ohne aber die fachliche Befähigung
+zu haben). Hier greift man dann häufig zur Alternative *Rebase*. Dabei wird der Ursprung eines
+Branches auf einen bestimmten Commit verschoben. Im Anschluss ist dann ein Merge mit *fast forward*,
+also ohne die typischen rautenförmigen Ketten in der Historie und ohne extra Merge-Commit möglich.
+Dies kann aber auch als Nachteil gesehen werden, da man in der Historie den früheren Branch nicht
+mehr erkennt! Ein weiterer schwerwiegender Nachteil ist, dass alle Commits im verschobenen Branch
+umgeschrieben werden und damit neue Commit-IDs bekommen. Das verursacht bei der Zusammenarbeit in
+Projekten massive Probleme! Als Vorteil gilt, dass man mögliche Merge-Konflikte bereits beim Rebasen
+auflösen muss, d.h. hier muss derjenige, der den Merge "beantragt", durch einen vorherigen Rebase den
+konfliktfreien Merge sicherstellen. Mehr dazu nächste Woche (Branching-Strategien und Workflows).
+:::
+
+\pause
+\bigskip
+\bigskip
+\bigskip
+
+:::::: columns
+:::  {.column width="40%"}
+\vspace{14mm}
+`git rebase master experiment`
+:::
+:::  {.column width="50%"}
+![](figs/git/basic-rebase-3)
+[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/basic-rebase-3.png)]{.origin}
+:::
+::::::
+
+::: notes
+Nach dem Rebase von `experiment` auf `master` sieht es so aus, als ob der Branch `experiment`
+eben erst vom `master` abgezweigt wurde. Damit ist dann ein *fast forward* Merge von `experiment`
+in den `master` möglich, d.h. es gibt keine Raute und auch keinen extra Merge-Commit (hier nicht
+gezeigt).
+
+Man beachte aber die Änderung der Commit-IDs von `experiment`: Aus `C4` wird `C4'`! (Datum, Ersteller
+und Message bleiben aber erhalten.)
+:::
+
+
+## Don't lose your HEAD
+
+*   Branches sind wie Zeiger auf letzten Stand (Commit) eines Zweiges
+
+*   `HEAD`: Spezieller Pointer
+    *   Zeigt auf den aktuellen Branch der Workingcopy
+
+\bigskip
+
+*   Früheren Commit auschecken (ohne Branch): "headless state"
+    *   Workingcopy ist auf früherem Commit
+    *   Kein Branch => Änderungen gehen verloren!
+
+        ::: notes
+        Eventuelle Änderungen würden ganz normal als Commits auf
+        dem `HEAD`-Branch aufgezeichnet. Sobald man aber einen
+        anderen Branch auscheckt, wird der `HEAD` auf diesen anderen
+        Branch gesetzt, so dass die eben gemachten Commits "in der
+        Luft hängen". Sofern man die SHA's kennt, kommt man noch auf
+        die Commits zurück. Allerdings laufen von Zeit zu Zeit
+        Aufräum-Aktionen, so dass die Chance gut steht, dass die
+        "kopflosen" Commits irgendwann tatsächlich verschwinden.
+        :::
+
+[Konsole: Commit auschecken]{.bsp}
+
 
 ## Wrap-Up
-...
+
+*   Anlegen von Branches mit `git branch`
+*   Umschalten der Workingcopy auf anderen Branch (`git checkout`)
+*   Mergen von Branches und Auflösen von Konflikten (`git merge`)
+*   Verschieben von Branches mit `git rebase`
+
 
 
 
