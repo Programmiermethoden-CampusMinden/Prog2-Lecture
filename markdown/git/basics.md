@@ -40,24 +40,24 @@ fhmedia:
 
 ## Versionsverwaltung mit Git: Typische Arbeitsschritte
 
-a.  Repository anlegen (oder clonen)
+1.  Repository anlegen (oder clonen)
 
 \bigskip
 
-b.  Dateien neu erstellen (und löschen, umbenennen, verschieben)
-c.  Änderungen einpflegen ("committen")
-d.  Änderungen und Logs betrachten
-e.  Änderungen rückgängig machen
-f.  Projektstand markieren ("taggen")
+2.  Dateien neu erstellen (und löschen, umbenennen, verschieben)
+3.  Änderungen einpflegen ("committen")
+4.  Änderungen und Logs betrachten
+5.  Änderungen rückgängig machen
+6.  Projektstand markieren ("taggen")
 
 \bigskip
 
-g.  Entwicklungszweige anlegen ("branchen")
-h.  Entwicklungszweige zusammenführen ("mergen")
+7.  Entwicklungszweige anlegen ("branchen")
+8.  Entwicklungszweige zusammenführen ("mergen")
 
 \bigskip
 
-i.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
+9.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
 
 
 ## Dateien unter Versionskontrolle stellen
