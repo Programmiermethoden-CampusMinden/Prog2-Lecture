@@ -283,7 +283,7 @@ mitgeben: `git init --bare` ...
 
 ## Hinzufügen eines (weiteren) Remote Repository
 
-![](figs/git/screenshot_branches){width="80%"}
+![](remotes.images/screenshot_branches.png){width="80%"}
 
 \vspace{4mm}
 
