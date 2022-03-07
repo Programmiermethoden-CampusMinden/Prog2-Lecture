@@ -68,7 +68,6 @@ Im Folgenden sollen also die Frage betrachtet werden: Wie setze ich Branches sin
                  \
                   G---H  test
 
-
 ::: notes
 Branchen ist in Git sehr einfach und schnell. Deshalb wird (gerade auch im Vergleich mit
 SVN) gern und viel gebrancht.
@@ -97,8 +96,11 @@ und der Themenbranch gelöscht.
 
 ## Umgang mit Branches: Langlaufende Branches
 
-![](figs/git/lr-branches-2){width="80%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/lr-branches-2.png)]{.origin}
+    A---B---D  master
+         \
+          C---E---I  develop
+               \
+                F---G---H topic
 
 ::: notes
 Häufig findet man in (größeren) Projekten Branches, die über die gesamte
