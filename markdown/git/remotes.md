@@ -6,9 +6,9 @@ author: "Carsten Gips (FH Bielefeld)"
 weight: 5
 readings:
   - key: "Chacon2014"
-     comment: "Kapitel 3"
-   - key: "AtlassianGit"
-   - key: "GitCheatSheet"
+    comment: "Kapitel 3"
+  - key: "AtlassianGit"
+  - key: "GitCheatSheet"
 tldr: |
   Eine der Stärken von Git ist das Arbeiten mit verteilten Repositories. Zu jeder Workingcopy gehört
   eine Kopie des Repositories, wodurch jederzeit alle Informationen einsehbar sind und auch offline
@@ -39,7 +39,7 @@ outcomes:
   - k3: "Aktualisierung der lokalen Branches"
   - k3: "Pushen der lokalen Änderungen ins fremde Repo"
   - k3: "Anlegen von lokalen Branches vs. Anlegen von entfernten Branches"
-  - k3: "Anlegen eines "Tracking Branches" zum Vereinfachen der Arbeit"
+  - k3: "Anlegen eines Tracking Branches zum Vereinfachen der Arbeit"
 quizzes:
   - link: "XYZ"
 assignments:
