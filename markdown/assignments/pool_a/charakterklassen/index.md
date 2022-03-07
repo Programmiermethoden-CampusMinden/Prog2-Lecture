@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In Rollenspielen ist es üblich, dass die Spielfigur einer bestimmen Klasse zugehörig ist. In dieser Aufgabe sollen Sie verschiedene Charakterklassen implementieren.
+In Rollenspielen ist es üblich, dass die Spielfigur einer bestimmen Spiel-Klasse zugehörig ist. In dieser Aufgabe sollen Sie verschiedene Charakterklassen implementieren.
 
 ## Voraussetzungen
 
