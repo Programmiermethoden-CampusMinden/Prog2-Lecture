@@ -10,11 +10,22 @@ readings:
   - key: "AtlassianGit"
   - key: "GitCheatSheet"
 tldr: |
-  TODO
-  *   Einsatz von Themenbranches für die Entwicklung
-  *   Unterschiedliche Modelle:
-      -   Git Flow: umfangreiches Konzept, gut für Entwicklung mit festen Releases
-      -   GitHub Flow: deutlich schlankeres Konzept, passend für kontinuierliche Entwicklung ohne echte Releases
+  Das Erstellen und Mergen von Branches ist in Git besonders einfach. Dies kann man sich in der Entwicklung zunutze machen
+  und die einzelnen Features unabhängig voneinander in eigenen Hilfs-Branches ausarbeiten.
+
+  Es haben sich zwei Modelle etabliert: "Git Flow" und "GitHub Flow".
+
+  In **Git Flow** gibt es ein umfangreiches Konzept mit verschiedenen Branches für feste Aufgaben, welches sich besonders
+  gut für Entwicklungmodelle mit festen Releases eignet. Es gibt zwei langlaufende Branches: `master` enthält den stabilen
+  veröffentlichten Stand, in `develop` werden die Ergebnisse der Entwicklung gesammelt. Features werden in kleinen Feature-Branches
+  entwickelt, die von `develop` abzweigen und dort wieder hineinmünden. Für Releases wird von `develop` ein eigener Release-Branch
+  angelegt und nach Finalisierung in den `master` und in `develop` gemergt. Fixes werden vom `master` abgezweigt, und wieder
+  in den `master` und auch nach `develop` integriert. Dadurch stehen auf dem `master` immer die stabilen Release-Stände zur
+  Verfügung, und im `develop` sammeln sich die Entwicklungsergebnisse.
+
+  Der **GitHub Flow** basiert auf einem deutlich schlankeren Konzept und passt gut für die kontinuierliche Entwicklung ohne
+  echte Releases. Hier hat man auch wieder einen `master` als langlaufenden Branch, der die stabilen Release-Stände enthält.
+  Vom `master` zweigen direkt die kleinen Feature-Branches ab und werden auch wieder direkt in den `master` integriert.
 outcomes:
   - k3: "Einsatz von Themenbranches in der Entwicklung"
   - k3: "Git Flow-Modell anwenden"
