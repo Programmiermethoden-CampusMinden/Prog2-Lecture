@@ -107,22 +107,18 @@ Für die URL sind verschiedene Protokolle möglich, beispielsweise:
 
 ## Eigener und entfernter _master_ entwickeln sich weiter ...
 
-```
-https://github.com/PM-Dungeon/PM-Lecture
+    https://github.com/PM-Dungeon/PM-Lecture
 
----C---D---E---F---G  master
-```
+    ---C---D---E---F---G  master
 
 \bigskip
 
 [`<br/>`{=markdown}]{.notes}
 
-```
-./PM-Lecture/  (lokaler Rechner)
+    ./PM-Lecture/  (lokaler Rechner)
 
----C---D---E---H  master
-           ^origin/master
-```
+    ---C---D---E---H  master
+               ^origin/master
 
 ::: notes
 Nach dem Auschecken liegen (in diesem Beispiel) drei `master`-Branches vor:
@@ -203,24 +199,20 @@ Mit `git fetch origin` alle Änderungen holen
 
 [`<br/>`{=markdown}]{.notes}
 
-```
-https://github.com/PM-Dungeon/PM-Lecture
+    https://github.com/PM-Dungeon/PM-Lecture
 
----C---D---E---H---I  master
-            \     /
-             F---G
-```
+    ---C---D---E---H---I  master
+                \     /
+                 F---G
 
 [`<br/>`{=markdown}]{.notes}
 
 
-```
-./PM-Lecture/  (lokaler Rechner)
+    ./PM-Lecture/  (lokaler Rechner)
 
----C---D---E---H---I  master
-            \     /^origin/master
-             F---G
-```
+    ---C---D---E---H---I  master
+                \     /^origin/master
+                 F---G
 
 *Anmerkung*: Schritt (2) kann man auch per `git pull origin master` erledigen ... Ein `pull`
 fasst `fetch` und `merge` zusammen (s.u.).
