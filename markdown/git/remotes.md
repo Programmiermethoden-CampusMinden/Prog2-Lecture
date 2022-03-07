@@ -69,15 +69,16 @@ ich sinnvoll über Git mit anderen Kollegen und Teams zusammen? Welche Modelle h
 
     ---C---D---E  master
 
+\bigskip
 
-    => git clone https://github.com/PM-Dungeon/PM-Lecture
+=> `git clone https://github.com/PM-Dungeon/PM-Lecture`
 
+\bigskip
 
     ./PM-Lecture/  (lokaler Rechner)
 
     ---C---D---E  master
-               ^
-               origin/master
+               ^origin/master
 
 
 ::: notes
@@ -106,17 +107,22 @@ Für die URL sind verschiedene Protokolle möglich, beispielsweise:
 
 ## Eigener und entfernter _master_ entwickeln sich weiter ...
 
-    https://github.com/PM-Dungeon/PM-Lecture
+```
+https://github.com/PM-Dungeon/PM-Lecture
 
-    ---C---D---E---F---G  master
+---C---D---E---F---G  master
+```
 
+\bigskip
 
-    ./PM-Lecture/  (lokaler Rechner)
+[`<br/>`{=markdown}]{.notes}
 
-    ---C---D---E---H  master
-               ^
-               origin/master
+```
+./PM-Lecture/  (lokaler Rechner)
 
+---C---D---E---H  master
+           ^origin/master
+```
 
 ::: notes
 Nach dem Auschecken liegen (in diesem Beispiel) drei `master`-Branches vor:
@@ -159,9 +165,11 @@ wurde, zeigt der remote Branch `origin/master` immer noch auf den Commit
 
     ---C---D---E---F---G  master
 
+\bigskip
 
-    => git fetch origin
+=> `git fetch origin`
 
+\bigskip
 
     ./PM-Lecture/  (lokaler Rechner)
 
@@ -193,19 +201,26 @@ Mit `git fetch origin` alle Änderungen holen
 3.  Mit `git push origin master` eigene Änderungen ins remote Repo pushen
 
 
-    https://github.com/PM-Dungeon/PM-Lecture
+[`<br/>`{=markdown}]{.notes}
 
-    ---C---D---E---H---I  master
-                \     /
-                 F---G
+```
+https://github.com/PM-Dungeon/PM-Lecture
+
+---C---D---E---H---I  master
+            \     /
+             F---G
+```
+
+[`<br/>`{=markdown}]{.notes}
 
 
-    ./PM-Lecture/  (lokaler Rechner)
+```
+./PM-Lecture/  (lokaler Rechner)
 
-    ---C---D---E---H---I  master, origin/master
-                \     /
-                 F---G
-
+---C---D---E---H---I  master
+            \     /^origin/master
+             F---G
+```
 
 *Anmerkung*: Schritt (2) kann man auch per `git pull origin master` erledigen ... Ein `pull`
 fasst `fetch` und `merge` zusammen (s.u.).
@@ -229,7 +244,7 @@ Zwischenzeit weiter geschoben -- dann muss die Aktualisierung erneut durchgefüh
 werden).
 :::::::::
 
-[Beispiel für Zusammenführen (merge und push), Anmerkung zu `fast forward merge`]{.bsp}
+[Beispiel für Zusammenführen (merge und push), Anmerkung zu _fast forward merge_]{.bsp}
 
 
 ## Branches und Remotes
@@ -237,7 +252,7 @@ werden).
 *   Eigenen (neuen) lokalen Branch ins remote Repo schicken
     *   `git push <remote> <branch>`
 
-\smallskip
+\bigskip
 
 *   Neuer Branch im remote Repo
     *   `git fetch <remote>` holt (auch) alle neuen Branches
@@ -266,8 +281,8 @@ werden).
 ::::::::: notes
 ### Anmerkung: _push_ geht nur, wenn
 
- i. Ziel ein "bare"-Repository ist, **und**
-ii. keine Konflikte entstehen
+1. Ziel ein "bare"-Repository ist, **und**
+2. keine Konflikte entstehen
 
 => im remote Repo [nur]{.alert} "fast forward"-Merge möglich
 
@@ -297,7 +312,7 @@ mitgeben: `git init --bare` ...
 *   **Tracking Branch**: lokaler Branch, der remote Branch "verfolgt"
     *   Beispiel: lokaler `master`-Branch folgt `origin/master` per Default
 
-\smallskip
+\bigskip
 
 *   **Vereinfachung im Workflow**:
     * ` git pull` entspricht
@@ -333,9 +348,9 @@ mitgeben: `git init --bare` ...
 
 ## Hinzufügen eines (weiteren) Remote Repository
 
-![](remotes.images/screenshot_branches.png){width="80%"}
+![](remotes.images/screenshot_branches.png){width="75%"}
 
-\vspace{4mm}
+\vspace{2mm}
 
 ::: notes
 Sie können einem Repo beliebig viele Remotes hinzufügen:
@@ -366,7 +381,7 @@ Beispiel: `git fetch andi` oder `git push origin master`
     *   Änderungen in lokalen Branch einpflegen: `git merge <remote>/<branch>`
     *   Eigene Änderungen ins fremde Repo schieben: `git push <remote> <branch>`
 
-\smallskip
+\bigskip
 
 *   Tracking Branches (Konzept, Anwendung)
     *   Remote Branches können lokal nicht verändert werden:
