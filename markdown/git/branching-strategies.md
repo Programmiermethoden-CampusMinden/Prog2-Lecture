@@ -7,15 +7,18 @@ weight: 4
 readings:
   - key: "Chacon2014"
     comment: "Kapitel 3"
+  - key: "GitFlow"
+  - key: "GitHubFlow"
+  - key: "GitHubFlowGH"
   - key: "AtlassianGit"
   - key: "GitCheatSheet"
 tldr: |
   Das Erstellen und Mergen von Branches ist in Git besonders einfach. Dies kann man sich in der Entwicklung zunutze machen
   und die einzelnen Features unabhängig voneinander in eigenen Hilfs-Branches ausarbeiten.
 
-  Es haben sich zwei Modelle etabliert: "Git Flow" und "GitHub Flow".
+  Es haben sich zwei Modelle etabliert: "Git-Flow" und "GitHub Flow".
 
-  In **Git Flow** gibt es ein umfangreiches Konzept mit verschiedenen Branches für feste Aufgaben, welches sich besonders
+  In **Git-Flow** gibt es ein umfangreiches Konzept mit verschiedenen Branches für feste Aufgaben, welches sich besonders
   gut für Entwicklungmodelle mit festen Releases eignet. Es gibt zwei langlaufende Branches: `master` enthält den stabilen
   veröffentlichten Stand, in `develop` werden die Ergebnisse der Entwicklung gesammelt. Features werden in kleinen Feature-Branches
   entwickelt, die von `develop` abzweigen und dort wieder hineinmünden. Für Releases wird von `develop` ein eigener Release-Branch
@@ -28,7 +31,7 @@ tldr: |
   Vom `master` zweigen direkt die kleinen Feature-Branches ab und werden auch wieder direkt in den `master` integriert.
 outcomes:
   - k3: "Einsatz von Themenbranches in der Entwicklung"
-  - k3: "Git Flow-Modell anwenden"
+  - k3: "Git-Flow-Modell anwenden"
   - k3: "GitHub Flow-Modell anwenden"
 quizzes:
   - link: "XYZ"
@@ -121,7 +124,7 @@ Linux-Kernel.
 :::
 
 
-## Komplexe Branching-Strategie: Git Flow
+## Komplexe Branching-Strategie: Git-Flow
 
 ![](figs/git/Git-branching-model)
 [Quelle: Vincent Driessen [nvie.com/files/Git-branching-model.pdf](http://nvie.com/files/Git-branching-model.pdf)]{.origin}
@@ -135,13 +138,13 @@ Modells eigentlich nicht erklären :-)
 :::
 
 
-## Git Flow: Hauptzweige *master* und *develop*
+## Git-Flow: Hauptzweige *master* und *develop*
 
 ![](figs/git/mainbranches)
 [Quelle: Vincent Driessen, [nvie.com/img/main-branches@2x.png](http://nvie.com/img/main-branches@2x.png)]{.origin}
 
 ::: notes
-Bei Git Flow gibt es zwei langlaufende Branches: Den `master`, der immer den stabilen
+Bei Git-Flow gibt es zwei langlaufende Branches: Den `master`, der immer den stabilen
 Stand enthält und in den *nie* ein direkter Commit gemacht wird, sowie den `develop`,
 wo letztlich (ggf. über Themenbranches) die eigentliche Entwicklung stattfindet.
 
@@ -155,14 +158,14 @@ Entwicklungsarbeit mehr. Nach Fertigstellung wird der `release` dann sowohl in d
 :::
 
 
-## Git Flow: Weitere Branches als Themen-Branches
+## Git-Flow: Weitere Branches als Themen-Branches
 
 ![](figs/git/featurebranches)
 [Quelle: Vincent Driessen, [nvie.com/img/fb@2x.png](http://nvie.com/img/fb@2x.png)]{.origin}
 
 ::: notes
 Für die Entwicklung eigenständiger Features bietet es sich auch im
-Git Flow an, vom `develop` entsprechende Themenbranches abzuzweigen
+Git-Flow an, vom `develop` entsprechende Themenbranches abzuzweigen
 und darin jeweils isoliert die Features zu entwickeln. Wenn diese
 Arbeiten eine gewisse Reife haben, werden die Featurebranches in den
 `develop` integriert.
@@ -170,7 +173,7 @@ Arbeiten eine gewisse Reife haben, werden die Featurebranches in den
 
 
 ::: notes
-## Git Flow: Merging-Detail
+## Git-Flow: Merging-Detail
 
 ![](figs/git/featurebranchesmerging)
 [Quelle: Vincent Driessen, [nvie.com/img/merge-without-ff@2x.png](http://nvie.com/img/merge-without-ff@2x.png)]{.origin}
@@ -194,7 +197,7 @@ dass alle Commit-Kommentare zu einem Feature "A" mit "`feature a: `" starten mü
 :::
 
 
-## Git Flow: Umgang mit Fehlerbehebung
+## Git-Flow: Umgang mit Fehlerbehebung
 
 ![](figs/git/hotfixbranches)
 [Quelle: Vincent Driessen, [nvie.com/img/hotfix-branches@2x.png](http://nvie.com/img/hotfix-branches@2x.png)]{.origin}
@@ -243,7 +246,7 @@ erfolgt durch das Akzeptieren des PR der Merge des Feature-Branches in den `mast
 
 
 ::: notes
-## Diskussion: Git Flow vs. GitHub Flow
+## Diskussion: Git-Flow vs. GitHub Flow
 
 In der Praxis zeigt sich, dass das Git-Flow-Modell besonders gut geeignet ist,
 wenn man tatsächlich so etwas wie "Releases" hat, die zudem nicht zu häufig
@@ -266,7 +269,7 @@ Linux-Distribution die bessere sei):
 *   [Git-Flow-Modell von Vincent Driessen](http://nvie.com/posts/a-successful-git-branching-model/)
 *   [Kurzer Überblick über das GitHub-Flow-Modell](https://guides.github.com/introduction/flow/)
 *   [Diskussion des GitHub-Flow-Modells (Github)](https://githubflow.github.io/)
-*   [Luca Mezzalira: "Git Flow vs Github Flow"](https://lucamezzalira.com/2014/03/10/git-flow-vs-github-flow/)
+*   [Luca Mezzalira: "Git-Flow vs Github Flow"](https://lucamezzalira.com/2014/03/10/git-flow-vs-github-flow/)
 *   [Scott Schacon, Autor des Pro-Git-Buchs](http://scottchacon.com/2011/08/31/github-flow.html)
 *   [Noch eine (längere) Betrachtung (Robin Daugherty)](https://hackernoon.com/a-branching-and-releasing-strategy-that-fits-github-flow-be1b6c48eca2)
 :::
@@ -276,7 +279,7 @@ Linux-Distribution die bessere sei):
 
 *   Einsatz von Themenbranches für die Entwicklung
 *   Unterschiedliche Modelle:
-    -   Git Flow: umfangreiches Konzept, gut für Entwicklung mit festen Releases
+    -   Git-Flow: umfangreiches Konzept, gut für Entwicklung mit festen Releases
     -   GitHub Flow: deutlich schlankeres Konzept, passend für kontinuierliche Entwicklung ohne echte Releases
 
 
