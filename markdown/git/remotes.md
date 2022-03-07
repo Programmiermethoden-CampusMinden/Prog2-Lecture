@@ -113,7 +113,7 @@ Für die URL sind verschiedene Protokolle möglich, beispielsweise:
 
 \bigskip
 
-[`<br/>`{=markdown}]{.notes}
+[`<p></p>`{=markdown}]{.notes}
 
     ./PM-Lecture/  (lokaler Rechner)
 
@@ -197,7 +197,7 @@ Mit `git fetch origin` alle Änderungen holen
 3.  Mit `git push origin master` eigene Änderungen ins remote Repo pushen
 
 
-[`<br/>`{=markdown}]{.notes}
+[`<p></p>`{=markdown}]{.notes}
 
     https://github.com/PM-Dungeon/PM-Lecture
 
@@ -205,7 +205,7 @@ Mit `git fetch origin` alle Änderungen holen
                 \     /
                  F---G
 
-[`<br/>`{=markdown}]{.notes}
+[`<p></p>`{=markdown}]{.notes}
 
 
     ./PM-Lecture/  (lokaler Rechner)
