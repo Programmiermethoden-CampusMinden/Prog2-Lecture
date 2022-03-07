@@ -44,7 +44,7 @@ fhmedia:
 ---
 
 
-## Nutzung von Git in Projekten: Verteiltes Git und Workflows
+## Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
 
 ![](branching-strategies.images/distributed.png){width="80%"}
 
@@ -53,7 +53,7 @@ fhmedia:
 Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit
 entsprechenden Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.
 
-Im Folgenden sollen also die Frage betrachtet werden: Wie setze ich Branches sinnvoll ein?
+Im Folgenden sollen also die Frage betrachtet werden: **Wie setze ich Branches sinnvoll ein?**
 :::
 
 
