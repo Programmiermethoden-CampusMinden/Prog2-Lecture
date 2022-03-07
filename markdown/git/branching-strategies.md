@@ -60,8 +60,14 @@ Im Folgenden sollen also die Frage betrachtet werden: Wie setze ich Branches sin
 
 ## Umgang mit Branches: Themen-Branches
 
-![](figs/git/topic-branches-1){width="80%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/topic-branches-1.png)]{.origin}
+                    I---J---K  wuppieV1
+                   /
+              D---F  wuppie
+             /
+    A---B---C---E  master
+                 \
+                  G---H  test
+
 
 ::: notes
 Branchen ist in Git sehr einfach und schnell. Deshalb wird (gerade auch im Vergleich mit
