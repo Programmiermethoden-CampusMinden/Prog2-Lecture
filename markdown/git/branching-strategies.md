@@ -301,11 +301,11 @@ Hier ein paar Einstiegsseiten für die Diskussion, die teilweise sehr erbittert
 (und mit ideologischen Zügen) geführt wird (erinnert an die Diskussionen, welche
 Linux-Distribution die bessere sei):
 
-*   [Git-Flow-Modell von Vincent Driessen](http://nvie.com/posts/a-successful-git-branching-model/)
+*   [Git-Flow-Modell von Vincent Driessen](https://nvie.com/posts/a-successful-git-branching-model/)
 *   [Kurzer Überblick über das GitHub-Flow-Modell](https://guides.github.com/introduction/flow/)
 *   [Diskussion des GitHub-Flow-Modells (Github)](https://githubflow.github.io/)
 *   [Luca Mezzalira: "Git-Flow vs Github Flow"](https://lucamezzalira.com/2014/03/10/git-flow-vs-github-flow/)
-*   [Scott Schacon, Autor des Pro-Git-Buchs](http://scottchacon.com/2011/08/31/github-flow.html)
+*   [Scott Schacon, Autor des Pro-Git-Buchs](https://scottchacon.com/2011/08/31/github-flow.html)
 *   [Noch eine (längere) Betrachtung (Robin Daugherty)](https://hackernoon.com/a-branching-and-releasing-strategy-that-fits-github-flow-be1b6c48eca2)
 :::
 
