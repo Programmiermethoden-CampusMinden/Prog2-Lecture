@@ -228,7 +228,7 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 [Konsole]{.bsp}
 
 
-## Dateien ignorieren: *.gitignore*
+## Dateien ignorieren: _.gitignore_
 
 ::: notes
 *   Nicht alle Dateien gehören ins Repo:
