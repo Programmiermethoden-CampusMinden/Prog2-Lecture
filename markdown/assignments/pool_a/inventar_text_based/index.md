@@ -7,7 +7,7 @@ weight: 2
 hidden: true
 ---
 
-## Vorraussezungen
+## Voraussetzungen
 
 Um diese Aufgabe bearbeiten zu können, sollten Sie vorher die Aufgabe "Item" aus Pool C gelöst haben.
 
