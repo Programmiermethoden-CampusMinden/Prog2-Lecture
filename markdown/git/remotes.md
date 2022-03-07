@@ -10,7 +10,29 @@ readings:
    - key: "AtlassianGit"
    - key: "GitCheatSheet"
 tldr: |
-  TODO
+  Eine der Stärken von Git ist das Arbeiten mit verteilten Repositories. Zu jeder Workingcopy gehört
+  eine Kopie des Repositories, wodurch jederzeit alle Informationen einsehbar sind und auch offline
+  gearbeitet werden kann. Allerdings muss man für die Zusammenarbeit mit anderen Entwicklern die lokalen
+  Repos mit den "entfernten" Repos (auf dem Server oder anderen Entwicklungsrechnern) synchronisieren.
+
+  Beim Klonen eines Repositories mit `git clone <url>` wird das fremde Repo mit dem Namen `origin`
+  im lokalen Repo festgehalten. Dieser Name wird auch als Präfix für die Branches in diesem Repo genutzt,
+  d.h. die Branches im Remote-Repo tauchen als `origin/<branch>` im lokalen Repo auf. Diese Remote-Branches
+  kann man nicht direkt bearbeiten, sondern man muss diese Remote-Branches in einem lokalen Branch auschecken
+  und dann darin weiterarbeiten. Es können beliebig viele weitere Remotes dem eigenen Repository hinzugefügt
+  werden.
+
+  Änderungen aus einem Remote-Repo können mit `git fetch <remote>` in das lokale Repo geholt werden.
+  Dies aktualisiert **nur** die Remote-Branches `<remote>/<branch>`! Die Änderungen können anschließend
+  mit `git merge <remote>/<branch>` in den aktuell in der Workingcopy ausgecheckten Branch gemergt werden.
+  (_Anmerkung_: Wenn mehrere Personen an einem Branch arbeiten, will man die eigenen Arbeiten in dem Branch
+  vermutlich eher auf den aktuellen Stand des Remote **rebasen** statt mergen!) Eigene Änderungen können
+  mit `git push <remote> <branch>` in das Remote-Repo geschoben werden.
+
+  Um den Umgang mit den Remote-Branches und den davon abgeleiteten lokalen Branches zu vereinfachen,
+  gibt es das Konzept der "Tracking Branches". Dabei "folgt" ein lokaler Branch einem Remote-Branch.
+  Ein einfaches `git pull` oder `git push` holt dann Änderungen aus dem Remote-Branch in den ausgecheckten
+  lokalen Branch bzw. schiebt Änderungen im lokalen Branch in den Remote-Branch.
 outcomes:
   - k3: "Erzeugen eines Clones von fremden Git-Repositories"
   - k3: "Holen der Änderungen vom fremden Repo"
