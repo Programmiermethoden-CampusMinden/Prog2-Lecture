@@ -157,7 +157,7 @@ Modells eigentlich nicht erklären :-)
 :::
 
 
-## Git-Flow: Hauptzweige *master* und *develop*
+## Git-Flow: Hauptzweige _master_ und _develop_
 
     A---B-------E---------------J  master
          \     /               /
