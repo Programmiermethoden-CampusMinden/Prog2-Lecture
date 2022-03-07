@@ -46,8 +46,7 @@ fhmedia:
 
 ## Nutzung von Git in Projekten: Verteiltes Git und Workflows
 
-![](figs/git/workflows){width="80%"}
-[Quelle: Vincent Driessen, [nvie.com/img/centr-decentr@2x.png](http://nvie.com/img/centr-decentr@2x.png)]{.origin}
+![](branching-strategies.images/distributed.png){width="80%"}
 
 
 ::: notes
