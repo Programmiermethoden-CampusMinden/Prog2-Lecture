@@ -32,6 +32,10 @@ outcomes:
   - k3: "Rebasen von Branches"
 quizzes:
   - link: "XYZ"
+  - link: "https://learngitbranching.js.org/"
+    name: "Tutorial: Welcome to Learn Git Branching"
+  - link: "https://marklodato.github.io/visual-git-guide/index-en.html"
+    name: "Tutorial: A Visual Git Reference"
 assignments:
   - topic: sheet01
 youtube:
