@@ -245,13 +245,17 @@ Dadurch entspricht jeder Commit im `master` einem Release.
 
 ## Vereinfachte Braching-Strategie: GitHub Flow
 
-![](figs/git/githubflow)
-[Quelle: [guides.github.com/introduction/flow](https://guides.github.com/introduction/flow/)]{.origin}
+    A---B---C----D-----------E  master
+         \   \  /           /
+          \   ta1  topicA  /
+           \              /
+            tb1---tb2---tb3  topicB
+
 
 ::: notes
 Github verfolgt eine deutlich vereinfachte Strategie: "GitHub Flow"
-(vgl. [guides.github.com/introduction/flow](https://guides.github.com/introduction/flow/)
-bzw. [PDF-Version "GitHub Flow"](https://guides.github.com/pdfs/githubflow-online.pdf)).
+(vgl. ["GitHub Flow" (S. Chacon)](https://githubflow.github.io/)
+bzw. ["GitHub flow" (GitHub, Inc.)](https://docs.github.com/en/get-started/quickstart/github-flow)).
 
 Hier ist der stabile Stand ebenfalls immer im `master`. Features werden ebenso
 wie im Git-Flow-Modell in eigenen Feature-Branches entwickelt.
@@ -261,17 +265,18 @@ dem Test auch immer dort wieder direkt integriert (es gibt also keine weiteren
 langlaufenden Branches wie `develop` oder `release`).
 
 
-Im obigen Screenshot ist zu sehen, dass für die Entwicklung eines Features ein
-entsprechender Themenbranch (vom `master`) abgezweigt wird (Schritt 1). Darin
-erfolgt dann die Entwicklung des Features, d.h. mehrere Commits (Schritt 2).
-
-In Schritt 3 wird ein Pull-Request (*PR*) aufgemacht (streng genommen gehört dies
-bereits in die Kategorie "Zusammenarbeit" bzw. "Workflows"; außerdem gehört ein
-PR nicht zu Git selbst, sondern zum Tooling von Github; vgl. nächstes Kapitel),
-worüber in Schritt 4 andere Entwickler den Code kommentieren können. Jeder weitere
-Commit auf dem Themenbranch wird ebenfalls Bestandteil des Pull-Requests. In Schritt 5
-("Eichhörnchen") erfolgen dann ggf. automatisierte Tests etc., und in Schritt 6
-erfolgt durch das Akzeptieren des PR der Merge des Feature-Branches in den `master`.
+In der obigen Abbildung ist zu sehen, dass für die Entwicklung eines Features ein
+entsprechender Themenbranch vom `master` abgezweigt wird. Darin erfolgt dann die
+Entwicklung des Features, d.h. mehrere Commits. Das Mergen des Features in den
+`master` erfolgt dann aber nicht lokal, sondern mit einem "Pull-Request" auf dem
+Server: Sobald man im Feature-Branch einen "diskussionswürdigen" Stand hat, wird ein
+**Pull-Request** (*PR*) über die Weboberfläche aufgemacht (streng genommen gehört
+dies in die Kategorie `["Zusammenarbeit" bzw. "Workflows"]({{<ref "/git/workflows" >}})`{=markdown};
+außerdem gehört ein PR nicht zu Git selbst, sondern zum Tooling von Github). In
+einem PR können andere Entwickler den Code kommentieren und ergänzen. Jeder weitere
+Commit auf dem Themenbranch wird ebenfalls Bestandteil des Pull-Requests. Parallel
+laufen ggf. automatisierte Tests etc. und durch das Akzeptieren des PR in der
+Weboberfläche erfolgt schließlich der Merge des Feature-Branches in den `master`.
 :::
 
 
