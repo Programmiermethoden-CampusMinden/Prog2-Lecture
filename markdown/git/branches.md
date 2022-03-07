@@ -162,7 +162,7 @@ auch Branches auf der Basis von `wuppie` anlegen ...
 :::
 
 
-## Fix ist stabil: Integration in *master*
+## Fix ist stabil: Integration in _master_
 
               D  wuppie
              /
@@ -237,7 +237,7 @@ einer Datei noch "`--`" nutzen: `git checkout -- <dateiname>`.
 :::
 
 
-## Feature ist stabil: Integration in *master*
+## Feature ist stabil: Integration in _master_
 
               D---F  wuppie                                D---F  wuppie
              /                     =>                     /     \
