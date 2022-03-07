@@ -51,16 +51,15 @@ fhmedia:
 ---
 
 
-## Nutzung von Git in Projekten: Verteiltes Git und Workflows
+## Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
 
-![](figs/git/workflows){width="80%"}
-[Quelle: Vincent Driessen, [nvie.com/img/centr-decentr@2x.png](http://nvie.com/img/centr-decentr@2x.png)]{.origin}
+![](remotes.images/distributed.png){width="80%"}
 
 
 ::: notes
 Git ermöglicht eine einfaches Zusammenarbeit in verteilten Teams. Nachdem wir die verschiedenen
-Branching-Strategien betrachtet haben, soll im Folgenden die Frage betrachtet werden: Wie arbeite
-ich sinnvoll über Git mit anderen Kollegen und Teams zusammen? Welche Modelle haben sich etabliert?
+Branching-Strategien betrachtet haben, soll im Folgenden die Frage betrachtet werden: **Wie arbeite
+ich sinnvoll über Git mit anderen Kollegen und Teams zusammen? Welche Modelle haben sich etabliert?**
 :::
 
 
@@ -140,7 +139,6 @@ wurde, zeigt der remote Branch `origin/master` immer noch auf den Commit
 
 
 ::::::::: notes
-
 ### Änderungen auf dem Server mit dem eigenen Repo abgleichen
 
 Mit `git fetch origin` alle Änderungen holen
@@ -179,7 +177,6 @@ und das Ergebnis wieder in das remote Repo pushen (dann ist ja wieder ein
 *fast forward merge* möglich, es sei denn, jemand hat den remote `master` in der
 Zwischenzeit weiter geschoben -- dann muss die Aktualisierung erneut durchgeführt
 werden).
-
 :::::::::
 
 [Beispiel für Zusammenführen (merge und push), Anmerkung zu `fast forward merge`]{.bsp}
