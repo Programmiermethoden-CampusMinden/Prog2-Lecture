@@ -19,7 +19,7 @@ Suchen Sie sich passende Texturen für Ihr Spiel heraus. Sie benötigen vor alle
 
 ## Dungeon
 
-Implementieren Sie mithilfe der [Dokumentation](https://github.com/PM-Dungeon/desktop/blob/master/documentation/quickstart_de.md) Ihr Dungeon und Ihren Helden.
+Implementieren Sie mithilfe des [Quick-Starts](https://github.com/PM-Dungeon/desktop/blob/master/documentation/quickstart_de.md) Ihren ersten Dungeon und Ihren Helden.
 
 ## Animationen
 
