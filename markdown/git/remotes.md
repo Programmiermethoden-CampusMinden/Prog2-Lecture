@@ -65,8 +65,20 @@ ich sinnvoll über Git mit anderen Kollegen und Teams zusammen? Welche Modelle h
 
 ## Clonen kann sich lohnen ...
 
-![](figs/git/remote-branches-1){width="80%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/remote-branches-1.png)]{.origin}
+    https://github.com/PM-Dungeon/PM-Lecture
+
+    ---C---D---E  master
+
+
+    => git clone https://github.com/PM-Dungeon/PM-Lecture
+
+
+    ./PM-Lecture/  (lokaler Rechner)
+
+    ---C---D---E  master
+               ^
+               origin/master
+
 
 ::: notes
 Git-Repository mit der URL `<URL-Repo>` in lokalen Ordner `<directory>` auschecken:
@@ -92,10 +104,19 @@ Für die URL sind verschiedene Protokolle möglich, beispielsweise:
 [[Hinweis auf Protokolle, Beispiel]{.bsp}]{.slides}
 
 
-## Eigener und entfernter *master* entwickeln sich weiter ...
+## Eigener und entfernter _master_ entwickeln sich weiter ...
 
-![](figs/git/remote-branches-2){width="80%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/remote-branches-2.png)]{.origin}
+    https://github.com/PM-Dungeon/PM-Lecture
+
+    ---C---D---E---F---G  master
+
+
+    ./PM-Lecture/  (lokaler Rechner)
+
+    ---C---D---E---H  master
+               ^
+               origin/master
+
 
 ::: notes
 Nach dem Auschecken liegen (in diesem Beispiel) drei `master`-Branches vor:
@@ -122,20 +143,31 @@ nur der `origin/master` beim Clonen automatisch als lokaler Branch ausgecheckt.
 
 
 Zur Abbildung:
-Während man lokal arbeitet (Commits `a38de` und `893cd` auf dem lokalen `master`),
-kann es passieren, dass sich auch das remote Repo ändert. Im Beispiel wurden
-dort die beiden Commits `31b8e` und `190a3` angelegt (durch `git push`, s.u.).
+Während man lokal arbeitet (Commit `H` auf dem lokalen `master`), kann es passieren,
+dass sich auch das remote Repo ändert. Im Beispiel wurden dort die beiden Commits
+`F` und `G` angelegt (durch `git push`, s.u.).
 
 Wichtig: Da in der Zwischenzeit das lokale Repo nicht mit dem Server abgeglichen
 wurde, zeigt der remote Branch `origin/master` immer noch auf den Commit
-`f42c5`!
+`E`!
 :::
 
 
 ## Änderungen im Remote holen und Branches zusammenführen
 
-![](figs/git/remote-branches-3){width="80%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/remote-branches-3.png)]{.origin}
+    https://github.com/PM-Dungeon/PM-Lecture
+
+    ---C---D---E---F---G  master
+
+
+    => git fetch origin
+
+
+    ./PM-Lecture/  (lokaler Rechner)
+
+    ---C---D---E---H  master
+                \
+                 F---G  origin/master
 
 
 ::::::::: notes
@@ -145,7 +177,7 @@ Mit `git fetch origin` alle Änderungen holen
 
 *   Alle remote Branches werden aktualisiert und entsprechen den jeweiligen
     Branches auf dem Server: Im Beispiel zeigt jetzt `origin/master` ebenso
-    wie der `master` auf dem Server auf den Commit `190a3`.
+    wie der `master` auf dem Server auf den Commit `G`.
 *   Neue Branches auf dem Server werden ebenfalls "geholt", d.h. sie liegen
     nach dem Fetch als entsprechende remote Branches vor
 *   Auf dem Server gelöschte Branches werden nicht automatisch lokal gelöscht;
@@ -154,22 +186,40 @@ Mit `git fetch origin` alle Änderungen holen
 *Wichtig*: Es werden nur die remote Branches aktualisiert, nicht die lokalen Branches!
 
 
-### *master*-Branch nach *git fetch origin* zusammenführen (nicht in Abbildung dargestellt)
+### _master_-Branch nach "git fetch origin" zusammenführen
 
 1.  Mit `git checkout master` Workingcopy auf eigenen `master` umstellen
-2.  Mit `git merge origin/master` Änderungen am `origin/master` in eigenen
-    `master` mergen
-3.  Mit `git push origin master` eigene Änderungen ins remote Repo pushen (in
-    `origin/master`)
+2.  Mit `git merge origin/master` Änderungen am `origin/master` in eigenen `master` mergen
+3.  Mit `git push origin master` eigene Änderungen ins remote Repo pushen
+
+
+    https://github.com/PM-Dungeon/PM-Lecture
+
+    ---C---D---E---H---I  master
+                \     /
+                 F---G
+
+
+    ./PM-Lecture/  (lokaler Rechner)
+
+    ---C---D---E---H---I  master, origin/master
+                \     /
+                 F---G
+
 
 *Anmerkung*: Schritt (2) kann man auch per `git pull origin master` erledigen ... Ein `pull`
 fasst `fetch` und `merge` zusammen (s.u.).
 
+*Anmerkung* Statt dem `merge` in Schritt (2) kann man auch den lokalen `master` auf den
+aktualisierten `origin/master` rebasen und vermeidet damit die "Raute". Der `pull` kann
+mit der Option "`--rebase`" auf "rebase" umgestellt werden (per Default wird bei `pull`
+ein "merge" ausgeführt).
 
-### Auf dem Server ist nur ein *fast forward merge* möglich
+
+### Auf dem Server ist nur ein _fast forward merge_ möglich
 
 Sie können Ihre Änderungen in Ihrem lokalen `master` auch direkt in das remote Repo
-pushen, solange auf dem Server ein *fast forward merge* möglich ist.
+pushen, solange auf dem Server ein **fast forward merge** möglich ist.
 
 Wenn aber (wie in der Abbildung) der lokale und der remote `master` divergieren,
 müssen Sie den Merge wie beschrieben lokal durchführen (`fetch`/`merge` oder `pull`)
@@ -214,7 +264,7 @@ werden).
 
 
 ::::::::: notes
-### *Anmerkung*: `push` geht nur, wenn
+### Anmerkung: _push_ geht nur, wenn
 
  i. Ziel ein "bare"-Repository ist, **und**
 ii. keine Konflikte entstehen
