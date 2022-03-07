@@ -16,7 +16,7 @@ tldr: |
   Das Erstellen und Mergen von Branches ist in Git besonders einfach. Dies kann man sich in der Entwicklung zunutze machen
   und die einzelnen Features unabhängig voneinander in eigenen Hilfs-Branches ausarbeiten.
 
-  Es haben sich zwei Modelle etabliert: "Git-Flow" und "GitHub Flow".
+  Es haben sich zwei grundlegende Modelle etabliert: "Git-Flow" und "GitHub Flow".
 
   In **Git-Flow** gibt es ein umfangreiches Konzept mit verschiedenen Branches für feste Aufgaben, welches sich besonders
   gut für Entwicklungmodelle mit festen Releases eignet. Es gibt zwei langlaufende Branches: `master` enthält den stabilen
