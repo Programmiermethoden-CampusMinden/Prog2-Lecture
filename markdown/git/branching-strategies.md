@@ -136,8 +136,18 @@ Linux-Kernel.
 
 ## Komplexe Branching-Strategie: Git-Flow
 
-![](figs/git/Git-branching-model)
-[Quelle: Vincent Driessen [nvie.com/files/Git-branching-model.pdf](http://nvie.com/files/Git-branching-model.pdf)]{.origin}
+    A---B---------------------G---J1  master
+         \                   / \ /
+          \                 /   X  fix
+           \               /     \
+            C-------------F----I--J2  develop
+             \           / \  /
+              \         /   H1  featureB
+               \       /
+                D1----D2  featureA
+                 \
+                  E1---E2---E3---E4---E5  featureC
+
 
 ::: notes
 Das Git-Flow-Modell von Vincent Driessen
