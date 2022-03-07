@@ -68,6 +68,7 @@ Im Folgenden sollen also die Frage betrachtet werden: Wie setze ich Branches sin
                  \
                   G---H  test
 
+
 ::: notes
 Branchen ist in Git sehr einfach und schnell. Deshalb wird (gerade auch im Vergleich mit
 SVN) gern und viel gebrancht.
@@ -101,6 +102,7 @@ und der Themenbranch gelöscht.
           C---E---I  develop
                \
                 F---G---H topic
+
 
 ::: notes
 Häufig findet man in (größeren) Projekten Branches, die über die gesamte
@@ -148,8 +150,10 @@ Modells eigentlich nicht erklären :-)
 
 ## Git-Flow: Hauptzweige *master* und *develop*
 
-![](figs/git/mainbranches)
-[Quelle: Vincent Driessen, [nvie.com/img/main-branches@2x.png](http://nvie.com/img/main-branches@2x.png)]{.origin}
+    A---B-------E---------------J  master
+         \     /               /
+          C---D---F---G---H---I---K  develop
+
 
 ::: notes
 Bei Git-Flow gibt es zwei langlaufende Branches: Den `master`, der immer den stabilen
@@ -168,8 +172,16 @@ Entwicklungsarbeit mehr. Nach Fertigstellung wird der `release` dann sowohl in d
 
 ## Git-Flow: Weitere Branches als Themen-Branches
 
-![](figs/git/featurebranches)
-[Quelle: Vincent Driessen, [nvie.com/img/fb@2x.png](http://nvie.com/img/fb@2x.png)]{.origin}
+    A---B---------------------I-------------K  master
+         \                   /             /
+          C------------F----H-------------J---L  develop
+           \          / \  /             /
+            \        /   G1  featureB   /
+             \      /                  /
+              D1---D2  featureA       /
+               \                     /
+                E1---E2---E3---E4---E5  featureC
+
 
 ::: notes
 Für die Entwicklung eigenständiger Features bietet es sich auch im
@@ -180,11 +192,17 @@ Arbeiten eine gewisse Reife haben, werden die Featurebranches in den
 :::
 
 
-::: notes
+::::::::: notes
 ## Git-Flow: Merging-Detail
 
-![](figs/git/featurebranchesmerging)
-[Quelle: Vincent Driessen, [nvie.com/img/merge-without-ff@2x.png](http://nvie.com/img/merge-without-ff@2x.png)]{.origin}
+    ---C--------E  develop
+        \      /                 git merge --no-ff
+         D1---D2  featureA
+
+vs.
+
+    ---C---D1---D2  develop      git merge
+
 
 Wenn beim Mergen ein "*fast forward*" möglich ist, würde Git beim Mergen
 eines (Feature-) Branches in den `develop` (oder allgemein in einen anderen
@@ -202,13 +220,17 @@ Häufig wird deshalb ein extra Merge-Commit mit `git merge --no-ff <branch>`
 Anmerkung: Man kann natürlich auch über Konventionen in den Commit-Kommentaren
 eine gewisse Übersichtlichkeit erzwingen. Beispielsweise könnte man vereinbaren,
 dass alle Commit-Kommentare zu einem Feature "A" mit "`feature a: `" starten müssen.
-:::
+:::::::::
 
 
 ## Git-Flow: Umgang mit Fehlerbehebung
 
-![](figs/git/hotfixbranches)
-[Quelle: Vincent Driessen, [nvie.com/img/hotfix-branches@2x.png](http://nvie.com/img/hotfix-branches@2x.png)]{.origin}
+    A---B---D--------F1  master
+         \   \      /
+          \   E1---E2  fix
+           \        \
+            C1-------F2  develop
+
 
 ::: notes
 Wenn im stabilen Branch (also dem `master`) ein Problem bekannt wird,
