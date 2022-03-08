@@ -3,7 +3,7 @@ type: assignment
 title: "Fähigkeiten"
 author: "Andre Matutat (FH Bielefeld)"
 points: 3
-weight: 3
+weight: 2
 hidden: true
 ---
 
