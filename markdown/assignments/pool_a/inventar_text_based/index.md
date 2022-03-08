@@ -9,12 +9,12 @@ hidden: true
 
 ## Voraussetzungen
 
-Um diese Aufgabe bearbeiten zu können, sollten Sie vorher die Aufgabe "Item" aus Pool C gelöst haben.
+Um diese Aufgabe bearbeiten zu können, sollten Sie vorher die Aufgabe `["Item" aus Pool C]({{< ref "/assignments/pool_c/item" >}})`{=markdown} gelöst haben.
 
 ## Ziel
 
-In dieser Aufgabe sollen Sie ein textbasierter, also über die Konsole einseh- und steuerbares, Inventar implementieren.
-Im Inventar können Gegenstände gelagert, ausgerüstet oder verwendet werden.
+In dieser Aufgabe sollen Sie ein textbasiertes, also über die Konsole einseh- und steuerbares, Inventar implementieren.
+Im Inventar können bestimmte Gegenstände gelagert, ausgerüstet oder verwendet werden.
 
 ## Inventar (text basiert)
 
