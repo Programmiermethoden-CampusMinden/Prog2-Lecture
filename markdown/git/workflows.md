@@ -249,7 +249,7 @@ als Bitte um Review der Änderungen gewertet wird.
 Hier ein Screenshot der Änderungsansicht unseres Gitlab-Servers (SW-Labor):
 :::
 
-![](figs/git/screenshot_merge-request_code){width="80%"}
+![](workflows.images/screenshot_merge-request_code.png){width="80%"}
 
 [Diskussion Merge vs. MR, Live-Demo Gitlab]{.bsp}
 
@@ -257,7 +257,7 @@ Hier ein Screenshot der Änderungsansicht unseres Gitlab-Servers (SW-Labor):
 ::: notes
 Nachfolgend für den selben MR aus der letzten Abbildung noch die reine Diskussionsansicht:
 
-![](figs/git/screenshot_merge-request_discussion){width="80%"}
+![](workflows.images/screenshot_merge-request_discussion.png){width="80%"}
 :::
 
 
