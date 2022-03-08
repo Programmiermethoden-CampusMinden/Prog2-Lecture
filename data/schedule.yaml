@@ -77,9 +77,9 @@
 
 - week: "KW21"
   lecture:
-    - topic: "/building/ant"
-    - topic: "/building/maven"
-    - topic: "/building/docker"
+    - topic: "/frameworks/guava"
+    - topic: "/gui/swing"
+    - topic: "/gui/java2d"
   misc_lecture:
     - notes: ">> E1 (23.05.) in Vorlesungs-Slot"
   misc_assignment:
@@ -120,9 +120,9 @@
 - week: "KW25"
   lecture:
     - topic: "/java-jvm/configuration"
-    - topic: "/frameworks/guava"
-    - topic: "gui/swing"
-    - topic: "gui/java2d"
+    - topic: "/building/ant"
+    - topic: "/building/maven"
+    - topic: "/building/docker"
   assignment:
     - topic: "sheet10"
       due: "16.06."
