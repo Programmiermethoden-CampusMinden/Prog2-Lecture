@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In Rollenspielen gibt die Charakterklasse an, welche Werte (Anzahl der Lebenspunkte, Kampfschaden, Manapunkte etc.) die Spielfigur hat, welche Waffen sie verwenden und welche Fähigkeiten sie erlernen kann.
+In Rollenspielen gibt die Charakterklasse an, welche Werte (Anzahl der Lebenspunkte, Kampfschaden, Manapunkte etc.) die Spielfigur hat, welche Waffen sie verwenden und welche Fähigkeiten sie erlernen kann. Typische Charakterklassen sind Krieger, Zauberer oder Schurke.
 
 In dieser Aufgabe sollen Sie verschiedene Charakterklassen implementieren.
 
