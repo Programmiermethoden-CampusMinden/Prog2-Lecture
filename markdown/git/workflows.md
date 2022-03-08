@@ -66,10 +66,10 @@ Antwort: Workflows mit Git ...
 ![](workflows.images/centralised.png){width="80%"}
 
 ::: notes
-In kleinen Projektgruppen wie beispielsweise Ihrer PM-Arbeitsgruppe wird häufig
+In kleinen Projektgruppen wie beispielsweise Ihrer Arbeitsgruppe wird häufig
 ein einfacher zentralisierter Workflow bei der Versionsverwaltung genutzt. Im
 Mittelpunkt steht dabei ein zentrales Repository, auf dem alle Teammitglieder
-gleichberechtigt pushen dürfen.
+gleichberechtigt und direkt pushen dürfen.
 
 *   Vorteile:
     *   Einfachstes denkbares Modell
@@ -109,23 +109,25 @@ Projekten auf Github.
 
 \smallskip
 
-*   Entwickler clonen das Master-Repo lokal
+*   Entwickler
+    *   Forken das Master-Repo auf dem Server und klonen ihren Fork lokal
     *   Arbeiten auf lokalem Klon: Unabhängige Entwicklung eines Features
-    *   Pushen ihren Stand in ihr eigenes öffentliches Repo: Veröffentlichung
-        des Beitrags zum Projekt (sobald fertig bzw. diskutierbar)
-    *   Lösen Merge-Request für Integrations-Manager aus: Beitrag soll geprüft
-        und ins Projekt aufgenommen werden (Merge ins Master-Repo)
+    *   Pushen ihren Stand in ihren Fork (ihr eigenes öffentliches Repo):
+        Veröffentlichung des Beitrags zum Projekt (sobald fertig bzw. diskutierbar)
+    *   Lösen Pull- bzw. Merge-Request gegen das Master-Repo aus: Beitrag
+        soll geprüft und ins Projekt aufgenommen werden (Merge ins Master-Repo
+        durch den Integrationsmanager)
 
 \smallskip
 
-*   Integrations-Manager fetcht die Änderungen aus den öffentlichen
-    Entwickler-Repos
-    *   Prüft die Änderungen und fordert ggf. Nacharbeiten an bzw. lehnt
-        Integration ab (technische oder politische Gründe)
-    *   Führt Merge der Entwickler-Zweige mit den Hauptzweigen durch
-    *   Lädt die Änderungen ins geschützte Master-Repo hoch ("push"): Beitrag
-        der Entwickler ist im Projekt angekommen und ist beim nächsten Pull
-        in deren lokalen Repo vorhanden
+*   Integrationsmanager
+    *   Prüft die Änderungen im Pull- bzw. Merge-Request und fordert ggf.
+        Nacharbeiten an bzw. lehnt Integration ab (technische oder politische
+        Gründe)
+    *   Führt Merge der Entwickler-Zweige mit den Hauptzweigen durch Akzeptieren
+        der Pull- bzw. Merge-Requests durch: Beitrag der Entwickler ist im
+        Projekt angekommen und ist beim nächsten Pull in deren lokalen Repos
+        vorhanden
 
 Den hier gezeigten Zusammenhang kann man auf weitere Ebenen verteilen, vgl. den
 im Linux-Kernel gelebten "Dictator and Lieutenants Workflow" (siehe Literatur).
