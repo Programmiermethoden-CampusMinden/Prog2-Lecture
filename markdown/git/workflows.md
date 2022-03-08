@@ -18,7 +18,7 @@ tldr: |
 
   In größeren Projekten gibt es oft ein zentrales öffentliches Repo, wo aber nur wenige Personen
   Schreibrechte haben. Hier forkt man sich dieses Repo, erstellt also eine öffentliche Kopie auf dem
-  Server. Diese Kopie klont man lokal und arbeitet hier und pusht die Änderungen in den öffentlich
+  Server. Diese Kopie klont man lokal und arbeitet hier und pusht die Änderungen in den eigenen öffentlich
   sichtbaren Fork. Um die Änderungen ins Projekt-Repo integrieren zu lassen, wird auf dem Server ein
   sogenannter Merge-Request (Gitlab) bzw. Pull-Request (GitHub) erstellt. Dies erlaubt zusätzlich ein
   Review und eine Diskussion direkt am Code. Damit man die Änderungen im Hauptprojekt in den eigenen
@@ -208,17 +208,17 @@ bevorzugt werden.
 Branch arbeiten könnten und entsprechend auf die Commit-IDs angewiesen sind. Nach einem Rebase
 stimmen diese Commit-IDs nicht mehr, was normalerweise mindestens zu Verärgerung führt ... Die
 Dritten müssten ihre Arbeit dann auf den neuen Feature-Branch (d.h. den Feature-Branch nach
-dessen Rebase) rebasen ... Vgl. auch "The Perils of Rebasing" in Abschnitt "3.6 Rebasing" in
+dessen Rebase) rebasen ... vgl. auch "The Perils of Rebasing" in Abschnitt "3.6 Rebasing" in
 [@Chacon2014].
 
 
 ### Mögliches Szenario im Praktikum
 
-Im Praktikum haben Sie das Vorgabe-Repo. Dieses könnten Sie als `upstream` in
-Ihr lokales Repo einbinden.
+Im Praktikum haben Sie das Vorgabe-Repo. Dieses könnten Sie als `upstream` in Ihre lokale
+Workingcopy einbinden.
 
 Mit Ihrem Team leben Sie vermutlich einen zentralen Workflow, d.h. Sie binden Ihr gemeinsames
-Repo als `origin` in Ihre lokales Workingcopy ein.
+Repo als `origin` in Ihre lokale Workingcopy ein.
 
 Dann müssen Sie den lokalen `master` aus *beiden* Remotes aktualisieren. Zusätzlich
 wollen Sie Ihren aktuellen Themenbranch auf den aktuellen `master` rebasen.
@@ -238,7 +238,7 @@ Team-Mitglieder sollten darüber informiert werden, dass sich der `master` auf
 inkompatible Weise geändert hat ...
 :::::::::
 
-[Beispiel: Unterschied Pull/Merge vs. Pull/Rebase]{.bsp}
+[[Besser einen Pull/Rebase für den Feature-Branch machen!]{.bsp}]{.slides}
 
 
 ## Kommunikation: Merge- bzw. Pull-Requests
@@ -263,7 +263,7 @@ Hier ein Screenshot der Änderungsansicht unseres Gitlab-Servers (SW-Labor):
 
 ![](workflows.images/screenshot_merge-request_code.png){width="80%"}
 
-[Diskussion Merge vs. MR, Live-Demo Gitlab]{.bsp}
+[[Diskussion Merge vs. MR, Live-Demo Gitlab]{.bsp}]{.slides}
 
 
 ::: notes
