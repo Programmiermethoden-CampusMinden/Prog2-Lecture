@@ -90,9 +90,8 @@ gleichberechtigt pushen dürfen.
 
 ## Zusammenarbeit: Einfacher verteilter Workflow mit Git
 
-![](figs/git/integration-manager){width="80%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/integration-manager.png)]{.origin}
-:::
+![](workflows.images/workflow.png){width="80%"}
+
 
 ::: notes
 In großen und/oder öffentlichen Projekten wird üblicherweise ein Workflow
@@ -170,7 +169,7 @@ zu bringen, führt man dann einfach folgendes aus (im Beispiel für den `master`
 [Beispiel: Forken mit Gitlab, Namen für Remotes]{.bsp}
 
 
-## Feature-Branches aktualisieren: Mergen mit `master` vs. Rebase auf `master`
+## Feature-Branches aktualisieren: Mergen mit _master_ vs. Rebase auf _master_
 
 ::: notes
 Im Netz finden sich häufig Anleitungen, wonach man Änderungen im `master`
@@ -180,7 +179,7 @@ mit einem Merge in den Feature-Branch holt, also sinngemäß:
     $ git checkout master         # Workingcopy auf master
     $ git pull upstream master    # Aktualisiere lokalen master mit master aus Vorgabe-Repo
     $ git checkout feature        # Workingcopy auf feature
-    $ git merge master            # Aktualisiere feature mit neuem master: Merge master in feature
+    $ git merge master            # Aktualisiere feature: Merge master in feature
     $ git push origin feature     # Push aktuellen feature ins Team-Repo
 
 ::::::::: notes
@@ -198,14 +197,14 @@ Um die Änderungen im `master` in einen Feature-Branch zu bekommen, sollte desha
 (des Feature-Branches auf den `master`) vor einem Merge (des `master` in den Feature-Branch)
 bevorzugt werden.
 
-[Merk-Regel: Merge niemals nie den `master` in Feature-Branches!]{.alert}
+[**Merk-Regel**: Merge niemals nie den `master` in Feature-Branches!]{.alert}
 
 **Achtung**: Ein Rebase bei veröffentlichten Branches ist problematisch, da Dritte auf diesem
 Branch arbeiten könnten und entsprechend auf die Commit-IDs angewiesen sind. Nach einem Rebase
 stimmen diese Commit-IDs nicht mehr, was normalerweise mindestens zu Verärgerung führt ... Die
 Dritten müssten ihre Arbeit dann auf den neuen Feature-Branch (d.h. den Feature-Branch nach
 dessen Rebase) rebasen ... Vgl. auch "The Perils of Rebasing" in Abschnitt "3.6 Rebasing" in
-@Chacon2014.
+[@Chacon2014].
 
 
 ### Mögliches Szenario im Praktikum
@@ -304,9 +303,12 @@ Nachfolgend für den selben MR aus der letzten Abbildung noch die reine Diskussi
 
 ## Wrap-Up
 
-*   Git-Workflows für die Zusammenarbeit: ein einfacher zentraler Ansatz für kleine
-    Arbeitsgruppen vs. ein einfacher verteilter Ansatz mit einem "blessed" Repo
-    (häufig in Open-Source-Projekten zu finden)
+*   Git-Workflows für die Zusammenarbeit:
+    *   einfacher zentraler Ansatz für kleine Arbeitsgruppen vs.
+    *   einfacher verteilter Ansatz mit einem "blessed" Repo [(häufig in Open-Source-Projekten zu finden)]{.notes}
+
+\smallskip
+
 *   Aktualisieren Ihres Clones und Ihres Forks mit Änderungen aus dem "blessed" Repo
 *   Unterschied zwischen einem Pull/Merge und einem Pull/Rebase
 *   Erstellen von Beiträgen zu einem Projekt über Merge-Requests
