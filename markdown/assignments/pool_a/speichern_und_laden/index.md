@@ -21,7 +21,7 @@ Speichern Sie die Informationen über den Spielzustand, damit Sie zu einem spät
 
 Speichern Sie mindestens den aktuellen Zustand des Helden und das aktuelle Level sowie alle Elemente, die sich im Level befinden (und wo).
 
-Sie können auch externe Bibliotheken verwenden. Binden Sie diese in Ihrem Buildscript mit ein. 
+Sie können auch externe Bibliotheken oder andere Techniken verwenden. Binden Sie diese in Ihrem Buildscript mit ein. 
 
 Dokumentieren Sie Ihre Entscheidung. 
 
