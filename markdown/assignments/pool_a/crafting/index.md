@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe sollen Sie ein Crafting-System implementieren. Also eine Möglichkeit für den Helden, aus verschiedenen Gegenständen neue Gegenstände herzustellen. Denken Sie an das brauen von Tränken oder schmieden von Waffen.
+In dieser Aufgabe sollen Sie ein Crafting-System implementieren. Das ist eine Möglichkeit für den Helden, aus verschiedenen Gegenständen nach bestimmten Regeln neue Gegenstände herstellen zu können. Denken Sie beispielsweise an das Brauen von Tränken oder Schmieden von Waffen.
 
 ## Voraussetzung
 
