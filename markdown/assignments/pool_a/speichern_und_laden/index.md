@@ -3,7 +3,7 @@ type: assignment
 title: "Speichern und Laden"
 author: "Andre Matutat (FH Bielefeld)"
 points: 3
-weight: 5
+weight: 7
 hidden: true
 ---
 
