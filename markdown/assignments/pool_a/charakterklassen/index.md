@@ -3,7 +3,7 @@ type: assignment
 title: "Charakterklassen"
 author: "Andre Matutat (FH Bielefeld)"
 points: 3
-weight: 4
+weight: 6
 hidden: true
 ---
 
