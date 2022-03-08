@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgaben sollen Sie fiese Fallen implementieren, die das vorranschreiten im Dungeon schwieriger machen.
+In dieser Aufgaben sollen Sie Fallen implementieren, die das Voranschreiten im Dungeon schwieriger machen.
 
 ## Fallen
 
