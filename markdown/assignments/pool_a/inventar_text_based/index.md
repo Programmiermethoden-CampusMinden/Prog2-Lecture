@@ -14,7 +14,7 @@ Um diese Aufgabe bearbeiten zu können, sollten Sie vorher die Aufgabe `["Item" 
 ## Ziel
 
 In dieser Aufgabe sollen Sie ein textbasiertes, also über die Konsole einseh- und steuerbares, Inventar implementieren.
-Im Inventar können Gegenstände gelagert, ausgerüstet oder verwendet werden.
+Im Inventar können bestimmte Gegenstände gelagert, ausgerüstet oder verwendet werden.
 
 ## Inventar (text basiert)
 
