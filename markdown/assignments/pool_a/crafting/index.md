@@ -19,5 +19,5 @@ Um diese Aufgabe lösen zu können, müssen Sie vorher die Aufgabe `[Inventar]({
 
 Implementieren Sie ein Crafting-System.
 Lassen Sie den Helden mindestens einen Trank, eine Waffe und einen Zauberspruch craften.
-Um Items zu craften muss vorher eine Rezeptur, entsprechendes Werkzeug sowie die Zutaten gefunden werden.
+Um Items craften zu können, müssen vorher eine passende Rezeptur, entsprechendes Werkzeug sowie die nötigen Zutaten gefunden werden.
 Das Crafting soll über das Inventar-Menü gesteuert werden können.
