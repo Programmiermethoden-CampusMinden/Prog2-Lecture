@@ -13,7 +13,7 @@ In dieser Aufgabe sollen Sie ein Crafting-System implementieren. Also eine Mögl
 
 ## Voraussetzung
 
-Um diese Aufgabe lösen zu können, müssen Sie vorher die Aufgabe `[Inventar]({{<ref "/assignments/pool_a/inventar_text_based" >}})`{=markdown} gelöst haben.
+Um diese Aufgabe lösen zu können, müssen Sie vorher die Aufgabe `["Inventar"]({{< ref "/assignments/pool_a/inventar_text_based" >}})`{=markdown} gelöst haben.
 
 ## Crafting
 
