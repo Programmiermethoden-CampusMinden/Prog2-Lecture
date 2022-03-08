@@ -42,10 +42,9 @@ fhmedia:
 ---
 
 
-## Nutzung von Git in Projekten: Verteiltes Git und Workflows
+## Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
 
-![](figs/git/workflows){width="80%"}
-[Quelle: Vincent Driessen, [nvie.com/img/centr-decentr@2x.png](http://nvie.com/img/centr-decentr@2x.png)]{.origin}
+![](workflows.images/distributed.png){width="80%"}
 
 
 ::: notes
@@ -57,7 +56,7 @@ Auch hier ergeben sich verschiedene Workflows, wie man mit anderen Entwicklern
 an einem Projekt arbeiten will/kann.
 
 
-Im Folgenden sollen also die Frage betrachtet werden: Wie gestalte ich die Zusammenarbeit?
+Im Folgenden sollen also die Frage betrachtet werden: **Wie gestalte ich die Zusammenarbeit?**
 Antwort: Workflows mit Git ...
 :::
 
