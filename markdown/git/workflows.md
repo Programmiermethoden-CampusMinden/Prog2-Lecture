@@ -63,8 +63,7 @@ Antwort: Workflows mit Git ...
 
 ## Zusammenarbeit: Zentraler Workflow mit Git (analog zu SVN)
 
-![](figs/git/centralized_workflow){width="80%"}
-[Quelle: [Scott Chacon and Ben Straub (CC BY-NC-SA 3.0)](https://github.com/progit/progit2/blob/master/images/centralized_workflow.png)]{.origin}
+![](workflows.images/centralised.png){width="80%"}
 
 ::: notes
 In kleinen Projektgruppen wie beispielsweise Ihrer PM-Arbeitsgruppe wird häufig
