@@ -129,7 +129,7 @@ Projekten auf Github.
         in deren lokalen Repo vorhanden
 
 Den hier gezeigten Zusammenhang kann man auf weitere Ebenen verteilen, vgl. den
-im Linux-Kernel gelebten "Dictator and Lieutenants Workflow" (siehe Selbststudium).
+im Linux-Kernel gelebten "Dictator and Lieutenants Workflow" (siehe Literatur).
 
 *Hinweis*: Hier wird nur die Zusammenarbeit im verteilten Team dargestellt. Dazu
 kommt noch das Arbeiten mit verschiedenen Branches!
@@ -187,9 +187,9 @@ mit einem Merge in den Feature-Branch holt, also sinngemäß:
 Das funktioniert rein technisch betrachtet.
 
 Allerdings spielt in den meisten Git-Projekten der `master` üblicherweise eine besondere Rolle
-(vgl. auch die Branching-Strategien im nächsten Kapitel) und ist üblicherweise stets das **Ziel**
-eines Merge, aber nie die Quelle! D.h. per Konvention geht der Fluß von Änderungen stets **in**
-den `master` (und nicht heraus).
+(vgl. `[Branching-Strategien]({{< ref "/git/branching-strategies" >}})`{=markdown}) und ist
+üblicherweise stets das **Ziel** eines Merge, aber nie die Quelle! D.h. per Konvention geht der
+Fluß von Änderungen stets **in** den `master` (und nicht heraus).
 
 Wenn man sich nicht an diese Konvention hält, hat man später möglicherweise Probleme, die
 Merge-Historie zu verstehen (welche Änderung kam von woher)!
@@ -213,13 +213,11 @@ dessen Rebase) rebasen ... Vgl. auch "The Perils of Rebasing" in Abschnitt "3.6 
 Im Praktikum haben Sie das Vorgabe-Repo. Dieses könnten Sie als `upstream` in
 Ihr lokales Repo einbinden.
 
-Mit Ihrem Team leben Sie vermutlich einen zentralen Workflow (vgl. übernächstes
-Kapitel), d.h. Sie binden Ihr gemeinsames Repo als `origin` in Ihr lokales Repo
-ein.
+Mit Ihrem Team leben Sie vermutlich einen zentralen Workflow, d.h. Sie binden Ihr gemeinsames
+Repo als `origin` in Ihre lokales Workingcopy ein.
 
 Dann müssen Sie den lokalen `master` aus *beiden* Remotes aktualisieren. Zusätzlich
-wollen Sie Ihren aktuellen Themenbranch (vgl. nächstes Kapitel) auf den aktuellen
-`master` rebasen.
+wollen Sie Ihren aktuellen Themenbranch auf den aktuellen `master` rebasen.
 
     $ git checkout master         # Workingcopy auf master
     $ git pull upstream master    # Aktualisiere lokalen master mit master aus Vorgabe-Repo
