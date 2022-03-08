@@ -10,17 +10,20 @@ readings:
   - key: "AtlassianGit"
   - key: "GitCheatSheet"
 tldr: |
-  TODO
+  Git erlaubt unterschiedliche Formen der Zusammenarbeit.
 
-    *   Git-Workflows für die Zusammenarbeit: ein einfacher zentraler Ansatz für kleine
-        Arbeitsgruppen vs. ein einfacher verteilter Ansatz mit einem "blessed" Repo
-        (häufig in Open-Source-Projekten zu finden)
-    *   Aktualisieren Ihres Clones und Ihres Forks mit Änderungen aus dem "blessed" Repo
-    *   Unterschied zwischen einem Pull/Merge und einem Pull/Rebase
-    *   Erstellen von Beiträgen zu einem Projekt über Merge-Requests
-        *   Welche Commits werden Bestandteil eines Merge-Requests (und warum)
-        *   Diskussion über den Code in Merge-Requests
+  Bei kleinen Teams kann man einen einfachen zentralen Ansatz einsetzen. Dabei gibt es ein zentrales
+  Repo auf dem Server, und alle Team-Mitglieder dürfen direkt in dieses Repo pushen. Hier muss man
+  sich gut absprechen und ein vernünftiges Branching-Schema ist besonders wichtig.
 
+  In größeren Projekten gibt es oft ein zentrales öffentliches Repo, wo aber nur wenige Personen
+  Schreibrechte haben. Hier forkt man sich dieses Repo, erstellt also eine öffentliche Kopie auf dem
+  Server. Diese Kopie klont man lokal und arbeitet hier und pusht die Änderungen in den öffentlich
+  sichtbaren Fork. Um die Änderungen ins Projekt-Repo integrieren zu lassen, wird auf dem Server ein
+  sogenannter Merge-Request (Gitlab) bzw. Pull-Request (GitHub) erstellt. Dies erlaubt zusätzlich ein
+  Review und eine Diskussion direkt am Code. Damit man die Änderungen im Hauptprojekt in den eigenen
+  Fork bekommt, trägt man das Hauptprojekt als weiteres Remote in die Workingcopy ein und aktualisiert
+  regelmäßig die Hauptbranches, von denen dann auch die eigenen Feature-Branches ausgehen sollten.
 outcomes:
   - k2: "Git-Workflows für die Zusammenarbeit"
   - k2: "Unterschied zwischen einem Pull/Merge und einem Pull/Rebase"
