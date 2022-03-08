@@ -226,6 +226,13 @@ wollen Sie Ihren aktuellen Themenbranch auf den aktuellen `master` rebasen.
     $ git push origin master      # Pushe lokalen master in das Team-Repo zurück
     $ git rebase master feature   # Rebase feature auf den aktuellen lokalen master
     $ git push -f origin feature  # Push aktuellen feature ins Team-Repo ("-f" wg. geänderter IDs durch rebase)
+
+**Anmerkung**: Dabei können in Ihrem `master` die unschönen "Rauten" entstehen. Wenn
+Sie das vermeiden wollen, tauschen Sie den zweiten und den dritten Schritt und führen
+den Pull gegen den Upstream-`master` als `pull --rebase` durch. Dann müssen Sie Ihren
+lokalen `master` allerdings auch force-pushen in Ihr Team-Repo und die anderen
+Team-Mitglieder sollten darüber informiert werden, dass sich der `master` auf
+inkompatible Weise geändert hat ...
 :::::::::
 
 [Beispiel: Unterschied Pull/Merge vs. Pull/Rebase]{.bsp}
@@ -243,8 +250,9 @@ dem lokalen Mergen wichtige Vorteile: Andere Entwickler sehen den beabsichtigten
 (frühzeitig) und können direkt den Code kommentieren und die vorgeschlagenen Änderungen
 diskutieren, aber auch allgemeine Kommentare abgeben.
 
-Man sollte einen MR/PR immer direkt einem anderen Entwickler zuweisen, was in der Regel
-als Bitte um Review der Änderungen gewertet wird.
+Falls möglich, sollte man einen MR/PR immer dem Entwickler zuweisen, der sich weiter
+um diesen MR/PR kümmern wird (also zunächst ist man das erstmal selbst). Zusätzlich
+kann man einen Reviewer bestimmen, d.h. wer soll sich den Code ansehen.
 
 
 Hier ein Screenshot der Änderungsansicht unseres Gitlab-Servers (SW-Labor):
@@ -268,27 +276,27 @@ Nachfolgend für den selben MR aus der letzten Abbildung noch die reine Diskussi
 1.  MR/PR so zeitig wie möglich aufmachen
     *   Am besten sofort, wenn ein neuer Branch auf den Server gepusht wird!
     *   Ggf. mit dem Präfix "WIP" im Titel gegen unbeabsichtigtes vorzeitiges Mergen
-        sperren ...
+        sperren ... (bei GitHub als "Draft"-PR öffnen)
 2.  Auswahl Start- und Ziel-Branch (und ggf. Ziel-Repo)
-    *   Es gibt verschiedene Stellen, um einen MR zu erstellen. Manchmal kann man nur
+    *   Es gibt verschiedene Stellen, um einen MR/PR zu erstellen. Manchmal kann man nur
         noch den Ziel-Branch einstellen, manchmal beides.
     *   Bitte auch darauf achten, welches Ziel-Repo eingestellt ist! Bei Forks wird
         hier immer das Original-Repo voreingestellt!
-    *   Den Ziel-Branch kann man ggf. auch nachträglich durch Editieren des MR
+    *   Den Ziel-Branch kann man ggf. auch nachträglich durch Editieren des MR/PR
         anpassen (Start-Branch und Ziel-Repo leider nicht, also beim Erstellen aufpassen!).
 3.  Titel (*Summary*): Das ist das, was man in der Übersicht sieht!
     *   Per Default wird die letzte Commit-Message eingesetzt.
     *   Analog zur Commit-Message: Bitte hier unbedingt einen sinnvollen Titel
-        einsetzen: Was macht der MR (kurz)?
-4.  Beschreibung: Was passiert, wenn man diesen MR akzeptiert (ausführlicher)?
+        einsetzen: Was macht der MR/PR (kurz)?
+4.  Beschreibung: Was passiert, wenn man diesen MR/PR akzeptiert (ausführlicher)?
     *   Analog zur Commit-Message sollte hier bei Bedarf die Summary ausformuliert
-        werden und beschreiben, was der MR ändert.
+        werden und beschreiben, was der MR/PR ändert.
 5.  Assignee: Wer soll sich drum kümmern?
     *   Ein MR/PR sollte immer jemanden zugewiesen sein, d.h. nicht "unassigned"
         sein. Ansonsten ist nicht klar, wer den Request durchführen/akzeptieren
         soll.
-    *   Außerdem taucht ein nicht zugewiesener MR nicht in der Übersicht "meiner" MRs
-        auf, d.h. diese MRs haben die Tendenz, vergessen zu werden!
+    *   Außerdem taucht ein nicht zugewiesener MR/PR nicht in der Übersicht "meiner"
+        MR/PR auf, d.h. diese MR/PR haben die Tendenz, vergessen zu werden!
 6.  Diskussion am (und neben) dem Code
     *   Nur die vorgeschlagenen Code-Änderungen diskutieren!
     *   Weitergehende Diskussionen (etwa über Konzepte o.ä.) besser in separaten Issues
@@ -299,7 +307,7 @@ Nachfolgend für den selben MR aus der letzten Abbildung noch die reine Diskussi
     setzen und in die Diskussion einbinden
 
 *Anmerkung*: Bei Gitlab (d.h. auch bei dem Gitlab-Server im SW-Labor) gibt es
-"*Merge-Requests*". Bei Github gibt es "*Pull-Requests*" ...
+"*Merge-Requests*" (MR). Bei Github gibt es "*Pull-Requests*" (PR) ...
 :::::::::
 
 
