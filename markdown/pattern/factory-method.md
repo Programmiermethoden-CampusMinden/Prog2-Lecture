@@ -9,12 +9,9 @@ readings:
   - key: "Gamma2011"
   - key: "Kleuker2018"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+  TODO
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k3: "Entwurfsmuster Factory-Methode anwenden"
 quizzes:
   - link: "XYZ"
 assignments:
@@ -26,27 +23,31 @@ fhmedia:
 ---
 
 
-## Motivation
-Lorem Ipsum. Starte mit H2-Level.
-...
+## Einschub Factory-Method-Pattern
 
-## Folie 2
-...
+![](images/factorymethod.png)
 
-## Folie 3
-...
 
-## Folie 4
-...
+## Hands-On: Ticketautomat (10 Minuten)
 
-## Folie 5
-...
+Implementieren Sie einen Ticketautomaten, der verschiedene Tickets mit
+Hilfe des Factory-Method Entwurfsmusters generiert.
 
-## Folie 6
-...
+\bigskip
+
+*   Nutzer geben Fahrtziel an (und nicht die Ticketart!)
+*   Ticketautomat erstellt passendes Ticket
+    *   User muss nicht die konkreten Ticketarten kennen
+    *   Ticketarten lassen sich leicht austauschen
+
+    => Objekte sollen nicht direkt durch den Nutzer erzeugt werden
+
+[Konsole: factory.FactoryBeispiel]{.bsp}
+
 
 ## Wrap-Up
-...
+
+TODO
 
 
 
@@ -60,9 +61,4 @@ Lorem Ipsum. Starte mit H2-Level.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
