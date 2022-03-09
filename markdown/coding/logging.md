@@ -5,12 +5,8 @@ menuTitle: "Logging"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 1
 readings:
-  - key: "Martin2009"
-  - key: "Dietz2018"
-  - key: "Fowler2011"
-  - key: "Beck2014"
-  - key: "Passig2013"
-  - key: "googlestyleguide"
+  - key: "JDK-Doc"
+    notes: "Kapitel 8: Java Logging Overview"
 tldr: |
   TODO
 outcomes:
