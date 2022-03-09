@@ -7,6 +7,7 @@
 ######################
 .vscode/
 .idea/
+*.iml
 
 
 # Temporary files #
