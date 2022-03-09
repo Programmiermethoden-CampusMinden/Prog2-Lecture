@@ -33,17 +33,33 @@ fhmedia:
 ---
 
 
-## Einschub Factory-Method-Pattern
+## Motivation Ticket-App
+
+*   Nutzer geben Fahrtziel an (und nicht die Ticketart!)
+
+\bigskip
+
+*   Ticket-App bucht passendes Ticket
+    *   User muss nicht die konkreten Ticketarten kennen
+    *   Ticketarten lassen sich leicht austauschen
+
+\bigskip
+\bigskip
+
+=> **Factory-Method-Pattern**: Objekte sollen nicht direkt durch den Nutzer erzeugt werden
+
+
+## Factory-Method-Pattern
 
 ![](images/factorymethod.png)
 
 
-## Hands-On: Ticketautomat (10 Minuten)
+## Hands-On: Ticket-App
 
-Implementieren Sie einen Ticketautomaten, der verschiedene Tickets mit
+Implementieren Sie eine Ticket-App, die verschiedene Tickets mit
 Hilfe des Factory-Method Entwurfsmusters generiert.
 
-\bigskip
+[UML; Konsole: factory.FactoryBeispiel]{.bsp}
 
 *   Nutzer geben Fahrtziel an (und nicht die Ticketart!)
 *   Ticketautomat erstellt passendes Ticket
