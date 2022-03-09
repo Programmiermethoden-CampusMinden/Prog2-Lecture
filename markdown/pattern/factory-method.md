@@ -9,7 +9,17 @@ readings:
   - key: "Gamma2011"
   - key: "Kleuker2018"
 tldr: |
-  TODO
+  Oft ist es wünschenswert, dass Nutzer nicht direkt Objekte von bestimmten Klassen anlegen (können).
+  Hier kann eine "Fabrik-Methode" (**Factory-Method**) helfen, der man die gewünschten Parameter
+  übergibt und die daraus dann das passende Objekt (der richtigen Klasse) erzeugt und zurückliefert.
+
+  Dadurch erreicht man eine höhere Entkoppelung, die Nutzer müssen nur noch das Interface oder die
+  abstrakte Klasse, also den Obertyp des Ergebnisses kennen. Außerdem lassen sich so leicht die
+  konkreten Klassen austauschen.
+
+  Dieses Entwurfsmuster kommt häufig zusammen mit dem _Singleton-Pattern_ vor, wo es nur eine einzige
+  Instanz einer Klasse geben soll. Über eine Fabrik-Methode kann man diese Instanz ggf. erzeugen und
+  dann die Referenz darauf zurückliefern.
 outcomes:
   - k3: "Entwurfsmuster Factory-Methode anwenden"
 quizzes:
