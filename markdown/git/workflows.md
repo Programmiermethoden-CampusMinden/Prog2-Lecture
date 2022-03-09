@@ -47,7 +47,7 @@ fhmedia:
 
 ## Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
 
-![](workflows.images/distributed.png){width="80%"}
+![](images/distributed.png){width="80%"}
 
 
 ::: notes
@@ -66,7 +66,7 @@ Antwort: Workflows mit Git ...
 
 ## Zusammenarbeit: Zentraler Workflow mit Git (analog zu SVN)
 
-![](workflows.images/centralised.png){width="80%"}
+![](images/centralised.png){width="80%"}
 
 ::: notes
 In kleinen Projektgruppen wie beispielsweise Ihrer Arbeitsgruppe wird häufig
@@ -93,7 +93,7 @@ gleichberechtigt und direkt pushen dürfen.
 
 ## Zusammenarbeit: Einfacher verteilter Workflow mit Git
 
-![](workflows.images/workflow.png){width="80%"}
+![](images/workflow_remote.png){width="80%"}
 
 
 ::: notes
@@ -261,7 +261,7 @@ kann man einen Reviewer bestimmen, d.h. wer soll sich den Code ansehen.
 Hier ein Screenshot der Änderungsansicht unseres Gitlab-Servers (SW-Labor):
 :::
 
-![](workflows.images/screenshot_merge-request_code.png){width="80%"}
+![](images/screenshot_merge-request_code.png){width="80%"}
 
 [[Diskussion Merge vs. MR, Live-Demo Gitlab]{.bsp}]{.slides}
 
@@ -269,7 +269,7 @@ Hier ein Screenshot der Änderungsansicht unseres Gitlab-Servers (SW-Labor):
 ::: notes
 Nachfolgend für den selben MR aus der letzten Abbildung noch die reine Diskussionsansicht:
 
-![](workflows.images/screenshot_merge-request_discussion.png){width="80%"}
+![](images/screenshot_merge-request_discussion.png){width="80%"}
 :::
 
 
