@@ -4,7 +4,7 @@ title: "Bounds & Wildcards"
 menuTitle: "Bounds & Wildcards"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 2
-eadings:
+readings:
   - key: "Ullenboom2021"
     comment: "Kapitel 11.3"
   - key: "LernJava"
@@ -15,11 +15,11 @@ eadings:
 tldr: |
   TODO
 
-  *   Ein Wildcard (`?`) als Typparameter steht für einen beliebigen Typ
+  *   Ein Wildcard (`?`) als Typ-Parameter steht für einen beliebigen Typ
     -   Ist in Klasse oder Methode dann aber nicht mehr zugreifbar
-  *   Mit Bounds kann man Typparameter nach oben oder nach unten einschränken
+  *   Mit Bounds kann man Typ-Parameter nach oben oder nach unten einschränken
     (im Sinne einer Vererbungshierarchie)
-    -   `extends`: Der Typparameter muss eine Unterklasse eines bestimmten Typen sein
+    -   `extends`: Der Typ-Parameter muss eine Unterklasse eines bestimmten Typen sein
     -   `super`: Der Typparamenter muss einer Oberklasse eines bestimmten Typen sein
 
 outcomes:
@@ -59,7 +59,7 @@ Cps<String> c;  // Fehler!!!
     ```
 
 ::: notes
-*   Typ-Parameter analog auch mit `super` (nach unten) einschränkbar
+_Anmerkung_: Der Typ-Parameter ist analog auch mit `super` (nach unten) einschränkbar
 
 [Beispiel bounds.Cps]{.bsp}
 :::
@@ -69,7 +69,9 @@ Cps<String> c;  // Fehler!!!
 
 \bigskip
 
-[Wildcard mit "`?`" => steht für unbestimmten Typ]{.cbox}
+::: cbox
+Wildcard mit "`?`" => steht für unbestimmten Typ
+:::
 
 \bigskip
 
@@ -153,7 +155,7 @@ public class X {
 
 => **So gehts auch nicht!** Im Prinzip passt das jetzt
 für `List<A>` und `List<B>`. Dummerweise hat man durch das Wildcard
-keinen Zugriff mehr auf den Typparameter und muss für den Typ der
+keinen Zugriff mehr auf den Typ-Parameter und muss für den Typ der
 Laufvariablen in der `for`-Schleife dann `Object` nehmen. Aber
 `Object` kennt unser `printInfo` nicht ... Außerdem könnte man die
 Methode `X#printInfo` dank des Wildcards auch mit allen anderen
@@ -182,12 +184,15 @@ und hat dann auch wieder die `printInfo`-Methode zur Verfügung ...
 
 ## Wrap-Up
 
-*   Ein Wildcard (`?`) als Typparameter steht für einen beliebigen Typ
+*   Ein Wildcard (`?`) als Typ-Parameter steht für einen beliebigen Typ
     -   Ist in Klasse oder Methode dann aber nicht mehr zugreifbar
-*   Mit Bounds kann man Typparameter nach oben oder nach unten einschränken
+
+\smallskip
+
+*   Mit Bounds kann man Typ-Parameter nach oben oder nach unten einschränken
     (im Sinne einer Vererbungshierarchie)
-    -   `extends`: Der Typparameter muss eine Unterklasse eines bestimmten Typen sein
-    -   `super`: Der Typparameter muss einer Oberklasse eines bestimmten Typen sein
+    -   `extends`: Der Typ-Parameter muss eine Unterklasse eines bestimmten Typen sein
+    -   `super`: Der Typ-Parameter muss einer Oberklasse eines bestimmten Typen sein
 
 
 
