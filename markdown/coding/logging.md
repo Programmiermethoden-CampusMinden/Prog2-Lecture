@@ -10,7 +10,7 @@ readings:
 tldr: |
   Im Paket `java.util.logging` findet sich eine einfache Logging-API.
 
-  Über die Methode `getLogger()` der Klasse `Logger` (*Factory-Method-Pattern**)
+  Über die Methode `getLogger()` der Klasse `Logger` (_Factory-Method-Pattern_)
   kann ein (neuer) Logger erzeugt werden, dabei wird über den String-Parameter
   eine Logger-Hierarchie aufgebaut analog zu den Java-Package-Strukturen. Der
   oberste Logger (der "Root-Logger") hat den leeren Namen.
