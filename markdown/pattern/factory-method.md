@@ -33,7 +33,7 @@ fhmedia:
 ---
 
 
-## Motivation Ticket-App
+## Motivation: Ticket-App
 
 *   Nutzer geben Fahrtziel an (und nicht die Ticketart!)
 
@@ -51,7 +51,7 @@ fhmedia:
 
 ## Factory-Method-Pattern
 
-![](images/factorymethod.png)
+![](images/factorymethod.png){width="80%"}
 
 
 ## Hands-On: Ticket-App
