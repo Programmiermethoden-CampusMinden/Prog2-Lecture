@@ -8,7 +8,29 @@ readings:
   - key: "JDK-Doc"
     notes: "Kapitel 8: Java Logging Overview"
 tldr: |
-  TODO
+  Im Paket `java.util.logging` findet sich eine einfache Logging-API.
+
+  Über die Methode `getLogger()` der Klasse `Logger` (*Factory-Method-Pattern**)
+  kann ein (neuer) Logger erzeugt werden, dabei wird über den String-Parameter
+  eine Logger-Hierarchie aufgebaut analog zu den Java-Package-Strukturen. Der
+  oberste Logger (der "Root-Logger") hat den leeren Namen.
+
+  Jeder Logger kann mit einem Log-Level (Klasse `Level`) eingestellt werden;
+  Log-Meldungen unterhalb des eingestellten Levels werden verworfen.
+
+  Vom Logger nicht verworfene Log-Meldungen werden an den bzw. die Handler des
+  Loggers und (per Default) an den Eltern-Logger weiter gereicht. Die Handler
+  haben ebenfalls ein einstellbares Log-Level und verwerfen alle Nachrichten
+  unterhalb der eingestellten Schwelle. Zur tatsächlichen Ausgabe gibt man einem
+  Handler noch einen Formatter mit. Defaultmäßig hat nur der Root-Logger einen
+  Handler.
+
+  Der Root-Logger (leerer String als Name) hat als Default-Level (wie auch sein
+  Console-Handler) "`Info`" eingestellt.
+
+  Nachrichten, die durch Weiterleitung nach oben empfangen wurden, werden nicht
+  am Log-Level des empfangenden Loggers gemessen, sondern akzeptiert und an die
+  Handler des Loggers und (sofern nicht deaktiviert) an den Elternlogger weitergereicht.
 outcomes:
   - k3: "Nutzung der Java Logging API im Paket `java.util.logging`"
   - k3: "Erstellung eigener Handler und Formatter"
