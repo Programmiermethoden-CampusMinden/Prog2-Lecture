@@ -16,15 +16,15 @@ tldr: |
   TODO
 
   *   Begriffe:
-    *   Generischer Typ: `Stack<T>`{.java}
-    *   Formaler Typ-Parameter: `T`{.java}
-    *   Parametrisierter Typ:`Stack<Long>`{.java}
-    *   Typ-Parameter: `Long`{.java}
-    *   Raw Type: `Stack`{.java}
-  *   Generische Klassen: `public class Stack<E> { }`{.java}
-    *   "`<Typ>`{.java}" hinter Klassennamen
-  *   Generische Methoden: `public <T> T foo(T m) { }`{.java}
-    *   "`<Typ>`{.java}" vor Rückgabewert
+    *   Generischer Typ: `Stack<T>`
+    *   Formaler Typ-Parameter: `T`
+    *   Parametrisierter Typ:`Stack<Long>`
+    *   Typ-Parameter: `Long`
+    *   Raw Type: `Stack`
+  *   Generische Klassen: `public class Stack<E> { }`
+    *   "`<Typ>`" hinter Klassennamen
+  *   Generische Methoden: `public <T> T foo(T m) { }`
+    *   "`<Typ>`" vor Rückgabewert
 
 outcomes:
   - k1: "Begriffe generischer Typ, parametrisierter Typ, formaler Typ-Parameter, Typ-Parameter"
@@ -92,7 +92,7 @@ Vorteile beim Einsatz von Generics:
 
 ## Generische Klassen/Interfaces definieren
 
-*   **Definition**: "`<Typ>`{.java}" hinter Klassennamen
+*   **Definition**: "`<Typ>`" hinter Klassennamen
 
     ```java
     public class Stack<E> {
@@ -103,8 +103,8 @@ Vorteile beim Einsatz von Generics:
     }
     ```
 
-    *   `Stack<E>`{.java} => Generische (parametrisierte) Klasse (auch: "*generischer Typ*")
-    *   `E`{.java} => Formaler Typ-Parameter (auch: "*Typ-Variable*")
+    *   `Stack<E>` => Generische (parametrisierte) Klasse (auch: "*generischer Typ*")
+    *   `E` => Formaler Typ-Parameter (auch: "*Typ-Variable*")
 
 \pause
 \bigskip
@@ -116,8 +116,8 @@ Vorteile beim Einsatz von Generics:
     Stack<Integer> stack = new Stack<Integer>();
     ```
 
-    *   `Integer`{.java} => Typ-Parameter
-    *   `Stack<Integer>`{.java} => Parametrisierter Typ
+    *   `Integer` => Typ-Parameter
+    *   `Stack<Integer>` => Parametrisierter Typ
 
 
 ::::::::: notes
@@ -227,15 +227,15 @@ class Fluppie<T> extends Wuppie<S> { ... }
 ```
 
 ::: notes
-*   Generische Klasse `Foo<T>`{.java} kann nicht selbst vom Typ-Parameter `T`{.java} ableiten (warum?)
-*   Bei Ableiten von generischer Klasse `Wuppie<S>`{.java} muss deren Typ-Parameter `S`{.java} bestimmt sein:
-    etwa durch den Typ-Parameter der ableitenden Klasse, beispielsweise `Fluppie<S>`{.java} (statt `Fluppie<T>`{.java})
+*   Generische Klasse `Foo<T>` kann nicht selbst vom Typ-Parameter `T` ableiten (warum?)
+*   Bei Ableiten von generischer Klasse `Wuppie<S>` muss deren Typ-Parameter `S` bestimmt sein:
+    etwa durch den Typ-Parameter der ableitenden Klasse, beispielsweise `Fluppie<S>` (statt `Fluppie<T>`)
 :::
 
 
 ## Generische Methoden definieren
 
-*   "`<Typ>`{.java}" vor Rückgabetyp
+*   "`<Typ>`" vor Rückgabetyp
 
     ```java
     public class Mensch {
@@ -343,21 +343,21 @@ public class GenericMethods {
 ## Wrap-Up
 
 *   Begriffe:
-    *   Generischer Typ: `Stack<T>`{.java}
-    *   Formaler Typ-Parameter: `T`{.java}
-    *   Parametrisierter Typ:`Stack<Long>`{.java}
-    *   Typ-Parameter: `Long`{.java}
-    *   Raw Type: `Stack`{.java}
+    *   Generischer Typ: `Stack<T>`
+    *   Formaler Typ-Parameter: `T`
+    *   Parametrisierter Typ:`Stack<Long>`
+    *   Typ-Parameter: `Long`
+    *   Raw Type: `Stack`
 
 \smallskip
 
-*   Generische Klassen: `public class Stack<E> { }`{.java}
-    *   "`<Typ>`{.java}" hinter Klassennamen
+*   Generische Klassen: `public class Stack<E> { }`
+    *   "`<Typ>`" hinter Klassennamen
 
 \smallskip
 
-*   Generische Methoden: `public <T> T foo(T m) { }`{.java}
-    *   "`<Typ>`{.java}" vor Rückgabewert
+*   Generische Methoden: `public <T> T foo(T m) { }`
+    *   "`<Typ>`" vor Rückgabewert
 
 
 
