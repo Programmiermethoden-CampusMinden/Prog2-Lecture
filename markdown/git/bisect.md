@@ -10,17 +10,23 @@ readings:
   - key: "AtlassianGit"
   - key: "GitCheatSheet"
 tldr: |
-  Mit Git Bisect kann man durch Halbierungssuche den Commit finden, der einen bestimmten
-  Fehler eingeführt hat. Dazu startet man den Prozess mit `git bisect start` und teilt
-  Git jeweils den letzten bekannten "guten" und den ersten bekannten fehlerhaften Commit
-  mit: `git bisect good <commit>` und `git bisect bad <commit>`. Anschließend sucht Git
-  einen Commit dazwischen und "präsentiert" diesen. Wenn der Commit noch fehlerfrei ist,
-  antwortet man mit `git bisect good`, sonst mit `git bisect bad`. Auf diese Weise grenzt
-  man den Commit ein, der den Fehler eingeführt hat. Man kann die Workingcopy mit
-  `git bisect reset` anschließend wieder zurücksetzen. Der Prozess lässt sich automatisieren
-  mit `git bisect run <my_script> <arguments>`, wobei Git automatisch bei jedem untersuchten
-  Commit das Skript ausführt und entsprechend reagiert (die Rückgabe 0 bedeutet dabei OK, ein
-  anderer Rückgabewert bedeutet Fehler).
+  Mit Git Bisect kann man durch Halbierungssuche den Commit finden, der einen
+  bestimmten Fehler eingeführt hat.
+
+  Dazu startet man den Prozess mit `git bisect start` und teilt Git jeweils den
+  letzten bekannten "guten" und den ersten bekannten fehlerhaften Commit mit:
+  `git bisect good <commit>` und `git bisect bad <commit>`. Anschließend sucht
+  Git einen Commit dazwischen und "präsentiert" diesen in der Workingcopy. Wenn
+  der Commit noch fehlerfrei ist, antwortet man mit `git bisect good`, sonst mit
+  `git bisect bad`. Auf diese Weise grenzt man den Commit ein, der den Fehler
+  eingeführt hat.
+
+  Man kann die Workingcopy mit `git bisect reset` anschließend wieder zurücksetzen.
+
+  Der Prozess lässt sich automatisieren mit `git bisect run <my_script> <arguments>`,
+  wobei Git automatisch bei jedem untersuchten Commit das Skript ausführt und
+  entsprechend reagiert (die Rückgabe 0 bedeutet dabei "OK", ein anderer Rückgabewert
+  bedeutet "Fehler").
 outcomes:
   - k3: "Fehlersuche mit Git Bisect"
 quizzes:
@@ -56,40 +62,23 @@ fhmedia:
 :::::::::
 
 
-\bigskip
-
 1.  Git Bisect initialisieren
 
-    ```sh
-    $ git bisect start
-    $ git bisect good <commit>
-    $ git bisect bad <commit>
-    ```
+        git bisect start
+        git bisect good <commit>
+        git bisect bad <commit>
 
 \smallskip
 
 2.  Git präsentiert einen Commit zwischen `<good commit>` und `<bad commit>`
-    *   Alles OK?
+    *   Alles OK: `git bisect good`
+    *   Fehler vorhanden: `git bisect bad`
 
-        ```sh
-        $ git bisect good
-        ```
-
-    *   Fehler vorhanden?
-
-        ```sh
-        $ git bisect bad
-        ```
-
-    => Git sucht nächsten Commit dazwischen ...
+        => Git sucht nächsten Commit dazwischen ...
 
 \smallskip
 
-3.  Workingcopy zurücksetzen
-
-    ```sh
-    $ git bisect reset
-    ```
+3.  Workingcopy zurücksetzen: `git bisect reset`
 
 [Live-Demo]{.bsp}
 
