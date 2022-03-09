@@ -53,7 +53,7 @@ fhmedia:
 
 ## Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
 
-![](remotes.images/distributed.png){width="80%"}
+![](images/distributed.png){width="80%"}
 
 
 ::: notes
@@ -340,7 +340,7 @@ mitgeben: `git init --bare` ...
 
 ## Hinzufügen eines (weiteren) Remote Repository
 
-![](remotes.images/screenshot_branches.png){width="75%"}
+![](images/screenshot_branches.png){width="75%"}
 
 \vspace{2mm}
 
