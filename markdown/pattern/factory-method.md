@@ -61,19 +61,17 @@ Hilfe des Factory-Method Entwurfsmusters generiert.
 
 [UML; Konsole: factory.FactoryBeispiel]{.bsp}
 
-*   Nutzer geben Fahrtziel an (und nicht die Ticketart!)
-*   Ticketautomat erstellt passendes Ticket
-    *   User muss nicht die konkreten Ticketarten kennen
-    *   Ticketarten lassen sich leicht austauschen
-
-    => Objekte sollen nicht direkt durch den Nutzer erzeugt werden
-
-[Konsole: factory.FactoryBeispiel]{.bsp}
-
 
 ## Wrap-Up
 
-TODO
+*   Konkrete Objekte sollen nicht direkt über Konstruktor erzeugt werden
+*   (Statische) Hilfsmethode, die aus Parameter das "richtige" Objekte erzeugt
+
+\smallskip
+
+*   Vorteil:
+    *   Nutzer kennt nur das Interface
+    *   Konkrete Klassen lassen sich leicht austauschen
 
 
 
