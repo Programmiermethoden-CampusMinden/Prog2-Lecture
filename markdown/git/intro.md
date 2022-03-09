@@ -55,7 +55,7 @@ fhmedia:
 
 ## Folgen SW-Entwicklung ohne Versionsverwaltung
 
-![](intro.images/screenshot_zusammenarbeit_ohne_vcs.png){width=80%}
+![](images/screenshot_zusammenarbeit_ohne_vcs.png){width=80%}
 
 ::: notes
 *   Filesystem müllt voll mit manuell versionierten
@@ -73,7 +73,7 @@ fhmedia:
 :::::: columns
 ::: {.column width="48%"}
 
-![](intro.images/local.png){width="80%" web_width="40%"}
+![](images/local.png){width="80%" web_width="40%"}
 
 :::
 ::: {.column width="50%"}
@@ -94,7 +94,7 @@ fhmedia:
 
 ## Varianten: Zentrale Versionsverwaltung (Beispiel SVN)
 
-![](intro.images/centralised.png){width="80%"}
+![](images/centralised.png){width="80%"}
 
 ::: notes
 Es gibt ein zentrales Repository (typischerweise auf einem Server), von dem die Developer einen
@@ -108,7 +108,7 @@ eine Verbindung zum Server.
 
 ## Varianten: Verteilte Versionsverwaltung (Beispiel Git)
 
-![](intro.images/distributed.png){width="80%"}
+![](images/distributed.png){width="80%"}
 
 ::: notes
 In diesem Szenario hat jeder Developer nicht nur die Workingcopy, sondern auch noch eine Kopie
