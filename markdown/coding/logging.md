@@ -49,6 +49,8 @@ fhmedia:
 
 Paket `java.util.logging`
 
+\bigskip
+
 ![](images/logging.png){width="80%"}
 
 ::: notes
@@ -68,7 +70,7 @@ Log-Level) nach weiteren Kriterien filtern kann.
 [Konsole: logging.LoggingDemo]{.bsp}
 
 
-::: notes
+::::::::: notes
 ## Erzeugen neuer Logger
 
 ```java
@@ -91,7 +93,7 @@ Logger l = Logger.getLogger(MyClass.class.getName());
     *   Spiegelt modulares Design
     *   Ausgaben enthalten automatisch Hinweis auf Herkunft (Lokalität) der Meldung
     *   **Alternativen**: Funktionale Namen wie "XML", "DB", "Security"
-:::
+:::::::::
 
 
 ## Ausgabe von Logmeldungen
@@ -150,7 +152,7 @@ ab `INFO` geloggt? Wer erzeugt eigentlich die Ausgaben?!
 \bigskip
 
 ::: slides
-![](images/logging.png){width="40%"}
+![](images/logging.png){width="60%"}
 :::
 
 \bigskip
@@ -199,7 +201,10 @@ angezeigt (ab `INFO` aufwärts)?!
 ## Wrap-Up
 
 *   Java Logging API im Paket `java.util.logging`
-*   Logger über **Factory-Methode** der Klasse `Logger`
+
+\smallskip
+
+*   Neuer Logger über **Factory-Methode** der Klasse `Logger`
     *   Einstellbares Log-Level (Klasse `Level`)
     *   Handler kümmern sich um die Ausgabe, nutzen dazu Formatter
     *   Mehrere Handler je Logger registrierbar
@@ -221,9 +226,4 @@ angezeigt (ab `INFO` aufwärts)?!
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
