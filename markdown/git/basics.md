@@ -69,7 +69,7 @@ fhmedia:
 
 \bigskip
 
-![](basics.images/workflow.png){width="80%"}
+![](images/workflow.png){width="80%"}
 
 ::: notes
 1.  `git add .` (oder `git add <file>`)
@@ -94,7 +94,7 @@ fhmedia:
 
 \bigskip
 
-![](basics.images/lifecycle.png){width="70%"}
+![](images/lifecycle.png){width="70%"}
 
 \bigskip
 
