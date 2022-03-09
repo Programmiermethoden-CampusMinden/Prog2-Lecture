@@ -3,6 +3,12 @@
 .DS_Store*
 
 
+# IDE generated files #
+######################
+.vscode/
+.idea/
+
+
 # Temporary files #
 ###################
 *~
