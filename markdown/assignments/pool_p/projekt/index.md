@@ -27,5 +27,5 @@ Nach der ersten Woche müssen Sie ein schriftliches Feinkonzept und einen ersten
 
 Nach der zweiten Woche stellen Sie das Ergebnis vor.
 
-Bei der Punktevergabe kommt es nicht nur darauf an, ob Sie Ihr Ziel erreicht haben, sondern auch darauf, ob Sie die Ihnen bekannten Maßnahmen zur Einhaltung der Softwarequalität genutzt haben (Testfälle, Logging, Code-Style). Auch Ihre schriftliche Ausarbeitung fließt in die Punktevergabe mit ein.
+Bei der Punktevergabe kommt es nicht nur darauf an, ob Sie Ihr Ziel erreicht haben, sondern auch darauf, ob Sie die Ihnen bekannten Maßnahmen zur Einhaltung der Softwarequalität genutzt haben (Testfälle, Logging, Code-Style). Auch die Qualität Ihrer schriftlichen Ausarbeitung fließt in die Punktevergabe mit ein.
 
