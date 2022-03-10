@@ -93,7 +93,9 @@ D.h. irgendwer muss sich dann mit Ihren Bugs herumärgern -- vermutlich sogar Si
 > \hfill -- [John F. Woods](https://groups.google.com/g/comp.lang.c++/c/rYCO5yn4lXw/m/oITtSkZOtoUJ)
 
 ::: notes
-Siehe auch [OSCON](https://twitter.com/andypiper/status/490952891058757632) ...
+Dieses Zitat taucht immer mal wieder auf, beispielsweise auf der [OSCON 2014](https://twitter.com/andypiper/status/490952891058757632) ...
+Es scheint aber tatsächlich, dass [John F. Woods](https://groups.google.com/g/comp.lang.c++/c/rYCO5yn4lXw/m/oITtSkZOtoUJ)
+die ursprüngliche Quelle war (vgl. [Stackoverflow: 876089](https://stackoverflow.com/questions/876089/who-wrote-this-programing-saying-always-code-as-if-the-guy-who-ends-up-maintai#878436)).
 :::
 
 ::: notes
@@ -203,7 +205,7 @@ Version nicht mehr weiterentwickelt wird.
 :::
 ::: {.column width="50%"}
 
-![](images/newJUnit.png){width=80% web_width=60%}
+![](images/newJUnit.png){width=80% web_width=40%}
 
 :::
 ::::::
@@ -331,7 +333,7 @@ import static packageName.className.*;
 :::::: columns
 ::: {.column width="55%"}
 
-![](images/junitErgebnis.png){width=80% web_width=60%}
+![](images/junitErgebnis.png){width=80% web_width=40%}
 
 :::
 ::: {.column width="44%"}
@@ -458,7 +460,7 @@ public void testBsp() {
 :::
 ::: {.column width="48%"}
 
-![](images/junitIgnore.png){width=80% web_width=60%}
+![](images/junitIgnore.png){width=80% web_width=40%}
 
 :::
 ::::::
@@ -493,7 +495,7 @@ void testTestDauerlaeufer() {
 :::
 ::: {.column width="44%"}
 
-![](images/junitIgnore.png){width=80% web_width=60%}
+![](images/junitIgnore.png){width=80% web_width=40%}
 
 :::
 ::::::
