@@ -1,0 +1,19 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>330</x><y>90</y><w>150</w><h>60</h></coordinates><panel_attributes>Hund
+--
+bellen()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>230</x><y>190</y><w>100</w><h>50</h></coordinates><panel_attributes>Husky
+--
+bellen()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>190</y><w>100</w><h>50</h></coordinates><panel_attributes>Bulldogge
+--
+bellen()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>120</x><y>260</y><w>100</w><h>50</h></coordinates><panel_attributes>Note..
+bg=light_gray
+bellt leise</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>230</y><w>80</w><h>50</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>60;10;10;30</additional_attributes></element><element><id>UMLNote</id><coordinates><x>320</x><y>280</y><w>100</w><h>50</h></coordinates><panel_attributes>Note..
+bg=light_gray
+knurrt fies</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>230</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>190</y><w>100</w><h>50</h></coordinates><panel_attributes>Fiffy
+--
+bellen()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>480</x><y>280</y><w>100</w><h>50</h></coordinates><panel_attributes>Note..
+bg=light_gray
+fiept</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>500</x><y>230</y><w>60</w><h>70</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;40;50</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>140</y><w>110</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>140</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>140</y><w>90</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;50</additional_attributes></element></diagram>
