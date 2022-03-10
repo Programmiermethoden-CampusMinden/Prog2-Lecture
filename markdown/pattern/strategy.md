@@ -152,8 +152,8 @@ Implementieren Sie das Strategie-Muster für eine Übersetzungsfunktion:
 
 [Fragen:]{.notes}
 
-a)  Wie muss das Pattern angepasst werden?
-b)  Wie sieht die Implementierung aus?
+1.  Wie muss das Pattern angepasst werden?
+2.  Wie sieht die Implementierung aus?
 
 
 ## Auflösung
@@ -166,6 +166,8 @@ b)  Wie sieht die Implementierung aus?
 ## Wrap-Up
 
 Strategy-Pattern: Verhaltensänderung durch Delegation an passendes Objekt
+
+\smallskip
 
 *   Interface oder abstrakte Klasse als Schnittstelle
 *   Konkrete Klassen implementieren Schnittstelle => konkrete Strategien
