@@ -15,7 +15,7 @@ Ein Projekt hat eine Laufzeit von **zwei** Wochen. In dieser Zeit bearbeiten Sie
 
 Sie können insgesamt zwei Projekte durchführen, müssen aber mindestens eines durchführen.
 
-Um den pool_p erfolgreich zu absolvieren, müssen sie mindestens 15-Punkte holen.
+Um den `[Pool P]({{<ref "/assignments/pool_p" >}})`{=markdown} erfolgreich zu absolvieren, müssen sie hier **mindestens 15 Punkte** erreichen.
 
 Sie können die Projekte erst ab dem xx.xx (nach dem ersten E-Assesment) starten.
 
