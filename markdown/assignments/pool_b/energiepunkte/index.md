@@ -1,15 +1,24 @@
 ---
 type: assignment
-title: "Energiepunkte"
+title: "Game-Over"
 author: "Andre Matutat (FH Bielefeld)"
 points: 1
-weight: 1
+weight: 3
 hidden: true
 ---
 
+## Ziel
+
+In dieser Aufgabe implementieren Sie den Spieler Tot.
+
+## Voraussetzung
+
+Um die Aufgabe lösen zu können, brauchen Sie `["Monster"]({{< ref "/assignments/pool_b/monster" >}})`{=markdown} und ein beliebiges `["Kampfsystem"]({{< ref "/assignments/pool_b/nahkampf" >}})`{=markdown}.
 
 ## Energiepunkte
 
--   Erweitern Sie den Helden um Lebenspunkte. Verliert der Held all seine Lebenspunkte, ist das Spiel beendet.
--   Lebenspunkte werden initial vergeben. Lebenspunkte können aufgefrischt werden, beispielsweise bei einem erfolgreichen Kampf ...
--   Wenn der Held stirbt, soll "Game Over" ausgegeben werden und das Spiel auf Tastendruck neugestartet werden.
+Erweitern Sie den Helden um Lebenspunkte. Im Kampf kann der Held Lebenspunkte verlieren. Hat der Held all seine Lebenspunkte, ist das Spiel beendet.
+
+Lebenspunkte werden initial vergeben. Lebenspunkte können aufgefrischt werden, beispielsweise bei einem erfolgreichen Kampf.
+
+Wenn der Held stirbt, soll "Game Over" ausgegeben werden und das Spiel auf Tastendruck neu gestartet werden.
