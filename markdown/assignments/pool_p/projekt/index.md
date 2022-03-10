@@ -17,7 +17,7 @@ Sie können insgesamt zwei Projekte durchführen, müssen aber mindestens eines 
 
 Um den `[Pool P]({{<ref "/assignments/pool_p" >}})`{=markdown} erfolgreich zu absolvieren, müssen sie hier **mindestens 15 Punkte** erreichen.
 
-Sie können die Projekte erst ab dem xx.xx (nach dem ersten E-Assesment) starten.
+Sie können die Projekte erst ab Woche 9 (d.h. ab KW22, also in der Woche nach dem ersten E-Assessment) starten.
 
 Sie müssen das Projekt vorher mit ??? absprechen. Bereiten Sie dafür ein kurzes Konzept vor und erklären Sie, was Sie machen möchten, wie Sie dabei vorgehen wollen und welche Probleme/Fragen es gibt. Melden Sie sich bitte frühzeitig.
 
