@@ -11,7 +11,7 @@ hidden: true
 
 Während des Projektes sollen Sie sich ein größeres Feature für Ihren Dungeon überlegen, konzeptionieren und implementieren.
 
-Ein Projekt hat eine Laufzeit von 2 Wochen. In dieser Zeit bearbeiten Sie nur die Aufgaben aus dem pool_k und Ihr Projekt. Andere Pool-Aufgaben müssen Sie nicht parallel bearbeiten.
+Ein Projekt hat eine Laufzeit von **zwei** Wochen. In dieser Zeit bearbeiten Sie nur die Aufgaben aus dem `[Pool K]({{<ref "/assignments/pool_k" >}})`{=markdown} und Ihr Projekt. Andere Pool-Aufgaben müssen Sie nicht parallel bearbeiten.
 
 Sie können insgesamt zwei Projekte durchführen, müssen aber mindestens eines durchführen.
 
