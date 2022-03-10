@@ -7,84 +7,141 @@ hidden: true
 ---
 
 
-## Prüfungsform: Parcours-Prüfung, 5 ECTS
+## Prüfungsform: Performanzprüfung, 5 ECTS
 
--   Stationen 1-5: Erfolgreiche Bearbeitung der Aufgabenblätter
--   Station 6+7: Mündliche Prüfung mit je 30 Minuten Dauer
--   Station 8: Vortrag mit 45 Minuten Dauer
+-   **Praktische Teilleistung**:
+    *   4x normales Blatt (3er Teams, **P**räsentation der Lösung im Praktikum) mit je 10P
+    *   3x **F**ingerübungen (3er Teams, Upload der Lösung mit Lerntagebuch (keine Präsentation)) mit je 5P
+    *   2x **E**inzelblatt (als E-Assessment, Einzelbearbeitung, online) mit je 15P
 
-**Gesamtnote: Mittelwert(mdl. Prüfung I, mdl. Prüfung II, Vortrag)**
+    \smallskip
+
+    -   85P Gesamt, 15P Puffer => “Krankheitsregelung”, 70P == 100%
+    -   4.0: ab 60% (42.0P), alle 4% nächste Teilnote, 1.0: ab 96% (67.2P)
+
+\smallskip
+
+-   **Theoretische Teilleistung**: (digitale) Klausur in Prüfungsphase
+
+\bigskip
+
+-   **Gesamtnote: Mittelwert der beiden Teilleistungen**
+
+[Hinweis Abgabeslots, Präsenz/Online]{.bsp}
 
 
 ### Parcours-Prüfung: Was ist das?
 
-Sie legen die **Prüfung in mehreren Stationen** zurück und sammeln jeweils Teilnoten, die
-gemittelt in **eine Gesamtnote** für das Modul münden.
+Die Performanzprüfung besteht aus zwei Teilprüfungen, die Sie unabhängig voneinander absolvieren
+können: der **praktischen Teilleistung** und der **theoretischen Teilleistung**. Dies sind zwei
+getrennte Prüfungsleistungen, für die Sie sich **jeweils separat im LSF** anmelden müssen. Sie
+bekommen als Note für das Modul den Mittelwert aus den beiden Teilleistungen.
 
-Um eine Note und die Credit-Points zu erhalten, müssen Sie sich (wie bei allen anderen
-Prüfungen) für die Gesamtprüfung im LSF anmelden.
+Diese Prüfungsform gilt automatisch für alle Studierenden in Programmiermethoden, die nicht bereits
+früher unter einer anderen Prüfungsform in Programmiermethoden eine Prüfungsleistung abgelegt oder
+begonnen haben (vgl. auch "Regelung für Wiederholer").
 
-Die Parcours-Prüfung im W21 in Compilerbau setzt sich aus insgesamt 8 Stationen zusammen:
-Die ersten fünf Stationen entsprechen der erfolgreichen Bearbeitung der Aufgabenblätter.
-Die Stationen 6 und 7 werden als mündliche Prüfungen durchgeführt, Station 8 wird als
-Vortrag durchgeführt.
+### Praktische Teilleistung (Praktikum)
 
-Für die beiden mündlichen Prüfungen und den Vortrag gibt es je eine Teilnote, wobei der
-Mittelwert der drei Teilnoten am Ende die Gesamtnote ergibt.
+Diese Prüfungsleistung absolvieren Sie im Praktikum.
 
-Eine nicht bestandene Teilprüfung/Station (Aufgabenblätter, mdl. Prüfungen) führt zur
-Gesamtnote "nicht bestanden".
+Es wird in diesem Semester drei verschiedene Typen von Aufgabenblättern/Stationen geben mit
+unterschiedlicher Gewichtung und Bearbeitung:
 
-### Stationen 1-5: "Aufgabenblätter"
+*   4x normales Blatt (3er Teams, **P**räsentation der Lösung im Praktikum) mit je 10P
+*   3x **F**ingerübungen (3er Teams, Upload der Lösung mit Lerntagebuch (keine Präsentation)) mit je 5P
+*   2x **E**inzelblatt (E-Assessment, Einzelbearbeitung, online) mit je 15P
 
-Die 5 Aufgabenblätter werden in 2er Teams als Hausaufgabe vor dem jeweiligen Praktikum
-gelöst, die Lösung muss jeweils vor Ablauf der Abgabefrist in die entsprechende ILIAS-Aufgabe
-hochgeladen werden (je Team ein Zip mit den kommentierten Sourcen ins ILIAS hochladen und
-alle Team-Mitglieder in der Abgabe mit eintragen).
+Beachten Sie die "Regeln zur Bearbeitung der Aufgaben", die sich auf die Inhalte und die formalen
+Aspekte Ihrer Abgaben beziehen.
 
-In jeder Praktikumssitzung stellen die Teams ihre Lösung den anderen Teams in Form eines
-ca. 20-minütigen "Walk-Through" vor. Die anderen Teams stellen dazu Fragen und denken sich
-Beispiele aus, auf die die vorgestellte Lösung angewendet wird.
+#### "Normale" Übungsblätter (P)
+Die "normalen Übungsblätter" bearbeiten Sie in selbstgewählten Teams zu je drei Personen zu Hause,
+laden die Lösung vor der Deadline ins ILIAS hoch und stellen Ihre Lösung im Praktikum vor. Dazu
+wird im ersten Praktikum ein individueller Abgabeslot vereinbart.
 
-Die erfolgreiche Bearbeitung der Aufgabenblätter ist Bestandteil der Parcoursprüfung, ergibt
-aber keine eigene Teilnote. (Wir wollen nicht den Lernprozess bewerten!) Ab mind. 4 erfolgreich
-bearbeiteten Aufgabenblättern gilt diese Station als "bestanden".
+Die Punkte bekommen Sie dann für die Qualität der hochgeladenen Lösung und Ihrer Erklärung/Vorstellung
+im Praktikum, d.h. wenn Sie eine perfekte Lösung hochladen, diese aber nicht erklären können bzw. nicht
+zur Vorstellung erscheinen, können Sie keine Punkte bekommen.
 
-Für das Bestehen der Gesamtprüfung ist die erfolgreiche Bearbeitung der Station
-"Aufgabenblätter" erforderlich.
+#### "Fingerübungen" (F)
+Die "Fingerübungen" sind ebenfalls in 3er Teams zu bearbeiten. Die Lösung ist zusammen mit einem
+**Lerntagebuch** (vgl. Programmiermethoden im S21) vor der Abgabefrist ins ILIAS hochzuladen.
 
-**Achtung**: Wer angibt, eine Aufgabe gelöst zu haben, aber im Praktikum nicht
-(oder zu spät) erscheint oder die Lösung im Praktikum nicht vorstellen kann/will,
-bekommt das gesamte Übungsblatt als "nicht bestanden" testiert!
+Das Team wird die Lösung offline bewerten, dabei werden auch automatisierte Tests benutzt. Ohne
+Lerntagebuch gibt es keine Punkte.
 
-### Stationen 6+7: "mdl. Prüfung"
+Eine Vorstellung der Lösung erfolgt bei diesen kleineren Blättern nicht. Sie brauchen als hier
+nicht zum Praktikum kommen.
 
-Die beiden mündlichen Prüfungen (Termine siehe `[Fahrplan]({{< ref "/org/schedule" >}})`{=markdown})
-werden einzeln pro Teilnehmer durchgeführt und dauern ca. 30 Minuten. Wir vereinbaren rechtzeitig
-vorher individuelle Zeitslots an den beiden Prüfungstagen mit Ihnen. Die Prüfungen erfolgen
-über Zoom.
+#### "Einzelblätter" (E)
+Die "Einzelblätter" werden als kurzes E-Assessment im Home-Office durchgeführt. Die Aufgaben sind
+einzeln zu bearbeiten. Die Bearbeitungsdauer beträgt jeweils 30 Minuten und erfolgt zu **Beginn des
+Vorlesungsslots** in der jeweiligen Woche.
 
-Beide Prüfungen können sich auch auf Stoff beziehen, der durch die Bearbeitung der vorangegangenen
-Aufgabenblätter erarbeitet wurde.
+**Hinweis**: Diese beiden kurzen E-Assessments zählen als Übungsblätter und ersetzen nicht die Klausur
+am Ende des Semesters für die theoretische Teilleistung!
 
-**Hinweis**: **Die zweite mündliche Prüfung kann abweichend vom `[Fahrplan]({{< ref "/org/schedule" >}})`{=markdown}
-auch im zweiten Prüfungszeitraum durchgeführt werden.**
+### Praktikum: Zeitslots, Präsenz vs. Home-Office
 
-### Stationen 8: "Vortrag"
+Das erste Praktikum (Vorstellung der Lösung von Blatt 01) erfolgt für alle in Präsenz.
 
-Es stehen verschiedene Vortragsthemen zur Auswahl (Termine siehe `[Fahrplan]({{< ref "/org/schedule" >}})`{=markdown}).
+~~Wir werden dort mit jedem Team einen individuellen Abgabeslot in Ihrer Praktikumszeit vereinbaren,
+damit Sie in die nächsten Abgaben zielgerichtet zu Ihrer Abgabe kommen.~~ Über die Etherpads im ILIAS
+haben Sie einen individuellen Abgabeslot in Ihrer Praktikumszeit vereinbart, zu dem Sie zielgerichtet
+zu Ihrer Abgabe kommen.
 
-Die Vorträge werden in der Regel als Einzelvortrag mit ca. 45 Minuten Dauer in deutscher Sprache
-gehalten. Ausnahme ist der Vortrag zu Bison, der von zwei Personen in englischer Sprache und mit
-doppelter Länge durchgeführt wird (Teilnahme der kanadischen Studierenden).
+Um Studierenden, die dem kurzfristigen Wechsel zur Präsenz nicht folgen können, die Studierbarkeit
+des Moduls zu ermöglichen, vereinbaren wir in der ersten Abgabe mit jedem Team, ob Sie Ihre
+Präsentation in Zukunft in Präsenz oder online aus dem Home-Office durchführen wollen. Teams, die
+eine Änderung des vereinbarten Modus wünschen, geben dies mindestens 3 Tage vor der Präsentation
+per E-Mail an BC George bzw. André Matutat bekannt.
 
-### Praktikum: Verspätete Abgaben
+### Praktikum: Verspätete Abgaben, Krankheit
 
 Es gibt keine verspäteten Abgaben. Das sind 0P.
 
-Bei Krankheit/familiären Notfällen: Setzen Sie sich **zeitnah** und **selbstständig** mit den
-Dozenten in Verbindung. "Zeitnah" bedeutet: Nehmen Sie noch vor dem Praktikum den Kontakt auf.
-Je nach Situation vereinbaren wir einen kurzfristigen Sondertermin als Ersatz für die verpasste
-Praktikums-Station (mündliche Prüfung). Diese Regelung kann pro Person **einmal pro Semester**
-genutzt werden. Wenn die persönliche Ausnahmesituation länger vorliegen sollte, müssen ggf. andere
-Lösungen gefunden werden, um das Semester erfolgreich abschließen zu können.
+Bei Krankheit/familiären Notfällen: Es sind insgesamt 15 Punkte als "Puffer" für Notfälle oder
+Krankheitsfälle eingeplant. Sie könnten also bei einem Einzelblatt ("E-Assessment", 15P) oder
+einem normalen Praktikumsblatt (10P) plus einer "Fingerübung" (5P) oder bei allen drei
+"Fingerübungen (die mit den 5P) fehlen und immer noch eine 1.0 erreichen.
+
+Wenn die persönliche Ausnahmesituation länger vorliegen sollte, müssen ggf. andere Lösungen
+gefunden werden, um das Semester erfolgreich abschließen zu können. Nehmen Sie in diesem Fall
+zeitnah Kontakt zum Dozenten auf.
+
+### Theoretische Teilleistung (Klausur)
+
+Die theoretische Teilleistung absolvieren Sie als separate Prüfungsleistung im Prüfungszeitraum.
+In diesem Semester werden dazu im ersten und im zweiten Prüfungszeitraum jeweils E-Assessments
+(digitale Klausuren) mit je 90 Minuten Dauer angeboten.
+
+Es wird jeweils rechtzeitig vor der Klausur bekanntgegeben, ob diese wie bisher im Home-Office
+durchgeführt wird oder ob dafür Rechner der FH genutzt werden, d.h. eine Anwesenheit in den
+Räumen der FH notwendig ist. Die Termine werden rechtzeitig vom Prüfungsamt bekannt gegeben.
+
+
+## Regelung für Wiederholer
+
+### Wiederholer mit Performanzprüfung
+
+Wer bereits früher in Programmiermethoden eine Prüfungsleistung unter der Prüfungsform
+"Performanzprüfung" abgelegt hat und diese Prüfung noch nicht abgeschlossen hat, belegt
+die fehlenden Teilleistungen in diesem Semester.
+
+Wenn Ihnen die **theoretische Teilleistung** fehlt, dann nehmen Sie an der Klausur teil.
+Wenn bei Ihnen die **praktische Teilleistung** noch offen ist, nehmen Sie entsprechend am
+Praktikum teil. Melden Sie sich für die jeweilige Teilleistung im LSF an.
+
+### Wiederholer mit Parcours-Prüfung
+
+Wer bereits früher in Programmiermethoden eine Prüfungsleistung unter der Prüfungsform
+"Parcours-Prüfung" abgelegt hat und diese Prüfung noch nicht abgeschlossen hat, belegt
+in diesem Semester sowohl das **Praktikum** als auch die **Klausur**.
+
+Sie bekommen auf beide Teile eine (interne) Teilnote, die gemittelt die Note in der
+Parcours-Prüfung ergeben.
+
+Sie müssen sich entsprechend im LSF sowohl für die **praktische Teilleistung** als auch
+für die **theoretische Teilleistung** anmelden. Bitte melden Sie sich zusätzlich zeitnah
+per E-Mail beim Dozenten.
