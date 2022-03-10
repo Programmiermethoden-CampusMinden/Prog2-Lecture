@@ -4,55 +4,52 @@ title: "Ressourcen"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 4
 hidden: true
+nocite: |
+  @Ullenboom2021,@Chacon2014,@Fowler2011,@Bloch2018,@Martin2009,@Passig2013,@Urma2014
 ---
-
-
-@Bloch2018
-@Chacon2014
-@Dietz2018
-@Nissen1997
-...
 
 
 ## Was brauche ich? Literatur ...
 
 ### Basics ("Must Have"!)
 
-1.  "**Compiler: Prinzipien, Techniken und Werkzeuge**": @Aho2008
-2.  "**Crafting Interpreters**": @Nystrom2021
+1.  "**Java ist auch eine Insel**": @Ullenboom2021
+2.  "**Pro Git**": @Chacon2014
+3.  "**Java Core Libraries Developer Guide**": @JDK-Doc
+4.  "**The Java Tutorials**": @Java-SE-Tutorial
 
 ### Weitere empfohlene Literatur
 
-Ergänzend zum @Aho2008 empfiehlt sich ein Blick in @Mogensen2017 und @Watson2017, wo ebenfalls beinahe
-alle Themen (auf etwas einfacherem Niveau) besprochen werden.
+Schauen Sie auch in die offizielle Dokumentation von Oracle rein, etwa "Java 11 Documentation"
+(@Java-11-documentation) oder "The Java Tutorials (JDK11)" (@Java-11-tutorial) und "The Java Tutorials (JDK8)"
+(@Java-SE-tutorial, noch Java 8, passt aber für die meisten Dinge).
 
-Zur Vertiefung sei @Grune2012 als eine moderne Variante zum Drachenbuch empfohlen. Ebenfalls sehr interessant
-ist @Torczon2012, wobei hier der Fokus allerdings sehr stark auf dem Backend liegt. Ein weiteres gutes Buch
-zum Thema Compilerbau ist @Wirth2011.
+Joshua Bloch, einer der "Väter" von Java, hat eine interessante Sammlung von Rezepten für
+typische Probleme und wie man diese am sinnvollsten in Java lösen kann gesammelt: @Bloch2018
+bzw. @Bloch2011 (ältere Version). Mit @Inden2013 gibt es ein extrem umfangreiches Nachschlagewerk
+zu (fast) allen Themen in Java (wird gelegentlich aktualisiert).
 
-Zum Thema "Formale Sprachen" wird auf @Wagenknecht2014 und @Schoening2009 verwiesen.
+Mit Java 8 wurden einige interessante Features eingeführt wie etwa Lambda-Ausdrücke und
+Funktionsinterfaces. Hierzu ist @Urma2014 eine gute Quelle. Für das Update auf Java 9 kann
+man sich @Juneau2017 anschauen.
 
-Zu ANTLR sei auf die Online-Dokumentation [github.com/antlr](https://github.com/antlr/antlr4) verwiesen
-sowie auf @Parr2014. Dort gibt der Autor eine Einführung in ANTLR und geht u.a. auch auf LL-Parsing und
-Symboltabellen ein. @Parr2010 ist ebenfalls interessant in Bezug auf die Erläuterungen zum Lexing und
-(LL-) Parsing, allerdings bezieht sich das Buch in den Beispielen auf eine veraltete ANTLR-Version.
 
-Speziell zu Flex und Bison sei auf @Levine2009 verwiesen.
+Mit @Passig2013 ist ein wunderbar launiges Buch erschienen, wo typische Code-Smells diskutiert
+werden (wobei man manche Standpunkte hinterfragen sollte). Ein Standardwerk zu diesem Thema
+ist @Martin2009.
 
-In @Ball2018a und @Ball2018b wird für eine kleine künstliche Sprache *Monkey* jeweils ein Interpreter und ein
-Compiler in Go entwickelt. (Achtung: Das ist ein relativ praktisches Vorgehen, hier findet sich kaum Theorie!)
-Wer sich für Haskell interessiert, findet den passenden Beispielcode (für den Interpreter-Teil) in
-[github.com/utatti/monkey-hs](https://github.com/utatti/monkey-hs).
-Analog wird in @Clausing2011 für verschiedene Sprachen (imperativ, objektorientiert, funktional: Mini-C,
-Mini-Java, Mini-Lisp) ein Interpreter in Java geschrieben. Um den Interpreter einfach zu halten, wird für die
-betrachteten Sprachen allerdings jeweils eine Scheme-ähnliche Syntax (und nicht die übliche) eingesetzt.
-@Nystrom2021 entwickelt ebenfalls einen Interpreter für eine fiktive Sprache.
+Zum Thema Refactoring ist @Fowler2011 DIE Referenz.
 
-Bei Interesse an Sprachkonzepten und der entsprechenden Umsetzung im Compilerbau erscheinen @Clausing2011,
-@Lee2017, @Sestoft2017 und @Scott2016 interessant.
+Wer Interesse an UML und/oder Designpattern hat, sollte in @Oestereich2012 sowie @UML25 und
+@Gamma2011 sowie @Eilebrecht2013 schauen.
 
-Unter @Alhour2018 findet sich eine kuratierte Liste mit interessanten Hinweisen, Projekten und Literatur zum
-Thema Compilerbau. Lohnenswert!
+Zum Thema Unit-Test seien @vogellaJUnit, @junit4, @fernunihagenJunit, @Osherove2014 und
+@Beck2014 empfohlen.
+
+Zum Thema Coding Conventions sind @SunMicrosystems1997 und @googlestyleguide gute Referenzen.
+
+Hier noch eine Sammlung von Gedanken zum Berufsverständnis von Informatikern: @AtlassianHelloWorld.
+
 
 **Hinweis**: Am Ende einer Vorlesung wird noch einmal spezifisch zum Thema passende Literatur empfohlen.
 
