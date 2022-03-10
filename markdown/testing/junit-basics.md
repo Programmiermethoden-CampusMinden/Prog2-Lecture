@@ -53,7 +53,7 @@ sketch: true
 
 ## Software-Fehler und ihre Folgen
 
-![](images/swfehler.png)
+![](images/swfehler.png){width="80%"}
 
 [Ursachen für Fehler?]{.bsp}
 
@@ -92,7 +92,7 @@ D.h. irgendwer muss sich dann mit Ihren Bugs herumärgern -- vermutlich sogar Si
 >
 > \hfill -- [John F. Woods](https://groups.google.com/g/comp.lang.c++/c/rYCO5yn4lXw/m/oITtSkZOtoUJ)
 
-:::
+::: notes
 Siehe auch [OSCON](https://twitter.com/andypiper/status/490952891058757632) ...
 :::
 
@@ -203,9 +203,7 @@ Version nicht mehr weiterentwickelt wird.
 :::
 ::: {.column width="50%"}
 
-\hspace*{2mm}
-
-![](images/newJUnit.png)
+![](images/newJUnit.png){width=80% web_width=60%}
 
 :::
 ::::::
@@ -240,11 +238,11 @@ herunter und bindet sie in das Projekt ein.
 :::
 
 
-## JUnit 4+5: Definition von Tests mit _@Test_
+## JUnit 4+5: Definition von Tests
 
-::: notes
 Annotation `@Test` vor Testmethode schreiben
-:::
+
+\bigskip
 
 ```java
 import org.junit.Test;
@@ -333,7 +331,7 @@ import static packageName.className.*;
 :::::: columns
 ::: {.column width="55%"}
 
-![](images/junitErgebnis.png)
+![](images/junitErgebnis.png){width=80% web_width=60%}
 
 :::
 ::: {.column width="44%"}
@@ -410,7 +408,7 @@ In JUnit 5 wurden die Namen dieser Annotationen leicht geändert:
 
 
 ::: notes
-### Beispiel für den Einsatz von _@Before_
+### Beispiel für den Einsatz von `@Before`
 
 Annahme: **alle/viele** Testmethoden brauchen **neues** Objekt `x` vom Typ `Studi`
 
@@ -460,9 +458,7 @@ public void testBsp() {
 :::
 ::: {.column width="48%"}
 
-\hspace*{2mm}
-
-![](images/junitIgnore.png)
+![](images/junitIgnore.png){width=80% web_width=60%}
 
 :::
 ::::::
@@ -485,6 +481,8 @@ mit dem Grund für das Ignorieren des Tests hinterlegen.
 :::::: columns
 ::: {.column width="52%"}
 
+\vspace{6mm}
+
 ```java
 @Test(timeout = 2000)
 void testTestDauerlaeufer() {
@@ -495,9 +493,7 @@ void testTestDauerlaeufer() {
 :::
 ::: {.column width="44%"}
 
-\hspace*{2mm}
-
-![](images/junitIgnore.png)
+![](images/junitIgnore.png){width=80% web_width=60%}
 
 :::
 ::::::
