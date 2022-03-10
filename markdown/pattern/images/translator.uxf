@@ -2,7 +2,7 @@
 ITranslator
 --
 +translate(String): String
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>260</y><w>170</w><h>70</h></coordinates><panel_attributes>StratEx
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>260</y><w>170</w><h>70</h></coordinates><panel_attributes>TranslatorExample
 --
 --
 +getMessage(): String
@@ -16,7 +16,7 @@ ITranslator
 r2=-translator</panel_attributes><additional_attributes>10;20;190;20</additional_attributes></element><element><id>UMLNote</id><coordinates><x>240</x><y>70</y><w>280</w><h>150</h></coordinates><panel_attributes>Note..
 bg=light_gray
 
-StratEx(ITranslator t) {
+TranslatorExample(ITranslator t) {
     translator = t;
 }
 public String getMessage() {

@@ -18,10 +18,10 @@ class ES implements ITranslator {
     }
 }
 
-class Translator {
+class TranslatorExample {
     private final ITranslator translator;
 
-    Translator(ITranslator t) {
+    TranslatorExample(ITranslator t) {
         translator = t;
     }
 
@@ -31,10 +31,10 @@ class Translator {
 
     // Test des Uebersetzers
     public static void main(String[] args) {
-        Translator j = new Translator(new DE());
+        TranslatorExample j = new TranslatorExample(new DE());
         j.getMessage(); // Ausgabe in deutscher Sprache
 
-        Translator k = new Translator(new ES());
+        TranslatorExample k = new TranslatorExample(new ES());
         k.getMessage(); // Ausgabe in spanischer Sprache
     }
 }

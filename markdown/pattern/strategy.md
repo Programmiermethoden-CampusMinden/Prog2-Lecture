@@ -41,7 +41,7 @@ sketch: true
 
 ## Wie kann man das Verhalten einer Klasse dynamisch ändern?
 
-![](images/hunde.png){width="80%"}
+![](images/hunde.png){width="60%"}
 
 ::: notes
 Modellierung unterschiedlicher Hunderassen: Jede Art bellt anders.
@@ -160,7 +160,7 @@ b)  Wie sieht die Implementierung aus?
 
 ![](images/translator.png){width="80%"}
 
-[Konsole Translator.java]{.bsp}
+[Konsole TranslatorExample.java]{.bsp}
 
 
 ## Wrap-Up
