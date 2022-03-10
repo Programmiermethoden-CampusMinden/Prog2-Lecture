@@ -2,15 +2,31 @@
 type: assignment
 title: "Shop"
 author: "Andre Matutat (FH Bielefeld)"
-points: 4
-weight: 1
+points: 10
+weight: 9
 hidden: true
 ---
 
+## Ziel
+
+In dieser Aufgabe implementieren Sie einen Shop, bei dem der Spieler Gegenstände und Verbesserungen kaufen und verkaufen kann. 
+
+## Voraussetungen
+
+Um diese Aufgabe lösen zu können, sollten Sie vorher folgende Aufgaben gelöst haben:
+-    `["NPC"]({{< ref "/assignments/pool_c/npc" >}})`{=markdown}
+-    `["Item"]({{< ref "/assignments/pool_c/item" >}})`{=markdown}
+-    `["Inventar_UI"]({{< ref "/assignments/pool_c/inventar_ui" >}})`{=markdown}
+-    `["Dialogsystem"]({{< ref "/assignments/pool_c/dialogsystem" >}})`{=markdown}
 
 ## Shop
 
--   Implementieren Sie einen Shop, bei dem der Spieler Items kaufen und verkaufen kann.
--   Items kosten Geld, implementieren Sie daher eine Währung und ein System um an Geld zu kommen.
--   Items sind nicht unendlich oft im Shop.
--   Items sind im Einkauf teuer als im Verkauf.
+Implementieren Sie einen Shop, bei dem der Spieler Items kaufen und verkaufen kann.
+
+-   Items kosten Geld, implementieren Sie daher eine Währung und ein System, um an Geld zu kommen.
+-   Items sind nicht unendlich oft im Shop.
+-   Items sind im Einkauf teuer als im Verkauf.
+
+Der Kauf bzw. Verkauf soll mithilfe von RexExp und dem Dialogsystem erfolgen. Implementieren Sie eine Mechanik zum Feilschen per Texteingabe. Preise sollen ebenfalls über das Dialogsystem angefragt/vorgeschlagen werden. 
+
+Der Shop muss grafisch dargestellt werden. 
