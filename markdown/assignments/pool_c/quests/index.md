@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie verschiedene Quests, also Aufgaben die der Spieler lösen kann, um Belohnen zu erhalten.
+In dieser Aufgabe implementieren Sie verschiedene Quests, also Aufgaben die der Spieler lösen kann, um Belohnungen zu erhalten.
 
 
 ## Quests
