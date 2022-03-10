@@ -7,7 +7,7 @@ hidden: true
 ---
 
 
-## Prüfungsform: Performanzprüfung, 5 ECTS
+## Prüfungsform: Performanzprüfung, 7 ECTS
 
 -   **Praktische Teilleistung**:
     *   4x normales Blatt (3er Teams, **P**räsentation der Lösung im Praktikum) mit je 10P
@@ -21,7 +21,17 @@ hidden: true
 
 \smallskip
 
--   **Theoretische Teilleistung**: (digitale) Klausur in Prüfungsphase
+-   **Theoretische Teilleistung**:
+    -   2x digitale Prüfung (je max. 24 Punkte): 1x im Semester plus 1x in erster Prüfungsphase
+    -   Alternativ _eine_ digitale Klausur in zweiter Prüfungsphase
+
+    ::: notes
+    Wir bieten für die beiden elektronischen Prüfungen drei Termine an. Die beiden besten
+    Ergebnisse gehen jeweils in die Berechnung der Note ein.
+
+    Die E-Prüfungen werden voraussichtlich über eine spezielle ILIAS-Instanz im Home-Office
+    durchgeführt. Nähere Informationen zu gegebener Zeit.
+    :::
 
 \bigskip
 
