@@ -13,6 +13,7 @@ hidden: true
 
 -   [Carsten Gips](https://www.fh-bielefeld.de/minden/ueber-uns/personenverzeichnis/carsten-gips) (Vorlesung, Organisation)
 -   Jonas Posselt (Praktikum, Lehrauftrag)
+-   Tutoren (siehe ILIAS-Mitgliederliste)
 
 ### Sprechstunde ("Flipped"-Teil der Vorlesung)
 
@@ -39,6 +40,12 @@ Durchführung als **Flipped Classroom**:
     Screencasts (**Selbststudium**)
 *   Sprechstunde ("Flipped"-Teil der Vorlesung) per Zoom (**Zugangsdaten siehe ILIAS**)
 
+::: notes
+[Achtung:]{.alert} Es gibt keine Präsenzvorlesung in PM im S21. Arbeiten Sie das bereitgestellte
+Material (Handouts, Screencasts, Selbststudiumsaufgaben, Literaturhinweise) **selbstständig zu Hause**
+durch. Im VL-Slot findet eine Zoom-Sprechstunde zu den jeweiligen Themen statt.
+:::
+
 ### Praktikum: 2+1 SWS
 
 *   Gruppe 1: XX, XX:XX - XX:XX Uhr (XXXX)
@@ -57,3 +64,14 @@ In ausgewählten Wochen finden statt der Praktika zusätzliche Vorlesungen statt
 :::
 
 Siehe auch `["Hinweise zum Praktikum"]({{< ref "/org/grading" >}})`{=markdown}
+
+### Tutorium: 1 SWS
+
+-   XX, XX:XX -- XX:XX Uhr (Details siehe "News" im ILIAS)
+
+**Anmerkung**: Das Tutorium in PM ist fester Bestandteil der Prüfungsordnung.
+
+
+### Prüfungsform
+
+**Performanzprüfung**, 7 ECTS

@@ -9,78 +9,82 @@ hidden: true
 
 ## Worum geht's hier?
 
-![](images/architektur_cb.png)
+::: center
+[**Weniger schlecht programmieren**]{.alert} \quad ;-)
+:::
+
+\bigskip
+\bigskip
+\bigskip
+
+> ... And, lastly, there's the explosive growth in demand, which has led to many
+> people doing it who aren't any good at it. Code is merely a means to an end.
+> **Programming is an art and code is merely its medium.**
+> Pointing a camera at a subject does not make one a proper photographer. There are
+> a lot of self-described coders out there who couldn't program their way out of a
+> paper bag.
+>
+> \hfill -- John Gruber auf [daringfireball.net](https://daringfireball.net/2020/04/cobol_programming_coding)
 
 
-*   Verständnis für die wichtigsten Konzepte im Compilerbau
-*   Kenntnis relevanter aktueller Tools/Frameworks
-*   Verständnis für wichtige Sprachparadigmen
+::: notes
+Sie haben letztes Semester in OOP die *wichtigsten* Elemente und Konzepte der
+Programmiersprache Java kennen gelernt.
 
-=> Aufteilung: 40% Konzepte/Theorie, 60% Anwendung
+Java ist neben C derzeit die wichtigste Programmiersprache am Markt (siehe
+[TIOBE Index](https://www.tiobe.com/tiobe-index/))-
+
+Jetzt geht es darum, diese Kenntnisse sowohl auf der Java- als auch auf der
+Methoden-Seite so zu erweitern, dass Sie gemeinsam größere Anwendungen erstellen
+und pflegen können:
+
+*   **Java**
+    *   Sich sicherer in Java bewegen: Praxiserfahrung/Routine gewinnen
+    *   Wichtigste Konzepte und APIs kennen und beherrschen
+    *   Merkmale größerer Applikationen wie Logging und Konfiguration einsetzen
+
+*   **Design**
+    *   Basis-Entwurfsmuster (er-)kennen und einsetzen
+
+*   **Methoden**
+    *   Code erstellen und pflegen wie die Profis
+        *   Build-Tools einsetzen
+        *   Testen von Software
+        *   Refactoring von "stinkendem" Code
+    *   Zusammenarbeit in Teams: Verwaltung von Software und Workflows
+:::
+
+[Warum ist *guter Code* wichtig?]{.bsp}
+
+[=> Guter Code ist vor allem wichtig [für den Programmier]{.alert}!]{.notes}
 
 
 ## Überblick Modulinhalte
 
-1.  Lexikalische Analyse: Scanner/Lexer
-    *   Reguläre Ausdrücke
-    *   Klassisches Vorgehen: RegExp nach NFA (Thompson's Construction),
-        NFA nach DFA (Subset Construction), DFA nach Minimal DFA (Hopcroft's Algorithm)
-    *   Manuelle Implementierung, Look-Ahead
-    *   Generierung mit ANTLR und Flex
-    *   Error Recovery
+1)  Fortgeschrittene Konzepte in Java
+    *   Reguläre Ausdrücke, Annotationen, Generics, Reflection
+    *   Parallele Programmierung (Threads)
+    *   Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas
+    *   CLI, Konfiguration, Fremde APIs nutzen
 
+\smallskip
 
-2.  Syntaxanalyse: Parser
-    *   Kontextfreie Grammatiken (CFG), Chomsky
-    *   LL-Parser (Top-Down-Parser)
-        *   FIRST, FOLLOW
-        *   Tabellenbasierte Verfahren
-        *   Rekursiver Abstieg
-        *   LL(1), LL(k), LL(*)
-        *   Umgang mit linksrekursiven Grammatiken
-        *   Umgang mit Vorrang-Regeln und Assoziativität
-        *   Backtracking, Memoizing, Predicated Parsers; ANTLR4: ALL(*)
-    *   LR-Parser (Bottom-Up-Parser)
-        *   Shift-Reduce
-        *   LR(0), SLR(1), LR(1), LALR(1)
-    *   Generierung mit ANTLR und Bison
-    *   Error Recovery
-    *   Grenze Lexer und Parser (aus praktischen Gesichtspunkten)
+2)  Fortgeschrittenes OO-Design
+    *   Entwurfsmuster: Strategy, Template-Method, Factory-Method, Singleton, ...
 
+\smallskip
 
-3.  Symboltabellen
-    *   Berücksichtigung unterschiedlicher Sprachparadigmen
-    *   Typen, Klassen, Polymorphie
-    *   Namen und Scopes
-
-
-4.  Semantische Analyse und Optimierungen
-    *   Attributierte Grammatiken: L-attributed vs. R-attributed grammars
-    *   Typen, Typ-Inferenz, Type Checking
-    *   Datenfluss-Analyse
-    *   Optimierungen: Peephole u.a.
-
-
-5.  Zwischencode: Intermediate Representation (IR), LLVM
-
-
-6.  Interpreter
-    *   AST-Traversierung
-    *   Read-Eval-Schleife
-    *   Resolver: Beschleunigung bei der Interpretation
-
-
-7.  Compiler
-    *   Speicherlayout
-    *   Erzeugen von Byte-Code
-    *   Ausführen in einer Virtuellen Maschine
+3)  Programmiermethoden
+    *   Versionskontrolle
+    *   Testen, Coding Conventions, Refactoring
+    *   Logging, Build-Tools, CI
 
 
 ## Erwartungen an Sie
 
-![](images/modulbeschreibung.png)
+![](images/modulbeschreibung.png){width="80%"}
 
-*   90h Selbststudium => ca. 6h Arbeitszeit pro Woche!
+*  135h Selbststudium => ca. 9h Arbeitszeit pro Woche!
 
 Zeiten sind Richtwerte! -- Manche brauchen länger, manche sind schneller ...
 
