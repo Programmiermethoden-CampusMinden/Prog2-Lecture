@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie verschiedene Gegenstände die der Spieler verwenden kann.
+In dieser Aufgabe implementieren Sie verschiedene Gegenstände, die der Spieler verwenden kann.
 
 ## Voraussetzung
 
