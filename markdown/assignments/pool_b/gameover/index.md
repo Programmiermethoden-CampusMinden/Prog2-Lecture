@@ -13,7 +13,7 @@ In dieser Aufgabe implementieren Sie den Spieler Tot.
 
 ## Voraussetzung
 
-Um die Aufgabe lösen zu können, brauchen Sie `["Monster"]({{< ref "/assignments/pool_b/monster" >}})`{=markdown} und ein beliebiges `["Kampfsystem"]({{< ref "/assignments/pool_b/nahkampf" >}})`{=markdown}.
+Um die Aufgabe lösen zu können, brauchen Sie `["Monster"]({{< ref "/assignments/pool_b/monster" >}})`{=markdown} und ein beliebiges `["Kampfsystem"]({{< ref "/assignments/pool_b/nahkampf" >}})`{=markdown} oder `["Fernkampf"]({{< ref "/assignments/pool_b/fernkampf" >}})`{=markdown}.
 
 ## Energiepunkte
 
