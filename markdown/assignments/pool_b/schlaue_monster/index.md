@@ -17,7 +17,7 @@ Um diese Aufgabe lösen zu können, sollten Sie vorher `["Monster"]({{< ref "/as
 
 ## Schlaue Monster
 
-Implementieren Sie eine Struktur um das Verhalten der verschiedenen Monster zu bestimmen.
+Implementieren Sie eine Struktur, um das Verhalten der verschiedenen Monster flexibel ändern bzw. beeinflussen zu können. Überlegen Sie, welche Entwurfsmuster Sie hier einsetzen können und begründen Sie Ihre Entscheidung.
 
 Implementieren Sie mindestens drei verschiedene konkrete Verhaltensweisen.
 
