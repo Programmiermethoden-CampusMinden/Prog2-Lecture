@@ -21,4 +21,4 @@ Erweitern Sie den Helden um Lebenspunkte. Im Kampf kann der Held Lebe
 
 Lebenspunkte werden initial vergeben. Lebenspunkte können aufgefrischt werden, beispielsweise bei einem erfolgreichen Kampf oder durch Heiltränke oder Zaubersprüche.
 
-Wenn der Held stirbt, soll "Game Over" ausgegeben werden und das Spiel auf Tastendruck neu gestartet werden.
+Wenn der Held stirbt, soll "Game Over" ausgegeben werden und das Spiel auf Tastendruck neu gestartet werden können.
