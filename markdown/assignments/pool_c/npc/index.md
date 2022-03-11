@@ -17,4 +17,4 @@ Implementieren Sie NPCs mit eigenen Texturen, Animationen und Verhaltens
 
 Überlegen Sie sich, was diese NPCs tun können, um das Spiel zu bereichern.
 
-*Anmerkung*: Diese Aufgabe ist als Vorbereitung für andere Aufgaben gedacht und lässt sich hervorragend mit der Aufgabe `["Shop"]({{< ref "/assignments/pool_c/shop" >}})`{=markdown} und `["Dialogsystem"]({{< ref "/assignments/pool_c/dialogsystem" >}})`{=markdown} kombinieren.
+*Anmerkung*: Diese Aufgabe ist als Vorbereitung für andere Aufgaben gedacht und lässt sich hervorragend mit den Aufgaben `["Shop"]({{< ref "/assignments/pool_c/shop" >}})`{=markdown} und `["Dialogsystem"]({{< ref "/assignments/pool_c/dialogsystem" >}})`{=markdown} kombinieren.
