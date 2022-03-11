@@ -21,4 +21,4 @@ Lassen Sie die Monster sich zufällig im Dungeon bewegen.
 
 Überlegen Sie sich eine zukunftssichere Struktur. Überlegen Sie, welche Pattern angewendet werden können? Dokumentieren Sie Ihre Entscheidungen.
 
-Verteilen Sie eine zufällige Anzahl am Monster beim jedem Levelstart. Verteilen Sie mehr und stärkere Monster, je tiefer der Spiele im Dungeon vorrangeschritten ist.
+Verteilen Sie eine zufällige Anzahl von Monstern beim jedem Levelstart. Verteilen Sie mehr und stärkere Monster, je tiefer der Spieler im Dungeon vorrangeschritten ist.
