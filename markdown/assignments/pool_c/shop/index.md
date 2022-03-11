@@ -21,7 +21,7 @@ Um diese Aufgabe lösen zu können, sollten Sie vorher folgende Aufgaben gelöst
 
 ## Shop
 
-Implementieren Sie einen Shop, bei dem der Spieler Items kaufen und verkaufen kann.
+Implementieren Sie einen Shop, in dem der Spieler Items kaufen und verkaufen kann.
 
 -   Items kosten Geld, implementieren Sie daher eine Währung und ein System, um an Geld zu kommen.
 -   Items sind nicht unendlich oft im Shop.
