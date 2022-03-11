@@ -19,6 +19,6 @@ Bevor Sie diese Aufgabe lösen können müssen Sie das `["Inventar"]({{< ref "/a
 
 Implementieren Sie Taschen, die das Inventar des Spielers erweitern.
 
-Taschen nehmen selbst **einen** Inventarplatz ein, können aber wiederum selbst **mehrere** Gegenstände **eines** Typus (z.B. Waffen oder Tränke) aufbewahren.
+Taschen nehmen selbst **einen** Inventarplatz ein, können aber wiederum selbst **mehrere** Gegenstände **eines** Typus (z.B. Waffen oder Tränke) aufbewahren. Taschen können nur eine begrenzte Anzahl an Gegenständen beinhalten.
 
 Sie **müssen** für die Implementierung der Taschen Generics verwenden.
