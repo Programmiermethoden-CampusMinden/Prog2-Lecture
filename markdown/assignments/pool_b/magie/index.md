@@ -17,4 +17,4 @@ Implementieren Sie ein Magie-System. Der Spieler soll in der Lage sein, verschie
 
 Beachten Sie dabei, dass es sich nicht um Zauber handelt, die als "Fernkampf" bezeichnet werden können (also keine Feuerbälle o.ä.).
 
-Überlegen Sie sich zwei verschiedene Zaubersprüche wie Gedankenkontrolle oder Telekinese.
+Überlegen Sie sich zwei verschiedene Zaubersprüche wie Gedankenkontrolle oder Telekinese oder Upgrade von Waffen/Rüstungen.
