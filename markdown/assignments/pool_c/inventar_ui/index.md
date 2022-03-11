@@ -17,4 +17,6 @@ Um diese Aufgabe lösen zu können, müssen Sie vorher `["Inventar"]({{< ref "/a
 
 ## Inventar UI
 
-Implementieren Sie eine grafische Oberfläche für das Inventar. Stellen Sie die verschiedenen Items grafisch dar und erlauben Sie es, Items mithilfe der Maus zu verwenden oder fallen zu lassen.
+Implementieren Sie eine grafische Oberfläche für das Inventar. Ergänzen Sie passende Befehle, so dass das Inventar ein- und auch wieder ausgeblendet werden kann. Das Ein- und Ausblenden des Inventars soll keinen Spielzug kosten.
+
+Stellen Sie die verschiedenen Items grafisch dar und erlauben Sie es, Items mithilfe der Maus zu verwenden oder fallen zu lassen.
