@@ -30,6 +30,6 @@ Folgende Kriterien müssen mindestens erfüllt sein: 
 -    Eigenes Bewegungsmuster
 -    Eigenes Angriffsmuster
 -    Hat unterschiedliche Angriffe, je nachdem wie nah/fern der Held zum Boss steht
--    Eine zweite Phase, nachdem der Boss 50% seiner Lebenspunkte verloren hat. 
+-    Eine zweite Phase, nachdem der Boss 50% seiner Lebenspunkte verloren hat: Der Boss soll dann andere Angriffe/Angriffstechniken haben und aggressiver werden.
         - Der Boss soll neue Angriffe haben und aggressiver werden
 
