@@ -17,7 +17,7 @@ Um diese Aufgabe lösen zu können, müssen Sie vorher `["Inventar"]({{< ref "/a
 
 ## Schatzkiste
 
-Implementieren Sie Schatzkisten, die im Dungeon verteilt werden und von den Spielern geöffnet ("aktiviert") werden können.
+Implementieren Sie Schatzkisten, die im Dungeon verteilt werden und von den Spielern geöffnet ("aktiviert") werden können. Die Kisten sind zunächst geschlossen und können durch eine (neue) Aktion des Helden geöffnet werden, sofern er in ausreichender Nähe ist. Erst dann ist der Inhalt sichtbar und für den Helden zugreifbar.
 
 Schatzkisten beinhalten (zufällige) Items, die der Spieler aufsammeln kann. Schatzkisten haben damit auch ein Inventar.
 
