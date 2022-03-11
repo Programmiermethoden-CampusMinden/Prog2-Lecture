@@ -13,7 +13,7 @@ In dieser Aufgabe implementieren Sie simple Gegner, welche sich selbsts
 
 ## Monster
 
-Implementieren Sie analog zum Helden verschiedene Monster (mindestens zwei) für das Dungeon. Die Monster sollen auch eigene Animationen haben.
+Implementieren Sie analog zum Helden verschiedene Monster (mindestens zwei) für das Dungeon. Die Monster sollen auch jeweils eigene Animationen haben.
 
 Überlegen Sie sich, welche Eigenschaften die Monster haben sollen. Dies könnte beispielsweise die Geschwindigkeit sein, die Kampfstärke oder die Zahl der Lebenspunkte ("Gesundheit").
 
