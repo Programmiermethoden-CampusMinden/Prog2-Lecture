@@ -14,9 +14,9 @@ In dieser Aufgabe implementieren Sie einen Shop, in dem der Spieler I
 ## Voraussetungen
 
 Um diese Aufgabe lösen zu können, sollten Sie vorher folgende Aufgaben gelöst haben:
--    `["NPC"]({{< ref "/assignments/pool_c/npc" >}})`{=markdown}
 -    `["Item"]({{< ref "/assignments/pool_c/item" >}})`{=markdown}
 -    `["Inventar_UI"]({{< ref "/assignments/pool_c/inventar_ui" >}})`{=markdown}
+-    `["NPC"]({{< ref "/assignments/pool_c/npc" >}})`{=markdown}
 -    `["Dialogsystem"]({{< ref "/assignments/pool_c/dialogsystem" >}})`{=markdown}
 
 ## Shop
