@@ -17,7 +17,7 @@ Um die Aufgabe lösen zu können, brauchen Sie `["Monster"]({{< ref "/assignment
 
 ## Energiepunkte
 
-Erweitern Sie den Helden um Lebenspunkte. Im Kampf kann der Held Lebenspunkte verlieren. Hat der Held all seine Lebenspunkte, ist das Spiel beendet.
+Erweitern Sie den Helden um Lebenspunkte. Im Kampf kann der Held Lebenspunkte verlieren. Hat der Held all seine Lebenspunkte "verbraucht", ist das Spiel beendet.
 
 Lebenspunkte werden initial vergeben. Lebenspunkte können aufgefrischt werden, beispielsweise bei einem erfolgreichen Kampf.
 
