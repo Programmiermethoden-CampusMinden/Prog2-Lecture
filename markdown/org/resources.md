@@ -45,6 +45,3 @@ Zum Thema Coding Conventions sind @SunMicrosystems1997 und @googlestyleguide gut
 Hier noch eine Sammlung von Gedanken zum Berufsverständnis von Informatikern: @AtlassianHelloWorld.
 
 **Hinweis**: Am Ende einer Vorlesung wird noch einmal spezifisch zum Thema passende Literatur empfohlen.
-
-
-`{{< bib />}}`{=markdown}
