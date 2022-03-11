@@ -24,7 +24,7 @@ Um diese Aufgabe lösen zu können, sollten Sie vorher folgende Aufgaben gelöst
 Implementieren Sie einen Shop, in dem der Spieler Items kaufen und verkaufen kann.
 
 -   Items kosten etwas. Implementieren Sie daher eine Währung und ein System, um an Zahlungsmittel zu kommen.
--   Items sind nicht unendlich oft im Shop.
+-   Items gibt es nur in begrenzter Anzahl im Shop.
 -   Items sind im Einkauf teuer als im Verkauf.
 
 Der Kauf bzw. Verkauf soll mithilfe von RexExp und dem Dialogsystem erfolgen. Implementieren Sie eine Mechanik zum Feilschen per Texteingabe. Preise sollen ebenfalls über das Dialogsystem angefragt/vorgeschlagen werden. 
