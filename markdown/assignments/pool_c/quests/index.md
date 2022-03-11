@@ -14,7 +14,7 @@ In dieser Aufgabe implementieren Sie verschiedene Quests, also Aufgaben, die der
 
 ## Quests
 
-Implementieren Sie verschiedene Aufgaben (*Quests*), die der Held erfüllen muss. Dies könnte beispielsweise das Sammeln einer bestimmten Zahl von Gegenständen oder das Besiegen einer bestimmten Zahl einer bestimmten Art von Monstern sein. Nutzen Sie dazu das Observer-Pattern.
+Implementieren Sie verschiedene Aufgaben (*Quests*), die der Held erfüllen kann. Dies könnte beispielsweise das Sammeln einer bestimmten Zahl von Gegenständen oder das Besiegen einer bestimmten Zahl einer bestimmten Art von Monstern sein.
 
 Für die Erfüllung der Aufgaben soll der Held mit Erfahrungspunkten und/oder Items (etwa ein Zauberstab) belohnt werden.
 
