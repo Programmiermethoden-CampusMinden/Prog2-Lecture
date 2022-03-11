@@ -23,7 +23,7 @@ Um diese Aufgabe lösen zu können, sollten Sie vorher folgende Aufgaben gelöst
 
 Implementieren Sie einen Shop, in dem der Spieler Items kaufen und verkaufen kann.
 
--   Items kosten Geld, implementieren Sie daher eine Währung und ein System, um an Geld zu kommen.
+-   Items kosten etwas. Implementieren Sie daher eine Währung und ein System, um an Zahlungsmittel zu kommen.
 -   Items sind nicht unendlich oft im Shop.
 -   Items sind im Einkauf teuer als im Verkauf.
 
