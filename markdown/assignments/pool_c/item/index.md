@@ -17,7 +17,7 @@ Am besten kombinieren Sie diese Aufgabe mit dem `["Inventar"]({{< ref "/assignme
 
 ## Items
 
-Implementieren Sie unterschiedliche vom Spieler ein sammelbare und (ins Inventar) aufnehmbare Gegenstände wie Waffen oder Heiltränke oder Zaubersprüche.
+Implementieren Sie unterschiedliche vom Spieler einsammelbare und (ins Inventar) aufnehmbare Gegenstände wie Waffen oder Heiltränke oder Zaubersprüche.
 
 Jeder Gegenstand soll vom Spieler verwendbar sein. Überlegen Sie sich passende "Funktionen", die die einzelnen Gegenstände erfüllen. 
 
