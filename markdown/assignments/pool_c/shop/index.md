@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie einen Shop, bei dem der Spieler Gegenstände und Verbesserungen kaufen und verkaufen kann. 
+In dieser Aufgabe implementieren Sie einen Shop, in dem der Spieler Items wie Gegenstände und Verbesserungen kaufen und verkaufen kann. 
 
 ## Voraussetungen
 
