@@ -13,7 +13,7 @@ In dieser Aufgabe implementieren Sie [Freundliche NPCs (Non-Player-Character)](h
 
 ## Freundliche NPCs
 
-Implementieren Sie NPCs mit eigenen Texturen, Animationen und Verhaltensweisen. Anders als Monster sollen diese NPCs den Spieler **nicht** angreifen.
+Implementieren Sie NPCs mit eigenen Texturen, Animationen und Verhaltensweisen. Anders als die normalen Monster sollen diese freundlichen NPCs den Spieler **nicht** angreifen.
 
 Überlegen Sie sich, was diese NPCs tun können, um das Spiel zu bereichern.
 
