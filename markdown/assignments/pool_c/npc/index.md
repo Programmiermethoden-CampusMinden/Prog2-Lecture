@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie [NPCs(Non-Player-Character)](https://usk.de/alle-lexikonbegriffe/non-player-character/#:~:text=NPC%20oder%20Non%2DPlayer%2DCharacter,hin%20zu%20tragende%20Rollen%20spielen.).
+In dieser Aufgabe implementieren Sie [NPCs (Non-Player-Character)](https://en.wikipedia.org/wiki/Non-player_character).
 
 ## NPC
 
