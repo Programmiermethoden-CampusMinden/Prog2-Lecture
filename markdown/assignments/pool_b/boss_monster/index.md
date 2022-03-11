@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie eine einzigartiges Boss-Monster.
+In dieser Aufgabe implementieren Sie ein einzigartiges Boss-Monster.
 
 ## Voraussetzung
 
