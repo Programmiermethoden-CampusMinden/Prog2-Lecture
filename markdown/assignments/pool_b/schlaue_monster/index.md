@@ -21,6 +21,6 @@ Implementieren Sie eine Struktur, um das Verhalten der verschiedenen Monster fle
 
 Implementieren Sie mindestens drei verschiedene konkrete Verhaltensweisen.
 
-Ein Monster soll auf den Spieler zulaufen, wenn es mehr als 50% Lebenspunkte hat und vom Helden weglaufen, wenn es weniger als 50% Lebenspunkte hat.
+**Beispiel**: Ein Monster soll auf den Spieler zulaufen, wenn es mehr als 50% Lebenspunkte hat und vom Helden weglaufen, wenn es weniger als 50% Lebenspunkte hat.
 
 
