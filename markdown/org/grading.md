@@ -9,126 +9,206 @@ hidden: true
 
 ## Prüfungsform: Performanzprüfung, 7 ECTS
 
--   **Praktische Teilleistung**:
-    *   4x normales Blatt (3er Teams, **P**räsentation der Lösung im Praktikum) mit je 10P
-    *   3x **F**ingerübungen (3er Teams, Upload der Lösung mit Lerntagebuch (keine Präsentation)) mit je 5P
-    *   2x **E**inzelblatt (als E-Assessment, Einzelbearbeitung, online) mit je 15P
+::: notes
+Die Performanzprüfung besteht aus **zwei Teilprüfungen**, die Sie unabhängig voneinander
+absolvieren können: der **praktischen Teilleistung** und der **theoretischen Teilleistung**.
 
-    \smallskip
+Dies sind zwei getrennte Prüfungsleistungen, für die Sie sich **jeweils separat im LSF**
+anmelden müssen. Sie bekommen als Note für das Modul den gewichteten Mittelwert aus den
+beiden Teilleistungen.
 
-    -   85P Gesamt, 15P Puffer => “Krankheitsregelung”, 70P == 100%
-    -   4.0: ab 60% (42.0P), alle 4% nächste Teilnote, 1.0: ab 96% (67.2P)
-
-\smallskip
-
--   **Theoretische Teilleistung**:
-    -   2x digitale Prüfung (je max. 24 Punkte): 1x im Semester plus 1x in erster Prüfungsphase
-    -   Alternativ _eine_ digitale Klausur in zweiter Prüfungsphase
-
-    ::: notes
-    Wir bieten für die beiden elektronischen Prüfungen drei Termine an. Die beiden besten
-    Ergebnisse gehen jeweils in die Berechnung der Note ein.
-
-    Die E-Prüfungen werden voraussichtlich über eine spezielle ILIAS-Instanz im Home-Office
-    durchgeführt. Nähere Informationen zu gegebener Zeit.
-    :::
-
-\bigskip
-
--   **Gesamtnote: Mittelwert der beiden Teilleistungen**
-
-[Hinweis Abgabeslots, Präsenz/Online]{.bsp}
+Diese Prüfungsform gilt automatisch für alle Studierenden in Programmiermethoden, die nicht
+bereits früher unter einer anderen Prüfungsform in Programmiermethoden eine Prüfungsleistung
+abgelegt oder begonnen haben (vgl. auch "Regelung für Wiederholer").
+:::
 
 
-### Parcours-Prüfung: Was ist das?
+### 1. Praktische Teilleistung
 
-Die Performanzprüfung besteht aus zwei Teilprüfungen, die Sie unabhängig voneinander absolvieren
-können: der **praktischen Teilleistung** und der **theoretischen Teilleistung**. Dies sind zwei
-getrennte Prüfungsleistungen, für die Sie sich **jeweils separat im LSF** anmelden müssen. Sie
-bekommen als Note für das Modul den Mittelwert aus den beiden Teilleistungen.
+::: notes
+Diese Prüfungsleistung absolvieren Sie im Praktikum. Es wird in diesem Semester verschiedene
+Typen von Aufgaben geben mit unterschiedlicher Gewichtung und Bearbeitung:
+:::
 
-Diese Prüfungsform gilt automatisch für alle Studierenden in Programmiermethoden, die nicht bereits
-früher unter einer anderen Prüfungsform in Programmiermethoden eine Prüfungsleistung abgelegt oder
-begonnen haben (vgl. auch "Regelung für Wiederholer").
+*   "Pool A" mit max. 28 Punkten (mind. 14 Punkte zum Bestehen)
+*   "Pool B" mit max. 22 Punkten (mind. 11 Punkte zum Bestehen)
+*   "Pool C" mit max. 30 Punkten (mind. 15 Punkte zum Bestehen)
+*   "Pool P" mit max. 40 Punkten (mind. 15 Punkte zum Bestehen)
+*   "Pool K" mit max. 100 Punkten (mind. 50 Punkte zum Bestehen)
 
-### Praktische Teilleistung (Praktikum)
+::: notes
+#### Bearbeitung
 
-Diese Prüfungsleistung absolvieren Sie im Praktikum.
+Für die Aufgaben der Pools A, B und C können Sie sich den Zeitpunkt der Bearbeitung relativ frei
+auswählen; natürlich hängen aber bestimmte Aufgaben von anderen Aufgaben ab.
 
-Es wird in diesem Semester drei verschiedene Typen von Aufgabenblättern/Stationen geben mit
-unterschiedlicher Gewichtung und Bearbeitung:
+Für die Aufgaben in Pool K ist dagegen jeweils eine feste Deadline angegeben, zu der die Lösung
+erarbeitet, in Ihr Repo hochgeladen und im Praktikum vorgestellt werden muss.
 
-*   4x normales Blatt (3er Teams, **P**räsentation der Lösung im Praktikum) mit je 10P
-*   3x **F**ingerübungen (3er Teams, Upload der Lösung mit Lerntagebuch (keine Präsentation)) mit je 5P
-*   2x **E**inzelblatt (E-Assessment, Einzelbearbeitung, online) mit je 15P
+Die beiden Aufgaben in Pool P sollen über zwei Wochen bearbeitet werden. Die Projektaufgaben können
+Sie frühestens in der Woche nach dem E-Assessment bearbeiten.
 
-Beachten Sie die "Regeln zur Bearbeitung der Aufgaben", die sich auf die Inhalte und die formalen
+#### Workload
+
+Pro Woche sollen Sie aus Pool A/B/C Aufgaben für 10 Punkte bearbeiten. Sie können auch mehr machen,
+aber wir limitieren die maximal erreichbare Punkteanzahl hier auf 15 Punkte pro Woche. Wenn Sie hier
+einmal Abzüge bekommen, können Sie dies in einer anderen Woche nacharbeiten (unter Beachtung der
+Maximal-15-Punkte-pro-Woche-Regel).
+
+Jede der beiden Aufgaben aus Pool P geht über zwei Wochen und bringt maximal 20 Punkte. Diese Aufgaben
+sind nicht mit Aufgaben aus Pool A/B/C kombinierbar; eine Nacharbeitung ist hier nicht möglich. Sie
+können hier frühestens in der Woche nach dem E-Assessment starten.
+
+Parallel zu Pool A/B/C/P bearbeiten Sie jede Woche eine vorgegebene Aufgabe aus Pool K für je 10 Punkte.
+
+#### Praktische Teilnote
+:::
+
+*   220P Gesamt, 40P Puffer => “Krankheitsregelung”, 180P == 100%
+*   4.0: ab 60% v. 180P (108P), alle 4% nächste Teilnote, 1.0: ab 96% v. 180P (172,8P)
+
+::: notes
+Sie können maximal in den Pools A+B+C+P 120 Punkte und in Pool K 100 Punkte erreichen, in Summe
+also 220 Punkte. Die 100% für die Notenberechnung wird auf 180 Punkte festgelegt. Damit haben Sie
+genügend Schlupf, falls Sie einmal erkranken oder wegen anderer familiärer Angelegenheiten nicht
+zur Vorstellung Ihrer Lösung im Praktikum erscheinen können.
+
+**Achtung**: Sie müssen im Laufe des Semesters in **jedem Pool** die jeweils angegebene
+Mindestanzahl der Punkte zum Bestehen erreichen, sonst haben Sie die praktische Teilleistung
+insgesamt nicht bestanden.
+
+
+Beachten Sie zusätzlich die "Hinweise zum Praktikum", die sich auf die Inhalte und die formalen
 Aspekte Ihrer Abgaben beziehen.
+:::
 
-#### "Normale" Übungsblätter (P)
-Die "normalen Übungsblätter" bearbeiten Sie in selbstgewählten Teams zu je drei Personen zu Hause,
-laden die Lösung vor der Deadline ins ILIAS hoch und stellen Ihre Lösung im Praktikum vor. Dazu
-wird im ersten Praktikum ein individueller Abgabeslot vereinbart.
 
-Die Punkte bekommen Sie dann für die Qualität der hochgeladenen Lösung und Ihrer Erklärung/Vorstellung
-im Praktikum, d.h. wenn Sie eine perfekte Lösung hochladen, diese aber nicht erklären können bzw. nicht
-zur Vorstellung erscheinen, können Sie keine Punkte bekommen.
+### 2. Theoretische Teilleistung
 
-#### "Fingerübungen" (F)
-Die "Fingerübungen" sind ebenfalls in 3er Teams zu bearbeiten. Die Lösung ist zusammen mit einem
-**Lerntagebuch** (vgl. Programmiermethoden im S21) vor der Abgabefrist ins ILIAS hochzuladen.
+*   Erster Prüfungszeitraum: 2x digitale Prüfung: 1x im Semester ("E-Assessment") plus 1x in erster Prüfungsphase
+*   Zweiter Prüfungszeitraum: _Eine_ digitale Klausur
 
-Das Team wird die Lösung offline bewerten, dabei werden auch automatisierte Tests benutzt. Ohne
-Lerntagebuch gibt es keine Punkte.
+::: notes
+Die Prüfung für die theoretische Teilleistung wird als digitale Klausur über eine
+spezielle ILIAS-Instanz ("E-Assessment-Server") durchgeführt.
 
-Eine Vorstellung der Lösung erfolgt bei diesen kleineren Blättern nicht. Sie brauchen als hier
-nicht zum Praktikum kommen.
+Im ersten Prüfungszeitraum besteht die theoretische Prüfung aus zwei kürzeren Teilprüfungen
+("E-Assessments") mit je 45 Minuten Dauer, die einmal etwa in der Mitte der Vorlesungszeit
+und einmal in der ersten Prüfungsphase angeboten werden. Die Note ergibt sich dabei aus dem
+Mittelwert der beiden Teilprüfungen.
 
-#### "Einzelblätter" (E)
-Die "Einzelblätter" werden als kurzes E-Assessment im Home-Office durchgeführt. Die Aufgaben sind
-einzeln zu bearbeiten. Die Bearbeitungsdauer beträgt jeweils 30 Minuten und erfolgt zu **Beginn des
-Vorlesungsslots** in der jeweiligen Woche.
+Im zweiten Prüfungszeitraum besteht die theoretische Prüfung aus einer digitalen Klausur mit
+90 Minuten Dauer.
 
-**Hinweis**: Diese beiden kurzen E-Assessments zählen als Übungsblätter und ersetzen nicht die Klausur
-am Ende des Semesters für die theoretische Teilleistung!
+Es wird jeweils rechtzeitig bekanntgegeben, ob die Prüfungen wie bisher im Home-Office durchgeführt
+werden oder ob dafür Rechner der FH genutzt werden, d.h. eine Anwesenheit in den Räumen der FH am
+Campus Minden notwendig ist. Die Termine in den Prüfungszeiträumen werden rechtzeitig vom Prüfungsamt
+bekannt gegeben, für den Termin in der Vorlesungszeit siehe `[Fahrplan]({{< ref "/org/schedule" >}})`{=markdown}.
+:::
 
-### Praktikum: Zeitslots, Präsenz vs. Home-Office
 
-Das erste Praktikum (Vorstellung der Lösung von Blatt 01) erfolgt für alle in Präsenz.
+### 3. Gesamtnote: Gewichteter Mittelwert der beiden Teilleistungen
 
-~~Wir werden dort mit jedem Team einen individuellen Abgabeslot in Ihrer Praktikumszeit vereinbaren,
-damit Sie in die nächsten Abgaben zielgerichtet zu Ihrer Abgabe kommen.~~ Über die Etherpads im ILIAS
-haben Sie einen individuellen Abgabeslot in Ihrer Praktikumszeit vereinbart, zu dem Sie zielgerichtet
-zu Ihrer Abgabe kommen.
+**60% Praxis, 40% Theorie**
 
-Um Studierenden, die dem kurzfristigen Wechsel zur Präsenz nicht folgen können, die Studierbarkeit
-des Moduls zu ermöglichen, vereinbaren wir in der ersten Abgabe mit jedem Team, ob Sie Ihre
-Präsentation in Zukunft in Präsenz oder online aus dem Home-Office durchführen wollen. Teams, die
-eine Änderung des vereinbarten Modus wünschen, geben dies mindestens 3 Tage vor der Präsentation
-per E-Mail an BC George bzw. André Matutat bekannt.
+[[Hinweis Abgabeslots, Präsenz/Online]{.bsp}]{.slides}
+
+
+## Hinweise zum Praktikum
+
+### Bearbeitung, Teams
+
+Sie bearbeiten alle Aufgaben in festen Teams zu je **zwei Personen**. Jedes Team erarbeitet seine
+**eigene** Lösung.
+
+Wer Lösungen ganz oder teilweise von anderen Teams/Studierenden oder anderen Quellen übernimmt
+und als eigene Lösung ab-/ausgibt, begeht einen Täuschungsversuch mit entsprechenden Konsequenzen
+im Prüfungsverfahren.
+
+### Abgabe per Git-Repo und Vorstellung im Praktikum
+
+Die Abgabe der Lösungen erfolgt über einen Pull- bzw. Merge-Request in einem nicht öffentlich
+sichtbaren Git-Repo, welches wir Ihnen zu Beginn des Semesters einrichten. Dazu benötigen Sie
+entweder einen kostenfreien und ggf. anonymen GitHub-Account oder Sie können alternativ den
+Gitlab-Server im Software-Labor nutzen, den Sie aus dem FH-Netz bzw. über VPN erreichen und wo
+Sie sich mit Ihren normalen FH-Zugangsdaten einloggen können ("LDAP").
+
+Die Lösungen müssen jeweils **vor** dem Praktikum hochgeladen werden (ggf. Deadlines beachten!)
+**und** **im** jeweiligen Praktikum von allen Teammitgliedern vorgestellt werden. Ohne diese
+Rücksprache gibt es keine Punkte.
+
+### Punkte und formale Abzüge
+
+Für die sinnvolle Umsetzung der Aufgaben erhalten Sie die jeweils angegebenen (Teil-) Punkte.
+
+Lösungen, die sich nicht kompilieren und/oder nicht ausführen lassen können höchstens wenige
+Teilpunkte bekommen. Dito Lösungen, bei denen sich die Vorgabe-Tests (so vorhanden) nicht
+kompilieren und/oder ausführen lassen. Stellen Sie vor Abgabe sicher, dass Ihr Code keine fest
+codierten Dateien/Verzeichnisse enthält. Denken Sie daran, dass bei UNIX ebenso wie bei Java
+zwischen Groß- und Kleinschreibung unterschieden wird, dass Dateinamen und Klassennamen korrekt
+sein müssen, dass die angegebenen Methodensignaturen korrekt sein müssen usw. ...
+
+Die Codequalität zählt. Selbst wenn Ihre Lösung eine perfekte Funktionalität aufweist, gibt es
+Abzug für schlechte oder schlampige Programmierung. Dies betrifft u.a. fehlende/mangelhafte
+Dokumentation, Verletzung von Namenskonventionen, uneinheitliche Formatierung,
+schlechte Namen für Klassen/Methoden/Variablen/..., duplizierter Code, ...
+
+Konkret können Sie für die Nichteinhaltung der formalen Kriterien folgende Abzüge pro Abgabe
+"erreichen":
+*   Keine/nicht ausreichende Tests: -2P
+*   Kein/nicht ausreichendes Logging: -1P
+*   Kein/nicht ausreichendes Javadoc: -1P
+*   Code-Style nicht/nur ungenügend beachtet: -1P
+
+### Lerntagebuch
+
+Sie führen zu jeder Abgabe von Aufgaben aus Pool A/B/C oder P ein Lerntagebuch. Wenn dies komplett
+nicht vorhanden ist oder nur ungenügend ausgearbeitet ist, bekommen Sie auf die gesamte Abgabe der
+betreffenden Aufgaben keine Punkte (also nur noch für die Pool-K-Aufgaben).
+
+Bei der Abgabe der Pool-P-Aufgaben bekommen Sie zusätzlich für Ihr Lerntagebuch Punkte.
+
+<!-- TODO: Inhalte und Struktur Lerntagebuch -->
+
+### Besonderheit Pool P: "Projekt"
+
+Pool P steht für "Projekt". Sie können diese Aufgabe maximal zweimal bearbeiten und jeweils maximal
+20 Punkte bekommen. Die Bearbeitungszeit ist jeweils für zwei Wochen angelegt.
+
+Spätestens eine Woche vor dem Projekt stellen Sie im Praktikum Ihr Konzept dem Lehrbeauftragten vor
+und diskutieren mit ihm die Machbarkeit und die Verteilung der Punkte.
+
+In der ersten Woche der Bearbeitung stellen Sie im Praktikum Ihr Feinkonzept und eine erste grobe
+Basis-Implementierung vor. Dafür können Sie maximal 10 Punkte bekommen.
+
+In der zweiten Woche stellen Sie dann Ihre finale Implementierung, die Dokumentation und das Lerntagebuch
+vor und bekommen für die sinnvolle Umsetzung die zu Beginn vereinbarten Teilpunkte. Es gelten die selben
+Kriterien für die Abgabe wie für die Pool A/B/C-Aufgaben, d.h. Sie können entsprechende Abzüge für das
+Nichteinhalten formaler Kriterien bekommen.
+
+<!-- TODO: Kriterien für schriftliche Ausarbeitung -->
+
+Die Projektaufgaben können Sie frühestens in der Woche nach dem E-Assessment bearbeiten, d.h. Sie müssten
+dann entsprechend Ihr Konzept in der Woche vor dem E-Assessment oder in der Woche mit dem E-Assessment
+vorstellen.
+
+### Praktikum: Zeitslots
+
+Wir werden mit jedem Team einen individuellen Abgabeslot in Ihrer Praktikumszeit vereinbaren, damit Sie
+im Praktikum zielgerichtet zu Ihrer Abgabe kommen können und so Wartezeiten vermeiden. Dazu gibt es
+vorbereitete Etherpads im ILIAS, wo Sie sich mit Ihrem Team für einen Abgabeslot eintragen.
 
 ### Praktikum: Verspätete Abgaben, Krankheit
 
 Es gibt keine verspäteten Abgaben. Das sind 0P.
 
-Bei Krankheit/familiären Notfällen: Es sind insgesamt 15 Punkte als "Puffer" für Notfälle oder
-Krankheitsfälle eingeplant. Sie könnten also bei einem Einzelblatt ("E-Assessment", 15P) oder
-einem normalen Praktikumsblatt (10P) plus einer "Fingerübung" (5P) oder bei allen drei
-"Fingerübungen (die mit den 5P) fehlen und immer noch eine 1.0 erreichen.
+Bei Krankheit/familiären Notfällen: Es sind insgesamt 40 Punkte als "Puffer" für Notfälle oder
+Krankheitsfälle eingeplant. Sie könnten also je nach Punktestand einmal eine Woche fehlen und
+immer noch eine 1.0 erreichen.
 
 Wenn die persönliche Ausnahmesituation länger vorliegen sollte, müssen ggf. andere Lösungen
 gefunden werden, um das Semester erfolgreich abschließen zu können. Nehmen Sie in diesem Fall
 zeitnah Kontakt zum Dozenten auf.
-
-### Theoretische Teilleistung (Klausur)
-
-Die theoretische Teilleistung absolvieren Sie als separate Prüfungsleistung im Prüfungszeitraum.
-In diesem Semester werden dazu im ersten und im zweiten Prüfungszeitraum jeweils E-Assessments
-(digitale Klausuren) mit je 90 Minuten Dauer angeboten.
-
-Es wird jeweils rechtzeitig vor der Klausur bekanntgegeben, ob diese wie bisher im Home-Office
-durchgeführt wird oder ob dafür Rechner der FH genutzt werden, d.h. eine Anwesenheit in den
-Räumen der FH notwendig ist. Die Termine werden rechtzeitig vom Prüfungsamt bekannt gegeben.
 
 
 ## Regelung für Wiederholer
@@ -139,7 +219,9 @@ Wer bereits früher in Programmiermethoden eine Prüfungsleistung unter der Prü
 "Performanzprüfung" abgelegt hat und diese Prüfung noch nicht abgeschlossen hat, belegt
 die fehlenden Teilleistungen in diesem Semester.
 
-Wenn Ihnen die **theoretische Teilleistung** fehlt, dann nehmen Sie an der Klausur teil.
+Wenn Ihnen die **theoretische Teilleistung** fehlt, dann nehmen Sie an der Klausur teil
+(d.h. für den ersten Prüfungszeitraum an den beiden kürzeren Prüfungen, für den zweiten
+Prüfungszeitraum an der längeren E-Klausur).
 Wenn bei Ihnen die **praktische Teilleistung** noch offen ist, nehmen Sie entsprechend am
 Praktikum teil. Melden Sie sich für die jeweilige Teilleistung im LSF an.
 
