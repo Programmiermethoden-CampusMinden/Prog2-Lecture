@@ -12,7 +12,7 @@ hidden: true
 ### Dozenten
 
 -   [Carsten Gips](https://www.fh-bielefeld.de/minden/ueber-uns/personenverzeichnis/carsten-gips) (Vorlesung, Organisation)
--   Jonas Posselt (Praktikum, Lehrauftrag)
+-   Jonas Posselt (Praktikum)
 -   Tutoren (siehe ILIAS-Mitgliederliste)
 
 ### Sprechstunde ("Flipped"-Teil der Vorlesung)
@@ -33,7 +33,7 @@ Zur Verteilung der Themen siehe auch den `["Fahrplan"]({{< ref "/org/schedule" >
 
 ### Vorlesung: 2 SWS
 
-=> Vorlesungszeit: XX, XX:XX - XX:XX Uhr (XXXX)
+=> Vorlesungszeit: Mo, 15:45 - 17:15 Uhr (online/J104)
 
 Durchführung als **Flipped Classroom**:
 *   Vorbereitung individuell \@home mit ausführlich kommentierten Skripten plus
@@ -41,16 +41,17 @@ Durchführung als **Flipped Classroom**:
 *   Sprechstunde ("Flipped"-Teil der Vorlesung) per Zoom (**Zugangsdaten siehe ILIAS**)
 
 ::: notes
-[Achtung:]{.alert} Es gibt keine Präsenzvorlesung in PM im S21. Arbeiten Sie das bereitgestellte
-Material (Handouts, Screencasts, Selbststudiumsaufgaben, Literaturhinweise) **selbstständig zu Hause**
-durch. Im VL-Slot findet eine Zoom-Sprechstunde zu den jeweiligen Themen statt.
+[Achtung:]{.alert} Es gibt keine Präsenzvorlesung in PM im S22. Arbeiten Sie das
+bereitgestellte Material (Handouts, Screencasts, Quizzes, Literaturhinweise)
+**selbstständig vor** der Sprechstunde durch. Im VL-Slot findet eine Zoom-Sprechstunde
+zu den jeweiligen Themen statt. Sie können dafür den angegebenen Raum nutzen.
 :::
 
 ### Praktikum: 2+1 SWS
 
-*   Gruppe 1: XX, XX:XX - XX:XX Uhr (XXXX)
-*   Gruppe 2: XX, XX:XX - XX:XX Uhr (XXXX)
-*   Gruppe 3: XX, XX:XX - XX:XX Uhr (XXXX)
+*   Gruppe 1: Fr, 09:00 - 10:30 Uhr (D320)
+*   Gruppe 2: Fr, 13:15 - 14:45 Uhr (D320)
+*   Gruppe 3: Fr, 10:45 - 12:15 Uhr (D320)
 
 \bigskip
 
@@ -71,7 +72,8 @@ Siehe auch `["Hinweise zum Praktikum"]({{< ref "/org/grading" >}})`{=markdown}
 
 **Anmerkung**: Das Tutorium in PM ist fester Bestandteil der Prüfungsordnung.
 
-
 ### Prüfungsform
 
 **Performanzprüfung**, 7 ECTS
+
+Siehe auch `["Hinweise zum Prüfung"]({{< ref "/org/grading" >}})`{=markdown}
