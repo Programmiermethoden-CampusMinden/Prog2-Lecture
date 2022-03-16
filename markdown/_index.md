@@ -55,6 +55,7 @@ zu den jeweiligen Themen statt. Sie können dafür den angegebenen Raum nutzen.
 
 \bigskip
 
+Ablauf:
 -   Bearbeitung der Aufgaben in **2er Teams** vor dem Praktikum
 -   Abgabe der gelösten Aufgaben **vor** der Deadline im ILIAS
 -   Vorstellung und Diskussion der Lösung **im** Praktikum (hybrid/Zoom)
@@ -76,4 +77,4 @@ Siehe auch `["Hinweise zum Praktikum"]({{< ref "/org/grading" >}})`{=markdown}
 
 **Performanzprüfung**, 7 ECTS
 
-Siehe auch `["Hinweise zum Prüfung"]({{< ref "/org/grading" >}})`{=markdown}
+Siehe auch `["Hinweise zur Prüfung"]({{< ref "/org/grading" >}})`{=markdown}
