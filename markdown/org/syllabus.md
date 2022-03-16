@@ -31,15 +31,15 @@ hidden: true
 Sie haben letztes Semester in OOP die *wichtigsten* Elemente und Konzepte der
 Programmiersprache Java kennen gelernt.
 
-Java ist neben C derzeit die wichtigste Programmiersprache am Markt (siehe
-[TIOBE Index](https://www.tiobe.com/tiobe-index/))-
+Java ist neben C und Python derzeit die wichtigste Programmiersprache am Markt
+(siehe [TIOBE Index](https://www.tiobe.com/tiobe-index/)).
 
 Jetzt geht es darum, diese Kenntnisse sowohl auf der Java- als auch auf der
 Methoden-Seite so zu erweitern, dass Sie gemeinsam größere Anwendungen erstellen
 und pflegen können:
 
 *   **Java**
-    *   Sich sicherer in Java bewegen: Praxiserfahrung/Routine gewinnen
+    *   Sich sicherer in Java bewegen: Praxiserfahrung und Routine gewinnen
     *   Wichtigste Konzepte und APIs kennen und beherrschen
     *   Merkmale größerer Applikationen wie Logging und Konfiguration einsetzen
 
@@ -56,7 +56,7 @@ und pflegen können:
 
 [Warum ist *guter Code* wichtig?]{.bsp}
 
-[=> Guter Code ist vor allem wichtig [für den Programmier]{.alert}!]{.notes}
+[=> Guter Code ist vor allem wichtig [für den Entwickler]{.alert}!]{.notes}
 
 
 ## Überblick Modulinhalte
