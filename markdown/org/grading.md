@@ -200,6 +200,11 @@ Wir werden mit jedem Team einen individuellen Abgabeslot in Ihrer Praktikumszeit
 im Praktikum zielgerichtet zu Ihrer Abgabe kommen können und so Wartezeiten vermeiden. Dazu gibt es
 vorbereitete Etherpads im ILIAS, wo Sie sich mit Ihrem Team für einen Abgabeslot eintragen.
 
+Bitte entscheiden Sie in jedem Team, ob Sie zur Abgabe in die FH kommen wollen oder die Abgabe hybrid,
+also über Zoom machen wollen. Dies vermerken Sie entsprechend hinter Ihren Namen im Etherpad ("präsenz"
+vs. "hybrid"). Teams, die später eine Änderung des vereinbarten Modus wünschen, geben dies mindestens
+vier Tage vor der Präsentation per E-Mail an Jonas Posselt bekannt.
+
 ### Praktikum: Verspätete Abgaben, Krankheit
 
 Es gibt keine verspäteten Abgaben. Das sind 0P.
