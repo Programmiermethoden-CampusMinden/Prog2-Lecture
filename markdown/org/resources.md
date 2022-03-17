@@ -69,6 +69,7 @@ Hier noch eine Sammlung von Gedanken zum Berufsverständnis von Informatikern: @
 
 \bigskip
 
+<!-- TODO: Konkrete Links zu den späteren Repos einbauen -->
 *   Vorgaben (Interfaces, Testsuiten, ...)
     *   [GitHub: PM-Dungeon](https://github.com/PM-Dungeon)
     *   [Alternative Gitlab im SW-Labor](http://git03-ifm-min.ad.fh-bielefeld.de) (**nur aus dem FH-Netz/VPN**)
