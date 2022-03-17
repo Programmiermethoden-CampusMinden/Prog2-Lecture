@@ -58,7 +58,7 @@ zu den jeweiligen Themen statt. Sie können dafür den angegebenen Raum nutzen.
 Ablauf:
 -   Bearbeitung der Aufgaben in **2er Teams** vor dem Praktikum
 -   Abgabe der gelösten Aufgaben **vor** der Deadline im ILIAS
--   Vorstellung und Diskussion der Lösung **im** Praktikum (hybrid/Zoom)
+-   Vorstellung und Diskussion der Lösung **im** Praktikum (Präsenz oder Hybrid/Zoom)
 
 ::: notes
 In ausgewählten Wochen finden statt der Praktika zusätzliche Vorlesungen statt
