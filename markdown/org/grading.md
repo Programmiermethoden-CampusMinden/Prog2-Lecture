@@ -118,6 +118,8 @@ bekannt gegeben, für den Termin in der Vorlesungszeit siehe `[Fahrplan]({{< ref
 
 ### Bearbeitung, Teams
 
+<!-- TODO: 2er Teams (ca. 20 Minuten pro Team) oder 3er Teams (30 Minuten pro Team)? -->
+
 Sie bearbeiten alle Aufgaben in festen Teams zu je **zwei Personen**. Jedes Team erarbeitet seine
 **eigene** Lösung.
 
