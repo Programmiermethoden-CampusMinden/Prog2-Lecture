@@ -239,8 +239,8 @@ einer Datei noch "`--`" nutzen: `git checkout -- <dateiname>`.
 
 ## Feature ist stabil: Integration in _master_
 
-              D---F  wuppie                                D---F  wuppie
-             /                     =>                     /     \
+              D---F  wuppie                            D-------F  wuppie
+             /                     =>                 /         \
     A---B---C---E  master                    A---B---C---E-------G  master
 
 \bigskip
@@ -331,8 +331,8 @@ Alternativ: Nutzung graphischer Oberflächen mittels `git mergetool`
 
 ## Rebasen: Verschieben von Branches
 
-              D---F  wuppie                                D---F  wuppie
-             /                     =>                     /     \
+              D---F  wuppie                            D-------F  wuppie
+             /                     =>                 /         \
     A---B---C---E  master                    A---B---C---E-------G  master
 
 ::: notes
