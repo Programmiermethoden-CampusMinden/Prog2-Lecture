@@ -156,7 +156,7 @@ Dokumentation, Verletzung von Namenskonventionen, uneinheitliche Formatierung,
 schlechte Namen für Klassen/Methoden/Variablen/..., duplizierter Code, ...
 
 Konkret können Sie für die Nichteinhaltung der formalen Kriterien folgende Abzüge pro Abgabe
-"erreichen":
+"erreichen" (sofern das Thema bereits in der Vorlesung besprochen wurde):
 *   Keine/nicht ausreichende Tests: -2P
 *   Kein/nicht ausreichendes Logging: -1P
 *   Kein/nicht ausreichendes Javadoc: -1P
