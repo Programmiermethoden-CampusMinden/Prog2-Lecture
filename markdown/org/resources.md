@@ -77,7 +77,8 @@ Hier noch eine Sammlung von Gedanken zum Berufsverständnis von Informatikern: @
 ::: notes
 Wir stellen die Unterlagen komplett auf GitHub zur Verfügung. Sie können sich dort einen kostenfreien und anonymen Account
 einrichten. Wenn Sie dies nicht möchten, können Sie alternativ den Gitlab-Server im Software-Labor nutzen. Dieser ist
-nur aus dem FH-Netz bzw. VPN heraus erreichbar und Sie können sich dort mit Ihren FH-Zugangsdaten anmelden (Reiter "LDAP").
+nur aus dem FH-Netz bzw. VPN heraus erreichbar und Sie können sich dort mit Ihren FH-Zugangsdaten anmelden (im Reiter "LDAP"
+geben Sie Ihren Benutzernamen ohne das `@fh-bielefeld.de` plus Ihr Passwort ein).
 
 Die Aufgaben werden ebenfalls über GitHub oder den internen Gitlab-Server abgegeben (Ausnahmen siehe Aufgabenblätter). Dafür
 richten wir Ihnen jeweils ein privates Repo ein.
