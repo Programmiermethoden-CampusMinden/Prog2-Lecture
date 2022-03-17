@@ -56,7 +56,7 @@ zu den jeweiligen Themen statt. Sie können dafür den angegebenen Raum nutzen.
 \bigskip
 
 Ablauf:
--   Bearbeitung der Aufgaben in **2er Teams** vor dem Praktikum
+-   Bearbeitung der Aufgaben in **3er Teams** vor dem Praktikum
 -   Abgabe der gelösten Aufgaben **vor** der Deadline im ILIAS
 -   Vorstellung und Diskussion der Lösung **im** Praktikum (Präsenz oder Hybrid/Zoom)
 
