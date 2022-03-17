@@ -12,7 +12,7 @@ hidden: true
 ### Dozenten
 
 -   [Carsten Gips](https://www.fh-bielefeld.de/minden/ueber-uns/personenverzeichnis/carsten-gips) (Vorlesung, Organisation)
--   Jonas Posselt (Praktikum)
+-   Jonas Posselt (Praktikum; Kontaktdaten siehe [ILIAS-Kursraum > Info](https://www.fh-bielefeld.de/elearning/ilias.php?ref_id=1015325&cmdClass=ilinfoscreengui&cmd=showSummary&cmdNode=wr:ls:er&baseClass=ilrepositorygui#after_tabs))
 -   Tutoren (siehe ILIAS-Mitgliederliste)
 
 ### Sprechstunde ("Flipped"-Teil der Vorlesung)
