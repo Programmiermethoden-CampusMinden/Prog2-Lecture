@@ -100,7 +100,7 @@ und der Themenbranch gelöscht.
          \
           C---E---I  develop
                \
-                F---G---H topic
+                F---G---H  topic
 
 
 ::: notes
