@@ -38,14 +38,14 @@ assignments:
   - topic: sheet01
 youtube:
   - link: "https://youtu.be/Ac3-pZhVf_c"
-    name: "Git Intro"
+    name: "VL Git Intro"
   - link: "https://youtu.be/0noYvZvQhic"
     name: "Demo Config"
   - link: "https://youtu.be/ZaWEwIpER-U"
     name: "Demo Repo"
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/12ee47d53c582cf255d80fd186bb79bebeb65e63ca954a8070cb270eb82c4e5d492dc812da74cbdcdb3e697eeccdaf0b585852697306ac82d890229adffbf401"
-    name: "Git Intro"
+    name: "VL Git Intro"
 ---
 
 
