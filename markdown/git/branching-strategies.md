@@ -38,9 +38,11 @@ quizzes:
 assignments:
   - topic: sheet01
 youtube:
-  - link: "https://youtu.be/XYZ"
+  - link: "https://youtu.be/v1WHIPdoA0k"
+    name: "VL Git Branching-Strategien"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/XYZ"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/aad8053a927c859084bf51c4145ed70f49a0e87a1cf246b3d232d266d6d77bd57c140bda4159b09ab8218345523463036bcb92ebef2591cd573ebdf3745f4ede"
+    name: "VL Git Branching-Strategien"
 ---
 
 
