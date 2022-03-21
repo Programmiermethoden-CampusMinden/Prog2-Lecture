@@ -42,7 +42,7 @@ youtube:
   - link: "https://youtu.be/ITF8wj8GluM"
     name: "Demo New Files"
   - link: "https://youtu.be/SFIVudlVUhg"
-    name: "Demo Arbeitsablauf: Datei ändern -- stagen -- committen"
+    name: "Demo Arbeitsablauf: Datei ändern - stagen - committen"
   - link: "https://youtu.be/0uczjI7wsrQ"
     name: "Demo Amend"
   - link: "https://youtu.be/vmb-PZ1Efkg"
