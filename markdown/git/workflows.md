@@ -39,9 +39,15 @@ quizzes:
 assignments:
   - topic: sheet01
 youtube:
-  - link: "https://youtu.be/XYZ"
+  - link: "https://youtu.be/3xqmNGN39wE"
+    name: "VL Git Workflows"
+  - link: "https://youtu.be/-8NOia7k0WI"
+    name: "Demo Anlegen eines Forks, Erstellen eines Pull-Requests (PR)"
+  - link: "https://youtu.be/4LaZc080Ajo"
+    name: "Demo Arbeiten mit einem PR, Review eines PR"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/XYZ"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/b673fe50e18f064b2b5c81108c81dfea940b2eb81790d54b27e8ade26f0afa10d0d05f8a0c0c852e8e9da6c558065f053033d83384810b47a6ca7f5110482153"
+    name: "VL Git Workflows"
 ---
 
 
