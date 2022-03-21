@@ -34,9 +34,13 @@ quizzes:
 assignments:
   - topic: sheet01
 youtube:
-  - link: "https://youtu.be/XYZ"
+  - link: "https://youtu.be/9XWwefIokPg"
+    name: "VL Git Bisect"
+  - link: "https://youtu.be/hiiugrQMNR4"
+    name: "Demo Git Bisect"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/XYZ"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/c844865038e41cf59adebab0244758e61af9cf2c76233962be711920ff8f2d614d1a8012ec85d47cf421eaa94a9efedf0917bf369f3adb495c018796d3d89b13"
+    name: "VL Git Bisect"
 ---
 
 
