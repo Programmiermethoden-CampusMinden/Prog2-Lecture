@@ -37,9 +37,23 @@ quizzes:
 assignments:
   - topic: sheet01
 youtube:
-  - link: "https://youtu.be/XYZ"
+  - link: "https://youtu.be/GxJI8nmZVE8"
+    name: "VL Git Basics"
+  - link: "https://youtu.be/ITF8wj8GluM"
+    name: "Demo New Files"
+  - link: "https://youtu.be/SFIVudlVUhg"
+    name: "Demo Arbeitsablauf: Datei ändern -- stagen -- committen"
+  - link: "https://youtu.be/0uczjI7wsrQ"
+    name: "Demo Amend"
+  - link: "https://youtu.be/vmb-PZ1Efkg"
+    name: "Demo Log"
+  - link: "https://youtu.be/XB8lfGuU6ZI"
+    name: "Demo Diff"
+  - link: "https://youtu.be/F1W0RqrxCho"
+    name: "Demo Tag"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/XYZ"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/3a44c8a32e7699db77ae922c6b8944acf0d8c65b78d02859e707ffdf783ea45a78200312cdb8102c1052f382101b69a5092bcaf0a11ded36b98f4552a4aca345"
+    name: "VL Git Basics"
 ---
 
 
