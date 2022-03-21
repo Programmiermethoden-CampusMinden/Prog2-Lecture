@@ -18,17 +18,13 @@ Um den `[Pool P]({{< ref "/assignments/pool_p" >}})`{=markdown} erfolgreich zu a
 
 Sie können die Projekte erst ab Woche 9 (d.h. ab KW22, also in der Woche nach dem ersten E-Assessment) starten.
 
-Sie müssen das Projekt vorher mit ??? absprechen. Bereiten Sie dafür ein kurzes Konzept vor und erklären Sie, was Sie machen möchten, wie Sie dabei vorgehen wollen und welche Probleme/Fragen es gibt. Melden Sie sich bitte frühzeitig.
+Sie müssen das Projekt vorher mit Jonas Posselt absprechen. Bereiten Sie dafür ein kurzes Konzept vor und erklären Sie, was Sie machen möchten, wie Sie dabei vorgehen wollen und welche Probleme/Fragen es gibt. Melden Sie sich bitte mindestens eine Woche bevor Sie das Projekt starten wollen.
 
 Nachdem Ihre Projekt-Idee genehmigt wurde, beginnt die Bearbeitungszeit.
 
-Nach der ersten Woche müssen Sie ein schriftliches Feinkonzept und einen ersten Grobentwurf der Implementierung vorstellen.
+Nach der ersten Woche müssen Sie ein schriftliches Feinkonzept und einen ersten Grobentwurf der Implementierung vorstellen. Für diesen Teil können Sie bis zu 10 Punkte erhalten.
+**TODO KRITERIEN**
 
-Nach der zweiten Woche stellen Sie das Ergebnis vor.
-
-Bei der Punktevergabe kommt es nicht nur darauf an, ob Sie Ihr Ziel erreicht haben, sondern auch darauf, ob Sie die Ihnen bekannten Maßnahmen zur Einhaltung der Softwarequalität genutzt haben (Testfälle, Logging, Code-Style). Auch die Qualität Ihrer schriftlichen Ausarbeitung fließt in die Punktevergabe mit ein.
-
-
-
+Nach der zweiten Woche stellen Sie das Ergebnis vor. Dies beinhaltet die fertiggestellte Dokumentation (**TODO PUNKTE**), das Lerntagebuch (**TODO PUNKTE**) und die lauffähige Software (**TODO PUNKTE**).Für diesen Teil können Sie bis zu 10 Punkte erhalten. Beachten Sie dieselben Kriterien wie bei den anderen Abgaben (Logging, Dokumentation, Testfälle, Codestile etc.). 
 
 `{{< children showhidden="true" >}}`{=markdown}
