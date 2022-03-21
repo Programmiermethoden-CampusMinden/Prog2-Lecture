@@ -45,7 +45,7 @@ quizzes:
 assignments:
   - topic: sheet01
 youtube:
-  - link: "https://youtu.be/_uhEseblDYU"
+  - link: "`https://youtu.be/_uhEseblDYU`{=markdown}"
     name: "VL Git Remotes"
   - link: "https://youtu.be/moqywsxtEy8"
     name: "Demo Fetch, Pull und Push"
