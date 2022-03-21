@@ -33,24 +33,26 @@ Zur Verteilung der Themen siehe auch den `["Fahrplan"]({{< ref "/org/schedule" >
 
 ### Vorlesung: 2 SWS
 
-=> Vorlesungszeit: Mo, 15:45 - 17:15 Uhr (online/J104)
+=> Vorlesungszeit:
+*   Einmalig am Mo, 04.04.22: 15:45 - 17:15 Uhr (online/J104)
+*   Ab 08.04.22: **Fr, 16:00 - 17:30 Uhr**  (online/J104)
 
 Durchführung als **Flipped Classroom**:
 *   Vorbereitung individuell \@home mit ausführlich kommentierten Skripten plus
     Screencasts (**Selbststudium**)
-*   Sprechstunde ("Flipped"-Teil der Vorlesung) per Zoom (**Zugangsdaten siehe ILIAS**)
+*   **Sprechstunde** ("Flipped"-Teil der Vorlesung) **per Zoom** (Zugangsdaten siehe ILIAS)
 
 ::: notes
-[Achtung:]{.alert} Es gibt keine Präsenzvorlesung in PM im S22. Arbeiten Sie das
-bereitgestellte Material (Handouts, Screencasts, Quizzes, Literaturhinweise)
-**selbstständig vor** der Sprechstunde durch. Im VL-Slot findet eine Zoom-Sprechstunde
-zu den jeweiligen Themen statt. Sie können dafür den angegebenen Raum nutzen.
+[Achtung:]{.alert} Es gibt keine Präsenzvorlesung. Arbeiten Sie das bereitgestellte Material
+(Handouts, Screencasts, Quizzes, Literaturhinweise) **selbstständig vor** der Sprechstunde
+durch. Im VL-Slot findet eine Zoom-Sprechstunde zu den jeweiligen Themen statt. Sie können
+dafür den angegebenen Raum nutzen.
 :::
 
 ### Praktikum: 2+1 SWS
 
 *   Gruppe 1: Fr, 09:00 - 10:30 Uhr (D320)
-*   Gruppe 2: Fr, 13:15 - 14:45 Uhr (D320)
+*   Gruppe 2: Fr, 12:45 - 14:15 Uhr (D320)
 *   Gruppe 3: Fr, 10:45 - 12:15 Uhr (D320)
 
 \bigskip
