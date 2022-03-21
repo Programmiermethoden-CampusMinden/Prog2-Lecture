@@ -45,9 +45,17 @@ quizzes:
 assignments:
   - topic: sheet01
 youtube:
-  - link: "https://youtu.be/XYZ"
+  - link: "https://youtu.be/_uhEseblDYU"
+    name: "VL Git Remotes"
+  - link: "https://youtu.be/moqywsxtEy8"
+    name: "Demo Fetch, Pull und Push"
+  - link: "https://youtu.be/0RoqM5Wmxfc"
+    name: "Demo Tracking-Branches"
+  - link: "https://youtu.be/jL4AvSsjjKg"
+    name: "Demo Verknüpfen weiterer Remotes"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/XYZ"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/8aa3f0e96448352e436aead353f54a3de6bbd3737bf33b6bd935b098352690544dc527e59424068ec65b6e0d67f6aff6bd6aa0a602127ce2a02a360658e0151d"
+    name: "VL Git Remotes"
 ---
 
 
