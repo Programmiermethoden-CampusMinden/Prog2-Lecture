@@ -296,7 +296,13 @@ Grund: Es gibt nur `List.class` (und kein `List<String>.class` bzw. `List<Intege
 
 ## Wrap-Up
 
-TODO
+-   Generics existieren eigentlich nur auf Quellcode-Ebene
+-   "Type-Erasure":
+    -   Compiler entfernt [nach Typ-Prüfungen etc.]{.notes}
+        generische Typ-Parameter [etc.]{.notes} => im Byte-Code nur noch Raw-Typen
+        [bzw. die oberen Typ-Schranken der Typ-Parameter, in der Regel `Object`]{.notes}
+    -   Compiler baut passende Casts in Byte-Code ein
+    -   Transparent für User; Auswirkungen beachten!
 
 
 
