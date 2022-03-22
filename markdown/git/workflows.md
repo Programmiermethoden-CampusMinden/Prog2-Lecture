@@ -35,7 +35,7 @@ outcomes:
   - k3: "Aktualisierung von Merge-Requests"
   - k3: "Diskussion über den Code in Merge-Requests"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037714&client_id=FH-Bielefeld"
 assignments:
   - topic: sheet01
 youtube:
