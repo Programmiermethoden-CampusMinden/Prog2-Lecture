@@ -1,27 +1,32 @@
 ---
-- week: "KW14"
+- week: "KW14/Mo"
   lecture:
     - topic: "/org/syllabus"
       notes: "Kick-Off (Zoom)"
     - topic: "/git/intro"
     - topic: "/git/basics"
+  misc_assignment:
+    - notes: ">> Kein Praktikum"
+
+- week: "KW14/Fr"
+  lecture:
     - topic: "/git/branches"
     - topic: "/git/branching-strategies"
-    - topic: "/coding/debugging"
-    - topic: "/database/jdbc"
+    - topic: "/git/remotes"
+    - topic: "/pattern/factory-method"
+    - topic: "/coding/logging"
   misc_assignment:
-    - notes: "Kein Praktikum - wir nutzen die Zeit für Vorlesungsinhalte"
+    - notes: ">> Kein Praktikum"
 
 - week: "KW15"
   lecture:
-    - topic: "/git/remotes"
     - topic: "/git/workflows"
-    - topic: "/coding/logging"
     - topic: "/coding/javadoc"
-    - topic: "/pattern/factory-method"
   assignment:
     - topic: "sheet01"
-      due: "14.04."
+      due: "12.04."
+  misc_assignment:
+    - notes: ">> Kein Praktikum (nur Abgabe von K1; Vorstellung im Praktikum in W3)"
 
 - week: "KW16"
   lecture:
@@ -32,7 +37,9 @@
     - topic: "/pattern/strategy"
   assignment:
     - topic: "sheet02"
-      due: "21.04."
+      due: "19.04."
+  misc_assignment:
+    - notes: ">> Vorstellung von K1 zusammen mit K2"
 
 - week: "KW17"
   lecture:
@@ -43,7 +50,7 @@
     - topic: "/coding/tdd"
   assignment:
     - topic: "sheet03"
-      due: "28.04."
+      due: "26.04."
 
 - week: "KW18"
   lecture:
@@ -52,7 +59,7 @@
     - topic: "/testing/mockito"
   assignment:
     - topic: "sheet04"
-      due: "05.05."
+      due: "03.05."
 
 - week: "KW19"
   lecture:
@@ -64,7 +71,7 @@
     - topic: "/pattern/observer"
   assignment:
     - topic: "sheet05"
-      due: "12.05."
+      due: "10.05."
 
 - week: "KW20"
   lecture:
@@ -73,7 +80,7 @@
     - topic: "/pattern/template-method"
   assignment:
     - topic: "sheet06"
-      due: "19.05."
+      due: "17.05."
 
 - week: "KW21"
   lecture:
@@ -81,9 +88,9 @@
     - topic: "/gui/swing"
     - topic: "/gui/java2d"
   misc_lecture:
-    - notes: ">> E1 (23.05.) in Vorlesungs-Slot"
+    - notes: ">> E1 (27.05.) in Vorlesungs-Slot"
   misc_assignment:
-    - notes: "Kein Praktikum"
+    - notes: ">> Kein Praktikum"
 
 - week: "KW22"
   lecture:
@@ -93,7 +100,7 @@
     - topic: "/java-jvm/regexp"
   assignment:
     - topic: "sheet07"
-      due: "02.06."
+      due: "31.05."
 
 - week: "KW23"
   lecture:
@@ -104,7 +111,7 @@
     - topic: "/pattern/command"
   assignment:
     - topic: "sheet08"
-      due: "09.06."
+      due: "07.06."
 
 - week: "KW24"
   lecture:
@@ -115,7 +122,7 @@
     - topic: "/java-jvm/exceptions"
   assignment:
     - topic: "sheet09"
-      due: "16.06."
+      due: "14.06."
 
 - week: "KW25"
   lecture:
@@ -125,12 +132,12 @@
     - topic: "/building/docker"
   assignment:
     - topic: "sheet10"
-      due: "16.06."
+      due: "21.06."
 
 - week: "KW26"
   lecture:
     - topic: "/org/syllabus"
       notes: "Rückblick, Prüfungsvorbereitung (Zoom)"
   misc_assignment:
-    - notes: "Kein Praktikum"
+    - notes: ">> Praktikum: Vorstellung letzte Dungeon-Aufgabe"
 ---
