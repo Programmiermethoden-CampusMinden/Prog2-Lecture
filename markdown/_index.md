@@ -52,7 +52,7 @@ dafür den angegebenen Raum nutzen.
 ### Praktikum: 2 SWS
 
 *   Gruppe 1: Fr, 09:00 - 10:30 Uhr (D320)
-*   Gruppe 2: Fr, 12:45 - 14:15 Uhr (D320)
+*   Gruppe 2: Fr, 12:45 - 14:15 Uhr (D320) (**Achtung: Abweichung vom Stundenplan**)
 *   Gruppe 3: Fr, 10:45 - 12:15 Uhr (D320)
 
 \bigskip
