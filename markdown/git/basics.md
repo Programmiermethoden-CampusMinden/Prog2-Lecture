@@ -33,7 +33,7 @@ outcomes:
   - k3: "Herausfinden von Unterschieden, Ansehen der Historie"
   - k3: "Ignorieren von Dateien und Ordnern"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037711&client_id=FH-Bielefeld"
 assignments:
   - topic: sheet01
 youtube:
