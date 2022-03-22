@@ -41,7 +41,7 @@ outcomes:
   - k3: "Anlegen von lokalen Branches vs. Anlegen von entfernten Branches"
   - k3: "Anlegen eines Tracking Branches zum Vereinfachen der Arbeit"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037712&client_id=FH-Bielefeld"
 assignments:
   - topic: sheet01
 youtube:
