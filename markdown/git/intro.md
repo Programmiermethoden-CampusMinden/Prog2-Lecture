@@ -33,7 +33,7 @@ outcomes:
   - k2: "Erstellung von lokalen Git-Repositories"
   - k3: "Umgang mit entsprechenden Git-Befehlen auf der Konsole"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037713&client_id=FH-Bielefeld"
 assignments:
   - topic: sheet01
 youtube:
