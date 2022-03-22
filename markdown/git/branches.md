@@ -31,7 +31,7 @@ outcomes:
   - k3: "Mergen von Branches, Auflösen möglicher Konflikte"
   - k3: "Rebasen von Branches"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037710&client_id=FH-Bielefeld"
   - link: "https://learngitbranching.js.org/"
     name: "Tutorial: Welcome to Learn Git Branching"
   - link: "https://marklodato.github.io/visual-git-guide/index-en.html"
