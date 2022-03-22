@@ -34,7 +34,7 @@ outcomes:
   - k3: "Git-Flow-Modell anwenden"
   - k3: "GitHub Flow-Modell anwenden"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037715&client_id=FH-Bielefeld"
 assignments:
   - topic: sheet01
 youtube:
