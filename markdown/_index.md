@@ -49,7 +49,7 @@ durch. Im VL-Slot findet eine Zoom-Sprechstunde zu den jeweiligen Themen statt. 
 dafür den angegebenen Raum nutzen.
 :::
 
-### Praktikum: 2+1 SWS
+### Praktikum: 2 SWS
 
 *   Gruppe 1: Fr, 09:00 - 10:30 Uhr (D320)
 *   Gruppe 2: Fr, 12:45 - 14:15 Uhr (D320)
@@ -71,7 +71,7 @@ Siehe auch `["Hinweise zum Praktikum"]({{< ref "/org/grading" >}})`{=markdown}
 
 ### Tutorium: 1 SWS
 
--   XX, XX:XX -- XX:XX Uhr (Details siehe "News" im ILIAS)
+-   Mo, 13:00 -- 15:30 Uhr (online/J104)
 
 **Anmerkung**: Das Tutorium in PM ist fester Bestandteil der Prüfungsordnung.
 
