@@ -29,10 +29,6 @@ tldr: |
   bedeutet "Fehler").
 outcomes:
   - k3: "Fehlersuche mit Git Bisect"
-quizzes:
-  - link: "XYZ"
-assignments:
-  - topic: sheet01
 youtube:
   - link: "https://youtu.be/9XWwefIokPg"
     name: "VL Git Bisect"
