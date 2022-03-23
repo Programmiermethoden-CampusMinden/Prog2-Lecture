@@ -26,7 +26,7 @@ quizzes:
   - link: "XYZ"
     name: "Quiz Generics und Polymorphie (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet03
 youtube:
   - link: "https://youtu.be/RiTA43wTixQ"
     name: "VL Generics und Polymorphie"
