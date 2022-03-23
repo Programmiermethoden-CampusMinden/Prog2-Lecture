@@ -14,8 +14,8 @@ readings:
   - key: "Bloch2018"
 tldr: |
   Generische Klassen und Methoden sind ein wichtiger Baustein in der Programmierung mit Java.
-  Dabei kann man Typ-Variablen einführen, die dann bei der Instantiierung von Klassen mit
-  existierenden Typen konkretisiert werden.
+  Dabei werden Typ-Variablen eingeführt, die dann bei der Instantiierung von Klassen mit
+  existierenden Typen konkretisiert werden ("Typ-Parameter").
 
   Syntaktisch definiert man die Typ-Variablen in spitzen Klammern hinter dem Klassennamen bzw.
   vor dem Rückgabetyp einer Methode: `public class Stack<E> { }` und `public <T> T foo(T m) { }`.
@@ -35,7 +35,7 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/5497f0d31a9d0ac4d46e781040b1fd9f20ca7e0103cccc1abe0089c7c36a9251de0126f11fe376341a7b077dcdd43e8683f2c165b895da1a70da6c17d5c4576f"
     name: "VL Generische Klassen & Methoden"
- ---
+---
 
 
 ## Generische Strukturen
