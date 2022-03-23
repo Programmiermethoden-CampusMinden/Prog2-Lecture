@@ -29,9 +29,13 @@ quizzes:
 assignments:
   - topic: sheet01
 youtube:
-  - link: "https://youtu.be/XYZ"
+  - link: "https://youtu.be/OV2vEn2EkWo"
+    name: "VL Generics: Bounds & Wildcards"
+  - link: "https://youtu.be/D2hIicsho7I"
+    name: "Demo Wildcards"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/XYZ"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/08ef62f9367140e7ae75cd4e90fde1e63cc3ec6c9e7e4c11a1994065fd45e781f46bc6b3f1fbe4fbe8952db11812d52efe8cd8900fe88843e5eaefad62bbc7d3"
+    name: "VL Generics: Bounds & Wildcards"
 ---
 
 
