@@ -34,12 +34,7 @@ fhmedia:
 ---
 
 
-## Generische Polymorphie: _`B<E> extends A<E>`_
-
-<!-- XXX
-Eigentlich kein texttt{} in Überschrift, da LaTeX damit u.U. Probleme hat. Aber
-hier verschwinden sonst die spitzen Klammern ...
--->
+## Generische Polymorphie: _`B<E> extends A<E>`{=markdown}_
 
 ::: cbox
 `B<E> extends A<E>`
