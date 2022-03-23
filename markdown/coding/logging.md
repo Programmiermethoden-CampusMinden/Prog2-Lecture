@@ -37,7 +37,7 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037706&client_id=FH-Bielefeld"
 assignments:
-  - topic: sheet01
+  - topic: sheet02
 youtube:
   - link: "https://youtu.be/XYZ"
 fhmedia:
