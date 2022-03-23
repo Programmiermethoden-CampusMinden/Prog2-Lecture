@@ -16,7 +16,7 @@ outcomes:
   - k2: "*foo*"
   - k3: "fluppie"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037708&client_id=FH-Bielefeld"
 youtube:
   - link: "https://youtu.be/XYZ"
 fhmedia:
