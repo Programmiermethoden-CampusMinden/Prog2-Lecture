@@ -28,9 +28,11 @@ quizzes:
 assignments:
   - topic: sheet01
 youtube:
-  - link: "https://youtu.be/XYZ"
+  - link: "https://youtu.be/RiTA43wTixQ"
+    name: "VL Generics und Polymorphie"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/XYZ"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/a0d6f4ada3f85cd9f78dfde923f045f5fd43819a4930c5ef989ff6acb150c2f53208a061cf87f3c3f03823f6d645e10b1388009bfd9cfe474cfb4bdc93302fc2"
+    name: "VL Generics und Polymorphie"
 ---
 
 
