@@ -126,6 +126,9 @@ public class X {
 }
 ```
 
+[**Hinweis**: Dieses Beispiel beinhaltet auch Polymorphie bei/mit generischen Datentypen, bitte vorher
+ auch das Video zum vierten Teil "Generics und Polymorphie" anschauen]{.notes}
+
 ::::::::: notes
 ### Erster Versuch (_A_ und _B_ und _main()_ wie oben)
 
