@@ -26,9 +26,11 @@ quizzes:
 assignments:
   - topic: sheet01
 youtube:
-  - link: "https://youtu.be/XYZ"
+  - link: "https://youtu.be/vo0WKkPBMAM"
+    name: "VL Generics: Type Erasure"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/XYZ"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/5fad3671a098d262206f0b0eb995b2d692a6e9914a336b1c28fc99753b0c874a637d310dcdc639afdd200d831b4e3ee5924ea8073b4a32751aebe4fa91c32bef"
+    name: "VL Generics: Type Erasure"
 ---
 
 
