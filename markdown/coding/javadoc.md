@@ -17,8 +17,6 @@ outcomes:
   - k3: "fluppie"
 quizzes:
   - link: "XYZ"
-assignments:
-  - topic: sheet01
 youtube:
   - link: "https://youtu.be/XYZ"
 fhmedia:
