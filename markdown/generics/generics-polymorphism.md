@@ -14,12 +14,12 @@ readings:
   - key: "Bloch2018"
 tldr: |
   Auch mit generischen Klassen stehen die Mechanismen Vererbung und Überladen zur Verfügung. Dabei muss
-  aber beachtet werden, dass generische Klassen sich **invariant** verhalten: Der Typ selbst folgt der
+  aber beachtet werden, dass generische Klassen sich **"invariant"** verhalten: Der Typ selbst folgt der
   Vererbungsbeziehung, eine Vererbung des Typ-Parameters begründet _keine_ Vererbungsbeziehung! D.h.
-  aus "`U extends O`" folgt **nicht** "`A<U> extends A<O>`".
+  aus `U extends O` folgt **nicht** `A<U> extends A<O>`.
 
-  Bei Arrays ist es genau anders herum: Wenn "`U extends O`" dann gilt auch "`U[] extends O[]`" ... (Dies
-  nennt man "kovariantes" Verhalten.)
+  Bei Arrays ist es genau anders herum: Wenn `U extends O` dann gilt auch `U[] extends O[]` ... (Dies
+  nennt man "_kovariantes_" Verhalten.)
 outcomes:
   - k3: "Vererbungsbeziehungen mit generischen Klassen"
   - k3: "Umgang mit Arrays und generischen Typen"
