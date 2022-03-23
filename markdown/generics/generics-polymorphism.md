@@ -34,7 +34,7 @@ fhmedia:
 ---
 
 
-## Generische Polymorphie: _`B<E> extends A<E>`{=markdown}_
+## Generische Polymorphie
 
 ::: cbox
 `B<E> extends A<E>`
