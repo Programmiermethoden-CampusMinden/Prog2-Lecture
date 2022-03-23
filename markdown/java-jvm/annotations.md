@@ -151,24 +151,6 @@ public void setDate(int date) {
 }
 ```
 
-[[Javadoc-Regeln an java.util.Date diskutieren; Doku für annotations.B generieren und diskutieren]{.bsp}]{.notes}
-
-
-::: notes
-## Regeln für die Dokumentation mit Javadoc
-
-*   Javadoc-Kommentare beginnen mit `/**` und enden mit `*/`
-    *   Meist mit `*` am Anfang jeder Kommentarzeile: Wird von Javadoc ignoriert
-*   Erste Zeile bei Methoden/Attributen geht in die "Summary", Rest in die "Details"
-*   Annotationen für Autoren und Version: `@author`, `@version`, `@since`
-*   Annotationen zur Erklärung der Parameter und der Rückgabewerte: `@param`, `@return`
-*   Annotation zum Markieren als veraltet: `@deprecated`
-    *   für Sichtbarkeit zur Laufzeit: normale Code-Annotation `@Deprecated`
-*   Verweise mit `@see` bzw. `{@link ...}`
-*   Generation der Doku mit `javadoc *.java` bzw. aus Eclipse:
-    `File > Export > Javadoc`
-:::
-
 
 ## `@NotNull` mit IntelliJ
 
