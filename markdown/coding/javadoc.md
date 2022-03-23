@@ -5,11 +5,8 @@ menuTitle: "Javadoc"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 3
 readings:
-  - key: "Martin2009"
-  - key: "Dietz2018"
-  - key: "Fowler2011"
-  - key: "Beck2014"
-  - key: "Passig2013"
+  - key: "Ullenboom2021"
+    comment: "Kap. 23.4: Dokumentationskommentare mit Javadoc"
   - key: "googlestyleguide"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
@@ -29,24 +26,41 @@ fhmedia:
 ---
 
 
-## Motivation
-Lorem Ipsum. Starte mit H2-Level.
-...
+## Dokumentation mit Javadoc
 
-## Folie 2
-...
+```java
+/**
+ * Beschreibung Beschreibung Beschreibung
+ *
+ * @author  Dagobert Duck
+ * @version V1
+ * @since   schon immer
+ * @param   date   Tag, Wert zw. 1 .. 31
+ * @return  nix (nur zur Demo)
+ * @see     java.util.Calendar
+ * @deprecated As of JDK version 1.1
+ */
+public void setDate(int date) {
+    setField(Calendar.DATE, date);
+}
+```
 
-## Folie 3
-...
+[[Javadoc-Regeln an java.util.Date diskutieren; Doku für annotations.B generieren und diskutieren]{.bsp}]{.notes}
 
-## Folie 4
-...
 
-## Folie 5
-...
+## Regeln für die Dokumentation mit Javadoc
 
-## Folie 6
-...
+*   Javadoc-Kommentare beginnen mit `/**` und enden mit `*/`
+    *   Meist mit `*` am Anfang jeder Kommentarzeile: Wird von Javadoc ignoriert
+*   Erste Zeile bei Methoden/Attributen geht in die "Summary", Rest in die "Details"
+*   Annotationen für Autoren und Version: `@author`, `@version`, `@since`
+*   Annotationen zur Erklärung der Parameter und der Rückgabewerte: `@param`, `@return`
+*   Annotation zum Markieren als veraltet: `@deprecated`
+    *   für Sichtbarkeit zur Laufzeit: normale Code-Annotation `@Deprecated`
+*   Verweise mit `@see` bzw. `{@link ...}`
+*   Generation der Doku mit `javadoc *.java` bzw. aus Eclipse:
+    `File > Export > Javadoc`
+
 
 ## Wrap-Up
 ...
