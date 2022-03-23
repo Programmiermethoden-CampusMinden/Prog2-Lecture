@@ -13,19 +13,12 @@ readings:
     comment: "Specialized Trails: Generics"
   - key: "Bloch2018"
 tldr: |
-  TODO
+  Generische Klassen und Methoden sind ein wichtiger Baustein in der Programmierung mit Java.
+  Dabei kann man Typ-Variablen einführen, die dann bei der Instantiierung von Klassen mit
+  existierenden Typen konkretisiert werden.
 
-  *   Begriffe:
-    *   Generischer Typ: `Stack<T>`
-    *   Formaler Typ-Parameter: `T`
-    *   Parametrisierter Typ:`Stack<Long>`
-    *   Typ-Parameter: `Long`
-    *   Raw Type: `Stack`
-  *   Generische Klassen: `public class Stack<E> { }`
-    *   "`<Typ>`" hinter Klassennamen
-  *   Generische Methoden: `public <T> T foo(T m) { }`
-    *   "`<Typ>`" vor Rückgabewert
-
+  Syntaktisch definiert man die Typ-Variablen in spitzen Klammern hinter dem Klassennamen bzw.
+  vor dem Rückgabetyp einer Methode: `public class Stack<E> { }` und `public <T> T foo(T m) { }`.
 outcomes:
   - k1: "Begriffe generischer Typ, parametrisierter Typ, formaler Typ-Parameter, Typ-Parameter"
   - k3: "Erstellen und Nutzen von generischen Klassen und Interfaces"
