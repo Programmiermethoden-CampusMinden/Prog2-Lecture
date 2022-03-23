@@ -13,15 +13,18 @@ readings:
     comment: "Specialized Trails: Generics"
   - key: "Bloch2018"
 tldr: |
-  TODO
+  Typ-Variablen können weiter eingeschränkt werden, in dem man einen verpflichtenden
+  Ober- oder Untertyp angibt mit `extends` bzw. `super`. Damit muss der später
+  bei der Instantiierung verwendete Typ-Parameter entweder die Oberklasse selbst
+  sein oder davon ableiten (bei `extends`) bzw. der Typ-Parameter muss eine Oberklasse
+  der angegebenen Schranke sein (`super`).
 
-  *   Ein Wildcard (`?`) als Typ-Parameter steht für einen beliebigen Typ
-    -   Ist in Klasse oder Methode dann aber nicht mehr zugreifbar
-  *   Mit Bounds kann man Typ-Parameter nach oben oder nach unten einschränken
-    (im Sinne einer Vererbungshierarchie)
-    -   `extends`: Der Typ-Parameter muss eine Unterklasse eines bestimmten Typen sein
-    -   `super`: Der Typparamenter muss einer Oberklasse eines bestimmten Typen sein
+  Durch die Einschränkung mit `extends` können in der Klasse/Methode auf der Typ-Variablen
+  alle Methoden des angegebenen Obertyps verwendet werden.
 
+  Ein Wildcard (`?`) als Typ-Parameter steht für einen beliebigen Typ, wobei die
+  Typ-Variable keinen Namen bekommt und damit innerhalb der Klasse/Methode nicht
+  zugreifbar ist.
 outcomes:
   - k3: "Umgang mit Wildcards und Bounds bei generischen Klassen/Methoden"
 quizzes:
@@ -199,7 +202,7 @@ und hat dann auch wieder die `printInfo`-Methode zur Verfügung ...
 *   Mit Bounds kann man Typ-Parameter nach oben oder nach unten einschränken
     (im Sinne einer Vererbungshierarchie)
     -   `extends`: Der Typ-Parameter muss eine Unterklasse eines bestimmten Typen sein
-    -   `super`: Der Typ-Parameter muss einer Oberklasse eines bestimmten Typen sein
+    -   `super`: Der Typ-Parameter muss eine Oberklasse eines bestimmten Typen sein
 
 
 
