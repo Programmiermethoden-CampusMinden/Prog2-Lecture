@@ -25,12 +25,12 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037708&client_id=FH-Bielefeld"
 youtube:
-  - link: ""
+  - link: "https://youtu.be/Qo2TTD593eQ"
     name: "VL Javadoc"
-  - link: ""
-    name: "Demo Javadoc am Beispiel java.util.ArrayList"
+  - link: "https://youtu.be/stt9Hm_04fs"
+    name: "Demo Javadoc"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/15984eacd03de989ab2bce322ace5d74da962a911ae45afbb60958714ed6b16c72c962aec4b60acda9419ef15d26c5a5265129245f26beb0f905af9a7176b9fa"
     name: "VL Javadoc"
 ---
 
