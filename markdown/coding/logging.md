@@ -92,7 +92,6 @@ Log-Level) nach weiteren Kriterien filtern kann.
 [Konsole: logging.LoggingDemo]{.bsp}
 
 
-::::::::: notes
 ## Erzeugen neuer Logger
 
 ```java
@@ -115,7 +114,6 @@ Logger l = Logger.getLogger(MyClass.class.getName());
     *   Spiegelt modulares Design
     *   Ausgaben enthalten automatisch Hinweis auf Herkunft (Lokalität) der Meldung
     *   **Alternativen**: Funktionale Namen wie "XML", "DB", "Security"
-:::::::::
 
 
 ## Ausgabe von Logmeldungen
