@@ -1,6 +1,6 @@
 ---
 type: assignment
-title: ""
+title: "Wuppie"
 author: "Andre Matutat (FH Bielefeld)"
 points:
 weight: 1
@@ -8,4 +8,11 @@ hidden: true
 ---
 
 
-## XXX
+## Aufgabe 1
+
+`{{% include "assignments/pool_k/tasks/wuppie.md" "false" %}}`{=markdown}
+
+## Aufgabe 2
+
+{{% include "assignments/pool_k/tasks/fluppie.md" %}}
+
