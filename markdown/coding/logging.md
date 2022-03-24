@@ -39,7 +39,7 @@ quizzes:
 assignments:
   - topic: sheet02
 youtube:
-  - link: "https://youtu.be/_jYWJzr1rkA"
+  - link: "`https://youtu.be/_jYWJzr1rkA`{=markdown}"
     name: "VL Logging"
   - link: "https://youtu.be/fWSc5A_CPL8"
     name: "Demo Logging (Überblick)"
