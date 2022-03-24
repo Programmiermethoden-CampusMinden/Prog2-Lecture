@@ -39,7 +39,7 @@ fhmedia:
 
 ```java
 /**
- * Beschreibung Beschreibung (Summary)
+ * Beschreibung Beschreibung (Summary).
  *
  * <p>Hier kommt dann ein laengerer Text, der die Dinge
  * bei Bedarf etwas ausfuehrlicher erklaert.
@@ -69,7 +69,7 @@ Aufruf gern für Sie tätigt).
 
 ```java
 /**
- * Beschreibung Beschreibung (Summary)
+ * Beschreibung Beschreibung (Summary).
  *
  * <p> Hier kommt dann ein laengerer Text, der die Dinge
  * bei Bedarf etwas ausfuehrlicher erklaert.
@@ -120,7 +120,7 @@ public int setDate(int date) {
 
 ```java
 /**
- * Beschreibung Beschreibung Beschreibung
+ * Beschreibung Beschreibung Beschreibung.
  *
  * @deprecated As of v102, replaced by <code>Foo.fluppie()</code>.
  */
@@ -142,7 +142,7 @@ beibehalten und danach das veraltete Element aus der API entfernt.
 
 ```java
 /**
- * Beschreibung Beschreibung Beschreibung
+ * Beschreibung Beschreibung Beschreibung.
  *
  * @author  Dagobert Duck
  * @version V1
