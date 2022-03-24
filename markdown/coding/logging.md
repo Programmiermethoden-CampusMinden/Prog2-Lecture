@@ -39,9 +39,19 @@ quizzes:
 assignments:
   - topic: sheet02
 youtube:
-  - link: "https://youtu.be/XYZ"
+  - link: "https://youtu.be/_jYWJzr1rkA"
+    name: "VL Logging"
+  - link: "https://youtu.be/fWSc5A_CPL8"
+    name: "Demo Logging (Überblick)"
+  - link: "https://youtu.be/0UUVQCVYNHo"
+    name: "Demo Log-Level"
+  - link: "https://youtu.be/dYOYA99EfrY"
+    name: "Demo Logging: Handler und Formatter"
+  - link: "https://youtu.be/19Bki4IglWQ"
+    name: "Demo Weiterleitung an den Elternlogger"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/XYZ"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/a91451640b7833daed3f6fb212fff9490ef6b8885783cc0297603a418055f1a8c2ff7b51f3cb9fb2c4344132eb95bef5af55201f8958f24d767dbd075120bce2"
+    name: "VL Logging"
 ---
 
 
