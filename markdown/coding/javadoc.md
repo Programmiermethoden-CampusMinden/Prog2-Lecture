@@ -172,11 +172,18 @@ Diese Annotationen finden Sie vor allem in Kommentaren zu Packages oder Klassen.
 Alle anderen Elemente bei Bedarf mit _normalen_ Kommentaren versehen.
 
 ::: notes
+### Beispiel aus dem JDK: ArrayList
+
 Schauen Sie sich gern mal Klassen aus der Java-API an, beispielsweise eine `java.util.ArrayList`:
 *   Generierte Dokumentation:
     [zu "ArrayList" runterscrollen](https://docs.oracle.com/javase/8/docs/api/index.html?java/util/package-summary.html)
     bzw. [direkt](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
 *   Quellcode: [ArrayList.java](https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java)
+
+### Best Practices: Was beschreibe ich eigentlich?
+
+Unter [Documentation Best Practices](https://github.com/google/styleguide/blob/gh-pages/docguide/best_practices.md#documentation-is-the-story-of-your-code)
+finden Sie eine sehr gute Beschreibung, was das Ziel der Dokumentation sein sollte. Versuchen Sie, dieses zu erreichen!
 :::
 
 [Javadoc-Regeln an java.util.ArrayList diskutieren]{.bsp}
