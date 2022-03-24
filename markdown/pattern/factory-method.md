@@ -27,9 +27,13 @@ quizzes:
 assignments:
   - topic: sheet02
 youtube:
-  - link: "https://youtu.be/XYZ"
+  - link: "https://youtu.be/mJWe-2BS2W0"
+    name: "VL Factory-Method-Pattern"
+  - link: "https://youtu.be/14rt1YIoiME"
+    name: "Demo Factory-Method-Pattern"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/XYZ"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/54f1c0ac6b5a7670788efdd88e63dd9eb5de4179d342bce82f5c04268c469beba149891305c81181f1d23c2cf89194f06cdac809396d2e7bff7607078a1a621e"
+    name: "VL Factory-Method-Pattern"
 ---
 
 
