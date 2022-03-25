@@ -10,15 +10,20 @@ readings:
   - key: "googlestyleguide"
     comment: "Kap. 7 Javadoc"
 tldr: |
-  TODO
+  Mit Javadoc kann aus speziell markierten Block-Kommentaren eine externe Dokumentation im HTML-Format
+  erzeugt werden. Die Block-Kommentare, auf die das im JDK enthaltene Programm `javadoc` reagiert,
+  beginnen mit `/**` (also einem zusätzlichen Stern, der für den Java-Compiler nur das erste Kommentarzeichen
+  ist).
 
-  *   Javadoc-Kommentare sind normale Block-Kommentare beginnend mit `/**`
-  *   Generierung der HTML-Dokumentation mit `javadoc *.java`
-  *   Erste Zeile ist eine Zusammenfassung (fast immer sichtbar)
-  *   Längerer Text danach als "Description" einer Methode/Klasse
-  *   Annotationen für besondere Elemente: `@param`, `@return`, `@throws`, `@deprecated`
+  Die erste Zeile eines Javadoc-Kommentars ist eine "Zusammenfassung" und an fast allen Stellen der
+  generierten Doku sichtbar. Diese Summary sollte kurz gehalten werden und eine Idee vermitteln, was
+  die Klasse oder die Methode oder das Attribut macht.
 
-  *   Faustregel: Alle `public` und `protected` Elemente mit Javadoc kommentieren!
+  Für die Dokumentation von Parametern, Rückgabetypen, Exceptions und veralteten Elementen existieren
+  spezielle Annotationen: `@param`, `@return`, `@throws` und `@deprecated`.
+
+  Als Faustregel gilt: Es werden alle `public` und `protected` Elemente mit Javadoc kommentiert. Alle
+  nicht-öffentlichen Elemente bekommen normale Java-Kommentare (Zeilen- oder Blockkommentare).
 outcomes:
   - k2: "Ziel der Javadoc-Dokumentation verstehen"
   - k2: "Typischen Aufgabe von Javadoc-Kommentaren verstehen"
