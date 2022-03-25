@@ -22,8 +22,9 @@ tldr: |
   Für die Dokumentation von Parametern, Rückgabetypen, Exceptions und veralteten Elementen existieren
   spezielle Annotationen: `@param`, `@return`, `@throws` und `@deprecated`.
 
-  Als Faustregel gilt: Es werden alle `public` und `protected` Elemente mit Javadoc kommentiert. Alle
-  nicht-öffentlichen Elemente bekommen normale Java-Kommentare (Zeilen- oder Blockkommentare).
+  Als Faustregel gilt: Es werden **alle** `public` und `protected` Elemente (Klassen, Methoden, Attribute)
+  mit Javadoc kommentiert. Alle nicht-öffentlichen Elemente bekommen normale Java-Kommentare (Zeilen- oder
+  Blockkommentare).
 outcomes:
   - k2: "Ziel der Javadoc-Dokumentation verstehen"
   - k2: "Typischen Aufgabe von Javadoc-Kommentaren verstehen"
