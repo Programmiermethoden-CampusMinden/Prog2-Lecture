@@ -20,8 +20,11 @@ tldr: |
 
   *   Faustregel: Alle `public` und `protected` Elemente mit Javadoc kommentieren!
 outcomes:
-  - k2: "x"
-  - k3: "x"
+  - k2: "Ziel der Javadoc-Dokumentation verstehen"
+  - k2: "Typischen Aufgabe von Javadoc-Kommentaren verstehen"
+  - k3: "Dokumentation öffentlich sichtbarer Elemente mit Javadoc"
+  - k3: "Schreiben einer sinnvollen Summary"
+  - k3: "Einsatz von Annotionen zur Dokumentation von Parametern, Rückgabetypen, Exceptions, veralteten Elementen"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037708&client_id=FH-Bielefeld"
 youtube:
