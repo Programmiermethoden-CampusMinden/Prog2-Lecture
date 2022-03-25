@@ -22,7 +22,7 @@ tldr: |
 outcomes:
   - k2: "Typ-Löschung und Auswirkungen"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1044899&client_id=FH-Bielefeld"
 assignments:
   - topic: sheet03
 youtube:
