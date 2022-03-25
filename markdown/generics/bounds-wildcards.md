@@ -28,7 +28,7 @@ tldr: |
 outcomes:
   - k3: "Umgang mit Wildcards und Bounds bei generischen Klassen/Methoden"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1044734&client_id=FH-Bielefeld"
 assignments:
   - topic: sheet03
 youtube:
