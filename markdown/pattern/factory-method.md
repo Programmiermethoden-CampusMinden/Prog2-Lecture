@@ -23,7 +23,7 @@ tldr: |
 outcomes:
   - k3: "Entwurfsmuster Factory-Methode anwenden"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1045002&client_id=FH-Bielefeld"
 assignments:
   - topic: sheet02
 youtube:
