@@ -1,0 +1,15 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>550</x><y>90</y><w>210</w><h>80</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+Product
+--
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>220</y><w>210</w><h>80</h></coordinates><panel_attributes>ConcreteCreator
+--
+--
++factoryMethod(): Product</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>300</y><w>210</w><h>70</h></coordinates><panel_attributes>ProductB
+--
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>160</y><w>150</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;130;140</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>260</y><w>440</w><h>100</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;creates&gt;&gt;</panel_attributes><additional_attributes>420;80;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>220</y><w>210</w><h>70</h></coordinates><panel_attributes>
+ProductA
+--
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>160</y><w>110</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>90;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>240</y><w>230</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;creates&gt;&gt;</panel_attributes><additional_attributes>210;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>110</y><w>390</w><h>130</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>370;10;10;110</additional_attributes></element></diagram>
