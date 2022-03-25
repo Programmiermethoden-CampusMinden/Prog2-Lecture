@@ -1,1 +1,3 @@
-TODO
+### Bad Smells und Refactoring
+
+Aufgabentext ...
