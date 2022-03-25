@@ -17,5 +17,5 @@ Zeigen Sie in der Abgabe, wo Sie diese verwendet haben. (4P)
 
 Zudem sollen sie dabei auch die Bad Smells beheben. (2P)
 
-**Bitte denken Sie auch daran, dass Sie ihr Vorgehen im Praktikum erklären und ihre 
+**Bitte denken Sie auch daran, dass Sie ihr Vorgehen im Praktikum erklären und Ihre 
 Entscheidungen begründen können.**
