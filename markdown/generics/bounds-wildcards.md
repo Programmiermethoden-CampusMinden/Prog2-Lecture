@@ -31,6 +31,7 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1044734&client_id=FH-Bielefeld"
 assignments:
   - topic: sheet03
+    name: "Quiz Generics: Bounds & Wildcards (ILIAS)"
 youtube:
   - link: "https://youtu.be/OV2vEn2EkWo"
     name: "VL Generics: Bounds & Wildcards"

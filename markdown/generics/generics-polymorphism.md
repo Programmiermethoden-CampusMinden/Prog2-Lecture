@@ -19,6 +19,7 @@ outcomes:
   - k3: "fluppie"
 quizzes:
   - link: "XYZ"
+    name: "Quiz Generics und Polymorphie (ILIAS)"
 assignments:
   - topic: sheet01
 youtube:

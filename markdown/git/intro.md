@@ -34,6 +34,7 @@ outcomes:
   - k3: "Umgang mit entsprechenden Git-Befehlen auf der Konsole"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037713&client_id=FH-Bielefeld"
+    name: "Quiz Git Intro (ILIAS)"
 assignments:
   - topic: sheet01
 youtube:
