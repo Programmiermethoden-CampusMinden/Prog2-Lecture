@@ -33,6 +33,7 @@ outcomes:
   - k3: "Einsatz von Annotationen zur Dokumentation von Parametern, Rückgabetypen, Exceptions, veralteten Elementen"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037708&client_id=FH-Bielefeld"
+    name: "Quiz Javadoc (ILIAS)"
 youtube:
   - link: "https://youtu.be/Qo2TTD593eQ"
     name: "VL Javadoc"

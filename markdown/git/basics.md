@@ -34,6 +34,7 @@ outcomes:
   - k3: "Ignorieren von Dateien und Ordnern"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037711&client_id=FH-Bielefeld"
+    name: "Quiz Git Basics (ILIAS)"
 assignments:
   - topic: sheet01
 youtube:

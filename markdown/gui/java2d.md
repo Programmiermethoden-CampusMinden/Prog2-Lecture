@@ -18,12 +18,20 @@ outcomes:
   - k3: "fluppie"
 quizzes:
   - link: "XYZ"
+    name: "Quiz XXX (ILIAS)"
 assignments:
   - topic: sheet01
 youtube:
-  - link: "https://youtu.be/XYZ"
+  - link: ""
+    name: "VL "
+  - link: ""
+    name: "Demo "
+  - link: ""
+    name: "Demo "
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/XYZ"
+  - link: ""
+    name: "VL "
+sketch: true
 ---
 
 

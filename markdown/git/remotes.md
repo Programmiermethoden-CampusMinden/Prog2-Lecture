@@ -42,6 +42,7 @@ outcomes:
   - k3: "Anlegen eines Tracking Branches zum Vereinfachen der Arbeit"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037712&client_id=FH-Bielefeld"
+    name: "Quiz Git Remotes (ILIAS)"
 assignments:
   - topic: sheet01
 youtube:

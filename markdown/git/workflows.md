@@ -36,6 +36,7 @@ outcomes:
   - k3: "Diskussion über den Code in Merge-Requests"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037714&client_id=FH-Bielefeld"
+    name: "Quiz Git Workflows (ILIAS)"
 assignments:
   - topic: sheet01
 youtube:
