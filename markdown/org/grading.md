@@ -137,6 +137,13 @@ Die Lösungen müssen jeweils **vor** dem Praktikum hochgeladen werden (ggf. Dea
 **und** **im** jeweiligen Praktikum von allen Teammitgliedern vorgestellt werden. Ohne diese
 Rücksprache gibt es keine Punkte.
 
+Sofern nichts anderes bei den Aufgaben angegeben ist, sind die Aufgaben aus Pool "K" stets bis
+**Dienstag 18:00 Uhr** per Pull-/Merge-Request von Ihrem Feature-Branch in den Master-Branch in
+Ihrem Repo abzugeben, als Assignee ist Jonas Posselt zu setzen. Die Aufgaben aus Pool "A"/"B"/"C"
+sind ebenfalls per Pull-Request abzugeben, dies können Sie bis zum Beginn des Praktikums tun.
+Die Pull-/Merge-Requests werden von Jonas Posselt zur angegebenen Deadline gemergt, eine spätere
+Abgabe ist nicht möglich. Auftretende Merge-Konflikte werden wie "keine Abgabe" gewertet.
+
 ### Punkte und formale Abzüge
 
 Für die sinnvolle Umsetzung der Aufgaben erhalten Sie die jeweils angegebenen (Teil-) Punkte.
