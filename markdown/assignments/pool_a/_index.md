@@ -1,14 +1,15 @@
 ---
 chapter: true
-title: "Pool A"
+title: "Gruppe A: Basics"
 hidden: true
 weight: 1
 ---
 
 
-# Pool A
+# Gruppe A "Basics"
 
-Hier finden Sie die Praktikumsaufgaben aus dem Pool A.
+Hier finden Sie die Praktikumsaufgaben aus Gruppe A "Basics". Sie benötigen diese Aufgaben, um
+einen rudimentären Dungeon zu erhalten.
 
 
 `{{< children showhidden="true" >}}`{=markdown}
