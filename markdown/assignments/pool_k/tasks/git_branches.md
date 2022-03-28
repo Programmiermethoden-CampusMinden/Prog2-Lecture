@@ -6,7 +6,7 @@
    und committen Sie die Änderungen. Checken Sie den Master-Branch aus und
    mergen Sie die Änderungen. Was beobachten Sie?
 
-b) Legen Sie einen weiteren Branch an. Ändern Sie einige Dateien und
+2.  Legen Sie einen weiteren Branch an. Ändern Sie einige Dateien und
    committen Sie die Änderungen. Checken Sie den Master-Branch aus und
    ändern Sie dort ebenfalls:
 
