@@ -33,7 +33,9 @@ Mit @Passig2013 ist ein wunderbar launiges Buch erschienen, wo typische Code-Sme
 werden (wobei man manche Standpunkte hinterfragen sollte). Ein Standardwerk zu diesem Thema
 ist @Martin2009.
 
-Zum Thema Refactoring ist @Fowler2011 DIE Referenz.
+Zum Thema Refactoring ist @Fowler2011 DIE Referenz. Auf @RefactoringGuru finden Sie eine nett
+aufbereitete Übersicht zum Theme Refactoring, aber auch zu den Zusammenhängen mit dem Thema
+Bad Smells und Clean Code.
 
 Wer Interesse an UML und/oder Designpattern hat, sollte in @Oestereich2012 sowie @UML25 und
 @Gamma2011 sowie @Eilebrecht2013 schauen.
@@ -69,7 +71,6 @@ Hier noch eine Sammlung von Gedanken zum Berufsverständnis von Informatikern: @
 
 \bigskip
 
-<!-- TODO: Konkrete Links zu den späteren Repos einbauen -->
 *   Vorgaben (Interfaces, Testsuiten, ...)
     *   [GitHub: PM-Dungeon](https://github.com/PM-Dungeon/pm-s22-vorgaben)
     *   [Alternative Gitlab im SW-Labor](http://git03-ifm-min.ad.fh-bielefeld.de/cagix/pm-s22-vorgaben) (**nur aus dem FH-Netz/VPN**)
