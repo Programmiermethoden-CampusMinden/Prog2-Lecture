@@ -8,7 +8,7 @@
 
 2.  Legen Sie einen weiteren Branch an. Ändern Sie einige Dateien und
     committen Sie die Änderungen. Checken Sie den Master-Branch aus und
-   ändern Sie dort ebenfalls:
+    ändern Sie dort ebenfalls:
 
     *   Ändern Sie eine Datei an einer Stelle, die nicht bereits im Branch
         modifiziert wurde.
