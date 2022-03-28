@@ -22,12 +22,7 @@ im ILIAS hochzuladen. Beachten Sie die Deadline (vgl. `[Wuppie]({{<ref "/org/sch
 {{% include "assignments/pool_k/tasks/git_branches.md" %}}
 
 
-## Git Remotes (4 Punkte)
-
-{{% include "assignments/pool_k/tasks/git_remotes.md" %}}
-
-
-## Vorbereitung Abgabe
+## Git Remotes: Vorbereitung Repo für die Abgabe (2 Punkte)
 
 Sie sollen alle zukünftigen Aufgaben aus dem Dungeon- und Konzept-Pool in einem
 privaten Git-Repository bearbeiten.
