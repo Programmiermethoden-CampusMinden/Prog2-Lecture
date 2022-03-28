@@ -34,7 +34,7 @@ privaten Git-Repository bearbeiten.
     auf dem Ihr Team das Semester über arbeiten wird.
 3.  Tragen Sie Jonas Posselt (`jposselt`), André Matutat (`amatutat`) und Carsten Gips (`cagix`)
     mit Schreibrechten in Ihr Repo ein (GitHub: Settings > Collaborateurs and Teams > Manage Access > Role "write";
-    Gitlab: Project Information > Members > Invite > Rolle "Developer").
+    Gitlab: Project Information > Members > Invite > Role "Developer").
     Dies ist zwingend notwendig, damit wir Ihre Pull-/Merge-Requests bearbeiten/akzeptieren
     können.
 4.  Schreiben Sie die verwendeten Usernamen Ihrer Teammitglieder und die URL Ihres Repos in eine
