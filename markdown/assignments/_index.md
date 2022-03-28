@@ -25,7 +25,8 @@ Aufgaben ggf. Abhängigkeiten gibt - Sie müssten beispielsweise erst ein einfac
 Sie sich an die Boss-Monster heranwagen können. Diese Aufgaben geben Sie per offenem Pull-/Merge-Request vor
 dem Praktikum ab und stellen die Lösung im Praktikum am Freitag vor. Als Zielgröße sollen Sie pro Woche Aufgaben
 aus diesem Pool für insgesamt 10 Punkte bearbeiten und abgeben. Maximal können Sie pro Woche Aufgaben aus dem
-Dungeon-Pool für 15 Punkte abgeben.
+Dungeon-Pool für 15 Punkte abgeben. Beachten Sie, dass Sie für die Dungeon-Aufgaben ein Lerntagebuch führen
+und mit abgeben müssen (vgl. `[Note und Credits]({{< ref "/org/grading" >}})`{=markdown}).
 
 Die Aufgaben im Konzept-Pool sind zeitlich mit den Vorlesungsthemen verknüpft. Hier ist für jede Woche ein Blatt
 zugeordnet. Diese Aufgaben sind (falls nicht anders angegeben) bis Dienstag 18 Uhr per offenem Pull-/Merge-Request
