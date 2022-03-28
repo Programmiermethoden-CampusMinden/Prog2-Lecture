@@ -71,15 +71,16 @@ Hier noch eine Sammlung von Gedanken zum Berufsverständnis von Informatikern: @
 
 <!-- TODO: Konkrete Links zu den späteren Repos einbauen -->
 *   Vorgaben (Interfaces, Testsuiten, ...)
-    *   [GitHub: PM-Dungeon](https://github.com/PM-Dungeon)
-    *   [Alternative Gitlab im SW-Labor](http://git03-ifm-min.ad.fh-bielefeld.de) (**nur aus dem FH-Netz/VPN**)
+    *   [GitHub: PM-Dungeon](https://github.com/PM-Dungeon/pm-s22-vorgaben)
+    *   [Alternative Gitlab im SW-Labor](http://git03-ifm-min.ad.fh-bielefeld.de/cagix/pm-s22-vorgaben) (**nur aus dem FH-Netz/VPN**)
 
 ::: notes
-Wir stellen die Unterlagen komplett auf GitHub zur Verfügung. Sie können sich dort einen kostenfreien und anonymen Account
-einrichten. Wenn Sie dies nicht möchten, können Sie alternativ den Gitlab-Server im Software-Labor nutzen. Dieser ist
-nur aus dem FH-Netz bzw. VPN heraus erreichbar und Sie können sich dort mit Ihren FH-Zugangsdaten anmelden (im Reiter "LDAP"
-geben Sie Ihren Benutzernamen ohne das `@fh-bielefeld.de` plus Ihr Passwort ein).
+Wir stellen die Unterlagen und Vorgaben (Konzeptaufgaben, Dungeonaufgaben) komplett auf GitHub zur Verfügung.
+Sie können sich dort einen kostenfreien und anonymen Account einrichten. Wenn Sie dies nicht möchten, können
+Sie alternativ unseren Gitlab-Server im Software-Labor nutzen. Dieser ist nur aus dem FH-Netz bzw. VPN heraus
+erreichbar und Sie können sich dort mit Ihren FH-Zugangsdaten anmelden (im Reiter "LDAP" geben Sie Ihren
+Benutzernamen ohne das `@fh-bielefeld.de` plus Ihr Passwort ein).
 
-Die Aufgaben werden ebenfalls über GitHub oder den internen Gitlab-Server abgegeben (Ausnahmen siehe Aufgabenblätter). Dafür
-richten wir Ihnen jeweils ein privates Repo ein.
+Die Aufgaben werden ebenfalls über GitHub oder den internen Gitlab-Server abgegeben (Ausnahmen siehe Aufgabenblätter).
+Dafür richten wir Sie sich ein privates Repo ein (vgl. erstes Aufgabenblatt).
 :::
