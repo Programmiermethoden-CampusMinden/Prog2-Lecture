@@ -4,7 +4,7 @@
 
 1.  Legen Sie in Ihrem Projekt einen Branch an. Ändern Sie einige Dateien
     und committen Sie die Änderungen. Checken Sie den Master-Branch aus und
-   mergen Sie die Änderungen. Was beobachten Sie?
+    mergen Sie die Änderungen. Was beobachten Sie?
 
 2.  Legen Sie einen weiteren Branch an. Ändern Sie einige Dateien und
    committen Sie die Änderungen. Checken Sie den Master-Branch aus und
