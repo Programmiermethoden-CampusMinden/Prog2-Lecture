@@ -131,7 +131,7 @@ einrichten. Dazu benötigen Sie entweder einen kostenfreien und ggf. anonymen Gi
 oder Sie können alternativ den Gitlab-Server im Software-Labor nutzen, den Sie aus dem
 FH-Netz bzw. über VPN erreichen und wo Sie sich mit Ihren normalen FH-Zugangsdaten einloggen
 können ("LDAP"). Klonen Sie dazu eines der beiden bereitgestellten Vorgabe-Repos (siehe
-`[Ressourcen > Zugänge]({{< ref "/org/resources" >}})`{=markdown}) auf Ihren Rechner,
+`[Ressourcen > Vorgaben]({{< ref "/org/resources" >}})`{=markdown}) auf Ihren Rechner,
 erstellen Sie sich auf [GitHub](https://github.com/) oder alternativ auf unserem Gitlab-Server
 im SW-Labor (nur über VPN erreichbar) ein privates Repo für Ihr Team und tragen Sie dieses
 Repo als weiteres Remote in Ihre Workingcopy ein. Geben Sie `jposselt`, `amatutat` und
