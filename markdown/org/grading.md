@@ -30,11 +30,11 @@ Diese Prüfungsleistung absolvieren Sie im Praktikum. Es wird in diesem Semester
 verschiedene Typen von Aufgaben geben mit unterschiedlicher Gewichtung und Bearbeitung:
 :::
 
-1.  Pool "Dungeon" mit max. 110 Punkten (mind. 50 Punkte zum Bestehen)
-    *   Gruppe A "Basics" (38 P)
-    *   Gruppe B "Monster und Kampf" (32 P)
-    *   Gruppe C "Items, Aufbewahrung und Handel" (40 P)
-2.  Pool "Konzept" mit max. 100 Punkten (mind. 50 Punkte zum Bestehen)
+1.  `[Pool "Dungeon"]({{< ref "/assignments" >}})`{=markdown} mit max. 110 Punkten (mind. 50 Punkte zum Bestehen)
+    *   `[Gruppe A "Basics"]({{< ref "/assignments/pool_a" >}})`{=markdown} (38 P)
+    *   `[Gruppe B "Monster und Kampf"]({{< ref "/assignments/pool_b" >}})`{=markdown} (32 P)
+    *   `[Gruppe C "Items, Aufbewahrung und Handel"]({{< ref "/assignments/pool_c" >}})`{=markdown} (40 P)
+2.  `[Pool "Konzept"]({{< ref "/assignments/pool_k" >}})`{=markdown} mit max. 100 Punkten (mind. 50 Punkte zum Bestehen)
 
 ::: notes
 #### Bearbeitung
