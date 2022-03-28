@@ -9,7 +9,7 @@ hidden: true
 
 
 **Abgabe**: Die Lösung für dieses Blatt ist als **Zip**-Archiv (`.zip`) im Objekt "Praktikum"
-im ILIAS hochzuladen. Beachten Sie die Deadline (vgl. `[Wuppie]({{<ref "/org/schedule" >}})`{=markdown})!
+im ILIAS hochzuladen. Beachten Sie die Deadline (vgl. `[Fahrplan]({{<ref "/org/schedule" >}})`{=markdown})!
 
 
 ## Git Basics (4 Punkte)
