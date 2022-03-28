@@ -51,29 +51,28 @@ Hier noch eine Sammlung von Gedanken zum Berufsverständnis von Informatikern: @
 
 ## Was brauche ich noch? Tools ...
 
-*   Tools:
-    *   JDK: Java SE 17 (LTS) ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk))
-    *   IDE: [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/)
-        oder [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/)
-        oder [Visual Studio Code](https://code.visualstudio.com/)
-        oder [Vim](https://www.vim.org/)
-    *   [Git](https://git-scm.com/)
-    *   [Gradle Build Tool](https://gradle.org/)
-    *   [JUnit-Framework](https://junit.org/) (Version 4.x oder 5.x)
-    *   [Checkstyle](https://checkstyle.org/)
+### Tools:
 
-\bigskip
+*   JDK: Java SE 17 (LTS) ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk))
+*   IDE: [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/)
+    oder [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/)
+    oder [Visual Studio Code](https://code.visualstudio.com/)
+    oder [Vim](https://www.vim.org/)
+*   [Git](https://git-scm.com/)
+*   [Gradle Build Tool](https://gradle.org/)
+*   [JUnit-Framework](https://junit.org/) (Version 4.x oder 5.x)
+*   [Checkstyle](https://checkstyle.org/)
 
-*   Zugänge:
-    *   [ILIAS](https://www.fh-bielefeld.de/elearning/goto.php?target=crs_1015325&client_id=FH-Bielefeld)
-    *   [VPN](https://www.fh-bielefeld.de/dvz/it-services/vpn)
-    *   [Zoom](https://www.fh-bielefeld.de/dvz/zoom)
+### Zugänge:
 
-\bigskip
+*   [ILIAS](https://www.fh-bielefeld.de/elearning/goto.php?target=crs_1015325&client_id=FH-Bielefeld)
+*   [VPN](https://www.fh-bielefeld.de/dvz/it-services/vpn)
+*   [Zoom](https://www.fh-bielefeld.de/dvz/zoom)
 
-*   Vorgaben für die Dungeon- und Konzept-Aufgaben (Interfaces, Testsuiten, ...)
-    *   [GitHub](https://github.com/PM-Dungeon/pm-s22-vorgaben)
-    *   Alternative: [Gitlab im SW-Labor](http://git03-ifm-min.ad.fh-bielefeld.de/cagix/pm-s22-vorgaben) (**nur aus dem FH-Netz/VPN**)
+### Vorgaben für die Dungeon- und Konzept-Aufgaben (Interfaces, Testsuiten, ...)
+
+*   [GitHub](https://github.com/PM-Dungeon/pm-s22-vorgaben)
+*   Alternative: [Gitlab im SW-Labor](http://git03-ifm-min.ad.fh-bielefeld.de/cagix/pm-s22-vorgaben) (**nur aus dem FH-Netz/VPN**)
 
 ::: notes
 Wir stellen die Unterlagen und Vorgaben (Konzept-Aufgaben, Dungeon-Aufgaben) komplett auf GitHub zur Verfügung.
