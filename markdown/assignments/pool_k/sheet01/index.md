@@ -29,7 +29,7 @@ privaten Git-Repository bearbeiten.
 
 1.  Erstellen Sie sich einen kostenlosen und ggf. anonymen Account auf [GitHub](https://github.com/)
     oder loggen Sie sich einmal mit Ihren FH-Zugangsdaten auf dem Gitlab-Server im Software-Labor
-    ein (URLs siehe `[Ressourcen > Zugänge]({{<ref "/org/resources" >}})`{=markdown}).
+    ein (URLs siehe `[Ressourcen > Zugänge]({{< ref "/org/resources" >}})`{=markdown}).
 2.  Erstellen Sie sich auf GitHub oder dem Gitlab-Server im SW-Labor ein neues (leeres!) privates Repo,
     auf dem Ihr Team das Semester über arbeiten wird.
 3.  Tragen Sie Jonas Posselt (`jposselt`), André Matutat (`amatutat`) und Carsten Gips (`cagix`)
