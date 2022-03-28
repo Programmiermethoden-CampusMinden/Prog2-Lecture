@@ -71,7 +71,7 @@ Siehe auch `["Hinweise zum Praktikum"]({{< ref "/org/grading" >}})`{=markdown}
 
 ### Tutorium: 1 SWS
 
--   Mo, 13:00 -- 15:30 Uhr (online/J104)
+-   Mo, 13:30 -- 15:00 Uhr (online)
 
 **Anmerkung**: Das Tutorium in PM ist fester Bestandteil der Prüfungsordnung.
 
