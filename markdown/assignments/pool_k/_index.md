@@ -9,7 +9,7 @@ weight: 5
 # Pool Konzept
 
 Die Aufgaben aus diesem Pool sind zeitlich an die Vorlesungsthemen geknüpft. Beachten Sie die
-Deadlines für die Ababen.
+Deadlines für die Abgaben.
 
 
 `{{< children showhidden="true" >}}`{=markdown}
