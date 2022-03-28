@@ -26,60 +26,56 @@ abgelegt oder begonnen haben (vgl. auch "Regelung für Wiederholer").
 ### 1. Praktische Teilleistung
 
 ::: notes
-Diese Prüfungsleistung absolvieren Sie im Praktikum. Es wird in diesem Semester verschiedene
-Typen von Aufgaben geben mit unterschiedlicher Gewichtung und Bearbeitung:
+Diese Prüfungsleistung absolvieren Sie im Praktikum. Es wird in diesem Semester zwei
+verschiedene Typen von Aufgaben geben mit unterschiedlicher Gewichtung und Bearbeitung:
 :::
 
-*   "Pool A" mit max. 28 Punkten (mind. 14 Punkte zum Bestehen)
-*   "Pool B" mit max. 22 Punkten (mind. 11 Punkte zum Bestehen)
-*   "Pool C" mit max. 30 Punkten (mind. 15 Punkte zum Bestehen)
-*   "Pool P" mit max. 40 Punkten (mind. 15 Punkte zum Bestehen)
-*   "Pool K" mit max. 100 Punkten (mind. 50 Punkte zum Bestehen)
+1.  Pool "Dungeon" mit max. 110 Punkten (mind. 50 Punkte zum Bestehen)
+    *   Gruppe A "Basics" (38 P)
+    *   Gruppe B "Monster und Kampf" (32 P)
+    *   Gruppe C "Items, Aufbewahrung und Handel" (40 P)
+2.  Pool "Konzept" mit max. 100 Punkten (mind. 50 Punkte zum Bestehen)
 
 ::: notes
 #### Bearbeitung
 
-Für die Aufgaben der Pools A, B und C können Sie sich den Zeitpunkt der Bearbeitung relativ frei
-auswählen; natürlich hängen aber bestimmte Aufgaben von anderen Aufgaben ab.
+Für die Aufgaben aus dem Dungeon-Pool können Sie sich den Zeitpunkt der Bearbeitung
+relativ frei auswählen; natürlich hängen aber bestimmte Aufgaben von anderen Aufgaben
+ab.
 
-Für die Aufgaben in Pool K ist dagegen jeweils eine feste Deadline angegeben, zu der die Lösung
-erarbeitet, in Ihr Repo hochgeladen und im Praktikum vorgestellt werden muss.
-
-Die beiden Aufgaben in Pool P sollen über zwei Wochen bearbeitet werden. Die Projektaufgaben können
-Sie frühestens in der Woche nach dem E-Assessment bearbeiten.
+Für die Aufgaben im Konzept-Pool ist dagegen jeweils eine feste Deadline angegeben, zu
+der die Lösung erarbeitet, in Ihr Repo hochgeladen und im Praktikum vorgestellt werden
+muss.
 
 #### Workload
 
-Pro Woche sollen Sie aus Pool A/B/C Aufgaben für 10 Punkte bearbeiten. Sie können auch mehr machen,
-aber wir limitieren die maximal erreichbare Punkteanzahl hier auf 15 Punkte pro Woche. Wenn Sie hier
-einmal Abzüge bekommen, können Sie dies in einer anderen Woche nacharbeiten (unter Beachtung der
-Maximal-15-Punkte-pro-Woche-Regel).
+Pro **Woche** sollen Sie aus dem **Dungeon-Pool** selbst gewählte Aufgaben für **10 Punkte**
+bearbeiten. Sie können auch mehr machen, aber wir limitieren die maximal erreichbare
+Punkteanzahl hier auf _15 Punkte pro Woche_.
+Wenn Sie bei den Dungeon-Aufgaben Abzüge bekommen, können Sie dies in einer anderen Woche
+nacharbeiten (unter Beachtung der "Maximal-15-Punkte-pro-Woche-für-Dungeon-Aufgaben"-Regel).
 
-Jede der beiden Aufgaben aus Pool P geht über zwei Wochen und bringt maximal 20 Punkte. Diese Aufgaben
-sind nicht mit Aufgaben aus Pool A/B/C kombinierbar; eine Nacharbeitung ist hier nicht möglich. Sie
-können hier frühestens in der Woche nach dem E-Assessment starten.
-
-Parallel zu Pool A/B/C/P bearbeiten Sie jede Woche eine vorgegebene Aufgabe aus Pool K für je 10 Punkte.
+Parallel zum Dungeon-Pool bearbeiten Sie **jede Woche** ein **vorgegebenes Aufgabenblatt**
+aus dem **Konzept-Pool** für je 10 Punkte.
 
 #### Praktische Teilnote
 :::
 
-*   220P Gesamt, 40P Puffer => “Krankheitsregelung”, 180P == 100%
+*   210P Gesamt, 30P Puffer => “Krankheitsregelung”, 180P == 100%
 *   4.0: ab 60% v. 180P (108P), alle 4% nächste Teilnote, 1.0: ab 96% v. 180P (172,8P)
 
 ::: notes
-Sie können maximal in den Pools A+B+C+P 120 Punkte und in Pool K 100 Punkte erreichen, in Summe
-also 220 Punkte. Die 100% für die Notenberechnung wird auf 180 Punkte festgelegt. Damit haben Sie
-genügend Schlupf, falls Sie einmal erkranken oder wegen anderer familiärer Angelegenheiten nicht
-zur Vorstellung Ihrer Lösung im Praktikum erscheinen können.
+Sie können in Summe maximal 210 Punkte erreichen. Die 100% für die Notenberechnung wird
+auf 180 Punkte festgelegt. Damit haben Sie 30 Punkte Schlupf, falls Sie einmal erkranken
+oder wegen anderer familiärer Angelegenheiten nicht zur Vorstellung Ihrer Lösung im Praktikum
+erscheinen können.
 
 **Achtung**: Sie müssen im Laufe des Semesters in **jedem Pool** die jeweils angegebene
 Mindestanzahl der Punkte zum Bestehen erreichen, sonst haben Sie die praktische Teilleistung
 insgesamt nicht bestanden.
 
-
-Beachten Sie zusätzlich die "Hinweise zum Praktikum", die sich auf die Inhalte und die formalen
-Aspekte Ihrer Abgaben beziehen.
+Beachten Sie zusätzlich die "Hinweise zum Praktikum" (s.u.), die sich auf die Inhalte und die
+formalen Aspekte Ihrer Abgaben beziehen.
 :::
 
 
