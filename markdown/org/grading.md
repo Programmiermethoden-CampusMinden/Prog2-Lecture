@@ -181,28 +181,6 @@ betreffenden Dungeon-Aufgaben keine Punkte.
 
 <!-- TODO: Inhalte und Struktur Lerntagebuch -->
 
-### Besonderheit Pool P: "Projekt"
-
-Pool P steht für "Projekt". Sie können diese Aufgabe maximal zweimal bearbeiten und jeweils maximal
-20 Punkte bekommen. Die Bearbeitungszeit ist jeweils für zwei Wochen angelegt.
-
-Spätestens eine Woche vor dem Projekt stellen Sie im Praktikum Ihr Konzept dem Lehrbeauftragten vor
-und diskutieren mit ihm die Machbarkeit und die Verteilung der Punkte.
-
-In der ersten Woche der Bearbeitung stellen Sie im Praktikum Ihr Feinkonzept und eine erste grobe
-Basis-Implementierung vor. Dafür können Sie maximal 10 Punkte bekommen.
-
-In der zweiten Woche stellen Sie dann Ihre finale Implementierung, die Dokumentation und das Lerntagebuch
-vor und bekommen für die sinnvolle Umsetzung die zu Beginn vereinbarten Teilpunkte. Es gelten die selben
-Kriterien für die Abgabe wie für die Pool A/B/C-Aufgaben, d.h. Sie können entsprechende Abzüge für das
-Nichteinhalten formaler Kriterien bekommen.
-
-<!-- TODO: Kriterien für schriftliche Ausarbeitung -->
-
-Die Projektaufgaben können Sie frühestens in der Woche nach dem E-Assessment bearbeiten, d.h. Sie müssten
-dann entsprechend Ihr Konzept in der Woche vor dem E-Assessment oder in der Woche mit dem E-Assessment
-vorstellen.
-
 ### Praktikum: Zeitslots
 
 Wir werden mit jedem Team einen individuellen Abgabeslot in Ihrer Praktikumszeit vereinbaren, damit Sie
