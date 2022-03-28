@@ -39,4 +39,4 @@ Für die Abgabe erstellen Sie in Ihrem Team-Repo einen Pull-/Merge-Request von d
 Master-Branch und weisen den PR/MR zum Merge an Jonas Posselt (`jposselt`) zu (Sie lassen den PR/MR also _offen_).
 
 Um das Praktikum zu bestehen, müssen Sie jedem der beiden Pools mindestens 50 Punkte erreichen, in Summe aber
-mindestens 108 Punkte (vgl. `[Note und Credits > Praktische Teilleistung]({{< ref "/org/grading" >}})`{=markdown}).
+mindestens 105 Punkte (vgl. `[Note und Credits > Praktische Teilleistung]({{< ref "/org/grading" >}})`{=markdown}).
