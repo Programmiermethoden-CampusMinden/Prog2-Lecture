@@ -26,7 +26,7 @@ Sie sich an die Boss-Monster heranwagen können. Diese Aufgaben geben Sie per of
 dem Praktikum ab und stellen die Lösung im Praktikum am Freitag vor. Als Zielgröße sollen Sie pro Woche Aufgaben
 aus diesem Pool für insgesamt 10 Punkte bearbeiten und abgeben. Maximal können Sie pro Woche Aufgaben aus dem
 Dungeon-Pool für 15 Punkte abgeben. Beachten Sie, dass Sie für die Dungeon-Aufgaben ein Lerntagebuch führen
-und mit abgeben müssen (vgl. `[Note und Credits]({{< ref "/org/grading" >}})`{=markdown}).
+und mit abgeben müssen (vgl. `[Note und Credits > Lerntagebuch]({{< ref "/org/grading" >}})`{=markdown}).
 
 Die Aufgaben im Konzept-Pool sind zeitlich mit den Vorlesungsthemen verknüpft. Hier ist für jede Woche ein Blatt
 zugeordnet. Diese Aufgaben sind (falls nicht anders angegeben) bis Dienstag 18 Uhr per offenem Pull-/Merge-Request
@@ -39,4 +39,4 @@ Für die Abgabe erstellen Sie in Ihrem Team-Repo einen Pull-/Merge-Request von d
 Master-Branch und weisen den PR/MR zum mergen an Jonas Posselt (`jposselt`) zu (lassen den PR/MR also _offen_).
 
 Um das Praktikum zu bestehen, müssen Sie jedem der beiden Pools mindestens 50 Punkte erreichen, in Summe aber
-mindestens 108 Punkte (vgl. `[Note und Credits]({{< ref "/org/grading" >}})`{=markdown}).
+mindestens 108 Punkte (vgl. `[Note und Credits > Praktische Teilleistung]({{< ref "/org/grading" >}})`{=markdown}).
