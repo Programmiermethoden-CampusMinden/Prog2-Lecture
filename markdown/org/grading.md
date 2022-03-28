@@ -127,22 +127,31 @@ im Prüfungsverfahren.
 
 ### Abgabe per Git-Repo und Vorstellung im Praktikum
 
-Die Abgabe der Lösungen erfolgt über einen Pull- bzw. Merge-Request in einem nicht öffentlich
-sichtbaren Git-Repo, welches wir Ihnen zu Beginn des Semesters einrichten. Dazu benötigen Sie
-entweder einen kostenfreien und ggf. anonymen GitHub-Account oder Sie können alternativ den
-Gitlab-Server im Software-Labor nutzen, den Sie aus dem FH-Netz bzw. über VPN erreichen und wo
-Sie sich mit Ihren normalen FH-Zugangsdaten einloggen können ("LDAP").
+Das `[erste Blatt]({{< ref "sheet01" >}})`{=markdown} ist im
+[ILIAS](https://www.fh-bielefeld.de/elearning/goto.php?target=exc_1037695&client_id=FH-Bielefeld)
+abzugeben. Die Abgabe der anderen Aufgaben erfolgt über einen Pull- bzw. Merge-Request
+in Ihrem nicht öffentlich sichtbaren Git-Repo, welches Sie sich zu Beginn des Semesters
+einrichten. Dazu benötigen Sie entweder einen kostenfreien und ggf. anonymen GitHub-Account
+oder Sie können alternativ den Gitlab-Server im Software-Labor nutzen, den Sie aus dem
+FH-Netz bzw. über VPN erreichen und wo Sie sich mit Ihren normalen FH-Zugangsdaten einloggen
+können ("LDAP"). Klonen Sie dazu eines der beiden bereitgestellten Vorgabe-Repos (siehe
+`[Ressourcen > Zugänge]({{< ref "/org/resources" >}})`{=markdown}) auf Ihren Rechner,
+erstellen Sie sich auf [GitHub](https://github.com/) oder alternativ auf unserem Gitlab-Server
+im SW-Labor (nur über VPN erreichbar) ein privates Repo für Ihr Team und tragen Sie dieses
+Repo als weiteres Remote in Ihre Workingcopy ein. Geben Sie `jposselt`, `amatutat` und
+`cagix` Schreibzugriff, damit wir die Pull-/Merge-Requests bearbeiten können.
 
-Die Lösungen müssen jeweils **vor** dem Praktikum hochgeladen werden (ggf. Deadlines beachten!)
+Die Lösungen müssen jeweils **vor** dem Praktikum hochgeladen werden (Deadlines beachten!)
 **und** **im** jeweiligen Praktikum von allen Teammitgliedern vorgestellt werden. Ohne diese
-Rücksprache gibt es keine Punkte.
+Rücksprache/Vorstellung gibt es keine Punkte.
 
-Sofern nichts anderes bei den Aufgaben angegeben ist, sind die Aufgaben aus Pool "K" stets bis
-**Dienstag 18:00 Uhr** per Pull-/Merge-Request von Ihrem Feature-Branch in den Master-Branch in
-Ihrem Repo abzugeben, als Assignee ist Jonas Posselt zu setzen. Die Aufgaben aus Pool "A"/"B"/"C"
-sind ebenfalls per Pull-Request abzugeben, dies können Sie bis zum Beginn des Praktikums tun.
-Die Pull-/Merge-Requests werden von Jonas Posselt zur angegebenen Deadline gemergt, eine spätere
-Abgabe ist nicht möglich. Auftretende Merge-Konflikte werden wie "keine Abgabe" gewertet.
+Sofern nichts anderes bei den Aufgaben angegeben ist, sind die Aufgaben aus Pool K stets
+bis **Dienstag 18:00 Uhr** per offenem Pull-/Merge-Request von Ihrem Feature-Branch in den
+Master-Branch in Ihrem Repo abzugeben, als Assignee ist Jonas Posselt (`jposselt`) zu setzen.
+Die Aufgaben aus den Pools A/B/C sind ebenfalls per (separatem) Pull-Request abzugeben, dies
+können Sie bis zum Beginn des Praktikums tun. Die Pull-/Merge-Requests werden von Jonas Posselt
+zur angegebenen Deadline gemergt, eine spätere Abgabe ist nicht möglich. Auftretende Merge-Konflikte
+werden wie "keine Abgabe" gewertet.
 
 ### Punkte und formale Abzüge
 
