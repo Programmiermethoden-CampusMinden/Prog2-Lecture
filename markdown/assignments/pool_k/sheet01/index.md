@@ -40,8 +40,11 @@ privaten Git-Repository bearbeiten.
 3.  Tragen Sie Jonas Posselt (`jposselt`), André Matutat (`amatutat`) und Carsten Gips (`cagix`)
     mit Schreibrechten in Ihr Repo ein (GitHub: Settings > Collaborateurs and Teams > Manage Access > Rolle "write";
     Gitlab: Project Information > Members > Invite > Rolle "Developer").
-4.  Schreiben Sie die Usernamen Ihrer Teammitglieder und die URL Ihres Repos in eine Textdatei,
-    die Sie mit in das `.zip`-Archiv aufnehmen und mit im ILIAS abgeben.
+    Dies ist zwingend notwendig, damit wir Ihre Pull-/Merge-Requests bearbeiten/akzeptieren
+    können.
+4.  Schreiben Sie die verwendeten Usernamen Ihrer Teammitglieder und die URL Ihres Repos in eine
+    Textdatei, die Sie mit in das `.zip`-Archiv aufnehmen und mit im ILIAS abgeben. Keine Passwörter
+    angeben!
 5.  Klonen Sie Ihr Team-Repo auf Ihren lokalen Rechner und tragen Sie das Vorgabe-Repo (siehe
     `[Ressourcen]({{<ref "/org/resources" >}})`{=markdown}) als weiteres Remote ein. Pullen Sie
-    vom Vorgaberepo und pushen Sie die Dateien in Ihr eigenes Repo.
+    vom Vorgabe-Repo und pushen Sie die Dateien in Ihr eigenes Repo.
