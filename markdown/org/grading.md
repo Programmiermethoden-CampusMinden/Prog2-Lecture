@@ -61,12 +61,12 @@ aus dem **Konzept-Pool** für je 10 Punkte.
 #### Praktische Teilnote
 :::
 
-*   210P Gesamt, 30P Puffer => “Krankheitsregelung”, 180P == 100%
-*   4.0: ab 60% v. 180P (108P), alle 4% nächste Teilnote, 1.0: ab 96% v. 180P (172,8P)
+*   210P Gesamt, 35P Puffer => “Krankheitsregelung”, 175P == 100%
+*   4.0: ab 60% v. 175P (105P), alle 4% nächste Teilnote, 1.0: ab 96% v. 175P (168P)
 
 ::: notes
 Sie können in Summe maximal 210 Punkte erreichen. Die 100% für die Notenberechnung wird
-auf 180 Punkte festgelegt. Damit haben Sie 30 Punkte Schlupf, falls Sie einmal erkranken
+auf 175 Punkte festgelegt. Damit haben Sie 35 Punkte Schlupf, falls Sie einmal erkranken
 oder wegen anderer familiärer Angelegenheiten nicht zur Vorstellung Ihrer Lösung im Praktikum
 erscheinen können.
 
