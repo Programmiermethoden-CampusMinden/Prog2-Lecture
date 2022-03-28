@@ -41,5 +41,5 @@ privaten Git-Repository bearbeiten.
     Textdatei, die Sie mit in das `.zip`-Archiv aufnehmen und mit im ILIAS abgeben. Keine Passwörter
     angeben!
 5.  Klonen Sie Ihr Team-Repo auf Ihren lokalen Rechner und tragen Sie das Vorgabe-Repo (siehe
-    `[Ressourcen]({{<ref "/org/resources" >}})`{=markdown}) als weiteres Remote ein. Pullen Sie
+    `[Ressourcen > Zugänge]({{< ref "/org/resources" >}})`{=markdown}) als weiteres Remote ein. Pullen Sie
     vom Vorgabe-Repo und pushen Sie die Dateien in Ihr eigenes Repo.
