@@ -71,7 +71,7 @@ Hier noch eine Sammlung von Gedanken zum Berufsverständnis von Informatikern: @
 
 \bigskip
 
-*   Vorgaben (Interfaces, Testsuiten, ...)
+*   Vorgaben für die Dungeon- und Konzept-Aufgaben (Interfaces, Testsuiten, ...)
     *   [GitHub: PM-Dungeon](https://github.com/PM-Dungeon/pm-s22-vorgaben)
     *   [Alternative Gitlab im SW-Labor](http://git03-ifm-min.ad.fh-bielefeld.de/cagix/pm-s22-vorgaben) (**nur aus dem FH-Netz/VPN**)
 
