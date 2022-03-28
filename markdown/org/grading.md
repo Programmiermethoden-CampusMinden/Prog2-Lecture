@@ -141,13 +141,14 @@ Die Lösungen müssen jeweils **vor** dem Praktikum hochgeladen werden (Deadline
 **und** **im** jeweiligen Praktikum von allen Teammitgliedern vorgestellt werden. Ohne diese
 Rücksprache/Vorstellung gibt es keine Punkte.
 
-Sofern nichts anderes bei den Aufgaben angegeben ist, sind die Aufgaben aus Pool K stets
-bis **Dienstag 18:00 Uhr** per offenem Pull-/Merge-Request von Ihrem Feature-Branch in den
-Master-Branch in Ihrem Repo abzugeben, als Assignee ist Jonas Posselt (`jposselt`) zu setzen.
-Die Aufgaben aus den Pools A/B/C sind ebenfalls per (separatem) Pull-Request abzugeben, dies
+Sofern nichts anderes bei den Aufgaben angegeben ist, sind die Aufgaben aus dem Konzept-Pool
+stets bis **Dienstag 18:00 Uhr** per offenem Pull-/Merge-Request von Ihrem Feature-Branch in
+den Master-Branch in Ihrem Repo abzugeben, als Assignee ist Jonas Posselt (`jposselt`) zu
+setzen.
+Die Aufgaben aus dem Dungeon-Pool sind ebenfalls per (separatem) Pull-Request abzugeben, dies
 können Sie bis zum Beginn des Praktikums tun. Die Pull-/Merge-Requests werden von Jonas Posselt
-zur angegebenen Deadline gemergt, eine spätere Abgabe ist nicht möglich. Auftretende Merge-Konflikte
-werden wie "keine Abgabe" gewertet.
+zur angegebenen Deadline gemergt, eine spätere Abgabe ist nicht möglich.
+Auftretende Merge-Konflikte werden wie "keine Abgabe" gewertet.
 
 ### Punkte und formale Abzüge
 
@@ -174,11 +175,9 @@ Konkret können Sie für die Nichteinhaltung der formalen Kriterien folgende Abz
 
 ### Lerntagebuch
 
-Sie führen zu jeder Abgabe von Aufgaben aus Pool A/B/C oder P ein Lerntagebuch. Wenn dies komplett
+Sie führen zu jeder Abgabe von Aufgaben aus dem Dungeon-Pool ein Lerntagebuch. Wenn dies komplett
 nicht vorhanden ist oder nur ungenügend ausgearbeitet ist, bekommen Sie auf die gesamte Abgabe der
-betreffenden Aufgaben keine Punkte (also nur noch für die Pool-K-Aufgaben).
-
-Bei der Abgabe der Pool-P-Aufgaben bekommen Sie zusätzlich für Ihr Lerntagebuch Punkte.
+betreffenden Dungeon-Aufgaben keine Punkte.
 
 <!-- TODO: Inhalte und Struktur Lerntagebuch -->
 
