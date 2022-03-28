@@ -33,7 +33,7 @@ privaten Git-Repository bearbeiten.
 2.  Erstellen Sie sich auf GitHub oder dem Gitlab-Server im SW-Labor ein neues (leeres!) privates Repo,
     auf dem Ihr Team das Semester über arbeiten wird.
 3.  Tragen Sie Jonas Posselt (`jposselt`), André Matutat (`amatutat`) und Carsten Gips (`cagix`)
-    mit Schreibrechten in Ihr Repo ein (GitHub: Settings > Collaborateurs and Teams > Manage Access > Rolle "write";
+    mit Schreibrechten in Ihr Repo ein (GitHub: Settings > Collaborateurs and Teams > Manage Access > Role "write";
     Gitlab: Project Information > Members > Invite > Rolle "Developer").
     Dies ist zwingend notwendig, damit wir Ihre Pull-/Merge-Requests bearbeiten/akzeptieren
     können.
