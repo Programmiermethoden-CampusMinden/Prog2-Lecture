@@ -83,9 +83,9 @@ erreichbar und Sie können sich dort mit Ihren _FH-Zugangsdaten_ anmelden (im Re
 Benutzernamen ohne das `@fh-bielefeld.de` plus Ihr Passwort ein). Bitte loggen Sie sich auf einem der beiden
 Systeme mind. einmal ein, bevor Sie uns Ihre Usernamen mitteilen.
 
-Beide Vorgabe-Repos sind nicht öffentlich sichtbar. Bitte teilen Sie uns mit der Abgabe der ersten Lösung (im
-ILIAS) Ihren GitHub-Account oder FH-Usernamen, mit dem Sie sich an unserem Gitlab-Server im Software-Labor
-angemeldet hatten, mit. Wir tragen Sie dann in den jeweiligen Repos ein, damit Sie Zugang zu den Daten haben.
+Beide Vorgabe-Repos sind nicht öffentlich sichtbar. Bitte teilen Sie uns in der Abgabe des ersten Blattes (via
+ILIAS) Ihren GitHub-Account oder FH-Usernamen mit (mit dem Sie sich an unserem Gitlab-Server im Software-Labor
+angemeldet hatten). Wir tragen Sie dann in den jeweiligen Repos ein, damit Sie Zugang zu den Daten haben.
 
 Die Aufgaben werden ebenfalls über GitHub oder den internen Gitlab-Server abgegeben (Ausnahmen siehe Aufgabenblätter).
 Dafür richten Sie sich ein privates Repo ein, welches mit dem Vorgabe-Repo verknüpft ist (vgl. erstes Aufgabenblatt).
