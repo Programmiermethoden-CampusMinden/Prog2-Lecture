@@ -33,10 +33,10 @@ zugeordnet. Diese Aufgaben sind (falls nicht anders angegeben) bis Dienstag 18 U
 abzugeben und am Freitag im Praktikum vorzustellen.
 
 Beachten Sie bei der Lösung der Aufgaben in beiden Pools die formalen Vorgaben (vgl.
-`[Note und Credits > Punkte und formale Abzüge]({{< ref "/org/grading" >}})`{=markdown})
+`[Note und Credits > Punkte und formale Abzüge]({{< ref "/org/grading" >}})`{=markdown}).
 
 Für die Abgabe erstellen Sie in Ihrem Team-Repo einen Pull-/Merge-Request von dem Feature-Branch gegen Ihren
-Master-Branch und weisen den PR/MR zum mergen an Jonas Posselt (`jposselt`) zu (lassen den PR/MR also _offen_).
+Master-Branch und weisen den PR/MR zum Merge an Jonas Posselt (`jposselt`) zu (Sie lassen den PR/MR also _offen_).
 
 Um das Praktikum zu bestehen, müssen Sie jedem der beiden Pools mindestens 50 Punkte erreichen, in Summe aber
 mindestens 108 Punkte (vgl. `[Note und Credits > Praktische Teilleistung]({{< ref "/org/grading" >}})`{=markdown}).
