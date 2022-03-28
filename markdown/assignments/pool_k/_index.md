@@ -1,15 +1,15 @@
 ---
 chapter: true
-title: "Pool K"
+title: "Pool Konzept"
 hidden: true
 weight: 5
 ---
 
 
-# Pool K
+# Pool Konzept
 
-Aufgaben aus diesem Pool müssen Sie im jeweils vorgegeben Zeitraum bearbeiten und durch
-einen Pull-Request in Ihrem Repository abgeben.
+Die Aufgaben aus diesem Pool sind zeitlich an die Vorlesungsthemen geknüpft. Beachten Sie die
+Deadlines für die Abgaben (vgl. `["Fahrplan"]({{< ref "/org/schedule" >}})`{=markdown}).
 
 
 `{{< children showhidden="true" >}}`{=markdown}
