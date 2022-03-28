@@ -1,4 +1,4 @@
-### Git Basic
+### Git Basics
 
 1.  Legen Sie ein Repository an.
 2.  Fügen Sie Dateien dem Verzeichnis hinzu und stellen Sie *einige* davon
