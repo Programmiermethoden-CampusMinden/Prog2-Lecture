@@ -90,17 +90,19 @@ Entwurfsmuster: [**Strategy Pattern**]{.alert}
 Eine **Assoziation** beschreibt eine Beziehung zwischen zwei (oder mehr)
 UML-Elementen (etwa Klassen oder Interfaces).
 
-**Aggregation** (leere Raute) hebt eine _Teil-Ganzes-Beziehung_ hervor.
-Teile können dabei ohne das Ganze existieren (Beispiel: Personen als
-Partner in einer Ehe-Beziehung). D.h. auf der einbindenden Seite (mit
-der leeren Raute) hat man implizit `0..*` stehen.
+Eine **Aggregation** (leere Raute) ist eine Assoziation, die eine
+_Teil-Ganzes-Beziehung_ hervorhebt. Teile können dabei ohne das Ganze
+existieren (Beispiel: Personen als Partner in einer Ehe-Beziehung).
+D.h. auf der einbindenden Seite (mit der leeren Raute) hat man implizit
+`0..*` stehen.
 
-**Komposition** (volle Raute) hebt Teil-Ganzes-Beziehung hervor. Teile
-können aber nicht ohne das Ganze existieren (Beispiel: Gebäude und
-Stockwerke: Ein Gebäude besteht aus Stockwerken, die ohne das Gebäude
-aber nicht existieren.). D.h. auf der einbindenden Seite (mit der vollen
-Raute) steht implizit eine `1` (ein Stockwerk gehört genau zu einem
-Gebäude, ein Gebäude besteht aber aus mehreren Stockwerken).
+Eine **Komposition** (volle Raute) ist eine Assoziation, die eine
+Teil-Ganzes-Beziehung hervorhebt. Teile können aber nicht ohne das Ganze
+existieren (Beispiel: Gebäude und Stockwerke: Ein Gebäude besteht aus
+Stockwerken, die ohne das Gebäude aber nicht existieren.). D.h. auf der
+einbindenden Seite (mit der vollen Raute) steht implizit eine `1` (ein
+Stockwerk gehört genau zu einem Gebäude, ein Gebäude besteht aber aus
+mehreren Stockwerken).
 
 Siehe auch [Aggregation](https://de.wikipedia.org/wiki/Aggregation_(Informatik)),
 [Assoziation](https://de.wikipedia.org/wiki/Assoziation_(UML)#Aggregation_und_Komposition)
