@@ -102,11 +102,12 @@ D.h. auf der einbindenden Seite (mit der vollen Raute) steht implizit eine 1.
 --->
 
 ::: notes
-Zweites Beispiel: Sortieren einer Liste von Studis: `Collections.sort`
-kann eine Liste nach einem Default-Kriterium sortieren oder aber über
-einen extra `Comparator` nach benutzerdefinierten Kriterien ... Das
-Verhalten der Sortiermethode wird quasi an dieses Comparator-Objekt
-delegiert ...
+## Zweites Beispiel: Sortieren einer Liste von Studis
+
+Sortieren einer Liste von Studis: `Collections.sort` kann eine Liste
+nach einem Default-Kriterium sortieren oder aber über einen extra
+`Comparator` nach benutzerdefinierten Kriterien ... Das Verhalten der
+Sortiermethode wird also quasi an dieses Comparator-Objekt delegiert ...
 
 ```java
 public class Studi {
@@ -135,7 +136,7 @@ unsicher sind!
 :::
 
 
-## Hands-On: Strategie-Muster (10 Minuten)
+## Hands-On: Strategie-Muster
 
 Implementieren Sie das Strategie-Muster für eine Übersetzungsfunktion:
 
@@ -155,9 +156,11 @@ Implementieren Sie das Strategie-Muster für eine Übersetzungsfunktion:
 2.  Wie sieht die Implementierung aus?
 
 
+::: notes
 ## Auflösung
 
 ![](images/translator.png){width="80%"}
+:::
 
 [Konsole TranslatorExample.java]{.bsp}
 
