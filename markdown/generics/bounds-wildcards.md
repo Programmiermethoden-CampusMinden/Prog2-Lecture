@@ -111,7 +111,7 @@ Weitere Eigenschaften:
 @Bloch2018: Nur für Parameter und nicht für Rückgabewerte nutzen!
 
 
-## Hands-On: 10 Minuten
+## Hands-On: Ausgabe für generische Listen
 
 Ausgabe für Listen gesucht, die sowohl Elemente der Klasse `A` als auch
 Elemente der Klasse `B` enthalten [können]{.notes}
