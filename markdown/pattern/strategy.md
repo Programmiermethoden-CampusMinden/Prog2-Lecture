@@ -22,7 +22,7 @@ outcomes:
   - k3: "Strategie-Entwurfsmuster praktisch anwenden"
 quizzes:
   - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+    name: "Quiz Strategy-Pattern (ILIAS)"
 assignments:
   - topic: sheet03
 youtube:
