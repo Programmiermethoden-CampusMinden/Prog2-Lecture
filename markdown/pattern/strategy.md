@@ -83,21 +83,29 @@ leise fiept ...
 
 Entwurfsmuster: [**Strategy Pattern**]{.alert}
 
-<!-- XXX
-Assoziation vs. Aggregation vs. Komposition
-https://de.wikipedia.org/wiki/Aggregation_(Informatik)
-https://de.wikipedia.org/wiki/Assoziation_(UML)#Aggregation_und_Komposition
-https://de.wikipedia.org/wiki/Klassendiagramm
+::: notes
+## Exkurs UML: Assoziation vs. Aggregation vs. Komposition
 
-Aggregation (leere Raute) hebt Teil-Ganzes-Beziehung hervor. Teile können
-ohne das Ganze existieren (Beispiel: Ehepartner). D.h. auf der einbindenden
-Seite (mit der leeren Raute) hat man 0..* stehen.
+Eine **Assoziation** beschreibt eine Beziehung zwischen zwei (oder mehr)
+UML-Elementen (etwa Klassen oder Interfaces).
 
-Komposition (volle Raute) hebt Teil-Ganzes-Beziehung hervor. Teile können
-aber nicht ohne das Ganze existieren (Beispiel: Gebäude und Stockwerke: Ein
-Gebäude besteht aus Stockwerken, die ohne das Gebäude aber nicht existieren.).
-D.h. auf der einbindenden Seite (mit der vollen Raute) steht implizit eine 1.
---->
+**Aggregation** (leere Raute) hebt eine _Teil-Ganzes-Beziehung_ hervor.
+Teile können dabei ohne das Ganze existieren (Beispiel: Personen als
+Partner in einer Ehe-Beziehung). D.h. auf der einbindenden Seite (mit
+der leeren Raute) hat man implizit `0..*` stehen.
+
+**Komposition** (volle Raute) hebt Teil-Ganzes-Beziehung hervor. Teile
+können aber nicht ohne das Ganze existieren (Beispiel: Gebäude und
+Stockwerke: Ein Gebäude besteht aus Stockwerken, die ohne das Gebäude
+aber nicht existieren.). D.h. auf der einbindenden Seite (mit der vollen
+Raute) steht implizit eine `1` (ein Stockwerk gehört genau zu einem
+Gebäude, ein Gebäude besteht aber aus mehreren Stockwerken).
+
+Siehe auch [Aggregation](https://de.wikipedia.org/wiki/Aggregation_(Informatik)),
+[Assoziation](https://de.wikipedia.org/wiki/Assoziation_(UML)#Aggregation_und_Komposition)
+und [Klassendiagramm](https://de.wikipedia.org/wiki/Klassendiagramm).
+:::
+
 
 ::: notes
 ## Zweites Beispiel: Sortieren einer Liste von Studis
