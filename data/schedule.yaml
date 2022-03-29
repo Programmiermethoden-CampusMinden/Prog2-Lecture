@@ -24,9 +24,9 @@
     - topic: "/coding/javadoc"
   assignment:
     - topic: "sheet01"
-      due: "Di, 12.04., 18 Uhr (ILIAS)"
+      due: "Di, 12.04., 18 Uhr, ILIAS"
   misc_assignment:
-    - notes: ">> Kein Praktikum (nur Abgabe von Blatt 01; Vorstellung im Praktikum in KW16)"
+    - notes: ">> Kein Praktikum (nur Abgabe von Blatt 01 via ILIAS; Vorstellung im Praktikum in KW16)"
 
 - week: "KW16"
   lecture:
@@ -37,10 +37,10 @@
     - topic: "/pattern/strategy"
   assignment:
     - topic: "sheet02"
-      due: "Di, 19.04., 18 Uhr (PR)"
+      due: "Di, 19.04., 18 Uhr, PR/MR"
   misc_assignment:
     - notes: ">> Vorstellung von Blatt 01 zusammen mit Blatt 02"
-    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe 'Start'"
+    - notes: ">> Abgabe und Vorstellung erste Dungeon-Aufgabe 'Start'"
 
 - week: "KW17"
   lecture:
@@ -51,7 +51,7 @@
     - topic: "/coding/tdd"
   assignment:
     - topic: "sheet03"
-      due: "Di, 26.04., 18 Uhr (PR)"
+      due: "Di, 26.04., 18 Uhr, PR/MR"
   misc_assignment:
     - notes: ">> Vorstellung von Blatt 03"
     - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
@@ -63,7 +63,7 @@
     - topic: "/testing/mockito"
   assignment:
     - topic: "sheet04"
-      due: "Di, 03.05., 18 Uhr (PR)"
+      due: "Di, 03.05., 18 Uhr, PR/MR"
   misc_assignment:
     - notes: ">> Vorstellung von Blatt 04"
     - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
@@ -78,7 +78,7 @@
     - topic: "/pattern/observer"
   assignment:
     - topic: "sheet05"
-      due: "Di, 10.05., 18 Uhr (PR)"
+      due: "Di, 10.05., 18 Uhr, PR/MR"
   misc_assignment:
     - notes: ">> Vorstellung von Blatt 05"
     - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
@@ -90,7 +90,7 @@
     - topic: "/pattern/template-method"
   assignment:
     - topic: "sheet06"
-      due: "Di, 17.05., 18 Uhr (PR)"
+      due: "Di, 17.05., 18 Uhr, PR/MR"
   misc_assignment:
     - notes: ">> Vorstellung von Blatt 06"
     - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
@@ -113,7 +113,7 @@
     - topic: "/java-jvm/regexp"
   assignment:
     - topic: "sheet07"
-      due: "Di, 31.05., 18 Uhr (PR)"
+      due: "Di, 31.05., 18 Uhr, PR/MR"
   misc_assignment:
     - notes: ">> Vorstellung von Blatt 07"
     - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
@@ -127,7 +127,7 @@
     - topic: "/pattern/command"
   assignment:
     - topic: "sheet08"
-      due: "Di, 07.06., 18 Uhr (PR)"
+      due: "Di, 07.06., 18 Uhr, PR/MR"
   misc_assignment:
     - notes: ">> Vorstellung von Blatt 08"
     - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
@@ -141,7 +141,7 @@
     - topic: "/java-jvm/exceptions"
   assignment:
     - topic: "sheet09"
-      due: "Di, 14.06., 18 Uhr (PR)"
+      due: "Di, 14.06., 18 Uhr, PR/MR"
   misc_assignment:
     - notes: ">> Vorstellung von Blatt 09"
     - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
@@ -154,7 +154,7 @@
     - topic: "/building/docker"
   assignment:
     - topic: "sheet10"
-      due: "Di, 21.06., 18 Uhr (PR)"
+      due: "Di, 21.06., 18 Uhr, PR/MR"
   misc_assignment:
     - notes: ">> Vorstellung von Blatt 10"
     - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
