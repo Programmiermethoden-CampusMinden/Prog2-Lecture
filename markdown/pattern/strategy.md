@@ -83,6 +83,7 @@ leise fiept ...
 
 Entwurfsmuster: [**Strategy Pattern**]{.alert}
 
+
 ::: notes
 ## Exkurs UML: Assoziation vs. Aggregation vs. Komposition
 
