@@ -126,7 +126,7 @@ public class Studi {
 
 [Konsole SortDefault.java, SortOwnCrit.java]{.bsp}
 
-*Anmerkung*:
+_Anmerkung_:
 Die Interfaces `Comparable` und `Comparator` und deren Nutzung wurde(n) in
 OOP besprochen. Anonyme Klassen wurden ebenfalls in OOP besprochen. Bitte
 lesen Sie dies noch einmal in der Semesterliteratur nach, wenn Sie hier
