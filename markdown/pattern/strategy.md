@@ -27,14 +27,12 @@ assignments:
   - topic: sheet03
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Strategy-Pattern"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo Strategy-Pattern"
 fhmedia:
   - link: ""
-    name: "VL "
+    name: "VL Strategy-Pattern"
 ---
 
 
