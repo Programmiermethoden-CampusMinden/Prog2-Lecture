@@ -24,9 +24,9 @@
     - topic: "/coding/javadoc"
   assignment:
     - topic: "sheet01"
-      due: "12.04."
+      due: "Di, 12.04., 18 Uhr (ILIAS)"
   misc_assignment:
-    - notes: ">> Kein Praktikum (nur Abgabe von K1; Vorstellung im Praktikum in W3)"
+    - notes: ">> Kein Praktikum (nur Abgabe von Blatt 01; Vorstellung im Praktikum in KW16)"
 
 - week: "KW16"
   lecture:
@@ -37,9 +37,10 @@
     - topic: "/pattern/strategy"
   assignment:
     - topic: "sheet02"
-      due: "19.04."
+      due: "Di, 19.04., 18 Uhr (PR)"
   misc_assignment:
-    - notes: ">> Vorstellung von K1 zusammen mit K2"
+    - notes: ">> Vorstellung von Blatt 01 zusammen mit Blatt 02"
+    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe 'Start'"
 
 - week: "KW17"
   lecture:
@@ -50,7 +51,10 @@
     - topic: "/coding/tdd"
   assignment:
     - topic: "sheet03"
-      due: "26.04."
+      due: "Di, 26.04., 18 Uhr (PR)"
+  misc_assignment:
+    - notes: ">> Vorstellung von Blatt 03"
+    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
 
 - week: "KW18"
   lecture:
@@ -59,7 +63,10 @@
     - topic: "/testing/mockito"
   assignment:
     - topic: "sheet04"
-      due: "03.05."
+      due: "Di, 03.05., 18 Uhr (PR)"
+  misc_assignment:
+    - notes: ">> Vorstellung von Blatt 04"
+    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
 
 - week: "KW19"
   lecture:
@@ -71,7 +78,10 @@
     - topic: "/pattern/observer"
   assignment:
     - topic: "sheet05"
-      due: "10.05."
+      due: "Di, 10.05., 18 Uhr (PR)"
+  misc_assignment:
+    - notes: ">> Vorstellung von Blatt 05"
+    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
 
 - week: "KW20"
   lecture:
@@ -80,7 +90,10 @@
     - topic: "/pattern/template-method"
   assignment:
     - topic: "sheet06"
-      due: "17.05."
+      due: "Di, 17.05., 18 Uhr (PR)"
+  misc_assignment:
+    - notes: ">> Vorstellung von Blatt 06"
+    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
 
 - week: "KW21"
   lecture:
@@ -88,7 +101,7 @@
     - topic: "/gui/swing"
     - topic: "/gui/java2d"
   misc_lecture:
-    - notes: ">> E1 (27.05.) in Vorlesungs-Slot"
+    - notes: ">> E1 (Fr, 27.05.) in Vorlesungs-Slot"
   misc_assignment:
     - notes: ">> Kein Praktikum"
 
@@ -100,7 +113,10 @@
     - topic: "/java-jvm/regexp"
   assignment:
     - topic: "sheet07"
-      due: "31.05."
+      due: "Di, 31.05., 18 Uhr (PR)"
+  misc_assignment:
+    - notes: ">> Vorstellung von Blatt 07"
+    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
 
 - week: "KW23"
   lecture:
@@ -111,7 +127,10 @@
     - topic: "/pattern/command"
   assignment:
     - topic: "sheet08"
-      due: "07.06."
+      due: "Di, 07.06., 18 Uhr (PR)"
+  misc_assignment:
+    - notes: ">> Vorstellung von Blatt 08"
+    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
 
 - week: "KW24"
   lecture:
@@ -122,7 +141,10 @@
     - topic: "/java-jvm/exceptions"
   assignment:
     - topic: "sheet09"
-      due: "14.06."
+      due: "Di, 14.06., 18 Uhr (PR)"
+  misc_assignment:
+    - notes: ">> Vorstellung von Blatt 09"
+    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
 
 - week: "KW25"
   lecture:
@@ -132,12 +154,15 @@
     - topic: "/building/docker"
   assignment:
     - topic: "sheet10"
-      due: "21.06."
+      due: "Di, 21.06., 18 Uhr (PR)"
+  misc_assignment:
+    - notes: ">> Vorstellung von Blatt 10"
+    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
 
 - week: "KW26"
   lecture:
     - topic: "/org/syllabus"
       notes: "Rückblick, Prüfungsvorbereitung (Zoom)"
   misc_assignment:
-    - notes: ">> Praktikum: Vorstellung letzte Dungeon-Aufgabe"
+    - notes: ">> Abgabe und Vorstellung letzte Dungeon-Aufgabe"
 ---
