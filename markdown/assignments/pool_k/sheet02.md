@@ -1,10 +1,11 @@
 ---
 type: assignment
-title: ""
+title: "Blatt 02: Logging, Factory-Method"
 author: "Andre Matutat (FH Bielefeld)"
-points:
-weight: 3
+points: 10
+weight: 2
 hidden: true
+sketch: true
 ---
 
 

@@ -1,10 +1,11 @@
 ---
 type: assignment
-title: ""
+title: "Blatt 06: Serialisierung, Observer, FlyWeight, Type Object"
 author: "Andre Matutat (FH Bielefeld)"
-points:
+points: 10
 weight: 6
 hidden: true
+sketch: true
 ---
 
 

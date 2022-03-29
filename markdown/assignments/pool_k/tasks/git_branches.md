@@ -1,5 +1,3 @@
-### Git Branches und Mergen -- Kommandozeile
-
 Üben Sie den Umgang mit Git auf der Kommandozeile:
 
 1.  Legen Sie in Ihrem Projekt einen Branch an. Ändern Sie einige Dateien
@@ -14,9 +12,8 @@
         modifiziert wurde.
     *   Ändern Sie eine Datei an einer Stelle, die bereits im Branch
         manipuliert wurde.
-    
+
     Committen Sie die Änderungen.
-    
+
     Mergen Sie den Branch jetzt in den Master-Branch. Was beobachten Sie? Wie
     lösen Sie Konflikte auf?
-

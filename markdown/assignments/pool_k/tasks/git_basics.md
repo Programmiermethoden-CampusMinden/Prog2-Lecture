@@ -1,11 +1,9 @@
-### Git Basics
-
 1.  Legen Sie ein Repository an.
 2.  Fügen Sie Dateien dem Verzeichnis hinzu und stellen Sie *einige* davon
     unter Versionskontrolle.
 3.  Ändern Sie eine Datei und versionieren Sie die Änderung.
 4.  Was ist der Unterschied zwischen "`git add .; git commit`" und
-     "`git commit -a`"?
+    "`git commit -a`"?
 5.  Wie finden Sie heraus, welche Dateien geändert wurden?
 6.  Entfernen Sie eine Datei aus der Versionskontrolle, aber nicht aus dem
     Verzeichnis!
@@ -18,4 +16,3 @@
 11. Legen Sie sich ein Java-Projekt in Ihrer IDE an an. Stellen Sie dieses
     Projekt unter Git-Versionskontrolle. Führen Sie die vorigen Schritte mit
     Ihrer IDE durch.
-

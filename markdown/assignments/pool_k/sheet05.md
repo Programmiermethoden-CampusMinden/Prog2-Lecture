@@ -1,10 +1,11 @@
 ---
 type: assignment
-title: ""
+title: "Blatt 05: Mocking, Smells, Refactoring"
 author: "Andre Matutat (FH Bielefeld)"
-points:
-weight: 10
+points: 10
+weight: 5
 hidden: true
+sketch: true
 ---
 
 

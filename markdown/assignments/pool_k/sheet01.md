@@ -1,6 +1,6 @@
 ---
 type: assignment
-title: "Git (Basics, Branches, Remotes)"
+title: "Blatt 01: Git (Basics, Branches, Remotes)"
 author: "Andre Matutat (FH Bielefeld)"
 points: 10
 weight: 1
@@ -16,10 +16,20 @@ im ILIAS hochzuladen. Beachten Sie die Deadline (vgl. `[Fahrplan]({{< ref "/org/
 
 {{% include "assignments/pool_k/tasks/git_basics.md" %}}
 
+Abgabe: Schreiben Sie Ihre Schritte, die Antworten auf die Fragen und Ihre Beobachtungen zu den einzelnen
+Schritten in eine Textdatei und geben Sie diese als Teil der Lösung im Zip-Archiv ab. Das erstellte Repo
+samt Workingcopy fügen Sie ebenfalls dem Zip-Archiv hinzu. Im Praktikum demonstrieren Sie den Umgang mit
+den Schritten noch einmal live.
+
 
 ## Git Branches (4 Punkte)
 
 {{% include "assignments/pool_k/tasks/git_branches.md" %}}
+
+Abgabe: Schreiben Sie Ihre Schritte, die Antworten auf die Fragen und Ihre Beobachtungen zu den einzelnen
+Schritten in eine Textdatei und geben Sie diese als Teil der Lösung im Zip-Archiv ab. Das erstellte Repo
+samt Workingcopy fügen Sie ebenfalls dem Zip-Archiv hinzu. Im Praktikum demonstrieren Sie den Umgang mit
+den Schritten noch einmal live.
 
 
 ## Git Remotes: Vorbereitung Repo für die Abgabe (2 Punkte)
@@ -43,3 +53,6 @@ privaten Git-Repository bearbeiten.
 5.  Klonen Sie Ihr Team-Repo auf Ihren lokalen Rechner und tragen Sie das Vorgabe-Repo (siehe
     `[Ressourcen > Vorgaben]({{< ref "/org/resources" >}})`{=markdown}) als weiteres Remote ein. Pullen Sie
     vom Vorgabe-Repo und pushen Sie die Dateien in Ihr eigenes Repo.
+
+Abgabe: Geben Sie die Textdatei aus Schritt (4) als Teil der Lösung im Zip-Archiv ab. Im Praktikum zeigen Sie
+den Umgang mit Ihrem Repo und Ihrer Workingcopy noch einmal live.

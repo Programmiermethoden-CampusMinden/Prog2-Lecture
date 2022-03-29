@@ -1,10 +1,11 @@
 ---
 type: assignment
-title: ""
+title: "Blatt 10: Threads, Enumeration"
 author: "Andre Matutat (FH Bielefeld)"
-points:
-weight: 8
+points: 10
+weight: 10
 hidden: true
+sketch: true
 ---
 
 
