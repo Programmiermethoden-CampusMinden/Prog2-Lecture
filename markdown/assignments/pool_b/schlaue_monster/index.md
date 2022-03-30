@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-Bisher bewegen sich die Monster nur zufällig durch das Dungeon. In dieser Aufgabe erweitern Sie Ihre Monster um unterschiedliche Verhaltensweisen.
+Bisher bewegen sich die Monster nur zufällig durch den Dungeon. In dieser Aufgabe erweitern Sie Ihre Monster um unterschiedliche Verhaltensweisen.
 
 ## Voraussetzung
 
