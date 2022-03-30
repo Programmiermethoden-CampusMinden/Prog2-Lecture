@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie einen Shop, in dem der Spieler Items wie Gegenstände und Verbesserungen kaufen und verkaufen kann. 
+In dieser Aufgabe implementieren Sie einen Shop, in dem der Spieler Items wie Gegenstände und Verbesserungen kaufen und verkaufen kann.
 
 ## Voraussetungen
 
@@ -21,12 +21,12 @@ Um diese Aufgabe lösen zu können, sollten Sie vorher folgende Aufgaben gelöst
 
 ## Shop
 
-Implementieren Sie einen Shop, in dem der Spieler Items kaufen und verkaufen kann.
+Implementieren Sie einen Shop, in dem der Spieler Items kaufen und verkaufen kann.
 
--   Items kosten etwas. Implementieren Sie daher eine Währung und ein System, um an Zahlungsmittel zu kommen.
--   Items gibt es nur in begrenzter Anzahl im Shop.
--   Items sind im Einkauf teurer als im Verkauf.
+-   Items kosten etwas. Implementieren Sie daher eine Währung und ein System, um an Zahlungsmittel zu kommen.
+-   Items gibt es nur in begrenzter Anzahl im Shop.
+-   Items sind im Einkauf teurer als im Verkauf.
 
-Der Kauf bzw. Verkauf soll mithilfe von RexExp und dem Dialogsystem erfolgen. Implementieren Sie eine Mechanik zum Feilschen per Texteingabe. Preise sollen ebenfalls über das Dialogsystem angefragt/vorgeschlagen werden. 
+Der Kauf bzw. Verkauf soll mithilfe von RexExp und dem Dialogsystem erfolgen. Implementieren Sie eine Mechanik zum Feilschen per Texteingabe. Preise sollen ebenfalls über das Dialogsystem angefragt/vorgeschlagen werden.
 
-Der Shop muss grafisch dargestellt werden. 
+Der Shop muss grafisch dargestellt werden.
