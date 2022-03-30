@@ -17,12 +17,12 @@ Um diese Aufgabe lösen zu können, sollten Sie vorher `["Monster"]({{< ref "/as
 
 ## Boss-Monster
 
-Zu jedem guten Spiel gehört ein guter Boss-Gegner. Boss-Monster sind oft deutlich stärker als die sonstigen Monster im Spiel.
+Zu jedem guten Spiel gehört ein guter Boss-Gegner. Boss-Monster sind oft deutlich stärker als die sonstigen Monster im Spiel.
 Was sie jedoch besonders macht, ist das einzigartige Verhalten dieser Monster.
 
 In dieser Aufgabe geht es nicht darum, ein wiederverwendbares Verhalten zu programmieren, sondern etwas Einzigartiges.
 
-Konzeptionieren und implementieren Sie Ihren eigenen Boss-Gegner.
+Konzipieren und implementieren Sie Ihren eigenen Boss-Gegner.
 
 Folgende Kriterien müssen mindestens erfüllt sein:
 
