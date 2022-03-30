@@ -23,7 +23,6 @@ Implementieren Sie ein Fernkampfsystem. Dabei soll der Spieler (oder auc
 Das Projektil (Feuerball, Pfeil, etc.) hat eine eigene Textur und eine Flugbahn.
 
 Trifft das Projektil auf einen Gegner (oder den Helden) verursacht es Schaden und fliegt nicht mehr weiter.
-
 Trifft das Projektil auf eine Wand, fliegt es nicht mehr weiter. 
 
 Überlegen Sie sich unterschiedliche Flugbahnen für unterschiedliche Projektile. Vielleicht können manche Projektile auch von der Wand abprallen. 
