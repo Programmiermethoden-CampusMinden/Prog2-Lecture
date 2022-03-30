@@ -21,4 +21,3 @@ Beachten Sie dabei, dass es sich nicht um Zauber handelt, die Schaden
 
 Überlegen Sie sich, wie der Held an die Zaubersprüche gelangt und wie er sie benutzen kann.
 
-
