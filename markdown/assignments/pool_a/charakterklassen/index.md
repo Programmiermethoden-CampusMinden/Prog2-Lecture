@@ -3,14 +3,26 @@ type: assignment
 title: "Charakterklassen"
 author: "Andre Matutat (FH Bielefeld)"
 points: 3
-weight: 4
+weight: 6
 hidden: true
 ---
 
+## Ziel
+
+In Rollenspielen gibt die Charakterklasse an, welche Werte (Anzahl der Lebenspunkte, Kampfschaden, [Mana-Punkte](https://de.wikipedia.org/wiki/Mana_(Spiele)) etc.) die Spielfigur hat, welche Waffen sie verwenden und welche Fähigkeiten sie erlernen kann. Typische Charakterklassen sind Krieger, Zauberer oder Schurke.
+
+In dieser Aufgabe sollen Sie verschiedene Charakterklassen implementieren.
+
+## Voraussetzungen
+
+Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsysteme (`["Nahkampf"]({{< ref "/assignments/pool_b/nahkampf" >}})`{=markdown} oder `["Fernkampf"]({{< ref "/assignments/pool_b/fernkampf" >}})`{=markdown}) und  `["Fähigkeiten"]({{< ref "/assignments/pool_a/skills" >}})`{=markdown} umgesetzt haben.
 
 ## Charakterklassen
 
-In Rollenspielen ist es üblich, dass die Spielfigur einer bestimmen Klasse zugehörig ist.
-Die Klasse des Helden gibt an, welche Gegenstände benutzt werden können, wie die Charakterwerte Verteilt sind und welche Fähigkeiten erlernt werden können.
-Überlegen Sie sich zwei stark voneinander unterschiedlichen Charakterklassen und implementieren Sie diese. Machen Sie sich Gedanken, wie Sie die Charakterklassen wirklich einzigartig machen können.
-Zu Beginn des Spiels soll der Spieler die Klasse Auswählen können (oder haben Sie eine bessere Idee?).
+Überlegen Sie sich zuerst, welche Charakterklassen Sie implementieren wollen. Sie sollen mindestens drei unterschiedliche Charakterklassen anbieten.
+
+Überlegen UND notieren Sie dabei, was diese Charakterklassen gemeinsam haben und worin sie sich unterscheiden. Geben Sie jeder Charakterklasse eine passende Bezeichnung.
+
+Implementieren Sie nun die verschiedenen Charakterklassen im Sinne des OOP-Gedankens. Überlegen Sie auch, welche Pattern Sie ggf. verwenden können. Begründen Sie Ihre Entscheidungen schriftlich.
+
+Zu Beginn des Spiels soll der Spieler die Klasse auswählen können (oder haben Sie eine bessere Idee?).
