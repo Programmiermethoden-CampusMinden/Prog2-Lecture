@@ -28,4 +28,4 @@ Trifft das Projektil auf eine Wand, fliegt es nicht mehr weiter. 
 
 Überlegen Sie sich unterschiedliche Flugbahnen für unterschiedliche Projektile. Vielleicht können manche Projektile auch von der Wand abprallen. 
 
-Bei einem Treffer soll der Getroffene eine kurze Distanz zurückgeschleudert werden.  Beachten Sie dabei, dass niemand durch eine Wand bewegt wird.
+Bei einem Treffer soll der Getroffene eine kurze Distanz zurückgeschleudert werden. Beachten Sie dabei, dass niemand durch eine Wand bewegt wird.
