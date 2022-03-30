@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie den Spieler Tot.
+In dieser Aufgabe implementieren Sie den Spieler-Tod.
 
 ## Voraussetzung
 
