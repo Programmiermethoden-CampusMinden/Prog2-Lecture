@@ -15,7 +15,7 @@ In dieser Aufgabe sollen Sie verschiedene Charakterklassen implementieren.
 
 ## Voraussetzungen
 
-Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsysteme (Nahkampf, Fernkampf, Magie) und Skills umgesetzt haben.
+Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsysteme (Nahkampf, Fernkampf, Magie) und Fähigkeiten umgesetzt haben.
 
 ## Charakterklassen
 
