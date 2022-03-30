@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementiert Sie Schatzkisten, die der Spieler im Level finden und plündern kann. 
+In dieser Aufgabe implementieren Sie Schatzkisten, die der Spieler im Level finden und plündern kann. 
 
 ## Voraussetzung
 
