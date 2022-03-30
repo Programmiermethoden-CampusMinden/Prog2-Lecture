@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe sollen Sie ein [Crafting-System](https://de.wikipedia.org/wiki/Crafting#:~:text=Als%20Crafting%2DSystem%20wird%20das,Survival%2DSpielen%20sowie%20Rollenspielen%20verwendet.) implementieren. Das ist eine Möglichkeit für den Helden, aus verschiedenen Gegenständen nach bestimmten Regeln neue Gegenstände herstellen zu können. Denken Sie beispielsweise an das Brauen von Tränken oder Schmieden von Waffen.
+In dieser Aufgabe sollen Sie ein [Crafting-System](https://de.wikipedia.org/wiki/Crafting) implementieren. Das ist eine Möglichkeit für den Helden, aus verschiedenen Gegenständen nach bestimmten Regeln neue Gegenstände herstellen zu können. Denken Sie beispielsweise an das Brauen von Tränken oder Schmieden von Waffen.
 
 ## Voraussetzung
 
