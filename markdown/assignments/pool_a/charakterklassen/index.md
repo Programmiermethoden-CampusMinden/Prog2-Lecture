@@ -15,7 +15,7 @@ In dieser Aufgabe sollen Sie verschiedene Charakterklassen implementieren.
 
 ## Voraussetzungen
 
-Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsysteme (Nahkampf, Fernkampf, Magie) und Fähigkeiten umgesetzt haben.
+Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsysteme ((`["Nahkampf"]({{< ref "/assignments/pool_b/nahkampf" >}})`{=markdown} oder `["Fernkampf"]({{< ref "/assignments/pool_b/fernkampf" >}})`{=markdown}) und  ((`["Fähigkeiten"]({{< ref "/assignments/pool_a/skills" >}}) umgesetzt haben.
 
 ## Charakterklassen
 
