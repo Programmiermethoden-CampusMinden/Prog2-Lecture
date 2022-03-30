@@ -23,7 +23,7 @@ Bei einem erfolgreichen Angriff wird dem angegriffenen Gegner ein bestimmter Sch
 
 Ob ein Angriff erfolgreich ist, kann mit einem Zufallsgenerator bestimmt werden: Beispielsweise könnten 60% aller Angriffe erfolgreich sein.
 
-Die Trefferchance oder der Schaden können auch durch die Stufe des Spielers/des Monster oder der verwendeten Ausrüstung bestimmt werden.
+Die Trefferchance oder der Schaden können auch durch die Stufe des Spielers/des Monster oder der verwendeten Ausrüstung bestimmt werden.
 
-Wird jemand von einem Angriff getroffen, soll er eine kurze Distanz zurückgeschleudert werden. Beachten Sie dabei, dass niemand durch eine Wand bewegt wird.
+Wird jemand von einem Angriff getroffen, soll er eine kurze Distanz zurückgeschleudert werden. Beachten Sie dabei, dass niemand durch eine Wand bewegt wird.
 

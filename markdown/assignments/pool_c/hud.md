@@ -13,6 +13,6 @@ In dieser Aufgabe implementieren Sie ein _HUD_ ([_heads-up display_](https://en.
 
 ## HUD
 
-Stellen Sie alle Informationen, die für den Spieler relevant sein könnten, grafisch auf dem HUD dar.
+Stellen Sie alle Informationen, die für den Spieler relevant sein könnten, grafisch auf dem HUD dar.
 
-Halten Sie Ihr HUD im Laufe des Praktikums up-to-date und ergänzen Sie es, wenn Sie neue Inhalte implementieren. 
+Halten Sie Ihr HUD im Laufe des Praktikums up-to-date und ergänzen Sie es, wenn Sie neue Inhalte implementieren.
