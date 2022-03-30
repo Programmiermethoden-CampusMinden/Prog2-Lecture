@@ -9,15 +9,24 @@ readings:
   - key: "Gamma2011"
   - key: "Kleuker2018"
 tldr: |
-  TODO
+  Das Verhalten von Klassen kann über Vererbungshierarchien weitergegeben und durch
+  Überschreiben in den erbenden Klassen verändert werden. Dies führt häufig schnell
+  zu breiten und tiefen Vererbungsstrukturen.
 
-  Strategy-Pattern: Verhaltensänderung durch Delegation an passendes Objekt
+  Das Strategy-Pattern ist ein Entwurfsmuster, in dem Verhalten stattdessen an
+  passende Klassen/Objekte ausgelagert (delegiert) wird.
 
-  *   Interface oder abstrakte Klasse als Schnittstelle
-  *   Konkrete Klassen implementieren Schnittstelle => konkrete Strategien
-  *   Zur Laufzeit Instanz dieser Klassen übergeben (Aggregation) ...
-  *   ... und nutzen (Delegation)
+  Es wird eine Schnittstelle benötigt (Interface oder abstrakte Klasse), in dem
+  Methoden zum Abrufen des gewünschten Verhaltens definiert werden. Konkrete Klassen
+  leiten davon ab und implementieren das gewünschte konkrete Verhalten.
 
+  In den nutzenden Klassen wird zur Laufzeit eine passende Instanz der (Strategie-)
+  Klassen übergeben (Konstruktor, Setter, ...) und beispielsweise über ein Attribut
+  referenziert. Das gewünschte Verhalten muss nun nicht mehr in der nutzenden Klasse
+  selbst implementiert werden, stattdessen wird einfach auf dem übergebenen Objekt
+  die Methode aus der Schnittstelle aufgerufen. Dies nennt man auch "Delegation",
+  weil die Aufgabe (das Verhalten) an ein anderes Objekt (hier das Strategie-Objekt)
+  weiter gereicht (delegiert) wurde.
 outcomes:
   - k3: "Strategie-Entwurfsmuster praktisch anwenden"
 quizzes:
