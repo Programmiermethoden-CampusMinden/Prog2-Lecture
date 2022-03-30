@@ -10,11 +10,10 @@ hidden: true
 
 ## Freie Aufgabe
 
-In dieser Aufgabe dürfen Sie eigenständig ein großes oder mehrere kleine Features für Ihr Dungeon konzeptionieren und implementieren. 
+In dieser Aufgabe implementieren Sie ein großes oder mehrere kleinere Features für Ihren Dungeon. Sie dürfen sich diese(s) Feature(s) selbst aussuchen und konzipieren. Beachten Sie dabei, dass Ihr Feature nicht Teil einer vorgegebenen oder bereits bearbeiteten/abgegebenen anderen Dungeon-Aufgabe sein kann. 
 
-Formulieren Sie Ihr Vorhaben ausführlich in Ihrem Lerntagebuch. Machen Sie deutlich, **was** Sie erreichen wollen.
+Formulieren Sie Ihr Vorhaben ausführlich in Ihrem Lerntagebuch. Machen Sie besonders deutlich, **was** Sie erreichen wollen.
 
-Beachten Sie dabei, dass Ihr Feature nicht Teil einer bereits vorgegebenen Dungeon-Aufgabe ist. 
 
 Diese Aufgabe bringt Ihnen bis zu 10 Punkte ein. Wählen Sie den Umfang daher entsprechend so, dass Sie nicht zu wenig, aber auch nicht zu viel zu tun haben. 
 
