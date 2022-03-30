@@ -24,11 +24,10 @@ In dieser Aufgabe geht es nicht darum, ein wiederverwendbares Verhalten
 
 Konzeptionieren und implementieren Sie Ihren eigenen Boss-Gegner.
 
-Folgende Kriterien müssen mindestens erfüllt sein: 
+Folgende Kriterien müssen mindestens erfüllt sein:
 
--    Eigene Texturen und Animationen
--    Eigenes Bewegungsmuster
--    Eigenes Angriffsmuster
--    Hat unterschiedliche Angriffe, je nachdem wie nah/fern der Held zum Boss steht
--    Eine zweite Phase, nachdem der Boss 50% seiner Lebenspunkte verloren hat: Der Boss soll dann andere Angriffe/Angriffstechniken haben und aggressiver werden.
-
+-   Eigene Texturen und Animationen
+-   Eigenes Bewegungsmuster
+-   Eigenes Angriffsmuster
+-   Hat unterschiedliche Angriffe, je nachdem wie nah/fern der Held zum Boss steht
+-   Eine zweite Phase, nachdem der Boss 50% seiner Lebenspunkte verloren hat: Der Boss soll dann andere Angriffe/Angriffstechniken haben und aggressiver werden.
