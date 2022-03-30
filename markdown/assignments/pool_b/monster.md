@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie simple Gegner, welche sich selbstständig im Dungeon umherbewegen. 
+In dieser Aufgabe implementieren Sie simple Gegner, welche sich selbstständig im Dungeon umherbewegen.
 
 ## Monster
 

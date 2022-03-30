@@ -15,7 +15,7 @@ In dieser Aufgabe implementieren Sie verschiedene Zaubersprüche.
 
 Implementieren Sie ein Magie-System. Der Spieler soll in der Lage sein verschiedene Zauber zu verwenden.
 
-Beachten Sie dabei, dass es sich nicht um Zauber handelt, die Schaden verursachen. Zauber, die Monster anderweitig manipulieren, sind erlaubt.  
+Beachten Sie dabei, dass es sich nicht um Zauber handelt, die Schaden verursachen. Zauber, die Monster anderweitig manipulieren, sind erlaubt.
 
 Überlegen Sie sich zwei verschiedene Zaubersprüche wie Gedankenkontrolle oder Telekinese oder Upgrade von Waffen/Rüstungen.
 

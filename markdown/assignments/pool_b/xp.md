@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie Erfahrungspunkte, die der Spieler sammeln kann, um in der Charakterstufe aufzusteigen.
+In dieser Aufgabe implementieren Sie Erfahrungspunkte, die der Spieler sammeln kann, um in der Charakterstufe aufzusteigen.
 
 ## Voraussetzung
 
@@ -17,11 +17,11 @@ Um die Aufgabe lösen zu können, brauchen Sie `["Monster"]({{< ref "/assignment
 
 ## Erfahrungspunkte
 
-Wenn Ihr Held Monster besiegt, soll er mit Erfahrungspunkten belohnt werden.
+Wenn Ihr Held Monster besiegt, soll er mit Erfahrungspunkten belohnt werden.
 
-Unterschiedliche Monster geben unterschiedlich viele Erfahrungspunkte.
+Unterschiedliche Monster geben unterschiedlich viele Erfahrungspunkte.
 
-Wenn genug Erfahrungspunkte erlangt wurden, soll der Spieler eine Stufe aufsteigen. Überlegen Sie sich hierfür eine Belohnung.
-Lassen Sie Ihr Stufen-System skalieren. Es soll keine Maximal-Stufe geben, es soll aber immer schwerer werden (mehr Erfahrungspunkte brauchen), um die nächste Stufe zu erreichen.
+Wenn genug Erfahrungspunkte erlangt wurden, soll der Spieler eine Stufe aufsteigen. Überlegen Sie sich hierfür eine Belohnung.
+Lassen Sie Ihr Stufen-System skalieren. Es soll keine Maximal-Stufe geben, es soll aber immer schwerer werden (mehr Erfahrungspunkte brauchen), um die nächste Stufe zu erreichen.
 
-Sie dürfen **keine** `static` oder `public` Variablen benutzen, um die Erfahrungspunkte zu verteilen.
+Sie dürfen **keine** `static` oder `public` Variablen benutzen, um die Erfahrungspunkte zu verteilen.
