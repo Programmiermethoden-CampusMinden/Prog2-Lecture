@@ -1,7 +1,7 @@
 ---
 type: assignment
 title: "Fallen"
-author: " André Matutat (FH Bielefeld)"
+author: "André Matutat (FH Bielefeld)"
 points: 1
 weight: 3
 hidden: true

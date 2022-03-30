@@ -1,7 +1,7 @@
 ---
 type: assignment
 title: "Freundliche NPCs"
-author: " André Matutat (FH Bielefeld)"
+author: "André Matutat (FH Bielefeld)"
 points: 2
 weight: 6
 hidden: true

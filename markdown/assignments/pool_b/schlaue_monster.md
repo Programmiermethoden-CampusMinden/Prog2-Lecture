@@ -1,7 +1,7 @@
 ---
 type: assignment
 title: "Schlaue Monster"
-author: " André Matutat (FH Bielefeld)"
+author: "André Matutat (FH Bielefeld)"
 points: 5
 weight: 7
 hidden: true

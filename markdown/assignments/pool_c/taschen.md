@@ -1,7 +1,7 @@
 ---
 type: assignment
 title: "Taschen"
-author: " André Matutat (FH Bielefeld)"
+author: "André Matutat (FH Bielefeld)"
 points: 1
 weight: 2
 hidden: true

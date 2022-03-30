@@ -1,7 +1,7 @@
 ---
 type: assignment
 title: "Fernkampf"
-author: " André Matutat (FH Bielefeld)"
+author: "André Matutat (FH Bielefeld)"
 points: 2
 weight: 4
 hidden: true

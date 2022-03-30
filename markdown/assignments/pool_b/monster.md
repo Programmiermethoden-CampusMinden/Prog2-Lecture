@@ -1,7 +1,7 @@
 ---
 type: assignment
 title: "Monster"
-author: " André Matutat (FH Bielefeld)"
+author: "André Matutat (FH Bielefeld)"
 points: 3
 weight: 1
 hidden: true

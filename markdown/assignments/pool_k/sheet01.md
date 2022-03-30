@@ -1,7 +1,7 @@
 ---
 type: assignment
 title: "Blatt 01: Git (Basics, Branches, Remotes)"
-author: " André Matutat (FH Bielefeld)"
+author: "André Matutat (FH Bielefeld)"
 points: 10
 weight: 1
 hidden: true
