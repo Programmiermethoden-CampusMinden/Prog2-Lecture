@@ -1,7 +1,7 @@
 ---
 type: assignment
 title: "Crafting"
-author: "Andre Matutat (FH Bielefeld)"
+author: " André Matutat (FH Bielefeld)"
 points: 3
 weight: 5
 hidden: true

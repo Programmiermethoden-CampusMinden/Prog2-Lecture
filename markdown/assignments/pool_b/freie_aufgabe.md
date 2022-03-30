@@ -1,7 +1,7 @@
 ---
 type: assignment
 title: "Freie Aufgabe"
-author: "Andre Matutat (FH Bielefeld)"
+author: " André Matutat (FH Bielefeld)"
 points: 10
 weight: 10
 hidden: true
