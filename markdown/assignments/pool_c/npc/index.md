@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie [freundliche NPCs (Non-Player-Character)](https://en.wikipedia.org/wiki/Non-player_character).
+In dieser Aufgabe implementieren Sie freundliche [NPCs (_Non-Player-Character_)](https://en.wikipedia.org/wiki/Non-player_character).
 
 ## Freundliche NPCs
 
