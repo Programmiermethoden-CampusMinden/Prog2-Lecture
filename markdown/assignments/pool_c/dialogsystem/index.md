@@ -2,16 +2,19 @@
 type: assignment
 title: "Dialogsystem"
 author: "Andre Matutat (FH Bielefeld)"
-points: 4
-weight: 1
+points: 5
+weight: 7
 hidden: true
 ---
 
+## Ziel
+
+In dieser Aufgabe implementieren Sie ein dynamisches Dialogsystem.
 
 ## Dialogsystem
 
--   Nutzen Sie RegExp um ein Dialogsystem zu implementieren.
--   Dabei sollen verschiedene Eingaben erkannt werden und entsprechend darauf reagiert werden.
--   Implementieren Sie ein Rätsel im Spiel, das es erfordert eine Eingabe, passend zu einem regulären Ausdruck, einzugeben.
+Nutzen Sie reguläre Ausdrücke (_RegExp_), um ein Dialogsystem zu implementieren. Implementieren Sie eine Möglichkeit, um den Spieler Texte eingeben zu lassen. Dabei sollen verschiedene Eingaben über reguläre Ausdrücke erkannt werden und entsprechend darauf reagiert werden.
 
-*Anmerkung: Die Aufgabe lässt sich hervorragen mit der Aufgabe "Shop" und "NPC" kombinieren.
+Implementieren Sie ein Rätsel im Spiel, welches eine zu einem regulären Ausdruck passende Eingabe erfordert.
+
+_Anmerkung_: Die Aufgabe lässt sich hervorragen mit der Aufgabe `["Shop"]({{< ref "/assignments/pool_c/shop" >}})`{=markdown} und `["NPC"]({{< ref "/assignments/pool_c/npc" >}})`{=markdown} kombinieren.
