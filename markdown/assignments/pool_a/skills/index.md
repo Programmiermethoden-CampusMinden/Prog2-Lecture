@@ -21,6 +21,6 @@ Implementieren Sie mindestens drei unterschiedliche Fähigkeiten, wobei m
 Außerdem: 
 
 -   Eine der Fähigkeiten soll einen Cooldown bekommen. Es muss also eine gewisse Zeit vergehen, bevor die Fähigkeit erneut eingesetzt werden kann.
--   Eine der Fähigkeiten soll eine Form von Ressourcenkosten haben. Sie verbraucht also Lebenspunkte, Ausdauerpunkte, [Mana-Punkte](https://de.wikipedia.org/wiki/Mana_(Spiele)) o.ä.
+-   Eine der Fähigkeiten soll eine Form von Ressourcenkosten haben. Sie verbraucht also Lebenspunkte, Ausdauerpunkte, [Mana-Punkte](https://de.wikipedia.org/wiki/Mana_(Spiele)) o.ä.
 
 Denken Sie daran: Sie werden vermutlich noch viele unterschiedliche Fähigkeiten einbauen wollen, daher sollten Sie sich ein wiederverwendbares Konzept für die Implementierung überlegen.
