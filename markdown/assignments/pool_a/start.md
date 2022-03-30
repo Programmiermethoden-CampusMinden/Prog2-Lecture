@@ -1,7 +1,7 @@
 ---
 type: assignment
 title: "Start"
-author: "Andre Matutat (FH Bielefeld)"
+author: "André Matutat (FH Bielefeld)"
 points: 10
 weight: 1
 hidden: true

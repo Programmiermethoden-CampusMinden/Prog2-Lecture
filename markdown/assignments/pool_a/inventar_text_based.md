@@ -1,7 +1,7 @@
 ---
 type: assignment
 title: "Inventar (text basiert)"
-author: "Andre Matutat (FH Bielefeld)"
+author: "André Matutat (FH Bielefeld)"
 points: 3
 weight: 4
 hidden: true

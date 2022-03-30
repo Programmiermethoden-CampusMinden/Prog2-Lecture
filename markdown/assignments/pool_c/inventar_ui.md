@@ -1,7 +1,7 @@
 ---
 type: assignment
-title: "Inventar UI "
-author: "Andre Matutat (FH Bielefeld)"
+title: "Inventar (UI)"
+author: "André Matutat (FH Bielefeld)"
 points: 2
 weight: 5
 hidden: true

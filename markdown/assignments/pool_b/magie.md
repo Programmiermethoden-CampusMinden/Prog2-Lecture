@@ -1,7 +1,7 @@
 ---
 type: assignment
 title: "Magie"
-author: "Andre Matutat (FH Bielefeld)"
+author: "André Matutat (FH Bielefeld)"
 points: 2
 weight: 5
 hidden: true
