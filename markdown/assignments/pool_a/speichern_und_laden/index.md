@@ -25,4 +25,4 @@ Sie können auch externe Bibliotheken oder andere Techniken verwenden. Bin
 
 Dokumentieren Sie Ihre Entscheidung. 
 
-*Tipp: Um das aktuelle Level in JSON-Formatierung zu bekommen, verwenden Sie `Level#toJSON`* 
+_Tipp_: Um das aktuelle Level in JSON-Formatierung zu bekommen, verwenden Sie `Level#toJSON`.
