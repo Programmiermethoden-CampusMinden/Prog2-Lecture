@@ -28,8 +28,9 @@ lässt.
     record.getLoggerName(),record.getLevel(),record.getSourceMethodName(),record.getSourceClassName(),record.getMessage()
     ```
 
-Ersetzen Sie mindestens sämtliche Konsolenausgaben (`System.out.println` und `System.err.println`)
-in der Vorgabe durch geeignete Logger-Aufrufe mit passendem Log-Level.
+3.  Ersetzen Sie mindestens sämtliche Konsolenausgaben (`System.out.println` und
+    `System.err.println`) in der Vorgabe durch geeignete Logger-Aufrufe mit passendem
+    Log-Level.
 
-Alle Warnungen und Fehler sollen zusätzlich in eine `.csv`-Datei geschrieben werden. Auf
-der Konsole sollen alle Log-Meldungen ausgegeben werden.
+    Alle Warnungen und Fehler sollen zusätzlich in eine `.csv`-Datei geschrieben werden.
+    Auf der Konsole sollen alle Log-Meldungen ausgegeben werden.
