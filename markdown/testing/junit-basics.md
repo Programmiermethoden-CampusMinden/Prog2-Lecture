@@ -367,6 +367,21 @@ import static packageName.className.*;
 :::
 
 
+## To "assert" or to "assume"?
+
+*   Mit `assert*` werden Testergebnisse geprüft
+    *   Test wird ausgeführt
+    *   Ergebnis: OK, Failure, Error
+
+\bigskip
+
+*   Mit `assume*` werden Annahmen über den Zustand geprüft
+    *   Test wird abgebrochen, wenn Annahme nicht erfüllt
+    *   Prüfen von Vorbedingungen: Ist der Test hier ausführbar/anwendbar?
+
+[[Beispiel: junit4.TestAssume]{.bsp}]{.notes}
+
+
 ## Setup und Teardown: Testübergreifende Konfiguration
 
 ```java
