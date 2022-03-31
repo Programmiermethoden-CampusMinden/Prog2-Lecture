@@ -8,15 +8,14 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 public class TestAssume {
     @Test
-    public void testSum() {
-        Sum s = new Sum();
-        int s1 = 2;
-        int s2 = -3;
-        int erg = 5;
+    public void testStudi() {
+        Studi s = new Studi();
+        int cps = 2;
+        // cps = -5;
 
-        assumeTrue(s2 > 0);
+        // assumeTrue(cps > 0);
 
-        fail();
-        assertEquals(erg, s.sum(s1, s2));
+        s.addToCredits(cps);
+        assertEquals(cps, s.getCredits());
     }
 }
