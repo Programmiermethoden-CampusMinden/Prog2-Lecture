@@ -379,7 +379,7 @@ import static packageName.className.*;
     *   Test wird abgebrochen, wenn Annahme nicht erfüllt
     *   Prüfen von Vorbedingungen: Ist der Test hier ausführbar/anwendbar?
 
-[[Beispiel: junit4.TestAssume]{.bsp}]{.notes}
+[Beispiel: junit4.TestAssume]{.bsp}
 
 
 ## Setup und Teardown: Testübergreifende Konfiguration
