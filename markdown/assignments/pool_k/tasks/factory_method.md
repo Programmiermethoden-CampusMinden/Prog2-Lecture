@@ -31,7 +31,7 @@ public class ComputerFactory {
 
     public static Computer buildComputer(..."stationär",..."viel Wumms") {
         ...
-        return PerformanceDesktopComputer;
+        return myComputer;
     }
 }
 ```
