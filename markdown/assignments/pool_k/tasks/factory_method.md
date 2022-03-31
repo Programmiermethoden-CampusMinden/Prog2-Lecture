@@ -29,7 +29,7 @@ welche das jeweils passend konfigurierte Objekt zurückgibt.
 public class ComputerFactory {
     ...
 
-    public static buildComputer(..."stationär",..."viel Wumms") {
+    public static Computer buildComputer(..."stationär",..."viel Wumms") {
         ...
         return PerformanceDesktopComputer;
     }
