@@ -56,8 +56,9 @@ fhmedia:
 
 [Ursachen für Fehler?]{.bsp}
 
+
 ::: notes
-### (Einige) Ursachen für Fehler
+## (Einige) Ursachen für Fehler
 
 *   Zeit- und Kostendruck
 *   Mangelhafte Anforderungsanalyse
@@ -224,7 +225,7 @@ hintereinander (da sie im selben Paket sind und mit dem selben Namen anfangen)
 => besserer Überblick!
 
 
-### Anmerkung: Die (richtige) JUnit-Bibliothek muss im Classpath liegen!
+## Anmerkung: Die (richtige) JUnit-Bibliothek muss im Classpath liegen!
 
 Eclipse bringt für JUnit 4 und JUnit 5 die nötigen Jar-Dateien mit und fragt beim
 erstmaligen Anlegen einer neuen Testklasse, ob die für die ausgewählte Version
@@ -357,8 +358,9 @@ import static packageName.className.*;
 
 [[Anmerkung zu Asserts pro Testmethode]{.bsp}]{.slides}
 
+
 ::: notes
-### Anmerkungen zu Assert
+## Anmerkungen zu Assert
 
 *   Pro Testmethode möglichst nur **ein** Assert verwenden!
 *   Anderenfalls: Schlägt ein Assert fehl, wird der Rest nicht mehr überprüft ...
@@ -380,7 +382,6 @@ public void testToString() {
 }
 ```
 
-\bigskip
 \bigskip
 
 **`@Before`**
@@ -409,7 +410,7 @@ In JUnit 5 wurden die Namen dieser Annotationen leicht geändert:
 
 
 ::: notes
-### Beispiel für den Einsatz von `@Before`
+## Beispiel für den Einsatz von `@Before`
 
 Annahme: **alle/viele** Testmethoden brauchen **neues** Objekt `x` vom Typ `Studi`
 
@@ -693,7 +694,7 @@ public class MyTestSuite {
 ```
 
 ::: notes
-### Testsuiten mit JUnit 5
+## Testsuiten mit JUnit 5
 
 In JUnit 5 gibt es zwei Möglichkeiten, Testsuiten zu erstellen:
 
