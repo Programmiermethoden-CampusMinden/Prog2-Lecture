@@ -29,9 +29,9 @@ entscheiden, welche Art von Computer dabei erstellt werden soll.
 
 ```java
 public class ComputerFactory {
-...
+    ...
 
-    buildComputer(..."stationär",..."viel Wumms") { 
+    public static buildComputer(..."stationär",..."viel Wumms") {
         ...
         return PerformanceDesktopComputer;
     }
