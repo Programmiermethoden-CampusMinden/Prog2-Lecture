@@ -639,6 +639,54 @@ muss eine Testklasse in JUnit 4 folgende Bedingungen erfüllen:
 Letztlich wird damit das Kreuzprodukt aus Testmethoden und Testdaten durchgeführt.
 :::
 
+::::::::: slides
+## Parametrisierte Tests: Konstruktor (JUnit 4)
+
+```java
+@RunWith(Parameterized.class)
+public class SumTestConstructor {
+    private final int s1;
+    private final int s2;
+    private final int erg;
+
+    public SumTestConstructor(int p1, int p2, int p3) { s1 = p1;  s2 = p2;  erg = p3; }
+
+    @Parameters
+    public static Collection<Object[]> values() {
+        return Arrays.asList(new Object[][] { { 1, 1, 2 }, { 2, 2, 4 }, { 2, 2, 5 } });
+    }
+
+    @Test
+    public void testSum() {
+        assertEquals(Sum.sum(s1, s2), erg);
+    }
+}
+```
+
+
+## Parametrisierte Tests: Parameter (JUnit 4)
+
+```java
+@RunWith(Parameterized.class)
+public class SumTestParameters {
+
+    @Parameter(0)  public int s1;
+    @Parameter(1)  public int s2;
+    @Parameter(2)  public int erg;
+
+    @Parameters
+    public static Collection<Object[]> values() {
+        return Arrays.asList(new Object[][] { { 1, 1, 2 }, { 2, 2, 4 }, { 2, 2, 5 } });
+    }
+
+    @Test
+    public void testSum() {
+        assertEquals(Sum.sum(s1, s2), erg);
+    }
+}
+```
+:::::::::
+
 [Beispiel: junit4.SumTestConstructor, junit4.SumTestParameters]{.bsp}
 
 
