@@ -29,16 +29,16 @@ welche das jeweils passend konfigurierte Objekt zurückgibt.
 public class ComputerFactory {
     ...
 
-    public static buildComputer(..."stationär",..."viel Wumms") {
+    public static Computer buildComputer(..."stationär",..."viel Wumms") {
         ...
-        return PerformanceDesktopComputer;
+        return myComputer;
     }
 }
 ```
 
 **Konfigurationsmatrix**
 
-|         ---          |           ("stationär") Desktop           |            ("mobil") Laptop             |            ("nicht daheim") Cloud             |
-|:--------------------:|:-----------------------------------------:|:---------------------------------------:|:---------------------------------------------:|
-| ("leise schnurrend") | 8 Cores, 1.21GHZ,<br>16GB RAM, 256GB HDD  | 4 Cores, 1.21GHZ,<br>8GB RAM, 256GB HDD |   8 Cores, 1.21GHZ,<br>24GB RAM, 1000GB HDD   |
-|    ("viel Wumms")    | 16 Cores, 4.2GHZ,<br>32GB RAM, 2000GB SSD | 8 Cores, 2.4GHZ,<br>16GB RAM, 256GB SSD | 42 Cores, 9.001GHZ,<br>128GB RAM, 10000GB SSD |
+|                    |    "stationär" (`DesktopComputer `)    |      "mobil" (`LaptopComputer`)      |      "nicht daheim" (`CloudComputer`)      |
+|:------------------:|:--------------------------------------:|:------------------------------------:|:------------------------------------------:|
+| "leise schnurrend" | 8 Cores, 1.21GHZ, 16GB RAM, 256GB HDD  | 4 Cores, 1.21GHZ, 8GB RAM, 256GB HDD |   8 Cores, 1.21GHZ, 24GB RAM, 1000GB HDD   |
+|    "viel Wumms"    | 16 Cores, 4.2GHZ, 32GB RAM, 2000GB SSD | 8 Cores, 2.4GHZ, 16GB RAM, 256GB SSD | 42 Cores, 9.001GHZ, 128GB RAM, 10000GB SSD |

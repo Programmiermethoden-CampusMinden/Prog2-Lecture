@@ -8,7 +8,7 @@ lässt.
 
 
 1.  Schreiben Sie einen Formatter, welcher die Meldungen in folgendem Format auf der
-    Konsole ausgibt. Bauen Sie diesen Formatter in alle Logger ein.
+    _Konsole_ ausgibt. Bauen Sie diesen Formatter in alle Logger ein.
 
     ```
     ------------
@@ -21,8 +21,9 @@ lässt.
     ```
 
 2.  Schreiben Sie einen weiteren Formatter, welcher die Daten als Komma-separierte Werte
-    (CSV-Format) mit der folgenden Reihenfolge ausgibt. Bauen Sie diesen Formatter in
-    den Logger für den Ringpuffer ein.
+    (CSV-Format) mit der folgenden Reihenfolge in eine _Datei_ ausgibt (durch Anfügen
+    einer neuen Zeile an bereits bestehenden Inhalt). Bauen Sie diesen Formatter in den
+    Logger für den Ringpuffer ein.
 
     ```
     record.getLoggerName(),record.getLevel(),record.getSourceMethodName(),record.getSourceClassName(),record.getMessage()
