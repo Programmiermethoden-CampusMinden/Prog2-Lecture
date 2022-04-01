@@ -3,7 +3,7 @@ type: lecture-cg
 title: "Testfallermittlung: Wie viel und was muss man testen?"
 menuTitle: "Testfallermittlung"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 2
+weight: 3
 readings:
   - key: "vogellaJUnit"
   - key: "junit4"
