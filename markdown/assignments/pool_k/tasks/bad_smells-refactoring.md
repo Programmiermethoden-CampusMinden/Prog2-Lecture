@@ -1,23 +1,21 @@
-### Bad Smells und Refactoring
+In der Vorgabe finden Sie unübersichtlichen und schlecht strukturierten Code.
 
-In der Vorgabe finden Sie unübersichtlichen und schlecht strukturierten Code. 
+Welche _Bad Smells_ können Sie hier identifizieren?
 
-Welche Bad Smells können Sie hier identifizieren? Beheben Sie die Smells durch die schrittweise Anwendung von den aus der Vorlesung bekannten Refactoring-Methoden. Wenden Sie mindestens die unten genannten Methoden an. Wenn Sie keinen passenden Smell identifizieren können, suchen Sie sich eine geeignete Stelle, um die jeweilige Methode anzuwenden. 
+Beheben Sie die Smells durch die _schrittweise Anwendung_ von den aus der Vorlesung
+bekannten Refactoring-Methoden. Wenden Sie dabei mindestens die unten genannten
+Methoden an. Wenn Sie keinen passenden Smell identifizieren können, suchen Sie sich
+eine geeignete Stelle, um die jeweilige Methode anzuwenden. Denken Sie auch daran,
+dass Refactoring immer durch eine entsprechende Testsuite abgesichert sein muss.
 
-Ergänzend zu der Übersicht aus der Vorlesung, finden sie unter 
-[Refactoring Guru](https://refactoring.guru/refactoring/techniques) eine erweiterte 
+Ergänzend zu der Übersicht aus der Vorlesung finden sie unter
+[Refactoring Guru](https://refactoring.guru/refactoring/techniques) eine erweiterte
 Auflistung der gängigen Refactoring-Techniken.
 
-Es sollen mindestens die folgenden Refactoring-Techniken angewendet werden. 
-Zeigen Sie in der Abgabe, wo Sie diese verwendet haben.
+1.  Extract Method/Class
+2.  Move Method/Field
+3.  Encapsulate Method/Field
+4.  Pull Up oder Push Down
 
--   Extract Method/Class
--   Move Method/Field
--   Encapsulate Method/Field
--   Pull Up
--   Push Down
 
-Zudem sollen sie dabei auch die Bad Smells beheben.
-
-**Bitte denken Sie auch daran, dass Sie Ihr Vorgehen im Praktikum erklären und Ihre 
-Entscheidungen begründen können.**
+**Sie müssen Ihr Vorgehen im Praktikum demonstrieren und erklären können sowie Ihre Entscheidungen begründen können.**
