@@ -3,7 +3,7 @@ type: lecture-cg
 title: "Mocking mit Mockito"
 menuTitle: "Mocking"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 3
+weight: 4
 readings:
   - key: "vogellaJUnit"
   - key: "junit4"
