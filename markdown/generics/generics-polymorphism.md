@@ -24,7 +24,7 @@ outcomes:
   - k3: "Vererbungsbeziehungen mit generischen Klassen"
   - k3: "Umgang mit Arrays und generischen Typen"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1049737&client_id=FH-Bielefeld"
     name: "Quiz Generics und Polymorphie (ILIAS)"
 assignments:
   - topic: sheet03
