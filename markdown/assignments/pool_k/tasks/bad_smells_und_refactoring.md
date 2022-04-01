@@ -9,7 +9,7 @@ Ergänzend zu der Übersicht aus der Vorlesung, finden sie unter
 Auflistung der gängigen Refactoring-Techniken.
 
 Es sollen mindestens die folgenden Refactoring-Techniken angewendet werden. 
-Zeigen Sie in der Abgabe, wo Sie diese verwendet haben. (4P)
+Zeigen Sie in der Abgabe, wo Sie diese verwendet haben.
 
 -   Extract Method/Class
 -   Move Method/Field
@@ -17,7 +17,7 @@ Zeigen Sie in der Abgabe, wo Sie diese verwendet haben. (4P)
 -   Pull Up
 -   Push Down
 
-Zudem sollen sie dabei auch die Bad Smells beheben. (2P)
+Zudem sollen sie dabei auch die Bad Smells beheben.
 
 **Bitte denken Sie auch daran, dass Sie Ihr Vorgehen im Praktikum erklären und Ihre 
 Entscheidungen begründen können.**
