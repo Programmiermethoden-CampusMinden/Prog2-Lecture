@@ -13,7 +13,7 @@ In dieser Aufgabe implementieren Sie eine grafische Benutzeroberfläche für das
 
 ## Voraussetzung
 
-Um diese Aufgabe lösen zu können, müssen Sie vorher `["Inventar"]({{< ref "/assignments/pool_a/inventar_text_based" >}})`{=markdown} implementieren.
+Um diese Aufgabe lösen zu können, müssen Sie vorher `["Inventar"]({{< ref "/assignments/pool_dungeon/group_a/inventar_text_based" >}})`{=markdown} implementieren.
 
 ## Inventar UI
 

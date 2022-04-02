@@ -15,7 +15,7 @@ In dieser Aufgabe sollen Sie verschiedene Charakterklassen implementieren.
 
 ## Voraussetzungen
 
-Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsysteme (`["Nahkampf"]({{< ref "/assignments/pool_b/nahkampf" >}})`{=markdown} oder `["Fernkampf"]({{< ref "/assignments/pool_b/fernkampf" >}})`{=markdown}) und  `["Fähigkeiten"]({{< ref "/assignments/pool_a/skills" >}})`{=markdown} umgesetzt haben.
+Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsysteme (`["Nahkampf"]({{< ref "/assignments/pool_dungeon/group_b/nahkampf" >}})`{=markdown} oder `["Fernkampf"]({{< ref "/assignments/pool_dungeon/group_b/fernkampf" >}})`{=markdown}) und  `["Fähigkeiten"]({{< ref "/assignments/pool_dungeon/group_a/skills" >}})`{=markdown} umgesetzt haben.
 
 ## Charakterklassen
 

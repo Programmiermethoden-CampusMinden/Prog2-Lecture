@@ -13,7 +13,7 @@ In dieser Aufgabe implementieren Sie verschiedene Gegenstände, die der Spieler 
 
 ## Voraussetzung
 
-Am besten kombinieren Sie diese Aufgabe mit dem `["Inventar"]({{< ref "/assignments/pool_a/inventar_text_based" >}})`{=markdown}.
+Am besten kombinieren Sie diese Aufgabe mit dem `["Inventar"]({{< ref "/assignments/pool_dungeon/group_a/inventar_text_based" >}})`{=markdown}.
 
 ## Items
 

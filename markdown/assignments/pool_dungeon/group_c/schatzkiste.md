@@ -13,7 +13,7 @@ In dieser Aufgabe implementieren Sie Schatzkisten, die der Spieler im Level find
 
 ## Voraussetzung
 
-Um diese Aufgabe lösen zu können, müssen Sie vorher `["Inventar"]({{< ref "/assignments/pool_a/inventar_text_based" >}})`{=markdown} und `["Item"]({{< ref "/assignments/pool_c/item" >}})`{=markdown} gelöst haben.
+Um diese Aufgabe lösen zu können, müssen Sie vorher `["Inventar"]({{< ref "/assignments/pool_dungeon/group_a/inventar_text_based" >}})`{=markdown} und `["Item"]({{< ref "/assignments/pool_dungeon/group_c/item" >}})`{=markdown} gelöst haben.
 
 ## Schatzkiste
 

@@ -13,7 +13,7 @@ In dieser Aufgabe sollen Sie ein [Crafting-System](https://de.wikipedia.org/wiki
 
 ## Voraussetzung
 
-Um diese Aufgabe lösen zu können, müssen Sie vorher die Aufgabe `["Inventar"]({{< ref "/assignments/pool_a/inventar_text_based" >}})`{=markdown} gelöst haben.
+Um diese Aufgabe lösen zu können, müssen Sie vorher die Aufgabe `["Inventar"]({{< ref "/assignments/pool_dungeon/group_a/inventar_text_based" >}})`{=markdown} gelöst haben.
 
 ## Crafting
 
