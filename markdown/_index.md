@@ -31,6 +31,8 @@ Zur Verteilung der Themen siehe auch den `["Fahrplan"]({{< ref "/org/schedule" >
 
 ## Kursformat
 
+![](images/fahrplan.png){width="60%"}
+
 ### Vorlesung: 2 SWS
 
 => Vorlesungszeit:
