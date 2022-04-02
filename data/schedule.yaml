@@ -53,9 +53,10 @@
   assignment:
     - topic: "sheet03"
       due: "Di, 26.04., 18 Uhr, PR/MR"
+    - topic: "/assignments/pool_dungeon"
+      due: "Fr, 29.04., 09 Uhr, PR/MR"
   misc_assignment:
-    - notes: ">> Vorstellung von Blatt 03"
-    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
+    - notes: ">> Praktikum: Vorstellung von Blatt 03 und Dungeon-Aufgabe"
 
 - week: "KW18"
   lecture:
@@ -65,9 +66,10 @@
   assignment:
     - topic: "sheet04"
       due: "Di, 03.05., 18 Uhr, PR/MR"
+    - topic: "/assignments/pool_dungeon"
+      due: "Fr, 06.05., 09 Uhr, PR/MR"
   misc_assignment:
-    - notes: ">> Vorstellung von Blatt 04"
-    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
+    - notes: ">> Praktikum: Vorstellung von Blatt 04 und Dungeon-Aufgabe"
 
 - week: "KW19"
   lecture:
@@ -80,9 +82,10 @@
   assignment:
     - topic: "sheet05"
       due: "Di, 10.05., 18 Uhr, PR/MR"
+    - topic: "/assignments/pool_dungeon"
+      due: "Fr, 13.05., 09 Uhr, PR/MR"
   misc_assignment:
-    - notes: ">> Vorstellung von Blatt 05"
-    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
+    - notes: ">> Praktikum: Vorstellung von Blatt 05 und Dungeon-Aufgabe"
 
 - week: "KW20"
   lecture:
@@ -92,9 +95,10 @@
   assignment:
     - topic: "sheet06"
       due: "Di, 17.05., 18 Uhr, PR/MR"
+    - topic: "/assignments/pool_dungeon"
+      due: "Fr, 20.05., 09 Uhr, PR/MR"
   misc_assignment:
-    - notes: ">> Vorstellung von Blatt 06"
-    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
+    - notes: ">> Praktikum: Vorstellung von Blatt 06 und Dungeon-Aufgabe"
 
 - week: "KW21"
   lecture:
@@ -115,9 +119,10 @@
   assignment:
     - topic: "sheet07"
       due: "Di, 31.05., 18 Uhr, PR/MR"
+    - topic: "/assignments/pool_dungeon"
+      due: "Fr, 03.06., 09 Uhr, PR/MR"
   misc_assignment:
-    - notes: ">> Vorstellung von Blatt 07"
-    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
+    - notes: ">> Praktikum: Vorstellung von Blatt 07 und Dungeon-Aufgabe"
 
 - week: "KW23"
   lecture:
@@ -129,9 +134,10 @@
   assignment:
     - topic: "sheet08"
       due: "Di, 07.06., 18 Uhr, PR/MR"
+    - topic: "/assignments/pool_dungeon"
+      due: "Fr, 10.06., 09 Uhr, PR/MR"
   misc_assignment:
-    - notes: ">> Vorstellung von Blatt 08"
-    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
+    - notes: ">> Praktikum: Vorstellung von Blatt 08 und Dungeon-Aufgabe"
 
 - week: "KW24"
   lecture:
@@ -143,9 +149,10 @@
   assignment:
     - topic: "sheet09"
       due: "Di, 14.06., 18 Uhr, PR/MR"
+    - topic: "/assignments/pool_dungeon"
+      due: "Fr, 17.06., 09 Uhr, PR/MR"
   misc_assignment:
-    - notes: ">> Vorstellung von Blatt 09"
-    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
+    - notes: ">> Praktikum: Vorstellung von Blatt 09 und Dungeon-Aufgabe"
 
 - week: "KW25"
   lecture:
@@ -156,14 +163,18 @@
   assignment:
     - topic: "sheet10"
       due: "Di, 21.06., 18 Uhr, PR/MR"
+    - topic: "/assignments/pool_dungeon"
+      due: "Fr, 24.06., 09 Uhr, PR/MR"
   misc_assignment:
-    - notes: ">> Vorstellung von Blatt 10"
-    - notes: ">> Abgabe und Vorstellung Dungeon-Aufgabe"
+    - notes: ">> Praktikum: Vorstellung von Blatt 10 und Dungeon-Aufgabe"
 
 - week: "KW26"
   lecture:
     - topic: "/org/syllabus"
       notes: "Rückblick, Prüfungsvorbereitung (Zoom)"
+  assignment:
+    - topic: "/assignments/pool_dungeon"
+      due: "Fr, 01.07., 09 Uhr, PR/MR"
   misc_assignment:
-    - notes: ">> Abgabe und Vorstellung letzte Dungeon-Aufgabe"
+    - notes: ">> Praktikum: Abgabe und Vorstellung letzte Dungeon-Aufgabe"
 ---
