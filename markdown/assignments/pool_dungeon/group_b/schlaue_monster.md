@@ -13,7 +13,7 @@ Bisher bewegen sich die Monster nur zufällig durch den Dungeon. In dieser Aufga
 
 ## Voraussetzung
 
-Um diese Aufgabe lösen zu können, sollten Sie vorher `["Monster"]({{< ref "/assignments/pool_b/monster" >}})`{=markdown} implementieren.
+Um diese Aufgabe lösen zu können, sollten Sie vorher `["Monster"]({{< ref "/assignments/pool_dungeon/group_b/monster" >}})`{=markdown} implementieren.
 
 ## Schlaue Monster
 

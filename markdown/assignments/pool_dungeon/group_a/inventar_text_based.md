@@ -9,7 +9,7 @@ hidden: true
 
 ## Voraussetzungen
 
-Um diese Aufgabe bearbeiten zu können, sollten Sie vorher die Aufgabe `["Item" aus Pool C]({{< ref "/assignments/pool_c/item" >}})`{=markdown} gelöst haben.
+Um diese Aufgabe bearbeiten zu können, sollten Sie vorher die Aufgabe `["Item" aus Pool C]({{< ref "/assignments/pool_dungeon/group_c/item" >}})`{=markdown} gelöst haben.
 
 ## Ziel
 

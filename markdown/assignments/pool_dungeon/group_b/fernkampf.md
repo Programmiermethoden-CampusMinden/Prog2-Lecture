@@ -14,7 +14,7 @@ In dieser Aufgabe implementieren Sie ein Fernkampfsystem, damit der Held gegen d
 
 ## Voraussetzung
 
-Um diese Aufgabe lösen zu können, müssen Sie vorher `["Monster"]({{< ref "/assignments/pool_b/monster" >}})`{=markdown} implementiert haben.
+Um diese Aufgabe lösen zu können, müssen Sie vorher `["Monster"]({{< ref "/assignments/pool_dungeon/group_b/monster" >}})`{=markdown} implementiert haben.
 
 ## Fernkampf
 

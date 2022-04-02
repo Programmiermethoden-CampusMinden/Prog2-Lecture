@@ -13,7 +13,7 @@ In dieser Aufgabe implementieren Sie Taschen, welche das Inventar des Spielers e
 
 ## Voraussetzung
 
-Bevor Sie diese Aufgabe lösen können, müssen Sie das `["Inventar"]({{< ref "/assignments/pool_a/inventar_text_based" >}})`{=markdown} implementiert haben.
+Bevor Sie diese Aufgabe lösen können, müssen Sie das `["Inventar"]({{< ref "/assignments/pool_dungeon/group_a/inventar_text_based" >}})`{=markdown} implementiert haben.
 
 ## Taschen
 
