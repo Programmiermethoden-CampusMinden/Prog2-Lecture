@@ -34,7 +34,7 @@ verschiedene Typen von Aufgaben geben mit unterschiedlicher Gewichtung und Bearb
     *   `[Gruppe A "Basics"]({{< ref "/assignments/pool_a" >}})`{=markdown} (38 P)
     *   `[Gruppe B "Monster und Kampf"]({{< ref "/assignments/pool_b" >}})`{=markdown} (32 P)
     *   `[Gruppe C "Items, Aufbewahrung und Handel"]({{< ref "/assignments/pool_c" >}})`{=markdown} (40 P)
-2.  `[Pool "Konzept"]({{< ref "/assignments/pool_k" >}})`{=markdown} mit max. 100 Punkten (mind. 50 Punkte zum Bestehen)
+2.  `[Pool "Konzept"]({{< ref "/assignments/pool_concept" >}})`{=markdown} mit max. 100 Punkten (mind. 50 Punkte zum Bestehen)
 
 ::: notes
 #### Bearbeitung

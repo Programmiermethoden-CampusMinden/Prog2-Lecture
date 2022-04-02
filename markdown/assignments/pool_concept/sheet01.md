@@ -14,7 +14,7 @@ im ILIAS hochzuladen. Beachten Sie die Deadline (vgl. `[Fahrplan]({{< ref "/org/
 
 ## Git Basics (4 Punkte)
 
-{{% include "assignments/pool_k/tasks/git_basics.md" %}}
+{{% include "assignments/pool_concept/tasks/git_basics.md" %}}
 
 Abgabe: Schreiben Sie Ihre Schritte, die Antworten auf die Fragen und Ihre Beobachtungen zu den einzelnen
 Schritten in eine Textdatei und geben Sie diese als Teil der Lösung im Zip-Archiv ab. Das erstellte Repo
@@ -24,7 +24,7 @@ den Schritten noch einmal live.
 
 ## Git Branches (4 Punkte)
 
-{{% include "assignments/pool_k/tasks/git_branches.md" %}}
+{{% include "assignments/pool_concept/tasks/git_branches.md" %}}
 
 Abgabe: Schreiben Sie Ihre Schritte, die Antworten auf die Fragen und Ihre Beobachtungen zu den einzelnen
 Schritten in eine Textdatei und geben Sie diese als Teil der Lösung im Zip-Archiv ab. Das erstellte Repo
