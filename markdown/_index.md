@@ -38,6 +38,8 @@ gefördert ("Fellowships für Innovationen in der digitalen Hochschulbildung
 
 ## Kursformat
 
+![](images/fahrplan.png){width="60%"}
+
 ### Vorlesung: 2 SWS
 
 => Vorlesungszeit:
