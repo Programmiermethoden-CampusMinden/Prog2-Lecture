@@ -3,8 +3,7 @@ package junit4;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
+import static org.junit.Assume.assumeTrue;
 
 public class TestAssume {
     @Test
