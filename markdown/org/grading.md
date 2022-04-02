@@ -166,12 +166,12 @@ Abzug für schlechte oder schlampige Programmierung. Dies betrifft u.a. fehlende
 Dokumentation, Verletzung von Namenskonventionen, uneinheitliche Formatierung,
 schlechte Namen für Klassen/Methoden/Variablen/..., duplizierter Code, ...
 
-Konkret können Sie für die Nichteinhaltung der formalen Kriterien folgende Abzüge pro Abgabe
-"erreichen" (sofern das Thema bereits in der Vorlesung besprochen wurde):
-*   Keine/nicht ausreichende Tests: -2P
-*   Kein/nicht ausreichendes Logging: -1P
-*   Kein/nicht ausreichendes Javadoc: -1P
-*   Code-Style nicht/nur ungenügend beachtet: -1P
+Konkret können Sie für die Nichteinhaltung der formalen Kriterien folgende **Abzüge pro Abgabe**
+"erreichen" (sofern das Thema bereits in der Vorlesung besprochen wurde und hier anwendbar ist):
+*   Keine/nicht ausreichende Tests: -4P
+*   Kein/nicht ausreichendes Logging: -2P
+*   Kein/nicht ausreichendes Javadoc: -2P
+*   Code-Style nicht/nur ungenügend beachtet: -2P
 
 ### Lerntagebuch
 
