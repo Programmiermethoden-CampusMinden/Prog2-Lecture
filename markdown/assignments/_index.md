@@ -13,11 +13,11 @@ _build:
 
 Hier finden Sie die Praktikumsaufgaben. Die Aufgaben sind in zwei Pools sortiert:
 
-*   Pool "Dungeon":
+1.  Pool "Dungeon":
     *   `[Gruppe A "Basics"]({{< ref "/assignments/pool_a" >}})`{=markdown} (38 Punkte)
     *   `[Gruppe B "Monster und Kampf"]({{< ref "/assignments/pool_b" >}})`{=markdown} (32 Punkte)
     *   `[Gruppe C "Items, Aufbewahrung und Handel"]({{< ref "/assignments/pool_c" >}})`{=markdown} (40 Punkte)
-*   Pool `["Konzept"]({{< ref "/assignments/pool_k" >}})`{=markdown} (100 Punkte)
+2.  Pool `["Konzept"]({{< ref "/assignments/pool_k" >}})`{=markdown} (100 Punkte)
 
 Die Aufgaben im Dungeon-Pool haben keinen direkten zeitlichen Bezug zu den Themen in der Vorlesung und können
 in einer von Ihnen gewählten Reihenfolge bearbeitet werden. Beachten Sie dabei, dass es unter den einzelnen
