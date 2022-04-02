@@ -9,14 +9,16 @@ tbd
 
 Questions, bug reports, feature requests and pull requests are very welcome.
 Please be sure to read the [contributor guidelines](CONTRIBUTING.md) before
-opening a new issue. 
+opening a new issue.
 
 See also ["Workflow Erstellung Konzeptaufgaben"](https://github.com/PM-Dungeon/PM-Lecture/wiki/Workflow-Erstellung-Konzeptaufgaben).
 
 
 ## Credits
 
-tbd
+The revision of this course is funded by the Ministry of Culture and Science (MKW)
+in North Rhine-Westphalia in agreement with the Digitale Hochschule NRW (DH.NRW)
+("Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)").
 
 
 ## License
