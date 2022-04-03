@@ -81,7 +81,7 @@ void fail();
     *   Test wird abgebrochen, wenn Annahme nicht erfüllt
     *   Prüfen von Vorbedingungen: Ist der Test hier ausführbar/anwendbar?
 
-[Beispiel: junit4.TestAssume]{.bsp}
+[Beispiel: [junit4.TestAssume](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/junit4/TestAssume.java)]{.bsp}
 
 
 ## Setup und Teardown: Testübergreifende Konfiguration
@@ -404,7 +404,7 @@ public class SumTestParameters {
 ```
 :::::::::
 
-[Beispiel: junit4.SumTestConstructor, junit4.SumTestParameters]{.bsp}
+[Beispiel: [junit4.SumTestConstructor](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/junit4/SumTestConstructor.java), [junit4.SumTestParameters](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/junit4/SumTestParameters.java)]{.bsp}
 
 
 ::: notes
@@ -431,7 +431,7 @@ oder Methoden (`@MethodSource`) angeben.
 *Hinweis*: Parametrisierte Tests werden in JUnit 5 derzeit noch als "*experimentell*"
 angesehen!
 
-[Beispiel: junit5.TestValueSource, junit5.TestMethodSource]{.bsp}
+[Beispiel: [junit5.TestValueSource](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/junit5/TestValueSource.java), [junit5.TestMethodSource](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/junit5/TestMethodSource.java)]{.bsp}
 :::
 
 
