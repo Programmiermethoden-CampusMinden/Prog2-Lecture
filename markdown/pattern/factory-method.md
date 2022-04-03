@@ -64,7 +64,7 @@ fhmedia:
 Implementieren Sie eine Ticket-App, die verschiedene Tickets mit
 Hilfe des Factory-Method Entwurfsmusters generiert.
 
-[UML; Konsole: factory.FactoryBeispiel]{.bsp}
+[UML; Konsole: [factory.FactoryBeispiel](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/factory/FactoryBeispiel.java)]{.bsp}
 
 
 ## Wrap-Up
