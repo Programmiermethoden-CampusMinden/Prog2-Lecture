@@ -1,3 +1,5 @@
+package strategy;
+
 interface ITranslator {
     String translate(String s);
 }
