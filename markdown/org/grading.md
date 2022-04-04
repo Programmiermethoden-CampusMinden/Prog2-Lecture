@@ -105,7 +105,7 @@ bekannt gegeben, für den Termin in der Vorlesungszeit siehe `[Fahrplan]({{< ref
 
 ### 3. Gesamtnote: Gewichteter Mittelwert der beiden Teilleistungen
 
-**60% Praxis, 40% Theorie**
+**50% Praxis, 50% Theorie**
 
 [[Hinweis Abgabeslots, Präsenz/Online]{.bsp}]{.slides}
 
