@@ -7,7 +7,7 @@ tlmgr update --self || exit 1
 tlmgr install beamertheme-metropolis pgfopts tcolorbox environ || exit 1
 
 ## Install extra packages for LaTeX conversion to .png
-tlmgr install standalone filemod currfile || exit 1
+tlmgr install standalone filemod currfile mathtools gincltex svn-prov adjustbox collectbox || exit 1
 
 ## Install make and graphviz (dot)
 apk --no-cache add make bash zip graphviz ghostscript font-noto || exit 1
