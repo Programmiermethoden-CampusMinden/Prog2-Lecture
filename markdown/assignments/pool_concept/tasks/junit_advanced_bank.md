@@ -1,5 +1,3 @@
-### JUnit Advanced Bank
-
 Eine Bank berechnet den Zinssatz für ein Konto basierend auf dem Kontostand (Guthaben) und dem Alter des Kunden:
 
 - Bis einschließlich 100 EUR Guthaben gibt es 1% Zinsen,
