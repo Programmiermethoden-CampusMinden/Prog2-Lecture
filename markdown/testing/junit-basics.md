@@ -36,15 +36,17 @@ quizzes:
 assignments:
   - topic: sheet04
 youtube:
-  - link: ""
-    name: "VL "
-  - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+  - link: "https://youtu.be/2SC40rO0ZOE"
+    name: "VL JUnit Basics"
+  - link: "https://youtu.be/j3FK9iTHuDk"
+    name: "Demo assume() vs. assert()"
+  - link: "https://youtu.be/KsFydUSBDTc"
+    name: "Demo Parametrisierte Tests mit JUnit4"
+  - link: "https://youtu.be/0H-OCICktS0"
+    name: "Demo Parametrisierte Tests mit JUnit5"
 fhmedia:
-  - link: ""
-    name: "VL "
+  - link: "https://www.fh-bielefeld.de/medienportal/m/e10dd378f9b18ba4a42ffbb2c13bfb83685b60fd39a221dba8658b8edcb0df032c2dcf9a1dcd44cf59aa6b483a00a19195cb5a8d117a6fbda52cfcfcf9efe5da"
+    name: "VL JUnit Basics"
 ---
 
 
