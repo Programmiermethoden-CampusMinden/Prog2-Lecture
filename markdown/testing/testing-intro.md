@@ -35,15 +35,13 @@ quizzes:
 assignments:
   - topic: sheet04
 youtube:
-  - link: ""
-    name: "VL "
-  - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+  - link: "https://youtu.be/WGd83crqu4I"
+    name: "VL Einführung Softwaretest"
+  - link: "https://youtu.be/xcogVwHUo5o"
+    name: "Demo Anlegen von Testfällen mit JUnit"
 fhmedia:
-  - link: ""
-    name: "VL "
+  - link: "https://www.fh-bielefeld.de/medienportal/m/87e2aa545269a6d4c0502a18a3e800c82bc767de66612f488f17e0ff60c3a66097884212745aff556c2b76eee7a0fd8a8225d912c3a39c274020fd5b8055bb10"
+    name: "VL Einführung Softwaretest"
 ---
 
 
