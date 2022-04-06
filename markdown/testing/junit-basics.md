@@ -12,20 +12,19 @@ readings:
   - key: "Spillner2012"
   - key: "fernunihagenJunit"
 tldr: |
-  TODO
+  In JUnit 4 und 5 werden Testmethoden mit Hilfe der Annotation `@Test` ausgezeichnet. Über die
+  verschiedenen `assert*()`-Methoden kann das Testergebnis mit dem erwarteten Ergebnis verglichen
+  werden und entsprechend ist der Test "grün" oder "rot". Mit den verschiedenen `assume*()`-Methoden
+  kann dagegen geprüft werden, ob eventuelle Vorbedingungen für das Ausführen eines Testfalls
+  erfüllt sind - anderenfalls wird der Testfall dann übersprungen.
 
-  *   Testen ist genauso wichtig wie Coden
-  *   Richtiges Testen spart Geld, Zeit, ...
-  *   Tests auf verschiedenen Abstraktionsstufen
+  Mit Hilfe von `@Before` und `@After` können Methoden gekennzeichnet werden, die jeweils vor jeder
+  Testmethoder und nach jeder Testmethode aufgerufen werden. Damit kann man seine Testumgebung auf-
+  und auch wieder abbauen (JUnit 4).
 
-  *   JUnit als Framework für (Unit-) Tests; hier JUnit 4 (mit Ausblick auf JUnit 5)
-    *   Testmethoden mit Annotation `@Test`
-    *   Aufbau der Testumgebung `@Before`
-    *   Abbau der Testumgebung `@After`
-    *   Steuern von Tests mit `@Ignore` oder `@Test(timout=XXX)`
-    *   Exceptions einfordern mit `@Test(expected=package.Exception.class)`
-    *   Tests zusammenfassen zu Testsuiten
-
+  Erwartete Exceptions lassen sich in JUnit 4 mit einem Parameter `expected` in der Annotation `@Test`
+  automatisch prüfen: `@Test(expected=package.Exception.class)`. In JUnit 4 besteht die Möglichkeit,
+  Testklassen zu Testsuiten zusammenzufassen und gemeinsam laufen zu lassen.
 outcomes:
   - k3: "Steuern von Tests (ignorieren, zeitliche Begrenzung)"
   - k3: "Prüfung von Exceptions"
