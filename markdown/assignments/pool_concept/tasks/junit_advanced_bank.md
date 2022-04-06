@@ -1,8 +1,8 @@
 Eine Bank berechnet den Zinssatz für ein Konto basierend auf dem Kontostand (Guthaben) und dem Alter des Kunden:
 
-- Bis einschließlich 100 EUR Guthaben gibt es 1% Zinsen,
-- bis einschließlich 1000 EUR Guthaben gibt es 3% Zinsen, und
-- darüber gibt es 5% Zinsen
+-   Bis einschließlich 100 EUR Guthaben gibt es 1% Zinsen,
+-   bis einschließlich 1000 EUR Guthaben gibt es 3% Zinsen, und
+-   darüber gibt es 5% Zinsen
 
 (jeweils für das gesamte Guthaben).
 
@@ -18,5 +18,5 @@ Grenzwertanalyse durch und ergänzen Sie die Testfälle. Dokumentieren Sie die E
 Grenzwertanalyse nachvollziehbar.
 
 Implementieren Sie die ermittelten Testfälle (eine Testmethode pro Testfall) mit JUnit (4.x oder 5.x). Implementieren
-Sie zusätzlich *eine* Testmethode, in der alle ermittelten positiven Testfälle als ein *parametrisierter Test*
-implementiert sind.
+Sie zusätzlich _eine_ Testmethode, in der alle ermittelten "positiven" Testfälle (also TF, die nur aus den gültigen
+ÄK stammen) als ein _parametrisierter Test_ implementiert sind.
