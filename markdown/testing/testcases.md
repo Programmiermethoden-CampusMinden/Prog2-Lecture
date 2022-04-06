@@ -14,8 +14,11 @@ readings:
 tldr: |
   Mit Hilfe der Äquivalenzklassenbildung kann man Testfälle bestimmen. Dabei wird der Eingabebereich
   für jeden Parameter einer Methode in Bereiche mit gleichem Verhalten der Methode eingeteilt (die
-  sogenannten "Äquivalenzklassen"). Jede dieser Äquivalenzklassen (ÄK) muss in mindestens einem
-  Testfall vorkommen, d.h. man bestimmt einen oder mehrere zufällige Werte in den ÄK. Dabei können
+  sogenannten "Äquivalenzklassen"). Dabei können einige Äquivalenzklassen (ÄK) gültigen Eingabebereichen
+  entsprechen ("gültige ÄK"), also erlaubten/erwarteten Eingaben (die zum gewünschten Verhalten führen),
+  und die restlichen ÄK entsprechen dann ungültigen Eingabebereichen ("ungültige ÄK"), also nicht
+  erlaubten Eingaben, die von der Methode zurückgewiesen werden sollten. Jede dieser ÄK muss in mindestens
+  einem Testfall vorkommen, d.h. man bestimmt einen oder mehrere zufällige Werte in den ÄK. Dabei können
   über mehrere Parameter hinweg verschiedene gültige ÄK in einem Testfall kombiniert werden. Bei den
   ungültigen ÄK kann dagegen immer nur ein Parameter eine ungültige ÄK haben, für die restlichen Parameter
   müssen gültige ÄK genutzt werden, und diese werden dabei als durch diesen Testfall "nicht getestet"
@@ -27,6 +30,9 @@ tldr: |
 
   Wenn in der getesteten Methode der Zustand des Objekts eine Rolle spielt, wird dieser wie ein weiterer
   Eingabeparameter für die Methode betrachtet und entsprechend in die ÄK-Bildung bzw. GW-Analyse einbezogen.
+
+  Wenn ein Testfall sich aus den gültigen ÄK/GW speist, spricht man auch von einem "Positiv-Test"; wenn
+  ungültige ÄK/GW genutzt werden, spricht man auch von einem "Negativ-Test".
 outcomes:
   - k2: "Merkmale schlecht testbaren Codes erklären"
   - k2: "Merkmale guter Unit-Tests erklären"
@@ -66,9 +72,9 @@ public class Studi {
 ::::::::: notes
 ### _JEDE_ Methode mindestens testen mit/auf:
 
-*   Positive Tests: Gutfall (Normalfall)
-*   Negativ-Tests (Fehlbedienung, ungültige Werte)
-*   Rand- bzw. Extremwerte
+*   Positive Tests: Gutfall (Normalfall) => "gültige ÄK/GW"
+*   Negativ-Tests (Fehlbedienung, ungültige Werte) => "ungültige ÄK/GW"
+*   Rand- bzw. Extremwerte => GW
 *   Exceptions
 
 => Anforderungen abgedeckt (Black-Box)?
