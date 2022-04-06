@@ -12,11 +12,21 @@ readings:
   - key: "Spillner2012"
   - key: "fernunihagenJunit"
 tldr: |
-  TODO
+  Mit Hilfe der Äquivalenzklassenbildung kann man Testfälle bestimmen. Dabei wird der Eingabebereich
+  für jeden Parameter einer Methode in Bereiche mit gleichem Verhalten der Methode eingeteilt (die
+  sogenannten "Äquivalenzklassen"). Jede dieser Äquivalenzklassen (ÄK) muss in mindestens einem
+  Testfall vorkommen, d.h. man bestimmt einen oder mehrere zufällige Werte in den ÄK. Dabei können
+  über mehrere Parameter hinweg verschiedene gültige ÄK in einem Testfall kombiniert werden. Bei den
+  ungültigen ÄK kann dagegen immer nur ein Parameter eine ungültige ÄK haben, für die restlichen Parameter
+  müssen gültige ÄK genutzt werden, und diese werden dabei als durch diesen Testfall "nicht getestet"
+  betrachtet.
 
-  *   Gründliches Testen ist ebenso viel Aufwand wie Coden
-  *   Äquivalenzklassenbildung und Grenzwertanalyse
+  Zusätzlich entstehen häufig Fehler bei den Grenzen der Bereiche, etwa in Schleifen. Deshalb führt
+  man zusätzlich noch eine Grenzwertanalyse durch und bestimmt für jede ÄK den unteren und den oberen
+  Grenzwert und erzeugt aus diesen Werten zusätzliche Testfälle.
 
+  Wenn in der getesteten Methode der Zustand des Objekts eine Rolle spielt, wird dieser wie ein weiterer
+  Eingabeparameter für die Methode betrachtet und entsprechend in die ÄK-Bildung bzw. GW-Analyse einbezogen.
 outcomes:
   - k2: "Merkmale schlecht testbaren Codes erklären"
   - k2: "Merkmale guter Unit-Tests erklären"
