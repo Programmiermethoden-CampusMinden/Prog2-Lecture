@@ -12,20 +12,25 @@ readings:
   - key: "Spillner2012"
   - key: "fernunihagenJunit"
 tldr: |
-  TODO
+  Fehler schleichen sich durch Zeitdruck und hohe Komplexität schnell in ein Softwareprodukt ein. Die
+  Folgen können von "ärgerlich" über "teuer" bis hin zu (potentiell) "tödlich" reichen. Richtiges
+  Testen ist also ein wichtiger Aspekt bei der Softwareentwicklung!
 
-  *   Testen ist genauso wichtig wie Coden
-  *   Richtiges Testen spart Geld, Zeit, ...
-  *   Tests auf verschiedenen Abstraktionsstufen
+  JUnit ist ein Java-Framework, mit dem Unit-Tests (aber auch andere Teststufen) implementiert werden
+  können. In JUnit 4 und 5 zeichnet man eine Testmethode mit Hilfe der Annotation `@Test` an der
+  entsprechenden Methode aus. Dadurch kann man Produktiv- und Test-Code prinzipiell mischen; Best
+  Practice ist aber das Anlegen eines weiteren Ordners `test/` und das Spiegeln der Packagestrukturen.
+  Für die zu testende Klasse wird eine korrespondierende Testklasse mit dem Suffix "Test" (Konvention)
+  angelegt und dort die Testmethoden implementiert. Der IDE muss der neue `test/`-Ordner noch als
+  Ordner für Sourcen bzw. Tests bekannt gemacht werden. In den Testmethoden baut man den Test auf,
+  führt schließlich den Testschritt durch (beispielsweise konkreter Aufruf der zu testenden Methode)
+  und prüft anschließend mit einem `assert*()`, ob das erzielte Ergebnis dem erwarteten Ergebnis
+  entspricht. Ist alles OK, ist der Test "grün", sonst "rot".
 
-  *   JUnit als Framework für (Unit-) Tests; hier JUnit 4 (mit Ausblick auf JUnit 5)
-    *   Testmethoden mit Annotation `@Test`
-    *   Aufbau der Testumgebung `@Before`
-    *   Abbau der Testumgebung `@After`
-    *   Steuern von Tests mit `@Ignore` oder `@Test(timout=XXX)`
-    *   Exceptions einfordern mit `@Test(expected=package.Exception.class)`
-    *   Tests zusammenfassen zu Testsuiten
-
+  Da ein fehlschlagendes `assert*()` den Test abbricht, werden eventuell danach folgende Prüfungen
+  **nicht** mehr durchgeführt und damit ggf. weitere Fehler maskiert. Deshalb ist es gute Praxis, in
+  einer Testmethode nur einen Testfall zu implementieren und i.d.R. auch nur ein (oder wenige) Aufrufe
+  von `assert*()` pro Testmethode zu haben.
 outcomes:
   - k2: "Ursachen von Softwarefehlern"
   - k3: "Aufbauen von Tests mit JUnit 4 und 5 unter Nutzung der Annotation `@Test`"
