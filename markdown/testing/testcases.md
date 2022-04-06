@@ -40,7 +40,7 @@ youtube:
   - link: "https://youtu.be/AR1WWt4AFqI"
     name: "VL Testfallermittlung"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/6719b852fd1ce5516a7110089ca465626826ef1e6d35ab62e8ef0ca5a71e2daab68631e2ff891d9562552ba7fa1ec97033e3d6c2ac65cf22b62377d2ceb4ea37"
     name: "VL Testfallermittlung"
 ---
 
