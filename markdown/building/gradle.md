@@ -17,8 +17,8 @@ tldr: |
 outcomes:
   - k3: "Schreiben und Verstehen einfacher Gradle-Skripte"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1062993&client_id=FH-Bielefeld"
+    name: "Quiz Gradle (ILIAS)"
 assignments:
   - topic: sheet01
 youtube:
