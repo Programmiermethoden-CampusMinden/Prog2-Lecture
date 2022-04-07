@@ -3,23 +3,23 @@ Ihre Aufgabe ist es, eine grafische Benutzeroberfläche für das Spiel zu entwic
 
 Ihr Fenster soll sich immer in der Mitte des Bildschirms starten und einen Titel besitzen.
 
-Beim start des Spiels, sollen beide Spieler Ihren Namen eingeben können, nutzen Sie dafür `JTextField`. Stellen Sie sicher, dass nur gülitge Eingaben getätigt werden.
+Beim Start des Spiels, sollen beide Spieler Ihren Namen eingeben können, nutzen Sie dafür `JTextField`. Stellen Sie sicher, dass nur gültige Eingaben getätigt werden.
 Sind die beiden Namen gültig, erstellen Sie die jeweiligen `Player` und starten Sie ein Spiel `TicTacToe`.
 
 Im Zentrum Ihres Spielfensters soll das Spielfeld angezeigt werden. Nutzen Sie dafür das `GridLayout` und `JButton`.
-Die Button representieren dabei die Felder des Spiels. Beim drücken eines Button, soll die Methode `TicTacToe#makeMove` aufrufen.
+Die Buttons repräsentieren dabei die Felder des Spiels. Beim Drücken eines Buttons soll die Methode `TicTacToe#makeMove` aufrufen.
 Überlegen Sie sich ein System, um die Parameter für die Methode richtig zu bestimmen.
 
 Mit `TicTacToe#getGameField` können Sie sich das aktuelle Spielfeld übergeben lassen.
 Sorgen Sie dafür, dass Ihre Oberfläche immer den aktuellen Zustand des Spielfeldes anzeigt.
 
-Prüfen Sie nach jedem Spielzug dem Status des Spiels mit `TicTacToe#getGameState`.
-    - Wenn ein Spieler gewonne hat, soll ein `JOptionPane` angezeigt werden und dem Gewinner gratulieren.
+Prüfen Sie nach jedem Spielzug den Status des Spiels mit `TicTacToe#getGameState`.
+    - Wenn ein Spieler gewonnen hat, soll ein `JOptionPane` angezeigt werden und dem Gewinner gratulieren.
     - Wenn ein Unentschieden gespielt wurde, soll ein `JOptionPane` angezeigt werden und das Unentschieden angezeigt werden.
     - In beiden Fällen, soll danach eine neue Runde gestartet werden.
 
 Im unteren Bereich des Fensters, soll der Spieler angezeigt werden, der aktuell am Zug ist.
-Im unteren Bereich des Fensters, soll auch der aktuelle Punktestand angezeigt werden.
+Im unteren Bereich des Fensters soll auch der aktuelle Punktestand angezeigt werden.
 
 Das Fenster soll eine Menüleiste mit folgenden Punkten haben:
     - Exit: Beendet das Programm.
@@ -27,5 +27,5 @@ Das Fenster soll eine Menüleiste mit folgenden Punkten haben:
     - Clear: Setzt das aktuelle Spielfeld zurück.
 
 Denken Sie bei der Umsetzung daran, dass der Benutzer nur die Oberfläche sieht und bedienen kann, stellen Sie daher sicher, dass alle Bedienelemente verständlich sind.
-Nutzen Sie ggf. `JLabel` um Texte auf der UI anzuzeigen.
-Für diese Aufgabe müssen Sie keinen Testfälle schreiben.
+Nutzen Sie ggf. `JLabel`, um Texte auf der UI anzuzeigen.
+Für diese Aufgabe müssen Sie keine Testfälle schreiben.
