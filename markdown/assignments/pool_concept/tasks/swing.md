@@ -1,16 +1,31 @@
-Implementieren Sie ein TikTacToe-Spiel mit Swing.
-- Implementieren Sie die Spiellogik.
-    - Überprüfen Sie nach einem Spielzug, ob ein Spieler gewonnen oder ob es ein Unentschieden ist oder ob das Spiel noch weitergespielt werden muss.
--    Zu Beginn des Spieles, sollen beiden Spieler ihren Namen über die Benutzeroberfläche eingeben.
--    Im Zentrum des Fensters, soll das Spielfeld gezeigt werden. Gespielt wird mit der Maus.
--    Im unteren Bereich des Fensters, soll der Spieler angezeigt werden, der aktuell am Zug ist.
--    Im unteren Bereich des Fensters, soll der aktuelle Punktestand angezeigt werden.
--    Das Fenster soll eine Menüleiste mit folgenden Punkten haben:
+In den Vorgaben finden Sie die Implementierung für ein TicTacToe-Spiel.
+Ihre Aufgabe ist es, eine grafische Benutzeroberfläche für das Spiel zu entwickeln.
+
+Ihr Fenster soll sich immer in der Mitte des Bildschirms starten und einen Titel besitzen.
+
+Beim start des Spiels, sollen beide Spieler Ihren Namen eingeben können, nutzen Sie dafür `JTextField`. Stellen Sie sicher, dass nur gülitge Eingaben getätigt werden.
+Sind die beiden Namen gültig, erstellen Sie die jeweiligen `Player` und starten Sie ein Spiel `TicTacToe`.
+
+Im Zentrum Ihres Spielfensters soll das Spielfeld angezeigt werden. Nutzen Sie dafür das `GridLayout` und `JButton`.
+Die Button representieren dabei die Felder des Spiels. Beim drücken eines Button, soll die Methode `TicTacToe#makeMove` aufrufen.
+Überlegen Sie sich ein System, um die Parameter für die Methode richtig zu bestimmen.
+
+Mit `TicTacToe#getGameField` können Sie sich das aktuelle Spielfeld übergeben lassen.
+Sorgen Sie dafür, dass Ihre Oberfläche immer den aktuellen Zustand des Spielfeldes anzeigt.
+
+Prüfen Sie nach jedem Spielzug dem Status des Spiels mit `TicTacToe#getGameState`.
+    - Wenn ein Spieler gewonne hat, soll ein `JOptionPane` angezeigt werden und dem Gewinner gratulieren.
+    - Wenn ein Unentschieden gespielt wurde, soll ein `JOptionPane` angezeigt werden und das Unentschieden angezeigt werden.
+    - In beiden Fällen, soll danach eine neue Runde gestartet werden.
+
+Im unteren Bereich des Fensters, soll der Spieler angezeigt werden, der aktuell am Zug ist.
+Im unteren Bereich des Fensters, soll auch der aktuelle Punktestand angezeigt werden.
+
+Das Fenster soll eine Menüleiste mit folgenden Punkten haben:
     - Exit: Beendet das Programm.
     - New Game: Startet das Spiel neu und erlaubt die neue Eingabe der Spielernamen.
     - Clear: Setzt das aktuelle Spielfeld zurück.
-- Geben Sie den Namen des Gewinners in der GUI aus und starten Sie dann eine neue Runde (mit denselben Spielern).
-- Achten Sie darauf, die Spiellogik und die Darstellung logisch zu trennen.
 
-
-
+Denken Sie bei der Umsetzung daran, dass der Benutzer nur die Oberfläche sieht und bedienen kann, stellen Sie daher sicher, dass alle Bedienelemente verständlich sind.
+Nutzen Sie ggf. `JLabel` um Texte auf der UI anzuzeigen.
+Für diese Aufgabe müssen Sie keinen Testfälle schreiben.
