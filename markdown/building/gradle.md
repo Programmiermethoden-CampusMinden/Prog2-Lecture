@@ -53,11 +53,11 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'junit:junit:4.13.2'
 }
 
 application {
-    mainClassName = 'tmp.App'
+    mainClass = 'fluppie.App'
 }
 ```
 
@@ -73,9 +73,9 @@ die JUnit-Bibliothek in einer Maven-artigen Notation angegeben (vgl.
 [mvnrepository.com](https://mvnrepository.com/)). (Für nur zur Übersetzung der Applikation
 benötigte Bibliotheken verwendet man stattdessen das Schlüsselwort `implementation`.)
 
-Bei der Initialisierung wurde als Package `tmp` angegeben. Gradle legt darunter defaultmäßig
-die Klasse `App` mit einer `main()`-Methode an. Entsprechend kann man über den Eintrag
-`application` den Einsprungpunkt in die Applikation konfigurieren.
+Bei der Initialisierung wurde als Package `fluppie` angegeben. Gradle legt darunter per
+Default die Klasse `App` mit einer `main()`-Methode an. Entsprechend kann man über den
+Eintrag `application` den Einsprungpunkt in die Applikation konfigurieren.
 :::
 
 
@@ -122,30 +122,36 @@ Select type of project to generate:
   2: application
   3: library
   4: Gradle plugin
-Enter selection (default: basic) [1..4]
+Enter selection (default: basic) [1..4] 2
 
 Select implementation language:
   1: C++
   2: Groovy
   3: Java
   4: Kotlin
-  5: Swift
-Enter selection (default: Java) [1..5]
+  5: Scala
+  6: Swift
+Enter selection (default: Java) [1..6] 3
+
+Split functionality across multiple subprojects?:
+  1: no - only one application project
+  2: yes - application and library projects
+Enter selection (default: no - only one application project) [1..2] 1
 
 Select build script DSL:
   1: Groovy
   2: Kotlin
-Enter selection (default: Groovy) [1..2]
+Enter selection (default: Groovy) [1..2] 1
 
 Select test framework:
   1: JUnit 4
   2: TestNG
   3: Spock
   4: JUnit Jupiter
-Enter selection (default: JUnit 4) [1..4]
+Enter selection (default: JUnit Jupiter) [1..4] 1
 
-Project name (default: tmp):
-Source package (default: tmp):
+Project name (default: tmp): wuppie
+Source package (default: tmp): fluppie
 ```
 
 Typischerweise möchte man eine Applikation bauen (Auswahl 2 bei der ersten Frage).
@@ -158,25 +164,20 @@ Damit wird die eingangs gezeigte Konfiguration angelegt.
 
 ## Ordner
 
-Durch `gradle init` wird folgende Ordnerstruktur angelegt:
+Durch `gradle init` wird ein neuer Ordner `wuppie/` mit folgender Ordnerstruktur
+angelegt:
 
 ```
-drwxrwxr-x  5 cagix cagix 4096 Jun 13 13:14 ./
-drwxrwxr-x 20 cagix cagix 4096 Jun 13 13:11 ../
--rw-rw-r--  1 cagix cagix  926 Jun 13 13:14 build.gradle
--rw-rw-r--  1 cagix cagix  154 Jun 13 13:13 .gitattributes
--rw-rw-r--  1 cagix cagix  103 Jun 13 13:13 .gitignore
-drwxrwxr-x  3 cagix cagix 4096 Jun 13 13:13 gradle/
-drwxrwxr-x  6 cagix cagix 4096 Jun 13 13:13 .gradle/
--rwxrwxr-x  1 cagix cagix 5770 Jun 13 13:13 gradlew*
--rw-rw-r--  1 cagix cagix 3058 Jun 13 13:13 gradlew.bat
--rw-rw-r--  1 cagix cagix  350 Jun 13 13:13 settings.gradle
-drwxrwxr-x  4 cagix cagix 4096 Jun 13 13:13 src/
+drwxr-xr-x 4 cagix cagix 4096 Apr  8 11:43 ./
+drwxrwxrwt 1 cagix cagix 4096 Apr  8 11:43 ../
+-rw-r--r-- 1 cagix cagix  154 Apr  8 11:43 .gitattributes
+-rw-r--r-- 1 cagix cagix  103 Apr  8 11:43 .gitignore
+drwxr-xr-x 3 cagix cagix 4096 Apr  8 11:43 app/
+drwxr-xr-x 3 cagix cagix 4096 Apr  8 11:42 gradle/
+-rwxr-xr-x 1 cagix cagix 8070 Apr  8 11:42 gradlew*
+-rw-r--r-- 1 cagix cagix 2763 Apr  8 11:42 gradlew.bat
+-rw-r--r-- 1 cagix cagix  370 Apr  8 11:43 settings.gradle
 ```
-
-Die Datei `build.gradle` ist die durch `gradle init` erzeugte (und
-eingangs gezeigte) Konfigurationsdatei, vergleichbar mit `build.xml`
-für Ant. In `settings.gradle` finden sich weitere Einstellungen.
 
 Es werden Einstellungen für Git erzeugt (`.gitattributes` und
 `.gitignore`).
@@ -186,10 +187,30 @@ Ordner wird normalerweise mit ins Repo eingecheckt. Die Skripte
 `gradlew` und `gradlew.bat` sind die Startskripte für den Gradle-Wrapper
 (s.u.) und werden normalerweise ebenfalls ins Repo mit eingecheckt.
 
-Der Ordner `.gradle/` ist nur ein Hilfsordner ("Cache") von Gradle.
+Der Ordner `.gradle/` (erscheint ggf. nach dem ersten Lauf von Gradle
+auf dem neuen Projekt) ist nur ein Hilfsordner ("Cache") von Gradle.
 Hier werden heruntergeladene Dateien etc. abgelegt. Dieser Order
 sollte **nicht** ins Repo eingecheckt werden und ist deshalb auch
-per Default im generierten `.gitignore` enthalten.
+per Default im generierten `.gitignore` enthalten. (Zusätzlich gibt es
+im User-Verzeichnis auch noch einen Ordner `.gradle/` mit einem globalen
+Cache.)
+
+In `settings.gradle` finden sich weitere Einstellungen. Die eigentliche
+Gradle-Konfiguration befindet sich zusammen mit dem eigentlichen Projekt
+im Unterordner `app/`:
+
+```
+drwxr-xr-x 4 root root 4096 Apr  8 11:50 ./
+drwxr-xr-x 5 root root 4096 Apr  8 11:49 ../
+drwxr-xr-x 5 root root 4096 Apr  8 11:50 build/
+-rw-r--r-- 1 root root  852 Apr  8 11:43 build.gradle
+drwxr-xr-x 4 root root 4096 Apr  8 11:43 src/
+```
+
+Die Datei `build.gradle` ist die durch `gradle init` erzeugte (und
+eingangs gezeigte) Konfigurationsdatei, vergleichbar mit `build.xml`
+für Ant oder `pom.xml` für Maven. Im Unterordner `build/` werden die
+generierten `.class`-Dateien etc. beim Build-Prozess abgelegt.
 
 Unter `src/` findet sich dann eine Maven-typische Ordnerstruktur
 für die Sourcen:
@@ -197,22 +218,23 @@ für die Sourcen:
 ```
 $ tree src/
 src/
-├── main
-│   ├── java
-│   │   └── tmp
-│   │       └── App.java
-│   └── resources
-└── test
-    ├── java
-    │   └── tmp
-    │       └── AppTest.java
-    └── resources
+|-- main
+|   |-- java
+|   |   `-- fluppie
+|   |       `-- App.java
+|   `-- resources
+`-- test
+    |-- java
+    |   `-- fluppie
+    |       `-- AppTest.java
+    `-- resources
 ```
 
 Unterhalb von `src/` ist ein Ordner `main/` für die Quellen der Applikation (Sourcen
 und Ressourcen). Für jede Sprache gibt es einen eigenen Unterordner, hier entsprechend
-`java/`. Unterhalb diesem folgt dann die bei der Initialisierung angelegte Package-Struktur.
-Diese Strukturen wiederholen sich für die Tests unterhalb von `src/test/`.
+`java/`. Unterhalb diesem folgt dann die bei der Initialisierung angelegte Package-Struktur
+(hier `fluppie` mit der Default-Main-Klasse `App` mit einer `main()`-Methode). Diese
+Strukturen wiederholen sich für die Tests unterhalb von `src/test/`.
 
 Wer die herkömmlichen, deutlich flacheren Strukturen bevorzugt, also unterhalb von `src/`
 direkt die Java-Package-Strukturen für die Sourcen der Applikation und unterhalb von `test/`
@@ -222,14 +244,14 @@ entsprechend die Strukturen für die JUnit-Test, der kann dies im Build-Skript e
 sourceSets {
     main {
         java {
-            srcDirs = [‘src’]
+            srcDirs = ['src']
         }
         resources {
-            srcDirs = [‘res’]
+            srcDirs = ['res']
         }
     test {
         java {
-            srcDirs = ["test"]
+            srcDirs = ['test']
         }
     }
 }
@@ -310,8 +332,9 @@ auch im Maven-Repo [mvnrepository.com](https://mvnrepository.com/) finden.
 
 ```groovy
 plugins {
-    id ‘application’
-    id ‘checkstyle’
+    id 'java'
+    id 'application'
+    id 'checkstyle'
 }
 
 
@@ -319,7 +342,9 @@ repositories {
     mavenCentral()
 }
 
-mainClassName = ‘hangman.Main’
+application {
+    mainClass = 'hangman.Main'
+}
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
@@ -333,21 +358,21 @@ run {
 sourceSets {
     main {
         java {
-            srcDirs = [‘src’]
+            srcDirs = ['src']
         }
         resources {
-            srcDirs = [‘res’]
+            srcDirs = ['res']
         }
     }
 }
 
 checkstyle {
     configFile = file(“${rootDir}/google_checks.xml”)
-    toolVersion = ‘8.32’
+    toolVersion = '8.32'
 }
 
 dependencies {
-    implementation group: ‘org.apache.poi’, name: ‘poi’, version: ‘4.1.2’
+    implementation group: 'org.apache.poi', name: 'poi', version: '4.1.2'
 }
 
 javadoc {
