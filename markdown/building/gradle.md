@@ -37,7 +37,7 @@ sketch: true
 
 ## Gradle: Eine DSL in Groovy
 
-[DSL: Domain Specific Language]{.notes}
+[DSL: _Domain Specific Language_]{.notes}
 
 \bigskip
 
@@ -82,6 +82,12 @@ Eintrag `application` den Einsprungpunkt in die Applikation konfigurieren.
 :::::::::  notes
 
 ## Gradle-DSL
+
+<!-- Für die Demos:
+docker pull gradle
+docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
+docker run --rm -it  -v "$PWD":/data -w /data  -u "$(id -u):$(id -g)"  --entrypoint "bash"  gradle
+-->
 
 Ein Gradle-Skript ist letztlich ein in Groovy geschriebenes Skript.
 [Groovy](https://groovy-lang.org/) ist eine auf Java basierende und auf
