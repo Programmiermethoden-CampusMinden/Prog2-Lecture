@@ -316,11 +316,11 @@ job1:
 In den Gitlab-CI-Pipelines (analog wie in den GitHub-Actions) kann man Docker-Container
 für die Ausführung der Pipeline nutzen.
 
-Mit `image: openjdk:11` wird das Docker-Image `openjdk:11` vom DockerHub geladen und durch
+Mit `image: openjdk:17` wird das Docker-Image `openjdk:17` vom DockerHub geladen und durch
 den Runner mit dem Tag `ivyjava` für die Stages als Container ausgeführt. Die Aktionen im
 `script`-Teil, wie beispielsweise `javac Hello.java` werden vom Runner an die Standard-Eingabe
 der Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechner:
-`docker run openjdk:11 javac Hello.java`.
+`docker run openjdk:17 javac Hello.java`.
 :::
 
 [[Beispiel: Gitlab, cagix/wuppie]{.bsp}]{.slides}
