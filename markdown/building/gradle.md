@@ -431,10 +431,8 @@ Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle vorzuziehen
 
 ## Wrap-Up
 
-TODO
-
-*   Automatisieren von Arbeitabläufen
-*   Einstieg in Gradle (DSL zur Konfiguration)
+*   Automatisieren von Arbeitsabläufen mit Build-Tools/-Skripten
+*   Einstieg in **Gradle** (DSL zur Konfiguration)
 
 
 
