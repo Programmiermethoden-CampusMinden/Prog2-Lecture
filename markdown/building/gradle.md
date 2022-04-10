@@ -427,7 +427,7 @@ Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle vorzuziehen
 
 
 ::::::::: notes
-## Link-Sammlung
+## Link-Sammlung Gradle
 
 *   ["Getting Started"](https://docs.gradle.org/current/userguide/getting_started.html)
 *   ["Building Java Applications Sample"](https://docs.gradle.org/current/samples/sample_building_java_applications.html)
