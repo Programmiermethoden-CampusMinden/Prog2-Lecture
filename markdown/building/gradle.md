@@ -425,7 +425,7 @@ Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle vorzuziehen
 
 :::::::::
 
-[[Live-Demo Gradle/Gradlew]{.bsp}]{.notes}
+[[Live-Demo Gradle/Gradlew]{.bsp}]{.slides}
 
 
 ## Wrap-Up
