@@ -284,14 +284,6 @@ durchführen (`gradle test` würde nur compilieren und die Tests ausführen), mi
 die Anwendung in ein `.jar`-File packen und mit `gradle javadoc` die Javadoc-Dokumentation
 erzeugen und mit `gradle clean` die generierten Hilfsdateien aufräumen (löschen).
 
-Vergleiche auch
-["Getting Started"](https://docs.gradle.org/current/userguide/getting_started.html),
-["Building Java Applications Sample"](https://docs.gradle.org/current/samples/sample_building_java_applications.html),
-["Building Java Applications with libraries Sample"](https://docs.gradle.org/current/samples/sample_building_java_applications_multi_project.html),
-["Building Java Libraries Sample"](https://docs.gradle.org/current/samples/sample_building_java_libraries.html)
-und
-["Building Java & JVM projects"](https://docs.gradle.org/current/userguide/building_java_projects.html).
-
 
 ## Plugin-Architektur
 
@@ -432,6 +424,17 @@ Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle vorzuziehen
 
 *   Automatisieren von Arbeitsabläufen mit Build-Tools/-Skripten
 *   Einstieg in **Gradle** (DSL zur Konfiguration)
+
+
+::::::::: notes
+## Link-Sammlung
+
+*   ["Getting Started"](https://docs.gradle.org/current/userguide/getting_started.html)
+*   ["Building Java Applications Sample"](https://docs.gradle.org/current/samples/sample_building_java_applications.html)
+*   ["Building Java Applications with libraries Sample"](https://docs.gradle.org/current/samples/sample_building_java_applications_multi_project.html)
+*   ["Building Java Libraries Sample"](https://docs.gradle.org/current/samples/sample_building_java_libraries.html)
+*   ["Building Java & JVM projects"](https://docs.gradle.org/current/userguide/building_java_projects.html)
+:::::::::
 
 
 
