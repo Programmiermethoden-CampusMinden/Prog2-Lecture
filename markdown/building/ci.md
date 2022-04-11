@@ -22,8 +22,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1063036&client_id=FH-Bielefeld"
     name: "Quiz Continuous Integration (ILIAS)"
-assignments:
-  - topic: sheet01
 youtube:
   - link: ""
     name: "VL "
