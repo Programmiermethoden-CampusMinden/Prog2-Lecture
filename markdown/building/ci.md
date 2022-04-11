@@ -368,13 +368,13 @@ Bauen des Docker-Containers aus einem Docker-File in der Action u.U. relativ lan
 
 Im Browser in den Repo-Einstellungen arbeiten:
 
-1.  Unter `Settings > Actions > General` die Actions aktivieren (Auswahl, welche Actions
-    erlaubt sind)
+1.  Unter `Settings > Actions > General > Actions permissions` die Actions aktivieren
+    (Auswahl, welche Actions erlaubt sind)
 
     ![](images/screenshot_github_settings_actions.png){width="70%" web_width="60%"}
 
-2.  Unter `Settings > Actions > General` ggf. bestimmen, ob die Actions das Repo nur lesen
-    dürfen oder auch zusätzlich schreiben dürfen
+2.  Unter `Settings > Actions > General > Workflow permissions` ggf. bestimmen, ob die
+    Actions das Repo nur lesen dürfen oder auch zusätzlich schreiben dürfen
 
     ![](images/screenshot_github_settings_permissions.png){width="70%" web_width="60%"}
 
