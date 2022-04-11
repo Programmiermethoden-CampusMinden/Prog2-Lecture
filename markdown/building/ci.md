@@ -148,21 +148,15 @@ job1:
     stage: my.compile
     only:
         - wuppie
-    tags:
-        - ivyjava
 
 job2:
     script: "./gradlew test"
     stage: my.test
-    tags:
-        - ivyjava
 
 job3:
     script:
         - echo "Job 3"
     stage: my.compile
-    tags:
-        - ivyjava
 ```
 
 #### Stages
