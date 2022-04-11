@@ -9,11 +9,22 @@ readings:
   - key: "Ullenboom2016"
   - key: "Inden2013"
 tldr: |
-  TODO
+  Um beim Übersetzen und Testen von Software von den spezifischen Gegebenheiten auf einem
+  Entwicklerrechner unabhängig zu werden, werden häufig sogenannte Build-Tools eingesetzt.
+  Mit diesen konfiguriert man sein Projekt abseits einer IDE und übersetzt, testet und
+  baut seine Applikation damit entsprechend unabhängig. In der Java-Welt sind aktuell die
+  Build-Tools Ant, Maven und Gradle weit verbreitet.
 
-  *   Automatisieren von Arbeitabläufen
-  *   Einstieg in Gradle
+  In Gradle ist ein Java-Entwicklungsmodell quasi eingebaut. Über die Konfigurationsskripte
+  müssen nur noch bestimmte Details wie benötigte externe Bibliotheken oder die Hauptklasse
+  und sonstige Projektbesonderheiten konfiguriert werden. Über "Tasks" wie `build`, `test`
+  oder `run` können Java-Projekte übersetzt, getestet und ausgeführt werden. Dabei werden die
+  externen Abhängigkeiten (Bibliotheken) aufgelöst (soweit konfiguriert) und auch abhängige
+  Tasks mit erledigt, etwa muss zum Testen vorher der Source-Code übersetzt werden.
 
+  Gradle bietet eine Fülle an Plugins für bestimmte Aufgaben an, die jeweils mit neuen Tasks
+  einher kommen. Beispiele sind das Plugin `java`, welches weitere Java-spezifische Tasks
+  wie `classes` mitbringt, oder das Plugin `checkstyle` zum Überprüfen von Coding-Style-Richtlinien.
 outcomes:
   - k3: "Schreiben und Verstehen einfacher Gradle-Skripte"
 quizzes:
