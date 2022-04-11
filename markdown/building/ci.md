@@ -315,7 +315,7 @@ jobs:
             -   run: echo "Job 3"
 ```
 
-#### Name und Events
+#### Workflowname und Trigger-Events
 
 Der Name des Workflows wird mit dem Eintrag `name` spezifiziert und sollte sich im
 Dateinamen widerspiegeln, also im Beispiel `.github/workflows/github_ci.yml`.
@@ -329,10 +329,10 @@ das manuelle Triggern (auf einem beliebigen Branch) freigeschaltet.
 Die Jobs werden unter dem Eintrag `jobs` definiert: `job1`, `job2` und `job3` definieren
 jeweils einen Job.
 
-*   `job1` besteht aus mehreren Befehlen (unter `run`), die auf einem aktuellen Ubuntu
-    ausgeführt werden.
+*   `job1` besteht aus mehreren Befehlen (unter `steps`), die auf einem aktuellen
+    virtualisierten Ubuntu-Runner ausgeführt werden.
 
-    Zusätzlich wird zunächst das Repo mit der Checkout-Action ausgecheckt
+    Es wird zunächst das Repo mit Hilfe der Checkout-Action ausgecheckt
     (`uses: actions/checkout@v3`), das JDK eingerichtet/installiert
     (`uses: actions/setup-java@v3`) und der im Repo enthaltene Gradle-Wrapper
     auf Unversehrtheit geprüft (`uses: gradle/wrapper-validation-action@v1`).
@@ -342,7 +342,11 @@ jeweils einen Job.
     [`actions/setup-java`](https://github.com/actions/setup-java). Actions können
     von jedermann definiert und bereitgestellt werden, in diesem Fall handelt es sich
     um GitHub Actions, die also von Github selbst im Namespace "actions" bereit gestellt
-    werden.
+    werden. Man kann Actions auch selbst im Ordner `.github/actions/` für das Repo
+    definieren (Beispiel:
+    [`PM-Dungeon/PM-Lecture](https://github.com/PM-Dungeon/PM-Lecture/blob/master/.github/actions/alpine-pandoc-hugo/action.yml)).
+
+    Mit `run` werden Befehle in der Shell auf dem genutzten Runner (hier Ubuntu) ausgeführt.
 
 *   Die Jobs `job2` ist von `job1` abhängig und wird erst gestartet, wenn `job1` erfolgreich
     abgearbeitet ist.
@@ -352,6 +356,13 @@ jeweils einen Job.
 Durch die Kombination von Workflows mit verschiedenen Jobs und Abhängigkeiten zwischen Jobs
 lassen sich unterschiedliche Pipelines ("Workflows") für verschiedene Zwecke definieren.
 
+Es lassen sich auch andere Runner benutzen, etwa ein virtualisiertes Windows oder macOS.
+Man kann auch über einen "Matrix-Build" den Workflow auf mehreren Betriebssystemen gleichzeitig
+laufen lassen.
+
+Man kann auch einen Docker-Container benutzen. Dabei muss man beachten, dass dieser am besten
+aus einer Registry (etwa von Docker-Hub oder aus der GitHub-Registry) "gezogen" wird, weil das
+Bauen des Docker-Containers aus einem Docker-File in der Action u.U. relativ lange dauert.
 
 ### Hinweise zur Konfiguration im GitHub CI
 
