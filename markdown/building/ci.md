@@ -98,7 +98,7 @@ fhmedia:
 ::::::::: notes
 ## Gitlab CI
 
-Siehe auch ["Get started with GitLab CI/CD"](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/quick_start/index.md).
+Siehe auch ["Get started with Gitlab CI/CD"](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/quick_start/index.md).
 
 
 ### Übersicht über Pipelines
@@ -228,6 +228,148 @@ _Optional_:
 
 9.  Ggf. Schedules unter `CI/CD > Schedules` anlegen
 10. Ggf. extra Mails einrichten: `Settings > Integrations > Pipeline status emails`
+:::::::::
+
+
+
+
+::::::::: notes
+## GitHub CI
+
+Siehe auch ["CI/CD explained"](https://resources.github.com/ci-cd/).
+
+
+### Übersicht über Workflows
+
+![](images/screenshot-githubci-workflows.png){width="70%" web_width="60%"}
+
+Hier sieht man das Ergebnis der letzten Workflows. Dazu sieht man den
+Commit und den Branch, auf dem der Workflow gelaufen ist sowie wann er
+gelaufen ist. Über die Spalten kann man beispielsweise nach Status oder
+Event filtern.
+
+In der Abbildung ist ein Workflow mit dem Namen "GitHub CI" zu sehen, der
+aktuell noch läuft.
+
+### Detailansicht eines Workflows
+
+![](images/screenshot-githubci-triggeredworkflow.png){width="70%" web_width="60%"}
+
+Wenn man in einen Workflow in der Übersicht anklickt, werden die einzelnen
+Jobs dieses Workflows genauer dargestellt. "job3" ist erfolgreich gelaufen, "job1"
+läuft gerade, und "job2" hängt von "job1" ab, d.h. kann erst nach dem erfolgreichen
+Lauf von "job2" starten.
+
+### Detailansicht eines Jobs
+
+![](images/screenshot-githubci-job.png){width="70%" web_width="60%"}
+
+Wenn man in einen Job anklickt, bekommt man quasi die Konsolenausgabe
+dieses Jobs. Hier kann man ggf. Fehler beim Ausführen der einzelnen Skripte
+oder die Ergebnisse beispielsweise der JUnit-Läufe anschauen.
+
+### GitHub CI: Konfiguration mit YAML-Datei
+
+Workflows werden als YAML-Dateien im Ordner `.github/workflows/` angelegt.
+
+```yaml
+name: GitHub CI
+
+on:
+  # push on master branch
+  push:
+    branches: [master]
+  # manually triggered
+  workflow_dispatch:
+
+jobs:
+
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v3
+            -   uses: actions/setup-java@v3
+                with:
+                    java-version: '17'
+                    distribution: 'temurin'
+            -   uses: gradle/wrapper-validation-action@v1
+            -   run: echo "Hello"
+            -   run: ./gradlew compileJava
+            -   run: echo "wuppie!"
+
+    job2:
+        needs: job1
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v3
+            -   uses: actions/setup-java@v3
+                with:
+                    java-version: '17'
+                    distribution: 'temurin'
+            -   uses: gradle/wrapper-validation-action@v1
+            -   run: ./gradlew test
+
+    job3:
+        runs-on: ubuntu-latest
+        steps:
+            -   run: echo "Job 3"
+```
+
+#### Name und Events
+
+Der Name des Workflows wird mit dem Eintrag `name` spezifiziert und sollte sich im
+Dateinamen widerspiegeln, also im Beispiel `.github/workflows/github_ci.yml`.
+
+Im Eintrag `on` können die Events definiert werden, die den Workflow triggern. Im
+Beispiel ist ein Push-Event auf dem `master`-Branch definiert sowie mit `workflow_dispatch:`
+das manuelle Triggern (auf einem beliebigen Branch) freigeschaltet.
+
+#### Jobs
+
+Die Jobs werden unter dem Eintrag `jobs` definiert: `job1`, `job2` und `job3` definieren
+jeweils einen Job.
+
+*   `job1` besteht aus mehreren Befehlen (unter `run`), die auf einem aktuellen Ubuntu
+    ausgeführt werden.
+
+    Zusätzlich wird zunächst das Repo mit der Checkout-Action ausgecheckt
+    (`uses: actions/checkout@v3`), das JDK eingerichtet/installiert
+    (`uses: actions/setup-java@v3`) und der im Repo enthaltene Gradle-Wrapper
+    auf Unversehrtheit geprüft (`uses: gradle/wrapper-validation-action@v1`).
+
+    Die Actions sind vordefinierte Actions und im Github unter `github.com/` + Action
+    zu finden, d.h. [`actions/checkout`](https://github.com/actions/checkout) oder
+    [`actions/setup-java`](https://github.com/actions/setup-java). Actions können
+    von jedermann definiert und bereitgestellt werden, in diesem Fall handelt es sich
+    um GitHub Actions, die also von Github selbst im Namespace "actions" bereit gestellt
+    werden.
+
+*   Die Jobs `job2` ist von `job1` abhängig und wird erst gestartet, wenn `job1` erfolgreich
+    abgearbeitet ist.
+
+    Ansonsten können die Jobs prinzipiell parallel ausgeführt werden.
+
+Durch die Kombination von Workflows mit verschiedenen Jobs und Abhängigkeiten zwischen Jobs
+lassen sich unterschiedliche Pipelines ("Workflows") für verschiedene Zwecke definieren.
+
+
+### Hinweise zur Konfiguration im GitHub CI
+
+Im Browser in den Repo-Einstellungen arbeiten:
+
+1.  Unter `Settings > Actions > General` die Actions aktivieren (Auswahl, welche Actions
+    erlaubt sind)
+
+    ![](images/screenshot_github_settings_actions.png){width="70%" web_width="60%"}
+
+2.  Unter `Settings > Actions > General` ggf. bestimmen, ob die Actions das Repo nur lesen
+    dürfen oder auch zusätzlich schreiben dürfen
+
+    ![](images/screenshot_github_settings_permissions.png){width="70%" web_width="60%"}
+
+3.  Unter `Actions > <WORKFLOW>` den Workflow ggf. deaktivieren:
+
+    ![](images/screenshot_github_actions.png){width="70%" web_width="60%"}
 :::::::::
 
 
