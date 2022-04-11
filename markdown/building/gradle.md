@@ -34,6 +34,63 @@ fhmedia:
 ---
 
 
+## Automatisieren von Arbeitsabläufen
+
+::: cbox
+Works on my machine ...
+:::
+
+::: notes
+Einen häufigen Ausspruch, den man bei der Zusammenarbeit in Teams zu hören
+bekommt, ist "Also, bei mir läuft der Code." ...
+
+Das Problem dabei ist, dass jeder Entwickler eine andere Maschine hat, oft ein
+anderes Betriebssystem oder eine andere OS-Version. Dazu kommen noch eine andere
+IDE und/oder andere Einstellungen und so weiter.
+
+Wie bekommt man es hin, dass Code zuverlässig auch auf anderen Rechnern baut?
+Ein wichtiger Baustein dafür sind sogenannte "Build-Systeme", also Tools, die
+unabhängig von der IDE (und den IDE-Einstellungen) für das Übersetzen der
+Software eingesetzt werden und deren Konfiguration dann mit im Repo eingecheckt
+wird. Damit kann die Software dann auf allen Rechnern und insbesondere dann auch
+auf dem Server (Stichwort "Continuous Integration") unabhängig von der IDE o.ä.
+automatisiert gebaut und getestet werden.
+:::
+
+\bigskip
+\pause
+
+*   Apache Ant
+*   Apache Maven
+*   Gradle
+
+::: notes
+Das sind die drei am häufigsten anzutreffenden Build-Tools in der Java-Welt.
+
+Ant ist von den drei genannten Tools das älteste und setzt wie Maven auf XML als
+Beschreibungssprache. In Ant müssen dabei alle Regeln stets explizit formuliert
+werden, die man benutzen möchte.
+
+In Maven wird dagegen von einem bestimmten Entwicklungsmodell ausgegangen, hier
+müssen nur noch die Abweichungen zu diesem Modell konfiguriert werden.
+
+In Gradle wird eine DSL basierend auf der Skriptsprache Groovy (läuft auf der
+JVM) eingesetzt, und es gibt hier wie in Maven ein bestimmtes eingebautes
+Entwicklungsmodell. Gradle bringt zusätzlich noch einen Wrapper mit, d.h. es
+wird eine Art Gradle-Starter im Repo konfiguriert, der sich quasi genauso
+verhält wie ein fest installiertes Gradle (s.u.).
+
+
+**Achtung**: Während Ant und Maven relativ stabil in der API sind, verändert
+sich Gradle teilweise deutlich zwischen den Versionen. Zusätzlich sind bestimmte
+Gradle-Versionen oft noch von bestimmten JDK-Versionen abhängig. In der Praxis
+bedeutet dies, dass man Gradle-Skripte im Laufe der Zeit relativ oft überarbeiten
+muss (einfach nur, damit das Skript wieder läuft -- ohne dass man dabei
+irgendwelche neuen Features oder sonstige Vorteile erzielen würde). Ein großer
+Vorteil ist aber der Gradle-Wrapper (s.u.).
+:::
+
+
 ## Gradle: Eine DSL in Groovy
 
 [DSL: _Domain Specific Language_]{.notes}
@@ -79,7 +136,6 @@ Eintrag `application` den Einsprungpunkt in die Applikation konfigurieren.
 
 
 :::::::::  notes
-
 ## Gradle-DSL
 
 <!-- Für die Demos:
@@ -261,7 +317,28 @@ sourceSets {
     }
 }
 ```
+:::::::::
 
+
+:::::::::  slides
+## Wichtige Gradle-Tasks
+
+*   Initialisieren des Projekts: `gradle init`
+
+\smallskip
+
+*   Überblick über die Tasks: `gradle tasks`
+
+\smallskip
+
+*   Übersetzen: `gradle compileJava` oder `gradle classes`
+*   Testen: `gradle test`
+*   Ausführen: `gradle run`
+*   Aufräumen: `gradle clean`
+:::::::::
+
+
+:::::::::  notes
 ## Ablauf eines Gradle-Builds
 
 Ein Gradle-Build hat zwei Hauptphasen: Konfiguration und Ausführung.
@@ -389,10 +466,26 @@ bevorzugt wird.
 Vorhandene Ant-Buildskripte kann man nach Gradle importieren und ausführen
 lassen. Über die DSL kann man auch direkt Ant-Tasks aufrufen. Siehe auch
 ["Using Ant from Gradle"](https://docs.gradle.org/current/userguide/ant.html).
+:::::::::
 
 
 ## Gradle-Wrapper
 
+:::::::::  slides
+```
+project
+|-- app/
+|-- build.gradle
+|-- gradle/
+|   `-- wrapper/
+|       |-- gradle-wrapper.jar
+|       `-- gradle-wrapper.properties
+|-- gradlew
+`-- gradlew.bat
+```
+:::::::::
+
+:::::::::  notes
 Zur Ausführung von Gradle-Skripten benötigt man eine lokale Gradle-Installation.
 Diese sollte für i.d.R. alle User, die das Projekt bauen wollen, identisch sein.
 Leider ist dies oft nicht gegeben bzw. nicht einfach lösbar.
@@ -414,7 +507,6 @@ in einer bestimmten (gewünschten) Version anlegen lassen.
 Da der Gradle-Wrapper im Repository eingecheckt ist, benutzen alle Entwickler damit
 automatisch die selbe Version, ohne diese auf ihrem System zuvor installieren zu müssen.
 Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle vorzuziehen!
-
 :::::::::
 
 [[Live-Demo Gradle/Gradlew]{.bsp}]{.slides}
