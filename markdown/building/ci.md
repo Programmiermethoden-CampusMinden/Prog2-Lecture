@@ -98,6 +98,9 @@ fhmedia:
 ::::::::: notes
 ## Gitlab CI
 
+Siehe auch ["Get started with GitLab CI/CD"](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/quick_start/index.md).
+
+
 ### Übersicht über Pipelines
 
 ![](images/screenshot-gitlabci-pipelines.png){width="70%" web_width="60%"}
@@ -106,8 +109,8 @@ fhmedia:
     "pending" (die Pipeline läuft gerade), "cancelled" (Pipeline wurde manuell
     abgebrochen), "passed" (alle Jobs der Pipeline sind sauber durchgelaufen),
     "failed" (ein Job ist fehlgeschlagen, Pipeline wurde deshalb abgebrochen)
-*   In Spalte "Pipeline" sind die Pipelines eindeutig benannt aufgeführt
-*   In Spalte "Commit" erkennt man den Commit (inkl. Branch)
+*   In Spalte "Pipeline" sind die Pipelines eindeutig benannt aufgeführt,
+    inkl. Trigger (Commit und Branch)
 *   In Spalte "Stages" sieht man den Zustand der einzelnen Stages
 
 Wenn man mit der Maus auf den Status oder die Stages geht, erfährt man mehr bzw.
@@ -140,70 +143,65 @@ stages:
 job1:
     script:
         - echo "Hello"
-        - ant compile
+        - ./gradlew compileJava
         - echo "wuppie!"
     stage: my.compile
     only:
-        - yaml
+        - wuppie
     tags:
         - ivyjava
 
 job2:
-    script: "ant test"
+    script: "./gradlew test"
     stage: my.test
+    tags:
+        - ivyjava
+
+job3:
+    script:
+        - echo "Job 3"
+    stage: my.compile
     tags:
         - ivyjava
 ```
 
 #### Stages
 
-Unter "`stages`" werden die einzelnen Stages einer Pipeline definiert. Diese werden
-in der hier spezifizierten Reihenfolge durchgeführt, d.h. zurerst würde `my.compile`
-ausgeführt und erst wenn alle Jobs in `my.compile` erfolgreich ausgeführt wurden,
+Unter `stages` werden die einzelnen Stages einer Pipeline definiert. Diese werden
+in der hier spezifizierten Reihenfolge durchgeführt, d.h. zuerst würde `my.compile`
+ausgeführt, und erst wenn alle Jobs in `my.compile` erfolgreich ausgeführt wurden,
 würde anschließend `my.test` ausgeführt.
 
-Dabei gilt: Die Jobs einer Stage werden parallel zueinander ausgeführt, und
-die Jobs der nächsten Stage werden erst dann gestartet, wenn alle Jobs der
+Dabei gilt: Die Jobs einer Stage werden (potentiell) parallel zueinander ausgeführt,
+und die Jobs der nächsten Stage werden erst dann gestartet, wenn alle Jobs der
 aktuellen Stage erfolgreich beendet wurden.
 
-Wenn keine eigenen "`stages`" definiert werden, kann man
-<!-- TODO -->
-([lt. Doku](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/yaml/README.md#stages))
+Wenn keine eigenen `stages` definiert werden, kann man
+([lt. Doku](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/yaml/index.md#stages))
 auf die Default-Stages `build`, `test` und `deploy` zurückgreifen. **Achtung**: Sobald
 man eigene Stages definiert, stehen diese Default-Stages *nicht* mehr zur Verfügung!
 
 #### Jobs
 
-"`job1`" und "`job2`" definieren jeweils einen Job.
+`job1`, `job2` und `job3` definieren jeweils einen Job.
 
-*   "`job1`" besteht aus mehreren Befehlen (unter "`script`"). Alternativ
-    kann man die bei "`job2`" gezeigte Syntax nutzen, wenn nur ein
+*   `job1` besteht aus mehreren Befehlen (unter `script`). Alternativ
+    kann man die bei `job2` gezeigte Syntax nutzen, wenn nur ein
     Befehl zu bearbeiten ist.
 
     Die Befehle werden von Gitlab CI in einer Shell ausgeführt.
 
-*   Der Job "`job1`" ist der Stage "`my.compile`" zugeordnet (Abschnitt "`stage`").
-    Einer Stage können mehrere Jobs zugeordnet sein, die dann parallel
+*   Die Jobs `job1` und `job2` sind der Stage `my.compile` zugeordnet (Abschnitt
+    `stage`). Einer Stage können mehrere Jobs zugeordnet sein, die dann parallel
     ausgeführt werden.
 
     Wenn ein Job nicht explizit einer Stage zugeordnet ist, wird er
-    <!-- TODO -->
-    ([lt. Doku](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/yaml/README.md#stages))
+    ([lt. Doku](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/yaml/index.md#stages))
     zur Default-Stage `test` zugewiesen. (Das geht nur, wenn es diese
     Stage auch gibt!)
 
-*   Mit "`only`" und "`except`" kann man u.a. Branches oder Tags angeben,
+*   Mit `only` und `except` kann man u.a. Branches oder Tags angeben,
     für die dieser Job ausgeführt (bzw. nicht ausgeführt) werden soll.
-
-*   Unter "`tags`" wird ein Label vergeben. Dieses muss mit einem der dem
-    Projekt zugeordneten (Shared) Runner übereinstimmen.
-
-    <!-- TODO -->
-    [**In PM nutzen wir aktuell den Shared Runner mit dem Tag "`ivyjava`"!**]{.alert}
-    Dieser Runner muss in Ihrem Repo unter `Settings > CI/CD > Runners` unter
-    "Shared Runners" auftauchen (grün markiert). (Diese Einstellung ist nur
-    dann sichtbar, wenn unter `Settings > General > Permissions` die Pipelines
-    aktiviert sind.)
 
 Durch die Kombination von Jobs mit der Zuordnung zu Stages und Events lassen
 sich unterschiedliche Pipelines für verschiedene Zwecke definieren.
@@ -212,31 +210,30 @@ sich unterschiedliche Pipelines für verschiedene Zwecke definieren.
 ### Hinweise zur Konfiguration im Gitlab CI
 
 Im Browser in den Repo-Einstellungen arbeiten:
-<!-- TODO: Einstellungen prüfen -->
 
-1.  Unter "`Settings > General > Permissions`" die "`Pipelines`" aktivieren
-2.  Prüfen unter "`Settings > CI/CD > Runners`", dass unter
-    <!-- TODO: Runner? -->
-    "`Available shared Runners`" der Runner mit dem Tag **"ivyjava"**
-    steht und mit grün markiert ist ...
-3.  Unter "`Settings > CI/CD > General pipelines`" einstellen:
-    *   "`Git strategy for pipelines`": "`git clone`"
-    *   "`Timeout`": "`10m`"
-    *   "`Public pipelines`": `false` (nicht angehakt)
-4.  YAML-File ("`.Gitlab CI.yml`") in Projektwurzel anlegen,
-    Aufbau siehe Literaturhinweise
-5.  Ant-Skript erstellen, lokal lauffähig bekommen, in Jobs nutzen
-6.  Im "`.Gitlab CI.yml`" die relevanten Branches einstellen (vgl. Literatur)
-7.  Pushen, und unter "`CI/CD > Pipelines`" das Builden beobachten
+1.  Unter `Settings > General > Visibility, project features, permissions`
+    das `CI/CD` aktivieren
+2.  Prüfen unter `Settings > CI/CD > Runners`, dass unter
+    `Available shared Runners` mind. ein shared Runner verfügbar ist
+    (mit grün markiert ist)
+3.  Unter `Settings > CI/CD > General pipelines` einstellen:
+    *   `Git strategy`: `git clone`
+    *   `Timeout`: `10m`
+    *   `Public pipelines`: `false` (nicht angehakt)
+4.  YAML-File (`.gitlab-ci.yml`) in Projektwurzel anlegen,
+    Aufbau siehe oben
+5.  Build-Skript erstellen, **lokal** lauffähig bekommen, dann in Jobs nutzen
+6.  Im `.gitlab-ci.yml` die relevanten Branches einstellen (s.o.)
+7.  Pushen, und unter `CI/CD > Pipelines` das Builden beobachten
     *   in Status reinklicken und schauen, ob und wo es hakt
-8.  `README.md` anlegen in Projektwurzel (neben "`.Gitlab CI.yml`"),
-    Markdown-Schnipsel aus "`Settings > CI/CD > General pipelines > Pipeline status`"
+8.  `README.md` anlegen in Projektwurzel (neben `.Gitlab CI.yml`),
+    Markdown-Schnipsel aus `Settings > CI/CD > General pipelines > Pipeline status`
     auswählen und einfügen ....
 
-Optional:
+_Optional_:
 
-9.  Ggf. Schedules unter "`CI/CD > Schedules`" anlegen
-10. Ggf. extra Mails einrichten: "`Settings > Integrations > Pipelines emails`"
+9.  Ggf. Schedules unter `CI/CD > Schedules` anlegen
+10. Ggf. extra Mails einrichten: `Settings > Integrations > Pipeline status emails`
 :::::::::
 
 
