@@ -220,7 +220,7 @@ Im Browser in den Repo-Einstellungen arbeiten:
 6.  Im `.gitlab-ci.yml` die relevanten Branches einstellen (s.o.)
 7.  Pushen, und unter `CI/CD > Pipelines` das Builden beobachten
     *   in Status reinklicken und schauen, ob und wo es hakt
-8.  `README.md` anlegen in Projektwurzel (neben `.Gitlab CI.yml`),
+8.  `README.md` anlegen in Projektwurzel (neben `.gitlab-ci.yml`),
     Markdown-Schnipsel aus `Settings > CI/CD > General pipelines > Pipeline status`
     auswählen und einfügen ....
 
