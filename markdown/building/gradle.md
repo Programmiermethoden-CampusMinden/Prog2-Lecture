@@ -58,11 +58,13 @@ automatisiert gebaut und getestet werden.
 :::
 
 \bigskip
+\bigskip
 \pause
 
-*   Apache Ant
-*   Apache Maven
-*   Gradle
+*   Build-Tools:
+    *   Apache Ant
+    *   Apache Maven
+    *   **Gradle**
 
 ::: notes
 Das sind die drei am häufigsten anzutreffenden Build-Tools in der Java-Welt.
@@ -329,7 +331,7 @@ sourceSets {
 
 *   Überblick über die Tasks: `gradle tasks`
 
-\smallskip
+\bigskip
 
 *   Übersetzen: `gradle compileJava` oder `gradle classes`
 *   Testen: `gradle test`
@@ -455,8 +457,8 @@ javadoc {
 ```
 
 Hier sehen Sie übrigens noch eine weitere mögliche Schreibweise für das Notieren
-von Abhängigkeiten: "`implementation group: 'org.apache.poi', name: 'poi', version: '4.1.2'`"
-und "`implementation 'org.apache.poi:poi:4.1.2'`" sind gleichwertig, wobei die letztere
+von Abhängigkeiten: `implementation group: 'org.apache.poi', name: 'poi', version: '4.1.2'`
+und `implementation 'org.apache.poi:poi:4.1.2'` sind gleichwertig, wobei die letztere
 Schreibweise sowohl in den generierten Builds-Skripten und in der offiziellen Dokumentation
 bevorzugt wird.
 
@@ -471,19 +473,17 @@ lassen. Über die DSL kann man auch direkt Ant-Tasks aufrufen. Siehe auch
 
 ## Gradle-Wrapper
 
-:::::::::  slides
 ```
 project
 |-- app/
 |-- build.gradle
-|-- gradle/
-|   `-- wrapper/
-|       |-- gradle-wrapper.jar
-|       `-- gradle-wrapper.properties
 |-- gradlew
-`-- gradlew.bat
+|-- gradlew.bat
+`-- gradle/
+    `-- wrapper/
+        |-- gradle-wrapper.jar
+        `-- gradle-wrapper.properties
 ```
-:::::::::
 
 :::::::::  notes
 Zur Ausführung von Gradle-Skripten benötigt man eine lokale Gradle-Installation.
@@ -515,7 +515,13 @@ Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle vorzuziehen
 ## Wrap-Up
 
 *   Automatisieren von Arbeitsabläufen mit Build-Tools/-Skripten
+
+\smallskip
+
 *   Einstieg in **Gradle** (DSL zur Konfiguration)
+    *   Typisches Java-Entwicklungsmodell eingebaut
+    *   Konfiguration der Abweichungen (Abhängigkeiten, Namen, ...)
+    *   Gradle-Wrapper: Ersetzt eine feste Installation
 
 
 ::::::::: notes
