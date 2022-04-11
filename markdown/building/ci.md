@@ -130,6 +130,8 @@ oder die Ergebnisse beispielsweise der JUnit-Läufe anschauen.
 
 ### Gitlab CI: Konfiguration mit YAML-Datei
 
+Datei `.gitlab-ci.yml` im Projekt-Ordner:
+
 ```yaml
 stages:
     - my.compile
