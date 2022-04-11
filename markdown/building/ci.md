@@ -64,8 +64,7 @@ fhmedia:
 
 ![](images/ci.png){width="70%" web_width="60%"}
 
-
-::: notes
+::::::::: notes
 ### Vorgehen
 
 *   Entwickler und Tester committen ihre Änderungen regelmäßig (Git, SVN, ...)
@@ -90,18 +89,18 @@ fhmedia:
 *   [GitLab CI](https://docs.gitlab.com/ee/ci/)
 *   [GitHub CI](https://resources.github.com/ci-cd/)
 *   [Bamboo](https://www.atlassian.com/software/bamboo)
-*   [Travis CI](https://www.travis-ci.com)
-:::
+*   [Travis CI](https://www.travis-ci.com/)
+:::::::::
 
-<!-- cagix/pm-ci-demo -->
-[Live-Demo Gitlab-CI]{.bsp}
+[[Live-Demo Gitlab/GitHub]{.bsp}]{.slides}
 
 
-::: notes
-## Übersicht über Pipelines
+::::::::: notes
+## Gitlab CI
+
+### Übersicht über Pipelines
 
 ![](images/screenshot-gitlabci-pipelines.png){width="70%" web_width="60%"}
-
 
 *   In Spalte "Status" sieht man das Ergebnis der einzelnen Pipelines:
     "pending" (die Pipeline läuft gerade), "cancelled" (Pipeline wurde manuell
@@ -113,34 +112,23 @@ fhmedia:
 
 Wenn man mit der Maus auf den Status oder die Stages geht, erfährt man mehr bzw.
 kann auf eine Seite mit mehr Informationen kommen.
-:::
 
-
-::: notes
-## Detailansicht einer Pipeline
+### Detailansicht einer Pipeline
 
 ![](images/screenshot-gitlabci-triggeredpipeline.png){width="70%" web_width="60%"}
 
-
 Wenn man in eine Pipeline in der Übersicht klickt, werden die einzelnen
 Stages dieser Pipeline genauer dargestellt.
-:::
 
-
-::: notes
-## Detailansicht eines Jobs
+### Detailansicht eines Jobs
 
 ![](images/screenshot-gitlabci-job.png){width="70%" web_width="60%"}
-
 
 Wenn man in einen Job einer Stage klickt, bekommt man quasi die Konsolenausgabe
 dieses Jobs. Hier kann man ggf. Fehler beim Ausführen der einzelnen Skripte
 oder die Ergebnisse beispielsweise der JUnit-Läufe anschauen.
-:::
 
-
-::: notes
-## Gitlab-CI: Konfiguration mit YAML-Datei
+### Gitlab CI: Konfiguration mit YAML-Datei
 
 ```yaml
 stages:
@@ -165,8 +153,7 @@ job2:
         - ivyjava
 ```
 
-
-### Stages
+#### Stages
 
 Unter "`stages`" werden die einzelnen Stages einer Pipeline definiert. Diese werden
 in der hier spezifizierten Reihenfolge durchgeführt, d.h. zurerst würde `my.compile`
@@ -183,8 +170,7 @@ Wenn keine eigenen "`stages`" definiert werden, kann man
 auf die Default-Stages `build`, `test` und `deploy` zurückgreifen. **Achtung**: Sobald
 man eigene Stages definiert, stehen diese Default-Stages *nicht* mehr zur Verfügung!
 
-
-### Jobs
+#### Jobs
 
 "`job1`" und "`job2`" definieren jeweils einen Job.
 
@@ -192,7 +178,7 @@ man eigene Stages definiert, stehen diese Default-Stages *nicht* mehr zur Verfü
     kann man die bei "`job2`" gezeigte Syntax nutzen, wenn nur ein
     Befehl zu bearbeiten ist.
 
-    Die Befehle werden von Gitlab-CI in einer Shell ausgeführt.
+    Die Befehle werden von Gitlab CI in einer Shell ausgeführt.
 
 *   Der Job "`job1`" ist der Stage "`my.compile`" zugeordnet (Abschnitt "`stage`").
     Einer Stage können mehrere Jobs zugeordnet sein, die dann parallel
@@ -219,11 +205,9 @@ man eigene Stages definiert, stehen diese Default-Stages *nicht* mehr zur Verfü
 
 Durch die Kombination von Jobs mit der Zuordnung zu Stages und Events lassen
 sich unterschiedliche Pipelines für verschiedene Zwecke definieren.
-:::
 
 
-::: notes
-## Hinweise zur Konfiguration
+### Hinweise zur Konfiguration im Gitlab CI
 
 Im Browser in den Repo-Einstellungen arbeiten:
 <!-- TODO: Einstellungen prüfen -->
@@ -237,29 +221,28 @@ Im Browser in den Repo-Einstellungen arbeiten:
     *   "`Git strategy for pipelines`": "`git clone`"
     *   "`Timeout`": "`10m`"
     *   "`Public pipelines`": `false` (nicht angehakt)
-4.  YAML-File ("`.gitlab-ci.yml`") in Projektwurzel anlegen,
+4.  YAML-File ("`.Gitlab CI.yml`") in Projektwurzel anlegen,
     Aufbau siehe Literaturhinweise
 5.  Ant-Skript erstellen, lokal lauffähig bekommen, in Jobs nutzen
-6.  Im "`.gitlab-ci.yml`" die relevanten Branches einstellen (vgl. Literatur)
+6.  Im "`.Gitlab CI.yml`" die relevanten Branches einstellen (vgl. Literatur)
 7.  Pushen, und unter "`CI/CD > Pipelines`" das Builden beobachten
     *   in Status reinklicken und schauen, ob und wo es hakt
-8.  `README.md` anlegen in Projektwurzel (neben "`.gitlab-ci.yml`"),
+8.  `README.md` anlegen in Projektwurzel (neben "`.Gitlab CI.yml`"),
     Markdown-Schnipsel aus "`Settings > CI/CD > General pipelines > Pipeline status`"
     auswählen und einfügen ....
-
 
 Optional:
 
 9.  Ggf. Schedules unter "`CI/CD > Schedules`" anlegen
 10. Ggf. extra Mails einrichten: "`Settings > Integrations > Pipelines emails`"
-:::
+:::::::::
 
 
 ## Wrap-Up
 
 Überblick über Continuous Integration:
 
-*   Konfigurierbare Aktionen, die auf dem Gitlab-Server ausgeführt werden
+*   Konfigurierbare Aktionen, die auf dem Gitlab-/GitHub-Server ausgeführt werden
 *   Unterschiedliche Trigger: Commit, Merge, ...
 *   Aktionen können Branch-spezifisch sein
 *   Aktionen können von anderen Aktionen abhängen
