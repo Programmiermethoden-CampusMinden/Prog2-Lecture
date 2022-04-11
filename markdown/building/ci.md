@@ -284,35 +284,35 @@ on:
 
 jobs:
 
-    job1:
-        runs-on: ubuntu-latest
-        steps:
-            -   uses: actions/checkout@v3
-            -   uses: actions/setup-java@v3
-                with:
-                    java-version: '17'
-                    distribution: 'temurin'
-            -   uses: gradle/wrapper-validation-action@v1
-            -   run: echo "Hello"
-            -   run: ./gradlew compileJava
-            -   run: echo "wuppie!"
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - uses: gradle/wrapper-validation-action@v1
+      - run: echo "Hello"
+      - run: ./gradlew compileJava
+      - run: echo "wuppie!"
 
-    job2:
-        needs: job1
-        runs-on: ubuntu-latest
-        steps:
-            -   uses: actions/checkout@v3
-            -   uses: actions/setup-java@v3
-                with:
-                    java-version: '17'
-                    distribution: 'temurin'
-            -   uses: gradle/wrapper-validation-action@v1
-            -   run: ./gradlew test
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - uses: gradle/wrapper-validation-action@v1
+      - run: ./gradlew test
 
-    job3:
-        runs-on: ubuntu-latest
-        steps:
-            -   run: echo "Job 3"
+  job3:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Job 3"
 ```
 
 #### Workflowname und Trigger-Events
