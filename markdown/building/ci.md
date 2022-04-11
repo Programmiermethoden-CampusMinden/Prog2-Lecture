@@ -62,7 +62,7 @@ fhmedia:
 
 ## Continuous Integration (CI)
 
-![](images/ci.png){width="70%" web_width="60%"}
+![](images/ci.png){width="80%" web_width="60%"}
 
 ::::::::: notes
 ### Vorgehen
