@@ -8,15 +8,25 @@ readings:
   - key: "GitlabCI"
   - key: "GitHubCI"
 tldr: |
-  TODO
+  In größeren Projekten mit mehreren Teams werden die Beteiligten nur noch "ihre" Codestellen
+  compilieren und testen. Dennoch ist es wichtig, das gesamte Projekt regelmäßig zu "bauen"
+  und auch umfangreichere Testsuiten laufen zu lassen. Außerdem ist es wichtig, das in einer
+  definierten Umgebung zu tun und nicht auf einem oder mehreren Entwicklerrechnern, die i.d.R.
+  (leicht) unterschiedlich konfiguriert sind. Weiterhin möchte man auf bestimmte Ereignisse
+  reagieren, wie etwa neue Commits im Git-Server, oder bei Pull-Requests möchte man vor dem
+  Merge automatisiert sicherstellen, dass damit die vorhandenen Tests alle "grün" sind und auch
+  die Formatierung etc. stimmt.
 
-  Überblick über Continuous Integration:
+  Dafür hat sich "Continuous Integration" etabliert. Hier werden die angesprochenen Prozesse
+  regelmäßig auf einem dafür eingerichteten System durchgeführt. Aktivitäten wie Übersetzen,
+  Testen, Style-Checks etc. werden in sogenannten Pipelines oder Workflows zusammengefasst
+  und automatisiert durch Commits, Pull-Requests oder Merges auf dem Git-Server ausgelöst. Die
+  Aktionen können dabei je nach Trigger und Branch unterschiedlich sein, d.h. man könnte etwa
+  bei PR gegen den Master umfangreichere Tests laufen lassen als bei einem PR gegen einen
+  Develop-Branch. In einem Workflow oder einer Pipeline können einzelne Aktionen wiederum von
+  anderen Aktionen abhängen.
 
-  *   Konfigurierbare Aktionen, die auf dem Gitserver ausgeführt werden
-  *   Unterschiedliche Trigger: Commit, Merge, ...
-  *   Aktionen können Branch-spezifisch sein
-  *   Aktionen können von anderen Aktionen abhängen
-
+  Wir schauen uns hier exemplarisch GitHub CI und Gitlab CI an.
 outcomes:
   - k2: "Arbeitsweise von/mit CI"
 quizzes:
