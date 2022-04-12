@@ -26,7 +26,7 @@ tldr: |
   bei PR gegen den Master umfangreichere Tests laufen lassen als bei einem PR gegen einen
   Develop-Branch. In einem Workflow oder einer Pipeline können einzelne Aktionen wiederum von
   anderen Aktionen abhängen. Das Ergebnis kann man dann auf dem Server einsehen oder bekommt
-  komfortabel einen Report per Mail zugeschickt.
+  man komfortabel als Report per Mail zugeschickt.
 
   Wir schauen uns hier exemplarisch GitHub CI und Gitlab CI an. Um CI sinnvoll einsetzen zu
   können, benötigt man Kenntnisse über Build-Tools. "CI" tritt üblicherweise zusammen mit "CD"
