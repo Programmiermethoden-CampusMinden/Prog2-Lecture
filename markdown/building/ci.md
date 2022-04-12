@@ -38,14 +38,14 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1063036&client_id=FH-Bielefeld"
     name: "Quiz Continuous Integration (ILIAS)"
 youtube:
-  - link: "https://youtu.be/cvPmB-MKMOo"
+  - link: "https://youtu.be/NCWxo-PN4gs"
     name: "VL Continuous Integration"
   - link: "https://youtu.be/7wkm_BARtJQ"
     name: "Demo GitHub CI"
   - link: "https://youtu.be/deZaUpxoETA"
     name: "Demo Demo Gitlab CI"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/46c2ae7bb0148ca9ab4ce86df738510522bdbd448a28d362159196f367e90ba2816b716b0d5b642f098e28468c13e2bcdcd7653290e362527c21f0cec140c551"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/74a8f8c2e1a07d9fb70c8984e522d884141b2260c27dadfd7a23884bee8c0573136475ce66f28562097ca34a63fcf9c6d1c45ff695485d79465a4131878180ca"
     name: "VL Continuous Integration"
 ---
 
