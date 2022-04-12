@@ -114,6 +114,7 @@ fhmedia:
 ## Gitlab CI
 
 Siehe auch ["Get started with Gitlab CI/CD"](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/quick_start/index.md).
+(Für den Zugriff wird VPN benötigt!)
 
 
 ### Übersicht über Pipelines
