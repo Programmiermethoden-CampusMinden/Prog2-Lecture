@@ -20,15 +20,18 @@ tldr: |
 
   Dafür hat sich "Continuous Integration" etabliert. Hier werden die angesprochenen Prozesse
   regelmäßig auf einem dafür eingerichteten System durchgeführt. Aktivitäten wie Übersetzen,
-  Testen, Style-Checks etc. werden in sogenannten Pipelines oder Workflows zusammengefasst
+  Testen, Style-Checks etc. werden in sogenannten "Pipelines" oder "Workflows" zusammengefasst
   und automatisiert durch Commits, Pull-Requests oder Merges auf dem Git-Server ausgelöst. Die
   Aktionen können dabei je nach Trigger und Branch unterschiedlich sein, d.h. man könnte etwa
   bei PR gegen den Master umfangreichere Tests laufen lassen als bei einem PR gegen einen
   Develop-Branch. In einem Workflow oder einer Pipeline können einzelne Aktionen wiederum von
-  anderen Aktionen abhängen.
+  anderen Aktionen abhängen. Das Ergebnis kann man dann auf dem Server einsehen oder bekommt
+  komfortabel einen Report per Mail zugeschickt.
 
   Wir schauen uns hier exemplarisch GitHub CI und Gitlab CI an. Um CI sinnvoll einsetzen zu
-  können, benötigt man Kenntnisse über Build-Tools.
+  können, benötigt man Kenntnisse über Build-Tools. "CI" tritt üblicherweise zusammen mit "CD"
+  (Continuous Delivery) auf, also als CI/CD. Der CD-Teil ist nicht Gegenstand der Betrachtung
+  in dieser Lehrveranstaltung.
 outcomes:
   - k2: "Arbeitsweise von/mit CI"
 quizzes:
