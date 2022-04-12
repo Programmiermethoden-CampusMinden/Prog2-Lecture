@@ -8,14 +8,15 @@ readings:
   - key: "GitlabCI"
   - key: "GitHubCI"
 tldr: |
-  In größeren Projekten mit mehreren Teams werden die Beteiligten nur noch "ihre" Codestellen
-  compilieren und testen. Dennoch ist es wichtig, das gesamte Projekt regelmäßig zu "bauen"
-  und auch umfangreichere Testsuiten laufen zu lassen. Außerdem ist es wichtig, das in einer
-  definierten Umgebung zu tun und nicht auf einem oder mehreren Entwicklerrechnern, die i.d.R.
-  (leicht) unterschiedlich konfiguriert sind. Weiterhin möchte man auf bestimmte Ereignisse
+  In größeren Projekten mit mehreren Teams werden die Beteiligten i.d.R. nur noch "ihre"
+  Codestellen compilieren und testen. Dennoch ist es wichtig, das gesamte Projekt regelmäßig
+  zu "bauen" und auch umfangreichere Testsuiten regelmäßig laufen zu lassen. Außerdem ist
+  es wichtig, das in einer definierten Umgebung zu tun und nicht auf einem oder mehreren
+  Entwicklerrechnern, die i.d.R. (leicht) unterschiedlich konfiguriert sind, um zuverlässige
+  und nachvollziehbare Ergebnisse zu bekommen. Weiterhin möchte man auf bestimmte Ereignisse
   reagieren, wie etwa neue Commits im Git-Server, oder bei Pull-Requests möchte man vor dem
-  Merge automatisiert sicherstellen, dass damit die vorhandenen Tests alle "grün" sind und auch
-  die Formatierung etc. stimmt.
+  Merge automatisiert sicherstellen, dass damit die vorhandenen Tests alle "grün" sind und
+  auch die Formatierung etc. stimmt.
 
   Dafür hat sich "Continuous Integration" etabliert. Hier werden die angesprochenen Prozesse
   regelmäßig auf einem dafür eingerichteten System durchgeführt. Aktivitäten wie Übersetzen,
@@ -26,7 +27,8 @@ tldr: |
   Develop-Branch. In einem Workflow oder einer Pipeline können einzelne Aktionen wiederum von
   anderen Aktionen abhängen.
 
-  Wir schauen uns hier exemplarisch GitHub CI und Gitlab CI an.
+  Wir schauen uns hier exemplarisch GitHub CI und Gitlab CI an. Um CI sinnvoll einsetzen zu
+  können, benötigt man Kenntnisse über Build-Tools.
 outcomes:
   - k2: "Arbeitsweise von/mit CI"
 quizzes:
