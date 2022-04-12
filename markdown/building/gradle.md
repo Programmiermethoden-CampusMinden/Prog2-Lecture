@@ -33,15 +33,13 @@ quizzes:
 assignments:
   - topic: sheet04
 youtube:
-  - link: ""
-    name: "VL "
-  - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+  - link: "https://youtu.be/aVtDkFpwd_E"
+    name: "VL Build-Systeme: Gradle"
+  - link: "https://youtu.be/OhQRGaNO4iA"
+    name: "Demo Gradle"
 fhmedia:
-  - link: ""
-    name: "VL "
+  - link: "https://www.fh-bielefeld.de/medienportal/m/3af48428e1b62bd42410e2a802cf355309212ea621509aa20833c5e1c486ffe9214b027c29e55d775f135f45ab7d3fcd59d735812d64bc04a71de8d59df8a3f5"
+    name: "VL Build-Systeme: Gradle"
 ---
 
 
