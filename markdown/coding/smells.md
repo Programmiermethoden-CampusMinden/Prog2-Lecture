@@ -45,15 +45,14 @@ assignments:
   - topic: sheet01
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Bad Smells und Coding Conventions"
   - link: ""
     name: "Demo "
   - link: ""
     name: "Demo "
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL Bad Smells und Coding Conventions"
 ---
 
 
@@ -83,13 +82,11 @@ for(i=0;i<10;i++) // fuer alle i
     } }}   }
 ```
 
-[Quelle: Nach einem Beispiel von Matthias König]{.origin}
-
 ::: notes
 Der Code im obigen Beispiel lässt sich möglicherweise kompilieren. Und
 möglicherweise tut er sogar das, was er tun soll.
 
-Dennoch: [**Der Code "stinkt"**]{.alert} (zeigt *Bad Smells*):
+Dennoch: [**Der Code "stinkt"**]{.alert} (zeigt **Bad Smells**):
 
 *   Nichtbeachtung üblicher Konventionen (Coding Rules)
 *   Schlechte Kommentare
@@ -104,7 +101,7 @@ Dennoch: [**Der Code "stinkt"**]{.alert} (zeigt *Bad Smells*):
 *   Globale Variablen, lokale Variablen als Attribut
 *   Magic Numbers
 
-Diese Liste enthält die wichtigsten Smells und lässt sich noch beliebig fortsetzen.
+Diese Liste enthält die häufigsten "Smells" und ließe sich noch beliebig fortsetzen.
 Schauen Sie mal in die unten angegebene Literatur :-)
 
 [**Stinkender Code führt zu möglichen (späteren) Problemen.**]{.alert}
@@ -114,21 +111,23 @@ Schauen Sie mal in die unten angegebene Literatur :-)
 ## Was ist guter ("sauberer") Code?
 
 ::: notes
-Robert Martin lässt in [@Martin2009] verschiedene Ikonen der SW-Entwicklung zu
-Wort kommen (Zusammenfassung):
+Im Grunde bezeichnet "sauberer Code" die Abwesenheit von Smells. D.h. man könnte
+Code als "sauberen" Code bezeichnen, wenn die folgenden Eigenschaften erfüllt
+sind (keine vollständige Aufzählung!):
 :::
 
-> *   Gut ("angenehm") lesbar
-> *   Schnell verständlich: Geeignete Abstraktionen
-> *   Leicht wart- und erweiterbar: Minimale Abhängigkeiten
-> *   Konzentriert sich auf **eine** Aufgabe
-> *   So einfach und direkt wie möglich
-> *   Fehler können sich nicht so einfach verstecken
-> *   Verleitet andere Programmierer nicht zum "Optimieren"
-> *   Ist gut getestet
->
-> [Quelle: nach [@Martin2009]]{.origin}
+*   Gut ("angenehm") lesbar
+*   Schnell verständlich: Geeignete Abstraktionen
+*   Konzentriert sich auf **eine** Aufgabe
+*   So einfach und direkt wie möglich
+*   Ist gut getestet
 
+::: notes
+In [@Martin2009] lässt der Autor Robert Martin verschiedene Ikonen der SW-Entwicklung
+zu diesem Thema zu Wort kommen -- eine sehr lesenswerte Lektüre!
+:::
+
+\bigskip
 \bigskip
 => Jemand kümmert sich um den Code; solides Handwerk
 
@@ -138,9 +137,20 @@ Wort kommen (Zusammenfassung):
 > Any fool can write code that a computer can understand.
 > Good programmers write code that humans can understand.
 >
-> [Quelle: [@Fowler2011]]{.origin}
+> \hfill\ [Quelle: [@Fowler2011]]{.origin}
 
-::: notes
+::::::::: notes
+Auch wenn das zunächst seltsam klingt, aber Code muss auch von Menschen gelesen und
+verstanden werden können. Klar, der Code muss inhaltlich korrekt sein und die jeweilige
+Aufgabe erfüllen, er muss kompilieren etc. ... aber er muss auch von anderen Personen
+weiter entwickelt werden und dazu gelesen und verstanden werden. Guter Code ist nicht
+einfach nur inhaltlich korrekt, sondern kann auch einfach verstanden werden.
+
+Code, der nicht einfach lesbar ist oder nur schwer verständlich ist, wird oft in der
+Praxis später nicht gut gepflegt: Andere Entwickler haben (die berechtigte) Angst, etwas
+kaputt zu machen und arbeiten "um den Code herum". Nur leider wird das Konstrukt dann
+nur noch schwerer verständlich ...
+
 ### "Broken Windows" Phänomen
 
 Wenn ein Gebäude leer steht, wird es eine gewisse Zeit lang nur relativ langsam
@@ -158,11 +168,11 @@ nicht an die Überarbeitung der richtigen Stellen traut und stattdessen die
 Änderungen als weiteren "Erker" einfach dran pappt. Seit es, weil man keine Lust
 hat, Zeit in ordentliche Arbeit zu investieren, weil der Code ja eh schon
 schlecht ist ... Das wird mit der Zeit nicht besser ...
-:::
+:::::::::
 
 [["Broken Windows" Phänomen](https://en.wikipedia.org/wiki/Broken_windows_theory)]{.bsp}
 
-::: notes
+::::::::: notes
 ### Bad Smells
 
 Verstöße gegen die Prinzipien von *Clean Code* nennt man auch *Bad Smells*: Der
@@ -172,19 +182,21 @@ Er ist nur nicht sauber formuliert, schwer verständlich, enthält Doppelungen e
 was im Laufe der Zeit die Chance für Probleme deutlich erhöht.
 
 [**Stinkender Code führt zu möglichen (späteren) Problemen.**]{.alert}
-:::
 
+### Maßeinheit für Code-Qualität ;-)
 
-## Maßeinheit für Code-Qualität ;-)
+Es gibt eine "praxisnahe" (und nicht ganz ernst gemeinte) Maßeinheit für Code-Qualität:
+Die "WTF/m" (_What the Fuck per minute_):
+[Thom Holwerda: www.osnews.com/story/19266/WTFs_](https://www.osnews.com/story/19266/wtfsm/).
 
-![](figs/badsmells/wtfm){width="60%"}
-<!-- https://www.osnews.com/images/comics/wtfm.jpg -->
-[Quelle: [Thom Holwerda: www.osnews.com/story/19266/WTFs_](https://www.osnews.com/story/19266/wtfsm/)]{.origin}
+Wenn beim Code-Review durch Kollegen viele "WTF" kommen, ist der Code offenbar nicht
+in Ordnung ...
+:::::::::
 
 
 ## Bad Smells: Nichtbeachtung von Coding Conventions
 
-*   Richtlinien für einheitliches Aussehen \newline
+*   Richtlinien für einheitliches Aussehen
     => Andere Programmierer sollen Code schnell lesen können
     *   Namen, Schreibweisen
     *   Kommentare (Ort, Form, Inhalt)
@@ -194,7 +206,8 @@ was im Laufe der Zeit die Chance für Probleme deutlich erhöht.
 
 \smallskip
 
-*   Beispiele: [Sun Code Conventions](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf), [Google Java Style](https://google.github.io/styleguide/javaguide.html)
+*   Beispiele: [Sun Code Conventions](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf),
+    [Google Java Style](https://google.github.io/styleguide/javaguide.html)
 
 \bigskip
 
@@ -217,8 +230,6 @@ was im Laufe der Zeit die Chance für Probleme deutlich erhöht.
     die Mühe zu verstehen), was er da tut! Fehler sind vorprogrammiert!
     :::
 
-\bigskip
-
 *   Redundante Kommentare[: Erklären Sie, was der Code **inhaltlich** tun sollte (und warum)!]{.notes}
 
     ```java
@@ -228,17 +239,14 @@ was im Laufe der Zeit die Chance für Probleme deutlich erhöht.
     ```
 
     ::: notes
-    > Als Faustregel kann man sich daran orientieren, dass ein Kommentar alles
-    > enthalten sollte, was man auch seinen Kollegen sagen würde, ginge man mit
-    > ihnen den Code durch. Idealerweise wiederholt der Kommentar dabei nicht
-    > das, was der Code tut, sondern beschreibt, was der Code tun sollte und
-    > warum. Es ist kein Fehler, dabei statt des spezifischen Lösungswegs das
-    > allgemeine Konzept zu beschreiben.
-    >
-    > [Quelle: [@Passig2013]]{.origin}
-    :::
+    Was würden Sie Ihrem Kollegen erklären (müssen), wenn Sie ihm/ihr den
+    Code vorstellen?
 
-\bigskip
+    Wiederholen Sie nicht, was der Code tut (das kann ich ja selbst lesen),
+    sondern beschreiben Sie, was der Code tun _sollte_ und _warum_.
+
+    Beschreiben Sie dabei auch das Konzept hinter einem Codebaustein.
+    :::
 
 *   Veraltete Kommentare
 
@@ -369,7 +377,6 @@ Kopierter Code ist problematisch:
 
 
 ::::::::: notes
-
 ### Lesbarkeit und Übersichtlichkeit leiden:
 
 *   Mensch kann sich nur begrenzt viele Dinge im Kurzzeitgedächtnis merken
@@ -382,7 +389,6 @@ Kopierter Code ist problematisch:
     sehr erschwert
 *   Große Dateien verleiten (auch mangels Übersichtlichkeit) dazu, neuen
     Code ebenfalls schluderig zu gliedern
-
 
 ### Langer Code deutet auch auf eine Verletzung des Prinzips der einfachen Verantwortung hin:
 
@@ -410,7 +416,6 @@ Kopierter Code ist problematisch:
     Circle makeCircle(int x, int y, int radius);
     Circle makeCircle(Point center, int radius);  // besser!
     ```
-
 :::::::::
 
 
@@ -471,7 +476,6 @@ public class HourlyPayCalculator {
 
 *   Einhaltung der Coding Rules
 *   Beachtung der Regeln des objektorientierten Entwurfs
-
 
 ### Beispiele für wichtige Metriken (jeweils max-Werte)
 :::
@@ -551,5 +555,5 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 \bigskip
 
 ### Exceptions
-*   TODO (what, where, license)
+*   Citation "_Any fool can write code ..._": [@Fowler2011]
 :::
