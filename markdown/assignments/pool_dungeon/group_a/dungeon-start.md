@@ -13,7 +13,7 @@ Am Ende dieser Aufgaben sollen Sie ein lauffähiges Gerüst für Ihr Dungeon-Spi
 
 ## Dungeon
 
-Implementieren Sie mithilfe des [Quick-Starts](https://github.com/PM-Dungeon/desktop/blob/master/documentation/quickstart_de.md) Ihren ersten Dungeon und Ihren Helden.
+Implementieren Sie mithilfe des [Quickstart-Guides](https://github.com/PM-Dungeon/dungeon-starter/blob/master/documentation/quickstart_de.md) Ihren ersten Dungeon und Ihren Helden.
 
 ## Texturen
 
