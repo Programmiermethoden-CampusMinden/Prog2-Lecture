@@ -14,8 +14,8 @@ lässt.
     ------------
     Logger: record.getLoggerName()
     Level: record.getLevel()
-    Class: record.getSourceMethodName()
-    Method: record.getSourceClassName()
+    Class: record.getSourceClassName()
+    Method: record.getSourceMethodName()
     Message: record.getMessage()
     ------------
     ```
