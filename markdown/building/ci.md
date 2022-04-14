@@ -358,7 +358,7 @@ jeweils einen Job.
     zu finden, d.h. [`actions/checkout`](https://github.com/actions/checkout) oder
     [`actions/setup-java`](https://github.com/actions/setup-java). Actions können
     von jedermann definiert und bereitgestellt werden, in diesem Fall handelt es sich
-    von GitHub selbst im Namespace "actions" bereit gestellte direkt nutzbare Actions.
+    um von GitHub selbst im Namespace "actions" bereit gestellte direkt nutzbare Actions.
     Man kann Actions auch selbst im Ordner `.github/actions/` für das Repo definieren
     (Beispiel:
     [`PM-Dungeon/PM-Lecture](https://github.com/PM-Dungeon/PM-Lecture/blob/master/.github/actions/alpine-pandoc-hugo/action.yml)).
