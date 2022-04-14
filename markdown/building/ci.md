@@ -28,9 +28,9 @@ tldr: |
   anderen Aktionen abhängen. Das Ergebnis kann man dann auf dem Server einsehen oder bekommt
   man komfortabel als Report per Mail zugeschickt.
 
-  Wir schauen uns hier exemplarisch GitHub CI und Gitlab CI an. Um CI sinnvoll einsetzen zu
-  können, benötigt man Kenntnisse über Build-Tools. "CI" tritt üblicherweise zusammen mit "CD"
-  (Continuous Delivery) auf, also als CI/CD. Der CD-Teil ist nicht Gegenstand der Betrachtung
+  Wir schauen uns hier exemplarisch GitHub Actions und GitLab CI/CD an. Um CI sinnvoll einsetzen
+  zu können, benötigt man Kenntnisse über Build-Tools. "CI" tritt üblicherweise zusammen mit "CD"
+  (Continuous Delivery) auf, also als "CI/CD". Der "CD"-Teil ist nicht Gegenstand der Betrachtung
   in dieser Lehrveranstaltung.
 outcomes:
   - k2: "Arbeitsweise von/mit CI"
@@ -40,10 +40,10 @@ quizzes:
 youtube:
   - link: "https://youtu.be/NCWxo-PN4gs"
     name: "VL Continuous Integration"
-  - link: "https://youtu.be/7wkm_BARtJQ"
-    name: "Demo GitHub CI"
-  - link: "https://youtu.be/deZaUpxoETA"
-    name: "Demo Demo Gitlab CI"
+  - link: "https://youtu.be/rpkZvuiyvTU"
+    name: "Demo GitHub Actions"
+  - link: "https://youtu.be/2ydDA4WY1wA"
+    name: "Demo Demo GitLab CI/CD"
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/74a8f8c2e1a07d9fb70c8984e522d884141b2260c27dadfd7a23884bee8c0573136475ce66f28562097ca34a63fcf9c6d1c45ff695485d79465a4131878180ca"
     name: "VL Continuous Integration"
@@ -101,8 +101,8 @@ fhmedia:
 ### Beispiele für verbreitete CI-Umgebungen
 
 *   [Jenkins](https://www.jenkins.io/)
-*   [GitLab CI](https://docs.gitlab.com/ee/ci/)
-*   [GitHub CI](https://resources.github.com/ci-cd/)
+*   [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
+*   [GitHub Actions](https://github.com/features/actions) und [GitHub CI/CD](https://resources.github.com/ci-cd/)
 *   [Bamboo](https://www.atlassian.com/software/bamboo)
 *   [Travis CI](https://www.travis-ci.com/)
 :::::::::
@@ -111,7 +111,7 @@ fhmedia:
 
 
 ::::::::: notes
-## Gitlab CI
+## GitLab CI/CD
 
 Siehe auch ["Get started with Gitlab CI/CD"](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/quick_start/index.md).
 (Für den Zugriff wird VPN benötigt!)
@@ -147,7 +147,7 @@ Wenn man in einen Job einer Stage klickt, bekommt man quasi die Konsolenausgabe
 dieses Jobs. Hier kann man ggf. Fehler beim Ausführen der einzelnen Skripte
 oder die Ergebnisse beispielsweise der JUnit-Läufe anschauen.
 
-### Gitlab CI: Konfiguration mit YAML-Datei
+### GitLab CI/CD: Konfiguration mit YAML-Datei
 
 Datei `.gitlab-ci.yml` im Projekt-Ordner:
 
@@ -199,7 +199,7 @@ man eigene Stages definiert, stehen diese Default-Stages *nicht* mehr zur Verfü
     kann man die bei `job2` gezeigte Syntax nutzen, wenn nur ein
     Befehl zu bearbeiten ist.
 
-    Die Befehle werden von Gitlab CI in einer Shell ausgeführt.
+    Die Befehle werden von GitLab CI/CD in einer Shell ausgeführt.
 
 *   Die Jobs `job1` und `job2` sind der Stage `my.compile` zugeordnet (Abschnitt
     `stage`). Einer Stage können mehrere Jobs zugeordnet sein, die dann parallel
@@ -217,7 +217,7 @@ Durch die Kombination von Jobs mit der Zuordnung zu Stages und Events lassen
 sich unterschiedliche Pipelines für verschiedene Zwecke definieren.
 
 
-### Hinweise zur Konfiguration im Gitlab CI
+### Hinweise zur Konfiguration von GitLab CI/CD
 
 Im Browser in den Repo-Einstellungen arbeiten:
 
@@ -250,9 +250,10 @@ _Optional_:
 
 
 ::::::::: notes
-## GitHub CI
+## GitHub Actions
 
-Siehe auch ["CI/CD explained"](https://resources.github.com/ci-cd/).
+Siehe ["GitHub Actions: Automate your workflow from idea to production"](https://github.com/features/actions)
+und auch ["GitHub: CI/CD explained"](https://resources.github.com/ci-cd/).
 
 
 ### Übersicht über Workflows
@@ -284,7 +285,7 @@ Wenn man in einen Job anklickt, bekommt man quasi die Konsolenausgabe
 dieses Jobs. Hier kann man ggf. Fehler beim Ausführen der einzelnen Skripte
 oder die Ergebnisse beispielsweise der JUnit-Läufe anschauen.
 
-### GitHub CI: Konfiguration mit YAML-Datei
+### GitHub Actions: Konfiguration mit YAML-Datei
 
 Workflows werden als YAML-Dateien im Ordner `.github/workflows/` angelegt.
 
@@ -357,9 +358,9 @@ jeweils einen Job.
     zu finden, d.h. [`actions/checkout`](https://github.com/actions/checkout) oder
     [`actions/setup-java`](https://github.com/actions/setup-java). Actions können
     von jedermann definiert und bereitgestellt werden, in diesem Fall handelt es sich
-    um GitHub Actions, die also von Github selbst im Namespace "actions" bereit gestellt
-    werden. Man kann Actions auch selbst im Ordner `.github/actions/` für das Repo
-    definieren (Beispiel:
+    um von GitHub selbst im Namespace "actions" bereit gestellte direkt nutzbare Actions.
+    Man kann Actions auch selbst im Ordner `.github/actions/` für das Repo definieren
+    (Beispiel:
     [`PM-Dungeon/PM-Lecture](https://github.com/PM-Dungeon/PM-Lecture/blob/master/.github/actions/alpine-pandoc-hugo/action.yml)).
 
     Mit `run` werden Befehle in der Shell auf dem genutzten Runner (hier Ubuntu) ausgeführt.
@@ -380,7 +381,7 @@ Man kann auch einen Docker-Container benutzen. Dabei muss man beachten, dass die
 aus einer Registry (etwa von Docker-Hub oder aus der GitHub-Registry) "gezogen" wird, weil das
 Bauen des Docker-Containers aus einem Docker-File in der Action u.U. relativ lange dauert.
 
-### Hinweise zur Konfiguration im GitHub CI
+### Hinweise zur Konfiguration von GitHub Actions
 
 Im Browser in den Repo-Einstellungen arbeiten:
 
