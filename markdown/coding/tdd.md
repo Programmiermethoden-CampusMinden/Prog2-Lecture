@@ -19,8 +19,8 @@ tldr: |
 outcomes:
   - k3: "Einsatz von TDD bei der Softwareentwicklung"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1068951&client_id=FH-Bielefeld"
+    name: "Quiz TDD (ILIAS)"
 youtube:
   - link: ""
     name: "VL "
