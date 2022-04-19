@@ -27,7 +27,9 @@ tldr: |
 
 outcomes:
   - k2: "Erklären verschiedener Coding Conventions"
+  - k2: "Erklären wichtiger Grundregeln des objektorientierten Designs"
   - k2: "Erklären der Metriken NCSS, McCabe, BEC, DAC"
+  - k3: "Einhalten der wichtigsten Grundregeln des objektorientierten Designs"
   - k3: "Nutzung des Tools Checkstyle (Standalone, Eclipse-Plugin, Konfiguration)"
 quizzes:
   - link: "XYZ"

@@ -9,30 +9,16 @@ readings:
   - key: "Passig2013"
   - key: "Inden2013"
     comment: "Kapitel 10: Bad Smells"
-  - key: "googlestyleguide"
 tldr: |
-  TODO
+  Code entsteht nicht zum Selbstzweck, er muss von anderen Menschen leicht verstanden und
+  gewartet werden können. Dabei helfen "Coding Conventions", die eine gewisse einheitliche
+  äußerliche Erscheinung des Codes vorgeben (Namen, Einrückungen, ...). Die Beachtung von
+  grundlegenden Design-Regeln hilft ebenso, die Lesbarkeit und Verständlichkeit zu verbessern.
 
-  Smells: Probleme im Code, die noch nicht direkt zu einem Fehler führen
-
-  Code entsteht nicht zum Selbstzweck => Regeln nötig!
-
-  *   Coding Conventions
-    *   Regeln zu Schreibweisen und Layout
-    *   Leerzeichen, Einrückung, Klammern
-    *   Zeilenlänge, Umbrüche
-    *   Kommentare
-  *   Prinzipien des objektorientierten Design
-    *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.
-        (_Single Responsibility_)
-    *   Keine Code-Duplizierung! (_DRY_ - Don't repeat yourself)
-    *   Klassen und Methoden sollten sich erwartungsgemäß verhalten.
-    *   Kapselung: Möglichst wenig öffentlich zugänglich machen.
-
+  Code, der diese Konventionen und Regeln verletzt, zeigt sogenannte "Code Smells" oder
+  "Bad Smells". Das sind Probleme im Code, die noch nicht direkt zu einem Fehler führen, die
+  aber im Laufe der Zeit die Chance für echte Probleme deutlich erhöht.
 outcomes:
-  - k2: "Erklären verschiedener Coding Conventions"
-  - k2: "Erklären wichtiger Grundregeln des objektorientierten Designs"
-  - k3: "Einhalten der wichtigsten Grundregeln des objektorientierten Designs"
   - k3: "Erkennen und Vermeiden von Bad Smells"
 quizzes:
   - link: "XYZ"
@@ -153,7 +139,7 @@ Verstöße gegen die Prinzipien von _Clean Code_ nennt man auch _Bad Smells_: De
 Code "stinkt" gewissermaßen. Dies bedeutet nicht unbedingt, dass der Code nicht
 funktioniert (d.h. er kann dennoch compilieren und die Anforderungen erfüllen).
 Er ist nur nicht sauber formuliert, schwer verständlich, enthält Doppelungen etc.,
-was im Laufe der Zeit die Chance für Probleme deutlich erhöht.
+was im Laufe der Zeit die Chance für tatsächliche Probleme deutlich erhöht.
 :::::::::
 
 \bigskip
