@@ -1,7 +1,7 @@
 ---
 type: lecture-cg
 title: "Testbarkeit und Testdriven Development (TDD)"
-menuTitle: "TDD"
+menuTitle: "Testbarkeit und TDD"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 7
 readings:
@@ -72,7 +72,7 @@ public void Ausgabe(...) {
     *   Berechnung plus Ausgabe
     *   Mehrere unterschiedliche Berechnungen
     *   ...
-*   Seiteneffekte, beispielsweise Berechnung und direkte Veränderung von Zuständen **anderer** Objekte
+*   Seiteneffekte, z.B. Berechnung und direkte Veränderung von Zuständen **anderer** Objekte
 
 
 ## Private Methoden sind nicht (direkt) testbar
@@ -162,7 +162,7 @@ public void Ausgabe(...) {
 
 ## TDD oder der "Red-Green-Refactor"-Zyklus
 
-![](images/tdd.png){width="70%" web_width="50%"}
+![](images/tdd.png){width="60%" web_width="40%"}
 
 ::: notes
 ### Test-Driven Development (_TDD_)
@@ -178,12 +178,10 @@ public void Ausgabe(...) {
         sich den Methodenrumpf für die zu testende Methode(!) von Eclipse generieren.
     *   Jetzt compiliert der Code und der Test, aber der Test ist immer noch
         "rot".
-
 2.  Schreibe genau soviel Code, dass Test OK wird: "Green"
     *   Implementieren Sie jetzt die Methode, d.h. füllen Sie den generierten
         Methodenrumpf mit "Leben". Aber nur genau so viel Code schreiben, bis
         der Test "grün" ist.
-
 3.  Überarbeite Code-Struktur: "Refactor" (Refactoring ist Thema einer
     `[späteren VL]({{< ref "/coding/refactoring" >}})`{=markdown})
     *   Durch das reine Erfüllen des neuen Test gibt es im Laufe der Zeit sehr
@@ -195,12 +193,10 @@ public void Ausgabe(...) {
 
 \vfill
 
-*Anmerkung*: Jeder Zyklus sollte sehr kurz sein!
+_Anmerkung_: Jeder Zyklus sollte sehr kurz sein!
 [=> Pro Stunde schafft man i.d.R. viele Rot/Grün/Refactoring-Zyklen!]{.notes}
 
-<!-- TODO
 [Demo: Taschenrechner (Addition zweier Ints)]{.bsp}
--->
 
 ::: notes
 ### Vorteile bei konsequenter Anwendung von TDD
@@ -219,8 +215,10 @@ public void Ausgabe(...) {
 
 ## Wrap-Up
 
-<!-- TODO -->
-Test-Driven Development (_TDD_)
+*   Testbarkeit muss mitgedacht werden: SW-Design
+*   Private Methoden auch testen ("Sicherheitsnetz")
+*   Auch Tests brauchen SW-Design (Kapselung, Single Responsibility, ...)
+*   _Test first_: Test-Driven Development (_TDD_)
 
 
 
