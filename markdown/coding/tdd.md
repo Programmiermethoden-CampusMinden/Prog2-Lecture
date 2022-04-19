@@ -6,11 +6,8 @@ author: "Carsten Gips (FH Bielefeld)"
 weight: 7
 readings:
   - key: "Martin2009"
-  - key: "Dietz2018"
   - key: "Fowler2011"
   - key: "Beck2014"
-  - key: "Passig2013"
-  - key: "googlestyleguide"
 tldr: |
   TODO
 
