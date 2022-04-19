@@ -37,7 +37,7 @@ quizzes:
   - link: "XYZ"
     name: "Quiz XXX (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet07
 youtube:
   - link: ""
     name: "VL "
