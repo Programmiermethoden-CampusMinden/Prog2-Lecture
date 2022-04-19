@@ -17,7 +17,7 @@ hidden: true
 
 ## Generics II (4 Punkte)
 
-{{% include "assignments/pool_concept/tasks/generics1.md" %}}
+{{% include "assignments/pool_concept/tasks/generics2.md" %}}
 
 **Punkte**: TODO
 
