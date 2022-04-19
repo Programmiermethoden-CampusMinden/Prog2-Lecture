@@ -11,9 +11,11 @@ readings:
   - key: "googlestyleguide"
 tldr: |
   Code entsteht nicht zum Selbstzweck, er muss von anderen Menschen leicht verstanden und
-  gewartet werden können. Dabei helfen "Coding Conventions", die eine gewisse einheitliche
+  gewartet werden können: Entwickler verbringen einen wesentlichen Teil ihrer Zeit mit dem
+  **Lesen** von (fremdem) Code. Dabei helfen "Coding Conventions", die eine gewisse einheitliche
   äußerliche Erscheinung des Codes vorgeben (Namen, Einrückungen, ...). Die Beachtung von
-  grundlegenden Design-Regeln hilft ebenso, die Lesbarkeit und Verständlichkeit zu verbessern.
+  grundlegenden Programmierprinzipien hilft ebenso, die Lesbarkeit und Verständlichkeit zu
+  verbessern.
 
   Metriken zur Überwachung der Einhaltung
 
@@ -71,7 +73,7 @@ fhmedia:
 [Beispiel: Google Java Style; Hinweis auf Formatter]{.bsp}
 
 
-## Design-Prinzip "Prinzip der minimalen Verwunderung"
+## Programmierprinzip "Prinzip der minimalen Verwunderung"
 
 *   Klassen und Methoden sollten sich erwartungsgemäß verhalten
 *   Gute Namen ersparen das Lesen der Dokumentation
@@ -89,7 +91,7 @@ public class Studi extends Person {
 ```
 
 
-## Design-Prinzip "Kapselung/Information Hiding"
+## Programmierprinzip "Kapselung/Information Hiding"
 
 *   Möglichst schlanke öffentliche Schnittstelle \newline
     => "Vertrag" mit Nutzern der Klasse!
@@ -107,7 +109,7 @@ public class Studi extends Person {
 ```
 
 
-## Design-Prinzip "DRY": "Don't repeat yourself!"
+## Programmierprinzip "DRY": "Don't repeat yourself!"
 
 *   Kein duplizierter Code!
 
@@ -128,7 +130,7 @@ public class Studi {
 ```
 
 
-## Design-Prinzip "Single Responsibility"
+## Programmierprinzip "Single Responsibility"
 
 Jede Klasse ist für genau [einen Aspekt]{.alert} des Gesamtsystems verantwortlich
 
@@ -215,7 +217,7 @@ Metriken werden sinnvollerweise durch diverse Tools erfasst.
         *   Kommentare
         :::
 
-    *   Prinzipien des objektorientierten Design
+    *   Prinzipien des objektorientierten Programmierens
 
         ::: notes
         *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.

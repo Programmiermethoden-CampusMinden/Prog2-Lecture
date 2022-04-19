@@ -11,15 +11,20 @@ readings:
     comment: "Kapitel 10: Bad Smells"
 tldr: |
   Code entsteht nicht zum Selbstzweck, er muss von anderen Menschen leicht verstanden und
-  gewartet werden können. Dabei helfen "Coding Conventions", die eine gewisse einheitliche
+  gewartet werden können: Entwickler verbringen einen wesentlichen Teil ihrer Zeit mit dem
+  **Lesen** von (fremdem) Code. Dabei helfen "Coding Conventions", die eine gewisse einheitliche
   äußerliche Erscheinung des Codes vorgeben (Namen, Einrückungen, ...). Die Beachtung von
-  grundlegenden Design-Regeln hilft ebenso, die Lesbarkeit und Verständlichkeit zu verbessern.
+  grundlegenden Programmierprinzipien hilft ebenso, die Lesbarkeit und Verständlichkeit zu
+  verbessern.
 
   Code, der diese Konventionen und Regeln verletzt, zeigt sogenannte "**Code Smells**" oder
   "Bad Smells". Das sind Probleme im Code, die noch nicht direkt zu einem Fehler führen, die
   aber im Laufe der Zeit die Chance für echte Probleme deutlich erhöht.
 outcomes:
   - k3: "Erkennen und Vermeiden von Code Smells"
+  - k3: "Unterscheiden von leicht lesbarem und schwer lesbarem Code"
+  - k3: "Programmierprinzipien anwenden, um den Code sauberer zu gestalten"
+  - k3: "Bessere Kommentare schreiben"
 quizzes:
   - link: "XYZ"
     name: "Quiz XXX (ILIAS)"
@@ -307,8 +312,8 @@ gehören zur Schnittstelle und damit Teil des "Vertrags" mit den Nutzern!
 
 \bigskip
 
-*   Design-Prinzip "**Prinzip der minimalen Verwunderung**"
-*   Design-Prinzip "**Kapselung/Information Hiding**"
+*   Programmierprinzip "**Prinzip der minimalen Verwunderung**"
+*   Programmierprinzip "**Kapselung/Information Hiding**"
 
 
 ## Code Smells: Duplizierter Code
@@ -328,7 +333,7 @@ public class Studi {
 
 \bigskip
 
-*   Design-Prinzip "**DRY**" => "Don't repeat yourself!"
+*   Programmierprinzip "**DRY**" => "Don't repeat yourself!"
 
 ::: notes
 Im Beispiel wird das Formatieren der Adresse mehrfach identisch implementiert,
@@ -361,7 +366,7 @@ Kopierter Code ist problematisch:
 
 \bigskip
 
-*   Design-Prinzip "**Single Responsibility**"
+*   Programmierprinzip "**Single Responsibility**"
 
     ::: notes
     Jede Klasse ist für genau [einen Aspekt]{.alert} des Gesamtsystems verantwortlich
@@ -453,7 +458,7 @@ public class CreditsCalculator {
         *   Kommentare
         :::
 
-    *   Prinzipien des objektorientierten Design
+    *   Prinzipien des objektorientierten Programmierens
 
         ::: notes
         *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.
