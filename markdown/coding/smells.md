@@ -452,12 +452,20 @@ public class CreditsCalculator {
 
 ## Wrap-Up
 
-*   Code Smells: Code führt zu möglichen (späteren) Problemen
+*   Code entsteht nicht zum Selbstzweck => Lesbarkeit ist wichtig
 
 \bigskip
 
-*   Code entsteht nicht zum Selbstzweck => Regeln nötig!
-    *   Coding Conventions
+*   Code Smells: Code führt zu möglichen (späteren) Problemen
+
+    *   Richtiges Kommentieren und Dokumentieren
+
+        ::: notes
+        In dieser Sitzung haben wir vor allem auf Kommentare geschaut. Zum Thema Dokumentieren
+        siehe die Einheit zu `["Javadoc"]({{< ref "/coding/javadoc" >}})`{=markdown}.
+        :::
+
+    *   Einhalten von Coding Conventions
 
         ::: notes
         *   Regeln zu Schreibweisen und Layout
@@ -466,7 +474,7 @@ public class CreditsCalculator {
         *   Kommentare
         :::
 
-    *   Prinzipien des objektorientierten Programmierens
+    *   Einhalten von Prinzipien des objektorientierten Programmierens
 
         ::: notes
         *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.
