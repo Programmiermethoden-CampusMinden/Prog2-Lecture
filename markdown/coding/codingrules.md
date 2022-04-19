@@ -10,9 +10,10 @@ readings:
     comment: "Kapitel 13: Programmierstil und Coding Conventions"
   - key: "googlestyleguide"
 tldr: |
-  TODO
-
-  Code entsteht nicht zum Selbstzweck => Regeln nötig!
+  Code entsteht nicht zum Selbstzweck, er muss von anderen Menschen leicht verstanden und
+  gewartet werden können. Dabei helfen "Coding Conventions", die eine gewisse einheitliche
+  äußerliche Erscheinung des Codes vorgeben (Namen, Einrückungen, ...). Die Beachtung von
+  grundlegenden Design-Regeln hilft ebenso, die Lesbarkeit und Verständlichkeit zu verbessern.
 
   Metriken zur Überwachung der Einhaltung
 

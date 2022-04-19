@@ -1,7 +1,7 @@
 ---
 type: lecture-cg
-title: "Bad Smells"
-menuTitle: "Bad Smells"
+title: "Code Smells"
+menuTitle: "Code Smells"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 4
 readings:
@@ -15,11 +15,11 @@ tldr: |
   äußerliche Erscheinung des Codes vorgeben (Namen, Einrückungen, ...). Die Beachtung von
   grundlegenden Design-Regeln hilft ebenso, die Lesbarkeit und Verständlichkeit zu verbessern.
 
-  Code, der diese Konventionen und Regeln verletzt, zeigt sogenannte "Code Smells" oder
+  Code, der diese Konventionen und Regeln verletzt, zeigt sogenannte "**Code Smells**" oder
   "Bad Smells". Das sind Probleme im Code, die noch nicht direkt zu einem Fehler führen, die
   aber im Laufe der Zeit die Chance für echte Probleme deutlich erhöht.
 outcomes:
-  - k3: "Erkennen und Vermeiden von Bad Smells"
+  - k3: "Erkennen und Vermeiden von Code Smells"
 quizzes:
   - link: "XYZ"
     name: "Quiz XXX (ILIAS)"
@@ -27,18 +27,18 @@ assignments:
   - topic: sheet05
 youtube:
   - link: ""
-    name: "VL Bad Smells"
+    name: "VL Code Smells"
   - link: ""
     name: "Demo "
   - link: ""
     name: "Demo "
 fhmedia:
   - link: ""
-    name: "VL Bad Smells"
+    name: "VL Code Smells"
 ---
 
 
-## Bad Smells: Ist das Code oder kann das weg?
+## Code Smells: Ist das Code oder kann das weg?
 
 ```{.java size="footnotesize"}
 class checker {
@@ -68,7 +68,7 @@ for(i=0;i<10;i++) // fuer alle i
 Der Code im obigen Beispiel lässt sich möglicherweise kompilieren. Und
 möglicherweise tut er sogar das, was er tun soll.
 
-Dennoch: [**Der Code "stinkt"**]{.alert} (zeigt **Bad Smells**):
+Dennoch: [**Der Code "stinkt"**]{.alert} (zeigt **Code Smells**):
 
 *   Nichtbeachtung üblicher Konventionen (Coding Rules)
 *   Schlechte Kommentare
@@ -133,9 +133,9 @@ Praxis später nicht gut gepflegt: Andere Entwickler haben (die berechtigte) Ang
 kaputt zu machen und arbeiten "um den Code herum". Nur leider wird das Konstrukt dann
 nur noch schwerer verständlich ...
 
-### Bad Smells
+### Code Smells
 
-Verstöße gegen die Prinzipien von _Clean Code_ nennt man auch _Bad Smells_: Der
+Verstöße gegen die Prinzipien von _Clean Code_ nennt man auch _Code Smells_: Der
 Code "stinkt" gewissermaßen. Dies bedeutet nicht unbedingt, dass der Code nicht
 funktioniert (d.h. er kann dennoch compilieren und die Anforderungen erfüllen).
 Er ist nur nicht sauber formuliert, schwer verständlich, enthält Doppelungen etc.,
@@ -180,7 +180,7 @@ in Ordnung ...
 :::::::::
 
 
-## Bad Smells: Nichtbeachtung von Coding Conventions
+## Code Smells: Nichtbeachtung von Coding Conventions
 
 *   Richtlinien für einheitliches Aussehen
     => Andere Programmierer sollen Code schnell lesen können
@@ -202,7 +202,7 @@ in Ordnung ...
 [Hinweis: Genauere Betrachtung in "Coding Rules"]{.bsp}
 
 
-## Bad Smells: Schlechte Kommentare I
+## Code Smells: Schlechte Kommentare I
 
 *   Ratlose Kommentare
 
@@ -237,7 +237,7 @@ in Ordnung ...
     :::
 
 
-## Bad Smells: Schlechte Kommentare II
+## Code Smells: Schlechte Kommentare II
 
 *   Veraltete Kommentare
 
@@ -277,7 +277,7 @@ in Ordnung ...
     :::
 
 
-## Bad Smells: Schlechte Namen und fehlende Kapselung
+## Code Smells: Schlechte Namen und fehlende Kapselung
 
 ```java
 public class Studi extends Person {
@@ -305,7 +305,7 @@ gehören zur Schnittstelle und damit Teil des "Vertrags" mit den Nutzern!
 *   Design-Prinzip "**Kapselung/Information Hiding**"
 
 
-## Bad Smells: Duplizierter Code
+## Code Smells: Duplizierter Code
 
 ```java
 public class Studi {
@@ -336,7 +336,7 @@ Kopierter Code ist problematisch:
 :::
 
 
-## Bad Smells: Langer Code
+## Code Smells: Langer Code
 
 *   Lange Klassen
     *   Faustregel: 5 Bildschirmseiten sind viel
@@ -406,7 +406,7 @@ Kopierter Code ist problematisch:
 :::::::::
 
 
-## Bad Smells: Feature Neid
+## Code Smells: Feature Neid
 
 ```java
 public class CreditsCalculator {
@@ -433,7 +433,7 @@ public class CreditsCalculator {
 
 ## Wrap-Up
 
-*   Bad Smells: Code führt zu möglichen (späteren) Problemen
+*   Code Smells: Code führt zu möglichen (späteren) Problemen
 
 \bigskip
 
