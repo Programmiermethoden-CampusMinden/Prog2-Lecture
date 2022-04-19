@@ -47,26 +47,67 @@ fhmedia:
 ---
 
 
-## Bad Smells: Nichtbeachtung von Coding Conventions
+## Coding Conventions
+
+=> Andere Programmierer sollen Code schnell lesen können
+
+\smallskip
 
 *   Richtlinien für einheitliches Aussehen
-    => Andere Programmierer sollen Code schnell lesen können
     *   Namen, Schreibweisen
     *   Kommentare (Ort, Form, Inhalt)
     *   Einrückungen und Spaces vs. Tabs
     *   Zeilenlängen, Leerzeilen
     *   Klammern
 
-\smallskip
+\bigskip
 
 *   Beispiele: [Sun Code Conventions](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf),
     [Google Java Style](https://google.github.io/styleguide/javaguide.html)
 
+[Beispiel: Google Java Style; Hinweis auf Formatter]{.bsp}
+
+
+## Wichtige Design-Prinzipien
+
+### Design-Prinzip "Prinzip der minimalen Verwunderung"
+
+*   Klassen und Methoden sollten sich erwartungsgemäß verhalten
+*   Gute Namen ersparen das Lesen der Dokumentation
+
+### Design-Prinzip "Kapselung/Information Hiding"
+
+*   Möglichst schlanke öffentliche Schnittstelle \newline
+    => "Vertrag" mit Nutzern der Klasse!
+
+### Design-Prinzip "DRY": "Don't repeat yourself!"
+
+*   Kein duplizierter Code!
+
+### Design-Prinzip "Single Responsibility"
+
+Jede Klasse ist für genau [einen Aspekt]{.alert} des Gesamtsystems verantwortlich
+
 \bigskip
 
-*   *Hinweis*: Betrifft vor allem die (äußere) Form!
+```java
+public class Student {
+    private String name;
+    private String phoneAreaCode;
+    private String phoneNumber;
 
-[Beispiel: Google Java Style; Hinweis auf Formatter]{.bsp}
+    public void printStudentInfo() {
+        System.out.println("name:    " + name);
+        System.out.println("contact: " + phoneAreaCode + "/" + phoneNumber);
+    }
+}
+```
+
+::: notes
+Warum sollte sich die Klasse `Student` um die Einzelheiten des Aufbaus einer
+Telefonnummer kümmern? Das Prinzip der "_Single Responsibility_" wird hier
+verletzt!
+:::
 
 
 ## Metriken: Kennzahlen für verschiedene Aspekte zum Code
@@ -77,17 +118,17 @@ fhmedia:
 
 ## Beispiele für wichtige Metriken (jeweils max-Werte)
 
-*   **NCSS** (*Non Commenting Source Statements*)
+*   **NCSS** (_Non Commenting Source Statements_)
     *   Zeilen pro Methode: 50; pro Klasse: 500; pro Datei: 600 \newline
         *Annahme*: Eine Anweisung je Zeile ...
 *   **Anzahl der Methoden** pro Klasse: 10
 *   **Parameter** pro Methode: 3
-*   **BEC** (*Boolean Expression Complexity*) \newline
+*   **BEC** (_Boolean Expression Complexity_) \newline
     Anzahl boolescher Ausdrücke in `if` etc.: 3
-*   **McCabe** (Cyclomatic Complexity)
+*   **McCabe** (_Cyclomatic Complexity_)
     *   Anzahl der möglichen Verzweigungen (Pfade) pro Methode
     *   1-4 gut, 5-7 noch OK
-*   **DAC** (*Class Data Abstraction Coupling*)
+*   **DAC** (_Class Data Abstraction Coupling_)
     *   Anzahl der genutzten (instantiierten) "Fremdklassen"
     *   Werte kleiner 7 werden i.A. als normal betrachtet
 
@@ -133,8 +174,8 @@ Metriken werden sinnvollerweise durch diverse Tools erfasst.
 
         ::: notes
         *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.
-            (*Single Responsibility*)
-        *   Keine Code-Duplizierung! (*DRY* - Don't repeat yourself)
+            (_Single Responsibility_)
+        *   Keine Code-Duplizierung! (_DRY_ - Don't repeat yourself)
         *   Klassen und Methoden sollten sich erwartungsgemäß verhalten.
         *   Kapselung: Möglichst wenig öffentlich zugänglich machen.
         :::

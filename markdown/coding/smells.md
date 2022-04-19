@@ -24,8 +24,8 @@ tldr: |
     *   Kommentare
   *   Prinzipien des objektorientierten Design
     *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.
-        (*Single Responsibility*)
-    *   Keine Code-Duplizierung! (*DRY* - Don't repeat yourself)
+        (_Single Responsibility_)
+    *   Keine Code-Duplizierung! (_DRY_ - Don't repeat yourself)
     *   Klassen und Methoden sollten sich erwartungsgemäß verhalten.
     *   Kapselung: Möglichst wenig öffentlich zugänglich machen.
 
@@ -104,12 +104,12 @@ Schauen Sie mal in die unten angegebene Literatur :-)
 :::
 
 
-## Was ist guter ("sauberer") Code?
+## Was ist guter ("sauberer") Code ("Clean Code")?
 
 ::: notes
-Im Grunde bezeichnet "sauberer Code" die Abwesenheit von Smells. D.h. man könnte
-Code als "sauberen" Code bezeichnen, wenn die folgenden Eigenschaften erfüllt
-sind (keine vollständige Aufzählung!):
+Im Grunde bezeichnet "sauberer Code" ("Clean Code") die Abwesenheit von Smells. D.h. man
+könnte Code als "sauberen" Code bezeichnen, wenn die folgenden Eigenschaften erfüllt sind
+(keine vollständige Aufzählung!):
 :::
 
 *   Gut ("angenehm") lesbar
@@ -147,6 +147,20 @@ Praxis später nicht gut gepflegt: Andere Entwickler haben (die berechtigte) Ang
 kaputt zu machen und arbeiten "um den Code herum". Nur leider wird das Konstrukt dann
 nur noch schwerer verständlich ...
 
+### Bad Smells
+
+Verstöße gegen die Prinzipien von _Clean Code_ nennt man auch _Bad Smells_: Der
+Code "stinkt" gewissermaßen. Dies bedeutet nicht unbedingt, dass der Code nicht
+funktioniert (d.h. er kann dennoch compilieren und die Anforderungen erfüllen).
+Er ist nur nicht sauber formuliert, schwer verständlich, enthält Doppelungen etc.,
+was im Laufe der Zeit die Chance für Probleme deutlich erhöht.
+:::::::::
+
+\bigskip
+
+[**Stinkender Code führt zu möglichen (späteren) Problemen.**]{.alert}
+
+::::::::: notes
 ### "Broken Windows" Phänomen
 
 Wenn ein Gebäude leer steht, wird es eine gewisse Zeit lang nur relativ langsam
@@ -169,16 +183,6 @@ schlecht ist ... Das wird mit der Zeit nicht besser ...
 [["Broken Windows" Phänomen](https://en.wikipedia.org/wiki/Broken_windows_theory)]{.bsp}
 
 ::::::::: notes
-### Bad Smells
-
-Verstöße gegen die Prinzipien von *Clean Code* nennt man auch *Bad Smells*: Der
-Code "stinkt" gewissermaßen. Dies bedeutet nicht unbedingt, dass der Code nicht
-funktioniert (d.h. er kann dennoch compilieren und die Anforderungen erfüllen).
-Er ist nur nicht sauber formuliert, schwer verständlich, enthält Doppelungen etc.,
-was im Laufe der Zeit die Chance für Probleme deutlich erhöht.
-
-[**Stinkender Code führt zu möglichen (späteren) Problemen.**]{.alert}
-
 ### Maßeinheit für Code-Qualität ;-)
 
 Es gibt eine "praxisnahe" (und nicht ganz ernst gemeinte) Maßeinheit für Code-Qualität:
@@ -207,12 +211,12 @@ in Ordnung ...
 
 \bigskip
 
-*   *Hinweis*: Betrifft vor allem die (äußere) Form!
+*   _Hinweis_: Betrifft vor allem die (äußere) Form!
 
-[Beispiel: Google Java Style; Hinweis auf Formatter]{.bsp}
+[Hinweis: Genauere Betrachtung in "Coding Rules"]{.bsp}
 
 
-## Bad Smells: Schlechte Kommentare
+## Bad Smells: Schlechte Kommentare I
 
 *   Ratlose Kommentare
 
@@ -226,7 +230,9 @@ in Ordnung ...
     die Mühe zu verstehen), was er da tut! Fehler sind vorprogrammiert!
     :::
 
-*   Redundante Kommentare[: Erklären Sie, was der Code **inhaltlich** tun sollte (und warum)!]{.notes}
+\bigskip
+
+*   Redundante Kommentare: Erklären Sie, was der Code **inhaltlich** tun sollte (und warum)!
 
     ```java
     public int i; // neues i
@@ -244,6 +250,9 @@ in Ordnung ...
     Beschreiben Sie dabei auch das Konzept hinter einem Codebaustein.
     :::
 
+
+## Bad Smells: Schlechte Kommentare II
+
 *   Veraltete Kommentare
 
     ::: notes
@@ -252,12 +261,22 @@ in Ordnung ...
     extrem misstrauisch machen.
     :::
 
+*   Auskommentierter Code
+
+    ::: notes
+    Da ist jemand seiner Sache unsicher bzw. hat eine Überarbeitung nicht
+    abgeschlossen. Die Chance, dass sich der restliche Code im Laufe der Zeit
+    so verändert, dass der auskommentierte Code nicht mehr (richtig) läuft, ist
+    groß! Auskommentierter Code ist gefährlich und dank Versionskontrolle
+    absolut überflüssig!
+    :::
+
 *   Kommentare erscheinen zwingend nötig
 
     ::: notes
     Häufig ein Hinweis auf ungeeignete Wahl der Namen (Klassen, Methoden,
     Attribute) und/oder auf ein ungeeignetes Abstraktionsniveau (beispielsweise
-    Nichtbeachtung des Prinzips der "*Single Responsibility*")!
+    Nichtbeachtung des Prinzips der "_Single Responsibility_")!
 
     Der Code soll im **Normalfall** für sich selbst sprechen: **WAS** wird gemacht.
     Der Kommentar erklärt im Normalfall, **WARUM** der Code das machen soll.
@@ -269,16 +288,6 @@ in Ordnung ...
     Hinweise wie "wer hat wann was geändert" gehören in das Versionskontroll-
     oder ins Issue-Tracking-System. Die Änderung ist im Code sowieso nicht mehr
     sichtbar/nachvollziehbar!
-    :::
-
-*   Auskommentierter Code
-
-    ::: notes
-    Da ist jemand seiner Sache unsicher bzw. hat eine Überarbeitung nicht
-    abgeschlossen. Die Chance, dass sich der restliche Code im Laufe der Zeit
-    so verändert, dass der auskommentierte Code nicht mehr (richtig) läuft, ist
-    groß! Auskommentierter Code ist gefährlich und dank Versionskontrolle
-    absolut überflüssig!
     :::
 
 
@@ -339,9 +348,7 @@ public class Studi {
 ::: notes
 Im Beispiel wird das Formatieren der Adresse mehrfach identisch implementiert,
 d.h. duplizierter Code. Auslagern in eigene Methode und aufrufen!
-:::
 
-::: notes
 Kopierter Code ist problematisch:
 
 *   Spätere Änderungen müssen an mehreren Stellen vorgenommen werden
@@ -371,6 +378,11 @@ Kopierter Code ist problematisch:
 
 *   Design-Prinzip "**Single Responsibility**"
 
+    ::: notes
+    Jede Klasse ist für genau [einen Aspekt]{.alert} des Gesamtsystems verantwortlich
+    :::
+
+\bigskip
 
 ::::::::: notes
 ### Lesbarkeit und Übersichtlichkeit leiden:
@@ -386,7 +398,7 @@ Kopierter Code ist problematisch:
 *   Große Dateien verleiten (auch mangels Übersichtlichkeit) dazu, neuen
     Code ebenfalls schluderig zu gliedern
 
-### Langer Code deutet auch auf eine Verletzung des Prinzips der einfachen Verantwortung hin:
+### Langer Code deutet auch auf eine Verletzung des Prinzips der Single Responsibility hin:
 
 *   Klassen fassen nicht zusammengehörende Dinge zusammen
 *   Methoden erledigen mehr als nur eine Aufgabe
@@ -413,32 +425,6 @@ Kopierter Code ist problematisch:
     Circle makeCircle(Point center, int radius);  // besser!
     ```
 :::::::::
-
-
-## Design-Prinzip _Single Responsibility_
-
-Jede Klasse ist für genau [einen Aspekt]{.alert} des Gesamtsystems verantwortlich
-
-\bigskip
-
-```java
-public class Student {
-    private String name;
-    private String phoneAreaCode;
-    private String phoneNumber;
-
-    public void printStudentInfo() {
-        System.out.println("name:    " + name);
-        System.out.println("contact: " + phoneAreaCode + "/" + phoneNumber);
-    }
-}
-```
-
-::: notes
-Warum sollte sich die Klasse `Student` um die Einzelheiten des Aufbaus einer
-Telefonnummer kümmern? Das Prinzip der "*Single Responsibility*" wird hier
-verletzt!
-:::
 
 
 ## Bad Smells: Feature Neid
@@ -485,8 +471,8 @@ public class HourlyPayCalculator {
 
         ::: notes
         *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.
-            (*Single Responsibility*)
-        *   Keine Code-Duplizierung! (*DRY* - Don't repeat yourself)
+            (_Single Responsibility_)
+        *   Keine Code-Duplizierung! (_DRY_ - Don't repeat yourself)
         *   Klassen und Methoden sollten sich erwartungsgemäß verhalten.
         *   Kapselung: Möglichst wenig öffentlich zugänglich machen.
         :::
