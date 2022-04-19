@@ -68,23 +68,64 @@ fhmedia:
 [Beispiel: Google Java Style; Hinweis auf Formatter]{.bsp}
 
 
-## Wichtige Design-Prinzipien
-
-### Design-Prinzip "Prinzip der minimalen Verwunderung"
+## Design-Prinzip "Prinzip der minimalen Verwunderung"
 
 *   Klassen und Methoden sollten sich erwartungsgemäß verhalten
 *   Gute Namen ersparen das Lesen der Dokumentation
 
-### Design-Prinzip "Kapselung/Information Hiding"
+\bigskip
+
+```java
+// Schlechtes Beispiel
+public class Studi extends Person {
+    public String n;
+    public int c;
+
+    public void prtIf() { ... }
+}
+```
+
+
+## Design-Prinzip "Kapselung/Information Hiding"
 
 *   Möglichst schlanke öffentliche Schnittstelle \newline
     => "Vertrag" mit Nutzern der Klasse!
 
-### Design-Prinzip "DRY": "Don't repeat yourself!"
+\bigskip
+
+```java
+// Schlechtes Beispiel
+public class Studi extends Person {
+    public String n;
+    public int c;
+
+    public void prtIf() { ... }
+}
+```
+
+
+## Design-Prinzip "DRY": "Don't repeat yourself!"
 
 *   Kein duplizierter Code!
 
-### Design-Prinzip "Single Responsibility"
+\bigskip
+
+```java
+// Schlechtes Beispiel
+public class Studi {
+    public String getName() { return name; }
+    public String getAddress() {
+        return strasse+", "+plz+" "+stadt;
+    }
+
+    public String getStudiAsString() {
+        return name+" ("+strasse+", "+plz+" "+stadt+")";
+    }
+}
+```
+
+
+## Design-Prinzip "Single Responsibility"
 
 Jede Klasse ist für genau [einen Aspekt]{.alert} des Gesamtsystems verantwortlich
 
@@ -120,7 +161,7 @@ verletzt!
 
 *   **NCSS** (_Non Commenting Source Statements_)
     *   Zeilen pro Methode: 50; pro Klasse: 500; pro Datei: 600 \newline
-        *Annahme*: Eine Anweisung je Zeile ...
+        _Annahme_: Eine Anweisung je Zeile ...
 *   **Anzahl der Methoden** pro Klasse: 10
 *   **Parameter** pro Methode: 3
 *   **BEC** (_Boolean Expression Complexity_) \newline

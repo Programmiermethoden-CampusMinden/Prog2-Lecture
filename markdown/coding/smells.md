@@ -305,7 +305,7 @@ public class Studi extends Person {
 ::: notes
 Nach drei Wochen fragen Sie sich, was `n` oder `c` oder `Studi#prtIf()` wohl
 sein könnte! (Ein anderer Programmierer fragt sich das schon beim **ersten**
-Lesen.)
+Lesen.) Klassen und Methoden sollten sich erwartungsgemäß verhalten.
 
 Wenn Dinge öffentlich angeboten werden, muss man damit rechnen, dass andere
 darauf zugreifen. D.h. man kann nicht mehr so einfach Dinge wie die interne
@@ -316,14 +316,7 @@ gehören zur Schnittstelle und damit Teil des "Vertrags" mit den Nutzern!
 \bigskip
 
 *   Design-Prinzip "**Prinzip der minimalen Verwunderung**"
-    *   Klassen und Methoden sollten sich erwartungsgemäß verhalten
-    *   Gute Namen ersparen das Lesen der Dokumentation
-
-\smallskip
-
 *   Design-Prinzip "**Kapselung/Information Hiding**"
-    *   Möglichst schlanke öffentliche Schnittstelle \newline
-        => "Vertrag" mit Nutzern der Klasse!
 
 
 ## Bad Smells: Duplizierter Code
@@ -393,7 +386,7 @@ Kopierter Code ist problematisch:
 *   Lange Methoden sind schwer verständlich
 *   Mehr als 3 Parameter kann sich kaum jemand merken, vor allem beim
     Aufruf von Methoden
-*   Testbarkeit wird bei zu komplexen Methoden/Klassen und vielen Parametern
+*   Die Testbarkeit wird bei zu komplexen Methoden/Klassen und vielen Parametern
     sehr erschwert
 *   Große Dateien verleiten (auch mangels Übersichtlichkeit) dazu, neuen
     Code ebenfalls schluderig zu gliedern
