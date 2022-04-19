@@ -5,9 +5,9 @@ menuTitle: "TDD"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 7
 readings:
+  - key: "Beck2014"
   - key: "Martin2009"
   - key: "Fowler2011"
-  - key: "Beck2014"
 tldr: |
   TODO
 
@@ -20,14 +20,12 @@ quizzes:
     name: "Quiz TDD (ILIAS)"
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL TDD"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo TDD"
 fhmedia:
   - link: ""
-    name: "VL "
+    name: "VL TDD"
 ---
 
 
