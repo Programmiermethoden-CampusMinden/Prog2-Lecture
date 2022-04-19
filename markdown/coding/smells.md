@@ -378,12 +378,12 @@ Kopierter Code ist problematisch:
 \bigskip
 
 ::::::::: notes
-### Lesbarkeit und Übersichtlichkeit leiden:
+### Lesbarkeit und Übersichtlichkeit leiden
 
-*   Mensch kann sich nur begrenzt viele Dinge im Kurzzeitgedächtnis merken
-*   Klassen länger als 5 Bildschirmseiten erfordern viel Hin- und
+*   Der Mensch kann sich nur begrenzt viele Dinge im Kurzzeitgedächtnis merken
+*   Klassen, die länger als 5 Bildschirmseiten sind, erfordern viel Hin- und
     Her-Scrollen, dito für lange Methoden
-*   Lange Methoden sind schwer verständlich
+*   Lange Methoden sind schwer verständlich (erledigen viele Dinge?)
 *   Mehr als 3 Parameter kann sich kaum jemand merken, vor allem beim
     Aufruf von Methoden
 *   Die Testbarkeit wird bei zu komplexen Methoden/Klassen und vielen Parametern
@@ -391,24 +391,24 @@ Kopierter Code ist problematisch:
 *   Große Dateien verleiten (auch mangels Übersichtlichkeit) dazu, neuen
     Code ebenfalls schluderig zu gliedern
 
-### Langer Code deutet auch auf eine Verletzung des Prinzips der Single Responsibility hin:
+### Langer Code deutet auch auf eine Verletzung des Prinzips der Single Responsibility hin
 
-*   Klassen fassen nicht zusammengehörende Dinge zusammen
-*   Methoden erledigen mehr als nur eine Aufgabe
+*   Klassen fassen evtl. nicht zusammengehörende Dinge zusammen
+*   Methoden erledigen vermutlich mehr als nur eine Aufgabe
     *   Erklären Sie die Methode jemandem. Wenn dabei das Wort "und"
         vorkommt, macht die Methode höchstwahrscheinlich zu viel!
 
         ```java
-        // nach [@Martin2009]
-        public void pay() {
-            for (Employee e : employees) {
-                if (e.isPayDay()) {
-                Money amount = e.calculatePay();
-                e.deliverPay(amount);
+        public void credits() {
+            for (Student s : students) {
+                if (s.hasSemesterFinished()) {
+                    ECTS c = calculateEcts(s);
+                    s.setEctsSum(c);
+                }
             }
         }
 
-        // Methode erledigt 4 Dinge: Iteration, Abfrage, Berechnung, Auslieferung ...
+        // Methode erledigt 4 Dinge: Iteration, Abfrage, Berechnung, Setzen ...
         ```
 
 *   Viele Parameter bedeuten oft fehlende Datenabstraktion
@@ -423,24 +423,25 @@ Kopierter Code ist problematisch:
 ## Bad Smells: Feature Neid
 
 ```java
-// nach [@Martin2009]
-public class HourlyPayCalculator {
-    public Money calculateWeeklyPay(HourlyEmployee e) {
-        int rate = e.getRate();
-        int worked = e.getHoursWorked();
-        int straightTime = Math.min(40, worked);
-        int overTime = Math.max(0, worked-straightTime);
-        int straightPay = straightTime*rate;
-        int overtimePay = (int)Math.round(overTime*rate*1.5);
-        return new Money(straightPay+overtimePay);
+public class CreditsCalculator {
+    public ECTS calculateEcts(Student s) {
+        int semester = s.getSemester();
+        int workload = s.getCurrentWorkload();
+        int nrModuls = s.getNumberOfModuls();
+        int total = Math.min(30, workload);
+        int extra = Math.max(0, total - 30);
+        if (semester < 5) {
+             extra = extra * nrModuls;
+        }
+        return new ECTS(total + extra);
     }
 }
 ```
 
 ::: notes
-*   Zugriff auf Interna der anderen Klasse! => Hohe Kopplung der Klassen!
-*   Methode `HourlyPayCalculator#calculateWeeklyPay()` "möchte" eigentlich in
-    `HourlyEmployee` sein ...
+*   Zugriff auf (viele) Interna der anderen Klasse! => Hohe Kopplung der Klassen!
+*   Methode `CreditsCalculator#calculateEcts()` "möchte" eigentlich in
+    `Student` sein ...
 :::
 
 
@@ -466,8 +467,8 @@ public class HourlyPayCalculator {
         *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.
             (_Single Responsibility_)
         *   Keine Code-Duplizierung! (_DRY_ - Don't repeat yourself)
-        *   Klassen und Methoden sollten sich erwartungsgemäß verhalten.
-        *   Kapselung: Möglichst wenig öffentlich zugänglich machen.
+        *   Klassen und Methoden sollten sich erwartungsgemäß verhalten
+        *   Kapselung: Möglichst wenig öffentlich zugänglich machen
         :::
 
 

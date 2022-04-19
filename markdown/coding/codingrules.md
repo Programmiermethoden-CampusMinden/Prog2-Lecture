@@ -201,6 +201,7 @@ Metriken werden sinnvollerweise durch diverse Tools erfasst.
 
 ## Wrap-Up
 
+
 *   Code entsteht nicht zum Selbstzweck => Regeln nötig!
     *   Coding Conventions
 
@@ -217,8 +218,8 @@ Metriken werden sinnvollerweise durch diverse Tools erfasst.
         *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.
             (_Single Responsibility_)
         *   Keine Code-Duplizierung! (_DRY_ - Don't repeat yourself)
-        *   Klassen und Methoden sollten sich erwartungsgemäß verhalten.
-        *   Kapselung: Möglichst wenig öffentlich zugänglich machen.
+        *   Klassen und Methoden sollten sich erwartungsgemäß verhalten
+        *   Kapselung: Möglichst wenig öffentlich zugänglich machen
         :::
 
 \bigskip
