@@ -105,7 +105,7 @@ Beispiel: Zu testende Methode mit Eingabewert _x_, der zw. 10 und 100 liegen sol
 
 *   Zerlegung der Definitionsbereiche in Äquivalenzklassen (ÄK):
     *   Disjunkte Teilmengen, wobei
-    *   Werte *einer* ÄK führen zu *gleichartigem* Verhalten
+    *   Werte _einer_ ÄK führen zu _gleichartigem_ Verhalten
 
 *   Annahme: Eingabeparameter sind untereinander unabhängig
 
@@ -118,16 +118,15 @@ Beispiel: Zu testende Methode mit Eingabewert _x_, der zw. 10 und 100 liegen sol
 ### Bemerkungen
 
 Hintergrund: Da die Werte einer ÄK zu gleichartigem Verhalten führen, ist es
-egal, *welchen* Wert man aus einer ÄK für den Test nimmt.
+egal, _welchen_ Wert man aus einer ÄK für den Test nimmt.
 
-Formal hat man *eine* ungültige ÄK (d.h. die Menge aller ungültigen Werte). In
+Formal hat man _eine_ ungültige ÄK (d.h. die Menge aller ungültigen Werte). In
 der Programmierpraxis macht es aber einen Unterschied, ob es sich um Werte
-unterhalb oder oberhalb des erlaubten Wertebereichs handelt
-(Fallunterscheidung). Beispiel: Eine Funktion soll Werte zwischen 10 und 100
-verarbeiten. Dann sind alle Werte kleiner 10 oder größer 100 mathematisch
-gesehen in der selben ÄK "ungültig". Praktisch macht es aber Sinn, eine
-ungültige ÄK für "kleiner 10" und eine weitere ungültige ÄK für "größer 100"
-zu betrachten ...
+unterhalb oder oberhalb des erlaubten Wertebereichs handelt (Fallunterscheidung).
+Beispiel: Eine Funktion soll Werte zwischen 10 und 100 verarbeiten. Dann sind
+alle Werte kleiner 10 oder größer 100 mathematisch gesehen in der selben ÄK
+"ungültig". Praktisch macht es aber Sinn, eine ungültige ÄK für "kleiner 10"
+und eine weitere ungültige ÄK für "größer 100" zu betrachten ...
 
 Traditionell betrachtet man nur die Eingabeparameter. Es kann aber Sinn machen,
 auch die Ausgabeseite zu berücksichtigen (ist aber u.U. nur schwierig zu
@@ -173,7 +172,7 @@ realisieren).
     Aufteilung in eine gültige und eine ungültige ÄK
 
 
-*Hinweis*: Werden Werte einer ÄK vermutlich nicht gleichwertig behandelt, dann
+_Hinweis_: Werden Werte einer ÄK vermutlich nicht gleichwertig behandelt, dann
 erfolgt die Aufspaltung der ÄK in kleinere ÄKs. Das ist im Grunde die analoge
 Überlegung zu mehreren ungültigen ÄKs.
 
@@ -185,33 +184,30 @@ der laufenden Nummer $n$.
 
 ## ÄK: Erstellung der Testfälle
 
-::: notes
-*   Aus jeder ÄK wird ein Repräsentant gewählt
-*   Prinzipiell: Paarweise vollständige Kombination, d.h. jeder Repräsentant
-    einer ÄK kommt mit jedem Repräsentanten jeder anderen ÄK in einem Testfall
-    (TF) zur Ausführung
+*   Jede ÄK durch _mindestens_ **einen TF** abdecken
 
-*   Erinnerung: Annahme: Eingabeparameter sind untereinander unabhängig
-
-    => Es reicht, wenn jeder Repräsentant einer ÄK *einmal* in einem
-    TF zur Ausführung kommt => Kombination verschiedener
-    Repräsentanten in *einem* TF
-
-    **Achtung**: Dies gilt nur für die **gültigen** ÄK! Bei den ungültigen
-    ÄKs sollten Repräsentanten nicht miteinander in einem TF kombiniert werden!
-    Bei gleichzeitiger Behandlung verschiedener ungültiger ÄK bleiben u.U.
-    Fehler unentdeckt, da sich die Wirkungen der ungültigen ÄK überlagern!
-:::
-
-*   Alle ÄKs durch _mindestens_ **einen TF** abdecken
-
-\smallskip
+\bigskip
 
 *   Dabei pro Testfall
-    *   *mehrere gültige ÄKs* kombinieren, oder
-    *   genau *eine ungültige ÄK* untersuchen
-        (restl. Werte aus gültigen ÄK auffüllen; diese gelten dann aber
-        nicht als getestet!)
+    *   _mehrere gültige ÄKs_ kombinieren, oder
+    *   genau _eine ungültige ÄK_ untersuchen
+        [(restl. Werte aus gültigen ÄK auffüllen; diese gelten dann aber
+        nicht als getestet!)]{.notes}
+
+::: notes
+Im Prinzip muss man zur Erstellung der Testfälle (TF) eine paarweise vollständige Kombination über
+die ÄK bilden, d.h. jede ÄK kommt mit jeder anderen ÄK in einem TF zur Ausführung.
+
+_Erinnerung_: Annahme: Eingabeparameter sind untereinander unabhängig! => Es reicht, wenn _jede_
+gültige ÄK _einmal_ in einem TF zur Ausführung kommt. => Kombination verschiedener gültiger ÄK
+in _einem TF_.
+
+**Achtung**: Dies gilt nur für die **gültigen** ÄK! Bei den ungültigen ÄKs dürfen diese nicht
+miteinander in einem TF kombiniert werden! Bei gleichzeitiger Behandlung verschiedener ungültiger
+ÄK bleiben u.U. Fehler unentdeckt, da sich die Wirkungen der ungültigen ÄK überlagern!
+
+**Für jeden Testfall (TF) wird aus den zu kombinierenden ÄK ein zufälliger Repräsentant ausgewählt.**
+:::
 
 
 ## ÄK: Beispiel: Eingabewert _x_ soll zw. 10 und 100 liegen
@@ -248,14 +244,19 @@ Beobachtung: Grenzen in Verzweigungen/Schleifen kritisch
     *   "ungültige Grenzwerte" (*uGW*): Grenzwerte von ungültigen ÄK
 
 ::: notes
-Zusätzlich sinnvoll:
-*   Werte "rechts" und "links" der Grenze
-*   Weitere grenzwertnahe Werte
+Zusätzlich sinnvoll: Weitere grenznahe Werte, d.h. weitere Werte "rechts" und "links"
+der Grenze nutzen.
 
 Bildung der Testfälle:
 :::
 
 *   Jeder GW muss in mind. einem TF vorkommen
+
+::: notes
+**Pro TF darf ein GW (gültig oder ungültig) verwendet werden, die restlichen Parameter
+werden (mit zufälligen Werten) aus gültigen ÄK aufgefüllt, um mögliche Grenzwertprobleme
+nicht zu überlagern.**
+:::
 
 [[Beispiel: Eingabeparameter _x_ zw. 10 und 100]{.bsp}]{.slides}
 
@@ -278,21 +279,21 @@ Bildung der Testfälle:
 
 ### Tests
 
-| Testnummer          | 1     | 2     | 3         | 4         |
+| Testnummer          | 4     | 5     | 6         | 7         |
 |:--------------------|:------|:------|:----------|:----------|
-| geprüfte ÄK         | gÄK1u | gÄK1o | uÄK2o     | uÄK3u     |
+| geprüfter GW        | gÄK1u | gÄK1o | uÄK2o     | uÄK3u     |
 | _x_                 | 10    | 100   | 9         | 101       |
 | Erwartetes Ergebnis | OK    | OK    | Exception | Exception |
 
 
 ::: notes
-**Hinweis**: Es gibt auch Ansätze, wonach die Ergebnisse der GW-Analyse **zusätzlich**
-zu den Werten aus der ÄK-Analyse eingesetzt werden. In diesem Fall würde man für das
-obige Beispiel folgende Tests aus der kombinierten ÄK- und GW-Analyse erhalten:
+**Hinweis**: Die Ergebnisse der GW-Analyse werden **zusätzlich** zu den Werten aus der ÄK-Analyse
+eingesetzt. Für das obige Beispiel würde man also folgende Tests aus der kombinierten ÄK- und
+GW-Analyse erhalten:
 
 | Testnummer          | 1    | 2         | 3         | 4     | 5     | 6         | 7         |
 |:--------------------|:-----|:----------|:----------|:------|:------|:----------|:----------|
-| geprüfte ÄK         | gÄK1 | uÄK2      | uÄK3      | gÄK1u | gÄK1o | uÄK2o     | uÄK3u     |
+| geprüfte(r) ÄK/GW   | gÄK1 | uÄK2      | uÄK3      | gÄK1u | gÄK1o | uÄK2o     | uÄK3u     |
 | _x_                 | 42   | 7         | 120       | 10    | 100   | 9         | 101       |
 | Erwartetes Ergebnis | OK   | Exception | Exception | OK    | OK    | Exception | Exception |
 :::
