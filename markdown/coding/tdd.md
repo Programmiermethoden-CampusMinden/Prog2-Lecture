@@ -3,7 +3,7 @@ type: lecture-cg
 title: "Testbarkeit und Testdriven Development (TDD)"
 menuTitle: "TDD"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 6
+weight: 7
 readings:
   - key: "Martin2009"
   - key: "Dietz2018"
