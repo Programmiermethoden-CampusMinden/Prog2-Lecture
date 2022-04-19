@@ -61,6 +61,7 @@
 - week: "KW18"
   lecture:
     - topic: "/coding/smells"
+    - topic: "/coding/codingrules"
     - topic: "/coding/refactoring"
     - topic: "/testing/mockito"
   assignment:
