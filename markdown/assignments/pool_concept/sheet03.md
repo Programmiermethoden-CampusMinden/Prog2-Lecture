@@ -8,14 +8,14 @@ hidden: true
 ---
 
 
-## Generics I (3 Punkte)
+## Generics I (2 Punkte)
 
 {{% include "assignments/pool_concept/tasks/generics1.md" %}}
 
-**Punkte**: Je 1P für jede Teilaufgabe.
+**Punkte**: Je 0.5P für die ersten beiden Teilaufgaben und 1P für die dritte Teilaufgabe.
 
 
-## Generics II (3 Punkte)
+## Generics II (4 Punkte)
 
 {{% include "assignments/pool_concept/tasks/generics1.md" %}}
 
