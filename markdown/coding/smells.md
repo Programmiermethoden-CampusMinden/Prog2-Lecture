@@ -1,19 +1,19 @@
 ---
 type: lecture-cg
-title: "Bad Smells und Coding Conventions"
+title: "Bad Smells"
 menuTitle: "Bad Smells"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 4
 readings:
   - key: "Martin2009"
-  - key: "Fowler2011"
-  - key: "Beck2014"
   - key: "Passig2013"
   - key: "Inden2013"
-    comment: "Kapitel 10: Bad Smells, Kapitel 13: Programmierstil und Coding Conventions"
+    comment: "Kapitel 10: Bad Smells"
   - key: "googlestyleguide"
 tldr: |
   TODO
+
+  Smells: Probleme im Code, die noch nicht direkt zu einem Fehler führen
 
   Code entsteht nicht zum Selbstzweck => Regeln nötig!
 
@@ -28,31 +28,27 @@ tldr: |
     *   Keine Code-Duplizierung! (*DRY* - Don't repeat yourself)
     *   Klassen und Methoden sollten sich erwartungsgemäß verhalten.
     *   Kapselung: Möglichst wenig öffentlich zugänglich machen.
-  *   Metriken: Einhaltung von Regeln in Zahlen ausdrücken
-  *   Prüfung manuell durch Code Reviews oder durch Tools, zB. Checkstyle
 
 outcomes:
   - k2: "Erklären verschiedener Coding Conventions"
   - k2: "Erklären wichtiger Grundregeln des objektorientierten Designs"
-  - k2: "Erklären der Metriken NCSS, McCabe, BEC, DAC"
-  - k3: "Nutzung des Tools Checkstyle (Standalone, Eclipse-Plugin, Konfiguration)"
-  - k3: "Beachten von Coding Conventions und Metriken"
   - k3: "Einhalten der wichtigsten Grundregeln des objektorientierten Designs"
+  - k3: "Erkennen und Vermeiden von Bad Smells"
 quizzes:
   - link: "XYZ"
     name: "Quiz XXX (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet05
 youtube:
   - link: ""
-    name: "VL Bad Smells und Coding Conventions"
+    name: "VL Bad Smells"
   - link: ""
     name: "Demo "
   - link: ""
     name: "Demo "
 fhmedia:
   - link: ""
-    name: "VL Bad Smells und Coding Conventions"
+    name: "VL Bad Smells"
 ---
 
 
@@ -469,75 +465,31 @@ public class HourlyPayCalculator {
 :::
 
 
-## Metriken: Messen und Bewerten
+## Wrap-Up
 
-::: notes
-### Kennzahlen für verschiedene Aspekte zum Code
-
-*   Einhaltung der Coding Rules
-*   Beachtung der Regeln des objektorientierten Entwurfs
-
-### Beispiele für wichtige Metriken (jeweils max-Werte)
-:::
-
-*   **NCSS** (*Non Commenting Source Statements*)
-    *   Zeilen pro Methode: 50; pro Klasse: 500; pro Datei: 600 \newline
-        *Annahme*: Eine Anweisung je Zeile ...
-*   **Anzahl der Methoden** pro Klasse: 10
-*   **Parameter** pro Methode: 3
-*   **BEC** (*Boolean Expression Complexity*) \newline
-    Anzahl boolescher Ausdrücke in `if` etc.: 3
-*   **McCabe** (Cyclomatic Complexity)
-    *   Anzahl der möglichen Verzweigungen (Pfade) pro Methode
-    *   1-4 gut, 5-7 noch OK
-*   **DAC** (*Class Data Abstraction Coupling*)
-    *   Anzahl der genutzten (instantiierten) "Fremdklassen"
-    *   Werte kleiner 7 werden i.A. als normal betrachtet
-
-::: notes
-Die obigen Grenzwerte sind vorgeschlagene Standardwerte, die sich in der Praxis
-allgemein bewährt haben (u.a. nach [@Martin2009]). Dennoch sind das keine absoluten
-Werte an sich, sondern müssen an das konkrete Projekt angepasst werden. Ein
-Übertreten der Grenzen ist ein **Hinweis** darauf, das **höchstwahrscheinlich**
-etwas nicht stimmt, muss aber im konkreten Fall hinterfragt und diskutiert werden!
-:::
+*   Bad Smells: Code führt zu möglichen (späteren) Problemen
 
 \bigskip
 
-=> Verweis auf LV Softwareengineering
+*   Code entsteht nicht zum Selbstzweck => Regeln nötig!
+    *   Coding Conventions
 
-::: notes
-### Tool-Support
+        ::: notes
+        *   Regeln zu Schreibweisen und Layout
+        *   Leerzeichen, Einrückung, Klammern
+        *   Zeilenlänge, Umbrüche
+        *   Kommentare
+        :::
 
-Metriken werden sinnvollerweise durch diverse Tools erfasst.
+    *   Prinzipien des objektorientierten Design
 
-*   **Checkstyle** [([Standalone via Ant](https://github.com/checkstyle/checkstyle) und Plugin für
-    [Eclipse](https://github.com/checkstyle/eclipse-cs) oder [IntelliJ](https://github.com/jshiell/checkstyle-idea))]{.notes}
-*   Alternativen/Ergänzungen: [Metrics](http://metrics.sourceforge.net/),
-    [MetricsReloaded](https://github.com/BasLeijdekkers/MetricsReloaded),
-    [FindBugs/SpotBugs](https://github.com/spotbugs/spotbugs), ...
-:::
-
-[Beispiel: Konfiguration Eclipse-Checkstyle, Hinweis auf Formatter]{.bsp}
-
-
-## Wrap-Up
-
-Code entsteht nicht zum Selbstzweck => Regeln nötig!
-
-*   Coding Conventions
-    *   Regeln zu Schreibweisen und Layout
-    *   Leerzeichen, Einrückung, Klammern
-    *   Zeilenlänge, Umbrüche
-    *   Kommentare
-*   Prinzipien des objektorientierten Design
-    *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.
-        (*Single Responsibility*)
-    *   Keine Code-Duplizierung! (*DRY* - Don't repeat yourself)
-    *   Klassen und Methoden sollten sich erwartungsgemäß verhalten.
-    *   Kapselung: Möglichst wenig öffentlich zugänglich machen.
-*   Metriken: Einhaltung von Regeln in Zahlen ausdrücken
-*   Prüfung manuell durch Code Reviews oder durch Tools, zB. Checkstyle
+        ::: notes
+        *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.
+            (*Single Responsibility*)
+        *   Keine Code-Duplizierung! (*DRY* - Don't repeat yourself)
+        *   Klassen und Methoden sollten sich erwartungsgemäß verhalten.
+        *   Kapselung: Möglichst wenig öffentlich zugänglich machen.
+        :::
 
 
 
