@@ -442,6 +442,14 @@ public class CreditsCalculator {
 :::
 
 
+::: notes
+## Weiterführende Links
+
+*   ["Foundations: Clean Code" (The Odin Project)](https://www.theodinproject.com/lessons/foundations-clean-code)
+*   ["Documentation Best Practices" (Google Styleguide)](https://github.com/google/styleguide/blob/gh-pages/docguide/best_practices.md)
+:::
+
+
 ## Wrap-Up
 
 *   Code Smells: Code führt zu möglichen (späteren) Problemen
