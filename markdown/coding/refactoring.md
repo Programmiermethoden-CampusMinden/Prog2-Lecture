@@ -3,7 +3,7 @@ type: lecture-cg
 title: "Refactoring"
 menuTitle: "Refactoring"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 5
+weight: 6
 readings:
   - key: "Fowler2011"
   - key: "Inden2013"
