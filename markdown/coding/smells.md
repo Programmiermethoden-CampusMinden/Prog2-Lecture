@@ -86,7 +86,7 @@ Dennoch: [**Der Code "stinkt"**]{.alert} (zeigt **Code Smells**):
 Diese Liste enthält die häufigsten "Smells" und ließe sich noch beliebig fortsetzen.
 Schauen Sie mal in die unten angegebene Literatur :-)
 
-[**Stinkender Code führt zu möglichen (späteren) Problemen.**]{.alert}
+**Stinkender Code führt zu möglichen (späteren) Problemen.**
 :::
 
 
@@ -142,9 +142,15 @@ Er ist nur nicht sauber formuliert, schwer verständlich, enthält Doppelungen e
 was im Laufe der Zeit die Chance für tatsächliche Probleme deutlich erhöht.
 :::::::::
 
+\pause
 \bigskip
+\vfill
 
+[Und weil es so wichtig ist, hier gleich noch einmal:]{.notes}
+
+::: cbox
 [**Stinkender Code führt zu möglichen (späteren) Problemen.**]{.alert}
+:::
 
 ::::::::: notes
 ### "Broken Windows" Phänomen
