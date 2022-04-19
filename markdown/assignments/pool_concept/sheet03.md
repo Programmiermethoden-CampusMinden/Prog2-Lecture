@@ -9,23 +9,23 @@ sketch: true
 ---
 
 
-## Generics I (6 Punkte)
+## Generics I (3 Punkte)
 
 {{% include "assignments/pool_concept/tasks/generics1.md" %}}
 
-**Punkte**: Je 2P für die beiden Formatter und das Einbauen des Loggings.
+**Punkte**: Je 1P für jede Teilaufgabe.
 
 
-## Generics II (6 Punkte)
+## Generics II (3 Punkte)
 
-{{% include "assignments/pool_concept/tasks/logging.md" %}}
+{{% include "assignments/pool_concept/tasks/generics1.md" %}}
 
-**Punkte**: Je 2P für die beiden Formatter und das Einbauen des Loggings.
+**Punkte**: TODO
 
 
 ## Entwurfsmuster "Strategy Pattern" (4 Punkte)
 
-{{% include "assignments/pool_concept/tasks/factory_method.md" %}}
+{{% include "assignments/pool_concept/tasks/strategy_pattern.md" %}}
 
-**Punkte**: Je 2P für das Erzeugen eines passenden neuen Computers und für
-das korrekte Umsetzen des Factory-Method-Patterns.
+**Punkte**: 1P für die Liste der Anforderungen, 1P für das UML-Diagramm, 2P für die Implementierung
+und die Gedanken zum manuellen Test des Spiels (ohne JUnit).
