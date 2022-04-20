@@ -9,10 +9,19 @@ readings:
   - key: "Martin2009"
   - key: "Fowler2011"
 tldr: |
-  TODO
+  Um Code mit JUnit automatisiert testen zu können, muss beim Software-Entwurf die Testbarkeit
+  mitgedacht werden. Besonders einfach lassen sich Methoden testen, die das Ergebnis ihrer
+  Berechnung als Rückgabewert zurückliefern und die keine Seiteneffekte aufweisen. Wenn Methoden
+  den inneren Zustand des eigenen Objekts ändern, kann man dies nur indirekt über den Aufruf
+  anderer Methoden testen. Je weniger eine Methode berechnet, um so einfacher lassen sich diese
+  Berechnungen durch JUnit-Tests überprüfen.
 
-  Test-Driven Development (_TDD_)
-
+  Mit "Test-Driven Development" (_TDD_) steht eine Methode bereit, wo zuerst ein Test geschrieben
+  wird und erst danach der Code. Dabei wird der Code nur so weit implementiert, bis der Test
+  "grün" ist. Danach erfolgt ggf. eine Umstrukturierung der inneren Code-Strukturen (aber kein
+  Hinzufügen von Funktionalität), und der Zyklus kann erneut beginnen: Test, Code, Refactoring.
+  Dies führt dazu, dass man nicht "vergessen" kann, Tests zu schreiben. Außerdem erhält man
+  häufig den minimal nötigen Code, da ja immer nur die Tests erfüllt werden sollen.
 outcomes:
   - k3: "Einsatz von TDD bei der Softwareentwicklung"
 quizzes:
