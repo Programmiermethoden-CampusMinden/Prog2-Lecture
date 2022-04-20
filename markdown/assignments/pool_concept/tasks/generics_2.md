@@ -5,7 +5,7 @@ man einen Zoo modellieren kann.
 
 2.  Betrachten Sie das nicht-generische Interface `IGehege` in den Vorgaben. Arbeiten
     Sie dieses Interface in eine generische Klasse `Gehege` mit einer Typ-Variablen um
-    (erstellen Sie ein neue generische Klasse mit den Methoden aus dem Interface).
+    (erstellen Sie eine neue generische Klasse mit den Methoden aus dem Interface).
     Stellen Sie durch geeignete Beschränkung der Typ-Variablen sicher, dass nur Gehege
     mit von `Tier` abgeleiteten Typen gebildet werden können. Jedes einzelne Tier im
     Gehege kann genau einmal vorkommen.
