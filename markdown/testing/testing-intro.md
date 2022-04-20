@@ -391,4 +391,9 @@ import static packageName.className.*;
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
+
+\bigskip
+
+### Exceptions
+*   Citation "_Always code as if ..._": [John F. Woods](https://groups.google.com/g/comp.lang.c++/c/rYCO5yn4lXw/m/oITtSkZOtoUJ)
 :::
