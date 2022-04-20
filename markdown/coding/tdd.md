@@ -16,6 +16,12 @@ tldr: |
   anderer Methoden testen. Je weniger eine Methode berechnet, um so einfacher lassen sich diese
   Berechnungen durch JUnit-Tests überprüfen.
 
+  Auch für (JUnit-) Tests gelten die üblichen Regeln des Software-Entwurfs. Insbesondere sollte
+  sich ein Testfall auf einen Aspekt konzentrieren und möglichst schnell und möglichst unabhängig
+  von Datenbank- oder Internetverbindungen o.ä. ausführen lassen. Nur wenn die Testfälle nicht
+  viel Zeit bei der Ausführung benötigen, wird man sie als Entwickler häufiger nach Änderungen
+  laufen lassen ...
+
   Mit "Test-Driven Development" (_TDD_) steht eine Methode bereit, wo zuerst ein Test geschrieben
   wird und erst danach der Code. Dabei wird der Code nur so weit implementiert, bis der Test
   "grün" ist. Danach erfolgt ggf. eine Umstrukturierung der inneren Code-Strukturen (aber kein
