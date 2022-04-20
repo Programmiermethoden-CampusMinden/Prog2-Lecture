@@ -196,7 +196,7 @@ public void ausgabe(...) {
 _Anmerkung_: Jeder Zyklus sollte sehr kurz sein!
 [=> Pro Stunde schafft man i.d.R. viele Rot/Grün/Refactoring-Zyklen!]{.notes}
 
-[Demo: Taschenrechner (Addition zweier Ints)]{.bsp}
+[Demo: Validierung von Passwörtern]{.bsp}
 
 ::: notes
 ### Vorteile bei konsequenter Anwendung von TDD
