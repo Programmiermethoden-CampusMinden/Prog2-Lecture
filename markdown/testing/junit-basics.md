@@ -19,7 +19,7 @@ tldr: |
   erfüllt sind - anderenfalls wird der Testfall dann übersprungen.
 
   Mit Hilfe von `@Before` und `@After` können Methoden gekennzeichnet werden, die jeweils vor jeder
-  Testmethoder und nach jeder Testmethode aufgerufen werden. Damit kann man seine Testumgebung auf-
+  Testmethode und nach jeder Testmethode aufgerufen werden. Damit kann man seine Testumgebung auf-
   und auch wieder abbauen (JUnit 4).
 
   Erwartete Exceptions lassen sich in JUnit 4 mit einem Parameter `expected` in der Annotation `@Test`
@@ -30,8 +30,8 @@ outcomes:
   - k3: "Prüfung von Exceptions"
   - k3: "Aufbau von Testsuiten mit JUnit"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1070318&client_id=FH-Bielefeld"
+    name: "Quiz JUnit-Basics (ILIAS)"
 assignments:
   - topic: sheet04
 youtube:

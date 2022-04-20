@@ -19,7 +19,7 @@ tldr: |
   JUnit ist ein Java-Framework, mit dem Unit-Tests (aber auch andere Teststufen) implementiert werden
   können. In JUnit 4 und 5 zeichnet man eine Testmethode mit Hilfe der Annotation `@Test` an der
   entsprechenden Methode aus. Dadurch kann man Produktiv- und Test-Code prinzipiell mischen; Best
-  Practice ist aber das Anlegen eines weiteren Ordners `test/` und das Spiegeln der Packagestrukturen.
+  Practice ist aber das Anlegen eines weiteren Ordners `test/` und das Spiegeln der Package-Strukturen.
   Für die zu testende Klasse wird eine korrespondierende Testklasse mit dem Suffix "Test" (Konvention)
   angelegt und dort die Testmethoden implementiert. Der IDE muss der neue `test/`-Ordner noch als
   Ordner für Sourcen bzw. Tests bekannt gemacht werden. In den Testmethoden baut man den Test auf,
@@ -35,8 +35,8 @@ outcomes:
   - k2: "Ursachen von Softwarefehlern"
   - k3: "Aufbauen von Tests mit JUnit 4 und 5 unter Nutzung der Annotation `@Test`"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1070318&client_id=FH-Bielefeld"
+    name: "Quiz JUnit-Basics -- nur erster Teil (ILIAS)"
 assignments:
   - topic: sheet04
 youtube:
