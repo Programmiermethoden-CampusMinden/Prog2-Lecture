@@ -36,7 +36,7 @@ fhmedia:
 :::
 
 ```java
-public void Ausgabe(...) {
+public void ausgabe(...) {
     ... // mache komplexe Berechnungen
     ... // berechne nette Formatierungen
     System.out.println(...);
@@ -59,7 +59,7 @@ private A berechneA(...)  {
 private String formatiereA(A a) {
     return ...;  // berechne nette Formatierungen
 }
-public void Ausgabe(...) {
+public void ausgabe(...) {
     System.out.println(formatiereA(berechneA(...)));
 }
 ```
