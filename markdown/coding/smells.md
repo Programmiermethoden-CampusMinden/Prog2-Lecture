@@ -31,14 +31,10 @@ quizzes:
 assignments:
   - topic: sheet05
 youtube:
-  - link: ""
+  - link: "https://youtu.be/ALDuLxm71tg"
     name: "VL Code Smells"
-  - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/9d53c3536ada817eee76c9f6e8f7838bfb2308a79d220b8dab0a3cf339f90c52e28ae25e85a652d6da31c8f38c581463bc1679fa5f9cc376115558f7fee41217"
     name: "VL Code Smells"
 ---
 
