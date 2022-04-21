@@ -1,7 +1,6 @@
 ---
 title: "Lerntagebuch Beispiel"
-author:
-- "André Matutat"
+author: "André Matutat"
 hidden: true
 ---
 
