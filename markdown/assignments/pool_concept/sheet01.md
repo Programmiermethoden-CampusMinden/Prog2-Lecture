@@ -21,6 +21,8 @@ Schritten in eine Textdatei und geben Sie diese als Teil der Lösung im Zip-Arch
 samt Workingcopy fügen Sie ebenfalls dem Zip-Archiv hinzu. Im Praktikum demonstrieren Sie den Umgang mit
 den Schritten noch einmal live. Für Schritt (11) - Git in der IDE - reicht die Demonstration im Praktikum.
 
+**Punkte**: Je 1P für je 3 Teilaufgaben (2 ... 10) sowie 1P für Teilaufgabe (11)
+
 
 ## Git Branches (4 Punkte)
 
@@ -30,6 +32,8 @@ Abgabe: Schreiben Sie Ihre Schritte, die Antworten auf die Fragen und Ihre Beoba
 Schritten in eine Textdatei und geben Sie diese als Teil der Lösung im Zip-Archiv ab. Das erstellte Repo
 samt Workingcopy fügen Sie ebenfalls dem Zip-Archiv hinzu. Im Praktikum demonstrieren Sie den Umgang mit
 den Schritten noch einmal live.
+
+**Punkte**: Je 2P für die beiden Teilaufgaben
 
 
 ## Git Remotes: Vorbereitung Repo für die Abgabe (2 Punkte)
@@ -56,3 +60,5 @@ privaten Git-Repository bearbeiten.
 
 Abgabe: Geben Sie die Textdatei aus Schritt (4) als Teil der Lösung im Zip-Archiv ab. Im Praktikum zeigen Sie
 den Umgang mit Ihrem Repo und Ihrer Workingcopy noch einmal live.
+
+**Punkte**: Je 1P für Repo auf Server einrichten und lokale Workingcopy einrichten
