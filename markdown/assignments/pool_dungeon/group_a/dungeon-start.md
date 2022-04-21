@@ -7,6 +7,14 @@ weight: 1
 hidden: true
 ---
 
+
+**Erinnerung**: Für alle Aufgaben aus dem `[Dungeon-Pool]({{< ref "/assignments/pool_dungeon" >}})`{=markdown}
+ist stets ein [Lerntagebuch](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/org/lerntagebuch.md)
+zu führen und mit der Lösung abzugeben (vgl.
+`["Note und Credits > Hinweise zum Praktikum > Lerntagebuch"]({{< ref "/org/grading" >}})`{=markdown}, dort
+finden Sie auch die zu nutzende Markdown-Vorlage und zusätzlich ein ausgefülltes Beispiel).
+
+
 ## Ziel
 
 Am Ende dieser Aufgaben sollen Sie ein lauffähiges Gerüst für Ihr Dungeon-Spiel aufgesetzt haben.
