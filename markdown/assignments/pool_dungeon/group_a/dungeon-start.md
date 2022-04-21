@@ -31,7 +31,7 @@ Implementieren Sie mithilfe des [Quickstart-Guides](https://github.com/PM-Dungeo
 
 Suchen Sie sich passende Texturen für Ihr Spiel heraus. Sie benötigen vor allem Texturen für Spielfiguren, Monster und Items. Achten Sie bei Ihrer Auswahl auf passende Größenverhältnisse. Die in der Dokumentation verwendeten Texturen finden Sie [hier](https://0x72.itch.io/dungeontileset-ii).
 
-*Tipp*: Oft finden Sie nur Animationen für eine Laufrichtung. Spiegeln Sie diese mithilfe von externen (Bildbearbeitungs-) Programmen, um aus einer rechtslaufenden Animation eine linkslaufende zu machen.
+_Tipp_: Oft finden Sie nur Animationen für eine Laufrichtung. Spiegeln Sie diese mithilfe von externen (Bildbearbeitungs-) Programmen, um aus einer rechtslaufenden Animation eine linkslaufende zu machen.
 
 **Punkte**: 3P
 
