@@ -1,7 +1,6 @@
 ---
 title: "Lerntagebuch Beispiel"
-author:
-- "André Matutat"
+author: "André Matutat"
 hidden: true
 ---
 
@@ -71,7 +70,7 @@ verwaltet werden, daher implementiert die Klasse auch das Interface `IEntity`.
 
 ## Daraus ergibt sich folgendes UML:
 
-![Klassendiagramm der angedachten Lösung](figs/lerntagebuch/tagebuch_uml.png)
+![Klassendiagramm der angedachten Lösung](images/tagebuch_uml.png)
 
 ## Beschreibung der konkreten Monster:
 
@@ -121,5 +120,5 @@ sich auch durch Wände. Die Lösung ist, in der `move`-Methode genau wie beim He
 Kollisionsabfrage durchzuführen. Ist das Feld unbetretbar, bewegt sich das Monster
 dadurch in diesem Frame nicht.
 
-Durch unsere Monster-Basislasse können wir auch in Zukunft schnell und einfach neue
+Durch unsere Monster-Basisklasse können wir auch in Zukunft schnell und einfach neue
 Monster im erstellen (Geister, welche durch Wände gehen können?!).
