@@ -15,3 +15,23 @@ sketch: true
 besprochen und sind ab diesem Blatt im Praktikum einzusetzen (vgl.
 `["Note und Credits > Hinweise zum Praktikum > Punkte und formale Abzüge"]({{< ref "/org/grading" >}})`{=markdown}).
 
+
+## XXX (6 Punkte)
+
+{{% include "assignments/pool_concept/tasks/XXX.md" %}}
+
+**Punkte**: Je 2P für XXX
+
+
+## XXX (6 Punkte)
+
+{{% include "assignments/pool_concept/tasks/XXX.md" %}}
+
+**Punkte**: Je 2P für XXX
+
+
+## XXX (6 Punkte)
+
+{{% include "assignments/pool_concept/tasks/XXX.md" %}}
+
+**Punkte**: Je 2P für XXX
