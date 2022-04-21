@@ -34,12 +34,12 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1068951&client_id=FH-Bielefeld"
     name: "Quiz TDD (ILIAS)"
 youtube:
-  - link: ""
+  - link: "https://youtu.be/oqiESd5N1lY"
     name: "VL TDD"
-  - link: ""
+  - link: "https://youtu.be/4NAcu8I8fJk"
     name: "Demo TDD"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/7001d744808baccc1e1e8ba3194d94fe49f56d92bffbed3f327bb75ad1a872b9356d71c2419c08b2b4950546468ab0a30c31a86fa2654419e5c5c118368415d8"
     name: "VL TDD"
 ---
 
