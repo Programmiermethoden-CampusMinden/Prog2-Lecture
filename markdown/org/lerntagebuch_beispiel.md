@@ -121,5 +121,5 @@ sich auch durch Wände. Die Lösung ist, in der `move`-Methode genau wie beim He
 Kollisionsabfrage durchzuführen. Ist das Feld unbetretbar, bewegt sich das Monster
 dadurch in diesem Frame nicht.
 
-Durch unsere Monster-Basislasse können wir auch in Zukunft schnell und einfach neue
+Durch unsere Monster-Basisklasse können wir auch in Zukunft schnell und einfach neue
 Monster im erstellen (Geister, welche durch Wände gehen können?!).
