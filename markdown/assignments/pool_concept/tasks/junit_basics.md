@@ -25,11 +25,11 @@ erwartet funktioniert.
     darf nur noch das verbleibende Element enthalten.
 
 5.  Schreiben Sie eine Testmethode `testRemoveIndex()`.
-    Entfernen Sie ein vorhandenes Element über dessen _Index_ und prüfen Sie
-    mit einer passenden `assert*`-Methode, ob die Liste nach dem Entfernen
-    den gewünschten Zustand hat: Die Liste darf nur noch das verbleibende
-    Element enthalten. (Nutzen Sie zum Entfernen die `remove(int)`-Methode
-    der Liste.)
+    Entfernen Sie ein vorhandenes Element über dessen _Index_ in der Liste
+    und prüfen Sie mit einer passenden `assert*`-Methode, ob die Liste nach
+    dem Entfernen den gewünschten Zustand hat: Die Liste darf nur noch das
+    verbleibende Element enthalten.
+    (Nutzen Sie zum Entfernen die `remove(int)`-Methode der Liste.)
 
 6.  Schreiben Sie zusätzlich einen **parametrisierten JUnit-Test** für die
     folgende Klasse:
