@@ -19,9 +19,13 @@ finden Sie auch die zu nutzende Markdown-Vorlage und zusätzlich ein ausgefüllt
 
 Am Ende dieser Aufgaben sollen Sie ein lauffähiges Gerüst für Ihr Dungeon-Spiel aufgesetzt haben.
 
+
 ## Dungeon
 
 Implementieren Sie mithilfe des [Quickstart-Guides](https://github.com/PM-Dungeon/dungeon-starter/blob/master/documentation/quickstart_de.md) Ihren ersten Dungeon und Ihren Helden.
+
+**Punkte**: 3P
+
 
 ## Texturen
 
@@ -29,7 +33,11 @@ Suchen Sie sich passende Texturen für Ihr Spiel heraus. Sie benötigen vor alle
 
 *Tipp*: Oft finden Sie nur Animationen für eine Laufrichtung. Spiegeln Sie diese mithilfe von externen (Bildbearbeitungs-) Programmen, um aus einer rechtslaufenden Animation eine linkslaufende zu machen.
 
+**Punkte**: 3P
+
 
 ## Animationen
 
 Erweitern Sie Ihren Helden um weitere Animationen: Fügen Sie jeweils eine Animation hinzu, die abgespielt wird, wenn sich der Held nach links bzw. rechts bewegt. Es soll automatisch zwischen Lauf- und Idle-Animation gewechselt werden.
+
+**Punkte**: 4P
