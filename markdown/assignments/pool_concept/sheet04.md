@@ -26,7 +26,7 @@ besprochen und sind ab diesem Blatt im Praktikum einzusetzen (vgl.
 
 {{% include "assignments/pool_concept/tasks/junit_advanced_rsv.md" %}}
 
-**Punkte**: 2P für ÄK-Bildung, 1P GW-Analyse, 2P TF-Erstellung
+**Punkte**: 2P für ÄK-Bildung, 1P GW-Analyse, 1P TF-Erstellung, 1P Umsetzung als JUnit-Tests
 
 
 ## Buildscripte: Gradle (2 Punkte)
