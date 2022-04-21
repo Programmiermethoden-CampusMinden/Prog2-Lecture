@@ -16,7 +16,7 @@ public class MitgliederVerwaltung {
      */
     public boolean testBeitritt(int alter, int motivation) {
         if (alter < 0 || alter > 99 || motivation < 0 || motivation > 10) {
-            throw new IllegalArgumentException("Das Alter und die Motivation ungültig.");
+            throw new IllegalArgumentException("Das Alter und/oder die Motivation ist ungültig.");
         }
         if (alter < 16) {
             return false;
