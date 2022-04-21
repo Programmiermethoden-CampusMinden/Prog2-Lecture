@@ -33,4 +33,4 @@ besprochen und sind ab diesem Blatt im Praktikum einzusetzen (vgl.
 
 {{% include "assignments/pool_concept/tasks/XXX.md" %}}
 
-**Punkte**: 1P für Erklärung der Elemente, 1P für Erklärung Plugin "java" samt Tasks
+**Punkte**: 1P für Erklärung der Elemente, 1P für Erklärung Plugin "java" samt Tasks im Detail
