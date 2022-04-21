@@ -47,6 +47,7 @@
   lecture:
     - topic: "/building/gradle"
     - topic: "/building/ci"
+    - topic: "/testing/testing-intro"
     - topic: "/testing/junit-basics"
     - topic: "/testing/testcases"
     - topic: "/coding/tdd"
