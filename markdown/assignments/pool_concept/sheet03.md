@@ -19,7 +19,7 @@ hidden: true
 
 {{% include "assignments/pool_concept/tasks/generics2.md" %}}
 
-**Punkte**: TODO
+**Punkte**: Je 1P für jede der vier Teilaufgaben.
 
 
 ## Entwurfsmuster "Strategy Pattern" (4 Punkte)
