@@ -6,11 +6,11 @@ erwartet funktioniert.
     (`ArrayList<String>`) und Attribute für die Elemente (`String`), die
     eingefügt und geprüft werden sollen.
 
-2.  Fügen Sie eine `init()`- und `tearDown()`-Methode zu Ihrer Testklasse hinzu.
-    Die `init()`-Methode muss vor jedem Testfall ausgeführt werden, die
+2.  Fügen Sie eine `setup()`- und `tearDown()`-Methode zu Ihrer Testklasse hinzu.
+    Die `setup()`-Methode muss vor jedem Testfall ausgeführt werden, die
     `tearDown()`-Methode muss nach jedem Testfall ausgeführt werden.
 
-3.  Initialisieren Sie in der `init()`-Methode die Liste und fügen Sie zwei
+3.  Initialisieren Sie in der `setup()`-Methode die Liste und fügen Sie zwei
     Elemente ein. Stellen Sie mit einer passenden `assume*`-Methode sicher,
     dass die Liste genau diese beiden Elemente enthält.
 
