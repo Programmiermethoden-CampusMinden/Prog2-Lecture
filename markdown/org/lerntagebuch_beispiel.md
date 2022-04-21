@@ -71,7 +71,7 @@ verwaltet werden, daher implementiert die Klasse auch das Interface `IEntity`.
 
 ## Daraus ergibt sich folgendes UML:
 
-![Klassendiagramm der angedachten Lösung](figs/lerntagebuch/tagebuch_uml.png)
+![](images/tagebuch_uml.png){width="80%"}
 
 ## Beschreibung der konkreten Monster:
 
