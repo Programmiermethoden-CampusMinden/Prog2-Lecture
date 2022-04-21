@@ -19,7 +19,7 @@ im ILIAS hochzuladen. Beachten Sie die Deadline (vgl. `[Fahrplan]({{< ref "/org/
 Abgabe: Schreiben Sie Ihre Schritte, die Antworten auf die Fragen und Ihre Beobachtungen zu den einzelnen
 Schritten in eine Textdatei und geben Sie diese als Teil der Lösung im Zip-Archiv ab. Das erstellte Repo
 samt Workingcopy fügen Sie ebenfalls dem Zip-Archiv hinzu. Im Praktikum demonstrieren Sie den Umgang mit
-den Schritten noch einmal live.
+den Schritten noch einmal live. Für Schritt (11) - Git in der IDE - reicht die Demonstration im Praktikum.
 
 
 ## Git Branches (4 Punkte)
