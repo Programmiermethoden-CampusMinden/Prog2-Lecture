@@ -2,10 +2,6 @@ Schreiben Sie eine JUnit-Testklasse (JUnit 4.x oder 5.x) und testen Sie eine
 `ArrayList<String>`. Prüfen Sie dabei, ob das Einfügen und Entfernen wie
 erwartet funktioniert.
 
-1.  Deklarieren Sie in der Testklasse ein Attribut für die zu testende Liste
-    (`ArrayList<String>`) und Attribute für die Elemente (`String`), die
-    eingefügt und geprüft werden sollen.
-
 2.  Fügen Sie eine `setUp()`- und `tearDown()`-Methode zu Ihrer Testklasse hinzu.
     Die `setUp()`-Methode muss vor jedem Testfall ausgeführt werden, die
     `tearDown()`-Methode muss nach jedem Testfall ausgeführt werden.
