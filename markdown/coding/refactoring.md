@@ -130,7 +130,7 @@ sinnvoll ist.
 \smallskip
 
 2.  **Coding Conventions** einhalten
-    *   Sourcecode formatieren
+    *   Sourcecode formatieren (lassen)
 
 \bigskip
 \smallskip
@@ -138,14 +138,15 @@ sinnvoll ist.
 3.  Haben Sie die [fragliche Codestelle auch wirklich verstanden]{.alert}?!
 
 
-::: notes
-### Hinweise zum Vorgehen beim Refactoring:
+## Vorgehen beim Refactoring
 
 *   Kleine Schritte: immer nur **eine** Änderung zu einer Zeit
-*   Nach jedem Refactoring-Schritt Testsuite laufen lassen
-    *   Nächster Refactoring-Schritt erst, wenn alle Tests wieder "grün"
+
+*   Nach **jedem** Refactoring-Schritt **Testsuite** laufen lassen
+
+    => Nächster Refactoring-Schritt erst, wenn alle Tests wieder "grün"
+
 *   Versionskontrolle nutzen: **Jeden** Schritt **einzeln** committen
-:::
 
 
 ::: notes
