@@ -5,7 +5,6 @@ author: "André Matutat (FH Bielefeld)"
 points: 10
 weight: 5
 hidden: true
-sketch: true
 ---
 
 
