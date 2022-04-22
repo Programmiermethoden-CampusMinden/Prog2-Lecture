@@ -121,30 +121,22 @@ sinnvoll ist.
 :::
 
 
-## Und los ... Standardvorgehen
-
-\bigskip
+## Bevor Sie loslegen ...
 
 1.  **Unit Tests** schreiben
     *   Normale und ungültige Eingaben
     *   Rand- und Spezialfälle
 
+\smallskip
+
 2.  **Coding Conventions** einhalten
     *   Sourcecode formatieren
-    *   Umbenennungen (Namenskonventionen, Verständlichkeit)
-
-3.  **Clean up**
-    *   Unbenutzte Variablen/Methoden/... raus
-    *   Alte/falsche Kommentare raus
-    *   Duplizierten Code entfernen
-    *   Bedingungen (zb. in `if`) vereinfachen
-    *   Bei Bedarf erklärende Kommentare
-
-4.  **Refactoring-Katalog** anwenden [(Das ist das eigentliche Refactoring!)]{.notes}
 
 \bigskip
+\smallskip
 
-Letzte Frage: Haben Sie die [fragliche Codestelle auch wirklich verstanden]{.alert}?!
+3.  Haben Sie die [fragliche Codestelle auch wirklich verstanden]{.alert}?!
+
 
 ::: notes
 ### Hinweise zum Vorgehen beim Refactoring:
@@ -154,8 +146,6 @@ Letzte Frage: Haben Sie die [fragliche Codestelle auch wirklich verstanden]{.ale
     *   Nächster Refactoring-Schritt erst, wenn alle Tests wieder "grün"
 *   Versionskontrolle nutzen: **Jeden** Schritt **einzeln** committen
 :::
-
-[Beispiel: refactoring.*]{.bsp}
 
 
 ::: notes
