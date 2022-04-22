@@ -73,10 +73,9 @@ fhmedia:
 
 ## Anzeichen, dass Refactoring jetzt eine gute Idee wäre
 
-*   Code "stinkt" (zeigt/enthält *Bad Smells*)
+*   Code "stinkt" (zeigt/enthält _Code Smells_)
 
 \smallskip
-
 
 *   [Nach]{.notes} [@Passig2013]:
     *   Schwer erklärbarer Code
@@ -450,5 +449,7 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 \bigskip
 
 ### Exceptions
-*   TODO (what, where, license)
+*   Citation "_Refactoring ist, wenn ..._": Andreas Bogk, in: Lutz Donnerhacke: "Fachbegriffe der Informatik"  [(altlasten.lutz.donnerhacke.de)](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html)
+*   Citation "_Refactoring is a change ..._": [@Fowler2011]
+*   Citation "_Rule of Three_": [@Fowler2011]
 :::
