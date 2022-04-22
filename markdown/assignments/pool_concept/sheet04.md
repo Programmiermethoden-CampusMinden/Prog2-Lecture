@@ -31,6 +31,6 @@ besprochen und sind ab diesem Blatt im Praktikum einzusetzen (vgl.
 
 ## Buildscripte: Gradle (2 Punkte)
 
-{{% include "assignments/pool_concept/tasks/XXX.md" %}}
+{{% include "assignments/pool_concept/tasks/gradle.md" %}}
 
 **Punkte**: 1P für Erklärung der Elemente, 1P für Erklärung Plugin "java" samt Tasks im Detail
