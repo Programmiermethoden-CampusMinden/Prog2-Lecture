@@ -150,36 +150,6 @@ sinnvoll ist.
 
 
 ::: notes
-## Formatieren Sie Ihren Code mit der IDE
-
-*   Eclipse: "`Project > Properties > Java Code Style > Formatter`":
-    Coding-Style einstellen/einrichten
-*   Code markieren, "`Source > Format`"
-*   Komplettes Aufräumen: "`Source > Clean Up`" (Formatierung, Importe, Annotationen, ...)
-    Kann auch so eingestellt werden, dass ein Clean Up immer beim Speichern
-    ausgeführt wird!
-
-IntelliJ verfügt über ähnliche Fähigkeiten.
-
-
-Wer direkt den [Google Java Style](https://google.github.io/styleguide/javaguide.html) nutzt, kann auch den dazu
-passenden Formatter von Google einsetzen: [google-java-format](https://github.com/google/google-java-format).
-Diesen kann man entweder als Plugin für IntelliJ/Eclipse einsetzen oder als Stand-alone-Tool
-(Kommandozeile oder Build-Skripte) aufrufen. Wenn man sich noch einen entsprechenden
-Git-Hook definiert, wird vor jedem Commit der Code entsprechend den Richtlinien formatiert :)
-
-**Achtung**: Zumindest in Eclipse gibt es mehrere Stellen, wo ein Code-Style eingestellt
-werden kann (Clean Up, Formatter/Profile, Formatter/Implementation). Diese sollten dann jeweils
-auf den selben Style eingestellt werden, sonst gibt es u.U. lustige Effekte, da beim Speichern
-ein anderer Style angewendet wird als beim Clean Up oder beim Format Source ... Analog sollte
-man auch die entsprechenden CheckStyle-Regeln passend einstellen, sonst bekommt man Warnungen
-angezeigt, die man durch ein automatisches Formatieren nicht beheben kann.
-
-[Beispiel: Konfiguration Formatter (`Source > Format`, `Source > Clean Up`)]{.bsp}
-:::
-
-
-::: notes
 ## Refactoring-Methode: Rename Method/Class/Field
 
 ### Motivation
