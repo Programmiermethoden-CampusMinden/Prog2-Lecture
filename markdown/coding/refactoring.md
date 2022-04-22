@@ -76,41 +76,32 @@ fhmedia:
 
 \smallskip
 
-*   [Nach]{.notes} [@Passig2013]:
-    *   Schwer erklärbarer Code
+*   Schwer erklärbarer Code
 
-        ::: notes
-        Könnten Sie Ihren Code ohne Vorbereitung in der Abgabe erklären?
-        In einer Minute? In fünf Minuten? In zehn? Gar nicht? In den letzten beiden
-        Fällen sollten Sie definitiv über eine Vereinfachung nachdenken.
-        :::
+    ::: notes
+    Könnten Sie Ihren Code ohne Vorbereitung in der Abgabe erklären?
+    In einer Minute? In fünf Minuten? In zehn? Gar nicht? In den letzten beiden
+    Fällen sollten Sie definitiv über eine Vereinfachung der Strukturen nachdenken.
+    :::
 
-    *   Verständnisprobleme, Erweiterungen
+*   Verständnisprobleme, Erweiterungen
 
-        ::: notes
-        Sie grübeln in der Abgabe, was Ihr Code machen sollte? Sie überlegen,
-        was Ihr Code bedeutet, um herauszufinden, wo Sie die neue Funktionalität
-        anbauen können? Nutzen Sie die (neuen) Erkenntnisse, um den Code leichter
-        verständlich zu gestalten.
-        :::
+    ::: notes
+    Sie grübeln in der Abgabe, was Ihr Code machen sollte? Sie überlegen,
+    was Ihr Code bedeutet, um herauszufinden, wo Sie die neue Funktionalität
+    anbauen können? Nutzen Sie die (neuen) Erkenntnisse, um den Code leichter
+    verständlich zu gestalten.
+    :::
 
-    *   Schlechte Nachbarschaft
+*   Falsche Orte
 
-        ::: notes
-        Schlechter Code wird meist von schlechtem Code aufgerufen, da vom selben
-        Autor zur selben Zeit geschrieben. Gilt übrigens auch für Fehler: Wo man
-        einen Fehler findet, findet man oft noch mehr.
-        :::
+    ::: notes
+    Sie suchen nach Codeteilen, finden diese aber nicht, da die sich in
+    anderen (falschen?) Stellen/Klassen befinden. Aufräumen: Oft sind die
+    intuitiven Erwartungen nicht schlecht.
+    :::
 
-    *   Falsche Orte
-
-        ::: notes
-        Sie suchen nach Codeteilen, finden diese aber nicht, da die sich in
-        anderen (falschen?) Stellen/Klassen befinden. Aufräumen: Oft sind die
-        intuitiven Erwartungen nicht schlecht.
-        :::
-
-\smallskip
+\bigskip
 
 *   [@Fowler2011]: "Rule of Three"
 
@@ -121,6 +112,12 @@ fhmedia:
     werden Sie sich vermutlich noch öfter darüber ärgern. Jetzt ist der
     Zeitpunkt für eine Verbesserung.
     :::
+
+::: notes
+Schauen Sie sich die entsprechenden Kapitel in [@Passig2013] und [@Fowler2011]
+an, dort finden Sie noch weitere Anhaltspunkte, ob und wann Refactoring sinnvoll
+ist.
+:::
 
 
 ## Und los ... Standardvorgehen
