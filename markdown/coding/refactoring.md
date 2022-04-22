@@ -74,49 +74,50 @@ fhmedia:
 
 *   Code "stinkt" (zeigt/enthält _Code Smells_)
 
-\smallskip
+\bigskip
 
 *   Schwer erklärbarer Code
 
     ::: notes
     Könnten Sie Ihren Code ohne Vorbereitung in der Abgabe erklären?
-    In einer Minute? In fünf Minuten? In zehn? Gar nicht? In den letzten beiden
-    Fällen sollten Sie definitiv über eine Vereinfachung der Strukturen nachdenken.
+    In einer Minute? In fünf Minuten? In zehn? Gar nicht?
+
+    In den letzten beiden Fällen sollten Sie definitiv über eine
+    Vereinfachung der Strukturen nachdenken.
     :::
 
 *   Verständnisprobleme, Erweiterungen
 
     ::: notes
-    Sie grübeln in der Abgabe, was Ihr Code machen sollte? Sie überlegen,
-    was Ihr Code bedeutet, um herauszufinden, wo Sie die neue Funktionalität
-    anbauen können? Nutzen Sie die (neuen) Erkenntnisse, um den Code leichter
+    Sie grübeln in der Abgabe, was Ihr Code machen sollte?
+
+    Sie überlegen, was Ihr Code bedeutet, um herauszufinden, wo Sie
+    die neue Funktionalität anbauen können?
+
+    Sie suchen nach Codeteilen, finden diese aber nicht, da die sich
+    in anderen (falschen?) Stellen/Klassen befinden?
+
+    Nutzen Sie die (neuen) Erkenntnisse, um den Code leichter
     verständlich zu gestalten.
     :::
 
-*   Falsche Orte
-
-    ::: notes
-    Sie suchen nach Codeteilen, finden diese aber nicht, da die sich in
-    anderen (falschen?) Stellen/Klassen befinden. Aufräumen: Oft sind die
-    intuitiven Erwartungen nicht schlecht.
-    :::
-
 \bigskip
+\vfill
 
-*   [@Fowler2011]: "Rule of Three"
-
-    > "Three strikes and you refactor."
-
-    ::: notes
-    Wenn Sie sich zum dritten Mal über eine suboptimale Lösung ärgern, dann
-    werden Sie sich vermutlich noch öfter darüber ärgern. Jetzt ist der
-    Zeitpunkt für eine Verbesserung.
-    :::
+::: cbox
+> "Three strikes and you refactor."
+>
+> \hfill\ [Quelle: [@Fowler2011]: "Rule of Three"]{.origin}
+:::
 
 ::: notes
+Wenn Sie sich zum dritten Mal über eine suboptimale Lösung ärgern, dann
+werden Sie sich vermutlich noch öfter darüber ärgern. Jetzt ist der
+Zeitpunkt für eine Verbesserung.
+
 Schauen Sie sich die entsprechenden Kapitel in [@Passig2013] und [@Fowler2011]
-an, dort finden Sie noch weitere Anhaltspunkte, ob und wann Refactoring sinnvoll
-ist.
+an, dort finden Sie noch viele weitere Anhaltspunkte, ob und wann Refactoring
+sinnvoll ist.
 :::
 
 
