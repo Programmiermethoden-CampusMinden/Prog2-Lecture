@@ -150,8 +150,25 @@ sinnvoll ist.
 
 
 ::: notes
+## Überblick über die Methoden des Refactorings
+
+Die Refactoring-Methoden sind nicht einheitlich definiert, es existiert ein großer
+und uneinheitlicher "Katalog" an möglichen Schritten. Teilweise benennt jede IDE
+die Schritte etwas anders, teilweise werden unterschiedliche Möglichkeiten angeboten.
+
+Zu den am häufigsten genutzten Methoden zählen
+
+*   Rename Method/Class/Field
+*   Encapsulate Field
+*   Extract Method/Class
+*   Move Method
+*   Pull Up, Push Down (Field, Method)
+:::
+
+
 ## Refactoring-Methode: Rename Method/Class/Field
 
+::: notes
 ### Motivation
 
 Name einer Methode/Klasse/Attributs erklärt nicht ihren Zweck.
@@ -165,22 +182,25 @@ Name selektieren, "`Refactor > Rename`"
 Aufrufer? Superklassen?
 
 ### Beispiel
+:::
+
+**Vorher**
 
 ```java
 public String getTeN() {}
 ```
 
-wird zu
+**Nachher**
 
 ```java
 public String getTelefonNummer() {}
 ```
-:::
 
 
-::: notes
+
 ## Refactoring-Methode: Encapsulate Field
 
+::: notes
 ### Motivation
 
 Sichtbarkeit von Attributen reduzieren.
@@ -194,6 +214,9 @@ Attribut selektieren, "`Refactor > Encapsulate Field`"
 Superklassen? Referenzen? (Neue) JUnit-Tests?
 
 ### Beispiel
+:::
+
+**Vorher**
 
 ```java
 int cps;
@@ -203,7 +226,7 @@ public void printDetails() {
 }
 ```
 
-wird zu
+**Nachher**
 
 ```java
 private int cps;
@@ -215,12 +238,11 @@ public void printDetails() {
     System.out.println("credits: "+getCps());
 }
 ```
-:::
 
 
-::: notes
 ## Refactoring-Methode: Extract Method/Class
 
+::: notes
 ### Motivation
 
 *   Codefragment stellt eigenständige Methode dar
@@ -243,6 +265,9 @@ Codefragment selektieren, "`Refactor > Extract Method`" bzw. "`Refactor > Extrac
         und Zuweisung bei Aufruf; evtl. neue Typen nötig!
 
 ### Beispiel
+:::
+
+**Vorher**
 
 ```java
 public void printInfos() {
@@ -253,7 +278,7 @@ public void printInfos() {
 }
 ```
 
-wird zu
+**Nachher**
 
 ```java
 public void printInfos() {
@@ -265,12 +290,11 @@ private void printDetails() {
     System.out.println("credits: "+cps);
 }
 ```
-:::
 
 
-::: notes
 ## Refactoring-Methode: Move Method
 
+::: notes
 ### Motivation
 
 Methode nutzt (oder wird genutzt von) mehr Eigenschaften einer
@@ -290,6 +314,9 @@ Methode selektieren, "`Refactor > Move`"
     und Zuweisung bei Aufruf; evtl. neue Typen nötig!
 
 ### Beispiel
+:::
+
+**Vorher**
 
 ```java
 public class Kurs {
@@ -309,7 +336,7 @@ public class Studi extends Person {
 }
 ```
 
-wird zu
+**Nachher**
 
 ```java
 public class Kurs {
@@ -332,12 +359,11 @@ public class Studi extends Person {
     }
 }
 ```
-:::
 
 
-::: notes
 ## Refactoring-Methode: Pull Up, Push Down (Field, Method)
 
+::: notes
 ### Motivation
 
 *   Attribut/Methode nur für die Oberklasse relevant: **Pull Up**
@@ -353,6 +379,9 @@ Name selektieren, "`Refactor > Pull Up`" oder "`Refactor > Push Down`"
 Referenzen/Aufrufer? JUnit-Tests?
 
 ### Beispiel
+:::
+
+**Vorher**
 
 ```java
 public class Person { }
@@ -365,7 +394,7 @@ public class Studi extends Person {
 }
 ```
 
-wird zu
+**Nachher**
 
 ```java
 public class Person { protected String name; }
@@ -376,14 +405,17 @@ public class Studi extends Person {
     }
 }
 ```
-:::
 
 
 ## Wrap-Up
 
 Behebung von **Bad Smells** durch **Refactoring**
 
-=> Änderung der inneren Struktur ohne Beeinflussung äußeren Verhaltens
+\smallskip
+
+=> Änderung der inneren Struktur ohne Beeinflussung des äußeren Verhaltens
+
+\bigskip
 
 *   Verbessert Lesbarkeit, Verständlichkeit, Wartbarkeit
 *   Immer nur kleine Schritte machen
