@@ -15,22 +15,15 @@ besprochen und sind ab diesem Blatt im Praktikum einzusetzen (vgl.
 `["Note und Credits > Hinweise zum Praktikum > Punkte und formale Abzüge"]({{< ref "/org/grading" >}})`{=markdown}).
 
 
-## Testen und Mocking mit Mockito (3 Punkte)
+## Testen und Mocking mit Mockito (5 Punkte)
 
 {{% include "assignments/pool_concept/tasks/mocking.md" %}}
 
-**Punkte**: Je 0.5P für die vier Unit-Tests sowie Setup und Teardown
+**Punkte**: 2P für Setup und je 1P für jeden Testfall
 
 
-## Testfallermittlung (5 Punkte)
+## Code Smells und Refactoring (5 Punkte)
 
-{{% include "assignments/pool_concept/tasks/junit_advanced_rsv.md" %}}
+{{% include "assignments/pool_concept/tasks/bad_smells-refactoring.md" %}}
 
-**Punkte**: 2P für ÄK-Bildung, 1P GW-Analyse, 1P TF-Erstellung, 1P Umsetzung als JUnit-Tests
-
-
-## Buildscripte: Gradle (2 Punkte)
-
-{{% include "assignments/pool_concept/tasks/gradle.md" %}}
-
-**Punkte**: 1P für Erklärung der Elemente, 1P für Erklärung Plugin "java" samt Tasks im Detail
+**Punkte**: Je 1P für das Finden/Begründen der Smells und das Anwendung der vier Refactoring-Methoden
