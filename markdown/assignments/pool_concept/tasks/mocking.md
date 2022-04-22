@@ -1,10 +1,12 @@
-Testen Sie die Methoden `nonEvilAdd`, `evilAdd` und `veryEvilAdd` der Klasse
-`Utility.java` mit dem JUnit- und dem Mockito-Framework.
+Testen Sie die Methoden `nonEvilAdd`, `evilAdd` und `veryEvilAdd` der
+Klasse `Utility.java` mit dem [JUnit-](https://junit.org/) und dem
+[Mockito-Framework](https://github.com/mockito/mockito).
 
-Vervollständigen Sie dazu die vorgegebene Klasse `UtilityTest.java`. Die Klassen
-`Evil.java` und `Utility.java` dürfen Sie nicht ändern. Nutzen Sie Mocking mit
-der Mockito-Bibliothek, um die Tests zum Laufen zu bringen. Die Tests dürfen Sie
-verändern, aber die Aufrufe müssen erhalten bleiben.
+Vervollständigen Sie dazu die vorgegebene Klasse `UtilityTest.java`.
+Die Klassen `Evil.java` und `Utility.java` dürfen Sie nicht ändern.
+Nutzen Sie Mocking mit [Mockito](https://github.com/mockito/mockito),
+um die Tests zum Laufen zu bringen. Die Tests dürfen Sie entsprechend
+verändern, aber die Aufrufe aus der Vorgabe müssen erhalten bleiben.
 
 *   `Evil.java`:
 
