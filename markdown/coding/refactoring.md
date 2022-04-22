@@ -222,7 +222,7 @@ Superklassen? Referenzen? (Neue) JUnit-Tests?
 int cps;
 
 public void printDetails() {
-    System.out.println("Credits: "+cps);
+    System.out.println("Credits: " + cps);
 }
 ```
 
@@ -235,7 +235,7 @@ int getCps() { return cps; }
 void setCps(int cps) {  this.cps = cps;  }
 
 public void printDetails() {
-    System.out.println("credits: "+getCps());
+    System.out.println("credits: " + getCps());
 }
 ```
 
@@ -273,8 +273,8 @@ Codefragment selektieren, "`Refactor > Extract Method`" bzw. "`Refactor > Extrac
 public void printInfos() {
     printHeader();
     // Details ausgeben
-    System.out.println("name:    "+name);
-    System.out.println("credits: "+cps);
+    System.out.println("name:    " + name);
+    System.out.println("credits: " + cps);
 }
 ```
 
@@ -286,8 +286,8 @@ public void printInfos() {
     printDetails();
 }
 private void printDetails() {
-    System.out.println("name:    "+name);
-    System.out.println("credits: "+cps);
+    System.out.println("name:    " + name);
+    System.out.println("credits: " + cps);
 }
 ```
 
@@ -330,11 +330,15 @@ public class Studi extends Person {
     Kurs kurs;
 
     public void printKursInfos() {
-        System.out.println("Kurs:    "+kurs.descr);
-        System.out.println("Credits: "+kurs.cps);
+        System.out.println("Kurs:    " + kurs.descr);
+        System.out.println("Credits: " + kurs.cps);
     }
 }
 ```
+
+::: slides
+## Refactoring-Methode: Move Method (cnt.)
+:::
 
 **Nachher**
 
@@ -344,8 +348,8 @@ public class Kurs {
     String descr;
 
     public void printKursInfos() {
-        System.out.println("Kurs:    "+descr);
-        System.out.println("Credits: "+cps);
+        System.out.println("Kurs:    " + descr);
+        System.out.println("Credits: " + cps);
     }
 }
 
@@ -354,9 +358,7 @@ public class Studi extends Person {
     int cps;
     Kurs kurs;
 
-    public void printKursInfos() {
-        kurs.printKursInfos();
-    }
+    public void printKursInfos() { kurs.printKursInfos(); }
 }
 ```
 
@@ -388,9 +390,7 @@ public class Person { }
 
 public class Studi extends Person {
     String name;
-    public void printDetails() {
-        System.out.println("name:    "+name);
-    }
+    public void printDetails() { System.out.println("name:    " + name); }
 }
 ```
 
@@ -400,9 +400,7 @@ public class Studi extends Person {
 public class Person { protected String name; }
 
 public class Studi extends Person {
-    public void printDetails() {
-        System.out.println("name:    "+name);
-    }
+    public void printDetails() { System.out.println("name:    " + name); }
 }
 ```
 
