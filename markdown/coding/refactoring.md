@@ -45,23 +45,22 @@ fhmedia:
 ---
 
 
-## Definition Refactoring
+## Was ist Refactoring?
 
 > Refactoring ist, wenn einem auffällt, daß der Funktionsname `foobar`
 > ziemlich bescheuert ist, und man die Funktion in `sinus` umbenennt.
 >
-> [Quelle: Andreas Bogk, in: Lutz Donnerhacke: "Fachbegriffe der Informatik"  [[(altlasten.lutz.donnerhacke.de)](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html)]{.notes}]{.origin}
+> \hfill\ [Quelle: Andreas Bogk, in: Lutz Donnerhacke: "Fachbegriffe der Informatik"  [[(altlasten.lutz.donnerhacke.de)](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html)]{.notes}]{.origin}
 
 \pause
 \bigskip
-\bigskip
-\smallskip
+\vfill
 
 > Refactoring is a change made to the internal structure of software to make it
 > easier to understand and cheaper to modify without changing its observable
 > behaviour.
 >
-> [Quelle: [@Fowler2011]]{.origin}
+> \hfill\ [Quelle: [@Fowler2011]]{.origin}
 
 ::: notes
 **Refactoring:** Änderungen an der [**inneren Struktur**]{.alert} einer Software
