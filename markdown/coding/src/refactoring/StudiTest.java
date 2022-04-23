@@ -10,9 +10,9 @@ public class StudiTest {
         Kurs k = new Kurs("myKurs", 9);
         Studi s = new Studi("Werner", 3, k);
 
-        assertEquals(s.n, "Werner");
-        assertEquals(s.c, 3);
-        assertEquals(s.k, k);
+        assertEquals("Werner", s.n);
+        assertEquals(3, s.c);
+        assertEquals(k, s.k);
     }
 
     @Test
@@ -20,12 +20,12 @@ public class StudiTest {
         Kurs k = new Kurs("myKurs", 9);
         Studi s = new Studi("Werner", 3, k);
 
-        assertEquals(s.n, "Werner");
+        assertEquals("Werner", s.n);
 
         s.n = "Heini";
-        assertEquals(s.n, "Heini");
-        assertEquals(s.c, 3);
-        assertEquals(s.k, k);
+        assertEquals("Heini", s.n);
+        assertEquals(3, s.c);
+        assertEquals(k, s.k);
     }
 
     @Test
