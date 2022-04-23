@@ -9,18 +9,18 @@ readings:
   - key: "Inden2013"
     comment: "Kapitel 11: Refactorings"
 tldr: |
-  TODO
+  Refactoring bedeutet Änderung der inneren Struktur des Codes ohne Beeinflussung äußeren Verhaltens.
 
-  Behebung von **Bad Smells** durch **Refactoring**
+  Mit Hilfe von Refactoring kann man Code Smells beheben, und Lesbarkeit, Verständlichkeit und Wartbarkeit
+  von Software verbessern.
 
-  => Änderung der inneren Struktur ohne Beeinflussung äußeren Verhaltens
+  Es ist wichtig, immer nur einzelne Schritte zu machen und anschließend die Testsuite laufen zu lassen,
+  damit nicht versehentlich Fehler oder Verhaltensänderungen beim Refactoring eingebaut werden.
 
-  *   Verbessert Lesbarkeit, Verständlichkeit, Wartbarkeit
-  *   Immer nur kleine Schritte machen
-  *   Nach jedem Schritt Testsuite laufen lassen
-  *   Katalog von Maßnahmen, beispielsweise _Rename_, _Extract_, _Move_, _Push Up/Pull Down_, u.a.
-  *   Unterstützung durch IDEs wie Eclipse, Idea, u.a.
-
+  Prinzipiell kann man Refactoring manuell mit Search&Replace durchführen, aber es bietet sich an, hier
+  die IDE-Unterstützung zu nutzen. Es stehen verschiedene Methoden zur Verfügung, die nicht unbedingt
+  einheitlich benannt sein müssen oder in jeder IDE vorkomment. Zu den häufig genutzten Methoden zählen
+  _Rename_, _Extract_, _Move_ und _Push Up/Pull Down_.
 outcomes:
   - k2: "Begriff, Notwendigkeit und Vorgehen des/beim Refactoring"
   - k2: "Bedeutung kleiner Schritte beim Refactoring"
