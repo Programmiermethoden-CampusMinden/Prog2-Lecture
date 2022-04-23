@@ -66,6 +66,10 @@ fhmedia:
 **Refactoring:** Änderungen an der [**inneren Struktur**]{.alert} einer Software
 
 *   Beobachtbares (äußeres) Verhalten ändert sich dabei **nicht**
+    *   Keine neuen Features einführen
+    *   Keine Bugs fixen
+    *   Keine öffentliche Schnittstelle ändern (_Anmerkung_: Bis auf Umbenennungen
+        oder Verschiebungen von Elementen innerhalb der Software)
 *   Ziel: Verbesserung von Verständlichkeit und Änderbarkeit
 :::
 
@@ -73,6 +77,13 @@ fhmedia:
 ## Anzeichen, dass Refactoring jetzt eine gute Idee wäre
 
 *   Code "stinkt" (zeigt/enthält _Code Smells_)
+
+    ::: notes
+    Code Smells sind strukturelle Probleme, die im Laufe der Zeit zu
+    Problemen führen können. Refactoring ändert die innere Struktur
+    des Codes und kann entsprechend genutzt werden, um die Smells zu
+    beheben.
+    :::
 
 \bigskip
 
@@ -140,17 +151,8 @@ sinnvoll ist.
 
 ## Vorgehen beim Refactoring
 
-*   Kleine Schritte: immer nur **eine** Änderung zu einer Zeit
-
-*   Nach **jedem** Refactoring-Schritt **Testsuite** laufen lassen
-
-    => Nächster Refactoring-Schritt erst, wenn alle Tests wieder "grün"
-
-*   Versionskontrolle nutzen: **Jeden** Schritt **einzeln** committen
-
-
 ::: notes
-## Überblick über die Methoden des Refactorings
+### Überblick über die Methoden des Refactorings
 
 Die Refactoring-Methoden sind nicht einheitlich definiert, es existiert ein großer
 und uneinheitlicher "Katalog" an möglichen Schritten. Teilweise benennt jede IDE
@@ -163,7 +165,26 @@ Zu den am häufigsten genutzten Methoden zählen
 *   Extract Method/Class
 *   Move Method
 *   Pull Up, Push Down (Field, Method)
+
+### Best Practice
+
+Eine Best Practice (oder nennen Sie es einfach eine wichtige Erfahrung) ist,
+beim Refactoring langsam und gründlich vorzugehen. Sie ändern die Struktur
+der Software und können dabei leicht Fehler oder echte Probleme einbauen.
+Gehen Sie also langsam und sorgsam vor, machen Sie einen Schritt nach dem
+anderen und sichern Sie sich durch eine gute Testsuite ab, die Sie nach jedem
+Schritt erneut ausführen: Das Verhalten der Software soll sich ja nicht
+ändern, d.h. die Tests müssen nach jedem einzelnen Refactoring-Schritt immer
+grün sein (oder Sie haben einen Fehler gemacht).
 :::
+
+*   Kleine Schritte: immer nur **eine** Änderung zu einer Zeit
+
+*   Nach **jedem** Refactoring-Schritt **Testsuite** laufen lassen
+
+    => Nächster Refactoring-Schritt erst, wenn alle Tests wieder "grün"
+
+*   Versionskontrolle nutzen: **Jeden** Schritt **einzeln** committen
 
 
 ## Refactoring-Methode: Rename Method/Class/Field
