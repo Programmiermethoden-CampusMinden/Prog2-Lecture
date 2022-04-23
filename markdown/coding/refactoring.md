@@ -33,15 +33,21 @@ quizzes:
 assignments:
   - topic: sheet05
 youtube:
-  - link: ""
-    name: "VL "
-  - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+  - link: "https://youtu.be/n0RaQ_Qve0Y"
+    name: "VL Refactoring"
+  - link: "https://youtu.be/zZ2RGKRBVz4"
+    name: "Demo Refactoring: Rename"
+  - link: "https://youtu.be/PR4mEjBl_No"
+    name: "Demo Refactoring: Encapsulate"
+  - link: "https://youtu.be/4VbxgqZ68ng"
+    name: "Demo Refactoring: Extract Method"
+  - link: "https://youtu.be/Wr92Oboh05E"
+    name: "Demo Refactoring: Move Method"
+  - link: "https://youtu.be/t24c88RshL8"
+    name: "Demo Refactoring: Pull up"
 fhmedia:
-  - link: ""
-    name: "VL "
+  - link: "https://www.fh-bielefeld.de/medienportal/m/36389f8fe4befc6370c28cda4475690224942c00c854e6dfc953b60c26acdf62093345ae1ee0698f71dc0a7f02739253d4ba29b7c05b69036cbb09fb1e361549"
+    name: "VL Refactoring"
 ---
 
 
