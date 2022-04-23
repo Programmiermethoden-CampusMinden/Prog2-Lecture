@@ -19,7 +19,7 @@ tldr: |
 
   Prinzipiell kann man Refactoring manuell mit Search&Replace durchführen, aber es bietet sich an, hier
   die IDE-Unterstützung zu nutzen. Es stehen verschiedene Methoden zur Verfügung, die nicht unbedingt
-  einheitlich benannt sein müssen oder in jeder IDE vorkomment. Zu den häufig genutzten Methoden zählen
+  einheitlich benannt sein müssen oder in jeder IDE vorkommen. Zu den häufig genutzten Methoden zählen
   _Rename_, _Extract_, _Move_ und _Push Up/Pull Down_.
 outcomes:
   - k2: "Begriff, Notwendigkeit und Vorgehen des/beim Refactoring"
