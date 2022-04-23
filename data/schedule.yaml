@@ -50,7 +50,6 @@
     - topic: "/testing/testing-intro"
     - topic: "/testing/junit-basics"
     - topic: "/testing/testcases"
-    - topic: "/coding/tdd"
   assignment:
     - topic: "sheet03"
       due: "Di, 26.04., 18 Uhr, PR/MR"
@@ -65,6 +64,7 @@
     - topic: "/coding/codingrules"
     - topic: "/coding/refactoring"
     - topic: "/testing/mockito"
+    - topic: "/coding/tdd"
   assignment:
     - topic: "sheet04"
       due: "Di, 03.05., 18 Uhr, PR/MR"
