@@ -155,7 +155,7 @@ elementarer Programmierregeln gemessen.
 :::::::::
 
 *   **NCSS** (_Non Commenting Source Statements_)
-    *   Zeilen pro Methode: 50; pro Klasse: 500; pro Datei: 600 \newline
+    *   Zeilen pro Methode: 40; pro Klasse: 250; pro Datei: 300 \newline
         _Annahme_: Eine Anweisung je Zeile ...
 *   **Anzahl der Methoden** pro Klasse: 10
 *   **Parameter** pro Methode: 3
@@ -169,11 +169,23 @@ elementarer Programmierregeln gemessen.
     *   Werte kleiner 7 werden i.A. als normal betrachtet
 
 ::: notes
-Die obigen Grenzwerte sind vorgeschlagene Standardwerte, die sich in der Praxis
-allgemein bewährt haben (u.a. nach [@Martin2009]). Dennoch sind das keine absoluten
-Werte an sich, sondern müssen an das konkrete Projekt angepasst werden. Ein
-Übertreten der Grenzen ist ein **Hinweis** darauf, das **höchstwahrscheinlich**
-etwas nicht stimmt, muss aber im konkreten Fall hinterfragt und diskutiert werden!
+Die obigen Grenzwerte sind typische Standardwerte, die sich in der Praxis allgemein bewährt haben
+(u.a. [@Martin2009] oder auch in
+[AOSP: Write short methods](https://source.android.com/setup/contribute/code-style#write-short-methods)
+und [AOSP: Limit line length](https://source.android.com/setup/contribute/code-style#limit-line-length)).
+
+Dennoch sind das keine absoluten Werte an sich. Ein Übertreten der Grenzen ist ein
+**Hinweis** darauf, das **höchstwahrscheinlich** etwas nicht stimmt, muss aber im
+konkreten Fall hinterfragt und diskutiert werden!
+
+### Metriken für das PM-Praktikum
+
+Im PM-Praktikum beachten wir die obigen Metriken mit den dort definierten Grenzwerten.
+
+Zusätzlich wenden wir den [Google Java Style](https://google.github.io/styleguide/javaguide.html)
+an. Statt der dort vorgeschriebenen Einrückung mit 2 Leerzeichen (und 4+ Leerzeichen bei Zeilenumbruch
+in einem Statement) können Sie auch mit 4 Leerzeichen einrücken und 8 Leerzeichen bei Zeilenumbruch
+nutzen (AOSP-Style). Halten Sie sich in Ihrem Team an eine einheitliche Einrückung.
 :::
 
 \bigskip
