@@ -56,7 +56,7 @@ fhmedia:
 \bigskip
 
 *   **Namen, Schreibweisen**: UpperCamelCase vs. lowerCamelCase vs. UPPER_SNAKE_CASE
-*   **Kommentare** (Ort, Form, Inhalt): Javadoc an allen `public` Elemente
+*   **Kommentare** (Ort, Form, Inhalt): Javadoc an allen `public` und `protected` Elementen
 *   **Einrückungen und Spaces vs. Tabs**: 4 Spaces
 *   **Zeilenlängen**: 100 Zeichen
 *   **Leerzeilen**: Leerzeilen für Gliederung
@@ -92,7 +92,7 @@ public class MyWuppieStudi implements Comparable<MyWuppieStudi> {
     /**
      * Erzeugt ein neues Exemplar der MyWuppieStudi-Spezies (max. 40 Zeilen)
      */
-    public static MyWuppieStudi newMyWuppieStudi(String name) {
+    public static MyWuppieStudi getMyWuppieStudi(String name) {
         if (studi == null) {
             studi = new MyWuppieStudi();
         }
@@ -107,6 +107,33 @@ public class MyWuppieStudi implements Comparable<MyWuppieStudi> {
     }
 }
 ```
+
+::: notes
+Dieses Beispiel wurde nach Google Java Style/AOSP formatiert.
+
+Die Zeilenlänge sind max. 100 Zeichen. Pro Methode werden max. 40 Zeilen genutzt. Zwischen Attributen,
+Methoden und Importen wird jeweils eine Leerzeile eingesetzt (zwischen den einzelnen Attributen _muss_
+aber keine Leerzeile genutzt werden). Zur logischen Gliederung können innerhalb von Methoden weitere
+Leerzeilen eingesetzt werden, aber immer nur eine.
+
+Klassennamen sind UpperCamelCase, Attribute und Methoden und Parameter lowerCamelCase, Konstanten (im
+Beispiel nicht vorhanden) UPPER_SNAKE_CASE. Klassen sind Substantive, Methoden Verben.
+
+Alle `public` und `protected` Elemente werden mit einem Javadoc-Kommentar versehen. Überschriebene Methoden
+müssen nicht mit Javadoc kommentiert werden, müssen aber mit `@Override` markiert werden.
+
+Geschweifte Klammern starten immer auf der selben Codezeile. Wenn bei einem `if` nur ein Statement vorhanden
+ist und dieses auf die selbe Zeile passt, kann auf die umschließenden geschweiften Klammern ausnahmsweise
+verzichtet werden.
+
+Es wird mit Leerzeichen eingerückt. [Google Java Style](https://google.github.io/styleguide/javaguide.html#s4.2-block-indentation)
+arbeitet mit 2 Leerzeichen, während [AOSP](https://source.android.com/setup/contribute/code-style#use-spaces-for-indentation)
+hier 4 Leerzeichen vorschreibt.
+
+Darüber hinaus gibt es vielfältige Regeln für das Aussehen des Codes. Lesen Sie dazu entsprechend auf
+[Google Java Style](https://google.github.io/styleguide/javaguide.html) und auch auf
+[AOSP](https://source.android.com/setup/contribute/code-style) nach.
+:::
 
 
 ## Formatieren Sie Ihren Code mit der IDE
