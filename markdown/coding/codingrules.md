@@ -51,6 +51,12 @@ fhmedia:
 
 ## Coding Conventions
 
+<!-- TODO
+- Ziel: Regeln
+- Typ. Vertreter: Google Java Style, AOSP
+- Exemplarisch: Regel, Beispiel vorher/nachher
+-->
+
 => Andere Programmierer sollen Code schnell lesen können
 
 \smallskip
@@ -65,12 +71,39 @@ fhmedia:
 \bigskip
 
 *   Beispiele: [Sun Code Conventions](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf),
-    [Google Java Style](https://google.github.io/styleguide/javaguide.html)
+    [Google Java Style](https://google.github.io/styleguide/javaguide.html) (Quelle: [Google Style Guides](https://github.com/google/styleguide/)),
+    [AOSP Java Code Style for Contributors](https://source.android.com/setup/contribute/code-style)
 
 [Beispiel: Google Java Style; Hinweis auf Formatter]{.bsp}
 
 
 ## Formatieren Sie Ihren Code mit der IDE
+
+<!-- TODO
+https://github.com/diffplug/spotless
+https://github.com/google/google-java-format
+https://google.github.io/styleguide/javaguide.html
+https://source.android.com/setup/contribute/code-style
+
+- Ziel: aktiv einhalten
+- IDE: IntelliJ, Eclipse (3x!), ...
+- Gradle: Spotless => google-java-format und manueller Aufruf
+
+```
+plugins {
+    id "java"
+    id "checkstyle"
+    id "com.github.spotbugs"
+    id "com.diffplug.spotless"
+}
+
+spotless {
+    java {
+        googleJavaFormat().aosp()
+    }
+}
+```
+-->
 
 *   Eclipse: "`Project > Properties > Java Code Style > Formatter`":
     Coding-Style einstellen/einrichten
@@ -101,6 +134,12 @@ angezeigt, die man durch ein automatisches Formatieren nicht beheben kann.
 
 
 ## Metriken: Kennzahlen für verschiedene Aspekte zum Code
+
+<!-- TODO
+- Ziel: Messen
+- Beispiele für typische Metriken
+- Beispiele für Werte (Code+Wert)
+-->
 
 ::::::::: notes
 Metriken messen verschiedene Aspekte zum Code und liefern eine Zahl zurück. Mit Metriken kann
@@ -142,7 +181,33 @@ etwas nicht stimmt, muss aber im konkreten Fall hinterfragt und diskutiert werde
 => Verweis auf LV Softwareengineering
 
 
-## Tool-Support
+## Tool-Support: Checkstyle
+
+<!-- TODO
+https://github.com/checkstyle/checkstyle
+
+- Ziel: prüfen
+- Checkstyle: IDE-Plugin, Gradle
+- Aufbau Konfig
+- Pakete
+- Beispiel für obige Metriken
+- Demo: Eclipse und Eclipse_cs, 3x Formatter einstellen
+- Demo: Gradle
+
+```
+plugins {
+    id "java"
+    id "checkstyle"
+    id "com.github.spotbugs"
+    id "com.diffplug.spotless"
+}
+checkstyle {
+    configFile file("checkstyle-config/checks.xml")
+    toolVersion "9.2.1"
+    showViolations = true
+}
+```
+-->
 
 Metriken werden sinnvollerweise durch diverse Tools erfasst.
 
@@ -155,7 +220,47 @@ Metriken werden sinnvollerweise durch diverse Tools erfasst.
 [Beispiel: Konfiguration Eclipse-Checkstyle, Hinweis auf Formatter]{.bsp}
 
 
+## SpotBugs: Finde Anti-Pattern und potentielle Bugs (Linter)
+
+
+<!-- TODO
+https://github.com/spotbugs/spotbugs
+
+- Ziel: prüfen
+- Überblick "Bugs" (evtl. am Beispiel?)
+- Demo: Gradle
+
+```
+plugins {
+    id "java"
+    id "checkstyle"
+    id "com.github.spotbugs"
+    id "com.diffplug.spotless"
+}
+spotbugs {
+    toolVersion = "4.2.2"
+    ignoreFailures = true
+    showStackTraces = false
+}
+spotbugsMain {
+    reports {
+        xml {
+            enabled = true
+            destination = file("$buildDir/reports/spotbugsXml.xml")
+        }
+    }
+}
+```
+-->
+
+[FindBugs/SpotBugs](https://github.com/spotbugs/spotbugs), ...
+
+
 ## Wrap-Up
+
+<!-- TODO
+Vorgaben für PM/Praktikum: Checkstyle, Format
+-->
 
 *   Code entsteht nicht zum Selbstzweck => Regeln nötig!
     *   Coding Conventions
