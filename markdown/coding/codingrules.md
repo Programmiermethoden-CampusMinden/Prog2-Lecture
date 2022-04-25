@@ -79,6 +79,7 @@ fhmedia:
     Kann auch so eingestellt werden, dass ein Clean Up immer beim Speichern
     ausgeführt wird!
 
+::::::::: notes
 IntelliJ verfügt über ähnliche Fähigkeiten.
 
 
@@ -94,18 +95,25 @@ auf den selben Style eingestellt werden, sonst gibt es u.U. lustige Effekte, da 
 ein anderer Style angewendet wird als beim Clean Up oder beim Format Source ... Analog sollte
 man auch die entsprechenden Checkstyle-Regeln passend einstellen, sonst bekommt man Warnungen
 angezeigt, die man durch ein automatisches Formatieren nicht beheben kann.
+:::::::::
 
 [Beispiel: Konfiguration Formatter (`Source > Format`, `Source > Clean Up`)]{.bsp}
 
 
 ## Metriken: Kennzahlen für verschiedene Aspekte zum Code
 
-::: notes
-*   Einhaltung der Coding Rules
-*   Beachtung der Regeln des objektorientierten Entwurfs
+::::::::: notes
+Metriken messen verschiedene Aspekte zum Code und liefern eine Zahl zurück. Mit Metriken kann
+man beispielsweise die Einhaltung der Coding Rules (Formate, ...) prüfen, aber auch die Einhaltung
+verschiedener Regeln des objektorientierten Programmierens.
 
 ### Beispiele für wichtige Metriken (jeweils max-Werte)
-:::
+
+Die folgenden Metriken und deren Maximal-Werte sind gute Erfahrungswerte aus der Praxis und helfen,
+den Code Smell "Langer Code"  (vgl. `["Code Smells"]({{< ref "/coding/smells" >}})`{=markdown}) zu
+erkennen und damit zu vermeiden. Über die Metriken _BEC_, _McCabe_ und _DAC_ wird auch die Einhaltung
+elementarer Programmierregeln gemessen.
+:::::::::
 
 *   **NCSS** (_Non Commenting Source Statements_)
     *   Zeilen pro Methode: 50; pro Klasse: 500; pro Datei: 600 \newline
@@ -148,7 +156,6 @@ Metriken werden sinnvollerweise durch diverse Tools erfasst.
 
 
 ## Wrap-Up
-
 
 *   Code entsteht nicht zum Selbstzweck => Regeln nötig!
     *   Coding Conventions
