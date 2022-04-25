@@ -92,7 +92,7 @@ Git-Hook definiert, wird vor jedem Commit der Code entsprechend den Richtlinien 
 werden kann (Clean Up, Formatter/Profile, Formatter/Implementation). Diese sollten dann jeweils
 auf den selben Style eingestellt werden, sonst gibt es u.U. lustige Effekte, da beim Speichern
 ein anderer Style angewendet wird als beim Clean Up oder beim Format Source ... Analog sollte
-man auch die entsprechenden CheckStyle-Regeln passend einstellen, sonst bekommt man Warnungen
+man auch die entsprechenden Checkstyle-Regeln passend einstellen, sonst bekommt man Warnungen
 angezeigt, die man durch ein automatisches Formatieren nicht beheben kann.
 
 [Beispiel: Konfiguration Formatter (`Source > Format`, `Source > Clean Up`)]{.bsp}
