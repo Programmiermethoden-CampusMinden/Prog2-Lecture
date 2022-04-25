@@ -49,32 +49,64 @@ fhmedia:
 ---
 
 
-## Coding Conventions
+## Coding Conventions: Richtlinien für einheitliches Aussehen von Code
 
-<!-- TODO
-- Ziel: Regeln
-- Typ. Vertreter: Google Java Style, AOSP
-- Exemplarisch: Regel, Beispiel vorher/nachher
--->
-
-=> Andere Programmierer sollen Code schnell lesen können
-
-\smallskip
-
-*   Richtlinien für einheitliches Aussehen
-    *   Namen, Schreibweisen
-    *   Kommentare (Ort, Form, Inhalt)
-    *   Einrückungen und Spaces vs. Tabs
-    *   Zeilenlängen, Leerzeilen
-    *   Klammern
+=> Ziel: Andere Programmierer sollen Code schnell lesen können
 
 \bigskip
 
-*   Beispiele: [Sun Code Conventions](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf),
-    [Google Java Style](https://google.github.io/styleguide/javaguide.html) (Quelle: [Google Style Guides](https://github.com/google/styleguide/)),
-    [AOSP Java Code Style for Contributors](https://source.android.com/setup/contribute/code-style)
+*   **Namen, Schreibweisen**: UpperCamelCase vs. lowerCamelCase vs. UPPER_SNAKE_CASE
+*   **Kommentare** (Ort, Form, Inhalt): Javadoc an allen `public` Elemente
+*   **Einrückungen und Spaces vs. Tabs**: 4 Spaces
+*   **Zeilenlängen**: 100 Zeichen
+*   **Leerzeilen**: Leerzeilen für Gliederung
+*   **Klammern**: Auf selber Zeile wie Code
 
-[Beispiel: Google Java Style; Hinweis auf Formatter]{.bsp}
+\bigskip
+\smallskip
+
+Beispiele: [Sun Code Conventions](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf),
+[Google Java Style](https://google.github.io/styleguide/javaguide.html),
+[AOSP Java Code Style for Contributors](https://source.android.com/setup/contribute/code-style)
+
+
+## Coding Conventions: Beispiel nach Google Java Style/AOSP formatiert
+
+```{.java size="tiny"}
+package wuppie.deeplearning.strategy;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Demonstriert den Einsatz von AOSP/Google Java Style ................. Umbruch nach 100 Zeichen |
+ */
+public class MyWuppieStudi implements Comparable<MyWuppieStudi> {
+    private static String lastName;
+    private static MyWuppieStudi studi;
+
+    // Verstecke den Konstruktor - Singleton-Pattern
+    private MyWuppieStudi() {
+    }
+
+    /**
+     * Erzeugt ein neues Exemplar der MyWuppieStudi-Spezies (max. 40 Zeilen)
+     */
+    public static MyWuppieStudi newMyWuppieStudi(String name) {
+        if (studi == null) {
+            studi = new MyWuppieStudi();
+        }
+        if (lastName == null) lastName = name;
+
+        return studi;
+    }
+
+    @Override
+    public int compareTo(MyWuppieStudi o) {
+        return lastName.compareTo(lastName);
+    }
+}
+```
 
 
 ## Formatieren Sie Ihren Code mit der IDE
@@ -185,7 +217,8 @@ Im PM-Praktikum beachten wir die obigen Metriken mit den dort definierten Grenzw
 Zusätzlich wenden wir den [Google Java Style](https://google.github.io/styleguide/javaguide.html)
 an. Statt der dort vorgeschriebenen Einrückung mit 2 Leerzeichen (und 4+ Leerzeichen bei Zeilenumbruch
 in einem Statement) können Sie auch mit 4 Leerzeichen einrücken und 8 Leerzeichen bei Zeilenumbruch
-nutzen (AOSP-Style). Halten Sie sich in Ihrem Team an eine einheitliche Einrückung.
+nutzen [AOSP-Style](https://source.android.com/setup/contribute/code-style). Halten Sie sich in Ihrem
+Team an eine einheitliche Einrückung.
 :::
 
 \bigskip
