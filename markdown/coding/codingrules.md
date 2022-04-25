@@ -98,96 +98,14 @@ angezeigt, die man durch ein automatisches Formatieren nicht beheben kann.
 [Beispiel: Konfiguration Formatter (`Source > Format`, `Source > Clean Up`)]{.bsp}
 
 
-## Programmierprinzip "Prinzip der minimalen Verwunderung"
-
-*   Klassen und Methoden sollten sich erwartungsgemäß verhalten
-*   Gute Namen ersparen das Lesen der Dokumentation
-
-\bigskip
-
-```java
-// Schlechtes Beispiel
-public class Studi extends Person {
-    public String n;
-    public int c;
-
-    public void prtIf() { ... }
-}
-```
-
-
-## Programmierprinzip "Kapselung/Information Hiding"
-
-*   Möglichst schlanke öffentliche Schnittstelle \newline
-    => "Vertrag" mit Nutzern der Klasse!
-
-\bigskip
-
-```java
-// Schlechtes Beispiel
-public class Studi extends Person {
-    public String n;
-    public int c;
-
-    public void prtIf() { ... }
-}
-```
-
-
-## Programmierprinzip "DRY": "Don't repeat yourself!"
-
-*   Kein duplizierter Code!
-
-\bigskip
-
-```java
-// Schlechtes Beispiel
-public class Studi {
-    public String getName() { return name; }
-    public String getAddress() {
-        return strasse+", "+plz+" "+stadt;
-    }
-
-    public String getStudiAsString() {
-        return name+" ("+strasse+", "+plz+" "+stadt+")";
-    }
-}
-```
-
-
-## Programmierprinzip "Single Responsibility"
-
-Jede Klasse ist für genau [einen Aspekt]{.alert} des Gesamtsystems verantwortlich
-
-\bigskip
-
-```java
-public class Student {
-    private String name;
-    private String phoneAreaCode;
-    private String phoneNumber;
-
-    public void printStudentInfo() {
-        System.out.println("name:    " + name);
-        System.out.println("contact: " + phoneAreaCode + "/" + phoneNumber);
-    }
-}
-```
-
-::: notes
-Warum sollte sich die Klasse `Student` um die Einzelheiten des Aufbaus einer
-Telefonnummer kümmern? Das Prinzip der "_Single Responsibility_" wird hier
-verletzt!
-:::
-
-
 ## Metriken: Kennzahlen für verschiedene Aspekte zum Code
 
+::: notes
 *   Einhaltung der Coding Rules
 *   Beachtung der Regeln des objektorientierten Entwurfs
 
-
-## Beispiele für wichtige Metriken (jeweils max-Werte)
+### Beispiele für wichtige Metriken (jeweils max-Werte)
+:::
 
 *   **NCSS** (_Non Commenting Source Statements_)
     *   Zeilen pro Methode: 50; pro Klasse: 500; pro Datei: 600 \newline
