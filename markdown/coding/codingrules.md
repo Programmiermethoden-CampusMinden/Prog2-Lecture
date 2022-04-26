@@ -85,13 +85,9 @@ public class MyWuppieStudi implements Comparable<MyWuppieStudi> {
     private static String lastName;
     private static MyWuppieStudi studi;
 
-    // Verstecke den Konstruktor - Singleton-Pattern
-    private MyWuppieStudi() {
-    }
+    private MyWuppieStudi() {}
 
-    /**
-     * Erzeugt ein neues Exemplar der MyWuppieStudi-Spezies (max. 40 Zeilen)
-     */
+    /** Erzeugt ein neues Exemplar der MyWuppieStudi-Spezies (max. 40 Zeilen) */
     public static MyWuppieStudi getMyWuppieStudi(String name) {
         if (studi == null) {
             studi = new MyWuppieStudi();
@@ -150,18 +146,18 @@ Darüber hinaus gibt es vielfältige Regeln für das Aussehen des Codes. Lesen S
     ```groovy
     plugins {
         id "java"
-        id "com.diffplug.spotless"
+        id "com.diffplug.spotless" version "6.5.0"
     }
 
     spotless {
         java {
             // googleJavaFormat()
-            googleJavaFormat().aosp()
+            googleJavaFormat().aosp()  // indent w/ 4 spaces
         }
     }
     ```
 
-    `./gradlew spotlessApply``
+    `./gradlew spotlessCheck` (Teil von `./gradlew build`) und `./gradlew spotlessApply`
 
 ::::::::: notes
 *   Eclipse:
