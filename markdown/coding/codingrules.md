@@ -323,10 +323,16 @@ ein [Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) m
         id "java"
         id "checkstyle"
     }
+
+    checkstyle {
+        configFile file('checkstyle.xml');
+        toolVersion '10.2';
+    }
     ```
 
     *   Aufruf: `./gradlew checkstyleMain` (Teil von `./gradlew check`)
-    *   Konfiguration: `<projectDir>/config/checkstyle/checkstyle.xml`
+    *   Konfiguration: `<projectDir>/config/checkstyle/checkstyle.xml` (Default)
+        [bzw. mit der Konfiguration direkt im Projektordner]{.notes}
 
 [Demo: IntelliJ, Gradle]{.bsp}
 
