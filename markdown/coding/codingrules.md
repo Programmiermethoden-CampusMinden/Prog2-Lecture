@@ -392,6 +392,11 @@ eigenes [Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.htm
         [bzw. mit der obigen Konfiguration direkt im Projektordner]{.notes}
     *   Report: `<projectDir>/build/reports/checkstyle/main.html`
 
+<!-- Für die Demo:
+docker pull gradle
+docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
+-->
+
 [Demo: IntelliJ, [Checkstyle/Gradle](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/checkstyle/)]{.bsp}
 
 
@@ -478,7 +483,23 @@ spotbugsMain {
 ```
 -->
 
-[FindBugs/SpotBugs](https://github.com/spotbugs/spotbugs), ...
+[SpotBugs](https://github.com/spotbugs/spotbugs), ...
+
+
+`java -jar spotbugs.jar options ...`
+
+https://github.com/spotbugs/spotbugs-gradle-plugin
+
+`./gradlew spotbugsMain` (in `./gradlew check`)
+
+
+
+<!-- Für die Demo:
+docker pull gradle
+docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
+-->
+
+[Demo: [SpotBugs/Gradle](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/spotbugs/)]{.bsp}
 
 
 ## Wrap-Up
