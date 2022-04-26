@@ -177,14 +177,20 @@ ein anderer Style angewendet wird als beim Clean Up oder beim Format Source ... 
 man auch die entsprechenden Checkstyle-Regeln passend einstellen, sonst bekommt man Warnungen
 angezeigt, die man durch ein automatisches Formatieren nicht beheben kann.
 
-Wer direkt den [Google Java Style](https://google.github.io/styleguide/javaguide.html) nutzt, kann auch den dazu
-passenden Formatter von Google einsetzen: [google-java-format](https://github.com/google/google-java-format).
+Wer direkt den [Google Java Style](https://google.github.io/styleguide/javaguide.html) nutzt,
+kann auch den dazu passenden Formatter von Google einsetzen:
+[google-java-format](https://github.com/google/google-java-format).
 Diesen kann man entweder als Plugin für IntelliJ/Eclipse einsetzen oder als Stand-alone-Tool
 (Kommandozeile oder Build-Skripte) aufrufen. Wenn man sich noch einen entsprechenden
 Git-Hook definiert, wird vor jedem Commit der Code entsprechend den Richtlinien formatiert :)
 :::::::::
 
-[Beispiel: Konfiguration Formatter (`Source > Format`, `Source > Clean Up`)]{.bsp}
+<!-- Für die Demo:
+docker pull gradle
+docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
+-->
+
+[Demo: Konfiguration Formatter IDE, [Spotless/Gradle](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/formatter/)]{.bsp}
 
 
 ## Metriken: Kennzahlen für verschiedene Aspekte zum Code
