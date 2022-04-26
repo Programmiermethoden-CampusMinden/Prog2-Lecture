@@ -274,8 +274,8 @@ Im PM-Praktikum beachten wir die obigen Metriken mit den dort definierten Grenzw
 
 Zusätzlich wenden wir den [Google Java Style](https://google.github.io/styleguide/javaguide.html)
 an. Statt der dort vorgeschriebenen Einrückung mit 2 Leerzeichen (und 4+ Leerzeichen bei Zeilenumbruch
-in einem Statement) können Sie auch mit 4 Leerzeichen einrücken und 8 Leerzeichen bei Zeilenumbruch
-nutzen [AOSP-Style](https://source.android.com/setup/contribute/code-style). Halten Sie sich in Ihrem
+in einem Statement) können Sie auch mit 4 Leerzeichen einrücken (8 Leerzeichen bei Zeilenumbruch)
+([AOSP-Style](https://source.android.com/setup/contribute/code-style)). Halten Sie sich in Ihrem
 Team an eine einheitliche Einrückung.
 :::::::::
 
@@ -283,7 +283,7 @@ Team an eine einheitliche Einrückung.
 
 => Verweis auf LV Softwareengineering
 
-[[Beispiel: Metriken an MyWuppieStudi#getMyWuppieStudi]]{.bsp}]{.notes}
+[[Beispiel: Metriken an MyWuppieStudi#getMyWuppieStudi]{.bsp}]{.slides}
 
 
 ## Tool-Support: Checkstyle
