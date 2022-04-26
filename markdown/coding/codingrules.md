@@ -316,8 +316,11 @@ checkstyle {
 
 Metriken werden sinnvollerweise durch diverse Tools erfasst.
 
-*   **Checkstyle** [([Standalone via Ant](https://github.com/checkstyle/checkstyle) und Plugin für
-    [Eclipse](https://github.com/checkstyle/eclipse-cs) oder [IntelliJ](https://github.com/jshiell/checkstyle-idea))]{.notes}
+*   **Checkstyle** [([Standalone via CLI](https://checkstyle.org/cmdline.html) und Plugin für
+    [Eclipse](https://checkstyle.org/eclipse-cs) oder [IntelliJ](https://github.com/jshiell/checkstyle-idea) oder
+    [Gradle](https://docs.gradle.org/current/userguide/checkstyle_plugin.html))]{.notes}
+
+
 *   Alternativen/Ergänzungen: [Metrics](http://metrics.sourceforge.net/),
     [MetricsReloaded](https://github.com/BasLeijdekkers/MetricsReloaded),
     [FindBugs/SpotBugs](https://github.com/spotbugs/spotbugs), ...
