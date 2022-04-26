@@ -238,7 +238,7 @@ elementarer Programmierregeln gemessen.
     *   Anzahl der genutzten (instantiierten) "Fremdklassen"
     *   Werte kleiner 7 werden i.A. als normal betrachtet
 
-::: notes
+::::::::: notes
 Die obigen Grenzwerte sind typische Standardwerte, die sich in der Praxis allgemein bewährt haben
 (u.a. [@Martin2009] oder auch in
 [AOSP: Write short methods](https://source.android.com/setup/contribute/code-style#write-short-methods)
@@ -247,6 +247,26 @@ und [AOSP: Limit line length](https://source.android.com/setup/contribute/code-s
 Dennoch sind das keine absoluten Werte an sich. Ein Übertreten der Grenzen ist ein
 **Hinweis** darauf, das **höchstwahrscheinlich** etwas nicht stimmt, muss aber im
 konkreten Fall hinterfragt und diskutiert werden!
+
+### Beispiel von oben
+
+```java
+    private static String lastName;
+    private static MyWuppieStudi studi;
+
+    public static MyWuppieStudi getMyWuppieStudi(String name) {
+        if (studi == null) {
+            studi = new MyWuppieStudi();
+        }
+        if (lastName == null) lastName = name;
+
+        return studi;
+    }
+```
+
+*   BEC: 1 (nur ein boolescher Ausdruck im `if`)
+*   McCabe: 4 (es gibt vier mögliche Pfade durch die Methode)
+*   DAC: 1 (eine "Fremdklasse": `String`)
 
 ### Metriken für das PM-Praktikum
 
@@ -257,11 +277,13 @@ an. Statt der dort vorgeschriebenen Einrückung mit 2 Leerzeichen (und 4+ Leerze
 in einem Statement) können Sie auch mit 4 Leerzeichen einrücken und 8 Leerzeichen bei Zeilenumbruch
 nutzen [AOSP-Style](https://source.android.com/setup/contribute/code-style). Halten Sie sich in Ihrem
 Team an eine einheitliche Einrückung.
-:::
+:::::::::
 
 \bigskip
 
 => Verweis auf LV Softwareengineering
+
+[[Beispiel: Metriken an MyWuppieStudi#getMyWuppieStudi]]{.bsp}]{.notes}
 
 
 ## Tool-Support: Checkstyle
