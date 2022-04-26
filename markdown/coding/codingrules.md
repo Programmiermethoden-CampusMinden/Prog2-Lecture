@@ -159,25 +159,26 @@ Darüber hinaus gibt es vielfältige Regeln für das Aussehen des Codes. Lesen S
     `./gradlew spotlessCheck` (Teil von `./gradlew build`) und `./gradlew spotlessApply`
 
 ::::::::: notes
-Einstellungen der IDE's:
+### Einstellungen der IDE's:
 
 *   Eclipse:
     *   `Project > Properties > Java Code Style > Formatter`: Coding-Style einstellen/einrichten
     *   Code markieren, `Source > Format`
     *   Komplettes Aufräumen: `Source > Clean Up` (Formatierung, Importe, Annotationen, ...)
-        Kann auch so eingestellt werden, dass ein Clean Up immer beim Speichern
-        ausgeführt wird!
+        Kann auch so eingestellt werden, dass ein Clean Up immer beim Speichern ausgeführt wird!
 *   IntelliJ verfügt über ähnliche Fähigkeiten:
     *   Einstellen über `Preferences > Editor > Code Style > Java`
     *   Formatieren mit `Code > Reformat Code` oder `Code > Reformat File`
 
 **Achtung**: Zumindest in Eclipse gibt es mehrere Stellen, wo ein Code-Style eingestellt werden
-kann ("Clean Up", "Formatter/Profile", "Formatter/Implementation"). Diese sollten dann jeweils
-auf den selben Style eingestellt werden, sonst gibt es u.U. lustige Effekte, da beim Speichern
-ein anderer Style angewendet wird als beim Clean Up oder beim Format Source ... Analog sollte
-man auch die entsprechenden Checkstyle-Regeln passend einstellen, sonst bekommt man Warnungen
-angezeigt, die man durch ein automatisches Formatieren nicht beheben kann.
+kann ("Clean Up", "Formatter"). Diese sollten dann jeweils auf den selben Style eingestellt werden,
+sonst gibt es unter Umständen lustige Effekte, da beim Speichern ein anderer Style angewendet wird
+als beim Clean Up oder beim Format Source ...
 
+Analog sollte man auch in der IDE die entsprechenden Checkstyle-Regeln passend einstellen, sonst
+bekommt man Warnungen angezeigt, die man durch ein automatisches Formatieren nicht beheben kann.
+
+### Google Java Style und google-java-format
 
 Wer direkt den [Google Java Style](https://google.github.io/styleguide/javaguide.html) nutzt,
 kann auch den dazu passenden Formatter von Google einsetzen:
@@ -186,6 +187,7 @@ Diesen kann man entweder als Plugin für IntelliJ/Eclipse einsetzen oder als Sta
 (Kommandozeile oder Build-Skripte) aufrufen. Wenn man sich noch einen entsprechenden
 Git-Hook definiert, wird vor jedem Commit der Code entsprechend den Richtlinien formatiert :)
 
+### Spotless und google-java-format in Gradle
 
 _Hinweis_: Bei Spotless in Gradle müssen je nach den Versionen von Spotless/google-java-format
 bzw. des JDK noch Optionen in der Datei `gradle.properties` eingestellt werden (siehe
