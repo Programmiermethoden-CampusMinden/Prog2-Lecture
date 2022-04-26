@@ -158,6 +158,7 @@ Darüber hinaus gibt es vielfältige Regeln für das Aussehen des Codes. Lesen S
 
     `./gradlew spotlessCheck` (Teil von `./gradlew build`) und `./gradlew spotlessApply`
 
+
 ::::::::: notes
 ### Einstellungen der IDE's:
 
@@ -261,7 +262,12 @@ konkreten Fall hinterfragt und diskutiert werden!
 *   BEC: 1 (nur ein boolescher Ausdruck im `if`)
 *   McCabe: 3 (es gibt zwei mögliche Verzweigungen in der Methode plus die Methode selbst)
 *   DAC: 1 (eine "Fremdklasse": `String`)
+:::::::::
 
+[[Beispiel: Metriken an MyWuppieStudi#getMyWuppieStudi]{.bsp}]{.slides}
+
+
+::::::::: notes
 ### Metriken für das PM-Praktikum
 
 Im PM-Praktikum beachten wir die obigen Metriken mit den dort definierten Grenzwerten.
@@ -332,7 +338,7 @@ Team an eine einheitliche Einrückung.
 </module>
 ```
 
-Sie können diese Basiseinstellungen auch aus dem PM-Dungeon/PM-Lecture-Repo direkt herunterladen:
+Sie können diese Basis-Einstellungen auch aus dem PM-Dungeon/PM-Lecture-Repo direkt herunterladen:
 [`checkstyle.xml`](https://github.com/PM-Dungeon/PM-Lecture/tree/master/markdown/coding/src/checkstyle.xml).
 
 Sie können zusätzlich gern noch die weiteren (und strengeren) Regeln aus der vom Checkstyle-Projekt
@@ -344,8 +350,6 @@ nutzen.
 \bigskip
 
 => Verweis auf LV Softwareengineering
-
-[[Beispiel: Metriken an MyWuppieStudi#getMyWuppieStudi]{.bsp}]{.slides}
 
 
 ## Tool-Support: Checkstyle
