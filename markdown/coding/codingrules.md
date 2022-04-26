@@ -356,7 +356,7 @@ und benötigen keine weitere externe Abhängigkeiten. Die einzelnen Checks werde
 "Modul" dem "TreeWalker" hinzugefügt und über die jeweiligen Properties näher konfiguriert. Sie
 finden in der [Doku](https://checkstyle.org/checks.html) zu jedem Check das entsprechende Modul,
 das Eltern-Modul (also wo müssen Sie das Modul im XML-Baum einfügen) und auch die möglichen
-Properties und deren Defaulteinstellungen.
+Properties und deren Default-Einstellungen.
 :::::::::
 
 ```{.xml size="scriptsize"}
@@ -444,7 +444,7 @@ spotbugsMain {
 \bigskip
 
 *   Metriken: Einhaltung von Regeln in Zahlen ausdrücken
-*   Prüfung manuell durch Code Reviews oder durch Tools, zB. Checkstyle
+*   Prüfung manuell durch Code Reviews oder durch Tools wie Checkstyle oder SpotBugs
 
 
 
