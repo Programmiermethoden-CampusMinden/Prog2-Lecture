@@ -1,0 +1,31 @@
+package wuppie.deeplearning.strategy;
+
+/**
+ * Demonstriert den Einsatz von AOSP/Google Java Style ................. Umbruch nach 100 Zeichen |
+ */
+public class MyWuppieStudi implements Comparable<MyWuppieStudi> {
+    private static String lastName;
+    private static MyWuppieStudi studi;
+
+    private MyWuppieStudi() {}
+
+    /** Erzeugt ein neues Exemplar der MyWuppieStudi-Spezies (max. 40 Zeilen) */
+    public static MyWuppieStudi getMyWuppieStudi(String name) {
+        if (studi == null) {
+            studi = new MyWuppieStudi();
+        }
+        if (lastName == null) lastName = name;
+
+        return studi;
+    }
+
+    @Override
+    public int compareTo(MyWuppieStudi o) {
+        return lastName.compareTo(lastName);
+    }
+
+    public static void main(String[] args) {
+        MyWuppieStudi.getMyWuppieStudi("Hello World");
+        System.out.println("Hello World");
+    }
+}
