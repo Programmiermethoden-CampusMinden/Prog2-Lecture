@@ -386,8 +386,9 @@ ein [Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) m
     *   Aufruf: `./gradlew checkstyleMain` (Teil von `./gradlew check`)
     *   Konfiguration: `<projectDir>/config/checkstyle/checkstyle.xml` (Default)
         [bzw. mit der Konfiguration direkt im Projektordner]{.notes}
+    *   Report: `<projectDir>/build/reports/checkstyle/main.html`
 
-[Demo: IntelliJ, Gradle]{.bsp}
+[Demo: IntelliJ, [Checkstyl/Gradle](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/checkstyle/)]{.bsp}
 
 
 ## Checkstyle: Konfiguration
