@@ -205,12 +205,6 @@ docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 
 ## Metriken: Kennzahlen für verschiedene Aspekte zum Code
 
-<!-- TODO
-- Ziel: Messen
-- Beispiele für typische Metriken
-- Beispiele für Werte (Code+Wert)
--->
-
 ::::::::: notes
 Metriken messen verschiedene Aspekte zum Code und liefern eine Zahl zurück. Mit Metriken kann
 man beispielsweise die Einhaltung der Coding Rules (Formate, ...) prüfen, aber auch die Einhaltung
@@ -232,7 +226,7 @@ elementarer Programmierregeln gemessen.
 *   **BEC** (_Boolean Expression Complexity_) \newline
     Anzahl boolescher Ausdrücke in `if` etc.: 3
 *   **McCabe** (_Cyclomatic Complexity_)
-    *   Anzahl der möglichen Verzweigungen (Pfade) pro Methode
+    *   Anzahl der möglichen Verzweigungen (Pfade) pro Methode + 1
     *   1-4 gut, 5-7 noch OK
 *   **DAC** (_Class Data Abstraction Coupling_)
     *   Anzahl der genutzten (instantiierten) "Fremdklassen"
@@ -265,7 +259,7 @@ konkreten Fall hinterfragt und diskutiert werden!
 ```
 
 *   BEC: 1 (nur ein boolescher Ausdruck im `if`)
-*   McCabe: 4 (es gibt vier mögliche Pfade durch die Methode)
+*   McCabe: 3 (es gibt zwei mögliche Verzweigungen in der Methode plus die Methode selbst)
 *   DAC: 1 (eine "Fremdklasse": `String`)
 
 ### Metriken für das PM-Praktikum
@@ -277,6 +271,21 @@ an. Statt der dort vorgeschriebenen Einrückung mit 2 Leerzeichen (und 4+ Leerze
 in einem Statement) können Sie auch mit 4 Leerzeichen einrücken (8 Leerzeichen bei Zeilenumbruch)
 ([AOSP-Style](https://source.android.com/setup/contribute/code-style)). Halten Sie sich in Ihrem
 Team an eine einheitliche Einrückung.
+
+<!-- TODO
+Vorgaben für PM/Praktikum: Checkstyle, Format
+-->
+Nutzen Sie als Ausgangspunkt für die Konfiguration von Checkstyle die Konfigurationsdatei für den
+[Google Java Style](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml)
+(oder alternativ die entsprechende Konfiguration im Checkstyle-Plugin Ihrer IDE) und passen Sie die
+folgenden Abschnitte entsprechend an bzw. ergänzen Sie diese:
+
+```xml
+<!-- Werte anpassen -->
+
+<!-- Ergänzen -->
+
+```
 :::::::::
 
 \bigskip
@@ -313,17 +322,19 @@ checkstyle {
 }
 ```
 -->
-
+::::::::: notes
 Metriken werden sinnvollerweise durch diverse Tools erfasst.
 
-*   **Checkstyle** [([Standalone via CLI](https://checkstyle.org/cmdline.html) und Plugin für
+[**Checkstyle**](https://github.com/checkstyle)
+
+([Standalone via CLI](https://checkstyle.org/cmdline.html) und Plugin für
     [Eclipse](https://checkstyle.org/eclipse-cs) oder [IntelliJ](https://github.com/jshiell/checkstyle-idea) oder
     [Gradle](https://docs.gradle.org/current/userguide/checkstyle_plugin.html))]{.notes}
 
+:::::::::
 
 *   Alternativen/Ergänzungen: [Metrics](http://metrics.sourceforge.net/),
-    [MetricsReloaded](https://github.com/BasLeijdekkers/MetricsReloaded),
-    [FindBugs/SpotBugs](https://github.com/spotbugs/spotbugs), ...
+    [MetricsReloaded](https://github.com/BasLeijdekkers/MetricsReloaded)
 
 [Beispiel: Konfiguration Eclipse-Checkstyle, Hinweis auf Formatter]{.bsp}
 
@@ -333,6 +344,7 @@ Metriken werden sinnvollerweise durch diverse Tools erfasst.
 
 <!-- TODO
 https://github.com/spotbugs/spotbugs
+[FindBugs/SpotBugs](https://github.com/spotbugs/spotbugs)
 
 - Ziel: prüfen
 - Überblick "Bugs" (evtl. am Beispiel?)
@@ -365,10 +377,6 @@ spotbugsMain {
 
 
 ## Wrap-Up
-
-<!-- TODO
-Vorgaben für PM/Praktikum: Checkstyle, Format
--->
 
 *   Code entsteht nicht zum Selbstzweck => Regeln nötig!
     *   Coding Conventions
