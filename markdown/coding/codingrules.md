@@ -272,20 +272,73 @@ in einem Statement) können Sie auch mit 4 Leerzeichen einrücken (8 Leerzeichen
 ([AOSP-Style](https://source.android.com/setup/contribute/code-style)). Halten Sie sich in Ihrem
 Team an eine einheitliche Einrückung.
 
-<!-- TODO
-Vorgaben für PM/Praktikum: Checkstyle, Format
--->
-Nutzen Sie als Ausgangspunkt für die Konfiguration von Checkstyle die Konfigurationsdatei für den
-[Google Java Style](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml)
-(oder alternativ die entsprechende Konfiguration im Checkstyle-Plugin Ihrer IDE) und passen Sie die
-folgenden Abschnitte entsprechend an bzw. ergänzen Sie diese:
-
 ```xml
-<!-- Werte anpassen -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN" "https://checkstyle.org/dtds/configuration_1_3.dtd">
 
-<!-- Ergänzen -->
-
+<module name="Checker">
+  <property name="severity" value="warning"/>
+  <module name="TreeWalker">
+    <module name="AvoidStarImport"/>
+    <module name="BooleanExpressionComplexity"/>
+    <module name="JavaNCSS">
+      <property name="methodMaximum" value="40"/>
+      <property name="classMaximum" value="250"/>
+      <property name="fileMaximum" value="300"/>
+    </module>
+    <module name="ClassDataAbstractionCoupling">
+      <property name="max" value="6"/>
+    </module>
+    <module name="CyclomaticComplexity">
+      <property name="max" value="7"/>
+    </module>
+    <module name="Indentation">
+      <property name="basicOffset" value="4"/>
+      <property name="lineWrappingIndentation" value="8"/>
+      <property name="caseIndent" value="4"/>
+      <property name="throwsIndent" value="4"/>
+      <property name="arrayInitIndent" value="4"/>
+    </module>
+    <module name="MethodCount">
+      <property name="maxTotal" value="10"/>
+      <property name="maxPrivate" value="10"/>
+      <property name="maxPackage" value="10"/>
+      <property name="maxProtected" value="10"/>
+      <property name="maxPublic" value="10"/>
+    </module>
+    <module name="MethodLength">
+      <property name="max" value="40"/>
+    </module>
+    <module name="ParameterNumber">
+      <property name="max" value="3"/>
+    </module>
+    <module name="MissingOverride"/>
+    <module name="MissingJavadocMethod"/>
+    <module name="ParameterName"/>
+    <module name="ConstantName"/>
+    <module name="MemberName"/>
+    <module name="MethodName"/>
+    <module name="TypeName"/>
+    <module name="OneStatementPerLine"/>
+    <module name="MultipleVariableDeclarations"/>
+  </module>
+  <module name="LineLength">
+    <property name="max" value="100"/>
+  </module>
+  <module name="FileTabCharacter">
+    <property name="eachLine" value="true"/>
+  </module>
+  <module name="NewlineAtEndOfFile"/>
+</module>
 ```
+
+Sie können diese Basiseinstellungen auch aus dem PM-Dungeon/PM-Lecture-Repo direkt herunterladen:
+[`checkstyle.xml`](https://github.com/PM-Dungeon/PM-Lecture/tree/master/markdown/coding/src/checkstyle.xml).
+
+Sie können zusätzlich gern noch die weiteren (und strengeren) Regeln aus der vom Checkstyle-Projekt
+bereitgestellten Konfigurationsdatei für den
+[Google Java Style](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml)
+nutzen.
 :::::::::
 
 \bigskip
