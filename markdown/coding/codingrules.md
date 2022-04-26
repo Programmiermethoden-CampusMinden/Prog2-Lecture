@@ -308,7 +308,7 @@ plugins {
 }
 checkstyle {
     configFile file("checkstyle-config/checks.xml")
-    toolVersion "9.2.1"
+    toolVersion "10.1"
     showViolations = true
 }
 ```
