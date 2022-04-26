@@ -141,7 +141,7 @@ Darüber hinaus gibt es vielfältige Regeln für das Aussehen des Codes. Lesen S
 
     (auch als IDE-Plugin)
 
--   Plugin [Spotless](https://github.com/diffplug/spotless) in Gradle:
+-   [Spotless](https://github.com/diffplug/spotless) in Gradle:
 
     ```groovy
     plugins {
