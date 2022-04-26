@@ -297,46 +297,89 @@ folgenden Abschnitte entsprechend an bzw. ergänzen Sie diese:
 
 ## Tool-Support: Checkstyle
 
-<!-- TODO
-https://github.com/checkstyle/checkstyle
-
-- Ziel: prüfen
-- Checkstyle: IDE-Plugin, Gradle
-- Aufbau Konfig
-- Pakete
-- Beispiel für obige Metriken
-- Demo: Eclipse und Eclipse_cs, 3x Formatter einstellen
-- Demo: Gradle
-
-```
-plugins {
-    id "java"
-    id "checkstyle"
-    id "com.github.spotbugs"
-    id "com.diffplug.spotless"
-}
-checkstyle {
-    configFile file("checkstyle-config/checks.xml")
-    toolVersion "10.1"
-    showViolations = true
-}
-```
--->
 ::::::::: notes
-Metriken werden sinnvollerweise durch diverse Tools erfasst.
+Metriken und die Einhaltung von Coding-Conventions werden sinnvollerweise nicht manuell,
+sondern durch diverse Tools erfasst, etwa im Java-Bereich mit Hilfe von
+[**Checkstyle**](https://github.com/checkstyle).
 
-[**Checkstyle**](https://github.com/checkstyle)
-
-([Standalone via CLI](https://checkstyle.org/cmdline.html) und Plugin für
-    [Eclipse](https://checkstyle.org/eclipse-cs) oder [IntelliJ](https://github.com/jshiell/checkstyle-idea) oder
-    [Gradle](https://docs.gradle.org/current/userguide/checkstyle_plugin.html))]{.notes}
-
+Das Tool lässt sich [Standalone über CLI](https://checkstyle.org/cmdline.html) nutzen
+oder als Plugin für IDE's ([Eclipse](https://checkstyle.org/eclipse-cs) oder
+[IntelliJ](https://github.com/jshiell/checkstyle-idea)) einsetzen. Gradle bringt selbst
+ein [Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) mit.
 :::::::::
 
-*   Alternativen/Ergänzungen: [Metrics](http://metrics.sourceforge.net/),
-    [MetricsReloaded](https://github.com/BasLeijdekkers/MetricsReloaded)
+*   IDE: diverse [Plugins](https://checkstyle.org/index.html#Related_Tools):
+    [Eclipse-CS](https://checkstyle.org/eclipse-cs),
+    [CheckStyle-IDEA](https://github.com/jshiell/checkstyle-idea)
 
-[Beispiel: Konfiguration Eclipse-Checkstyle, Hinweis auf Formatter]{.bsp}
+*   [CLI](https://checkstyle.org/cmdline.html):
+    `java -jar checkstyle-10.2-all.jar -c google_checks.xml *.java`
+
+*   [Plugin "checkstyle"](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
+    in Gradle:
+
+    ```{.groovy size="scriptsize"}
+    plugins {
+        id "java"
+        id "checkstyle"
+    }
+    ```
+
+    *   Aufruf: `./gradlew checkstyleMain` (Teil von `./gradlew check`)
+    *   Konfiguration: `<projectDir>/config/checkstyle/checkstyle.xml`
+
+[Demo: IntelliJ, Gradle]{.bsp}
+
+
+## Checkstyle: Konfiguration
+
+::::::::: notes
+Die auszuführenden Checks lassen sich über eine [XML-Datei](https://checkstyle.org/config.html)
+konfigurieren. In [Eclipse-CS](https://checkstyle.org/eclipse-cs) kann man die Konfiguration
+auch in einer GUI bearbeiten.
+
+Das Checkstyle-Projekt stellt eine passende Konfiguration für den
+[Google Java Style](https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml)
+bereit. Diese ist auch in den entsprechenden Plugins oft bereits enthalten und kann direkt
+ausgewählt oder als Startpunkt für eigene Konfigurationen genutzt werden.
+
+Der Startpunkt für die Konfigurationsdatei ist immer das Modul "Checker". Darin können sich
+"FileSetChecks" (Module, die auf einer Menge von Dateien Checks ausführen), "Filters" (Module,
+die Events bei der Prüfung von Regeln filtern) und "AuditListeners" (Module, die akzeptierte
+Events in einen Report überführen) befinden. Der "TreeWalker" ist mit der wichtigste Vertreter
+der FileSetChecks-Module und transformiert die zu prüfenden Java-Sourcen in einen
+_Abstract Syntax Tree_, also eine Baumstruktur, die dem jeweiligen Code unter der Java-Grammatik
+entspricht. Darauf können dann wiederum die meisten Low-Level-Module arbeiten.
+
+Die [Standard-Checks](https://checkstyle.org/checks.html) sind bereits in Checkstyle implementiert
+und benötigen keine weitere externe Abhängigkeiten. Die einzelnen Checks werden in der Regel als
+"Modul" dem "TreeWalker" hinzugefügt und über die jeweiligen Properties näher konfiguriert. Sie
+finden in der [Doku](https://checkstyle.org/checks.html) zu jedem Check das entsprechende Modul,
+das Eltern-Modul (also wo müssen Sie das Modul im XML-Baum einfügen) und auch die möglichen
+Properties und deren Defaulteinstellungen.
+:::::::::
+
+```{.xml size="scriptsize"}
+<module name="Checker">
+    <module name="LineLength">
+        <property name="max" value="100"/>
+    </module>
+
+    <module name="TreeWalker">
+        <module name="AvoidStarImport"/>
+        <module name="MethodCount">
+            <property name="maxPublic" value="10"/>
+            <property name="maxTotal" value="40"/>
+        </module>
+    </module>
+</module>
+```
+
+::: notes
+Alternativen/Ergänzungen: [MetricsReloaded](https://github.com/BasLeijdekkers/MetricsReloaded).
+:::
+
+[Demo: Konfiguration Eclipse-CS, Hinweis auf Formatter]{.bsp}
 
 
 ## SpotBugs: Finde Anti-Pattern und potentielle Bugs (Linter)
