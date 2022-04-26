@@ -12,8 +12,8 @@ dependencies {
 }
 
 checkstyle {
-    configFile file('checkstyle.xml');
-    toolVersion '10.2';
+    configFile file('checkstyle.xml')
+    toolVersion '10.2'
 }
 
 application {

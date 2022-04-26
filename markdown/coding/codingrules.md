@@ -72,11 +72,8 @@ Beispiele: [Sun Code Conventions](https://www.oracle.com/technetwork/java/codeco
 
 ## Coding Conventions: Beispiel nach Google Java Style/AOSP formatiert
 
-```{.java size="tiny"}
+```{.java size="scriptsize"}
 package wuppie.deeplearning.strategy;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Demonstriert den Einsatz von AOSP/Google Java Style ................. Umbruch nach 100 Zeichen |
@@ -268,7 +265,7 @@ konkreten Fall hinterfragt und diskutiert werden!
 
 
 ::::::::: notes
-### Metriken für das PM-Praktikum
+### Konfiguration für das PM-Praktikum (Metriken, Checkstyle)
 
 Im PM-Praktikum beachten wir die obigen Metriken mit den dort definierten Grenzwerten.
 
@@ -277,6 +274,9 @@ an. Statt der dort vorgeschriebenen Einrückung mit 2 Leerzeichen (und 4+ Leerze
 in einem Statement) können Sie auch mit 4 Leerzeichen einrücken (8 Leerzeichen bei Zeilenumbruch)
 ([AOSP-Style](https://source.android.com/setup/contribute/code-style)). Halten Sie sich in Ihrem
 Team an eine einheitliche Einrückung.
+
+Nutzen Sie diese Minimal-Konfiguration für Checkstyle für Ihre Praktikumsaufgaben (zur Erklärung
+der Elemente siehe die nächsten beiden Folien):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -339,7 +339,7 @@ Team an eine einheitliche Einrückung.
 ```
 
 Sie können diese Basis-Einstellungen auch aus dem PM-Dungeon/PM-Lecture-Repo direkt herunterladen:
-[`checkstyle.xml`](https://github.com/PM-Dungeon/PM-Lecture/tree/master/markdown/coding/src/checkstyle.xml).
+[checkstyle.xml](https://github.com/PM-Dungeon/PM-Lecture/tree/master/markdown/coding/src/checkstyle.xml).
 
 Sie können zusätzlich gern noch die weiteren (und strengeren) Regeln aus der vom Checkstyle-Projekt
 bereitgestellten Konfigurationsdatei für den
@@ -361,8 +361,8 @@ sondern durch diverse Tools erfasst, etwa im Java-Bereich mit Hilfe von
 
 Das Tool lässt sich [Standalone über CLI](https://checkstyle.org/cmdline.html) nutzen
 oder als Plugin für IDE's ([Eclipse](https://checkstyle.org/eclipse-cs) oder
-[IntelliJ](https://github.com/jshiell/checkstyle-idea)) einsetzen. Gradle bringt selbst
-ein [Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) mit.
+[IntelliJ](https://github.com/jshiell/checkstyle-idea)) einsetzen. Gradle bringt ein
+eigenes [Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) mit.
 :::::::::
 
 *   IDE: diverse [Plugins](https://checkstyle.org/index.html#Related_Tools):
@@ -382,17 +382,17 @@ ein [Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html) m
     }
 
     checkstyle {
-        configFile file('checkstyle.xml');
-        toolVersion '10.2';
+        configFile file('checkstyle.xml')
+        toolVersion '10.2'
     }
     ```
 
     *   Aufruf: `./gradlew checkstyleMain` (Teil von `./gradlew check`)
     *   Konfiguration: `<projectDir>/config/checkstyle/checkstyle.xml` (Default)
-        [bzw. mit der Konfiguration direkt im Projektordner]{.notes}
+        [bzw. mit der obigen Konfiguration direkt im Projektordner]{.notes}
     *   Report: `<projectDir>/build/reports/checkstyle/main.html`
 
-[Demo: IntelliJ, [Checkstyl/Gradle](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/checkstyle/)]{.bsp}
+[Demo: IntelliJ, [Checkstyle/Gradle](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/checkstyle/)]{.bsp}
 
 
 ## Checkstyle: Konfiguration
@@ -460,9 +460,7 @@ https://github.com/spotbugs/spotbugs
 ```
 plugins {
     id "java"
-    id "checkstyle"
-    id "com.github.spotbugs"
-    id "com.diffplug.spotless"
+    id "com.github.spotbugs" version "5.0.6"
 }
 spotbugs {
     toolVersion = "4.2.2"
