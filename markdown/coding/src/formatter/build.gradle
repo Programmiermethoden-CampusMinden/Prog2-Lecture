@@ -1,0 +1,23 @@
+plugins {
+    id "java"
+    id "application"
+    id "com.diffplug.spotless" version "6.5.0"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+spotless {
+    java {
+        // googleJavaFormat()
+        googleJavaFormat().aosp()  // indent w/ 4 spaces
+    }
+}
+
+application {
+    mainClass = 'wuppie.deeplearning.strategy.MyWuppieStudi'
+}
