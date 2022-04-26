@@ -468,15 +468,14 @@ plugins {
     id "com.github.spotbugs" version "5.0.6"
 }
 spotbugs {
-    toolVersion = "4.2.2"
     ignoreFailures = true
     showStackTraces = false
 }
 spotbugsMain {
     reports {
-        xml {
-            enabled = true
-            destination = file("$buildDir/reports/spotbugsXml.xml")
+        html {
+            required = true
+            outputLocation = file("$buildDir/reports/spotbugs.html")
         }
     }
 }
@@ -486,9 +485,10 @@ spotbugsMain {
 [SpotBugs](https://github.com/spotbugs/spotbugs), ...
 
 
-`java -jar spotbugs.jar options ...`
-
-https://github.com/spotbugs/spotbugs-gradle-plugin
+CLI: `java -jar spotbugs.jar options ...`
+[IntelliJ SpotBugs plugin](https://github.com/JetBrains/spotbugs-intellij-plugin)
+[SpotBugs Eclipse plugin](https://spotbugs.readthedocs.io/en/latest/eclipse.html)
+[SpotBugs Gradle Plugin](https://github.com/spotbugs/spotbugs-gradle-plugin)
 
 `./gradlew spotbugsMain` (in `./gradlew check`)
 
