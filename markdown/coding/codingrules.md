@@ -134,16 +134,15 @@ Darüber hinaus gibt es vielfältige Regeln für das Aussehen des Codes. Lesen S
 
 ## Formatieren Sie Ihren Code (mit der IDE)
 
--   Code-Style in IDE einstellen und zum Formatieren nutzen
+*   IDE: Code-Style einstellen und zum Formatieren nutzen
 
--   [google-java-format](https://github.com/google/google-java-format):
-    `java -jar /path/to/google-java-format-1.15.0-all-deps.jar --replace *.java`
+*   [google-java-format](https://github.com/google/google-java-format):
+    `java -jar google-java-format.jar --replace *.java`
+    [(auch als IDE-Plugin)]{.notes}
 
-    (auch als IDE-Plugin)
+*   [Spotless](https://github.com/diffplug/spotless) in Gradle:
 
--   [Spotless](https://github.com/diffplug/spotless) in Gradle:
-
-    ```groovy
+    ```{.groovy size="scriptsize"}
     plugins {
         id "java"
         id "com.diffplug.spotless" version "6.5.0"
@@ -160,6 +159,8 @@ Darüber hinaus gibt es vielfältige Regeln für das Aussehen des Codes. Lesen S
     `./gradlew spotlessCheck` (Teil von `./gradlew build`) und `./gradlew spotlessApply`
 
 ::::::::: notes
+Einstellungen der IDE's:
+
 *   Eclipse:
     *   `Project > Properties > Java Code Style > Formatter`: Coding-Style einstellen/einrichten
     *   Code markieren, `Source > Format`
@@ -177,12 +178,19 @@ ein anderer Style angewendet wird als beim Clean Up oder beim Format Source ... 
 man auch die entsprechenden Checkstyle-Regeln passend einstellen, sonst bekommt man Warnungen
 angezeigt, die man durch ein automatisches Formatieren nicht beheben kann.
 
+
 Wer direkt den [Google Java Style](https://google.github.io/styleguide/javaguide.html) nutzt,
 kann auch den dazu passenden Formatter von Google einsetzen:
 [google-java-format](https://github.com/google/google-java-format).
 Diesen kann man entweder als Plugin für IntelliJ/Eclipse einsetzen oder als Stand-alone-Tool
 (Kommandozeile oder Build-Skripte) aufrufen. Wenn man sich noch einen entsprechenden
 Git-Hook definiert, wird vor jedem Commit der Code entsprechend den Richtlinien formatiert :)
+
+
+_Hinweis_: Bei Spotless in Gradle müssen je nach den Versionen von Spotless/google-java-format
+bzw. des JDK noch Optionen in der Datei `gradle.properties` eingestellt werden (siehe
+[Demo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/formatter/) und
+[Spotless > google-java-format](https://github.com/diffplug/spotless/tree/main/plugin-gradle#google-java-format)).
 :::::::::
 
 <!-- Für die Demo:
