@@ -111,7 +111,7 @@ public class MyWuppieStudi implements Comparable<MyWuppieStudi> {
 ::: notes
 Dieses Beispiel wurde nach Google Java Style/AOSP formatiert.
 
-Die Zeilenlänge sind max. 100 Zeichen. Pro Methode werden max. 40 Zeilen genutzt. Zwischen Attributen,
+Die Zeilenlänge beträgt max. 100 Zeichen. Pro Methode werden max. 40 Zeilen genutzt. Zwischen Attributen,
 Methoden und Importen wird jeweils eine Leerzeile eingesetzt (zwischen den einzelnen Attributen _muss_
 aber keine Leerzeile genutzt werden). Zur logischen Gliederung können innerhalb von Methoden weitere
 Leerzeilen eingesetzt werden, aber immer nur eine.
@@ -136,57 +136,56 @@ Darüber hinaus gibt es vielfältige Regeln für das Aussehen des Codes. Lesen S
 :::
 
 
-## Formatieren Sie Ihren Code mit der IDE
+## Formatieren Sie Ihren Code (mit der IDE)
 
-<!-- TODO
-https://github.com/diffplug/spotless
-https://github.com/google/google-java-format
-https://google.github.io/styleguide/javaguide.html
-https://source.android.com/setup/contribute/code-style
+-   Code-Style in IDE einstellen und zum Formatieren nutzen
 
-- Ziel: aktiv einhalten
-- IDE: IntelliJ, Eclipse (3x!), ...
-- Gradle: Spotless => google-java-format und manueller Aufruf
+-   [google-java-format](https://github.com/google/google-java-format):
+    `java -jar /path/to/google-java-format-1.15.0-all-deps.jar --replace *.java`
 
-```
-plugins {
-    id "java"
-    id "checkstyle"
-    id "com.github.spotbugs"
-    id "com.diffplug.spotless"
-}
+    (auch als IDE-Plugin)
 
-spotless {
-    java {
-        googleJavaFormat().aosp()
+-   Plugin [Spotless](https://github.com/diffplug/spotless) in Gradle:
+
+    ```groovy
+    plugins {
+        id "java"
+        id "com.diffplug.spotless"
     }
-}
-```
--->
 
-*   Eclipse: "`Project > Properties > Java Code Style > Formatter`":
-    Coding-Style einstellen/einrichten
-*   Code markieren, "`Source > Format`"
-*   Komplettes Aufräumen: "`Source > Clean Up`" (Formatierung, Importe, Annotationen, ...)
-    Kann auch so eingestellt werden, dass ein Clean Up immer beim Speichern
-    ausgeführt wird!
+    spotless {
+        java {
+            // googleJavaFormat()
+            googleJavaFormat().aosp()
+        }
+    }
+    ```
+
+    `./gradlew spotlessApply``
 
 ::::::::: notes
-IntelliJ verfügt über ähnliche Fähigkeiten.
+*   Eclipse:
+    *   `Project > Properties > Java Code Style > Formatter`: Coding-Style einstellen/einrichten
+    *   Code markieren, `Source > Format`
+    *   Komplettes Aufräumen: `Source > Clean Up` (Formatierung, Importe, Annotationen, ...)
+        Kann auch so eingestellt werden, dass ein Clean Up immer beim Speichern
+        ausgeführt wird!
+*   IntelliJ verfügt über ähnliche Fähigkeiten:
+    *   Einstellen über `Preferences > Editor > Code Style > Java`
+    *   Formatieren mit `Code > Reformat Code` oder `Code > Reformat File`
 
+**Achtung**: Zumindest in Eclipse gibt es mehrere Stellen, wo ein Code-Style eingestellt werden
+kann ("Clean Up", "Formatter/Profile", "Formatter/Implementation"). Diese sollten dann jeweils
+auf den selben Style eingestellt werden, sonst gibt es u.U. lustige Effekte, da beim Speichern
+ein anderer Style angewendet wird als beim Clean Up oder beim Format Source ... Analog sollte
+man auch die entsprechenden Checkstyle-Regeln passend einstellen, sonst bekommt man Warnungen
+angezeigt, die man durch ein automatisches Formatieren nicht beheben kann.
 
 Wer direkt den [Google Java Style](https://google.github.io/styleguide/javaguide.html) nutzt, kann auch den dazu
 passenden Formatter von Google einsetzen: [google-java-format](https://github.com/google/google-java-format).
 Diesen kann man entweder als Plugin für IntelliJ/Eclipse einsetzen oder als Stand-alone-Tool
 (Kommandozeile oder Build-Skripte) aufrufen. Wenn man sich noch einen entsprechenden
 Git-Hook definiert, wird vor jedem Commit der Code entsprechend den Richtlinien formatiert :)
-
-**Achtung**: Zumindest in Eclipse gibt es mehrere Stellen, wo ein Code-Style eingestellt
-werden kann (Clean Up, Formatter/Profile, Formatter/Implementation). Diese sollten dann jeweils
-auf den selben Style eingestellt werden, sonst gibt es u.U. lustige Effekte, da beim Speichern
-ein anderer Style angewendet wird als beim Clean Up oder beim Format Source ... Analog sollte
-man auch die entsprechenden Checkstyle-Regeln passend einstellen, sonst bekommt man Warnungen
-angezeigt, die man durch ein automatisches Formatieren nicht beheben kann.
 :::::::::
 
 [Beispiel: Konfiguration Formatter (`Source > Format`, `Source > Clean Up`)]{.bsp}
