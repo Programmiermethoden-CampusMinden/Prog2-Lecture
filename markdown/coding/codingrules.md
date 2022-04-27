@@ -241,7 +241,7 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
-[Demo: Konfiguration Formatter IDE, [Spotless/Gradle](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/formatter/)]{.bsp}
+[Demo: Konfiguration Formatter (IDE), [Spotless/Gradle](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/formatter/)]{.bsp}
 
 
 ## Metriken: Kennzahlen für verschiedene Aspekte zum Code
