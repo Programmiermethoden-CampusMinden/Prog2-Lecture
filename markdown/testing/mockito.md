@@ -31,9 +31,6 @@ fhmedia:
 
 ## Motivation
 
-![MockitoGrafik]((images/mockito.png)) // evtl. Lizenzprobleme -> klären ob das
-hier rein kann.
-
 Mockito ist ein Mocking-Framework. Es simuliert das Verhalten eines realen
 Objektes oder einer realen Methode.
 
@@ -49,7 +46,7 @@ Dabei stören uns aber bisher so ein paar Dinge:
 * Manchmal existiert der zu testende Teil einer Applikation auch noch gar nicht,
   sondern es gibt nur die Interfaces.
 * Oder es gibt unschöne Seiteneffekte beim Arbeiten mit den realen Objekten. Zum
-  Beispiel könnte es sein das immer eine email versendet wird wenn wir mit einem
+  Beispiel könnte es sein das immer eine email versendet wird, wenn wir mit einem
   Objekt interagieren.
 
 In solchen Situationen wollen wir eine Möglichkeit haben das Verhalten eines
@@ -130,15 +127,13 @@ unterscheiden zu können.
   internen Zustand eines Stubs gewähren, wenn dies nötigt ist. Man könnte
   eigentlich auch sagen das Stubs in den Tests generell zum verifizieren eines
   Zustandes genutzt werden.
-- **Spy**: Ein Spy ist in Mockito eine Art Wrapper der um ein Objekt gelegt
+- **Spy**: Ein Spy ist in Mockito eine Art Wrapper, der um ein Objekt gelegt
   wird. Dabei werden dann sämtliche Methodenaufrufe die eigentlich sonst von den
   realen Methoden eines Objekts ausgeführt worden wären an den Spion delegiert,
   der diese dann protokollieren, den State verändern und/oder eventuelle, von
   den Methoden getätigten Ausgaben kontrolliert verändern kann.
 
 // TODO Evtl. noch fuzzy Dummy und Fake erklären.
-
-// TODO hübsche Grafik
 
 ## Mockito Setup
 
