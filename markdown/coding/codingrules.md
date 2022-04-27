@@ -74,7 +74,7 @@ Beispiele: [Sun Code Conventions](https://www.oracle.com/technetwork/java/codeco
 [AOSP Java Code Style for Contributors](https://source.android.com/setup/contribute/code-style)
 
 
-## Coding Conventions: Beispiel nach Google Java Style/AOSP formatiert
+## Beispiel nach Google Java Style/AOSP formatiert
 
 ```{.java size="scriptsize"}
 package wuppie.deeplearning.strategy;
