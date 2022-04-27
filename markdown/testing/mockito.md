@@ -178,7 +178,25 @@ Quelle: [mock-vs-stub-vs-spy](https://www.javatpoint.com/mock-vs-stub-vs-spy)
 
 ## Folie 3
 
-...
+[Demo: WuppiWarenlagerStubTest]{.bsp}
+
+Bei dem gezeigten Beispiel unseres `WuppiStores` sieht man, dass dieser
+normalerweise von einem fertigen Warenlager die Wuppis beziehen möchte. Da
+dieses Lager aber noch nicht existiert haben wir uns kurzerhand einfach einen
+Stub von unserem IWuppiWarenlager Interface erstellt in dem wir zu Testzwecken,
+händisch ein Paar Wuppis ins Lager geräumt haben.
+
+Das funktioniert in diesem mini Testbeispiel ganz gut aber, wenn unsere Stores
+erst einmal so richtig Fahrt aufnehmen und wir irgendwann weltweit Wuppis
+verkaufen wird der Code des `IWuppiWarenlagers` wahrscheinlich sehr schnell viel
+komplexer werden; was unweigerlich dann zu Maintenance-Problemen unserer
+händisch angelegten Tests führt. Wenn wir zum Beispiel einmal eine Methode
+hinzufügen wollen, die es uns ermöglicht nicht immer alle Wuppis aus dem Lager
+zu ordern oder vielleicht noch andere Methoden, die Fluppis orderbar machen,
+hinzufügen, müssen wir immer dafür sorgen, dass wir die getätigten Änderungen
+händisch in den Stub des Warenlagers einpflegen.
+
+Das will eigentlich niemand...
 
 ## Folie 4
 
