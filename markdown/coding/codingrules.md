@@ -185,7 +185,7 @@ formatieren lassen. Hier einige Möglichkeiten:
     }
     ```
 
-    [Prüfen mit]{.notes} `./gradlew spotlessCheck` (Teil von `./gradlew build`)
+    [Prüfen mit]{.notes} `./gradlew spotlessCheck` (Teil von `./gradlew check`)
     und [Formatieren mit]{.notes} `./gradlew spotlessApply`
 
 
