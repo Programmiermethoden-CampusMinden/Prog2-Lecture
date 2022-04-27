@@ -9,7 +9,7 @@ import java.util.List;
  * einfach einen Stub des später einmal existierenden Warenlagers um die Funktionalität des Lagers
  * testen zu können.
  */
-public class IWuppiWarenlagerStub implements IWuppiWarenlager {
+public class WuppiWarenlagerStub implements IWuppiWarenlager {
 
     /**
      * Gibt eine Liste mit allen Wuppis zurück die im Warenlager bestellt werden können.

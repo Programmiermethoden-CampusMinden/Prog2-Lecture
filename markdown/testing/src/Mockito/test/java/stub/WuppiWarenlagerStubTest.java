@@ -18,7 +18,7 @@ public class WuppiWarenlagerStubTest {
         // Wir nutzen kurzerhand einen Stub des eigentlich noch nicht
         // fertiggestellten Warenlagers, um schonmal die Funktionalität zu
         // testen.
-        IWuppiWarenlager lager = new IWuppiWarenlagerStub();
+        IWuppiWarenlager lager = new WuppiWarenlagerStub();
 
         // Unser neuer, brandheißer WuppiStore!
         WuppiStore wuppiStore = new WuppiStore(lager);
