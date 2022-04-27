@@ -31,10 +31,37 @@ fhmedia:
 
 ## Motivation
 
-// TODO - Warum ist Mockito so toll, warum will man das verwenden und was für
-Vorteile bringt es einem überhaupt?
+![MockitoGrafik]((images/mockito.png)) // evtl. Lizenzprobleme -> klären ob das
+hier rein kann.
 
-// TODO hübsche Einführungsgrafik.
+Mockito ist ein Mocking-Framework. Es simuliert das Verhalten eines realen
+Objektes oder einer realen Methode.
+
+Wofür brauchen wir denn jetzt so ein Mocking-Framework überhaupt?
+
+Wir wollen die Funktionalität einer Klasse isoliert vom Rest testen können.
+Dabei stören uns aber bisher so ein paar Dinge:
+
+* Arbeiten mit den echten Objekten ist langsam. (zum Beispiel aufgrund von
+  Datenbankenzugriffen)
+* Objekte beinhalten oft komplexe Abhängigkeiten die in Tests schwer abzudecken
+  sind.
+* Manchmal existiert der zu testende Teil einer Applikation auch noch gar nicht,
+  sondern es gibt nur die Interfaces.
+* Oder es gibt unschöne Seiteneffekte beim Arbeiten mit den realen Objekten. Zum
+  Beispiel könnte es sein das immer eine email versendet wird wenn wir mit einem
+  Objekt interagieren.
+
+In solchen Situationen wollen wir eine Möglichkeit haben das Verhalten eines
+realen Objektes bzw. der Methoden zu simulieren möglichst ohne dabei die
+originalen Methoden aufrufen zu müssen. (Manchmal möchte man das dennoch
+aber dazu später mehr...)
+
+Und genau hier kommt Mockito ins Spiel. Mockito hilft uns dabei uns von den
+externen Abhängigkeiten zu lösen in dem es sogenannte Mocks, Stubs oder
+Spies anbietet mit denen sich das Verhalten der realen Objekte
+simulieren/überwachen und testen lässt.
+
 
 ## Einführung
 
