@@ -19,7 +19,7 @@ spotbugsMain {
     reports {
         html {
             required = true
-            outputLocation = file("$buildDir/reports/spotbugs.html")
+            outputLocation = file("$buildDir/reports/spotbugs/spotbugs.html")
         }
     }
 }

@@ -398,46 +398,30 @@ Alternativen/Ergänzungen: beispielsweise [MetricsReloaded](https://github.com/B
 
 ## SpotBugs: Finde Anti-Pattern und potentielle Bugs (Linter)
 
+*   [**SpotBugs**](https://github.com/spotbugs/spotbugs) sucht nach über 400 potentiellen Bugs im Code
+    *   Anti-Pattern (schlechte Praxis, "dodgy" Code)
+    *   Sicherheitsprobleme
+    *   Korrektheit
 
-<!-- TODO
-https://github.com/spotbugs/spotbugs
-[FindBugs/SpotBugs](https://github.com/spotbugs/spotbugs)
+\smallskip
 
-- Ziel: prüfen
-- Überblick "Bugs" (evtl. am Beispiel?)
-- Demo: Gradle
+*   CLI: `java -jar spotbugs.jar options ...`
+*   IDE: [IntelliJ SpotBugs plugin](https://github.com/JetBrains/spotbugs-intellij-plugin),
+    [SpotBugs Eclipse plugin](https://spotbugs.readthedocs.io/en/latest/eclipse.html)
+*   Gradle: [SpotBugs Gradle Plugin](https://github.com/spotbugs/spotbugs-gradle-plugin)
 
-```
-plugins {
-    id "java"
-    id "com.github.spotbugs" version "5.0.6"
-}
-spotbugs {
-    ignoreFailures = true
-    showStackTraces = false
-}
-spotbugsMain {
-    reports {
-        html {
-            required = true
-            outputLocation = file("$buildDir/reports/spotbugs/spotbugs.html")
-        }
+    ```{.groovy size="scriptsize"}
+    plugins {
+        id "java"
+        id "com.github.spotbugs" version "5.0.6"
     }
-}
-```
--->
+    spotbugs {
+        ignoreFailures = true
+        showStackTraces = false
+    }
+    ```
 
-[**SpotBugs**](https://github.com/spotbugs/spotbugs), ...
-
-
-CLI: `java -jar spotbugs.jar options ...`
-[IntelliJ SpotBugs plugin](https://github.com/JetBrains/spotbugs-intellij-plugin)
-[SpotBugs Eclipse plugin](https://spotbugs.readthedocs.io/en/latest/eclipse.html)
-[SpotBugs Gradle Plugin](https://github.com/spotbugs/spotbugs-gradle-plugin)
-
-[Prüfen mit]{.notes} `./gradlew spotbugsMain` (in `./gradlew check`)
-
-
+    [Prüfen mit]{.notes} `./gradlew spotbugsMain` (in `./gradlew check`)
 
 <!-- Für die Demo:
 docker pull gradle
