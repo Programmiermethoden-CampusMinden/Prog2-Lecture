@@ -269,7 +269,7 @@ konkreten Fall hinterfragt und diskutiert werden!
 
 
 ::::::::: notes
-### Konfiguration für das PM-Praktikum (Metriken, Checkstyle)
+## Konfiguration für das PM-Praktikum (Metriken, Checkstyle)
 
 Im PM-Praktikum beachten wir die obigen Metriken mit den dort definierten Grenzwerten.
 
@@ -518,6 +518,8 @@ docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
         *   Kommentare
         :::
 
+    *   Formatieren mit **Spotless**
+
     *   Prinzipien des objektorientierten Programmierens
 
         ::: notes
@@ -531,7 +533,8 @@ docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 \bigskip
 
 *   Metriken: Einhaltung von Regeln in Zahlen ausdrücken
-*   Prüfung manuell durch Code Reviews oder durch Tools wie Checkstyle oder SpotBugs
+*   Prüfung manuell durch Code Reviews oder durch Tools wie **Checkstyle** oder **SpotBugs**
+*   Definition des "PM-Styles" (siehe Folie "Konfiguration für das PM-Praktikum")
 
 
 
