@@ -183,7 +183,7 @@ Quelle: [mock-vs-stub-vs-spy](https://www.javatpoint.com/mock-vs-stub-vs-spy)
 Bei dem gezeigten Beispiel unseres `WuppiStores` sieht man, dass dieser
 normalerweise von einem fertigen Warenlager die Wuppis beziehen möchte. Da
 dieses Lager aber noch nicht existiert haben wir uns kurzerhand einfach einen
-Stub von unserem IWuppiWarenlager Interface erstellt in dem wir zu Testzwecken,
+Stub von unserem `IWuppiWarenlager` Interface erstellt in dem wir zu Testzwecken,
 händisch ein Paar Wuppis ins Lager geräumt haben.
 
 Das funktioniert in diesem mini Testbeispiel ganz gut aber, wenn unsere Stores
