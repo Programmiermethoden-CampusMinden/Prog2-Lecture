@@ -46,8 +46,8 @@ Dabei stören uns aber bisher so ein paar Dinge:
 * Manchmal existiert der zu testende Teil einer Applikation auch noch gar nicht,
   sondern es gibt nur die Interfaces.
 * Oder es gibt unschöne Seiteneffekte beim Arbeiten mit den realen Objekten. Zum
-  Beispiel könnte es sein das immer eine email versendet wird, wenn wir mit einem
-  Objekt interagieren.
+  Beispiel könnte es sein das immer eine email versendet wird, wenn wir mit
+  einem Objekt interagieren.
 
 In solchen Situationen wollen wir eine Möglichkeit haben das Verhalten eines
 realen Objektes bzw. der Methoden zu simulieren möglichst ohne dabei die
