@@ -40,9 +40,13 @@ youtube:
   - link: ""
     name: "VL Coding Conventions"
   - link: ""
-    name: "Demo "
+    name: "Demo Formatter und Spotless"
   - link: ""
-    name: "Demo "
+    name: "Demo Checkstyle"
+  - link: ""
+    name: "Demo Checkstyle: Konfiguration mit Eclipse-CS"
+  - link: ""
+    name: "Demo SpotBugs"
 fhmedia:
   - link: ""
     name: "VL Coding Conventions"
@@ -448,7 +452,7 @@ Properties und deren Default-Einstellungen.
 Alternativen/Ergänzungen: [MetricsReloaded](https://github.com/BasLeijdekkers/MetricsReloaded).
 :::
 
-[Demo: Konfiguration Eclipse-CS, Hinweis auf Formatter]{.bsp}
+[Demo: Konfiguration mit Eclipse-CS, Hinweis auf Formatter]{.bsp}
 
 
 ## SpotBugs: Finde Anti-Pattern und potentielle Bugs (Linter)
