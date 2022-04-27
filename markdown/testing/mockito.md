@@ -54,14 +54,14 @@ Dabei stören uns aber bisher so ein paar Dinge:
 
 In solchen Situationen wollen wir eine Möglichkeit haben das Verhalten eines
 realen Objektes bzw. der Methoden zu simulieren möglichst ohne dabei die
-originalen Methoden aufrufen zu müssen. (Manchmal möchte man das dennoch
-aber dazu später mehr...)
+originalen Methoden aufrufen zu müssen. (Manchmal möchte man das dennoch aber
+dazu später mehr...)
 
 Und genau hier kommt Mockito ins Spiel. Mockito hilft uns dabei uns von den
-externen Abhängigkeiten zu lösen in dem es sogenannte Mocks, Stubs oder
-Spies anbietet mit denen sich das Verhalten der realen Objekte
-simulieren/überwachen und testen lässt.
-
+externen Abhängigkeiten zu lösen in dem es sogenannte Mocks, Stubs oder Spies
+anbietet mit denen sich das Verhalten der realen Objekte simulieren/überwachen
+und testen lässt.
+Quelle: [Understanding mockito](https://medium.com/@ashrawan70/understanding-the-mockito-74cd7e5a77e4)
 
 ## Einführung
 
@@ -142,7 +142,7 @@ unterscheiden zu können.
 
 ## Mockito Setup
 
-Gradle -> (build.gradle):
+Gradle: `build.gradle`
 
 - ```java
   dependencies {
@@ -151,7 +151,7 @@ Gradle -> (build.gradle):
     }
    ```
 
-Maven -> (pom.xml):
+Maven: `pom.xml`
 
 - ```xml
     <dependency>
@@ -169,8 +169,13 @@ Maven -> (pom.xml):
 
 ## Folie 2
 
-...
-
+| Parameter         | Mock                                                                                                                                                    | Stub                                                                                         | Spy                                                                                                                               |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| Datenquelle       | Daten der Mocks werden in den Tests definiert                                                                                                           | Daten in Stubs sind hart codiert. Sie sind normalerweise eng mit der Testsuite verbunden.    | Spies sind partielle/halb gemockte Objekte. Spies werden ebenso wie Mocks in großen Testsuiten verwendet.                         |
+| Erstellt von      | Werden normalerweise bei der Verwendung eines Mocking-Frameworks erstellt.                                                                              | Werden normalerweise von Hand kreiert                                                        | Werden normalerweise bei der Verwendung eines Mocking-Frameworks erstellt.                                                        |
+| Verwendung        | Mocks werden meistens in großen Testsuiten verwendet. Mocks werden zum erstellen eines kompletten Mocks oder eines Dummy Objekts verwendet.             | Stubs werden meistens in kleinen/überschaubaren Testsuiten verwendet.                        | Spies werden verwendet um partielle oder halb gemockte Objekte zu erzeugen. Spies werden meistens in großen Testsuiten verwendet. |
+| Default Verhalten | Wenn gemockte Objekte verwendet werden ist deren default Verhalten von Methoden (wenn diese nicht stubed sind) das sie gar nichts tun. (doNothing(...)) | Beinhalten meistens nur das absolute Minimum an Methoden die für einen Test benötigt werden. | Wenn Spies verwendet werden ist deren default Verhalten von Methoden (die nicht stubbed sind) das sie die reale Methode aufrufen. |
+Quelle: [mock-vs-stub-vs-spy](https://www.javatpoint.com/mock-vs-stub-vs-spy)
 ## Folie 3
 
 ...
@@ -189,6 +194,20 @@ Maven -> (pom.xml):
 
 ## Wrap-Up
 
+* Gründliches Testen ist ebenso viel Aufwand wie Coden (siehe vorherige
+  Vorlesungen über JUnit tests).
+* How to Setup.
+* Unterschiede Mock > Stub > Spy.
+* Einfaches Beispiel für einen Mock.
+* Einfaches Beispiel für einen Stub.
+* Einfaches Beispiel für einen Spy.
+* Testen von Verhalten.
+* Verifikation mit `when(...).then(...)` / `times(...)`
+* Was macht der Mockito Arguemnt Captor.
+* Dynamische manipulation von Argumenten.
+* Dynamische Rückgabewerte basierend auf den verarbeiteten Argumenten.
+* // TODO
+
 ...
 
 ## NOTIZEN
@@ -197,7 +216,7 @@ Maven -> (pom.xml):
 
 @see https://www.javatpoint.com/examples-of-mockito-and-junit-in-eclipse-ide
 
-# Fakes vs. Dummys vs. Mock vs. Stub vs. Spy
+## Fakes vs. Dummys vs. Mock vs. Stub vs. Spy
 
 @see https://www.javatpoint.com/mockito
 @see https://www.javatpoint.com/mock-vs-stub-vs-spy
@@ -338,22 +357,6 @@ Fake vs... @see https://www.martinfowler.com/articles/mocksArentStubs.html
 - siehe coding Beispiel.
 
 ## Mockitos internal Whitebox is depreacted but Powermock has one with extended capabilities.
-
-## Wrap-Up
-
-* Gründliches Testen ist ebenso viel Aufwand wie Coden (siehe vorherige
-  Vorlesungen über JUnit tests).
-* How to Setup.
-* Unterschiede Mock > Stub > Spy.
-* Einfaches Beispiel für einen Mock.
-* Einfaches Beispiel für einen Stub.
-* Einfaches Beispiel für einen Spy.
-* Testen von Verhalten.
-* Verifikation mit `when(...).then(...)` / `times(...)`
-* Was macht der Mockito Arguemnt Captor.
-* Dynamische manipulation von Argumenten.
-* Dynamische Rückgabewerte basierend auf den verarbeiteten Argumenten.
-* // TODO
 
 <!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
 ::: slides
