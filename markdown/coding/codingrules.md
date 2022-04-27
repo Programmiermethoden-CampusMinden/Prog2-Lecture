@@ -33,7 +33,10 @@ outcomes:
   - k2: "Erklären wichtiger Grundregeln des objektorientierten Programmierens"
   - k2: "Erklären der Metriken NCSS, McCabe, BEC, DAC"
   - k3: "Einhalten der wichtigsten Grundregeln des objektorientierten Programmierens"
-  - k3: "Nutzung des Tools Checkstyle (Standalone, IDE-Plugins, Konfiguration)"
+  - k3: "Einhalten der wichtigsten Coding Conventions (Formatierung, Namen, Metriken)"
+  - k3: "Nutzung des Tools Spotless (Formatierung des Codes)"
+  - k3: "Nutzung des Tools Checkstyle (Coding Conventions und Metriken)"
+  - k3: "Nutzung des Tools SpotBugs (Vermeiden von Anti-Pattern)"
 assignments:
   - topic: sheet05
 youtube:
@@ -125,15 +128,20 @@ verzichtet werden.
 
 Es wird mit Leerzeichen eingerückt. [Google Java Style](https://google.github.io/styleguide/javaguide.html#s4.2-block-indentation)
 arbeitet mit 2 Leerzeichen, während [AOSP](https://source.android.com/setup/contribute/code-style#use-spaces-for-indentation)
-hier 4 Leerzeichen vorschreibt.
+hier 4 Leerzeichen vorschreibt. Im Beispiel wurde nach AOSP eingerückt.
 
-Darüber hinaus gibt es vielfältige Regeln für das Aussehen des Codes. Lesen Sie dazu entsprechend auf
-[Google Java Style](https://google.github.io/styleguide/javaguide.html) und auch auf
+Darüber hinaus gibt es vielfältige weitere Regeln für das Aussehen des Codes. Lesen Sie dazu entsprechend
+auf [Google Java Style](https://google.github.io/styleguide/javaguide.html) und auch auf
 [AOSP](https://source.android.com/setup/contribute/code-style) nach.
 :::
 
 
 ## Formatieren Sie Ihren Code (mit der IDE)
+
+::: notes
+Sie können den Code manuell formatieren, oder aber (sinnvollerweise) über Tools
+formatieren lassen. Hier einige Möglichkeiten:
+:::
 
 *   IDE: Code-Style einstellen und zum Formatieren nutzen
 
@@ -141,7 +149,7 @@ Darüber hinaus gibt es vielfältige Regeln für das Aussehen des Codes. Lesen S
     `java -jar google-java-format.jar --replace *.java`
     [(auch als IDE-Plugin)]{.notes}
 
-*   [Spotless](https://github.com/diffplug/spotless) in Gradle:
+*   [**Spotless**](https://github.com/diffplug/spotless) in Gradle:
 
     ```{.groovy size="scriptsize"}
     plugins {
@@ -157,28 +165,33 @@ Darüber hinaus gibt es vielfältige Regeln für das Aussehen des Codes. Lesen S
     }
     ```
 
-    `./gradlew spotlessCheck` (Teil von `./gradlew build`) und `./gradlew spotlessApply`
+    [Prüfen mit]{.notes} `./gradlew spotlessCheck` (Teil von `./gradlew build`)
+    und [Formatieren mit]{.notes} `./gradlew spotlessApply`
 
 
 ::::::::: notes
-### Einstellungen der IDE's:
+### Einstellungen der IDE's
 
 *   Eclipse:
     *   `Project > Properties > Java Code Style > Formatter`: Coding-Style einstellen/einrichten
     *   Code markieren, `Source > Format`
     *   Komplettes Aufräumen: `Source > Clean Up` (Formatierung, Importe, Annotationen, ...)
-        Kann auch so eingestellt werden, dass ein Clean Up immer beim Speichern ausgeführt wird!
+        Kann auch so eingestellt werden, dass ein "Clean Up" immer beim Speichern ausgeführt wird!
 *   IntelliJ verfügt über ähnliche Fähigkeiten:
     *   Einstellen über `Preferences > Editor > Code Style > Java`
     *   Formatieren mit `Code > Reformat Code` oder `Code > Reformat File`
 
-**Achtung**: Zumindest in Eclipse gibt es mehrere Stellen, wo ein Code-Style eingestellt werden
-kann ("Clean Up", "Formatter"). Diese sollten dann jeweils auf den selben Style eingestellt werden,
-sonst gibt es unter Umständen lustige Effekte, da beim Speichern ein anderer Style angewendet wird
-als beim Clean Up oder beim Format Source ...
+Die Details kann/muss man einzeln einstellen. Für die "bekannten" Styles (Google Java Style)
+bringen die IDE's oft aber schon eine Gesamtkonfiguration mit.
 
-Analog sollte man auch in der IDE die entsprechenden Checkstyle-Regeln passend einstellen, sonst
-bekommt man Warnungen angezeigt, die man durch ein automatisches Formatieren nicht beheben kann.
+**Achtung**: Zumindest in Eclipse gibt es mehrere Stellen, wo ein Code-Style eingestellt werden
+kann ("Clean Up", "Formatter", ...). Diese sollten dann jeweils auf den selben Style eingestellt
+werden, sonst gibt es unter Umständen lustige Effekte, da beim Speichern ein anderer Style
+angewendet wird als beim "Clean Up" oder beim "Format Source" ...
+
+Analog sollte man bei der Verwendung von Checkstyle auch in der IDE im Formatter die entsprechenden
+Checkstyle-Regeln (s.u.) passend einstellen, sonst bekommt man durch Checkstyle Warnungen angezeigt,
+die man durch ein automatisches Formatieren _nicht_ beheben kann.
 
 ### Google Java Style und google-java-format
 
@@ -194,7 +207,13 @@ Git-Hook definiert, wird vor jedem Commit der Code entsprechend den Richtlinien 
 _Hinweis_: Bei Spotless in Gradle müssen je nach den Versionen von Spotless/google-java-format
 bzw. des JDK noch Optionen in der Datei `gradle.properties` eingestellt werden (siehe
 [Demo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/formatter/) und
-[Spotless > google-java-format](https://github.com/diffplug/spotless/tree/main/plugin-gradle#google-java-format)).
+[Spotless > google-java-format (Web)](https://github.com/diffplug/spotless/tree/main/plugin-gradle#google-java-format)).
+
+**Tipp**: Die Formatierung über die IDE ist angenehm, aber in der Praxis leider oft etwas
+hakelig: Man muss alle Regeln selbst einstellen (und es gibt _einige_ dieser Einstellungen),
+und gerade IntelliJ "greift" manchmal nicht alle Code-Stellen beim Formatieren. Nutzen Sie
+Spotless und bauen Sie die Konfiguration in Ihr Build-Skript ein und konfigurieren Sie über
+den Build-Prozess.
 :::::::::
 
 <!-- Für die Demo:
@@ -212,7 +231,7 @@ Metriken messen verschiedene Aspekte zum Code und liefern eine Zahl zurück. Mit
 man beispielsweise die Einhaltung der Coding Rules (Formate, ...) prüfen, aber auch die Einhaltung
 verschiedener Regeln des objektorientierten Programmierens.
 
-### Beispiele für wichtige Metriken (jeweils max-Werte)
+### Beispiele für wichtige Metriken (jeweils Max-Werte für PM)
 
 Die folgenden Metriken und deren Maximal-Werte sind gute Erfahrungswerte aus der Praxis und helfen,
 den Code Smell "Langer Code"  (vgl. `["Code Smells"]({{< ref "/coding/smells" >}})`{=markdown}) zu
@@ -236,15 +255,15 @@ elementarer Programmierregeln gemessen.
 
 ::::::::: notes
 Die obigen Grenzwerte sind typische Standardwerte, die sich in der Praxis allgemein bewährt haben
-(u.a. [@Martin2009] oder auch in
+(vergleiche u.a. [@Martin2009] oder auch in
 [AOSP: Write short methods](https://source.android.com/setup/contribute/code-style#write-short-methods)
 und [AOSP: Limit line length](https://source.android.com/setup/contribute/code-style#limit-line-length)).
 
 Dennoch sind das keine absoluten Werte an sich. Ein Übertreten der Grenzen ist ein
-**Hinweis** darauf, das **höchstwahrscheinlich** etwas nicht stimmt, muss aber im
-konkreten Fall hinterfragt und diskutiert werden!
+**Hinweis** darauf, dass **höchstwahrscheinlich** etwas nicht stimmt, muss aber im
+konkreten Fall hinterfragt und diskutiert und begründet werden!
 
-### Beispiel von oben
+### Metriken im Beispiel von oben
 
 ```java
     private static String lastName;
@@ -263,6 +282,9 @@ konkreten Fall hinterfragt und diskutiert werden!
 *   BEC: 1 (nur ein boolescher Ausdruck im `if`)
 *   McCabe: 3 (es gibt zwei mögliche Verzweigungen in der Methode plus die Methode selbst)
 *   DAC: 1 (eine "Fremdklasse": `String`)
+
+_Anmerkung_: In Checkstyle werden für einige häufig verwendete Standard-Klassen Ausnahmen definiert,
+d.h. `String` würde im obigen Beispiel _nicht_ bei DAC mitgezählt/angezeigt.
 :::::::::
 
 [[Beispiel: Metriken an MyWuppieStudi#getMyWuppieStudi]{.bsp}]{.slides}
@@ -292,7 +314,7 @@ eigenes [Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.htm
 *   [CLI](https://checkstyle.org/cmdline.html):
     `java -jar checkstyle-10.2-all.jar -c google_checks.xml *.java`
 
-*   [Plugin "checkstyle"](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
+*   [Plugin "**checkstyle**"](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
     in Gradle:
 
     ```{.groovy size="scriptsize"}
@@ -307,7 +329,7 @@ eigenes [Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.htm
     }
     ```
 
-    *   Aufruf: `./gradlew checkstyleMain` (Teil von `./gradlew check`)
+    *   Aufruf: [Prüfen mit]{.notes} `./gradlew checkstyleMain` (Teil von `./gradlew check`)
     *   Konfiguration: `<projectDir>/config/checkstyle/checkstyle.xml` (Default)
         [bzw. mit der obigen Konfiguration direkt im Projektordner]{.notes}
     *   Report: `<projectDir>/build/reports/checkstyle/main.html`
@@ -340,10 +362,13 @@ der FileSetChecks-Module und transformiert die zu prüfenden Java-Sourcen in ein
 _Abstract Syntax Tree_, also eine Baumstruktur, die dem jeweiligen Code unter der Java-Grammatik
 entspricht. Darauf können dann wiederum die meisten Low-Level-Module arbeiten.
 
-Die [Standard-Checks](https://checkstyle.org/checks.html) sind bereits in Checkstyle implementiert
-und benötigen keine weitere externe Abhängigkeiten. Die einzelnen Checks werden in der Regel als
-"Modul" dem "TreeWalker" hinzugefügt und über die jeweiligen Properties näher konfiguriert. Sie
-finden in der [Doku](https://checkstyle.org/checks.html) zu jedem Check das entsprechende Modul,
+Eine Reihe von [Standard-Checks](https://checkstyle.org/checks.html) sind bereits in Checkstyle
+implementiert und benötigen keine weitere externe Abhängigkeiten. Man kann aber zusätzliche Regeln
+aus anderen Projekten beziehen (etwa via Gradle/Maven) oder sich eigene zusätzliche Regeln in Java
+schreiben. Die einzelnen Checks werden in der Regel als "Modul" dem "TreeWalker" hinzugefügt und
+über die jeweiligen Properties näher konfiguriert.
+
+Sie finden in der [Doku](https://checkstyle.org/checks.html) zu jedem Check das entsprechende Modul,
 das Eltern-Modul (also wo müssen Sie das Modul im XML-Baum einfügen) und auch die möglichen
 Properties und deren Default-Einstellungen.
 :::::::::
@@ -365,7 +390,7 @@ Properties und deren Default-Einstellungen.
 ```
 
 ::: notes
-Alternativen/Ergänzungen: [MetricsReloaded](https://github.com/BasLeijdekkers/MetricsReloaded).
+Alternativen/Ergänzungen: beispielsweise [MetricsReloaded](https://github.com/BasLeijdekkers/MetricsReloaded).
 :::
 
 [Demo: Konfiguration mit Eclipse-CS, Hinweis auf Formatter]{.bsp}
@@ -395,14 +420,14 @@ spotbugsMain {
     reports {
         html {
             required = true
-            outputLocation = file("$buildDir/reports/spotbugs.html")
+            outputLocation = file("$buildDir/reports/spotbugs/spotbugs.html")
         }
     }
 }
 ```
 -->
 
-[SpotBugs](https://github.com/spotbugs/spotbugs), ...
+[**SpotBugs**](https://github.com/spotbugs/spotbugs), ...
 
 
 CLI: `java -jar spotbugs.jar options ...`
@@ -410,7 +435,7 @@ CLI: `java -jar spotbugs.jar options ...`
 [SpotBugs Eclipse plugin](https://spotbugs.readthedocs.io/en/latest/eclipse.html)
 [SpotBugs Gradle Plugin](https://github.com/spotbugs/spotbugs-gradle-plugin)
 
-`./gradlew spotbugsMain` (in `./gradlew check`)
+[Prüfen mit]{.notes} `./gradlew spotbugsMain` (in `./gradlew check`)
 
 
 
@@ -426,23 +451,26 @@ docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 
 ::: notes
 Im PM-Praktikum beachten wir die obigen Coding Conventions und Metriken mit den dort definierten
-Grenzwerten. Diese sind bereits in der Minimal-Konfiguration für Checkstyle (s.u.) konfiguriert.
+Grenzwerten. Diese sind bereits in der bereit gestellten Minimal-Konfiguration für Checkstyle
+(s.u.) konfiguriert.
 :::
 
 ### Formatierung
 
-*   Google Java Style/AOSP-Style: **Spotless**
+*   Google Java Style/AOSP: **Spotless**
 
 ::: notes
 Zusätzlich wenden wir den [Google Java Style](https://google.github.io/styleguide/javaguide.html)
 an. Statt der dort vorgeschriebenen Einrückung mit 2 Leerzeichen (und 4+ Leerzeichen bei Zeilenumbruch
 in einem Statement) können Sie auch mit 4 Leerzeichen einrücken (8 Leerzeichen bei Zeilenumbruch)
-([AOSP-Style](https://source.android.com/setup/contribute/code-style)). Halten Sie sich in Ihrem
-Team an eine einheitliche Einrückung.
+([AOSP](https://source.android.com/setup/contribute/code-style)). Halten Sie sich in Ihrem
+Team an eine einheitliche Einrückung (Google Java Style _oder_ AOSP).
 
 Formatieren Sie Ihren Code vor den Commits mit **Spotless** (über Gradle) oder stellen Sie den
 Formatter Ihrer IDE entsprechend ein.
 :::
+
+\bigskip
 
 ### Checkstyle
 
@@ -451,7 +479,7 @@ Formatter Ihrer IDE entsprechend ein.
 ::: notes
 Nutzen Sie die folgende **Minimal-Konfiguration** für **Checkstyle** für Ihre
 Praktikumsaufgaben. Diese beinhaltet die Prüfung der wichtigsten Formate nach
-Google Java Style/AOSP-Style sowie der obigen Metriken. Halten Sie diese Regeln
+Google Java Style/AOSP sowie der obigen Metriken. Halten Sie diese Regeln
 ein.
 
 ```xml
@@ -460,26 +488,19 @@ ein.
 
 <module name="Checker">
   <property name="severity" value="warning"/>
+
   <module name="TreeWalker">
-    <module name="AvoidStarImport"/>
-    <module name="BooleanExpressionComplexity"/>
     <module name="JavaNCSS">
       <property name="methodMaximum" value="40"/>
       <property name="classMaximum" value="250"/>
       <property name="fileMaximum" value="300"/>
     </module>
-    <module name="ClassDataAbstractionCoupling">
-      <property name="max" value="6"/>
-    </module>
+    <module name="BooleanExpressionComplexity"/>
     <module name="CyclomaticComplexity">
       <property name="max" value="7"/>
     </module>
-    <module name="Indentation">
-      <property name="basicOffset" value="4"/>
-      <property name="lineWrappingIndentation" value="8"/>
-      <property name="caseIndent" value="4"/>
-      <property name="throwsIndent" value="4"/>
-      <property name="arrayInitIndent" value="4"/>
+    <module name="ClassDataAbstractionCoupling">
+      <property name="max" value="6"/>
     </module>
     <module name="MethodCount">
       <property name="maxTotal" value="10"/>
@@ -488,22 +509,31 @@ ein.
       <property name="maxProtected" value="10"/>
       <property name="maxPublic" value="10"/>
     </module>
-    <module name="MethodLength">
-      <property name="max" value="40"/>
-    </module>
     <module name="ParameterNumber">
       <property name="max" value="3"/>
     </module>
-    <module name="MissingOverride"/>
-    <module name="MissingJavadocMethod"/>
+    <module name="MethodLength">
+      <property name="max" value="40"/>
+    </module>
+    <module name="Indentation">
+      <property name="basicOffset" value="4"/>
+      <property name="lineWrappingIndentation" value="8"/>
+      <property name="caseIndent" value="4"/>
+      <property name="throwsIndent" value="4"/>
+      <property name="arrayInitIndent" value="4"/>
+    </module>
+    <module name="TypeName"/>
+    <module name="MethodName"/>
+    <module name="MemberName"/>
     <module name="ParameterName"/>
     <module name="ConstantName"/>
-    <module name="MemberName"/>
-    <module name="MethodName"/>
-    <module name="TypeName"/>
     <module name="OneStatementPerLine"/>
     <module name="MultipleVariableDeclarations"/>
+    <module name="MissingOverride"/>
+    <module name="MissingJavadocMethod"/>
+    <module name="AvoidStarImport"/>
   </module>
+
   <module name="LineLength">
     <property name="max" value="100"/>
   </module>
@@ -523,6 +553,8 @@ bereitgestellten Konfigurationsdatei für den
 nutzen. _Hinweis_: Einige der dort konfigurierten Checkstyle-Regeln gehen allerdings über den
 Google Java Style hinaus.
 :::
+
+\bigskip
 
 ### Linter: SpotBugs
 
@@ -548,7 +580,7 @@ Fehler beinhalten, die SpotBugs melden würde.
 
     *   Formatieren mit **Spotless**
 
-    *   Prinzipien des objektorientierten Programmierens
+    *   Prinzipien des objektorientierten Programmierens [(vgl. `["Code Smells"]({{< ref "/coding/smells" >}})`{=markdown})]{.notes}
 
         ::: notes
         *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.
@@ -562,7 +594,8 @@ Fehler beinhalten, die SpotBugs melden würde.
 
 *   Metriken: Einhaltung von Regeln in Zahlen ausdrücken
 *   Prüfung manuell durch Code Reviews oder durch Tools wie **Checkstyle** oder **SpotBugs**
-*   Definition des "PM-Styles" (siehe Folie "Konfiguration für das PM-Praktikum")
+*   Definition des ["PM-Styles"](https://github.com/PM-Dungeon/PM-Lecture/tree/master/markdown/coding/src/checkstyle.xml)
+    [(siehe Folie "Konfiguration für das PM-Praktikum")]{.notes}
 
 
 
