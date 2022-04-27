@@ -12,22 +12,42 @@ readings:
 tldr: |
   Code entsteht nicht zum Selbstzweck, er muss von anderen Menschen leicht verstanden und
   gewartet werden können: Entwickler verbringen einen wesentlichen Teil ihrer Zeit mit dem
-  **Lesen** von (fremdem) Code. Dabei helfen "Coding Conventions", die eine gewisse einheitliche
-  äußerliche Erscheinung des Codes vorgeben (Namen, Einrückungen, ...). Die Beachtung von
-  grundlegenden Programmierprinzipien hilft ebenso, die Lesbarkeit und Verständlichkeit zu
-  verbessern.
+  **Lesen** von (fremdem) Code.
 
-  Metriken zur Überwachung der Einhaltung
+  Dabei helfen "Coding Conventions", die eine gewisse einheitliche äußerliche Erscheinung
+  des Codes vorgeben (Namen, Einrückungen, ...). Im Java-Umfeld ist der "Google Java Style"
+  bzw. der recht ähnliche "AOSP Java Code Style for Contributors" häufig anzutreffen.
+  Coding Conventions beinhalten typischerweise Regeln zu
+  *   Schreibweisen und Layout
+  *   Leerzeichen, Einrückung, Klammern
+  *   Zeilenlänge, Umbrüche
+  *   Kommentare
 
-  *   Coding Conventions
-    *   Regeln zu Schreibweisen und Layout
-    *   Leerzeichen, Einrückung, Klammern
-    *   Zeilenlänge, Umbrüche
-    *   Kommentare
+  Die Beachtung von grundlegenden Programmierprinzipien hilft ebenso, die Lesbarkeit und
+  Verständlichkeit zu verbessern.
 
-  *   Metriken: Einhaltung von Regeln in Zahlen ausdrücken
-  *   Prüfung manuell durch Code Reviews oder durch Tools, zB. Checkstyle
+  Metriken sind Kennzahlen, die aus dem Code berechnet werden, und können zur Überwachung
+  der Einhaltung von Coding Conventions und anderen Regeln genutzt werden. Nützliche
+  Metriken sind dabei NCSS (_Non Commenting Source Statements_), McCabe (_Cyclomatic Complexity_),
+  BEC (_Boolean Expression Complexity_) und DAC (_Class Data Abstraction Coupling_).
 
+  Für die Formatierung des Codes kann man die IDE nutzen, muss dort dann aber die Regeln
+  detailliert manuell einstellen. Das Tool **Spotless** lässt sich dagegen in den Build-Prozess
+  einbinden und kann die Konfiguration über ein vordefiniertes Regelset passend zum Google
+  Java Style/AOSP automatisiert vornehmen.
+
+  Die Prüfung der Coding Conventions und Metriken kann durch das Tool **Checkstyle** erfolgen.
+  Dieses kann beispielsweise als Plugin in der IDE oder direkt in den Build-Prozess eingebunden
+  werden und wird mit Hilfe einer XML-Datei konfiguriert.
+
+  Um typische Anti-Pattern zu vermeiden, kann man den Code mit sogenannten _Lintern_ prüfen.
+  Ein Beispiel für die Java-Entwicklung ist **SpotBugs**, welches sich in den Build-Prozess
+  einbinden lässt und über 400 typische problematische Muster im Code erkennt.
+
+  Für die Praktika in der Veranstaltung Programmiermethoden wird der Google Java Style oder
+  AOSP genutzt. Für die passende Checkstyle-Konfiguration wird eine minimale
+  [checkstyle.xml](https://github.com/PM-Dungeon/PM-Lecture/tree/master/markdown/coding/src/checkstyle.xml)
+  bereitgestellt (vgl. Folie "Konfiguration für das PM-Praktikum").
 outcomes:
   - k2: "Erklären verschiedener Coding Conventions"
   - k2: "Erklären wichtiger Grundregeln des objektorientierten Programmierens"
