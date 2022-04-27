@@ -154,17 +154,20 @@ Gradle: `build.gradle`
 Maven: `pom.xml`
 
 - ```xml
-    <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-inline</artifactId>
-        <version>{mockitoversion}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-junit-jupiter</artifactId>
-        <version>{mockitoversion}</version>
-        <scope>test</scope>
-    </dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>2.0.1-beta</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     ```
 
 ## Folie 2
@@ -175,7 +178,9 @@ Maven: `pom.xml`
 | Erstellt von      | Werden normalerweise bei der Verwendung eines Mocking-Frameworks erstellt.                                                                              | Werden normalerweise von Hand kreiert                                                        | Werden normalerweise bei der Verwendung eines Mocking-Frameworks erstellt.                                                        |
 | Verwendung        | Mocks werden meistens in großen Testsuiten verwendet. Mocks werden zum erstellen eines kompletten Mocks oder eines Dummy Objekts verwendet.             | Stubs werden meistens in kleinen/überschaubaren Testsuiten verwendet.                        | Spies werden verwendet um partielle oder halb gemockte Objekte zu erzeugen. Spies werden meistens in großen Testsuiten verwendet. |
 | Default Verhalten | Wenn gemockte Objekte verwendet werden ist deren default Verhalten von Methoden (wenn diese nicht stubed sind) das sie gar nichts tun. (doNothing(...)) | Beinhalten meistens nur das absolute Minimum an Methoden die für einen Test benötigt werden. | Wenn Spies verwendet werden ist deren default Verhalten von Methoden (die nicht stubbed sind) das sie die reale Methode aufrufen. |
+
 Quelle: [mock-vs-stub-vs-spy](https://www.javatpoint.com/mock-vs-stub-vs-spy)
+
 ## Folie 3
 
 ...
@@ -218,9 +223,9 @@ Quelle: [mock-vs-stub-vs-spy](https://www.javatpoint.com/mock-vs-stub-vs-spy)
 
 ## Fakes vs. Dummys vs. Mock vs. Stub vs. Spy
 
-@see https://www.javatpoint.com/mockito
-@see https://www.javatpoint.com/mock-vs-stub-vs-spy
-Tabelle Mocks vs. Stubs vs. Spies von dort ^
+// TODO
+
+- [x] done. @see https://www.javatpoint.com/mockito
 
 Fake vs... @see https://www.martinfowler.com/articles/mocksArentStubs.html
 
