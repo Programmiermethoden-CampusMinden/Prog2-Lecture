@@ -548,9 +548,4 @@ docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO
 :::
