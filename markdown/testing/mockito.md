@@ -57,6 +57,13 @@ tests nur simuliert.
 Mocks stellen so, im Vergleich zu den umfangreichen integrationstests, eine
 schnelle und effiziente testbarkeit dar.
 
+**_Anmerkung_**: Ein Test der Daten in eine Datenbank schreibt oder von dieser
+Daten einliest oder ein Test der eine JSON-Datei von einem Webservice oder
+ähnlichem bezieht ist _kein_ Unittest. Siehe: [Teststufen VL:
+testing-intro](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/testing-intro.md#was-wann-testen-wichtigste-teststufen)
+
+Er wird erst dann zu einem Unittest, wenn man diese externen Zugriffe weg mockt.
+
 Mockito ist dabei ein sehr beliebtes, häufig in der praxis anzutreffendes,
 Mockingframework das einem bei der Erstellung von diesen Tests behilflich ist.
 
