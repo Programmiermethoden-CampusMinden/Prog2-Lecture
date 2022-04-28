@@ -93,8 +93,8 @@ Mockingframework das einem bei der Erstellung von diesen Tests behilflich ist.
 
 Quelle:
 
-- [Stubbing-and-mocking-with-mockito](https://semaphoreci.com/community/tutorials/stubbing-and-mocking-with-mockito-2-and-junit)
-- [Methods-of-mockito](https://www.javatpoint.com/methods-of-mockito)
+* [Stubbing-and-mocking-with-mockito](https://semaphoreci.com/community/tutorials/stubbing-and-mocking-with-mockito-2-and-junit)
+* [Methods-of-mockito](https://www.javatpoint.com/methods-of-mockito)
 
 ## Aber was genau ist denn jetzt eigentlich Mocking?
 
@@ -113,21 +113,21 @@ Dabei ist es von Vorteil die drei grundbegriffe Mock, Stub oder Spy, auf die wir
 in der Vorlesung noch häufiger treffen werden, voneinander abgrenzen und
 unterscheiden zu können.
 
-## Dabei bezeichnet ein:
+## Dabei bezeichnet ein
 
-- **Mock**: Eine Art Dummy oder Klon eines Objekts, das man mit Mockito anlegen
+* **Mock**: Eine Art Dummy oder Klon eines Objekts, das man mit Mockito anlegen
   kann und das dann in den Softwaretests anstelle, des realen Objekts in der
   Applikation genutzt wird. Diese Mocks werden von den Mocking-Frameworks
   erzeugt und, in den darauf aufbauenden Softwaretests, typischerweise für die
   sogenannte Verhaltensverifikation, auch "Behavior testing" genannt, genutzt.
-- **Stub**: Sind Objekte die vordefinierte Werte enthalten, die in den
+* **Stub**: Sind Objekte die vordefinierte Werte enthalten, die in den
   Softwaretests abgefragt werden können. Des Weiteren enthalten Stubs nur ein
   absolutes minimum an Methoden, die für den jeweiligen Test benötigten werden.
   Zudem können sie auch Methoden enthalten, die einem den Zugriff auf den
   internen Zustand eines Stubs gewähren, wenn dies nötigt ist. Man könnte
   eigentlich auch sagen das Stubs in den Tests generell zum verifizieren eines
   Zustandes genutzt werden.
-- **Spy**: Ein Spy ist in Mockito eine Art Wrapper, der um ein Objekt gelegt
+* **Spy**: Ein Spy ist in Mockito eine Art Wrapper, der um ein Objekt gelegt
   wird. Dabei werden dann sämtliche Methodenaufrufe die eigentlich sonst von den
   realen Methoden eines Objekts ausgeführt worden wären an den Spion delegiert,
   der diese dann protokollieren, den State verändern und/oder eventuelle, von
@@ -139,7 +139,7 @@ unterscheiden zu können.
 
 Gradle: `build.gradle`
 
-- ```java
+* ```java
     dependencies {
         testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
@@ -149,7 +149,7 @@ Gradle: `build.gradle`
 
 Maven: `pom.xml`
 
-- ```xml
+* ```xml
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -220,7 +220,7 @@ dennoch so tun als, ob die Methode eine Funktionalität hätte.
 ```java
     // Erstellen eines imaginären Lagerbestands.
     List<String> wuppisImLager=Arrays.asList("GruenerWuppi","RoterWuppi");
-        when(lager.getAlleWuppis()).thenReturn(wuppisImLager);
+    when(lager.getAlleWuppis()).thenReturn(wuppisImLager);
 ```
 
 Wann immer nun die Methode `getAlleWuppis()` des gemockten Lagers aufgerufen
@@ -229,14 +229,14 @@ verändert. Das Ergebnis können wir abschließend einfach in unserem Test wie h
 zu sehen ist testen.
 
 ```java
-// Erzeugen des WuppiStores.
+    // Erzeugen des WuppiStores.
     WuppiStore wuppiStore=new WuppiStore(lager);
 
-            // Bestelle alle Wuppis aus dem gemockten Lager List<String>
-            bestellteWuppis=wuppiStore.bestelleAlleWuppis(lager);
+    // Bestelle alle Wuppis aus dem gemockten Lager List<String>
+    bestellteWuppis=wuppiStore.bestelleAlleWuppis(lager);
 
-            // Hat die Bestellung geklappt?
-            assertEquals(2,bestellteWuppis.size());
+    // Hat die Bestellung geklappt?
+    assertEquals(2,bestellteWuppis.size());
 ```
 
 ## Folie 5
@@ -279,8 +279,6 @@ Die normalen Testmöglichkeiten von JUnit runden unseren Test zudem ab.
 ```java
     assertEquals(1,wuppiWarenlager.lager.size());
 ```
-
-...
 
 ## Folie 6
 
@@ -384,14 +382,14 @@ bewerkstelligen:
 
 ### PowerMock provides more functionality
 
-- mocking of static methods
-- final classes
-- final methods
-- private methods
-- constructor
-- removal of static initializers
+* mocking of static methods
+* final classes
+* final methods
+* private methods
+* constructor
+* removal of static initializers
 
-@see https://www.javatpoint.com/mockito-powermock
+@see <https://www.javatpoint.com/mockito-powermock>
 
 ...
 
@@ -419,22 +417,22 @@ bewerkstelligen:
 
 // TODO
 
-- [x] Done. @see https://howtodoinjava.com/mockito/mockito-mock-injectmocks/
+* [x] Done. @see <https://howtodoinjava.com/mockito/mockito-mock-injectmocks/>
 
 ## Examples
 
 // TODO
 
-- [ ] Beispiele erstellen.
-- @see https://www.javatpoint.com/examples-of-mockito-and-junit-in-eclipse-ide
+* [ ] Beispiele erstellen.
+* @see <https://www.javatpoint.com/examples-of-mockito-and-junit-in-eclipse-ide>
 
 ## Fakes vs. Dummys vs. Mock vs. Stub vs. Spy
 
 // TODO
 
-- [X]  done.
-- @see https://www.javatpoint.com/mockito
-- Fake vs... @see https://www.martinfowler.com/articles/mocksArentStubs.html
+* [X]  done.
+* @see <https://www.javatpoint.com/mockito>
+* Fake vs... @see <https://www.martinfowler.com/articles/mocksArentStubs.html>
 
 ## Stub -> when then syntax
 
@@ -442,165 +440,170 @@ bewerkstelligen:
 
 // TODO
 
-- [ ] Übersicht erstellen.
-- @see https://www.javadoc.io/doc/org.mockito/mockito-core/2.7.
+* [ ] Übersicht erstellen.
+* @see <https://www.javadoc.io/doc/org.mockito/mockito-core/2.7>.
   9/org/mockito/stubbing/Answer.html
-- @see https://www.baeldung.com/mockito-behavior
+* @see <https://www.baeldung.com/mockito-behavior>
 
-- doAnswer()
-- when() then answer()
+* doAnswer()
+* when() then answer()
 
 ## Mockito Argument Matchers
 
-- [x] Deprecated -> Done.
-- @see https://www.javadoc.io/doc/org.mockito/mockito-core/2.7.
+* [x] Deprecated -> Done.
+* @see <https://www.javadoc.io/doc/org.mockito/mockito-core/2.7>.
   17/org/mockito/Matchers.html
 
 # verify for testing side effects
 
 // TODO
 
-- [ ] Übersicht erstellen.
-- @see https://www.baeldung.com/mockito-verify
+* [ ] Übersicht erstellen.
+* @see <https://www.baeldung.com/mockito-verify>
 
 ## Mocking private methods with another dependency "PowerMock"?
 
 // TODO
 
-- [ ] Übersicht erstellen -> PowerMock
-- @see https://www.baeldung.com/powermock-private-method
+* [ ] Übersicht erstellen -> PowerMock
+* @see <https://www.baeldung.com/powermock-private-method>
 
 ## Mockito Spies
 
 // TODO
 
-- [ ] Übersicht erstellen.
-- @see https://www.baeldung.com/mockito-spy
+* [ ] Übersicht erstellen.
+* @see <https://www.baeldung.com/mockito-spy>
 
 ## Mockito’s Mock Methods
 
 // TODO
 
-- [ ] Übersicht erstellen.
-- @see https://www.baeldung.com/mockito-mock-methods
+* [ ] Übersicht erstellen.
+* @see <https://www.baeldung.com/mockito-mock-methods>
 
 ## Behavior-driven development (BDD)
 
 // TODO
 
-- [ ] Beispiel erstellen.
-- @see https://www.javatpoint.com/mockito-behavior-driven-development
+* [ ] Beispiel erstellen.
+* @see <https://www.javatpoint.com/mockito-behavior-driven-development>
 
 ## Mockito Annotations overview with examples
 
 // TODO
 
-- [x] Übersicht erstellen -> Folie 6
-- @see https://www.javatpoint.
-- @see https://www.javatpoint.com/mockito-annotations
+* [x] Übersicht erstellen -> Folie 6
+* @see <https://www.javatpoint>.
+* @see <https://www.javatpoint.com/mockito-annotations>
 
 ## Mockito JUnit Rules
 
 // TODO
 
-- [ ] Übersicht erstellen.
-- @see https://www.javatpoint.com/mockito-junit-rules
+* [ ] Übersicht erstellen.
+* @see <https://www.javatpoint.com/mockito-junit-rules>
 
 # Codesnippets
 
 // TODO
 
-- [ ] Beispiele erstellen.
-- @see https://blog.indrek.io/articles/getting-started-with-mockito/
+* [ ] Beispiele erstellen.
+* @see <https://blog.indrek.io/articles/getting-started-with-mockito/>
 
 ## Frage/Code snippet zu when(...).thenReturn(...)?
 
-- // TODO
+* // TODO
 
 ## Frage/Code snippet zu when(...).thenThrow(...)?
 
-- // TODO
+* // TODO
 
 ## Frage/Code snippet zu doReturn(...).when(...)?
 
-- // TODO
+* // TODO
 
 ## Frage/Code snippet zu doThrow(...).when(...)?
 
-- // TODO
--
+* // TODO
+
+* [ ]
 
 ## Frage/Code snippet zu doAnswer(...).when(...)?
 
-- // TODO
+* // TODO
 
 ## Wie können "Answer" Methoden von Mockito verwendet werden?
 
-- // TODO
+* // TODO
 
 ## Wie verwendet man Spies und Reflections um private Attribute zu ändern?
 
-- // TODO
+* // TODO
 
 ## Mockito example
 
 // TODO
 
-- [ ] Beispiele erstellen.
-- @see https://entwickler.de/software-architektur/cocktail-gefallig
+* [ ] Beispiele erstellen.
+* @see <https://entwickler.de/software-architektur/cocktail-gefallig>
 
 ## providing a Different Default Answer
 
 // TODO
 
-- [ ] Übersicht erstellen.
-- @see https://www.baeldung.com/mockito-mocksettings#providing-a-different
+* [ ] Übersicht erstellen.
+* @see <https://www.baeldung.com/mockito-mocksettings#providing-a-different>
   -default-answer
 
 ## AdditionalAnswers
 
 // TODO
 
-- [ ] Übersicht erstellen.
-- @see https://www.baeldung.com/mockito-additionalanswers#overview
+* [ ] Übersicht erstellen.
+* @see <https://www.baeldung.com/mockito-additionalanswers#overview>
 
 ## Return Custom Value using Mockito
 
 // TODO
 
-- [ ] Übersicht erstellen.
-- @see http://www.javabyexamples.com/mockito-recipe-custom-return-with-answer
+* [ ] Übersicht erstellen.
+* @see <http://www.javabyexamples.com/mockito-recipe-custom-return-with-answer>
 
 ### Calling the Real Method using Answer
 
 // TODO
 
-- [x] Beispiel erstellen.
-- @see http://www.javabyexamples.
+* [x] Beispiel erstellen.
+* @see <http://www.javabyexamples>.
   com/mockito-recipe-custom-return-with-answer#call-real
 
 ## Spying or Mocking Abstract Classes
+
 // TODO
 
-- [ ] Beispiel erstellen.
-- @see https://www.javatpoint.com/mockito-spying-or-mocking-abstract-classes
+* [ ] Beispiel erstellen.
+* @see <https://www.javatpoint.com/mockito-spying-or-mocking-abstract-classes>
 
 ## How to mock a void method using Mockito?
+
 // TODO
 
-- [ ] Beispiel erstellen.
-- @see https://www.baeldung.com/mockito-void-methods
+* [ ] Beispiel erstellen.
+* @see <https://www.baeldung.com/mockito-void-methods>
 
 ## Wie werden externe Abhängigkeiten gemockt?
+
 // TODO
 
-- [x] Beispiel erstellen.
-- siehe coding Beispiel.
+* [x] Beispiel erstellen.
+* siehe coding Beispiel.
 
-## Mockitos internal Whitebox is depreacted but Powermock has one with extended capabilities.
+## Mockitos internal Whitebox is depreacted but Powermock has one with extended capabilities
+
 // TODO
 
-- [x] Done weil deprecated.
+* [x] Done weil deprecated.
 
 <!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
 
