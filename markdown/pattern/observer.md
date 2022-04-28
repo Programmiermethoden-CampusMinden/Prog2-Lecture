@@ -15,8 +15,8 @@ outcomes:
   - k2: "*foo*"
   - k3: "fluppie"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1074559&client_id=FH-Bielefeld"
+    name: "Quiz Observer-Pattern (ILIAS)"
 assignments:
   - topic: sheet01
 youtube:
