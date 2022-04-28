@@ -16,19 +16,17 @@ outcomes:
   - k3: "fluppie"
 quizzes:
   - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+    name: "Quiz Type-Object-Pattern (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet06
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Type-Object-Pattern"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo Type-Object-Pattern"
 fhmedia:
   - link: ""
-    name: "VL "
+    name: "VL Type-Object-Pattern"
 ---
 
 
