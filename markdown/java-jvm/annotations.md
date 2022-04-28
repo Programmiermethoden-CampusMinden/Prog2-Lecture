@@ -19,8 +19,8 @@ outcomes:
   - k3: "Erstellen eigener Annotationen sowie Einstellen der Sichtbarkeit und Verwendbarkeit"
   - k3: "Erstellen eigener einfacher Annotation-Processors"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1074576&client_id=FH-Bielefeld"
+    name: "Quiz Annotationen (ILIAS)"
 assignments:
   - topic: sheet01
 youtube:
