@@ -31,23 +31,33 @@ fhmedia:
 
 
 ## Motivation
-Lorem Ipsum. Starte mit H2-Level.
-...
+
+Modellierung I  Level: Array mit Tiles (Enum), Methoden im Level für Eigenschaften (switch/case auf Enum)
+Modellierung II Level: Array mit Tiles (Objekte): Klassenhierarchie, mehrfaches Laden von Eigenschaften wie Textur etc.
+
+Problem: Daten und Zugriff über das ganze Level verteilt (I)! Großer Speicherbedarf (II)!
+
 
 ## Folie 2
-...
+
+Idee: Eigenschaften, die nicht an einem konkreten Tile hängen, werden in gemeinsam genutzte Objekte ausgelagert (Shared Objects/Memory)
+
+Modell I: Klasse Tile mit Texturen und Eigenschaften; im Level werden dann Singletons angelegt mit konkreten Eigenschaften, im Tile-Array nur noch Referenzen auf diese Singletons
+Modell II: Klasse Tile mit Referenz auf TileModel, dort dann Texturen und andere Eigenschaften; TileModel-Objekte werden von Tiles der gleichen Klasse gemeinsam genutzt
+
 
 ## Folie 3
-...
 
-## Folie 4
-...
+UML-Diagramm
 
-## Folie 5
-...
+Verbindung zu Factory-Pattern (Erzeugung der geteilten Objekte)
 
-## Folie 6
-...
+Begriffe:
+- speichere **intrinsic** state (invariant, context-independent und shareable)
+- interface um **extrinsic** state (variant, context-dependent und kann nicht geteilt werden) zu übergeben
+
+vgl. auch https://en.wikipedia.org/wiki/Flyweight_pattern
+
 
 ## Wrap-Up
 
