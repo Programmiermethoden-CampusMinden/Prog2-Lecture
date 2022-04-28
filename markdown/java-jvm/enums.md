@@ -5,13 +5,10 @@ menuTitle: "Enumerations"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 3
 readings:
-  - key: "Bloch2018"
   - key: "Java-11-documentation"
   - key: "Java-11-tutorial"
   - key: "Java-SE-tutorial"
   - key: "Ullenboom2016"
-  - key: "Urma2014"
-  - key: "Juneau2017"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
@@ -21,20 +18,17 @@ outcomes:
   - k3: "fluppie"
 quizzes:
   - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+    name: "Quiz Enumerations (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet06
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Enumerations"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo Enumerations"
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL Enumerations"
 ---
 
 
@@ -72,9 +66,4 @@ Lorem Ipsum. Starte mit H2-Level.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
