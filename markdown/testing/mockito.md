@@ -140,9 +140,10 @@ unterscheiden zu können.
 Gradle: `build.gradle`
 
 - ```java
-  dependencies {
-        testImplementation 'org.mockito:mockito-inline{mockitoversion}'
-        testImplementation 'org.mockito:mockito-junit-jupiter:{mockitoversion}'
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+        testImplementation "org.mockito:mockito-core:3.+"
     }
    ```
 
@@ -151,15 +152,15 @@ Maven: `pom.xml`
 - ```xml
     <dependencies>
         <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
-            <version>2.0.1-beta</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>RELEASE</version>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>4.5.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
