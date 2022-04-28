@@ -47,7 +47,14 @@ Lorem Ipsum. Starte mit H2-Level.
 ...
 
 ## Folie 6
+
+UML-Diagramm
+
+vgl. auch https://en.wikipedia.org/wiki/Observer_pattern
+vgl. auch https://gameprogrammingpatterns.com/observer.html
+
 ...
+
 
 ## Wrap-Up
 ...
