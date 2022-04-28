@@ -5,9 +5,8 @@ menuTitle: "Flyweight"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 7
 readings:
-  - key: "Eilebrecht2013"
-  - key: "Gamma2011"
-  - key: "Kleuker2018"
+  - key: "Nystrom2014"
+    comment: "Kap. 3: Flyweight"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
@@ -17,20 +16,17 @@ outcomes:
   - k3: "fluppie"
 quizzes:
   - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+    name: "Quiz Flyweight-Pattern (ILIAS)"
 assignments:
   - topic: sheet06
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Flyweight-Pattern"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo Flyweight-Pattern"
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL Flyweight-Pattern"
 ---
 
 
