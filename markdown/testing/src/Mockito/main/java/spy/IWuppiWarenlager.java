@@ -1,4 +1,4 @@
-package stub;
+package spy;
 
 import java.util.List;
 
@@ -12,5 +12,12 @@ public interface IWuppiWarenlager {
      *
      * @return Eine Liste mit Wuppis des Warenlagers.
      */
-    public List<String> getAlleWuppis();
+    public List<Wuppi> getAlleWuppis();
+
+    /**
+     * Fügt dem Warenlager den übergebenen Wuppi hinzu.
+     *
+     * @param wuppi Der Wuppi der dem Lager hinzugefügt werden soll.
+     */
+    public void addWuppi(Wuppi wuppi);
 }
