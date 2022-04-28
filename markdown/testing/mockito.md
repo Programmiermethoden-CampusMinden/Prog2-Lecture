@@ -46,7 +46,7 @@ Dabei stören uns aber bisher so ein paar Dinge:
 * Manchmal existiert der zu testende Teil einer Applikation auch noch gar nicht,
   sondern es gibt nur die Interfaces.
 * Oder es gibt unschöne Seiteneffekte beim Arbeiten mit den realen Objekten. Zum
-  Beispiel könnte es sein das immer eine email versendet wird, wenn wir mit
+  Beispiel könnte es sein, das immer eine E-Mail versendet wird, wenn wir mit
   einem Objekt interagieren.
 
 In solchen Situationen wollen wir eine Möglichkeit haben das Verhalten eines
@@ -63,7 +63,7 @@ Quelle: [Understanding mockito](https://medium.com/@ashrawan70/understanding-the
 ## Einführung
 
 Mocking und das sogenannte stubbing sind die beiden Eckpfeiler zum Erstellen von
-schnellen und einfachen JUnit tests.
+schnellen und einfachen JUnittests.
 
 Mocks sind in JUnittests immer dann nützlich, wenn man externe Abhängigkeiten
 hat, auf die der eigene Code zugreift. Das können zum Beispiel externe APIs sein
@@ -72,7 +72,7 @@ externen Abhängigkeiten zu lösen und seine Softwarefunktionalität dennoch
 schnell und effizient testen zu können ohne evtl. auftretende Verbindungsfehler
 oder andere mögliche Seiteneffekte der externen Abhängigkeiten auszulösen.
 
-Dabei simulieren Mocks die funktionalität der externen APIs oder
+Dabei simulieren Mocks die Funktionalität der externen APIs oder
 Datenbankzugriffe. Auf diese Weise ist es möglich Softwaretests zu schreiben die
 scheinbar die gleichen Methoden aufrufen die sie auch im regulären
 softwarebetrieb nutzen würden, diese werden wie oben erwähnt allerdings für die
@@ -132,8 +132,6 @@ unterscheiden zu können.
   realen Methoden eines Objekts ausgeführt worden wären an den Spion delegiert,
   der diese dann protokollieren, den State verändern und/oder eventuelle, von
   den Methoden getätigten Ausgaben kontrolliert verändern kann.
-
-// TODO Evtl. noch fuzzy Dummy und Fake erklären.
 
 ## Mockito Setup
 
@@ -256,8 +254,8 @@ hierzu: [BDD - Behavior Driven Development](https://de.wikipedia.org/wiki/Behavi
 [Demo: WuppiWarenlagerSpyTest]{.bsp}
 
 ```java
-        // Spion erstellen der unser wuppiWarenlager überwacht.
-        this.wuppiWarenlager=spy(WuppiWarenlager.class);
+    // Spion erstellen der unser wuppiWarenlager überwacht.
+    this.wuppiWarenlager=spy(WuppiWarenlager.class);
 ```
 
 Hier hatten wir uns einen Spion erzeugt mit dem sich anschließend das Verhalten
@@ -271,7 +269,7 @@ oder der Zugriff kontrollieren/testen ließ.
 
 ```java
     verify(wuppiWarenlager).addWuppi(normalerWuppi);
-        verifyNoMoreInteractions(wuppiWarenlager);
+    verifyNoMoreInteractions(wuppiWarenlager);
 ```
 
 Die normalen Testmöglichkeiten von JUnit runden unseren Test zudem ab.
@@ -300,10 +298,8 @@ Die `@RunWith`-Annotation wird immer im Zusammenspiel mit der `@Mock`-Annotation
 verwendet.
 
 ```java
-
-@RunWith(MockitoJUnitRunner.class)
-public class ToDoBusinessMock {...
-}
+    @RunWith(MockitoJUnitRunner.class)
+    public class ToDoBusinessMock {...}
 ```
 
 `@Spy` erlaubt das erstellen von partiell gemockten Objekten. Dabei wird eine
@@ -340,7 +336,7 @@ Methode übergebenen Parameter verifizieren.
 ```
 
 `@ExtendWith(MockitoExtension.class)` wird in JUnit5 verwendet, um die
-initialisierung von Mocks zu vereinfachen. Damit entfällt zum Beispiel die noch
+Initialisierung von Mocks zu vereinfachen. Damit entfällt zum Beispiel die noch
 unter JUnit4 nötige Initialisierung der Mocks durch einen Aufruf der
 Methode `MockitoAnnotations.openMocks()` im Setup des Tests
 (`@Before | @BeforeEach`)
@@ -372,7 +368,15 @@ bewerkstelligen:
         List<String> spionListe=spy(list);
 ```
 
-## Folie 7 - verify()
+## Folie 7 - `verify()`
+
+Mit Hilfe der umfangreichen `verfiy()`-Methoden die uns Mockito mitliefert können wir unseren Code unter anderem auf unerwünschte Seiteneffekte testen. So ist es mit verify zum Beispiel möglich abzufragen, ob mit einem gemockten Objekt interagiert wurde, wie damit interagiert wurde, welche Argumente dabei übergeben worden sind und in welcher Reihenfolge die Interaktionen damit erfolgt sind.
+
+Hier nur eine kurze Übersicht über das Testen des Codes mit Hilfe von Mockitos `verify()`-Methoden.
+
+[Demo: VerifyFluppisListeTest]{.bsp}
+
+Diese Beispiele finden sie im übrigen auch in den beigefügten Sourcecodes dieser Vorlesung.
 
 ## Folie 8 - Behavior-driven development BDD
 
@@ -458,7 +462,7 @@ bewerkstelligen:
 
 // TODO
 
-* [ ] Übersicht erstellen.
+* [x] Übersicht erstellen.
 * @see <https://www.baeldung.com/mockito-verify>
 
 ## Mocking private methods with another dependency "PowerMock"?
@@ -508,7 +512,7 @@ bewerkstelligen:
 
 // TODO
 
-* [ ] Beispiele erstellen.
+* [x] Beispiele erstellen.
 * @see <https://blog.indrek.io/articles/getting-started-with-mockito/>
 
 ## Frage/Code snippet zu when(...).thenReturn(...)?
