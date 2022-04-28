@@ -1,3 +1,4 @@
+---
 type: lecture-cg
 title: "Mocking mit Mockito"
 menuTitle: "Mocking"
