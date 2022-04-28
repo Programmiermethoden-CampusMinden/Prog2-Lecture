@@ -62,7 +62,7 @@ vgl. auch https://en.wikipedia.org/wiki/Flyweight_pattern
 ## Wrap-Up
 
 Ziel: Steigerung der Effizienz durch gemeinsame Nutzung von Objekten (Shared Memory)
-Anmerkung: Große Ähnlichkeit zum Flyweight-Pattern, aber Ziele unterschiedlich: Dort Anzahl der Klassen minimieren, hier Effizienz erhöhen durch gemeinsam genutzte Objekte.
+Anmerkung: Große Ähnlichkeit zum Type-Object-Pattern, aber Ziele unterschiedlich: Dort Anzahl der Klassen minimieren, hier Effizienz erhöhen durch gemeinsam genutzte Objekte.
 
 ...
 
