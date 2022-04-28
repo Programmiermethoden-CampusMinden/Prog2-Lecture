@@ -64,7 +64,6 @@
     - topic: "/coding/codingrules"
     - topic: "/coding/refactoring"
     - topic: "/testing/mockito"
-    - topic: "/coding/tdd"
   assignment:
     - topic: "sheet04"
       due: "Di, 03.05., 18 Uhr, PR/MR"
@@ -76,6 +75,7 @@
 - week: "KW19"
   lecture:
     - topic: "/git/bisect"
+    - topic: "/coding/tdd"
     - topic: "/java-jvm/serialisation"
     - topic: "/java-jvm/collections"
     - topic: "/pattern/flyweight"
