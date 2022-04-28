@@ -60,18 +60,18 @@ outcomes:
 assignments:
   - topic: sheet05
 youtube:
-  - link: ""
+  - link: "https://youtu.be/nLAEak6Fwfk"
     name: "VL Coding Conventions"
-  - link: ""
+  - link: "https://youtu.be/oCMwyDrPkFI"
     name: "Demo Formatter und Spotless"
-  - link: ""
+  - link: "https://youtu.be/NR070ZimbH4"
     name: "Demo Checkstyle"
-  - link: ""
+  - link: "https://youtu.be/0ny6e6CNTF8"
     name: "Demo Checkstyle: Konfiguration mit Eclipse-CS"
-  - link: ""
+  - link: "https://youtu.be/tSczcf_EOwI"
     name: "Demo SpotBugs"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/31a425902a7d01e5fd4b3b082259d9d71bcff55030eb4564c98bb044c554162088d7ab02edbf50aff0503232dfd4c3bed43341ec058e272a0cd6f9a388584d84"
     name: "VL Coding Conventions"
 ---
 
