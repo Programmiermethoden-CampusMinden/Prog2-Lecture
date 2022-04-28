@@ -34,6 +34,12 @@ fhmedia:
   - link: ""
     name: "VL "
 sketch: true
+
+hidden: true
+_build:
+  render: never
+  list: never
+  publishResources: false
 ---
 
 
