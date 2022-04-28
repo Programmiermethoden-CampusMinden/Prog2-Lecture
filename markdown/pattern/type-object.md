@@ -62,9 +62,17 @@ Schritt 4: Es wäre hilfreich, wenn die Type-Objects Eigenschaften untereinander
 Schritt 5: Die Konfiguration dieser Parameter legt man in einer Konfig-Datei ab, die vom Programm eingelesen wird. Damit muss am Code nichts mehr geändert werden und auch das Programm nicht mehr neu kompiliert werden, wenn man mal andere Eigenschaften ausprobieren oder Werte ändern möchte.
 
 
+## Folie 7
+
+UML-Diagramm (?!)
+
+Anmerkung: Keines der "klassischen" Design-Pattern (vgl. https://en.wikipedia.org/wiki/Design_Patterns)
+vgl. auch https://gameprogrammingpatterns.com/type-object.html
+
+
 ## Wrap-Up
 
-Ziel: Anzahl der Klassen zu minimieren, indem die Typen in unser eigenes Objekt-Modell gehoben werden
+Ziel: Anzahl der Klassen zu minimieren, indem die Typen in unser eigenes Objekt-Modell gehoben werden; flexibles Erzeugen von "Klassen" zur Laufzeit durch Konfiguration
 Anmerkung: Große Ähnlichkeit zum Flyweight-Pattern, aber Ziele unterschiedlich: Hier Anzahl der Klassen minimieren, dort Effizienz erhöhen durch gemeinsam genutzte Objekte.
 
 ...
