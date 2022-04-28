@@ -370,9 +370,53 @@ bewerkstelligen:
 
 ## Folie 7 - `verify()`
 
-Mit Hilfe der umfangreichen `verfiy()`-Methoden die uns Mockito mitliefert können wir unseren Code unter anderem auf unerwünschte Seiteneffekte testen. So ist es mit verify zum Beispiel möglich abzufragen, ob mit einem gemockten Objekt interagiert wurde, wie damit interagiert wurde, welche Argumente dabei übergeben worden sind und in welcher Reihenfolge die Interaktionen damit erfolgt sind.
+Mit Hilfe der umfangreichen `verfiy()`-Methoden die uns Mockito mitliefert können wir unseren Code unter anderem auf unerwünschte Seiteneffekte testen. So ist es mit "verify" zum Beispiel möglich abzufragen, ob mit einem gemockten Objekt interagiert wurde, wie damit interagiert wurde, welche Argumente dabei übergeben worden sind und in welcher Reihenfolge die Interaktionen damit erfolgt sind.
 
 Hier nur eine kurze Übersicht über das Testen des Codes mit Hilfe von Mockitos `verify()`-Methoden.
+
+```java
+    @Test
+    public void testVerifyDasKeineInteraktionMitDerListeStattgefundenHat() {
+        // Testet, ob die spezifizierte Interaktion mit der Liste
+        // nie stattgefunden hat.
+        verify(fluppisListe, never()).clear();
+    }
+```
+
+```java
+    @Test
+    public void testVerifyReihenfolgeDerInteraktionenMitDerFluppisListe() {
+        // Testet, ob die Reihenfolge der spezifizierten Interaktionen
+        // mit der Liste eingehalten wurde.
+        fluppisListe.clear();
+        InOrder reihenfolge = inOrder(fluppisListe);
+        reihenfolge.verify(fluppisListe).add("Fluppi001");
+        reihenfolge.verify(fluppisListe).clear();
+    }
+```
+
+
+
+```java
+    @Test
+    public void testVerifyFlexibleArgumenteBeimZugriffAufFluppisListe() {
+        // Testet, ob schon jemals etwas zu der Liste hinzugefügt wurde.
+        // Dabei ist es egal welcher String eingegeben wurde.
+        verify(fluppisListe).add(anyString());
+    }
+```
+
+```java
+    @Test
+    public void testVerifyInteraktionenMitHilfeDesArgumentCaptor() {
+        // Testet, welches Argument beim Methodenaufruf übergeben wurde.
+        fluppisListe.addAll(Arrays.asList("BobDerBaumeister"));
+        ArgumentCaptor<List> argumentMagnet = ArgumentCaptor.forClass(FluppisListe.class);
+        verify(fluppisListe).addAll(argumentMagnet.capture());
+        List<String> argumente = argumentMagnet.getValue();
+        assertEquals("BobDerBaumeister", argumente.get(0));
+    }
+```
 
 [Demo: VerifyFluppisListeTest]{.bsp}
 
