@@ -18,18 +18,15 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1074559&client_id=FH-Bielefeld"
     name: "Quiz Observer-Pattern (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet06
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Observer-Pattern"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo Observer-Pattern"
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL Observer-Pattern"
 ---
 
 
@@ -67,9 +64,4 @@ Lorem Ipsum. Starte mit H2-Level.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
