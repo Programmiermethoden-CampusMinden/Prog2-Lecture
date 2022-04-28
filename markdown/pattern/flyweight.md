@@ -57,6 +57,7 @@ Begriffe:
 - interface um **extrinsic** state (variant, context-dependent und kann nicht geteilt werden) zu übergeben
 
 vgl. auch https://en.wikipedia.org/wiki/Flyweight_pattern
+vgl. auch https://gameprogrammingpatterns.com/flyweight.html
 
 
 ## Wrap-Up
