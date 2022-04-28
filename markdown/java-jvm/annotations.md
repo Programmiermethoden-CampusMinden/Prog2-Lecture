@@ -22,7 +22,7 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1074576&client_id=FH-Bielefeld"
     name: "Quiz Annotationen (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet07
 youtube:
   - link: ""
     name: "VL "
