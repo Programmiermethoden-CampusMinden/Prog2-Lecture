@@ -1,5 +1,5 @@
----
-type: lecture-cg title: "Mocking mit Mockito"
+type: lecture-cg
+title: "Mocking mit Mockito"
 menuTitle: "Mocking"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 4
