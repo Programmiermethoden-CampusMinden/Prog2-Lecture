@@ -309,7 +309,18 @@ gehören zur Schnittstelle und damit Teil des "Vertrags" mit den Nutzern!
 \bigskip
 
 *   Programmierprinzip "**Prinzip der minimalen Verwunderung**"
+
+    ::: notes
+    *   Klassen und Methoden sollten sich erwartungsgemäß verhalten
+    *   Gute Namen ersparen das Lesen der Dokumentation
+    :::
+
 *   Programmierprinzip "**Kapselung/Information Hiding**"
+
+    ::: notes
+    *   Möglichst schlanke öffentliche Schnittstelle
+    *   => "Vertrag" mit Nutzern der Klasse!
+    :::
 
 
 ## Code Smells: Duplizierter Code
@@ -335,7 +346,7 @@ public class Studi {
 Im Beispiel wird das Formatieren der Adresse mehrfach identisch implementiert,
 d.h. duplizierter Code. Auslagern in eigene Methode und aufrufen!
 
-Kopierter Code ist problematisch:
+Kopierter/duplizierter Code ist problematisch:
 
 *   Spätere Änderungen müssen an mehreren Stellen vorgenommen werden
 *   Lesbarkeit/Orientierung im Code wird erschwert (Analogie: Reihenhaussiedlung)
@@ -387,22 +398,41 @@ Kopierter Code ist problematisch:
 ### Langer Code deutet auch auf eine Verletzung des Prinzips der Single Responsibility hin
 
 *   Klassen fassen evtl. nicht zusammengehörende Dinge zusammen
-*   Methoden erledigen vermutlich mehr als nur eine Aufgabe
-    *   Erklären Sie die Methode jemandem. Wenn dabei das Wort "und"
-        vorkommt, macht die Methode höchstwahrscheinlich zu viel!
 
-        ```java
-        public void credits() {
-            for (Student s : students) {
-                if (s.hasSemesterFinished()) {
-                    ECTS c = calculateEcts(s);
-                    s.setEctsSum(c);
-                }
+    ```java
+    public class Student {
+        private String name;
+        private String phoneAreaCode;
+        private String phoneNumber;
+
+        public void printStudentInfo() {
+            System.out.println("name:    " + name);
+            System.out.println("contact: " + phoneAreaCode + "/" + phoneNumber);
+        }
+    }
+    ```
+
+    Warum sollte sich die Klasse `Student` um die Einzelheiten des Aufbaus einer
+    Telefonnummer kümmern? Das Prinzip der "_Single Responsibility_" wird hier
+    verletzt!
+
+*   Methoden erledigen vermutlich mehr als nur eine Aufgabe
+
+    ```java
+    public void credits() {
+        for (Student s : students) {
+            if (s.hasSemesterFinished()) {
+                ECTS c = calculateEcts(s);
+                s.setEctsSum(c);
             }
         }
+    }
 
-        // Methode erledigt 4 Dinge: Iteration, Abfrage, Berechnung, Setzen ...
-        ```
+    // Diese Methode erledigt 4 Dinge: Iteration, Abfrage, Berechnung, Setzen ...
+    ```
+
+    => Erklären Sie die Methode jemandem. Wenn dabei das Wort "und"
+    vorkommt, macht die Methode höchstwahrscheinlich zu viel!
 
 *   Viele Parameter bedeuten oft fehlende Datenabstraktion
 

@@ -1,0 +1,21 @@
+plugins {
+    id "java"
+    id "application"
+    id "checkstyle"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+checkstyle {
+    configFile file('checkstyle.xml')
+    toolVersion '10.2'
+}
+
+application {
+    mainClass = 'wuppie.deeplearning.strategy.MyWuppieStudi'
+}
