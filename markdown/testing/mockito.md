@@ -5,12 +5,7 @@ menuTitle: "Mocking"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 4
 readings:
-  - key: "vogellaJUnit"
-  - key: "junit4"
-  - key: "Kleuker2019"
-  - key: "Osherove2014"
-  - key: "Spillner2012"
-  - key: "fernunihagenJunit"
+  - key: "XXX"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
@@ -20,19 +15,17 @@ outcomes:
   - k3: "fluppie"
 quizzes:
   - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+    name: "Quiz Mocking (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet05
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Mocking"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo Mocking"
 fhmedia:
   - link: ""
-    name: "VL "
+    name: "VL Mocking"
 ---
 
 
