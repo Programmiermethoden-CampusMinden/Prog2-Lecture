@@ -28,6 +28,7 @@ fhmedia:
 ---
 
 ---
+
 ## Motivation
 
 Mockito ist ein Mocking-Framework. Es simuliert das Verhalten eines realen
@@ -167,7 +168,6 @@ Maven: `pom.xml`
 
 ## Folie 2
 
-
 | Parameter         | Mock                                                                                                                                                    | Stub                                                                                           | Spy                                                                                                                                |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
 | Datenquelle       | Daten der Mocks werden in den Tests definiert                                                                                                           | Daten in Stubs sind hart codiert. Sie sind normalerweise eng mit der Testsuite verbunden.      | Spies sind partielle/halb gemockte Objekte. Spies werden ebenso wie Mocks in großen Testsuiten verwendet.                         |
@@ -285,16 +285,67 @@ Die normalen Testmöglichkeiten von JUnit runden unseren Test zudem ab.
 ## Folie 6
 
 In Mockito gibt es zahlreiche Annotationen, die uns beim Erstellen unserer Mocks
-und Spies behilflich sein können.
+und Spies behilflich sein können. Hier ein kleiner Überblick über die
+wichtigsten in Mockito verwendeten Annotation.
 
-Mockito Annotationen:
-* `@Mock` // TODO
-* `@Spy` // TODO
-* `@RunWith(MockitoJUnitRunner.class)` // TODO
-* `@InjectMocks` // TODO
-* `@Captor` // TODO
-* `@ExtendWith(MockitoExtension.class)` // TODO
-* `@Rule` // TODO
+`@Mock` wird zum Markieren des zu mockenden Objekts verwendet.
+
+```java
+    @Mock  
+    WuppiWarenlager lager;
+```
+
+`@RunWith(MockitoJUnitRunner.class)` dient dazu das Debugging zu verbessern und
+sorgt dafür, dass unbenutzte stubs im test erkannt werden. Ausserdem werden
+dadurch alle mit `@Mock` markierten Mocks initialisiert. _**Anmerkung**_:
+Die `@RunWith`-Annotation wird immer im Zusammenspiel mit der `@Mock`-Annotation
+verwendet.
+
+```java
+
+@RunWith(MockitoJUnitRunner.class)
+public class ToDoBusinessMock {...
+}
+```
+
+`@Spy` erlaubt das erstellen von partiell gemockten Objekten. Dabei wird eine
+Art Wrapper um das zu mockende Objekt gewickelt, der dafür sorgt, dass alle
+Methodenaufrufe des Objekts an den Spy delegiert werden. Diese können über den
+Spion dann abgefangen/verändert oder ausgewertet werden.
+
+```java
+    @Spy      
+    ArrayList<Wuppi> arrayListenSpion;  
+```
+
+`@InjectMocks` Erlaubt es parameter zu markieren in denen Mocks und/oder Spies
+injiziert werden. Mockito versucht dann, in dieser Reihenfolge, per
+Konstruktorinjektion, Setterinjektion oder Propertyinjektion die mocks zu
+injizieren. Weitere Informationen darüber findet man
+hier. [Mockito Dokumentation](https://javadoc.io/static/org.mockito/mockito-core/4.5.1/org/mockito/InjectMocks.html) _**Anmerkung**_: Es ist
+aber nicht ratsam "Field- oder Setterinjection" zu nutzen, da man nur bei der
+Verwendung von "Constructorinjection" sicherstellen kann, das eine Klasse nicht
+ohne die eigentlich notwendigen Parameter instanziiert wurde.
+
+```java
+    @InjectMocks
+    Wuppi fluppi;
+```
+
+`@Captor` erlaubt es einen die Argumente einer Methode abzufangen/auszuwerten.
+Im Zusammenspiel mit Mockitos `verify()`-Methode kann man somit auch die einer
+Methode übergebenen Parameter verifizieren.
+
+```java
+    @Captor  
+    ArgumentCaptor<String> argumentCaptor;
+```
+
+`@ExtendWith(MockitoExtension.class)` wird in JUnit5 verwendet, um die 
+initialisierung von Mocks zu vereinfachen. Damit entfällt zum Beispiel die 
+noch unter JUnit4 nötige Initialisierung der Mocks durch einen Aufruf der 
+Methode `MockitoAnnotations.openMocks()` im Setup des Tests 
+(`@Before | @BeforeEach`)
 
 Dabei gibt es zu den hier gezeigten Annotationen meist auch einen einfachen
 Methodenaufruf der die gleiche Funktionalität besitzt.
