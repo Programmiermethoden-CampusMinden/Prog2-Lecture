@@ -5,9 +5,8 @@ menuTitle: "Type-Object"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 8
 readings:
-  - key: "Eilebrecht2013"
-  - key: "Gamma2011"
-  - key: "Kleuker2018"
+  - key: "Nystrom2014"
+    comment: "Kap. 13: Type Object"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
