@@ -21,20 +21,17 @@ outcomes:
   - k3: "fluppie"
 quizzes:
   - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+    name: "Quiz Serialisierung (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet06
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Serialisierung"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo Serialisierung"
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL Serialisierung"
 ---
 
 
@@ -55,6 +52,9 @@ Lorem Ipsum. Starte mit H2-Level.
 ...
 
 ## Folie 6
+
+https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectOutputStream.html
+
 ...
 
 ## Wrap-Up
@@ -72,9 +72,4 @@ Lorem Ipsum. Starte mit H2-Level.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
