@@ -19,7 +19,7 @@ quizzes:
   - link: "XYZ"
     name: "Quiz XXX (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet06
 youtube:
   - link: ""
     name: "VL "
@@ -54,6 +54,10 @@ Lorem Ipsum. Starte mit H2-Level.
 ...
 
 ## Wrap-Up
+
+Ziel: Steigerung der Effizienz durch gemeinsame Nutzung von Objekten (Shared Memory)
+Anmerkung: Große Ähnlichkeit zum Flyweight-Pattern, aber Ziele unterschiedlich: Dort Anzahl der Klassen minimieren, hier Effizienz erhöhen durch gemeinsam genutzte Objekte.
+
 ...
 
 
@@ -68,9 +72,4 @@ Lorem Ipsum. Starte mit H2-Level.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
