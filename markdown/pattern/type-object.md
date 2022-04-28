@@ -66,6 +66,9 @@ Schritt 5: Die Konfiguration dieser Parameter legt man in einer Konfig-Datei ab,
 
 ## Wrap-Up
 
+Ziel: Anzahl der Klassen zu minimieren, indem die Typen in unser eigenes Objekt-Modell gehoben werden
+Anmerkung: Große Ähnlichkeit zum Flyweight-Pattern, aber Ziele unterschiedlich: Hier Anzahl der Klassen minimieren, dort Effizienz erhöhen durch gemeinsam genutzte Objekte.
+
 ...
 
 
