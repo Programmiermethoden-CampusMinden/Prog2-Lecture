@@ -5,9 +5,8 @@ menuTitle: "Observer"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 3
 readings:
-  - key: "Eilebrecht2013"
-  - key: "Gamma2011"
-  - key: "Kleuker2018"
+  - key: "Nystrom2014"
+    comment: "Kap. 4: Observer"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
