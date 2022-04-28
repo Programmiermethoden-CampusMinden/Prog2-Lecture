@@ -12,9 +12,7 @@ import java.util.List;
 public class WuppiWarenlagerStub implements IWuppiWarenlager {
 
     /**
-     * Gibt eine Liste mit allen Wuppis zurück die im Warenlager bestellt werden können.
-     *
-     * @return Alle Wuppis in unserem Warenlager
+     * @inheritDoc
      */
     public List<String> getAlleWuppis() {
 

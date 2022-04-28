@@ -1,10 +1,10 @@
 package stub;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Unsere Testklasse die wir nutzen, um über unsere heißen Wuppistores alle Wuppis aus dem zuvor
@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class WuppiWarenlagerStubTest {
     @Test
-    public void testBestellung() {
+    public void testBestellungMitStub() {
 
         // Wir nutzen kurzerhand einen Stub des eigentlich noch nicht
         // fertiggestellten Warenlagers, um schonmal die Funktionalität zu
