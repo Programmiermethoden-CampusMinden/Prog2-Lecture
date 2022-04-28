@@ -200,7 +200,11 @@ Das will eigentlich niemand...
 
 ## Folie 4
 
-...
+Aber es gibt da einen Ausweg. Wenn es komplexer wird, verwenden wir Mocks.
+
+Bislang haben wir noch keinen gebrauch von Mockito gemacht. Das ändern wir nun.
+
+
 
 ## Folie 5
 
@@ -229,6 +233,9 @@ Das will eigentlich niemand...
 ...
 
 ## NOTIZEN
+
+## When to use @Mock and when @InjectMocks
+@see https://howtodoinjava.com/mockito/mockito-mock-injectmocks/
 
 ## Examples
 
