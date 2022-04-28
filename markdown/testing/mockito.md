@@ -1,6 +1,5 @@
 ---
-type: lecture-cg
-title: "Mocking mit Mockito"
+type: lecture-cg title: "Mocking mit Mockito"
 menuTitle: "Mocking"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 4
@@ -146,7 +145,7 @@ Gradle: `build.gradle`
         testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
         testImplementation "org.mockito:mockito-core:3.+"
     }
-   ```
+  ```
 
 Maven: `pom.xml`
 
@@ -165,16 +164,16 @@ Maven: `pom.xml`
             <scope>test</scope>
         </dependency>
     </dependencies>
-    ```
+  ```
 
 ## Folie 2
 
-| Parameter         | Mock                                                                                                                                                    | Stub                                                                                         | Spy                                                                                                                               |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| Datenquelle       | Daten der Mocks werden in den Tests definiert                                                                                                           | Daten in Stubs sind hart codiert. Sie sind normalerweise eng mit der Testsuite verbunden.    | Spies sind partielle/halb gemockte Objekte. Spies werden ebenso wie Mocks in großen Testsuiten verwendet.                         |
-| Erstellt von      | Werden normalerweise bei der Verwendung eines Mocking-Frameworks erstellt.                                                                              | Werden normalerweise von Hand kreiert                                                        | Werden normalerweise bei der Verwendung eines Mocking-Frameworks erstellt.                                                        |
-| Verwendung        | Mocks werden meistens in großen Testsuiten verwendet. Mocks werden zum erstellen eines kompletten Mocks oder eines Dummy Objekts verwendet.             | Stubs werden meistens in kleinen/überschaubaren Testsuiten verwendet.                        | Spies werden verwendet um partielle oder halb gemockte Objekte zu erzeugen. Spies werden meistens in großen Testsuiten verwendet. |
-| Default Verhalten | Wenn gemockte Objekte verwendet werden ist deren default Verhalten von Methoden (wenn diese nicht stubed sind) das sie gar nichts tun. (doNothing(...)) | Beinhalten meistens nur das absolute Minimum an Methoden die für einen Test benötigt werden. | Wenn Spies verwendet werden ist deren default Verhalten von Methoden (die nicht stubbed sind) das sie die reale Methode aufrufen. |
+| Parameter         | Mock                                                                                                                                                    | Stub                                                                                           | Spy                                                                                                                                |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Datenquelle       | Daten der Mocks werden in den Tests definiert                                                                                                           | Daten in Stubs sind hart codiert. Sie sind normalerweise eng mit der Testsuite verbunden.      | Spies sind partielle/halb gemockte Objekte. Spies werden ebenso wie Mocks in großen Testsuiten verwendet.                         |
+| Erstellt von      | Werden normalerweise bei der Verwendung eines Mocking-Frameworks erstellt.                                                                              | Werden normalerweise von Hand kreiert                                                          | Werden normalerweise bei der Verwendung eines Mocking-Frameworks erstellt.                                                         |
+| Verwendung        | Mocks werden meistens in großen Testsuiten verwendet. Mocks werden zum erstellen eines kompletten Mocks oder eines Dummy Objekts verwendet.            | Stubs werden meistens in kleinen/überschaubaren Testsuiten verwendet.                         | Spies werden verwendet um partielle oder halb gemockte Objekte zu erzeugen. Spies werden meistens in großen Testsuiten verwendet. |
+| Default Verhalten | Wenn gemockte Objekte verwendet werden ist deren default Verhalten von Methoden (wenn diese nicht stubed sind) das sie gar nichts tun. (doNothing(...)) | Beinhalten meistens nur das absolute Minimum an Methoden die für einen Test benötigt werden. | Wenn Spies verwendet werden ist deren default Verhalten von Methoden (die nicht stubbed sind) das sie die reale Methode aufrufen.  |
 
 Quelle: [mock-vs-stub-vs-spy](https://www.javatpoint.com/mock-vs-stub-vs-spy)
 
@@ -185,8 +184,8 @@ Quelle: [mock-vs-stub-vs-spy](https://www.javatpoint.com/mock-vs-stub-vs-spy)
 Bei dem gezeigten Beispiel unseres `WuppiStores` sieht man, dass dieser
 normalerweise von einem fertigen Warenlager die Wuppis beziehen möchte. Da
 dieses Lager aber noch nicht existiert haben wir uns kurzerhand einfach einen
-Stub von unserem `IWuppiWarenlager` Interface erstellt in dem wir zu Testzwecken,
-händisch ein Paar Wuppis ins Lager geräumt haben.
+Stub von unserem `IWuppiWarenlager` Interface erstellt in dem wir zu
+Testzwecken, händisch ein Paar Wuppis ins Lager geräumt haben.
 
 Das funktioniert in diesem mini Testbeispiel ganz gut aber, wenn unsere Stores
 erst einmal so richtig Fahrt aufnehmen und wir irgendwann weltweit Wuppis
@@ -206,9 +205,79 @@ Aber es gibt da einen Ausweg. Wenn es komplexer wird, verwenden wir Mocks.
 
 Bislang haben wir noch keinen gebrauch von Mockito gemacht. Das ändern wir nun.
 
+[Demo: WuppiWarenlagerMockTest]{.bsp}
 
+Wie in diesem Beispiel gezeigt müssen wir nun keinen Stub mehr von Hand
+erstellen, sondern überlassen dies Mockito.
+
+```java
+    IWuppiWarenlager lager=mock(IWuppiWarenlager.class);
+```
+
+Anschließend können wir ohne die Methode `getAllWuppis()` implementiert zu haben
+dennoch so tun als, ob die Methode eine Funktionalität hätte.
+
+```java
+    // Erstellen eines imaginären Lagerbestands.
+    List<String> wuppisImLager=Arrays.asList("GruenerWuppi","RoterWuppi");
+        when(lager.getAlleWuppis()).thenReturn(wuppisImLager);
+```
+
+Wann immer nun die Methode `getAlleWuppis()` des gemockten Lagers aufgerufen
+wird, wird dieser Aufruf von Mockito abgefangen und wie oben definiert
+verändert. Das Ergebnis können wir abschließend einfach in unserem Test wie hier
+zu sehen ist testen.
+
+```java
+// Erzeugen des WuppiStores.
+    WuppiStore wuppiStore=new WuppiStore(lager);
+
+            // Bestelle alle Wuppis aus dem gemockten Lager List<String>
+            bestellteWuppis=wuppiStore.bestelleAlleWuppis(lager);
+
+            // Hat die Bestellung geklappt?
+            assertEquals(2,bestellteWuppis.size());
+```
 
 ## Folie 5
+
+Manchmal möchten wir allerdings nicht immer gleich ein ganzes Objekt mocken aber
+dennoch Einfluss auf die aufgerufenen Methoden eines Objekts haben um diese
+testen zu können. Vielleicht gibt es dabei ja sogar eine Möglichkeit unsere
+JUnittests, mit denen wir normalerweise nur Rückgabewerte von Methoden testen
+können, zusätzlich auch das Verhalten also die Interaktionen mit einem Objekt
+beobachtbar zu machen. Somit wären diese Interaktionen auch testbar.
+
+Und genau dafür bietet Mockito eine Funktion. Der sogenannte Spy.
+
+Dieser Spion erlaubt es uns nun zusätzlich das Verhalten zu testen. Siehe
+hierzu: [BDD - Behavior Driven Development](https://de.wikipedia.org/wiki/Behavior_Driven_Development)
+
+[Demo: WuppiWarenlagerSpyTest]{.bsp}
+
+```java
+        // Spion erstellen der unser wuppiWarenlager überwacht.
+        this.wuppiWarenlager = spy(WuppiWarenlager.class);
+```
+Hier hatten wir uns einen Spion erzeugt mit dem sich anschließend das
+Verhalten verändern
+
+```java
+    when(wuppiWarenlager.getAlleWuppis()).thenReturn(Arrays.asList(new Wuppi("Wuppi007")));
+```
+
+oder der Zugriff kontrollieren/testen ließ.
+
+```java
+    verify(wuppiWarenlager).addWuppi(normalerWuppi);
+    verifyNoMoreInteractions(wuppiWarenlager);
+   ```
+
+Die normalen Testmöglichkeiten von JUnit runden unseren Test zudem ab.
+
+```java
+    assertEquals(1, wuppiWarenlager.lager.size());
+```
 
 ...
 
@@ -237,6 +306,7 @@ Bislang haben wir noch keinen gebrauch von Mockito gemacht. Das ändern wir nun.
 ## NOTIZEN
 
 ## When to use @Mock and when @InjectMocks
+
 @see https://howtodoinjava.com/mockito/mockito-mock-injectmocks/
 
 ## Examples
@@ -247,7 +317,7 @@ Bislang haben wir noch keinen gebrauch von Mockito gemacht. Das ändern wir nun.
 
 // TODO
 
-- [x] done. @see https://www.javatpoint.com/mockito
+- [X]  done. @see https://www.javatpoint.com/mockito
 
 Fake vs... @see https://www.martinfowler.com/articles/mocksArentStubs.html
 
@@ -386,6 +456,7 @@ Fake vs... @see https://www.martinfowler.com/articles/mocksArentStubs.html
 ## Mockitos internal Whitebox is depreacted but Powermock has one with extended capabilities.
 
 <!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
+
 ::: slides
 
 ## LICENSE
