@@ -2,6 +2,7 @@
 chapter: true
 title: "Database"
 weight: 11
+hidden: true
 ---
 
 
