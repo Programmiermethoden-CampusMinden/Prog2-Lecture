@@ -28,7 +28,6 @@ fhmedia:
 ---
 
 ---
-
 ## Motivation
 
 Mockito ist ein Mocking-Framework. Es simuliert das Verhalten eines realen
@@ -168,6 +167,7 @@ Maven: `pom.xml`
 
 ## Folie 2
 
+
 | Parameter         | Mock                                                                                                                                                    | Stub                                                                                           | Spy                                                                                                                                |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
 | Datenquelle       | Daten der Mocks werden in den Tests definiert                                                                                                           | Daten in Stubs sind hart codiert. Sie sind normalerweise eng mit der Testsuite verbunden.      | Spies sind partielle/halb gemockte Objekte. Spies werden ebenso wie Mocks in großen Testsuiten verwendet.                         |
@@ -257,10 +257,11 @@ hierzu: [BDD - Behavior Driven Development](https://de.wikipedia.org/wiki/Behavi
 
 ```java
         // Spion erstellen der unser wuppiWarenlager überwacht.
-        this.wuppiWarenlager = spy(WuppiWarenlager.class);
+        this.wuppiWarenlager=spy(WuppiWarenlager.class);
 ```
-Hier hatten wir uns einen Spion erzeugt mit dem sich anschließend das
-Verhalten verändern
+
+Hier hatten wir uns einen Spion erzeugt mit dem sich anschließend das Verhalten
+verändern
 
 ```java
     when(wuppiWarenlager.getAlleWuppis()).thenReturn(Arrays.asList(new Wuppi("Wuppi007")));
@@ -270,18 +271,57 @@ oder der Zugriff kontrollieren/testen ließ.
 
 ```java
     verify(wuppiWarenlager).addWuppi(normalerWuppi);
-    verifyNoMoreInteractions(wuppiWarenlager);
-   ```
+        verifyNoMoreInteractions(wuppiWarenlager);
+```
 
 Die normalen Testmöglichkeiten von JUnit runden unseren Test zudem ab.
 
 ```java
-    assertEquals(1, wuppiWarenlager.lager.size());
+    assertEquals(1,wuppiWarenlager.lager.size());
 ```
 
 ...
 
 ## Folie 6
+
+In Mockito gibt es zahlreiche Annotationen, die uns beim Erstellen unserer Mocks
+und Spies behilflich sein können.
+
+Mockito Annotationen:
+* `@Mock` // TODO
+* `@Spy` // TODO
+* `@RunWith(MockitoJUnitRunner.class)` // TODO
+* `@InjectMocks` // TODO
+* `@Captor` // TODO
+* `@ExtendWith(MockitoExtension.class)` // TODO
+* `@Rule` // TODO
+
+Dabei gibt es zu den hier gezeigten Annotationen meist auch einen einfachen
+Methodenaufruf der die gleiche Funktionalität besitzt.
+
+Um zum Beispiel ein Mock eines Objekts zu erstellen, kann man entweder den Mock
+mit dem Methodenaufruf `mock(KlasseDesTypsDesZuMockendenObjekts.class)`
+erzeugen oder mit der Annotation `@Mock` wie in diesem Beispiel gezeigt:
+
+```java
+    @Mock
+    KlasseDesTypsDesZuMockendenObjekts objektname;
+```
+
+Ebenso lassen sich mit der Annotation `@Spy` zum Beispiel Spione definieren:
+
+```java
+    @Spy
+    List<String> spionListe=new ArrayList<String>();
+```
+
+Selbiges könnte man aber auch wie oben angesprochen mit einem Methodenaufruf
+bewerkstelligen:
+
+```java
+    List<String> list=new ArrayList<String>();
+        List<String> spionListe=spy(list);
+```
 
 ...
 
@@ -335,7 +375,7 @@ Fake vs... @see https://www.martinfowler.com/articles/mocksArentStubs.html
 
 ## Stub -> when then syntax
 
-## Answer<T> interface of Mockito
+## Answer`<T>` interface of Mockito
 
 @see https://www.javadoc.io/doc/org.mockito/mockito-core/2.7.9/org/mockito/stubbing/Answer.html
 @see https://www.baeldung.com/mockito-behavior
