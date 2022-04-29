@@ -29,13 +29,51 @@ fhmedia:
 ---
 
 
-## Motivation
+## Motivation: Entwicklung einer Studi-Prüfungsverwaltung
 
-Team A: Studi
-Team B: LSF
+::: notes
+Zwei Teams entwickeln eine neue Studi-Prüfungsverwaltung für die Hochschule. Ein Team modelliert dabei
+die Studierenden, ein anderes Team modelliert die Prüfungsverwaltung LSF.
+:::
 
-Team B kommt nicht so recht vorwärts, Team A will aber testen
-gar nicht vs. selbst impl. (wer pflegt das dann?) vs. mocking
+*   Team A:
+
+    ```{.java size="scriptsize"}
+    public class Studi {
+        String name;  LSF lsf;
+
+        public Studi(String name, LSF lsf) {
+            this.name = name;  this.lsf = lsf;
+        }
+
+        public boolean anmelden(String modul) { return lsf.anmelden(name, modul); }
+        public boolean klausurEinsicht(String modul) { return lsf.ergebnis(name, modul) > 50; }
+    }
+    ```
+
+*   Team B:
+
+    ```{.java size="scriptsize"}
+    public class LSF {
+        public boolean anmelden(String name, String modul) { throw new UnsupportedOperationException(); }
+        public int ergebnis(String name, String modul) { throw new UnsupportedOperationException(); }
+    }
+    ```
+
+\bigskip
+
+::: notes
+Team B kommt nicht so recht vorwärts, Team A will aber schon testen.
+:::
+
+Wie kann Team A seinen Code testen?
+
+::: notes
+Optionen:
+
+-   Gar nicht testen?!
+-   Das LSF selbst implementieren? Wer pflegt das dann?
+:::
 
 
 ## Manuell Stubs implementieren
