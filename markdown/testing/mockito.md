@@ -169,7 +169,29 @@ Lösung: Mockito-Spy als partieller Mock einer Klasse (Wrapper um ein Objekt): `
 :::
 
 ```{.java size="scriptsize"}
+public class StudiSpyTest {
+    Studi studi;  LSF lsf;
 
+    @Before
+    public void setUp() {
+        lsf = spy(LSF.class);  studi = new Studi("Harald", lsf);
+    }
+
+    @Test
+    public void testAnmelden() { assertTrue(studi.anmelden("PM-Dungeon")); }
+
+    @Test
+    public void testKlausurEinsichtI() {
+        doReturn(80).when(lsf).ergebnis(anyString(), anyString());
+        assertTrue(studi.klausurEinsicht("PM-Dungeon"));
+    }
+
+    @Test
+    public void testKlausurEinsichtII() {
+        doReturn(40).when(lsf).ergebnis(anyString(), anyString());
+        assertFalse(studi.klausurEinsicht("PM-Dungeon"));
+    }
+}
 ```
 
 ::: notes
