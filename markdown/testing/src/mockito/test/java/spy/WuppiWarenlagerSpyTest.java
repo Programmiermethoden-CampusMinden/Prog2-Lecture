@@ -1,12 +1,12 @@
 package spy;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.mockito.Mockito.*;
 
 /**
@@ -20,7 +20,7 @@ public class WuppiWarenlagerSpyTest {
     WuppiWarenlager wuppiWarenlager;
     Wuppi normalerWuppi;
 
-    @BeforeEach
+    @Before
     void setup() {
         // Spion erstellen der unser wuppiWarenlager überwacht.
         this.wuppiWarenlager = spy(WuppiWarenlager.class);

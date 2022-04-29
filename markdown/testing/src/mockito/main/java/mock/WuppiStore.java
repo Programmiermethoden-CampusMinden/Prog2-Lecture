@@ -17,8 +17,8 @@ public class WuppiStore {
     /**
      * Bestellt alle Wuppis aus dem angegebenen Warenlager
      *
-     * @param lager Das lager aus dem die Wuppis geordert werden.
-     * @return Eine Liste mit allen Wuppis die bestellt wurden.
+     * @param lager Das Lager, aus dem die Wuppis geordert werden.
+     * @return Eine Liste mit allen Wuppis, die bestellt wurden.
      */
     public List<String> bestelleAlleWuppis(IWuppiWarenlager lager) {
         return lager.getAlleWuppis();

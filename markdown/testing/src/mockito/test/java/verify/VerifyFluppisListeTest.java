@@ -1,26 +1,22 @@
 package verify;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Before;
+import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InOrder;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
-@ExtendWith(MockitoExtension.class)
 public class VerifyFluppisListeTest {
+    FluppisListe fluppisListe;
 
-    @Mock FluppisListe fluppisListe;
-
-    @BeforeEach
+    @Before
     void setup() {
+        fluppisListe = mock(FluppisListe.class);
         fluppisListe.add("Fluppi001");
     }
 
