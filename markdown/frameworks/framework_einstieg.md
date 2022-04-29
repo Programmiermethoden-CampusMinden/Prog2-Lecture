@@ -37,14 +37,56 @@ sketch: true
 ...
 
 ## Was sind Frameworks?
-- "Definition"
+
+
+> Ein Framework (englisch für Rahmenstruktur) ist ein Programmiergerüst, das in der Softwaretechnik, insbesondere im Rahmen der objektorientierten Softwareentwicklung sowie bei komponentenbasierten Entwicklungsansätzen, verwendet wird. Im allgemeineren Sinne bezeichnet man mit Framework auch einen Ordnungsrahmen. [https://de.wikipedia.org/wiki/Framework]
+
+> noch eine "bessere" finden
+
+
+
+Frameworks liefern die Rahmenstruktur und Architektur um Programme für die verschiedenen Anwendungszwecke einfacher und effizient zu entwickeln. Sie legen dabei fest, WIE programmiert werden soll. Dabei liefern sie Strukturen, um eine einfache Wiederverwendbarkeit zu gewährleisten.  
+
+Frameworks stellen Code bereit, der an entsprechenden Stellen mit eigenen Klassen und Funktionen erweitert werden muss, sind dabei aber selbst kein eigenen Programme (vgl. PM-Dungeon).  
+
+Frameworks sind die Lückentexte der Programmierung. //Ich finde die Analogie eigentlich nicht schlecht, aber die muss besser eingebunden werden
+
 ...
 
-## Unterschied zu Libaries
+## Unterschied zu Libraries 
+
+- Libraries stellen Funktionen bereit, die frei in der eigenen Implementierung genutzt werden können.
+- Frameworks geben eine Implementierung vor, die mit eigenen Verhalten erweitert werden kann/muss. 
+
 ...
+
+## Verbreitete Frameworks
+
+// Frage: Wie ausführlich den Anwendungszweck erklären? Teilweise ist das schon sehr spezifisch und für Einsteiger könnte es ein großes Buzzword Bingo werden. 
+
+| Framework | Anwendungszweck |
+| --------- | --------------- |
+| JUnit     | Testen von Software| 
+| Play      | Web Anwendungen |
+| **Spring**    | Web Anwendungen und Enterprise Java-Applications|
+| Hybernate | Datenbanken Anbindungen    |
+
 
 ## Vor- und Nachteile
+//Formatierung dieses Kaptitel? 
++ Ermöglichen eine schnelle Implementierung Umfangreicher Softwarekonstrukte
++ "Erzwingen" das einhalten eines bestimmen Qualitätsstandards 
++ Große Communitys 
++/- Verstecken komplexe Zusammenhänge vor den Entwicklern
+- Oftmals sehr Umfangreich und schwer zu erlernen
+- Fokus oft nicht mehr nur ein Anwendungsbereich (z.B Spring)
+- Schließen sich oft gegenseitig aus
+- Nicht alles was sich Framework nennt, ist auch wirklich eins. 
+- Hype-Gefahr: Frameworks werden stark angepriesen um dann fallen gelassen zu werden
+
 ...
+
+
 
 ## Einstieg in ein Framework
 - Problem darstellen
@@ -54,9 +96,6 @@ sketch: true
   - Wie intalliere ich sowas?
   - Hello World 
   - Problem lösen
-
-## Verbreitete Frameworks
-- Name| Einsatzbereich 
 
 ...
 
