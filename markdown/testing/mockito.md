@@ -31,6 +31,53 @@ fhmedia:
 
 ## Motivation
 
+Team A: Studi
+Team B: LSF
+
+Team B kommt nicht so recht vorwärts, Team A will aber testen
+
+
+## Manuell Stubs
+
+Team A könnte manuell das LSF implementieren (nur für die Tests): Stubs
+
+Problem: Wartung der Tests (wenn das richtige LSF fertig ist), ggf. Wartung der Stubs
+
+
+## Mocking
+
+Mocking der Klasse LSF für den Test von Studi: mock()
+
+
+## Spy
+
+LSF ist implementiert, hat Zufallskomponente (getGrades). Wie die Reaktion des Studis testen (reactToGrades)?
+
+Lösung: Spy als partieller Mock einer Klasse (Wrapper um ein Objekt): spy()
+
+
+## Weitere Details zu Mockito
+
+- when().thenReturn() und doReturn().when(spy)
+- verify(), verifyNoMoreInteractions()
+- times(), never(), atLeast(), atMost()
+- Auswerten und Fangen von Argumenten: any(), @Captor
+
+
+## Ausblick
+
+Konstruktoren, final Methoden, static Methoden, partielles Mocking und Whitebox/Variablen ... geht alles nicht
+
+Lösung: [PowerMock](https://github.com/powermock/powermock)
+
+
+
+
+
+
+
+## Motivation
+
 Mockito ist ein Mocking-Framework. Es simuliert das Verhalten eines realen
 Objektes oder einer realen Methode.
 
