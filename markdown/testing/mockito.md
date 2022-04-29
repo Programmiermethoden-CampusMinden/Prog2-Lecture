@@ -279,9 +279,17 @@ Erklärung der Elemente: TODO
 
 ## Ausblick: PowerMock
 
-Konstruktoren, final Methoden, static Methoden, partielles Mocking und Whitebox/Variablen ... geht alles nicht
+Mockito sehr mächtig, aber unterstützt (u.a.) keine
 
-Lösung: [PowerMock](https://github.com/powermock/powermock)
+*   Konstruktoren
+*   private Methoden
+*   final Methoden
+*   static Methoden
+
+\bigskip
+\bigskip
+
+=> Lösung: [PowerMock](https://github.com/powermock/powermock)
 
 
 
