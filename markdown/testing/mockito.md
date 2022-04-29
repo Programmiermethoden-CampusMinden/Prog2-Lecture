@@ -130,9 +130,7 @@ public class StudiMockTest {
     Studi studi;  LSF lsf;
 
     @Before
-    public void setUp() {
-        lsf = mock(LSF.class);  studi = new Studi("Harald", lsf);
-    }
+    public void setUp() { lsf = mock(LSF.class);  studi = new Studi("Harald", lsf); }
 
     @Test
     public void testAnmelden() {
@@ -145,7 +143,6 @@ public class StudiMockTest {
         when(lsf.ergebnis("Harald", "PM-Dungeon")).thenReturn(80);
         assertTrue(studi.einsicht("PM-Dungeon"));
     }
-
     @Test
     public void testEinsichtII() {
         when(lsf.ergebnis("Harald", "PM-Dungeon")).thenReturn(40);
@@ -179,9 +176,7 @@ public class StudiSpyTest {
     Studi studi;  LSF lsf;
 
     @Before
-    public void setUp() {
-        lsf = spy(LSF.class);  studi = new Studi("Harald", lsf);
-    }
+    public void setUp() { lsf = spy(LSF.class);  studi = new Studi("Harald", lsf); }
 
     @Test
     public void testAnmelden() { assertTrue(studi.anmelden("PM-Dungeon")); }
@@ -191,7 +186,6 @@ public class StudiSpyTest {
         doReturn(80).when(lsf).ergebnis("Harald", "PM-Dungeon");
         assertTrue(studi.einsicht("PM-Dungeon"));
     }
-
     @Test
     public void testEinsichtII() {
         doReturn(40).when(lsf).ergebnis("Harald", "PM-Dungeon");
@@ -214,16 +208,16 @@ Erklärung der Elemente: TODO
 public class VerifyTest {
     @Test
     public void testAnmelden() {
-        LSF lsf = mock(LSF.class);
-        Studi studi = new Studi("Harald", lsf);
+        LSF lsf = mock(LSF.class);  Studi studi = new Studi("Harald", lsf);
 
         when(lsf.anmelden("Harald", "PM-Dungeon")).thenReturn(true);
 
         assertTrue(studi.anmelden("PM-Dungeon"));
 
-        verify(lsf).anmelden("Harald", "PM-Dungeon");
 
+        verify(lsf).anmelden("Harald", "PM-Dungeon");
         verify(lsf, times(1)).anmelden("Harald", "PM-Dungeon");
+
         verify(lsf, atLeast(1)).anmelden("Harald", "PM-Dungeon");
         verify(lsf, atMost(1)).anmelden("Harald", "PM-Dungeon");
 
@@ -247,8 +241,7 @@ Erklärung der Elemente: TODO
 public class MatcherTest {
     @Test
     public void testAnmelden() {
-        LSF lsf = mock(LSF.class);
-        Studi studi = new Studi("Harald", lsf);
+        LSF lsf = mock(LSF.class);  Studi studi = new Studi("Harald", lsf);
 
         when(lsf.anmelden(anyString(), anyString())).thenReturn(false);
         when(lsf.anmelden("Harald", "PM-Dungeon")).thenReturn(true);
@@ -327,9 +320,9 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 
 
-
-
-
+- - -
+- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -
+- - -
 
 
 
