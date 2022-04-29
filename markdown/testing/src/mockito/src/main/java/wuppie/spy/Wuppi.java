@@ -1,4 +1,4 @@
-package spy;
+package wuppie.spy;
 
 /** Ein einfacher Wuppi */
 public class Wuppi {

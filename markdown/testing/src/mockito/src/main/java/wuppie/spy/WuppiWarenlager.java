@@ -1,4 +1,4 @@
-package spy;
+package wuppie.spy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class WuppiWarenlager implements IWuppiWarenlager {
 
     /** @inheritDoc */
     @Override
-    public void addWuppi(spy.Wuppi wuppi) {
+    public void addWuppi(Wuppi wuppi) {
         this.lager.add(wuppi);
     }
 }

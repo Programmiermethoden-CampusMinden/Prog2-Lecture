@@ -1,4 +1,4 @@
-package verify;
+package wuppie.verify;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
@@ -11,11 +11,11 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.InOrder;
 
 public class VerifyFluppisListeTest {
-    verify.FluppisListe fluppisListe;
+    private FluppisListe fluppisListe;
 
     @Before
     public void setup() {
-        fluppisListe = mock(verify.FluppisListe.class);
+        fluppisListe = mock(FluppisListe.class);
         fluppisListe.add("Fluppi001");
     }
 

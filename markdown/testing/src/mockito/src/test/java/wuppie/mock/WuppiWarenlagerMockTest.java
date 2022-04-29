@@ -1,4 +1,4 @@
-package mock;
+package wuppie.mock;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -18,7 +18,7 @@ public class WuppiWarenlagerMockTest {
     @Test
     public void testBestellungMitMock() {
         // Erstellen des Mocks
-        mock.IWuppiWarenlager lager = mock(mock.IWuppiWarenlager.class);
+        IWuppiWarenlager lager = mock(IWuppiWarenlager.class);
 
         // Erstellen eines imaginären Lagerbestands.
         List<String> wuppisImLager = Arrays.asList("GruenerWuppi", "RoterWuppi");

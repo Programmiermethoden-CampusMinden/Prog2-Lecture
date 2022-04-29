@@ -1,4 +1,4 @@
-package stub;
+package wuppie.mock;
 
 import java.util.List;
 

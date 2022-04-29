@@ -1,4 +1,4 @@
-package spy;
+package wuppie.spy;
 
 import java.util.List;
 

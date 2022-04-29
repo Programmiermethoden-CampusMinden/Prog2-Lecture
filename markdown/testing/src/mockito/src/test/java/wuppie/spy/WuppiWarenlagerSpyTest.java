@@ -1,4 +1,4 @@
-package spy;
+package wuppie.spy;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
@@ -14,16 +14,16 @@ import org.junit.Test;
  */
 public class WuppiWarenlagerSpyTest {
     // Erstellen eines realen Warenlagers.
-    spy.WuppiWarenlager wuppiWarenlager;
-    spy.Wuppi normalerWuppi;
+    WuppiWarenlager wuppiWarenlager;
+    Wuppi normalerWuppi;
 
     @Before
     public void setup() {
         // Spion erstellen, der unser wuppiWarenlager überwacht.
-        this.wuppiWarenlager = spy(spy.WuppiWarenlager.class);
+        this.wuppiWarenlager = spy(WuppiWarenlager.class);
 
         // Erzeugen eines normalen Wuppi
-        this.normalerWuppi = new spy.Wuppi("NormalerWuppi");
+        this.normalerWuppi = new Wuppi("NormalerWuppi");
     }
 
     @Test

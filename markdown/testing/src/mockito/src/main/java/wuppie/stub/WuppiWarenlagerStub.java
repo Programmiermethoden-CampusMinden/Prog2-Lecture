@@ -1,4 +1,4 @@
-package stub;
+package wuppie.stub;
 
 import java.util.Arrays;
 import java.util.List;

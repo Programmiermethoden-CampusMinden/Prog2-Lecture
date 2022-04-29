@@ -1,4 +1,4 @@
-package stub;
+package wuppie.stub;
 
 import static org.junit.Assert.assertEquals;
 
@@ -16,10 +16,10 @@ public class WuppiWarenlagerStubTest {
 
         // Wir nutzen kurzerhand einen Stub des eigentlich noch nicht
         // fertiggestellten Warenlagers, um schon mal die Funktionalität zu testen.
-        stub.IWuppiWarenlager lager = new stub.WuppiWarenlagerStub();
+        IWuppiWarenlager lager = new WuppiWarenlagerStub();
 
         // Unser neuer, brandheißer WuppiStore!
-        stub.WuppiStore wuppiStore = new stub.WuppiStore(lager);
+        WuppiStore wuppiStore = new WuppiStore(lager);
 
         // Bestelle alle Wuppis aus dem Lagerstub.
         List<String> bestellteWuppis = wuppiStore.bestelleAlleWuppis(lager);

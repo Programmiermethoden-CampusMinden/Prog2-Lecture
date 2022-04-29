@@ -1,4 +1,4 @@
-package verify;
+package wuppie.verify;
 
 import java.util.AbstractList;
 
