@@ -202,15 +202,19 @@ Erklärung der Elemente: TODO
 :::
 
 
-## Weitere Details zu Mockito
+## Wurde eine Methode aufgerufen?
+
 
 - verify(), verifyNoMoreInteractions()
 - times(), never(), atLeast(), atMost()
 
+
+## Fangen von Argumenten
+
 - Auswerten und Fangen von Argumenten: any(), @Captor
 
 
-## Ausblick
+## Ausblick: PowerMock
 
 Konstruktoren, final Methoden, static Methoden, partielles Mocking und Whitebox/Variablen ... geht alles nicht
 
