@@ -78,11 +78,40 @@ Optionen:
 
 ## Manuell Stubs implementieren
 
-Team A könnte manuell das LSF implementieren (nur für die Tests): Stubs
+::: notes
+Team A könnte manuell das LSF implementieren (nur für die Tests): **Stubs**
+:::
 
-Problem: Wartung der Tests (wenn das richtige LSF fertig ist), ggf. Wartung der Stubs
+```{.java size="footnotesize"}
+public class StudiStubTest {
+    Studi studi;  LSF lsf;
 
-Definition: Stubs
+    @Before
+    public void setUp() {
+        lsf = new LsfStub();  studi = new Studi("Harald", lsf);
+    }
+    @Test
+    public void anmelden() { assertTrue(studi.anmelden("PM-Dungeon")); }
+    @Test
+    public void klausurEinsicht() { assertTrue(studi.klausurEinsicht("PM-Dungeon")); }
+
+    // Stub für das noch nicht fertige LSF
+    class LsfStub extends LSF {
+        public boolean anmelden(String name, String modul) { return true; }
+        public int ergebnis(String name, String modul) { return 80; }
+    }
+}
+```
+
+::: notes
+**Problem**: Wartung der Tests (wenn das richtige LSF fertig ist) und Wartung der Stubs (wenn sich die Schnittstelle
+des LSF ändert, muss auch der Stub nachgezogen werden).
+
+**Problem**: Der Stub hat nur eine Art minimale Default-Logik (sonst könnte man ja das LSF gleich selbst implementieren).
+Wenn man im Test andere Antworten braucht, müsste man einen weiteren Stub anlegen ...
+
+**Definition**: "Stubs": TODO
+:::
 
 
 ## Mockito: Mocking von ganzen Klassen
