@@ -114,6 +114,8 @@ des LSF ändert, muss auch der Stub nachgezogen werden).
 Wenn man im Test andere Antworten braucht, müsste man einen weiteren Stub anlegen ...
 :::
 
+[Demo [fhb.StudiStubTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/StudiStubTest.java)]{.bsp}
+
 
 ## Mockito: Mocking von ganzen Klassen
 
@@ -156,6 +158,8 @@ public class StudiMockTest {
 Erklärung der Elemente: TODO
 `when().thenReturn()` => `when(mock.methode()).thenReturn(wert)`
 :::
+
+[Demo [fhb.StudiMockTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/StudiMockTest.java)]{.bsp}
 
 
 ## Mockito: Spy = Wrapper um ein Objekt
@@ -201,6 +205,8 @@ Erklärung der Elemente: TODO
 `doReturn().when()` => `doReturn(wert).when(spy).methode()`
 :::
 
+[Demo [fhb.StudiSpyTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/StudiSpyTest.java)]{.bsp}
+
 
 ## Wurde eine Methode aufgerufen?
 
@@ -232,10 +238,43 @@ public class VerifyTest {
 Erklärung der Elemente: TODO
 :::
 
+[Demo [fhb.VerifyTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/VerifyTest.java)]{.bsp}
+
 
 ## Fangen von Argumenten
 
-- Auswerten und Fangen von Argumenten: any(), @Captor
+```{.java size="scriptsize"}
+public class MatcherTest {
+    @Test
+    public void testAnmelden() {
+        LSF lsf = mock(LSF.class);
+        Studi studi = new Studi("Harald", lsf);
+
+        when(lsf.anmelden(anyString(), anyString())).thenReturn(false);
+        when(lsf.anmelden("Harald", "PM-Dungeon")).thenReturn(true);
+
+        assertTrue(studi.anmelden("PM-Dungeon"));
+        assertFalse(studi.anmelden("Wuppie?"));
+
+        verify(lsf, times(1)).anmelden("Harald", "PM-Dungeon");
+        verify(lsf, times(1)).anmelden("Harald", "Wuppie?");
+
+        verify(lsf, times(2)).anmelden(anyString(), anyString());
+        verify(lsf, times(2)).anmelden(argThat(new MyHaraldMatcher()), anyString());
+    }
+
+
+    class MyHaraldMatcher implements ArgumentMatcher<String> {
+        public boolean matches(String s) { return s.equals("Harald"); }
+    }
+}
+```
+
+::: notes
+Erklärung der Elemente: TODO
+:::
+
+[Demo [fhb.MatcherTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/MatcherTest.java)]{.bsp}
 
 
 ## Ausblick: PowerMock
