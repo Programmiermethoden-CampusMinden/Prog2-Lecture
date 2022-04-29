@@ -1,8 +1,7 @@
 package spy;
 
-import mock.IWuppiWarenlager;
-
 import java.util.List;
+import mock.IWuppiWarenlager;
 
 /**
  * Über unsere brandheißen WuppiStores verkaufen wir dann alle Wuppis aus dem Wuppi-Warenlager (wenn

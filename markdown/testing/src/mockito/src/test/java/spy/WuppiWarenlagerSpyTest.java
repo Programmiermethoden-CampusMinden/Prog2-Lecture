@@ -1,13 +1,12 @@
 package spy;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import java.util.Arrays;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.mockito.Mockito.*;
+
+import java.util.Arrays;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * Unsere Testklasse die wir nutzen, um über unsere heißen Wuppistores alle Wuppis aus dem zuvor

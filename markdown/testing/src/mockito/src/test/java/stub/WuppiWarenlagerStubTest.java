@@ -1,11 +1,9 @@
 package stub;
 
-
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 import java.util.List;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 /**
  * Unsere Testklasse die wir nutzen, um über unsere heißen Wuppistores alle Wuppis aus dem zuvor
