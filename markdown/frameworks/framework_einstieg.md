@@ -41,13 +41,9 @@ sketch: true
 
 > Ein Framework (englisch für Rahmenstruktur) ist ein Programmiergerüst, das in der Softwaretechnik, insbesondere im Rahmen der objektorientierten Softwareentwicklung sowie bei komponentenbasierten Entwicklungsansätzen, verwendet wird. Im allgemeineren Sinne bezeichnet man mit Framework auch einen Ordnungsrahmen. [https://de.wikipedia.org/wiki/Framework]
 
-> noch eine "bessere" finden
+Frameworks liefern die Rahmenstruktur und Architektur, um Programme für die verschiedenen Anwendungszwecke einfacher und effizient zu entwickeln. Sie legen dabei fest, WIE programmiert werden soll.  
 
-
-
-Frameworks liefern die Rahmenstruktur und Architektur um Programme für die verschiedenen Anwendungszwecke einfacher und effizient zu entwickeln. Sie legen dabei fest, WIE programmiert werden soll. Dabei liefern sie Strukturen, um eine einfache Wiederverwendbarkeit zu gewährleisten.  
-
-Frameworks stellen Code bereit, der an entsprechenden Stellen mit eigenen Klassen und Funktionen erweitert werden muss, sind dabei aber selbst kein eigenen Programme (vgl. PM-Dungeon).  
+Frameworks stellen Code bereit, der an entsprechenden Stellen mit eigenen Klassen und Funktionen erweitert werden muss, um die eigentliche Funktion der Anwendung zu implementieren, sind dabei aber selbst kein eigenen Programme (vgl. PM-Dungeon).  
 
 Frameworks sind die Lückentexte der Programmierung. //Ich finde die Analogie eigentlich nicht schlecht, aber die muss besser eingebunden werden
 
@@ -56,7 +52,16 @@ Frameworks sind die Lückentexte der Programmierung. //Ich finde die Analogie ei
 ## Unterschied zu Libraries 
 
 - Libraries stellen Funktionen bereit, die frei in der eigenen Implementierung genutzt werden können.
+- Beispiele für Libraries
+  - Auswerten von Regulären Ausdrücken
+  - Verwenden von Netzwerkprotokollen
+  - Komplexe mathematischen Funktionen
+  
 - Frameworks geben eine Implementierung vor, die mit eigenen Verhalten erweitert werden kann/muss. 
+- Beispiele für Frameworks
+  - Web Anwendungs Systeme
+  - GUI Systeme
+  - Testen von Software
 
 ...
 
@@ -69,7 +74,7 @@ Frameworks sind die Lückentexte der Programmierung. //Ich finde die Analogie ei
 | JUnit     | Testen von Software| 
 | Play      | Web Anwendungen |
 | **Spring**    | Web Anwendungen und Enterprise Java-Applications|
-| Hybernate | Datenbanken Anbindungen    |
+| Hybernate | Datenbanken Anbindungen und Kommunikation    |
 
 
 ## Vor- und Nachteile
