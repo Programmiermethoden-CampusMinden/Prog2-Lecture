@@ -90,13 +90,13 @@ public class StudiStubTest {
     Studi studi;  LSF lsf;
 
     @Before
-    public void setUp() {
-        lsf = new LsfStub();  studi = new Studi("Harald", lsf);
-    }
+    public void setUp() { lsf = new LsfStub();  studi = new Studi("Harald", lsf); }
+
     @Test
     public void testAnmelden() { assertTrue(studi.anmelden("PM-Dungeon")); }
     @Test
     public void testEinsicht() { assertTrue(studi.einsicht("PM-Dungeon")); }
+
 
     // Stub für das noch nicht fertige LSF
     class LsfStub extends LSF {
