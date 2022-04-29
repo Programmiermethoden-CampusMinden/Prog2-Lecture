@@ -5,7 +5,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
 
@@ -29,7 +28,7 @@ public class StudiSpyTest {
     @Test
     public void testEinsichtI() {
         // nutze einen eigenen Rückgabewert beim Aufruf der Methode LSF#ergebnis()
-        doReturn(80).when(lsf).ergebnis(anyString(), anyString());
+        doReturn(80).when(lsf).ergebnis("Harald", "PM-Dungeon");
 
         assertTrue(studi.einsicht("PM-Dungeon"));
     }
@@ -37,7 +36,7 @@ public class StudiSpyTest {
     @Test
     public void testEinsichtII() {
         // nutze einen eigenen Rückgabewert beim Aufruf der Methode LSF#ergebnis()
-        doReturn(40).when(lsf).ergebnis(anyString(), anyString());
+        doReturn(40).when(lsf).ergebnis("Harald", "PM-Dungeon");
 
         assertFalse(studi.einsicht("PM-Dungeon"));
     }

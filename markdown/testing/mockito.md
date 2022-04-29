@@ -140,13 +140,13 @@ public class StudiMockTest {
 
     @Test
     public void testEinsichtI() {
-        when(lsf.ergebnis(anyString(), anyString())).thenReturn(80);
+        when(lsf.ergebnis("Harald", "PM-Dungeon")).thenReturn(80);
         assertTrue(studi.einsicht("PM-Dungeon"));
     }
 
     @Test
     public void testEinsichtII() {
-        when(lsf.ergebnis(anyString(), anyString())).thenReturn(40);
+        when(lsf.ergebnis("Harald", "PM-Dungeon")).thenReturn(40);
         assertFalse(studi.einsicht("PM-Dungeon"));
     }
 }
@@ -154,6 +154,7 @@ public class StudiMockTest {
 
 ::: notes
 Erklärung der Elemente: TODO
+`when().thenReturn()` => `when(mock.methode()).thenReturn(wert)`
 :::
 
 
@@ -183,13 +184,13 @@ public class StudiSpyTest {
 
     @Test
     public void testEinsichtI() {
-        doReturn(80).when(lsf).ergebnis(anyString(), anyString());
+        doReturn(80).when(lsf).ergebnis("Harald", "PM-Dungeon");
         assertTrue(studi.einsicht("PM-Dungeon"));
     }
 
     @Test
     public void testEinsichtII() {
-        doReturn(40).when(lsf).ergebnis(anyString(), anyString());
+        doReturn(40).when(lsf).ergebnis("Harald", "PM-Dungeon");
         assertFalse(studi.einsicht("PM-Dungeon"));
     }
 }
@@ -197,14 +198,15 @@ public class StudiSpyTest {
 
 ::: notes
 Erklärung der Elemente: TODO
+`doReturn().when()` => `doReturn(wert).when(spy).methode()`
 :::
 
 
 ## Weitere Details zu Mockito
 
-- when().thenReturn() und doReturn().when(spy)
 - verify(), verifyNoMoreInteractions()
 - times(), never(), atLeast(), atMost()
+
 - Auswerten und Fangen von Argumenten: any(), @Captor
 
 
