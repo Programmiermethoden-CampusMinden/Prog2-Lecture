@@ -292,6 +292,19 @@ Mockito sehr mächtig, aber unterstützt (u.a.) keine
 => Lösung: [PowerMock](https://github.com/powermock/powermock)
 
 
+## Wrap-Up
+
+*   Gründliches Testen ist ebenso viel Aufwand wie Coden!
+
+\bigskip
+
+*   Mockito ergänzt JUnit:
+    *   Mocken ganzer Klassen (`mock()`, `when().thenReturn()`)
+    *   Wrappen von Objekten (`spy()`, `doReturn().when()`)
+    *   Auswerten, wie häufig Methoden aufgerufen wurden (`verify()`)
+    *   Auswerten, mit welchen Argumenten Methoden aufgerufen wurden (`anyString`)
+
+
 
 
 
@@ -706,22 +719,6 @@ Diese Beispiele finden sie im übrigen auch in den beigefügten Sourcecodes dies
 @see <https://www.javatpoint.com/mockito-powermock>
 
 ...
-
-## Wrap-Up
-
-* Gründliches Testen ist ebenso viel Aufwand wie Coden (siehe vorherige
-  Vorlesungen über JUnit Tests).
-* How to Setup.
-* Unterschiede Mock > Stub > Spy.
-* Einfaches Beispiel für einen Mock.
-* Einfaches Beispiel für einen Stub.
-* Einfaches Beispiel für einen Spy.
-* Testen von Verhalten.
-* Verifikation mit `when(...).then(...)` / `times(...)`
-* Was macht der Mockito Arguemnt Captor.
-* Dynamische Manipulation von Argumenten.
-* Dynamische Rückgabewerte basierend auf den verarbeiteten Argumenten.
-* // TODO
 
 ...
 
