@@ -287,7 +287,7 @@ wichtigsten in Mockito verwendeten Annotation.
 `@Mock` wird zum Markieren des zu mockenden Objekts verwendet.
 
 ```java
-    @Mock  
+    @Mock
     WuppiWarenlager lager;
 ```
 
@@ -308,8 +308,8 @@ Methodenaufrufe des Objekts an den Spy delegiert werden. Diese können über den
 Spion dann abgefangen/verändert oder ausgewertet werden.
 
 ```java
-    @Spy      
-    ArrayList<Wuppi> arrayListenSpion;  
+    @Spy
+    ArrayList<Wuppi> arrayListenSpion;
 ```
 
 `@InjectMocks` Erlaubt es parameter zu markieren in denen Mocks und/oder Spies
@@ -331,7 +331,7 @@ Im Zusammenspiel mit Mockitos `verify()`-Methode kann man somit auch die einer
 Methode übergebenen Parameter verifizieren.
 
 ```java
-    @Captor  
+    @Captor
     ArgumentCaptor<String> argumentCaptor;
 ```
 
