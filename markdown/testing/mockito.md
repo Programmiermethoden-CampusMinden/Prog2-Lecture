@@ -47,7 +47,7 @@ die Studierenden, ein anderes Team modelliert die Prüfungsverwaltung LSF.
         }
 
         public boolean anmelden(String modul) { return lsf.anmelden(name, modul); }
-        public boolean klausurEinsicht(String modul) { return lsf.ergebnis(name, modul) > 50; }
+        public boolean einsicht(String modul) { return lsf.ergebnis(name, modul) > 50; }
     }
     ```
 
@@ -63,23 +63,26 @@ die Studierenden, ein anderes Team modelliert die Prüfungsverwaltung LSF.
 \bigskip
 
 ::: notes
-Team B kommt nicht so recht vorwärts, Team A will aber schon testen.
+Team B kommt nicht so recht vorwärts, Team A ist fertig und will schon testen.
 :::
 
 Wie kann Team A seinen Code testen?
 
 ::: notes
-Optionen:
+**Optionen**:
 
--   Gar nicht testen?!
--   Das LSF selbst implementieren? Wer pflegt das dann?
+*   Gar nicht testen?!
+*   Das LSF selbst implementieren? Wer pflegt das dann? => manuell implementierte Stubs
+*   Das LSF durch einen Mock ersetzen => Einsatz der Bibliothek "mockito"
 :::
 
 
 ## Manuell Stubs implementieren
 
 ::: notes
-Team A könnte manuell das LSF implementieren (nur für die Tests): **Stubs**
+Team A könnte manuell das LSF rudimentär implementieren (nur für die Tests): **Stubs**
+
+**Definition**: "Stubs": TODO
 :::
 
 ```{.java size="footnotesize"}
@@ -91,9 +94,9 @@ public class StudiStubTest {
         lsf = new LsfStub();  studi = new Studi("Harald", lsf);
     }
     @Test
-    public void anmelden() { assertTrue(studi.anmelden("PM-Dungeon")); }
+    public void testAnmelden() { assertTrue(studi.anmelden("PM-Dungeon")); }
     @Test
-    public void klausurEinsicht() { assertTrue(studi.klausurEinsicht("PM-Dungeon")); }
+    public void testEinsicht() { assertTrue(studi.einsicht("PM-Dungeon")); }
 
     // Stub für das noch nicht fertige LSF
     class LsfStub extends LSF {
@@ -109,15 +112,13 @@ des LSF ändert, muss auch der Stub nachgezogen werden).
 
 **Problem**: Der Stub hat nur eine Art minimale Default-Logik (sonst könnte man ja das LSF gleich selbst implementieren).
 Wenn man im Test andere Antworten braucht, müsste man einen weiteren Stub anlegen ...
-
-**Definition**: "Stubs": TODO
 :::
 
 
 ## Mockito: Mocking von ganzen Klassen
 
 ::: notes
-Lösung: Mocking der Klasse `LSF` für den Test von `Studi`: `mock()`.
+**Lösung**: Mocking der Klasse `LSF` mit Mockito für den Test von `Studi`: `mock()`.
 
 **Definition**: "Mock": TODO
 :::
@@ -132,21 +133,21 @@ public class StudiMockTest {
     }
 
     @Test
-    public void anmelden() {
+    public void testAnmelden() {
         when(lsf.anmelden(anyString(), anyString())).thenReturn(true);
         assertTrue(studi.anmelden("PM-Dungeon"));
     }
 
     @Test
-    public void klausurEinsichtI() {
+    public void testEinsichtI() {
         when(lsf.ergebnis(anyString(), anyString())).thenReturn(80);
-        assertTrue(studi.klausurEinsicht("PM-Dungeon"));
+        assertTrue(studi.einsicht("PM-Dungeon"));
     }
 
     @Test
-    public void klausurEinsichtII() {
+    public void testEinsichtII() {
         when(lsf.ergebnis(anyString(), anyString())).thenReturn(40);
-        assertFalse(studi.klausurEinsicht("PM-Dungeon"));
+        assertFalse(studi.einsicht("PM-Dungeon"));
     }
 }
 ```
@@ -159,11 +160,11 @@ Erklärung der Elemente: TODO
 ## Mockito: Spy = Wrapper um ein Objekt
 
 ::: notes
-Team B hat das `LSF` nun implementiert und Team A kann es nun für die Tests benutzen. Aber das
-`LSF` hat eine Zufallskomponente (`ergebnis()`). Wie kann man nun die Reaktion des Studis testen
-(`klausurEinsicht`)?
+Team B hat das `LSF` nun implementiert und Team A kann es endlich für die Tests benutzen. Aber
+das `LSF` hat eine Zufallskomponente (`ergebnis()`). Wie kann man nun die Reaktion des Studis
+testen (`einsicht()`)?
 
-Lösung: Mockito-Spy als partieller Mock einer Klasse (Wrapper um ein Objekt): `spy()`.
+**Lösung**: Mockito-Spy als partieller Mock einer Klasse (Wrapper um ein Objekt): `spy()`.
 
 **Definition**: "Spy": TODO
 :::
@@ -181,15 +182,15 @@ public class StudiSpyTest {
     public void testAnmelden() { assertTrue(studi.anmelden("PM-Dungeon")); }
 
     @Test
-    public void testKlausurEinsichtI() {
+    public void testEinsichtI() {
         doReturn(80).when(lsf).ergebnis(anyString(), anyString());
-        assertTrue(studi.klausurEinsicht("PM-Dungeon"));
+        assertTrue(studi.einsicht("PM-Dungeon"));
     }
 
     @Test
-    public void testKlausurEinsichtII() {
+    public void testEinsichtII() {
         doReturn(40).when(lsf).ergebnis(anyString(), anyString());
-        assertFalse(studi.klausurEinsicht("PM-Dungeon"));
+        assertFalse(studi.einsicht("PM-Dungeon"));
     }
 }
 ```

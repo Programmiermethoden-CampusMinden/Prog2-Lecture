@@ -2,14 +2,12 @@ package fhb;
 
 import org.junit.Before;
 import org.junit.Test;
-import wuppie.spy.WuppiWarenlager;
-
-import java.util.Arrays;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.spy;
 
 public class StudiSpyTest {
     Studi studi;
@@ -22,25 +20,25 @@ public class StudiSpyTest {
     }
 
     @Test
-    public void anmelden() {
+    public void testAnmelden() {
         // nutze die normale Methode LSF#anmelden()
         // Hinweis: Wird fehlschlagen, da diese Methode hier doch noch nicht implementiert ist
         assertTrue(studi.anmelden("PM-Dungeon"));
     }
 
     @Test
-    public void klausurEinsichtI() {
+    public void testEinsichtI() {
         // nutze einen eigenen Rückgabewert beim Aufruf der Methode LSF#ergebnis()
         doReturn(80).when(lsf).ergebnis(anyString(), anyString());
 
-        assertTrue(studi.klausurEinsicht("PM-Dungeon"));
+        assertTrue(studi.einsicht("PM-Dungeon"));
     }
 
     @Test
-    public void klausurEinsichtII() {
+    public void testEinsichtII() {
         // nutze einen eigenen Rückgabewert beim Aufruf der Methode LSF#ergebnis()
         doReturn(40).when(lsf).ergebnis(anyString(), anyString());
 
-        assertFalse(studi.klausurEinsicht("PM-Dungeon"));
+        assertFalse(studi.einsicht("PM-Dungeon"));
     }
 }

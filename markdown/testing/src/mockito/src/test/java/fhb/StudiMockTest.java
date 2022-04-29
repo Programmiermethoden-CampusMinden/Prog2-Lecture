@@ -20,23 +20,23 @@ public class StudiMockTest {
     }
 
     @Test
-    public void anmelden() {
+    public void testAnmelden() {
         when(lsf.anmelden(anyString(), anyString())).thenReturn(true);
 
         assertTrue(studi.anmelden("PM-Dungeon"));
     }
 
     @Test
-    public void klausurEinsichtI() {
+    public void testEinsichtI() {
         when(lsf.ergebnis(anyString(), anyString())).thenReturn(80);
 
-        assertTrue(studi.klausurEinsicht("PM-Dungeon"));
+        assertTrue(studi.einsicht("PM-Dungeon"));
     }
 
     @Test
-    public void klausurEinsichtII() {
+    public void testEinsichtII() {
         when(lsf.ergebnis(anyString(), anyString())).thenReturn(40);
 
-        assertFalse(studi.klausurEinsicht("PM-Dungeon"));
+        assertFalse(studi.einsicht("PM-Dungeon"));
     }
 }

@@ -16,13 +16,13 @@ public class StudiStubTest {
     }
 
     @Test
-    public void anmelden() {
+    public void testAnmelden() {
         assertTrue(studi.anmelden("PM-Dungeon"));
     }
 
     @Test
-    public void klausurEinsicht() {
-        assertTrue(studi.klausurEinsicht("PM-Dungeon"));
+    public void testEinsicht() {
+        assertTrue(studi.einsicht("PM-Dungeon"));
     }
 
     // Stub für das noch nicht fertige LSF

@@ -25,7 +25,7 @@ public class Studi {
      * @param modul Für dieses Modul soll die Einsicht erfolgen
      * @return true, falls mehr als 50 Punkte (bestanden); sonst false
      */
-    public boolean klausurEinsicht(String modul) {
+    public boolean einsicht(String modul) {
         return lsf.ergebnis(name, modul) > 50;
     }
 }
