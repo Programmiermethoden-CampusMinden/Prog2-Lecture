@@ -116,18 +116,65 @@ Wenn man im Test andere Antworten braucht, müsste man einen weiteren Stub anleg
 
 ## Mockito: Mocking von ganzen Klassen
 
-Mocking der Klasse LSF für den Test von Studi: mock()
+::: notes
+Lösung: Mocking der Klasse `LSF` für den Test von `Studi`: `mock()`.
 
-Definition: Mock
+**Definition**: "Mock": TODO
+:::
+
+```{.java size="scriptsize"}
+public class StudiMockTest {
+    Studi studi;  LSF lsf;
+
+    @Before
+    public void setUp() {
+        lsf = mock(LSF.class);  studi = new Studi("Harald", lsf);
+    }
+
+    @Test
+    public void anmelden() {
+        when(lsf.anmelden(anyString(), anyString())).thenReturn(true);
+        assertTrue(studi.anmelden("PM-Dungeon"));
+    }
+
+    @Test
+    public void klausurEinsichtI() {
+        when(lsf.ergebnis(anyString(), anyString())).thenReturn(80);
+        assertTrue(studi.klausurEinsicht("PM-Dungeon"));
+    }
+
+    @Test
+    public void klausurEinsichtII() {
+        when(lsf.ergebnis(anyString(), anyString())).thenReturn(40);
+        assertFalse(studi.klausurEinsicht("PM-Dungeon"));
+    }
+}
+```
+
+::: notes
+Erklärung der Elemente: TODO
+:::
 
 
 ## Mockito: Spy = Wrapper um ein Objekt
 
-LSF ist implementiert, hat Zufallskomponente (getGrades). Wie die Reaktion des Studis testen (reactToGrades)?
+::: notes
+Team B hat das `LSF` nun implementiert und Team A kann es nun für die Tests benutzen. Aber das
+`LSF` hat eine Zufallskomponente (`ergebnis()`). Wie kann man nun die Reaktion des Studis testen
+(`klausurEinsicht`)?
 
-Lösung: Spy als partieller Mock einer Klasse (Wrapper um ein Objekt): spy()
+Lösung: Mockito-Spy als partieller Mock einer Klasse (Wrapper um ein Objekt): `spy()`.
 
-Definition: Spy
+**Definition**: "Spy": TODO
+:::
+
+```{.java size="scriptsize"}
+
+```
+
+::: notes
+Erklärung der Elemente: TODO
+:::
 
 
 ## Weitere Details zu Mockito
