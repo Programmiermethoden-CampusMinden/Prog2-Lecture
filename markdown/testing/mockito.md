@@ -35,25 +35,32 @@ Team A: Studi
 Team B: LSF
 
 Team B kommt nicht so recht vorwärts, Team A will aber testen
+gar nicht vs. selbst impl. (wer pflegt das dann?) vs. mocking
 
 
-## Manuell Stubs
+## Manuell Stubs implementieren
 
 Team A könnte manuell das LSF implementieren (nur für die Tests): Stubs
 
 Problem: Wartung der Tests (wenn das richtige LSF fertig ist), ggf. Wartung der Stubs
 
+Definition: Stubs
 
-## Mocking
+
+## Mockito: Mocking von ganzen Klassen
 
 Mocking der Klasse LSF für den Test von Studi: mock()
 
+Definition: Mock
 
-## Spy
+
+## Mockito: Spy = Wrapper um ein Objekt
 
 LSF ist implementiert, hat Zufallskomponente (getGrades). Wie die Reaktion des Studis testen (reactToGrades)?
 
 Lösung: Spy als partieller Mock einer Klasse (Wrapper um ein Objekt): spy()
+
+Definition: Spy
 
 
 ## Weitere Details zu Mockito
