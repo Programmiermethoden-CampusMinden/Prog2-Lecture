@@ -204,9 +204,33 @@ Erklärung der Elemente: TODO
 
 ## Wurde eine Methode aufgerufen?
 
+```{.java size="scriptsize"}
+public class VerifyTest {
+    @Test
+    public void testAnmelden() {
+        LSF lsf = mock(LSF.class);
+        Studi studi = new Studi("Harald", lsf);
 
-- verify(), verifyNoMoreInteractions()
-- times(), never(), atLeast(), atMost()
+        when(lsf.anmelden("Harald", "PM-Dungeon")).thenReturn(true);
+
+        assertTrue(studi.anmelden("PM-Dungeon"));
+
+        verify(lsf).anmelden("Harald", "PM-Dungeon");
+
+        verify(lsf, times(1)).anmelden("Harald", "PM-Dungeon");
+        verify(lsf, atLeast(1)).anmelden("Harald", "PM-Dungeon");
+        verify(lsf, atMost(1)).anmelden("Harald", "PM-Dungeon");
+
+        verify(lsf, never()).ergebnis("Harald", "PM-Dungeon");
+
+        verifyNoMoreInteractions(lsf);
+    }
+}
+```
+
+::: notes
+Erklärung der Elemente: TODO
+:::
 
 
 ## Fangen von Argumenten
