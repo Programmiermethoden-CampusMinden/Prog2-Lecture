@@ -74,12 +74,12 @@ oder andere mögliche Seiteneffekte der externen Abhängigkeiten auszulösen.
 
 Dabei simulieren Mocks die Funktionalität der externen APIs oder
 Datenbankzugriffe. Auf diese Weise ist es möglich Softwaretests zu schreiben die
-scheinbar die gleichen Methoden aufrufen die sie auch im regulären
-softwarebetrieb nutzen würden, diese werden wie oben erwähnt allerdings für die
-tests nur simuliert.
+scheinbar die gleichen Methoden aufrufen, die sie auch im regulären
+Softwarebetrieb nutzen würden, diese werden wie oben erwähnt allerdings für die
+Tests nur simuliert.
 
-Mocks stellen so, im Vergleich zu den umfangreichen integrationstests, eine
-schnelle und effiziente testbarkeit dar.
+Mocks stellen so, im Vergleich zu den umfangreichen Integrationstests, eine
+schnelle und effiziente Testbarkeit dar.
 
 **_Anmerkung_**: Ein Test der Daten in eine Datenbank schreibt oder von dieser
 Daten einliest oder ein Test der eine JSON-Datei von einem Webservice oder
@@ -88,8 +88,8 @@ testing-intro](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/tes
 
 Er wird erst dann zu einem Unittest, wenn man diese externen Zugriffe weg mockt.
 
-Mockito ist dabei ein sehr beliebtes, häufig in der praxis anzutreffendes,
-Mockingframework das einem bei der Erstellung von diesen Tests behilflich ist.
+Mockito ist dabei ein sehr beliebtes, häufig in der Praxis anzutreffendes,
+Mocking-Framework das einem bei der Erstellung von diesen Tests behilflich ist.
 
 Quelle:
 
@@ -101,15 +101,15 @@ Quelle:
 Mocking ist ein Prozess zum Erzeugen von Objekten die ein Mock/Klon der realen
 Objekte sind. Dabei bezeichnet Mocking eine Technik, die in Softwaretests
 verwendet wird, in denen die gemockten Objekte anstatt der realen Objekte zu
-testzwecken genutzt werden. Die gemockten Objekte liefern dabei bei einem vom
-Programmierer bestimmten (dummy) input, einen dazu passenden gelieferten (dummy)
-output der durch seine vorhersagbare funktionalität gut testbar ist.
+Testzwecken genutzt werden. Die gemockten Objekte liefern dabei bei einem vom
+Programmierer bestimmten (Dummy) Input, einen dazu passenden gelieferten (Dummy)
+Output der durch seine vorhersagbare Funktionalität gut testbar ist.
 
 Um das ganze Konzept des Mockens etwas besser verstehen zu können ist es
 hilfreich vielleicht ein Paar weitere Begrifflichkeiten vorab zu klären auf die
 wir in der Vorlesung stoßen werden.
 
-Dabei ist es von Vorteil die drei grundbegriffe Mock, Stub oder Spy, auf die wir
+Dabei ist es von Vorteil die drei Grundbegriffe Mock, Stub oder Spy, auf die wir
 in der Vorlesung noch häufiger treffen werden, voneinander abgrenzen und
 unterscheiden zu können.
 
@@ -122,7 +122,7 @@ unterscheiden zu können.
   sogenannte Verhaltensverifikation, auch "Behavior testing" genannt, genutzt.
 * **Stub**: Sind Objekte die vordefinierte Werte enthalten, die in den
   Softwaretests abgefragt werden können. Des Weiteren enthalten Stubs nur ein
-  absolutes minimum an Methoden, die für den jeweiligen Test benötigten werden.
+  absolutes Minimum an Methoden, die für den jeweiligen Test benötigten werden.
   Zudem können sie auch Methoden enthalten, die einem den Zugriff auf den
   internen Zustand eines Stubs gewähren, wenn dies nötigt ist. Man könnte
   eigentlich auch sagen das Stubs in den Tests generell zum verifizieren eines
@@ -170,8 +170,8 @@ Maven: `pom.xml`
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
 | Datenquelle       | Daten der Mocks werden in den Tests definiert                                                                                                           | Daten in Stubs sind hart codiert. Sie sind normalerweise eng mit der Testsuite verbunden.      | Spies sind partielle/halb gemockte Objekte. Spies werden ebenso wie Mocks in großen Testsuiten verwendet.                         |
 | Erstellt von      | Werden normalerweise bei der Verwendung eines Mocking-Frameworks erstellt.                                                                              | Werden normalerweise von Hand kreiert                                                          | Werden normalerweise bei der Verwendung eines Mocking-Frameworks erstellt.                                                         |
-| Verwendung        | Mocks werden meistens in großen Testsuiten verwendet. Mocks werden zum erstellen eines kompletten Mocks oder eines Dummy Objekts verwendet.            | Stubs werden meistens in kleinen/überschaubaren Testsuiten verwendet.                         | Spies werden verwendet um partielle oder halb gemockte Objekte zu erzeugen. Spies werden meistens in großen Testsuiten verwendet. |
-| Default Verhalten | Wenn gemockte Objekte verwendet werden ist deren default Verhalten von Methoden (wenn diese nicht stubed sind) das sie gar nichts tun. (doNothing(...)) | Beinhalten meistens nur das absolute Minimum an Methoden die für einen Test benötigt werden. | Wenn Spies verwendet werden ist deren default Verhalten von Methoden (die nicht stubbed sind) das sie die reale Methode aufrufen.  |
+| Verwendung        | Mocks werden meistens in großen Testsuiten verwendet. Mocks werden zum Erstellen eines kompletten Mocks oder eines Dummy Objekts verwendet.            | Stubs werden meistens in kleinen/überschaubaren Testsuiten verwendet.                         | Spies werden verwendet um partielle oder halb gemockte Objekte zu erzeugen. Spies werden meistens in großen Testsuiten verwendet. |
+| Default Verhalten | Wenn gemockte Objekte verwendet werden ist deren Default Verhalten von Methoden (wenn diese nicht stubed sind) das sie gar nichts tun. (doNothing(...)) | Beinhalten meistens nur das absolute Minimum an Methoden, die für einen Test benötigt werden. | Wenn Spies verwendet werden ist deren default Verhalten von Methoden (die nicht stubbed sind) das sie die reale Methode aufrufen.  |
 
 Quelle: [mock-vs-stub-vs-spy](https://www.javatpoint.com/mock-vs-stub-vs-spy)
 
@@ -212,7 +212,7 @@ erstellen, sondern überlassen dies Mockito.
     IWuppiWarenlager lager=mock(IWuppiWarenlager.class);
 ```
 
-Anschließend können wir ohne die Methode `getAllWuppis()` implementiert zu haben
+Anschließend können wir, ohne die Methode `getAllWuppis()` implementiert zu haben,
 dennoch so tun als, ob die Methode eine Funktionalität hätte.
 
 ```java
@@ -292,7 +292,7 @@ wichtigsten in Mockito verwendeten Annotation.
 ```
 
 `@RunWith(MockitoJUnitRunner.class)` dient dazu das Debugging zu verbessern und
-sorgt dafür, dass unbenutzte stubs im test erkannt werden. Ausserdem werden
+sorgt dafür, dass unbenutzte Stubs im Test erkannt werden. Außerdem werden
 dadurch alle mit `@Mock` markierten Mocks initialisiert. _**Anmerkung**_:
 Die `@RunWith`-Annotation wird immer im Zusammenspiel mit der `@Mock`-Annotation
 verwendet.
@@ -302,7 +302,7 @@ verwendet.
     public class ToDoBusinessMock {...}
 ```
 
-`@Spy` erlaubt das erstellen von partiell gemockten Objekten. Dabei wird eine
+`@Spy` erlaubt das Erstellen von partiell gemockten Objekten. Dabei wird eine
 Art Wrapper um das zu mockende Objekt gewickelt, der dafür sorgt, dass alle
 Methodenaufrufe des Objekts an den Spy delegiert werden. Diese können über den
 Spion dann abgefangen/verändert oder ausgewertet werden.
@@ -312,9 +312,9 @@ Spion dann abgefangen/verändert oder ausgewertet werden.
     ArrayList<Wuppi> arrayListenSpion;
 ```
 
-`@InjectMocks` Erlaubt es parameter zu markieren in denen Mocks und/oder Spies
+`@InjectMocks` erlaubt es Parameter zu markieren in denen Mocks und/oder Spies
 injiziert werden. Mockito versucht dann, in dieser Reihenfolge, per
-Konstruktorinjektion, Setterinjektion oder Propertyinjektion die mocks zu
+Konstruktorinjektion, Setterinjektion oder Propertyinjektion die Mocks zu
 injizieren. Weitere Informationen darüber findet man
 hier. [Mockito Dokumentation](https://javadoc.io/static/org.mockito/mockito-core/4.5.1/org/mockito/InjectMocks.html) _**
 Anmerkung**_: Es ist aber nicht ratsam "Field- oder Setterinjection" zu nutzen,
@@ -395,8 +395,6 @@ Hier nur eine kurze Übersicht über das Testen des Codes mit Hilfe von Mockitos
     }
 ```
 
-
-
 ```java
     @Test
     public void testVerifyFlexibleArgumenteBeimZugriffAufFluppisListe() {
@@ -444,7 +442,7 @@ Diese Beispiele finden sie im übrigen auch in den beigefügten Sourcecodes dies
 ## Wrap-Up
 
 * Gründliches Testen ist ebenso viel Aufwand wie Coden (siehe vorherige
-  Vorlesungen über JUnit tests).
+  Vorlesungen über JUnit Tests).
 * How to Setup.
 * Unterschiede Mock > Stub > Spy.
 * Einfaches Beispiel für einen Mock.
@@ -453,13 +451,13 @@ Diese Beispiele finden sie im übrigen auch in den beigefügten Sourcecodes dies
 * Testen von Verhalten.
 * Verifikation mit `when(...).then(...)` / `times(...)`
 * Was macht der Mockito Arguemnt Captor.
-* Dynamische manipulation von Argumenten.
+* Dynamische Manipulation von Argumenten.
 * Dynamische Rückgabewerte basierend auf den verarbeiteten Argumenten.
 * // TODO
 
 ...
 
-## NOTIZEN
+## NOTIZEN (Here be dragons)
 
 ## When to use @Mock and when @InjectMocks
 
