@@ -6,8 +6,8 @@ import java.util.List;
 import org.junit.Test;
 
 /**
- * Unsere Testklasse die wir nutzen, um über unsere heißen Wuppistores alle Wuppis aus dem zuvor
- * erzeugten WuppiWarenlagerStub zu bestellen und diese funktionalität testen zu können, obwohl noch
+ * Unsere Testklasse, die wir nutzen, um über unsere heißen Wuppistores alle Wuppis aus dem zuvor
+ * erzeugten WuppiWarenlagerStub zu bestellen und diese Funktionalität testen zu können, obwohl noch
  * gar kein richtiges Warenlager existiert.
  */
 public class WuppiWarenlagerStubTest {
@@ -15,12 +15,11 @@ public class WuppiWarenlagerStubTest {
     public void testBestellungMitStub() {
 
         // Wir nutzen kurzerhand einen Stub des eigentlich noch nicht
-        // fertiggestellten Warenlagers, um schonmal die Funktionalität zu
-        // testen.
-        IWuppiWarenlager lager = new WuppiWarenlagerStub();
+        // fertiggestellten Warenlagers, um schon mal die Funktionalität zu testen.
+        stub.IWuppiWarenlager lager = new stub.WuppiWarenlagerStub();
 
         // Unser neuer, brandheißer WuppiStore!
-        WuppiStore wuppiStore = new WuppiStore(lager);
+        stub.WuppiStore wuppiStore = new stub.WuppiStore(lager);
 
         // Bestelle alle Wuppis aus dem Lagerstub.
         List<String> bestellteWuppis = wuppiStore.bestelleAlleWuppis(lager);

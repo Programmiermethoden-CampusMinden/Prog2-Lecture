@@ -12,5 +12,5 @@ public interface IWuppiWarenlager {
      *
      * @return Eine Liste mit Wuppis des Warenlagers.
      */
-    public List<String> getAlleWuppis();
+    List<String> getAlleWuppis();
 }

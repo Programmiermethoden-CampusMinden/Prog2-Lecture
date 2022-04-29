@@ -8,7 +8,6 @@ import mock.IWuppiWarenlager;
  * es mal fertiggestellt ist).
  */
 public class WuppiStore {
-
     public IWuppiWarenlager lager;
 
     public WuppiStore(IWuppiWarenlager lager) {

@@ -11,11 +11,11 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.InOrder;
 
 public class VerifyFluppisListeTest {
-    FluppisListe fluppisListe;
+    verify.FluppisListe fluppisListe;
 
     @Before
-    void setup() {
-        fluppisListe = mock(FluppisListe.class);
+    public void setup() {
+        fluppisListe = mock(verify.FluppisListe.class);
         fluppisListe.add("Fluppi001");
     }
 
@@ -51,8 +51,8 @@ public class VerifyFluppisListeTest {
     @Test
     public void testVerifyObNachEinemMethodenaufrufNochEinmalMitDemMockInteragiertWurde() {
         // Testet, ob nach dem spezifizierten Methodenaufruf noch auf eine
-        // andere Art mit dem Mock interagiert wurde. (Dieser Test sollte
-        // fehlschlagen)
+        // andere Art mit dem Mock interagiert wurde.
+        // (Dieser Test sollte fehlschlagen)
         verify(fluppisListe).add("");
         verifyNoMoreInteractions(fluppisListe);
     }

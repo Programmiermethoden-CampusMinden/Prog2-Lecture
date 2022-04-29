@@ -11,6 +11,7 @@ public class WuppiWarenlager implements IWuppiWarenlager {
     public List<Wuppi> getAlleWuppis() {
         return this.lager;
     }
+
     /** @inheritDoc */
     @Override
     public void addWuppi(spy.Wuppi wuppi) {

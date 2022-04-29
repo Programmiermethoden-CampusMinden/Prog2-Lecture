@@ -10,10 +10,8 @@ import java.util.List;
  * Lagers testen zu können.
  */
 public class WuppiWarenlagerStub implements IWuppiWarenlager {
-
     /** @inheritDoc */
     public List<String> getAlleWuppis() {
-
         return Arrays.asList("GruenerWuppi", "RoterWuppi");
     }
 }

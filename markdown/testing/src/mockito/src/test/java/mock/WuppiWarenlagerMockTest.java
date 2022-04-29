@@ -9,17 +9,16 @@ import java.util.List;
 import org.junit.Test;
 
 /**
- * Unsere Testklasse die wir nutzen, um über unsere heißen Wuppistores alle Wuppis aus dem zuvor
- * erzeugten WuppiWarenlagerStub zu bestellen und diese funktionalität testen zu können, obwohl noch
- * gar kein richtiges Warenlager existiert. Aber dieses Mal nutzen wir dafür ein gemocktes Objekt
- * der klasse IWuppiWarenlager.
+ * Unsere Testklasse, die wir nutzen, um unseren heißen Wuppistore testen zu können, obwohl noch gar
+ * kein richtiges Warenlager existiert. Aber dieses Mal nutzen wir dafür ein gemocktes Objekt der
+ * Klasse IWuppiWarenlager.
  */
 public class WuppiWarenlagerMockTest {
 
     @Test
     public void testBestellungMitMock() {
         // Erstellen des Mocks
-        IWuppiWarenlager lager = mock(IWuppiWarenlager.class);
+        mock.IWuppiWarenlager lager = mock(mock.IWuppiWarenlager.class);
 
         // Erstellen eines imaginären Lagerbestands.
         List<String> wuppisImLager = Arrays.asList("GruenerWuppi", "RoterWuppi");

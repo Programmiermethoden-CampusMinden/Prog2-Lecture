@@ -7,7 +7,6 @@ import java.util.List;
  * es mal fertiggestellt ist).
  */
 public class WuppiStore {
-
     public IWuppiWarenlager lager;
 
     public WuppiStore(IWuppiWarenlager lager) {
