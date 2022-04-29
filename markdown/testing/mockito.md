@@ -5,7 +5,7 @@ menuTitle: "Mocking"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 4
 readings:
-  - key: "XXX"
+  - key: "Mockito"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
