@@ -230,6 +230,21 @@ public class VerifyTest {
 
 ::: notes
 Erklärung der Elemente: TODO
+
+```java
+        LSF lsf = mock(LSF.class);
+        Studi studi = new Studi("Harald", lsf);
+
+        when(lsf.anmelden("Harald", "PM-Dungeon")).thenReturn(true);
+
+        InOrder inOrder = inOrder(lsf);
+
+        assertTrue(studi.anmelden("PM-Dungeon"));
+        studi.anmelden("Wuppie");
+
+        inOrder.verify(lsf).anmelden("Harald", "Wuppie");
+        inOrder.verify(lsf).anmelden("Harald", "PM-Dungeon");
+```
 :::
 
 [Demo [fhb.VerifyTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/VerifyTest.java)]{.bsp}
