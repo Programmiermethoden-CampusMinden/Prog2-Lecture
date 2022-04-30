@@ -19,12 +19,20 @@ quizzes:
 assignments:
   - topic: sheet05
 youtube:
-  - link: ""
+  - link: "https://youtu.be/8deFZKtjXSk"
     name: "VL Mocking"
-  - link: ""
-    name: "Demo Mocking"
+  - link: "https://youtu.be/WNEedC7PrVQ"
+    name: "Demo Mocking: Stubs"
+  - link: "https://youtu.be/avUyYVePFCI"
+    name: "Demo Mocking: Mocks"
+  - link: "https://youtu.be/dj3pmOZfS_A"
+    name: "Demo Mocking: Spy"
+  - link: "https://youtu.be/CPGqhyC8BjU"
+    name: "Demo Mocking: verify()"
+  - link: "https://youtu.be/JNouzOd0s-w"
+    name: "Demo Mocking: Matcher"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/9531e04dd11458ea45915269aca452ba6b9978ef7b1b3a777a424d673573f75724a3fbedd0a2bec5e4d14de4025ea92ae4a966f95ee312e9f6ecca4fde4c98ef"
     name: "VL Mocking"
 ---
 
