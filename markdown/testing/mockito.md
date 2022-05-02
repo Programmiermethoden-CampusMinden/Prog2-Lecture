@@ -276,6 +276,7 @@ public class MatcherTest {
         verify(lsf, times(1)).anmelden("Harald", "Wuppie?");
 
         verify(lsf, times(2)).anmelden(anyString(), anyString());
+        verify(lsf, times(1)).anmelden(eq("Harald"), eq("Wuppie?"));
         verify(lsf, times(2)).anmelden(argThat(new MyHaraldMatcher()), anyString());
     }
 
@@ -288,6 +289,11 @@ public class MatcherTest {
 
 ::: notes
 Erklärung der Elemente: TODO
+
+Sie finden viele weitere vordefinierte Matcher in der Klasse `ArgumentMatchers`.
+Mit der Klasse `ArgumentCaptor<T>` finden Sie eine alternative Möglichkeit, auf
+Argumente in gemockten Methoden zu reagieren. Schauen Sie sich dazu die Javadoc
+von [Mockito](https://javadoc.io/doc/org.mockito/mockito-core/) an.
 :::
 
 [Demo [fhb.MatcherTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/MatcherTest.java)]{.bsp}

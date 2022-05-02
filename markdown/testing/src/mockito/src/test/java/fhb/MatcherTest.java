@@ -23,9 +23,10 @@ public class MatcherTest {
         verify(lsf, times(1)).anmelden("Harald", "Wuppie?");
 
         verify(lsf, times(2)).anmelden(anyString(), anyString());
+        verify(lsf, times(1)).anmelden(eq("Harald"), eq("Wuppie?"));
 
         // verify(lsf) is really verify(lsf, times(1)) ...
-//        verify(lsf).anmelden(argThat(new MyHaraldMatcher()), anyString());
+        verify(lsf).anmelden(argThat(new MyHaraldMatcher()), anyString());
         verify(lsf, atLeastOnce()).anmelden(argThat(new MyHaraldMatcher()), anyString());
     }
 
