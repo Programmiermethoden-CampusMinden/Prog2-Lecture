@@ -40,6 +40,8 @@ fhmedia:
 ## Motivation: Entwicklung einer Studi-Prüfungsverwaltung
 
 ::: notes
+### Szenario
+
 Zwei Teams entwickeln eine neue Studi-Prüfungsverwaltung für die Hochschule. Ein Team modelliert dabei
 die Studierenden, ein anderes Team modelliert die Prüfungsverwaltung LSF.
 :::
@@ -85,7 +87,7 @@ Wie kann Team A seinen Code testen?
 :::
 
 ::::::::: notes
-### Motivation
+### Motivation Mocking und Mockito
 
 [Mockito](https://github.com/mockito/mockito) ist ein Mocking-Framework für JUnit. Es
 simuliert das Verhalten eines realen Objektes oder einer realen Methode.
@@ -189,9 +191,8 @@ unterscheiden zu können.
 ## Manuell Stubs implementieren
 
 ::: notes
-Team A könnte manuell das LSF rudimentär implementieren (nur für die Tests): **Stubs**
-
-**Definition**: "Stubs": TODO
+Team A könnte manuell das LSF rudimentär implementieren (nur für die Tests, einfach mit
+festen Rückgabewerten): **Stubs**
 :::
 
 ```{.java size="footnotesize"}
@@ -230,8 +231,6 @@ Wenn man im Test andere Antworten braucht, müsste man einen weiteren Stub anleg
 
 ::: notes
 **Lösung**: Mocking der Klasse `LSF` mit Mockito für den Test von `Studi`: `mock()`.
-
-**Definition**: "Mock": TODO
 :::
 
 ```{.java size="scriptsize"}
@@ -261,8 +260,19 @@ public class StudiMockTest {
 ```
 
 ::: notes
-Erklärung der Elemente: TODO
-`when().thenReturn()` => `when(mock.methode()).thenReturn(wert)`
+Der Aufruf `mock(LSF.class)` erzeugt einen Mock der Klasse (oder des Interfaces) `LSF`. Dabei wird ein Objekt
+vom Typ `LSF` erzeugt, mit dem man dann wie mit einem normalen Objekt weiter arbeiten kann. Die Methoden sind
+allerdings nicht implementiert ...
+
+Mit Hilfe von `when().thenReturn()` kann man definieren, was genau beim Aufruf einer bestimmten Methode auf dem
+Mock passieren soll, d.h. welcher Rückgabewert entsprechend zurückgegeben werden soll. Hier kann man dann für
+bestimmte Argumentwerte andere Rückgabewerte definieren. `when(lsf.ergebnis("Harald", "PM-Dungeon")).thenReturn(80)`
+gibt also für den Aufruf von `ergebnis` mit den Argumenten `"Harald"` und `"PM-Dungeon"` auf dem Mock `lsf`
+den Wert 80 zurück.
+
+Dies kann man in weiten Grenzen flexibel anpassen.
+
+Mit Hilfe der Argument-Matcher `anyString()` wird jedes String-Argument akzeptiert.
 :::
 
 [Demo [fhb.StudiMockTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/StudiMockTest.java)]{.bsp}
@@ -276,8 +286,6 @@ das `LSF` hat eine Zufallskomponente (`ergebnis()`). Wie kann man nun die Reakti
 testen (`einsicht()`)?
 
 **Lösung**: Mockito-Spy als partieller Mock einer Klasse (Wrapper um ein Objekt): `spy()`.
-
-**Definition**: "Spy": TODO
 :::
 
 ```{.java size="scriptsize"}
@@ -304,8 +312,20 @@ public class StudiSpyTest {
 ```
 
 ::: notes
-Erklärung der Elemente: TODO
-`doReturn().when()` => `doReturn(wert).when(spy).methode()`
+Der Aufruf `spy(LSF.class)` erzeugt einen Spy um ein Objekt der Klasse `LSF`. Dabei bleiben zunächst die Methoden
+in `LSF` erhalten und können aufgerufen werden, sie können aber auch mit einem (partiellen) Mock überlagert werden.
+Der Spy zeichnet wie der Mock die Interaktion mit dem Objekt auf.
+
+Mit Hilfe von `doReturn().when()` kann man definieren, was genau beim Aufruf einer bestimmten Methode auf dem
+Spy passieren soll, d.h. welcher Rückgabewert entsprechend zurückgegeben werden soll. Hier kann man analog zum Mock
+für bestimmte Argumentwerte andere Rückgabewerte definieren. `doReturn(40).when(lsf).ergebnis("Harald", "PM-Dungeon")`
+gibt also für den Aufruf von `ergebnis` mit den Argumenten `"Harald"` und `"PM-Dungeon"` auf dem Spy `lsf` den Wert
+40 zurück.
+
+Wenn man die Methoden nicht mit einem partiellen Mock überschreibt, dann wird einfach die originale Methode aufgerufen
+(Beispiel: In `studi.anmelden("PM-Dungeon")` wird `lsf.anmelden("Harald", "PM-Dungeon")` aufgerufen.).
+
+Auch hier können Argument-Matcher wie `anyString()` eingesetzt werden.
 :::
 
 [Demo [fhb.StudiSpyTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/StudiSpyTest.java)]{.bsp}
@@ -338,22 +358,35 @@ public class VerifyTest {
 ```
 
 ::: notes
-Erklärung der Elemente: TODO
+Mit der Methode `verify()` kann auf einem Mock oder Spy überprüft werden, ob und wie oft und in welcher Reihenfolge
+Methoden aufgerufen wurden und mit welchen Argumenten. Auch hier lassen sich wieder Argument-Matcher wie `anyString()`
+einsetzen.
+
+Ein einfaches `verify(mock)` prüft dabei, ob die entsprechende Methode exakt einmal vorher aufgerufen wurde. Dies
+ist äquivalent zu `verify(mock, times(1))`. Analog kann man mit den Parametern `atLeast()` oder `atMost` bestimmte
+Unter- oder Obergrenzen für die Aufrufe angeben und mit `never()` prüfen, ob es gar keinen Aufruf vorher gab.
+
+`verifyNoMoreInteractions(lsf)` ist interessant: Es ist genau dann `true`, wenn es außer den vorher abgefragten
+Interaktionen keinerlei sonstigen Interaktionen mit dem Mock oder Spy gab.
+
 
 ```java
-        LSF lsf = mock(LSF.class);
-        Studi studi = new Studi("Harald", lsf);
+LSF lsf = mock(LSF.class);
+Studi studi = new Studi("Harald", lsf);
 
-        when(lsf.anmelden("Harald", "PM-Dungeon")).thenReturn(true);
+when(lsf.anmelden("Harald", "PM-Dungeon")).thenReturn(true);
 
-        InOrder inOrder = inOrder(lsf);
+InOrder inOrder = inOrder(lsf);
 
-        assertTrue(studi.anmelden("PM-Dungeon"));
-        studi.anmelden("Wuppie");
+assertTrue(studi.anmelden("PM-Dungeon"));
+studi.anmelden("Wuppie");
 
-        inOrder.verify(lsf).anmelden("Harald", "Wuppie");
-        inOrder.verify(lsf).anmelden("Harald", "PM-Dungeon");
+inOrder.verify(lsf).anmelden("Harald", "Wuppie");
+inOrder.verify(lsf).anmelden("Harald", "PM-Dungeon");
 ```
+
+Mit `InOrder` lassen sich Aufrufe auf einem Mock/Spy oder auch auf verschiedenen Mocks/Spies in eine zeitliche
+Reihenfolge bringen und so überprüfen.
 :::
 
 [Demo [fhb.VerifyTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/VerifyTest.java)]{.bsp}
@@ -389,7 +422,14 @@ public class MatcherTest {
 ```
 
 ::: notes
-Erklärung der Elemente: TODO
+Sie können die konkreten Argumente angeben, für die der Aufruf gelten soll. Alternativ
+können Sie mit vordefinierten `ArgumentMatchers` wie `anyString()` beispielsweise auf
+beliebige Strings reagieren oder selbst einen eigenen `ArgumentMatcher<T>` für Ihren
+Typ `T` erstellen und nutzen.
+
+**Wichtig**: Wenn Sie für einen Parameter einen `ArgumentMatcher` einsetzen, müssen Sie
+für die restlichen Parameter der Methode dies ebenfalls tun. Sie können keine konkreten
+Argumente mit `ArgumentMatcher` mischen.
 
 Sie finden viele weitere vordefinierte Matcher in der Klasse `ArgumentMatchers`.
 Mit der Klasse `ArgumentCaptor<T>` finden Sie eine alternative Möglichkeit, auf
