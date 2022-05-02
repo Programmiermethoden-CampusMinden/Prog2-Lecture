@@ -307,6 +307,7 @@ Mockito sehr mächtig, aber unterstützt (u.a.) keine
 *   private Methoden
 *   final Methoden
 *   static Methoden
+    [(ab Version 3.4.0 scheint auch [Mockito statische Methoden](https://www.baeldung.com/mockito-mock-static-methods) zu unterstützen)]{.notes}
 
 \bigskip
 \bigskip
