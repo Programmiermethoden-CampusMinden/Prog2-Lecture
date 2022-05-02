@@ -84,6 +84,107 @@ Wie kann Team A seinen Code testen?
 *   Das LSF durch einen Mock ersetzen => Einsatz der Bibliothek "mockito"
 :::
 
+::::::::: notes
+### Motivation
+
+[Mockito](https://github.com/mockito/mockito) ist ein Mocking-Framework für JUnit. Es
+simuliert das Verhalten eines realen Objektes oder einer realen Methode.
+
+Wofür brauchen wir denn jetzt so ein Mocking-Framework überhaupt?
+
+Wir wollen die Funktionalität einer Klasse isoliert vom Rest testen können.
+Dabei stören uns aber bisher so ein paar Dinge:
+
+*   Arbeiten mit den echten Objekten ist langsam (zum Beispiel aufgrund von
+    Datenbankenzugriffen)
+*   Objekte beinhalten oft komplexe Abhängigkeiten, die in Tests schwer abzudecken
+    sind
+*   Manchmal existiert der zu testende Teil einer Applikation auch noch gar nicht,
+    sondern es gibt nur die Interfaces.
+*   Oder es gibt unschöne Seiteneffekte beim Arbeiten mit den realen Objekten. Zum
+    Beispiel könnte es sein, das immer eine E-Mail versendet wird, wenn wir mit
+    einem Objekt interagieren.
+
+In solchen Situationen wollen wir eine Möglichkeit haben, das Verhalten eines
+realen Objektes bzw. der Methoden zu simulieren, ohne dabei die originalen
+Methoden aufrufen zu müssen. (Manchmal möchte man das dennoch, aber dazu später
+mehr...)
+
+Und genau hier kommt Mockito ins Spiel. Mockito hilft uns dabei, uns von den
+externen Abhängigkeiten zu lösen, indem es sogenannte Mocks, Stubs oder Spies
+anbietet, mit denen sich das Verhalten der realen Objekte simulieren/überwachen
+und testen lässt.
+
+### Aber was genau ist denn jetzt eigentlich Mocking?
+
+Ein Mock-Objekt ("etwas vortäuschen") ist im Software-Test ein Objekt, das als Platzhalter
+(Attrappe) für das echte Objekt verwendet wird.
+
+Mocks sind in JUnit-Tests immer dann nützlich, wenn man externe Abhängigkeiten
+hat, auf die der eigene Code zugreift. Das können zum Beispiel externe APIs sein
+oder Datenbanken etc. ... Mocks helfen einem beim Testen nun dabei, sich von diesen
+externen Abhängigkeiten zu lösen und seine Softwarefunktionalität dennoch
+schnell und effizient testen zu können ohne evtl. auftretende Verbindungsfehler
+oder andere mögliche Seiteneffekte der externen Abhängigkeiten auszulösen.
+
+Dabei simulieren Mocks die Funktionalität der externen APIs oder Datenbankzugriffe.
+Auf diese Weise ist es möglich Softwaretests zu schreiben, die scheinbar die gleichen
+Methoden aufrufen, die sie auch im regulären Softwarebetrieb nutzen würden, allerdings
+werden diese wie oben erwähnt allerdings für die Tests nur simuliert.
+
+Mocking ist also eine Technik, die in Softwaretests verwendet wird, in denen die
+gemockten Objekte anstatt der realen Objekte zu Testzwecken genutzt werden. Die
+gemockten Objekte liefern dabei bei einem vom Programmierer bestimmten (Dummy-) Input,
+einen dazu passenden gelieferten (Dummy-) Output, der durch seine vorhersagbare
+Funktionalität dann in den eigentlichen Testobjekten gut für den Test nutzbar ist.
+
+Dabei ist es von Vorteil die drei Grundbegriffe "Mock", "Stub" oder "Spy", auf die wir
+in der Vorlesung noch häufiger treffen werden, voneinander abgrenzen und
+unterscheiden zu können.
+
+### Dabei bezeichnet ein
+
+*   **Stub**: Ein Stub ist ein Objekt, dessen Methoden nur mit einer minimalen Logik
+    für den Test implementiert wurden. Häufig werden dabei einfach feste (konstante)
+    Werte zurückgeliefert, d.h. beim Aufruf einer Methode wird unabhängig von der konkreten
+    Eingabe immer die selbe Ausgabe zurückgeliefert.
+*   **Mock**: Ein Mock ist ein Objekt, welches im Gegensatz zum Stub bei vorher definierten
+    Funktionsaufrufen mit vorher definierten Argumente eine definierte Rückgabe liefert.
+*   **Spy**: Ein Spy ist ein Objekt, welches Aufrufe und übergebene Werte protokolliert und
+    abfragbar macht. Es ist also eine Art Wrapper um einen Stub oder einen Mock.
+
+### Mockito Setup
+
+*   Gradle: `build.gradle`
+
+    ```groovy
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+        testImplementation "org.mockito:mockito-core:3.+"
+    }
+    ```
+
+*   Maven: `pom.xml`
+
+    ```xml
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>4.5.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    ```
+:::::::::
+
 
 ## Manuell Stubs implementieren
 
@@ -569,168 +670,3 @@ public void testVerify_InteraktionenMitHilfeDesArgumentCaptor() {
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 :::
-
-
-
-
-
-
-
-
-
-
-- - -
-- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -- - -
-- - -
-
-
-
-
-## Motivation
-
-Mockito ist ein Mocking-Framework. Es simuliert das Verhalten eines realen
-Objektes oder einer realen Methode.
-
-Wofür brauchen wir denn jetzt so ein Mocking-Framework überhaupt?
-
-Wir wollen die Funktionalität einer Klasse isoliert vom Rest testen können.
-Dabei stören uns aber bisher so ein paar Dinge:
-
-* Arbeiten mit den echten Objekten ist langsam. (zum Beispiel aufgrund von
-  Datenbankenzugriffen)
-* Objekte beinhalten oft komplexe Abhängigkeiten die in Tests schwer abzudecken
-  sind.
-* Manchmal existiert der zu testende Teil einer Applikation auch noch gar nicht,
-  sondern es gibt nur die Interfaces.
-* Oder es gibt unschöne Seiteneffekte beim Arbeiten mit den realen Objekten. Zum
-  Beispiel könnte es sein, das immer eine E-Mail versendet wird, wenn wir mit
-  einem Objekt interagieren.
-
-In solchen Situationen wollen wir eine Möglichkeit haben das Verhalten eines
-realen Objektes bzw. der Methoden zu simulieren möglichst ohne dabei die
-originalen Methoden aufrufen zu müssen. (Manchmal möchte man das dennoch aber
-dazu später mehr...)
-
-Und genau hier kommt Mockito ins Spiel. Mockito hilft uns dabei uns von den
-externen Abhängigkeiten zu lösen in dem es sogenannte Mocks, Stubs oder Spies
-anbietet mit denen sich das Verhalten der realen Objekte simulieren/überwachen
-und testen lässt.
-Quelle: [Understanding mockito](https://medium.com/@ashrawan70/understanding-the-mockito-74cd7e5a77e4)
-
-## Einführung
-
-Mocking und das sogenannte stubbing sind die beiden Eckpfeiler zum Erstellen von
-schnellen und einfachen JUnit-Tests.
-
-Mocks sind in JUnit-Tests immer dann nützlich, wenn man externe Abhängigkeiten
-hat, auf die der eigene Code zugreift. Das können zum Beispiel externe APIs sein
-oder Datenbanken etc. Mocks helfen einem beim Testen nun dabei sich von diesen
-externen Abhängigkeiten zu lösen und seine Softwarefunktionalität dennoch
-schnell und effizient testen zu können ohne evtl. auftretende Verbindungsfehler
-oder andere mögliche Seiteneffekte der externen Abhängigkeiten auszulösen.
-
-Dabei simulieren Mocks die Funktionalität der externen APIs oder
-Datenbankzugriffe. Auf diese Weise ist es möglich Softwaretests zu schreiben die
-scheinbar die gleichen Methoden aufrufen, die sie auch im regulären
-Softwarebetrieb nutzen würden, diese werden wie oben erwähnt allerdings für die
-Tests nur simuliert.
-
-Mocks stellen so, im Vergleich zu den umfangreichen Integrationstests, eine
-schnelle und effiziente Testbarkeit dar.
-
-**_Anmerkung_**: Ein Test der Daten in eine Datenbank schreibt oder von dieser
-Daten einliest oder ein Test der eine JSON-Datei von einem Webservice oder
-ähnlichem bezieht ist _kein_ Unittest. Siehe: [Teststufen VL:
-testing-intro](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/testing-intro.md#was-wann-testen-wichtigste-teststufen)
-
-Er wird erst dann zu einem Unittest, wenn man diese externen Zugriffe weg mockt.
-
-Mockito ist dabei ein sehr beliebtes, häufig in der Praxis anzutreffendes,
-Mocking-Framework das einem bei der Erstellung von diesen Tests behilflich ist.
-
-Quelle:
-
-* [Stubbing-and-mocking-with-mockito](https://semaphoreci.com/community/tutorials/stubbing-and-mocking-with-mockito-2-and-junit)
-* [Methods-of-mockito](https://www.javatpoint.com/methods-of-mockito)
-
-## Aber was genau ist denn jetzt eigentlich Mocking?
-
-Mocking ist ein Prozess zum Erzeugen von Objekten die ein Mock/Klon der realen
-Objekte sind. Dabei bezeichnet Mocking eine Technik, die in Softwaretests
-verwendet wird, in denen die gemockten Objekte anstatt der realen Objekte zu
-Testzwecken genutzt werden. Die gemockten Objekte liefern dabei bei einem vom
-Programmierer bestimmten (Dummy) Input, einen dazu passenden gelieferten (Dummy)
-Output der durch seine vorhersagbare Funktionalität gut testbar ist.
-
-Um das ganze Konzept des Mockens etwas besser verstehen zu können ist es
-hilfreich vielleicht ein Paar weitere Begrifflichkeiten vorab zu klären auf die
-wir in der Vorlesung stoßen werden.
-
-Dabei ist es von Vorteil die drei Grundbegriffe Mock, Stub oder Spy, auf die wir
-in der Vorlesung noch häufiger treffen werden, voneinander abgrenzen und
-unterscheiden zu können.
-
-## Dabei bezeichnet ein
-
-* **Mock**: Eine Art Dummy oder Klon eines Objekts, das man mit Mockito anlegen
-  kann und das dann in den Softwaretests anstelle, des realen Objekts in der
-  Applikation genutzt wird. Diese Mocks werden von den Mocking-Frameworks
-  erzeugt und, in den darauf aufbauenden Softwaretests, typischerweise für die
-  sogenannte Verhaltensverifikation, auch "Behavior testing" genannt, genutzt.
-* **Stub**: Sind Objekte die vordefinierte Werte enthalten, die in den
-  Softwaretests abgefragt werden können. Des Weiteren enthalten Stubs nur ein
-  absolutes Minimum an Methoden, die für den jeweiligen Test benötigten werden.
-  Zudem können sie auch Methoden enthalten, die einem den Zugriff auf den
-  internen Zustand eines Stubs gewähren, wenn dies nötigt ist. Man könnte
-  eigentlich auch sagen das Stubs in den Tests generell zum verifizieren eines
-  Zustandes genutzt werden.
-* **Spy**: Ein Spy ist in Mockito eine Art Wrapper, der um ein Objekt gelegt
-  wird. Dabei werden dann sämtliche Methodenaufrufe die eigentlich sonst von den
-  realen Methoden eines Objekts ausgeführt worden wären an den Spion delegiert,
-  der diese dann protokollieren, den State verändern und/oder eventuelle, von
-  den Methoden getätigten Ausgaben kontrolliert verändern kann.
-
-## Mockito Setup
-
-Gradle: `build.gradle`
-
-* ```java
-    dependencies {
-        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-        testImplementation "org.mockito:mockito-core:3.+"
-    }
-  ```
-
-Maven: `pom.xml`
-
-* ```xml
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
-            <version>4.5.1</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-  ```
-
-## Folie 2
-
-| Parameter         | Mock                                                                                                                                                    | Stub                                                                                           | Spy                                                                                                                                |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Datenquelle       | Daten der Mocks werden in den Tests definiert                                                                                                           | Daten in Stubs sind hart codiert. Sie sind normalerweise eng mit der Testsuite verbunden.      | Spies sind partielle/halb gemockte Objekte. Spies werden ebenso wie Mocks in großen Testsuiten verwendet.                         |
-| Erstellt von      | Werden normalerweise bei der Verwendung eines Mocking-Frameworks erstellt.                                                                              | Werden normalerweise von Hand kreiert                                                          | Werden normalerweise bei der Verwendung eines Mocking-Frameworks erstellt.                                                         |
-| Verwendung        | Mocks werden meistens in großen Testsuiten verwendet. Mocks werden zum Erstellen eines kompletten Mocks oder eines Dummy Objekts verwendet.            | Stubs werden meistens in kleinen/überschaubaren Testsuiten verwendet.                         | Spies werden verwendet um partielle oder halb gemockte Objekte zu erzeugen. Spies werden meistens in großen Testsuiten verwendet. |
-| Default Verhalten | Wenn gemockte Objekte verwendet werden ist deren Default Verhalten von Methoden (wenn diese nicht stubed sind) das sie gar nichts tun. (doNothing(...)) | Beinhalten meistens nur das absolute Minimum an Methoden, die für einen Test benötigt werden. | Wenn Spies verwendet werden ist deren default Verhalten von Methoden (die nicht stubbed sind) das sie die reale Methode aufrufen.  |
-
-Quelle: [mock-vs-stub-vs-spy](https://www.javatpoint.com/mock-vs-stub-vs-spy)
-
-
-
