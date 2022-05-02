@@ -315,6 +315,235 @@ Mockito sehr mächtig, aber unterstützt (u.a.) keine
 => Lösung: [PowerMock](https://github.com/powermock/powermock)
 
 
+::::::::: notes
+## Ausführlicheres Beispiel: WuppiWarenlager
+
+**Credits**: Der Dank für die Erstellung des nachfolgenden Beispiels und Textes geht an
+[\@jedi101](https://github.com/jedi101).
+
+
+[Demo: [WuppiWarenlager (wuppie.stub)](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/wuppie/stub/))]{.bsp}
+
+Bei dem gezeigten Beispiel unseres `WuppiStores` sieht man, dass dieser
+normalerweise von einem fertigen Warenlager die Wuppis beziehen möchte. Da
+dieses Lager aber noch nicht existiert, haben wir uns kurzerhand einfach einen
+Stub von unserem `IWuppiWarenlager`-Interface erstellt, in dem wir zu
+Testzwecken händisch ein Paar Wuppis ins Lager geräumt haben.
+
+Das funktioniert in diesem Mini-Testbeispiel ganz gut aber, wenn unsere Stores
+erst einmal so richtig Fahrt aufnehmen und wir irgendwann weltweit Wuppis
+verkaufen, wird der Code des `IWuppiWarenlagers` wahrscheinlich sehr schnell viel
+komplexer werden, was unweigerlich dann zu Maintenance-Problemen unserer
+händisch angelegten Tests führt. Wenn wir zum Beispiel einmal eine Methode
+hinzufügen wollen, die es uns ermöglicht, nicht immer alle Wuppis aus dem Lager
+zu ordern oder vielleicht noch andere Methoden, die Fluppis orderbar machen,
+hinzufügen, müssen wir immer dafür sorgen, dass wir die getätigten Änderungen
+händisch in den Stub des Warenlagers einpflegen.
+
+Das will eigentlich niemand...
+
+### Einsatz von Mockito
+
+Aber es gibt da einen Ausweg. Wenn es komplexer wird, verwenden wir Mocks.
+
+Bislang haben wir noch keinen Gebrauch von Mockito gemacht. Das ändern wir nun.
+
+[Demo: [WuppiWarenlager (wuppie.mock)](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/wuppie/mock/))]{.bsp}
+
+Wie in diesem Beispiel gezeigt, müssen wir nun keinen Stub mehr von Hand
+erstellen, sondern überlassen dies Mockito.
+
+```java
+IWuppiWarenlager lager = mock(IWuppiWarenlager.class);
+```
+
+Anschließend können wir, ohne die Methode `getAllWuppis()` implementiert zu haben,
+dennoch so tun als, ob die Methode eine Funktionalität hätte.
+
+```java
+// Erstellen eines imaginären Lagerbestands.
+List<String> wuppisImLager = Arrays.asList("GruenerWuppi","RoterWuppi");
+when(lager.getAlleWuppis()).thenReturn(wuppisImLager);
+```
+
+Wann immer nun die Methode `getAlleWuppis()` des gemockten Lagers aufgerufen
+wird, wird dieser Aufruf von Mockito abgefangen und wie oben definiert
+verändert. Das Ergebnis können wir abschließend einfach in unserem Test testen:
+
+```java
+// Erzeugen des WuppiStores.
+WuppiStore wuppiStore = new WuppiStore(lager);
+
+// Bestelle alle Wuppis aus dem gemockten Lager List<String>
+bestellteWuppis = wuppiStore.bestelleAlleWuppis(lager);
+
+// Hat die Bestellung geklappt?
+assertEquals(2,bestellteWuppis.size());
+```
+
+### Mockito Spies
+
+Manchmal möchten wir allerdings nicht immer gleich ein ganzes Objekt mocken,
+aber dennoch Einfluss auf die aufgerufenen Methoden eines Objekts haben, um
+diese testen zu können. Vielleicht gibt es dabei ja sogar eine Möglichkeit unsere
+JUnit-Tests, mit denen wir normalerweise nur Rückgabewerte von Methoden testen
+können, zusätzlich auch das Verhalten also die Interaktionen mit einem Objekt
+beobachtbar zu machen. Somit wären diese Interaktionen auch testbar.
+
+Und genau dafür bietet Mockito eine Funktion: der sogenannte "Spy".
+
+Dieser Spion erlaubt es uns nun zusätzlich das Verhalten zu testen. Das geht in
+die Richtung von [BDD - Behavior Driven Development](https://de.wikipedia.org/wiki/Behavior_Driven_Development).
+
+[Demo: [WuppiWarenlager (wuppie.spy)](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/wuppie/spy/))]{.bsp}
+
+```java
+// Spion erstellen, der unser wuppiWarenlager überwacht.
+this.wuppiWarenlager = spy(WuppiWarenlager.class);
+```
+
+Hier hatten wir uns einen Spion erzeugt, mit dem sich anschließend das Verhalten
+verändern lässt:
+
+```java
+when(wuppiWarenlager.getAlleWuppis()).thenReturn(Arrays.asList(new Wuppi("Wuppi007")));
+```
+
+Aber auch der Zugriff lässt sich kontrollieren/testen:
+
+```java
+verify(wuppiWarenlager).addWuppi(normalerWuppi);
+verifyNoMoreInteractions(wuppiWarenlager);
+```
+
+Die normalen Testmöglichkeiten von JUnit runden unseren Test zudem ab.
+
+```java
+assertEquals(1,wuppiWarenlager.lager.size());
+```
+
+## Mockito und Annotationen
+
+In Mockito können Sie wie oben gezeigt mit `mock()` und `spy()` neue
+Mocks bzw. Spies erzeugen und mit `verify()` die Interaktion überprüfen
+und mit `ArgumentMatcher<T>` bzw. den vordefinierten `ArgumentMatchers`
+auf Argumente zuzugreifen bzw. darauf zu reagieren.
+
+Zusätzlich/alternativ gibt es in Mockito zahlreiche Annotationen, die
+**ersatzweise** statt der genannten Methoden genutzt werden können. Hier
+ein kleiner Überblick über die wichtigsten in Mockito verwendeten Annotation:
+
+*   `@Mock` wird zum Markieren des zu mockenden Objekts verwendet.
+
+    ```java
+    @Mock
+    WuppiWarenlager lager;
+    ```
+
+*   `@RunWith(MockitoJUnitRunner.class)` ist der entsprechende JUnit-Runner,
+    wenn Sie Mocks mit `@Mock` anlegen.
+
+    ```java
+    @RunWith(MockitoJUnitRunner.class)
+    public class ToDoBusinessMock {...}
+    ```
+
+*   `@Spy` erlaubt das Erstellen von partiell gemockten Objekten. Dabei wird eine
+    Art Wrapper um das zu mockende Objekt gewickelt, der dafür sorgt, dass alle
+    Methodenaufrufe des Objekts an den Spy delegiert werden. Diese können über den
+    Spion dann abgefangen/verändert oder ausgewertet werden.
+
+    ```java
+    @Spy
+    ArrayList<Wuppi> arrayListenSpion;
+    ```
+
+*   `@InjectMocks` erlaubt es, Parameter zu markieren, in denen Mocks und/oder
+    Spies injiziert werden. Mockito versucht dann (in dieser Reihenfolge) per
+    Konstruktorinjektion, Setterinjektion oder Propertyinjektion die Mocks zu
+    injizieren. Weitere Informationen darüber findet man hier:
+    [Mockito Dokumentation](https://javadoc.io/static/org.mockito/mockito-core/4.5.1/org/mockito/InjectMocks.html)
+
+    **Anmerkung**: Es ist aber nicht ratsam "Field- oder Setterinjection" zu nutzen,
+    da man nur bei der Verwendung von "Constructorinjection" sicherstellen kann, das
+    eine Klasse nicht ohne die eigentlich notwendigen Parameter instanziiert wurde.
+
+    ```java
+    @InjectMocks
+    Wuppi fluppi;
+    ```
+
+*   `@Captor` erlaubt es, die Argumente einer Methode abzufangen/auszuwerten. Im
+    Zusammenspiel mit Mockitos `verify()`-Methode kann man somit auch die einer
+    Methode übergebenen Argumente verifizieren.
+
+    ```java
+    @Captor
+    ArgumentCaptor<String> argumentCaptor;
+    ```
+
+*   `@ExtendWith(MockitoExtension.class)` wird in JUnit5 verwendet, um die
+    Initialisierung von Mocks zu vereinfachen. Damit entfällt zum Beispiel die
+    noch unter JUnit4 nötige Initialisierung der Mocks durch einen Aufruf der
+    Methode `MockitoAnnotations.openMocks()` im Setup des Tests (`@Before` bzw.
+    `@BeforeEach`).
+
+
+### Prüfen der Interaktion mit  _verify()_
+
+Mit Hilfe der umfangreichen `verify()`-Methoden, die uns Mockito mitliefert, können
+wir unseren Code unter anderem auf unerwünschte Seiteneffekte testen. So ist es mit
+`verify` zum Beispiel möglich abzufragen, ob mit einem gemockten Objekt interagiert
+wurde, wie damit interagiert wurde, welche Argumente dabei übergeben worden sind und
+in welcher Reihenfolge die Interaktionen damit erfolgt sind.
+
+Hier nur eine kurze Übersicht über das Testen des Codes mit Hilfe von Mockitos
+`verify()`-Methoden.
+
+```java
+@Test
+public void testVerify_DasKeineInteraktionMitDerListeStattgefundenHat() {
+    // Testet, ob die spezifizierte Interaktion mit der Liste nie stattgefunden hat.
+    verify(fluppisListe, never()).clear();
+}
+```
+
+```java
+@Test
+public void testVerify_ReihenfolgeDerInteraktionenMitDerFluppisListe() {
+    // Testet, ob die Reihenfolge der spezifizierten Interaktionen mit der Liste eingehalten wurde.
+    fluppisListe.clear();
+    InOrder reihenfolge = inOrder(fluppisListe);
+    reihenfolge.verify(fluppisListe).add("Fluppi001");
+    reihenfolge.verify(fluppisListe).clear();
+}
+```
+
+```java
+@Test
+public void testVerify_FlexibleArgumenteBeimZugriffAufFluppisListe() {
+    // Testet, ob schon jemals etwas zu der Liste hinzugefügt wurde.
+    // Dabei ist es egal welcher String eingegeben wurde.
+    verify(fluppisListe).add(anyString());
+}
+```
+
+```java
+@Test
+public void testVerify_InteraktionenMitHilfeDesArgumentCaptor() {
+    // Testet, welches Argument beim Methodenaufruf übergeben wurde.
+    fluppisListe.addAll(Arrays.asList("BobDerBaumeister"));
+    ArgumentCaptor<List> argumentMagnet = ArgumentCaptor.forClass(FluppisListe.class);
+    verify(fluppisListe).addAll(argumentMagnet.capture());
+    List<String> argumente = argumentMagnet.getValue();
+    assertEquals("BobDerBaumeister", argumente.get(0));
+}
+```
+
+[Demo: [WuppiWarenlager (wuppie.verify)](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/wuppie/verify/))]{.bsp}
+:::::::::
+
+
 ## Wrap-Up
 
 *   Gründliches Testen ist ebenso viel Aufwand wie Coden!
@@ -391,9 +620,9 @@ Quelle: [Understanding mockito](https://medium.com/@ashrawan70/understanding-the
 ## Einführung
 
 Mocking und das sogenannte stubbing sind die beiden Eckpfeiler zum Erstellen von
-schnellen und einfachen JUnittests.
+schnellen und einfachen JUnit-Tests.
 
-Mocks sind in JUnittests immer dann nützlich, wenn man externe Abhängigkeiten
+Mocks sind in JUnit-Tests immer dann nützlich, wenn man externe Abhängigkeiten
 hat, auf die der eigene Code zugreift. Das können zum Beispiel externe APIs sein
 oder Datenbanken etc. Mocks helfen einem beim Testen nun dabei sich von diesen
 externen Abhängigkeiten zu lösen und seine Softwarefunktionalität dennoch
@@ -503,253 +732,5 @@ Maven: `pom.xml`
 
 Quelle: [mock-vs-stub-vs-spy](https://www.javatpoint.com/mock-vs-stub-vs-spy)
 
-## Folie 3
 
-[Demo: WuppiWarenlagerStubTest]{.bsp}
-
-Bei dem gezeigten Beispiel unseres `WuppiStores` sieht man, dass dieser
-normalerweise von einem fertigen Warenlager die Wuppis beziehen möchte. Da
-dieses Lager aber noch nicht existiert haben wir uns kurzerhand einfach einen
-Stub von unserem `IWuppiWarenlager` Interface erstellt in dem wir zu
-Testzwecken, händisch ein Paar Wuppis ins Lager geräumt haben.
-
-Das funktioniert in diesem mini Testbeispiel ganz gut aber, wenn unsere Stores
-erst einmal so richtig Fahrt aufnehmen und wir irgendwann weltweit Wuppis
-verkaufen wird der Code des `IWuppiWarenlagers` wahrscheinlich sehr schnell viel
-komplexer werden; was unweigerlich dann zu Maintenance-Problemen unserer
-händisch angelegten Tests führt. Wenn wir zum Beispiel einmal eine Methode
-hinzufügen wollen, die es uns ermöglicht nicht immer alle Wuppis aus dem Lager
-zu ordern oder vielleicht noch andere Methoden, die Fluppis orderbar machen,
-hinzufügen, müssen wir immer dafür sorgen, dass wir die getätigten Änderungen
-händisch in den Stub des Warenlagers einpflegen.
-
-Das will eigentlich niemand...
-
-## Folie 4
-
-Aber es gibt da einen Ausweg. Wenn es komplexer wird, verwenden wir Mocks.
-
-Bislang haben wir noch keinen gebrauch von Mockito gemacht. Das ändern wir nun.
-
-[Demo: WuppiWarenlagerMockTest]{.bsp}
-
-Wie in diesem Beispiel gezeigt müssen wir nun keinen Stub mehr von Hand
-erstellen, sondern überlassen dies Mockito.
-
-```java
-    IWuppiWarenlager lager=mock(IWuppiWarenlager.class);
-```
-
-Anschließend können wir, ohne die Methode `getAllWuppis()` implementiert zu haben,
-dennoch so tun als, ob die Methode eine Funktionalität hätte.
-
-```java
-    // Erstellen eines imaginären Lagerbestands.
-    List<String> wuppisImLager=Arrays.asList("GruenerWuppi","RoterWuppi");
-    when(lager.getAlleWuppis()).thenReturn(wuppisImLager);
-```
-
-Wann immer nun die Methode `getAlleWuppis()` des gemockten Lagers aufgerufen
-wird, wird dieser Aufruf von Mockito abgefangen und wie oben definiert
-verändert. Das Ergebnis können wir abschließend einfach in unserem Test wie hier
-zu sehen ist testen.
-
-```java
-    // Erzeugen des WuppiStores.
-    WuppiStore wuppiStore=new WuppiStore(lager);
-
-    // Bestelle alle Wuppis aus dem gemockten Lager List<String>
-    bestellteWuppis=wuppiStore.bestelleAlleWuppis(lager);
-
-    // Hat die Bestellung geklappt?
-    assertEquals(2,bestellteWuppis.size());
-```
-
-## Folie 5
-
-Manchmal möchten wir allerdings nicht immer gleich ein ganzes Objekt mocken aber
-dennoch Einfluss auf die aufgerufenen Methoden eines Objekts haben um diese
-testen zu können. Vielleicht gibt es dabei ja sogar eine Möglichkeit unsere
-JUnittests, mit denen wir normalerweise nur Rückgabewerte von Methoden testen
-können, zusätzlich auch das Verhalten also die Interaktionen mit einem Objekt
-beobachtbar zu machen. Somit wären diese Interaktionen auch testbar.
-
-Und genau dafür bietet Mockito eine Funktion. Der sogenannte Spy.
-
-Dieser Spion erlaubt es uns nun zusätzlich das Verhalten zu testen. Siehe
-hierzu: [BDD - Behavior Driven Development](https://de.wikipedia.org/wiki/Behavior_Driven_Development)
-
-[Demo: WuppiWarenlagerSpyTest]{.bsp}
-
-```java
-    // Spion erstellen der unser wuppiWarenlager überwacht.
-    this.wuppiWarenlager=spy(WuppiWarenlager.class);
-```
-
-Hier hatten wir uns einen Spion erzeugt mit dem sich anschließend das Verhalten
-verändern
-
-```java
-    when(wuppiWarenlager.getAlleWuppis()).thenReturn(Arrays.asList(new Wuppi("Wuppi007")));
-```
-
-oder der Zugriff kontrollieren/testen ließ.
-
-```java
-    verify(wuppiWarenlager).addWuppi(normalerWuppi);
-    verifyNoMoreInteractions(wuppiWarenlager);
-```
-
-Die normalen Testmöglichkeiten von JUnit runden unseren Test zudem ab.
-
-```java
-    assertEquals(1,wuppiWarenlager.lager.size());
-```
-
-## Folie 6
-
-In Mockito gibt es zahlreiche Annotationen, die uns beim Erstellen unserer Mocks
-und Spies behilflich sein können. Hier ein kleiner Überblick über die
-wichtigsten in Mockito verwendeten Annotation.
-
-`@Mock` wird zum Markieren des zu mockenden Objekts verwendet.
-
-```java
-    @Mock
-    WuppiWarenlager lager;
-```
-
-`@RunWith(MockitoJUnitRunner.class)` dient dazu das Debugging zu verbessern und
-sorgt dafür, dass unbenutzte Stubs im Test erkannt werden. Außerdem werden
-dadurch alle mit `@Mock` markierten Mocks initialisiert. _**Anmerkung**_:
-Die `@RunWith`-Annotation wird immer im Zusammenspiel mit der `@Mock`-Annotation
-verwendet.
-
-```java
-    @RunWith(MockitoJUnitRunner.class)
-    public class ToDoBusinessMock {...}
-```
-
-`@Spy` erlaubt das Erstellen von partiell gemockten Objekten. Dabei wird eine
-Art Wrapper um das zu mockende Objekt gewickelt, der dafür sorgt, dass alle
-Methodenaufrufe des Objekts an den Spy delegiert werden. Diese können über den
-Spion dann abgefangen/verändert oder ausgewertet werden.
-
-```java
-    @Spy
-    ArrayList<Wuppi> arrayListenSpion;
-```
-
-`@InjectMocks` erlaubt es Parameter zu markieren in denen Mocks und/oder Spies
-injiziert werden. Mockito versucht dann, in dieser Reihenfolge, per
-Konstruktorinjektion, Setterinjektion oder Propertyinjektion die Mocks zu
-injizieren. Weitere Informationen darüber findet man
-hier. [Mockito Dokumentation](https://javadoc.io/static/org.mockito/mockito-core/4.5.1/org/mockito/InjectMocks.html) _**
-Anmerkung**_: Es ist aber nicht ratsam "Field- oder Setterinjection" zu nutzen,
-da man nur bei der Verwendung von "Constructorinjection" sicherstellen kann, das
-eine Klasse nicht ohne die eigentlich notwendigen Parameter instanziiert wurde.
-
-```java
-    @InjectMocks
-    Wuppi fluppi;
-```
-
-`@Captor` erlaubt es einen die Argumente einer Methode abzufangen/auszuwerten.
-Im Zusammenspiel mit Mockitos `verify()`-Methode kann man somit auch die einer
-Methode übergebenen Parameter verifizieren.
-
-```java
-    @Captor
-    ArgumentCaptor<String> argumentCaptor;
-```
-
-`@ExtendWith(MockitoExtension.class)` wird in JUnit5 verwendet, um die
-Initialisierung von Mocks zu vereinfachen. Damit entfällt zum Beispiel die noch
-unter JUnit4 nötige Initialisierung der Mocks durch einen Aufruf der
-Methode `MockitoAnnotations.openMocks()` im Setup des Tests
-(`@Before | @BeforeEach`)
-
-Dabei gibt es zu den hier gezeigten Annotationen meist auch einen einfachen
-Methodenaufruf der die gleiche Funktionalität besitzt.
-
-Um zum Beispiel ein Mock eines Objekts zu erstellen, kann man entweder den Mock
-mit dem Methodenaufruf `mock(KlasseDesTypsDesZuMockendenObjekts.class)`
-erzeugen oder mit der Annotation `@Mock` wie in diesem Beispiel gezeigt:
-
-```java
-    @Mock
-    KlasseDesTypsDesZuMockendenObjekts objektname;
-```
-
-Ebenso lassen sich mit der Annotation `@Spy` zum Beispiel Spione definieren:
-
-```java
-    @Spy
-    List<String> spionListe=new ArrayList<String>();
-```
-
-Selbiges könnte man aber auch wie oben angesprochen mit einem Methodenaufruf
-bewerkstelligen:
-
-```java
-    List<String> list=new ArrayList<String>();
-        List<String> spionListe=spy(list);
-```
-
-## Folie 7 - `verify()`
-
-Mit Hilfe der umfangreichen `verfiy()`-Methoden die uns Mockito mitliefert können wir unseren Code unter anderem auf unerwünschte Seiteneffekte testen. So ist es mit "verify" zum Beispiel möglich abzufragen, ob mit einem gemockten Objekt interagiert wurde, wie damit interagiert wurde, welche Argumente dabei übergeben worden sind und in welcher Reihenfolge die Interaktionen damit erfolgt sind.
-
-Hier nur eine kurze Übersicht über das Testen des Codes mit Hilfe von Mockitos `verify()`-Methoden.
-
-```java
-    @Test
-    public void testVerifyDasKeineInteraktionMitDerListeStattgefundenHat() {
-        // Testet, ob die spezifizierte Interaktion mit der Liste
-        // nie stattgefunden hat.
-        verify(fluppisListe, never()).clear();
-    }
-```
-
-```java
-    @Test
-    public void testVerifyReihenfolgeDerInteraktionenMitDerFluppisListe() {
-        // Testet, ob die Reihenfolge der spezifizierten Interaktionen
-        // mit der Liste eingehalten wurde.
-        fluppisListe.clear();
-        InOrder reihenfolge = inOrder(fluppisListe);
-        reihenfolge.verify(fluppisListe).add("Fluppi001");
-        reihenfolge.verify(fluppisListe).clear();
-    }
-```
-
-```java
-    @Test
-    public void testVerifyFlexibleArgumenteBeimZugriffAufFluppisListe() {
-        // Testet, ob schon jemals etwas zu der Liste hinzugefügt wurde.
-        // Dabei ist es egal welcher String eingegeben wurde.
-        verify(fluppisListe).add(anyString());
-    }
-```
-
-```java
-    @Test
-    public void testVerifyInteraktionenMitHilfeDesArgumentCaptor() {
-        // Testet, welches Argument beim Methodenaufruf übergeben wurde.
-        fluppisListe.addAll(Arrays.asList("BobDerBaumeister"));
-        ArgumentCaptor<List> argumentMagnet = ArgumentCaptor.forClass(FluppisListe.class);
-        verify(fluppisListe).addAll(argumentMagnet.capture());
-        List<String> argumente = argumentMagnet.getValue();
-        assertEquals("BobDerBaumeister", argumente.get(0));
-    }
-```
-
-[Demo: VerifyFluppisListeTest]{.bsp}
-
-Diese Beispiele finden sie im übrigen auch in den beigefügten Sourcecodes dieser Vorlesung.
-
-
-## How to mock a void method using Mockito?
-
-* @see <https://www.baeldung.com/mockito-void-methods>
 
