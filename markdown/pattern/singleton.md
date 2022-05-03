@@ -5,8 +5,8 @@ menuTitle: "Singleton"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 9
 readings:
-  - key: "Java-11-documentation"
-    comment: ""
+  - key: "Nystrom2014"
+    comment: "Kap. 6: Singleton"
 tldr: |
     *   Singleton-Pattern: Klasse, von der nur genau ein Objekt instantiiert werden kann
         *   Konstruktor "verstecken" (Sichtbarkeit auf `private` setzen)
