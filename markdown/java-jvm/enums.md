@@ -10,17 +10,15 @@ readings:
   - key: "Ullenboom2021"
     comment: "Abschnitt 6.4.3: Aufzählungstypen, Abschnitt 10.7: Die Spezial-Oberklasse Enum"
 tldr: |
-    *   Aufzählungen mit Hilfe von `enum`
-        *   Compiler erzeugt intern Klassen
-    *   Komplexe Enumerations analog zu Klassendefinition: Konstruktoren, Felder
-        und Methoden
-        *   Keine Instanzen von Enum-Klassen erzeugbar
-        *   Enum-Konstanten sind implizit `final` und `static`
-        *   Compiler stellt Methoden `name()`, `ordinal()` und `values()` zur
-            Verfügung:
-            *   Name der Konstanten
-            *   Interne Nummer der Konstanten (Reihenfolge des Anlegens)
-            *   Array mit allen Konstanten der Enum-Klasse
+    Mit Hilfe von `enum` lassen sich Aufzählungstypen definieren (der Compiler erzeugt intern
+    passende Klassen). Dabei wird den Konstanten eine fortlaufende Nummer zugeordnet, auf die
+    mit `ordinal()` zugegriffen werden kann. Mit der Methode `values()` kann über die Konstanten
+    iteriert werden, und mit `name()` kann eine Stringrepräsentation einer Konstanten erzeugt
+    werden. Es sind keine Instanzen von Enum-Klassen erzeugbar, und die Enum-Konstanten sind
+    implizit `final` und `static`.
+
+    Es lassen sich auch komplexe Enumerations analog zu Klassendefinition definieren, die eigene
+    Konstruktoren, Felder und Methoden enthalten.
 outcomes:
   - k2: "Vorgänge beim Initialisieren von Enum-Klassen (Hinweis: `static`)"
   - k3: "Erstellung komplexer Enumerationen mit Feldern und Konstruktoren"
