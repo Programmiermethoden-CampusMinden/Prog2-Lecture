@@ -6,7 +6,7 @@ author: "Carsten Gips (FH Bielefeld)"
 weight: 3
 readings:
   - key: "Java-SE-Tutorial"
-    comment: "Trail: Learning the Java Language > Classes and Objects > Enum Types"
+    comment: "Trail: Learning the Java Language :: Classes and Objects :: Enum Types"
   - key: "Ullenboom2021"
     comment: "Abschnitt 6.4.3: Aufzählungstypen, Abschnitt 10.7: Die Spezial-Oberklasse Enum"
 tldr: |
@@ -89,6 +89,8 @@ public class Studi {
     public static void main(String[] args) {
         Studi rainer = new Studi("Rainer", 10, Fach.IFM);
         Studi holger = new Studi("Holger", 3, 4);   // Syntax-Fehler!
+    }
+}
 ```
 
 
