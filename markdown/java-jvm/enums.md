@@ -5,11 +5,12 @@ menuTitle: "Enumerations"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 3
 readings:
-  - key: "Java-11-documentation"
+  - key: "Java-SE-Tutorial"
+    comment: "Trail: Learning the Java Language > Classes and Objects > Enum Types"
   - key: "Java-11-tutorial"
   - key: "Java-SE-tutorial"
-  - key: "Ullenboom2016"
-    comment: "Abschnitt 5.4: Konstanten und Aufzählungen, Abschnitt 9.6: Die Spezial-Oberklasse Enum"
+  - key: "Ullenboom2021"
+    comment: "Abschnitt 6.4.3: Aufzählungstypen, Abschnitt 10.7: Die Spezial-Oberklasse Enum"
 tldr: |
     *   Aufzählungen mit Hilfe von `enum`
         *   Compiler erzeugt intern Klassen
