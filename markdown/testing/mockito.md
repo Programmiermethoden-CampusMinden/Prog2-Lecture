@@ -49,12 +49,12 @@ fhmedia:
 ---
 
 
-## Motivation: Entwicklung einer Studi-Prüfungsverwaltung
+## Motivation: Entwicklung einer Studi-/Prüfungsverwaltung
 
 ::: notes
 ### Szenario
 
-Zwei Teams entwickeln eine neue Studi-Prüfungsverwaltung für die Hochschule. Ein Team modelliert dabei
+Zwei Teams entwickeln eine neue Studi-/Prüfungsverwaltung für die Hochschule. Ein Team modelliert dabei
 die Studierenden, ein anderes Team modelliert die Prüfungsverwaltung LSF.
 :::
 
