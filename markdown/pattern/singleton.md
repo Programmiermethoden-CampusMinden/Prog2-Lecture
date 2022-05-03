@@ -8,11 +8,16 @@ readings:
   - key: "Nystrom2014"
     comment: "Kap. 6: Singleton"
 tldr: |
-    *   Singleton-Pattern: Klasse, von der nur genau ein Objekt instantiiert werden kann
-        *   Konstruktor "verstecken" (Sichtbarkeit auf `private` setzen)
-        *   Methode zum Zugriff auf die eine Instanz
-        *   Anlegen der Instanz beispielsweise beim Laden der Klasse ("Eager") oder
-            beim Aufruf der Zugriffsmethode ("Lazy")
+    Wenn von einer Klasse nur genau ein Objekt angelegt werden kann, nennt man dies auch das
+    "Singleton-Pattern".
+
+    Dazu muss verhindert werden, dass der Konstruktor aufgerufen werden kann. Üblicherweise
+    "versteckt" man diesen einfach (Sichtbarkeit auf `private` setzen). Für den Zugriff auf
+    die Instanz bietet man eine statische Methode an.
+
+    Im Prinzip kann man die Instanz direkt beim Laden der Klasse anlegen ("Eager") oder
+    abwarten, bis die Instanz über die statische Methode angefordert wird, und das Objekt
+    erst dann anlegen ("Lazy").
 outcomes:
   - k2: "Was ist ein _Singleton_? Was ist der Unterschied zw. einem _Lazy_ und einem _Eager_ Singleton?"
   - k3: "Anwendung des Singleton-Patterns"
@@ -24,8 +29,6 @@ assignments:
 youtube:
   - link: ""
     name: "VL Singleton-Pattern"
-  - link: ""
-    name: "Demo Singleton-Pattern"
 fhmedia:
   - link: ""
     name: "VL Singleton-Pattern"
@@ -34,50 +37,76 @@ fhmedia:
 
 ## Motivation
 
-...
+```java
+public enum Fach { IFM, ELM, ARC }
+```
 
+\bigskip
 
-## Ausflug Singleton-Pattern
+```java
+Logger l = Logger.getLogger(MyClass.class.getName());
+```
 
-Von den Enum-Konstanten soll es nur genau eine Instantiierung, also jeweils nur genau ein Objekt geben. Dies
-ist uns bereits beim Thema ["Logging"](pm_logging.html) begegnet: Für jeden Namen soll/darf es nur einen
-tatsächlichen Logger (== Objekt) geben.
+::: notes
+Von den Enum-Konstanten soll es nur genau eine Instantiierung, also jeweils nur genau ein Objekt
+geben. Ähnlich war es beim Logging: Für jeden Namen soll/darf es nur einen tatsächlichen Logger
+(== Objekt) geben.
 
 Dies nennt man "**Singleton Pattern**".
 
-Damit man von "außen" keine Instanzen einer Klasse anlegen kann, versteckt man den Konstruktor, d.h. man setzt
-die Sichtbarkeit auf `private`. Zusätzlich benötigt man eine Methode, die das Objekt zurückliefern kann. Beim
-Logger war dies einfach der Aufruf `Logger.getLogger("name")`.
+_Anmerkung_: Im Logger-Fall handelt es sich streng genommen nicht um ein Singleton, da es vom
+Logger mehrere Instanzen geben kann (wenn der Name sich unterscheidet). Aber jeden Logger mit
+einem bestimmten Namen gibt es nur einmal im ganzen Programm, insofern ist es doch wieder ein
+Beispiel für das Singleton-Pattern ...
+:::
 
-Man kann verschiedene Ausprägungen bei der Umsetzung des Singleton Patterns beobachten. Die beiden wichtigsten
-sind das "Eager Singleton Pattern" und das "Lazy Singleton Pattern". Der Unterschied liegt darin, wann genau
-das Objekt erzeugt wird: Beim "Eager Singleton Pattern" wird es direkt beim Laden der Klasse erzeugt, beim
-"Lazy Singleton Pattern" erst, wenn die Instanz benötigt wird (also beim Aufruf der `get`-Methode).
 
-Hier zwei Skizzen:
+## Umsetzung: Eager Singleton Pattern
+
+::: notes
+Damit man von "außen" keine Instanzen einer Klasse anlegen kann, versteckt man den Konstruktor,
+d.h. man setzt die Sichtbarkeit auf `private`. Zusätzlich benötigt man eine Methode, die das
+Objekt zurückliefern kann. Beim Logger war dies beispielsweise der Aufruf `Logger.getLogger("name")`.
+
+Man kann verschiedene Ausprägungen bei der Umsetzung des Singleton Patterns beobachten. Die
+beiden wichtigsten sind das "Eager Singleton Pattern" und das "Lazy Singleton Pattern". Der
+Unterschied liegt darin, wann genau das Objekt erzeugt wird: Beim "Eager Singleton Pattern"
+wird es direkt beim Laden der Klasse erzeugt.
+:::
 
 ```java
 public class SingletonEager {
     private static final SingletonEager inst = new SingletonEager();
 
     // Privater Constructor: Niemand kann Objekte außerhalb der Klasse anlegen
-    private SingletonEager() {
-    }
+    private SingletonEager() {}
 
     public static SingletonEager getInst() {
         return inst;
     }
 }
+```
 
+[Beispiel: [singleton.SingletonEager](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/singleton/SingletonEager.java)]{.bsp}
+
+
+## Umsetzung: Lazy Singleton Pattern
+
+::: notes
+Beim "Lazy Singleton Pattern" wird das Objekt erst erzeugt, wenn die Instanz tatsächlich benötigt
+wird (also erst beim Aufruf der `get`-Methode).
+:::
+
+```java
 public class SingletonLazy {
     private static SingletonLazy inst = null;
 
     // Privater Constructor: Niemand kann Objekte außerhalb der Klasse anlegen
-    private SingletonLazy() {
-    }
+    private SingletonLazy() {}
 
     public static SingletonLazy getInst() {
-        synchronized (SingletonLazy.class) {  // Thread-safe. Kann weggelassen werden bei Single-Threaded Gebrauch
+        // Thread-safe. Kann weggelassen werden bei Single-Threaded-Gebrauch
+        synchronized (SingletonLazy.class) {
             if (inst == null) {
                 inst = new SingletonLazy();
             }
@@ -87,17 +116,33 @@ public class SingletonLazy {
 }
 ```
 
-[Code: singleton.SingletonEager vs. singleton.SingletonLazy]{.bsp}
+[Beispiel: [singleton.SingletonLazy](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/singleton/SingletonLazy.java)]{.bsp}
 
+
+## Vorsicht!
+
+::: cbox
+Sie schaffen damit eine globale Variable!
+:::
+
+::: notes
+Da es von der Klasse nur eine Instanz gibt, und Sie sich diese an jeder Stelle im Programm "geben"
+lassen können, haben Sie in der Praxis eine globale Variable geschaffen. Das kann direkt zu schlechter
+Programmierung führen. Zudem wird der Code schwerer lesbar/navigierbar, da diese Singletons nicht
+über die Schnittstellen von Methoden übergeben werden müssen.
+
+Nutzen Sie das Pattern **sparsam**.
+:::
 
 
 ## Wrap-Up
 
-*   Singleton-Pattern: Klasse, von der nur genau ein Objekt instantiiert werden kann
-    *   Konstruktor "verstecken" (Sichtbarkeit auf `private` setzen)
-    *   Methode zum Zugriff auf die eine Instanz
-    *   Anlegen der Instanz beispielsweise beim Laden der Klasse ("Eager") oder
-        beim Aufruf der Zugriffsmethode ("Lazy")
+Singleton-Pattern: Klasse, von der nur genau ein Objekt instantiiert werden kann
+
+1.  Konstruktor "verstecken" (Sichtbarkeit auf `private` setzen)
+2.  Methode zum Zugriff auf die eine Instanz
+3.  Anlegen der Instanz beispielsweise beim Laden der Klasse ("Eager") oder
+    beim Aufruf der Zugriffsmethode ("Lazy")
 
 
 
