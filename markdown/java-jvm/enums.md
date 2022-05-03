@@ -176,10 +176,10 @@ switch (f) {
 ```
 
 ::: notes
-Außerdem können wir (u.a.) folgende Eigenschaften nutzen:
+Außerdem können wir folgende Eigenschaften nutzen (u.a., s.u.):
 
 *   Enumerations haben Methode `String toString()` für die Konstanten
-*   Enumerations haben Methode `final T[] values()`
+*   Enumerations haben Methode `final T[] values()` für die Iteration über die Konstanten
 :::
 
 [Demo: [enums.v2.Studi](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v2/Studi.java)]{.bsp}
@@ -250,6 +250,8 @@ public enum Fach {
         (Reihenfolge des Anlegens der Konstanten!)
     *   `public static T valueOf(String)` => Zum String passende Konstante
         (via `name()`)
+
+**Hinweis**: Diese Methoden gibt es auch bei den "einfachen" Enumerationen (s.o.).
 :::
 
 [Demo: [enums.v3](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v3/)]{.bsp}
