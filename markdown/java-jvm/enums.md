@@ -7,8 +7,6 @@ weight: 3
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Trail: Learning the Java Language > Classes and Objects > Enum Types"
-  - key: "Java-11-tutorial"
-  - key: "Java-SE-tutorial"
   - key: "Ullenboom2021"
     comment: "Abschnitt 6.4.3: Aufzählungstypen, Abschnitt 10.7: Die Spezial-Oberklasse Enum"
 tldr: |
@@ -72,7 +70,7 @@ public class Studi {
 :::
 
 [[Probleme: Typsicherheit, Kontext]{.bsp}]{.slides}
-[[Beispiel enums.v1.Studi]{.bsp}]{.notes}
+[[Beispiel [enums.v1.Studi](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v1/Studi.java)]{.bsp}]{.notes}
 
 
 ## Verbesserung: Einfache Aufzählung
@@ -106,6 +104,7 @@ public enum Fach {
 
 1.  Enum-Konstanten (`IFM`, ...) sind implizit `static` und `final`
 2.  Enumerations (`Fach`) nicht instantiierbar
+3.  Enumerations stellen einen neuen Typ dar: hier der Typ `Fach`
 
 [Erinnerung: Bedeutung von *static* und *final*]{.bsp}
 
@@ -146,7 +145,7 @@ public enum Fach {
     }
     ```
 
-    [Beispiel enums.FinalDemo]{.bsp}
+    [Beispiel [enums.FinalDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/enums/FinalDemo.java)]{.bsp}
 
 *   Methoden: `final` deklarierte Methoden können bei Vererbung nicht überschrieben werden
 *   Klassen: von `final` deklarierten Klassen können keine Unterklassen gebildet werden
@@ -183,7 +182,7 @@ Außerdem können wir (u.a.) folgende Eigenschaften nutzen:
 *   Enumerations haben Methode `final T[] values()`
 :::
 
-[Code: enums.v2.Studi]{.bsp}
+[Demo: [enums.v2.Studi](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v2/Studi.java)]{.bsp}
 
 
 ## Enum: Genauer betrachtet
@@ -235,38 +234,47 @@ public enum Fach {
 ```
 
 ::: notes
-*   Konstruktoren und Methoden für Enum-Klassen definierbar
-    *   Kein eigener Aufruf von `super` (!)
-    *   Konstruktoren implizit `private`
+### Konstruktoren und Methoden für Enum-Klassen definierbar
 
-\bigskip
+*   Kein eigener Aufruf von `super` (!)
+*   Konstruktoren implizit `private`
 
-*   Compiler fügt automatisch folgende Methoden hinzu (Auswahl):
+### Compiler fügt automatisch folgende Methoden hinzu (Auswahl):
+
+*   Strings:
+    *   `public final String name()` => Name der Konstanten (`final`!)
     *   `public String toString()` => Ruft `name()` auf, überschreibbar
+*   Konstanten:
     *   `public final T[] values()` => Alle Konstanten der Aufzählung
-    *   `public final String name()` => Name der Konstanten (nicht überschreibbar)
     *   `public final int ordinal()` => Interne Nummer der Konstanten
         (Reihenfolge des Anlegens der Konstanten!)
     *   `public static T valueOf(String)` => Zum String passende Konstante
         (via `name()`)
 :::
 
-[Code: enums.v3.Fach und enums.v3.Studi]{.bsp}
+[Demo: [enums.v3](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v3/)]{.bsp}
 
 
 ## Wrap-Up
 
 *   Aufzählungen mit Hilfe von `enum`
-    *   Compiler erzeugt intern Klassen
-*   Komplexe Enumerations analog zu Klassendefinition: Konstruktoren, Felder
-    und Methoden
+
+    ::: notes
+    Compiler erzeugt intern Klassen
+    :::
+
+\bigskip
+
+*   Komplexe Enumerations analog zu Klassendefinition: Konstruktoren, Felder und Methoden
     *   Keine Instanzen von Enum-Klassen erzeugbar
     *   Enum-Konstanten sind implizit `final` und `static`
-    *   Compiler stellt Methoden `name()`, `ordinal()` und `values()` zur
-        Verfügung:
+    *   Compiler stellt Methoden `name()`, `ordinal()` und `values()` zur Verfügung
+
+        ::: notes
         *   Name der Konstanten
         *   Interne Nummer der Konstanten (Reihenfolge des Anlegens)
         *   Array mit allen Konstanten der Enum-Klasse
+        :::
 
 
 
