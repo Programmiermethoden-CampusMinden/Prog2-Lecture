@@ -259,24 +259,23 @@ public enum Fach {
 
 ## Wrap-Up
 
-*   Aufzählungen mit Hilfe von `enum`
+*   Aufzählungen mit Hilfe von `enum` [(Compiler erzeugt intern Klassen)]{.notes}
 
-    ::: notes
-    Compiler erzeugt intern Klassen
-    :::
+\smallskip
+
+*   Komplexe Enumerations analog zu Klassendefinition: Konstruktoren, Felder und Methoden \newline
+    (keine Instanzen von Enum-Klassen erzeugbar)
 
 \bigskip
 
-*   Komplexe Enumerations analog zu Klassendefinition: Konstruktoren, Felder und Methoden
-    *   Keine Instanzen von Enum-Klassen erzeugbar
-    *   Enum-Konstanten sind implizit `final` und `static`
-    *   Compiler stellt Methoden `name()`, `ordinal()` und `values()` zur Verfügung
+*   Enum-Konstanten sind implizit `final` und `static`
+*   Compiler stellt Methoden `name()`, `ordinal()` und `values()` zur Verfügung
 
-        ::: notes
-        *   Name der Konstanten
-        *   Interne Nummer der Konstanten (Reihenfolge des Anlegens)
-        *   Array mit allen Konstanten der Enum-Klasse
-        :::
+    ::: notes
+    *   Name der Konstanten
+    *   Interne Nummer der Konstanten (Reihenfolge des Anlegens)
+    *   Array mit allen Konstanten der Enum-Klasse
+    :::
 
 
 
