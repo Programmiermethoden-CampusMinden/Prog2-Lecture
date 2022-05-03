@@ -1,18 +1,11 @@
 ---
 type: assignment
-title: "Blatt 06: Serialisierung, Observer, FlyWeight, Type Object, Enumerationen"
+title: "Blatt 06: Observer, FlyWeight, Type Object, Enumerationen"
 author: "André Matutat (FH Bielefeld)"
 points: 10
 weight: 6
 hidden: true
 ---
-
-
-## Serialisierung von Objekten (2 Punkte)
-
-{{% include "assignments/pool_concept/tasks/serialisation.md" %}}
-
-**Punkte**: XXX
 
 
 ## Enumerationen (2 Punkte)
