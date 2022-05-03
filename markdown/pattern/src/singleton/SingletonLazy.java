@@ -1,7 +1,7 @@
 package singleton;
 
 /**
- * Demonstration einer häufig verwendeten Ausprägung des Singleton-Patterns: "Lazy Singleton".
+ * Demonstration einer häufig verwendeten Ausprägung des Singleton-Patterns: "Lazy Singleton":
  * Die Instanz der Klasse wird erst bei Bedarf erzeugt.
  */
 public class SingletonLazy {

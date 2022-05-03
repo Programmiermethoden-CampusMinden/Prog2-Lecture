@@ -1,7 +1,7 @@
 package singleton;
 
 /**
- * Demonstration einer häufig verwendeten Ausprägung des Singleton-Patterns: "Eager Singleton".
+ * Demonstration einer häufig verwendeten Ausprägung des Singleton-Patterns: "Eager Singleton":
  * Die Instanz der Klasse wird direkt beim Laden durch JVM angelegt.
  */
 public class SingletonEager {
