@@ -7,12 +7,24 @@ weight: 4
 readings:
   - key: "Mockito"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+  Häufig hat man es in Softwaretests mit dem Problem zu tun, dass die zu testenden Klassen von
+  anderen, noch nicht implementierten Klassen oder von zufälligen oder langsamen Operationen
+  abhängen.
+
+  In solchen Situationen kann man auf "Platzhalter" für diese Abhängigkeiten zurückgreifen. Dies
+  können einfache Stubs sein, also Objekte, die einfach einen festen Wert bei einem Methodenaufruf
+  zurückliefern oder Mocks, wo man auf die Argumente eines Methodenaufrufs reagieren kann und
+  passende unterschiedliche Rückgabewerte zurückgeben kann.
+
+  Mockito ist eine Java-Bibliothek, die zusammen mit JUnit das Mocking von Klassen in Java
+  erlaubt. Man kann hier zusätzlich auch die Interaktion mit dem gemockten Objekt überprüfen und
+  testen, ob eine bestimmte Methode mit bestimmten Argumenten aufgerufen wurde und wie oft.
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k2: "Begriffe: Mocking, Mock, Stub, Spy"
+  - k3: "Erzeugen eines Mocks in Mockito"
+  - k3: "Erzeugen eines Spies in Mockito"
+  - k3: "Prüfen von Interaktion mit _verify()_"
+  - k3: "Einsatz von _ArgumentMatcher_"
 quizzes:
   - link: "XYZ"
     name: "Quiz Mocking (ILIAS)"
