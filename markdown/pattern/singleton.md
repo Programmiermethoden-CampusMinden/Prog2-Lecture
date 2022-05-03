@@ -126,10 +126,10 @@ Sie schaffen damit eine globale Variable!
 :::
 
 ::: notes
-Da es von der Klasse nur eine Instanz gibt, und Sie sich diese an jeder Stelle im Programm "geben"
-lassen können, haben Sie in der Praxis eine globale Variable geschaffen. Das kann direkt zu schlechter
-Programmierung führen. Zudem wird der Code schwerer lesbar/navigierbar, da diese Singletons nicht
-über die Schnittstellen von Methoden übergeben werden müssen.
+Da es von der Klasse nur eine Instanz gibt, und Sie sich diese dank der statischen Methode an jeder
+Stelle im Programm "geben" lassen können, haben Sie in der Praxis eine globale Variable geschaffen.
+Das kann direkt zu schlechter Programmierung (ver-) führen. Zudem wird der Code schwerer lesbar/navigierbar,
+da diese Singletons nicht über die Schnittstellen von Methoden übergeben werden müssen.
 
 Nutzen Sie das Pattern **sparsam**.
 :::
