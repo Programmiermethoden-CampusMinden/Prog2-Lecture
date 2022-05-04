@@ -201,6 +201,8 @@ Dungeon-Aufgaben vom ersten Schritt bis zur Abgabe der Lösung dokumentieren,
 d.h. wie sind Sie die gestellte Aufgabe angegangen (und warum), was war
 Ihr Plan und auf welche Probleme sind Sie bei der Umsetzung gestoßen und
 wie haben Sie diese Probleme gelöst. Beachten Sie die vorgegebene Struktur.
+Die zentrale Frage ist: Welche Techniken kenne ich und kann ich sinnvoll
+für die Lösung der Aufgabe verwenden (und warum)?
 
 Für jede Abgabe sollte ungefähr eine DIN-A4-Seite Text erstellt werden,
 d.h. ca. 400 Wörter umfassen. Wer das Lerntagebuch nur ungenügend führt
@@ -229,11 +231,14 @@ TODO
 # Ansatz und Modellierung
 
 <!--
-Bitte hier den Lösungsansatz kurz beschreiben:
+Bitte hier den Lösungsansatz beschreiben:
 -   Wie sollte die Aufgabe gelöst werden?
 -   Welche Techniken wollten Sie einsetzen?
 -   Wie sah Ihre Modellierung aus (UML-Diagramm)?
 -   Worauf müssen Sie konkret achten?
+
+=> Die zentrale Frage ist: Welche Techniken kenne ich und kann ich
+sinnvoll für die Lösung der Aufgabe verwenden (und warum)?
 -->
 
 TODO
@@ -242,7 +247,7 @@ TODO
 # Umsetzung
 
 <!--
-Bitte hier die Umsetzung der Lösung kurz beschreiben:
+Bitte hier die Umsetzung der Lösung **kurz** beschreiben:
 -   Was haben Sie gemacht,
 -   an welchem Datum haben sie es gemacht,
 -   wie lange hat es gedauert,
