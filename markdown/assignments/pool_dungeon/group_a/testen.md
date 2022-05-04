@@ -3,7 +3,7 @@ type: assignment
 title: "JUnit Group A"
 author: "André Matutat (FH Bielefeld)"
 points: 5
-weight: 9
+weight: 8
 hidden: true
 ---
 
