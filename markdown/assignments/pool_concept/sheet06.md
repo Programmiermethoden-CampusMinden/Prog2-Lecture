@@ -8,13 +8,6 @@ hidden: true
 ---
 
 
-## Enumerationen (2 Punkte)
-
-{{% include "assignments/pool_concept/tasks/enums.md" %}}
-
-**Punkte**: XXX
-
-
 ## Pattern: Flyweight und Type-Object (2 Punkte)
 
 {{% include "assignments/pool_concept/tasks/flyweight.md" %}}
