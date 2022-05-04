@@ -168,6 +168,7 @@ schlechte Namen für Klassen/Methoden/Variablen/..., duplizierter Code, ...
 
 Konkret können Sie für die Nichteinhaltung der formalen Kriterien folgende **Abzüge pro Abgabe**
 "erreichen" (sofern das Thema bereits in der Vorlesung besprochen wurde und hier anwendbar ist):
+
 *   ~~Keine/nicht ausreichende Tests: -4P~~
 *   Kein/nicht ausreichendes Logging: -2P
 *   Kein/nicht ausreichendes Javadoc: -2P
