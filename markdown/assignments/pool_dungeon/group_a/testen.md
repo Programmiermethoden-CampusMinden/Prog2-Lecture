@@ -14,7 +14,7 @@ In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für Ihren Helden i
 ## JUnit
 
 - Überlegen Sie sich, was Sie alles testen müssen.
-- Ermitteln Sie die Testfälle mit Aquivalenzklassen und Grenzwertanalyse. 
+- Ermitteln Sie die Testfälle mit Äquivalenzklassenbildung und Grenzwertanalyse. 
 - Implementieren Sie Ihre Testfälle mit JUnit. 
 
 **Dokumentieren Sie die Ergebnisse aller Arbeitsschritte entsprechend nachvollziehbar.** 
