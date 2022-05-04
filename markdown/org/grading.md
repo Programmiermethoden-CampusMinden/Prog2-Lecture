@@ -30,10 +30,10 @@ Diese Prüfungsleistung absolvieren Sie im Praktikum. Es wird in diesem Semester
 verschiedene Typen von Aufgaben geben mit unterschiedlicher Gewichtung und Bearbeitung:
 :::
 
-1.  `[Pool "Dungeon"]({{< ref "/assignments/pool_dungeon" >}})`{=markdown} mit max. 110 Punkten (mind. 50 Punkte zum Bestehen)
-    *   `[Gruppe A "Basics"]({{< ref "/assignments/pool_dungeon/group_a" >}})`{=markdown} (38 P)
-    *   `[Gruppe B "Monster und Kampf"]({{< ref "/assignments/pool_dungeon/group_b" >}})`{=markdown} (32 P)
-    *   `[Gruppe C "Items, Aufbewahrung und Handel"]({{< ref "/assignments/pool_dungeon/group_c" >}})`{=markdown} (40 P)
+1.  `[Pool "Dungeon"]({{< ref "/assignments/pool_dungeon" >}})`{=markdown} mit max. 125 Punkten (mind. 50 Punkte zum Bestehen)
+    *   `[Gruppe A "Basics"]({{< ref "/assignments/pool_dungeon/group_a" >}})`{=markdown} (43 P)
+    *   `[Gruppe B "Monster und Kampf"]({{< ref "/assignments/pool_dungeon/group_b" >}})`{=markdown} (37 P)
+    *   `[Gruppe C "Items, Aufbewahrung und Handel"]({{< ref "/assignments/pool_dungeon/group_c" >}})`{=markdown} (45 P)
 2.  `[Pool "Konzept"]({{< ref "/assignments/pool_concept" >}})`{=markdown} mit max. 100 Punkten (mind. 50 Punkte zum Bestehen)
 
 ::: notes
@@ -59,12 +59,12 @@ aus dem **Konzept-Pool** für je 10 Punkte.
 #### Praktische Teilnote
 :::
 
-*   210P Gesamt, 35P Puffer => “Krankheitsregelung”, 175P == 100%
+*   225P Gesamt, 50P Puffer => “Krankheitsregelung”, 175P == 100%
 *   4.0: ab 60% v. 175P (105P), alle 4% nächste Teilnote, 1.0: ab 96% v. 175P (168P)
 
 ::: notes
-Sie können in Summe maximal 210 Punkte erreichen. Die 100% für die Notenberechnung wird
-auf 175 Punkte festgelegt. Damit haben Sie 35 Punkte Schlupf, falls Sie einmal erkranken
+Sie können in Summe maximal 225 Punkte erreichen. Die 100% für die Notenberechnung wird
+auf 175 Punkte festgelegt. Damit haben Sie 50 Punkte Schlupf, falls Sie einmal erkranken
 oder wegen anderer familiärer Angelegenheiten nicht zur Vorstellung Ihrer Lösung im Praktikum
 erscheinen können.
 
