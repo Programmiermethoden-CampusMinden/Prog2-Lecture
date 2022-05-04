@@ -168,10 +168,17 @@ schlechte Namen für Klassen/Methoden/Variablen/..., duplizierter Code, ...
 
 Konkret können Sie für die Nichteinhaltung der formalen Kriterien folgende **Abzüge pro Abgabe**
 "erreichen" (sofern das Thema bereits in der Vorlesung besprochen wurde und hier anwendbar ist):
-*   Keine/nicht ausreichende Tests: -4P
+
+*   ~~Keine/nicht ausreichende Tests: -4P~~
 *   Kein/nicht ausreichendes Logging: -2P
 *   Kein/nicht ausreichendes Javadoc: -2P
 *   Code-Style nicht/nur ungenügend beachtet: -2P
+
+**Hinweis**: Um den Arbeitsaufwand zu verringern, _müssen_ Sie für die Konzept- und Dungeon-Aufgaben
+keine eigenen Tests erstellen, außer es wird auf dem Blatt bzw. in der Aufgabe explizit gefordert.
+Für das Refactoring im Dungeon wäre es aber hilfreich, wenn Sie trotzdem passende Testsuiten erstellen.
+Deshalb führen wir im Dungeon-Pool dedizierte Aufgaben ein, wo Sie Punkte für das Erstellen von Tests
+für bestimmte Dungeon-Aufgaben bekommen können.
 
 ### Lerntagebuch für Dungeon-Aufgaben
 
@@ -285,7 +292,7 @@ zu können.
 Dabei gilt die "Maximal-15-Punkte-pro-Woche-für-Dungeon-Aufgaben"-Regel, d.h. die nachgearbeiteten
 Dungeon-Aufgaben werden in der Woche angerechnet, wo Sie die Nachbearbeitung abgeben und vorstellen.
 
-### Praktikum: Zeitslots
+### Zeitslots für Vorstellung
 
 Wir werden mit jedem Team einen individuellen Abgabeslot in Ihrer Praktikumszeit vereinbaren,
 damit Sie im Praktikum zielgerichtet zu Ihrer Abgabe kommen können und so Wartezeiten vermeiden.
@@ -295,7 +302,7 @@ eintragen.
 **Achtung**: Die Praktika werden in **Präsenz** durchgeführt. Falls Ihr Team ausnahmsweise nur
 in Hybrid teilnehmen kann, wenden Sie sich bitte _zeitnah_ an den Dozenten.
 
-### Praktikum: Verspätete Abgaben, Krankheit
+### Verspätete Abgaben, Krankheit
 
 Es gibt keine verspäteten Abgaben. Das sind 0P.
 
