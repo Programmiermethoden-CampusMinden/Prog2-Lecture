@@ -173,7 +173,7 @@ Konkret können Sie für die Nichteinhaltung der formalen Kriterien folgende **A
 *   Kein/nicht ausreichendes Javadoc: -2P
 *   Code-Style nicht/nur ungenügend beachtet: -2P
 
-### Lerntagebuch
+### Lerntagebuch für Dungeon-Aufgaben
 
 Sie führen zu jeder Abgabe von Aufgaben aus dem Dungeon-Pool ein Lerntagebuch. Wenn dies komplett
 nicht vorhanden ist oder nur ungenügend ausgearbeitet ist, bekommen Sie auf die gesamte Abgabe der
