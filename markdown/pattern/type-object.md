@@ -30,12 +30,55 @@ fhmedia:
 ---
 
 
-## Motivation
+## Motivation: Monster und spezialisierte Monster
 
-Szenario: Monster-Basisklasse, davon leiten dann die Monstertypen ab und überschreiben die Methoden nach Bedarf.
+```java
+public abstract class Monster {
+    protected int attackDamage;
+    protected int movementSpeed;
 
-Problem: Dadurch entsteht eine tiefe und verzweigte Vererbungshierarchie. Außerdem müssen für jede (noch so kleine) Änderung an den Monster-Eigenschaften viele Klassen editiert und das gesamte Projekt neu kompiliert werden.
+    public Monster(int attackDamage, int movementSpeed) { ... }
 
+    public void attack(Monster m)  { ... }
+}
+
+public class Rat extends Monster {
+    public Rat() {
+        super(10, 10);  // Ratten haben 10 Damage und 10 Speed
+    }
+
+    @Override
+    public void attack(Monster m)  { ... }
+}
+
+
+public static void main(String[] args) {
+    Monster harald = new Rat();
+    Monster eve = new ...
+}
+```
+
+::: notes
+Sie haben sich eine Monster-Basisklasse geschrieben. Darin gruppieren Sie typische
+Eigenschaften eines Monsters: Es kann sich mit einer bestimmten Geschwindigkeit
+bewegen und es kann anderen Monstern bei einem Angriff einen bestimmten Schaden
+zufügen.
+
+Um nun andere Monstertypen zu erzeugen, greifen Sie zur Vererbung und leiten von
+der Basisklasse Ihre spezialisierten Monster ab und überschreiben die Defaultwerte
+und bei Bedarf auch das Verhalten (die Methoden).
+
+Damit entsteht aber recht schnell eine tiefe und verzweigte Vererbungshierarchie,
+Sie müssen ja für jede Variation eine neue Unterklasse anlegen. Außerdem müssen
+für jede (noch so kleine) Änderung an den Monster-Eigenschaften viele Klassen
+editiert und das gesamte Projekt neu kompiliert werden.
+
+Es würde auch nicht wirklich helfen, die Eigenschaften der Unterklassen über
+deren Konstruktor einstellbar zu machen (die `Rat` könnte in ihrem Konstruktor
+beispielsweise noch die Werte für Damage und Speed übergeben bekommen). Dann
+werden die Eigenschaften an allen Stellen im Programm verstreut, wo Sie den
+Konstruktor aufrufen.
+:::
 
 
 ## Folie 2
