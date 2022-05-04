@@ -26,7 +26,7 @@ outcomes:
   - k3: "Prüfen von Interaktion mit _verify()_"
   - k3: "Einsatz von _ArgumentMatcher_"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1077199&client_id=FH-Bielefeld"
     name: "Quiz Mocking (ILIAS)"
 assignments:
   - topic: sheet05
