@@ -52,8 +52,6 @@ muss.
 Pro **Woche** sollen Sie aus dem **Dungeon-Pool** selbst gewählte Aufgaben für **10 Punkte**
 bearbeiten. Sie können auch mehr machen, aber wir limitieren die maximal erreichbare
 Punkteanzahl hier auf _15 Punkte pro Woche_.
-Wenn Sie bei den Dungeon-Aufgaben Abzüge bekommen, können Sie dies in einer anderen Woche
-nacharbeiten (unter Beachtung der "Maximal-15-Punkte-pro-Woche-für-Dungeon-Aufgaben"-Regel).
 
 Parallel zum Dungeon-Pool bearbeiten Sie **jede Woche** ein **vorgegebenes Aufgabenblatt**
 aus dem **Konzept-Pool** für je 10 Punkte.
@@ -145,9 +143,11 @@ Sofern nichts anderes bei den Aufgaben angegeben ist, sind die Aufgaben aus dem 
 stets bis **Dienstag 18:00 Uhr** per offenem Pull-/Merge-Request von Ihrem Feature-Branch in
 den Master-Branch in Ihrem Repo abzugeben, als Assignee ist Jonas Posselt (`jposselt`) zu
 setzen.
+
 Die Aufgaben aus dem Dungeon-Pool sind ebenfalls per (separatem) Pull-Request abzugeben, dies
 können Sie bis zum Beginn des Praktikums tun. Die Pull-/Merge-Requests werden von Jonas Posselt
 zur angegebenen Deadline gemergt, eine spätere Abgabe ist nicht möglich.
+
 Auftretende Merge-Konflikte werden wie "keine Abgabe" gewertet.
 
 ### Punkte und formale Abzüge
@@ -270,6 +270,15 @@ Sie können sich ein
 und ein
 [ausgefülltes Beispiel](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/org/lerntagebuch_beispiel.md)
 herunterladen.
+
+### Nachbearbeitung Dungeon-Aufgaben
+
+Wenn Sie bei den Dungeon-Aufgaben Abzüge bekommen, können Sie die Mängel nacharbeiten und in
+einer anderen Woche vorstellen, um so die abgezogenen/nicht erreichten Punkte noch erhalten
+zu können.
+
+Dabei gilt die "Maximal-15-Punkte-pro-Woche-für-Dungeon-Aufgaben"-Regel, d.h. die nachgearbeiteten
+Dungeon-Aufgaben werden in der Woche angerechnet, wo Sie die Nachbearbeitung abgeben und vorstellen.
 
 ### Praktikum: Zeitslots
 
