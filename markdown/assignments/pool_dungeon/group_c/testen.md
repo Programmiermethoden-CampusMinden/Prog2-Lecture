@@ -14,7 +14,7 @@ In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für die Aufgabe `[
 ## JUnit
 
 - Überlegen Sie sich, was Sie alles testen müssen.
-- Ermitteln Sie die Testfälle mit Aquivalenzklassen und Grenzwertanalyse. 
-- Implementieren Sie Ihre Testfälle mit JUnit. 
+- Ermitteln Sie die Testfälle mit Äquivalenzklassenbildung und Grenzwertanalyse. 
+- Implementieren Sie Ihre Testfälle mit JUnit und Mockito. 
 
-**Dokumentieren Sie die Ergebnisse aller Arbeitsschritte entsprechend nachvollziehbar.** 
+**Dokumentieren Sie die Ergebnisse aller Arbeitsschritte entsprechend nachvollziehbar im Lerntagebuch.** 

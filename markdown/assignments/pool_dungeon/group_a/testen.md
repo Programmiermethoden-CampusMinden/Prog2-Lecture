@@ -15,6 +15,6 @@ In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für Ihren Helden i
 
 - Überlegen Sie sich, was Sie alles testen müssen.
 - Ermitteln Sie die Testfälle mit Äquivalenzklassenbildung und Grenzwertanalyse. 
-- Implementieren Sie Ihre Testfälle mit JUnit. 
+- Implementieren Sie Ihre Testfälle mit JUnit und Mockito. 
 
-**Dokumentieren Sie die Ergebnisse aller Arbeitsschritte entsprechend nachvollziehbar.** 
+**Dokumentieren Sie die Ergebnisse aller Arbeitsschritte entsprechend nachvollziehbar im Lerntagebuch.** 
