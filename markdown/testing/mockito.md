@@ -173,9 +173,8 @@ unterscheiden zu können.
 
     ```groovy
     dependencies {
-        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-        testImplementation "org.mockito:mockito-core:3.+"
+        implementation 'junit:junit:4.13.2'
+        implementation 'org.mockito:mockito-core:4.5.1'
     }
     ```
 
@@ -184,16 +183,13 @@ unterscheiden zu können.
     ```xml
     <dependencies>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
         </dependency>
-        <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
+            <artifactId>mockito-core</artifactId>
             <version>4.5.1</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
     ```
