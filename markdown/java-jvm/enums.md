@@ -105,6 +105,7 @@ public enum Fach {
 1.  Enum-Konstanten (`IFM`, ...) sind implizit `static` und `final`
 2.  Enumerations (`Fach`) nicht instantiierbar
 3.  Enumerations stellen einen neuen Typ dar: hier der Typ `Fach`
+4.  Methoden: `name()`, `ordinal()`, `values()`, `toString()`
 
 [Erinnerung: Bedeutung von *static* und *final*]{.bsp}
 
