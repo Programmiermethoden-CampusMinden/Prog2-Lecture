@@ -9,7 +9,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für Ihren Helden implementieren. 
+In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für Ihren `["Helden"]({{< ref "/assignments/pool_dungeon/group_a/dungeon-start" >}})`{=markdown} implementieren. 
 
 ## JUnit
 
