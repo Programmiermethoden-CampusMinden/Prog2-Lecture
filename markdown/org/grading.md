@@ -291,7 +291,7 @@ zu können.
 Dabei gilt die "Maximal-15-Punkte-pro-Woche-für-Dungeon-Aufgaben"-Regel, d.h. die nachgearbeiteten
 Dungeon-Aufgaben werden in der Woche angerechnet, wo Sie die Nachbearbeitung abgeben und vorstellen.
 
-### Praktikum: Zeitslots
+### Praktikum: Zeitslots für Vorstellung
 
 Wir werden mit jedem Team einen individuellen Abgabeslot in Ihrer Praktikumszeit vereinbaren,
 damit Sie im Praktikum zielgerichtet zu Ihrer Abgabe kommen können und so Wartezeiten vermeiden.
@@ -301,7 +301,7 @@ eintragen.
 **Achtung**: Die Praktika werden in **Präsenz** durchgeführt. Falls Ihr Team ausnahmsweise nur
 in Hybrid teilnehmen kann, wenden Sie sich bitte _zeitnah_ an den Dozenten.
 
-### Praktikum: Verspätete Abgaben, Krankheit
+### Verspätete Abgaben, Krankheit
 
 Es gibt keine verspäteten Abgaben. Das sind 0P.
 
