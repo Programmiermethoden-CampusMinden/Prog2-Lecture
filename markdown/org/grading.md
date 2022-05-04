@@ -291,7 +291,7 @@ zu können.
 Dabei gilt die "Maximal-15-Punkte-pro-Woche-für-Dungeon-Aufgaben"-Regel, d.h. die nachgearbeiteten
 Dungeon-Aufgaben werden in der Woche angerechnet, wo Sie die Nachbearbeitung abgeben und vorstellen.
 
-### Praktikum: Zeitslots für Vorstellung
+### Zeitslots für Vorstellung
 
 Wir werden mit jedem Team einen individuellen Abgabeslot in Ihrer Praktikumszeit vereinbaren,
 damit Sie im Praktikum zielgerichtet zu Ihrer Abgabe kommen können und so Wartezeiten vermeiden.
