@@ -177,7 +177,7 @@ Konkret können Sie für die Nichteinhaltung der formalen Kriterien folgende **A
 keine eigenen Tests erstellen, außer es wird auf dem Blatt bzw. in der Aufgabe explizit gefordert.
 Für das Refactoring im Dungeon wäre es aber hilfreich, wenn Sie trotzdem passende Testsuiten erstellen.
 Deshalb führen wir im Dungeon-Pool dedizierte Aufgaben ein, wo Sie Punkte für das Erstellen von Tests
-für bestimmte Dungeon-Aufgaben bekommen.
+für bestimmte Dungeon-Aufgaben bekommen können.
 
 ### Lerntagebuch für Dungeon-Aufgaben
 
