@@ -1,0 +1,39 @@
+plugins {
+    id "java"
+    id "checkstyle"
+    id "com.diffplug.spotless" version "6.5.0"
+    id "com.github.spotbugs" version "5.0.6"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-core:4.5.1'
+}
+
+checkstyle {
+    configFile file('checkstyle.xml')
+    toolVersion '10.2'
+}
+
+spotless {
+    java {
+        googleJavaFormat().aosp()
+    }
+}
+
+spotbugs {
+    ignoreFailures = true
+    showStackTraces = false
+}
+spotbugsMain {
+    reports {
+        html {
+            required = true
+            outputLocation = file("$buildDir/reports/spotbugs/spotbugs.html")
+        }
+    }
+}
