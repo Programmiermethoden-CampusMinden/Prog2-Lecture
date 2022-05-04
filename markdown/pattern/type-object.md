@@ -81,12 +81,79 @@ Konstruktor aufrufen.
 :::
 
 
-## Folie 2
+## Type-Object: Vereinfachen der Vererbungshierarchie (mit Enums)
 
-Lösung: Die Monster-Basisklasse bekommt ein Attribut, welches den Typ des Monsters bestimmt ("Type-Object"). Das könnte ein einfaches Enum sein, das in den Methoden des Monsters abgefragt wird. So kann zur Laufzeit bei der Erzeugung der Monster-Objekte durch Übergabe des Enums bestimmt werden, was genau dieses konkrete Monster genau ist bzw. wie es sich verhält.
+```java
+public enum Species { RAT, TROLL, ... }
+
+public abstract class Monster {
+    private Species type;
+    private int attackDamage;
+    private int movementSpeed;
+
+    public Monster(Species type) {
+        switch (type) {
+            case RAT: attackDamage = 10; movementSpeed = 10; break;
+            ...
+        }
+    }
+
+    public void attack(Monster m)  { ... }
+}
 
 
-## Folie 3
+public static void main(String[] args) {
+    Monster harald = new Monster(Species.RAT);
+    Monster eve = new ...
+}
+```
+
+::: notes
+Die Lösung für die Vermeidung der Vererbungshierarchie: Die Monster-Basisklasse bekommt ein
+Attribut, welches den Typ des Monsters bestimmt (das sogenannte "Type-Object"). Das könnte
+wie im Beispiel ein einfaches Enum sein, das in den Methoden des Monsters abgefragt wird.
+So kann zur Laufzeit bei der Erzeugung der Monster-Objekte durch Übergabe des Enums bestimmt
+werden, was genau dieses konkrete Monster genau ist bzw. wie es sich verhält.
+
+Allerdings ist das Hantieren mit den Enums etwas umständlich:  Man muss an allen Stellen,
+wo das Verhalten der Monster unterschiedlich ist, ein `switch/case` einbauen und den Wert
+des Type-Objekts abfragen. Das bedeutet einerseits viel duplizierten Code und andererseits
+muss man bei Erweiterungen des Enums alle `switch/case`-Blöcke auch anpassen.
+:::
+
+
+## Monster mit Strategie
+
+```java
+public class Species {
+    private int attackDamage;
+    private int movementSpeed;
+
+    public Species(int attackDamage, int movementSpeed) { ... }
+    
+}
+
+public abstract class Monster {
+    private Species type;
+    private int attackDamage;
+    private int movementSpeed;
+
+    public Monster(Species type) {
+        switch (type) {
+            case RAT: attackDamage = 10; movementSpeed = 10; break;
+            ...
+        }
+    }
+
+    public void attack(Monster m)  { ... }
+}
+
+
+public static void main(String[] args) {
+    Monster harald = new Monster(Species.RAT);
+    Monster eve = new ...
+}
+```
 
 Schritt 2: Statt des Enums nimmt man eine "echte" Klasse mit Methoden. Davon legt man zur Laufzeit Objekte an und bestückt damit die instantiierten Monster. Im Monster selbst rufen die Monster-Methoden dann einfach nur die Methoden des Type-Objects auf (Delegation, also quasi Strategie-Pattern). Vorteil: Änderungen erfolgen bei der Parametrisierung der Objekte (an einer Stelle im Code, vermutlich main() oder eben eine Konfig-Datei).
 
