@@ -30,12 +30,79 @@ fhmedia:
 ---
 
 
-## Motivation
+## Motivation: Modellierung eines Levels
 
-Modellierung I  Level: Array mit Tiles (Enum), Methoden im Level für Eigenschaften (switch/case auf Enum)
-Modellierung II Level: Array mit Tiles (Objekte): Klassenhierarchie, mehrfaches Laden von Eigenschaften wie Textur etc.
+::: notes
+### Variante I: Einsatz eines Enums für die Felder
+:::
 
-Problem: Daten und Zugriff über das ganze Level verteilt (I)! Großer Speicherbedarf (II)!
+```{.java size="footnotesize"}
+public enum Tile { WATER, FLOOR, WALL, ... }
+
+public class Level {
+    private Tile[][] tiles;
+
+    public boolean isAccessible(int x, int y) {
+        switch (tiles[x][y]) {
+            case: WATER: return false;
+            case: FLOOR: return true;
+            ...
+        }
+    }
+    ...
+}
+```
+
+::: notes
+Ein Level kann als Array mit Feldern modelliert werden. Die Felder selbst könnten mit
+Hilfe eines Enums repräsentiert werden.
+
+Allerdings muss dann bei jedem Zugriff auf ein Feld und dessen Eigenschaften eine
+entsprechende `switch/case`-Fallunterscheidung eingebaut werden. Damit verstreut man
+die Eigenschaften über die gesamte Klasse, und bei jeder Änderung am Enum für die Tiles
+müssen _alle_ `switch/case`-Blöcke entsprechend angepasst werden.
+:::
+
+
+::: slides
+## Motivation: Modellierung eines Levels (cnt.)
+:::
+
+::: notes
+### Variante II: Einsatz einer Klasse für die Felder
+:::
+
+```{.java size="footnotesize"}
+public abstract class Tile {
+    protected boolean isAccessible;
+    protected Texture texture;
+    public abstract boolean isAccessible() { return isAccessible; }
+}
+public class Floor extends Tile {
+    protected boolean isAccessible = true;
+    protected Texture texture = Texture.loadTexture("path/to/floor.png");
+}
+public class Water extends Tile {
+    protected boolean isAccessible = false;
+    protected Texture texture = Texture.loadTexture("path/to/water.png");
+}
+
+public class Level {
+    private Tile[][] tiles;
+
+    public boolean isAccessible(int x, int y) {
+        return tiles[x][y].isAccessible();
+    }
+}
+```
+
+::: notes
+Hier werden die Felder über eine Klassenhierarchie mit gemeinsamer Basisklasse modelliert.
+
+Allerdings wird hier die Klassenhierarchie unter Umständen sehr schnell sehr umfangreich.
+Außerdem werden Eigenschaften wie Texturen beim Anlegen der Tile-Objekte immer wieder neu
+geladen und entsprechend mehrfach im Speicher gehalten.
+:::
 
 
 ## Folie 2
