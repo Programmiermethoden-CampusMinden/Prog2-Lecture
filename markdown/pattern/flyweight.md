@@ -8,22 +8,27 @@ readings:
   - key: "Nystrom2014"
     comment: "Kap. 3: Flyweight"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+  Das Flyweight-Pattern dient der Steigerung der (Speicher-) Effizienz, indem gemeinsame
+  Daten durch gemeinsam genutzte Objekte repräsentiert werden.
+
+  Den sogenannten _Intrinsic State_, also die Eigenschaften, die sich alle Objekte teilen,
+  werden in gemeinsam genutzte Objekte ausgelagert, und diese werden in den ursprünglichen
+  Klassen bzw. Objekten nur referenziert. So werden diese Eigenschaften nur einmal in den
+  Speicher geladen.
+
+  Den sogenannten _Extrinsic State_, also alle individuellen Eigenschaften, werden
+  entsprechend individuell je Objekt modelliert/eingestellt.
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k2: "Unterscheiden von Intrinsic State und Extrinsic State"
+  - k2: "Verschieben des Intrinsic States in gemeinsam genutzte Objekte"
+  - k2: "Erklären der Ähnlichkeit zum Type-Object-Pattern"
+  - k3: "Praktischer Einsatz des Flyweight-Patterns"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1077973&client_id=FH-Bielefeld"
     name: "Quiz Flyweight-Pattern (ILIAS)"
-assignments:
-  - topic: sheet06
 youtube:
   - link: ""
     name: "VL Flyweight-Pattern"
-  - link: ""
-    name: "Demo Flyweight-Pattern"
 fhmedia:
   - link: ""
     name: "VL Flyweight-Pattern"
@@ -215,7 +220,7 @@ je einmal im Speicher repräsentiert.
 
 \bigskip
 
--   **Extrinsic** State: variant, Kontext-unabhängig und kann nicht geteilt werden) \newline
+-   **Extrinsic** State: variant, Kontext-abhängig und kann nicht geteilt werden) \newline
     => individuell modellieren
 
 
