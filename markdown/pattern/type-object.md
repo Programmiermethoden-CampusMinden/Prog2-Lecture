@@ -8,25 +8,27 @@ readings:
   - key: "Nystrom2014"
     comment: "Kap. 13: Type Object"
 tldr: |
-  Das Type-Object-Pattern dient dazu, die Anzahl der Klassen auf Code-Ebene zu reduzieren
-  und damit eine höhere Flexibilität zu erreichen.
+  Das Type-Object-Pattern dient dazu, die Anzahl der Klassen auf Code-Ebene zu reduzieren und
+  durch eine Konfiguration zu ersetzen und damit eine höhere Flexibilität zu erreichen.
 
-  Dazu werden sogenannte Type-Objects definiert: Sie enthalten genau die Daten, die für
-  verschiedene Typen von Objekten jeweils identisch sind. Damit können diese Daten aus
-  den ursprünglichen Klassen entfernt und durch eine Referenz auf ein von allen Objekten
-  dieses Typs geteiltes Type-Object ersetzt werden. In den Klassen muss man dann nur noch
-  die für die einzelnen Typen individuellen Daten implementieren. Zusätzlich wird man nun
-  mehrere Klassen zusammenlegen können, da der Typ über das geteilte Type-Object definiert
-  wird (zur Laufzeit) und nicht mehr durch eine separate Klasse auf Code-Ebene repräsentiert
-  werden muss.
+  Dazu werden sogenannte Type-Objects definiert: Sie enthalten genau die Eigenschaften, die
+  in verschiedenen (Unter-) Klassen gemeinsam vorkommen. Damit können diese Eigenschaften
+  aus den ursprünglichen Klassen entfernt und durch eine Referenz auf ein solches Type-Object
+  ersetzt werden. In den Klassen muss man dann nur noch die für die einzelnen Typen
+  individuellen Eigenschaften implementieren. Zusätzlich kann man nun verschiedene (Unter-)
+  Klassen zusammenlegen, da der Typ über das geteilte Type-Object definiert wird (zur Laufzeit)
+  und nicht mehr durch eine separate Klasse auf Code-Ebene repräsentiert werden muss.
 
-  Die Type-Object werden zur Laufzeit angelegt und häufig über eine entsprechende
+  Die Type-Objects werden zur Laufzeit mit den entsprechenden Ausprägungen der früheren (Unter-)
+  Klassen angelegt und dann über den Konstruktor in die nutzenden Objekte übergeben. Dadurch
+  teilen sich alle Objekte einer früheren (Unter-) Klasse das selbe Type-Objekt und zeigen nach
+  außen das selbe Verhalten. Die Type-Objects werden häufig über eine entsprechende
   Konfiguration erzeugt, so dass man beispielsweise unterschiedliche Monsterklassen und
   -eigenschaften ausprobieren kann, ohne den Code neu kompilieren zu müssen. Man kann
   sogar eine Art "Vererbung" unter den Type-Objects implementieren.
 outcomes:
-  - k2: "Verschieben des Type-definierenden Teils in ein Type-Object"
-  - k2: "Ähnlichkeit zum Flyweight-Pattern"
+  - k2: "Verschieben des Typ-definierenden Teils der Eigenschaften in ein Type-Object"
+  - k2: "Erklären der Ähnlichkeit zum Flyweight-Pattern"
   - k3: "Praktischer Einsatz des Type-Object-Patterns"
 quizzes:
   - link: "XYZ"
@@ -89,7 +91,7 @@ editiert und das gesamte Projekt neu kompiliert werden.
 Es würde auch nicht wirklich helfen, die Eigenschaften der Unterklassen über
 deren Konstruktor einstellbar zu machen (die `Rat` könnte in ihrem Konstruktor
 beispielsweise noch die Werte für Damage und Speed übergeben bekommen). Dann
-werden die Eigenschaften an allen Stellen im Programm verstreut, wo Sie den
+würden die Eigenschaften an allen Stellen im Programm verstreut, wo Sie den
 Konstruktor aufrufen.
 :::
 
@@ -129,10 +131,14 @@ wie im Beispiel ein einfaches Enum sein, das in den Methoden des Monsters abgefr
 So kann zur Laufzeit bei der Erzeugung der Monster-Objekte durch Übergabe des Enums bestimmt
 werden, was genau dieses konkrete Monster genau ist bzw. wie es sich verhält.
 
+Im obigen Beispiel wird eine Variante gezeigt, wo das Enum im Konstruktor ausgewertet
+wird und die Attribute entsprechend gesetzt werden. Man könnte das auch so implementieren,
+dass man auf die Attribute verzichtet und stattdessen stets das Enum auswertet.
+
 Allerdings ist das Hantieren mit den Enums etwas umständlich:  Man muss an allen Stellen,
 wo das Verhalten der Monster unterschiedlich ist, ein `switch/case` einbauen und den Wert
 des Type-Objects abfragen. Das bedeutet einerseits viel duplizierten Code und andererseits
-muss man bei Erweiterungen des Enums alle `switch/case`-Blöcke auch anpassen.
+muss man bei Erweiterungen des Enums auch _alle_ `switch/case`-Blöcke anpassen.
 :::
 
 
@@ -174,13 +180,14 @@ public static void main(String[] args) {
 ```
 
 ::: notes
-Statt des Enums nimmt man eine "echte" Klasse mit Methoden. Davon legt man zur Laufzeit
-Objekte an (das sind dann die möglichen Monster-Typen) und bestückt damit die zu
-erzeugenden Monster.
+Statt des Enums nimmt man eine "echte" Klasse mit Methoden für die Type-Objects.
+Davon legt man zur Laufzeit Objekte an (das sind dann die möglichen Monster-Typen)
+und bestückt damit die zu erzeugenden Monster.
 
 Im Monster selbst rufen die Monster-Methoden dann einfach nur die Methoden des Type-Objects
-auf (Delegation => "Strategie-Pattern"). Man kann aber auch Attribute im Monster selbst
-pflegen und durch das Type-Object nur initialisieren.
+auf (Delegation => `[Strategie-Pattern]({{< ref "/pattern/strategy" >}})`{=markdown}). Man
+kann aber auch Attribute im Monster selbst pflegen und durch das Type-Object nur passend
+initialisieren.
 
 Vorteil: Änderungen erfolgen bei der Parametrisierung der Objekte (an **einer** Stelle im
 Code, vermutlich `main()` oder beispielsweise durch Einlesen einer Konfig-Datei).
@@ -209,8 +216,9 @@ public static void main(String[] args) {
 ```
 
 ::: notes
-Das Hantieren mit den Type-Objects und den Monstern ist nicht so schön. Deshalb kann man in
-der Klasse für die Type-Objects noch eine Fabrikmethode (=> Factory-Method-Pattern) mit
+Das Hantieren mit den Type-Objects und den Monstern ist nicht so schön. Deshalb kann
+man in der Klasse für die Type-Objects noch eine Fabrikmethode (=>
+`[Factory-Method-Pattern]({{< ref "/pattern/factory-method" >}})`{=markdown}) mit
 einbauen, über die dann die Monster erzeugt werden.
 :::
 
@@ -277,7 +285,8 @@ aus dem Eltern-Type-Object übernommen (sofern dieses übergeben wird).
 ::: notes
 Jetzt kann man die Konfiguration der Type-Objects in einer Konfig-Datei ablegen und einfach
 an einer passenden Stelle im Programm einlesen. Dort werden dann damit die Type-Objects
-angelegt und mit Hilfe dieser dann die passend konfigurierten Monster (und deren Unterarten).
+angelegt und mit Hilfe dieser dann die passend konfigurierten Monster (und deren Unterarten)
+erzeugt.
 :::
 
 
@@ -286,13 +295,13 @@ angelegt und mit Hilfe dieser dann die passend konfigurierten Monster (und deren
 
 ### Vorteil
 
-Es gibt nur zwei Klassen auf Code-Ebene, und man kann über die Konfiguration beliebig viele
-Monster-Typen erzeugen.
+Es gibt nur noch wenige Klassen auf Code-Ebene (im Beispiel: 2), und man kann über die
+Konfiguration beliebig viele Monster-Typen erzeugen.
 
 ### Nachteil
 
-Es werden zunächst nur Daten "überschreiben", d.h. man kann für die einzelnen Typen spezifische
-Werte mitgeben/definieren.
+Es werden zunächst nur Daten "überschrieben", d.h. man kann nur für die einzelnen Typen
+spezifische Werte mitgeben/definieren.
 
 Bei Vererbung kann man in den Unterklassen nahezu beliebig das Verhalten durch einfaches
 Überschreiben der Methoden ändern. Das könnte man in diesem Entwurfsmuster erreichen, in
@@ -302,8 +311,8 @@ dann anhand von Werten ausgewählt und anhand anderer Werte weiter parametrisier
 ### Verwandtschaft zum Flyweight-Pattern
 
 Das [Type-Object-Pattern](https://gameprogrammingpatterns.com/type-object.html) ist keines
-der ["klassischen" Design-Pattern](https://en.wikipedia.org/wiki/Design_Patterns). Dennoch
-ist es gerade in der Spiele-Entwicklung häufig anzutreffen.
+der ["klassischen" Design-Pattern](https://en.wikipedia.org/wiki/Design_Patterns) der "Gang
+of Four". Dennoch ist es gerade in der Spiele-Entwicklung häufig anzutreffen.
 
 Das Type-Object-Pattern ist sehr ähnlich zum `[Flyweight-Pattern]({{< ref "/pattern/flyweight" >}})`{=markdown}.
 In beiden Pattern teilen sich mehrere Objekte gemeinsame Daten, die über Referenzen auf
