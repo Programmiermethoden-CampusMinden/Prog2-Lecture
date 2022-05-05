@@ -320,7 +320,7 @@ zeitnah Kontakt zum Dozenten auf.
 
 Sie können aktiv dabei helfen, das Dungeon-Framework weiterzuentwickeln und sich so Bonus-Punkte für das Praktikum verdienen.
 
-Sie können entweder Fehler beheben bzw. Features implementieren, die Sie gerne im Dungeon sehen würden oder ein bereits bestehendes Issue mit dem Label "help wanted" bearbeiten.
+Sie können entweder Fehler beheben oder Features implementieren, die Sie gerne im Dungeon sehen würden, oder ein bereits bestehendes Issue mit dem Label "help wanted" bearbeiten.
 
 Bei der Bepunktung betrachten wir nicht nur den Fix/Code selbst, sondern auch Ihren Umgang mit Git und die Qualität der Kommunikation innerhalb von GitHub (Issue-Beschreibungen, PR-Beschreibungen etc.) sowie den Umfang des Problems. Für einen akzeptierten PR können Sie bis zu 5 Bonus-Punkte erhalten. Es lohnt sich also, aktiv beim Gestalten des Frameworks mitzuhelfen.
 
