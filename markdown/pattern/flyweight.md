@@ -15,7 +15,7 @@ outcomes:
   - k2: "*foo*"
   - k3: "fluppie"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1077973&client_id=FH-Bielefeld"
     name: "Quiz Flyweight-Pattern (ILIAS)"
 assignments:
   - topic: sheet06
