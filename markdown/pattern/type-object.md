@@ -46,21 +46,18 @@ fhmedia:
 
 ## Motivation: Monster und spezialisierte Monster
 
-```java
+```{.java size="footnotesize"}
 public abstract class Monster {
     protected int attackDamage;
     protected int movementSpeed;
 
     public Monster(int attackDamage, int movementSpeed) { ... }
-
     public void attack(Monster m)  { ... }
 }
 
 public class Rat extends Monster {
     public Rat() { super(10, 10); }  // Ratten haben 10 Damage und 10 Speed
-
-    @Override
-    public void attack(Monster m)  { ... }
+    @Override public void attack(Monster m)  { ... }
 }
 
 public class Gnoll extends Monster { ... }
@@ -98,7 +95,7 @@ Konstruktor aufrufen.
 
 ## Vereinfachen der Vererbungshierarchie (mit Enums als Type-Object)
 
-```java
+```{.java size="footnotesize"}
 public enum Species { RAT, GNOLL, ... }
 
 public final class Monster {
@@ -112,7 +109,6 @@ public final class Monster {
             ...
         }
     }
-
     public void attack(Monster m)  { ... }
 }
 
@@ -144,14 +140,13 @@ muss man bei Erweiterungen des Enums auch _alle_ `switch/case`-Blöcke anpassen.
 
 ## Monster mit Strategie
 
-```java
+```{.java size="scriptsize"}
 public final class Species {
     private int attackDamage;
     private int movementSpeed;
     private int xp;
 
     public Species(int attackDamage, int movementSpeed, int xp) { ... }
-
     public void attack(Monster m)  { ... }
 }
 
@@ -159,13 +154,8 @@ public final class Monster {
     private Species type;
     private int xp;
 
-    public Monster(Species type) {
-        this.type = type;
-        xp = type.xp;
-    }
-
+    public Monster(Species type) { this.type = type;  xp = type.xp; }
     public int movementSpeed() { return type.movementSpeed(); }
-
     public void attack(Monster m)  { type.attack(m); }
 }
 
@@ -196,7 +186,7 @@ Code, vermutlich `main()` oder beispielsweise durch Einlesen einer Konfig-Datei)
 
 ## Fabrikmethode für die Type-Objects
 
-```java
+```{.java size="footnotesize"}
 public final class Species {
     ...
 
@@ -225,7 +215,7 @@ einbauen, über die dann die Monster erzeugt werden.
 
 ## Vererbung unter den Type-Objects
 
-```java
+```{.java size="footnotesize"}
 public final class Species {
     ...
 
@@ -326,9 +316,9 @@ die Typen in ein eigenes Objekt-Modell verschiebt.
 
 ## Wrap-Up
 
-Type-Object-Pattern
+Type-Object-Pattern: Implementierung eines eigenen Objektmodells
 
-\smallskip
+\bigskip
 
 *   Ziel: Minimierung der Anzahl der Klassen
 *   Ziel: Erhöhung der Flexibilität
