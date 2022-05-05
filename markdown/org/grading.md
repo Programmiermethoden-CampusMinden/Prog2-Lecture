@@ -36,7 +36,7 @@ verschiedene Typen von Aufgaben geben mit unterschiedlicher Gewichtung und Bearb
     *   `[Gruppe C "Items, Aufbewahrung und Handel"]({{< ref "/assignments/pool_dungeon/group_c" >}})`{=markdown} (45 P)
 2.  `[Pool "Konzept"]({{< ref "/assignments/pool_concept" >}})`{=markdown} mit max. 100 Punkten (mind. 50 Punkte zum Bestehen)
 
-Sie können auch Bonus-Punkte verdienen, wenn Sie am Dungeon-Framework mitarbeiten (vgl. auch "Helfen im Framework").
+Sie können sich zusätzliche Bonus-Punkte verdienen, wenn Sie am Dungeon-Framework mitarbeiten (siehe unten "Bonus-Punkte: Helfen im Framework").
 
 ::: notes
 #### Bearbeitung
