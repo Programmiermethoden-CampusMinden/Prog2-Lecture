@@ -36,6 +36,8 @@ verschiedene Typen von Aufgaben geben mit unterschiedlicher Gewichtung und Bearb
     *   `[Gruppe C "Items, Aufbewahrung und Handel"]({{< ref "/assignments/pool_dungeon/group_c" >}})`{=markdown} (45 P)
 2.  `[Pool "Konzept"]({{< ref "/assignments/pool_concept" >}})`{=markdown} mit max. 100 Punkten (mind. 50 Punkte zum Bestehen)
 
+Sie können sich zusätzliche Bonus-Punkte verdienen, wenn Sie am Dungeon-Framework mitarbeiten (siehe unten "Bonus-Punkte: Helfen im Framework").
+
 ::: notes
 #### Bearbeitung
 
@@ -313,6 +315,16 @@ immer noch eine 1.0 erreichen.
 Wenn die persönliche Ausnahmesituation länger vorliegen sollte, müssen ggf. andere Lösungen
 gefunden werden, um das Semester erfolgreich abschließen zu können. Nehmen Sie in diesem Fall
 zeitnah Kontakt zum Dozenten auf.
+
+### Bonus-Punkte: Helfen im Framework
+
+Sie können aktiv dabei helfen, das Dungeon-Framework weiterzuentwickeln und sich so Bonus-Punkte für das Praktikum verdienen.
+
+Sie können entweder Fehler beheben oder Features implementieren, die Sie gerne im Dungeon sehen würden, oder ein bereits bestehendes Issue mit dem Label "help wanted" bearbeiten.
+
+Bei der Bepunktung betrachten wir nicht nur den Fix/Code selbst, sondern auch Ihren Umgang mit Git und die Qualität der Kommunikation innerhalb von GitHub (Issue-Beschreibungen, PR-Beschreibungen etc.) sowie den Umfang des Problems. Für einen akzeptierten PR können Sie bis zu 5 Bonus-Punkte erhalten. Es lohnt sich also, aktiv beim Gestalten des Frameworks mitzuhelfen.
+
+Weitere Informationen darüber, wie Sie am Framework mitarbeiten können, finden Sie in der [Core-CONTRIBUTING.md](https://github.com/PM-Dungeon/core/blob/master/CONTRIBUTING.md).
 
 
 ## Regelung für Wiederholer
