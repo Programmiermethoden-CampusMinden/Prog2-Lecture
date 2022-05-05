@@ -8,12 +8,26 @@ readings:
   - key: "Nystrom2014"
     comment: "Kap. 13: Type Object"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+  Das Type-Object-Pattern dient dazu, die Anzahl der Klassen auf Code-Ebene zu reduzieren
+  und damit eine höhere Flexibilität zu erreichen.
+
+  Dazu werden sogenannte Type-Objects definiert: Sie enthalten genau die Daten, die für
+  verschiedene Typen von Objekten jeweils identisch sind. Damit können diese Daten aus
+  den ursprünglichen Klassen entfernt und durch eine Referenz auf ein von allen Objekten
+  dieses Typs geteiltes Type-Object ersetzt werden. In den Klassen muss man dann nur noch
+  die für die einzelnen Typen individuellen Daten implementieren. Zusätzlich wird man nun
+  mehrere Klassen zusammenlegen können, da der Typ über das geteilte Type-Object definiert
+  wird (zur Laufzeit) und nicht mehr durch eine separate Klasse auf Code-Ebene repräsentiert
+  werden muss.
+
+  Die Type-Object werden zur Laufzeit angelegt und häufig über eine entsprechende
+  Konfiguration erzeugt, so dass man beispielsweise unterschiedliche Monsterklassen und
+  -eigenschaften ausprobieren kann, ohne den Code neu kompilieren zu müssen. Man kann
+  sogar eine Art "Vererbung" unter den Type-Objects implementieren.
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k2: "Verschieben des Type-definierenden Teils in ein Type-Object"
+  - k2: "Ähnlichkeit zum Flyweight-Pattern"
+  - k3: "Praktischer Einsatz des Type-Object-Patterns"
 quizzes:
   - link: "XYZ"
     name: "Quiz Type-Object-Pattern (ILIAS)"
@@ -22,8 +36,6 @@ assignments:
 youtube:
   - link: ""
     name: "VL Type-Object-Pattern"
-  - link: ""
-    name: "Demo Type-Object-Pattern"
 fhmedia:
   - link: ""
     name: "VL Type-Object-Pattern"
