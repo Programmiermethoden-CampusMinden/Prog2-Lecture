@@ -19,6 +19,8 @@ Hier finden Sie die Praktikumsaufgaben. Die Aufgaben sind in zwei Pools sortiert
     *   `[Gruppe C "Items, Aufbewahrung und Handel"]({{< ref "/assignments/pool_dungeon/group_c" >}})`{=markdown} (45 Punkte)
 2.  `[Pool "Konzept"]({{< ref "/assignments/pool_concept" >}})`{=markdown} (100 Punkte)
 
+Sie können auch Bonus-Punkte verdienen, wenn Sie am Dungeon-Framework mitarbeiten (vgl. "orga/Helfen im Framework").
+
 Die Aufgaben im Dungeon-Pool haben keinen direkten zeitlichen Bezug zu den Themen in der Vorlesung und können
 in einer von Ihnen gewählten Reihenfolge bearbeitet werden. Beachten Sie dabei, dass es unter den einzelnen
 Aufgaben ggf. Abhängigkeiten gibt - Sie müssten beispielsweise erst ein einfaches Monster implementieren, bevor
