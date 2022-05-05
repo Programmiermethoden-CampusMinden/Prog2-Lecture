@@ -42,6 +42,13 @@ public enum Tile { WATER, FLOOR, WALL, ... }
 public class Level {
     private Tile[][] tiles;
 
+    public Level() {
+        tiles[0][0] = Tile.WALL;  tiles[1][0] = Tile.WALL;   tiles[2][0] = Tile.WALL;  ...
+        tiles[0][1] = Tile.WALL;  tiles[1][1] = Tile.FLOOR;  tiles[2][1] = Tile.FLOOR; ...
+        tiles[0][2] = Tile.WALL;  tiles[1][2] = Tile.WATER;  tiles[2][2] = Tile.FLOOR; ...
+        ...
+    }
+
     public boolean isAccessible(int x, int y) {
         switch (tiles[x][y]) {
             case: WATER: return false;
@@ -79,20 +86,20 @@ public abstract class Tile {
     public abstract boolean isAccessible() { return isAccessible; }
 }
 public class Floor extends Tile {
-    protected boolean isAccessible = true;
-    protected Texture texture = Texture.loadTexture("path/to/floor.png");
+    public Floor() { isAccessible = true;  texture = Texture.loadTexture("path/to/floor.png"); }
 }
-public class Water extends Tile {
-    protected boolean isAccessible = false;
-    protected Texture texture = Texture.loadTexture("path/to/water.png");
-}
+...
 
 public class Level {
     private Tile[][] tiles;
 
-    public boolean isAccessible(int x, int y) {
-        return tiles[x][y].isAccessible();
+    public Level() {
+        tiles[0][0] = new Wall();  tiles[1][0] = new Wall();   tiles[2][0] = new Wall();  ...
+        tiles[0][1] = new Wall();  tiles[1][1] = new Floor();  tiles[2][1] = new Floor(); ...
+        tiles[0][2] = new Wall();  tiles[1][2] = new Water();  tiles[2][2] = new Floor(); ...
+        ...
     }
+    public boolean isAccessible(int x, int y) { return tiles[x][y].isAccessible(); }
 }
 ```
 
@@ -105,44 +112,120 @@ geladen und entsprechend mehrfach im Speicher gehalten (großer Speicherbedarf).
 :::
 
 
-## Folie 2
+## Flyweight: Nutze gemeinsame Eigenschaften gemeinsam
 
-Idee: Eigenschaften, die nicht an einem konkreten Tile hängen, werden in gemeinsam genutzte Objekte ausgelagert (Shared Objects/Memory)
+::: notes
+Idee: Eigenschaften, die nicht an einem konkreten Objekt hängen, werden in gemeinsam genutzte
+Objekte ausgelagert (Shared Objects/Memory).
 
-Modell I: Klasse Tile mit Texturen und Eigenschaften; im Level werden dann Singletons angelegt mit konkreten Eigenschaften, im Tile-Array nur noch Referenzen auf diese Singletons
-Modell II: Klasse Tile mit Referenz auf TileModel, dort dann Texturen und andere Eigenschaften; TileModel-Objekte werden von Tiles der gleichen Klasse gemeinsam genutzt
+Ziel: Erhöhung der Speichereffizienz (geringerer Bedarf an Hauptspeicher, geringere Bandbreite
+bei der Übertragung der Daten/Objekt an die GPU, ...).
+
+### Lösungsvorschlag I
+:::
+
+```{.java size="footnotesize"}
+public final class Tile {
+    private boolean isAccessible;
+    private Texture texture;
+    public boolean isAccessible() { return isAccessible; }
+}
+
+public class Level {
+    private static final Tile FLOOR = new Tile(true,  Texture.loadTexture("path/to/floor.png"));
+    private static final Tile WALL  = new Tile(false, Texture.loadTexture("path/to/wall.png"));
+    private static final Tile WATER = new Tile(false, Texture.loadTexture("path/to/water.png"));
+
+    private Tile[][] tiles;
+
+    public Level() {
+        tiles[0][0] = WALL;  tiles[1][0] = WALL;   tiles[2][0] = WALL;  ...
+        tiles[0][1] = WALL;  tiles[1][1] = FLOOR;  tiles[2][1] = FLOOR; ...
+        tiles[0][2] = WALL;  tiles[1][2] = WATER;  tiles[2][2] = FLOOR; ...
+        ...
+    }
+    public boolean isAccessible(int x, int y) { return tiles[x][y].isAccessible(); }
+}
+```
+
+::: notes
+Man legt die verschiedenen Tiles nur je _einmal_ an und nutzt dann Referenzen auf diese Objekte.
+Dadurch werden die speicherintensiven Elemente wie Texturen o.ä. nur je einmal geladen und im
+Speicher vorgehalten.
+
+Bei dieser Modellierung können die einzelnen Felder aber keine individuellen Eigenschaften haben,
+wie etwa, ob ein Feld bereits durch den Helden untersucht/betreten wurde o.ä. ...
+:::
 
 
-## Folie 3
+::: slides
+## Flyweight: Nutze gemeinsame Eigenschaften gemeinsam (cnt.)
+:::
 
-UML-Diagramm
+::: notes
+### Lösungsvorschlag II
+:::
 
-Verbindung zu Factory-Pattern (Erzeugung der geteilten Objekte)
+```{.java size="scriptsize"}
+public final class TileModel {
+    private boolean isAccessible;
+    private Texture texture;
+    public boolean isAccessible() { return isAccessible; }
+}
+public final class Tile {
+    private boolean wasEntered;
+    private TileModel model;
+    public boolean isAccessible() { return model.isAccessible(); }
+    public boolean wasEntered() { return wasEntered; }
+}
 
-Begriffe:
-- speichere **intrinsic** state (invariant, context-independent und shareable)
-- interface um **extrinsic** state (variant, context-dependent und kann nicht geteilt werden) zu übergeben
+public class Level {
+    private static final TileModel FLOOR = new TileModel(true,  Texture.loadTexture("path/to/floor.png"));
+    ...
 
-vgl. auch https://en.wikipedia.org/wiki/Flyweight_pattern
-vgl. auch https://gameprogrammingpatterns.com/flyweight.html
+    private Tile[][] tiles;
+
+    public Level() {
+        tiles[0][0] = new Tile(WALL);  tiles[1][0] = new Tile(WALL);   tiles[2][0] = new Tile(WALL);  ...
+        tiles[0][1] = new Tile(WALL);  tiles[1][1] = new Tile(FLOOR);  tiles[2][1] = new Tile(FLOOR); ...
+        tiles[0][2] = new Tile(WALL);  tiles[1][2] = new Tile(WATER);  tiles[2][2] = new Tile(FLOOR); ...
+        ...
+    }
+    public boolean isAccessible(int x, int y) { return tiles[x][y].isAccessible(); }
+}
+```
+
+::: notes
+In dieser Variante werden die Eigenschaften eines `Tile` in Eigenschaften aufgeteilt, die von den
+Tiles geteilt werden können (im Beispiel Textur und Betretbarkeit) und in Eigenschaften, die je
+Feld individuell modelliert werden müssen (im Beispiel: wurde das Feld bereits betreten?).
+
+Entsprechend könnte man für das Level-Beispiel ein `TileModel` anlegen, welches die gemeinsamen
+Eigenschaften verwaltet. Man erzeugt dann im Level die nötigen Modelle je genau einmal und nutzt
+sie, um damit dann die konkreten Felder zu erzeugen und im Level-Array zu referenzieren. Damit
+werden Tile-Modelle von Tiles der gleichen "Klasse" gemeinsam genutzt und die Texturen u.ä. nur
+je einmal im Speicher repräsentiert.
+:::
+
+
+## Flyweight-Pattern: Begriffe
+
+-   **Intrinsic** State: invariant, Kontext-unabhängig, gemeinsam nutzbar \newline
+    => auslagern in gemeinsame Objekte
+
+\bigskip
+
+-   **Extrinsic** State: variant, Kontext-unabhängig und kann nicht geteilt werden) \newline
+    => individuell modellieren
 
 
 ::: notes
-## Vor- und Nachteile des Flyweight-Pattern
+## Verwandtschaft zum Type-Object-Pattern
 
-### Vorteil
-
-TODO
-
-### Nachteil
-
-TODO
-
-### Verwandtschaft zum Type-Object-Pattern
-
-Das Flyweight-Pattern ist sehr ähnlich zum `[Type-Object-Pattern]({{< ref "/pattern/type-object" >}})`{=markdown}.
-In beiden Pattern teilen sich mehrere Objekte gemeinsame Daten, die über Referenzen auf
-gemeinsame Hilfsobjekte eingebunden werden. Die Zielrichtung unterscheidet sich aber deutlich:
+Das [Flyweight-Pattern](https://gameprogrammingpatterns.com/flyweight.html) ist sehr ähnlich zum
+`[Type-Object-Pattern]({{< ref "/pattern/type-object" >}})`{=markdown}. In beiden Pattern teilen
+sich mehrere Objekte gemeinsame Daten, die über Referenzen auf gemeinsame Hilfsobjekte eingebunden
+werden. Die Zielrichtung unterscheidet sich aber deutlich:
 
 *   Beim Flyweight-Pattern ist das Ziel vor allem die Erhöhung der Speichereffizienz, und die
     dort geteilten Daten müssen nicht unbedingt den "Typ" des nutzenden Objekts definieren.
@@ -154,10 +237,12 @@ gemeinsame Hilfsobjekte eingebunden werden. Die Zielrichtung unterscheidet sich 
 
 ## Wrap-Up
 
-Ziel: Steigerung der Effizienz durch gemeinsame Nutzung von Objekten (Shared Memory)
-Anmerkung: Große Ähnlichkeit zum Type-Object-Pattern, aber Ziele unterschiedlich: Dort Anzahl der Klassen minimieren, hier Effizienz erhöhen durch gemeinsam genutzte Objekte.
+Flyweight-Pattern: Steigerung der (Speicher-) Effizienz durch gemeinsame Nutzung von Objekten
 
-...
+\smallskip
+
+-   Lagere _Intrinsic State_ in gemeinsam genutzte Objekte aus
+-   Modelliere _Extrinsic State_ individuell
 
 
 
