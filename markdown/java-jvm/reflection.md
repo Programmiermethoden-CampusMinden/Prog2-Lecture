@@ -25,21 +25,20 @@ outcomes:
   - k3: "Inspection von Klassen zur Laufzeit mit Reflection"
   - k3: "Einbindung von zur Compilezeit unbekannten Klassen, Aufruf von Konstruktoren und Methoden (mit und ohne Parameter/Rückgabewerte)"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1077974&client_id=FH-Bielefeld"
+    name: "Quiz Reflection (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet07
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Reflection"
   - link: ""
-    name: "Demo "
+    name: "Demo Reflection"
   - link: ""
     name: "Demo "
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL Reflection"
 ---
 
 
