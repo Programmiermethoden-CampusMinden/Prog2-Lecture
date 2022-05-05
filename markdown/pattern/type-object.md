@@ -245,44 +245,79 @@ aus dem Eltern-Type-Object übernommen (sofern dieses übergeben wird).
 
 ```json
 {
-  "Rat": {
-    "attackDamage": 10,
-    "movementSpeed": 10,
-    "xp": 4
-  },
-  "BossRat": {
-    "parent": "Rat",
-    "attackDamage": 100
-  },
-  "Gnoll": {
-    "attackDamage": ...,
-    "movementSpeed": ...,
-    "xp": ...
-  }
+    "Rat": {
+        "attackDamage": 10,
+        "movementSpeed": 10,
+        "xp": 4
+    },
+    "BossRat": {
+        "parent": "Rat",
+        "attackDamage": 100
+    },
+    "Gnoll": {
+        "attackDamage": ...,
+        "movementSpeed": ...,
+        "xp": ...
+    }
 }
 ```
 
 ::: notes
-
+Jetzt kann man die Konfiguration der Type-Objects in einer Konfig-Datei ablegen und einfach
+an einer passenden Stelle im Programm einlesen. Dort werden dann damit die Type-Objects
+angelegt und mit Hilfe dieser dann die passend konfigurierten Monster (und deren Unterarten).
 :::
 
-Schritt 5: Die Konfiguration dieser Parameter legt man in einer Konfig-Datei ab, die vom Programm eingelesen wird. Damit muss am Code nichts mehr geändert werden und auch das Programm nicht mehr neu kompiliert werden, wenn man mal andere Eigenschaften ausprobieren oder Werte ändern möchte.
 
+::: notes
+## Vor- und Nachteile des Type-Object-Pattern
 
-## Folie 7
+### Vorteil
 
-UML-Diagramm (?!)
+Es gibt nur zwei Klassen auf Code-Ebene, und man kann über die Konfiguration beliebig viele
+Monster-Typen erzeugen.
 
-Anmerkung: Keines der "klassischen" Design-Pattern (vgl. https://en.wikipedia.org/wiki/Design_Patterns)
-vgl. auch https://gameprogrammingpatterns.com/type-object.html
+### Nachteil
+
+Es werden zunächst nur Daten "überschreiben", d.h. man kann für die einzelnen Typen spezifische
+Werte mitgeben/definieren.
+
+Bei Vererbung kann man in den Unterklassen nahezu beliebig das Verhalten durch einfaches
+Überschreiben der Methoden ändern. Das könnte man in diesem Entwurfsmuster erreichen, in
+dem man beispielsweise eine Reihe von vordefinierten Verhaltensarten implementiert, die
+dann anhand von Werten ausgewählt und anhand anderer Werte weiter parametrisiert werden.
+
+### Verwandtschaft zum Flyweight-Pattern
+
+Das [Type-Object-Pattern](https://gameprogrammingpatterns.com/type-object.html) ist keines
+der ["klassischen" Design-Pattern](https://en.wikipedia.org/wiki/Design_Patterns). Dennoch
+ist es gerade in der Spiele-Entwicklung häufig anzutreffen.
+
+Das Type-Object-Pattern ist sehr ähnlich zum `[Flyweight-Pattern]({{< ref "/pattern/flyweight" >}})`{=markdown}.
+In beiden Pattern teilen sich mehrere Objekte gemeinsame Daten, die über Referenzen auf
+gemeinsame Hilfsobjekte eingebunden werden. Die Zielrichtung unterscheidet sich aber deutlich:
+Beim Flyweight-Pattern ist das Ziel vor allem Speichereffizienz, und die dort geteilten Daten
+müssen nicht unbedingt den "Typ" des nutzenden Objekts definieren. Beim Type-Objekt-Pattern
+ist das Ziel die Flexibilität auf Code-Ebene, indem man die Anzahl der Klassen minimiert und
+die Typen in ein eigenes Objekt-Modell verschiebt.
+:::
 
 
 ## Wrap-Up
 
-Ziel: Anzahl der Klassen zu minimieren, indem die Typen in unser eigenes Objekt-Modell gehoben werden; flexibles Erzeugen von "Klassen" zur Laufzeit durch Konfiguration
-Anmerkung: Große Ähnlichkeit zum Flyweight-Pattern, aber Ziele unterschiedlich: Hier Anzahl der Klassen minimieren, dort Effizienz erhöhen durch gemeinsam genutzte Objekte.
+Type-Object-Pattern
 
-...
+\smallskip
+
+*   Ziel: Minimierung der Anzahl der Klassen
+*   Ziel: Erhöhung der Flexibilität
+
+\smallskip
+
+*   Schiebe "Typen" in ein eigenes Objekt-Modell
+*   Type-Objects lassen sich dynamisch über eine Konfiguration anlegen
+*   Objekte erhalten eine Referenz auf "ihr" Type-Object
+*   "Vererbung" unter den Type-Objects möglich
 
 
 
