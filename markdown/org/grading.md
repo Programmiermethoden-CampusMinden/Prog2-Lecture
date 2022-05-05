@@ -326,6 +326,7 @@ Bei der Bepunktung betrachten wir nicht nur den Fix/Code selbst, sondern auch Ih
 
 Weitere Informationen darüber, wie Sie am Framework mitarbeiten können, finden Sie in der [Core-CONTRIBUTING.md](https://github.com/PM-Dungeon/core/blob/master/CONTRIBUTING.md).
 
+
 ## Regelung für Wiederholer
 
 ### Wiederholer mit Performanzprüfung
