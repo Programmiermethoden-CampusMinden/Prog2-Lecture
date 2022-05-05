@@ -60,6 +60,31 @@ vgl. auch https://en.wikipedia.org/wiki/Flyweight_pattern
 vgl. auch https://gameprogrammingpatterns.com/flyweight.html
 
 
+::: notes
+## Vor- und Nachteile des Flyweight-Pattern
+
+### Vorteil
+
+TODO
+
+### Nachteil
+
+TODO
+
+### Verwandtschaft zum Type-Object-Pattern
+
+Das Flyweight-Pattern ist sehr ähnlich zum `[Type-Object-Pattern]({{< ref "/pattern/type-object" >}})`{=markdown}.
+In beiden Pattern teilen sich mehrere Objekte gemeinsame Daten, die über Referenzen auf
+gemeinsame Hilfsobjekte eingebunden werden. Die Zielrichtung unterscheidet sich aber deutlich:
+
+*   Beim Flyweight-Pattern ist das Ziel vor allem die Erhöhung der Speichereffizienz, und die
+    dort geteilten Daten müssen nicht unbedingt den "Typ" des nutzenden Objekts definieren.
+*   Beim Type-Objekt-Pattern ist das Ziel die Flexibilität auf Code-Ebene, indem man die Anzahl
+    der Klassen minimiert und die Typen in ein eigenes Objekt-Modell verschiebt. Das Teilen von
+    Speicher ist hier nur ein Nebeneffekt.
+:::
+
+
 ## Wrap-Up
 
 Ziel: Steigerung der Effizienz durch gemeinsame Nutzung von Objekten (Shared Memory)
