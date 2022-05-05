@@ -316,7 +316,7 @@ Wenn die persönliche Ausnahmesituation länger vorliegen sollte, müssen ggf. a
 gefunden werden, um das Semester erfolgreich abschließen zu können. Nehmen Sie in diesem Fall
 zeitnah Kontakt zum Dozenten auf.
 
-### Helfen im Framework
+### Bonus-Punkte: Helfen im Framework
 
 Sie können aktiv dabei helfen, das Dungeon-Framework weiterzuentwickeln und sich so Bonus-Punkte für das Praktikum verdienen.
 
