@@ -307,16 +307,18 @@ of Four". Dennoch ist es gerade in der Spiele-Entwicklung häufig anzutreffen.
 Das Type-Object-Pattern ist sehr ähnlich zum `[Flyweight-Pattern]({{< ref "/pattern/flyweight" >}})`{=markdown}.
 In beiden Pattern teilen sich mehrere Objekte gemeinsame Daten, die über Referenzen auf
 gemeinsame Hilfsobjekte eingebunden werden. Die Zielrichtung unterscheidet sich aber deutlich:
-Beim Flyweight-Pattern ist das Ziel vor allem Speichereffizienz, und die dort geteilten Daten
-müssen nicht unbedingt den "Typ" des nutzenden Objekts definieren. Beim Type-Objekt-Pattern
-ist das Ziel die Flexibilität auf Code-Ebene, indem man die Anzahl der Klassen minimiert und
-die Typen in ein eigenes Objekt-Modell verschiebt.
+
+*   Beim Flyweight-Pattern ist das Ziel vor allem die Erhöhung der Speichereffizienz, und die
+    dort geteilten Daten müssen nicht unbedingt den "Typ" des nutzenden Objekts definieren.
+*   Beim Type-Objekt-Pattern ist das Ziel die Flexibilität auf Code-Ebene, indem man die Anzahl
+    der Klassen minimiert und die Typen in ein eigenes Objekt-Modell verschiebt. Das Teilen von
+    Speicher ist hier nur ein Nebeneffekt.
 :::
 
 
 ## Wrap-Up
 
-Type-Object-Pattern: Implementierung eines eigenen Objektmodells
+Type-Object-Pattern: Implementierung eines eigenen Objekt-Modells
 
 \bigskip
 
