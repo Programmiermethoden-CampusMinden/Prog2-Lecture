@@ -69,7 +69,7 @@ müssen _alle_ `switch/case`-Blöcke entsprechend angepasst werden.
 :::
 
 ::: notes
-### Variante II: Einsatz einer Klasse für die Felder
+### Variante II: Einsatz einer Klasse/Klassenhierarchie für die Felder
 :::
 
 ```{.java size="footnotesize"}
@@ -101,7 +101,7 @@ Hier werden die Felder über eine Klassenhierarchie mit gemeinsamer Basisklasse 
 
 Allerdings wird hier die Klassenhierarchie unter Umständen sehr schnell sehr umfangreich.
 Außerdem werden Eigenschaften wie Texturen beim Anlegen der Tile-Objekte immer wieder neu
-geladen und entsprechend mehrfach im Speicher gehalten.
+geladen und entsprechend mehrfach im Speicher gehalten (großer Speicherbedarf).
 :::
 
 
