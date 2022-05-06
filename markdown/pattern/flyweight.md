@@ -348,7 +348,7 @@ werden. Die Zielrichtung unterscheidet sich aber deutlich:
 
 Flyweight-Pattern: Steigerung der (Speicher-) Effizienz durch gemeinsame Nutzung von Objekten
 
-\smallskip
+\bigskip
 
 *   Lagere _Intrinsic State_ in gemeinsam genutzte Objekte aus
 *   Modelliere _Extrinsic State_ individuell
