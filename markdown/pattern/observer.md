@@ -22,7 +22,6 @@ tldr: |
   die Information abfragen möchten, nennt man "_Observer_".
 outcomes:
   - k2: "Aufbau des Observer-Patterns (Beobachter-Entwurfsmusters)"
-  - k2: "Einsatz von Polymorphie und überladenen Methoden"
   - k3: "Anwendung des Observer-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1074559&client_id=FH-Bielefeld"
@@ -42,14 +41,15 @@ fhmedia:
 
 ## Verteilung der Prüfungsergebnisse
 
-![](images/observer/lsf.png){width="80%"}
+![](images/lsf.png){width="80%"}
 
 ::: notes
 Die Studierenden möchten nach einer Prüfung wissen, ob für einen bestimmten Kurs
 die/ihre Prüfungsergebnisse im LSF bereit stehen.
 
 Dazu modelliert man eine Klasse `LSF` und implementiert eine Abfragemethode, die
-dann alle Objekte regelmäßig aufrufen können.
+dann alle Objekte regelmäßig aufrufen können. Dies sieht dann praktisch etwa so
+aus:
 
 ```java
 final Person[] persons = { new Lecturer("Frau Holle"),
@@ -68,7 +68,7 @@ for (Person p : persons) {
 
 ## Elegantere Lösung: Observer-Entwurfsmuster
 
-![](images/observer/observerexample.png){width="80%"}
+![](images/observerexample.png){width="80%"}
 
 ::: notes
 Sie erstellen im `LSF` eine Methode `register()`, mit der sich interessierte Objekte
@@ -83,7 +83,7 @@ die traditionell `update()` genannt wird.
 
 ## Observer-Pattern verallgemeinert
 
-![](images/observer/observer.png){width="80%"}
+![](images/observer.png){width="80%"}
 
 ::: notes
 Im vorigen Beispiel wurde die Methode `update()` einfach der gemeinsamen Basisklasse `Person`
@@ -107,6 +107,10 @@ eigene Referenz auf das beobachtete Objekt halten, um dort dann weitere Informat
 zu können. Dies kann vereinfacht werden, indem das beobachtete Objekt beim Aufruf der
 `update()`-Methode die Informationen als Parameter mitgibt, beispielsweise eine Referenz auf sich
 selbst o.ä. ... Dies muss dann natürlich im `Observer`-Interface nachgezogen werden.
+
+**Hinweis**: Es gibt in Swing bereits die Interfaces `Observer` und `Observable`, die aber als
+"deprecated" gekennzeichnet sind. Sinnvollerweise nutzen Sie nicht diese Interfaces aus Swing,
+sondern implementieren Ihre eigenen Interfaces, wenn Sie das Observer-Pattern einsetzen wollen!
 :::
 
 
@@ -114,12 +118,12 @@ selbst o.ä. ... Dies muss dann natürlich im `Observer`-Interface nachgezogen w
 
 Observer-Pattern: Benachrichtige registrierte Objekte über Statusänderungen
 
-\smallskip
+\bigskip
 
 *   Interface `Observer` mit Methode `update()``
 *   Interessierte Objekte
-    *   implementieren das Interface `Observer`
-    *   registrieren sich beim zu beobachtenden Objekt (`Observable`)
+    1.  implementieren das Interface `Observer`
+    2.  registrieren sich beim zu beobachtenden Objekt (`Observable`)
 *   Beobachtetes Objekt ruft auf allen registrierten Objekten `update()` auf
 *   `update()` kann auch Parameter haben
 
