@@ -302,7 +302,7 @@ dann anhand von Werten ausgewählt und anhand anderer Werte weiter parametrisier
 
 Das [Type-Object-Pattern](https://gameprogrammingpatterns.com/type-object.html) ist keines
 der ["klassischen" Design-Pattern](https://en.wikipedia.org/wiki/Design_Patterns) der "Gang
-of Four". Dennoch ist es gerade in der Spiele-Entwicklung häufig anzutreffen.
+of Four" [@Gamma2011]. Dennoch ist es gerade in der Spiele-Entwicklung häufig anzutreffen.
 
 Das Type-Object-Pattern ist sehr ähnlich zum `[Flyweight-Pattern]({{< ref "/pattern/flyweight" >}})`{=markdown}.
 In beiden Pattern teilen sich mehrere Objekte gemeinsame Daten, die über Referenzen auf
