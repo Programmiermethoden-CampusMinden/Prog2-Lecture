@@ -139,6 +139,8 @@ Nutzen Sie das Pattern **sparsam**.
 
 Singleton-Pattern: Klasse, von der nur genau ein Objekt instantiiert werden kann
 
+\bigskip
+
 1.  Konstruktor "verstecken" (Sichtbarkeit auf `private` setzen)
 2.  Methode zum Zugriff auf die eine Instanz
 3.  Anlegen der Instanz beispielsweise beim Laden der Klasse ("Eager") oder
