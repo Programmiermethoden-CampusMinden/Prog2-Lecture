@@ -246,8 +246,8 @@ Flyweight-Pattern: Steigerung der (Speicher-) Effizienz durch gemeinsame Nutzung
 
 \smallskip
 
--   Lagere _Intrinsic State_ in gemeinsam genutzte Objekte aus
--   Modelliere _Extrinsic State_ individuell
+*   Lagere _Intrinsic State_ in gemeinsam genutzte Objekte aus
+*   Modelliere _Extrinsic State_ individuell
 
 
 
