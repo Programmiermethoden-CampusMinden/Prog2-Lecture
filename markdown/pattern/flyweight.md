@@ -131,8 +131,8 @@ bei der Übertragung der Daten/Objekt an die GPU, ...).
 
 ```{.java size="footnotesize"}
 public final class Tile {
-    private boolean isAccessible;
-    private Texture texture;
+    private final boolean isAccessible;
+    private final Texture texture;
     public boolean isAccessible() { return isAccessible; }
 }
 
@@ -173,13 +173,13 @@ wie etwa, ob ein Feld bereits durch den Helden untersucht/betreten wurde o.ä. .
 
 ```{.java size="scriptsize"}
 public final class TileModel {
-    private boolean isAccessible;
-    private Texture texture;
+    private final boolean isAccessible;
+    private final Texture texture;
     public boolean isAccessible() { return isAccessible; }
 }
 public final class Tile {
     private boolean wasEntered;
-    private TileModel model;
+    private final TileModel model;
     public boolean isAccessible() { return model.isAccessible(); }
     public boolean wasEntered() { return wasEntered; }
 }
@@ -222,6 +222,110 @@ je einmal im Speicher repräsentiert.
 
 *   **Extrinsic** State: variant, Kontext-abhängig und kann nicht geteilt werden \newline
     => individuell modellieren
+
+
+## Flyweight-Pattern: Klassische Modellierung
+
+![](images/flyweight.png){width="60%"}
+
+[[Hinweis zum Beispiel: -Interface, -Factory, +Composite]{.bsp}]{.slides}
+
+::: notes
+Im klassischen Flyweight-Pattern der "Gang of Four" [@Gamma2011] wird ein gemeinsames Interface
+erstellt, von dem die einzelnen Fliegengewicht-Klassen ableiten. Der Nutzer kennt nur dieses
+Interface und nicht direkt die implementierenden Klassen.
+
+Das Interface wird von zwei Arten von Klassen implementiert: Klassen, die nur intrinsischen
+Zustand modellieren, und Klassen, die extrinsischen Zustand modellieren.
+
+Für die Klassen, die den intrinsischen Zustand modellieren, werden die Objekte gemeinsam genutzt
+(nicht im Diagramm darstellbar) und deshalb eine Factory davor geschaltet, die die Objekte der
+entsprechenden Fliegengewicht-Klassen erzeugt und dabei darauf achtet, dass diese Objekte nur
+einmal angelegt und bei erneuter Anfrage einfach nur wieder zurückgeliefert werden.
+
+Zusätzlich gibt es Klassen, die extrinsischen Zustand modellieren und deshalb nicht unter den
+Nutzern geteilt werden können und deren Objekte bei jeder Anfrage neu erstellt werden. Aber
+auch diese werden von der Factory erzeugt/verwaltet.
+
+### Kombination mit dem Composite-Pattern
+
+In der Praxis kann man das Pattern so direkt meist nicht einsetzen, sondern verbindet es mit
+dem Composite-Pattern:
+
+![](images/composite.png){width="40%"}
+
+Ein Element kann eine einfache Komponente sein (im obigen Beispiel war das die Klasse `TileModel`)
+oder eine zusammengesetzte Komponente, die ihrerseits andere Komponenten speichert (im obigen
+Beispiel war das die Klasse `Tile`, die ein Objekt vom Typ `TileModel` referenziert - allerdings
+fehlt im obigen Beispiel das gemeinsame Interface ...).
+
+### Level-Beispiel mit Flyweight (vollständig) und Composite
+
+Im obigen Beispiel wurde zum Flyweight-Pattern noch das Composite-Pattern hinzugenommen, aber
+es wurde aus Gründen der Übersichtlichkeit auf ein gemeinsames Interface und auf die Factory
+verzichtet. Wenn man es anpassen würde, dann würde das Beispiel ungefähr so aussehen:
+
+```java
+public interface ITile {
+    public boolean isAccessible();
+}
+
+public final class TileModel implements ITile {
+    private final boolean isAccessible;
+    private final Texture texture;
+
+    public boolean isAccessible() { return isAccessible; }
+}
+
+public final class Tile implements ITile {
+    private boolean wasEntered;
+    private final TileModel model;
+
+    public boolean isAccessible() { return model.isAccessible(); }
+
+    public boolean wasEntered() { return wasEntered; }
+}
+
+public final class TileFactory {
+    private static final TileModel FLOOR = new TileModel(true,  Texture.loadTexture("path/to/floor.png"));
+    ...
+
+    public static final ITile getTile(String tile) {
+        switch (tile) {
+            case "WALL": return new Tile(WALL);
+            case "FLOOR": return new Tile(FLOOR);
+            case "WATER": return new Tile(WATER);
+            ...
+        }
+    }
+}
+
+public class Level {
+    private ITile[][] tiles;
+
+    public Level() {
+        tiles[0][0] = TileFactory.getTile("WALL");
+        tiles[1][0] = TileFactory.getTile("WALL");
+        tiles[2][0] = TileFactory.getTile("WALL");
+        ...
+
+        tiles[0][1] = TileFactory.getTile("WALL");
+        tiles[1][1] = TileFactory.getTile("FLOOR");
+        tiles[2][1] = TileFactory.getTile("FLOOR");
+        ...
+
+        tiles[0][2] = TileFactory.getTile("WALL");
+        tiles[1][2] = TileFactory.getTile("WATER");
+        tiles[2][2] = TileFactory.getTile("FLOOR");
+        ...
+
+        ...
+    }
+
+    public boolean isAccessible(int x, int y) { return tiles[x][y].isAccessible(); }
+}
+```
+:::
 
 
 ::: notes
