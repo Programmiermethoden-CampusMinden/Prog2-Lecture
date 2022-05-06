@@ -7,13 +7,23 @@ weight: 3
 readings:
   - key: "Nystrom2014"
     comment: "Kap. 4: Observer"
+  - key: "Gamma2011"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+  Eine Reihe von Objekten möchte über eine Änderung in einem anderen ("zentralen") Objekt informiert werden.
+  Dazu könnte das "zentrale" Objekt eine Zugriffsmethode anbieten, die die anderen Objekte regelmäßig
+  abrufen ("pollen").
+
+  Mit dem Observer-Pattern kann man das aktive Polling vermeiden. Die interessierten Objekte "registrieren"
+  sich beim "zentralen" Objekt. Sobald dieses eine Änderung erfährt oder Informationen bereitstehen o.ä.,
+  wird das "zentrale" Objekt alle registrierten Objekte über den Aufruf einer Methode benachrichtigen. Dazu
+  müssen diese eine gemeinsame Schnittstelle implementieren.
+
+  Das "zentrale" Objekt, welches abgefragt wird, nennt man "_Observable_" oder "_Subject_". Die Objekte, die
+  die Information abfragen möchten, nennt man "_Observer_".
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k2: "Aufbau des Observer-Patterns (Beobachter-Entwurfsmusters)"
+  - k2: "Einsatz von Polymorphie und überladenen Methoden"
+  - k3: "Anwendung des Observer-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1074559&client_id=FH-Bielefeld"
     name: "Quiz Observer-Pattern (ILIAS)"
@@ -30,34 +40,88 @@ fhmedia:
 ---
 
 
-## Motivation
-Lorem Ipsum. Starte mit H2-Level.
-...
+## Verteilung der Prüfungsergebnisse
 
-## Folie 2
-...
+![](images/observer/lsf.png){width="80%"}
 
-## Folie 3
-...
+::: notes
+Die Studierenden möchten nach einer Prüfung wissen, ob für einen bestimmten Kurs
+die/ihre Prüfungsergebnisse im LSF bereit stehen.
 
-## Folie 4
-...
+Dazu modelliert man eine Klasse `LSF` und implementiert eine Abfragemethode, die
+dann alle Objekte regelmäßig aufrufen können.
 
-## Folie 5
-...
+```java
+final Person[] persons = { new Lecturer("Frau Holle"),
+                           new Student("Heinz"),
+                           new Student("Karla"),
+                           new Tutor("Kolja"),
+                           new Student("Wuppie") };
+final LSF lsf = new LSF();
 
-## Folie 6
+for (Person p : persons) {
+    lsf.getGradings(p, "My Module");   // ???!
+}
+```
+:::
 
-UML-Diagramm
 
-vgl. auch https://en.wikipedia.org/wiki/Observer_pattern
-vgl. auch https://gameprogrammingpatterns.com/observer.html
+## Elegantere Lösung: Observer-Entwurfsmuster
 
-...
+![](images/observer/observerexample.png){width="80%"}
+
+::: notes
+Sie erstellen im `LSF` eine Methode `register()`, mit der sich interessierte Objekte
+beim `LSF` registrieren können.
+
+Zur Benachrichtigung der registrierten Objekte brauchen diese eine geeignete Methode,
+die traditionell `update()` genannt wird.
+:::
+
+[Demo: [observer](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/observer/)]{.bsp}
+
+
+## Observer-Pattern verallgemeinert
+
+![](images/observer/observer.png){width="80%"}
+
+::: notes
+Im vorigen Beispiel wurde die Methode `update()` einfach der gemeinsamen Basisklasse `Person`
+hinzugefügt. Normalerweise möchte man die Aspekte `Person` und `Observer` aber sauber trennen
+und definiert sich dazu ein _separates_ Interface `Observer` mit der Methode `update()`, die
+dann alle "interessierten" Klassen (zusätzlich zur bestehenden Vererbungshierarchie) implementieren.
+
+Die Klasse für das zu beobachtende Objekt benötigt dann eine Methode `register()`, mit der sich
+Observer registrieren können. Die Objektreferenzen werden dabei einfach einer internen Sammlung
+hinzugefügt.
+
+Häufig findet sich dann noch eine Methode `unregister()`, mit der sich bereits registrierte
+Beobachter wieder abmelden können. Weiterhin findet man häufig eine Methode `notifyObservers()`,
+die man von außen auf dem beobachteten Objekt aufrufen kann und die dann auf allen registrierten
+Beobachtern deren Methoden `update()` aufruft. (Dieser Vorgang kann aber auch durch eine sonstige
+Zustandsänderung im beobachteten Objekt durchgeführt werden.)
+
+In der Standarddefinition des Observer-Patterns nach [@Gamma2011] werden beim Aufruf der Methode
+`update()` keine Werte an die Beobachter mitgegeben. Der Beobachter muss sich entsprechend eine
+eigene Referenz auf das beobachtete Objekt halten, um dort dann weitere Informationen erhalten
+zu können. Dies kann vereinfacht werden, indem das beobachtete Objekt beim Aufruf der
+`update()`-Methode die Informationen als Parameter mitgibt, beispielsweise eine Referenz auf sich
+selbst o.ä. ... Dies muss dann natürlich im `Observer`-Interface nachgezogen werden.
+:::
 
 
 ## Wrap-Up
-...
+
+Observer-Pattern: Benachrichtige registrierte Objekte über Statusänderungen
+
+\smallskip
+
+*   Interface `Observer` mit Methode `update()``
+*   Interessierte Objekte
+    *   implementieren das Interface `Observer`
+    *   registrieren sich beim zu beobachtenden Objekt (`Observable`)
+*   Beobachtetes Objekt ruft auf allen registrierten Objekten `update()` auf
+*   `update()` kann auch Parameter haben
 
 
 
