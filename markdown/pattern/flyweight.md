@@ -88,7 +88,7 @@ müssen _alle_ `switch/case`-Blöcke entsprechend angepasst werden.
 public abstract class Tile {
     protected boolean isAccessible;
     protected Texture texture;
-    public abstract boolean isAccessible() { return isAccessible; }
+    public boolean isAccessible() { return isAccessible; }
 }
 public class Floor extends Tile {
     public Floor() { isAccessible = true;  texture = Texture.loadTexture("path/to/floor.png"); }
@@ -96,7 +96,7 @@ public class Floor extends Tile {
 ...
 
 public class Level {
-    private Tile[][] tiles;
+    private final Tile[][] tiles;
 
     public Level() {
         tiles[0][0] = new Wall();  tiles[1][0] = new Wall();   tiles[2][0] = new Wall();  ...
@@ -141,7 +141,7 @@ public class Level {
     private static final Tile WALL  = new Tile(false, Texture.loadTexture("path/to/wall.png"));
     private static final Tile WATER = new Tile(false, Texture.loadTexture("path/to/water.png"));
 
-    private Tile[][] tiles;
+    private final Tile[][] tiles;
 
     public Level() {
         tiles[0][0] = WALL;  tiles[1][0] = WALL;   tiles[2][0] = WALL;  ...
@@ -188,7 +188,7 @@ public class Level {
     private static final TileModel FLOOR = new TileModel(true,  Texture.loadTexture("path/to/floor.png"));
     ...
 
-    private Tile[][] tiles;
+    private final Tile[][] tiles;
 
     public Level() {
         tiles[0][0] = new Tile(WALL);  tiles[1][0] = new Tile(WALL);   tiles[2][0] = new Tile(WALL);  ...
@@ -220,7 +220,7 @@ je einmal im Speicher repräsentiert.
 
 \bigskip
 
--   **Extrinsic** State: variant, Kontext-abhängig und kann nicht geteilt werden) \newline
+-   **Extrinsic** State: variant, Kontext-abhängig und kann nicht geteilt werden \newline
     => individuell modellieren
 
 
