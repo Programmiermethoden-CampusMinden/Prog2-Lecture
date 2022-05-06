@@ -215,12 +215,12 @@ je einmal im Speicher repräsentiert.
 
 ## Flyweight-Pattern: Begriffe
 
--   **Intrinsic** State: invariant, Kontext-unabhängig, gemeinsam nutzbar \newline
+*   **Intrinsic** State: invariant, Kontext-unabhängig, gemeinsam nutzbar \newline
     => auslagern in gemeinsame Objekte
 
 \bigskip
 
--   **Extrinsic** State: variant, Kontext-abhängig und kann nicht geteilt werden \newline
+*   **Extrinsic** State: variant, Kontext-abhängig und kann nicht geteilt werden \newline
     => individuell modellieren
 
 
