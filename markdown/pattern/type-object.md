@@ -99,7 +99,7 @@ Konstruktor aufrufen.
 public enum Species { RAT, GNOLL, ... }
 
 public final class Monster {
-    private Species type;
+    private final Species type;
     private int attackDamage;
     private int movementSpeed;
 
@@ -142,30 +142,30 @@ muss man bei Erweiterungen des Enums auch _alle_ `switch/case`-Blöcke anpassen.
 
 ```{.java size="scriptsize"}
 public final class Species {
-    private int attackDamage;
-    private int movementSpeed;
-    private int xp;
+    private final int attackDamage;
+    private final int movementSpeed;
+    private final int xp;
 
     public Species(int attackDamage, int movementSpeed, int xp) { ... }
     public void attack(Monster m)  { ... }
 }
 
 public final class Monster {
-    private Species type;
+    private final Species type;
     private int xp;
 
-    public Monster(Species type) { this.type = type;  xp = type.xp; }
+    public Monster(Species type) { this.type = type;  xp = type.xp(); }
     public int movementSpeed() { return type.movementSpeed(); }
     public void attack(Monster m)  { type.attack(m); }
 }
 
 
 public static void main(String[] args) {
-    Species rat = new Species(10, 10, 4);
-    Species gnoll = new Species(...);
+    final Species RAT = new Species(10, 10, 4);
+    final Species GNOLL = new Species(...);
 
-    Monster harald = new Monster(rat);
-    Monster eve = new ...
+    Monster harald = new Monster(RAT);
+    Monster eve = new Monster(GNOLL);
 }
 ```
 
@@ -197,11 +197,11 @@ public final class Species {
 
 
 public static void main(String[] args) {
-    Species rat = new Species(10, 10, 4);
-    Species gnoll = new Species(...);
+    final Species RAT = new Species(10, 10, 4);
+    final Species GNOLL = new Species(...);
 
-    Monster harald = rat.newMonster();
-    Monster eve = gnoll.newMonster()
+    Monster harald = RAT.newMonster();
+    Monster eve = GNOLL.newMonster();
 }
 ```
 
@@ -230,12 +230,12 @@ public final class Species {
 
 
 public static void main(String[] args) {
-    Species rat = new Species(10, 10, 4);
-    Species bossRat = new Species(rat, 100);
-    Species gnoll = new Species(...);
+        final Species RAT = new Species(10, 10, 4);
+        final Species BOSS_RAT = new Species(RAT, 100);
+        final Species GNOLL = new Species(...);
 
-    Monster harald = new Monster(rat);
-    Monster eve = new ...
+        Monster harald = RAT.newMonster();
+        Monster eve = GNOLL.newMonster();
 }
 ```
 
