@@ -1,6 +1,6 @@
 ---
 type: assignment
-title: "Blatt 06: Observer, FlyWeight, Type Object, Enumerationen"
+title: "Blatt 06: Observer, Type-Object, Enumerationen"
 author: "André Matutat (FH Bielefeld)"
 points: 10
 weight: 6
