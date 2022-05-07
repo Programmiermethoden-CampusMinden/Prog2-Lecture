@@ -29,12 +29,12 @@ quizzes:
 assignments:
   - topic: sheet06
 youtube:
-  - link: ""
+  - link: "https://youtu.be/833lHcoxeog"
     name: "VL Observer-Pattern"
-  - link: ""
+  - link: "https://youtu.be/0mgB8RfcNuM"
     name: "Demo Observer-Pattern"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/e00888ac91978bb3694491a722e61bba5d836d403d7f94e7d3ef6b28c07dae841b5852488bdf8f64e1628a58a2e5f3410dbb08699ded346ec2da34fd877a831f"
     name: "VL Observer-Pattern"
 ---
 
