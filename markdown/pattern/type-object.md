@@ -36,10 +36,10 @@ quizzes:
 assignments:
   - topic: sheet06
 youtube:
-  - link: ""
+  - link: "https://youtu.be/No-xduTVlt0"
     name: "VL Type-Object-Pattern"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/cbd631e6a505ed773555ab6ebf3b3618496dbca65b07027db5a8655e018336f234a562e1648f312964d796b449ba9fea15db9e07ef6ec13c9d0928ab50ba6d78"
     name: "VL Type-Object-Pattern"
 ---
 
