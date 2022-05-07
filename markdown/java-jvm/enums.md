@@ -29,12 +29,12 @@ quizzes:
 assignments:
   - topic: sheet06
 youtube:
-  - link: ""
+  - link: "https://youtu.be/qoeT9jVuQZc"
     name: "VL Enumerations"
-  - link: ""
+  - link: "https://youtu.be/ZCE9AmTluyk"
     name: "Demo Enumerations"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/5c9330cb4425a5b33f89b491d007990642765bf0ca7ea9fd6b8b7536f46691b86bba9bde65cdbce308fb467f2d0183391dd0d1247c142e4e28d9b9eaf8c0ff67"
     name: "VL Enumerations"
 ---
 
