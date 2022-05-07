@@ -120,7 +120,7 @@ Observer-Pattern: Benachrichtige registrierte Objekte über Statusänderungen
 
 \bigskip
 
-*   Interface `Observer` mit Methode `update()``
+*   Interface `Observer` mit Methode `update()`
 *   Interessierte Objekte
     1.  implementieren das Interface `Observer`
     2.  registrieren sich beim zu beobachtenden Objekt (`Observable`)
