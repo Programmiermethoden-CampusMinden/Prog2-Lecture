@@ -230,12 +230,12 @@ public final class Species {
 
 
 public static void main(String[] args) {
-        final Species RAT = new Species(10, 10, 4);
-        final Species BOSS_RAT = new Species(RAT, 100);
-        final Species GNOLL = new Species(...);
+    final Species RAT = new Species(10, 10, 4);
+    final Species BOSS_RAT = new Species(RAT, 100);
+    final Species GNOLL = new Species(...);
 
-        Monster harald = RAT.newMonster();
-        Monster eve = GNOLL.newMonster();
+    Monster harald = RAT.newMonster();
+    Monster eve = GNOLL.newMonster();
 }
 ```
 
