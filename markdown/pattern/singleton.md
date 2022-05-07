@@ -27,10 +27,10 @@ quizzes:
 assignments:
   - topic: sheet06
 youtube:
-  - link: ""
+  - link: "https://youtu.be/ZT3rl1t85aY"
     name: "VL Singleton-Pattern"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/22cc77330d6a5fd8784bdf83dc050be4173622cf4ea3c1ef7ddbefa1350d12ea144e228fdded23a4b96aa6948c3b4613f51f99de8c3cd0d3b858577e67851bb5"
     name: "VL Singleton-Pattern"
 ---
 
