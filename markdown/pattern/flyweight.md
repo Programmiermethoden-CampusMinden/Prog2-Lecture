@@ -27,10 +27,10 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1077973&client_id=FH-Bielefeld"
     name: "Quiz Flyweight-Pattern (ILIAS)"
 youtube:
-  - link: ""
+  - link: "https://youtu.be/Oo8TO8z5wQI"
     name: "VL Flyweight-Pattern"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/48c5b1437b5f1ff4023295d0a95c12d893510d0980ff5c6a37ab4e5814990c82b769ff505e727fc3d1ee6b71facb92955639400c01d269ad74e69d9788470c53"
     name: "VL Flyweight-Pattern"
 ---
 
