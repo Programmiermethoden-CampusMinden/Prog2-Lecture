@@ -90,7 +90,7 @@ public class SingletonEager {
 [Beispiel: [singleton.SingletonEager](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/singleton/SingletonEager.java)]{.bsp}
 
 
-## Umsetzung: Lazy Singleton Pattern
+## Umsetzung: "Lazy" Singleton Pattern
 
 ::: notes
 Beim "Lazy Singleton Pattern" wird das Objekt erst erzeugt, wenn die Instanz tatsächlich benötigt
