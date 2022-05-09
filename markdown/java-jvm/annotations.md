@@ -343,8 +343,7 @@ Elemente verwendbar.
 \bigskip
 
 <!-- TODO -->
-![](figs/annotations/javac-flow){width="80%"}
-[[Quelle: [openjdk.java.net/groups/compiler/doc/compilation-overview/index.html](http://openjdk.java.net/groups/compiler/doc/compilation-overview/javac-flow.png)]{.origin}]{.notes}
+![](images/javac-flow){width="80%"}
 
 ::: notes
 Der dem `javac`-Compiler vorgelegte Source-Code wird eingelesen und in einen
@@ -414,6 +413,7 @@ public class Foo extends AbstractProcessor {
 
 Für ein umfangreicheres Beispiel mit Code-Erzeugung vergleiche beispielsweise die Artikelserie unter
 [cloudogu.com/en/blog/Java-Annotation-Processors_1-Intro](https://cloudogu.com/en/blog/Java-Annotation-Processors_1-Intro).
+Siehe auch [OpenJDK: Compilation Overview](https://openjdk.java.net/groups/compiler/doc/compilation-overview/index.html).
 
 Im Projekt muss jetzt noch der Ordner `META-INF/services/` angelegt werden mit der Datei
 `javax.annotation.processing.Processor`. Deren Inhalt ist für das obige Beispiel die Zeile
