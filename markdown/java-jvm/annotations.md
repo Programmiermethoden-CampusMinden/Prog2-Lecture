@@ -464,21 +464,29 @@ Note: found @MySecondAnnotation at main(java.lang.String[])
 
 ## Wrap-Up
 
-*   Annotationen als Metadaten zum Programm
-*   Typische Anwendungen: Compiler-Hinweise, Dokumentation, Tests
-    *   Annotationen enthalten **Zusatzinformationen** über ein Programm,
-        die selbst nicht Teil des Programms sind
-    *   Annotationen haben **keinen (direkten) Einfluss** auf die
-        **Ausführung** des annotierten Codes
-    *   Verschiedene **Tools werten Annotationen** aus:
-        *   Compiler: Erkennen von logischen Fehlern, Unterdrücken von
-            Warnungen => `java.lang`: `@Override`,
-            `@Deprecated`, `@SuppressWarnings`
-        *   Javadoc: Erkennen von Schlüsselwörtern (`@author`, `@return`, `@param`, ...)
-        *   JUnit: Erkennen von Tests-Methoden (`@Test`)
-        *   ...
+*   Annotationen: Metadaten zum Programm
+
+    ::: notes
+    *   **Zusatzinformationen** über ein Programm, aber nicht selbst Teil des Programms
+    *   **Kein (direkter) Einfluss** auf die **Ausführung** des annotierten Codes
+    :::
+
+\smallskip
+
+*   Typische Anwendungen: Compiler-Hinweise, Javadoc, Tests
+
+    ::: notes
+    *   Compiler: Erkennen von logischen Fehlern, Unterdrücken von
+        Warnungen => `java.lang`: `@Override`,
+        `@Deprecated`, `@SuppressWarnings`
+    *   Javadoc: Erkennen von Schlüsselwörtern (`@author`, `@return`, `@param`, ...)
+    *   JUnit: Erkennen von Tests-Methoden (`@Test`)
+    *   ...
+    :::
+
+\bigskip
+
 *   Annotationen können auf Deklarationen (Klassen, Felder, Methoden) angewendet werden
-*   Annotationen werden meist auf eine eigene Zeile geschrieben (Konvention)
 *   Annotationen können relativ einfach selbst erstellt werden
     *   Definition fast wie ein Interface
     *   Einstellung der Sichtbarkeit und Verwendbarkeit und Dokumentation
