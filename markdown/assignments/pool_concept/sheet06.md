@@ -13,8 +13,8 @@ hidden: true
 {{% include "assignments/pool_concept/tasks/type-object.md" %}}
 
 **Punkte**: 1P Definition Enum, 1P Begründung für den konkreten Einsatz des
-Type-Objekt-Patterns, 1P für korrekte Umsetzung, 1P für "Vererbungs"-Mechanismus
-bei den Type-Objects
+Type-Objekt-Patterns, 1P für korrekte Umsetzung inkl. Fabrik-Methode, 1P für
+"Vererbungs"-Mechanismus bei den Type-Objects
 
 
 ## Pattern: Observer (6 Punkte)
