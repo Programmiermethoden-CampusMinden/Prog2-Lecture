@@ -53,7 +53,7 @@ public class B extends A {
 }
 ```
 
-[[Beispiel: annotations.B]{.bsp}]{.notes}
+[[Beispiel: [annotations.B](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java)]{.bsp}]{.notes}
 
 \pause
 \bigskip
@@ -92,7 +92,7 @@ generieren: `Preferences > Java > Code Style > Add @Override annotation ...`.
     *   Webservices: `@WebService`, `@WebMethod`
     *   ...
 
-[[Beispiel: annotations.B: `@Override`, `@Deprecated`]{.bsp}]{.notes}
+[[Beispiel: [annotations.B](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java): `@Override`, `@Deprecated`]{.bsp}]{.notes}
 
 
 ::::::::: notes
@@ -102,7 +102,6 @@ Anschließend lernen Sie die Dokumentation mittels Javadoc-Annotationen kennen.
 
 Das Thema JUnit ist in einer anderen VL dran. Webservices ereilen Sie dann in
 späteren Semestern :-)
-
 
 ### `@Override`
 
@@ -125,7 +124,7 @@ im Javadoc. Allerdings kann letzteres nur von Javadoc ausgewertet werden.
 
 Im Paket `java.lang` finden sich weitere Annotationen. Mit Hilfe von `@SuppressWarnings` lassen sich bestimmte
 Compilerwarnungen unterdrücken ([**so etwas sollte man NIE tun!**]{.alert}), und mit `@FunctionalInterface`
-lassen sich Schnittstellen auszeichen, die genau eine (abstrakte) Methode besitzen (Verweis auf spätere Vorlesung).
+lassen sich Schnittstellen auszeichnen, die genau eine (abstrakte) Methode besitzen (Verweis auf spätere Vorlesung).
 
 Weitere Annotationen aus dem JDK finden sich in den Paketen `java.lang.annotation` und `javax.annotation`.
 :::::::::
@@ -160,7 +159,7 @@ public void setDate(int date) {
 Damit lassen sich Rückgabewerte von Methoden sowie Variablen (Attribute, lokale Variablen, Parameter) markieren:
 Diese dürfen nicht `null` werden.
 
-IntelliJ prüft beim Compilieren, dass diese Elemente nicht `null` werden und warnt gegebenfalls (zur Compilezeit).
+IntelliJ prüft beim Compilieren, dass diese Elemente nicht `null` werden und warnt gegebenenfalls (zur Compilezeit).
 Zusätzlich baut IntelliJ entsprechende Assertions in den Code ein, die zur Laufzeit einen `null`-Wert abfangen
 und dann das Programm abbrechen.
 
@@ -190,8 +189,7 @@ public void foo(@NotNull Object o) {
 }
 ```
 
-[Beispiel: annotations.Wuppie und annotations.WuppieAnnotation]{.bsp}
-
+[Beispiel: [annotations.Wuppie](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/Wuppie.java) und [annotations.WuppieAnnotation](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/WuppieAnnotation.java)]{.bsp}
 
 ::: notes
 ### IntelliJ inferiert mit `@NotNull` mögliche `null`-Werte
@@ -222,8 +220,7 @@ public class C {
 }
 ```
 
-[Beispiel: annotations.C]{.bsp}
-
+[Beispiel: [annotations.C](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java)]{.bsp}
 
 ::::::::: notes
 ### Definition einer Annotation
@@ -390,7 +387,7 @@ public class Foo extends AbstractProcessor {
 }
 ```
 
-[Beispiel: annotations.C, annotations.Foo, META-INF]{.bsp}
+[Beispiel: [annotations.C](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java), [annotations.Foo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/Foo.java), [META-INF](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/META-INF/)]{.bsp}
 
 ::::::::: notes
 1.  Der Annotation-Processor sollte von `AbstractProcessor` ableiten
