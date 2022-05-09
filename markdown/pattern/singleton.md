@@ -22,7 +22,7 @@ outcomes:
   - k2: "Was ist ein _Singleton_? Was ist der Unterschied zw. einem _Lazy_ und einem _Eager_ Singleton?"
   - k3: "Anwendung des Singleton-Patterns"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1079251&client_id=FH-Bielefeld"
     name: "Quiz Singleton-Pattern (ILIAS)"
 assignments:
   - topic: sheet06
