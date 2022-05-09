@@ -1,11 +1,14 @@
 package annotations;
 
-import java.lang.annotation.*;
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /* Mit @Documented geht die Annotation in die generierte Javadoc */
 @Documented
-@interface MyFirstAnnotation {
-}
+@interface MyFirstAnnotation {}
 
 /* Sichtbarkeit: SOURCE, CLASS, RUNTIME */
 @Retention(RetentionPolicy.RUNTIME)
@@ -40,11 +43,10 @@ public class C {
 
 /*
 @MySecondAnnotation("wuppie") // NUR an Methoden erlaubt
-class D {
-}
+class D {}
 */
+
 /*
 @MySecondAnnotation(value = "wuppie") // NUR an Methoden erlaubt
-class E {
-}
- */
+class E {}
+*/

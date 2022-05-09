@@ -1,22 +1,15 @@
-/**
- * Package fuer Code-Snippets in VL "Annotationen"
- */
+/** Package fuer Code-Snippets in VL "Annotationen" */
 package annotations;
 
 import java.util.Date;
 
 /**
  * Summary fuer Klasse B
- * <p>
- * <p>
- * Wozu, warum, wieso :)
- * Wozu, warum, wieso :)
- * Wozu, warum, wieso :)
- * Wozu, warum, wieso :)
+ *
+ * <p>Wozu, warum, wieso :) Wozu, warum, wieso :) Wozu, warum, wieso :) Wozu, warum, wieso :)
  *
  * @author Carsten Gips
  */
-
 public class B extends A {
 
     /**
@@ -34,12 +27,10 @@ public class B extends A {
     }
 
     /**
-     * Methode ueberschreibt {@link A#getInfo()} und erweitert Parameter-String mit
-     * Zeichenkette "Klasse B" ...
-     * <p>
-     * <p>
-     * Es folgt die ausfuehrliche Beschreibung, die spaeter im Abschnitt "Method
-     * Detail"
+     * Liefert Info zu Klasse B zurück
+     *
+     * <p>Methode ueberschreibt {@link A#getInfo()} und erweitert Parameter-String mit Zeichenkette
+     * "Klasse B" ... Ausfuehrliche Beschreibung, die spaeter im Abschnitt "Method Detail"
      * erscheint, aber nicht in der Uebersicht.
      *
      * @param s String, der verarbeitet werden soll
@@ -50,5 +41,4 @@ public class B extends A {
     public String getInfo(String s) {
         return s + "Klasse B";
     }
-
 }
