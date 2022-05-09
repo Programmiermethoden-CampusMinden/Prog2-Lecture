@@ -24,7 +24,7 @@ outcomes:
   - k3: "Erstellung komplexer Enumerationen mit Feldern und Konstruktoren"
   - k3: "Nutzung von `name()`, `ordinal()` und `values()` in Enum-Klassen"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1078776&client_id=FH-Bielefeld"
     name: "Quiz Enumerations (ILIAS)"
 assignments:
   - topic: sheet06
