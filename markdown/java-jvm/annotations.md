@@ -11,8 +11,20 @@ readings:
     comment: "Getting to Know the Language > Annotations"
   - key: "LernJava"
 tldr: |
-  TODO
+  Annotationen sind Metadaten zum Programm: Sie haben keinen (direkten) Einfluss auf die
+  Ausführung des annotierten Codes, sondern enthalten Zusatzinformationen über ein Programm,
+  die selbst nicht Teil des Programms sind. Verschiedene Tools werten Annotationen aus,
+  beispielsweise der Compiler, Javadoc, JUnit, ...
 
+
+  Annotationen können auf Deklarationen (Klassen, Felder, Methoden) angewendet werden und
+  werden meist auf eine eigene Zeile geschrieben (Konvention).
+
+  Annotationen können relativ einfach selbst erstellt werden: Die Definition ist fast wie
+  bei einem Interface. Zusätzlich kann man noch über Meta-Annotationen die Sichtbarkeit,
+  Verwendbarkeit und Dokumentation einschränken. Annotationen können zur Übersetzungszeit
+  mit einem Annotation-Processor verarbeitet werden oder zur Laufzeit über Reflection
+  ausgewertet werden.
 outcomes:
   - k2: "Begriff der Annotation erklären können am Beispiel"
   - k3: "Anwendung von `@Override` sowie der Javadoc-Annotationen"
