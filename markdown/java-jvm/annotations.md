@@ -27,7 +27,11 @@ youtube:
   - link: ""
     name: "VL Annotationen"
   - link: ""
-    name: "Demo Annotationen: Deprecated"
+    name: "Demo Annotationen: `@Deprecated`"
+  - link: ""
+    name: "Demo `@NotNull`"
+  - link: ""
+    name: "Demo Annotationen selbst gebastelt"
   - link: ""
     name: "Demo Annotation-Prozessor"
 fhmedia:
@@ -92,7 +96,7 @@ generieren: `Preferences > Java > Code Style > Add @Override annotation ...`.
     *   Webservices: `@WebService`, `@WebMethod`
     *   ...
 
-[Demo: [annotations.B](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java): `@Override`, `@Deprecated`]{.bsp}
+[Demo: [annotations.B](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java): \@Override, \@Deprecated]{.bsp}
 
 ::::::::: notes
 Jetzt schauen wir uns erst einmal die Auswirkungen von `@Override` und `@Deprecated`
@@ -102,14 +106,14 @@ Anschließend lernen Sie die Dokumentation mittels Javadoc-Annotationen kennen.
 Das Thema JUnit ist in einer anderen VL dran. Webservices ereilen Sie dann in
 späteren Semestern :-)
 
-### `@Override`
+### \@Override
 
 Die mit `@Override` annotierte Methode überschreibt eine Methode aus der Oberklasse oder implementiert eine
 Methode einer Schnittstelle. Dies wird durch den Compiler geprüft und ggf. mit einer Fehlermeldung quittiert.
 
 `@Override` ist eine im JDK im Paket `java.lang` enthaltene Annotation.
 
-### `@Deprecated`
+### \@Deprecated
 
 Das mit `@Deprecated` markierte Element ist veraltet ("*deprecated*") und sollte nicht mehr benutzt werden.
 Typischerweise werden so markierte Elemente in zukünftigen Releases aus der API entfernt ...
@@ -119,7 +123,7 @@ im Javadoc. Allerdings kann letzteres nur von Javadoc ausgewertet werden.
 
 `@Deprecated` ist eine im JDK im Paket `java.lang` enthaltene Annotation.
 
-### Weitere Annotationen aus `java.lang`
+### Weitere Annotationen aus _java.lang_
 
 Im Paket `java.lang` finden sich weitere Annotationen. Mit Hilfe von `@SuppressWarnings` lassen sich bestimmte
 Compilerwarnungen unterdrücken ([**so etwas sollte man NIE tun!**]{.alert}), und mit `@FunctionalInterface`
@@ -148,14 +152,15 @@ public boolean setDate(int date) {
 ::: notes
 Die Dokumentation mit Javadoc hatten wir uns bereits in der Einheit
 `["Javadoc"]({{< ref "/coding/javadoc" >}})`{=markdown} angesehen.
+
 Hier noch einmal exemplarisch die wichtigsten Elemente, die an
-Methoden verwendet werden.
+"`public`" sichtbaren Methoden verwendet werden.
 :::
 
-[[Beispiel: [annotations.B](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java)]{.bsp}]{.notes}
+[[Beispiel: [annotations.B](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java) (Javadoc)]{.bsp}]{.notes}
 
 
-## `@NotNull` mit IntelliJ
+## \@NotNull mit IntelliJ
 
 ::: notes
 [IntelliJ](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) bietet im Paket
@@ -193,14 +198,14 @@ public void foo(@NotNull Object o) {
 }
 ```
 
-[Beispiel: [annotations.WuppieAnnotation](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/WuppieAnnotation.java)]{.bsp}
+[Demo: [annotations.WuppieAnnotation](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/WuppieAnnotation.java): \@NotNull]{.bsp}
 
 ::: notes
-### IntelliJ inferiert mit `@NotNull` mögliche `null`-Werte
+### IntelliJ inferiert mit \@NotNull mögliche _null_-Werte
 
 ![](images/screenshot_infer-notnull.png){width="80%"}
 
-### IntelliJ baut bei `@NotNull` passende Assertions ein
+### IntelliJ baut bei \@NotNull passende Assertions ein
 
 ![](images/screenshot_nullpointerexception-notnull.png){width="80%"}
 :::
@@ -389,7 +394,7 @@ public class Foo extends AbstractProcessor {
 }
 ```
 
-[Demo: [annotations.C](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java), [annotations.Foo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/Foo.java), [META-INF](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/META-INF/)]{.bsp}
+[Demo: [annotations.C](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java) und [annotations.Foo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/Foo.java), [META-INF](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/META-INF/)]{.bsp}
 
 ::::::::: notes
 1.  Der Annotation-Processor sollte von `AbstractProcessor` ableiten
