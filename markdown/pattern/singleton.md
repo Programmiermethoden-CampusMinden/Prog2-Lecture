@@ -61,7 +61,7 @@ Beispiel für das Singleton-Pattern ...
 :::
 
 
-## Umsetzung: Eager Singleton Pattern
+## Umsetzung: "Eager" Singleton Pattern
 
 ::: notes
 Damit man von "außen" keine Instanzen einer Klasse anlegen kann, versteckt man den Konstruktor,
