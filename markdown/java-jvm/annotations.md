@@ -27,7 +27,7 @@ youtube:
   - link: ""
     name: "VL Annotationen"
   - link: ""
-    name: "Demo Annotationen"
+    name: "Demo Annotationen: Deprecated"
   - link: ""
     name: "Demo "
 fhmedia:
@@ -92,8 +92,7 @@ generieren: `Preferences > Java > Code Style > Add @Override annotation ...`.
     *   Webservices: `@WebService`, `@WebMethod`
     *   ...
 
-[[Beispiel: [annotations.B](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java): `@Override`, `@Deprecated`]{.bsp}]{.notes}
-
+[Demo: [annotations.B](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java): `@Override`, `@Deprecated`]{.bsp}
 
 ::::::::: notes
 Jetzt schauen wir uns erst einmal die Auswirkungen von `@Override` und `@Deprecated`
@@ -136,18 +135,24 @@ Weitere Annotationen aus dem JDK finden sich in den Paketen `java.lang.annotatio
 /**
  * Beschreibung Beschreibung Beschreibung
  *
- * @author  Dagobert Duck
- * @version V1
- * @since   schon immer
- * @param   date   Tag, Wert zw. 1 .. 31
- * @return  nix (nur zur Demo)
- * @see     java.util.Calendar
+ * @param date Tag, Wert zw. 1 .. 31
+ * @return true, falls Datum gesetzt wurde; false sonst
+ * @see java.util.Calendar
  * @deprecated As of JDK version 1.1
  */
-public void setDate(int date) {
+public boolean setDate(int date) {
     setField(Calendar.DATE, date);
 }
 ```
+
+::: notes
+Die Dokumentation mit Javadoc hatten wir uns bereits in der Einheit
+`["Javadoc"]({{< ref "/coding/javadoc" >}})`{=markdown} angesehen.
+Hier noch einmal exemplarisch die wichtigsten Elemente, die an
+Methoden verwendet werden.
+:::
+
+[[Beispiel: [annotations.B](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java)]{.bsp}]{.notes}
 
 
 ## `@NotNull` mit IntelliJ
@@ -169,10 +174,8 @@ sein.
 :::
 
 ```java
-/**
- * @param o should NOT be null
- */
-public void foo(Object o) {
+/** @param o should not be null */
+public void bar(Object o) {
     int i;
     if (o != null) {
         i = o.hashCode();
@@ -184,12 +187,13 @@ public void foo(Object o) {
 \pause
 
 ```java
+/** @param o must not be null */
 public void foo(@NotNull Object o) {
     int i = o.hashCode();
 }
 ```
 
-[Beispiel: [annotations.Wuppie](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/Wuppie.java) und [annotations.WuppieAnnotation](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/WuppieAnnotation.java)]{.bsp}
+[Beispiel: [annotations.WuppieAnnotation](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/WuppieAnnotation.java)]{.bsp}
 
 ::: notes
 ### IntelliJ inferiert mit `@NotNull` mögliche `null`-Werte
