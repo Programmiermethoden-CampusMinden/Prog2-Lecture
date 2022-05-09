@@ -29,7 +29,7 @@ youtube:
   - link: ""
     name: "Demo Annotationen: Deprecated"
   - link: ""
-    name: "Demo "
+    name: "Demo Annotation-Prozessor"
 fhmedia:
   - link: ""
     name: "VL Annotationen"
@@ -224,7 +224,7 @@ public class C {
 }
 ```
 
-[Beispiel: [annotations.C](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java)]{.bsp}
+[Demo: [annotations.C](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java)]{.bsp}
 
 ::::::::: notes
 ### Definition einer Annotation
@@ -348,13 +348,12 @@ Elemente verwendbar.
 
 ::: notes
 Der dem `javac`-Compiler vorgelegte Source-Code wird eingelesen und in einen
-entsprechenden Syntax-Tree (*AST*) transformiert (dazu mehr im Master im Modul
+entsprechenden Syntax-Tree (_AST_) transformiert (dazu mehr im Master im Modul
 "Compilerbau" :)
 
 Anschließend können sogenannte "Annotation Processors" über den AST laufen und
-ihre Analysen machen und/oder den AST modifizieren.
-(Danach kommen die üblichen weiteren Analysen und die Code-Generierung.)
-
+ihre Analysen machen und/oder den AST modifizieren. (Danach kommen die üblichen
+weiteren Analysen und die Code-Generierung.)
 
 An dieser Stelle kann man sich einklinken und einen eigenen Annotation-Prozessor
 ausführen lassen. Zur Abgrenzung: Diese Auswertung der Annotationen findet zur
@@ -376,7 +375,7 @@ eines einfachen Annotation-Prozessors, der lediglich die Annotationen liest.
 
 ```{.java size="footnotesize"}
 @SupportedAnnotationTypes("annotations.MySecondAnnotation")
-@SupportedSourceVersion(SourceVersion.RELEASE_11)
+@SupportedSourceVersion(SourceVersion.RELEASE_17)
 public class Foo extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> as, RoundEnvironment re) {
@@ -391,7 +390,7 @@ public class Foo extends AbstractProcessor {
 }
 ```
 
-[Beispiel: [annotations.C](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java), [annotations.Foo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/Foo.java), [META-INF](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/META-INF/)]{.bsp}
+[Demo: [annotations.C](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java), [annotations.Foo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/Foo.java), [META-INF](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/META-INF/)]{.bsp}
 
 ::::::::: notes
 1.  Der Annotation-Processor sollte von `AbstractProcessor` ableiten
@@ -416,29 +415,30 @@ public class Foo extends AbstractProcessor {
 Für ein umfangreicheres Beispiel mit Code-Erzeugung vergleiche beispielsweise die Artikelserie unter
 [cloudogu.com/en/blog/Java-Annotation-Processors_1-Intro](https://cloudogu.com/en/blog/Java-Annotation-Processors_1-Intro).
 
-
 Im Projekt muss jetzt noch der Ordner `META-INF/services/` angelegt werden mit der Datei
 `javax.annotation.processing.Processor`. Deren Inhalt ist für das obige Beispiel die Zeile
 `annotations.Foo`. Damit ist der Annotation-Processor `annotations.Foo` für das Übersetzen im eigenen
 Projekt registriert.
 
-
 Zum Compilieren des Annotation-Processors selbst ruft man beispielsweise folgenden Befehl auf:
+
 ```
 javac -cp . -proc:none annotations/Foo.java
 ```
+
 Die Option `-proc:none` sorgt für das Beispiel dafür, dass beim Compilieren des Annotation-Processors
 dieser nicht bereits aufgerufen wird (was sonst wg. der Registrierung über
 `META-INF/services/javax.annotation.processing.Processor` passieren würde).
 
-
 Zum Compilieren der Klasse `C` kann man wie sonst auch den Befehl nutzen:
+
 ```
 javac -cp . annotations/C.java
 ```
 
 Dabei läuft dann der Annotation-Processor `annotations.Foo` und erzeugt beim Verarbeiten von `annotations.C`
 die folgende Ausgabe:
+
 ```
 Note: found @MySecondAnnotation at main(java.lang.String[])
 ```
