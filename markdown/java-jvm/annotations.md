@@ -357,11 +357,6 @@ Elemente verwendbar.
 
 ## Annotationen [bei Compilieren]{ .notes} bearbeiten: Java Annotation-Prozessoren
 
-\bigskip
-
-<!-- TODO -->
-![](images/javac-flow){width="80%"}
-
 ::: notes
 Der dem `javac`-Compiler vorgelegte Source-Code wird eingelesen und in einen
 entsprechenden Syntax-Tree (_AST_) transformiert (dazu mehr im Master im Modul
@@ -370,6 +365,8 @@ entsprechenden Syntax-Tree (_AST_) transformiert (dazu mehr im Master im Modul
 Anschließend können sogenannte "Annotation Processors" über den AST laufen und
 ihre Analysen machen und/oder den AST modifizieren. (Danach kommen die üblichen
 weiteren Analysen und die Code-Generierung.)
+
+(Vgl. [OpenJDK: Compilation Overview](https://openjdk.java.net/groups/compiler/doc/compilation-overview/index.html).)
 
 An dieser Stelle kann man sich einklinken und einen eigenen Annotation-Prozessor
 ausführen lassen. Zur Abgrenzung: Diese Auswertung der Annotationen findet zur
