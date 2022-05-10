@@ -206,7 +206,7 @@ public void bar(Object o) {
 ```java
 /* o must not be null */
 public void foo(@NotNull Object o) {
-    // assert(o != null);
+    // assert(o != null);  //  Wirkung (von IntelliJ eingefügt)
     int i = o.hashCode();
 }
 ```
@@ -227,8 +227,7 @@ public void foo(@NotNull Object o) {
 ## Eigene Annotationen erstellen
 
 ```java
-public @interface MyFirstAnnotation {
-}
+public @interface MyFirstAnnotation {}
 
 public @interface MyThirdAnnotation {
     String author();
@@ -238,8 +237,7 @@ public @interface MyThirdAnnotation {
 
 @MyFirstAnnotation
 @MyThirdAnnotation(author = "Carsten Gips", vl = 3)
-public class C {
-}
+public class C {}
 ```
 
 [Demo: [annotations.C](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java)]{.bsp}
@@ -268,12 +266,10 @@ Parameter für Annotation werden über entsprechende Methoden-Deklaration realis
     }
 
     @MySecondAnnotation("wuppie")
-    public class D {
-    }
+    public class D {}
 
-    @MySecondAnnotation(value="wuppie")
-    public class E {
-    }
+    @MySecondAnnotation(value = "wuppie")
+    public class E {}
     ```
 
 *   Defaultwerte mit dem nachgestellten Schlüsselwort `default` sowie dem
@@ -323,8 +319,7 @@ public class Wuppie {
     private String foo;
 
     @ConstructorAnnotation
-    public Wuppie() {
-    }
+    public Wuppie() {}
 
     @MethodAnnotation1
     @MethodAnnotation2
