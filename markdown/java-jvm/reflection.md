@@ -35,7 +35,7 @@ youtube:
   - link: ""
     name: "Demo Reflection"
   - link: ""
-    name: "Demo "
+    name: "Demo Class-Loader"
 fhmedia:
   - link: ""
     name: "VL Reflection"
@@ -67,30 +67,26 @@ schauen Sie doch bitte einfach kurz im Handout zu Annotationen nach :-)
 :::
 
 
-## Wer bin ich? ... Informationen über ein Programm
-
-> Reflection is commonly used by programs which require the ability to examine
-> or modify the runtime behaviour of applications running in the Java virtual
-> machine.
->
-> \hfill -- [docs.oracle.com/javase/tutorial/reflect/](https://docs.oracle.com/javase/tutorial/reflect/)
-
-\bigskip
-\bigskip
-
-> For every type of object, the Java virtual machine instantiates an immutable
-> instance of `java.lang.Class` which provides methods to examine the runtime
-> properties of the object including its members and type information. `Class`
-> also provides the ability to create new classes and objects. Most importantly,
-> it is the entry point for all of the Reflection APIs.
->
-> \hfill -- [docs.oracle.com/javase/tutorial/reflect/class/](https://docs.oracle.com/javase/tutorial/reflect/class/)
-
-\bigskip
+## Wer bin ich? ... Informationen über ein Programm (zur Laufzeit)
 
 ::: cbox
 `java.lang.Class`: Metadaten über Klassen
 :::
+
+\bigskip
+
+```java
+// usual way of life
+Studi heiner = new Studi();
+heiner.hello();
+
+// let's use reflection
+try {
+    Object eve = Studi.class.getDeclaredConstructor().newInstance();
+    Method m = Studi.class.getDeclaredMethod("hello");
+    m.invoke(eve);
+} catch (ReflectiveOperationException ignored) {}
+```
 
 ::: notes
 Dies umfasst u.a.:
@@ -185,14 +181,10 @@ Method[] allMethods = c.getDeclaredMethods();  // all methods (excl. inherited)
 ```
 
 ::: notes
-*   Public Methode laden (auch von Superklasse/Interface geerbt): `Class<?>.getMethod(String, Class<?>[])`
-*   Beliebige (auch private) Methoden (in der Klasse selbst deklariert): `Class<?>.getDeclaredMethod(...)`
+*   `public` Methode laden (auch von Superklasse/Interface geerbt): `Class<?>.getMethod(String, Class<?>[])`
+*   Beliebige (auch `private`) Methoden (in der Klasse selbst deklariert): `Class<?>.getDeclaredMethod(...)`
 
-
-[Beispiel: reflection.ReflectionDemoInfo]{.bsp}
-
-
-*Anmerkung*: Mit `Class<?>.getDeclaredMethods()` erhalten Sie alle Methoden,
+_Anmerkung_: Mit `Class<?>.getDeclaredMethods()` erhalten Sie alle Methoden,
 die direkt in der Klasse deklariert werden (ohne geerbte Methoden!), unabhängig
 von deren Sichtbarkeit. Mit `Class<?>.getMethods()` erhalten Sie dagegen alle
 `public` Methoden, die in der Klasse selbst oder ihren Superklassen bzw. den
@@ -208,8 +200,6 @@ etc.
 Analog können Sie weitere Eigenschaften einer Klasse abfragen, beispielsweise Attribute
 (`Class<?>.getDeclaredFields()`) oder Konstruktoren (`Class<?>.getDeclaredConstructors()`).
 :::
-
-[Beispiel: reflection.ReflectionDemoAnnotation]{.bsp}
 
 
 ## Schritt 3: Instanz der geladenen Klasse erzeugen
@@ -233,26 +223,25 @@ Studi s = (Studi) ctor.newInstance("Beate", 42);
 ```
 
 ::: notes
-[Beispiel: reflection.ReflectionDemoCreate]{.bsp}
+### Parameterlose, öffentliche Konstruktoren:
 
-*   Parameterlose, öffentliche Konstruktoren:
-    *   `Class<?>.newInstance()` (seit Java9 *deprecated*)
-    *   `Class<?>.getConstructor()` => `Constructor<?>.newInstance()`
+*   `Class<?>.newInstance()` (seit Java9 *deprecated*)
+*   `Class<?>.getConstructor()` => `Constructor<?>.newInstance()`
 
-*   Sonst: Passenden Konstruktor explizit holen
-    `Class<?>.getDeclaredConstructor(Class<?>[])`,
-    Parametersatz zusammenbasteln (hier nicht dargestellt)
-    und aufrufen `Constructor<?>.newInstance(...)`
+### Sonstige Konstruktoren:
 
+Passenden Konstruktor explizit holen: `Class<?>.getDeclaredConstructor(Class<?>[])`,
+Parametersatz zusammenbasteln (hier nicht dargestellt)
+und aufrufen `Constructor<?>.newInstance(...)`
 
-**Unterschied `new` und `Constructor.newInstance()`**:
+### Unterschied _new_ und _Constructor.newInstance()_:
 
-> Tip: An important difference between `new` and `Constructor.newInstance()` is
-> that `new` performs method argument type checking, boxing, and method
-> resolution. None of these occur in reflection, where explicit choices must
-> be made.
->
-> \hfill -- [docs.oracle.com/javase/tutorial/reflect/member/ctorTrouble.html](https://docs.oracle.com/javase/tutorial/reflect/member/ctorTrouble.html)
+`new` ist nicht identisch zu `Constructor.newInstance()`: `new`
+kann Dinge wie Typ-Prüfung  oder Auto-Boxing mit erledigen, während
+man dies bei `Constructor.newInstance()` selbst explizit angeben
+oder erledigen muss.
+
+Vgl. [docs.oracle.com/javase/tutorial/reflect/member/ctorTrouble.html](https://docs.oracle.com/javase/tutorial/reflect/member/ctorTrouble.html).
 :::
 
 
@@ -273,7 +262,7 @@ Method method = c.getMethod("setName", paramT);
 method.invoke(s, "Holgi");
 ```
 
-[[Beispiel: reflection.ReflectionDemoCall]{.bsp}]{.notes}
+[Demo: [reflection.ReflectionDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/reflection/ReflectionDemo.java)]{.bsp}
 
 
 ## Hinweis: Klassen außerhalb des Classpath laden
@@ -287,18 +276,18 @@ Class<?> c1 = Class.forName("org.wuppie.Fluppie", true, ucl);
 Class<?> c2 = ucl.loadClass("org.wuppie.Fluppie");
 ```
 
-[Bemerkung zu Ordnerstruktur und Classpath; Beispiel: reflection.ReflectionDemoCP]{.bsp}
+[Bemerkung zu Ordnerstruktur und Classpath; Demo: [reflection.ClassLoaderDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/reflection/ClassLoaderDemo.java)]{.bsp}
 
 ::: notes
 Mit `Class.forName("reflection.Studi")` können Sie die Klasse `Studi` im
 Package `reflection` laden. Dabei muss sich aber die entsprechende
-`.class`-Datei (samt der der Package-Struktur entsprechendenen Ordnerstruktur
+`.class`-Datei (samt der der Package-Struktur entsprechenden Ordnerstruktur
 darüber) **im Java-Classpath** befinden!
 
 Mit einem weiteren `ClassLoader` können Sie auch aus Ordnern, die sich
 nicht im Classpath befinden, `.class`-Dateien laden. Dies geht dann entweder
-wie vorher über `Class.forName()`, wobei hier der neue Classloader als
-Parameter mitgegeben wird, oder direkt über den neuen Classloader mit
+wie vorher über `Class.forName()`, wobei hier der neue Class-Loader als
+Parameter mitgegeben wird, oder direkt über den neuen Class-Loader mit
 dessen Methode `loadClass()`.
 :::
 
@@ -315,7 +304,7 @@ dessen Methode `loadClass()`.
 
 [**Nachteile**]{.alert}:
 
-*   Verlust von Kapselung, Compilerunterstützung und Refactoring
+*   Verlust von Kapselung, Compiler-Unterstützung und Refactoring
 *   Performance: Dynamisches Laden von Klassen etc.
 *   Sicherheitsprobleme/-restriktionen
 
@@ -347,9 +336,4 @@ dessen Methode `loadClass()`.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
