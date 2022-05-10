@@ -58,8 +58,7 @@ public class FactoryBeispielTest {
 ```java
 @Target(value = ElementType.METHOD)
 @Retention(value = RetentionPolicy.RUNTIME)
-public @interface Wuppie {
-}
+public @interface Wuppie {}
 ```
 
 ::: notes
@@ -89,7 +88,9 @@ schauen Sie doch bitte einfach kurz im Handout zu Annotationen nach :-)
 
 \bigskip
 
-[`java.lang.Class`: Metadaten über Klassen]{.cbox}
+::: cbox
+`java.lang.Class`: Metadaten über Klassen
+:::
 
 ::: notes
 Dies umfasst u.a.:
@@ -109,7 +110,7 @@ Dies umfasst u.a.:
 
 \smallskip
 
-2.  Informationen abrufen (etwa welche Methoden vorhanden sind, welche Annotationen annotiert wurden, ...)
+2.  Informationen abrufen (welche Methoden, welche Annotationen, ...)
 
 \smallskip
 
@@ -320,7 +321,9 @@ dessen Methode `loadClass()`.
 
 \bigskip
 
-[**Gibt es eine Lösung ohne Reflection, wähle diese!**]{.cbox}
+::: cbox
+**Gibt es eine Lösung ohne Reflection, wähle diese!**
+:::
 
 
 ## Wrap-Up
