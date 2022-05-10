@@ -36,18 +36,18 @@ quizzes:
 assignments:
   - topic: sheet07
 youtube:
-  - link: ""
+  - link: "https://youtu.be/7u4_I4W_1JY"
     name: "VL Annotationen"
-  - link: ""
+  - link: "https://youtu.be/wt-Dq_Nv5UU"
     name: "Demo Annotationen: `@Override`, `@Deprecated`"
-  - link: ""
+  - link: "https://youtu.be/ayWWf_ALObs"
     name: "Demo `@NotNull`"
-  - link: ""
+  - link: "https://youtu.be/8vTMgYCstLE"
     name: "Demo Annotationen selbst gebastelt"
-  - link: ""
+  - link: "https://youtu.be/ypHMxunNZpg"
     name: "Demo Annotation-Prozessor"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/d438c8d0b87fc2934e71e539aaf32ce01126fc2145f08284235c4c4b2058b0ab9ccba925dbbcfaf90466c70aff29f79acae1f66edeb18bd794d08628545d4e07"
     name: "VL Annotationen"
 ---
 
