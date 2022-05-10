@@ -39,7 +39,7 @@ youtube:
   - link: ""
     name: "VL Annotationen"
   - link: ""
-    name: "Demo Annotationen: `@Deprecated`"
+    name: "Demo Annotationen: `@Override`, `@Deprecated`"
   - link: ""
     name: "Demo `@NotNull`"
   - link: ""
