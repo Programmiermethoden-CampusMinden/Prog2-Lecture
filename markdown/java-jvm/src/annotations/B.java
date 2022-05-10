@@ -1,8 +1,6 @@
 /** Package fuer Code-Snippets in VL "Annotationen" */
 package annotations;
 
-import java.util.Date;
-
 /**
  * Summary fuer Klasse B
  *
@@ -22,8 +20,6 @@ public class B extends A {
 
         System.out.println(s.getInfo());
         System.out.println(s.getInfo("Info: "));
-
-        Date d; // Dummy zum schnellen Oeffnen von java.util.Date ... :)
     }
 
     /**
@@ -36,6 +32,7 @@ public class B extends A {
      * @param s String, der verarbeitet werden soll
      * @return neuer String
      * @see A#getInfo()
+     * @see java.util.Date
      */
     // @Override
     public String getInfo(String s) {
