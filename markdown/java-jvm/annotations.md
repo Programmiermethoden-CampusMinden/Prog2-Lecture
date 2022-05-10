@@ -191,7 +191,7 @@ sein.
 :::
 
 ```java
-/** @param o should not be null */
+/* o should not be null */
 public void bar(Object o) {
     int i;
     if (o != null) {
@@ -204,8 +204,9 @@ public void bar(Object o) {
 \pause
 
 ```java
-/** @param o must not be null */
+/* o must not be null */
 public void foo(@NotNull Object o) {
+    // assert(o != null);
     int i = o.hashCode();
 }
 ```
