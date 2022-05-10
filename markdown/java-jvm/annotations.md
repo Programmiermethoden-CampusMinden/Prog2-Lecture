@@ -186,6 +186,10 @@ Zusätzlich baut IntelliJ entsprechende Assertions in den Code ein, die zur Lauf
 und dann das Programm abbrechen.
 
 Dadurch können entsprechende Dokumentationen im Javadoc und/oder manuelle Überprüfungen im Code entfallen.
+Außerdem hat man durch die Annotation gewissermaßen einen sichtbaren Vertrag (_Contract_) mit den Nutzern
+der Methode. Bei einem Aufruf mit `null` würde dieser Contract verletzt und eine entsprechende Exception
+geworfen (automatisch) statt einfach das Programm und die JVM "abzuschießen".
+
 Nachteil: Die entsprechende Bibliothek muss bei allen Entwicklern vorhanden und in das Projekt eingebunden
 sein.
 :::
