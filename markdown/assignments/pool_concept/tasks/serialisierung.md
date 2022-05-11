@@ -1,6 +1,6 @@
 Implementieren Sie die beiden Klassen entsprechend dem UML-Diagram:
 
-![](images/uml.png)
+![](images/uml_serialisierung.png)
 
 Objekte vom Typ `Person` sowie `Address` sollen serialisierbar sein (vgl. Vorlesung).
 Dabei soll das Passwort nicht serialisiert bzw. gespeichert werden, alle anderen
