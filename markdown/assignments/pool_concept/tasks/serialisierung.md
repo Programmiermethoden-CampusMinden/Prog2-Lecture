@@ -7,5 +7,5 @@ _Hinweis_: Verwenden Sie zur Umsetzung [java.io.Serializable](https://docs.oracl
 
 Erstellen Sie in Ihrem `main()` einige Instanzen von Person und speichern Sie diese in serialisierter Form und laden (deserialisieren) Sie diese anschließend in neue Variablen.
 
-Betrachten Sie die originalen, sowie die wieder deserialisierten, Objekte mithilfe des Debuggers.
+Betrachten Sie die ursprünglichen und die wieder deserialisierten Objekte mit Hilfe des Debuggers.
 Alternativ können Sie die Objekte auch in übersichtlicher Form über den Logger ausgeben.
