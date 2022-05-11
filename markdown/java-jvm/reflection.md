@@ -30,14 +30,14 @@ quizzes:
 assignments:
   - topic: sheet07
 youtube:
-  - link: ""
+  - link: "https://youtu.be/7wTKl8-KYd0"
     name: "VL Reflection"
-  - link: ""
+  - link: "https://youtu.be/e7rLH1f0fKM"
     name: "Demo Reflection"
-  - link: ""
+  - link: "https://youtu.be/HI_ZJFbvoNY"
     name: "Demo Class-Loader"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/9ebd01cdab64351e7b52863f4a442d3199d3322eef1ba277ba979ce756d2892a1317ddd6e1fc34e6b4d28b237dec99e56810fe8bb35b9e95db325edbb14d7719"
     name: "VL Reflection"
 ---
 
