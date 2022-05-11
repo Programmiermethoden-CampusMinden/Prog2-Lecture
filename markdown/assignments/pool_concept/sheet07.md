@@ -1,6 +1,6 @@
 ---
 type: assignment
-title: "Blatt 07: Annotationen, Reflection, Template-Method-Pattern, Swing"
+title: "Blatt 07: Reflection, Template-Method-Pattern"
 author: "André Matutat (FH Bielefeld)"
 points: 10
 weight: 7
