@@ -10,15 +10,24 @@ readings:
   - key: "Inden2013"
     comment: "Reflection: Kapitel 8"
 tldr: |
-  TODO
+  Mit Hilfe der Reflection-API kann man Programme zur **Laufzeit** inspizieren
+  und Eigenschaften von Elementen wie Klassen oder Methoden abfragen, aber auch
+  Klassen instantiieren und Methoden aufrufen, die eigentlich auf `private``
+  gesetzt sind oder die beispielsweise mit einer bestimmten Annotation markiert
+  sind.
 
-  *   Inspektion von Programmen zur Laufzeit: **Reflection**
-    *   `java.lang.Class`: Metadaten über Klassen
-    *   Je Klasse ein `Class`-Objekt
-    *   Informationen über Konstruktoren, Methoden, Felder
-    *   Anwendung: Laden und Ausführen von zur Compile-Zeit unbekanntem Code
-    *   Vorsicht: Verlust von Refactoring und Compiler-Zusicherungen!
+  Die Laufzeitumgebung erzeugt zu jedem Typ ein Objekt der Klasse
+  `java.lang.Class`. Über dieses `Class`-Objekt einer Klasse können dann Informationen
+  über diese Klasse abgerufen werden, beispielsweise welche Konstruktoren,
+  Methoden und Attribute es gibt.
 
+  Man kann über auch Klassen zur Laufzeit nachladen, die zur Compile-Zeit nicht
+  bekannt waren. Dies bietet sich beispielsweise für User-definierte Plugins an.
+
+  Reflection ist ein mächtiges Werkzeug. Durch das Arbeiten mit Strings und die
+  Interaktion/Inspektion zur _Laufzeit_ verliert man aber viele Prüfungen, die
+  der Compiler normalerweise zur Compile-Zeit vornimmt. Auch das Refactoring wird
+  dadurch eher schwierig.
 outcomes:
   - k2: "Probleme beim Einsatz von Reflection"
   - k2: "Bedeutung der verschiedenen Exceptions beim Aufruf von Methoden per Reflection"
