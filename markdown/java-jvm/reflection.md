@@ -12,7 +12,7 @@ readings:
 tldr: |
   Mit Hilfe der Reflection-API kann man Programme zur **Laufzeit** inspizieren
   und Eigenschaften von Elementen wie Klassen oder Methoden abfragen, aber auch
-  Klassen instantiieren und Methoden aufrufen, die eigentlich auf `private``
+  Klassen instantiieren und Methoden aufrufen, die eigentlich auf `private`
   gesetzt sind oder die beispielsweise mit einer bestimmten Annotation markiert
   sind.
 
