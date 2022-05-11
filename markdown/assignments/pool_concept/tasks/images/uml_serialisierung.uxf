@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>280</y>
+      <w>160</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Address
+--
+- street: String 
+- number: Integer
+- city: String
+- plz: Integer
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>280</y>
+      <w>220</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Person
+--
+- name: String 
+- age: Integer
+- username: String
+- password: String
+- addressList: List&lt;Address&gt;
+- friend: Person
+--
++ setFriend(person: Person): void
++ getFriend(): Person
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>320</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>230</y>
+      <w>160</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;90.0;140.0;90.0;140.0;10.0;10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+</diagram>
