@@ -33,6 +33,8 @@ public class ReflectionDemo {
         for (Method m : allMethods) {
             System.out.println(m.toGenericString());
             System.out.println("  Modifiers:  " + Modifier.toString(m.getModifiers()));
+            System.out.println("  Parameter:  " + m.getParameterCount());
+
 
             // Variante I:  getAnnotation() plus Vergleich
             Wuppie w = m.getAnnotation(Wuppie.class);
