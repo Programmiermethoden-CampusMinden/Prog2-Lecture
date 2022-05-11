@@ -35,6 +35,7 @@ public class ClassLoaderDemo {
         // Ab hier dann "normale" Reflection
         Object eve = c1.getDeclaredConstructor().newInstance();
         Method m = c1.getDeclaredMethod("hello");
+        m.setAccessible(true);
         m.invoke(eve);
     }
 }

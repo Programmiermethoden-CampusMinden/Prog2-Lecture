@@ -24,7 +24,7 @@ public class Studi {
             Method m = Studi.class.getDeclaredMethod("hello");
             m.invoke(eve);
         } catch (ReflectiveOperationException ignored) {
-            // TODO: Hier fehlt eine vernünftige sFehlerbehandlung!
+            // TODO: Hier fehlt eine vernünftige Fehlerbehandlung!
         }
     }
 

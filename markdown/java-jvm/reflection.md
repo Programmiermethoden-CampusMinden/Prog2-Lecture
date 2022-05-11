@@ -62,6 +62,11 @@ public @interface Wuppie {}
 ```
 
 ::: notes
+Reflection wird allgemein genutzt, um zur Laufzeit von Programmen
+Informationen über Klassen/Methoden/... zu bestimmen. Man könnte
+damit auch das Verhalten der laufenden Programme ändern oder Typen
+instantiieren und/oder Methoden aufrufen ...
+
 Wenn Sie nicht (mehr) wissen, wie man eigene Annotationen definiert,
 schauen Sie doch bitte einfach kurz im Handout zu Annotationen nach :-)
 :::
@@ -89,6 +94,10 @@ try {
 ```
 
 ::: notes
+Für jeden Typ instantiiert die JVM eine nicht veränderbare Instanz
+der Klasse `java.lang.Class`, über die Informationen zu dem Typ
+abgefragt werden können.
+
 Dies umfasst u.a.:
 
 *   Klassenname
@@ -97,6 +106,8 @@ Dies umfasst u.a.:
 *   Attribute
 *   Annotationen
 *   ...
+
+`java.lang.Class` bildet damit den Einstiegspunkt in die Reflection.
 :::
 
 
@@ -225,7 +236,7 @@ Studi s = (Studi) ctor.newInstance("Beate", 42);
 ::: notes
 ### Parameterlose, öffentliche Konstruktoren:
 
-*   `Class<?>.newInstance()` (seit Java9 *deprecated*)
+*   `Class<?>.newInstance()` (seit Java9 _deprecated_!)
 *   `Class<?>.getConstructor()` => `Constructor<?>.newInstance()`
 
 ### Sonstige Konstruktoren:
@@ -311,7 +322,7 @@ dessen Methode `loadClass()`.
 \bigskip
 
 ::: cbox
-**Gibt es eine Lösung ohne Reflection, wähle diese!**
+[Reflection ist ein nützliches Werkzeug. Aber:]{.notes} **Gibt es eine Lösung ohne Reflection, wähle diese!**
 :::
 
 
