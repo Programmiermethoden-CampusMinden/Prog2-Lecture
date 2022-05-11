@@ -273,6 +273,13 @@ Method method = c.getMethod("setName", paramT);
 method.invoke(s, "Holgi");
 ```
 
+::: notes
+Die Reflection-API bietet neben dem reinen Zugriff auf (alle) Methoden noch viele
+weitere Möglichkeiten. Beispielsweise können Sie bei einer Methode nach der Anzahl
+der Parameter und deren Typ und Annotationen fragen etc. ... Schauen Sie am besten
+einmal selbst in die API hinein.
+:::
+
 [Demo: [reflection.ReflectionDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/reflection/ReflectionDemo.java)]{.bsp}
 
 
