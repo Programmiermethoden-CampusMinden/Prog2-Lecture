@@ -8,4 +8,8 @@ hidden: true
 ---
 
 
-## XXX
+## Pattern: Template-Method-Pattern (2 Punkte)
+
+{{% include "assignments/pool_concept/tasks/template_method_pattern.md" %}}
+
+**Punkte**: 1P Einsatz Template-Method-Pattern, 1P Begründung für den Einsatz
