@@ -178,7 +178,7 @@ implementierten Methoden durchgeführt: Hier wird also die von `Token` geerbte M
 Ergebnisse.
 
 Die Methode `getHtml()` wird auch als "_Template-Methode_" bezeichnet. Die beiden darin
-aufgerufenen Methoden `htmlStart()` und `htmlEnd()` in `Token` werden auch als "_Hook-Methoden_"
+aufgerufenen Methoden `htmlStart()` und `htmlEnd()` in `Token` werden auch als "Hilfsmethoden"
 bezeichnet.
 
 Dies ist ein Beispiel für das **[Template-Method-Pattern](https://en.wikipedia.org/wiki/Template_method_pattern)**.
@@ -197,7 +197,7 @@ die sich auf anderen in der Basisklasse deklarierten (Hilfs-) Methoden "abstütz
 aufruft; in der Skizze `method1`, `method2`, `method3`). Diese Hilfsmethoden können als
 `abstract` markiert werden und müssen dann von den ableitenden Klassen implementiert werden
 (in der Skizze `method1` und `method2`). Man kann aber auch einige/alle dieser aufgerufenen
-Hilfsmethoden in der Basisklasse implementieren (beispielweise mit einem leeren Body - sogenannte
+Hilfsmethoden in der Basisklasse implementieren (beispielsweise mit einem leeren Body - sogenannte
 "Hook"-Methoden) und die ableitenden Klassen _können_ dann diese Methoden überschreiben und das
 Verhalten so neu formulieren (in der Skizze `method3`).
 
