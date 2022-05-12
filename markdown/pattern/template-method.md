@@ -192,7 +192,7 @@ Damit werden Teile des Verhaltens an die ableitenden Klassen ausgelagert.
 
 ### Verwandtschaft zum Strategy-Pattern
 
-Dieses Pattern hat eine starke Verwandtschaft zum Strategy-Pattern.
+Das Template-Method-Pattern hat eine starke Verwandtschaft zum Strategy-Pattern.
 
 Im Strategy-Pattern haben wir Verhalten komplett an andere Objekte _delegiert_, indem wir in
 einer Methode einfach die passende Methode auf dem übergebenen Strategie-Objekt aufgerufen haben.
@@ -208,7 +208,18 @@ im Template-Method-Pattern gewissermaßen nur Teile des Verhaltens an die ableit
 
 
 ## Wrap-Up
-...
+
+Template-Method-Pattern: Verhaltensänderung durch Vererbungsbeziehungen
+
+\smallskip
+
+*   Basis-Klasse:
+    *   Template-Methode, die Verhalten definiert und Hook-Methoden aufruft
+    *   Hook-Methoden: Abstrakte Methoden (oder Basis-Implementierung)
+*   Ableitende Klassen:
+    *   Verfeinern Verhalten durch Implementieren der Hook-Methoden
+*   Zur Laufzeit: Dynamische Polymorphie: Aufruf der Template-Methode nutzt
+    die im tatsächlichen Typ implementierten Hook-Methoden
 
 
 
