@@ -5,30 +5,22 @@ menuTitle: "Serialisierung"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 7
 readings:
-  - key: "Bloch2018"
-  - key: "Java-11-documentation"
-  - key: "Java-11-tutorial"
-  - key: "Java-SE-tutorial"
-  - key: "Ullenboom2016"
-  - key: "Urma2014"
-  - key: "Juneau2017"
+  - key: "Java-SE-Tutorial"
+    comment: "Essential Java Classes > Basic I/O > Object Streams"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
 outcomes:
-  - k1: "**wuppie**"
   - k2: "*foo*"
   - k3: "fluppie"
 quizzes:
   - link: "XYZ"
     name: "Quiz Serialisierung (ILIAS)"
 assignments:
-  - topic: sheet06
+  - topic: sheet07
 youtube:
   - link: ""
     name: "VL Serialisierung"
-  - link: ""
-    name: "Demo Serialisierung"
 fhmedia:
   - link: ""
     name: "VL Serialisierung"
@@ -46,7 +38,9 @@ Lorem Ipsum. Starte mit H2-Level.
 ...
 
 ## Folie 4
-...
+
+Serialisierung (equals, hashCode Wdhlg)
+
 
 ## Folie 5
 ...
