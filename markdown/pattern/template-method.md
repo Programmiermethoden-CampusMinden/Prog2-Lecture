@@ -165,8 +165,9 @@ implementierten Methoden durchgeführt: Hier wird also die von `Token` geerbte M
 `htmlEnd()` aufruft. Diese sind in `KeyWord` implementiert und liefern nun die passenden
 Ergebnisse.
 
-Die beiden Methoden `htmlStart()` und `htmlEnd()` in `Token` werden auch als
-"_Template-Methoden_" bezeichnet.
+Die Methode `getHtml()` wird auch als "_Template-Methode_" bezeichnet. Die beiden darin
+aufgerufenen Methoden `htmlStart()` und `htmlEnd()` in `Token` werden auch als "_Hook-Methoden_"
+bezeichnet.
 
 Dies ist ein Beispiel für das **[Template-Method-Pattern](https://en.wikipedia.org/wiki/Template_method_pattern)**.
 :::
@@ -174,7 +175,7 @@ Dies ist ein Beispiel für das **[Template-Method-Pattern](https://en.wikipedia.
 
 ## Template-Method-Pattern
 
-![](images/template-method.png){width="80%"}
+![](images/template-method.png){width="80%" web_width="50%"}
 
 ::: notes
 Dieses Pattern hat eine starke Verwandtschaft zum Strategy-Pattern.
