@@ -48,6 +48,9 @@ Serialisierung (equals, hashCode Wdhlg)
 ## Folie 6
 
 https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectOutputStream.html
+https://docs.oracle.com/javase/8/docs/platform/serialization/spec/serialTOC.html
+https://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html
+https://www.baeldung.com/java-serialization
 
 ...
 
