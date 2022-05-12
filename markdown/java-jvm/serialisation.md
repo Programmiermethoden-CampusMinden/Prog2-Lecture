@@ -54,8 +54,7 @@ Lorem Ipsum. Starte mit H2-Level.
     ObjectInputStream: Object readObject()
     ```
 
-::: notes
-### Bedingungen für Objektserialisierung
+## Bedingungen für Objekt-Serialisierung
 
 *   Klassen implementieren Marker-Interface `Serializable`
 *   Alle Attribute müssen ebenfalls serialisierbar sein (oder Deklaration "`transient`")
@@ -64,12 +63,14 @@ Lorem Ipsum. Starte mit H2-Level.
     nur einmal (bei Mehrfachreferenzierung)
 *   Serialisierbarkeit vererbt sich
 
-### Ausnahmen
+## Ausnahmen
 
 *   Statische Attribute werden nicht serialisiert
 *   Als `transient` deklarierte Attribute werden nicht serialisiert
+*   Nicht serialisierbare Attribute führen zu `NotSerializableException`
 
-### Version-UID
+
+## Version-UID
 
 `static final long serialVersionUID = 42L;`
 
@@ -77,37 +78,22 @@ Lorem Ipsum. Starte mit H2-Level.
 *   Wenn das Attribut fehlt, wird eine Art Checksumme von der Runtime-Umgebung
     berechnet (basierend auf diversen Eigenschaften der Klasse)
 
-Es existieren diverse Fallstricke und Probleme, siehe Bloch: "Effective Java",
-Addison-Wesley, Kapitel 11 "Serialization"
+::: notes
+Es existieren diverse Fallstricke und Probleme, siehe [@Bloch2018] Kapitel 11 "Serialization".
+
+Weitere Links:
+
+-   Tutorials:
+    -   https://docs.oracle.com/en/java/javase/17/docs/specs/serialization/input.html
+    -   https://www.baeldung.com/java-serialization
+-   API:
+    -   https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectOutputStream.html
+    -   https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectInputStream.html
+    -   https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html
 :::
 
 [Beispiel: [serial.SerializableStudi](https://github.com/PM-Dungeon/PM-Lecture/blob/master/java-jvm/src/serial/SerializableStudi.java)]{.bsp}
 
-
-
-## Folie 3
-...
-
-## Folie 4
-
-Serialisierung (equals, hashCode Wdhlg)
-
-
-## Folie 5
-...
-
-## Folie 6
-
-https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectOutputStream.html
-https://docs.oracle.com/javase/8/docs/platform/serialization/spec/serialTOC.html
-https://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html
-https://www.baeldung.com/java-serialization
-
-https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html
-https://docs.oracle.com/javase/8/docs/api/java/io/ObjectOutputStream.html
-https://docs.oracle.com/javase/8/docs/api/java/io/ObjectInputStream.html
-
-...
 
 ## Wrap-Up
 ...

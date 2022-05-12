@@ -1,11 +1,6 @@
 package serial;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.*;
 import java.util.logging.Logger;
 
 public class SerializableStudi implements Serializable {
@@ -35,10 +30,10 @@ public class SerializableStudi implements Serializable {
     }
 
     public static void writeObject(SerializableStudi studi, String filename) {
-        try (ObjectOutputStream out = new ObjectOutputStream(Files.newOutputStream(Paths.get(filename)))) {
-            out.writeObject(studi);
-            out.flush();
-            out.close();
+        try (FileOutputStream fos = new FileOutputStream(filename); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            oos.writeObject(studi);
+            oos.flush();
+            oos.close();
         } catch (IOException ex) {
             final Logger LOG = Logger.getLogger(SerializableStudi.class.getName());
             LOG.severe("Konnte Objekt nicht serialisieren");
@@ -47,9 +42,9 @@ public class SerializableStudi implements Serializable {
 
     public static SerializableStudi readObject(String filename) {
         SerializableStudi studi = null;
-        try (ObjectInputStream in = new ObjectInputStream(Files.newInputStream(Paths.get(filename)))) {
-            studi = (SerializableStudi) in.readObject();
-            in.close();
+        try (FileInputStream fis = new FileInputStream(filename); ObjectInputStream ois = new ObjectInputStream(fis)) {
+            studi = (SerializableStudi) ois.readObject();
+            ois.close();
         } catch (IOException | ClassNotFoundException ex) {
             final Logger LOG = Logger.getLogger(SerializableStudi.class.getName());
             LOG.severe("Konnte Objekt nicht de-serialisieren");
