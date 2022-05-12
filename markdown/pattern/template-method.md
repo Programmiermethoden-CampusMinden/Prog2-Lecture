@@ -197,11 +197,13 @@ Dieses Pattern hat eine starke Verwandtschaft zum Strategy-Pattern.
 Im Strategy-Pattern haben wir Verhalten komplett an andere Objekte _delegiert_, indem wir in
 einer Methode einfach die passende Methode auf dem übergebenen Strategie-Objekt aufgerufen haben.
 
-Im Template-Method-Pattern nutzen wir statt Delegation Mechanismen der Vererbung und dynamischen
-Polymorphie und definieren abstrakte Hook-Methoden, die wir in der Template-Methode der Basis-Klasse
-aufrufen. Die Hook-Methoden werden aber ihrerseits erst in den ableitenden Klassen implementiert
-(oder überschrieben). Damit lagert man hier gewissermaßen nur Teile des Verhaltens an die ableitenden
-Klassen aus.
+Im Template-Method-Pattern nutzen wir statt Delegation die Mechanismen Vererbung und dynamische
+Polymorphie und definieren in der Basis-Klasse abstrakte Hook-Methoden, die wir bereits in der
+Template-Methode der Basis-Klasse aufrufen. Damit ist das grobe Verhalten in der Basis-Klasse
+festgelegt, wird aber in den ableitenden Klassen durch das dortige Definieren oder Überschreiben
+der Hook-Methoden verfeinert. Zur Laufzeit werden dann durch die dynamische Polymorphie die
+tatsächlich implementierten Hook-Methoden in den ableitenden Klassen aufgerufen. Damit lagert man
+im Template-Method-Pattern gewissermaßen nur Teile des Verhaltens an die ableitenden Klassen aus.
 :::
 
 
