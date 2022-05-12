@@ -52,6 +52,10 @@ https://docs.oracle.com/javase/8/docs/platform/serialization/spec/serialTOC.html
 https://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html
 https://www.baeldung.com/java-serialization
 
+https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html
+https://docs.oracle.com/javase/8/docs/api/java/io/ObjectOutputStream.html
+https://docs.oracle.com/javase/8/docs/api/java/io/ObjectInputStream.html
+
 ...
 
 ## Wrap-Up
