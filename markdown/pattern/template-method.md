@@ -177,12 +177,17 @@ Dies ist ein Beispiel für das **[Template-Method-Pattern](https://en.wikipedia.
 ![](images/template-method.png){width="80%"}
 
 ::: notes
-Dieses Pattern hat eine starke Verwandtschaft zum Strategy-Pattern. Dort haben
-wir Verhalten an andere Objekte _delegiert_, indem wir in einer Methode einfach
-die passende Methode auf dem übergebenen Strategie-Objekt aufgerufen haben. Im
-Template-Method-Pattern nutzen wir Vererbung und dynamische Polymorphie und
-definieren abstrakte Template-Methoden, die wir in unseren Methoden aufrufen,
-die aber ihrerseits erst in den ableitenden Klassen implementiert werden.
+Dieses Pattern hat eine starke Verwandtschaft zum Strategy-Pattern.
+
+Dort haben wir Verhalten komplett an andere Objekte _delegiert_, indem
+wir in einer Methode einfach die passende Methode auf dem übergebenen
+Strategie-Objekt aufgerufen haben.
+
+Im Template-Method-Pattern nutzen wir Vererbung und dynamische Polymorphie
+und definieren abstrakte Template-Methoden, die wir in den Methoden der
+Basis-Klasse aufrufen. Die Template-Methoden werden aber ihrerseits erst
+in den ableitenden Klassen implementiert. Damit lagert man hier gewissermaßen
+nur Teile des Verhaltens an die ableitenden Klassen aus.
 :::
 
 
