@@ -178,17 +178,29 @@ Dies ist ein Beispiel für das **[Template-Method-Pattern](https://en.wikipedia.
 ![](images/template-method.png){width="80%" web_width="50%"}
 
 ::: notes
+### Aufbau Template-Method-Pattern
+
+In der Basisklasse implementiert man eine Template-Methode (in der Skizze `templateMethod`),
+die sich auf anderen in der Basisklasse deklarierten Methoden "abstützt" (diese also aufruft;
+in der Skizze `method1`, `method2`, `method3`). Diese weiteren Methoden können als `abstract`
+markiert werden und müssen dann von den ableitenden Klassen implementiert werden (in der Skizze
+`method1` und `method2`). Man kann aber auch einige/alle dieser aufgerufenen Methoden in der
+Basisklasse implementieren und die ableitenden Klassen _können_ dann das Verhalten überschreiben
+und neu formulieren (in der Skizze `method3`).
+
+Damit werden Teile des Verhaltens an die ableitenden Klassen ausgelagert.
+
+### Verwandtschaft zum Strategy-Pattern
+
 Dieses Pattern hat eine starke Verwandtschaft zum Strategy-Pattern.
 
-Dort haben wir Verhalten komplett an andere Objekte _delegiert_, indem
-wir in einer Methode einfach die passende Methode auf dem übergebenen
-Strategie-Objekt aufgerufen haben.
+Dort haben wir Verhalten komplett an andere Objekte _delegiert_, indem wir in einer Methode
+einfach die passende Methode auf dem übergebenen Strategie-Objekt aufgerufen haben.
 
-Im Template-Method-Pattern nutzen wir Vererbung und dynamische Polymorphie
-und definieren abstrakte Template-Methoden, die wir in den Methoden der
-Basis-Klasse aufrufen. Die Template-Methoden werden aber ihrerseits erst
-in den ableitenden Klassen implementiert. Damit lagert man hier gewissermaßen
-nur Teile des Verhaltens an die ableitenden Klassen aus.
+Im Template-Method-Pattern nutzen wir Vererbung und dynamische Polymorphie und definieren
+abstrakte Template-Methoden, die wir in den Methoden der Basis-Klasse aufrufen. Die
+Template-Methoden werden aber ihrerseits erst in den ableitenden Klassen implementiert. Damit
+lagert man hier gewissermaßen nur Teile des Verhaltens an die ableitenden Klassen aus.
 :::
 
 
