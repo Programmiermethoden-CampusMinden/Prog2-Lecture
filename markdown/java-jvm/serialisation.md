@@ -21,15 +21,38 @@ assignments:
 youtube:
   - link: ""
     name: "VL Serialisierung"
+  - link: ""
+    name: "Demo Serialisierung"
 fhmedia:
   - link: ""
     name: "VL Serialisierung"
 ---
 
 
-## Motivation
-Lorem Ipsum. Starte mit H2-Level.
-...
+## Motivation: Persistierung von Objekten und Spielzuständen
+
+```java
+public class Studi {
+    private final int credits = 42;
+    private String name = "Hilde";
+
+    ...
+}
+```
+
+\bigskip
+
+::: cbox
+Wie kann ich Objekte speichern und wieder laden?
+:::
+
+::: notes
+Ich möchte ein Spiel (einen Lauf) im Dungeon abspeichern, um es später fortsetzen
+zu können. Wie kann ich den aktuellen Zustand (also Level, Monster, Held, Inventar,
+XP/Health/...) so speichern, dass ich später das Spiel nach einem Neustart einfach
+fortsetzen kann?
+:::
+
 
 ## Serialisierung von Objekten
 
@@ -45,14 +68,26 @@ Lorem Ipsum. Starte mit H2-Level.
 *   Schreiben von Objekten (samt Zustand) in Streams
 
     ```java
-    ObjectOutputStream: void writeObject(Object);
+    ObjectOutputStream: void writeObject(Object)
     ```
+
+    ::: notes
+    Die Serialisierung erfolgt dabei für alle Attribute
+    (außer `static` und `transient`, s.u.) rekursiv.
+
+    Dabei werden auch Zirkelreferenzen automatisch
+    aufgelöst/unterbrochen.
+    :::
 
 *   Lesen und "Wiedererwecken" der Objekte aus Streams
 
     ```java
     ObjectInputStream: Object readObject()
     ```
+
+    ::: notes
+    Dabei erfolgt KEIN Konstruktor-Aufruf!
+    :::
 
 
 ## Einfaches Beispiel
@@ -65,8 +100,7 @@ public class Studi implements Serializable {
     public static void writeObject(Studi studi, String filename) {
         try (FileOutputStream fos = new FileOutputStream(filename);
             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-            oos.writeObject(studi);
-            oos.close();
+            oos.writeObject(studi);    oos.close();
         } catch (IOException ex) {}
     }
 
@@ -74,8 +108,7 @@ public class Studi implements Serializable {
         Studi studi = null;
         try (FileInputStream fis = new FileInputStream(filename);
             ObjectInputStream ois = new ObjectInputStream(fis)) {
-            studi = (Studi) ois.readObject();
-            ois.close();
+            studi = (Studi) ois.readObject();    ois.close();
         } catch (IOException | ClassNotFoundException ex) {}
         return studi;
     }
@@ -95,9 +128,9 @@ public class Studi implements Serializable {
 
 ## Ausnahmen
 
-*   Statische Attribute werden nicht serialisiert
+*   Als `static` deklarierte Attribute werden nicht serialisiert
 *   Als `transient` deklarierte Attribute werden nicht serialisiert
-*   Nicht serialisierbare Attribute führen zu `NotSerializableException`
+*   Nicht serialisierbare Attribut-Typen führen zu `NotSerializableException`
 
 
 ## Version-UID
@@ -140,7 +173,22 @@ Weitere Links:
 
 
 ## Wrap-Up
-...
+
+*   Markerinterface `Serializable` schaltet Serialisierbarkeit frei
+
+\smallskip
+
+*   Objekte schreiben: `ObjectOutputStream`:  `void writeObject(Object)`
+*   Objekte lesen: `ObjectInputStream`: `Object readObject()`
+
+\smallskip
+
+*   Wichtigste Eigenschaften:
+    *   Attribute müssen serialisierbar sein
+    *   `transient` und `static` Attribute werden nicht serialisiert
+    *   De-Serialisierung: KEIN Konstruktor-Aufruf!
+    *   Serialisierbarkeit vererbt sich
+    *   Objekt-Referenz-Graph wird automatisch beachtet
 
 
 
