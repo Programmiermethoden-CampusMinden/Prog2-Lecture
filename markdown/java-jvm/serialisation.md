@@ -31,7 +31,7 @@ fhmedia:
 Lorem Ipsum. Starte mit H2-Level.
 ...
 
-## Folie 2
+## Serialisierung von Objekten
 
 *   Klassen müssen Marker-Interface `Serializable` implementieren
 
@@ -54,14 +54,44 @@ Lorem Ipsum. Starte mit H2-Level.
     ObjectInputStream: Object readObject()
     ```
 
+
+## Einfaches Beispiel
+
+```{.java size="footnotesize"}
+public class Studi implements Serializable {
+    private final int credits = 42;
+    private String name = "Hilde";
+
+    public static void writeObject(Studi studi, String filename) {
+        try (FileOutputStream fos = new FileOutputStream(filename);
+            ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            oos.writeObject(studi);
+            oos.close();
+        } catch (IOException ex) {}
+    }
+
+    public static Studi readObject(String filename) {
+        Studi studi = null;
+        try (FileInputStream fis = new FileInputStream(filename);
+            ObjectInputStream ois = new ObjectInputStream(fis)) {
+            studi = (Studi) ois.readObject();
+            ois.close();
+        } catch (IOException | ClassNotFoundException ex) {}
+        return studi;
+    }
+}
+```
+
+
 ## Bedingungen für Objekt-Serialisierung
 
 *   Klassen implementieren Marker-Interface `Serializable`
 *   Alle Attribute müssen ebenfalls serialisierbar sein (oder Deklaration "`transient`")
 *   Alle primitiven Typen sind per Default serialisierbar
-*   Es wird automatisch rekusiv serialisiert, aber jedes Objekt
+*   Es wird automatisch rekursiv serialisiert, aber jedes Objekt
     nur einmal (bei Mehrfachreferenzierung)
 *   Serialisierbarkeit vererbt sich
+
 
 ## Ausnahmen
 
@@ -72,27 +102,41 @@ Lorem Ipsum. Starte mit H2-Level.
 
 ## Version-UID
 
-`static final long serialVersionUID = 42L;`
+```java
+static final long serialVersionUID = 42L;
+```
+
+\bigskip
 
 *   Dient zum Vergleich der serialisierten Version und der aktuellen Klasse
+*   Über IDE generieren oder manuell vergeben
 *   Wenn das Attribut fehlt, wird eine Art Checksumme von der Runtime-Umgebung
     berechnet (basierend auf diversen Eigenschaften der Klasse)
 
 ::: notes
-Es existieren diverse Fallstricke und Probleme, siehe [@Bloch2018] Kapitel 11 "Serialization".
+Dieser Wert wird beim Einlesen verglichen: Das Objekt wird nur dann wieder de-serialisiert,
+wenn die `serialVersionUID` mit der einzulesenden Klasse übereinstimmt!
+
+Bei automatischer Berechnung der `serialVersionUID` durch die JVM kann jede kleine Änderung an
+der Klasse (beispielsweise Refactoring: Änderung der Methodennamen) eine neue `serialVersionUID`
+zur Folge haben. Das würde bedeuten, dass bereits serialisierte Objekte nicht mehr eingelesen
+werden können, auch wenn sich nur Methoden o.ä. verändert haben und die Attribute noch so vorhanden
+sind. Deshalb bietet es sich an, hier selbst eine `serialVersionUID` zu definieren.
+
+Es existieren diverse weitere Fallstricke und Probleme, siehe [@Bloch2018] Kapitel 11 "Serialization".
 
 Weitere Links:
 
--   Tutorials:
-    -   https://docs.oracle.com/en/java/javase/17/docs/specs/serialization/input.html
-    -   https://www.baeldung.com/java-serialization
--   API:
-    -   https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectOutputStream.html
-    -   https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectInputStream.html
-    -   https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html
+*   Tutorials:
+    *   https://docs.oracle.com/en/java/javase/17/docs/specs/serialization/input.html
+    *   https://www.baeldung.com/java-serialization
+*   API:
+    *   https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectOutputStream.html
+    *   https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectInputStream.html
+    *   https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html
 :::
 
-[Beispiel: [serial.SerializableStudi](https://github.com/PM-Dungeon/PM-Lecture/blob/master/java-jvm/src/serial/SerializableStudi.java)]{.bsp}
+[Demo: [serial.SerializableStudi](https://github.com/PM-Dungeon/PM-Lecture/blob/master/java-jvm/src/serial/SerializableStudi.java)]{.bsp}
 
 
 ## Wrap-Up
