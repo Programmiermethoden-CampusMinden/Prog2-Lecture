@@ -7,7 +7,6 @@ weight: 5
 readings:
   - key: "Eilebrecht2013"
   - key: "Gamma2011"
-  - key: "Kleuker2018"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
