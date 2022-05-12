@@ -8,20 +8,21 @@ readings:
   - key: "Eilebrecht2013"
   - key: "Gamma2011"
 tldr: |
-  Das Template-Method-Pattern ist ein Entwurfsmuster, in dem ein gewisses Verhalten
-  in einer sogenannten "Template-Methode" implementiert wird. Darin werden dann
-  beispielsweise Methoden aufgerufen, die in der Basisklasse als `abstract` markiert
-  sind ("Hook-Methoden"). Über diese Template-Methoden legt also die Basisklasse ein
-  gewisses Verhaltensschema fest ("Template") - daher auch der Name.
+  Das Template-Method-Pattern ist ein Entwurfsmuster, in dem ein gewisses Verhalten in
+  einer sogenannten "Template-Methode" implementiert wird. Darin werden dann u.a.
+  Hilfsmethoden aufgerufen, die in der Basisklasse entweder als `abstract` markiert
+  sind oder mit einem leeren Body implementiert sind ("Hook-Methoden"). Über diese
+  Template-Methode legt also die Basisklasse ein gewisses Verhaltensschema fest
+  ("Template") - daher auch der Name.
 
-  In den ableitenden Klassen werden dann die abstrakten Methoden (Hook-Methoden)
-  implementiert und damit das Verhalten verfeinert.
+  In den ableitenden Klassen werden dann die abstrakten Methoden und/oder die Hook-Methoden
+  implementiert bzw. überschrieben und damit das Verhalten verfeinert.
 
-  Zur Laufzeit ruft man auf den Objekten die Template-Methode auf. Dabei wird der
-  konkrete Typ der Objekte bestimmt (auch wenn man sie unter dem Typ der Oberklasse
-  führt) und die am tiefsten in der Vererbungshierarchie implementierten Methoden
-  aufgerufen. D.h. die Aufrufe der Hook-Methoden in der Template-Methode führen zu
-  den in der jeweiligen ableitenden Klasse implementierten Varianten.
+  Zur Laufzeit ruft man auf den Objekten die Template-Methode auf. Dabei wird von der
+  Laufzeitumgebung der konkrete Typ der Objekte bestimmt (auch wenn man sie unter dem
+  Typ der Oberklasse führt) und die am tiefsten in der Vererbungshierarchie implementierten
+  Methoden aufgerufen. D.h. die Aufrufe der Hilfsmethoden in der Template-Methode führen
+  zu den in der jeweiligen ableitenden Klasse implementierten Varianten.
 outcomes:
   - k3: "Template-Method-Entwurfsmuster praktisch anwenden"
 quizzes:
@@ -192,12 +193,13 @@ Dies ist ein Beispiel für das **[Template-Method-Pattern](https://en.wikipedia.
 ### Aufbau Template-Method-Pattern
 
 In der Basisklasse implementiert man eine Template-Methode (in der Skizze `templateMethod`),
-die sich auf anderen in der Basisklasse deklarierten Methoden "abstützt" (diese also aufruft;
-in der Skizze `method1`, `method2`, `method3`). Diese weiteren Methoden können als `abstract`
-markiert werden und müssen dann von den ableitenden Klassen implementiert werden (in der Skizze
-`method1` und `method2`). Man kann aber auch einige/alle dieser aufgerufenen Methoden in der
-Basisklasse implementieren und die ableitenden Klassen _können_ dann das Verhalten überschreiben
-und neu formulieren (in der Skizze `method3`).
+die sich auf anderen in der Basisklasse deklarierten (Hilfs-) Methoden "abstützt" (diese also
+aufruft; in der Skizze `method1`, `method2`, `method3`). Diese Hilfsmethoden können als
+`abstract` markiert werden und müssen dann von den ableitenden Klassen implementiert werden
+(in der Skizze `method1` und `method2`). Man kann aber auch einige/alle dieser aufgerufenen
+Hilfsmethoden in der Basisklasse implementieren (beispielweise mit einem leeren Body - sogenannte
+"Hook"-Methoden) und die ableitenden Klassen _können_ dann diese Methoden überschreiben und das
+Verhalten so neu formulieren (in der Skizze `method3`).
 
 Damit werden Teile des Verhaltens an die ableitenden Klassen ausgelagert.
 
@@ -209,11 +211,11 @@ Im Strategy-Pattern haben wir Verhalten komplett an andere Objekte _delegiert_, 
 einer Methode einfach die passende Methode auf dem übergebenen Strategie-Objekt aufgerufen haben.
 
 Im Template-Method-Pattern nutzen wir statt Delegation die Mechanismen Vererbung und dynamische
-Polymorphie und definieren in der Basis-Klasse abstrakte Hook-Methoden, die wir bereits in der
-Template-Methode der Basis-Klasse aufrufen. Damit ist das grobe Verhalten in der Basis-Klasse
+Polymorphie und definieren in der Basis-Klasse abstrakte oder Hook-Methoden, die wir bereits in
+der Template-Methode der Basis-Klasse aufrufen. Damit ist das grobe Verhalten in der Basis-Klasse
 festgelegt, wird aber in den ableitenden Klassen durch das dortige Definieren oder Überschreiben
-der Hook-Methoden verfeinert. Zur Laufzeit werden dann durch die dynamische Polymorphie die
-tatsächlich implementierten Hook-Methoden in den ableitenden Klassen aufgerufen. Damit lagert man
+der Hilfsmethoden verfeinert. Zur Laufzeit werden dann durch die dynamische Polymorphie die
+tatsächlich implementierten Hilfsmethoden in den ableitenden Klassen aufgerufen. Damit lagert man
 im Template-Method-Pattern gewissermaßen nur Teile des Verhaltens an die ableitenden Klassen aus.
 :::
 
@@ -225,11 +227,11 @@ Template-Method-Pattern: Verhaltensänderung durch Vererbungsbeziehungen
 \smallskip
 
 *   Basis-Klasse:
-    *   Template-Methode, die Verhalten definiert und Hook-Methoden aufruft
-    *   Hook-Methoden: Abstrakte Methoden (oder Basis-Implementierung)
-*   Ableitende Klassen: Verfeinern Verhalten durch Implementieren der Hook-Methoden
+    *   Template-Methode, die Verhalten definiert und Hilfsmethoden aufruft
+    *   Hilfsmethoden: Abstrakte Methoden (oder "Hook": Basis-Implementierung)
+*   Ableitende Klassen: Verfeinern Verhalten durch Implementieren der Hilfsmethoden
 *   Zur Laufzeit: Dynamische Polymorphie: Aufruf der Template-Methode nutzt
-    die im tatsächlichen Typ des Objekts implementierten Hook-Methoden
+    die im tatsächlichen Typ des Objekts implementierten Hilfsmethoden
 
 
 
