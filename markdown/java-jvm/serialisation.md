@@ -10,7 +10,7 @@ readings:
 tldr: |
   Objekte lassen sich mit der Methode `void writeObject(Object)` in `ObjectOutputStream`
   einfach in einen Datenstrom schreiben. Dies kann beispielsweise eine Datei o.ä. sein.
-  Mit Hilfe von `Object readObject()` in `ObjectInputStream` lassen sich Objekt aus dem
+  Mit Hilfe von `Object readObject()` in `ObjectInputStream` lassen sich Objekte aus dem
   Datenstrom auch wieder herstellen. Dies nennt man Serialisierung und De-Serialisierung.
 
   Um Objekte einer Klasse serialisieren zu können, muss diese das leere Interface
