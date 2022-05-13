@@ -27,7 +27,7 @@ outcomes:
   - k3: "Template-Method-Entwurfsmuster praktisch anwenden"
 quizzes:
   - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+    name: "Quiz Template-Method-Pattern (ILIAS)"
 assignments:
   - topic: sheet07
 youtube:
