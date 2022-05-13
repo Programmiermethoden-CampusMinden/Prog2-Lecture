@@ -1,4 +1,4 @@
-Schreiben Sie drei eigene Annotationen
+Schreiben Sie drei eigene Annotationen:
 - `@MeineKlasse` darf nur an Klassendefinitionen stehen und speichert den Namen des Autoren ab. 
 - `@MeineMethode` darf nur an Methoden stehen.
 - `@TODO` darf an Methoden und Klassen stehen, ist aber nur in den Source-Dateien sichtbar. 
