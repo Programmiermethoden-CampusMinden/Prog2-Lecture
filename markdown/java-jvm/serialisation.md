@@ -59,10 +59,20 @@ fortsetzen kann?
 *   Klassen müssen Marker-Interface `Serializable` implementieren
 
     ::: notes
-    "Marker-Interface": Interface ohne Methoden. Ändert das Verhalten des
-    Compilers, wenn eine Klasse dieses Interface implementiert: Weitere
-    Funktionen werden "freigeschaltet", beispielsweise die Fähigkeit, Klone
-    zu erstellen oder Objekte serialisierbar zu machen.
+    "Marker-Interface": Interface ohne Methoden. Ändert das Verhalten
+    des Compilers, wenn eine Klasse dieses Interface implementiert:
+    Weitere Funktionen werden "freigeschaltet", beispielsweise die
+    Fähigkeit, Klone zu erstellen (`Cloneable`) oder bei `Serializable`
+    Objekte serialisierbar zu machen.
+
+    Das ist in meinen Augen eine "Design-Sünde" in Java (neben der
+    Einführung von `null`): Normalerweise definieren Interfaces eine
+    Schnittstelle, die eine das Interface implementierende Klasse
+    dann erfüllen muss. Damit agiert das Interface wie ein Typ. Hier
+    ist das Interface aber leer, es wird also keine Schnittstelle
+    definiert. Aber es werden damit stattdessen Tooling-Optionen
+    aktiviert, was Interfaces vom Konzept her eigentlich nicht machen
+    sollten/dürften - dazu gibt es Annotationen!
     :::
 
 *   Schreiben von Objekten (samt Zustand) in Streams
