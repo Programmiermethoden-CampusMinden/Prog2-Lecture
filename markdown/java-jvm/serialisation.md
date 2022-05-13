@@ -164,7 +164,9 @@ Bei automatischer Berechnung der `serialVersionUID` durch die JVM kann jede klei
 der Klasse (beispielsweise Refactoring: Änderung der Methodennamen) eine neue `serialVersionUID`
 zur Folge haben. Das würde bedeuten, dass bereits serialisierte Objekte nicht mehr eingelesen
 werden können, auch wenn sich nur Methoden o.ä. verändert haben und die Attribute noch so vorhanden
-sind. Deshalb bietet es sich an, hier selbst eine `serialVersionUID` zu definieren.
+sind. Deshalb bietet es sich an, hier selbst eine `serialVersionUID` zu definieren - dann muss
+man aber auch selbst darauf achten, diese zu verändern, wenn sich wesentliche strukturelle
+Änderungen an der Klasse ergeben!
 
 Es existieren diverse weitere Fallstricke und Probleme, siehe [@Bloch2018] Kapitel 11 "Serialization".
 
