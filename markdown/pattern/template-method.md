@@ -31,11 +31,11 @@ quizzes:
 assignments:
   - topic: sheet07
 youtube:
-  - link: ""
-    name: "VL "
+  - link: "https://youtu.be/EE-n2T6AO-g"
+    name: "VL Template-Method-Pattern"
 fhmedia:
-  - link: ""
-    name: "VL "
+  - link: "https://www.fh-bielefeld.de/medienportal/m/a368cbd0990f4f58e5ee776bb4d6a1443c0a7cd443177eaa35ba35558e5c01307f689be5c9c239c6ffb41c74d2726397f2ba6be086df30737eec1df17ac4827a"
+    name: "VL Template-Method-Pattern"
 ---
 
 
