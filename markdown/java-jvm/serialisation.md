@@ -170,6 +170,10 @@ man aber auch selbst darauf achten, diese zu verändern, wenn sich wesentliche s
 
 Es existieren diverse weitere Fallstricke und Probleme, siehe [@Bloch2018] Kapitel 11 "Serialization".
 
+Man kann in den `ObjectOutputStream` nicht nur ein Objekt schreiben, sondern mehrere Objekte und
+Variablen schreiben lassen. In dieser Reihenfolge muss man diese dann aber auch wieder aus dem
+Stream herauslesen (vgl. [Object Streams](https://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html)).
+
 Weitere Links:
 
 *   Tutorials:
