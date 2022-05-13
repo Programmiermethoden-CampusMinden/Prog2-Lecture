@@ -179,7 +179,7 @@ Ergebnisse.
 
 Die Methode `getHtml()` wird auch als "_Template-Methode_" bezeichnet. Die beiden darin
 aufgerufenen Methoden `htmlStart()` und `htmlEnd()` in `Token` werden auch als "Hilfsmethoden"
-bezeichnet.
+(oder "_Helper Methods_") bezeichnet.
 
 Dies ist ein Beispiel für das **[Template-Method-Pattern](https://en.wikipedia.org/wiki/Template_method_pattern)**.
 :::
