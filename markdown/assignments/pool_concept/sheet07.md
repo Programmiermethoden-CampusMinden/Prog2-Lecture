@@ -19,5 +19,6 @@ hidden: true
 
 {{% include "assignments/pool_concept/tasks/reflection.md" %}}
 
-**Punkte**: 2P Annotation (inkl. Parameter und Sichtbarkeit), 1P Operationen,
-3P Reflection, 1P Einbinden Methoden in GUI, 1P Aufruf Methoden
+**Punkte**: 2P Annotation (inkl. Parameter und Sichtbarkeit), 1P Operationen
+definieren, 5P Reflection (separater Folder, Dateien, Laden der Klassen,
+Auswerten der Annotationen, Fehlerbehandlung)
