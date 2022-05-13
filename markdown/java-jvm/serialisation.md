@@ -19,12 +19,12 @@ quizzes:
 assignments:
   - topic: sheet07
 youtube:
-  - link: ""
+  - link: "https://youtu.be/wnwCMtKpXAQ"
     name: "VL Serialisierung"
-  - link: ""
+  - link: "https://youtu.be/zpWLPIRPTeQ"
     name: "Demo Serialisierung"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/ab8df96555932244456b9ac3dc332fbe39c09029605959af2eea790b5bd5966c5212c9c0184700d6e3785b7af8bdc03e3e6b948bad9392fa01e79309677df68a"
     name: "VL Serialisierung"
 ---
 
