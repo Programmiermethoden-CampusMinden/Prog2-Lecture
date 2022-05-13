@@ -8,11 +8,35 @@ readings:
   - key: "Java-SE-Tutorial"
     comment: "Essential Java Classes > Basic I/O > Object Streams"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+  Objekte lassen sich mit der Methode `void writeObject(Object)` in `ObjectOutputStream`
+  einfach in einen Datenstrom schreiben. Dies kann beispielsweise eine Datei o.ä. sein.
+  Mit Hilfe von `Object readObject()` in `ObjectInputStream` lassen sich Objekt aus dem
+  Datenstrom auch wieder herstellen. Dies nennt man Serialisierung und De-Serialisierung.
+
+  Um Objekte einer Klasse serialisieren zu können, muss diese das leere Interface
+  `Serializable` implementieren ("Marker-Interface"). Damit wird quasi die Unterstützung
+  in `Object*Stream` freigeschaltet.
+
+  Wenn ein Objekt serialisiert wird, werden alle Attribute in den Datenstrom geschrieben,
+  d.h. die Typen der Attribute müssen ihrerseits serialisierbar sein. Dies gilt für alle
+  primitiven Typen und die meisten eingebauten Typen. Die Serialisierung erfolgt ggf.
+  rekursiv, Zirkelreferenzen werden erkannt und aufgebrochen.
+
+  `static` und `transient` Attribute werden nicht serialisiert.
+
+  Beim De-Serialisieren wird das neue Objekt von der Laufzeitumgebung aus dem Datenstrom
+  rekonstruiert. Dies geschieht direkt, es wird kein Konstruktor involviert.
+
+  Beim Serialisieren wird für die Klasse des zu schreibenden Objekts eine `serialVersionUID`
+  berechnet und mit gespeichert. Beim Einlesen wird dann geprüft, ob die serialisierten
+  Daten zur aktuellen Version der Klasse passen. Da dies relativ empfindlich gegenüber
+  Änderungen an einer Klasse ist, wird empfohlen, selbst eine `serialVersionUID` pro
+  Klasse zu definieren.
 outcomes:
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k2: "Was ist ein Marker-Interface und warum ist dies eine der großen Design-Sünden in Java?"
+  - k2: "Erklären Sie den Prozess der Serialisierung und De-Serialisierung. Worauf müssen Sie achten?"
+  - k3: "Serialisierung von Objekten und Programmzuständen"
+  - k3: "Serialisierung eigener Klassen und Typen"
 quizzes:
   - link: "XYZ"
     name: "Quiz Serialisierung (ILIAS)"
