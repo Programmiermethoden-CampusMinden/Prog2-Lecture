@@ -191,12 +191,21 @@ werden können, auch wenn sich nur Methoden o.ä. verändert haben und die Attri
 sind. Deshalb bietet es sich an, hier selbst eine `serialVersionUID` zu definieren - dann muss
 man aber auch selbst darauf achten, diese zu verändern, wenn sich wesentliche strukturelle
 Änderungen an der Klasse ergeben!
+:::
+
+
+::: notes
+## Bemerkungen
 
 Es existieren diverse weitere Fallstricke und Probleme, siehe [@Bloch2018] Kapitel 11 "Serialization".
 
 Man kann in den `ObjectOutputStream` nicht nur ein Objekt schreiben, sondern mehrere Objekte und
 Variablen schreiben lassen. In dieser Reihenfolge muss man diese dann aber auch wieder aus dem
 Stream herauslesen (vgl. [Object Streams](https://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html)).
+
+Man kann die zu serialisierenden Attribute mit der Annotation `@Serial` markieren. Dies ist in
+der Wirkung ähnlich zu `@Override`: Der Compiler prüft dann, ob die markierten Attribute wirklich
+serialisierbar sind und würde sonst zur Compile-Zeit einen Fehler werfen.
 
 Weitere Links:
 
