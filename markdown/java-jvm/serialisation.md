@@ -38,7 +38,7 @@ outcomes:
   - k3: "Serialisierung von Objekten und Programmzuständen"
   - k3: "Serialisierung eigener Klassen und Typen"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1081894&client_id=FH-Bielefeld"
     name: "Quiz Serialisierung (ILIAS)"
 assignments:
   - topic: sheet07
