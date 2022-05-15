@@ -8,12 +8,12 @@ readings:
   - key: "Eilebrecht2013"
   - key: "Gamma2011"
 tldr: |
-  Das Template-Method-Pattern ist ein Entwurfsmuster, in dem ein gewisses Verhalten in
-  einer sogenannten "Template-Methode" implementiert wird. Darin werden dann u.a.
-  Hilfsmethoden aufgerufen, die in der Basisklasse entweder als `abstract` markiert
-  sind oder mit einem leeren Body implementiert sind ("Hook-Methoden"). Über diese
-  Template-Methode legt also die Basisklasse ein gewisses Verhaltensschema fest
-  ("Template") - daher auch der Name.
+  Das Template-Method-Pattern ist ein Entwurfsmuster, bei dem ein gewisses Verhalten
+  in einer Methode implementiert wird, die wie eine Schablone agiert, der sogenannten
+  "Template-Methode". Darin werden dann u.a. Hilfsmethoden aufgerufen, die in der
+  Basisklasse entweder als `abstract` markiert sind oder mit einem leeren Body
+  implementiert sind ("Hook-Methoden"). Über diese Template-Methode legt also die
+  Basisklasse ein gewisses Verhaltensschema fest ("Template") - daher auch der Name.
 
   In den ableitenden Klassen werden dann die abstrakten Methoden und/oder die Hook-Methoden
   implementiert bzw. überschrieben und damit das Verhalten verfeinert.
