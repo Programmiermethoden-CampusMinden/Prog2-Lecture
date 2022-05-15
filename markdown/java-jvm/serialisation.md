@@ -40,8 +40,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1081894&client_id=FH-Bielefeld"
     name: "Quiz Serialisierung (ILIAS)"
-assignments:
-  - topic: sheet07
 youtube:
   - link: "https://youtu.be/wnwCMtKpXAQ"
     name: "VL Serialisierung"
