@@ -38,7 +38,7 @@ Neben der eigentlichen Funktionalität werden an Softwareprodukte viele weitere 
 Dies können Sicherheitsbindungen sein oder Anforderungen an die Art und Weise der Bereitstellung des Produktes, zum Beispiel als Webservice.
 Viele dieser Anforderungen ähneln sich von Produkt zu Produkt und müssen dennoch immer wieder neu programmiert werden.
 
-So muss für einen Webservice eine HTML-Schnittstelle bereitgestellt werden, die Anfragen annimmt, bearbeitet und die Antwort wieder zurückliefert.
+Für einen Webservice muss eine HTML-Schnittstelle bereitgestellt werden, die Anfragen annimmt, bearbeitet und die Antworten wieder zurückliefert.
 
 ## Was sind Frameworks?
 
@@ -92,13 +92,12 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
 - Fokus oft nicht mehr nur auf einem Anwendungsbereich (z.B Spring)
 - Schließen sich oft gegenseitig aus
 - Nicht alles, was sich Framework nennt, ist auch wirklich eins.
-- Hype-Gefahr: Frameworks werden stark angepriesen um dann fallen gelassen zu werden
+- Hype-Gefahr: Frameworks werden stark angepriesen, um dann fallen gelassen zu werden
 
 
 ## Wann sollte man Frameworks verwenden
 
 - Wenn man bereits etablierte Anwendungen (wie Webservices) mit eigener Funktionalität anbieten möchte.
-
 
 ## Wie findet man ein passendes Framework
 
@@ -114,7 +113,7 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
    - Dokumentation überfliegen.
    - Beispielprojekte anschauen.
 2. Hello World programmieren. <!-- https://javalin.io/tutorials/gradle-setup -->
-3. Schrittweises erweitern der Startanwendung, bis ein Verständnis für das Framework erlangt wurde.
+3. Schrittweises erweitern der Startanwendung, bis ein Verständnis für das Framework erlangt wurde (mwe).
 
 **Frameworks müssen gelernt werden.**
 
@@ -127,8 +126,8 @@ Problem: Es soll eine interne Webanwendung bereitgestellt werden, die bei jedem 
 1. Das Framework [Javalin](https://javalin.io/) wirbt mit einer einfachen und schnellen Handhabung.
    - Die [Dokumentation](https://javalin.io/documentation) gibt bereits einen guten Einblick.
   => Javalin ist für das Problem gut geeignet.
-2. [Javalin-Hello-World](https://javalin.io/tutorials/gradle-setup)  <!-- In der doc fehlt:  implementation 'org.slf4j:slf4j-simple:1.8.0-beta4' -->
-3. Anwendung erweitern. <!-- siehe /src -->
+2. [Javalin-Hello-World](https://javalin.io/tutorials/gradle-setup)  <!-- In der doc fehlt:  implementation 'org.slf4j:slf4j-simple:1.8.0-beta4' siehe src/javalin/JavalinHelloWorld -->
+3. Anwendung erweitern. <!-- siehe /src/javalin/JavalinRandomNumber -->
 
 
 ## Wrap-Up
