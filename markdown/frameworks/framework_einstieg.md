@@ -10,14 +10,11 @@ tldr: |
   Frameworks sind ein Softwaregerüst, um wiederkehrende Softwarestrukturen schnell und einfach um die eigene Funktionalität zu erweitern.
   Im Gegensatz zu Libraries stellen sie keine einzelnen Funktionen bereits, die im eigene Code aufgerufen werden, sondern geben Strukturen vor, in denen der eigenen Code eingearbeitet werden muss.
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k1: "Begriff Framework kennen gelernt"
+  - k2: "Unterschied zwischen Frameworks und Libraries verstehen"
 quizzes:
   - link: "XYZ"
     name: "Quiz XXX (ILIAS)"
-assignments:
-  - topic: sheet01
 youtube:
   - link: ""
     name: "VL "
