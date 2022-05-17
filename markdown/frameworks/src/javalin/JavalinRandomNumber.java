@@ -63,3 +63,4 @@ public class JavalinRandomNumber {
         return "" + r.nextFloat();
     }
 }
+
