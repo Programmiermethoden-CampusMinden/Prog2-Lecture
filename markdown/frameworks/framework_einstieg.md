@@ -112,7 +112,7 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
    - Beschreibung auf der Webseite analysieren.
    - Dokumentation überfliegen.
    - Beispielprojekte anschauen. 
-2. Hello World programmieren. <!-- https://javalin.io/tutorials/gradle-setup>
+2. Hello World programmieren. <!-- https://javalin.io/tutorials/gradle-setup -->
 3. Schrittweises erweitern der Startanwendung, bis ein Verständnis für das Framework erlangt wurde.
 
 **Frameworks müssen gelernt werden.** 
