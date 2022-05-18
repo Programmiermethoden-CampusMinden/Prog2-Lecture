@@ -17,7 +17,7 @@ youtube:
   - link: ""
     name: "VL Swing 101"
   - link: ""
-    name: "Demo Swing 101"
+    name: "Demo Einfaches Fenster"
 fhmedia:
   - link: ""
     name: "VL Swing 101"
@@ -52,9 +52,6 @@ Präfix "J": `java.awt.Button` (AWT) => `javax.swing.JButton` (Swing)
 
 ## Graphische Komponenten einer GUI
 
-TODO: Screenshot einfaches Fenster, gelabelt
-
-::: notes
 *   Top-Level Komponenten
     *   Darstellung direkt auf Benutzeroberfläche des Betriebssystems
     *   Beispiele: Fenster, Dialoge
@@ -66,9 +63,9 @@ TODO: Screenshot einfaches Fenster, gelabelt
 *   Gruppierende Komponenten
     *   Bündeln und gruppieren andere Komponenten
     *   Beispiele: JPanel
-:::
 
 \bigskip
+
 [Achtung:]{.alert}
 Unterteilung nicht im API ausgedrückt: Alle Swing-Bausteine leiten von
 Klasse `javax.swing.JComponent` ab!
@@ -78,9 +75,69 @@ Klasse `javax.swing.JComponent` ab!
 
 ## Ein einfaches Fenster
 
-TODO: Code
+```java
+public class FirstWindow {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Hello World :)");
 
-[Demo: Fenster mit einigen Elementen]{.bsp}
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        frame.pack();
+        frame.setVisible(true);
+    }
+}
+```
+
+::: notes
+### Elemente
+
+Es wird ein neuer Frame angelegt als Top-Level-Komponente. Der Fenstertitel wird auf "Hello World :)"
+gesetzt.
+
+Zusätzlich wird spezifiziert, dass sich das Programm durch Schließen des Fensters beenden soll.
+Anderenfalls würde man zwar das sichtbare Fenster schließen, aber das Programm würde weiter laufen.
+
+Mit der Swing-Methode `pack()` werden alle Komponenten berechnet und die Fenstergröße bestimmt, so dass
+alle Komponenten Platz haben. Bis dahin ist das Fenster aber unsichtbar und wird erst über den Aufruf
+von `setVisible(true)` auch dargestellt.
+
+### Swing und Multithreading: Event Dispatch Thread
+
+Leider ist die Welt nicht ganz so einfach. In Swing werden Events wie das Drücken eines Buttons
+durch den _Event Dispatch Thread_ (EDT) abgearbeitet. Dieser wird mit dem Erzeugen der visuellen
+Komponenten für die Swing-Objekte durch den Aufruf der Swing-Methoden `show()`, `setVisible()`
+und `pack()` erstellt. Bereits beim Realisieren der Komponenten könnten diese Events auslösen,
+die dann durch den EDT verarbeitet werden und an mögliche Listener verteilt werden. Dummerweise
+wird das `main()` von der JVM aber in einem eigenen Thread abgearbeitet - es könnten also zwei
+Threads parallel durch die hier erzeugte Swing-GUI laufen, und Swing ist **nicht Thread-safe**!
+Komponenten dürfen nicht durch verschiedene Threads manipuliert werden.
+
+Die Lösung ist, die Realisierung der Komponenten als Job für den EDT zu "verpacken":
+
+```java
+javax.swing.SwingUtilities.invokeLater(
+        new Runnable() {
+            public void run() {
+                JFrame frame = new JFrame("Hello World :)");
+
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+```
+
+Mit `new Runnable()` wird ein neuer Threads anlegt (Hauptmethode `run()`) und mit
+`javax.swing.SwingUtilities.invokeLater()` dem EDT zu Ausführung übergeben. Wir
+werden uns das Thema Erzeugen und Starten von Threads in der Einheit
+`["Einführung in die nebenläufige Programmierung mit Threads"]({{< ref "/threads/intro" >}})`{=markdown}
+genauer ansehen.
+
+[Beispiel: [basics.FirstWindow](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/basics/FirstWindow.java)]{.bsp}
+:::
+
+[Demo: [basics.SecondWindow](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/basics/SecondWindow.java)]{.bsp}
 
 
 ## Wrap-Up
