@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.logging.Logger;
-import javax.swing.*;
+import javax.swing.JPanel;
 
 /** Demo: Einsatz des MouseListeners */
 public class MouseListenerDemo extends JPanel {

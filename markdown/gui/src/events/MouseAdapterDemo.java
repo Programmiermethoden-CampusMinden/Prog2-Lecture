@@ -5,7 +5,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.logging.Logger;
-import javax.swing.*;
+import javax.swing.JPanel;
 
 /** Demo: Einsatz des MouseAdapters */
 public class MouseAdapterDemo extends JPanel {
