@@ -10,13 +10,18 @@ readings:
   - key: "Ullenboom2021"
     comment: "Kap. 18: Einführung in grafische Oberflächen"
 tldr: |
-  TODO
+  In Swing-Komponenten werden Events ausgelöst, wenn der User mit den Komponenten interagiert.
 
-  *   Observer-Pattern in Swing-Komponenten:
-    *   Events: Enthalten Source-Objekt und Informationen
-    *   Event-Listener: Interfaces mit Methoden zur Reaktion
-    *   Adapter: Listener mit leeren Methodenrümpfen
+  Zur Bearbeitung der Events kann man Listener bei den Komponenten registrieren, die bei Auftreten
+  eines Events benachrichtigt werden (Observer-Pattern: Die Observer werden in Swing "Listener"
+  genannt).
 
+  Es gibt für alle möglichen Formen von Interaktion mit Komponenten vordefinierte Interfaces für
+  die Event-Listener. Da man hier wie üblich immer alle Methoden implementieren muss, selbst wenn
+  man nur auf wenige Events reagieren möchte, gibt es zusätzlich sogenannte "Adapter": Dies sind
+  Klassen, die das jeweilige Event-Listener-Interface mit leeren Methodenrümpfen implementieren.
+  Bei Nutzung der Adapter-Klassen müssen dann nur noch die benötigten Methoden überschrieben
+  werden.
 outcomes:
   - k2: "Unterschied zwischen den Listenern und den entsprechenden Adaptern"
   - k3: "Anwendung des Observer-Pattern, beispielsweise als Listener in Swing, aber auch in eigenen Programmen"
