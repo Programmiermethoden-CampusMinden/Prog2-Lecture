@@ -39,8 +39,6 @@ Für einen Webservice muss eine HTML-Schnittstelle bereitgestellt werden, die An
 
 ## Was sind Frameworks?
 
-> Ein Framework (englisch für Rahmenstruktur) ist ein Programmiergerüst, das in der Softwaretechnik, insbesondere im Rahmen der objektorientierten Softwareentwicklung sowie bei komponentenbasierten Entwicklungsansätzen, verwendet wird. Im allgemeineren Sinne bezeichnet man mit Framework auch einen Ordnungsrahmen. [https://de.wikipedia.org/wiki/Framework]
-
 Frameworks liefern die Rahmenstruktur und Architektur, um Programme für die verschiedenen Anwendungszwecke einfacher und effizient zu entwickeln. Sie legen dabei fest, WIE programmiert werden soll.
 
 Frameworks stellen Code bereit, der an entsprechenden Stellen mit eigenen Klassen und Funktionen erweitert werden muss, um die eigentliche Funktion der Anwendung zu implementieren, sind dabei aber selbst keine eigenen Programme (vgl. PM-Dungeon).
