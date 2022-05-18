@@ -31,11 +31,17 @@ sketch: true
 
 ## Motivation
 
+- tbd
+
+::: notes ... :::
+
 Neben der eigentlichen Funktionalität werden an Softwareprodukte viele weitere Randbindungen gestellt.
 Dies können Sicherheitsbindungen sein oder Anforderungen an die Art und Weise der Bereitstellung des Produktes, zum Beispiel als Webservice.
 Viele dieser Anforderungen ähneln sich von Produkt zu Produkt und müssen dennoch immer wieder neu programmiert werden.
 
 Für einen Webservice muss eine HTML-Schnittstelle bereitgestellt werden, die Anfragen annimmt, bearbeitet und die Antworten wieder zurückliefert.
+
+:::::::::
 
 ## Was sind Frameworks?
 
