@@ -312,10 +312,7 @@ Züge verwaltet und auf einer Anzeigetafel darstellt.
 
 [Hinweis auf Push- vs. Pull-Modell]{.bsp}
 
-
 ::: notes
-## Observer-Pattern im Detail
-
 *   Anzahl der Observer muss nicht bekannt sein -- zur Laufzeit erweiterbar!
 *   Verschiedene Update-Methoden für unterschiedliche Observer denkbar
 *   **Push-Modell**: Benötigte Daten werden der Update-Methode mitgegeben
@@ -323,71 +320,8 @@ Züge verwaltet und auf einer Anzeigetafel darstellt.
 *   Referenz auf Observable mitgeben -- Observer braucht dann keine Referenz
     auf das Observable halten und kann sich bei verschiedenen Observables
     registrieren
-*   `Observer` werden manchmal auch `Listener` genannt
+*   `Observer` werden (vor allem im Swing-Umfeld) manchmal auch `Listener` genannt
 :::
-
-
-::::::::: notes
-
-## Abhängigkeit auflösen -- Anzeigetafeln als Observer
-
-![](images/AnzeigeObserver.png){width="80%"}
-
-
-## Anzeigetafeln beim Server registrieren
-
-```java
-// Server aufsetzen
-Observable server = new Server();
-
-// Anzeigetafeln
-Observer wr1 = new AnzeigeTafelWarteraum();
-Observer wr2 = new AnzeigeTafelWarteraum();
-Observer bs1 = new AnzeigeBahnsteig();
-Observer bs2 = new AnzeigeBahnsteig();
-Observer bs3 = new AnzeigeBahnsteig();
-Observer ko = new AnzeigeKonsole();
-
-// Anzeigetafeln registrieren
-server.add(wr1);   server.add(wr2);
-server.add(bs1);   server.add(bs2);   server.add(bs3);
-server.add(ko);
-```
-
-
-## Server als Observable (Ausschnitt)
-
-```java
-class Server implements Observable {
-    Observer[] anzeigetafeln;
-    ...
-    void notify() {
-        for (Observer o : anzeigetafeln) {
-            o.update();
-        }
-    }
-    ...
-}
-```
-
-
-## Anzeigetafeln als Observer (Ausschnitt)
-
-```java
-class AnzeigeBahnsteig implements Observer {
-    ...
-    void update() {
-        // es scheinen neue Daten vorhanden zu sein
-        // also schauen wir mal nach, was wir brauchen
-        Zug z = server.getAktZug();
-        this.anzeigenAktZug(z);
-        ...
-    }
-    ...
-}
-```
-
-:::::::::
 
 
 ## Spielobjekte als Observer (Listener)
