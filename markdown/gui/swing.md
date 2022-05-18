@@ -7,7 +7,8 @@ weight: 1
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Creating Graphical User Interfaces > Creating a GUI With Swing"
-  - key: "Gamma2011"
+  - key: "Ullenboom2021"
+    comment: "Kap. 18: Einführung in grafische Oberflächen"
 tldr: |
   TODO
 
@@ -182,7 +183,7 @@ Abschnitt 14.15: "Adapter Classes"
 
 *   Fokus in PM: Swing, dennoch oft Nutzung von AWT-Komponenten
 *   Konvention: in Swing reimplementierte Klassen aus AWT:
-    Präfix "J": `java.awt.Button` $\Rightarrow$ `javax.swing.JButton`
+    Präfix "J": `java.awt.Button` => `javax.swing.JButton`
 
 
 ## Graphische Komponenten einer GUI
