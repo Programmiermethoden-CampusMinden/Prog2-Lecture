@@ -37,8 +37,6 @@ outcomes:
 quizzes:
   - link: "XYZ"
     name: "Quiz XXX (ILIAS)"
-assignments:
-  - topic: sheet07
 youtube:
   - link: ""
     name: "VL "
