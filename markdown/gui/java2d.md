@@ -58,7 +58,6 @@ youtube:
 fhmedia:
   - link: ""
     name: "VL "
-sketch: true
 ---
 
 
