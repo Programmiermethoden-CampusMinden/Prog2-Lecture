@@ -11,10 +11,12 @@ readings:
     comment: "Kap. 18: Einführung in grafische Oberflächen"
 tldr: |
   TODO
+    Nützliche Swing-Komponenten:
 
-  *   Fortgeschrittene Swing-Komponenten
-    *   Scroll-Bars, Panel mit Tabs, Kontextmenü, Radiobuttons
-
+    *   Scroll-Bars
+    *   Panel mit Tabs
+    *   Kontextmenü
+    *   Radiobuttons
 outcomes:
   - k3: "Umgang mit komplexeren Swing-Komponenten: JRadioButton, JFileChooser, JTabbedPane, JScrollPane, JPopupMenu"
   - k3: "Nutzung von ActionListener, MouseListener, KeyListener, FocusListener"
@@ -25,9 +27,13 @@ youtube:
   - link: ""
     name: "VL Swing Widgets"
   - link: ""
-    name: "Demo Swing Widgets"
+    name: "Demo JRadioButton"
   - link: ""
-    name: "Demo Swing Widgets"
+    name: "Demo JFileChooser"
+  - link: ""
+    name: "Demo JTabbedPane und JScrollPane"
+  - link: ""
+    name: "Demo JPopupMenu"
 fhmedia:
   - link: ""
     name: "VL Swing Widgets"
@@ -38,7 +44,9 @@ fhmedia:
 
 \bigskip
 
-![](images/screenshot-radiobuttons.png){width="80%"}
+![](images/screenshot-radiobuttons.png){width="50%"}
+
+\bigskip
 
 ::: notes
 *   Erzeugen einen neuen "Knopf" (rund)
@@ -47,34 +55,41 @@ fhmedia:
 *   Reagieren mit `ItemListener`
 :::
 
+\bigskip
+
 *   **Logische Gruppierung der Buttons**: `ButtonGroup`
     *   `JRadioButton` sind **unabhängige** Objekte
     *   Normalerweise nur ein Button aktiviert
     *   Aktivierung eines Buttons => vormals aktivierter Button deaktiviert
 
-    ```java
+    \smallskip
+
+    ```{.java size=footnotesize}
     JRadioButton b1 = new JRadioButton("Button 1", true);
     JRadioButton b2 = new JRadioButton("Button 2", false);
 
     ButtonGroup radioGroup = new ButtonGroup();
-    radioGroup.add(b1);
-    radioGroup.add(b2);
+    radioGroup.add(b1);    radioGroup.add(b2);
     ```
 
-[Beispiel: java2d.swing.RadioButtonFrame]{.bsp}
+[Demo: [widgets.RadioButton](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/RadioButton.java)]{.bsp}
 
 
 ## Dateien oder Verzeichnisse auswählen: _JFileChooser_
 
-![](images/screenshot-filechooser.png){width="80%"}
+![](images/screenshot-filechooser.png){width="40%"}
 
-::: notes
-```java
+\bigskip
+
+```{.java size=footnotesize}
 JFileChooser fc = new JFileChooser("Startverzeichnis");
 fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-// JFileChooser.FILES_ONLY, JFileChooser.DIRECTORIES_ONLY
+if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
+    fc.getSelectedFile()
 ```
 
+::: notes
+*   `fc.setFileSelectionMode()`: Dateien, Ordner oder beides auswählbar
 *   Anzeigen mit `fc.showOpenDialog()`
 *   Rückgabewert vergleichen mit `JFileChooser.APPROVE_OPTION`:
     Datei/Ordner wurde ausgewählt => Prüfen!
@@ -88,37 +103,39 @@ fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
     *   `String getDescription()`
 :::
 
-[Beispiel: java2d.swing.FileChooserDemo]{.bsp}
+[Demo: [widgets.FileChooser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/FileChooser.java)]{.bsp}
 
 
 ## TabbedPane und Scroll-Bars
 
 \bigskip
 
-**TabbedPane**: `JTabbedPane`
+*   **TabbedPane**: `JTabbedPane`
+    *   Container für weitere Komponenten
+    *   Methode zum Hinzufügen anderer Swing-Komponenten:
 
-*   Container für weitere Komponenten
-*   Methode zum Hinzufügen anderer Swing-Komponenten:
+        \smallskip
 
-    ```java
-    public void addTab(String title, Icon icon, Component component, String tip)
-    ```
+        ```{.java size=footnotesize}
+        public void addTab(String title, Icon icon, Component component, String tip)
+        ```
 
-\smallskip
+\bigskip
 
-**Scroll-Bars**: `JScrollPane`
+*   **Scroll-Bars**: `JScrollPane`
+    *   Container für weitere Komponenten
+    *   Scroll-Bars werden bei Bedarf sichtbar
+    *   Hinzufügen einer Komponente:
 
-*   Container für weitere Komponenten
-*   Scroll-Bars werden bei Bedarf sichtbar
-*   Hinzufügen einer Komponente:
+        \smallskip
 
-    ```java
-    JPanel panel = new JPanel();
-    JTextArea text = new JTextArea(5, 10);
+        ```{.java size=footnotesize}
+        JPanel panel = new JPanel();
+        JTextArea text = new JTextArea(5, 10);
 
-    JScrollPane scrollText = new JScrollPane(text);
-    panel.add(scrollText);
-    ```
+        JScrollPane scrollText = new JScrollPane(text);
+        panel.add(scrollText);
+        ```
 
 <!-- XXX
 *   Zusammenbauen der Komponenten und Container am Beispiel zeigen/erklären
@@ -126,41 +143,35 @@ fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 *   Wirkung der Scrollpane zeigen (letzter Tab)
 -->
 
-[Beispiel: java2d.swing.TabbedPane]{.bsp}
+[Demo: [widgets.TabbedPane](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/TabbedPane.java)]{.bsp}
 
 
 ## Kontextmenü mit _JPopupMenu_
 
 *   Menü kann über anderen Komponenten angezeigt werden
+
 *   Einträge vom Typ `JMenuItem` hinzufügen (beispielsweise `JRadioButtonMenuItem`)
-    ```java
+
+    ```{.java size=footnotesize}
     public JMenuItem add(JMenuItem menuItem)
     ```
+
 *   Menü über der aufrufenden Komponente "`invoker`" anzeigen
-    ```java
+
+    ```{.java size=footnotesize}
     public void show(Component invoker, int x, int y)
     ```
 
 ::: notes
-**Details zu `JMenuItem`**
+### Details zu _JMenuItem_
 
 *   Erweitert `AbstractButton`
 *   Reagiert auf `ActionEvent`
     => `ActionListener` implementieren für Reaktion auf Menüauswahl
-:::
 
-[Beispiel: java2d.swing.PopupFrame]{.bsp}
+### Details zum Kontextmenü
 
-<!-- TODO
-BC mit Java9/Windows: Beispiel scheint nicht zu funktionieren
-Fenster ist zunächst grau, mit rechter Maus bekommt man Auswahlmenü ...
--->
-
-
-::: notes
-## Details zum Kontextmenü
-
-**Triggern der Anzeige eines `JPopupMenu**`
+**Triggern der Anzeige eines `JPopupMenu`**
 
 *   Beispielsweise über `MouseListener` einer (anderen!) Komponente
 *   Darin Reaktion auf `MouseEvent.isPopupTrigger()`
@@ -180,11 +191,17 @@ myFrame.addMouseListener(new MouseAdapter() {
 ```
 :::
 
+[Demo: [widgets.Popup](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/Popup.java)]{.bsp}
+
 
 ## Wrap-Up
 
-*   Fortgeschrittene Swing-Komponenten
-    *   Scroll-Bars, Panel mit Tabs, Kontextmenü, Radiobuttons
+Nützliche Swing-Komponenten:
+
+*   Scroll-Bars
+*   Panel mit Tabs
+*   Kontextmenü
+*   Radiobuttons
 
 
 
