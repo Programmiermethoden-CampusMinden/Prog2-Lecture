@@ -11,6 +11,14 @@ readings:
     comment: "Kap. 18: Einführung in grafische Oberflächen"
 tldr: |
   TODO
+
+*   Swing-Fenster haben Top-Level-Komponenten: `JFrame`, ...
+*   Atomare Komponenten wie Buttons, Label, ... können gruppiert werden
+*   Fenster müssen explizit sichtbar gemacht werden
+*   Nach Schließen des Fensters läuft die Applikation weiter (Default)
+*   Swing-Events werden durch den _Event Dispatch Thread_ (EDT) verarbeitet
+    => Aufpassen mit Multithreading!
+
 outcomes:
   - k2: "Unterschied und Zusammenhang zwischen Swing und AWT"
 youtube:
@@ -104,18 +112,19 @@ von `setVisible(true)` auch dargestellt.
 ### Swing und Multithreading: Event Dispatch Thread
 
 Leider ist die Welt nicht ganz so einfach. In Swing werden Events wie das Drücken eines Buttons
-durch den _Event Dispatch Thread_ (EDT) abgearbeitet. Dieser wird mit dem Erzeugen der visuellen
-Komponenten für die Swing-Objekte durch den Aufruf der Swing-Methoden `show()`, `setVisible()`
-und `pack()` erstellt. Bereits beim Realisieren der Komponenten könnten diese Events auslösen,
-die dann durch den EDT verarbeitet werden und an mögliche Listener verteilt werden. Dummerweise
-wird das `main()` von der JVM aber in einem eigenen Thread abgearbeitet - es könnten also zwei
-Threads parallel durch die hier erzeugte Swing-GUI laufen, und Swing ist **nicht Thread-safe**!
-Komponenten dürfen nicht durch verschiedene Threads manipuliert werden.
+durch den _Event Dispatch Thread_ (EDT) abgearbeitet. (Zum Thema Events in Swing siehe Einheit
+`["Swing Events"]({{< ref "/gui/swing2_events" >}})`{=markdown}.) Der EDT wird mit dem Erzeugen
+der visuellen Komponenten für die Swing-Objekte durch den Aufruf der Swing-Methoden `show()`,
+`setVisible()` und `pack()` erstellt. Bereits beim Realisieren der Komponenten könnten diese
+Events auslösen, die dann durch den EDT verarbeitet werden und an mögliche Listener verteilt
+werden. Dummerweise wird das `main()` von der JVM aber in einem eigenen Thread abgearbeitet - es
+könnten also zwei Threads parallel durch die hier erzeugte Swing-GUI laufen, und Swing ist
+**nicht Thread-safe**! Komponenten dürfen nicht durch verschiedene Threads manipuliert werden.
 
 Die Lösung ist, die Realisierung der Komponenten als Job für den EDT zu "verpacken":
 
 ```java
-javax.swing.SwingUtilities.invokeLater(
+SwingUtilities.invokeLater(
         new Runnable() {
             public void run() {
                 JFrame frame = new JFrame("Hello World :)");
@@ -128,11 +137,13 @@ javax.swing.SwingUtilities.invokeLater(
         });
 ```
 
-Mit `new Runnable()` wird ein neuer Threads anlegt (Hauptmethode `run()`) und mit
-`javax.swing.SwingUtilities.invokeLater()` dem EDT zu Ausführung übergeben. Wir
-werden uns das Thema Erzeugen und Starten von Threads in der Einheit
+Mit `new Runnable()` wird ein neues Objekt vom Typ `Runnable` anlegt - im Prinzip ein neuer, noch nicht
+gestarteter Thread mit der Hauptmethode `run()`. Dieses Runnable wird mit `SwingUtilities.invokeLater()`
+dem EDT zu Ausführung übergeben. Wir werden uns das Thema Erzeugen und Starten von Threads in der Einheit
 `["Einführung in die nebenläufige Programmierung mit Threads"]({{< ref "/threads/intro" >}})`{=markdown}
 genauer ansehen.
+
+Siehe auch ["Concurrency in Swing"](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/index.html).
 
 [Beispiel: [basics.FirstWindow](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/basics/FirstWindow.java)]{.bsp}
 :::
@@ -142,7 +153,12 @@ genauer ansehen.
 
 ## Wrap-Up
 
-*   TODO
+*   Swing-Fenster haben Top-Level-Komponenten: `JFrame`, ...
+*   Atomare Komponenten wie Buttons, Label, ... können gruppiert werden
+*   Fenster müssen explizit sichtbar gemacht werden
+*   Nach Schließen des Fensters läuft die Applikation weiter (Default)
+*   Swing-Events werden durch den _Event Dispatch Thread_ (EDT) verarbeitet
+    => Aufpassen mit Multithreading!
 
 
 
