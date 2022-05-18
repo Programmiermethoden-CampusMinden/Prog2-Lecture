@@ -3,7 +3,7 @@ type: lecture-cg
 title: "Einführung in Graphics und Java 2D"
 menuTitle: "Java2D"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 2
+weight: 6
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Creating Graphical User Interfaces > Creating a GUI With Swing"
