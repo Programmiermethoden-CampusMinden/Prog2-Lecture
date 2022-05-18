@@ -10,15 +10,24 @@ readings:
   - key: "Ullenboom2021"
     comment: "Kap. 18: Einführung in grafische Oberflächen"
 tldr: |
-  TODO
+  Swing baut auf AWT auf und ersetzt dieses. Der designierte Nachfolger JavaFX wurde nie wirklich
+  als Ersatz angenommen und ist mittlerweile sogar wieder aus dem JDK bzw. der Java SE herausgenommen
+  worden.
 
-*   Swing-Fenster haben Top-Level-Komponenten: `JFrame`, ...
-*   Atomare Komponenten wie Buttons, Label, ... können gruppiert werden
-*   Fenster müssen explizit sichtbar gemacht werden
-*   Nach Schließen des Fensters läuft die Applikation weiter (Default)
-*   Swing-Events werden durch den _Event Dispatch Thread_ (EDT) verarbeitet
-    => Aufpassen mit Multithreading!
+  Swing-Fenster bestehen zunächst aus Top-Level-Komponenten wie einem Frame oder einem Dialog.
+  Darin können "atomare Komponenten" wie Buttons, Label, Textfelder, ... eingefügt werden. Zur
+  Gruppierung können Komponenten wie Panels genutzt werden.
 
+  Fenster werden über die Methode `pack()` berechnet (Größe, Anordnung) und müssen explizit
+  sichtbar gemacht werden (`setVisible(true)`). Per Default läuft die Anwendung weiter,
+  nachdem das Hauptfenster geschlossen wurde (konfigurierbar).
+
+  Swing ist nicht Thread-safe, man darf also nicht mit mehreren Threads parallel die Komponenten
+  bearbeiten. Events werden in Swing durch einen speziellen Thread verarbeitet, dem sogenannten
+  _Event Dispatch Thread_ (EDT). Dieser wird über den Aufruf von `pack()` automatisch gestartet.
+  Da das Hauptprogramm `main()` in einem eigenen Thread läuft und ja die ganzen Komponenten
+  quasi schrittweise erzeugt, kann es hier zu Konflikten kommen. Deshalb sollte das Erzeugen der
+  Swing-GUI als neuer Thread ("Runnable") dem EDT übergeben werden.
 outcomes:
   - k2: "Unterschied und Zusammenhang zwischen Swing und AWT"
 youtube:
@@ -152,6 +161,11 @@ Siehe auch ["Concurrency in Swing"](https://docs.oracle.com/javase/tutorial/uisw
 
 
 ## Wrap-Up
+
+*   Swing baut auf AWT auf und nutzt dieses
+*   JavaFX ist moderner, aber kein Swing-Ersatz geworden
+
+\bigskip
 
 *   Swing-Fenster haben Top-Level-Komponenten: `JFrame`, ...
 *   Atomare Komponenten wie Buttons, Label, ... können gruppiert werden
