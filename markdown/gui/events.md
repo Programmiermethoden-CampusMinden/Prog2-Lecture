@@ -28,9 +28,9 @@ youtube:
   - link: ""
     name: "VL Swing Events"
   - link: ""
-    name: "Demo Swing Events"
+    name: "Demo Swing Events und Listener"
   - link: ""
-    name: "Demo Swing Events"
+    name: "Demo MouseListener vs. MouseAdapter"
 fhmedia:
   - link: ""
     name: "VL Swing Events"
@@ -39,30 +39,17 @@ fhmedia:
 
 ## Reaktion auf Events: Anwendung Observer-Pattern
 
-::::::::: notes
+::: notes
 *   Swing-GUI läuft in Dauerschleife
 *   Komponenten registrieren Ereignisse (Events):
     *   Mausklick
     *   Tastatureingaben
     *   Mauszeiger über Komponente
     *   ...
-* Reaktion mit passendem Listener: Observer Pattern!
-
-:::::: columns
-::: {.column width="45%"}
+*   Reaktion mit passendem Listener: Observer Pattern!
+:::
 
 ![](images/ActionListener.png){width="80%"}
-
-:::
-::: {.column width="45%"}
-
-![](images/Observer.png){width="80%"}
-
-:::
-::::::
-:::::::::
-
-![](images/EventListener.png){width="80%"}
 
 => Observer aus dem Observer-Pattern!
 
@@ -70,10 +57,23 @@ fhmedia:
 In Swing werden die "Observer" als "Listener" bezeichnet.
 :::
 
+\bigskip
+
 ```java
 component.addActionListener(ActionListener);
 component.addMouseListener(MouseListener);
 ```
+
+
+## Arten von Events
+
+![](images/EventListener.png){width="80%"}
+
+::: notes
+Es gibt für alle möglichen Input-Arten eine Ableitung von `java.util.EventListener`,
+beispielsweise für Maus- oder Tastaturereignisse oder wenn ein Element den Fokus
+bekommt und viele weitere.
+:::
 
 
 ## Details zu Listenern
@@ -89,18 +89,13 @@ component.addMouseListener(MouseListener);
 *   Ein Observable kann mehrere Listener bedienen:
 
     ```java
-    Handler h1 = new Handler();
-    Handler h2 = new Handler();
-    multiButton.addActionListener(h1);
-    multiButton.addActionListener(h2);
+    multiButton.addActionListener(new Handler());
+    multiButton.addActionListener(new Handler());
     ```
 
 *   Sequentielles Abarbeiten der Events bzw. Benachrichtigung der Observer
 
-![](images/2eventsource.png){width="80%"}
-[Quelle: Java-SE-7-Tutorial, Oracle.com, figures/uiswing/events/2eventsource.gif]{.origin}
-
-[Beispiel: java2d.swing.MultiListenerDemo]{.bsp}
+[Demo: [events.ListenerDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/events/ListenerDemo.java)]{.bsp}
 
 
 ## Wie komme ich an die Daten eines Events?
@@ -109,7 +104,7 @@ component.addMouseListener(MouseListener);
 
 **Event-Objekte**: Quelle des Events plus aufgetretene Daten
 
-[Beispiel: java2d.swing.MouseListenerDemo]{.bsp}
+[Demo: [events.MouseListenerDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/events/MouseListenerDemo.java)]{.bsp}
 
 
 ## Listener vs. Adapter
@@ -121,9 +116,10 @@ component.addMouseListener(MouseListener);
 :::
 
 => Bei Nutzung eines Event-Listeners müssen immer [**alle**]{.alert}
-Methoden implementiert werden (auch nicht benötigte)!
+Methoden implementiert werden [(auch nicht benötigte)!]{.notes}
 
 \bigskip
+
 Abhilfe: **Adapter**-Klassen:
 
 *   Für viele Event-Listener-Interfaces existieren Adapter-Klassen
@@ -131,22 +127,19 @@ Abhilfe: **Adapter**-Klassen:
 *   Alle Methoden mit **leerem** Body vorhanden
 
 \smallskip
-=> Nutzung Adapterklassen: Nur benötigte
-Listener-Methoden überschreiben.
 
-\bigskip
-Details siehe @Deitel2012,
-Abschnitt 14.15: "Adapter Classes"
+=> Nur benötigte Listener-Methoden überschreiben.
 
-[Beispiel: java2d.swing.MouseAdapterDemo]{.bsp}
+[Demo: [events.MouseAdapterDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/events/MouseAdapterDemo.java)]{.bsp}
 
 
 ## Wrap-Up
 
-*   Observer-Pattern in Swing-Komponenten:
-    *   Events: Enthalten Source-Objekt und Informationen
-    *   Event-Listener: Interfaces mit Methoden zur Reaktion
-    *   Adapter: Listener mit leeren Methodenrümpfen
+Observer-Pattern in Swing-Komponenten:
+
+*   Events: Enthalten Source-Objekt und Informationen
+*   Event-Listener: Interfaces mit Methoden zur Reaktion
+*   Adapter: Listener mit leeren Methodenrümpfen
 
 
 
