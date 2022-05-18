@@ -76,13 +76,16 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
 | libGDX    | Game Development|
 
 
-## Vor- und Nachteile
+## Vorteile von Frameworks
 
 <!-- Formatierung dieses Kaptitel? -->
 + Ermöglichen eine schnelle Implementierung umfangreicher Softwarekonstrukte
 + "Erzwingen" das Einhalten eines bestimmen Qualitätsstandards
 + Große Communitys
-+/- Verstecken komplexe Zusammenhänge vor den Entwicklern
++ Verstecken komplexe Zusammenhänge vor den Entwicklern
+
+## Nachteile von Frameworks
+
 - Oftmals sehr umfangreich und schwer zu erlernen
 - Fokus oft nicht mehr nur auf einem Anwendungsbereich (z.B Spring)
 - Schließen sich oft gegenseitig aus
