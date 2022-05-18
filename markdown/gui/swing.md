@@ -50,6 +50,71 @@ fhmedia:
 ---
 
 
+# Swing 101: Basics
+
+## Wiederholung GUI in Java
+
+*   **AWT**: `abstract window toolkit`
+    *   Älteres Framework ("Legacy")
+    *   "Schwergewichtig": plattformangepasst
+    *   Paket `java.awt`
+
+*   **Swing**
+    *   Nutzt AWT
+    *   "Leichtgewichtig": rein in Java implementiert
+    *   Paket `javax.swing`
+
+*   **JavaFX**
+    *   Soll als Ersatz für Swing dienen
+        *   Community eher verhalten
+        *   Weiterentwicklung immer wieder unklar
+        *   Nicht mehr im JDK/Java SE Plattform enthalten
+    *   Vergleichsweise komplexes Framework, auch ohne Java programmierbar
+        (Skriptsprache FXML)
+
+::: notes
+_Anmerkung_: In Swing reimplementierte Klassen aus AWT:
+Präfix "J": `java.awt.Button` (AWT) => `javax.swing.JButton` (Swing)
+:::
+
+
+## Graphische Komponenten einer GUI
+
+TODO: Screenshot einfaches Fenster, gelabelt
+
+::: notes
+*   Top-Level Komponenten
+    *   Darstellung direkt auf Benutzeroberfläche des Betriebssystems
+    *   Beispiele: Fenster, Dialoge
+
+*   Atomare Komponenten
+    *   Enthalten i.d.R. keine weiteren Komponenten
+    *   Beispiele: Label, Buttons, Bilder
+
+*   Gruppierende Komponenten
+    *   Bündeln und gruppieren andere Komponenten
+    *   Beispiele: JPanel
+:::
+
+\bigskip
+[Achtung:]{.alert}
+Unterteilung nicht im API ausgedrückt: Alle Swing-Bausteine leiten von
+Klasse `javax.swing.JComponent` ab!
+
+=> Nutzung "falscher" Methoden führt zu Laufzeitfehlern.
+
+
+## Ein einfaches Fenster
+
+TODO: Code
+
+[Demo: Fenster mit einigen Elementen]{.bsp}
+
+
+
+
+# Swing Events
+
 ## Reaktion auf Events: Anwendung Observer-Pattern
 
 ::::::::: notes
@@ -154,58 +219,9 @@ Abschnitt 14.15: "Adapter Classes"
 [Beispiel: java2d.swing.MouseAdapterDemo]{.bsp}
 
 
-::::::::: notes
-
-## Wiederholung GUI in Java
-
-*   AWT: `abstract window toolkit`
-    *   älteres Framework
-    *   "schwergewichtig": plattformangepasst
-    *   Paket `java.awt`
-
-*   Swing
-    *   nutzt AWT
-    *   "leichtgewichtig": rein in Java implementiert
-    *   Paket `javax.swing`
-
-*   JavaFX
-    *   (relativ) neues Framework
-        *   seit ca 2007 in erster Version
-        *   komplettes Re-Design für Version 2
-    *   soll als Ersatz für Swing dienen
-        *   Community eher verhalten
-        *   Weiterentwicklung immer wieder unklar
-    *   vergleichsweise komplexes Framework, auch ohne Java programmierbar
-        (Skriptsprache FXML)
-
-*   Fokus in PM: Swing, dennoch oft Nutzung von AWT-Komponenten
-*   Konvention: in Swing reimplementierte Klassen aus AWT:
-    Präfix "J": `java.awt.Button` => `javax.swing.JButton`
 
 
-## Graphische Komponenten einer GUI
-
-*   Top-Level Komponenten
-    *   Darstellung direkt auf Benutzeroberfläche des Betriebssystems
-    *   Beispiele: Fenster, Dialoge
-
-*   Atomare Komponenten
-    *   Enthalten i.d.R. keine weiteren Komponenten
-    *   Beispiele: Label, Buttons, Bilder
-
-*   Gruppierende Komponenten
-    *   Bündeln und gruppieren andere Komponenten
-    *   Beispiele: JPanel
-
-\bigskip
-[Achtung:]{.alert}
-Unterteilung nicht im API ausgedrückt: Alle Swing-Bausteine leiten von
-Klasse `javax.swing.JComponent` ab!
-
-=> Nutzung "falscher" Methoden führt zu Laufzeitfehlern.
-
-:::::::::
-
+# Swing: Nützliche Widgets
 
 ## Radiobuttons: _JRadioButton_
 
@@ -354,7 +370,27 @@ myFrame.addMouseListener(new MouseAdapter() {
 :::
 
 
-::: notes
+
+
+# Swing: Layout-Manager
+
+## Überblick
+
+todo
+
+## Grid
+
+todo
+
+## Border
+
+todo
+
+## Flow
+
+todo
+
+
 ## Komplexer Layoutmanager: _GridBagLayout_
 
 *   Layoutmanager mit gitterartiger Grundstruktur
@@ -372,7 +408,7 @@ myFrame.addMouseListener(new MouseAdapter() {
 | `weightx`    | Freier Platz in x-Richtung wird unter den **Grid-Slots** entsprechend ihrem "Gewicht" aufgeteilt             |
 | `weighty`    | Freier Platz in y-Richtung wird unter den **Grid-Slots** entsprechend ihrem "Gewicht" aufgeteilt             |
 
-
+::: notes
 Selbststudium: Machen Sie sich mit Hilfe der Literatur mit dem `GridBagLayout`
 vertraut. Nutzen Sie den Beispielcode und variieren Sie die verschiedenen
 Parameter/Constraints, um sich mit dem Verhalten und den Auswirkungen vertraut
@@ -381,6 +417,10 @@ zu machen!
 [Beispiel: java2d.swing.MultiListenerGridBagDemo]{.bsp}
 :::
 
+
+
+
+# Swing: Tabellen
 
 ## Einfache Tabelle mit festen Daten
 
@@ -507,6 +547,8 @@ m.addTableModelListener(new TableModelListener() {
 [Beispiel: java2d.swing.tabledemo.ModelListenerTableDemo]{.bsp}
 
 
+
+
 ## Wrap-Up
 
 *   Fortgeschrittene Swing-Komponenten
@@ -533,9 +575,4 @@ m.addTableModelListener(new TableModelListener() {
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
