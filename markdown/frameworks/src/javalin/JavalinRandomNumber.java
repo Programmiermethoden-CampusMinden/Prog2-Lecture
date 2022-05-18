@@ -17,6 +17,7 @@ public class JavalinRandomNumber {
         logger.addHandler(consoleHandler);
         Javalin app = Javalin.create().start(8080);
 
+        //Registirere eine Handler der aufgerufen wird, nachdem eine HTTP-Anfrage eingegangen ist und bevor sie verarbeitet wurde.
         app.before(new Handler() {
             @Override
             public void handle(@NotNull Context ctx) throws Exception {
@@ -24,6 +25,7 @@ public class JavalinRandomNumber {
             }
         });
 
+        //Registirere eine Handler der aufgerufen wird, wenn eine HTTP-Anfrage auf "localhost:8080/" eingeht.
         app.get("/", new Handler() {
             @Override
             public void handle(Context ctx) throws Exception {
@@ -31,6 +33,7 @@ public class JavalinRandomNumber {
             }
         });
 
+        //Registirere eine Handler der aufgerufen wird, wenn eine HTTP-Anfrage auf "localhost:8080/int" eingeht.
         app.get("/int", new Handler() {
             @Override
             public void handle(@NotNull Context ctx) throws Exception {
@@ -38,6 +41,7 @@ public class JavalinRandomNumber {
             }
         });
 
+        //Registirere eine Handler der aufgerufen wird, wenn eine HTTP-Anfrage auf "localhost:8080/float" eingeht.
         app.get("/float", new Handler() {
             @Override
             public void handle(@NotNull Context ctx) throws Exception {
@@ -45,6 +49,7 @@ public class JavalinRandomNumber {
             }
         });
 
+        //Registirere eine Handler der aufgerufen wird, wenn eine HTTP-Anfrage abgearbeitet wurde.
         app.after(new Handler() {
             @Override
             public void handle(@NotNull Context ctx) throws Exception {
