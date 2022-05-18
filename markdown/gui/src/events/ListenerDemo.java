@@ -1,7 +1,6 @@
 package events;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 /** Rahmen für die Listener-Demos */
@@ -14,11 +13,10 @@ public class ListenerDemo {
                         JFrame frame = new JFrame("Listener Demo");
                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-                        JPanel contentPane = new MouseListenerDemo(frame);
-                        // JPanel contentPane = new MouseAdapterDemo(frame);
-                        // JPanel contentPane = new ListenerPanel();
+                        // frame.setContentPane(new MouseListenerDemo());
+                        // frame.setContentPane(new MouseAdapterDemo());
+                        frame.setContentPane(new ListenerPanel());
 
-                        frame.add(contentPane);
                         frame.pack();
                         frame.setVisible(true);
                     }
