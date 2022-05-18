@@ -72,7 +72,7 @@ fhmedia:
     radioGroup.add(b1);    radioGroup.add(b2);
     ```
 
-[Demo: [widgets.RadioButton](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/RadioButton.java)]{.bsp}
+[Demo: [widgets.RadioButtonDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/RadioButtonDemo.java)]{.bsp}
 
 
 ## Dateien oder Verzeichnisse auswählen: _JFileChooser_
@@ -103,7 +103,7 @@ if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
     *   `String getDescription()`
 :::
 
-[Demo: [widgets.FileChooser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/FileChooser.java)]{.bsp}
+[Demo: [widgets.FileChooserDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/FileChooserDemo.java)]{.bsp}
 
 
 ## TabbedPane und Scroll-Bars
@@ -143,7 +143,7 @@ if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
 *   Wirkung der Scrollpane zeigen (letzter Tab)
 -->
 
-[Demo: [widgets.TabbedPane](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/TabbedPane.java)]{.bsp}
+[Demo: [widgets.TabbedPaneDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/TabbedPaneDemo.java)]{.bsp}
 
 
 ## Kontextmenü mit _JPopupMenu_
@@ -191,7 +191,7 @@ myFrame.addMouseListener(new MouseAdapter() {
 ```
 :::
 
-[Demo: [widgets.Popup](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/Popup.java)]{.bsp}
+[Demo: [widgets.PopupDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/PopupDemo.java)]{.bsp}
 
 
 ## Wrap-Up
