@@ -48,10 +48,14 @@ fhmedia:
     *   "Schwergewichtig": plattformangepasst
     *   Paket `java.awt`
 
+\bigskip
+
 *   **Swing**
     *   Nutzt AWT
     *   "Leichtgewichtig": rein in Java implementiert
     *   Paket `javax.swing`
+
+\bigskip
 
 *   **JavaFX**
     *   Soll als Ersatz für Swing dienen
@@ -167,12 +171,13 @@ Siehe auch ["Concurrency in Swing"](https://docs.oracle.com/javase/tutorial/uisw
 
 \bigskip
 
-*   Swing-Fenster haben Top-Level-Komponenten: `JFrame`, ...
-*   Atomare Komponenten wie Buttons, Label, ... können gruppiert werden
-*   Fenster müssen explizit sichtbar gemacht werden
-*   Nach Schließen des Fensters läuft die Applikation weiter (Default)
-*   Swing-Events werden durch den _Event Dispatch Thread_ (EDT) verarbeitet
-    => Aufpassen mit Multithreading!
+*   Basics:
+    *   Swing-Fenster haben Top-Level-Komponenten: `JFrame`, ...
+    *   Atomare Komponenten wie Buttons, Label, ... können gruppiert werden
+    *   Fenster müssen explizit sichtbar gemacht werden
+    *   Nach Schließen des Fensters läuft die Applikation weiter (Default)
+    *   Swing-Events werden durch den _Event Dispatch Thread_ (EDT) verarbeitet \newline
+        => Aufpassen mit Multithreading!
 
 
 
