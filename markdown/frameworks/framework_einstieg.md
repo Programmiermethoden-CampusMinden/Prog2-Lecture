@@ -71,9 +71,9 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
 | --------- | --------------- |
 | JUnit     | Testen von Software|
 | Play      | Web Anwendungen |
-| **Spring**| Web Anwendungen und Enterprise Java-Applications|
+| Spring    | Web Anwendungen und Enterprise Java-Applications|
 | Hybernate | Datenbanken Anbindungen und Kommunikation    |
-| **libGDX**| Game Development|
+| libGDX    | Game Development|
 
 
 ## Vor- und Nachteile
