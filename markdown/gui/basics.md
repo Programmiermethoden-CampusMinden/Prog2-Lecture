@@ -122,8 +122,8 @@ von `setVisible(true)` auch dargestellt.
 
 Leider ist die Welt nicht ganz so einfach. In Swing werden Events wie das Drücken eines Buttons
 durch den _Event Dispatch Thread_ (EDT) abgearbeitet. (Zum Thema Events in Swing siehe Einheit
-`["Swing Events"]({{< ref "/gui/swing2_events" >}})`{=markdown}.) Der EDT wird mit dem Erzeugen
-der visuellen Komponenten für die Swing-Objekte durch den Aufruf der Swing-Methoden `show()`,
+`["Swing Events"]({{< ref "/gui/events" >}})`{=markdown}.) Der EDT wird mit dem Erzeugen der
+visuellen Komponenten für die Swing-Objekte durch den Aufruf der Swing-Methoden `show()`,
 `setVisible()` und `pack()` erstellt. Bereits beim Realisieren der Komponenten könnten diese
 Events auslösen, die dann durch den EDT verarbeitet werden und an mögliche Listener verteilt
 werden. Dummerweise wird das `main()` von der JVM aber in einem eigenen Thread abgearbeitet - es
