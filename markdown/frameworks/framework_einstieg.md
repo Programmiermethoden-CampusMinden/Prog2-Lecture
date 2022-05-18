@@ -34,13 +34,11 @@ sketch: true
 - tbd
 
 ::: notes
-
 Neben der eigentlichen Funktionalität werden an Softwareprodukte viele weitere Randbindungen gestellt.
 Dies können Sicherheitsbindungen sein oder Anforderungen an die Art und Weise der Bereitstellung des Produktes, zum Beispiel als Webservice.
 Viele dieser Anforderungen ähneln sich von Produkt zu Produkt und müssen dennoch immer wieder neu programmiert werden.
 
 Für einen Webservice muss eine HTML-Schnittstelle bereitgestellt werden, die Anfragen annimmt, bearbeitet und die Antworten wieder zurückliefert.
-
 :::::::::
 
 ## Was sind Frameworks?
@@ -51,10 +49,9 @@ Frameworks stellen Code bereit, der an entsprechenden Stellen mit eigenen Klasse
 
 Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analogie eigentlich nicht schlecht, aber die muss besser eingebunden werden-->
 
-
+::: notes
 ## Unterschied zu Libraries
 
-::: notes
 - Libraries stellen Funktionen bereit, die frei in der eigenen Implementierung genutzt werden können.
 - Beispiele für Libraries
   - Auswerten von regulären Ausdrücken
@@ -66,7 +63,6 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
   - Web Anwendungssysteme
   - GUI-Systeme
   - Testen von Software
-
 :::::::::
 
 ![Unterschied zwischen Frameworks und Libraries grafisch veranschaulicht.](/images/frameworksVSlib.png)
@@ -74,7 +70,6 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
 
 ## Verbreitete Frameworks
 
-<!-- // Frage: Wie ausführlich den Anwendungszweck erklären? Teilweise ist das schon sehr spezifisch und für Einsteiger könnte es ein großes Buzzword Bingo werden. -->
 | Framework | Anwendungszweck |
 | --------- | --------------- |
 | JUnit     | Testen von Software|
@@ -86,7 +81,6 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
 
 ## Vorteile von Frameworks
 
-<!-- Formatierung dieses Kaptitel? -->
 + Ermöglichen eine schnelle Implementierung umfangreicher Softwarekonstrukte
 + "Erzwingen" das Einhalten eines bestimmen Qualitätsstandards
 + Große Communitys
@@ -124,12 +118,9 @@ Wie/Wo findet man passende Frameworks?
 
 **Frameworks müssen gelernt werden.**
 
-
-
-
+::: notes
 ## Beispiel
 
-::: notes
 Problem: Es soll eine interne Webanwendung bereitgestellt werden, die bei jedem Aufruf eine zufällige Zahl zurückgibt.
 
 - Für Webanwendungen gibt es eine Vielzahl an Frameworks. Für dieses kleine Problem ist ein einfaches und schlankes Framework zu bevorzugen.
@@ -139,10 +130,9 @@ Problem: Es soll eine interne Webanwendung bereitgestellt werden, die bei jedem 
   => Javalin ist für das Problem gut geeignet.
 2. [Javalin-Hello-World](https://javalin.io/tutorials/gradle-setup)  <!-- In der doc fehlt:  implementation 'org.slf4j:slf4j-simple:1.8.0-beta4' siehe src/javalin/JavalinHelloWorld -->
 3. Anwendung erweitern. <!-- siehe /src/javalin/JavalinRandomNumber -->
-:::::::::
 
 [Demo: Web-Anwendung für Zufallszahlen]{.bsp}
-
+:::::::::
 
 ## Wrap-Up
 
