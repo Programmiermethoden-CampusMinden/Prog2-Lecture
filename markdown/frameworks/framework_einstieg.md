@@ -33,7 +33,7 @@ sketch: true
 
 - tbd
 
-::: notes ... :::
+::: notes
 
 Neben der eigentlichen Funktionalität werden an Softwareprodukte viele weitere Randbindungen gestellt.
 Dies können Sicherheitsbindungen sein oder Anforderungen an die Art und Weise der Bereitstellung des Produktes, zum Beispiel als Webservice.
@@ -54,6 +54,7 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
 
 ## Unterschied zu Libraries
 
+::: notes
 - Libraries stellen Funktionen bereit, die frei in der eigenen Implementierung genutzt werden können.
 - Beispiele für Libraries
   - Auswerten von regulären Ausdrücken
@@ -66,6 +67,7 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
   - GUI-Systeme
   - Testen von Software
 
+:::::::::
 
 ![Unterschied zwischen Frameworks und Libraries grafisch veranschaulicht.](/images/frameworksVSlib.png)
 
@@ -98,17 +100,18 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
 - Nicht alles, was sich Framework nennt, ist auch wirklich eins.
 - Hype-Gefahr: Frameworks werden stark angepriesen, um dann fallen gelassen zu werden
 
+::: notes
+## Frameworks finden
+Wann sollte man Frameworks verwenden?
 
-## Wann sollte man Frameworks verwenden
+Wenn man bereits etablierte Anwendungen (wie Webservices) mit eigener Funktionalität anbieten möchte.
 
-- Wenn man bereits etablierte Anwendungen (wie Webservices) mit eigener Funktionalität anbieten möchte.
-
-## Wie findet man ein passendes Framework
+Wie/Wo findet man passende Frameworks?
 
 - Internetrecherche
 - Foren
 - GitHub/Open-Source-Projekte
-
+:::::::::
 
 ## Wie starte ich mit einem Framework?
 
@@ -121,8 +124,12 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
 
 **Frameworks müssen gelernt werden.**
 
+
+
+
 ## Beispiel
 
+::: notes
 Problem: Es soll eine interne Webanwendung bereitgestellt werden, die bei jedem Aufruf eine zufällige Zahl zurückgibt.
 
 - Für Webanwendungen gibt es eine Vielzahl an Frameworks. Für dieses kleine Problem ist ein einfaches und schlankes Framework zu bevorzugen.
@@ -132,6 +139,9 @@ Problem: Es soll eine interne Webanwendung bereitgestellt werden, die bei jedem 
   => Javalin ist für das Problem gut geeignet.
 2. [Javalin-Hello-World](https://javalin.io/tutorials/gradle-setup)  <!-- In der doc fehlt:  implementation 'org.slf4j:slf4j-simple:1.8.0-beta4' siehe src/javalin/JavalinHelloWorld -->
 3. Anwendung erweitern. <!-- siehe /src/javalin/JavalinRandomNumber -->
+:::::::::
+
+[Demo: Web-Anwendung für Zufallszahlen]{.bsp}
 
 
 ## Wrap-Up
