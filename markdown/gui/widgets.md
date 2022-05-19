@@ -10,15 +10,22 @@ readings:
   - key: "Ullenboom2021"
     comment: "Kap. 18: Einführung in grafische Oberflächen"
 tldr: |
-  TODO
-    Nützliche Swing-Komponenten:
+  Neben den Standardkomponenenten `JFrame` für ein Fenster, `JPanel` für ein Panel (auch zum
+  Gruppieren anderer Komponenten), `JButton` (Button) und `JTextArea` (Texteingabe) gibt es
+  eine Reihe weiterer nützlicher Swing-Komponenten:
 
-    *   Scroll-Bars
-    *   Panel mit Tabs
-    *   Kontextmenü
-    *   Radiobuttons
+  *   `JRadioButton` für Radio-Buttons und `JCheckBox` für Checkbox-Buttons sowie `ButtonGroup``
+      für die logische Verbindung von diesen Buttons (es kann nur ein Button einer ButtonGroup
+      aktiv sein - wenn ein anderer Button aktiviert wird, wird der zuletzt aktive Button
+      automatisch deaktiviert)
+  *   Dateiauswahldialoge mit `JFileChooser` und `FileFilter` zum Vorfiltern der Anzeige
+  *   Einfache (modale) Dialoge mit `JOptionPane`
+  *   `JTabbedPane` als Panel mit Tabs
+  *   `JScrollPane`, um Eingabefelder bei Bedarf scrollbar zu machen
+  *   Anlegen einer Menüleiste mit `JMenuBar`, dabei sind die Menüs `JMenu` und die Einträge `JMenuItem``
+  *   Kontextmenüs  mit `JPopupMenu`
 outcomes:
-  - k3: "Umgang mit komplexeren Swing-Komponenten: JRadioButton, JFileChooser, JTabbedPane, JScrollPane, JPopupMenu"
+  - k3: "Umgang mit komplexeren Swing-Komponenten: JRadioButton, JFileChooser, JOptionPane, JTabbedPane, JScrollPane, JMenuBar, JPopupMenu"
   - k3: "Nutzung von ActionListener, MouseListener, KeyListener, FocusListener"
 quizzes:
   - link: "XYZ"
@@ -31,9 +38,9 @@ youtube:
   - link: ""
     name: "Demo JFileChooser"
   - link: ""
-    name: "Demo JTabbedPane und JScrollPane"
-  - link: ""
     name: "Demo JOptionPane"
+  - link: ""
+    name: "Demo JTabbedPane und JScrollPane"
   - link: ""
     name: "Demo JMenuBar"
   - link: ""
