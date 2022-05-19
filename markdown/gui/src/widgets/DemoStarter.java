@@ -16,14 +16,12 @@ public class DemoStarter {
                         frame.setContentPane(new RadioButtonDemo());
                         // frame.setContentPane(new FileChooserDemo());
                         // frame.setContentPane(new TabbedPaneDemo());
-                        // frame.setContentPane(new PopupDemo());
                         // frame.setContentPane(new DialogDemo());
 
-                        /*
-                        frame.setContentPane(new MenuDemo());
                         //  Die Menüleiste gehört zum Frame, nicht zum Panel!
-                        frame.setJMenuBar(MenuDemo.newMenuBar());
-                        */
+                        // frame.setJMenuBar(MenuDemo.newMenuBar());
+
+                        // frame.setContentPane(new PopupDemo());
 
                         frame.pack();
                         frame.setVisible(true);

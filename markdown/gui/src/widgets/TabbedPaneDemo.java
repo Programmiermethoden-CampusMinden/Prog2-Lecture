@@ -15,8 +15,6 @@ public class TabbedPaneDemo extends JPanel {
     public TabbedPaneDemo() {
         super();
 
-        setLayout(new FlowLayout());
-
         t = new JTabbedPane();
         add(t);
 

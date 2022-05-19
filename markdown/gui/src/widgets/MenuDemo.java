@@ -10,15 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
 
 /** Demo: Umgang mit JMenuBar (und JMenuItem) */
-public class MenuDemo extends JPanel {
+public class MenuDemo {
     private static final Logger LOG = Logger.getLogger(MenuDemo.class.getName());
-
-    /** Erzeuge ein Demo-Panel */
-    public MenuDemo() {
-        super();
-
-        setLayout(new FlowLayout());
-    }
 
     /** Getter für den Frame: Der muss die MenuBar kennen und setzen */
     public static JMenuBar newMenuBar() {
