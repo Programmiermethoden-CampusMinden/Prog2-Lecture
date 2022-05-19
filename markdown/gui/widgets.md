@@ -33,6 +33,10 @@ youtube:
   - link: ""
     name: "Demo JTabbedPane und JScrollPane"
   - link: ""
+    name: "Demo JOptionPane"
+  - link: ""
+    name: "Demo JMenuBar"
+  - link: ""
     name: "Demo JPopupMenu"
 fhmedia:
   - link: ""
@@ -146,6 +150,64 @@ if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
 [Demo: [widgets.TabbedPaneDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/TabbedPaneDemo.java)]{.bsp}
 
 
+## Dialoge mit _JOptionPane_
+
+![](images/screenshot-dialog.png){width="40%"}
+
+\bigskip
+
+```java
+JOptionPane.showMessageDialog(
+    this,
+    "Krasse Warnung!",
+    "Das ist mein Titel",
+    JOptionPane.WARNING_MESSAGE)
+```
+
+::: notes
+Ein Dialog ist ein eigenes Top-Level-Fenster, welches zumindest eine Message zeigt.
+Zusätzlich kann man den Fenster-Titel einstellen und ein kleines Icon anzeigen lassen,
+was verdeutlichen soll, ob es sich um eine Bestätigung oder Frage oder Warnung etc.
+handelt.
+
+Damit der Dialog auch wirklich bedient werden muss, ist er "modal", d.h. er liegt "vor"
+der Elternkomponente. Diese wird als Referenz übergeben und bekommt erst wieder den
+Fokus, wenn der Dialog geschlossen wurde.
+:::
+
+[Demo: [widgets.DialogDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/DialogDemo.java)]{.bsp}
+
+
+## Menüs mit _JMenuBar_, _JMenu_ und _JMenuItem_
+
+```java
+JMenuBar menuBar = new JMenuBar();
+JMenu menu1 = new JMenu("(M)ein Menü");
+JMenuItem m1 = new JMenuItem("Text: A");
+JMenuItem m2 = new JMenuItem("Text: B");
+
+menu1.add(m1);
+menu1.add(m2);
+
+menuBar.add(menu1);
+
+frame.setJMenuBar(menuBar);
+```
+
+::: notes
+Eine Menüleiste wird über das Objekt `JMenuBar` realisiert. Diese ist eine Eigenschaft des Frames
+und kann nur dort hinzugefügt werden.
+
+In der Menüleiste kann es mehrere Menüs geben, diese werden mit Objekten vom Typ `JMenu`
+erstellt.
+
+Wenn man mit der Maus ein Menü ausklappt, wird eine Liste der Menüeinträge angezeigt. Diese
+sind vom Typ `JMenuItem` und verhalten sich wie Buttons.
+:::
+
+[Demo: [widgets.MenuDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/MenuDemo.java)]{.bsp}
+
+
 ## Kontextmenü mit _JPopupMenu_
 
 *   Menü kann über anderen Komponenten angezeigt werden
@@ -200,8 +262,9 @@ Nützliche Swing-Komponenten:
 
 *   Scroll-Bars
 *   Panel mit Tabs
-*   Kontextmenü
-*   Radiobuttons
+*   Dialogfenster und Dateiauswahl-Dialoge
+*   Menüleisten und Kontextmenü
+*   Radiobuttons und Checkboxen, logische Gruppierung
 
 
 
