@@ -12,52 +12,48 @@ readings:
   - key: "Ullenboom2021"
     comment: "Kap. 18: Einführung in grafische Oberflächen"
 tldr: |
-  TODO
+  Swing-Komponenten zeichnen mit `paintComponent()` auf einem `Graphics`-Objekt. Die Methode
+  wird von Swing selbst aufgerufen; man kann sie durch den Aufruf von `repaint()` auf einer
+  Swing-Komponente aber manuell triggern.
 
-  *   Java2D: Swing-Komponenten zeichnen mit `paintComponent()` auf `Graphics`
-  *   `Graphics`: Methoden zum Zeichnen von Linien, Rechtecken, Ovalen, Text ...
-    *   Koordinatensystem: Ursprung links oben!
-    *   Geom. Primitive und Text werden in ausgewählter Zeichenfarbe gerendert
-             *  Rechtecke, Ovale, Polygone auch als "gefüllte" Variante
-    *   Mehr Möglichkeiten: `Graphics2D`
-  *   Objekte sollen auf Zustandsänderung eines anderen Objekts reagieren
-    => "Beobachter" ("*Observer*") => Observer-Pattern
-    *   Beobachter registrieren sich beim überwachten Objekt ("Observable")
-    *   Observable benachrichtigt alle Observer von Zustandsänderung
-             *  Observer können sich dann aktualisieren
-             *  Keine feste Abhängigkeit des Observables von konkreten Observern
-                -- diese werden zur Laufzeit registriert
-             *  Anwendung bei Swing: `ActionListener`
-             *  Hinweis auf `java.util`: `Observer` und `Observable`
-                => oft ungünstig, da mit `Object` gearbeitet wird
-    *   Anwendung: Ereignisorientierte Programmierung
+  Die Klasse `Graphics` bietet verschiedene einfache Methoden zum Zeichnen von Linien, Rechtecken,
+  Ovalen und Texten ... Die davon ableitende Klasse `Graphics2D` bietet deutlich mehr Möglichkeiten,
+  und das Argument beim Aufruf von `paintComponent()` ist zwar formal vom Typ `Graphics`, in der
+  Praxis aber oft vom Typ `Graphics2D` (Typprüfung und anschließender Cast nötig).
 
+  Das Koordinatensystem in Java2D hat den Ursprung in der linken oberen Ecke.
+
+  Geometrische Primitive und Text werden in der aktuell ausgewählten Zeichenfarbe gerendert. Die
+  Rechtecke, Ovale und Polygone existieren auch als "gefüllte" Variante.
+
+  Da bei einem Aufruf von `paintComponent()` stets das komplette Objekt neu gezeichnet wird, kann
+  man dies in einer Game-Loop nutzen: Pro Schritt berechnet man für alle Objekte die neue Position,
+  lässt ggf. weitere Interaktion o.ä. berechnen und zeichnet anschließend die Objekte über den Aufruf
+  von `repaint()` neu. In der Game-Loop werden also keine Threads benötigt.
 outcomes:
   - k2: "Unterschied und Zusammenhang zwischen Swing und AWT"
   - k2: "Swing-Komponenten erben `paintComponent(Graphics)`"
-  - k2: "Wird durch Events oder durch `repaint()` aufgerufen"
-  - k2: "Auf Graphics-Objekt zeichnen mit geometrischen Primitiven"
-  - k2: "Funktionsweise des Observer Patterns"
-  - k2: "Ereignisorientierte Programmierung: Nutzung des Observer-Patterns"
-  - k2: "Unterschied zwischen den Listenern und den entsprechenden Adaptern"
-  - k3: "Nutzung von draw(), fill(), drawString()"
+  - k2: "`paintComponent(Graphics)` wird durch Events oder durch `repaint()` aufgerufen"
+  - k3: "Auf Graphics-Objekt zeichnen mit geometrischen Primitiven: Nutzung von draw(), fill(), drawString()"
   - k3: "Einstellung von Farbe und Font"
   - k3: "Erzeugen von Bewegung ohne Nutzung von Threads"
-  - k3: "Anwendung des Observer-Pattern, beispielsweise als Listener in Swing, aber auch in eigenen Programmen"
-  - k3: "Nutzung von ActionListener, MouseListener, KeyListener, FocusListener"
 quizzes:
   - link: "XYZ"
     name: "Quiz XXX (ILIAS)"
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Java2D"
   - link: ""
-    name: "Demo "
+    name: "Demo geometrische Objekte"
   - link: ""
-    name: "Demo "
+    name: "Demo Fonts"
+ - link: ""
+    name: "Demo Polygone"
+ - link: ""
+    name: "Demo Bewegung"
 fhmedia:
   - link: ""
-    name: "VL "
+    name: "VL Java2D"
 ---
 
 
@@ -65,7 +61,7 @@ fhmedia:
 
 ![](images/java2d.png){width="80%"}
 
-[Beispiel: java2d.j2d.J2DTeaser]{.bsp}
+[Demo: [java2d.simplegame.J2DTeaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/simplegame/J2DTeaser.java)]{.bsp}
 
 
 ## Einführung in die Java 2D API
@@ -102,7 +98,9 @@ Objekt vom Typ `Graphics` stellt graphischen Kontext dar
 
 \bigskip
 
-[=> [**Methode überschreiben und auf der GUI malen**]{.alert}]{.cbox}
+::: cbox
+=> [**Methode überschreiben und auf der GUI malen**]{.alert}
+:::
 
 ::: notes
 *   Basis: `java.awt.Graphics`; davon abgeleitet `java.awt.Graphics2D`
@@ -116,8 +114,6 @@ Objekt vom Typ `Graphics` stellt graphischen Kontext dar
 ## Java2D Koordinatensystem
 
 ![](images/java2d-koordinaten.png){width="80%"}
-<!-- XXX Screenshot aus VL12 SoSe2014 (dort als tikzpicture) -->
-
 
 *   Koordinatensystem lokal zum Graphics-Objekt
 *   Einheiten in Pixel(!)
@@ -148,7 +144,7 @@ Vorher Strichfarbe setzen: `Graphics.setColor(Color color)`:
 
     Rot/Grün/Blau, Werte zw. 0 und 255
 
-[Beispiel: java2d.j2d.SimpleDrawings]{.bsp}
+[Demo: [java2d.SimpleDrawings](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/SimpleDrawings.java)]{.bsp}
 
 
 ## Fonts und Strings
@@ -169,7 +165,7 @@ public void drawString(String str, int x, int y);
 
 Vorher Font und Farbe setzen!
 
-[Beispiel: java2d.j2d.SimpleFonts]{.bsp}
+[Demo: [java2d.SimpleFonts](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/SimpleFonts.java)]{.bsp}
 
 
 ## Einfache Polygone definieren
@@ -208,7 +204,7 @@ Statt `drawPolygon()` ....
 
 Vorher Farbe setzen!
 
-[Beispiel: java2d.j2d.SimplePoly]{.bsp}
+[Demo: [java2d.SimplePoly](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/SimplePoly.java)]{.bsp}
 
 
 ## Ausblick I: Umgang mit Bildern
@@ -228,6 +224,7 @@ Graphics2D g2 = (Graphics2D) g;
 ```
 
 \smallskip
+
 => `Line2D`, `Rectangle2D`, ...
 
 \smallskip
@@ -253,7 +250,7 @@ Beobachtung: `paintComponent()` schreibt `Graphics`-Objekt komplett neu!
 Idee: Je Zeitschritt:
 
 1.  Position der Objekte neu berechnen
-2.  Objekte mit `paintComponent()` in GUI zeichnen
+2.  Objekte mit `paintComponent()` neu in GUI zeichnen
 
 ::: notes
 *   Möglichkeit 1: Alle Objekte in zentraler Datenstruktur halten und die
@@ -278,37 +275,9 @@ Idee: Je Zeitschritt:
 [Hinweis: Zentrale Struktur vs. Observer-Pattern]{.bsp}
 
 
-::::::::: notes
-
-## Einschub: Wiederholung Observer-Entwurfsmuster
-
-Sie schreiben ein Programm für die Bahn, welches die Zeit bis zur Ankunft der
-Züge verwaltet und auf einer Anzeigetafel darstellt.
-
-![](images/Anzeigetafel.png){width="80%"}
-
-
-## Weitere Anzeigemöglichkeiten nötig ...
-
-*   Anzeigetafeln im Warteraum
-*   Anzeigen auf dem Bahnsteig
-*   Anzeige auf der Konsole (für Admin)
-
-![](images/AnzeigeErweitert.png){width="80%"}
-
-
-## Naives Vorgehen: Für jede neue Anzeige muss der Server verändert werden
-
-::: center
-\Huge[**Fazit: So gehts nicht!**]{.alert}
-:::
-
-:::::::::
-
-
 ## Erinnerung: Observer Pattern
 
-![](images/Observer.png){width="80%"}
+![](images/observer.png){width="80%"}
 
 [Hinweis auf Push- vs. Pull-Modell]{.bsp}
 
@@ -334,12 +303,12 @@ Objekte können sich auf `Graphics` darstellen:
 :::
 
 ```java
-interface GameObject {
-    void move();
-    void paintTo(Graphics g); // entspricht Observer#update()
+abstract class GameObject {
+    abstract void move();
+    abstract void paintTo(Graphics g); // entspricht Observer#update()
 }
 
-class GameRect implements GameObject {
+class GameRect extends GameObject {
     int x, y, deltaX;
     void move() { x += deltaX; }
     void paintTo(Graphics g) {
@@ -389,7 +358,7 @@ Weitere evtl. nützliche Methoden:
     Neuzeichnen der Objekte ausgelöst
 :::
 
-[Beispiel: java2d.j2d.SimpleGame]{.bsp}
+[Demo: [java2d.simplegame.J2DTeaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/simplegame/J2DTeaser.java)]{.bsp}
 
 
 ## Wrap-Up
@@ -400,17 +369,6 @@ Weitere evtl. nützliche Methoden:
     *   Geom. Primitive und Text werden in ausgewählter Zeichenfarbe gerendert
              *  Rechtecke, Ovale, Polygone auch als "gefüllte" Variante
     *   Mehr Möglichkeiten: `Graphics2D`
-*   Objekte sollen auf Zustandsänderung eines anderen Objekts reagieren
-    => "Beobachter" ("*Observer*") => Observer-Pattern
-    *   Beobachter registrieren sich beim überwachten Objekt ("Observable")
-    *   Observable benachrichtigt alle Observer von Zustandsänderung
-             *  Observer können sich dann aktualisieren
-             *  Keine feste Abhängigkeit des Observables von konkreten Observern
-                -- diese werden zur Laufzeit registriert
-             *  Anwendung bei Swing: `ActionListener`
-             *  Hinweis auf `java.util`: `Observer` und `Observable`
-                => oft ungünstig, da mit `Object` gearbeitet wird
-    *   Anwendung: Ereignisorientierte Programmierung
 
 
 
@@ -424,9 +382,4 @@ Weitere evtl. nützliche Methoden:
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
