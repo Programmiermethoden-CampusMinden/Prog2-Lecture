@@ -11,3 +11,13 @@ dependencies {
     implementation 'org.slf4j:slf4j-simple:1.8.0-beta4'
 }
 
+task helloWorld(dependsOn: classes, type: JavaExec) {
+    mainClass = "JavalinHelloWorld.java"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task randomNumber(dependsOn: classes, type: JavaExec) {
+    mainClass = "JavalinRandomNumber.java"
+    classpath = sourceSets.main.runtimeClasspath
+}
+
