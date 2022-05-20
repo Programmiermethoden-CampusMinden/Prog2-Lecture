@@ -11,7 +11,7 @@ public final class DemoStarter {
         SwingUtilities.invokeLater(
                 new Runnable() {
                     public void run() {
-                        JFrame frame = new JFrame("Widget Demo");
+                        JFrame frame = new JFrame("Java2D Demo");
                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
                         frame.add(J2DTeaser.newJ2DTeaser());
