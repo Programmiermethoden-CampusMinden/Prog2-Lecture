@@ -13,15 +13,15 @@ public final class DemoStarter {
                         JFrame frame = new JFrame("Widget Demo");
                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-                        frame.setContentPane(new RadioButtonDemo());
-                        // frame.setContentPane(new FileChooserDemo());
-                        // frame.setContentPane(new TabbedPaneDemo());
-                        // frame.setContentPane(new DialogDemo());
+                        frame.add(new RadioButtonDemo());
+                        // frame.add(new FileChooserDemo());
+                        // frame.add(new TabbedPaneDemo());
+                        // frame.add(new DialogDemo());
 
                         //  Die Menüleiste gehört zum Frame, nicht zum Panel!
                         // frame.setJMenuBar(MenuDemo.newMenuBar());
 
-                        // frame.setContentPane(new PopupDemo());
+                        // frame.add(new PopupDemo());
 
                         frame.pack();
                         frame.setVisible(true);

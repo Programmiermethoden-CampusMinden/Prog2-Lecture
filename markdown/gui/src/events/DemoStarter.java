@@ -13,11 +13,12 @@ public final class DemoStarter {
                         JFrame frame = new JFrame("Listener Demo");
                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-                        // frame.setContentPane(new MouseListenerDemo());
-                        // frame.setContentPane(new MouseAdapterDemo());
-                        frame.setContentPane(new ListenerDemo());
+                        frame.add(new MouseListenerDemo());
+                        // frame.add(new MouseAdapterDemo());
+                        // frame.add(new ListenerDemo());
 
                         frame.pack();
+                        frame.setSize(480, 460);
                         frame.setVisible(true);
                     }
                 });
