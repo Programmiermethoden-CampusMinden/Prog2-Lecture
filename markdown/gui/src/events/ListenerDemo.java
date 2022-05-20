@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /** Demo: Umgang mit mehreren Listenern/Observables */
-public class ListenerDemo extends JPanel {
+public final class ListenerDemo extends JPanel {
     private final JButton singleButton;
     private final JButton multiButton;
     private static final Logger LOG = Logger.getLogger(ListenerDemo.class.getName());

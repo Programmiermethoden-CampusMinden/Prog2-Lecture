@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 /** Demo: Einsatz des MouseAdapters */
-public class MouseAdapterDemo extends JPanel {
+public final class MouseAdapterDemo extends JPanel {
     private static final Logger LOG = Logger.getLogger(MouseAdapterDemo.class.getName());
 
     /** Erzeuge neue Demo: Ändere die Hintergrundfarbe bei Mouse-Events */

@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 /** Erzeuge ein minimales Fenster */
-public class FirstWindow {
+public final class FirstWindow {
     /** Erzeuge die Komponenten in neuem EDT-Job statt im main()-Tread */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(

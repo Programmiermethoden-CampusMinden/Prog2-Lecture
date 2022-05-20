@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
 /** Demo: Umgang mit JRadioButton (und JCheckBox) */
-public class RadioButtonDemo extends JPanel {
+public final class RadioButtonDemo extends JPanel {
     private final JRadioButton b1;
     private final JRadioButton b2;
     private final JRadioButton b3;

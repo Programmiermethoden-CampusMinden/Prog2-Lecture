@@ -8,7 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 /** Erzeuge ein Fenster mit einem Button, einem Label und einem festen Textfeld */
-public class SecondWindow {
+public final class SecondWindow {
     /** Erzeuge die Komponenten in neuem EDT-Job statt im main()-Tread */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(

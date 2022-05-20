@@ -1,6 +1,5 @@
 package widgets;
 
-import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -8,7 +7,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 
 /** Demo: Umgang mit JTabbedPane (und JScrollPane) */
-public class TabbedPaneDemo extends JPanel {
+public final class TabbedPaneDemo extends JPanel {
     private final JTabbedPane t;
 
     /** Erzeuge ein Demo-Panel */

@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.filechooser.FileFilter;
 
 /** Demo: Umgang mit JFileChooser (und FileFilter) */
-public class FileChooserDemo extends JPanel {
+public final class FileChooserDemo extends JPanel {
     private final JButton button;
     private static final Logger LOG = Logger.getLogger(FileChooserDemo.class.getName());
 

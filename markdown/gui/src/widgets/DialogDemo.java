@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /** Demo: Umgang mit JOptionPane */
-public class DialogDemo extends JPanel {
+public final class DialogDemo extends JPanel {
     private static final Logger LOG = Logger.getLogger(DialogDemo.class.getName());
     private final JButton b1;
     private final JButton b2;

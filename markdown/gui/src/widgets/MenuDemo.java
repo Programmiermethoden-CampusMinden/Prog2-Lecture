@@ -1,16 +1,14 @@
 package widgets;
 
-import java.awt.FlowLayout;
 import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 import javax.swing.JRadioButtonMenuItem;
 
 /** Demo: Umgang mit JMenuBar (und JMenuItem) */
-public class MenuDemo {
+public final class MenuDemo {
     private static final Logger LOG = Logger.getLogger(MenuDemo.class.getName());
 
     /** Getter für den Frame: Der muss die MenuBar kennen und setzen */

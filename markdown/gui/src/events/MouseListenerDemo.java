@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 /** Demo: Einsatz des MouseListeners */
-public class MouseListenerDemo extends JPanel {
+public final class MouseListenerDemo extends JPanel {
     private static final Logger LOG = Logger.getLogger(MouseListenerDemo.class.getName());
 
     /** Erzeuge neue Demo: Ändere die Hintergrundfarbe bei Mouse-Events */

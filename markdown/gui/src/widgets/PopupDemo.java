@@ -10,7 +10,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JRadioButtonMenuItem;
 
 /** Demo: Umgang mit JTabbedPane (und JScrollPane) */
-public class PopupDemo extends JPanel {
+public final class PopupDemo extends JPanel {
     private final JRadioButtonMenuItem blue;
     private final JRadioButtonMenuItem red;
     private final JRadioButtonMenuItem green;
