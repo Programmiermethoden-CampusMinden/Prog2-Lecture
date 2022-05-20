@@ -17,14 +17,12 @@ quizzes:
     name: "Quiz XXX (ILIAS)"
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Frameworks"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo Frameworks"
 fhmedia:
   - link: ""
-    name: "VL "
+    name: "VL Frameworks"
 ---
 
 
