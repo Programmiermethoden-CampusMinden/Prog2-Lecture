@@ -31,7 +31,11 @@ sketch: true
 
 ## Motivation
 
-- tbd
+![Checkliste für die Entwicklung eines simplen Videospiels.](/images/checklisteMotivation.png)
+
+## Motivation
+
+![Checkliste für die Entwicklung eines simplen Videospiels mithilfe eines Frameworks.](/images/checklisteMotivationFarbig.png)
 
 ::: notes
 Neben der eigentlichen Funktionalität werden an Softwareprodukte viele weitere Randbindungen gestellt.
