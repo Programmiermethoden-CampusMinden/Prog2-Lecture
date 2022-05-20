@@ -59,7 +59,7 @@ fhmedia:
 
 ## GUIs mit Java
 
-![](images/java2d.png){width="80%"}
+![](images/java2d.png){width="40%"}
 
 [Demo: [java2d.simplegame.J2DTeaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/simplegame/J2DTeaser.java)]{.bsp}
 
@@ -113,7 +113,9 @@ Objekt vom Typ `Graphics` stellt graphischen Kontext dar
 
 ## Java2D Koordinatensystem
 
-![](images/java2d-koordinaten.png){width="80%"}
+![](images/java2d-koordinaten.png){width="60%"}
+
+\bigskip
 
 *   Koordinatensystem lokal zum Graphics-Objekt
 *   Einheiten in Pixel(!)
@@ -131,7 +133,7 @@ public void drawOval(int x, int y, int width, int height)
 public void fillOval(int x, int y, int width, int height)
 ```
 
-\smallskip
+\bigskip
 
 Vorher Strichfarbe setzen: `Graphics.setColor(Color color)`:
 
@@ -139,10 +141,8 @@ Vorher Strichfarbe setzen: `Graphics.setColor(Color color)`:
 *   Ansonsten über Konstruktor, beispielsweise als RGB:
 
     ```java
-    public Color(int r, int g, int b)
+    public Color(int r, int g, int b)  // Rot/Grün/Blau, Werte zw. 0 und 255
     ```
-
-    Rot/Grün/Blau, Werte zw. 0 und 255
 
 [Demo: [java2d.SimpleDrawings](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/SimpleDrawings.java)]{.bsp}
 
@@ -155,7 +155,7 @@ Fonts über Font-Klasse einstellen: `Graphics.setFont(Font font);`
 public Font(String name, int style, int size)
 ```
 
-\smallskip
+\bigskip
 
 `Graphics` kann Strings "zeichnen":
 
@@ -325,15 +325,14 @@ Weitere evtl. nützliche Methoden:
 
 ## Oberfläche zusammenbauen
 
-*   Spielfeld von `JPanel` ableiten: Observable
-*   Liste von Spiel-Objekten anlegen (Listener "registrieren")
-*   `paintComponent()` vom Spielfeld überschreiben
-    *   entspricht `Observable#notify()`
+1.  Spielfeld von `JPanel` ableiten: Observable
+2.  Liste von Spiel-Objekten anlegen (Listener "registrieren")
+3.  `paintComponent()` vom Spielfeld überschreiben
     *   für alle Listener (Spiel-Objekte) `paintTo()` aufrufen
 
-    \smallskip
+\smallskip
 
-*   Hauptschleife für Spiel:
+4.  Hauptschleife für Spiel:
     *   Taktgeber (Zeit, Interaktion)
     *   Je Schritt `move()` für alle Listener aufrufen
     *   Weitere Berechnungen (Kollisionen, ...)
@@ -367,7 +366,7 @@ Weitere evtl. nützliche Methoden:
 *   `Graphics`: Methoden zum Zeichnen von Linien, Rechtecken, Ovalen, Text ...
     *   Koordinatensystem: Ursprung links oben!
     *   Geom. Primitive und Text werden in ausgewählter Zeichenfarbe gerendert
-             *  Rechtecke, Ovale, Polygone auch als "gefüllte" Variante
+        *   Rechtecke, Ovale, Polygone auch als "gefüllte" Variante
     *   Mehr Möglichkeiten: `Graphics2D`
 
 
