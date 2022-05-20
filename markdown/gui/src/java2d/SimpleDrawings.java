@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 /** Demo: Umgang mit einfachen geometrischen Formen */
-public class SimpleDrawings {
+public final class SimpleDrawings {
     /** Zeichne einfache Objekte auf einem JPanel */
     public static JPanel newDrawings() {
         return new JPanel() {

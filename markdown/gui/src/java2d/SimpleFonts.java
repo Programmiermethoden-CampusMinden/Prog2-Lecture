@@ -6,7 +6,7 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 /** Demo: Umgang mit Fonts */
-public class SimpleFonts {
+public final class SimpleFonts {
     /** Formatiere Zeichenketten auf einem JPanel */
     public static JPanel newWritings() {
         return new JPanel() {

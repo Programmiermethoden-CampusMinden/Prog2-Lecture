@@ -6,7 +6,7 @@ import java.awt.Polygon;
 import javax.swing.JPanel;
 
 /** Demo: Umgang mit Polygonen */
-public class SimplePoly {
+public final class SimplePoly {
     /** Zeichne einfache Objekte auf einem JPanel */
     public static JPanel newDrawings() {
         return new JPanel() {

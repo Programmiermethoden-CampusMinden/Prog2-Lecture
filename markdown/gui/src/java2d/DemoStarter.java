@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 /** Rahmen für die Java2D-Demos */
-public class DemoStarter {
+public final class DemoStarter {
     /** Erzeuge die Komponenten in neuem EDT-Job statt im main()-Tread */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(
