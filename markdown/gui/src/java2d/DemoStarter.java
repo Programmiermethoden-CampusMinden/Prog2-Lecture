@@ -1,5 +1,6 @@
 package java2d;
 
+import java2d.simplegame.J2DTeaser;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -13,10 +14,10 @@ public class DemoStarter {
                         JFrame frame = new JFrame("Widget Demo");
                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-                        // frame.add(J2DTeaser.newJ2DTeaser());
+                        frame.add(J2DTeaser.newJ2DTeaser());
                         // frame.add(SimpleDrawings.newDrawings());
                         // frame.add(SimpleFonts.newWritings());
-                        frame.add(SimplePoly.newDrawings());
+                        // frame.add(SimplePoly.newDrawings());
 
                         frame.pack();
                         frame.setSize(480, 460);
