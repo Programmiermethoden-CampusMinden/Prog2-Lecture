@@ -28,7 +28,7 @@ public abstract class GameObject {
 
     /** Bewegungsrichtung umkehren */
     public void turn() {
-        x = -x;
+        deltaX = -deltaX;
     }
 
     /**
