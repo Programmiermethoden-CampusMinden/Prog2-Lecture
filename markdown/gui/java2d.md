@@ -369,6 +369,13 @@ Weitere evtl. nützliche Methoden:
         *   Rechtecke, Ovale, Polygone auch als "gefüllte" Variante
     *   Mehr Möglichkeiten: `Graphics2D`
 
+\bigskip
+
+*   Spiel: Game-Loop
+    *   Bewege Objekte: Rechne neue Position aus
+    *   Interagiere: Angriffe, Sammeln, ...
+    *   Zeichne Objekte neu
+
 
 
 
