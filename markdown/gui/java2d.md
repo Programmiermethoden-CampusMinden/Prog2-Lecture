@@ -326,16 +326,16 @@ Weitere evtl. nützliche Methoden:
 ## Oberfläche zusammenbauen
 
 1.  Spielfeld von `JPanel` ableiten: Observable
-2.  Liste von Spiel-Objekten anlegen (Listener "registrieren")
+2.  Observer registrieren: Liste mit Spiel-Objekten anlegen
 3.  `paintComponent()` vom Spielfeld überschreiben
-    *   für alle Listener (Spiel-Objekte) `paintTo()` aufrufen
+    *   für alle Observer (Spiel-Objekte) `paintTo()` aufrufen
 
 \smallskip
 
 4.  Hauptschleife für Spiel:
     *   Taktgeber (Zeit, Interaktion)
-    *   Je Schritt `move()` für alle Listener aufrufen
-    *   Weitere Berechnungen (Kollisionen, ...)
+    *   Je Schritt `move()` für alle Observer aufrufen
+    *   Weitere Berechnungen (Kollisionen, Interaktionen, ...)
     *   `Spielfeld.repaint()` aufrufen => Neuzeichnen mit `paintComponent()`
 
 ::: notes
@@ -353,8 +353,15 @@ Weitere evtl. nützliche Methoden:
         *   Bewegungsrichtung umkehren
         *   Objekt aus dem Spiel nehmen
 
-3.  `repaint()` im Spielfeld aufrufen -- damit wird `paintComponent()` und ein
-    Neuzeichnen der Objekte ausgelöst
+3.  Interaktionen
+    *   Greifen sich Monster und Held an?
+    *   Öffnet der Held eine Truhe?
+    *   Sammelt der Held etwas auf?
+    *   ...
+
+3.  `repaint()` im Spielfeld aufrufen => damit wird `paintComponent()` aufgerufen,
+    in `paintComponent()` wird für alle Spielobjekte deren `paintTo()` aufgerufen
+    und damit ein Neuzeichnen aller  Objekte ausgelöst
 :::
 
 [Demo: [java2d.simplegame.J2DTeaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/simplegame/J2DTeaser.java)]{.bsp}
