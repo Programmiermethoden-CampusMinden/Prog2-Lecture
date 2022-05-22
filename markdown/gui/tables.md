@@ -65,7 +65,7 @@ fhmedia:
     table.setFillsViewportHeight(true);
     ```
 
-[Beispiel: java2d.swing.tabledemo.SimpleTableDemo]{.bsp}
+[Demo: [tables.SimpleTable](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/tables/SimpleTable.java)]{.bsp}
 
 
 ## Selektierbare und sortierbare Tabelle
@@ -88,7 +88,7 @@ fhmedia:
     }});
     ```
 
-[Beispiel: java2d.swing.tabledemo.SelectTableDemo]{.bsp}
+[Demo: [tables.SelectTable](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/tables/SelectTable.java)]{.bsp}
 
 
 ## Einschub: MVC-Pattern
@@ -114,8 +114,6 @@ TODO ausarbeiten (Abbildung ist nur Platzhalter)
 \bigskip
 => Kapselung der Daten! Müssen nicht als Array o.ä. vorliegen!
 
-[Beispiel: java2d.swing.tabledemo.ModelTableDemo]{.bsp}
-
 
 ## Modelleigenschaften
 
@@ -138,7 +136,7 @@ TODO ausarbeiten (Abbildung ist nur Platzhalter)
 *   Kontrolle über Änderung der Daten in `setValueAt()`
 
 *   Daten können in beliebigem Format vorliegen! Interface nach
-    "aussen" dennoch tabellenartig.
+    "außen" dennoch tabellenartig.
 
 
 ## Eigene Listener beim Modell registrieren
@@ -158,7 +156,7 @@ m.addTableModelListener(new TableModelListener() {
 });
 ```
 
-[Beispiel: java2d.swing.tabledemo.ModelListenerTableDemo]{.bsp}
+[Demo: [tables.ModelTable](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/tables/ModelTable.java)]{.bsp}
 
 
 ## Wrap-Up
