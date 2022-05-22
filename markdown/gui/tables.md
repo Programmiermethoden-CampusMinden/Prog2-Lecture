@@ -41,16 +41,15 @@ fhmedia:
 *   Einfache Tabelle erzeugen:
 
     ```java
-    public JTable(final Object[][] rowData,
-       final Object[] columnNames)
+    public JTable(final Object[][] rowData, final Object[] columnNames)
     ```
 
 *   Daten gleich mit erzeugen/übergeben:
 
     ```java
     Object[][] rowData = {
-    { "Hein", "Bloed", new Integer(5) },
-    { "Susi", "Studi", new Integer(2) } };
+        { "Hein", "Bloed", 5 },
+        { "Susi", "Studi", 2 } };
     ```
 
 *   Tabellenkopf als einfaches Array:
@@ -59,11 +58,19 @@ fhmedia:
     Object[] columnNames = { "Vorname", "Name", "ect" };
     ```
 
-*   Tabelle soll allen Platz im Container nutzen:
+::: notes
+Damit der Tabellenkopf angezeigt wird, muss die Tabelle lt. [Dokumentation](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
+entweder in eine `JScrollPane` verpackt werden oder der Tabellenkopf muss manuell geeignet
+untergebracht werden, beispielsweise über ein `BorderLayout`:
 
-    ```java
-    table.setFillsViewportHeight(true);
-    ```
+```java
+JTable table = new JTable(data, columns);
+
+contentPane.setLayout(new BorderLayout());
+contentPane.add(table.getTableHeader(), BorderLayout.NORTH);
+contentPane.add(table, BorderLayout.CENTER);
+```
+:::
 
 [Demo: [tables.SimpleTable](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/tables/SimpleTable.java)]{.bsp}
 
@@ -76,6 +83,16 @@ fhmedia:
     table.setAutoCreateRowSorter(true);
     ```
 
+    ::: notes
+    Damit kann man im Tabellenkopf auf eine Spalte klicken und die Tabelle wird entsprechend
+    dieser Spalte sortiert.
+
+    _Hinweis_: Dazu muss der Tabellenkopf sichtbar sein.
+
+    _Hinweis_: Man kann auch eigene Sortierer implementieren. Diese leiten von `TableRowSorter`
+    ab und werden über `table.setRowSorter()` gesetzt.
+    :::
+
 *   Selektion erkennen und reagieren mit MouseListener:
 
     ```java
@@ -84,7 +101,7 @@ fhmedia:
             TableModel model = table.getModel();
             int c = table.getSelectedColumn();  // selektierte Spalte
             int r = table.getSelectedRow();     // selektierte Zeile
-            model.getValueAt(r, c);         // Wert in Zeile r, Spalte c
+            model.getValueAt(r, c);             // Wert in Zeile r, Spalte c
     }});
     ```
 
@@ -106,12 +123,17 @@ TODO ausarbeiten (Abbildung ist nur Platzhalter)
 *   Tabelle wird über Instanz von diesem Modell erzeugt
 *   Tabelle ist View und Controller zugleich, trägt sich bei Erzeugung
     als Listener beim Modell ein
+
+\smallskip
+
 *   Modell muss die Tabelle über Änderungen an den Daten informieren:
+
     ```java
     fireTableCellUpdated(row, col);
     ```
 
 \bigskip
+
 => Kapselung der Daten! Müssen nicht als Array o.ä. vorliegen!
 
 
@@ -129,7 +151,7 @@ TODO ausarbeiten (Abbildung ist nur Platzhalter)
 
     ```java
     public boolean isCellEditable(int row, int col) {
-        return (col<2) ? false : true;
+        return col >= 2;
     }
     ```
 
@@ -139,6 +161,7 @@ TODO ausarbeiten (Abbildung ist nur Platzhalter)
     "außen" dennoch tabellenartig.
 
 
+::: notes
 ## Eigene Listener beim Modell registrieren
 
 ```java
@@ -148,13 +171,18 @@ m.addTableModelListener(new TableModelListener() {
         int row = e.getFirstRow();
         int column = e.getColumn();
         TableModel model = (TableModel) e.getSource();
-        String columnName = model.getColumnName(column);
         Object data = model.getValueAt(row, column);
-        int changeType = e.getType();
         ...
     }
 });
 ```
+
+Wenn Daten geändert werden, wird automatisch die Methode `setValueAt()` des Modells
+aufgerufen.
+
+Zusätzlich kann man beim Modell eigene Listener registrieren, die auf Events durch
+Änderungen der Tabelle reagieren können.
+:::
 
 [Demo: [tables.ModelTable](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/tables/ModelTable.java)]{.bsp}
 
@@ -163,8 +191,8 @@ m.addTableModelListener(new TableModelListener() {
 
 *   Fortgeschrittene Swing-Komponenten
     *   Komplexe Daten mit `JTable` anzeigen
-    *   Swing-Komponenten (nicht nur `JTable`!) haben Datenmodelle,
-        können separat erzeugt werden, haben eigene Listener, ...
+    *   Swing-Komponenten (nicht nur `JTable`!) haben Datenmodelle \newline
+        (können separat erzeugt werden, haben eigene Listener, ...)
 *   Trennung Daten und Anzeige: MVC-Pattern
 
 
