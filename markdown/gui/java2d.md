@@ -38,8 +38,8 @@ outcomes:
   - k3: "Einstellung von Farbe und Font"
   - k3: "Erzeugen von Bewegung ohne Nutzung von Threads"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085214&client_id=FH-Bielefeld"
+    name: "Quiz Java2D (ILIAS)"
 youtube:
   - link: ""
     name: "VL Java2D"
