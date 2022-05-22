@@ -1,5 +1,6 @@
 package tables;
 
+import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 
@@ -16,7 +17,11 @@ public final class SimpleTable {
             {"Susi", "Studi", 2, 2, Boolean.FALSE}
         };
 
-        contentPane.add(new JTable(data, columns));
+        JTable table = new JTable(data, columns);
+
+        contentPane.setLayout(new BorderLayout());
+        contentPane.add(table.getTableHeader(), BorderLayout.NORTH);
+        contentPane.add(table, BorderLayout.CENTER);
 
         return contentPane;
     }

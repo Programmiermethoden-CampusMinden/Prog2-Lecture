@@ -1,5 +1,6 @@
 package tables;
 
+import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.logging.Logger;
@@ -23,7 +24,10 @@ public final class SelectTable {
         };
 
         JTable table = new JTable(data, columns);
-        contentPane.add(table);
+
+        contentPane.setLayout(new BorderLayout());
+        contentPane.add(table.getTableHeader(), BorderLayout.NORTH);
+        contentPane.add(table, BorderLayout.CENTER);
 
         table.setAutoCreateRowSorter(true);
 
@@ -35,12 +39,7 @@ public final class SelectTable {
                         int c = table.getSelectedColumn();
                         int r = table.getSelectedRow();
                         log.info(
-                                "MouseListener: Zeile "
-                                        + r
-                                        + ", Spalte: "
-                                        + c
-                                        + ", Wert: "
-                                        + model.getValueAt(r, c));
+                                "MouseListener: (" + r + ", " + c + "): " + model.getValueAt(r, c));
                     }
                 });
 

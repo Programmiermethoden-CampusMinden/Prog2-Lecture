@@ -1,15 +1,17 @@
 package tables;
 
-import java.awt.FlowLayout;
+import java.awt.BorderLayout;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
 import javax.swing.JTable;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 
 /** Demo: Umgang mit einer Modell-basierten Tabelle */
 public final class ModelTable extends AbstractTableModel {
-    private static Logger LOG = Logger.getLogger("MyTableModel");
+    private static final Logger LOG = Logger.getLogger("MyTableModel");
 
     // Daten sind hier zufällig als Array strukturiert, hier können aber beliebige
     // Strukturen genutzt werden (die Methoden müssen nur passend implementiert
@@ -28,13 +30,26 @@ public final class ModelTable extends AbstractTableModel {
 
     /** Erzeuge ein Panel mit einer Modell-basierten Tabelle */
     public static JPanel newModelTable() {
-
-        JPanel contentPane = new JPanel();
-        contentPane.setLayout(new FlowLayout());
-
         TableModel model = new ModelTable();
+        JTable table = new JTable(model);
+        JPanel contentPane = new JPanel();
 
-        contentPane.add(new JTable(model));
+        contentPane.setLayout(new BorderLayout());
+        contentPane.add(table.getTableHeader(), BorderLayout.NORTH);
+        contentPane.add(table, BorderLayout.CENTER);
+
+        table.setAutoCreateRowSorter(true);
+
+        model.addTableModelListener(
+                new TableModelListener() {
+                    public void tableChanged(TableModelEvent e) {
+                        int row = e.getFirstRow();
+                        int column = e.getColumn();
+                        TableModel model = (TableModel) e.getSource();
+                        Object data = model.getValueAt(row, column);
+                        LOG.info("TableModelListener: (" + row + ", " + column + "): " + data);
+                    }
+                });
 
         return contentPane;
     }
@@ -72,19 +87,19 @@ public final class ModelTable extends AbstractTableModel {
     @Override
     public void setValueAt(Object value, int row, int col) {
         LOG.info(
-                "Setting value at ("
+                "TableModel: ("
                         + row
                         + ","
                         + col
-                        + ") from "
+                        + ") "
                         + data[row][col]
-                        + " to "
+                        + " => "
                         + value
-                        + " (an instance of "
+                        + " ("
                         + value.getClass()
                         + ")");
 
         data[row][col] = value; // update model
-        fireTableCellUpdated(row, col); // signal to update view
+        fireTableCellUpdated(row, col); // signal table to update view
     }
 }
