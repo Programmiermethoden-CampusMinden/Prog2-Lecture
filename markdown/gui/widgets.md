@@ -28,8 +28,8 @@ outcomes:
   - k3: "Umgang mit komplexeren Swing-Komponenten: JRadioButton, JFileChooser, JOptionPane, JTabbedPane, JScrollPane, JMenuBar, JPopupMenu"
   - k3: "Nutzung von ActionListener, MouseListener, KeyListener, FocusListener"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
+    name: "Quiz Swing (ILIAS)"
 youtube:
   - link: ""
     name: "VL Swing Widgets"

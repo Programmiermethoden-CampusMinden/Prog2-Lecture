@@ -21,8 +21,8 @@ outcomes:
   - k2: "Trennung von Anzeige und Daten: View und Model (MVC-Pattern)"
   - k3: "Anzeige von Tabellen mit JTable"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
+    name: "Quiz Swing (ILIAS)"
 youtube:
   - link: ""
     name: "VL Swing: Tabellen"

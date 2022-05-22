@@ -17,8 +17,8 @@ tldr: |
 outcomes:
   - k3: "Komplexe Layouts mit GridBagLayout"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
+    name: "Quiz Swing (ILIAS)"
 youtube:
   - link: ""
     name: "VL Swing: Layout-Manager"
