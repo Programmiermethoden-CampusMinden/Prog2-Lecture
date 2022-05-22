@@ -250,7 +250,8 @@ Beobachtung: `paintComponent()` schreibt `Graphics`-Objekt komplett neu!
 Idee: Je Zeitschritt:
 
 1.  Position der Objekte neu berechnen
-2.  Objekte mit `paintComponent()` neu in GUI zeichnen
+2.  Weitere Berechnungen: Kollision, Interaktion, Angriff, ...
+3.  Objekte mit `paintComponent()` neu in GUI zeichnen
 
 ::: notes
 *   Möglichkeit 1: Alle Objekte in zentraler Datenstruktur halten und die
