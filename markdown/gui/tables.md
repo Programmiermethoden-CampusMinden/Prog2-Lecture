@@ -110,10 +110,26 @@ contentPane.add(table, BorderLayout.CENTER);
 
 ## Einschub: MVC-Pattern
 
-<!-- TODO ausarbeiten -->
-TODO ausarbeiten (Abbildung ist nur Platzhalter)
+![](images/mvc.png){width="60%"}
 
-![](images/MVC.png){width="80%"}
+::: notes
+Das [Model-View-Controller-Pattern (MVC)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+ist vor allem im Bereich User-Interfaces anzutreffen.
+
+Das "Model" kennt und verwaltet die Daten. Es ist unabhängig von der konkreten Darstellung der Daten und kann
+neben den Daten auch Teile der Geschäftslogik beinhalten. Änderungen im Model werden per Observer-Pattern an
+den View weitergereicht.
+
+Der "View" ist für die Darstellung der Daten zuständig und für die Benutzerinteraktion. Der View kennt das Model,
+ist aber nicht für die Verwaltung der Daten zuständig. Benutzerinteraktion wird über das Observer-Pattern an den
+Controller weitergeleitet.
+
+Der "Controller" verwaltet das Model und den View und kümmert sich um die Verarbeitung der Nutzerinteraktion.
+Bei User-Interaktion mit dem View wird der Controller über das Observer-Pattern vom View benachrichtigt,
+verarbeitet die Interaktion und kann entsprechende Änderungen an das Model weitergeben.
+
+Dieses Pattern findet sich mittlerweile in diversen (leichten) Variationen.
+:::
 
 
 ## Daten in separatem Modell
