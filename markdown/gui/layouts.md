@@ -48,7 +48,7 @@ Anordnung der Komponenten [in einem Container ist]{.notes} abhängig vom **Layou
 
 \bigskip
 
-Verschiedene Layout-Manager:
+Verschiedene beliebte Layout-Manager:
 
 *   `BorderLayout`
 *   `FlowLayout`
@@ -209,7 +209,7 @@ aufgeteilt.
 
 \bigskip
 
-*   Auswahl von Layout-Managern:
+*   Auswahl von beliebten Layout-Managern:
     *   `BorderLayout`: Gitterartige Struktur mit fünf Elementen
     *   `FlowLayout`: Zeilenweise Anordnung (Umbruch bei Platzmangel)
     *   `GridLayout`: Tabellenartige Struktur, Elemente gleich groß
