@@ -1,7 +1,7 @@
 ---
 type: lecture-cg
 title: "Frameworks: Einstieg"
-menuTitle: "Frameworks"
+menuTitle: "Intro"
 author: "André Matutat (FH Bielefeld)"
 weight: 1
 tldr: |
