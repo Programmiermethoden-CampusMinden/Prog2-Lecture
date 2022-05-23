@@ -10,16 +10,15 @@ readings:
   - key: "Ullenboom2021"
     comment: "Kap. 18: Einführung in grafische Oberflächen"
 tldr: |
-  TODO
+  In Swing kann man komplexe Daten mit `JTable` in einer tabellenartigen Struktur darstellen.
 
-    *   Komplexe Daten mit `JTable` anzeigen
-    *   Swing-Komponenten (nicht nur `JTable`!) haben Datenmodelle,
-        können separat erzeugt werden, haben eigene Listener, ...
-    *   Trennung Daten und Anzeige: MVC-Pattern
-
+  Swing-Komponenten (nicht nur `JTable`!) nutzen das MVC-Pattern und trennen Daten und Anzeige.
+  Allerdings werden in Swing die Teile "Controller" und "View" miteinander verschmolzen (etwa
+  im `JTable`) und nur das "Model" wird separat erzeugt zur Verwaltung der Daten.
 outcomes:
   - k2: "Trennung von Anzeige und Daten: View und Model (MVC-Pattern)"
   - k3: "Anzeige von Tabellen mit JTable"
+  - k3: "Einsatz eines eigenen Datenmodells"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
@@ -27,9 +26,11 @@ youtube:
   - link: ""
     name: "VL Swing: Tabellen"
   - link: ""
-    name: "Demo Swing: Tabellen"
+    name: "Demo Swing: einfache Tabellen"
   - link: ""
-    name: "Demo Swing: Tabellen"
+    name: "Demo Swing: Tabellen mit Sortierung"
+  - link: ""
+    name: "Demo Swing: Tabellen mit Daten-Modell"
 fhmedia:
   - link: ""
     name: "VL Swing: Tabellen"
