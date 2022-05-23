@@ -32,21 +32,63 @@ fhmedia:
 ---
 
 
-# Swing: Layout-Manager
-
 ## Überblick
 
-todo
+Anordnung der Komponenten [in einem Container ist]{.notes} abhängig vom **Layout**
 
-## Grid
+\bigskip
 
-todo
+Verschiedene LayoutManager:
+
+*   `BorderLayout`
+*   `FlowLayout`
+*   `GridLayout`
+*   `GridBagLayout`
+*   ...
+
 
 ## Border
 
-todo
+![](images/screenshot-borderlayout.png){width="40%"}
+
+```java
+JPanel contentPane = new JPanel();
+
+contentPane.setLayout(new BorderLayout());
+
+contentPane.add(new JButton("North"), BorderLayout.NORTH);  // also: PAGE_START
+contentPane.add(new JButton("West"), BorderLayout.WEST);    // also: LINE_START
+contentPane.add(new JButton("Center"), BorderLayout.CENTER);
+contentPane.add(new JButton("East"), BorderLayout.EAST);    // also: LINE_END
+contentPane.add(new JButton("South"), BorderLayout.SOUTH);  // also: PAGE_END
+```
+
+::: notes
+Es gibt fünf verschiedene Bereiche, in denen die Komponenten bei einem Border-Layout angeordnet
+werden können. Für die "historischen" Konstanten `NORTH`, `SOUTH`, `WEST` und `EAST` gibt es
+mittlerweile neue Namen, die eher am Aufbau einer Seite orientiert werden können.
+
+Man kann auch nur einige Teile nutzen, bei der Tabellen-Demo beispielsweise wurde nur der
+`NORTH`-Bereich für den Tabellenkopf und der `CENTER`-Bereich für die eigentliche Tabelle
+genutzt.
+
+Wenn das Fenster vergrößert wird, bekommt zunächst der Mittelteil den neuen zur Verfügung stehenden
+Platz. Die anderen Bereiche werden dabei auf vergrößert, aber nur so weit, dass der neue verfügbare
+Platz ggf. ausgefüllt wird.
+
+Mit den Methoden `setHgap()` und `setVgap()` kann der Abstand zwischen den Komponenten eingestellt
+werden (horizontal und vertikal, Abstände in Pixel).
+:::
+
+[Demo: [layout.Border](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/layout/Border.java)]{.bsp}
+
 
 ## Flow
+
+todo
+
+
+## Grid
 
 todo
 
