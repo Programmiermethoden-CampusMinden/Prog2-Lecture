@@ -18,7 +18,7 @@ public class JavalinRandomNumber {
         logger.addHandler(consoleHandler);
         Javalin app = Javalin.create().start(8080);
 
-        // Registirere eine Handler der aufgerufen wird, nachdem eine HTTP-Anfrage eingegangen ist
+        // Registriere einen Handler, der aufgerufen wird, nachdem eine HTTP-Anfrage eingegangen ist
         // und bevor sie verarbeitet wurde.
         app.before(
                 new Handler() {
@@ -28,7 +28,7 @@ public class JavalinRandomNumber {
                     }
                 });
 
-        // Registirere eine Handler der aufgerufen wird, wenn eine HTTP-Anfrage auf
+        // Registtiere einen Handler, der aufgerufen wird, wenn eine HTTP-Anfrage auf
         // "localhost:8080/" eingeht.
         app.get(
                 "/",
@@ -39,7 +39,7 @@ public class JavalinRandomNumber {
                     }
                 });
 
-        // Registirere eine Handler der aufgerufen wird, wenn eine HTTP-Anfrage auf
+        // Registriere einen Handler, der aufgerufen wird, wenn eine HTTP-Anfrage auf
         // "localhost:8080/int" eingeht.
         app.get(
                 "/int",
@@ -50,7 +50,7 @@ public class JavalinRandomNumber {
                     }
                 });
 
-        // Registirere eine Handler der aufgerufen wird, wenn eine HTTP-Anfrage auf
+        // Registriere einen Handler, der aufgerufen wird, wenn eine HTTP-Anfrage auf
         // "localhost:8080/float" eingeht.
         app.get(
                 "/float",
@@ -61,7 +61,7 @@ public class JavalinRandomNumber {
                     }
                 });
 
-        // Registirere eine Handler der aufgerufen wird, wenn eine HTTP-Anfrage auf
+        // Registriere einen Handler, der aufgerufen wird, wenn eine HTTP-Anfrage auf
         // "localhost:8080/exit" eingeht.
         app.get(
                 "/exit",
@@ -73,7 +73,7 @@ public class JavalinRandomNumber {
                     }
                 });
 
-        // Registirere eine Handler der aufgerufen wird, wenn eine HTTP-Anfrage abgearbeitet wurde.
+        // Registriere einen Handler, der aufgerufen wird, wenn eine HTTP-Anfrage abgearbeitet wurde.
         app.after(
                 new Handler() {
                     @Override
