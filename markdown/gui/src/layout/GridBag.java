@@ -10,6 +10,7 @@ public final class GridBag {
     /** Erzeuge ein Panel mit dem GridBagLayout */
     public static JPanel newGridBag() {
         JPanel contentPane = new JPanel();
+
         contentPane.setLayout(new GridBagLayout());
 
         GridBagConstraints c1 = new GridBagConstraints();

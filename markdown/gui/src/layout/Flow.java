@@ -9,7 +9,13 @@ public final class Flow {
     /** Erzeuge ein Panel mit dem FlowLayout */
     public static JPanel newFlow() {
         JPanel contentPane = new JPanel();
-        contentPane.setLayout(new FlowLayout());
+        FlowLayout fl = new FlowLayout();
+
+        contentPane.setLayout(fl);
+
+        // fl.setHgap(20);
+        // fl.setVgap(20);
+        // fl.setAlignment(FlowLayout.LEFT);
 
         contentPane.add(new JButton("Label 1"));
         contentPane.add(new JButton("Label 2"));

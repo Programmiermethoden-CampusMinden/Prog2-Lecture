@@ -9,7 +9,12 @@ public final class Grid {
     /** Erzeuge ein Panel mit dem GridLayout */
     public static JPanel newGrid() {
         JPanel contentPane = new JPanel();
-        contentPane.setLayout(new GridLayout(0, 3));
+        GridLayout gl = new GridLayout(2, 3); // 0: any number of rows or columns
+
+        contentPane.setLayout(gl);
+
+        // gl.setHgap(20);
+        // gl.setVgap(20);
 
         contentPane.add(new JButton("Label 1"));
         contentPane.add(new JButton("Label 2"));

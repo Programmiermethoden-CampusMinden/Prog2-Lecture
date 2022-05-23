@@ -13,10 +13,10 @@ public final class DemoStarter {
                         JFrame frame = new JFrame("Layout Manager Demo");
                         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-                        frame.add(Flow.newFlow());
                         // frame.add(Border.newBorder());
+                        // frame.add(Flow.newFlow());
                         // frame.add(Grid.newGrid());
-                        // frame.add(GridBag.newGridBag());
+                        frame.add(GridBag.newGridBag());
 
                         frame.pack();
                         frame.setVisible(true);
