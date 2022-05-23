@@ -47,7 +47,7 @@ Verschiedene LayoutManager:
 *   ...
 
 
-## Border
+## BorderLayout
 
 ![](images/screenshot-borderlayout.png){width="40%"}
 
@@ -83,9 +83,32 @@ werden (horizontal und vertikal, Abstände in Pixel).
 [Demo: [layout.Border](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/layout/Border.java)]{.bsp}
 
 
-## Flow
+## FlowLayout
 
-todo
+![](images/screenshot-flowlayout.png){width="60%"}
+
+```java
+JPanel contentPane = new JPanel();
+
+contentPane.setLayout(new FlowLayout());
+
+contentPane.add(new JButton("Label 1"));
+contentPane.add(new JButton("Label 2"));
+contentPane.add(new JButton("Label 3"));
+```
+
+::: notes
+Das `FlowLayout` ist ein sehr einfaches Layout, welches per Default in `JPanel` genutzt wird.
+
+Die Komponenten werden der Reihe nach in einer Zeile angeordnet. Wenn der Platz nicht ausreicht,
+bricht diese Zeile um in mehrere Zeilen.
+
+Per Default werden die Komponenten zentriert angeordnet. Über den Konstruktor kann aber eine
+andere Ausrichtung definiert werden, ebenso wie ein vertikales und horizontales Padding zwischen
+den Komponenten.
+:::
+
+[Demo: [layout.Flow](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/layout/Flow.java)]{.bsp}
 
 
 ## Grid
