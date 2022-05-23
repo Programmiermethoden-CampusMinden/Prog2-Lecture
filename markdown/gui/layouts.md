@@ -10,12 +10,18 @@ readings:
   - key: "Ullenboom2021"
     comment: "Kap. 18: Einführung in grafische Oberflächen"
 tldr: |
-  TODO
+  Zur Anordnung von Komponenten greift Swing auf sogenannte Layout-Manager zurück.
 
-    *   Fortgeschrittenes Layout mit `GridBagLayout`
-
+  Hier gibt es viele verschiedene Ausprägungen und Spielarten. Es gibt beispielsweise:
+  *   das `BorderLayout`, eine gitterartige Struktur mit fünf Elementen,
+  *   das `FlowLayout`, eine einzeilige Anordnung mit automatischem Umbruch bei Platzmangel,
+  *   das `GridLayout`, eine tabellenartige Struktur, in der alle Elemente gleich groß dargestellt werden, und
+  *   das `GridBagLayout`, welches sich prinzipiell wie das `GridLayout` verhält und mehr Möglichkeiten bietet.
+      Zur Anordnung der Komponenten greift man hier auf `GridBagConstraints` zurück und kann sehr genau und
+      sehr flexibel definieren, wo und wie die Komponenten angeordnet sein sollen und sich bei Größenänderungen
+      des Containers verhalten sollen.
 outcomes:
-  - k3: "Komplexe Layouts mit GridBagLayout"
+  - k3: "Anwenden der verschiedenen Layout-Manager: BorderLayout, FlowLayout, GridLayout, GridBagLayout"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
@@ -23,9 +29,13 @@ youtube:
   - link: ""
     name: "VL Swing: Layout-Manager"
   - link: ""
-    name: "Demo Swing: Layout-Manager"
+    name: "Demo BorderLayout"
   - link: ""
-    name: "Demo Swing: Layout-Manager"
+    name: "Demo FlowLayout"
+  - link: ""
+    name: "Demo GridLayout"
+  - link: ""
+    name: "Demo GridBagLayout"
 fhmedia:
   - link: ""
     name: "VL Swing: Layout-Manager"
