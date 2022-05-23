@@ -38,7 +38,7 @@ Anordnung der Komponenten [in einem Container ist]{.notes} abhängig vom **Layou
 
 \bigskip
 
-Verschiedene LayoutManager:
+Verschiedene Layout-Manager:
 
 *   `BorderLayout`
 *   `FlowLayout`
@@ -47,7 +47,7 @@ Verschiedene LayoutManager:
 *   ...
 
 
-## BorderLayout
+## _BorderLayout_
 
 ![](images/screenshot-borderlayout.png){width="40%"}
 
@@ -83,7 +83,7 @@ werden (horizontal und vertikal, Abstände in Pixel).
 [Demo: [layout.Border](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/layout/Border.java)]{.bsp}
 
 
-## FlowLayout
+## _FlowLayout_
 
 ![](images/screenshot-flowlayout.png){width="60%"}
 
@@ -103,50 +103,107 @@ Das `FlowLayout` ist ein sehr einfaches Layout, welches per Default in `JPanel` 
 Die Komponenten werden der Reihe nach in einer Zeile angeordnet. Wenn der Platz nicht ausreicht,
 bricht diese Zeile um in mehrere Zeilen.
 
-Per Default werden die Komponenten zentriert angeordnet. Über den Konstruktor kann aber eine
-andere Ausrichtung definiert werden, ebenso wie ein vertikales und horizontales Padding zwischen
-den Komponenten.
+Per Default werden die Komponenten zentriert angeordnet. Über den Konstruktor oder die Methoden
+`setAlignment()` und `setHgap()` bzw. `setVgap()` kann aber eine andere Ausrichtung definiert
+werden, ebenso wie ein vertikales und horizontales Padding zwischen den Komponenten.
 :::
 
 [Demo: [layout.Flow](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/layout/Flow.java)]{.bsp}
 
 
-## Grid
+## _GridLayout_
 
-todo
+![](images/screenshot-gridlayout.png){width="40%"}
 
+```java
+JPanel contentPane = new JPanel();
 
-## Komplexer Layoutmanager: _GridBagLayout_
+contentPane.setLayout(new GridLayout(0, 3));
 
-*   Layoutmanager mit gitterartiger Grundstruktur
-*   Erzeugung/Verwendung ähnlich zu `GridLayout`
-*   Zusätzlich **Constraints**, beschreiben Verhalten des
-    Layouts bei Größenveränderungen: `GridBagConstraints`
-
-| Constraint   | Bedeutung                                                                                                    |
-|:-------------|:-------------------------------------------------------------------------------------------------------------|
-| `gridx`      | **Spalte** für Komponente (linke obere Ecke)                                                                 |
-| `gridy`      | **Zeile** für Komponente (linke obere Ecke)                                                                  |
-| `gridwidth`  | **Anzahl der Spalten** für Komponente                                                                        |
-| `gridheight` | **Anzahl der Zeilen** für Komponente                                                                         |
-| `fill`       | Vergrößert **Komponente** (wenn Platz ist) in angegebene  Richtung: `NONE`, `HORIZONTAL`, `VERTICAL`, `BOTH` |
-| `weightx`    | Freier Platz in x-Richtung wird unter den **Grid-Slots** entsprechend ihrem "Gewicht" aufgeteilt             |
-| `weighty`    | Freier Platz in y-Richtung wird unter den **Grid-Slots** entsprechend ihrem "Gewicht" aufgeteilt             |
+contentPane.add(new JButton("Label 1"));
+contentPane.add(new JButton("Label 2"));
+contentPane.add(new JButton("Label 3"));
+```
 
 ::: notes
-Selbststudium: Machen Sie sich mit Hilfe der Literatur mit dem `GridBagLayout`
-vertraut. Nutzen Sie den Beispielcode und variieren Sie die verschiedenen
-Parameter/Constraints, um sich mit dem Verhalten und den Auswirkungen vertraut
-zu machen!
+Das `GridLayout` ist ein sehr einfaches Layout mit einer tabellenartigen Struktur. Dabei werden
+die Komponenten nacheinander auf die "Zellen" verteilt, beginnend mit der ersten Zeile. Alle
+Komponenten werden dabei gleich groß dargestellt.
 
-[Beispiel: java2d.swing.MultiListenerGridBagDemo]{.bsp}
+Über den Konstruktor wird die Anzahl der gewünschten Zeilen und Spalten angegeben. Es darf auch
+für einen der beiden Parameter der Wert 0 verwendet werden, in diesem Fall werden so viele Zeilen
+oder Spalten angelegt, wie für die hinzugefügten Komponenten benötigt.
+
+Auch in diesem Layout kann das Padding über die Methoden `setHgap()` bzw. `setVgap()` eingestellt
+werden.
 :::
+
+[Demo: [layout.Grid](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/layout/Grid.java)]{.bsp}
+
+
+## Komplexer Layout-Manager: _GridBagLayout_
+
+*   Layout-Manager ähnlich zu `GridLayout`
+*   Zusätzlich `GridBagConstraints`: Verhalten bei Größenveränderungen
+
+\bigskip
+
+| Constraint   | Bedeutung                                                                                 |
+|:-------------|:------------------------------------------------------------------------------------------|
+| `gridx`      | **Spalte** für Komponente (linke obere Ecke)                                              |
+| `gridy`      | **Zeile** für Komponente (linke obere Ecke)                                               |
+| `gridwidth`  | **Anzahl der Spalten** für Komponente                                                     |
+| `gridheight` | **Anzahl der Zeilen** für Komponente                                                      |
+| `fill`       | Vergrößert **Komponente** in  Richtung: `NONE`, `HORIZONTAL`, `VERTICAL`, `BOTH`          |
+| `weightx`    | Platz in x-Richtung wird unter den **Grid-Slots** entsprechend ihrem "Gewicht" aufgeteilt |
+| `weighty`    | Platz in y-Richtung wird unter den **Grid-Slots** entsprechend ihrem "Gewicht" aufgeteilt |
+
+::: notes
+Beim Hinzufügen einer Komponente wird eine Instanz der Klasse `GridBagConstraints` mitgegeben.
+Diese definiert, wie die Komponente in der gitterartigen Struktur konkret angeordnet werden soll:
+Startposition im Gitter (x, y) bzw (Spalte, Zeile), wie viele Spalten oder Zeilen soll die
+Komponente überstreichen und wie soll auf Größenänderungen des Containers reagiert werden.
+
+Beispiel:
+
+```java
+JPanel contentPane = new JPanel();
+contentPane.setLayout(new GridBagLayout());
+
+GridBagConstraints c2 = new GridBagConstraints();
+c2.gridx = 1;
+c2.gridy = 0;
+c2.gridheight = 2;
+c2.fill = GridBagConstraints.VERTICAL;
+c2.weightx = 0.5;
+c2.weighty = 0.5;
+
+contentPane.add(new JButton("Label 2"), c2);
+```
+
+Der Button wird dem Panel mit dem GridBagLayout hinzugefügt und soll in Spalte 1 und Zeile 0
+angeordnet werden. Er soll sich dabei über 2 Zeilen erstrecken (und 1 Spalte). Der Button soll
+sich in vertikaler Richtung vergrößern, sofern Platz zur Verfügung steht.
+
+Dem Grid-Slot wird ein Gewicht in x- und in y-Richtung von je 0.5 mitgegeben. Bei einer Änderung
+des Containers in der jeweiligen Richtung wird der neue Platz unter den Slots gemäß ihren Gewichten
+aufgeteilt.
+:::
+
+[Demo: [layout.GridBag](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/layout/GridBag.java)]{.bsp}
 
 
 ## Wrap-Up
 
-*   Fortgeschrittene Swing-Komponenten
-    *   Fortgeschrittenes Layout mit `GridBagLayout`
+*   Anordnung von Komponenten lässt sich mit Layout-Manager steuern
+
+\bigskip
+
+*   Auswahl von Layout-Managern:
+    *   `BorderLayout`: Gitterartige Struktur mit fünf Elementen
+    *   `FlowLayout`: Zeilenweise Anordnung (Umbruch bei Platzmangel)
+    *   `GridLayout`: Tabellenartige Struktur, Elemente gleich groß
+    *   `GridBagLayout`: Wie `GridLayout`, mit mehr Möglichkeiten: `GridBagConstraints`
 
 
 
