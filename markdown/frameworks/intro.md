@@ -151,8 +151,8 @@ ist ein einfaches und schlankes Framework zu bevorzugen.
     [(Achtung: In der Doku fehlt:  `implementation 'org.slf4j:slf4j-simple:1.8.0-beta4'`!)]{.notes}
 3.  Schrittweises Erweitern der Startanwendung, bis ein Verständnis für
     das Framework erlangt wurde \newline (MWE: _Minimal Working Example_):
-    [javalin/JavalinHelloWorld](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/frameworks/src/javalin/JavalinHelloWorld.java)
-4.  Anwendung erweitern: [javalin/JavalinRandomNumber](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/frameworks/src/javalin/JavalinRandomNumber.java)
+    [JavalinHelloWorld](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/frameworks/src/javalin/src/main/java/JavalinHelloWorld.java)
+4.  Anwendung erweitern: [JavalinRandomNumber](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/frameworks/src/javalin/src/main/java/JavalinRandomNumber.java)
 
 \bigskip
 

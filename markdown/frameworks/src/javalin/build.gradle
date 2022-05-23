@@ -19,11 +19,11 @@ spotless {
 }
 
 task javalinHelloWorld(dependsOn: classes, type: JavaExec) {
-    mainClass = "javalin.JavalinHelloWorld"
+    mainClass = "JavalinHelloWorld"
     classpath = sourceSets.main.runtimeClasspath
 }
 
 task javalinRandomNumber(dependsOn: classes, type: JavaExec) {
-    mainClass = "javalin.JavalinRandomNumber"
+    mainClass = "JavalinRandomNumber"
     classpath = sourceSets.main.runtimeClasspath
 }
