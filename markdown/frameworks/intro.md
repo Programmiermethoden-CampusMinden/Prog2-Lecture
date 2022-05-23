@@ -12,7 +12,6 @@ tldr: |
   eigenen Code aufgerufen werden, sondern geben Strukturen vor, in denen der eigenen
   Code eingearbeitet werden muss.
 outcomes:
-  - k1: "Begriff Framework kennen gelernt"
   - k2: "Unterschied zwischen Frameworks und Libraries verstehen"
 youtube:
   - link: ""
@@ -135,40 +134,29 @@ Funktionalität anbieten möchte.
 
 ## Wie starte ich mit einem Framework?
 
-1.  Webseite des Frameworks besuchen und prüfen, ob es für die eigenen
-    Zwecke geeignet ist
+::: notes
+Beispielproblem: Es soll eine interne Webanwendung bereitgestellt werden, die
+bei jedem Aufruf eine zufällige Zahl zurückgibt.
+
+Für Webanwendungen gibt es eine Vielzahl an Frameworks. Für dieses kleine Problem
+ist ein einfaches und schlankes Framework zu bevorzugen.
+:::
+
+1.  [Webseite des Frameworks](https://javalin.io/) besuchen und prüfen, ob es
+    für die eigenen Zwecke geeignet ist
     *   Beschreibung auf der Webseite analysieren
-    *   Dokumentation überfliegen
+    *   [Dokumentation](https://javalin.io/documentation) überfliegen
     *   Beispielprojekte anschauen
-2.  Hello World programmieren <!-- https://javalin.io/tutorials/gradle-setup -->
+2.  [Hello World](https://javalin.io/tutorials/gradle-setup) programmieren
+    [(Achtung: In der Doku fehlt:  `implementation 'org.slf4j:slf4j-simple:1.8.0-beta4'`!)]{.notes}
 3.  Schrittweises Erweitern der Startanwendung, bis ein Verständnis für
-    das Framework erlangt wurde \newline
-    (MWE: _Minimal Working Example_)
+    das Framework erlangt wurde \newline (MWE: _Minimal Working Example_):
+    [javalin/JavalinHelloWorld](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/frameworks/src/javalin/JavalinHelloWorld.java)
+4.  Anwendung erweitern: [javalin/JavalinRandomNumber](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/frameworks/src/javalin/JavalinRandomNumber.java)
 
 \bigskip
 
 **Frameworks müssen ge-/erlernt werden.**
-
-
-::: notes
-## Beispiel
-
-Problem: Es soll eine interne Webanwendung bereitgestellt werden, die
-bei jedem Aufruf eine zufällige Zahl zurückgibt.
-
-Für Webanwendungen gibt es eine Vielzahl an Frameworks. Für dieses
-kleine Problem ist ein einfaches und schlankes Framework zu bevorzugen.
-
-<!-- Jetzt die Schritte 1 und 2 live vorführen -->
-
-1.  Das Framework [Javalin](https://javalin.io/) wirbt mit einer einfachen
-    und schnellen Handhabung
-    *   Die [Dokumentation](https://javalin.io/documentation) gibt bereits
-        einen guten Einblick
-    *   => Javalin ist für das Problem gut geeignet
-2.  [Javalin-Hello-World](https://javalin.io/tutorials/gradle-setup)  <!-- In der doc fehlt:  implementation 'org.slf4j:slf4j-simple:1.8.0-beta4' siehe src/javalin/JavalinHelloWorld -->
-3.  Anwendung erweitern <!-- siehe src/javalin/JavalinRandomNumber -->
-:::
 
 [Demo: [Web-Anwendung für Zufallszahlen](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/frameworks/src/javalin/)]{.bsp}
 
