@@ -25,46 +25,48 @@ fhmedia:
 ---
 
 
-## Motivation
+## Checkliste für die Entwicklung eines simplen Videospiels
 
-![](images/checklisteMotivation.png)
+![](images/checklisteMotivation.png){width="60%"}
 
 
-::: slides
-## Motivation (cnt.)
-:::
+## Checkliste für die Entwicklung eines simplen Videospiels mit Framework
 
-![](images/checklisteMotivationFarbig.png)
+![](images/checklisteMotivationFarbig.png){width="60%"}
 
 ::: notes
-Neben der eigentlichen Funktionalität werden an Softwareprodukte viele weitere Randbedingungen
-gestellt.
+Neben der eigentlichen Funktionalität werden an Softwareprodukte viele weitere
+Randbedingungen gestellt.
 
-Dies können Sicherheitsbedingungen sein oder Anforderungen an die Art und Weise der Bereitstellung
-des Produktes, zum Beispiel als Webservice. Viele dieser Anforderungen ähneln sich von Produkt zu
-Produkt und müssen dennoch immer wieder neu programmiert werden.
+Dies können Sicherheitsbedingungen sein oder Anforderungen an die Art und Weise
+der Bereitstellung des Produktes, zum Beispiel als Webservice. Viele dieser
+Anforderungen ähneln sich von Produkt zu Produkt und müssen dennoch immer wieder
+neu programmiert werden.
 
-Für einen Webservice muss beispielsweise eine HTML-Schnittstelle bereitgestellt werden, die Anfragen
-annimmt, bearbeitet und die Antworten wieder zurückliefert.
-:::::::::
+Für einen Webservice muss beispielsweise eine HTML-Schnittstelle bereitgestellt
+werden, die Anfragen annimmt, bearbeitet und die Antworten wieder zurückliefert.
+:::
 
 
 ## Was sind Frameworks?
 
-Frameworks liefern die Rahmenstruktur und Architektur, um Programme für die verschiedenen Anwendungszwecke
-einfacher und effizient zu entwickeln. Sie legen dabei fest, WIE programmiert werden soll.
+::: notes
+Frameworks liefern die Rahmenstruktur und Architektur, um Programme für die
+verschiedenen Anwendungszwecke einfacher und effizient zu entwickeln. Sie legen
+dabei fest, WIE programmiert werden soll.
 
-Frameworks stellen Code bereit, der an entsprechenden Stellen mit eigenen Klassen und Funktionen erweitert
-werden muss, um die eigentliche Funktion der Anwendung zu implementieren, sind dabei aber selbst keine eigenen
-Programme (vgl. PM-Dungeon).
+Frameworks stellen Code bereit, der an entsprechenden Stellen mit eigenen Klassen
+und Funktionen erweitert werden muss, um die eigentliche Funktion der Anwendung
+zu implementieren, sind dabei aber selbst keine eigenen Programme (vgl. PM-Dungeon).
 
-Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analogie eigentlich nicht schlecht, aber die muss besser eingebunden werden-->
-
+"Frameworks sind die Lückentexte der Programmierung."
+:::
 
 ::: notes
 ## Unterschied zu Libraries
 
-*   Libraries stellen Funktionen bereit, die frei in der eigenen Implementierung genutzt werden können.
+*   Libraries stellen Funktionen bereit, die frei in der eigenen Implementierung
+    genutzt werden können.
 *   Beispiele für Libraries
     *   Auswerten von regulären Ausdrücken
     *   Verwenden von Netzwerkprotokollen
@@ -72,14 +74,15 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
 
 \smallskip
 
-*   Frameworks geben eine Implementierung vor, die mit eigenen Verhalten erweitert werden kann/muss.
+*   Frameworks geben eine Implementierung vor, die mit eigenen Verhalten erweitert
+    werden kann/muss.
 *   Beispiele für Frameworks
     *   Web Anwendungssysteme
     *   GUI-Systeme
     *   Testen von Software
 :::
 
-![](images/frameworksVSlib.png)
+![](images/frameworksVSlib.png){width="80%"}
 
 
 ## Verbreitete Frameworks
@@ -89,19 +92,22 @@ Frameworks sind die Lückentexte der Programmierung. <!-- //Ich finde die Analog
 | JUnit     | Testen von Software                              |
 | Play      | Web Anwendungen                                  |
 | Spring    | Web Anwendungen und Enterprise Java-Applications |
-| Hybernate | Datenbanken Anbindungen und Kommunikation        |
-| libGDX    | Game Development                                 |
+| Hybernate | Datenbanken: Anbindungen und Kommunikation       |
+| libGDX    | Game Development  :)                             |
 
 
-## Vorteile von Frameworks
+## Mögliche Vor- und Nachteile von Frameworks
+
+### (+) Vorteile
 
 *   Ermöglichen eine schnelle Implementierung umfangreicher Softwarekonstrukte
 *   "Erzwingen" das Einhalten eines bestimmen Qualitätsstandards
 *   Große Communities
 *   Verstecken komplexe Zusammenhänge vor den Entwicklern
 
+\bigskip
 
-## Nachteile von Frameworks
+### (-) Nachteile
 
 *   Oftmals sehr umfangreich und schwer zu erlernen
 *   Fokus oft nicht mehr nur auf einem Anwendungsbereich (z.B Spring)
@@ -130,15 +136,18 @@ Funktionalität anbieten möchte.
 ## Wie starte ich mit einem Framework?
 
 1.  Webseite des Frameworks besuchen und prüfen, ob es für die eigenen
-    Zwecke geeignet ist.
-    -   Beschreibung auf der Webseite analysieren.
-    -   Dokumentation überfliegen.
-    -   Beispielprojekte anschauen.
-2.  Hello World programmieren. <!-- https://javalin.io/tutorials/gradle-setup -->
+    Zwecke geeignet ist
+    *   Beschreibung auf der Webseite analysieren
+    *   Dokumentation überfliegen
+    *   Beispielprojekte anschauen
+2.  Hello World programmieren <!-- https://javalin.io/tutorials/gradle-setup -->
 3.  Schrittweises Erweitern der Startanwendung, bis ein Verständnis für
-    das Framework erlangt wurde (MWE).
+    das Framework erlangt wurde \newline
+    (MWE: _Minimal Working Example_)
 
-**Frameworks müssen gelernt werden.**
+\bigskip
+
+**Frameworks müssen ge-/erlernt werden.**
 
 
 ::: notes
@@ -153,15 +162,15 @@ kleine Problem ist ein einfaches und schlankes Framework zu bevorzugen.
 <!-- Jetzt die Schritte 1 und 2 live vorführen -->
 
 1.  Das Framework [Javalin](https://javalin.io/) wirbt mit einer einfachen
-    und schnellen Handhabung.
+    und schnellen Handhabung
     *   Die [Dokumentation](https://javalin.io/documentation) gibt bereits
-        einen guten Einblick.
-    *   => Javalin ist für das Problem gut geeignet.
+        einen guten Einblick
+    *   => Javalin ist für das Problem gut geeignet
 2.  [Javalin-Hello-World](https://javalin.io/tutorials/gradle-setup)  <!-- In der doc fehlt:  implementation 'org.slf4j:slf4j-simple:1.8.0-beta4' siehe src/javalin/JavalinHelloWorld -->
-3.  Anwendung erweitern. <!-- siehe /src/javalin/JavalinRandomNumber -->
+3.  Anwendung erweitern <!-- siehe src/javalin/JavalinRandomNumber -->
 :::
 
-[Demo: Web-Anwendung für Zufallszahlen]{.bsp}
+[Demo: [Web-Anwendung für Zufallszahlen](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/frameworks/src/javalin/)]{.bsp}
 
 
 ## Wrap-Up
