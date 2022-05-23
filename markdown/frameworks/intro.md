@@ -4,8 +4,6 @@ title: "Frameworks: Einstieg"
 menuTitle: "Frameworks"
 author: "André Matutat (FH Bielefeld)"
 weight: 1
-readings:
-  - key: ""
 tldr: |
   Frameworks sind ein Softwaregerüst, um wiederkehrende Softwarestrukturen schnell
   und einfach um die eigene Funktionalität zu erweitern.
