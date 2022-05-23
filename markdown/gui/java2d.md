@@ -50,7 +50,7 @@ youtube:
   - link: ""
     name: "Demo Polygone"
   - link: ""
-    name: "Demo Bewegung"
+    name: "Demo Bewegung und Spiel"
 fhmedia:
   - link: ""
     name: "VL Java2D"
