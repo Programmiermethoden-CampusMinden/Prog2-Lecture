@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.diffplug.spotless" version "6.5.0"
 }
 
 repositories {
@@ -11,13 +12,18 @@ dependencies {
     implementation 'org.slf4j:slf4j-simple:1.8.0-beta4'
 }
 
-task helloWorld(dependsOn: classes, type: JavaExec) {
-    mainClass = "JavalinHelloWorld.java"
+spotless {
+    java {
+        googleJavaFormat().aosp()
+    }
+}
+
+task javalinHelloWorld(dependsOn: classes, type: JavaExec) {
+    mainClass = "javalin.JavalinHelloWorld"
     classpath = sourceSets.main.runtimeClasspath
 }
 
-task randomNumber(dependsOn: classes, type: JavaExec) {
-    mainClass = "JavalinRandomNumber.java"
+task javalinRandomNumber(dependsOn: classes, type: JavaExec) {
+    mainClass = "javalin.JavalinRandomNumber"
     classpath = sourceSets.main.runtimeClasspath
 }
-
