@@ -91,7 +91,7 @@ zu implementieren, sind dabei aber selbst keine eigenen Programme (vgl. PM-Dunge
 | JUnit     | Testen von Software                              |
 | Play      | Web Anwendungen                                  |
 | Spring    | Web Anwendungen und Enterprise Java-Applications |
-| Hybernate | Datenbanken: Anbindungen und Kommunikation       |
+| Hibernate | Datenbanken: Anbindungen und Kommunikation       |
 | libGDX    | Game Development  :)                             |
 
 
@@ -100,20 +100,20 @@ zu implementieren, sind dabei aber selbst keine eigenen Programme (vgl. PM-Dunge
 ### (+) Vorteile
 
 *   Ermöglichen eine schnelle Implementierung umfangreicher Softwarekonstrukte
-*   "Erzwingen" das Einhalten eines bestimmen Qualitätsstandards
-*   Große Communities
 *   Verstecken komplexe Zusammenhänge vor den Entwicklern
+*   "Erzwingen" das Einhalten eines bestimmen Qualitätsstandards
+*   Große Communities [(das kann aber auch für Libraries gelten ...)]{.notes}
 
 \bigskip
 
 ### (-) Nachteile
 
 *   Oftmals sehr umfangreich und schwer zu erlernen
-*   Fokus oft nicht mehr nur auf einem Anwendungsbereich (z.B Spring)
+*   Fokus oft nicht mehr nur auf einem Anwendungsbereich (z.B. Spring)
 *   Schließen sich oft gegenseitig aus
 *   Nicht alles, was sich Framework nennt, ist auch wirklich eins
 *   Hype-Gefahr: Frameworks werden stark angepriesen, um dann fallen gelassen
-    zu werden
+    zu werden [(das kann aber auch für Libraries gelten ...)]{.notes}
 
 
 ::: notes
