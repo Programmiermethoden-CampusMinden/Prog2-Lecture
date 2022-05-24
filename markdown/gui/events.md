@@ -30,7 +30,7 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
-  - link: "https://youtu.be/Un-FS88__VU"
+  - link: "`https://youtu.be/Un-FS88__VU`{=markdown}"
     name: "VL Swing Events"
   - link: "https://youtu.be/hjchoDaqcWY"
     name: "Demo Swing Events und Listener"

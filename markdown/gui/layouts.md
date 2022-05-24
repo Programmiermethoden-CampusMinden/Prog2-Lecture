@@ -26,7 +26,7 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
-  - link: "https://youtu.be/mV-_zhUeknw"
+  - link: "`https://youtu.be/mV-_zhUeknw`{=markdown}"
     name: "VL Swing: Layout-Manager"
   - link: "https://youtu.be/tifXSKXSUYw"
     name: "Demo BorderLayout"

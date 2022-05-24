@@ -23,7 +23,7 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
-  - link: "https://youtu.be/_iq_Grvhk90"
+  - link: "`https://youtu.be/_iq_Grvhk90`{=markdown}"
     name: "VL Swing: Tabellen"
   - link: "https://youtu.be/27o_A5SDbm0"
     name: "Demo Swing: einfache Tabellen"
