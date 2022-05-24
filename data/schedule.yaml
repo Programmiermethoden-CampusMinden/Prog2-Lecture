@@ -105,7 +105,6 @@
 
 - week: "KW21"
   lecture:
-    - topic: "/frameworks/guava"
     - topic: "/gui/swing"
     - topic: "/gui/java2d"
   misc_lecture:
@@ -119,6 +118,7 @@
     - topic: "/modern-java/methodreferences"
     - topic: "/modern-java/defaultmethods"
     - topic: "/java-jvm/regexp"
+    - topic: "/frameworks/intro"
   assignment:
     - topic: "sheet07"
       due: "Di, 31.05., 18 Uhr, PR/MR"

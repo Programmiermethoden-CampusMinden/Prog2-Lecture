@@ -1,0 +1,24 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLPackage</id><coordinates><x>120</x><y>140</y><w>420</w><h>450</h></coordinates><panel_attributes>Framework
+--
+bg=#CAE1FF
+layer=1
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>140</x><y>200</y><w>370</w><h>50</h></coordinates><panel_attributes>MyCode
+bg=#66CDAA
+layer=2
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>140</x><y>500</y><w>370</w><h>30</h></coordinates><panel_attributes>MyCode
+bg=#66CDAA
+layer=2
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>560</x><y>140</y><w>380</w><h>450</h></coordinates><panel_attributes>MyCode
+--
+bg=#66CDAA
+transparency=0
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>260</y><w>240</w><h>50</h></coordinates><panel_attributes>Library-Function
+bg=#CAE1FF
+layer=2
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>480</y><w>240</w><h>50</h></coordinates><panel_attributes>Library-Function
+bg=#CAE1FF
+layer=2
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>140</x><y>350</y><w>370</w><h>50</h></coordinates><panel_attributes>MyCode
+bg=#66CDAA
+layer=1
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element></diagram>
