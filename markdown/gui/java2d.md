@@ -41,18 +41,18 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085214&client_id=FH-Bielefeld"
     name: "Quiz Java2D (ILIAS)"
 youtube:
-  - link: ""
+  - link: "https://youtu.be/LDE_Kbc9w7k"
     name: "VL Java2D"
-  - link: ""
+  - link: "https://youtu.be/vzBH0MjJ0rM"
     name: "Demo geometrische Objekte"
-  - link: ""
+  - link: "https://youtu.be/F-6fIGeGAcY"
     name: "Demo Fonts"
-  - link: ""
+  - link: "https://youtu.be/BLTZ3XhbvkY"
     name: "Demo Polygone"
-  - link: ""
-    name: "Demo Bewegung und Spiel"
+  - link: "https://youtu.be/wfVwSyTgm-w"
+    name: "Demo Bewegung und 2D-Spiel"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/b5f92913ea6f152f6e38b71776fb665ebd0e823d907bb8eb5268964cbe5e1cbdd0c810e99638ef9d9bbe6d011b7cd11aa24f2e150a6d705ccad4d829fe177ae4"
     name: "VL Java2D"
 ---
 
