@@ -34,9 +34,9 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
-  - link: ""
+  - link: "https://youtu.be/ynwu6LuSLgQ"
     name: "VL Swing 101"
-  - link: ""
+  - link: "https://youtu.be/L3Y2mB7-jRQ"
     name: "Demo Einfaches Fenster"
 fhmedia:
   - link: ""

@@ -23,13 +23,13 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
-  - link: ""
+  - link: "https://youtu.be/_iq_Grvhk90"
     name: "VL Swing: Tabellen"
-  - link: ""
+  - link: "https://youtu.be/27o_A5SDbm0"
     name: "Demo Swing: einfache Tabellen"
-  - link: ""
+  - link: "https://youtu.be/tEB7ZF6cdvM"
     name: "Demo Swing: Tabellen mit Sortierung"
-  - link: ""
+  - link: "https://youtu.be/cZhXVcRsTLY"
     name: "Demo Swing: Tabellen mit Daten-Modell"
 fhmedia:
   - link: ""

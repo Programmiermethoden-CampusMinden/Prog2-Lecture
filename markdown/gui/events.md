@@ -30,11 +30,11 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
-  - link: ""
+  - link: "https://youtu.be/Un-FS88__VU"
     name: "VL Swing Events"
-  - link: ""
+  - link: "https://youtu.be/hjchoDaqcWY"
     name: "Demo Swing Events und Listener"
-  - link: ""
+  - link: "https://youtu.be/GaKMBAXY19w"
     name: "Demo MouseListener vs. MouseAdapter"
 fhmedia:
   - link: ""
