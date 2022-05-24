@@ -179,4 +179,9 @@ ist ein einfaches und schlankes Framework zu bevorzugen.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
+
+\bigskip
+
+### Exceptions
+*   Website [javalin.io](https://javalin.io/) and Javalin-"HelloWorld" (["Getting started"](https://javalin.io/documentation))
 :::
