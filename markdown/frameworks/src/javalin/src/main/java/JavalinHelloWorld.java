@@ -14,10 +14,10 @@ public class JavalinHelloWorld {
         app.get(
                 "/",
                 new Handler() {
-                    // Context: https://javalin.io/documentation#context
+                    // Context ctx: see https://javalin.io/documentation#context
                     @Override
                     public void handle(@NotNull Context ctx) {
-                        ctx.result("Hello World");
+                        ctx.result("Hello World :-)");
                     }
                 });
 
