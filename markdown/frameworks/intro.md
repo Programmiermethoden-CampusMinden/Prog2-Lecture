@@ -19,7 +19,7 @@ youtube:
   - link: "https://youtu.be/5jTbIBeZj7M"
     name: "Demo Frameworks"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/ebe6f49c9dedb8de9f802b0c035699fec476b8728ef1bf2b25ec198fb0fc8de512290977b0b6b7d6ab776bea5c109451c1a6489d2e1499a6f88c699e029089a8"
     name: "VL Frameworks"
 ---
 
