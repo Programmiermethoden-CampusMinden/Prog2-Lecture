@@ -46,7 +46,7 @@ youtube:
   - link: "https://youtu.be/ftHDFIkaC-E"
     name: "Demo JPopupMenu"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/b6208b6b99b3510b6ecc59d4acc2152536c124c45e7b28ac853327dacb237f74ffedecb414549809d806d2f7a0bb7ee9af6361b985cbe339bc2de9f52392fafb"
     name: "VL Swing Widgets"
 ---
 

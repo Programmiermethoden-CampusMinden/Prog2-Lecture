@@ -37,7 +37,7 @@ youtube:
   - link: "https://youtu.be/GaKMBAXY19w"
     name: "Demo MouseListener vs. MouseAdapter"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/75585089cf1cf8f79e8edd8639cdbeef9ebb7f4bc08344ad482be8e76e342588969e4d0e65c0c3196cee6b11a060b6271ec7b22a997f14e967bf075232eab1a7"
     name: "VL Swing Events"
 ---
 

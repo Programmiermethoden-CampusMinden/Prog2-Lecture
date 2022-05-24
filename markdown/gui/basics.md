@@ -39,7 +39,7 @@ youtube:
   - link: "https://youtu.be/L3Y2mB7-jRQ"
     name: "Demo Einfaches Fenster"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/4b3f17de4155c07ed1b7e568d19eea47a865912d93a68adba04f22601c0c509034d5328f3e66131bbfdb8fe31c2a23bf95d67a3df57e3df4e548612d9f4bfd16"
     name: "VL Swing 101"
 ---
 

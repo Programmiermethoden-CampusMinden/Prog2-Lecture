@@ -32,7 +32,7 @@ youtube:
   - link: "https://youtu.be/cZhXVcRsTLY"
     name: "Demo Swing: Tabellen mit Daten-Modell"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/411be806527dfa1a27b15be19aa1e65abf193c24416432fc6bf04e376d11937cb2335d6b0c78e286c7483772268c37a15bdc06858b6acfd773d48f3f2aabddfa"
     name: "VL Swing: Tabellen"
 ---
 

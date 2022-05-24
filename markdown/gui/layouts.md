@@ -37,7 +37,7 @@ youtube:
   - link: "https://youtu.be/95PG2alVTSo"
     name: "Demo GridBagLayout"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/60b68caf426f3582cbec57283d8f5eaf227e168911b0b0d823d792a6815fa82f3fd683160a41918ba5c9d41d9229b231bfa372d12217bc164490359f1aa53662"
     name: "VL Swing: Layout-Manager"
 ---
 
