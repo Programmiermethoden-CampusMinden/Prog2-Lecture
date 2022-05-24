@@ -105,10 +105,14 @@
 
 - week: "KW21"
   lecture:
-    - topic: "/gui/swing"
+    - topic: "/gui/basics"
+    - topic: "/gui/events"
+    - topic: "/gui/layouts"
+    - topic: "/gui/widgets"
+    - topic: "/gui/tables"
     - topic: "/gui/java2d"
   misc_lecture:
-    - notes: ">> E1 (Fr, 27.05.) in Vorlesungs-Slot"
+    - notes: ">> E1 (Fr, 27.05.) in Vorlesungs-Slot: 16:30 Uhr (online)"
   misc_assignment:
     - notes: ">> Kein Praktikum"
 
