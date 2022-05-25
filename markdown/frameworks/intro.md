@@ -14,12 +14,12 @@ tldr: |
 outcomes:
   - k2: "Unterschied zwischen Frameworks und Libraries verstehen"
 youtube:
-  - link: "https://youtu.be/3Jub-uH2Cno"
+  - link: "https://youtu.be/AV4YuF2Axgk"
     name: "VL Frameworks"
   - link: "https://youtu.be/5jTbIBeZj7M"
     name: "Demo Frameworks"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/ebe6f49c9dedb8de9f802b0c035699fec476b8728ef1bf2b25ec198fb0fc8de512290977b0b6b7d6ab776bea5c109451c1a6489d2e1499a6f88c699e029089a8"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/13e57ec21c8d4a1786b04a54dd51d832e55a924305d2df2ab50da7f85ee59075769c00aa74993d05dc66a6168f5786489d22bfda1c49910f749da7d67517edc5"
     name: "VL Frameworks"
 ---
 
