@@ -26,7 +26,7 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
-  - link: "`https://youtu.be/mV-_zhUeknw`{=markdown}"
+  - link: "https://youtu.be/An7tQMW1A3E"
     name: "VL Swing: Layout-Manager"
   - link: "https://youtu.be/tifXSKXSUYw"
     name: "Demo BorderLayout"
@@ -37,7 +37,7 @@ youtube:
   - link: "https://youtu.be/95PG2alVTSo"
     name: "Demo GridBagLayout"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/60b68caf426f3582cbec57283d8f5eaf227e168911b0b0d823d792a6815fa82f3fd683160a41918ba5c9d41d9229b231bfa372d12217bc164490359f1aa53662"
+  - link: "https://www.fh-bielefeld.de/medienportal/m/16d8509024067614df7909666ebb26ac42eb672180fd8b9f846d61f6d9d5c7d75a7430799469971666cbbe531fab23f7b78884c9bd432e901bfe81975e84da2b"
     name: "VL Swing: Layout-Manager"
 ---
 
