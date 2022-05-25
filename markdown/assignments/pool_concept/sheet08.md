@@ -19,4 +19,4 @@ hidden: true
 
 {{% include "assignments/pool_concept/tasks/regexp.md" %}}
 
-**Punkte**: Je RegExp 1P (aber Key-Words und Annotation je 0.5P)
+**Punkte**: Je RegExp 1P (aber Keywords und Annotation je 0.5P)
