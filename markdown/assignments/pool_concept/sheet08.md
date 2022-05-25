@@ -13,3 +13,10 @@ hidden: true
 {{% include "assignments/pool_concept/tasks/lambdas.md" %}}
 
 **Punkte**: XXX
+
+
+## Reguläre Ausdrücke (6 Punkte)
+
+{{% include "assignments/pool_concept/tasks/regexp.md" %}}
+
+**Punkte**: XXX
