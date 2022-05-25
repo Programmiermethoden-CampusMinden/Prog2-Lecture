@@ -8,4 +8,8 @@ hidden: true
 ---
 
 
-## XXX
+## Funktionsinterfaces, Lambdas und Methodenreferenzen (4 Punkte)
+
+{{% include "assignments/pool_concept/tasks/lambdas.md" %}}
+
+**Punkte**: XXX
