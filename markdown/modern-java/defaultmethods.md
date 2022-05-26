@@ -27,7 +27,7 @@ quizzes:
 assignments:
   - topic: sheet08
 youtube:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085302&client_id=FH-Bielefeld"
     name: "VL Defaultmethoden"
   - link: ""
     name: "Demo "
