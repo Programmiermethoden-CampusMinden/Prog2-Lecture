@@ -158,7 +158,7 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 
 *   `java.lang.String`:
 
-    ```java
+    ```{.java size="footnotesize"}
     public String[] split(String regex)
     public boolean matches(String regex)
     ```
@@ -169,7 +169,7 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 
 *   `java.util.regex.Pattern`:
 
-    ```java
+    ```{.java size="footnotesize"}
     public static Pattern compile(String regex)
     public Matcher matcher(CharSequence input)
     ```
@@ -187,7 +187,7 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 
 *   `java.util.regex.Matcher`:
 
-    ```java
+    ```{.java size="footnotesize"}
     public boolean find()
     public boolean matches()
     public int groupCount()
@@ -427,7 +427,11 @@ Lösung: `([A-Z][a-zA-Z]*)\s\1`
 
 
 ## Wrap-Up
-...
+
+*   RegExp: Zeichenketten, die andere Zeichenketten beschreiben
+*   `java.util.regex.Pattern` und `java.util.regex.Matcher`
+*   Unterschied zwischen `Matcher#find` und `Matcher#matches`!
+*   Quantifizierung ist möglich, aber **greedy** (Default)
 
 
 
