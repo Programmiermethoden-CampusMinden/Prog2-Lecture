@@ -51,6 +51,7 @@ interface Klausur {
 ```
 
 \bigskip
+\pause
 
 => Nachträglich noch `void schreiben(Studi s);`{.java} ergänzen?
 
@@ -79,7 +80,7 @@ interface Klausur {
     }
 
     default void wuppie() {
-        throw new UnsupportedOperationException();
+        throw new java.lang.UnsupportedOperationException();
     }
 }
 ```
@@ -306,7 +307,7 @@ public class CollectionsX {
 
 ## Wrap-Up
 
-Java8: Interfaces mit Implementierung: **Default-Methoden**
+Seit Java8: Interfaces mit Implementierung: **Default-Methoden**
 
 \bigskip
 
