@@ -1,7 +1,7 @@
 ---
 type: lecture-cg
-title: "Interfaces: Defaultmethoden"
-menuTitle: "Defaultmethoden"
+title: "Interfaces: Default-Methoden"
+menuTitle: "Default-Methoden"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 1
 readings:
@@ -17,18 +17,18 @@ tldr: |
     *   Die Implementierung wird vererbt und kann bei Bedarf überschrieben werden.
     *   Unterschied zu abstrakten Klassen: kein Zustand!
 outcomes:
-  - k2: "Interfaces mit Defaultmethoden, Unterschied zu abstrakten Klassen"
+  - k2: "Interfaces mit Default-Methoden, Unterschied zu abstrakten Klassen"
   - k2: "Problem der Mehrfachvererbung"
-  - k3: "Erstellen von Interfaces mit Defaultmethoden"
+  - k3: "Erstellen von Interfaces mit Default-Methoden"
   - k3: "Regeln zum Auflösen der Mehrfachvererbung"
 quizzes:
   - link: "XYZ"
-    name: "Quiz Defaultmethoden (ILIAS)"
+    name: "Quiz Default-Methoden (ILIAS)"
 assignments:
   - topic: sheet08
 youtube:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085302&client_id=FH-Bielefeld"
-    name: "VL Defaultmethoden"
+    name: "VL Default-Methoden"
   - link: ""
     name: "Demo "
   - link: ""
@@ -37,7 +37,7 @@ youtube:
     name: "Demo "
 fhmedia:
   - link: ""
-    name: "VL Defaultmethoden"
+    name: "VL Default-Methoden"
 ---
 
 
