@@ -305,7 +305,14 @@ public class CollectionsX {
 
 
 ## Wrap-Up
-...
+
+Java8: Interfaces mit Implementierung: **Default-Methoden**
+
+\bigskip
+
+*   Methoden mit dem Schlüsselwort `default` können Implementierung im Interface haben
+*   Die Implementierung wird vererbt und kann bei Bedarf überschrieben werden
+*   Unterschied zu abstrakten Klassen: **Kein Zustand**
 
 
 
