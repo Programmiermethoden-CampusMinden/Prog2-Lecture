@@ -26,7 +26,7 @@ outcomes:
   - k3: "Erstellen eigener Funktionsinterfaces"
   - k3: "Einsatz von Lambda-Ausdrücken"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1087248&client_id=FH-Bielefeld"
     name: "Quiz Funktionsinterfaces (ILIAS)"
 assignments:
   - topic: sheet08
