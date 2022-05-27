@@ -60,7 +60,7 @@ fhmedia:
 ---
 
 
-## Beispiel: Vereinfachung mit Methodenreferenzen
+## Beispiel: Sortierung einer Liste
 
 ```java
 List<Studi> sl = new ArrayList<Studi>();
@@ -68,12 +68,11 @@ List<Studi> sl = new ArrayList<Studi>();
 // anonyme Klasse
 Collections.sort(sl, new Comparator<Studi>() {
     public int compare(Studi o1, Studi o2) {
-        return o1.getCps() - o2.getCps();
+        return Studi.cmpCps(o1, o2);
     }
 });
 
 // Lambda-Ausdruck
-Collections.sort(sl, (o1, o2) -> o1.getCps() - o2.getCps());
 Collections.sort(sl, (o1, o2) -> Studi.cmpCps(o1, o2);
 
 // Methodenreferenz
@@ -138,7 +137,7 @@ Funktionsinterface mit entsprechend vielen Parametern definiert werden ...
 ## Methodenreferenz 1: Referenz auf statische Methode
 
 ```java
-public class StudiList {
+public class Studi {
     public static int cmpName(Studi o1, Studi o2) {
         return o1.getName().compareTo(o2.getName());
     }
@@ -313,7 +312,33 @@ List<Integer> wordLengths = words.stream()
 
 
 ## Wrap-Up
-...
+
+Seit Java8: **Methodenreferenzen** statt anonymer Klassen (**Funktionsinterface nötig**)
+
+\bigskip
+
+*   Drei mögliche Formen:
+    *   Form 1: Referenz auf statische Methode: `Classname::staticMethodName` \newline
+        (verwendet wie `(o1, o2) -> Classname.staticMethodName(o1, o2)`)
+    *   Form 2: Referenz auf Instanz-Methode eines Objekts: `objectref::instanceMethodName` \newline
+        (verwendet wie `(o1, o2) -> objectref.instanceMethodName(o1, o2)`)
+    *   Form 3: Referenz auf Instanz-Methode eines Typs: `ClassName::instanceMethodName` \newline
+        (verwendet wie `(o1, o2) -> o1.instanceMethodName(o2)`)
+
+\smallskip
+
+*   Im jeweiligen Kontext muss ein Funktionsinterface verwendet werden,
+    d.h. ein Interface mit **genau** einer abstrakten Methode
+
+    ::: notes
+    Im obigen Beispiel für die Verwendung wäre eine Methode mit zwei Parametern nötig:
+    :::
+
+    ```java
+    interface X<T,R> {
+        R m(T o1, T o2);
+    }
+    ```
 
 
 
