@@ -285,8 +285,8 @@ class X {
     }
 }
 
-List<String> words = Arrays.asList("Java8", "Lambdas", "In",
-        "Action", "Manning", "Working", "with", "streams");
+List<String> words = Arrays.asList("Java8", "Lambdas", "PM",
+        "Dungeon", "libGDX", "Hello", "World", "Wuppie");
 
 List<Integer> wordLengths = words.stream()
         .map(String::length)
@@ -327,8 +327,8 @@ Seit Java8: **Methodenreferenzen** statt anonymer Klassen (**Funktionsinterface 
 
 \smallskip
 
-*   Im jeweiligen Kontext muss ein Funktionsinterface verwendet werden,
-    d.h. ein Interface mit **genau** einer abstrakten Methode
+*   Im jeweiligen Kontext muss ein Funktionsinterface verwendet werden
+    [(d.h. ein Interface mit **genau** einer abstrakten Methode)]{.notes}
 
     ::: notes
     Im obigen Beispiel für die Verwendung wäre eine Methode mit zwei Parametern nötig:
