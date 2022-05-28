@@ -22,12 +22,12 @@ outcomes:
   - k3: "Erstellen von Interfaces mit Default-Methoden"
   - k3: "Regeln zum Auflösen der Mehrfachvererbung"
 quizzes:
-  - link: "XYZ"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085302&client_id=FH-Bielefeld"
     name: "Quiz Default-Methoden (ILIAS)"
 assignments:
   - topic: sheet08
 youtube:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085302&client_id=FH-Bielefeld"
+  - link: "https://youtu.be/qQ8BPkL9X5o"
     name: "VL Default-Methoden"
   - link: ""
     name: "Demo "
