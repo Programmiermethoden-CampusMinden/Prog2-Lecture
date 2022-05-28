@@ -84,14 +84,14 @@ Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
 
 ## Einfachste reguläre Ausdrücke
 
-| **Zeichenkette** | **Beschreibt**          |
-|:-----------------|:------------------------|
-| `x`              | "x"                     |
-| `.`              | jedes beliebige Zeichen |
-| `\t`             | Tabulator               |
-| `\n`             | Newline                 |
-| `\r`             | Carriage-return         |
-| `\\`             | Backslash               |
+| **Zeichenkette** | **Beschreibt**         |
+|:-----------------|:-----------------------|
+| `x`              | "x"                    |
+| `.`              | ein beliebiges Zeichen |
+| `\t`             | Tabulator              |
+| `\n`             | Newline                |
+| `\r`             | Carriage-return        |
+| `\\`             | Backslash              |
 
 ::: notes
 ### Beispiel
