@@ -28,7 +28,7 @@ quizzes:
 assignments:
   - topic: sheet08
 youtube:
-  - link: ""
+  - link: "https://youtu.be/K9R1Bwa73uI"
     name: "VL RegExp"
   - link: ""
     name: "Demo StringSplit"
