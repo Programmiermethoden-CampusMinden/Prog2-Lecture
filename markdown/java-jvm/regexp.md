@@ -304,17 +304,18 @@ Dies liegt am "*greedy*" Verhalten der Quantifizierer.
         `Matcher#matches` muss trotzdem auf den gesamten Suchstring passen!
         :::
 
-*   `Studi{2}` passt [nicht]{.alert} auf "StudiStudi" (!)
 
-    ::: notes
-    `(Studi){2}` => "StudiStudi"
+## (Fangende) Gruppierungen
 
-    Quantifizierung bezieht sich auf das direkt davor stehende Zeichen. Ggf.
-    Gruppierungen durch Klammern verwenden!
-    :::
+`Studi{2}` passt [nicht]{.alert} auf "StudiStudi" (!)
 
+::: notes
+Quantifizierung bezieht sich auf das direkt davor stehende Zeichen. Ggf.
+Gruppierungen durch Klammern verwenden!
+:::
 
-## Fangende Gruppierungen
+\pause
+\bigskip
 
 | **Zeichenkette** | **Beschreibt** |
 |:-----------------|:---------------|
@@ -347,6 +348,11 @@ zuzugreifen:
 
     Konvention: Gruppe 0 ist das gesamte Pattern, d.h. `m.group(0) == m.group();` ...
 :::
+
+\pause
+\bigskip
+
+`(Studi){2}` => "StudiStudi"
 
 [Demo: [regexp.Groups](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/regexp/Groups.java)]{.bsp}
 
