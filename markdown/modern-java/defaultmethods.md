@@ -315,6 +315,10 @@ Seit Java8: Interfaces mit Implementierung: **Default-Methoden**
 
 *   Methoden mit dem Schlüsselwort `default` können Implementierung im Interface haben
 *   Die Implementierung wird vererbt und kann bei Bedarf überschrieben werden
+*   Auflösung von Mehrfachvererbung:
+    *   Regel 1: Klassen gewinnen
+    *   Regel 2: Sub-Interfaces gewinnen
+    *   Regel 3: Methode explizit auswählen
 *   Unterschied zu abstrakten Klassen: **Kein Zustand**
 
 
