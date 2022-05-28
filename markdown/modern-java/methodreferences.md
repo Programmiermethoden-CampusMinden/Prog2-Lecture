@@ -13,23 +13,15 @@ tldr: |
     Seit Java8: **Methoden-Referenzen** statt anonymer Klassen (**Funktionsinterface nötig**)
 
     *   Drei mögliche Formen:
-        *   Form 1: Referenz auf statische Methode: `Classname::staticMethodName`
-            (verwendet wie `(o1, o2) -> Classname.staticMethodName(o1, o2)`)
-        *   Form 2: Referenz auf Instanz-Methode eines Objekts: `objectref::instanceMethodName`
-            (verwendet wie `(o1, o2) -> objectref.instanceMethodName(o1, o2)`)
-        *   Form 3: Referenz auf Instanz-Methode eines Typs: `ClassName::instanceMethodName`
-            (verwendet wie `(o1, o2) -> o1.instanceMethodName(o2)`)
+    *   Form 1: Referenz auf statische Methode: `Classname::staticMethodName` \newline
+        (verwendet wie `(args) -> Classname.staticMethodName(args)`)
+    *   Form 2: Referenz auf Instanz-Methode eines Objekts: `objectref::instanceMethodName` \newline
+        (verwendet wie `(args) -> objectref.instanceMethodName(args)`)
+    *   Form 3: Referenz auf Instanz-Methode eines Typs: `ClassName::instanceMethodName` \newline
+        (verwendet wie `(o1, args) -> o1.instanceMethodName(args)`)
 
     *   Im jeweiligen Kontext muss ein Funktionsinterface verwendet werden,
         d.h. ein Interface mit **genau** einer abstrakten Methode
-
-        Im obigen Beispiel für die Verwendung wäre eine Methode mit zwei Parametern nötig:
-
-        ```java
-        interface X<T,R> {
-            R m(T o1, T o2);
-        }
-        ```
 
     *   Die Methoden-Referenz muss von der Syntax her dieser einen abstrakten Methode
         entsprechen (bei der dritten Form wird die Methode auf dem ersten Parameter
@@ -314,26 +306,16 @@ Seit Java8: **Methoden-Referenzen** statt anonymer Klassen (**Funktionsinterface
 
 *   Drei mögliche Formen:
     *   Form 1: Referenz auf statische Methode: `Classname::staticMethodName` \newline
-        (verwendet wie `(o1, o2) -> Classname.staticMethodName(o1, o2)`)
+        (verwendet wie `(args) -> Classname.staticMethodName(args)`)
     *   Form 2: Referenz auf Instanz-Methode eines Objekts: `objectref::instanceMethodName` \newline
-        (verwendet wie `(o1, o2) -> objectref.instanceMethodName(o1, o2)`)
+        (verwendet wie `(args) -> objectref.instanceMethodName(args)`)
     *   Form 3: Referenz auf Instanz-Methode eines Typs: `ClassName::instanceMethodName` \newline
-        (verwendet wie `(o1, o2) -> o1.instanceMethodName(o2)`)
+        (verwendet wie `(o1, args) -> o1.instanceMethodName(args)`)
 
 \smallskip
 
 *   Im jeweiligen Kontext muss ein passendes Funktionsinterface verwendet werden
     [(d.h. ein Interface mit **genau** einer abstrakten Methode)]{.notes}
-
-    ::: notes
-    Im obigen Beispiel für die Verwendung wäre eine Methode mit zwei Parametern nötig:
-    :::
-
-    ```java
-    interface X<T,R> {
-        R m(T o1, T o2);
-    }
-    ```
 
 
 
