@@ -10,12 +10,26 @@ readings:
   - key: "Urma2014"
     comment: "Kapitel 9: Default Methods"
 tldr: |
-    Java8: Interfaces mit Implementierung: **Default-Methoden**
+  Seit Java8 können Methoden in Interfaces auch fertig implementiert sein: Sogenannte
+  **Default-Methoden**.
 
-    *   Methoden mit dem zusätzlichen Schlüsselwort `default`
-        können eine Implementierung im Interface haben.
-    *   Die Implementierung wird vererbt und kann bei Bedarf überschrieben werden.
-    *   Unterschied zu abstrakten Klassen: kein Zustand!
+  Dazu werden die Methoden mit dem neuen Schlüsselwort `default` gekennzeichnet. Die
+  Implementierung wird an die das Interface implementierenden Klassen (oder Interfaces)
+  vererbt und kann bei Bedarf überschrieben werden.
+
+  Da eine Klasse von einer anderen Klasse erben darf, aber mehrere Interfaces implementieren
+  kann, könnte es zu einer Mehrfachvererbung einer Methode kommen: Eine Methode könnte
+  beispielsweise in verschiedenen Interfaces als Default-Methode angeboten werden, und wenn
+  eine Klasse diese Interfaces implementiert, steht eine Methode mit der selben Signatur
+  auf einmal mehrfach zur Verfügung. Dies muss (u.U. manuell) aufgelöst werden.
+
+  Auflösung von Mehrfachvererbung:
+  *   Regel 1: Klassen gewinnen
+  *   Regel 2: Sub-Interfaces gewinnen
+  *   Regel 3: Methode explizit auswählen
+
+  Aktuell ist der Unterschied zu abstrakten Klassen: Interfaces können **keinen Zustand**
+  haben, d.h. keine Attribute/Felder.
 outcomes:
   - k2: "Interfaces mit Default-Methoden, Unterschied zu abstrakten Klassen"
   - k2: "Problem der Mehrfachvererbung"
@@ -93,7 +107,7 @@ neu implementieren (überschreiben). Alternativ kann die Klasse eine Default-Met
 neu *deklarieren* und wird damit zur abstrakten Klasse.
 
 Dies ähnelt abstrakten Klassen. Allerdings kann in abstrakten Klassen neben dem
-Verhalten (implementieren Methoden) auch Zustand über die Attribute gespeichert werden.
+Verhalten (implementierten Methoden) auch Zustand über die Attribute gespeichert werden.
 :::
 
 
