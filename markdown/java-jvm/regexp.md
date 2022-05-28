@@ -17,7 +17,7 @@ tldr: |
 
     Auf der Java-Seite stellt man reguläre Ausdrücke zunächst als `String` dar. Dabei
     muss darauf geachtet werden, dass ein Backslash im regulären Ausdruck im Java-String
-    geschützt (_escaped_) werden muss, indem ein weiterer Backslash voran gestellt
+    geschützt (_escaped_) werden muss, indem jeweils ein weiterer Backslash voran gestellt
     wird. Mit Hilfe der Klasse `java.util.regex.Pattern` lässt sich daraus ein Objekt
     mit dem kompilierten regulären Ausdruck erzeugen, was insbesondere bei mehrfacher
     Verwendung günstiger in der Laufzeit ist. Dem Pattern-Objekt kann man dann den
@@ -97,6 +97,7 @@ Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
 
 ## Einfachste reguläre Ausdrücke
 
+::: slides
 | **Zeichenkette** | **Beschreibt**         |
 |:-----------------|:-----------------------|
 | `x`              | "x"                    |
@@ -105,21 +106,41 @@ Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
 | `\n`             | Newline                |
 | `\r`             | Carriage-return        |
 | `\\`             | Backslash              |
+:::
+
+::: notes
+| **Zeichenkette** | **Beschreibt**         |
+|:-----------------|:-----------------------|
+| `x`              | "x"                    |
+| `.`              | ein beliebiges Zeichen |
+| `\t`             | Tabulator              |
+| `\n`             | Newline                |
+| `\r`             | Carriage-return        |
+| `\\\\`           | Backslash              |
+:::
 
 ::: notes
 ### Beispiel
 :::
 
+::: slides
 *   `abc` => "abc"
 *   `A.B` => "AAB" oder "A2B" oder ...
 *   `a\\bc` => "a\\bc"
+:::
+
+::: notes
+*   `abc` => "abc"
+*   `A.B` => "AAB" oder "A2B" oder ...
+*   `a\\\\bc` => "a\\bc"
+:::
 
 ::: notes
 ### Anmerkung
 
 In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein.
 Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
-=> Statt "`\n`" müssen Sie im Java-Code "`\\n`" schreiben!
+=> Statt "`\n`" müssen Sie im Java-Code "`\\\\n`" schreiben!
 :::
 
 
@@ -217,6 +238,18 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
         erfolgreich gematcht wurde (siehe unten "Fangende Gruppierungen")
     :::
 
+::: notes
+**Hinweis**:
+
+In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein.
+Deshalb muss der Backslash i.d.R. extra geschützt ("escaped") werden.
+
+=> Statt "`\n`" (regulärer Ausdruck) müssen Sie im Java-String "`\\\\n`" schreiben!
+
+=> Statt "`a\\\\bc`" (regulärer Ausdruck, passt auf die Zeichenkette "a\\bc") müssen
+Sie im Java-String "`a\\\\\\\\bc`" schreiben!
+:::
+
 [Demo: [regexp.MatchFind](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/regexp/MatchFind.java)]{.bsp}
 
 
@@ -241,7 +274,7 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 
 *   Regulärer Ausdruck: `abc`, Suchstring: "blah blah abc blub"
     *   `Matcher#find`: erfolgreich
-    *   `Matcher#matches`: kein Match -- Suchstring entspricht nicht dem Muster
+    *   `Matcher#matches`: kein Match - Suchstring entspricht nicht dem Muster
 
 
 ## Quantifizierung
@@ -330,10 +363,19 @@ Gruppierungen durch Klammern verwenden!
 \pause
 \bigskip
 
+::: slides
 | **Zeichenkette** | **Beschreibt** |
 |:-----------------|:---------------|
 | `X|Y`            | X oder Y       |
 | `(C)`            | Gruppierung    |
+:::
+
+::: notes
+| **Zeichenkette** | **Beschreibt** |
+|:-----------------|:---------------|
+| `X\|Y`           | X oder Y       |
+| `(C)`            | Gruppierung    |
+:::
 
 ::: notes
 ### Beispiel
@@ -346,7 +388,7 @@ Gruppierungen durch Klammern verwenden!
     -   Gruppe 3: `C`
 
 ::: notes
-Die Gruppen heißen auch "fangende" Gruppen (engl.: *"capturing groups"*).
+Die Gruppen heißen auch "fangende" Gruppen (engl.: _"capturing groups"_).
 
 Damit erreicht man eine Segmentierung des gesamten regulären Ausdrucks, der
 in seiner Wirkung aber nicht durch die Gruppierungen geändert wird. Durch die
