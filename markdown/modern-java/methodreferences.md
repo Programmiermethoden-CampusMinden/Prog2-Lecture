@@ -1,7 +1,7 @@
 ---
 type: lecture-cg
-title: "Methodenreferenzen"
-menuTitle: "Methodenreferenzen"
+title: "Methoden-Referenzen"
+menuTitle: "Methoden-Referenzen"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 3
 readings:
@@ -10,7 +10,7 @@ readings:
   - key: "Urma2014"
     comment: "Kapitel 3: Lambda Expressions, Kapitel 5: Working with streams"
 tldr: |
-    Seit Java8: **Methodenreferenzen** statt anonymer Klassen (**Funktionsinterface nötig**)
+    Seit Java8: **Methoden-Referenzen** statt anonymer Klassen (**Funktionsinterface nötig**)
 
     *   Drei mögliche Formen:
         *   Form 1: Referenz auf statische Methode: `Classname::staticMethodName`
@@ -31,32 +31,30 @@ tldr: |
         }
         ```
 
-    *   Die Methodenreferenz muss von der Syntax her dieser einen abstrakten Methode
+    *   Die Methoden-Referenz muss von der Syntax her dieser einen abstrakten Methode
         entsprechen (bei der dritten Form wird die Methode auf dem ersten Parameter
         aufgerufen).
 outcomes:
   - k2: "Funktionsinterfaces (Definition)"
   - k3: "Erstellen eigener Funktionsinterfaces"
-  - k3: "Einsatz von Methodenreferenzen"
+  - k3: "Einsatz von Methoden-Referenzen"
 quizzes:
   - link: "XYZ"
-    name: "Quiz Methodenreferenzen (ILIAS)"
+    name: "Quiz Methoden-Referenzen (ILIAS)"
 assignments:
   - topic: sheet08
 youtube:
   - link: ""
-    name: "VL Methodenreferenzen"
+    name: "VL Methoden-Referenzen"
   - link: ""
-    name: "Demo "
+    name: "Demo Referenz auf statische Methode"
   - link: ""
-    name: "Demo "
+    name: "Demo Referenz auf Instanz-Methode (Objekt)"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo Referenz auf Instanz-Methode (Typ)"
 fhmedia:
   - link: ""
-    name: "VL Methodenreferenzen"
+    name: "VL Methoden-Referenzen"
 ---
 
 
@@ -65,65 +63,66 @@ fhmedia:
 ```java
 List<Studi> sl = new ArrayList<Studi>();
 
-// anonyme Klasse
+// Anonyme innere Klasse
 Collections.sort(sl, new Comparator<Studi>() {
-    public int compare(Studi o1, Studi o2) {
-        return Studi.cmpCps(o1, o2);
+    @Override public int compare(Studi o1, Studi o2) {
+        return Studi.cmpCpsClass(o1, o2);
     }
 });
 
-// Lambda-Ausdruck
-Collections.sort(sl, (o1, o2) -> Studi.cmpCps(o1, o2);
 
-// Methodenreferenz
-Collections.sort(sl, Studi::cmpCps);
+// Lambda-Ausdruck
+Collections.sort(sl, (o1, o2) -> Studi.cmpCpsClass(o1, o2));
+
+// Methoden-Referenz
+Collections.sort(sl, Studi::cmpCpsClass);
 ```
 
 ::: notes
 ### Anmerkung
 
-Für das obige Beispiel wird davon ausgegangen, dass in der Klasse `Studi`
-eine Methode `cmpCps()` existiert:
+Für das obige Beispiel wird davon ausgegangen, dass in der Klasse `Studi` eine
+statische Methode `cmpCpsClass()` existiert:
 
 ```java
-public int cmpCps(Studi o) {
-    return o.getCps() - this.getCps();
+public static int cmpCpsClass(Studi s1, Studi s2) {
+    return s1.getCps() - s2.getCps();
 }
 ```
 
-Wenn man im Lambda-Ausdruck nur Methoden der eigenen Klasse aufruft,
-kann man das auch direkt per _Methodenreferenz_ abkürzen!
+Wenn man im Lambda-Ausdruck nur Methoden der eigenen Klasse aufruft, kann man das
+auch direkt per _Methoden-Referenz_ abkürzen!
 
 *   Erinnerung: `Comparator<T>` ist ein Funktionsinterface
 *   Instanzen können wie üblich durch Ableiten bzw. anonyme Klassen erzeugt werden
 *   Alternativ kann seit Java8 auch ein passender Lambda-Ausdruck verwendet werden
 *   Ab Java8: Referenzen auf passende Methoden (Signatur!) können ein
     Funktionsinterface "implementieren"
-    *   Die (im Beispiel nicht gezeigte) statische Methode `int cmpCps(Studi o1, Studi o2)`
-        hat die selbe Signatur wie `int compare(Studi o1, Studi o2)` aus `Comparator<Studi>`
+    *   Die statische Methode `static int cmpCpsClass(Studi s1, Studi s2)` hat die
+        selbe Signatur wie `int compare(Studi s1, Studi s2)` aus `Comparator<Studi>`
     *   Kann deshalb wie eine Instanz von `Comparator<Studi>` genutzt werden
-        *   Name der Methode spielt dabei keine Rolle
+    *   Name der Methode spielt dabei keine Rolle
 :::
 
 
 ::: notes
-## Überblick: Arten von Methodenreferenzen
+## Überblick: Arten von Methoden-Referenzen
 
 1.  Referenz auf eine statische Methode
     *   Form: `ClassName::staticMethodName`
-    *   Wirkung: Aufruf mit `(args)` => `ClassName.staticMethodName(args)`
+    *   Wirkung: Aufruf mit `(args) -> ClassName.staticMethodName(args)`
 
 \smallskip
 
 2.  Referenz auf Instanz-Methode eines bestimmten Objekts
     *   Form: `objectref::instanceMethodName`
-    *   Wirkung: Aufruf mit `(args)` => `objectref.instanceMethodName(args)`
+    *   Wirkung: Aufruf mit `(args) -> objectref.instanceMethodName(args)`
 
 \smallskip
 
 3.  Referenz auf Instanz-Methode eines bestimmten Typs
     *   Form: `ClassName::instanceMethodName`
-    *   Wirkung: Aufruf mit `(arg0, rest)` => `arg0.instanceMethodName(rest)` \newline
+    *   Wirkung: Aufruf mit `(arg0, rest) -> arg0.instanceMethodName(rest)` \newline
         (`arg0` ist vom Typ `ClassName`)
 
 
@@ -134,111 +133,109 @@ Funktionsinterface mit entsprechend vielen Parametern definiert werden ...
 :::
 
 
-## Methodenreferenz 1: Referenz auf statische Methode
+## Methoden-Referenz 1: Referenz auf statische Methode
 
 ```java
 public class Studi {
-    public static int cmpName(Studi o1, Studi o2) {
-        return o1.getName().compareTo(o2.getName());
+    public static int cmpCpsClass(Studi s1, Studi s2) {
+        return s1.getCredits() - s2.getCredits();
     }
 
-
-    public static void main(String[] args) {
+    public static void main(String... args) {
         List<Studi> sl = new ArrayList<Studi>();
 
-        // 1. Referenz auf statische Methode
-        Collections.sort(sl, StudiList::cmpName);
+        // Referenz auf statische Methode
+        Collections.sort(sl, Studi::cmpCpsClass);
 
-        // entsprechender Lambda-Ausdruck
-        Collections.sort(sl, (o1, o2) -> StudiList.cmpName(o1, o2));
+        // Entsprechender Lambda-Ausdruck
+        Collections.sort(sl, (o1, o2) -> Studi.cmpCpsClass(o1, o2));
     }
 }
 ```
 
-[Demo: [methodreferences.StudiListMethodreference](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/StudiListMethodreference.java)]{.bsp}
+[Demo: [methodreferences.DemoStaticMethodReference](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoStaticMethodReference.java)]{.bsp}
 
 ::: notes
-`Collections.sort()` erwartet in diesem Szenario als zweites Argument eine Instanz
-von `Comparator<Studi>` mit einer Methode `int compare(Studi o1, Studi o2)`.
+`Collections.sort()` erwartet in diesem Szenario als zweiten Parameter eine Instanz von
+`Comparator<Studi>` mit einer Methode `int compare(Studi o1, Studi o2)`.
 
-Die übergebene Referenz auf die **statische Methode `cmpName` der Klasse `StudiList`**
-hat die selbe Signatur und wird entsprechend von `Collections.sort()` genauso genutzt
-wie die eigentlich erwartete Methode `Comparator<Studi>#compare(Studi o1, Studi o2)`,
-d.h. statt `compare(o1, o2)` wird nun für jeden Vergleich **`StudiList.cmpName(o1, o2)`**
+Die übergebene Referenz auf die **statische Methode `cmpCpsClass` der Klasse `Studi`**
+hat die **selbe Signatur** und wird deshalb von `Collections.sort()` genauso genutzt wie
+die eigentlich erwartete Methode `Comparator<Studi>#compare(Studi o1, Studi o2)`, d.h.
+statt `compare(o1, o2)` wird nun für jeden Vergleich **`Studi.cmpNcmpCpsClassame(o1, o2)`**
 aufgerufen.
 :::
 
 
-## Methodenreferenz 2: Referenz auf Instanz-Methode (Objekt)
+## Methoden-Referenz 2: Referenz auf Instanz-Methode (Objekt)
 
 ```java
-public class StudiList {
-    List<Studi> list = new ArrayList<Studi>();
-    public int cmpCredits(Studi o1, Studi o2) {
-        return o1.getCredits() - o2.getCredits();
+public class Studi {
+    public int cmpCpsInstanz(Studi s1, Studi s2) {
+        return s1.getCredits() - s2.getCredits();
     }
 
-    public static void main(String[] args) {
-        StudiList sl = new StudiList();
+    public static void main(String... args) {
+        List<Studi> sl = new ArrayList<Studi>();
+        Studi holger = new Studi("Holger", 42);
 
-        // 2. Referenz auf Instanz-Methode eines Objekts
-        Collections.sort(sl.list, sl::cmpCredits);
+        // Referenz auf Instanz-Methode eines Objekts
+        Collections.sort(sl, holger::cmpCpsInstanz);
 
-        // entsprechender Lambda-Ausdruck
-        Collections.sort(sl.list, (o1, o2) -> sl.cmpCredits(o1, o2));
+        // Entsprechender Lambda-Ausdruck
+        Collections.sort(sl, (o1, o2) -> holger.cmpCpsInstanz(o1, o2));
     }
 }
 ```
 
-[Demo: [methodreferences.StudiListMethodreference](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/StudiListMethodreference.java)]{.bsp}
+[Demo: [methodreferences.DemoInstanceMethodReferenceObject](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceObject.java)]{.bsp}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine Instanz
 von `Comparator<Studi>` mit einer Methode `int compare(Studi o1, Studi o2)`.
 
-Die übergebene Referenz auf die **Instanz-Methode `cmpCredits` des Objekts `sl`**
-hat die selbe Signatur und wird entsprechend von `Collections.sort()` genauso genutzt
-wie die eigentlich erwartete Methode `Comparator<Studi>#compare(Studi o1, Studi o2)`,
-d.h. statt `compare(o1, o2)` wird nun für jeden Vergleich **`sl.cmpCredits(o1, o2)`**
+Die übergebene Referenz auf die **Instanz-Methode `cmpCpsInstanz` des Objekts `holger`**
+hat die selbe Signatur und wird entsprechend von `Collections.sort()` genauso genutzt wie
+die eigentlich erwartete Methode `Comparator<Studi>#compare(Studi o1, Studi o2)`, d.h.
+statt `compare(o1, o2)` wird nun für jeden Vergleich **`holger.cmpCpsInstanz(o1, o2)`**
 aufgerufen.
 :::
 
 
-## Methodenreferenz 3: Referenz auf Instanz-Methode (Typ)
+## Methoden-Referenz 3: Referenz auf Instanz-Methode (Typ)
 
 ```java
 public class Studi {
-    public int compareCredits(Studi o) {
-        return o.getCredits() - this.getCredits();
+    public int cmpCpsInstanz(Studi studi) {
+        return this.getCredits() - studi.getCredits();
     }
-}
-public class StudiList {
-    public static void main(String[] args) {
+
+    public static void main(String... args) {
         List<Studi> sl = new ArrayList<Studi>();
 
-        // 3. Referenz auf Instanz-Methode eines Typs
-        Collections.sort(sl, Studi::compareCredits);
+        // Referenz auf Instanz-Methode eines Typs
+        Collections.sort(sl, Studi::cmpCpsInstanz);
 
-        // entsprechender Lambda-Ausdruck
-        Collections.sort(sl, (o1, o2) -> o1.compareCredits(o2));
+        // Entsprechender Lambda-Ausdruck
+        Collections.sort(sl, (o1, o2) -> o1.cmpCpsInstanz(o2));
     }
 }
 ```
 
-[Demo: [methodreferences.StudiListMethodreference](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/StudiListMethodreference.java)]{.bsp}
+[Demo: [methodreferences.DemoInstanceMethodReferenceType](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceType.java)]{.bsp}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine Instanz
 von `Comparator<Studi>` mit einer Methode `int compare(Studi o1, Studi o2)`.
 
-Die übergebene Referenz auf die **Instanz-Methode `compareCredits` des Typs `Studi`**
-hat die Signatur `int compareCredits(Studi o)` und wird von `Collections.sort()` so genutzt:
-Statt `compare(o1, o2)` wird nun für jeden Vergleich **`o1.compareCredits(o2)`**
+Die übergebene Referenz auf die **Instanz-Methode `cmpCpsInstanz` des Typs `Studi`** hat
+die Signatur `int cmpCpsInstanz(Studi studi)` und wird von `Collections.sort()` so genutzt:
+Statt `compare(o1, o2)` wird nun für jeden Vergleich **`o1.cmpCpsInstanz(o2)`**
 aufgerufen.
 :::
 
 
-## Anwendung: Threads
+## Ausblick: Threads
 
 ::: notes
 Erinnerung an bzw. Vorgriff auf `["Threads: Intro"]({{< ref "/threads/intro" >}})`{=markdown}:
@@ -269,7 +266,7 @@ Thread t2 = new Thread(() -> System.out.println("t2: wuppie"));
 Thread t3 = new Thread(Wuppie::wuppie);
 ```
 
-[[Beispiel: [methodreferences.ThreadStarter](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/ThreadStarter.java)]{.bsp}]{.notes}
+[Beispiel: [methodreferences.ThreadStarter](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/ThreadStarter.java)]{.bsp}
 
 
 ## Ausblick: Datenstrukturen als Streams
@@ -293,7 +290,7 @@ List<Integer> wordLengths = words.stream()
         .collect(toList());
 ```
 
-[[Beispiel: [methodreferences.CollectionStreams](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/CollectionStreams.java)]{.bsp}]{.notes}
+[Beispiel: [methodreferences.CollectionStreams](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/CollectionStreams.java)]{.bsp}
 
 ::: notes
 *   Collections können als Datenstrom betrachtet werden: `stream()`
@@ -311,7 +308,7 @@ List<Integer> wordLengths = words.stream()
 
 ## Wrap-Up
 
-Seit Java8: **Methodenreferenzen** statt anonymer Klassen (**Funktionsinterface nötig**)
+Seit Java8: **Methoden-Referenzen** statt anonymer Klassen (**Funktionsinterface nötig**)
 
 \bigskip
 
