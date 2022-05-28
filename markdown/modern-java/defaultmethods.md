@@ -104,7 +104,7 @@ Methoden können in Interfaces seit Java8 implementiert werden. Für Default-Met
 muss das Schlüsselwort `default` vor die Signatur gesetzt werden. Klassen, die das
 Interface implementieren, können diese Default-Implementierung erben oder selbst
 neu implementieren (überschreiben). Alternativ kann die Klasse eine Default-Methode
-neu *deklarieren* und wird damit zur abstrakten Klasse.
+neu _deklarieren_ und wird damit zur abstrakten Klasse.
 
 Dies ähnelt abstrakten Klassen. Allerdings kann in abstrakten Klassen neben dem
 Verhalten (implementierten Methoden) auch Zustand über die Attribute gespeichert werden.
@@ -135,26 +135,27 @@ Auf den folgenden Folien wird dies anhand kleiner Beispiele verdeutlicht.
 
 ```java
 interface A {
-    default void hello() { System.out.println("A"); }
+    default String hello() { return "A"; }
 }
-class E implements A {
-    public void hello() { System.out.println("E"); }
+class C {
+    public String hello() { return "C"; }
 }
-class F extends E implements A { }
+class E extends C implements A {}
 
 
-public class DefaultTest {
+/** Mehrfachvererbung: 1. Klassen gewinnen */
+public class DefaultTest1 {
     public static void main(String... args) {
-        new F().hello();  // ???
+        String e = new E().hello();
     }
 }
 ```
 
-[Demo: [defaultmethods.DefaultTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/DefaultTest.java)]{.bsp}
+[Demo: [defaultmethods.rule1.DefaultTest1](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule1/DefaultTest1.java)]{.bsp}
 
 ::: notes
-Die Klasse `F` erbt sowohl von Klasse `E` als auch vom Interface `A` die Methode `hello()`
-(Mehrfachvererbung). In diesem Fall "gewinnt" die Implementierung aus Klasse `E`.
+Die Klasse `E` erbt sowohl von Klasse `C` als auch vom Interface `A` die Methode `hello()`
+(Mehrfachvererbung). In diesem Fall "gewinnt" die Implementierung aus Klasse `C`.
 
 **1. Regel**: Klassen gewinnen immer. Deklarationen einer Methode in einer Klasse oder
 einer Oberklasse haben Vorrang von allen Default-Methoden.
@@ -165,22 +166,23 @@ einer Oberklasse haben Vorrang von allen Default-Methoden.
 
 ```java
 interface A {
-    default void hello() { System.out.println("A"); }
+    default String hello() { return "A"; }
 }
 interface B extends A {
-    default void hello() { System.out.println("B"); }
+    @Override default String hello() { return "B"; }
 }
-class D implements A, B { }
+class D implements A, B {}
 
 
-public class DefaultTest {
+/** Mehrfachvererbung: 2. Sub-Interfaces gewinnen */
+public class DefaultTest2 {
     public static void main(String... args) {
-        new D().hello();  // ???
+        String e = new D().hello();
     }
 }
 ```
 
-[Demo: [defaultmethods.DefaultTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/DefaultTest.java)]{.bsp}
+[Demo: [defaultmethods.rule2.DefaultTest2](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule2/DefaultTest2.java)]{.bsp}
 
 ::: notes
 Die Klasse `D` erbt sowohl vom Interface `A` als auch vom Interface `B` die Methode `hello()`
@@ -196,28 +198,29 @@ spezialisiert ist.
 
 ```java
 interface A {
-    default void hello() { System.out.println("A"); }
+    default String hello() { return "A"; }
 }
-interface C {
-    default void hello() { System.out.println("C"); }
+interface B {
+    default String hello() { return "B"; }
 }
-class G implements A, C {
-    public void hello() { A.super.hello(); }  // explizite Auswahl
+class D implements A, B {
+    @Override public String hello() { return A.super.hello(); }
 }
 
 
-public class DefaultTest {
+/** Mehrfachvererbung: 3. Methode explizit auswählen */
+public class DefaultTest3 {
     public static void main(String... args) {
-        new G().hello();  // ???
+        String e = new D().hello();
     }
 }
 ```
 
-[Demo: [defaultmethods.DefaultTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/DefaultTest.java)]{.bsp}
+[Demo: [defaultmethods.rule3.DefaultTest3](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule3/DefaultTest3.java)]{.bsp}
 
 ::: notes
-Die Klasse `G` erbt sowohl vom Interface `A` als auch vom Interface `C` die Methode `hello()`
-(Mehrfachvererbung). In diesem Fall *muss* zur Auflösung die Methode in `G` neu implementiert
+Die Klasse `D` erbt sowohl vom Interface `A` als auch vom Interface `B` die Methode `hello()`
+(Mehrfachvererbung). In diesem Fall _muss_ zur Auflösung die Methode in `D` neu implementiert
 werden und die gewünschte geerbte Methode explizit aufgerufen werden. (Wenn dies unterlassen
 wird, führt das selbst bei Nicht-Nutzung der Methode `hello()` zu einem Compiler-Fehler!)
 
@@ -231,31 +234,33 @@ muss man manuell durch die explizite Angabe der gewünschten Methode auflösen.
 
 ## Quiz: Was kommt hier raus?
 
-
 ```java
 interface A {
-    default void hello() { System.out.println("A"); }
+    default String hello() { return "A"; }
 }
 interface B extends A {
-    default void hello() { System.out.println("B"); }
+    @Override default String hello() { return "B"; }
 }
-class E implements A {
-    public void hello() { System.out.println("E"); }
+class C implements B {
+    @Override public String hello() { return "C"; }
 }
-class H extends E implements B, A { }
+class D extends C implements A, B {}
 
 
+/** Quiz Mehrfachvererbung */
 public class DefaultTest {
     public static void main(String... args) {
-        new H().hello();  // ???
+        String e = new D().hello(); // ???
     }
 }
 ```
 
 ::: notes
-Die Klasse `H` erbt sowohl von Klasse `E` als auch von den Interfaces `A` und `B` die Methode
-`hello()` (Mehrfachvererbung). In diesem Fall "gewinnt" die Implementierung aus Klasse `H`: Klassen
+Die Klasse `D` erbt sowohl von Klasse `C` als auch von den Interfaces `A` und `B` die Methode
+`hello()` (Mehrfachvererbung). In diesem Fall "gewinnt" die Implementierung aus Klasse `C`: Klassen
 gewinnen immer (Regel 1).
+
+[Beispiel: [defaultmethods.quiz.DefaultTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/quiz/DefaultTest.java)]{.bsp}
 :::
 
 
