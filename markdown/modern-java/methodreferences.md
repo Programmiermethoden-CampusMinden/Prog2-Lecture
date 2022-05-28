@@ -254,17 +254,16 @@ Damit lassen sich Threads auf verschiedene Arten erzeugen:
 
 ```java
 public class Wuppie {
-    public static void wuppie() { System.out.println("wuppie"); }
+    public static void wuppie() { System.out.println("wuppie(): wuppie"); }
 }
-
 
 Thread t1 = new Thread(new Runnable() {
     public void run() {
-        System.out.println("wuppie");
+        System.out.println("t1: wuppie");
     }
 });
 
-Thread t2 = new Thread(() -> {System.out.println("wuppie");});
+Thread t2 = new Thread(() -> System.out.println("t2: wuppie"));
 
 Thread t3 = new Thread(Wuppie::wuppie);
 ```
