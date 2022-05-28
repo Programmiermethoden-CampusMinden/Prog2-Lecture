@@ -67,7 +67,7 @@ interface Klausur {
 \bigskip
 \pause
 
-=> Nachträglich noch `void schreiben(Studi s);`{.java} ergänzen?
+=> Nachträglich noch `void schreiben(Studi s);` ergänzen?
 
 ::: notes
 Wenn ein Interface nachträglich erweitert wird, müssen alle Kunden (also
