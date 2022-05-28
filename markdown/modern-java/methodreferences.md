@@ -253,9 +253,10 @@ Damit lassen sich Threads auf verschiedene Arten erzeugen:
 :::
 
 ```java
-public class Wuppie {
+public class ThreadStarter {
     public static void wuppie() { System.out.println("wuppie(): wuppie"); }
 }
+
 
 Thread t1 = new Thread(new Runnable() {
     public void run() {
@@ -268,7 +269,7 @@ Thread t2 = new Thread(() -> System.out.println("t2: wuppie"));
 Thread t3 = new Thread(Wuppie::wuppie);
 ```
 
-[[Beispiel: [methodreferences.Wuppie](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/Wuppie.java)]{.bsp}]{.notes}
+[[Beispiel: [methodreferences.ThreadStarter](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/ThreadStarter.java)]{.bsp}]{.notes}
 
 
 ## Ausblick: Datenstrukturen als Streams
@@ -279,9 +280,7 @@ Erinnerung an bzw. Vorgriff auf `["Stream-API"]({{< ref "/modern-java/stream-api
 
 ```java
 class X {
-    public static boolean gtFour(int x) {
-        return (x > 4) ? true : false;
-    }
+    public static boolean gtFour(int x) { return (x > 4) ? true : false; }
 }
 
 List<String> words = Arrays.asList("Java8", "Lambdas", "PM",

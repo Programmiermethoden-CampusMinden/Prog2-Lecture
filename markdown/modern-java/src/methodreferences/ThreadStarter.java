@@ -1,13 +1,19 @@
 package methodreferences;
 
-/** Beispiel: Starten von Threads */
-public class Wuppie {
-    /** Methode für Aufruf per Methoden-Referenz */
+/**
+ * Beispiel: Starten von Threads
+ */
+public class ThreadStarter {
+    /**
+     * Methode für Aufruf per Methoden-Referenz
+     */
     public static void wuppie() {
         System.out.println("wuppie(): wuppie");
     }
 
-    /** Starter -- just to please Checkstyle */
+    /**
+     * Starter -- just to please Checkstyle
+     */
     public static void main(String[] args) {
         // Anonyme innere Klasse
         Thread t1 = new Thread(new Runnable() {
@@ -20,7 +26,7 @@ public class Wuppie {
         Thread t2 = new Thread(() -> System.out.println("t2: wuppie"));
 
         // Methodenreferenz
-        Thread t3 = new Thread(Wuppie::wuppie);
+        Thread t3 = new Thread(ThreadStarter::wuppie);
 
         // Und nun los: Startet ...
         t1.start();
