@@ -322,7 +322,7 @@ Seit Java8: **Methoden-Referenzen** statt anonymer Klassen (**Funktionsinterface
 
 \smallskip
 
-*   Im jeweiligen Kontext muss ein Funktionsinterface verwendet werden
+*   Im jeweiligen Kontext muss ein passendes Funktionsinterface verwendet werden
     [(d.h. ein Interface mit **genau** einer abstrakten Methode)]{.notes}
 
     ::: notes
