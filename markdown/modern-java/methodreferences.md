@@ -10,22 +10,21 @@ readings:
   - key: "Urma2014"
     comment: "Kapitel 3: Lambda Expressions, Kapitel 5: Working with streams"
 tldr: |
-    Seit Java8: **Methoden-Referenzen** statt anonymer Klassen (**Funktionsinterface nötig**)
+  Seit Java8 können **Referenzen auf Methoden** statt anonymer Klassen eingesetzt werden
+  (**Funktionsinterface nötig**).
 
-    *   Drei mögliche Formen:
-    *   Form 1: Referenz auf statische Methode: `Classname::staticMethodName` \newline
-        (verwendet wie `(args) -> Classname.staticMethodName(args)`)
-    *   Form 2: Referenz auf Instanz-Methode eines Objekts: `objectref::instanceMethodName` \newline
-        (verwendet wie `(args) -> objectref.instanceMethodName(args)`)
-    *   Form 3: Referenz auf Instanz-Methode eines Typs: `ClassName::instanceMethodName` \newline
-        (verwendet wie `(o1, args) -> o1.instanceMethodName(args)`)
+  Dabei gibt es drei mögliche Formen:
+  *   Form 1: Referenz auf eine statische Methode: `Classname::staticMethodName`
+      (wird verwendet wie `(args) -> Classname.staticMethodName(args)`)
+  *   Form 2: Referenz auf eine Instanz-Methode eines Objekts: `objectref::instanceMethodName`
+      (wird verwendet wie `(args) -> objectref.instanceMethodName(args)`)
+  *   Form 3: Referenz auf eine Instanz-Methode eines Typs: `ClassName::instanceMethodName`
+      (wird verwendet wie `(o1, args) -> o1.instanceMethodName(args)`)
 
-    *   Im jeweiligen Kontext muss ein Funktionsinterface verwendet werden,
-        d.h. ein Interface mit **genau** einer abstrakten Methode
-
-    *   Die Methoden-Referenz muss von der Syntax her dieser einen abstrakten Methode
-        entsprechen (bei der dritten Form wird die Methode auf dem ersten Parameter
-        aufgerufen).
+  Im jeweiligen Kontext muss ein passendes Funktionsinterface verwendet werden, d.h. ein
+  Interface mit **genau** einer abstrakten Methode. Die Methoden-Referenz muss von der
+  Syntax her dieser einen abstrakten Methode entsprechen (bei der dritten Form wird die
+  Methode auf dem ersten Parameter aufgerufen).
 outcomes:
   - k2: "Funktionsinterfaces (Definition)"
   - k3: "Erstellen eigener Funktionsinterfaces"
