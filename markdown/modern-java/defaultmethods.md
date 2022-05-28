@@ -114,6 +114,8 @@ Drei Regeln zum Auflösen bei Konflikten:
 Auf den folgenden Folien wird dies anhand kleiner Beispiele verdeutlicht.
 :::
 
+[[Hinweis: Mehrfachvererbung]{.bsp}]{.slides}
+
 
 ## Auflösung Mehrfachvererbung: 1. Klassen gewinnen
 
@@ -301,7 +303,7 @@ public class CollectionsX {
 
 *   Design:
     *   Interfaces sind beinahe wie abstrakte Klassen, nur ohne Zustand
-    *   Klassen können nur von **einer** abstrakten Klasse erben, aber
+    *   Klassen können nur von **einer** (abstrakten) Klasse erben, aber
         **viele** Interfaces implementieren
 
 
