@@ -325,7 +325,7 @@ Dies liegt am "*greedy*" Verhalten der Quantifizierer.
 ### Beispiel
 :::
 
-*   `((A)(B(C)))`
+*   `(A)(B(C))`
     -   Gruppe 0: `ABC`
     -   Gruppe 1: `A`
     -   Gruppe 2: `BC`
