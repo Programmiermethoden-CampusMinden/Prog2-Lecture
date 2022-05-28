@@ -201,7 +201,7 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
         Bedeutung der unterschiedlichen Methoden siehe folgende Folien
 
         `Matcher#group`: Liefert die Sub-Sequenz des Suchstrings zurück, die
-        erfolgreich gematcht wurde
+        erfolgreich gematcht wurde (siehe unten "Fangende Gruppierungen")
     :::
 
 [Demo: [regexp.MatchFind](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/regexp/MatchFind.java)]{.bsp}
