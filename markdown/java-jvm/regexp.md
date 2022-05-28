@@ -8,11 +8,24 @@ readings:
   - key: "Java-SE-Tutorial"
     comment: "Essential Java Classes > Regular Expressions"
 tldr: |
-    TODO
-    *   RegExp: Zeichenketten, die andere Zeichenketten beschreiben
-    *   `java.util.regex.Pattern` und `java.util.regex.Matcher`
-    *   Unterschied zwischen `Matcher#find` und `Matcher#matches`!
-    *   Quantifizierung ist möglich, aber **greedy** (Default)
+    Mit Hilfe von regulären Ausdrücken kann man den Aufbau von Zeichenketten formal
+    beschreiben. Dabei lassen sich direkt die gewünschten Zeichen einsetzen, oder
+    man nutzt Zeichenklassen oder vordefinierte Ausdrücke. Teilausdrücke lassen sich
+    gruppieren und über _Quantifier_ kann definiert werden, wie oft ein Teilausdruck
+    vorkommen soll. Die Quantifier sind per Default **greedy** und versuchen so viel
+    wie möglich zu matchen.
+
+    Auf der Java-Seite stellt man reguläre Ausdrücke zunächst als `String` dar. Dabei
+    muss darauf geachtet werden, dass ein Backslash im regulären Ausdruck im Java-String
+    geschützt (_escaped_) werden muss, indem ein weiterer Backslash voran gestellt
+    wird. Mit Hilfe der Klasse `java.util.regex.Pattern` lässt sich daraus ein Objekt
+    mit dem kompilierten regulären Ausdruck erzeugen, was insbesondere bei mehrfacher
+    Verwendung günstiger in der Laufzeit ist. Dem Pattern-Objekt kann man dann den
+    Suchstring übergeben und bekommt ein Objekt der Klasse `java.util.regex.Matcher`
+    (dort sind regulärer Ausdruck/Pattern und der Suchstring kombiniert). Mit den
+    Methoden `Matcher#find` und `Matcher#matches` kann dann geprüft werden, ob das Pattern
+    auf den Suchstring passt: `find` sucht dabei nach dem ersten Vorkommen des Patterns
+    im Suchstring, `match` prüft, ob der gesamte String zum Pattern passt.
 outcomes:
   - k1: "Wichtigste Methoden von `java.util.regex.Pattern` und `java.util.regex.Matcher`"
   - k2: "Unterschied zwischen `Matcher#find` und `Matcher#matches`"
