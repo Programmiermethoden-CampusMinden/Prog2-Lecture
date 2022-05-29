@@ -12,9 +12,9 @@ public class DemoInstanceMethodReferenceObject {
         Studi holger = new Studi("Holger", 42);
 
         // Referenz auf Instanz-Methode eines Objekts
-        Collections.sort(sl, holger::cmpCpsInstanz);
+        Collections.sort(sl, holger::cmpCpsInstance);
 
         // Entsprechender Lambda-Ausdruck
-        Collections.sort(sl, (o1, o2) -> holger.cmpCpsInstanz(o1, o2));
+        Collections.sort(sl, (o1, o2) -> holger.cmpCpsInstance(o1, o2));
     }
 }

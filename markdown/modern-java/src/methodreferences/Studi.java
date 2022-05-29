@@ -47,7 +47,7 @@ public class Studi {
      * @param studi Anderer Studi (als Vergleichsobjekt)
      * @return Differenz meiner Credits und der des anderen Studis
      */
-    public int cmpCpsInstanz(Studi studi) {
+    public int cmpCpsInstance(Studi studi) {
         return this.getCredits() - studi.getCredits();
     }
 
@@ -60,7 +60,7 @@ public class Studi {
      * @param s2 Zweiter Studi (als Vergleichsobjekt)
      * @return Differenz der Credits der beiden Studis: s1 - s2
      */
-    public int cmpCpsInstanz(Studi s1, Studi s2) {
+    public int cmpCpsInstance(Studi s1, Studi s2) {
         return s1.getCredits() - s2.getCredits();
     }
 }

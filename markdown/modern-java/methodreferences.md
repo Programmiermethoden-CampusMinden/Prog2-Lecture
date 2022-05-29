@@ -14,8 +14,8 @@ tldr: |
   (**funktionales Interface nötig**).
 
   Dabei gibt es drei mögliche Formen:
-  *   Form 1: Referenz auf eine statische Methode: `Classname::staticMethodName`
-      (wird verwendet wie `(args) -> Classname.staticMethodName(args)`)
+  *   Form 1: Referenz auf eine statische Methode: `ClassName::staticMethodName`
+      (wird verwendet wie `(args) -> ClassName.staticMethodName(args)`)
   *   Form 2: Referenz auf eine Instanz-Methode eines Objekts: `objectref::instanceMethodName`
       (wird verwendet wie `(args) -> objectref.instanceMethodName(args)`)
   *   Form 3: Referenz auf eine Instanz-Methode eines Typs: `ClassName::instanceMethodName`
@@ -154,7 +154,7 @@ public class Studi {
 Die übergebene Referenz auf die **statische Methode `cmpCpsClass` der Klasse `Studi`**
 hat die **selbe Signatur** und wird deshalb von `Collections.sort()` genauso genutzt wie
 die eigentlich erwartete Methode `Comparator<Studi>#compare(Studi o1, Studi o2)`, d.h.
-statt `compare(o1, o2)` wird nun für jeden Vergleich **`Studi.cmpNcmpCpsClassame(o1, o2)`**
+statt `compare(o1, o2)` wird nun für jeden Vergleich **`Studi.cmpCpsClass(o1, o2)`**
 aufgerufen.
 :::
 
@@ -163,7 +163,7 @@ aufgerufen.
 
 ```java
 public class Studi {
-    public int cmpCpsInstanz(Studi s1, Studi s2) {
+    public int cmpCpsInstance(Studi s1, Studi s2) {
         return s1.getCredits() - s2.getCredits();
     }
 
@@ -172,10 +172,10 @@ public class Studi {
         Studi holger = new Studi("Holger", 42);
 
         // Referenz auf Instanz-Methode eines Objekts
-        Collections.sort(sl, holger::cmpCpsInstanz);
+        Collections.sort(sl, holger::cmpCpsInstance);
 
         // Entsprechender Lambda-Ausdruck
-        Collections.sort(sl, (o1, o2) -> holger.cmpCpsInstanz(o1, o2));
+        Collections.sort(sl, (o1, o2) -> holger.cmpCpsInstance(o1, o2));
     }
 }
 ```
@@ -186,10 +186,10 @@ public class Studi {
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine Instanz
 von `Comparator<Studi>` mit einer Methode `int compare(Studi o1, Studi o2)`.
 
-Die übergebene Referenz auf die **Instanz-Methode `cmpCpsInstanz` des Objekts `holger`**
+Die übergebene Referenz auf die **Instanz-Methode `cmpCpsInstance` des Objekts `holger`**
 hat die selbe Signatur und wird entsprechend von `Collections.sort()` genauso genutzt wie
 die eigentlich erwartete Methode `Comparator<Studi>#compare(Studi o1, Studi o2)`, d.h.
-statt `compare(o1, o2)` wird nun für jeden Vergleich **`holger.cmpCpsInstanz(o1, o2)`**
+statt `compare(o1, o2)` wird nun für jeden Vergleich **`holger.cmpCpsInstance(o1, o2)`**
 aufgerufen.
 :::
 
@@ -198,7 +198,7 @@ aufgerufen.
 
 ```java
 public class Studi {
-    public int cmpCpsInstanz(Studi studi) {
+    public int cmpCpsInstance(Studi studi) {
         return this.getCredits() - studi.getCredits();
     }
 
@@ -206,10 +206,10 @@ public class Studi {
         List<Studi> sl = new ArrayList<Studi>();
 
         // Referenz auf Instanz-Methode eines Typs
-        Collections.sort(sl, Studi::cmpCpsInstanz);
+        Collections.sort(sl, Studi::cmpCpsInstance);
 
         // Entsprechender Lambda-Ausdruck
-        Collections.sort(sl, (o1, o2) -> o1.cmpCpsInstanz(o2));
+        Collections.sort(sl, (o1, o2) -> o1.cmpCpsInstance(o2));
     }
 }
 ```
@@ -220,9 +220,9 @@ public class Studi {
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine Instanz
 von `Comparator<Studi>` mit einer Methode `int compare(Studi o1, Studi o2)`.
 
-Die übergebene Referenz auf die **Instanz-Methode `cmpCpsInstanz` des Typs `Studi`** hat
-die Signatur `int cmpCpsInstanz(Studi studi)` und wird von `Collections.sort()` so genutzt:
-Statt `compare(o1, o2)` wird nun für jeden Vergleich **`o1.cmpCpsInstanz(o2)`**
+Die übergebene Referenz auf die **Instanz-Methode `cmpCpsInstance` des Typs `Studi`** hat
+die Signatur `int cmpCpsInstance(Studi studi)` und wird von `Collections.sort()` so genutzt:
+Statt `compare(o1, o2)` wird nun für jeden Vergleich **`o1.cmpCpsInstance(o2)`**
 aufgerufen.
 :::
 
@@ -305,8 +305,8 @@ Seit Java8: **Methoden-Referenzen** statt anonymer Klassen (**funktionales Inter
 \bigskip
 
 *   Drei mögliche Formen:
-    *   Form 1: Referenz auf statische Methode: `Classname::staticMethodName` \newline
-        (verwendet wie `(args) -> Classname.staticMethodName(args)`)
+    *   Form 1: Referenz auf statische Methode: `ClassName::staticMethodName` \newline
+        (verwendet wie `(args) -> ClassName.staticMethodName(args)`)
     *   Form 2: Referenz auf Instanz-Methode eines Objekts: `objectref::instanceMethodName` \newline
         (verwendet wie `(args) -> objectref.instanceMethodName(args)`)
     *   Form 3: Referenz auf Instanz-Methode eines Typs: `ClassName::instanceMethodName` \newline

@@ -11,9 +11,9 @@ public class DemoInstanceMethodReferenceType {
         List<Studi> sl = new ArrayList<Studi>();
 
         // Referenz auf Instanz-Methode eines Typs
-        Collections.sort(sl, Studi::cmpCpsInstanz);
+        Collections.sort(sl, Studi::cmpCpsInstance);
 
         // Entsprechender Lambda-Ausdruck
-        Collections.sort(sl, (o1, o2) -> o1.cmpCpsInstanz(o2));
+        Collections.sort(sl, (o1, o2) -> o1.cmpCpsInstance(o2));
     }
 }
