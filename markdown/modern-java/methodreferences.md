@@ -11,7 +11,7 @@ readings:
     comment: "Kapitel 3: Lambda Expressions, Kapitel 5: Working with streams"
 tldr: |
   Seit Java8 können **Referenzen auf Methoden** statt anonymer Klassen eingesetzt werden
-  (**Funktionsinterface nötig**).
+  (**funktionales Interface nötig**).
 
   Dabei gibt es drei mögliche Formen:
   *   Form 1: Referenz auf eine statische Methode: `Classname::staticMethodName`
@@ -21,13 +21,12 @@ tldr: |
   *   Form 3: Referenz auf eine Instanz-Methode eines Typs: `ClassName::instanceMethodName`
       (wird verwendet wie `(o1, args) -> o1.instanceMethodName(args)`)
 
-  Im jeweiligen Kontext muss ein passendes Funktionsinterface verwendet werden, d.h. ein
+  Im jeweiligen Kontext muss ein passendes funktionales Interface verwendet werden, d.h. ein
   Interface mit **genau** einer abstrakten Methode. Die Methoden-Referenz muss von der
   Syntax her dieser einen abstrakten Methode entsprechen (bei der dritten Form wird die
   Methode auf dem ersten Parameter aufgerufen).
 outcomes:
-  - k2: "Funktionsinterfaces (Definition)"
-  - k3: "Erstellen eigener Funktionsinterfaces"
+  - k2: "Funktionales Interfaces (Definition)"
   - k3: "Einsatz von Methoden-Referenzen"
 quizzes:
   - link: "XYZ"
@@ -84,11 +83,11 @@ public static int cmpCpsClass(Studi s1, Studi s2) {
 Wenn man im Lambda-Ausdruck nur Methoden der eigenen Klasse aufruft, kann man das
 auch direkt per _Methoden-Referenz_ abkürzen!
 
-*   Erinnerung: `Comparator<T>` ist ein Funktionsinterface
+*   Erinnerung: `Comparator<T>` ist ein funktionales Interface
 *   Instanzen können wie üblich durch Ableiten bzw. anonyme Klassen erzeugt werden
 *   Alternativ kann seit Java8 auch ein passender Lambda-Ausdruck verwendet werden
-*   Ab Java8: Referenzen auf passende Methoden (Signatur!) können ein
-    Funktionsinterface "implementieren"
+*   Ab Java8: Referenzen auf passende Methoden (Signatur!) können ein funktionales
+    Interface "implementieren"
     *   Die statische Methode `static int cmpCpsClass(Studi s1, Studi s2)` hat die
         selbe Signatur wie `int compare(Studi s1, Studi s2)` aus `Comparator<Studi>`
     *   Kann deshalb wie eine Instanz von `Comparator<Studi>` genutzt werden
@@ -119,9 +118,11 @@ auch direkt per _Methoden-Referenz_ abkürzen!
 
 _Anmerkung_: Analog zur Referenz auf eine statische Methode gibt es noch die
 Form der Referenz auf einen Konstruktor: `ClassName::new`. Für Referenzen auf
-Konstruktoren mit mehr als 2 Parametern muss ein eigenes passendes
-Funktionsinterface mit entsprechend vielen Parametern definiert werden ...
+Konstruktoren mit mehr als 2 Parametern muss ein eigenes passendes funktionales
+Interface mit entsprechend vielen Parametern definiert werden ...
 :::
+
+[[Hinweis: Klassen- vs. Instanz-Methoden]{.bsp}]{.slides}
 
 
 ## Methoden-Referenz 1: Referenz auf statische Methode
@@ -254,7 +255,7 @@ Thread t1 = new Thread(new Runnable() {
 
 Thread t2 = new Thread(() -> System.out.println("t2: wuppie"));
 
-Thread t3 = new Thread(Wuppie::wuppie);
+Thread t3 = new Thread(ThreadStarter::wuppie);
 ```
 
 [Beispiel: [methodreferences.ThreadStarter](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/ThreadStarter.java)]{.bsp}
@@ -299,7 +300,7 @@ List<Integer> wordLengths = words.stream()
 
 ## Wrap-Up
 
-Seit Java8: **Methoden-Referenzen** statt anonymer Klassen (**Funktionsinterface nötig**)
+Seit Java8: **Methoden-Referenzen** statt anonymer Klassen (**funktionales Interface nötig**)
 
 \bigskip
 
@@ -313,7 +314,7 @@ Seit Java8: **Methoden-Referenzen** statt anonymer Klassen (**Funktionsinterface
 
 \smallskip
 
-*   Im jeweiligen Kontext muss ein passendes Funktionsinterface verwendet werden
+*   Im jeweiligen Kontext muss ein passendes funktionales Interface verwendet werden
     [(d.h. ein Interface mit **genau** einer abstrakten Methode)]{.notes}
 
 
