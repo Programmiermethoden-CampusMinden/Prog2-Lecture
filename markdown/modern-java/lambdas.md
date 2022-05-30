@@ -37,6 +37,10 @@ youtube:
     name: "Demo "
   - link: ""
     name: "Demo "
+  - link: ""
+    name: "Demo "
+  - link: ""
+    name: "Demo "
 fhmedia:
   - link: ""
     name: "VL Lambda-Ausdrücke und funktionale Interfaces"
@@ -118,7 +122,7 @@ Outer.StaticNested nested = new Outer.StaticNested();
 ```java
 List<Studi> sl = new ArrayList<>();
 
-// Liste sortieren?
+// Parametrisierung mit anonymer Klasse
 sl.sort(
         new Comparator<Studi>() {
             @Override
@@ -163,11 +167,12 @@ sl.sort(
 sl.sort( (Studi o1, Studi o2) -> o1.getCredits() - o2.getCredits() );
 ```
 
-[[Hinweis auf funktionales Interface]{.bsp}]{.slides}
+[[Hinweis auf **funktionales Interface**]{.bsp}]{.slides}
 
 ::: notes
 **Anmerkung**: Damit für den Parameter alternativ auch ein Lambda-Ausdruck verwendet
-werden kann, muss der erwartete Parameter ein "**funktionales Interface**" (s.u.) sein!
+werden kann, muss der erwartete Parameter vom Typ her ein "**funktionales Interface**"
+(s.u.) sein!
 :::
 
 [Demo: [nested.DemoLambda](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoLambda.java)]{.bsp}
@@ -234,44 +239,51 @@ also `return "foo";` ...).
 ::::::
 
 
-## Funktionale Interfaces ("_functional interfaces_")
+## Definition "Funktionales Interface" ("_functional interfaces_")
 
 ```java
 @FunctionalInterface
-public interface Comparator<T> {
-    int compare(T o1, T o2);
+public interface Wuppie<T> {
+    int wuppie(T obj);
     boolean equals(Object obj);
-    default Comparator<T> reversed() {
-        return Collections.reverseOrder(this);
-    }
+    default int fluppie() { return 42; }
 }
 ```
 
 \bigskip
 
-`Comparator<T>` ist ein [**funktionales Interface**]{.alert}  ("_functional interface_") [(seit Java 8)]{.notes}
+`Wuppie<T>` ist ein [**funktionales Interface**]{.alert}
+("_functional interface_") [(seit Java 8)]{.notes}
 
-*   Genau eine abstrakte Methode
-*   Evtl. weitere Default-Methoden
-*   Evtl. weitere abstrakte Methoden, die `public` Methoden von
+*   Hat **genau _eine_ abstrakte Methode**
+*   Hat evtl. weitere Default-Methoden
+*   Hat evtl. weitere abstrakte Methoden, die `public` Methoden von
     `java.lang.Object` überschreiben
 
 ::: notes
-=> Instanzen können zusätzlich mit Methodenreferenzen (u.a.) erzeugt werden
+Die Annotation `@FunctionalInterface` selbst ist nur für den Compiler: Falls
+das Interface _kein_ funktionales Interface ist, würde er beim Vorhandensein
+dieser Annotation einen Fehler werfen. Oder anders herum: Allein durch das
+Annotieren mit `@FunctionalInterface` wird aus einem Interface noch kein
+funktionales Interface! Vergleichbar mit `@Override` ...
 
-Die Annotation `@FunctionalInterface` selbst ist nur für den Compiler: Falls das Interface
-_kein_ funktionales Interface ist, würde er beim Vorhandensein dieser Annotation einen Fehler
-werfen. Oder anders herum: Allein durch das Annotieren mit `@FunctionalInterface` wird aus
-einem Interface noch kein funktionales Interface!
-
-Vergleichbar mit `@Override` ...
-
-[**Während man für eine anonyme Klasse lediglich ein normales Interface benötigt, braucht man
- für Lambda-Ausdrücke zwingend ein passendes funktionales Interface!**]{.alert}
+[**Während man für eine anonyme Klasse lediglich ein "normales" Interface
+ benötigt, braucht man für Lambda-Ausdrücke zwingend ein passendes funktionales
+ Interface!**]{.alert}
 
 _Anmerkung_: Es scheint keine einheitliche deutsche Übersetzung für den Begriff
-_functional interface_ zu geben. Es wird häufig mit "funktionales Interface", manchmal
-aber auch mit "Funktionsinterface" übersetzt.
+_functional interface_ zu geben. Es wird häufig mit "funktionales Interface",
+manchmal aber auch mit "Funktionsinterface" übersetzt.
+
+Das in den obigen Beispielen eingesetzte Interface `java.util.Comparator<T>`
+ist also ein funktionales Interface: Es hat nur _eine_ abstrakte Methode
+`int compare(T o1, T o2);`.
+
+Im Package [java.util.function](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)
+sind einige wichtige funktionale Interfaces bereits vordefiniert, beispielsweise
+`Predicate` (Test, ob eine Bedingung erfüllt ist) und `Function` (verarbeite
+einen Wert und liefere einen passenden Ergebniswert). Diese kann man auch in
+eigenen Projekten nutzen!
 :::
 
 
@@ -298,19 +310,18 @@ public interface Bar extends Wuppie {
 ::: showme
 Auflösung:
 
-*   `Wuppie` hat *genau eine* abstrakte Methode => funktionales Interface
+*   `Wuppie` hat _genau eine_ abstrakte Methode => funktionales Interface
 *   `Fluppie` hat zwei abstrakte Methoden => **kein** funktionales Interface
 *   `Foo` hat gar keine abstrakte Methode => **kein** funktionales Interface
-*   `Bar` hat *genau eine* abstrakte Methode (und eine Default-Methode) => funktionales Interface
+*   `Bar` hat _genau eine_ abstrakte Methode (und eine Default-Methode) => funktionales Interface
 :::
 ::::::
 
 
-## Lambdas und funktionale Interfaces, Typprüfung
+## Lambdas und funktionale Interfaces: Typprüfung
 
 ```java
-@FunctionalInterface
-public interface Comparator<T> {
+interface java.util.Comparator<T> {
     int compare(T o1, T o2);    // abstrakte Methode
 }
 ```
@@ -318,11 +329,11 @@ public interface Comparator<T> {
 \bigskip
 
 ```java
-// ohne weitere Typinferenz
-Comparator<Studi> c1 = (Studi o1, Studi o2) -> o1.getCps() - o2.getCps();
+// Verwendung ohne weitere Typinferenz
+Comparator<Studi> c1 = (Studi o1, Studi o2) -> o1.getCredits() - o2.getCredits();
 
-// mit Typinferenz
-Comparator<Studi> c2 = (o1, o2) -> o1.getCps() - o2.getCps();
+// Verwendung mit Typinferenz
+Comparator<Studi> c2 = (o1, o2) -> o1.getCredits() - o2.getCredits();
 ```
 
 ::: notes
@@ -330,7 +341,7 @@ Der Compiler prüft in etwa folgende Schritte, wenn er über einen Lambda-Ausdru
 
 1.  In welchem Kontext habe ich den Lambda-Ausdruck gesehen?
 2.  OK, der Zieltyp ist hier `Comparator<Studi>`.
-3.  Wie lautet die eine abstrakte Methode im `Comparator<T>`-Interface?
+3.  Wie lautet die **eine** abstrakte Methode im `Comparator<T>`-Interface?
 4.  OK, das ist `int compare(T o1, T o2);`
 5.  Da `T` hier an `Studi` gebunden ist, muss der Lambda-Ausdruck
     der Methode `int compare(Studi o1, Studi o2);` entsprechen:
@@ -342,33 +353,17 @@ Der Compiler prüft in etwa folgende Schritte, wenn er über einen Lambda-Ausdru
 :::
 
 
-## Offizielle funktionale Interfaces (Auswahl)
-
-::: notes
-Im Package `java.util.function` sind einige wichtige funktionale Interfaces
-bereits vordefiniert. Diese kann man auch in eigenen Projekten nutzen!
-
-Hier eine kleine Auswahl:
-:::
-
-| Interface                  | abstrakte Methode   |
-|:---------------------------|:--------------------|
-| `interface Predicate<T>`   | `boolean test(T t)` |
-| `interface Function<T, R>` | `R apply(T t)`      |
-| `interface Consumer<T>`    | `void accept(T t)`  |
-| `interface Supplier<T>`    | `T get()`           |
-
-[Quelle: Package [java.util.function](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)]{.origin}
-
-
 ## Wrap-Up
 
 *   Anonyme Klassen: "Wegwerf"-Innere Klassen
     *   Müssen Interface implementieren oder Klasse erweitern
+
+\smallskip
+
 *   Java8: **Lambda-Ausdrücke** statt anonymer Klassen (**funktionales Interface nötig**)
     *   Zwei mögliche Formen:
-        *   Form 1: `(parameters) -> expression`
-        *   Form 2: `(parameters) -> { statements; }`
+        *   Form 1: `(parameters)  ->  expression`
+        *   Form 2: `(parameters)  ->  { statements; }`
     *   Im jeweiligen Kontext muss ein **funktionales Interface** verwendet werden,
         d.h. ein Interface mit **genau** einer abstrakten Methode
     *   Der Lambda-Ausdruck muss von der Syntax her dieser einen abstrakten Methode

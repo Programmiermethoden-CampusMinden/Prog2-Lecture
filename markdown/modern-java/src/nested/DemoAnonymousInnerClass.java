@@ -10,7 +10,7 @@ public class DemoAnonymousInnerClass {
     public static void main(String... args) {
         List<Studi> sl = new ArrayList<>();
 
-        // Liste sortieren?
+        // Parametrisierung mit anonymer Klasse
         sl.sort(
                 new Comparator<Studi>() {
                     @Override

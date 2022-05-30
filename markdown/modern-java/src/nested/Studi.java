@@ -25,27 +25,4 @@ public class Studi {
     public int getCredits() {
         return credits;
     }
-
-    /**
-     * Habe ich mehr Credits als der andere Studi?
-     *
-     * @param studi Anderer Studi (als Vergleichsobjekt)
-     * @return Differenz meiner Credits und der des anderen Studis
-     */
-    public int cmpCps(Studi studi) {
-        return this.getCredits() - studi.getCredits();
-    }
-
-    /**
-     * Vergleiche die Credits zweier Studis
-     *
-     * <p>Als Instanz-Methode ausgeführt für die Nutzung per Methoden-Referenz.
-     *
-     * @param s1 Erster Studi (als Vergleichsobjekt)
-     * @param s2 Zweiter Studi (als Vergleichsobjekt)
-     * @return Differenz der Credits der beiden Studis: s1 - s2
-     */
-    public int cmpCps(Studi s1, Studi s2) {
-        return s1.getCredits() - s2.getCredits();
-    }
 }
