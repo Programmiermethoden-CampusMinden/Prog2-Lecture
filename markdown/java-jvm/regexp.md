@@ -36,22 +36,22 @@ outcomes:
   - k3: "Nutzung von Quantifizierern"
   - k3: "Zusammenbauen von komplexen Ausdrücken (u.a. mit Gruppen)"
 quizzes:
-  - link: "XYZ"
+  - link: ""
     name: "Quiz RegExp (ILIAS)"
 assignments:
   - topic: sheet08
 youtube:
   - link: "https://youtu.be/K9R1Bwa73uI"
     name: "VL RegExp"
-  - link: ""
+  - link: "https://youtu.be/j_pTZBI6Z3M"
     name: "Demo StringSplit"
-  - link: ""
+  - link: "https://youtu.be/LYlPL1C_au8"
     name: "Demo MatchFind"
-  - link: ""
+  - link: "https://youtu.be/xkD9PhCjXyY"
     name: "Demo Quantifier"
-  - link: ""
+  - link: "https://youtu.be/ANLB2MdC_uY"
     name: "Demo Groups"
-  - link: ""
+  - link: "https://youtu.be/SRZyT3EAB94"
     name: "Demo Backref"
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/35288af40bdf53fe210d0f8c4d25fd38d4c5f4cde5c04ffd49500f815723448b0bc16b305c7b05b0d57d670019d52dd5ff9da5f4a43afc0c85ed870b44f93e00"
