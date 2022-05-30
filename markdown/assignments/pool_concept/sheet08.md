@@ -10,7 +10,7 @@ hidden: true
 
 ## Funktionsinterfaces, Lambdas und Methodenreferenzen (4 Punkte)
 
-{{% include "assignments/pool_concept/tasks/lambdas.md" %}}
+{{% include "assignments/pool_concept/tasks/lambda.md" %}}
 
 **Punkte**: XXX
 
