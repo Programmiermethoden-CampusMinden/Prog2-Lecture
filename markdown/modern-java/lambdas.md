@@ -57,37 +57,22 @@ public class StudiList implements Iterable<Studi> {
 
 
 ::::::::: notes
-## Erinnerung: Innere Klassen ("_Nested Classes_")
+## Erinnerung: Verschachtelte Klassen ("_Nested Classes_")
 
-```java
-public class Outer {
-    ...
-    private class Inner {
-        ...
-    }
-
-    Outer.Inner nested = new Outer().new Inner();
-}
-
-```
+Man kann Klassen innerhalb von Klassen definieren: Verschachtelte Klassen.
 
 *   Implizite Referenz auf Instanz der äußeren Klasse, Zugriff auf **alle** Elemente
 *   **Begriffe**:
     *   "normale" innere Klassen: "_inner classes_"
-    *   statische innere Klassen: "_static nested classes_" (hier nicht weiter diskutiert)
-
-[Beispiel: [nested.StudiListNested](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListNested.java)]{.bsp}
-
-### Einsatzzweck
-
-*   Hilfsklassen: Zusätzliche Funktionalität kapseln; Nutzung **nur** in äußerer Klasse
-*   Kapselung von Rückgabewerten
+    *   statische innere Klassen: "_static nested classes_"
+*   Einsatzzweck:
+    *   Hilfsklassen: Zusätzliche Funktionalität kapseln; Nutzung **nur** in äußerer Klasse
+    *   Kapselung von Rückgabewerten
 
 Sichtbarkeit: Wird u.U. von äußerer Klasse "überstimmt"
 
-### Innere Klassen
+### Innere Klassen ("_Inner Classes_")
 
-*   Engl. Begriff: "_Inner Classes_"
 *   Objekt der äußeren Klasse muss existieren
 *   Innere Klasse ist normales Member der äußeren Klasse
 *   Implizite Referenz auf Instanz äußerer Klasse
@@ -96,9 +81,23 @@ Sichtbarkeit: Wird u.U. von äußerer Klasse "überstimmt"
     *   Nur innerhalb der Methode sichtbar
     *   Kennt zusätzlich `final` Attribute der Methode
 
-### Statische innere Klassen
+Beispiel:
 
-*   Engl. Begriff: "_Static Nested Classes_"
+```java
+public class Outer {
+    ...
+    private class Inner {
+        ...
+    }
+
+    Outer.Inner inner = new Outer().new Inner();
+}
+```
+
+[Beispiel mit Iterator als innere Klasse: [nested.StudiListNested](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListNested.java)]{.bsp}
+
+### Statische innere Klassen ("_Static Nested Classes_")
+
 *   Keine implizite Referenz auf Objekt
 *   Nur Zugriff auf Klassenmethoden und -attribute
 
