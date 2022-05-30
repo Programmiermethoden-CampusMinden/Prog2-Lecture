@@ -1,6 +1,6 @@
 ---
 type: lecture-cg
-title: "Verhaltens-Parametrisierung: Lambda-Ausdrücke und funktionale Interfaces"
+title: "Lambda-Ausdrücke und funktionale Interfaces"
 menuTitle: "Lambda-Ausdrücke"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 2
@@ -27,19 +27,19 @@ tldr: |
   **funktionales Interface** implementieren.
 
   Funktionale Interfaces sind Interfaces mit _genau einer abstrakten Methode_. Es können beliebig
-  viele Default-Methoden im Interface enthalten sein, und es können abstrakte Methoden von
-  `java.lang.Object` geerbt/überschrieben werden.
+  viele Default-Methoden im Interface enthalten sein, und es können `public` sichtbare abstrakte
+  Methoden von `java.lang.Object` geerbt/überschrieben werden.
 
   Die Lambda-Ausdrücke entsprechen einer anonymen Methode: Die Parameter werden aufgelistet (in
-  Klammern), und hinter einem Pfeil kommt ein Ausdruck (Wert - gleichzeitig Rückgabewert des
-  Lambda-Ausdrucks) oder ein oder mehrere Anweisungen (in geschweiften Klammern, mit Semikolon):
+  Klammern), und hinter einem Pfeil kommt entweder _ein_ Ausdruck (Wert - gleichzeitig Rückgabewert
+  des Lambda-Ausdrucks) oder beliebig viele Anweisungen (in geschweiften Klammern, mit Semikolon):
   *   Form 1: `(parameters)  ->  expression`
   *   Form 2: `(parameters)  ->  { statements; }`
 
   Der Lambda-Ausdruck muss von der Signatur her genau der einen abstrakten Methode im unterliegenden
   funktionalen Interface entsprechen.
 outcomes:
-  - k2: "funktionales Interfaces (Definition)"
+  - k2: "Funktionales Interfaces (Definition)"
   - k3: "Einsatz innerer und anonymer Klassen"
   - k3: "Erstellen eigener funktionaler Interfaces"
   - k3: "Einsatz von Lambda-Ausdrücken"
@@ -69,7 +69,7 @@ fhmedia:
 List<Studi> sl = new ArrayList<>();
 
 // Liste sortieren?
-sl.sort(???);  //  Parameter: java.util.Comparator<Studi>
+sl.sort(???);  // Parameter: java.util.Comparator<Studi>
 ```
 
 
@@ -284,15 +284,15 @@ Annotieren mit `@FunctionalInterface` wird aus einem Interface noch kein
 funktionales Interface! Vergleichbar mit `@Override` ...
 
 [**Während man für eine anonyme Klasse lediglich ein "normales" Interface
- benötigt, braucht man für Lambda-Ausdrücke zwingend ein passendes funktionales
- Interface!**]{.alert}
+ (oder eine Klasse) benötigt, braucht man für Lambda-Ausdrücke zwingend ein
+ passendes funktionales Interface!**]{.alert}
 
 _Anmerkung_: Es scheint keine einheitliche deutsche Übersetzung für den Begriff
 _functional interface_ zu geben. Es wird häufig mit "funktionales Interface",
 manchmal aber auch mit "Funktionsinterface" übersetzt.
 
 Das in den obigen Beispielen eingesetzte Interface `java.util.Comparator<T>`
-ist also ein funktionales Interface: Es hat nur _eine_ abstrakte Methode
+ist also ein funktionales Interface: Es hat nur _eine_ eigene abstrakte Methode
 `int compare(T o1, T o2);`.
 
 Im Package [java.util.function](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)
