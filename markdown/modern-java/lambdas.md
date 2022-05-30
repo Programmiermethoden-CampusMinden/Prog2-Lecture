@@ -46,14 +46,10 @@ fhmedia:
 ## Problem: Sortieren einer Studi-Liste
 
 ```java
-public class Demo {
-    public static void main(String... args) {
-        List<Studi> sl = new ArrayList<Studi>();
+List<Studi> sl = new ArrayList<>();
 
-        // Liste sortieren?
-        sl.sort(???);  //  Parameter: java.util.Comparator<Studi>
-    }
-}
+// Liste sortieren?
+sl.sort(???);  //  Parameter: java.util.Comparator<Studi>
 ```
 
 
@@ -120,6 +116,9 @@ Outer.StaticNested nested = new Outer.StaticNested();
 ## Lösung: Comparator als anonyme innere Klasse
 
 ```java
+List<Studi> sl = new ArrayList<>();
+
+// Liste sortieren?
 sl.sort(
         new Comparator<Studi>() {
             @Override
@@ -148,33 +147,36 @@ sl.sort(
 ## Vereinfachung mit Lambda-Ausdruck
 
 ```java
-StudiList sl = new StudiList();
+List<Studi> sl = new ArrayList<>();
 
 // Parametrisierung mit anonymer Klasse
-sl.sort(new Comparator<Studi>() {
-    @Override public int compare(Studi o1, Studi o2) {
-        return o1.getName().compareTo(o2.getName());
-    }
-});
+sl.sort(
+        new Comparator<Studi>() {
+            @Override
+            public int compare(Studi o1, Studi o2) {
+                return o1.getCredits() - o2.getCredits();
+            }
+        });  // Semikolon nicht vergessen!!!
+
 
 // Parametrisierung mit Lambda-Ausdruck
-sl.sort( (o1, o2) -> o1.getName().compareTo(o2.getName()) );
+sl.sort( (Studi o1, Studi o2) -> o1.getCredits() - o2.getCredits() );
 ```
 
 [[Hinweis auf funktionales Interface]{.bsp}]{.slides}
 
 ::: notes
-[Beispiel: [nested.StudiListLambda](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListLambda.java)]{.bsp}
-
 **Anmerkung**: Damit für den Parameter alternativ auch ein Lambda-Ausdruck verwendet
 werden kann, muss der erwartete Parameter ein "**funktionales Interface**" (s.u.) sein!
 :::
+
+[Demo: [nested.DemoLambda](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoLambda.java)]{.bsp}
 
 
 ## Syntax für Lambdas
 
 ```java
-(Studi o1, Studi o2) -> o1.getName().compareTo(o2.getName())
+(Studi o1, Studi o2)  ->  o1.getCredits() - o2.getCredits()
 ```
 
 ::: notes
@@ -184,9 +186,10 @@ Ein Lambda-Ausdruck ist eine Funktion ohne Namen und besteht aus drei Teilen:
 2.  Pfeil
 3.  Funktionskörper (rechte Seite)
 
-Falls es genau einen Parameter gibt, können die runden Klammern um den Parameter entfallen.
+Falls es _genau einen_ Parameter gibt, _können_ die runden Klammern um den Parameter
+entfallen.
 
-Dabei kann der Funktionskörper aus *einem Ausdruck* ("_expression_") bestehen oder
+Dabei kann der Funktionskörper aus _einem Ausdruck_ ("_expression_") bestehen oder
 einer _Menge von Anweisungen_ ("_statements"_), die dann in geschweifte Klammern
 eingeschlossen werden müssen (Block mit Anweisungen).
 
@@ -198,11 +201,11 @@ Der Wert des Ausdrucks ist zugleich der Rückgabewert des Lambda-Ausdrucks.
 
 Varianten:
 
-*   **`(parameters) -> expression`**
+*   **`(parameters)  ->  expression`**
 
 \smallskip
 
-*   **`(parameters) -> { statements; }`**
+*   **`(parameters)  ->  { statements; }`**
 
 
 ## Quiz: Welches sind keine gültigen Lambda-Ausdrücke?
@@ -219,7 +222,6 @@ Varianten:
 10. `() -> new Studi()`
 11. `s -> s.getCps() > 100 && s.getCps() < 300`
 12. `s -> { return s.getCps() > 100 && s.getCps() < 300; }`
-
 
 :::::: notes
 ::: showme
