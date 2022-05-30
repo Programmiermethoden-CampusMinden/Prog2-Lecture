@@ -46,11 +46,12 @@ fhmedia:
 ## Problem: Sortieren einer Studi-Liste
 
 ```java
-public class StudiList implements Iterable<Studi> {
-    List<Studi> list = new ArrayList<Studi>();
+public class Demo {
+    public static void main(String... args) {
+        List<Studi> sl = new ArrayList<Studi>();
 
-    public void sortName() {
-        // ???
+        // Liste sortieren?
+        sl.sort(???);  //  Parameter: java.util.Comparator<Studi>
     }
 }
 ```
@@ -116,52 +117,20 @@ Outer.StaticNested nested = new Outer.StaticNested();
 :::::::::
 
 
-## Lösung: Comparator als innere Klasse
+## Lösung: Comparator als anonyme innere Klasse
 
 ```java
-public class StudiList implements Iterable<Studi> {
-    List<Studi> list = new ArrayList<Studi>();
-
-    public void sortName() {
-        Comparator<Studi> c = new StudiNameComp();
-        Collections.sort(list, c);
-    }
-
-    class StudiNameComp implements Comparator<Studi> {
-        @Override
-        public int compare(Studi o1, Studi o2) {
-            return o1.getName().compareTo(o2.getName());
-        }
-    }
-}
+sl.sort(
+        new Comparator<Studi>() {
+            @Override
+            public int compare(Studi o1, Studi o2) {
+                return o1.getCredits() - o2.getCredits();
+            }
+        });  // Semikolon nicht vergessen!!!
 ```
 
 ::: notes
-=> Innere Hilfsklasse außerhalb nicht mehr sichtbar
-
-=> Aber: Komplette Hilfsklasse, wo nur **eine** Methode benötigt
-
-[Beispiel: [nested.StudiListInnerComparator](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListInnerComparator.java)]{.bsp}
-:::
-
-
-## Verbesserung: Anonyme innere Klassen
-
-```java
-public void sortName() {
-    Comparator<Studi> c = new Comparator<Studi>() {
-        @Override
-        public int compare(Studi o1, Studi o2) {
-            ...
-        }
-    };  // Semikolon beachten!!!
-
-    Collections.sort(list, c);
-}
-```
-
-::: notes
-=> Instanz einer anonymen Klasse, die das Interface `Comparator<Studi>` implementiert
+=> Instanz einer anonymen inneren Klasse, die das Interface `Comparator<Studi>` implementiert
 
 *   Für spezielle, einmalige Aufgabe: nur eine Instanz möglich
 *   Kein Name, kein Konstruktor, oft nur eine Methode
@@ -171,46 +140,9 @@ public void sortName() {
 *   Zugriff auf alle Attribute der äußeren Klasse plus alle `final` lokalen
     Variablen
 *   Nutzung typischerweise bei GUIs: Event-Handler etc.
-
-[Beispiel: [nested.StudiListAnonymComparator](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListAnonymComparator.java)]{.bsp}
 :::
 
-
-## Verbesserung: Parametrisierung mit Verhalten
-
-::: notes
-Die Sortiermethode kann allerdings trotzdem immer noch nur nach
-Namen sortieren! Besser wäre eine **Parametrisierung mit Verhalten**
-("_behaviour parametrisation_"):
-:::
-
-```java
-public class StudiList implements Iterable<Studi> {
-    List<Studi> list = new ArrayList<Studi>();
-
-    public void sort(Comparator<Studi> c) {
-        Collections.sort(list, c);
-    }
-
-    public static void main(String[] args) {
-        StudiList sl = new StudiList();
-
-        sl.sort(new Comparator<Studi>() {
-            @Override public int compare(Studi o1, Studi o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
-    }
-}
-```
-
-::: notes
-Die Methode `sort()` wird parametrisiert mit Verhalten: Beim Aufruf wird
-eine neue anonyme Klasse, die das aktuell gewünschte Verhalten codiert,
-als Argument mitgegeben.
-
-[Beispiel: [nested.StudiListBehaviourParametrisation](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListBehaviourParametrisation.java)]{.bsp}
-:::
+[Demo: [nested.DemoAnonymousInnerClass](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoAnonymousInnerClass.java)]{.bsp}
 
 
 ## Vereinfachung mit Lambda-Ausdruck
