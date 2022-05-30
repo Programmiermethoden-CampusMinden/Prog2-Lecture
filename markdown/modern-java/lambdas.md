@@ -210,7 +210,7 @@ Die Methode `sort()` wird parametrisiert mit Verhalten: Beim Aufruf wird
 eine neue anonyme Klasse, die das aktuell gewünschte Verhalten codiert,
 als Argument mitgegeben.
 
-[Beispiel: [nested.StudiListBehaviourParameterisation](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListBehaviourParameterisation.java)]{.bsp}
+[Beispiel: [nested.StudiListBehaviourParametrisation](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListBehaviourParametrisation.java)]{.bsp}
 :::
 
 
@@ -256,7 +256,7 @@ Ein Lambda-Ausdruck ist eine Funktion ohne Namen und besteht aus drei Teilen:
 Falls es genau einen Parameter gibt, können die runden Klammern um den Parameter entfallen.
 
 Dabei kann der Funktionskörper aus *einem Ausdruck* ("_expression_") bestehen oder
-einer *Menge von Anweisungen* ("_statements"_), die dann in geschweifte Klammern
+einer _Menge von Anweisungen_ ("_statements"_), die dann in geschweifte Klammern
 eingeschlossen werden müssen (Block mit Anweisungen).
 
 Der Wert des Ausdrucks ist zugleich der Rückgabewert des Lambda-Ausdrucks.
@@ -418,23 +418,14 @@ bereits vordefiniert. Diese kann man auch in eigenen Projekten nutzen!
 Hier eine kleine Auswahl:
 :::
 
-```java
-public interface Predicate<T> {
-    boolean test(T t);
-}
+| Interface                  | abstrakte Methode   |
+|:---------------------------|:--------------------|
+| `interface Predicate<T>`   | `boolean test(T t)` |
+| `interface Function<T, R>` | `R apply(T t)`      |
+| `interface Consumer<T>`    | `void accept(T t)`  |
+| `interface Supplier<T>`    | `T get()`           |
 
-public interface Consumer<T> {
-    void accept(T t);
-}
-
-public interface Function<T, R> {
-    R apply(T t);
-}
-
-public interface Supplier<T> {
-    T get();
-}
-```
+[Quelle: Package [java.util.function](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)]{.origin}
 
 
 ## Wrap-Up
