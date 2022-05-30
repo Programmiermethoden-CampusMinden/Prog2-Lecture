@@ -43,11 +43,11 @@ assignments:
 youtube:
   - link: "https://youtu.be/qQ8BPkL9X5o"
     name: "VL Default-Methoden"
-  - link: ""
+  - link: "https://youtu.be/gm6ttKlAEJc"
     name: "Demo Regel 1"
-  - link: ""
+  - link: "https://youtu.be/3j9i7iMVmMM"
     name: "Demo Regel 2"
-  - link: ""
+  - link: "https://youtu.be/J3gJnwz8Rf0"
     name: "Demo Regel 3"
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/a86bc2fc9d692f6ca307cfabd09c7860c06b8fd53b60e281586c8b51414b7139d061328b2160a988045952f92fc13a921b6148c0dd2f790ea7324634c491006e"
