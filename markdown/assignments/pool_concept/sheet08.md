@@ -5,8 +5,18 @@ author: "André Matutat (FH Bielefeld)"
 points: 10
 weight: 8
 hidden: true
-sketch: true
 ---
 
 
-## XXX
+## Funktionsinterfaces, Lambdas und Methodenreferenzen (4 Punkte)
+
+{{% include "assignments/pool_concept/tasks/lambda.md" %}}
+
+**Punkte**: Jede Teilaufgabe (1-4) je 1P
+
+
+## Reguläre Ausdrücke (6 Punkte)
+
+{{% include "assignments/pool_concept/tasks/regexp.md" %}}
+
+**Punkte**: Je RegExp 1P (aber Keywords und Annotation je 0.5P)
