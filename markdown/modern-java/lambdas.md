@@ -10,16 +10,32 @@ readings:
   - key: "Urma2014"
     comment: "Kapitel 3: Lambda Expressions, Kapitel 5: Working with streams"
 tldr: |
-    *   Anonyme Klassen: "Wegwerf"-Innere Klassen
-        *   Müssen Interface implementieren oder Klasse erweitern
-    *   Java8: **Lambda-Ausdrücke** statt anonymer Klassen (**funktionales Interface nötig**)
-        *   Zwei mögliche Formen:
-            *   Form 1: `(parameters) -> expression`
-            *   Form 2: `(parameters) -> { statements; }`
-        *   Im jeweiligen Kontext muss ein **funktionales Interface** verwendet werden,
-            d.h. ein Interface mit **genau** einer abstrakten Methode
-        *   Der Lambda-Ausdruck muss von der Syntax her dieser einen abstrakten Methode
-            entsprechen.
+  Mit einer anonymen inneren Klasse erstellt man gewissermaßen ein Objekt einer "Wegwerf"-Klasse:
+  Man leitet _on-the-fly_ von einem Interface ab oder erweitert eine Klasse und implementiert die
+  benötigten Methoden und erzeugt von dieser Klasse sofort eine Instanz (Objekt). Diese neue Klasse
+  ist im restlichen Code nicht sichtbar.
+
+  Anonyme innere Klassen sind beispielsweise in Swing recht nützlich, wenn man einer Komponente einen
+  Listener mitgeben will: Hier erzeugt man eine anonyme innere Klasse basierend auf dem passenden
+  Listener-Interface, implementiert die entsprechenden Methoden und übergibt das mit dieser Klasse
+  erzeugte Objekt als neuen Listener der Swing-Komponente.
+
+  Mit Java 8 können unter gewissen Bedingungen diese anonymen inneren Klassen zu Lambda-Ausdrücken
+  (und Methoden-Referenzen) vereinfacht werden. Dazu muss die anonyme innere Klasse ein sogenanntes
+  **funktionales Interface** implementieren.
+
+  Funktionale Interfaces sind Interfaces mit _genau einer abstrakten Methode_. Es können beliebig
+  viele Default-Methoden im Interface enthalten sein, und es können abstrakte Methoden von
+  `java.lang.Object` geerbt/überschrieben werden.
+
+  Die Lambda-Ausdrücke entsprechen einer anonymen Methode: Die Parameter werden aufgelistet (in
+  Klammern), und hinter einem Pfeil kommt ein Ausdruck (Wert - gleichzeitig Rückgabewert des
+  Lambda-Ausdrucks) oder ein oder mehrere Anweisungen (in geschweiften Klammern, mit Semikolon):
+  *   Form 1: `(parameters)  ->  expression`
+  *   Form 2: `(parameters)  ->  { statements; }`
+
+  Der Lambda-Ausdruck muss von der Signatur her genau der einen abstrakten Methode im unterliegenden
+  funktionalen Interface entsprechen.
 outcomes:
   - k2: "funktionales Interfaces (Definition)"
   - k3: "Einsatz innerer und anonymer Klassen"
@@ -364,8 +380,8 @@ Der Compiler prüft in etwa folgende Schritte, wenn er über einen Lambda-Ausdru
         *   Form 2: `(parameters)  ->  { statements; }`
     *   Im jeweiligen Kontext muss ein **funktionales Interface** verwendet werden,
         d.h. ein Interface mit **genau** einer abstrakten Methode
-    *   Der Lambda-Ausdruck muss von der Syntax her dieser einen abstrakten Methode
-        entsprechen.
+    *   Der Lambda-Ausdruck muss von der Signatur her dieser einen abstrakten Methode
+        entsprechen
 
 
 
