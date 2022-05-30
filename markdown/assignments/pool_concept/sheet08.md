@@ -12,7 +12,7 @@ hidden: true
 
 {{% include "assignments/pool_concept/tasks/lambda.md" %}}
 
-**Punkte**: XXX
+**Punkte**: Jede Teilaufgabe (1-4) je 1P
 
 
 ## Reguläre Ausdrücke (6 Punkte)
