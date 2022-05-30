@@ -1,6 +1,6 @@
 ---
 type: lecture-cg
-title: "Verhaltensparametrisierung: Lambda-Ausdrücke und Funktionsinterfaces"
+title: "Verhaltens-Parametrisierung: Lambda-Ausdrücke und funktionale Interfaces"
 menuTitle: "Lambda-Ausdrücke"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 2
@@ -12,38 +12,36 @@ readings:
 tldr: |
     *   Anonyme Klassen: "Wegwerf"-Innere Klassen
         *   Müssen Interface implementieren oder Klasse erweitern
-    *   Java8: **Lambda-Ausdrücke** statt anonymer Klassen (**Funktionsinterface nötig**)
+    *   Java8: **Lambda-Ausdrücke** statt anonymer Klassen (**funktionales Interface nötig**)
         *   Zwei mögliche Formen:
             *   Form 1: `(parameters) -> expression`
             *   Form 2: `(parameters) -> { statements; }`
-        *   Im jeweiligen Kontext muss ein **Funktionsinterface** verwendet werden,
+        *   Im jeweiligen Kontext muss ein **funktionales Interface** verwendet werden,
             d.h. ein Interface mit **genau** einer abstrakten Methode
         *   Der Lambda-Ausdruck muss von der Syntax her dieser einen abstrakten Methode
             entsprechen.
 outcomes:
-  - k2: "Funktionsinterfaces (Definition)"
+  - k2: "funktionales Interfaces (Definition)"
   - k3: "Einsatz innerer und anonymer Klassen"
-  - k3: "Erstellen eigener Funktionsinterfaces"
+  - k3: "Erstellen eigener funktionaler Interfaces"
   - k3: "Einsatz von Lambda-Ausdrücken"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1087248&client_id=FH-Bielefeld"
-    name: "Quiz Funktionsinterfaces (ILIAS)"
+    name: "Quiz Lambda-Ausdrücke und funktionale Interfaces (ILIAS)"
 assignments:
   - topic: sheet08
 youtube:
   - link: ""
-    name: "VL Funktionsinterfaces"
+    name: "VL Lambda-Ausdrücke und funktionale Interfaces"
   - link: ""
     name: "Demo "
   - link: ""
     name: "Demo "
 fhmedia:
   - link: ""
-    name: "VL Funktionsinterfaces"
+    name: "VL Lambda-Ausdrücke und funktionale Interfaces"
 ---
 
-
-# Verhaltens-Parametrisierung: Anonyme Klassen
 
 ## Problem: Sortieren einer Studi-Liste
 
@@ -59,7 +57,7 @@ public class StudiList implements Iterable<Studi> {
 
 
 ::::::::: notes
-## Erinnerung: Innere Klassen (*"Nested Classes"*)
+## Erinnerung: Innere Klassen ("_Nested Classes_")
 
 ```java
 public class Outer {
@@ -75,8 +73,8 @@ public class Outer {
 
 *   Implizite Referenz auf Instanz der äußeren Klasse, Zugriff auf **alle** Elemente
 *   **Begriffe**:
-    *   "normale" innere Klassen: *"inner classes"*
-    *   statische innere Klassen: *"static nested classes"* (hier nicht weiter diskutiert)
+    *   "normale" innere Klassen: "_inner classes_"
+    *   statische innere Klassen: "_static nested classes_" (hier nicht weiter diskutiert)
 
 [Beispiel: [nested.StudiListNested](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListNested.java)]{.bsp}
 
@@ -89,7 +87,7 @@ Sichtbarkeit: Wird u.U. von äußerer Klasse "überstimmt"
 
 ### Innere Klassen
 
-*   Engl. Begriff: "*Inner Classes*"
+*   Engl. Begriff: "_Inner Classes_"
 *   Objekt der äußeren Klasse muss existieren
 *   Innere Klasse ist normales Member der äußeren Klasse
 *   Implizite Referenz auf Instanz äußerer Klasse
@@ -100,7 +98,7 @@ Sichtbarkeit: Wird u.U. von äußerer Klasse "überstimmt"
 
 ### Statische innere Klassen
 
-*   Engl. Begriff: "*Static Nested Classes*"
+*   Engl. Begriff: "_Static Nested Classes_"
 *   Keine implizite Referenz auf Objekt
 *   Nur Zugriff auf Klassenmethoden und -attribute
 
@@ -184,7 +182,7 @@ public void sortName() {
 ::: notes
 Die Sortiermethode kann allerdings trotzdem immer noch nur nach
 Namen sortieren! Besser wäre eine **Parametrisierung mit Verhalten**
-("*behaviour parameterisation*"):
+("_behaviour parametrisation_"):
 :::
 
 ```java
@@ -216,12 +214,7 @@ als Argument mitgegeben.
 :::
 
 
-
-
-
-# Lambda-Ausdrücke und Funktionsinterfaces
-
-## Obiges Beispiel mit Lambda-Ausdruck vereinfacht
+## Vereinfachung mit Lambda-Ausdruck
 
 ```java
 StudiList sl = new StudiList();
@@ -237,13 +230,13 @@ sl.sort(new Comparator<Studi>() {
 sl.sort( (o1, o2) -> o1.getName().compareTo(o2.getName()) );
 ```
 
-[[Hinweis auf Funktionsinterface]{.bsp}]{.slides}
+[[Hinweis auf funktionales Interface]{.bsp}]{.slides}
 
 ::: notes
 [Beispiel: [nested.StudiListLambda](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListLambda.java)]{.bsp}
 
 **Anmerkung**: Damit für den Parameter alternativ auch ein Lambda-Ausdruck verwendet
-werden kann, muss der erwartete Parameter ein **Funktionsinterface** (s.u.) sein!
+werden kann, muss der erwartete Parameter ein "**funktionales Interface**" (s.u.) sein!
 :::
 
 
@@ -262,8 +255,8 @@ Ein Lambda-Ausdruck ist eine Funktion ohne Namen und besteht aus drei Teilen:
 
 Falls es genau einen Parameter gibt, können die runden Klammern um den Parameter entfallen.
 
-Dabei kann der Funktionskörper aus *einem Ausdruck* ("*expression*") bestehen oder
-einer *Menge von Anweisungen* ("*statements*"), die dann in geschweifte Klammern
+Dabei kann der Funktionskörper aus *einem Ausdruck* ("_expression_") bestehen oder
+einer *Menge von Anweisungen* ("_statements"_), die dann in geschweifte Klammern
 eingeschlossen werden müssen (Block mit Anweisungen).
 
 Der Wert des Ausdrucks ist zugleich der Rückgabewert des Lambda-Ausdrucks.
@@ -308,7 +301,7 @@ also `return "foo";` ...).
 ::::::
 
 
-## Funktionsinterfaces (*"functional interfaces"*)
+## Funktionale Interfaces ("_functional interfaces_")
 
 ```java
 @FunctionalInterface
@@ -323,7 +316,7 @@ public interface Comparator<T> {
 
 \bigskip
 
-`Comparator<T>` ist ein [**Funktionsinterface**]{.alert}  (*"functional interface"*) [(seit Java 8)]{.notes}
+`Comparator<T>` ist ein [**funktionales Interface**]{.alert}  ("_functional interface_") [(seit Java 8)]{.notes}
 
 *   Genau eine abstrakte Methode
 *   Evtl. weitere Default-Methoden
@@ -334,18 +327,22 @@ public interface Comparator<T> {
 => Instanzen können zusätzlich mit Methodenreferenzen (u.a.) erzeugt werden
 
 Die Annotation `@FunctionalInterface` selbst ist nur für den Compiler: Falls das Interface
-*kein* Funktionsinterface ist, würde er beim Vorhandensein dieser Annotation einen Fehler
+_kein_ funktionales Interface ist, würde er beim Vorhandensein dieser Annotation einen Fehler
 werfen. Oder anders herum: Allein durch das Annotieren mit `@FunctionalInterface` wird aus
-einem Interface noch kein Funktionsinterface!
+einem Interface noch kein funktionales Interface!
 
 Vergleichbar mit `@Override` ...
 
 [**Während man für eine anonyme Klasse lediglich ein normales Interface benötigt, braucht man
- für Lambda-Ausdrücke zwingend ein passendes Funktionsinterface!**]{.alert}
+ für Lambda-Ausdrücke zwingend ein passendes funktionales Interface!**]{.alert}
+
+_Anmerkung_: Es scheint keine einheitliche deutsche Übersetzung für den Begriff
+_functional interface_ zu geben. Es wird häufig mit "funktionales Interface", manchmal
+aber auch mit "Funktionsinterface" übersetzt.
 :::
 
 
-## Quiz: Welches ist kein Funktionsinterface?
+## Quiz: Welches ist kein funktionales Interface?
 
 ```java
 public interface Wuppie {
@@ -368,15 +365,15 @@ public interface Bar extends Wuppie {
 ::: showme
 Auflösung:
 
-*   `Wuppie` hat *genau eine* abstrakte Methode => Funktionsinterface
-*   `Fluppie` hat zwei abstrakte Methoden => **kein** Funktionsinterface
-*   `Foo` hat gar keine abstrakte Methode => **kein** Funktionsinterface
-*   `Bar` hat *genau eine* abstrakte Methode (und eine Default-Methode) => Funktionsinterface
+*   `Wuppie` hat *genau eine* abstrakte Methode => funktionales Interface
+*   `Fluppie` hat zwei abstrakte Methoden => **kein** funktionales Interface
+*   `Foo` hat gar keine abstrakte Methode => **kein** funktionales Interface
+*   `Bar` hat *genau eine* abstrakte Methode (und eine Default-Methode) => funktionales Interface
 :::
 ::::::
 
 
-## Lambdas und Funktionsinterfaces, Typprüfung
+## Lambdas und funktionale Interfaces, Typprüfung
 
 ```java
 @FunctionalInterface
@@ -412,10 +409,10 @@ Der Compiler prüft in etwa folgende Schritte, wenn er über einen Lambda-Ausdru
 :::
 
 
-## Offizielle Funktionsinterfaces (Auswahl)
+## Offizielle funktionale Interfaces (Auswahl)
 
 ::: notes
-Im Package `java.util.function` sind einige wichtige Funktionsinterfaces
+Im Package `java.util.function` sind einige wichtige funktionale Interfaces
 bereits vordefiniert. Diese kann man auch in eigenen Projekten nutzen!
 
 Hier eine kleine Auswahl:
@@ -441,7 +438,17 @@ public interface Supplier<T> {
 
 
 ## Wrap-Up
-...
+
+*   Anonyme Klassen: "Wegwerf"-Innere Klassen
+    *   Müssen Interface implementieren oder Klasse erweitern
+*   Java8: **Lambda-Ausdrücke** statt anonymer Klassen (**funktionales Interface nötig**)
+    *   Zwei mögliche Formen:
+        *   Form 1: `(parameters) -> expression`
+        *   Form 2: `(parameters) -> { statements; }`
+    *   Im jeweiligen Kontext muss ein **funktionales Interface** verwendet werden,
+        d.h. ein Interface mit **genau** einer abstrakten Methode
+    *   Der Lambda-Ausdruck muss von der Syntax her dieser einen abstrakten Methode
+        entsprechen.
 
 
 
