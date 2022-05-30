@@ -29,21 +29,21 @@ outcomes:
   - k2: "Funktionales Interfaces (Definition)"
   - k3: "Einsatz von Methoden-Referenzen"
 quizzes:
-  - link: "XYZ"
+  - link: ""
     name: "Quiz Methoden-Referenzen (ILIAS)"
 assignments:
   - topic: sheet08
 youtube:
-  - link: ""
+  - link: "https://youtu.be/z0mfvvrsRzc"
     name: "VL Methoden-Referenzen"
-  - link: ""
+  - link: "https://youtu.be/YFdPcxE_1Eo"
     name: "Demo Referenz auf statische Methode"
-  - link: ""
+  - link: "https://youtu.be/ImJTywhXrJo"
     name: "Demo Referenz auf Instanz-Methode (Objekt)"
-  - link: ""
+  - link: "https://youtu.be/DVz2x27WHU8"
     name: "Demo Referenz auf Instanz-Methode (Typ)"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/662003c5cb2cdef08b5d35cefd49b05f561fa26471cf3da22c4ff4310596909d0e21300133fc2fac353dfc4a391c8bb9af0dd47293efabfa8c3464429534d719"
     name: "VL Methoden-Referenzen"
 ---
 
