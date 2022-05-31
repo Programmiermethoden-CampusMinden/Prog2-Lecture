@@ -72,6 +72,36 @@ List<Studi> sl = new ArrayList<>();
 sl.sort(???);  // Parameter: java.util.Comparator<Studi>
 ```
 
+\pause
+
+```java
+class MyCompare implements Comparator<Studi> {
+    @Override
+    public int compare(Studi o1, Studi o2) {
+        return o1.getCredits() - o2.getCredits();
+    }
+}
+
+// Liste sortieren?
+MyCompare mc = new MyCompare();
+sl.sort(mc);
+```
+
+::: notes
+Da `Comparator<T>` ein Interface ist, muss man eine extra Klasse anlegen, die die
+abstrakte Methode aus dem Interface implementiert und ein Objekt von dieser Klasse
+erzeugen und dieses dann der `sort()`-Methode übergeben.
+
+Die Klasse bekommt wie in Java üblich eine eigene Datei und ist damit in der
+Package-Struktur offen sichtbar und "verstopft" mir damit die Strukturen: Diese
+Klasse ist doch nur eine Hilfsklasse ... Noch schlimmer: Ich brauche einen Namen
+für diese Klasse!
+
+Den ersten Punkt könnte man über verschachtelte Klassen lösen: Die Hilfsklasse
+wird innerhalb der Klasse definiert, die das Objekt benötigt. Für den zweiten
+Punkt brauchen wir mehr Anlauf ...
+:::
+
 
 ::::::::: notes
 ## Erinnerung: Verschachtelte Klassen ("_Nested Classes_")
