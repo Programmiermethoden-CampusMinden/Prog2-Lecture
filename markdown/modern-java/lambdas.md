@@ -49,7 +49,7 @@ quizzes:
 assignments:
   - topic: sheet08
 youtube:
-  - link: ""
+  - link: "https://youtu.be/Wd8KG7xtp4c"
     name: "VL Lambda-Ausdrücke und funktionale Interfaces"
   - link: ""
     name: "Demo Anonyme innere Klasse"
