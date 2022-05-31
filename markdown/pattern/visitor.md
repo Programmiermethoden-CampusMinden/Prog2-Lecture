@@ -12,25 +12,21 @@ tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k2: "Aufbau des Visitor-Patterns (Besucher-Entwurfsmusters)"
+  - k3: "Anwendung des Visitor-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: ""
+    name: "Quiz Visitor-Pattern (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet09
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Visitor-Pattern"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo Visitor-Pattern"
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL Visitor-Pattern"
 ---
 
 
@@ -68,9 +64,4 @@ Lorem Ipsum. Starte mit H2-Level.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
