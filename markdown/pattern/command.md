@@ -5,32 +5,26 @@ menuTitle: "Command"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 6
 readings:
-  - key: "Eilebrecht2013"
   - key: "Gamma2011"
-  - key: "Kleuker2018"
+  - key: "Nystrom2014"
+    comment: "Kap. 2: Command"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k2: ""
+  - k3: ""
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: ""
+    name: "Quiz Command-Pattern (ILIAS)"
 assignments:
   - topic: sheet01
 youtube:
   - link: ""
-    name: "VL "
-  - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "VL Command-Pattern"
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL Command-Pattern"
 ---
 
 
@@ -68,9 +62,4 @@ Lorem Ipsum. Starte mit H2-Level.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
