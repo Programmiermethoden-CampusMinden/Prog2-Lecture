@@ -61,7 +61,7 @@ aus dem **Konzept-Pool** für je 10 Punkte.
 #### Praktische Teilnote
 :::
 
-*   225P Gesamt, 50P Puffer => “Krankheitsregelung”, 175P == 100%
+*   225P gesamt, 50P Puffer => “Krankheitsregelung”, 175P == 100%
 *   4.0: ab 60% v. 175P (105P), alle 4% nächste Teilnote, 1.0: ab 96% v. 175P (168P)
 
 ::: notes
@@ -81,10 +81,25 @@ formalen Aspekte Ihrer Abgaben beziehen.
 
 ### 2. Theoretische Teilleistung
 
-*   Erster Prüfungszeitraum: 2x digitale Prüfung: 1x im Semester ("E-Assessment") plus 1x in erster Prüfungsphase
+*   Erster Prüfungszeitraum: 2x digitale Prüfung: 1x im Semester ("E-Assessment" E1) plus 1x in erster Prüfungsphase (E2)
 *   Zweiter Prüfungszeitraum: _Eine_ digitale Klausur
 
+#### Hinweise zum ersten Prüfungszeitraum
+
+*   Es gibt in E1 und in E2 je maximal 30 Punkte: 60P gesamt
+*   4.0: ab 50% v. 60P (30P), alle 5% nächste Teilnote, 1.0: ab 95% v. 60P (57P)
+
+In E1 sind alle Themen bis einschließlich Woche 8 (KW20) relevant, in E2 wird der
+Fokus auf den Themen ab einschließlich Woche 8 (KW20) liegen.
+
+#### Hinweise zum zweiten Prüfungszeitraum
+
+Der Notenspiegel für die theoretische Prüfung im zweiten Prüfungszeitraum steht noch
+nicht fest. Es sind hier alle in der Veranstaltung besprochenen Themen relevant.
+
 ::: notes
+#### Anmerkungen
+
 Die Prüfung für die theoretische Teilleistung wird als digitale Klausur über eine
 spezielle ILIAS-Instanz ("E-Assessment-Server") durchgeführt.
 
