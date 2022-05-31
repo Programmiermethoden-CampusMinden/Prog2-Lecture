@@ -108,7 +108,7 @@ bekannt gegeben, für den Termin in der Vorlesungszeit siehe `[Fahrplan]({{< ref
 **50% Praxis, 50% Theorie**
 
 Die beiden Teilleistungen (praktische Teilnote, theoretische Teilnote) werden vom Prüfungsamt
-einzeln erfasst (je eine einzelne Anmeldung im LSF erforderlich!) und werden vom Prüfungamt
+einzeln erfasst (je eine einzelne Anmeldung im LSF erforderlich!) und werden vom Prüfungsamt
 für die Gesamtnote in PM gleich gewichtet zusammengerechnet.
 
 [[Hinweis Abgabeslots, Präsenz/Online]{.bsp}]{.slides}
