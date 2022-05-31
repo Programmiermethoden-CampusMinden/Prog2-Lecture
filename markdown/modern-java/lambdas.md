@@ -73,15 +73,17 @@ sl.sort(???);  // Parameter: java.util.Comparator<Studi>
 ```
 
 \pause
+\bigskip
 
 ```java
-class MyCompare implements Comparator<Studi> {
-    @Override
-    public int compare(Studi o1, Studi o2) {
+public class MyCompare implements Comparator<Studi> {
+    @Override  public int compare(Studi o1, Studi o2) {
         return o1.getCredits() - o2.getCredits();
     }
 }
+````
 
+```java
 // Liste sortieren?
 MyCompare mc = new MyCompare();
 sl.sort(mc);
