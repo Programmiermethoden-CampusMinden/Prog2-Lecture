@@ -122,7 +122,6 @@
     - topic: "/modern-java/methodreferences"
     - topic: "/modern-java/defaultmethods"
     - topic: "/java-jvm/regexp"
-    - topic: "/frameworks/intro"
   assignment:
     - topic: "sheet07"
       due: "Di, 31.05., 18 Uhr, PR/MR"
@@ -138,6 +137,7 @@
     - topic: "/modern-java/optional"
     - topic: "/pattern/visitor"
     - topic: "/pattern/command"
+    - topic: "/frameworks/intro"
   assignment:
     - topic: "sheet08"
       due: "Di, 07.06., 18 Uhr, PR/MR"
