@@ -8,4 +8,8 @@ hidden: true
 ---
 
 
-## XXX
+## Visitor-Pattern (5 Punkte)
+
+{{% include "assignments/pool_concept/tasks/visitor_pattern.md" %}}
+
+**Punkte**: XXX
