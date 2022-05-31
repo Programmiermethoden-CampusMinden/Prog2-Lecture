@@ -5,36 +5,29 @@ menuTitle: "Optional"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 6
 readings:
-  - key: "Bloch2018"
-  - key: "Java-11-documentation"
-  - key: "Java-11-tutorial"
   - key: "Java-SE-tutorial"
-  - key: "Ullenboom2016"
-  - key: "Urma2014"
-  - key: "Juneau2017"
+    comment: ""
+  - key: "Ullenboom2021"
+    comment: ""
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k2: ""
+  - k3: ""
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: ""
+    name: "Quiz Optional (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet09
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Optional"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo Optional"
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL Optional"
 ---
 
 
@@ -72,9 +65,4 @@ Lorem Ipsum. Starte mit H2-Level.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
