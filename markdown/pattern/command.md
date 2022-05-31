@@ -12,16 +12,18 @@ tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
 outcomes:
-  - k2: ""
-  - k3: ""
+  - k2: "Aufbau des Command-Patterns"
+  - k3: "Anwendung des Command-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
 quizzes:
   - link: ""
     name: "Quiz Command-Pattern (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet09
 youtube:
   - link: ""
     name: "VL Command-Pattern"
+  - link: ""
+    name: "Demo Command-Pattern"
 fhmedia:
   - link: ""
     name: "VL Command-Pattern"
