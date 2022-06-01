@@ -43,6 +43,9 @@ fhmedia:
 
 ## Motivation: Parsen von "5*4+3"
 
+::::::::: {.columns}
+:::::: {.column width="50%"}
+
 ::: notes
 Zum Parsen von Ausdrücken (_Expressions_) könnte man diese einfache Grammatik
 einsetzen. Ein Ausdruck ist dabei entweder ein einfacher Integer oder eine
@@ -56,46 +59,22 @@ expr : e1=expr '*' e2=expr      # MUL
      ;
 ```
 
+::::::
+:::::: {.column width="40%"}
+
 ::: notes
 Beim Parsen von "5*4+3" würde dabei der folgende Parsetree entstehen:
 :::
 
-![](images/parsetree.png)
+![](images/parsetree.png){width="60%"}
+
+::::::
+:::::::::
 
 
 ## Strukturen für den Parsetree
 
-![](images/parsetree_classes_uml.png)
-
-<!--
-```java
-public interface Expr {}
-
-public class NumExpr implements Expr {
-    private final int d;
-
-    public NumExpr(int d) { this.d = d; }
-}
-
-public class MulExpr implements Expr {
-    private final Expr e1;
-    private final Expr e2;
-
-    public MulExpr(Expr e1, Expr e2) {
-        this.e1 = e1;    this.e2 = e2;
-    }
-}
-
-public class AddExpr implements Expr {
-    private final Expr e1;
-    private final Expr e2;
-
-    public AddExpr(Expr e1, Expr e2) {
-        this.e1 = e1;    this.e2 = e2;
-    }
-}
-```
--->
+![](images/parsetree_classes_uml.png){width="70%"}
 
 ::: notes
 Der Parsetree für diese einfache Grammatik ist ein Binärbaum. Die Regeln
@@ -108,45 +87,14 @@ leeres) Interface `Expr` geben.
 :::
 
 
-## Ausrechnen des Ausdrucks
+## Ergänzung I: Ausrechnen des Ausdrucks
 
 ::: notes
 Es wäre nun schön, wenn man mit dem Parsetree etwas anfangen könnte. Vielleicht
 möchte man den Ausdruck ausrechnen?
 :::
 
-![](images/parsetree_eval_uml.png)
-
-<!--
-```java
-public interface Expr { int eval(); }
-
-public class NumExpr implements Expr {
-    private final int d;
-
-    public int eval() { return d; }
-}
-
-public class MulExpr implements Expr {
-    private final Expr e1;
-    private final Expr e2;
-
-    public int eval() { return e1.eval() * e2.eval(); }
-}
-
-public class AddExpr implements Expr {
-    private final Expr e1;
-    private final Expr e2;
-
-    public int eval() { return e1.eval() + e2.eval(); }
-}
-
-public static void main(final String... args) {
-    Expr e = new AddExpr(new MulExpr(new NumExpr(5), new NumExpr(4)), new NumExpr(3));
-    int erg = e.eval();
-}
-```
--->
+![](images/parsetree_eval_uml.png){width="70%"}
 
 ::: notes
 Zum Ausrechnen des Ausdrucks könnte man dem Interface eine `eval()`-Methode
@@ -157,44 +105,14 @@ oder Multiplikation der Auswertungsergebnisse der beiden Kindknoten.
 :::
 
 
-## Pretty-Print des Ausdrucks
+## Ergänzung II: Pretty-Print des Ausdrucks
 
 ::: notes
 Nachdem das Ausrechnen so gut geklappt hat, will der Chef nun noch flink eine Funktion,
 mit der man den Ausdruck hübsch ausgeben kann:
 :::
 
-![](images/parsetree_eval_print_uml.png)
-
-<!--
-```java
-public interface Expr {
-    int eval();
-    String print();
-}
-
-public class NumExpr implements Expr {
-    public int eval() { return d; }
-    public String print() { return "NumExpr(" + d + ")"; }
-}
-
-public class MulExpr implements Expr {
-    public int eval() { return e1.eval() * e2.eval(); }
-    public String print() { return "MulExpr(" + e1.print() + ", " + e2.print() + ")"; }
-}
-
-public class AddExpr implements Expr {
-    public int eval() { return e1.eval() + e2.eval(); }
-    public String print() { return "AddExpr(" + e1.print() + ", " + e2.print() + ")"; }
-}
-
-public static void main(final String... args) {
-    Expr e = new AddExpr(new MulExpr(new NumExpr(5), new NumExpr(4)), new NumExpr(3));
-    int erg = e.eval();
-    String s = e.print();
-}
-```
--->
+![](images/parsetree_eval_print_uml.png){width="70%"}
 
 ::: notes
 Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche Strukturen,
@@ -202,14 +120,18 @@ mit denen wir diesen Parsetree traversieren ... Und wir müssen für _jede_ Erwe
 immer _alle_ Expression-Klassen anpassen!
 
 [Beispiel: [direct.DemoExpr](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/visitor/direct/DemoExpr.java)]{.bsp}
+:::
+
+\vfill
 
 **Das geht besser.**
-:::
 
 
 ## Visitor-Pattern (Besucher-Entwurfsmuster)
 
-![](images/visitor.png)
+![](images/visitor.png){web_width="60%"}
+
+[[Hinweis: Implementierungsdetail Traversierung]{.bsp}]{.slides}
 
 ::: notes
 Das Entwurfsmuster "Besucher" (_Visitor Pattern_) lagert die Aktion beim Besuchen eines
@@ -275,26 +197,33 @@ funktioniert in Java leider nicht. (Warum?)
 
 ## Ausrechnen des Ausdrucks mit einem Visitor
 
-![](images/parsetree_visitor_uml.png)
+![](images/parsetree_visitor_uml.png){web_width="60%"}
 
 [Demo: [extrav.DemoExpr](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/visitor/extrav/DemoExpr.java)]{.bsp}
 
 
 ## Wrap-Up
 
-Visitor-Pattern: Auslagern der Traversierung in eigene Klassenstruktur
+**Visitor-Pattern**: Auslagern der Traversierung in eigene Klassenstruktur
 
 \bigskip
+\smallskip
 
 *   Klassen der Datenstruktur
     *   bekommen eine `accept()`-Methode für einen Visitor
     *   rufen den Visitor mit sich selbst als Argument auf
+
+\smallskip
+
 *   Visitor
     *   hat für jede Klasse eine Überladung der `visit()`-Methode
     *   Rückgabewerte schwierig: Intern halten oder per `return`
         [(dann aber unterschiedliche `visit()`-Methoden für die verschiedenen Rückgabetypen!)]{.notes}
+
+\smallskip
+
 *   (Double-) Dispatch: Zur Laufzeit wird in `accept()` der Typ des Visitors
-    aufgelöst und in `visit()` der Typ der zu besuchenden Klasse
+    und in `visit()` der Typ der zu besuchenden Klasse aufgelöst
 
 
 
