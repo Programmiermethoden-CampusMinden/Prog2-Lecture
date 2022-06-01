@@ -7,21 +7,42 @@ weight: 2
 readings:
   - key: "Eilebrecht2013"
   - key: "Gamma2011"
-  - key: "Kleuker2018"
 tldr: |
-    Visitor-Pattern: Auslagern der Traversierung in eigene Klassenstruktur
+    Häufig bietet es sich bei Datenstrukturen an, die Traversierung nicht direkt in den Klassen
+    der Datenstrukturen zu implementieren, sondern in Hilfsklassen zu verlangern. Dies gilt vor
+    allem dann, wenn die Datenstruktur aus mehreren Klassen besteht (etwa ein Baum mit verschiedenen
+    Knotentypen) und/oder wenn man nicht nur eine Traversierungsart ermöglichen will oder/und wenn
+    man immer wieder neue Arten der Traversierung ergänzen will. Das würde nämlich bedeuten, dass
+    man für jede weitere Form der Traversierung in _allen_ Klassen eine entsprechende neue Methode
+    implementieren müsste.
 
-    \bigskip
+    Das Visitor-Pattern lagert die Traversierung in eigene Klassenstruktur aus.
 
-    *   Klassen der Datenstruktur
-        *   bekommen eine `accept()`-Methode für einen Visitor
-        *   rufen den Visitor mit sich selbst als Argument auf
-    *   Visitor
-        *   hat für jede Klasse eine Überladung der `visit()`-Methode
-        *   Rückgabewerte schwierig: Intern halten oder per `return`
-            [(dann aber unterschiedliche `visit()`-Methoden für die verschiedenen Rückgabetypen!)]{.notes}
-    *   (Double-) Dispatch: Zur Laufzeit wird in `accept()` der Typ des Visitors
-        aufgelöst und in `visit()` der Typ der zu besuchenden Klasse?
+    Die Klassen der Datenstruktur bekommen nur noch eine `accept()`-Methode, in der ein Visitor
+    übergeben wird und rufen auf diesem Visitor einfach dessen `visit()`-Methode auf (mit einer
+    Referenz auf sich selbst als Argument).
+
+    Der Visitor hat für jede Klasse der Datenstruktur eine Überladung der `visit()`-Methode. In
+    diesen kann er je nach Klasse die gewünschte Verarbeitung vornehmen. Üblicherweise gibt es
+    ein Interface oder eine abstrakte Klasse für die Visitoren, von denen dann konkrete Visitoren
+    ableiten.
+
+    Bei Elementen mit "Kindern" muss man sich entscheiden, wie die Traversierung implementiert
+    werden soll. Man könnte in der `accept()`-Methode den Visitor an die Kinder weiter reichen
+    (also auf den Kindern `accept()` mit dem Visitor aufrufen), bevor man die `visit()`-Methode
+    des Visitors mit sich selbst als Referenz aufruft. Damit ist die Form der Traversierung in
+    den Klassen der Datenstruktur fest verankert und über den Visitor findet "nur" noch eine
+    unterschiedliche Form der Verarbeitung statt. Alternativ überlässt man es dem Visitor, die
+    Traversierung durchzuführen: Hier muss in den `visit()`-Methoden für die einzelnen Elemente
+    entsprechend auf mögliche Kinder reagiert werden.
+
+    In diesem Pattern findet ein sogenannter "Double-Dispatch" statt: Zur Laufzeit wird ein konkreter
+    Visitor instantiiert und über `accept()` an ein Element der Datenstruktur übergeben. Dort ist
+    zur Compile-Zeit aber nur der Obertyp der Visitoren bekannt, d.h. zur Laufzeit wird hier der
+    konkrete Typ bestimmt und entsprechend die richtige `visit()`-Methode auf der "echten" Klasse
+    des Visitors aufgerufen (erster Dispatch). Da im Visitor die `visit()`-Methoden für jeden Typ
+    der Datenstrukur überladen sind, findet nun zur Laufzeit die Auflösung der korrekten Überladung
+    statt (zweiter Dispatch).
 outcomes:
   - k2: "Aufbau des Visitor-Patterns (Besucher-Entwurfsmusters)"
   - k3: "Anwendung des Visitor-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
