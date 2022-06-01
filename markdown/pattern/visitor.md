@@ -66,7 +66,7 @@ expr : e1=expr '*' e2=expr      # MUL
 Beim Parsen von "5*4+3" würde dabei der folgende Parsetree entstehen:
 :::
 
-![](images/parsetree.png){width="60%"}
+![](images/parsetree.png){width="60%" web_width="20%"}
 
 ::::::
 :::::::::
@@ -129,7 +129,7 @@ immer _alle_ Expression-Klassen anpassen!
 
 ## Visitor-Pattern (Besucher-Entwurfsmuster)
 
-![](images/visitor.png){web_width="60%"}
+![](images/visitor.png){web_width="80%"}
 
 [[Hinweis: Implementierungsdetail Traversierung]{.bsp}]{.slides}
 
@@ -197,7 +197,7 @@ funktioniert in Java leider nicht. (Warum?)
 
 ## Ausrechnen des Ausdrucks mit einem Visitor
 
-![](images/parsetree_visitor_uml.png){web_width="60%"}
+![](images/parsetree_visitor_uml.png)
 
 [Demo: [extrav.DemoExpr](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/visitor/extrav/DemoExpr.java)]{.bsp}
 
