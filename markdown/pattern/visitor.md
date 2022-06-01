@@ -30,24 +30,48 @@ fhmedia:
 ---
 
 
-## Motivation
-Lorem Ipsum. Starte mit H2-Level.
-...
+## Motivation: Parsen von "5*4+3"
 
-## Folie 2
-...
+```yacc
+expr : e1=expr '*' e2=expr      # MULT
+     | e1=expr '+' e2=expr      # ADD
+     | DIGIT                    # ZAHL
+     ;
+```
 
-## Folie 3
-...
+![](images/parsetree.png)
 
-## Folie 4
-...
 
-## Folie 5
-...
+## Strukturen für den Parsetree
 
-## Folie 6
-...
+```java
+
+```
+
+
+## Ausrechnen des Ausdrucks
+
+```java
+
+```
+
+
+## Pretty-Print des Ausdrucks
+
+```java
+```
+
+
+## Visitor-Pattern (Besucher-Entwurfsmuster)
+
+![](images/visitor.png)
+
+
+## Ausrechnen des Ausdrucks mit einem Visitor
+
+```java
+```
+
 
 ## Wrap-Up
 ...
