@@ -9,14 +9,22 @@ readings:
   - key: "Nystrom2014"
     comment: "Kap. 2: Command"
 tldr: |
-    **Command-Pattern**: Kapsele Befehle in ein Objekt
+    Das **Command-Pattern** ist die objektorientierte Antwort auf Callback-Funktionen: Man
+    kapselt Befehle in einem Objekt.
 
-    \bigskip
+    Die `Command`-Objekte haben eine Methode `execute()` und führen dabei Aktion auf einem
+    bzw. "ihrem" Receiver aus.
 
-    *   `Command`-Objekte haben eine Methode `execute()` und führen Aktion auf Receiver aus
-    *   `Receiver` sind Objekte, auf denen Aktionen ausgeführt werden (Hero, Monster, ...)
-    *   `Invoker` hat `Command`-Objekte und ruft `execute()` auf
-    *   `Client` kennt alle und baut alles zusammen
+    `Receiver` sind Objekte, auf denen Aktionen ausgeführt werden, im Dungeon könnten dies
+    etwa Hero, Monster, ... sein. Receiver müssen keine der anderen Akteure in diesem Pattern
+    kennen.
+
+    Damit die `Command`-Objekte aufgerufen werden, gibt es einen `Invoker`, der
+    `Command`-Objekte hat und zu gegebener Zeit auf diesen die Methode `execute()` aufruft.
+    Der Invoker muss dabei die konkreten Kommandos und die Receiver nicht kennen (nur die
+    `Command`-Schnittstelle).
+
+    Zusätzlich gibt es einen `Client`, der die anderen Akteure kennt und alles zusammen baut.
 outcomes:
   - k2: "Aufbau des Command-Patterns"
   - k3: "Anwendung des Command-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
