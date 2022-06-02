@@ -5,10 +5,8 @@ menuTitle: "Records"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 5
 readings:
-  - key: "Java-SE-tutorial"
-    comment: ""
-  - key: "Ullenboom2021"
-    comment: ""
+  - key: "LernJava"
+    comment: "Tutorials > Using Record to Model Immutable Data"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
@@ -32,25 +30,101 @@ fhmedia:
 
 
 ## Motivation
-Lorem Ipsum. Starte mit H2-Level.
-...
+
+ToDo: Herkömmliche Klasse mit Gettern/Settern/Ctor
+
 
 ## Folie 2
-...
+
+ToDo: Ersatz mit Record-Klasse
+
+Erklärung: `public record Point(int x, int y) {}`:
+-   Immutable Klasse mit Feldern x, y (beide int)
+    => "(int x, int y)" werden auch "Komponenten" des Records genannt
+-   Standardkonstruktor setzt diese Felder (Kopie) ("Kanonischer Konstruktor")
+-   Getter für beide Felder: `public int x() { return this.x; }`... (Namen wie die Felder!)
+
 
 ## Folie 3
-...
+
+-   Records erweitern implizit die Klasse `java.lang.Record`:
+    Keine andere Klassen mehr erweiterbar! (Interfaces kein Problem)
+-   Keine weiteren (Instanz-) Attribute definierbar (nur die Komponenten)
+-   Keine Setter definierbar für die Komponenten
+-   Statische Attribute mit Initialisierung geht
+
 
 ## Folie 4
+
+Konstruktor erweiterbar
+
+```java
+public record Point(int x, int y) {
+    public Point(int x, int y) {
+        if (x <= y) {
+            throw new IllegalArgumentException("End cannot be lesser than start");
+        }
+        if (x < 0) {
+            this.x = 0;
+        } else {
+            this.x = x;
+        }
+    }
+}
+```
+
+alternativ in kompakter Form (Attribute können hier nicht direkt gesetzt werden,
+also kein `this.x = x`. Aber man kann die Parameter des Konstruktors ändern ...):
+
+```java
+public record Point(int x, int y) {
+    public Point {
+        if (x <= y) {
+            throw new IllegalArgumentException("End cannot be lesser than start");
+        }
+        if (x < 0) {
+            x = 0;
+        }
+    }
+}
+```
+
+Weitere Konstruktoren definierbar, müssen den kanonischen Konstruktor aufrufen:
+
+```java
+public record Point(int x, int y) {
+    public Point() {this(0,0);}
+}
+```
+
 ...
 
 ## Folie 5
-...
 
-## Folie 6
-...
+Getter: automatisch generierte Methoden, Namen wie die Attribute
+
+```java
+public record Point(int x, int y) {}
+
+Point p = new Point();
+p.x(); p.y()
+```
+
+Getter überschreibbar
+
+```java
+public record Point(int x, int y) {
+    public int x() {
+        return x*42;
+    }
+}
+```
+
 
 ## Wrap-Up
+
+https://dev.java/learn/using-record-to-model-immutable-data/
+
 ...
 
 
