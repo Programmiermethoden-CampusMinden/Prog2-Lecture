@@ -102,19 +102,14 @@ entsprechen denen der Komponenten, es fehlt also der übliche "get"-Präfix!
 Der Konstruktor ist erweiterbar:
 :::
 
-```java
+```{.java size="footnotesize"}
 public record StudiS(String name, int credits) {
     public StudiS(String name, int credits) {
-        if (name == null) {
-            throw new IllegalArgumentException("Name cannot be null!");
-        } else {
-            this.name = name;
-        }
-        if (credits < 0) {
-            this.credits = 0;
-        } else {
-            this.credits = credits;
-        }
+        if (name == null) { throw new IllegalArgumentException("Name cannot be null!"); }
+        else { this.name = name; }
+
+        if (credits < 0) { this.credits = 0; }
+        else { this.credits = credits; }
     }
 }
 ```
@@ -126,16 +121,12 @@ In dieser Form muss man die Attribute selbst setzen.
 Alternativ kann man die "kompakte" Form nutzen:
 :::
 
-
-```java
+```{.java size="footnotesize"}
 public record StudiT(String name, int credits) {
     public StudiT {
-        if (name == null) {
-            throw new IllegalArgumentException("Name cannot be null!");
-        }
-        if (credits < 0) {
-            credits = 0;
-        }
+        if (name == null) { throw new IllegalArgumentException("Name cannot be null!"); }
+
+        if (credits < 0) { credits = 0; }
     }
 }
 ```
