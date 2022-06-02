@@ -221,6 +221,10 @@ keine weitere Buchhaltung ...
 *   `Invoker` hat `Command`-Objekte und ruft `execute()` auf
 *   `Client` kennt alle und baut alles zusammen
 
+\vfill
+
+**Objektorientierte Antwort auf Callback-Funktionen**
+
 
 
 
