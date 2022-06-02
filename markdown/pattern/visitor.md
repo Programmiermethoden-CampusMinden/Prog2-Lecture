@@ -105,6 +105,42 @@ und es gibt Knoten ohne Kindknoten ("Blätter").
 Entsprechend kann man sich einfache Klassen definieren, die die verschiedenen
 Knoten in diesem Parsetree repräsentieren. Als Obertyp könnte es ein (noch
 leeres) Interface `Expr` geben.
+
+```java
+public interface Expr {}
+
+public class NumExpr implements Expr {
+    private final int d;
+
+    public NumExpr(int d) { this.d = d; }
+}
+
+public class MulExpr implements Expr {
+    private final Expr e1;
+    private final Expr e2;
+
+    public MulExpr(Expr e1, Expr e2) {
+        this.e1 = e1;  this.e2 = e2;
+    }
+}
+
+public class AddExpr implements Expr {
+    private final Expr e1;
+    private final Expr e2;
+
+    public AddExpr(Expr e1, Expr e2) {
+        this.e1 = e1;  this.e2 = e2;
+    }
+}
+
+
+public class DemoExpr {
+    public static void main(final String... args) {
+        // 5*4+3
+        Expr e = new AddExpr(new MulExpr(new NumExpr(5), new NumExpr(4)), new NumExpr(3));
+    }
+}
+```
 :::
 
 
@@ -123,6 +159,49 @@ spendieren. Jeder Knoten kann für sich entscheiden, wie die entsprechende
 Operation ausgewertet werden soll: Bei einer `NumExpr` ist dies einfach der
 gespeicherte Wert, bei Addition oder Multiplikation entsprechend die Addition
 oder Multiplikation der Auswertungsergebnisse der beiden Kindknoten.
+
+```java
+public interface Expr {
+    int eval();
+}
+
+public class NumExpr implements Expr {
+    private final int d;
+
+    public NumExpr(int d) { this.d = d; }
+    public int eval() { return d; }
+}
+
+public class MulExpr implements Expr {
+    private final Expr e1;
+    private final Expr e2;
+
+    public MulExpr(Expr e1, Expr e2) {
+        this.e1 = e1;  this.e2 = e2;
+    }
+    public int eval() { return e1.eval() * e2.eval(); }
+}
+
+public class AddExpr implements Expr {
+    private final Expr e1;
+    private final Expr e2;
+
+    public AddExpr(Expr e1, Expr e2) {
+        this.e1 = e1;  this.e2 = e2;
+    }
+    public int eval() { return e1.eval() + e2.eval(); }
+}
+
+
+public class DemoExpr {
+    public static void main(final String... args) {
+        // 5*4+3
+        Expr e = new AddExpr(new MulExpr(new NumExpr(5), new NumExpr(4)), new NumExpr(3));
+
+        int erg = e.eval();
+    }
+}
+```
 :::
 
 
@@ -166,6 +245,100 @@ Die Besucher haben eine Methode, die für jeden zu bearbeitenden Knoten überlad
 In dieser Methode findet dann die eigentliche Verarbeitung statt: Auswerten des Knotens
 oder Ausgeben des Knotens ...
 
+```java
+public interface Expr {
+    void accept(ExprVisitor v);
+}
+
+public class NumExpr implements Expr {
+    private final int d;
+
+    public NumExpr(int d) { this.d = d; }
+    public int getValue() { return d; }
+
+    public void accept(ExprVisitor v) { v.visit(this); }
+}
+
+public class MulExpr implements Expr {
+    private final Expr e1;
+    private final Expr e2;
+
+    public MulExpr(Expr e1, Expr e2) {
+        this.e1 = e1;  this.e2 = e2;
+    }
+    public Expr getE1() { return e1; }
+    public Expr getE2() { return e2; }
+
+    public void accept(ExprVisitor v) { v.visit(this); }
+}
+
+public class AddExpr implements Expr {
+    private final Expr e1;
+    private final Expr e2;
+
+    public AddExpr(Expr e1, Expr e2) {
+        this.e1 = e1;  this.e2 = e2;
+    }
+    public Expr getE1() { return e1; }
+    public Expr getE2() { return e2; }
+
+    public void accept(ExprVisitor v) { v.visit(this); }
+}
+
+
+public interface ExprVisitor {
+    void visit(NumExpr e);
+    void visit(MulExpr e);
+    void visit(AddExpr e);
+}
+
+public class EvalVisitor implements ExprVisitor {
+    private final Stack<Integer> erg = new Stack<>();
+
+    public void visit(NumExpr e) { erg.push(e.getValue()); }
+    public void visit(MulExpr e) {
+        e.getE1().accept(this);  e.getE1().accept(this);
+        erg.push(erg.pop() * erg.pop());
+    }
+    public void visit(AddExpr e) {
+        e.getE1().accept(this);  e.getE1().accept(this);
+        erg.push(erg.pop() + erg.pop());
+    }
+    public int getResult() { return erg.peek(); }
+}
+
+public class PrintVisitor implements ExprVisitor {
+    private final Stack<String> erg = new Stack<>();
+
+    public void visit(NumExpr e) { erg.push("NumExpr(" + e.getValue() + ")"); }
+    public void visit(MulExpr e) {
+        e.getE1().accept(this);  e.getE1().accept(this);
+        erg.push("MulExpr(" + erg.pop() + ", " + erg.pop() + ")");
+    }
+    public void visit(AddExpr e) {
+        e.getE1().accept(this);  e.getE1().accept(this);
+        erg.push("AddExpr(" + erg.pop() + ", " + erg.pop() + ")");
+    }
+    public String getResult() { return erg.peek(); }
+}
+
+
+public class DemoExpr {
+    public static void main(final String... args) {
+        // 5*4+3
+        Expr e = new AddExpr(new MulExpr(new NumExpr(5), new NumExpr(4)), new NumExpr(3));
+
+        EvalVisitor v1 = new EvalVisitor();
+        e.accept(v1);
+        int erg = v1.getResult();
+
+        PrintVisitor v2 = new PrintVisitor();
+        e.accept(v2);
+        String s = v2.getResult();
+    }
+}
+```
+
 ### Implementierungsdetail
 
 In den beiden Klasse `AddExpr` und `MulExpr` müssen auch die beiden Kindknoten besucht
@@ -199,8 +372,8 @@ Basisklasse zu verlagern: Statt
     }
 ```
 
-in _jeder_ Knotenklasse zu definieren, könnte man das doch _einmalig_ in der Basisklasse
-definieren:
+in _jeder_ Knotenklasse einzeln zu definieren, könnte man das doch _einmalig_ in der
+Basisklasse definieren:
 
 ```java
 public abstract class Expr {
