@@ -113,18 +113,20 @@ Beispiel oben wurde dafür der `Hero` genutzt.
 Im Command-Pattern gibt es vier beteiligte Parteien: Client, Receiver, Command und Invoker.
 
 Ein Command ist die objektorientierte Abstraktion eines Befehls. Es hat möglicherweise
-einen Zustand, und man kann ein Kommando durch den Aufruf der `execute()`-Methode auf dem
-Objekt ausführen. Dabei wird auf dem Receiver dann eine vorher verabredete Methode ausgeführt.
-(Ein Command-Objekt kennt also "seinen" Receiver.)
+einen Zustand, und und kennt "seinen" Receiver und kann beim Aufruf der `execute()`-Methode
+eine vorher verabredete Methode auf diesem Receiver-Objekt ausführen.
 
 Ein Receiver ist eine Klasse, die Aktionen durchführen kann. Sie kennt die anderen Akteure
 nicht.
 
 Der Invoker (manchmal auch "Caller" genannt) ist eine Klasse, die Commands aggregiert und die
-die Commandos "ausführt", indem hier die `execute()`-Methode aufgerufen wird.
+die Commandos "ausführt", indem hier die `execute()`-Methode aufgerufen wird. Diese Klasse
+kennt nur das `Command`-Interface und keine spezifischen Kommandos (also keine der Sub-Klassen).
+Es kann zusätzlich eine gewisse Buchführung übernehmen, etwa um eine Undo-Funktionalität zu
+realisieren.
 
 Der Client ist ein Programmteil, der ein Command-Objekt aufbaut und dabei einen passenden
-Receiver übergibt und der das Command-Objekt dann an den Invoker weiterreicht.
+Receiver übergibt und der das Command-Objekt dann zum Aufruf an den Invoker weiterreicht.
 
 
 In unserem Beispiel lassen sich die einzelnen Teile so sortieren:
