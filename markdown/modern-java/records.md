@@ -29,103 +29,180 @@ fhmedia:
 ---
 
 
-## Motivation
+## Motivation; Klasse Studi
 
-ToDo: Herkömmliche Klasse mit Gettern/Settern/Ctor
+```java
+public class Studi {
+    private final String name;
+    private final int credits;
+
+    public Studi(String name, int credits) {
+        this.name = name;
+        this.credits = credits;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+}
+```
 
 
-## Folie 2
+## Klasse Studi als Record
 
-ToDo: Ersatz mit Record-Klasse
+```java
+public record StudiR(String name, int credits) {}
+```
 
-Erklärung: `public record Point(int x, int y) {}`:
--   Immutable Klasse mit Feldern x, y (beide int)
-    => "(int x, int y)" werden auch "Komponenten" des Records genannt
--   Standardkonstruktor setzt diese Felder (Kopie) ("Kanonischer Konstruktor")
--   Getter für beide Felder: `public int x() { return this.x; }`... (Namen wie die Felder!)
+\bigskip
+\pause
+
+*   Immutable Klasse mit Feldern `String name` und `int credits` \newline
+    => "`(String name, int credits)`" werden "Komponenten" des Records genannt
+*   Standardkonstruktor setzt diese Felder ("Kanonischer Konstruktor")
+*   Getter für beide Felder:
+
+    ```java
+    public String name() { return this.name; }
+    public int credits() { return this.credits; }
+    ```
+
+::: notes
+Der kanonische Konstruktor hat das Aussehen wie die Record-Deklaration, im
+Beispiel also `public StudiR(String name, int credits)`. Dabei werden die
+Komponenten über eine Kopie der Werte initialisiert.
+
+Für die Komponenten werden automatisch private Attribute mit dem selben
+Namen angelegt.
+
+Für die Komponenten werden automatisch Getter angelegt. Achtung: Die Namen
+entsprechen denen der Komponenten, es fehlt also der übliche "get"-Präfix!
+:::
 
 
-## Folie 3
+## Eigenschaften und Einschränkungen von Record-Klassen
 
--   Records erweitern implizit die Klasse `java.lang.Record`:
+*   Records erweitern implizit die Klasse `java.lang.Record`: \newline
     Keine andere Klassen mehr erweiterbar! (Interfaces kein Problem)
--   Keine weiteren (Instanz-) Attribute definierbar (nur die Komponenten)
--   Keine Setter definierbar für die Komponenten
--   Statische Attribute mit Initialisierung geht
+
+*   Keine weiteren (Instanz-) Attribute definierbar (nur die Komponenten)
+
+*   Keine Setter definierbar für die Komponenten
+
+*   Statische Attribute mit Initialisierung erlaubt
 
 
-## Folie 4
+## Records: Prüfungen im Konstruktor
 
-Konstruktor erweiterbar
+::: notes
+Der Konstruktor ist erweiterbar:
+:::
 
 ```java
-public record Point(int x, int y) {
-    public Point(int x, int y) {
-        if (x <= y) {
-            throw new IllegalArgumentException("End cannot be lesser than start");
-        }
-        if (x < 0) {
-            this.x = 0;
+public record StudiS(String name, int credits) {
+    public StudiS(String name, int credits) {
+        if (name == null) {
+            throw new IllegalArgumentException("Name cannot be null!");
         } else {
-            this.x = x;
+            this.name = name;
+        }
+        if (credits < 0) {
+            this.credits = 0;
+        } else {
+            this.credits = credits;
         }
     }
 }
 ```
 
-alternativ in kompakter Form (Attribute können hier nicht direkt gesetzt werden,
-also kein `this.x = x`. Aber man kann die Parameter des Konstruktors ändern ...):
+::: notes
+In dieser Form muss man die Attribute selbst setzen.
+
+
+Alternativ kann man die "kompakte" Form nutzen:
+:::
+
 
 ```java
-public record Point(int x, int y) {
-    public Point {
-        if (x <= y) {
-            throw new IllegalArgumentException("End cannot be lesser than start");
+public record StudiT(String name, int credits) {
+    public StudiT {
+        if (name == null) {
+            throw new IllegalArgumentException("Name cannot be null!");
         }
-        if (x < 0) {
-            x = 0;
+        if (credits < 0) {
+            credits = 0;
         }
     }
 }
 ```
 
-Weitere Konstruktoren definierbar, müssen den kanonischen Konstruktor aufrufen:
+::: notes
+In der kompakten Form kann man nur die Werte der Parameter des Konstruktors ändern.
+Das Setzen der Attribute ergänzt der Compiler nach dem eigenen Code.
+
+
+Es sind weitere Konstruktoren definierbar, diese _müssen_ den kanonischen Konstruktor
+aufrufen:
 
 ```java
-public record Point(int x, int y) {
-    public Point() {this(0,0);}
+public StudiT() {
+    this("", 42);
+}
+```
+:::
+
+
+## Getter und Methoden
+
+::: notes
+Getter werden vom Compiler automatisch generiert. Dabei entsprechen die Methoden-Namen
+den Namen der Attribute:
+:::
+
+```java
+public record StudiR(String name, int credits) {}
+
+public static void main(String... args) {
+    StudiR r = new StudiR("Sabine", 75);
+
+    int x = r.credits();
+    String y = r.name();
 }
 ```
 
-...
-
-## Folie 5
-
-Getter: automatisch generierte Methoden, Namen wie die Attribute
+::: notes
+Getter überschreibbar und man kann weitere Methoden definieren:
+:::
 
 ```java
-public record Point(int x, int y) {}
-
-Point p = new Point();
-p.x(); p.y()
-```
-
-Getter überschreibbar
-
-```java
-public record Point(int x, int y) {
-    public int x() {
-        return x*42;
-    }
+public record StudiT(String name, int credits) {
+    public int credits() { return credits + 42; }
+    public void wuppie() { System.out.println("WUPPIE"); }
 }
 ```
+
+::: notes
+Die Komponenten/Attribute sind aber `final` und können nicht über Methoden
+geändert werden!
+:::
 
 
 ## Wrap-Up
 
-https://dev.java/learn/using-record-to-model-immutable-data/
+*   Records sind immutable Klassen:
+    *   `final` Attribute (entsprechend den Komponenten)
+    *   Kanonischer Konstruktor
+    *   Automatische Getter (Namen wie Komponenten)
+*   Konstruktoren und Methoden können ergänzt/überschrieben werden
+*   Keine Vererbung von Klassen möglich (kein `extends`)
 
-...
+::: notes
+Schöne Doku: ["Using Record to Model Immutable Data"](https://dev.java/learn/using-record-to-model-immutable-data/).
+:::
 
 
 
