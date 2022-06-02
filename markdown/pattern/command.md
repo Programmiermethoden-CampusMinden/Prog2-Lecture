@@ -140,41 +140,10 @@ In unserem Beispiel lassen sich die einzelnen Teile so sortieren:
 :::
 
 
-## Folie 3
-
-```java
-public interface Command {
-    void execute();
-    Command newCommand(Entity e);
-}
-
-public class Jump implements Command {
-    private Entity e;
-
-    public void execute() { e.jump(); }
-    Command newCommand(Entity e) { return new Jump(e); }
-}
-
-public class InputHandler {
-    Command xbutton = new Jump();  // oder über Methoden setzen
-
-    void handleInput() {
-        Entity e = getSelectedEntity();
-        Command c;
-
-        if (isPressed(BUTTON_X)) c = xbutton.newCommand(e);
-        else if ...
-
-        c.execute();
-    }
-}
-```
-
-Jetzt kann jedes Command-Objekt eine neue Instanz erzeugen mit der
-Entity, die dann dieses Kommando empfangen soll.
-
-
 ## Undo
+
+::: notes
+Wir könnten das `Command`-Interface um ein paar Methoden erweitern:
 
 ```java
 public interface Command {
@@ -182,35 +151,59 @@ public interface Command {
     void undo();
     Command newCommand(Entity e);
 }
+```
 
-public class MoveX implements Command {
+Jetzt kann jedes Command-Objekt eine neue Instanz erzeugen mit der
+Entity, die dann dieses Kommando empfangen soll:
+:::
+
+```java
+public class Move implements Command {
     private Entity e;
-    private int oldx;
+    private int x, y, oldX, oldY;
 
-    public void execute() { oldx = e.getX(); e.move(); }
-    public void undo() { e.setX(oldx); e.move(); }
-    Command newCommand(Entity e) { return new MoveX(e); }
+    public void execute() {
+        oldX = e.getX();  oldY = e.getY();  x = oldX + 42;  y = oldY;
+        e.moveTo(x, y);
+    }
+    public void undo() { e.moveTo(oldX, oldY); }
+    public Command newCommand(Entity e) { return new Move(e); }
 }
 
 public class InputHandler {
-    Command xbutton = new Jump();   // oder über Methoden setzen
-    Command wbutton = new MoveX();  // oder über Methoden setzen
-    Stack<Command> s = new Stack<>;
+    private final Command wbutton;
+    private final Command abutton;
+    private final Stack<Command> s = new Stack<>();
 
-    void handleInput() {
+    public void handleInput() {
         Entity e = getSelectedEntity();
-
-        if (isPressed(BUTTON_X)) s.push(xbutton.newCommand(e));
-        else if (isPressed(BUTTON_W)) s.push(wbutton.newCommand(e));
-        else if (isPressed(BUTTON_Z)) s.pop().undo();
-        else if ...
-
-        s.peek().execute();
+        switch (isPressed()) {
+            case BUTTON_W -> { s.push(wbutton.newCommand(e)); s.peek().execute(); }
+            case BUTTON_A -> { s.push(abutton.newCommand(e)); s.peek().execute(); }
+            case BUTTON_U -> s.pop().undo();
+            case ...
+            default -> { ... }
+        }
     }
 }
 ```
 
-Über den Stack bekommt man ein Undo ...
+::: notes
+Über den Konstruktor von `InputHandler` (im Beispiel nicht gezeigt) würde man
+wie vorher die `Command`-Objekte für die Buttons setzen. Es würde aber in jedem
+Aufruf von `handleInput()` abgefragt, was gerade die selektierte Entität ist und
+für diese eine neue Instanz des zur Tastatureingabe passenden `Command`-Objekts
+erzeugt. Dieses wird nun in einem Stack gespeichert und danach ausgeführt.
+
+Wenn der Button "U" gedrückt wird, wird das letzte `Command`-Objekt aus dem
+Stack genommen (Achtung: Im echten Leben müsste man erst einmal schauen, ob hier
+noch was drin ist!) und auf diesem die Methode `undo()` aufgerufen. Für das
+Kommando `Move` ist hier skizziert, wie ein Undo aussehen könnte: Man muss einfach
+bei jedem `execute()` die alte Position der Entität speichern, dann kann man
+sie bei einem `undo()` wieder auf diese Position verschieben. Da für jeden Move
+ein neues Objekt angelegt wird und diese nur einmal benutzt werden, braucht man
+keine weitere Buchhaltung ...
+:::
 
 
 ## Wrap-Up
