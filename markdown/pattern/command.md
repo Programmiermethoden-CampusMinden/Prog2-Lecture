@@ -44,7 +44,7 @@ geben mit einer Methode ähnlich zu `handleInput()`:
 ```java
 public class InputHandler {
     public void handleInput() {
-        switch (isPressed()) {
+        switch (keyPressed()) {
             case BUTTON_W -> hero.jump();
             case BUTTON_A -> hero.moveX();
             case ...
@@ -56,32 +56,32 @@ public class InputHandler {
 
 ::: notes
 Diese Methode wird je Frame einmal aufgerufen, um auf eventuelle Benutzereingaben
-reagieren zu können. Je nach gedrücktem Button wird auf den Hero eine bestimmte
+reagieren zu können. Je nach gedrücktem Button wird auf dem Hero eine bestimmte
 Aktion ausgeführt ...
 
 Das funktioniert, ist aber recht unflexibel. Die Aktionen sind den Buttons fest
 zugeordnet und erlauben keinerlei Konfiguration.
 :::
 
+[[Problem: Starre Zuordnung]{.bsp}]{.slides}
+
 
 ## Auflösen der starren Zuordnung über Zwischenobjekte
 
-```java
-public interface Command {
-    void execute();
-}
+```{.java size="footnotesize"}
+public interface Command { void execute(); }
 
 public class Jump implements Command {
     private Entity e;
     public void execute() { e.jump(); }
 }
 
-public class InputHandler2 {
+public class InputHandler {
     private final Command wbutton = new Jump(hero);   // Über Ctor/Methoden setzen!
-    private final Command abutton = new MoveX(hero);  // Über Ctor/Methoden setzen!
+    private final Command abutton = new Move(hero);  // Über Ctor/Methoden setzen!
 
     public void handleInput() {
-        switch (isPressed()) {
+        switch (keyPressed()) {
             case BUTTON_W -> wbutton.execute();
             case BUTTON_A -> abutton.execute();
             case ...
@@ -105,13 +105,13 @@ Objekt die Methode `execute()` aufgerufen.
 
 Damit die Kommandos nicht nur auf den Helden wirken können, kann man den Kommando-Objekten
 beispielsweise noch eine Entität mitgeben, auf der das Kommando ausgeführt werden soll. Im
-Beispiel oben wurde dafür der `Hero` genutzt.
+Beispiel oben wurde dafür der `hero` genutzt.
 :::
 
 
 ## Command: Objektorientierte Antwort auf Callback-Funktionen
 
-![](images/command.png){width="80%"}
+![](images/command.png){web_width="80%"}
 
 ::: notes
 Im Command-Pattern gibt es vier beteiligte Parteien: Client, Receiver, Command und Invoker.
@@ -138,8 +138,8 @@ In unserem Beispiel lassen sich die einzelnen Teile so sortieren:
 *   Client: Klasse `InputHandler` (erzeugt neue `Command`-Objekte im obigen Code) bzw. `main()`,
     wenn man die `Command`-Objekte dort erstellt und an den Konstruktor von `InputHandler`
     weiterreicht
-*   Receiver: Klasse `Hero` (auf diesem wird eine Aktion ausgeführt)
-*   Command: `Jump` und `MoveX`
+*   Receiver: Objekt `hero` der Klasse `Hero` (auf diesem wird eine Aktion ausgeführt)
+*   Command: `Jump` und `Move`
 *   Invoker: `InputHandler` (in der Methode `handleInput()`)
 :::
 
@@ -161,15 +161,12 @@ Jetzt kann jedes Command-Objekt eine neue Instanz erzeugen mit der
 Entity, die dann dieses Kommando empfangen soll:
 :::
 
-```java
+```{.java size="scriptsize"}
 public class Move implements Command {
     private Entity e;
     private int x, y, oldX, oldY;
 
-    public void execute() {
-        oldX = e.getX();  oldY = e.getY();  x = oldX + 42;  y = oldY;
-        e.moveTo(x, y);
-    }
+    public void execute() { oldX = e.getX();  oldY = e.getY();  x = oldX + 42;  y = oldY;  e.moveTo(x, y); }
     public void undo() { e.moveTo(oldX, oldY); }
     public Command newCommand(Entity e) { return new Move(e); }
 }
@@ -181,7 +178,7 @@ public class InputHandler {
 
     public void handleInput() {
         Entity e = getSelectedEntity();
-        switch (isPressed()) {
+        switch (keyPressed()) {
             case BUTTON_W -> { s.push(wbutton.newCommand(e)); s.peek().execute(); }
             case BUTTON_A -> { s.push(abutton.newCommand(e)); s.peek().execute(); }
             case BUTTON_U -> s.pop().undo();
@@ -205,7 +202,7 @@ noch was drin ist!) und auf diesem die Methode `undo()` aufgerufen. Für das
 Kommando `Move` ist hier skizziert, wie ein Undo aussehen könnte: Man muss einfach
 bei jedem `execute()` die alte Position der Entität speichern, dann kann man
 sie bei einem `undo()` wieder auf diese Position verschieben. Da für jeden Move
-ein neues Objekt angelegt wird und diese nur einmal benutzt werden, braucht man
+ein neues Objekt angelegt wird und dieses nur einmal benutzt wird, braucht man
 keine weitere Buchhaltung ...
 :::
 
@@ -216,9 +213,9 @@ keine weitere Buchhaltung ...
 
 \bigskip
 
-*   `Command`-Objekte haben eine Methode `execute()` und führen Aktion auf Receiver aus
+*   `Command`-Objekte haben eine Methode `execute()` und führen darin Aktion auf Receiver aus
 *   `Receiver` sind Objekte, auf denen Aktionen ausgeführt werden (Hero, Monster, ...)
-*   `Invoker` hat `Command`-Objekte und ruft `execute()` auf
+*   `Invoker` hat `Command`-Objekte und ruft darauf `execute()` auf
 *   `Client` kennt alle und baut alles zusammen
 
 \vfill
