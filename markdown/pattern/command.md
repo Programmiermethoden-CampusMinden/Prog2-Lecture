@@ -12,19 +12,19 @@ tldr: |
     Das **Command-Pattern** ist die objektorientierte Antwort auf Callback-Funktionen: Man
     kapselt Befehle in einem Objekt.
 
-    Die `Command`-Objekte haben eine Methode `execute()` und führen dabei Aktion auf einem
-    bzw. "ihrem" Receiver aus.
+    1.  Die `Command`-Objekte haben eine Methode `execute()` und führen dabei Aktion auf einem
+        bzw. "ihrem" Receiver aus.
 
-    `Receiver` sind Objekte, auf denen Aktionen ausgeführt werden, im Dungeon könnten dies
-    etwa Hero, Monster, ... sein. Receiver müssen keine der anderen Akteure in diesem Pattern
-    kennen.
+    2.  `Receiver` sind Objekte, auf denen Aktionen ausgeführt werden, im Dungeon könnten dies
+        etwa Hero, Monster, ... sein. Receiver müssen keine der anderen Akteure in diesem Pattern
+        kennen.
 
-    Damit die `Command`-Objekte aufgerufen werden, gibt es einen `Invoker`, der
-    `Command`-Objekte hat und zu gegebener Zeit auf diesen die Methode `execute()` aufruft.
-    Der Invoker muss dabei die konkreten Kommandos und die Receiver nicht kennen (nur die
-    `Command`-Schnittstelle).
+    3.  Damit die `Command`-Objekte aufgerufen werden, gibt es einen `Invoker`, der
+        `Command`-Objekte hat und zu gegebener Zeit auf diesen die Methode `execute()` aufruft.
+        Der Invoker muss dabei die konkreten Kommandos und die Receiver nicht kennen (nur die
+        `Command`-Schnittstelle).
 
-    Zusätzlich gibt es einen `Client`, der die anderen Akteure kennt und alles zusammen baut.
+    4.  Zusätzlich gibt es einen `Client`, der die anderen Akteure kennt und alles zusammen baut.
 outcomes:
   - k2: "Aufbau des Command-Patterns"
   - k3: "Anwendung des Command-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
