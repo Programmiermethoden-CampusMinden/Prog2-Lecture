@@ -9,8 +9,14 @@ readings:
   - key: "Nystrom2014"
     comment: "Kap. 2: Command"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+    **Command-Pattern**: Kapsele Befehle in ein Objekt
+
+    \bigskip
+
+    *   `Command`-Objekte haben eine Methode `execute()` und führen Aktion auf Receiver aus
+    *   `Receiver` sind Objekte, auf denen Aktionen ausgeführt werden (Hero, Monster, ...)
+    *   `Invoker` hat `Command`-Objekte und ruft `execute()` auf
+    *   `Client` kennt alle und baut alles zusammen
 outcomes:
   - k2: "Aufbau des Command-Patterns"
   - k3: "Anwendung des Command-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
@@ -22,8 +28,6 @@ assignments:
 youtube:
   - link: ""
     name: "VL Command-Pattern"
-  - link: ""
-    name: "Demo Command-Pattern"
 fhmedia:
   - link: ""
     name: "VL Command-Pattern"
@@ -207,7 +211,15 @@ keine weitere Buchhaltung ...
 
 
 ## Wrap-Up
-...
+
+**Command-Pattern**: Kapsele Befehle in ein Objekt
+
+\bigskip
+
+*   `Command`-Objekte haben eine Methode `execute()` und führen Aktion auf Receiver aus
+*   `Receiver` sind Objekte, auf denen Aktionen ausgeführt werden (Hero, Monster, ...)
+*   `Invoker` hat `Command`-Objekte und ruft `execute()` auf
+*   `Client` kennt alle und baut alles zusammen
 
 
 
