@@ -8,8 +8,29 @@ readings:
   - key: "LernJava"
     comment: "Tutorials > Using Record to Model Immutable Data"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+    Häufig schreibt man relativ viel _Boiler Plate Code_, um einfach ein paar Daten plus den
+    Konstruktor und die Zugriffsmethoden zu kapseln. Und selbst wenn die IDE dies zum Teil
+    abnehmen kann - lesen muss man diesen Overhead trotzdem noch.
+
+    Für den Fall von Klassen mit `final` Attributen wurden in Java14 die **Record-Klassen**
+    eingeführt. Statt dem Schlüsselwort `class` wird das neue Schlüsselwort `record` verwendet.
+    Nach dem Klassennamen kommen in runden Klammern die "Komponenten" - eine Auflistung der
+    Parameter für den Standardkonstruktor (Typ, Name). Daraus wird automatisch ein "kanonischer
+    Konstruktor" mit exakt diesen Parametern generiert. Es werden zusätzlich `private final`
+    Attribute generiert für jede Komponente, und diese werden durch den kanonischen Konstruktor
+    gesetzt. Außerdem wird für jedes Attribut automatisch ein Getter mit dem Namen des Attributs
+    generiert (also ohne den Präfix "get").
+
+    Beispiel:
+    ```java
+    public record StudiR(String name, int credits) {}
+    ```
+
+    Der Konstruktor und die Getter können überschrieben werden, es können auch eigene Methoden
+    definiert werden (eigene Konstruktoren _müssen_ den kanonischen Konstruktor aufrufen). Es
+    gibt außer den über die Komponenten definierten Attribute keine weiteren Attribute. Da eine
+    Record-Klasse intern von `java.lang.Record` ableitet, kann eine Record-Klasse nicht von
+    weiteren Klassen ableiten (erben). Man kann aber beliebig viele Interfaces implementieren.
 outcomes:
   - k2: ""
   - k3: ""
