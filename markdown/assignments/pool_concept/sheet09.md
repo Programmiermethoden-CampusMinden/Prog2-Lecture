@@ -12,7 +12,7 @@ hidden: true
 
 {{% include "assignments/pool_concept/tasks/visitor_pattern.md" %}}
 
-**Punkte**: XXX
+**Punkte**: 2P Visitor-Pattern (`visit()`/`accept()`), je 1.5P Post-Order und In-Order
 
 
 ## Testfallermittlung (5 Punkte)
