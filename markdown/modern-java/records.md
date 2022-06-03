@@ -72,6 +72,9 @@ public record StudiR(String name, int credits) {}
     ```
 
 ::: notes
+Record-Klassen wurden in Java14 eingeführt und werden immer wieder in
+neuen Releases erweitert/ergänzt.
+
 Der kanonische Konstruktor hat das Aussehen wie die Record-Deklaration, im
 Beispiel also `public StudiR(String name, int credits)`. Dabei werden die
 Komponenten über eine Kopie der Werte initialisiert.
