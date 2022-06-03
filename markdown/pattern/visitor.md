@@ -361,7 +361,7 @@ Post-Order, ...) und diese elegant in den Visitor verlagern kann.
 Zur Laufzeit wird in `accept()` der Typ des Visitors aufgelöst und dann in `visit()` der
 Typ der zu besuchenden Klasse. Dies nennt man auch "Double-Dispatch".
 
-### Hinweis
+### Hinweis I
 
 Man könnte versucht sein, die `accept()`-Methode aus den Knotenklassen in die gemeinsame
 Basisklasse zu verlagern: Statt
@@ -386,6 +386,13 @@ public abstract class Expr {
 
 Dies wäre tatsächlich schön, weil man so Code-Duplizierung vermeiden könnte. Aber es
 funktioniert in Java leider nicht. (Warum?)
+
+### Hinweis II
+
+Während die `accept()`-Methode nicht in die Basisklasse der besuchten Typen (im Bild oben
+die Klasse `Elem` bzw. im Beispiel oben die Klasse `Expr`) verlagert werden kann, kann man
+aber die `visit()`-Methoden im Interface `Visitor` durchaus als Default-Methoden im Interface
+implementieren.
 :::
 
 
