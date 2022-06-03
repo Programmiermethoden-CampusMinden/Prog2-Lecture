@@ -85,7 +85,7 @@ public class Jump implements Command {
 }
 
 public class InputHandler {
-    private final Command wbutton = new Jump(hero);   // Über Ctor/Methoden setzen!
+    private final Command wbutton = new Jump(hero);  // Über Ctor/Methoden setzen!
     private final Command abutton = new Move(hero);  // Über Ctor/Methoden setzen!
 
     public void handleInput() {
