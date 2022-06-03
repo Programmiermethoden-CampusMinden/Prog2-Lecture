@@ -114,13 +114,40 @@ Stattdessen sollte `Optional.ofNullable()` verwendet werden.
 In der funktionalen Programmierung gibt es schon lange das Konzept von `Optional`,
 in Haskell ist dies beispielsweise die Monade `Maybe`. Allerdings ist die Einbettung
 in die Sprache von vornherein mit berücksichtigt worden, insbesondere kann man hier
-sehr gut mit _Pattern Matching_ die Funktionsdefinition auf den verpackten Inhalt
-anpassen: Eine Funktion, die auf ein `Nothing` (in Java ein `Optional.empty()`)
-reagiert, und eine gleichnamige Funktion, die aus `Just x` das `x` direkt im Funktionskopf
-auspackt und mit `x` dann in der Funktion weiter arbeitet (in Java wäre das ein `get()`).
-
-
+sehr gut mit _Pattern Matching_ in der Funktionsdefinition auf den verpackten Inhalt
+reagieren.
 :::
+
+
+```java
+.isPresent()
+.isEmpty()
+
+.orElseThrow()
+.orElse()
+```
+
+::: notes
+Es gibt noch eine Methode `get()`, die so verhält wie `orElseThrow()`. Da man diese
+Methode vom Namen her schnell mit einem Getter verwechselt, ist sie mittlerweile
+_deprecated_.
+:::
+
+## Einsatz in Streams
+
+```java
+String findCustomerNameById(int id){
+    List<Customer> customers = ...;
+
+    return customers.stream()
+                    .filter(customer->customer.getId() == id);
+                    .findFirst()
+                    .map(Customer::getName)
+                    .orElse("UNKNOWN");
+}
+```
+
+the map() method comes from the Optional class, and it integrates nicely with the stream processing. You do not need to check if the optional object returned by the findFirst() method is empty or not; calling map() does in fact this for you.
 
 
 ## Folie 2
@@ -257,8 +284,22 @@ return userService.getCurrentUser()
                   .orElse("(unknown)");
 ```
 
-## Folie 5
-...
+## Regeln
+
+Rule #1 Never use null for an optional variable or returned value.
+
+Rule #2 Never call orElseThrow() or get() unless you are sure the optional is not empty.
+
+Rule #3 Prefer alternatives to ifPresent(), orElseThrow(), or get().
+
+Rule #4 Do not create an optional to avoid testing for the nullity of a reference.
+
+Rule #5 Do not use optional in fields, method parameters, collections, and maps.
+
+Rule #6 Do not use identity-sensitive operations on an optional object, such as reference equality, identity hash code, and synchronization.
+
+Rule #7 Do not forget that optional objects are not serializable.
+
 
 ## Folie 6
 
