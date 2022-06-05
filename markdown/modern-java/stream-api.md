@@ -8,7 +8,7 @@ readings:
   - key: "LernJava"
     comment: "Tutorials > The Stream API"
   - key: "Ullenboom2021"
-    comment: ""
+    comment: "Kap. 17.3: Java Stream-API"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
