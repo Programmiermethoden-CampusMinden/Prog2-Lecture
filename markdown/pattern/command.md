@@ -37,7 +37,7 @@ youtube:
   - link: "https://youtu.be/F7RJ7YCVMS4"
     name: "VL Command-Pattern"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/a0484bfdc0f388075a01b88f20bde97709aae4d4fe34d517e0889407b2d7b095b9b781856870f21d638e4ed4bf35b534717f5bac227ecc17ea4b6e0a195248b9"
     name: "VL Command-Pattern"
 ---
 
