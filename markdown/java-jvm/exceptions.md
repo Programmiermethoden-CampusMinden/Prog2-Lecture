@@ -39,32 +39,41 @@ sketch: true
 
 
 ## Motivation
-Lorem Ipsum. Starte mit H2-Level.
-...
 
-## Folie 2
-...
+- Example: Read File das es nicht gibt -> BUMM alles kaputt weil kein Error Handling.
 
-## Folie 3
-...
 
-## Folie 4
-...
+## Exception vs Error
 
-## Folie 5
-...
+| Exception | Error | 
+|-----------|-------|
 
-## Folie 6
-...
+
+## Vererbungsstruktur Exception
+- uml
+- hervorheben der wichtiges Exception
+
+## Throw 
+- was ist das?
+- wann sollte man exceptions "weiterleiten"?
+- wie 
+
+## Try-Catch
+- try catch finally
+- wie und was
+
+## Try-with-Resources
+- example mit filereader
+
+## Eigene Exceptions
+- wie geht das?
 
 ## Wrap-Up
-...
 
-
-
-
-
-
+- was sind exceptions
+- man kann exceptions thrown
+- man kann exceptions mit try catch "behandeln"
+- finally wird immer aufgerufen
 
 <!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
 ::: slides
