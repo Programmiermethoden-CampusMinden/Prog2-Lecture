@@ -32,8 +32,14 @@ tldr: |
     Record-Klasse intern von `java.lang.Record` ableitet, kann eine Record-Klasse nicht von
     weiteren Klassen ableiten (erben). Man kann aber beliebig viele Interfaces implementieren.
 outcomes:
-  - k2: ""
-  - k3: ""
+  - k2: "Record-Klassen sind final"
+  - k2: "Record-Klassen haben einen kanonischen Konstruktor"
+  - k2: "Die Attribute von Record-Klassen sind final und werden automatisch angelegt und über den Konstruktor gesetzt"
+  - k2: "Die Getter in Record-Klassen haben die Namen und Typen der Komponenten, also keinen Präfix 'get'"
+  - k2: "Der kanonische Konstruktor kann ergänzt werden"
+  - k2: "Es können weitere Methoden definiert werden"
+  - k2: "Record-Klassen können nicht von anderen Klassen erben, können aber Interfaces implementieren"
+  - k3: "Einsatz von Record-Klassen"
 quizzes:
   - link: ""
     name: "Quiz Record-Klassen (ILIAS)"
