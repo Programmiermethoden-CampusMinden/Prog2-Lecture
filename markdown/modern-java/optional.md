@@ -33,58 +33,68 @@ fhmedia:
 
 ## Motivation
 
-Problem: `null` wird an (zu) vielen Stellen genutzt: "absence of a value", aber die
-Gründe sind nicht bekannt:
-
-*   Es gibt keinen Wert ("not found")
-*   Felder wurden (noch) nicht initialisiert
-*   Es ist ein Problem oder etwas Unerwartetes aufgetreten
-*   Parameter und Rückgabewerte müssen auf `null` geprüft werden
-
-Lösung:
-
-*   `Optional` für Rückgabewerte, die "not found" oder "not existing" bedeuten ("Kein Wert vorhanden")
-*   `@NotNull`/`@Nullable` für Parameter
-*   Exceptions für Fälle, wo ein Problem aufgetreten ist
-*   `null` auf Attribut-Ebene (Klassen-interne Verwendung)
-
-
-Supporting Methods That Cannot Produce a Result
-
-Being able to use the Optional class, for the cases where you cannot produce a value, offers many opportunities
-for better patterns, especially for better handling of errors. This is the main reason why you should be using
-option objects: **they signal that a method may not produce a result in certain circumstances**.
-**Storing an instance of Optional instance in a field, in a list, in a map, or passing it as a method argument is not what options have been created.**
-
-Wrapper-Klasse: Verpacke eine Referenz `Optional<T>` oder Wert `OptionalInt` => kann leer sein!
-
-
-
-Keep it simple and use Optional for absent values.
-
-*   Abwesenheit von Werten
-*   KEIN Ersatz für `null`-Checks!
-*   Vernünftige Error-Handling: "Something wrong happened and here’s a null." (Anti-Pattern!)
-
-
-`null` für absent values, `Optional` löst das Problem mit den absent values: Don’t return null, use Optional
-
 ```java
-if(absentVariable == null) { /* absent value handler */}
+public record Studi(String name, int credits) {}
 
+public class LSF {
+    private final Set<Studi> sl = new HashSet<>();
 
-if(isValueAbsent) {return null;} // => Nullpointerexception beim Aufrufer!
-...
-if(isValueAbsent) {return Optional.empty();}
+    public Studi getBestStudi() {
+        if (sl == null) return null;  // Fehler: Es gibt noch keine Liste
 
+        Studi best = null;
+        for (Studi s : sl) {
+            if (best == null) best = s;
+            if (best.credits() < s.credits()) best = s;
+        }
+        return best;
+    }
+}
 
-return Optional.ofNullable(variableInQuestion);  // wenn variableInQuestion==null => Optional.empty()
+public static void main(String... args) {
+    LSF lsf = new LSF();
+
+    Studi best = lsf.getBestStudi();
+    if (best != null) {
+        // mach was mit dem Studi ...
+        String name = best.name();
+        if (name != null) {
+            // mach was mit dem Namen ...
+        }
+    }
+}
 ```
+
+::: notes
+*   **Problem**: `null` wird an (zu) vielen Stellen genutzt:
+    *   Es gibt keinen Wert ("not found")
+    *   Felder wurden (noch) nicht initialisiert
+    *   Es ist ein Problem oder etwas Unerwartetes aufgetreten
+
+    => Parameter und Rückgabewerte müssen auf stets `null` geprüft werden
+    (oder Annotationen wie `@NotNull` eingesetzt werden ...)
+
+\smallskip
+
+*   **Lösung**:
+    *   `Optional<T>` für Rückgabewerte, die "kein Wert vorhanden" mit einschließen
+        (statt `null` bei Abwesenheit von Werten)
+    *   `@NotNull`/`@Nullable` für Parameter einsetzen (oder separate Prüfung)
+    *   Exceptions werfen in Fällen, wo ein Problem aufgetreten ist
+
+\smallskip
+
+*   **Anmerkungen**:
+    *   Verwendung von `null` auf Attribut-Ebene (Klassen-interne Verwendung) ist okay!
+    *   `Optional<T>` ist **kein** für `null`-Checks!
+    *   `null` ist **kein** Ersatz für vernünftiges Error-Handling!
+        "Irgendwas Unerwartetes ist passiert, hier ist `null`" ist ein _Anti-Pattern_!
+:::
 
 
 ## Erzeugen von _Optional_-Objekten
 
-Konstruktor ist `private`...
+Konstruktor ist `private` ...
 
 *   "Kein Wert": `Optional.empty()`
 *   Verpacken eines non-`null` Elements: `Optional.of()` (`NullPointerException` wenn Argument `null`!)
@@ -99,13 +109,43 @@ Konstruktor ist `private`...
 Es sollte in der Praxis eigentlich nur wenige Fälle geben, wo ein Aufruf von
 `Optional.of()` sinnvoll ist. Ebenso ist `Optional.empty()` nur selten sinnvoll.
 
-Stattdessen sollte `Optional.ofNullable()` verwendet werden.
+Stattdessen sollte stets `Optional.ofNullable()` verwendet werden.
 :::
 
 \vfill
 
 **`null` kann nicht nicht in `Optional<T>` verpackt werden!**
 [(Das wäre dann eben `Optional.empty()`.)]{.notes}
+
+
+## LSF liefert jetzt _Optional_ zurück
+
+```java
+public class LSF {
+    public Optional<Studi> getBestStudi() throws NullPointerException {
+        // Fehler: Es gibt noch keine Liste
+        if (sl == null) throw new NullPointerException("There ain't any list");
+
+        Studi best = null;
+        for (Studi s : sl) {
+            if (best == null) best = s;
+            if (best.credits() < s.credits()) best = s;
+        }
+
+        // Entweder Optional.empty() (wenn best==null) oder Optional.of(best) sonst
+        return Optional.ofNullable(best);
+    }
+}
+```
+
+::: notes
+Das Beispiel soll verdeutlichen, dass man im Fehlerfall nicht einfach `null` oder
+`Optional.empty()` zurückliefern soll, sondern eine passende Exception werfen soll.
+
+Wenn die Liste aber leer ist, stellt dies keinen Fehler dar! In diesem Fall wird
+statt `null` ein `Optional.empty()` zurückgeliefert, also ein Objekt, auf dem der
+Aufrufer die üblichen Methoden aufrufen kann.
+:::
 
 
 ## Zugriff auf _Optional_-Objekte
@@ -116,175 +156,87 @@ in Haskell ist dies beispielsweise die Monade `Maybe`. Allerdings ist die Einbet
 in die Sprache von vornherein mit berücksichtigt worden, insbesondere kann man hier
 sehr gut mit _Pattern Matching_ in der Funktionsdefinition auf den verpackten Inhalt
 reagieren.
+
+In Java gibt es die Methode `Optional#isEmpty()`, die einen Boolean zurückliefert und
+prüft, ob es sich um ein leeres `Optional` handelt oder ob hier ein Wert "verpackt" ist.
+
+Für den direkten Zugriff auf die Werte gibt es die Methoden `Optional#orElseThrow()`
+und `Optional#orElse()`. Damit kann man auf den verpackten Wert zugreifen, oder es
+wird eine Exception geworfen bzw. ein Ersatzwert geliefert.
+
+Zusätzlich gibt es `Optional#isPresent()`, die als Parameter ein ` java.util.function.Consumer`
+erwartet, also ein funktionales Interface mit einer Methode `void accept(T)`, die das
+Objekt verarbeitet.
 :::
 
 
 ```java
-.isPresent()
-.isEmpty()
+Studi best;
 
-.orElseThrow()
-.orElse()
+// Testen und dann verwenden
+if (!lsf.getBestStudi().isEmpty()) {
+    best = lsf.getBestStudi().get();
+    // mach was mit dem Studi ...
+}
+
+// Arbeite mit Consumer
+lsf.getBestStudi().ifPresent(studi -> {
+    // mach was mit dem Studi ...
+});
+
+// Studi oder Alternative (wenn Optional.empty())
+best = lsf.getBestStudi().orElse(anne);
+
+// Studi oder NoSuchElementException (wenn Optional.empty())
+best = lsf.getBestStudi().orElseThrow();
 ```
 
 ::: notes
 Es gibt noch eine Methode `get()`, die so verhält wie `orElseThrow()`. Da man diese
 Methode vom Namen her schnell mit einem Getter verwechselt, ist sie mittlerweile
 _deprecated_.
+
+[Beispiel: [optional.traditional.Demo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/optional/traditional/Demo.java)]{.bsp}
 :::
+
 
 ## Einsatz in Streams
 
 ```java
-String findCustomerNameById(int id){
-    List<Customer> customers = ...;
+public class LSF {
+    ...
 
-    return customers.stream()
-                    .filter(customer->customer.getId() == id);
-                    .findFirst()
-                    .map(Customer::getName)
-                    .orElse("UNKNOWN");
+    public Optional<Studi> getBestStudi() throws NullPointerException {
+        if (sl == null) throw new NullPointerException("There ain't any list");
+        return sl.stream().sorted((s1, s2) -> s2.credits() - s1.credits()).findFirst();
+    }
+}
+
+public static void main(String... args) {
+    ...
+
+    // Hole Studi und löse den Namen auf oder NoSuchElementException
+    // anna.name == null => NoSuchElementException
+    // anna.name != null => "Anna"
+    String name = lsf.getBestStudi()
+                     .map(Studi::name)
+                     .orElseThrow();
 }
 ```
+
+::: notes
+[Beispiel: [optional.streams.Demo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/optional/streams/Demo.java)]{.bsp}
+
+
 
 the map() method comes from the Optional class, and it integrates nicely with the stream processing. You do not need to check if the optional object returned by the findFirst() method is empty or not; calling map() does in fact this for you.
 
 
-## Folie 2
-
-```java
-Vorher:
-
-private int readExpirationAsInt(Milk milk)
-{
-  String expiration = milk.getExpiration();
-  try {
-    return Integer.parseInt(expiration);
-  }
-  catch(NumberFormatException ignored) {}
-
-  return 0;
-}
+Wrapper-Klasse: Verpacke eine Referenz `Optional<T>` oder Wert `OptionalInt` => kann leer sein!
+:::
 
 
-Nachher:
-
-private OptionalInt readExpirationAsInt(Milk milk)
-{
-  String expiration = milk.getExpiration();
-
-  try {
-    return Optional.of(Integer.parseInt(expiration));
-  }
-  catch(NumberFormatException e) {
-    return OptionalInt.empty();
-  }
-}
-```
-
-
-## Folie 3
-
-```java
-if (foo != null) {
-    // Do something
-}
-
-Optional.ofNullable(foo).ifPresent(value -> {
-//do something
-})
-```
-
-
-```java
-Before:
-
-User user = userRepo.findUserById("someId");
-
-if (user == null) {
-    // return some value
-    // or
-    // throw a business exception/controller 4xx error/etc.
-
-// do something with user
-
-
-After:
-
-// note the exception is now thrown when unwrapping
-
-User user = userRepo.findUserById("someId")
-                    .orElseThrow(// business exception/controller error/etc.);
-
-// do something with user
-```
-
-```java
-Before:
-
-User user = userRepo.findUserById("someId");
-
-List<String> favouriteFood = null;
-if (user == null) {
-    // return some value
-    // or
-    // throw a business exception/controller 4xx error/etc.
-
-favouriteFood = user.getFavouriteFood();
-
-// do something with favouriteFood
-
-
-After:
-
-List<String> favouriteFood = userRepo.findUserById("someId")
-                                     .map(User::getFavouriteFood)
-                                     .orElseThrow(// business exception/controller error/etc.);
-
-// do something with favouriteFood
-
-
-Not:
-
-userRepo.findUserById("someId")
-        .map(User::getFavouriteFood)
-        .map(this::doBusinessLogic)
-        .orElseThrow(// business exception/controller error/etc.);
-```
-
-## Folie 4
-
-```java
-var user = userService.getCurrentUser();
-if(user == null) {
-    return "(unknown)";
-}
-var username = user.getUsername();
-if (username == null) {
-    return "(unknown)";
-}
-return username;
-
-vs
-
-var user = userService.getCurrentUser();
-if(user.isEmpty()) {
-    return "(unknown)";
-}
-var username = user.orElseThrow().getUsername();
-if (username == null) {
-    return "(unknown)";
-}
-return username;
-
-vs
-
-return userService.getCurrentUser()
-                  .map(User::getUsername)
-                  .orElse("(unknown)");
-```
-
-## Regeln
+## Regeln für _Optional_
 
 Rule #1 Never use null for an optional variable or returned value.
 
@@ -301,13 +253,15 @@ Rule #6 Do not use identity-sensitive operations on an optional object, such as 
 Rule #7 Do not forget that optional objects are not serializable.
 
 
-## Folie 6
+::: notes
+## Interessante Links
 
 *   ["Using Optionals"](https://dev.java/learn/using-optionals/)
 *   ["What You Might Not Know About Optional"](https://medium.com/javarevisited/what-you-might-not-know-about-optional-7238e3c05f63)
 *   ["Experienced Developers Use These 7 Java Optional Tips to Remove Code Clutter"](https://medium.com/javarevisited/experienced-developers-use-these-7-java-optional-tips-to-remove-code-clutter-6e8b1a639861)
 *   ["Code Smells: Null"](https://blog.jetbrains.com/idea/2017/08/code-smells-null/)
 *   [`Class Optional<T>`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html)
+:::
 
 
 ## Wrap-Up
