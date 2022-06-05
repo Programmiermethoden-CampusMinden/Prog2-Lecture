@@ -34,7 +34,7 @@ quizzes:
 assignments:
   - topic: sheet09
 youtube:
-  - link: ""
+  - link: "https://youtu.be/F7RJ7YCVMS4"
     name: "VL Command-Pattern"
 fhmedia:
   - link: ""
