@@ -59,7 +59,7 @@ youtube:
   - link: "https://youtu.be/4rBRkXKhuN4"
     name: "Demo Visitor-Pattern (Part II: Traversierung mit Visitor)"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/8a307719da2fd87b9cba54d34c05715a2fdaf115e80feb8ef29e53dcfe45f02e587ae0f76c7700e8d82fe102a234a2922af549aeaa261034dba59cbacfaaa8c3"
     name: "VL Visitor-Pattern"
 ---
 
