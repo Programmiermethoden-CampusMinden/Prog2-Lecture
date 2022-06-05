@@ -52,11 +52,11 @@ quizzes:
 assignments:
   - topic: sheet09
 youtube:
-  - link: ""
+  - link: "https://youtu.be/zW_2oQmjp8M"
     name: "VL Visitor-Pattern"
-  - link: ""
+  - link: "https://youtu.be/9dvcufpyQdw"
     name: "Demo Visitor-Pattern (Part I: Traversierung ohne Visitor)"
-  - link: ""
+  - link: "https://youtu.be/4rBRkXKhuN4"
     name: "Demo Visitor-Pattern (Part II: Traversierung mit Visitor)"
 fhmedia:
   - link: ""
