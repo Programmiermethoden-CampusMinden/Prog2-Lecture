@@ -45,7 +45,7 @@ youtube:
   - link: "https://youtu.be/jWBAXWH0MUc"
     name: "Demo Record-Klassen"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/461caa1e97e1655109ce66647c169cf01b35d4b268bfaa64a6289c505f247a5ebfde054a98b08a1b5235195ff21b1fffa4d12e3968c7a68a0f001b0dabe6b695"
     name: "VL Record-Klassen"
 ---
 
