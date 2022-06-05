@@ -5,13 +5,10 @@ menuTitle: "Stream-API"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 4
 readings:
-  - key: "Bloch2018"
-  - key: "Java-11-documentation"
-  - key: "Java-11-tutorial"
-  - key: "Java-SE-tutorial"
-  - key: "Ullenboom2016"
-  - key: "Urma2014"
-  - key: "Juneau2017"
+  - key: "LernJava"
+    comment: "Tutorials > The Stream API"
+  - key: "Ullenboom2021"
+    comment: ""
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
