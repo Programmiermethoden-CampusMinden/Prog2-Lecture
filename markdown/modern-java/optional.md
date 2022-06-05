@@ -6,9 +6,9 @@ author: "Carsten Gips (FH Bielefeld)"
 weight: 6
 readings:
   - key: "LernJava"
-    comment: "Tutorials > The Stream API > Using Optionals "
+    comment: "Tutorials > The Stream API > Using Optionals"
   - key: "Ullenboom2021"
-    comment: ""
+    comment: "Kap. 12.6: Optional ist keine Nullnummer"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
