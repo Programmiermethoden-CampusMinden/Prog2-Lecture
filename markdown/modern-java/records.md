@@ -40,9 +40,9 @@ quizzes:
 assignments:
   - topic: sheet09
 youtube:
-  - link: ""
+  - link: "https://youtu.be/5RMhdCsZL6Y"
     name: "VL Record-Klassen"
-  - link: ""
+  - link: "https://youtu.be/jWBAXWH0MUc"
     name: "Demo Record-Klassen"
 fhmedia:
   - link: ""
