@@ -314,6 +314,11 @@ Rule #7 Do not forget that optional objects are not serializable.
 ...
 
 
+::: notes
+Schöne Doku: ["Using Optionals"](https://dev.java/learn/using-optionals/).
+:::
+
+
 
 
 
