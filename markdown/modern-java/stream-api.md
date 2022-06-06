@@ -293,7 +293,44 @@ private static long getCountFB3(Fachbereich fb) {
 
 ## Streams abschließen: Terminale Operationen
 
-Streams abschließen: terminale Operationen: count(), forEach(), findFirst, allMatch/anyMatch/noneMatch, sum, min/max, collect, (reduce)
+```java
+Stream<String> s = Stream.of("Hello", "World", "foo", "bar", "wuppie");
+
+long count = s.count();
+s.forEach(System.out::println);
+String first = s.findFirst().get();
+Boolean b = s.anyMatch(e -> e.length() > 3);
+
+List<String> s1 = s.collect(Collectors.toList());
+Set<String> s2 = s.collect(Collectors.toSet());
+List<String> s3 = s.collect(Collectors.toCollection(LinkedList::new));
+```
+
+::: notes
+Streams müssen mit **_einer_ terminalen Operation** abgeschlossen werden, damit die Verarbeitung
+tatsächlich angestoßen wird (_lazy evaluation_).
+
+Es gibt viele verschiedene terminale Operationen. Wir haben bereits `count()` und `forEach()`
+gesehen. In der Sitzung zu Optionals werden wir noch `findFirst()` näher kennenlernen.
+
+Daneben gibt es beispielsweise noch `allMatch()`, `anyMatch()` und `noneMatch()`, die jeweils
+ein Prädikat testen und einen Boolean zurückliefern (matchen alle, mind. eines oder keines).
+
+Mit `min()` und `max()` kann man sich das kleinste und das größte Element des Streams liefern
+lassen. Beide Methoden benötigen dazu einen `Comparator<T>` als Parameter.
+
+Mit der Methode `collect()` kann man eine der drei Methoden aus `Collectors` über den Stream
+laufen lassen und eine `Collection` erzeugen lassen:
+
+1.  `toList()` sammelt die Elemente in ein `List`-Objekt
+2.  `toSet()` sammelt die Elemente in ein `Set`-Objekt
+3.  `toCollection()` sammelt die Elemente durch Anwendung der Methode `T get()` des übergebenen
+    `Supplier<T>`-Objekts auf
+
+
+Die ist nur die sprichwörtliche "Spitze des Eisbergs"! Es gibt viele weitere Möglichkeiten, sowohl
+bei den intermediären als auch den terminalen Operationen. Schauen Sie in die Dokumentation!
+:::
 
 
 ## Spielregeln
@@ -307,6 +344,7 @@ Streams abschließen: terminale Operationen: count(), forEach(), findFirst, allM
     => Ein Stream sollte immer sofort nach der Erzeugung benutzt werden
 
 *   Operationen auf einem Stream sollten keine Seiteneffekte (Veränderungen von Variablen/Attributen außerhalb des Streams) haben
+    [(dies verhindert u.U. die parallele Verarbeitung)]{.notes}
 
 
 ## Wrap-Up
