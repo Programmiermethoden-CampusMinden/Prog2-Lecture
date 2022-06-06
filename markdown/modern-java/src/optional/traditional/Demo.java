@@ -23,7 +23,7 @@ public class Demo {
         // Arbeite mit Consumer
         lsf.getBestStudi()
                 .ifPresent(
-                        s -> {
+                        studi -> {
                             // mach was mit dem Studi ...
                         });
 

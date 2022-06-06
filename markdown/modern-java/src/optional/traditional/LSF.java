@@ -20,8 +20,8 @@ public class LSF {
 
     /** Finde den Studi mit den meisten Credits */
     public Optional<Studi> getBestStudi() throws NullPointerException {
-        // Fehler: Es gibt noch keine Liste
-        if (sl == null) throw new NullPointerException("There ain't any list");
+        // Fehler: Es gibt noch keine Sammlung
+        if (sl == null) throw new NullPointerException("There ain't any collection");
 
         Studi best = null;
         for (Studi s : sl) {

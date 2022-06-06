@@ -37,10 +37,10 @@ fhmedia:
 public record Studi(String name, int credits) {}
 
 public class LSF {
-    private final Set<Studi> sl = new HashSet<>();
+    private final Set<Studi> sl;
 
     public Studi getBestStudi() {
-        if (sl == null) return null;  // Fehler: Es gibt noch keine Liste
+        if (sl == null) return null;  // Fehler: Es gibt noch keine Sammlung
 
         Studi best = null;
         for (Studi s : sl) {
@@ -123,8 +123,8 @@ Stattdessen sollte stets `Optional.ofNullable()` verwendet werden.
 ```java
 public class LSF {
     public Optional<Studi> getBestStudi() throws NullPointerException {
-        // Fehler: Es gibt noch keine Liste
-        if (sl == null) throw new NullPointerException("There ain't any list");
+        // Fehler: Es gibt noch keine Sammlung
+        if (sl == null) throw new NullPointerException("There ain't any collection");
 
         Studi best = null;
         for (Studi s : sl) {
@@ -164,7 +164,7 @@ Für den direkten Zugriff auf die Werte gibt es die Methoden `Optional#orElseThr
 und `Optional#orElse()`. Damit kann man auf den verpackten Wert zugreifen, oder es
 wird eine Exception geworfen bzw. ein Ersatzwert geliefert.
 
-Zusätzlich gibt es `Optional#isPresent()`, die als Parameter ein ` java.util.function.Consumer`
+Zusätzlich gibt es `Optional#isPresent()`, die als Parameter ein `java.util.function.Consumer`
 erwartet, also ein funktionales Interface mit einer Methode `void accept(T)`, die das
 Objekt verarbeitet.
 :::
@@ -196,6 +196,9 @@ Es gibt noch eine Methode `get()`, die so verhält wie `orElseThrow()`. Da man d
 Methode vom Namen her schnell mit einem Getter verwechselt, ist sie mittlerweile
 _deprecated_.
 
+_Anmerkung_: Da `getBestStudi()` eine `NullPointerException` werfen kann, sollte der
+Aufruf möglicherweise in ein `try/catch` verpackt werden. Dito für `orElseThrow()`.
+
 [Beispiel: [optional.traditional.Demo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/optional/traditional/Demo.java)]{.bsp}
 :::
 
@@ -207,17 +210,16 @@ public class LSF {
     ...
 
     public Optional<Studi> getBestStudi() throws NullPointerException {
-        if (sl == null) throw new NullPointerException("There ain't any list");
-        return sl.stream().sorted((s1, s2) -> s2.credits() - s1.credits()).findFirst();
+        if (sl == null) throw new NullPointerException("There ain't any collection");
+        return sl.stream()
+                 .sorted((s1, s2) -> s2.credits() - s1.credits())
+                 .findFirst();
     }
 }
 
 public static void main(String... args) {
     ...
 
-    // Hole Studi und löse den Namen auf oder NoSuchElementException
-    // anna.name == null => NoSuchElementException
-    // anna.name != null => "Anna"
     String name = lsf.getBestStudi()
                      .map(Studi::name)
                      .orElseThrow();
@@ -227,12 +229,37 @@ public static void main(String... args) {
 ::: notes
 [Beispiel: [optional.streams.Demo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/optional/streams/Demo.java)]{.bsp}
 
+Im Beispiel wird in `getBestStudi()` die Sammlung als Stream betrachtet, über die
+Methode `sorted()` und den Lamda-Ausdruck für den `Comparator` sortiert ("falsch"
+herum: absteigend in den Credits der Studis in der Sammlung), und `findFirst()`
+ist die terminale Operation auf dem Stream, die ein `Optional<Studi>` zurückliefert:
+entweder den Studi mit den meisten Credits (verpackt in `Optional<Studi>`) oder
+`Optional.empty()`, wenn es überhaupt keine Studis in der Sammlung gab.
+
+In `main()` wird dieses `Optional<Studi>` mit den Stream-Methoden von `Optional<T>`
+bearbeitet, zunächst mit `Optional#map()`. Man braucht nicht selbst prüfen, ob das
+von `getBestStudi()` erhaltene Objekt leer ist oder nicht, da dies von `Optional#map()`
+erledigt wird: Es wendet die Methodenreferenz auf den verpackten Wert an (sofern
+dieser vorhanden ist) und liefert damit den Namen des Studis als `Optional<String>`
+verpackt zurück. Wenn es keinen Wert, also nur `Optional.empty()` von `getBestStudi()`
+gab, dann ist der Rückgabewert von `Optional#map()` ein `Optional.empty()`. Wenn
+der Name, also der Rückgabewert von `Studi::name`, `null` war, dann wird ebenfalls
+ein `Optional.empty()` zurückgeliefert. Dadurch wirft `orElseThrow()` dann eine
+`NoSuchElementException`. Man kann also direkt mit  dem String `name` weiterarbeiten
+ohne extra `null`-Prüfung - allerdings will man noch ein Exception-Handling einbauen
+(dies fehlt im obigen Beispiel aus Gründen der Übersicht) ...
+:::
 
 
-the map() method comes from the Optional class, and it integrates nicely with the stream processing. You do not need to check if the optional object returned by the findFirst() method is empty or not; calling map() does in fact this for you.
+::: notes
+## Weitere _Optionals_
 
+Für die drei primitiven Datentypen `int`, `long` und `double` gibt es passende
+Wrapper-Klassen von `Optional<T>`: `OptionalInt`, `OptionalLong` und `OptionalDouble`.
 
-Wrapper-Klasse: Verpacke eine Referenz `Optional<T>` oder Wert `OptionalInt` => kann leer sein!
+Diese verhalten sich analog zu `Optional<T>`, haben aber keine Methode `ofNullable()`,
+da dies hier keinen Sinn ergeben würde: Die drei primitiven Datentypen repräsentieren
+Werte - diese können nicht `null` sein.
 :::
 
 

@@ -19,7 +19,7 @@ public class LSF {
 
     /** Finde den Studi mit den meisten Credits */
     public Studi getBestStudi() {
-        if (sl == null) return null; // Fehler: Es gibt noch keine Liste
+        if (sl == null) return null; // Fehler: Es gibt noch keine Sammlung
 
         Studi best = null;
         for (Studi s : sl) {
