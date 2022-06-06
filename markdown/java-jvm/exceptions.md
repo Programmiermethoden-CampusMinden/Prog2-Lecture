@@ -16,14 +16,13 @@ tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k2: "Unterschied zwischen Error und Exception"
+  - k2: "Unterschied zwischen checked und unchecked Exceptions"
+  - k3: "Umgang mit Exceptions"
+  - k3: "Eigene Exceptions schreiben"
 quizzes:
   - link: "XYZ"
     name: "Quiz XXX (ILIAS)"
-assignments:
-  - topic: sheet01
 youtube:
   - link: ""
     name: "VL "
@@ -38,7 +37,7 @@ sketch: true
 ---
 
 
-## Motivation
+## Fehlerfälle in Java
 
 ```java
 double div(int a, int b){
@@ -75,20 +74,38 @@ else {
 *   Der Aufrufer muss auf `null` prüfen
 *   Es wird nicht kommuniziert warum `null` zurückgegeben wird. Was ist das Problem?
 *   Was ist, wenn `null` ein gültiger Rückgabewert sein soll?
-
 :::
-
-## Exception vs Error
-
-| Exception | Error |
-|-----------|-------|
 
 ## Unchecked vs Checked Exceptions
 
-## Vererbungsstruktur Exception
+Checked:
+  * Sind (logische) Fehler im Code
+    * Fehlerhafte Benutzereingabe
+    * Unerreichbare API
+  * Treten zur Compilezeit auf
+  * Müssen behandelt werden, um wieder in einen sicheren Zustand zu gelangen
 
-- uml
-- hervorheben der wichtiges Exception
+Unchecked:
+  * Sind Programmier Fehler
+    * `NullPointerException`
+  * Treten zur Laufzeit auf
+  * Müssen nicht behandelt werden
+
+## Exception vs Error
+
+Error:
+  * Sind unchecked
+  * Liegen an Systemfehlern (z.B `StackOverflowError`, `OutOfMemoryError` etc.)
+  * Sollten nicht behandelt werden
+
+Exceptions:
+ * Können checked oder unchecked sein
+ * Von Exceptions kann man sich erholen
+
+
+## Vererbungsstruktur Throwable
+
+![Ausschnitt aus der Vererbungsstruktur von Throwable.](images/exception.png){width="80%"}
 
 ## Throw
 
