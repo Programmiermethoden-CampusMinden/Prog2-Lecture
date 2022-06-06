@@ -349,7 +349,8 @@ bei den intermediären als auch den terminalen Operationen. Schauen Sie in die D
 
 ## Wrap-Up
 
-Stream: Folge von Objekten, Verarbeitung "lazy"
+`Stream<T>`: Folge von Objekten vom Typ `T`, Verarbeitung "lazy"
+[(Gegenstück zu `Collection<T>`: Dort werden Daten **gespeichert**, hier werden Daten **verarbeitet**)]{.notes}
 
 \bigskip
 
