@@ -348,7 +348,23 @@ bei den intermediären als auch den terminalen Operationen. Schauen Sie in die D
 
 
 ## Wrap-Up
-...
+
+Stream: Folge von Objekten, Verarbeitung "lazy"
+
+\bigskip
+
+*   Neuen Stream anlegen: `Collection#stream()` oder `Stream.of()`
+*   Intermediäre Operationen: `peek()`, `map()`, `flatMap()`, `filter()`, `sorted()`
+*   Terminale Operationen: `count()`, `forEach()`, `allMatch()`, `collect()`
+    *   `collect(Collectors.toList())`
+    *   `collect(Collectors.toSet())`
+    *   `collect(Collectors.toCollection(LinkedList::new))` (mit `Supplier<T>`)
+
+\smallskip
+
+*   Streams speichern keine Daten
+*   Intermediäre Operationen laufen erst bei Abschluss des Streams los
+*   Terminale Operation führt zur Verarbeitung und Abschluss des Streams
 
 ::: notes
 Schöne Doku: ["The Stream API"](https://dev.java/learn/the-stream-api/), und auch
