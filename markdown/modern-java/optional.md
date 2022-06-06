@@ -346,8 +346,22 @@ Werte - diese können nicht `null` sein.
 
 
 ## Wrap-Up
-...
 
+`Optional` als Rückgabe für "kein Wert vorhanden"
+
+\bigskip
+
+*   `Optional.ofNullable()`: Erzeugen eines `Optional`
+    *   Entweder Objekt "verpackt" (Argument != `null`)
+    *   Oder `Optional.empty()` (Argument == `null`)
+*   Prüfen mit `isEmpty()` und `ifPresent()`
+*   Direkter Zugriff mit `ifPresent()`, `orElse()` und `orElseThrow()`
+*   Stream-API: `map()`, `filter`, ...
+
+\bigskip
+
+*   Attribute, Parameter und Sammlungen: nicht `Optional` nutzen
+*   Kein Ersatz für `null`-Prüfung!
 
 ::: notes
 Schöne Doku: ["Using Optionals"](https://dev.java/learn/using-optionals/).
