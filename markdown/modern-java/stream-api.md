@@ -42,9 +42,11 @@ Beispiel klassisch: Iteration über Datenstruktur ...
 
 Beispiel mit Streams
 
-Was ist ein Stream? FP: map/filter/reduce + lazy evaluation;
+Was ist ein Stream? A stream is an object that does not store any data.
+FP: map/filter/reduce + lazy evaluation;
 Interne vs. externe Iteration, intermediäre vs. terminale Operationen
 Zustand ja/nein
+Was macht ein Stream ohne terminale Operation? NICHTS ...
 
 
 ## Erzeugen von Streams
