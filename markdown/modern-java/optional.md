@@ -265,19 +265,73 @@ Werte - diese können nicht `null` sein.
 
 ## Regeln für _Optional_
 
-Rule #1 Never use null for an optional variable or returned value.
+1.  Nutze `Optional` nur als Rückgabe für "kein Wert vorhanden"
 
-Rule #2 Never call orElseThrow() or get() unless you are sure the optional is not empty.
+    ::: notes
+    `Optional` ist nicht als Ersatz für eine `null`-Prüfung o.ä.
+    gedacht, sondern als Repräsentation, um ein "kein Wert
+    vorhanden" zurückliefern zu können.
+    :::
 
-Rule #3 Prefer alternatives to ifPresent(), orElseThrow(), or get().
+\smallskip
 
-Rule #4 Do not create an optional to avoid testing for the nullity of a reference.
+2.  Nutze nie `null` für eine `Optional`-Variable oder einen `Optional`-Rückgabewert
 
-Rule #5 Do not use optional in fields, method parameters, collections, and maps.
+    ::: notes
+    Wenn man ein `Optional` als Rückgabe bekommt, sollte das
+    niemals selbst eine `null`-Referenz sein. Das macht das
+    gesamte Konzept kaputt!
 
-Rule #6 Do not use identity-sensitive operations on an optional object, such as reference equality, identity hash code, and synchronization.
+    Nutzen Sie stattdessen `Optional.empty()`.
+    :::
 
-Rule #7 Do not forget that optional objects are not serializable.
+3.  Nutze `Optional.ofNullable()` zum Erzeugen eines `Optional`
+
+    ::: notes
+    Diese Methode verhält sich "freundlich" und erzeugt automatisch
+    ein `Optional.empty()`, wenn das Argument `null` ist. Es gibt
+    also keinen Grund, selbst mit einer Fallunterscheidung dies
+    erledigen zu wollen.
+
+    Bevorzugen Sie `Optional.ofNullable()` vor einer manuellen
+    Fallunterscheidung und dem entsprechenden Einsatz von
+    `Optional.of()` und `Optional.empty()`.
+    :::
+
+4.  Erzeuge keine `Optional` als Ersatz für die Prüfung auf `null`
+
+    ::: notes
+    Wenn Sie auf `null` prüfen müssen, müssen Sie auf `null` prüfen.
+    Der ersatzweise Einsatz von `Optional` macht es nur komplexer -
+    prüfen müssen Sie hinterher immer noch.
+    :::
+
+5.  Nutze `Optional` nicht in Attributen, Methoden-Parametern und Sammlungen
+
+    ::: notes
+    Nutzen Sie `Optional` vor allem für Rückgabewerte.
+
+    Attribute sollten immer direkt einen Wert haben oder `null`,
+    analog Parameter von Methoden o.ä. ... Hier hilft `Optional`
+    nicht, Sie müssten ja trotzdem eine `null`-Prüfung machen,
+    nur eben dann über den `Optional`, wodurch dies komplexer und
+    schlechter lesbar wird.
+
+    Aus einem ähnlichen Grund sollten Sie auch in Sammlungen
+    keine `Optional` speichern!
+    :::
+
+6.  Vermeide den direkten Zugriff (`ifPresent()`, `orElseThrow()` ...)
+
+    ::: notes
+    Der direkte Zugriff auf ein `Optional` entspricht dem
+    Prüfen auf `null` und dann dem Auspacken. Dies ist nicht
+    nur Overhead, sondern auch schlechter lesbar.
+
+    Vermeiden Sie den direkten Zugriff und nutzen Sie `Optional`
+    mit den Stream-Methoden. So ist dies von den Designern
+    gedacht.
+    :::
 
 
 ::: notes
