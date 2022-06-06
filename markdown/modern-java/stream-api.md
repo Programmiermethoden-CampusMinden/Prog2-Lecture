@@ -35,18 +35,112 @@ fhmedia:
 
 ## Motivation
 
-Beispiel klassisch: Iteration über Datenstruktur ...
+::: notes
+Es wurden Studis, Studiengänge und Fachbereiche modelliert (aus Gründen der Übersichtlichkeit
+einfach als Record-Klassen):
+
+```java
+public record Studi(String name, int credits) {}
+
+public record Studiengang(String name, List<Studi> studis) {}
+
+public record Fachbereich(String name, List<Studiengang> studiengaenge) {}
+```
+
+Nun soll pro Fachbereich die Anzahl der Studis ermittelt werden, die bereits 100 ECTS
+oder mehr haben. Dazu könnte man über alle Studiengänge im Fachbereich iterieren, und
+in der inneren Schleife über alle Studis im Studiengang. Dann filtert man alle Studis,
+deren ECTS größer 100 sind und erhöht jeweils den Zähler:
+:::
+
+
+```java
+private static long getCountFB(Fachbereich fb) {
+    long count = 0;
+    for (Studiengang sg : fb.studiengaenge()) {
+        for (Studi s : sg.studis()) {
+            if (s.credits() > 100) count += 1;
+        }
+    }
+    return count;
+}
+```
+
+::: notes
+Dies ist ein Beispiel, welches klassisch in OO-Manier als Iteration über Klassen
+realisiert ist. (Inhaltlich ist es vermutlich nicht sooo sinnvoll.)
+:::
 
 
 ## Beispiel mit Streams
 
-Beispiel mit Streams
+```java
+private static long getCountSG(Studiengang sg) {
+    return sg.studis().stream()
+                      .map(Studi::credits)
+                      .filter(c -> c > 100)
+                      .count();
+}
 
-Was ist ein Stream? A stream is an object that does not store any data.
-FP: map/filter/reduce + lazy evaluation;
-Interne vs. externe Iteration, intermediäre vs. terminale Operationen
-Zustand ja/nein
-Was macht ein Stream ohne terminale Operation? NICHTS ...
+private static long getCountFB2(Fachbereich fb) {
+    long count = 0;
+    for (Studiengang sg : fb.studiengaenge()) {
+        count += getCountSG(sg);
+    }
+    return count;
+}
+```
+
+::::::::: notes
+### Erklärung des Beispiels
+
+Im Beispiel wurde die innere Schleife in einen Stream ausgelagert.
+
+Mit der Methode `Collection#stream()` wird aus der Collection ein
+neuer Stream erzeugt. Auf diesem wird für jedes Element durch die
+Methode `map()` die Methode `Studi#credits()` angewendet, was aus
+einem Strom von `Studi` einen Strom von `Integer` macht. Mit `filter`
+wird auf jedes Element das Prädikat `c -> c > 100` angewendet und
+alle Elemente aus dem Strom entfernt, die der Bedingung nicht
+entsprechen. Am Ende wird mit `count()` gezählt, wie viele Elemente
+im Strom enthalten sind.
+
+### Was ist ein Stream?
+
+Ein "Stream" ist ein Strom (Folge) von Daten oder Objekten. In Java wird
+die Collections-API für die Speicherung von Daten (Objekten) verwendet.
+Die Stream-API dient zur Iteration über diese Daten und entsprechend
+zur Verarbeitung der Daten. In Java speichert ein Stream keine Daten.
+
+Das Konzept kommt aus der funktionalen Programmierung und wurde in Java
+nachträglich eingebaut (wobei dieser Prozess noch lange nicht abgeschlossen
+zu sein scheint).
+
+In der funktionalen Programmierung kennt man die Konzepte "map", "filter"
+und "reduce": Die Funktion "map" erhält als Parameter eine Funktion und
+wendet diese  auf alle Elemente eines Streams an. Die Funktion "filter"
+bekommt ein Prädikat als Parameter und prüft jedes Element im Stream, ob
+es dem Prädikat genügt (also ob das Prädikat mit dem jeweiligen Element
+zu `true` evaluiert). Mit "reduce" kann man Streams zu einem einzigen
+Wert zusammenfassen (denken Sie etwas an das Aufsummieren aller Elemente
+eines Integer-Streams). Zusätzlich kann man in der funktionalen Programmierung
+ohne Probleme unendliche Ströme darstellen: Die Auswertung erfolgt nur bei
+Bedarf und auch dann nur so weit wie nötig. Dies nennt man auch "_lazy evaluation_".
+
+Die Streams in Java versuchen, diese Konzepte aus der funktionalen Programmierung
+in die objektorientierte Programmierung zu übertragen. Ein Stream in Java
+hat eine Datenquelle, von wo die Daten gezogen werden - ein Stream speichert
+selbst keine Daten. Es gibt "intermediäre Operationen" auf einem Stream,
+die die Elemente verarbeiten. Allerdings werden diese Operationen erst durchgeführt,
+wenn eine "terminale Operation" den Stream "abschließt". Ein Stream ohne ein
+terminale Operation macht also tatsächlich _nichts_.
+
+Die Operationen auf dem Stream sind üblicherweise zustandslos, können aber
+durchaus auch einen Zustand haben. Dies verhindert üblicherweise die parallele
+Verarbeitung der Streams. Operationen sollten aber nach Möglichkeit keine
+_Seiteneffekte_ haben, d.h. keine Daten außerhalb des Streams modifizieren.
+Operationen dürfen auf keinen Fall die Datenquelle des Streams modifizieren!
+:::::::::
 
 
 ## Erzeugen von Streams
