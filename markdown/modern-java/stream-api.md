@@ -166,7 +166,8 @@ Ausgehend von einer Klasse aus der Collection-API kann man die Methode
 `Collection#stream()` aufrufen und bekommt einen seriellen Stream.
 
 Alternativ bietet das Interface `Stream` verschiedene statische Methoden wie
-`Stream.of()` an, mit deren Hilfe Streams angelegt werden können.
+`Stream.of()` an, mit deren Hilfe Streams angelegt werden können. Dies funktioniert
+auch mit Arrays ...
 
 Und schließlich kann man per `Stream.generate()` einen Stream anlegen, wobei
 als Argument ein "Supplier" (`java.util.function.Supplier<T>`) übergeben werden
@@ -241,7 +242,53 @@ und schließt den Stream ab.
 
 ## Was tun, wenn eine Methode Streams zurückliefert
 
-flatMap
+::: notes
+Wir konnten vorhin nur die innere Schleife in eine Stream-basierte Verarbeitung
+umbauen. Das Problem ist: Die äußere Schleife würde auch einen Stream liefern
+(Stream von Studiengängen), auf dem wir die `map`-Funktion dann anwenden müssten
+und für jeden Studiengang einen (inneren) Stream mit den Studis eines Studiengangs
+verarbeiten müssten.
+:::
+
+```{.java size="scriptsize"}
+private static long getCountSG(Studiengang sg) {
+    return sg.studis().stream().map(Studi::credits).filter(c -> c > 100).count();
+}
+
+private static long getCountFB2(Fachbereich fb) {
+    long count = 0;
+    for (Studiengang sg : fb.studiengaenge()) {
+        count += getCountSG(sg);
+    }
+    return count;
+}
+```
+
+::: notes
+Dafür ist die Methode `flatMap()` die Lösung. Diese Methode bekommt als Argument
+ein Objekt vom Typ `Function<? super T, ? extends Stream<? extends R>>` mit einer
+Methode `Stream<? extends R> apply(T)`. Die Methode `flatMap()` verarbeitet den
+Stream in zwei Schritten:
+
+1.  Mappe über alle Elemente des Eingabe-Streams mit der Funktion. Im Beispiel würde
+    also aus einem `Stream<Studiengang>` jeweils ein `Stream<Stream<Studi>>`, also
+    alle `Studiengang`-Objekte werden durch je ein `Stream<Studi>`-Objekt ersetzt.
+    Wir haben jetzt also einen Stream von `Stream<Studi>`-Objekten.
+
+2.  "Klopfe den Stream wieder flach", d.h. nimm die einzelnen `Studi`-Objekte aus
+    den `Stream<Studi>`-Objekten und setze diese stattdessen in den Stream. Das
+    Ergebnis ist dann wie gewünscht ein `Stream<Studi>`.
+:::
+
+```{.java size="scriptsize"}
+private static long getCountFB3(Fachbereich fb) {
+    return fb.studiengaenge().stream()
+            .flatMap(sg -> sg.studis().stream())
+            .map(Studi::credits)
+            .filter(c -> c > 100)
+            .count();
+}
+```
 
 
 ## Streams abschließen: Terminale Operationen
@@ -249,14 +296,17 @@ flatMap
 Streams abschließen: terminale Operationen: count(), forEach(), findFirst, allMatch/anyMatch/noneMatch, sum, min/max, collect, (reduce)
 
 
-## Anti-Pattern
+## Spielregeln
 
--   Operationen dürfen nicht die Stream-Quelle modifizieren
--   Operationen können die Werte im Stream ändern (map) oder filtern (filter)
--   Operationen können zustandslos sein (map, filter), oder zustandsbehaftet sein (sorted)
--   Keine Streams in Attributen/Variablen speichern oder als Argumente übergeben: Sie könnten bereits "gebraucht" sein!
+*   Operationen dürfen nicht die Stream-Quelle modifizieren
+
+*   Operationen können die Werte im Stream ändern (`map`) oder die Anzahl (`filter`)
+
+*   Keine Streams in Attributen/Variablen speichern oder als Argumente übergeben: Sie könnten bereits "gebraucht" sein!
+
     => Ein Stream sollte immer sofort nach der Erzeugung benutzt werden
--   Operationen auf einem Stream sollten keine Seiteneffekte (Veränderungen von Variablen/Attributen außerhalb des Streams) haben
+
+*   Operationen auf einem Stream sollten keine Seiteneffekte (Veränderungen von Variablen/Attributen außerhalb des Streams) haben
 
 
 ## Wrap-Up
