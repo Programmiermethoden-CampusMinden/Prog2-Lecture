@@ -10,8 +10,26 @@ readings:
   - key: "Ullenboom2021"
     comment: "Kap. 12.6: Optional ist keine Nullnummer"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+    Häufig hat man in Methoden den Fall, dass es keinen Wert gibt und man liefert dann
+    `null` als "kein Wert vorhanden" zurück. Dies führt dazu, dass die Aufrufer eine
+    entsprechende `null`-Prüfung für die Rückgabewerte durchführen müssen, bevor sie
+    das Ergebnis nutzen können.
+
+    `Optional` ermöglicht auch den Fall "kein Wert vorhanden": Es kann mit der Methode
+    `Optional.ofNullable()` das Argument in ein Optional verpacken (Argument != `null`)
+    oder ein `Optional.empty()` zurückliefern ("leeres" Optional wenn Argument == `null`).
+
+    Man kann Optionals prüfen `isEmpty()` und `ifPresent()` und dann direkt mit
+    `ifPresent()`, `orElse()` und `orElseThrow()` auf den verpackten Wert zugreifen.
+    Besser ist aber der Zugriff über die Stream-API von `Optional`: `map()`, `filter`,
+    `flatMap()`, ...
+
+
+    `Optional` ist vor allem für Rückgabewerte gedacht, die den Fall "kein Wert vorhanden"
+    einschließen. Attribute, Parameter und Sammlungen sollten nicht `Optional`-Referenzen
+    speichern. `Optional` ist kein Ersatz für `null`-Prüfung von Methoden-Parametern (nutzen
+    Sie hier beispielsweise passende Annotationen). `Optional` ist auch kein Ersatz für
+    vernünftiges Exception-Handling im Fall, dass etwas Unerwartetes passiert ist.
 outcomes:
   - k2: "Optionals sind kein Ersatz für `null`-Prüfung!"
   - k2: "Optionals sollen nicht für Attribute oder Parameter genutzt werden"
