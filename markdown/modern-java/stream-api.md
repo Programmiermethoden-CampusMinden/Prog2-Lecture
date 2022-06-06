@@ -10,21 +10,50 @@ readings:
   - key: "Ullenboom2021"
     comment: "Kap. 17.3 - 17.6: Java Stream-API"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+    Mit der Collection-API existiert in Java die Möglichkeit, Daten auf verschiedenste Weisen zu
+    speichern (`Collection<T>`). Mit der Stream-API gibt es die Möglichkeit, diese Daten in einer
+    Art Pipeline zu verarbeiten. Ein `Stream<T>` ist eine Folge von Objekten vom Typ `T`. Die
+    Verarbeitung der Daten ist "lazy", d.h. sie erfolgt erst auf Anforderung (durch die terminale
+    Operation).
+
+    Ein Stream hat eine Datenquelle und kann beispielsweise über `Collection#stream()` oder
+    `Stream.of()` angelegt werden. Streams speichern keine Daten. Die Daten werden aus der
+    verbundenen Datenquelle geholt.
+
+    Auf einem Stream kann man eine Folge von intermediäre Operationen wie `peek()`, `map()`,
+    `flatMap()`, `filter()`, `sorted()` ... durchführen. Alle diese Operationen arbeiten auf
+    dem Stream und erzeugen einen neuen Stream als Ergebnis. Dadurch kann die typische
+    Pipeline-artige Verkettung der Operationen ermöglicht werden. Die intermediären Operationen
+    werden erst ausgeführt, wenn der Stream durch eine terminale Operation geschlossen wird.
+
+    Terminale Operationen wie `count()`, `forEach()`, `allMatch()` oder `collect()`
+    *   `collect(Collectors.toList())` bzw. direkt mit `toList()` (ab Java16)
+    *   `collect(Collectors.toSet())`
+    *   `collect(Collectors.toCollection(LinkedList::new))` (mit `Supplier<T>`)
+
+    stoßen die Verarbeitung des Streams an und schließen den Stream damit ab.
+
+    Wir können hier nur die absoluten Grundlagen betrachten. Die Stream-API ist sehr groß und
+    mächtig und es lohnt sich, wenn Sie sich damit weiter auseinander setzen.
 outcomes:
-  - k2: ""
-  - k3: ""
+  - k2: "Streams speichern keine Daten"
+  - k2: "Streams verarbeiten die Daten lazy"
+  - k2: "`map()` ändert den Typ (und Inhalt) von Objekten im Stream, aber nicht die Anzahl"
+  - k2: "`filter()` ändert die Anzahl der Objekte im Stream, aber nicht deren Typ (und Inhalt)"
+  - k2: "Streams machen ausführlich Gebrauch von den funktionalen Interfaces in `java.util.function`"
+  - k2: "Streams sollten nicht Attributen gehalten oder als Argument von Methoden herumgereicht werden"
+  - k3: "Anlegen eines Streams"
+  - k3: "Verkettung von intermediären Operationen"
+  - k3: "Durchführung der Berechnung und Abschluss des Streams mit einer terminalen Operation"
+  - k3: "Einsatz von `flatMap()`"
 quizzes:
   - link: ""
-    name: "Quiz XXX (ILIAS)"
+    name: "Quiz Stream-API (ILIAS)"
 assignments:
   - topic: sheet09
 youtube:
   - link: ""
     name: "VL Stream-API"
-  - link: ""
-    name: "Demo Stream-API"
   - link: ""
     name: "Demo Stream-API"
 fhmedia:
@@ -204,8 +233,11 @@ demonstriert.
 
 Die Methode `peek()` liefert einen Stream zurück, die aus den Elementen des Eingabestroms
 bestehen. Auf jedes Element wird die Methode `void accept(T)` des `Consumer<T>` angewendet
-(Argument der Methode), was aber nicht zu einer Änderung der Daten führt. Diese Methode
-dient vor allem zu Debug-Zwecken!
+(Argument der Methode), was aber nicht zu einer Änderung der Daten führt.
+**Hinweis**: Diese Methode dient vor allem zu Debug-Zwecken! Durch den Seiteneffekt kann
+die Methode eine schlechtere Laufzeit zur Folge haben oder sogar eine sonst mögliche
+parallele Verarbeitung verhindern oder durch eine parallele Verarbeitung verwirrende
+Ergebnisse zeigen!
 
 Die Methode `map()` liefert ebenfalls einen Stream zurück, der durch die Anwendung der Methode
 `R apply(T)` der als Argument übergebenen `Function<T,R>` auf jedes Element des Eingabestroms
@@ -302,8 +334,9 @@ String first = s.findFirst().get();
 Boolean b = s.anyMatch(e -> e.length() > 3);
 
 List<String> s1 = s.collect(Collectors.toList());
-Set<String> s2 = s.collect(Collectors.toSet());
-List<String> s3 = s.collect(Collectors.toCollection(LinkedList::new));
+List<String> s2 = s.toList();   // ab Java16
+Set<String> s3 = s.collect(Collectors.toSet());
+List<String> s4 = s.collect(Collectors.toCollection(LinkedList::new));
 ```
 
 ::: notes
@@ -322,7 +355,7 @@ lassen. Beide Methoden benötigen dazu einen `Comparator<T>` als Parameter.
 Mit der Methode `collect()` kann man eine der drei Methoden aus `Collectors` über den Stream
 laufen lassen und eine `Collection` erzeugen lassen:
 
-1.  `toList()` sammelt die Elemente in ein `List`-Objekt
+1.  `toList()` sammelt die Elemente in ein `List`-Objekt bzw. direkt mit `toList()` (ab Java16)
 2.  `toSet()` sammelt die Elemente in ein `Set`-Objekt
 3.  `toCollection()` sammelt die Elemente durch Anwendung der Methode `T get()` des übergebenen
     `Supplier<T>`-Objekts auf
