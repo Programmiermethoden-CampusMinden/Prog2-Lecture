@@ -55,6 +55,10 @@ Lorem Ipsum. Starte mit H2-Level.
 ## Wrap-Up
 ...
 
+::: notes
+Schöne Doku: ["The Stream API"](https://dev.java/learn/the-stream-api/).
+:::
+
 
 
 
