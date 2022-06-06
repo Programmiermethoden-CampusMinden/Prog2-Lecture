@@ -8,7 +8,7 @@ readings:
   - key: "LernJava"
     comment: "Tutorials > The Stream API"
   - key: "Ullenboom2021"
-    comment: "Kap. 17.3: Java Stream-API"
+    comment: "Kap. 17.3 - 17.6: Java Stream-API"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
@@ -34,23 +34,53 @@ fhmedia:
 
 
 ## Motivation
-Lorem Ipsum. Starte mit H2-Level.
-...
 
-## Folie 2
-...
+Beispiel klassisch: Iteration über Datenstruktur ...
 
-## Folie 3
-...
 
-## Folie 4
-...
+## Beispiel mit Streams
 
-## Folie 5
-...
+Beispiel mit Streams
 
-## Folie 6
-...
+Was ist ein Stream? FP: map/filter/reduce + lazy evaluation;
+Interne vs. externe Iteration, intermediäre vs. terminale Operationen
+Zustand ja/nein
+
+
+## Erzeugen von Streams
+
+Erzeugen von Streams: Collection#stream(), Stream.of(1,2,3), Stream.generate( random::nextGaussian )
+
+parallel vs. sequentiell: Collection#parallelStream(): nur nutzen, wenn tatsächlich Vorteile durch Parallelisierung zu erwarten (Parallele Streams nutzen intern das Fork-&-Join-Framework)
+
+
+## Intermediäre Operationen auf Streams
+
+Methoden auf Streams: map, filter, sorted, peek
+
+Status vs. Status-frei: sorted und skip kann ordentlich in Speicher und Zeit zuschlagen, da es einen Zustand speichern muss und u.U. nicht/nur schlecht parallelisierbar ist!
+stream.parallel().sorted().skip(42) => erst alles sortieren, danach die ersten 42 überspringen ...
+
+
+## Was tun, wenn eine Methode Streams zurückliefert
+
+flatMap
+
+
+## Streams abschließen: Terminale Operationen
+
+Streams abschließen: terminale Operationen: count(), forEach(), findFirst, allMatch/anyMatch/noneMatch, sum, min/max, collect, (reduce)
+
+
+## Anti-Pattern
+
+-   Operationen dürfen nicht die Stream-Quelle modifizieren
+-   Operationen können die Werte im Stream ändern (map) oder filtern (filter)
+-   Operationen können zustandslos sein (map, filter), oder zustandsbehaftet sein (sorted)
+-   Keine Streams in Attributen/Variablen speichern oder als Argumente übergeben: Sie könnten bereits "gebraucht" sein!
+    => Ein Stream sollte immer sofort nach der Erzeugung benutzt werden
+-   Operationen auf einem Stream sollten keine Seiteneffekte (Veränderungen von Variablen/Attributen außerhalb des Streams) haben
+
 
 ## Wrap-Up
 ...
