@@ -13,8 +13,8 @@ tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
 outcomes:
-  - k2: ""
-  - k3: ""
+  - k2: "x"
+  - k3: "x"
 quizzes:
   - link: ""
     name: "Quiz Optional (ILIAS)"
@@ -33,11 +33,9 @@ fhmedia:
 
 ## Motivation
 
-```java
-public record Studi(String name, int credits) {}
-
+```{.java size="scriptsize"}
 public class LSF {
-    private final Set<Studi> sl;
+    private Set<Studi> sl;
 
     public Studi getBestStudi() {
         if (sl == null) return null;  // Fehler: Es gibt noch keine Sammlung
@@ -56,7 +54,6 @@ public static void main(String... args) {
 
     Studi best = lsf.getBestStudi();
     if (best != null) {
-        // mach was mit dem Studi ...
         String name = best.name();
         if (name != null) {
             // mach was mit dem Namen ...
@@ -71,7 +68,7 @@ public static void main(String... args) {
     *   Felder wurden (noch) nicht initialisiert
     *   Es ist ein Problem oder etwas Unerwartetes aufgetreten
 
-    => Parameter und Rückgabewerte müssen auf stets `null` geprüft werden
+    => Parameter und Rückgabewerte müssen stets auf `null` geprüft werden
     (oder Annotationen wie `@NotNull` eingesetzt werden ...)
 
 \smallskip
@@ -86,9 +83,10 @@ public static void main(String... args) {
 
 *   **Anmerkungen**:
     *   Verwendung von `null` auf Attribut-Ebene (Klassen-interne Verwendung) ist okay!
-    *   `Optional<T>` ist **kein** für `null`-Checks!
+    *   `Optional<T>` ist **kein** Ersatz für `null`-Checks!
     *   `null` ist **kein** Ersatz für vernünftiges Error-Handling!
-        "Irgendwas Unerwartetes ist passiert, hier ist `null`" ist ein _Anti-Pattern_!
+        Das häufig zu beobachtende "Irgendwas Unerwartetes ist passiert, hier ist `null`"
+        ist ein **Anti-Pattern**!
 :::
 
 
@@ -97,7 +95,8 @@ public static void main(String... args) {
 Konstruktor ist `private` ...
 
 *   "Kein Wert": `Optional.empty()`
-*   Verpacken eines non-`null` Elements: `Optional.of()` (`NullPointerException` wenn Argument `null`!)
+*   Verpacken eines non-`null` Elements: `Optional.of()` \newline
+    (`NullPointerException` wenn Argument `null`!)
 
 \bigskip
 
@@ -122,6 +121,8 @@ Stattdessen sollte stets `Optional.ofNullable()` verwendet werden.
 
 ```java
 public class LSF {
+    private Set<Studi> sl;
+
     public Optional<Studi> getBestStudi() throws NullPointerException {
         // Fehler: Es gibt noch keine Sammlung
         if (sl == null) throw new NullPointerException("There ain't any collection");
@@ -142,9 +143,10 @@ public class LSF {
 Das Beispiel soll verdeutlichen, dass man im Fehlerfall nicht einfach `null` oder
 `Optional.empty()` zurückliefern soll, sondern eine passende Exception werfen soll.
 
-Wenn die Liste aber leer ist, stellt dies keinen Fehler dar! In diesem Fall wird
-statt `null` ein `Optional.empty()` zurückgeliefert, also ein Objekt, auf dem der
-Aufrufer die üblichen Methoden aufrufen kann.
+Wenn die Liste aber leer ist, stellt dies keinen Fehler dar! Es handelt sich um den
+Fall "kein Wert vorhanden". In diesem Fall wird statt `null` nun ein `Optional.empty()`
+zurückgeliefert, also ein Objekt, auf dem der Aufrufer die üblichen Methoden aufrufen
+kann.
 :::
 
 
@@ -203,12 +205,11 @@ Aufruf möglicherweise in ein `try/catch` verpackt werden. Dito für `orElseThro
 :::
 
 
-## Einsatz in Streams
+## Einsatz mit Stream-API
 
 ```java
 public class LSF {
     ...
-
     public Optional<Studi> getBestStudi() throws NullPointerException {
         if (sl == null) throw new NullPointerException("There ain't any collection");
         return sl.stream()
@@ -217,9 +218,9 @@ public class LSF {
     }
 }
 
+
 public static void main(String... args) {
     ...
-
     String name = lsf.getBestStudi()
                      .map(Studi::name)
                      .orElseThrow();
@@ -269,11 +270,11 @@ Werte - diese können nicht `null` sein.
 
     ::: notes
     `Optional` ist nicht als Ersatz für eine `null`-Prüfung o.ä.
-    gedacht, sondern als Repräsentation, um ein "kein Wert
+    gedacht, sondern als Repräsentation, um auch ein "kein Wert
     vorhanden" zurückliefern zu können.
     :::
 
-\smallskip
+\bigskip
 
 2.  Nutze nie `null` für eine `Optional`-Variable oder einen `Optional`-Rückgabewert
 
@@ -290,7 +291,7 @@ Werte - diese können nicht `null` sein.
     ::: notes
     Diese Methode verhält sich "freundlich" und erzeugt automatisch
     ein `Optional.empty()`, wenn das Argument `null` ist. Es gibt
-    also keinen Grund, selbst mit einer Fallunterscheidung dies
+    also keinen Grund, dies mit einer Fallunterscheidung selbst
     erledigen zu wollen.
 
     Bevorzugen Sie `Optional.ofNullable()` vor einer manuellen
@@ -303,7 +304,7 @@ Werte - diese können nicht `null` sein.
     ::: notes
     Wenn Sie auf `null` prüfen müssen, müssen Sie auf `null` prüfen.
     Der ersatzweise Einsatz von `Optional` macht es nur komplexer -
-    prüfen müssen Sie hinterher immer noch.
+    prüfen müssen Sie hinterher ja immer noch.
     :::
 
 5.  Nutze `Optional` nicht in Attributen, Methoden-Parametern und Sammlungen
@@ -341,7 +342,7 @@ Werte - diese können nicht `null` sein.
 *   ["What You Might Not Know About Optional"](https://medium.com/javarevisited/what-you-might-not-know-about-optional-7238e3c05f63)
 *   ["Experienced Developers Use These 7 Java Optional Tips to Remove Code Clutter"](https://medium.com/javarevisited/experienced-developers-use-these-7-java-optional-tips-to-remove-code-clutter-6e8b1a639861)
 *   ["Code Smells: Null"](https://blog.jetbrains.com/idea/2017/08/code-smells-null/)
-*   [`Class Optional<T>`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html)
+*   ["Class Optional"](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html)
 :::
 
 
