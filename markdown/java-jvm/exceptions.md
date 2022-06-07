@@ -83,13 +83,13 @@ Checked:
     * Fehlerhafte Benutzereingabe
     * Unerreichbare API
   * Treten zur Compilezeit auf
-  * Müssen behandelt werden, um wieder in einen sicheren Zustand zu gelangen
+  * Müssen deklariert/behandelt werden, um wieder in einen sicheren Zustand zu gelangen
 
 Unchecked:
   * Sind Programmier Fehler
     * `NullPointerException`
   * Treten zur Laufzeit auf
-  * Müssen nicht behandelt werden
+  * Müssen nicht deklariert oder behandelt werden
 
 ## Exception vs Error
 
