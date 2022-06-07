@@ -46,9 +46,9 @@ quizzes:
 assignments:
   - topic: sheet09
 youtube:
-  - link: ""
+  - link: "https://youtu.be/JDG_hUSBfSA"
     name: "VL Optional"
-  - link: ""
+  - link: "https://youtu.be/vL2c0iB4uSk"
     name: "Demo Optional"
 fhmedia:
   - link: ""
