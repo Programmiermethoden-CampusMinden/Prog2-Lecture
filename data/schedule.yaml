@@ -132,12 +132,11 @@
 
 - week: "KW23"
   lecture:
-    - topic: "/modern-java/stream-api"
     - topic: "/modern-java/records"
-    - topic: "/modern-java/optional"
     - topic: "/pattern/visitor"
     - topic: "/pattern/command"
-    - topic: "/frameworks/intro"
+    - topic: "/modern-java/stream-api"
+    - topic: "/modern-java/optional"
   assignment:
     - topic: "sheet08"
       due: "Di, 07.06., 18 Uhr, PR/MR"
@@ -167,6 +166,7 @@
     - topic: "/building/ant"
     - topic: "/building/maven"
     - topic: "/building/docker"
+    - topic: "/frameworks/intro"
   assignment:
     - topic: "sheet10"
       due: "Di, 21.06., 18 Uhr, PR/MR"
