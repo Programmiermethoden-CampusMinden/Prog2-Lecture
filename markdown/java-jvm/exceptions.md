@@ -76,36 +76,47 @@ else {
 *   Was ist, wenn `null` ein gültiger Rückgabewert sein soll?
 :::
 
+## Vererbungsstruktur Throwable
+
+![Ausschnitt aus der Vererbungsstruktur von Throwable.](images/exception.png){width="80%"}
+
 ## Unchecked vs Checked Exceptions
 
 Checked:
-  * Sind (logische) Fehler im Code
-    * Fehlerhafte Benutzereingabe
-    * Unerreichbare API
-  * Treten zur Compilezeit auf
-  * Müssen deklariert/behandelt werden, um wieder in einen sicheren Zustand zu gelangen
+  * Für erwartbare Fehler fälle, die nicht am Programm selbst liegen
+    * `FileNotFoundException`
+    * `IOException`
+  * Alle nicht von `RuntimeException` ableitende Exceptions
+  * Werden vom Compiler überprüft
+  * Müssen deklariert und behandelt werden
 
 Unchecked:
-  * Sind Programmier Fehler
+  * Logische Programmierfehler ("Versagen" des Programmcodes)
+    * `IndexOutOfBoundException`
     * `NullPointerException`
-  * Treten zur Laufzeit auf
+    * `ArithmeticException`
+    * `IllegalArgumentException`
+  * Alle ableitende Exceptions von `RuntimeException`
+  * Werden nicht vom Compiler überprüft
   * Müssen nicht deklariert oder behandelt werden
 
-## Exception vs Error
+::: notes
+Beispiel Checked Exception: Es soll eine Abfrage an eine externe API geschickt werden. Diese ist aber aktuell nicht zu erreichen. Lösung: Anfrage noch einmal schicken.
+Beispiel unchecked Exception: Ein `for`-Loop über ein Array ist falsch programmiert und will auf einen Index im Array zugreifen, der nicht existiert.
+:::
 
-Error:
-  * Sind unchecked
-  * Liegen an Systemfehlern (z.B `StackOverflowError`, `OutOfMemoryError` etc.)
-  * Sollten nicht behandelt werden
+## Exception vs Error
 
 Exceptions:
  * Können checked oder unchecked sein
  * Von Exceptions kann man sich erholen
 
-
-## Vererbungsstruktur Throwable
-
-![Ausschnitt aus der Vererbungsstruktur von Throwable.](images/exception.png){width="80%"}
+Error:
+  * Liegen an Systemfehlern
+    * `StackOverflowError`
+    * `OutOfMemoryError`
+  * Von einem Error kann man sich  nicht erholen
+  * Sollten nicht behandelt werden
 
 ## Throw
 
@@ -115,7 +126,7 @@ double div(int a, int b) throws ArithmeticException{
 }
 ```
 
-Alternative
+Alternative:
 
 ```java
 double div(int a, int b) throws IllegalArgumentException{
@@ -161,15 +172,12 @@ try {
 catch(IllegalArgumentException e1) {
   e1.printstacktrace();
 }
-catch(FileNotFoundException e2) {
+catch(FileNotFoundException | NullPointerException e2) {
   e2.printstacktrace();
-}
-catch(NullPointerException e3) {
-  e3.printstacktrace();
 }
 ```
 ::: notes
-* Die Exception wird der Reihe nach mit den `catch` Blöcken gematcht.
+* Die Exception wird der Reihe nach mit den `catch` Blöcken gematcht (vergleichbar mit `switch case` ).
 * Daher muss die Vererbungshierarchie beachtet werden.
 :::
 
@@ -180,8 +188,7 @@ Scanner myScanner = new Scanner(System.in);
 try {
     double s= 5/myScanner.nextInt();
 }
-catch(ArithmeticException e) {
-  // ups
+catch(IllegalArgumentException e) {
   e.printstacktrace();
 }
 finally {
