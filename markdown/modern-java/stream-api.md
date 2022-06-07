@@ -52,9 +52,9 @@ quizzes:
 assignments:
   - topic: sheet09
 youtube:
-  - link: ""
+  - link: "https://youtu.be/zZMyk0u5hJk"
     name: "VL Stream-API"
-  - link: ""
+  - link: "https://youtu.be/KBP72tCkBt8"
     name: "Demo Stream-API"
 fhmedia:
   - link: ""
