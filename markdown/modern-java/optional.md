@@ -382,7 +382,7 @@ Werte - diese können nicht `null` sein.
     *   Oder `Optional.empty()` (Argument == `null`)
 *   Prüfen mit `isEmpty()` und `ifPresent()`
 *   Direkter Zugriff mit `ifPresent()`, `orElse()` und `orElseThrow()`
-*   Stream-API: `map()`, `filter`, `flatMap()`, ...
+*   Stream-API: `map()`, `filter()`, `flatMap()`, ...
 
 \bigskip
 
