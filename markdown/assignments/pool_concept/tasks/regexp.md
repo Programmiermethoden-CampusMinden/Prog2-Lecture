@@ -36,9 +36,6 @@ Die Token-Objekte fügen Sie im Konstruktor der Klasse `Lexer` durch den
 Aufruf der Methode `tokenizer.add(mytoken)` hinzu. Sie können Sich an den
 Kommentaren im `Lexer`-Konstruktor orientieren.
 
-
-Sollten Token ineinander geschachtelt sein, erkennt der Lexer dies automatisch.
-Sie brauchen sich keine Gedanken dazu machen, in welcher Reihenfolge die Token
-eingefügt und abgearbeitet werden. Beispiel: Im regulären Ausdruck für den
-einzeiligen Kommentar brauchen Sie keine Keywords, Annotationen, Strings usw.
-erkennen.
+Sie müssen sich um die Reihenfolge, in der Sie Ihre RegExp/Token-Objekte
+einfügen, keine Gedanken machen. Sollten innerhalb von Matches andere Matches
+vorkommen, so sind beide Match-Gruppen anschließend sichtbar.
