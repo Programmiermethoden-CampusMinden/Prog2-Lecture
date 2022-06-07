@@ -240,10 +240,14 @@ void myMethod(int x) throws MyException{
 
 ## Wrap-Up
 
-- Was sind exceptions
-- man kann exceptions thrown
-- man kann exceptions mit try catch "behandeln"
-- finally wird immer aufgerufen
+* Behandeln von Fehlerfällen in Programmen
+* Unterschied checked und unchecked Exceptions
+* Unterschied Error und Exception
+* `throw` : Wirf eine Exception
+* `try` : Versuche Code auszuführen
+* `catch` : Verhalten im Fehlerfall
+* `finally` : Verhalten im Erfolgs- und Fehlerfall
+* Mit `extends Exception` können eigene Exceptions implementiert werden
 
 <!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
 ::: slides
