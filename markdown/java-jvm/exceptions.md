@@ -13,8 +13,14 @@ readings:
   - key: "Urma2014"
   - key: "Juneau2017"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+    Man unterscheidet zwischen **Exception** und *Error**. Ein Error ist ein Fehler im System, von dem man sich nicht wieder erholen kann. Eine Exception ist ein Fehlerfall innerhalb des Programmes.
+
+    Mit Hilfe von Exceptions lassen sich Fehlerfälle im Programmablauf deklarieren und behandeln. Methoden können mit dem Keyword `throw` gefolgt vom Namen der Exception angeben, dass sie im Fehlerfall diese spezifische Exception werfen. Der Aufrufer kann dann mithilfe der Keywords `try`, `catch` und `finally` den Fehler abfangen und behandeln.
+    Dabei wird im `try`-Block der Code geschrieben, der einen potenziellen Fehler wirf, im `catch`-Block wird das Verhalten implementiert, dass im Fehlerfall ausgeführt werden soll und im `finally`-Block kann Optional Code geschrieben werden, der sowohl im Erfolgs- als auch Fehlerfall ausgeführt wird.
+
+    Es wird zwischen **checked** Exceptions und **unchecked** Exceptions unterschieden. Checked Exceptions sind für erwartbare Fehlerfälle gedacht, die nicht vom Programm ausgeschlossen werden können, wie das Fehlen einer Datei, die eingelesen werden soll. Checked Exceptions müssen deklariert und behandelt werden. Dies wird vom Compiler überprüft.
+
+    Unchecked Exceptions werden für Fehler in der Programmlogik verwendet, wie das Teilen durch 0. Sie deuten auf fehlerhafte Programmierung oder mangelhafter Eingabeprüfung hin. Checked Exceptions müssen nicht deklariert oder behandelt werden.
 outcomes:
   - k2: "Unterschied zwischen Error und Exception"
   - k2: "Unterschied zwischen checked und unchecked Exceptions"
