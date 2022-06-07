@@ -132,7 +132,6 @@
 
 - week: "KW23"
   lecture:
-    - topic: "/frameworks/intro"
     - topic: "/modern-java/records"
     - topic: "/pattern/visitor"
     - topic: "/pattern/command"
@@ -167,6 +166,7 @@
     - topic: "/building/ant"
     - topic: "/building/maven"
     - topic: "/building/docker"
+    - topic: "/frameworks/intro"
   assignment:
     - topic: "sheet10"
       due: "Di, 21.06., 18 Uhr, PR/MR"
