@@ -30,9 +30,9 @@ youtube:
   - link: ""
     name: "VL Threads Intro"
   - link: ""
-    name: "Demo Threads Intro"
+    name: "Demo Threads Intro: Erzeugen von Threads"
   - link: ""
-    name: "Demo Threads Intro"
+    name: "Demo Threads Intro: Zustand von Threads"
 fhmedia:
   - link: ""
     name: "VL Threads Intro"
