@@ -8,4 +8,15 @@ hidden: true
 ---
 
 
-## XXX
+## Exception (5 Punkte)
+
+{{% include "assignments/pool_concept/tasks/exception.md" %}}
+
+**Punkte**: TODO
+
+
+## Multithreading (5 Punkte)
+
+{{% include "assignments/pool_concept/tasks/multithreading.md" %}}
+
+**Punkte**: TODO
