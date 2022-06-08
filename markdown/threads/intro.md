@@ -49,7 +49,7 @@ fhmedia:
 Wert 42 ausprobieren (ist zeitlich ganz gut)
 -->
 
-[Demo: misc.SwingWorkerDemo (GUI ausprobieren)]{.bsp}
+[Demo: [misc.SwingWorkerDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/misc/SwingWorkerDemo.java)  (GUI ausprobieren)]{.bsp}
 
 
 ::: notes
@@ -67,7 +67,7 @@ Wert 42 ausprobieren (ist zeitlich ganz gut)
 *   Aufruf einer Methode verlagert Kontrollfluss in diese Methode
 *   Code hinter Methodenaufruf wird erst **nach Beendigung** der Methode ausgeführt
 
-[Demo intro.Traditional]{.bsp}
+[Demo: [intro.Traditional](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/intro/Traditional.java)]{.bsp}
 
 ::: notes
 ### Nebenläufige Programmierung
@@ -92,7 +92,7 @@ Wert 42 ausprobieren (ist zeitlich ganz gut)
         von der Java-VM
     :::
 
-[Demo intro.Threaded]{.bsp}
+[Demo: [intro.Threaded](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/intro/Threaded.java)]{.bsp}
 
 
 ## Erzeugen von Threads
@@ -126,8 +126,7 @@ Vorteil von `Runnable`: Ist ein Interface, d.h. man kann noch von einer anderen 
 ::::::::: notes
 ## Zustandsmodell von Threads (vereinfacht)
 
-![](images/threadzustaende.png)
-TODO
+TODO: Bild als Text erklären.
 
 Vergleiche [@Boles2008], Kapitel 5.2 "Thread-Zustände", S. 86
 
@@ -172,7 +171,7 @@ _Hinweis:_ Die Methoden `wait()`, `notify()`/`notifyAll()` und die "`synchronize
 werden in der Sitzung `["Threads: Synchronisation"]({{< ref "/threads/intro" >}})`{=markdown}
 besprochen.
 
-[Demo intro.Join]{.bsp}
+[Demo: [intro.Join](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/intro/Join.java)]{.bsp}
 :::::::::
 
 
