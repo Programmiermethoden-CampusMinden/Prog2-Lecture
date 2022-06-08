@@ -14,25 +14,23 @@ tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k2: ""
+  - k3: ""
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: ""
+    name: "Quiz High-Level Concurrency (ILIAS)"
 assignments:
-  - topic: sheet01
+  - topic: sheet10
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL High-Level Concurrency"
   - link: ""
-    name: "Demo "
+    name: "Demo High-Level Concurrency"
   - link: ""
-    name: "Demo "
+    name: "Demo High-Level Concurrency"
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL High-Level Concurrency"
 ---
 
 
@@ -70,9 +68,4 @@ Lorem Ipsum. Starte mit H2-Level.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
