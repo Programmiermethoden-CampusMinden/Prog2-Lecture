@@ -1,17 +1,18 @@
-package intro;
+package creation;
 
 import java.util.stream.IntStream;
 
-/** Paralleles Programm: Unabhängige Verarbeitung */
-public class Threaded extends Thread {
+/** Paralleles Programm: Implementierung über das Interface Runnable */
+public class ThreadRunnable implements Runnable {
     private int val = 0;
 
     /** Starte die Demo */
     public static void main(String... args) {
-        Threaded x = new Threaded();
+        ThreadRunnable x = new ThreadRunnable();
 
         System.out.println("main(): vor run()");
-        x.start();
+        Thread t = new Thread(x); // Runnable "in" neuen Threads stecken
+        t.start();
         System.out.println("main(): nach run()");
     }
 

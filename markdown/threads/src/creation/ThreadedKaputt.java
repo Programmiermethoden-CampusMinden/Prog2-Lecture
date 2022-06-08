@@ -1,17 +1,19 @@
-package intro;
+package creation;
 
 import java.util.stream.IntStream;
 
-/** Paralleles Programm: Unabhängige Verarbeitung */
-public class Threaded extends Thread {
+/** Paralleles Programm: So geht es nicht! */
+public class ThreadedKaputt extends Thread {
     private int val = 0;
 
     /** Starte die Demo */
-    public static void main(String... args) {
-        Threaded x = new Threaded();
+    public static void main(String[] args) {
+        ThreadedKaputt x = new ThreadedKaputt();
 
         System.out.println("main(): vor run()");
-        x.start();
+        x.run(); // run() tut's nicht
+        // x.start(); // so wird ein Thread gestartet ...
+        // x.start(); // 2x start() geht nicht
         System.out.println("main(): nach run()");
     }
 

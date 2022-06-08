@@ -64,10 +64,29 @@ Wert 42 ausprobieren (ist zeitlich ganz gut)
 ## Traditionelle Programmierung
 :::
 
+::: notes
 *   Aufruf einer Methode verlagert Kontrollfluss in diese Methode
 *   Code hinter Methodenaufruf wird erst **nach Beendigung** der Methode ausgeführt
+:::
+
+```java
+public class Traditional {
+    public static void main(String... args) {
+        Traditional x = new Traditional();
+
+        System.out.println("main(): vor run()");
+        x.run();
+        System.out.println("main(): nach run()");
+    }
+
+    public void run() {
+        IntStream.range(0, 10).mapToObj(i -> "in run()").forEach(System.out::println);
+    }
+}
+```
 
 [Demo: [intro.Traditional](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/intro/Traditional.java)]{.bsp}
+
 
 ::: notes
 ### Nebenläufige Programmierung
@@ -77,12 +96,11 @@ Wert 42 ausprobieren (ist zeitlich ganz gut)
 ## Nebenläufige Programmierung
 :::
 
+::: notes
 *   Erzeugung eines neuen Kontrollflussfadens (Thread)
     *   **Läuft (quasi-) parallel zu bisherigem Kontrollfluss**
 *   Threads können unabhängig von einander arbeiten
 *   Zustandsverwaltung durch Java-VM [(oder Unterstützung durch Betriebssystem)]{.notes}
-
-    ::: notes
     *   Aufruf einer bestimmten Methode erzeugt neuen Kontrollflussfaden
     *   Der neue Thread arbeitet "parallel" zum bisherigen Thread
     *   Kontrolle kehrt sofort wieder zurück: Code hinter dem Methodenaufruf
@@ -90,7 +108,24 @@ Wert 42 ausprobieren (ist zeitlich ganz gut)
         warten
     *   Verteilung der Threads auf die vorhandenen Prozessorkerne abhängig
         von der Java-VM
-    :::
+:::
+
+```java
+public class Threaded extends Thread {
+    public static void main(String... args) {
+        Threaded x = new Threaded();
+
+        System.out.println("main(): vor run()");
+        x.start();
+        System.out.println("main(): nach run()");
+    }
+
+    @Override
+    public void run() {
+        IntStream.range(0, 10).mapToObj(i -> "in run()").forEach(System.out::println);
+    }
+}
+```
 
 [Demo: [intro.Threaded](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/intro/Threaded.java)]{.bsp}
 
@@ -104,15 +139,15 @@ Wert 42 ausprobieren (ist zeitlich ganz gut)
 *   Methode `run()` implementieren, aber nicht aufrufen
 *   Methode `start()` aufrufen, aber (i.d.R.) nicht implementieren
 
-[Demo creation.*]{.bsp}
+[Demo: [creation.*](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/creation/)]{.bsp}
 
 ::: notes
-### Ableiten von *Thread*
+### Ableiten von _Thread_
 
 *    `start()` startet den Thread und sorgt für Ausführung von `run()`
 *    `start()` nur einmal aufrufen
 
-### Implementierung von *Runnable*
+### Implementierung von _Runnable_
 
 *   Ebenfalls `run()` implementieren
 *   Neues `Thread`-Objekt erzeugen, Konstruktor das eigene Runnable übergeben
@@ -126,7 +161,7 @@ Vorteil von `Runnable`: Ist ein Interface, d.h. man kann noch von einer anderen 
 ::::::::: notes
 ## Zustandsmodell von Threads (vereinfacht)
 
-TODO: Bild als Text erklären.
+**TODO**: Bild als Text erklären.
 
 Vergleiche [@Boles2008], Kapitel 5.2 "Thread-Zustände", S. 86
 

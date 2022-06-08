@@ -2,7 +2,7 @@ package intro;
 
 /** Paralleles Programm: Demonstration von interrupt() und join() */
 public class Join extends Thread {
-    public int val = 0;
+    private int val = 0;
 
     /** Starte die Demo */
     public static void main(String... args) throws InterruptedException {
@@ -40,9 +40,8 @@ public class Join extends Thread {
         System.out.println("main(): t.val=" + t.val);
     }
 
-    /** Hilfsmethode zum Inkrementieren der Hilfsvariable */
-    public int incrVal() {
-        return ++val;
+    private int incrVal() {
+        return val++;
     }
 
     /**

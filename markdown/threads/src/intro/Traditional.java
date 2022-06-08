@@ -1,8 +1,10 @@
 package intro;
 
+import java.util.stream.IntStream;
+
 /** Traditionelles Programm: Sequentielle Verarbeitung */
 public class Traditional {
-    int val = 0;
+    private int val = 0;
 
     /** Starte die Demo */
     public static void main(String... args) {
@@ -13,8 +15,7 @@ public class Traditional {
         System.out.println("main(): nach run()");
     }
 
-    /** Hilfsmethode zum Inkrementieren der Hilfsvariable */
-    public int incrVal() {
+    private int incrVal() {
         return val++;
     }
 
@@ -26,8 +27,6 @@ public class Traditional {
      * Kontrollfluss wieder zurück nach main() und die letzte Ausgabe dort wird gemacht.
      */
     public void run() {
-        for (int i = 0; i < 10; i++) {
-            System.out.println("run(): " + incrVal());
-        }
+        IntStream.range(0, 10).mapToObj(i -> "in run(): " + incrVal()).forEach(System.out::println);
     }
 }

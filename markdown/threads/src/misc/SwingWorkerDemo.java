@@ -11,10 +11,10 @@ import javax.swing.SwingWorker;
 
 /** Kleine Demo zum Einsatz von SwingWorker */
 public class SwingWorkerDemo extends JFrame {
-    JTextField in1;
-    JTextField in2;
-    JLabel erg1;
-    JLabel erg2;
+    private JTextField in1;
+    private JTextField in2;
+    private JLabel erg1;
+    private JLabel erg2;
 
     /** Baue die Demo zusammen */
     public SwingWorkerDemo() {
