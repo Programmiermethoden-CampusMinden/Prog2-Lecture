@@ -146,7 +146,6 @@ double div(int a, int b) throws IllegalArgumentException{
 *   Es können auch mehrere Exceptions geworfen werden `throws Exception1, Exception2, Exception3`
 *   Wenn innerhalb der Methode die genannte Exception aufkommt (oder mit `throw` geworfen wird), wird diese an die aufrufende Stelle weitergeleitet
 *   Wenn eine Methode `throws` **muss** die aufrufende Stelle diese Exception behandeln.
-*   Exceptions sollten immer dort behandelt werden, wo sie verursacht werden.
 :::
 
 ## Try-Catch
@@ -159,7 +158,7 @@ try {
 }
 catch(IllegalArgumentException e) {
   //  Codeblock der im Fehlerfall aufgerufen wird
-  e.printstacktrace();
+  e.printstaprintStackTracecktrace();
 }
 // hier geht es normal weiter
 ```
@@ -176,10 +175,10 @@ try {
     someMethod(a,b,c);
 }
 catch(IllegalArgumentException e1) {
-  e1.printstacktrace();
+  e1.printStackTrace();
 }
 catch(FileNotFoundException | NullPointerException e2) {
-  e2.printstacktrace();
+  e2.printStackTrace();
 }
 ```
 ::: notes
@@ -195,7 +194,7 @@ try {
     double s= 5/myScanner.nextInt();
 }
 catch(IllegalArgumentException e) {
-  e.printstacktrace();
+  e.printStackTrace();
 }
 finally {
     //wird immer aufgerufen
@@ -224,25 +223,86 @@ String getFirstLine(String pathToFile) throws IOException {
 * Ressourcen Objekte müssen `java.io.Closeable` implementieren
 :::
 
-## Eigene Exceptions
+## Wann throw wann catch?
+```java
+public static void methode1(String path, int x) throws IOException {
+    methode2(path, x, x * 2);
+}
+
+private static void methode2(String path, int x, int y) throws IOException {
+    methode3(path, x, y, x + y);
+}
+
+private static void methode3(String path, int x, int y, int z) throws IOException {
+    try (FileWriter fileWriter = new FileWriter(path);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+        bufferedWriter.write("X:" + x + " Y: " + y + " Z:" + z);
+        bufferedWriter.flush();
+    }
+}
+
+public static void main(String[] args) {
+    try {
+        methode1("wuppi/flupp", 2);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+```
+::: notes
+* Exceptions sollten immer beim Ursprung der Fehlerursache behandelt werden
+:::
+## Eigene Checked-Exceptions
 
 ```java
-public class MyException extends Exception {
+public class MyCheckedException extends Exception {
     public MyException(String errorMessage){
         super(errorMessage);
     }
 }
 ```
 ```java
-void myMethod(int x) throws MyException{
-    if(x>5 || x<10) throw new MyException("Ich finde x doof.");
+void myMethod(int x) throws MyCheckedException{
+    if(x>5 || x<10) throw new MyCheckedException("Ich finde x doof.");
     //...
 }
 ```
+```java
+try {
+    myMethod(12);
+} catch (MyCheckedException e) {
+    throw new RuntimeException(e);
+}
+```
 ::: notes
-* Eigene Exceptions erben von `Exception` (direkt oder indirekt)
+* Eigene Checked-Exceptions erben von `Exception` (direkt oder indirekt)
 * Können wie integrierte Exceptions verwendet werden
 :::
+
+## Eigene Unchecked-Exceptions
+
+```java
+public class MyUncheckedException extends RuntimeException {
+    public MyUncheckedException(String errorMessage){
+        super(errorMessage);
+    }
+}
+```
+```java
+void myMethod(int x) throws MyUncheckedException{
+    if(x>5 || x<10) throw new MyCheckedException("Ich finde x doof.");
+    //...
+}
+```
+```java
+myMethod(12);
+```
+::: notes
+* Eigene Unchecked-Exceptions erben von `RuntimeException` (direkt oder indirekt)
+* Können wie integrierte Exceptions verwendet werden
+:::
+
+## Wann checked, wann unchecked werfen?
 
 ## Wrap-Up
 
