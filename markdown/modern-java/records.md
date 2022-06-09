@@ -31,6 +31,7 @@ tldr: |
     gibt außer den über die Komponenten definierten Attribute keine weiteren Attribute. Da eine
     Record-Klasse intern von `java.lang.Record` ableitet, kann eine Record-Klasse nicht von
     weiteren Klassen ableiten (erben). Man kann aber beliebig viele Interfaces implementieren.
+    Record-Klassen sind implizit final, d.h. man nicht von Record-Klassen erben.
 outcomes:
   - k2: "Record-Klassen sind final"
   - k2: "Record-Klassen haben einen kanonischen Konstruktor"
@@ -119,9 +120,11 @@ entsprechen denen der Komponenten, es fehlt also der übliche "get"-Präfix!
 *   Records erweitern implizit die Klasse `java.lang.Record`: \newline
     Keine andere Klassen mehr erweiterbar! (Interfaces kein Problem)
 
+*   Record-Klassen sind implizit final
+
 *   Keine weiteren (Instanz-) Attribute definierbar (nur die Komponenten)
 
-*   Keine Setter definierbar für die Komponenten
+*   Keine Setter definierbar für die Komponenten: Attribute sind final
 
 *   Statische Attribute mit Initialisierung erlaubt
 
