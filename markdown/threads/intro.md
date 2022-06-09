@@ -158,12 +158,15 @@ Vorteil von `Runnable`: Ist ein Interface, d.h. man kann noch von einer anderen 
 :::
 
 
-::::::::: notes
 ## Zustandsmodell von Threads (vereinfacht)
 
+::: notes
 **TODO**: Bild als Text erklären.
 
 Vergleiche [@Boles2008], Kapitel 5.2 "Thread-Zustände", S. 86
+:::
+
+\vspace{3cm}
 
 ### Threads können wie normale Objekte kommunizieren
 
@@ -173,27 +176,38 @@ Vergleiche [@Boles2008], Kapitel 5.2 "Thread-Zustände", S. 86
 ### Threads können noch mehr
 
 *   Eine Zeitlang schlafen: `Thread.sleep(<duration_ms>)`
+
+    ::: notes
     *   Statische Methode der Klasse `Thread` (Klassenmethode)
     *   Aufrufender Thread wird bis zum Ablauf der Zeit oder bis zum Aufruf
         der `interrupt()`-Methode des Threads blockiert
     *   "Moderne" Alternative: `TimeUnit`, beispielsweise `TimeUnit.SECONDS.sleep( 2 );`
+    :::
 
 *   Prozessor abgeben und hinten in Warteschlange einreihen: `yield()`
 
 *   Andere Threads stören: `otherThreadObj.interrupt()`
+
+    ::: notes
     *   Die Methoden `sleep()`, `wait()` und `join()` im empfangenden Thread
         `otherThreadObj` lösen eine `InterruptedException` aus, wenn sie
         durch die Methode `interrupt()` unterbrochen werden. Das heißt,
         `interrupt()` beendet diese Methoden mit der Ausnahme.
     *   Empfangender Thread verlässt ggf. den Zustand "blockiert" und wechselt
         in den Zustand "rechenwillig"
+    :::
 
 *   Warten auf das Ende anderer Threads: `otherThreadObj.join()`
+
+    ::: notes
     *   Ausführender Thread wird blockiert (also nicht `otherThreadObj`!)
     *   Blockade des Aufrufers wird beendet, wenn der andere Thread
         (`otherThreadObj`) beendet wird.
+    :::
 
+\bigskip
 
+::: notes
 _Hinweis:_ Ein Thread wird beendet, wenn
 
 *   die `run()`-Methode normal endet, oder
@@ -201,13 +215,12 @@ _Hinweis:_ Ein Thread wird beendet, wenn
 *   von außen die Methode `stop()` aufgerufen wird (Achtung: Deprecated!
     Einen richtigen Ersatz gibt es aber auch nicht.).
 
-
 _Hinweis:_ Die Methoden `wait()`, `notify()`/`notifyAll()` und die "`synchronized`-Sperre"
 werden in der Sitzung `["Threads: Synchronisation"]({{< ref "/threads/intro" >}})`{=markdown}
 besprochen.
+:::
 
 [Demo: [intro.Join](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/intro/Join.java)]{.bsp}
-:::::::::
 
 
 ## Wrap-Up
