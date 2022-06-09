@@ -41,7 +41,7 @@ outcomes:
   - k2: "Record-Klassen können nicht von anderen Klassen erben, können aber Interfaces implementieren"
   - k3: "Einsatz von Record-Klassen"
 quizzes:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1091625&client_id=FH-Bielefeld"
     name: "Quiz Record-Klassen (ILIAS)"
 assignments:
   - topic: sheet09
