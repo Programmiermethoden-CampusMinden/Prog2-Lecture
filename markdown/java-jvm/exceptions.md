@@ -158,7 +158,7 @@ try {
 }
 catch(IllegalArgumentException e) {
   //  Codeblock der im Fehlerfall aufgerufen wird
-  e.printstaprintStackTracecktrace();
+  e.printStackTrace();
 }
 // hier geht es normal weiter
 ```
