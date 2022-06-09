@@ -302,7 +302,14 @@ myMethod(12);
 * Können wie integrierte Exceptions verwendet werden
 :::
 
-## Wann checked, wann unchecked werfen?
+## Wann eine Exception checked machen, wann unchecked
+
+Laut [Oracle](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
+* Wenn erwartet werden kann, das ein Client sich von der Exception erholen kann, mache sie checked
+* Wenn nicht erwartet werden kann, das ein Client sich von den Exception erholen kann, mache sie unchecked.
+
+Laut Bloch
+TODO
 
 ## Wrap-Up
 
