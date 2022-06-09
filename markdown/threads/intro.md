@@ -33,11 +33,11 @@ tldr: |
     Zeitscheibe zugeteilt bekommt, wechselt er in den Zustand "rechnend". Von hier kann
     er nach Ablauf der Zeitscheibe durch den Scheduler wieder nach "ausführungsbereit"
     zurück überführt werden. Dieses Wechselspiel passiert automatisch und i.d.R. schnell,
-    so dass selbst auf Maschinen mit einem Prozessor/Kern der Eindruck einer parallelen
+    so dass selbst auf Maschinen mit nur einem Prozessor/Kern der Eindruck einer parallelen
     Verarbeitung entsteht. Nach Abarbeitung der `run()`-Methode wird der Thread beendet
     und kann nicht wieder neu gestartet werden. Bei Zugriff auf gesperrte Ressourcen
     oder durch `sleep()` oder `join()` kann ein Thread blockiert werden. Aus diesem
-    Zustand gelangt er durch Interrupts oder Ablauf der Schlafzeit oder durch `notify``
+    Zustand gelangt er durch Interrupts oder nach Ablauf der Schlafzeit oder durch `notify`
     wieder zurück nach "ausführungsbereit".
 
     Die Thread-Objekte sind normale Java-Objekte. Man kann hier Attribute und Methoden
@@ -200,7 +200,7 @@ er vom Scheduler eine Zeitscheibe zugeteilt bekommt, wechselt er in den Zustand
 "rechnend" und führt den Inhalt der `run()`-Methode aus. Von hier kann er nach
 Ablauf der Zeitscheibe durch den Scheduler wieder nach "ausführungsbereit" zurück
 überführt werden. Dieses Wechselspiel passiert automatisch und i.d.R. schnell,
-so dass selbst auf Maschinen mit einem Prozessor/Kern der Eindruck einer parallelen
+so dass selbst auf Maschinen mit nur einem Prozessor/Kern der Eindruck einer parallelen
 Verarbeitung entsteht.
 
 Nach der Abarbeitung der `run()`-Methode oder bei einer nicht gefangenen Exception
