@@ -133,10 +133,10 @@
 - week: "KW23"
   lecture:
     - topic: "/modern-java/records"
-    - topic: "/pattern/visitor"
-    - topic: "/pattern/command"
     - topic: "/modern-java/stream-api"
     - topic: "/modern-java/optional"
+    - topic: "/pattern/visitor"
+    - topic: "/pattern/command"
   assignment:
     - topic: "sheet08"
       due: "Di, 07.06., 18 Uhr, PR/MR"
@@ -150,8 +150,8 @@
     - topic: "/threads/intro"
     - topic: "/threads/synchronisation"
     - topic: "/threads/highlevel"
-    - topic: "/java-jvm/collections"
     - topic: "/java-jvm/exceptions"
+    - topic: "/frameworks/intro"
   assignment:
     - topic: "sheet09"
       due: "Di, 14.06., 18 Uhr, PR/MR"
@@ -166,7 +166,7 @@
     - topic: "/building/ant"
     - topic: "/building/maven"
     - topic: "/building/docker"
-    - topic: "/frameworks/intro"
+    - topic: "/java-jvm/collections"
   assignment:
     - topic: "sheet10"
       due: "Di, 21.06., 18 Uhr, PR/MR"
