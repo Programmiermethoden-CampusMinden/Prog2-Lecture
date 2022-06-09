@@ -188,9 +188,36 @@ Vorteil von `Runnable`: Ist ein Interface, d.h. man kann noch von einer anderen 
 ## Zustandsmodell von Threads (vereinfacht)
 
 ::: notes
-**TODO**: Bild als Text erklären.
+Threads haben einen Lebenszyklus: Nach dem Erzeugen der Objekte mit `new` wird
+der Thread noch nicht ausgeführt. Er ist sozusagen in einem Zustand "erzeugt".
+Man kann bereits mit dem Objekt interagieren, also auf Attribute zugreifen und
+Methoden aufrufen.
 
-Vergleiche [@Boles2008], Kapitel 5.2 "Thread-Zustände", S. 86
+Durch den Aufruf der Methode `start()` gelangt der Thread in einen Zustand
+"ausführungsbereit", er läuft also aus Nutzersicht. Allerdings hat er noch keine
+Ressourcen zugeteilt (CPU, ...), so dass er tatsächlich noch nicht rechnet. Sobald
+er vom Scheduler eine Zeitscheibe zugeteilt bekommt, wechselt er in den Zustand
+"rechnend" und führt den Inhalt der `run()`-Methode aus. Von hier kann er nach
+Ablauf der Zeitscheibe durch den Scheduler wieder nach "ausführungsbereit" zurück
+überführt werden. Dieses Wechselspiel passiert automatisch und i.d.R. schnell,
+so dass selbst auf Maschinen mit einem Prozessor/Kern der Eindruck einer parallelen
+Verarbeitung entsteht.
+
+Nach der Abarbeitung der `run()`-Methode oder bei einer nicht gefangenen Exception
+wird der Thread beendet und kann nicht wieder neu gestartet werden. Auch wenn der
+Thread abgelaufen ist, kann man mit dem Objekt wie üblich interagieren (nur eben
+nicht mehr parallel).
+
+Bei Zugriff auf gesperrte Ressourcen oder durch Aufrufe von Methoden wie `sleep()`
+oder `join()` kann ein Thread blockiert werden. Hier führt der Thread nichts aus,
+bekommt durch den Scheduler aber auch keine neue Zeitscheibe zugewiesen. Aus diesem
+Zustand gelangt der Thread wieder heraus, etwa durch Interrupts (Aufruf der Methode
+`interrupt()` auf dem Thread-Objekt) oder nach Ablauf der Schlafzeit (in `sleep()`)
+oder durch ein `notify`, und wird wieder zurück nach "ausführungsbereit" versetzt
+und wartet auf die Zuteilung einer Zeitscheibe durch den Scheduler.
+
+Sie finden in [@Boles2008, Kapitel 5.2 "Thread-Zustände"] eine schöne
+ausführliche Darstellung.
 :::
 
 \vspace{3cm}
@@ -221,7 +248,7 @@ Vergleiche [@Boles2008], Kapitel 5.2 "Thread-Zustände", S. 86
         durch die Methode `interrupt()` unterbrochen werden. Das heißt,
         `interrupt()` beendet diese Methoden mit der Ausnahme.
     *   Empfangender Thread verlässt ggf. den Zustand "blockiert" und wechselt
-        in den Zustand "rechenwillig"
+        in den Zustand "ausführungsbereit"
     :::
 
 *   Warten auf das Ende anderer Threads: `otherThreadObj.join()`
