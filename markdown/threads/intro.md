@@ -220,12 +220,14 @@ Sie finden in [@Boles2008, Kapitel 5.2 "Thread-Zustände"] eine schöne
 ausführliche Darstellung.
 :::
 
-\vspace{3cm}
+\bigskip
 
 ### Threads können wie normale Objekte kommunizieren
 
-*   Zugriff auf `public` Attribute
+*   Zugriff auf (`public`) Attribute [(oder eben über Methoden)]{.notes}
 *   Aufruf von Methoden
+
+\bigskip
 
 ### Threads können noch mehr
 
@@ -273,6 +275,8 @@ _Hinweis:_ Die Methoden `wait()`, `notify()`/`notifyAll()` und die "`synchronize
 werden in der Sitzung `["Threads: Synchronisation"]({{< ref "/threads/intro" >}})`{=markdown}
 besprochen.
 :::
+
+\vspace{24mm}
 
 [Demo: [intro.Join](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/intro/Join.java)]{.bsp}
 
