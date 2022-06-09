@@ -249,7 +249,7 @@ TODO Bild! / Code!
 *   Thread ruft auf einem Synchronisations-Objekt die Methode `notify`
     oder `notifyAll` auf
 *   Falls Thread(s) in Warteschlange des Objekts vorhanden, dann
-    *   `notify`: Ein *zufälliger* Thread wird aus Warteschlange entfernt und
+    *   `notify`: Ein _zufälliger_ Thread wird aus Warteschlange entfernt und
         in den Zustand "rechenwillig" versetzt
     *   `notifyAll`: Alle Threads werden aus Warteschlange entfernt und in
         den Zustand "rechenwillig" versetzt
@@ -261,6 +261,8 @@ TODO Bild! / Code!
 ## Wrap-Up
 
 Synchronisierungsbedarf bei verteiltem Zugriff auf gemeinsame Ressourcen:
+
+\bigskip
 
 *   Vorsicht mit konkurrierendem Ressourcenzugriff: Synchronisieren mit
     `synchronize` => **Mehrseitige Synchronisierung**
