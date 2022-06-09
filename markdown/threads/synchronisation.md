@@ -29,9 +29,13 @@ youtube:
   - link: ""
     name: "VL Threads Synchronisation"
   - link: ""
-    name: "Demo Gemeinsame Ressourcen"
+    name: "Demo Teaser: Falscher Zugriff auf gemeinsame Ressourcen"
   - link: ""
-    name: "Demo Threads Synchronisation"
+    name: "Demo Mehrseitige Synchronisation (Sperrobjekt, synchronisierte Methode)"
+  - link: ""
+    name: "Demo Mehrseitige Synchronisation: Deadlock"
+  - link: ""
+    name: "Demo Einseitige Synchronisation"
 fhmedia:
   - link: ""
     name: "VL Threads Synchronisation"
@@ -40,28 +44,23 @@ fhmedia:
 
 ## Motivation: Verteilter Zugriff auf gemeinsame Ressourcen
 
-```{.java size="scriptsize"}
-public class MultiThreadKaputt implements Runnable {
+```{.java size="footnotesize"}
+public class Teaser implements Runnable {
     private int val = 0;
 
     public static void main(String... args) {
-        MultiThreadKaputt x = new MultiThreadKaputt();
-
-        Thread t1 = new Thread(x);   Thread t2 = new Thread(x);
-        t1.start();    t2.start();
+        Teaser x = new Teaser();
+        new Thread(x).start();
+        new Thread(x).start();
     }
 
-    private int incrVal() {
-        int erg = val;
-        ...
-        val++;
-        return erg;
+    private void incrVal() {
+        ++val;
+        System.out.println(Thread.currentThread().getId() + ": " + val);
     }
 
     public void run() {
-        IntStream.range(0, 10)
-                .mapToObj(i -> "run() [ID " + Thread.currentThread().getId() + "]: " + incrVal())
-                .forEach(System.out::println);
+        IntStream.range(0, 5).forEach(i -> incrVal());
     }
 }
 ```
@@ -139,9 +138,20 @@ Kurzschreibweise: Man spart das separate Wächter-Objekt und synchronisiert auf 
 
 ## Probleme bei der (mehrseitigen) Synchronisierung: Deadlocks
 
-TODO! Bild! / Code!
+```java
+public class Deadlock {
+    public synchronized void foo(Deadlock other) { other.bar(this); }
+    public synchronized void bar(Deadlock other) {}
 
-[Quelle: [@Ullenboom2021], Abschnitt 16.5.12 "Deadlocks"]{.origin}
+    public static void main(String... args) {
+        final Deadlock a = new Deadlock("a");
+        final Deadlock b = new Deadlock("b");
+
+        new Thread(() -> a.foo(b)).start();
+        new Thread(() -> b.foo(a)).start();
+    }
+}
+```
 
 ::: notes
 Viel hilft hier nicht viel! Durch zu großzügige mehrseitige Synchronisierung
@@ -150,51 +160,46 @@ eine Ressource, die ein anderer Thread B haben möchte und Thread B belegt eine
 Ressource, die A gerne bekommen würde. Da es dann nicht weitergeht, nennt man
 diese Situation auch "Deadlock" ("Verklemmung").
 
-Im Beispiel ruft der erste Thread für das Objekt `alphonse` die `bow` -Methode
-auf und holt sich damit den Lock auf `alphonse`. Um die Methode beenden zu
-können, muss noch die `bowBack` -Methode vom Objekt `gaston` durch diesen ersten
-Thread aufgerufen werden. Dafür muss der erste Thread den Lock auf `gaston`
+Im Beispiel ruft der erste Thread für das Objekt `a` die `foo()`-Methode
+auf und holt sich damit den Lock auf `a`. Um die Methode beenden zu
+können, muss noch die `bar()`-Methode vom Objekt `b` durch diesen ersten
+Thread aufgerufen werden. Dafür muss der erste Thread den Lock auf `b`
 bekommen.
 
-Dummerweise hat parallel der zweite Thread auf dem Objekt `gaston` die
-`bow`-Methode aufgerufen und sich damit den Lock auf `gaston` geholt. Damit
+Dummerweise hat parallel der zweite Thread auf dem Objekt `b` die
+`foo()`-Methode aufgerufen und sich damit den Lock auf `b` geholt. Damit
 muss der erste Thread so lange warten, bis der zweite Thread den Lock auf
-`gaston` freigibt.
+`b` freigibt.
 
 Das wird allerdings nicht passieren, da der zweite Thread zur Beendigung der
-`bow`-Methode noch `bowBack` auf `alphonse` ausführen muss und dazu den Lock
-auf `alphonse` holen, den aber aktuell der erste Thread hält.
+`foo()`-Methode noch `bar()` auf `a` ausführen muss und dazu den Lock
+auf `b` holen, den aber aktuell der erste Thread hält.
 
 Und schon geht's nicht mehr weiter :-)
 :::
 
-TODO Code
-[Demo synchronised.Deadlock]{.bsp}
+[Demo: [synchronised.Deadlock](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/Deadlock.java)]{.bsp}
 
 
 ## Warten auf andere Threads: Einseitige Synchronisierung
 
-TODO Bild! / Code!
-
-[Quelle: [@Ullenboom2021], Abschnitt 16.6 "Synchronisation über Warten und Benachrichtigen"]{.origin}
-
-::: notes
 ### Problem
 
 *   Thread T1 wartet auf Arbeitsergebnis von T2
 *   T2 ist noch nicht fertig
 
+\bigskip
+
 ### Mögliche Lösungen
 
-*   Aktives Warten (Polling): Permanente Abfrage
+1.  Aktives Warten (Polling): Permanente Abfrage
     *   Kostet unnötig Rechenzeit
-*   Schlafen mit `Thread.sleep()`
+2.  Schlafen mit `Thread.sleep()`
     *   Etwas besser; aber wie lange soll man idealerweise schlafen?
-*   Warten mit `join()`
-    *   Macht nur Sinn, wenn T1 auf das Ende von T2 wartet
-*   Einseitige Synchronisierung mit `wait()` und `notifyAll()`
+3.  Warten mit `T2.join()`
+    *   Macht nur Sinn, wenn T1 auf das _Ende_ von T2 wartet
+4.  **Einseitige Synchronisierung** mit `wait()` und `notifyAll()`
     *   Das ist DIE Lösung für das Problem :)
-:::
 
 
 ## Einseitige Synchronisierung mit _wait_ und _notify_
@@ -250,12 +255,14 @@ TODO Bild! / Code!
     oder `notifyAll` auf
 *   Falls Thread(s) in Warteschlange des Objekts vorhanden, dann
     *   `notify`: Ein _zufälliger_ Thread wird aus Warteschlange entfernt und
-        in den Zustand "rechenwillig" versetzt
+        in den Zustand "ausführungsbereit" versetzt
     *   `notifyAll`: Alle Threads werden aus Warteschlange entfernt und in
-        den Zustand "rechenwillig" versetzt
+        den Zustand "ausführungsbereit" versetzt
 
 => Geht nur innerhalb der `synchronized`-Anweisung für das Synchronisations-Objekt!
 :::
+
+[Demo: [synchronised.Staffel](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/Staffel.java)]{.bsp}
 
 
 ## Wrap-Up
