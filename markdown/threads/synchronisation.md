@@ -29,7 +29,7 @@ youtube:
   - link: ""
     name: "VL Threads Synchronisation"
   - link: ""
-    name: "Demo Threads Synchronisation"
+    name: "Demo Gemeinsame Ressourcen"
   - link: ""
     name: "Demo Threads Synchronisation"
 fhmedia:
@@ -38,13 +38,38 @@ fhmedia:
 ---
 
 
-## Verteilter Zugriff auf gemeinsame Ressourcen: Mehrseitige Synchronisierung
+## Motivation: Verteilter Zugriff auf gemeinsame Ressourcen
 
-\bigskip
+```{.java size="scriptsize"}
+public class MultiThreadKaputt implements Runnable {
+    private int val = 0;
 
-[Demo synchronised.MultiThreadKaputt]{.bsp}
+    public static void main(String... args) {
+        MultiThreadKaputt x = new MultiThreadKaputt();
 
-\pause
+        Thread t1 = new Thread(x);   Thread t2 = new Thread(x);
+        t1.start();    t2.start();
+    }
+
+    private int incrVal() {
+        int erg = val;
+        ...
+        val++;
+        return erg;
+    }
+
+    public void run() {
+        IntStream.range(0, 10)
+                .mapToObj(i -> "run() [ID " + Thread.currentThread().getId() + "]: " + incrVal())
+                .forEach(System.out::println);
+    }
+}
+```
+
+[Demo: [synchronised.Teaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java)]{.bsp}
+
+
+## Zugriff auf gemeinsame Ressourcen: Mehrseitige Synchronisierung
 
 ```java
 synchronized (<Object reference>) {
@@ -72,7 +97,7 @@ Fallunterscheidung: Thread T1 führt `synchronized`-Anweisung aus:
     => T1 wird blockiert, bis T2 die Sperre löst
 :::
 
-[Demo synchronised.MultiThreadObjSync]{.bsp}
+[Demo: [synchronised.ObjSync](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/ObjSync.java)]{.bsp}
 
 
 ## Synchronisierte Methoden
@@ -107,16 +132,16 @@ synchronized void f() {
 
 ::: notes
 Kurzschreibweise: Man spart das separate Wächter-Objekt und synchronisiert auf sich selbst ...
-
-[Beispiel: synchronised.MultiThreadMethodSync]{.bsp}
 :::
+
+[Demo: [synchronised.MethodSync](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/MethodSync.java)]{.bsp}
 
 
 ## Probleme bei der (mehrseitigen) Synchronisierung: Deadlocks
 
 TODO! Bild! / Code!
 
-[Quelle: [@Ullenboom2012], Abschnitt 14.5.12 "Deadlocks"]{.origin}
+[Quelle: [@Ullenboom2021], Abschnitt 16.5.12 "Deadlocks"]{.origin}
 
 ::: notes
 Viel hilft hier nicht viel! Durch zu großzügige mehrseitige Synchronisierung
@@ -151,7 +176,7 @@ TODO Code
 
 TODO Bild! / Code!
 
-[Quelle: [@Ullenboom2012], Abschnitt 14.6 "Synchronisation über Warten und Benachrichtigen"]{.origin}
+[Quelle: [@Ullenboom2021], Abschnitt 16.6 "Synchronisation über Warten und Benachrichtigen"]{.origin}
 
 ::: notes
 ### Problem
