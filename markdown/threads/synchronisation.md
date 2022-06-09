@@ -271,8 +271,8 @@ Synchronisierungsbedarf bei verteiltem Zugriff auf gemeinsame Ressourcen:
 
 \bigskip
 
-*   Vorsicht mit konkurrierendem Ressourcenzugriff: Synchronisieren mit
-    `synchronize` => **Mehrseitige Synchronisierung**
+*   Vorsicht mit konkurrierendem Ressourcenzugriff: \newline
+    Synchronisieren mit `synchronize` => **Mehrseitige Synchronisierung**
 *   Warten auf Ereignisse mit `wait` und `notifyAll` => **Einseitige Synchronisierung**
 
 
