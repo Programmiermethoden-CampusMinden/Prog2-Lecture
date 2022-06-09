@@ -11,11 +11,38 @@ readings:
     comment: "Trail: Essential Java Classes, Lesson: Concurrency"
   - key: "Boles2008"
 tldr: |
-    Threads sind weitere Kontrollflussfäden, von Java-VM (oder (selten) von OS) verwaltet
+    Threads sind weitere Kontrollflussfäden, die von der Java-VM (oder (selten) vom OS)
+    verwaltet werden. Damit ist sind sie leichtgewichtiger als der Start neuer Prozesse
+    direkt auf Betriebssystem-Ebene.
 
-    *   Ableiten von `Thread` oder implementieren von `Runnable`
-    *   Methode `run` enthält den auszuführenden Code
-    *   Starten des Threads mit `start` (nie mit `run`!)
+    Beim Start eines Java-Programms wird die `main()`-Methode automatisch in einem
+    (Haupt-) Thread ausgeführt. Alle Anweisungen in einem Thread werden sequentiell
+    ausgeführt.
+
+    Um einen neuen Thread zu erzeugen, leitet man von `Thread` ab oder implementiert
+    das Interface `Runnable`. Von diesen eigenen Klassen kann man wie üblich ein neues
+    Objekt anlegen. Die Methode `run()` enthält dabei den im Thread auszuführenden
+    Code. Um einen Thread als neuen parallelen Kontrollfluss zu starten, muss man die
+    geerbte Methode `start()` auf dem Objekt aufrufen. Im Fall der Implementierung von
+    `Runnable` muss man das Objekt zuvor noch in den Konstruktor von `Thread` stecken
+    und so ein neues `Thread`-Objekt erzeugen, auf dem man dann `start()` aufrufen kann.
+
+    Threads haben einen Lebenszyklus: Nach dem Erzeugen der Objekte mit `new` wird
+    der Thread noch nicht ausgeführt. Durch den Aufruf der Methode `start()` gelangt
+    der Thread in einen Zustand "ausführungsbereit". Sobald er vom Scheduler eine
+    Zeitscheibe zugeteilt bekommt, wechselt er in den Zustand "rechnend". Von hier kann
+    er nach Ablauf der Zeitscheibe durch den Scheduler wieder nach "ausführungsbereit"
+    zurück überführt werden. Dieses Wechselspiel passiert automatisch und i.d.R. schnell,
+    so dass selbst auf Maschinen mit einem Prozessor/Kern der Eindruck einer parallelen
+    Verarbeitung entsteht. Nach Abarbeitung der `run()`-Methode wird der Thread beendet
+    und kann nicht wieder neu gestartet werden. Bei Zugriff auf gesperrte Ressourcen
+    oder durch `sleep()` oder `join()` kann ein Thread blockiert werden. Aus diesem
+    Zustand gelangt er durch Interrupts oder Ablauf der Schlafzeit oder durch `notify``
+    wieder zurück nach "ausführungsbereit".
+
+    Die Thread-Objekte sind normale Java-Objekte. Man kann hier Attribute und Methoden
+    haben und diese entsprechend zugreifen/aufrufen. Das klappt auch, wenn der Thread
+    noch nicht gestartet wurde oder bereits abgearbeitet wurde.
 outcomes:
   - k2: "Grundsätzlicher Unterschied zw. Threads und Prozessen"
   - k2: "Lebenszyklus von Threads"
