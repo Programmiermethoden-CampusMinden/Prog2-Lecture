@@ -295,7 +295,7 @@ Synchronisierungsbedarf bei verteiltem Zugriff auf gemeinsame Ressourcen:
 
 \smallskip
 
-*   Warten auf Ereignisse mit `wait` und `notifyAll` => **Einseitige Synchronisierung**
+*   Warten auf Ereignisse mit `wait` und `notify`/`notifyAll` => **Einseitige Synchronisierung**
 
 
 
