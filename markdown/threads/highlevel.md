@@ -42,7 +42,7 @@ fhmedia:
 ## Explizite Lock-Objekte
 
 ::: notes
-Sie kennen bereits die Synchronisierung mit dem Schlüsselwort `synchronize`.
+Sie kennen bereits die Synchronisierung mit dem Schlüsselwort `synchronized`.
 
 ```java
 // Synchronisierung der gesamten Methode
@@ -55,7 +55,7 @@ public synchronized int incrVal() {
 // Synchronisierung eines Blocks (eines Teils einer Methode)
 public int incrVal() {
     ...
-    synchronized (new Object) {
+    synchronized (someObj) {
         ...
     }
     ...
