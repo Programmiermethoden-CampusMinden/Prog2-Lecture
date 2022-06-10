@@ -216,7 +216,7 @@ Und schon geht's nicht mehr weiter :-)
     *   Etwas besser; aber wie lange soll man idealerweise schlafen?
 3.  Warten mit `T2.join()`
     *   Macht nur Sinn, wenn T1 auf das _Ende_ von T2 wartet
-4.  **Einseitige Synchronisierung** mit `wait()` und `notifyAll()`
+4.  **Einseitige Synchronisierung** mit `wait()` und `notify()`
     *   Das ist DIE Lösung für das Problem :)
 
 
