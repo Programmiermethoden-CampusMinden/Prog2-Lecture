@@ -140,8 +140,8 @@ Kurzschreibweise: Man spart das separate Wächter-Objekt und synchronisiert auf 
 
 ```java
 public class Deadlock {
-    public synchronized void foo(Deadlock other) { other.bar(this); }
-    public synchronized void bar(Deadlock other) {}
+    public synchronized void foo(Deadlock other) { other.bar(); }
+    public synchronized void bar() {}
 
     public static void main(String... args) {
         final Deadlock a = new Deadlock("a");
