@@ -59,7 +59,7 @@ youtube:
   - link: ""
     name: "Demo Threads Intro: Erzeugen von Threads"
   - link: ""
-    name: "Demo Threads Intro: Zustand von Threads"
+    name: "Demo Threads Intro: Arbeiten mit Threads (`join()`)"
 fhmedia:
   - link: ""
     name: "VL Threads Intro"
