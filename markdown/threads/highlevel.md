@@ -101,9 +101,10 @@ Nachteile:
     durch das Verlassen der Methode freigegeben. Explizite Locks müssen
     **durch den Programmierer** freigegeben werden! => Nutzung des
     `finally`-Block!
-
-[Beispiel: lock.*]{.bsp}
 :::
+
+[Demo: [synchronised.Teaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java)]{.bsp}
+[Beispiel: lock.*]{.bsp}
 
 
 ## Thread-Management: Executor-Interface und Thread-Pools
@@ -173,6 +174,7 @@ pool.shutdown();    // Feierabend :)
 ```
 
 [Demo executor.MyThread]{.bsp}
+[Demo: [synchronised.Teaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java)]{.bsp}
 
 ::::::::: notes
 ### Hintergrund (vereinfacht)
