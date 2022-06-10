@@ -30,9 +30,13 @@ youtube:
   - link: ""
     name: "VL High-Level Concurrency"
   - link: ""
-    name: "Demo High-Level Concurrency"
+    name: "Demo Locks"
   - link: ""
-    name: "Demo High-Level Concurrency"
+    name: "Demo Executor"
+  - link: ""
+    name: "Demo ForkJoin"
+  - link: ""
+    name: "Demo SwingWorker"
 fhmedia:
   - link: ""
     name: "VL High-Level Concurrency"
@@ -103,8 +107,7 @@ Nachteile:
     `finally`-Block!
 :::
 
-[Demo: [synchronised.Teaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java)]{.bsp}
-[Beispiel: lock.*]{.bsp}
+[Demo: [lock.*Teaser*](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/lock/)]{.bsp}
 
 
 ## Thread-Management: Executor-Interface und Thread-Pools
@@ -176,6 +179,7 @@ pool.shutdown();    // Feierabend :)
 [Demo executor.MyThread]{.bsp}
 [Demo: [synchronised.Teaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java)]{.bsp}
 
+
 ::::::::: notes
 ### Hintergrund (vereinfacht)
 
@@ -233,13 +237,8 @@ public class RecursiveTask extends ForkJoinTask<V> {
 }
 ```
 
-::: notes
-TODO! Bild! / Code!
-
-[Quelle: [@Urma2014], Abschnitt 7.2.1 , Abbildung 7.3]{.origin}
-
+[Demo: [synchronised.Teaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java)]{.bsp}
 [Beispiel misc.ForkJoinSumCalc]{.bsp}
-:::
 
 
 ## Swing und Threads
@@ -282,6 +281,7 @@ TODO! Bild! / Code!
 :::
 
 [Demo misc.SwingWorkerDemo]{.bsp}
+[Demo: [synchronised.Teaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java)]{.bsp}
 
 
 ## Letzte Worte :-)
