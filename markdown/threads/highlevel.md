@@ -30,7 +30,7 @@ youtube:
   - link: ""
     name: "VL High-Level Concurrency"
   - link: ""
-    name: "Demo Locks"
+    name: "Demo Lock-Objekte"
   - link: ""
     name: "Demo Executor"
   - link: ""
@@ -107,7 +107,7 @@ Nachteile:
     `finally`-Block!
 :::
 
-[Demo: [lock.*Teaser*](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/lock/)]{.bsp}
+[Demo: [lock.*](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/lock/)]{.bsp}
 
 
 ## Thread-Management: Executor-Interface und Thread-Pools
