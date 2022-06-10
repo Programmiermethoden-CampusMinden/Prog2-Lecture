@@ -49,7 +49,7 @@ outcomes:
   - k3: "Erzeugen und Starten von Threads"
   - k3: "Kommunikation mit Objekten"
 quizzes:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1092528&client_id=FH-Bielefeld"
     name: "Quiz Threads Intro (ILIAS)"
 assignments:
   - topic: sheet10
