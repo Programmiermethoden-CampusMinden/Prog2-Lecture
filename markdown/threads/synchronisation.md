@@ -288,6 +288,7 @@ Und schon geht's nicht mehr weiter :-)
 Synchronisierungsbedarf bei verteiltem Zugriff auf gemeinsame Ressourcen:
 
 \bigskip
+\smallskip
 
 *   Vorsicht mit konkurrierendem Ressourcenzugriff: \newline
     Synchronisieren mit `synchronize` => **Mehrseitige Synchronisierung**
