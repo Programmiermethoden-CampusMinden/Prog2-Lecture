@@ -1,19 +1,19 @@
 package lock;
 
 /** Synchronisierung mit synchronized und wait/notify */
-public class TraditionalSynchronized {
+public class TradMonitors {
     private static final Object MONITOR = new Object(); // gemeinsames Monitor-Objekt
 
     /** Starte die Demo */
     public static void main(String... args) {
-        new Thread(TraditionalSynchronized::display).start();
+        new Thread(TradMonitors::display).start();
         // DisplayThread sollte vor CalculatorThread starten, sonst bekommt
         // CalculatorThread den Lock auf monitor und DisplayThread wartet
         // bereits im synchronized (und nicht erst im wait) => anschließend
         // geht DisplayThread ins wait und bleibt da für immer (weil keiner
         // mehr notify aufruft ...)
         sleep(10);
-        new Thread(TraditionalSynchronized::calculate).start();
+        new Thread(TradMonitors::calculate).start();
     }
 
     private static void display() {

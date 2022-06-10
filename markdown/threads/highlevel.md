@@ -236,7 +236,7 @@ public class RecursiveTask extends ForkJoinTask<V> {
 }
 ```
 
-[Demo: [forkjoin.ForkJoinSumCalc](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/forkjoin/ForkJoinSumCalc.java)]{.bsp}
+[Demo: [forkjoin.ForkJoin](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/forkjoin/ForkJoin.java)]{.bsp}
 
 
 ## Swing und Threads
@@ -278,8 +278,7 @@ public class RecursiveTask extends ForkJoinTask<V> {
     *   `V` Typ für Zwischenergebnisse
 :::
 
-[Demo misc.SwingWorkerDemo]{.bsp}
-[Demo: [synchronised.Teaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java)]{.bsp}
+[Demo: [misc.SwingWorkerDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/misc/SwingWorkerDemo.java)]{.bsp}
 
 
 ## Letzte Worte :-)
