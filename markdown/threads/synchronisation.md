@@ -5,8 +5,6 @@ menuTitle: "Synchronisation"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 2
 readings:
-  - key: "Ullenboom2021"
-    comment: "Kap. 16: Einführung in die nebenläufige Programmierung"
   - key: "Java-SE-Tutorial"
     comment: "Trail: Essential Java Classes, Lesson: Concurrency"
   - key: "Boles2008"
