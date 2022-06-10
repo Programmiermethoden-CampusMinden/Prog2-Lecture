@@ -162,8 +162,8 @@ public class Deadlock {
     public synchronized void bar() {}
 
     public static void main(String... args) {
-        final Deadlock a = new Deadlock("a");
-        final Deadlock b = new Deadlock("b");
+        final Deadlock a = new Deadlock();
+        final Deadlock b = new Deadlock();
 
         new Thread(() -> a.foo(b)).start();
         new Thread(() -> b.foo(a)).start();
