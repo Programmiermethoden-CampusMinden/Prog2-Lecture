@@ -16,7 +16,7 @@ public class ObjSync implements Runnable {
         new Thread(x).start();
     }
 
-    private synchronized void incrVal() {
+    private void incrVal() {
         synchronized (waechter) {
             ++val; // Zugriff auf gemeinsame Ressource
             System.out.println(Thread.currentThread().getId() + ": " + val);

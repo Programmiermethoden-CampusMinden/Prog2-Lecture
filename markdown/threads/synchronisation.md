@@ -14,12 +14,12 @@ tldr: |
     Synchronisierungsbedarf bei verteiltem Zugriff auf gemeinsame Ressourcen:
 
     *   Vorsicht mit konkurrierendem Ressourcenzugriff: Synchronisieren mit
-        `synchronize` => **Mehrseitige Synchronisierung**
+        `synchronized` => **Mehrseitige Synchronisierung**
     *   Warten auf Ereignisse mit `wait` und `notifyAll` => **Einseitige Synchronisierung**
 outcomes:
   - k2: "Notwendigkeit zur Synchronisation"
   - k2: "Unterscheidung einseitige und mehrseitige Synchronisation"
-  - k3: "Synchronisation mit `synchronize`, `wait` und `notifyAll`"
+  - k3: "Synchronisation mit `synchronized`, `wait`,  `notify` und `notifyAll`"
 quizzes:
   - link: ""
     name: "Quiz Threads Synchronisation (ILIAS)"
@@ -291,7 +291,7 @@ Synchronisierungsbedarf bei verteiltem Zugriff auf gemeinsame Ressourcen:
 \smallskip
 
 *   Vorsicht mit konkurrierendem Ressourcenzugriff: \newline
-    Synchronisieren mit `synchronize` => **Mehrseitige Synchronisierung**
+    Synchronisieren mit `synchronized` => **Mehrseitige Synchronisierung**
 
 \smallskip
 
