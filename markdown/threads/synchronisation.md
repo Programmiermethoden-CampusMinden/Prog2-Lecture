@@ -291,6 +291,9 @@ Synchronisierungsbedarf bei verteiltem Zugriff auf gemeinsame Ressourcen:
 
 *   Vorsicht mit konkurrierendem Ressourcenzugriff: \newline
     Synchronisieren mit `synchronize` => **Mehrseitige Synchronisierung**
+
+\smallskip
+
 *   Warten auf Ereignisse mit `wait` und `notifyAll` => **Einseitige Synchronisierung**
 
 
