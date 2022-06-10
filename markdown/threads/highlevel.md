@@ -176,8 +176,7 @@ pool.execute(x);    // x.start()
 pool.shutdown();    // Feierabend :)
 ```
 
-[Demo executor.MyThread]{.bsp}
-[Demo: [synchronised.Teaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java)]{.bsp}
+[Demo: [executor.ExecutorDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/executor/ExecutorDemo.java)]{.bsp}
 
 
 ::::::::: notes
