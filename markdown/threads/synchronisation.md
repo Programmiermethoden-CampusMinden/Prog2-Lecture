@@ -26,22 +26,23 @@ tldr: |
     "stimmen" sich quasi untereinander über den Zugriff auf eine Ressource ab).
 
     Um auf den Eintritt eines Ereignisses oder die Erfüllung einer Bedingung zu warten,
-    kann man `wait` nutzen. In einem `synchronized`-Block prüft man, ob die Bedingung
-    erfüllt oder ein Ereignis eingetreten ist, und falls ja arbeitet man damit normal
-    weiter. Falls die Bedingung nicht erfüllt ist oder das Ereignis nicht eingetreten
-    ist, kann man auf dem im `synchronized`-Block genutzten Sperr-Objekt die Methode
-    `wait()` aufrufen. Damit wird der Thread in die entsprechende Schlange auf dem
-    Sperr-Objekt eingereiht und blockiert. Zusätzlich wird der Lock auf dem Sperr-Objekt
-    freigegeben. Zum "Aufwecken" nutzt man an geeigneter Stelle auf dem **selben
-    Sperr-Objekt** die Methode `notify()` oder `notifyALl()` (erstere weckt einen in
-    der Liste des Sperr-Objekts wartenden Thread, die letztere alle). Nach dem Aufwachen
-    macht der Thread nach seinem `wait()` weiter. Es ist also wichtig, dass die Bedingung,
-    wegen der ursprünglich das `wait()` aufgerufen wurde, erneut abgefragt wird und ggf.
-    erneut in das `wait()` gegangen wird. Dies nennt man **einseitige Synchronisierung**.
+    kann man `wait` und `notify` nutzen. In einem `synchronized`-Block prüft man, ob
+    die Bedingung erfüllt oder ein Ereignis eingetreten ist, und falls ja arbeitet man
+    damit normal weiter. Falls die Bedingung nicht erfüllt ist oder das Ereignis nicht
+    eingetreten ist, kann man auf dem im `synchronized`-Block genutzten Sperr-Objekt
+    die Methode `wait()` aufrufen. Damit wird der Thread in die entsprechende Schlange
+    auf dem Sperr-Objekt eingereiht und blockiert. Zusätzlich wird der Lock auf dem
+    Sperr-Objekt freigegeben. Zum "Aufwecken" nutzt man an geeigneter Stelle auf dem
+    **selben Sperr-Objekt** die Methode `notify()` oder `notifyALl()` (erstere weckt
+    einen in der Liste des Sperr-Objekts wartenden Thread, die letztere alle). Nach
+    dem Aufwachen macht der Thread nach seinem `wait()` weiter. Es ist also wichtig,
+    dass die Bedingung, wegen der ursprünglich das `wait()` aufgerufen wurde, erneut
+    abgefragt wird und ggf. erneut in das `wait()` gegangen wird. Dies nennt man
+    **einseitige Synchronisierung**.
 
     Es gibt darüber hinaus viele weitere Mechanismen und Probleme, die aber den Rahmen
-    dieser Lehrveranstaltung sprengen würden. Diese werden teilweise in den Veranstaltungen
-    "Betriebssysteme" und/oder "Verteilte Systeme" besprochen.
+    dieser Lehrveranstaltung deutlich übersteigen. Diese werden teilweise in den
+    Veranstaltungen "Betriebssysteme" und/oder "Verteilte Systeme" besprochen.
 outcomes:
   - k2: "Notwendigkeit zur Synchronisation"
   - k2: "Unterscheidung einseitige und mehrseitige Synchronisation"
@@ -122,11 +123,16 @@ Fallunterscheidung: Thread T1 führt `synchronized`-Anweisung aus:
     => T1 wird blockiert, bis T2 die Sperre löst
 
 _Anmerkung_: Das für die Synchronisierung genutzte Objekt nennt man "Wächter-Objekt"
-oder auch "Sperr-Objekt".
+oder auch "Sperr-Objekt" oder auch "Synchronisations-Objekt".
 :::
 
 \pause
 \bigskip
+
+::: notes
+Damit könnte man den relevanten Teil der Methode `incrVal()` beispielsweise in einen
+geschützten Bereich einschließen und als Sperr-Objekt das eigene Objekt (`this`) einsetzen:
+:::
 
 ```java
     private void incrVal() {
@@ -173,6 +179,10 @@ Kurzschreibweise: Man spart das separate Wächter-Objekt und synchronisiert auf 
 
 \pause
 \bigskip
+
+::: notes
+Die Methode `incrVal()` könnte entsprechend so umgeschrieben werden:
+:::
 
 ```java
     private synchronized void incrVal() {
