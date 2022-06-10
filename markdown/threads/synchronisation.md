@@ -96,6 +96,15 @@ Fallunterscheidung: Thread T1 führt `synchronized`-Anweisung aus:
     => T1 wird blockiert, bis T2 die Sperre löst
 :::
 
+\pause
+\bigskip
+
+```java
+    private void incrVal() {
+        synchronized (this) { ++val; }
+    }
+```
+
 [Demo: [synchronised.ObjSync](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/ObjSync.java)]{.bsp}
 
 
@@ -132,6 +141,15 @@ synchronized void f() {
 ::: notes
 Kurzschreibweise: Man spart das separate Wächter-Objekt und synchronisiert auf sich selbst ...
 :::
+
+\pause
+\bigskip
+
+```java
+    private synchronized void incrVal() {
+        ++val;
+    }
+```
 
 [Demo: [synchronised.MethodSync](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/synchronised/MethodSync.java)]{.bsp}
 
