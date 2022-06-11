@@ -334,50 +334,175 @@ wie die Exceptions aus dem JDK.
 
 ## Stilfrage: Wie viel Code im _Try_?
 
-* Gute Stil ist es, so wenig Code wie möglich in einem `try` Block zu schreiben, sonst könnte es unklar sein, wo genau der Fehler herkommt.
+```java
+int getFirstLineAsInt(String pathToFile) {
+    FileReader fileReader = new FileReader(pathToFile);
+    BufferedReader bufferedReader = new BufferedReader(fileReader);
+    String firstLine = bufferedReader.readLine();
+
+    return Integer.parseInt(firstLine);
+}
+```
+
+[Beispiel: [exceptions.HowMuchTry](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/exceptions/HowMuchTry.java)]{.bsp}
 
 
-## Stilfrage:  Wann _Throw_, wann _Catch_?
+::: notes
+Hier lassen sich verschiedene "Ausbaustufen" unterscheiden.
+
+### Handling an den Aufrufer übergeben
 
 ```java
-public static void methode1(String path, int x) throws IOException {
-    methode2(path, x, x * 2);
+int getFirstLineAsIntV1(String pathToFile) throws FileNotFoundException, IOException {
+    FileReader fileReader = new FileReader(pathToFile);
+    BufferedReader bufferedReader = new BufferedReader(fileReader);
+    String firstLine = bufferedReader.readLine();
+
+    return Integer.parseInt(firstLine);
+}
+```
+
+Der Aufrufer hat den Pfad als String übergeben und ist vermutlich in der Lage, auf
+Probleme mit dem Pfad sinnvoll zu reagieren. Also könnte man in der Methode selbst
+auf ein `try`/`catch` verzichten und stattdessen die `FileNotFoundException` (vom
+`FileReader`) und die `IOException` (vom `bufferedReader.readLine()`) per `throws`
+deklarieren.
+
+_Anmerkung_: Da `FileNotFoundException` eine Spezialisierung von `IOException` ist,
+reicht es aus, lediglich die `IOException` zu deklarieren.
+
+### Jede Exception einzeln fangen und bearbeiten
+
+```java
+int getFirstLineAsIntV2(String pathToFile) {
+    FileReader fileReader = null;
+    try {
+        fileReader = new FileReader(pathToFile);
+    } catch (FileNotFoundException fnfe) {
+        fnfe.printStackTrace(); // Datei nicht gefunden
+    }
+
+    BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+    String firstLine = null;
+    try {
+        firstLine = bufferedReader.readLine();
+    } catch (IOException ioe) {
+        ioe.printStackTrace(); // Datei kann nicht gelesen werden
+    }
+
+    try {
+        return Integer.parseInt(firstLine);
+    } catch (NumberFormatException nfe) {
+        nfe.printStackTrace(); // Das war wohl kein Integer
+    }
+
+    return 0;
+}
+```
+
+In dieser Variante wird jede Operation, die eine Exception werfen kann, separat in
+ein `try`/`catch` verpackt und jeweils separat auf den möglichen Fehler reagiert.
+
+Dadurch kann man die Fehler sehr einfach dem jeweiligen Statement zuordnen.
+
+Allerdings muss man nun mit Behelfsinitialisierungen arbeiten und der Code wird sehr
+in die Länge gezogen und man erkennt die eigentlichen funktionalen Zusammenhänge nur
+noch schwer.
+
+_Anmerkung_: Das "Behandeln" der Exceptions ist im obigen Beispiel kein gutes Beispiel
+für das Behandeln von Exceptions. Einfach nur einen Stacktrace zu printen und weiter
+zu machen, als ob nichts passiert wäre, ist **kein sinnvolles Exception-Handling**.
+Wenn Sie solchen Code schreiben oder sehen, ist das ein Anzeichen, dass auf dieser Ebene
+nicht sinnvoll mit dem Fehler umgegangen werden kann und dass man ihn besser an den
+Aufrufer weiter reichen sollte (siehe nächste Folie).
+
+### Funktionaler Teil in gemeinsames _Try_ und mehrstufiges _Catch_
+
+```java
+int getFirstLineAsIntV3(String pathToFile) {
+    try {
+        FileReader fileReader = new FileReader(pathToFile);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String firstLine = bufferedReader.readLine();
+        return Integer.parseInt(firstLine);
+    } catch (FileNotFoundException fnfe) {
+        fnfe.printStackTrace(); // Datei nicht gefunden
+    } catch (IOException ioe) {
+        ioe.printStackTrace(); // Datei kann nicht gelesen werden
+    } catch (NumberFormatException nfe) {
+        nfe.printStackTrace(); // Das war wohl kein Integer
+    }
+
+    return 0;
+}
+```
+
+Hier wurde der eigentliche funktionale Kern der Methode in ein gemeinsames `try`/`catch`
+verpackt und mit einem mehrstufigen `catch` auf die einzelnen Fehler reagiert. Durch die
+Art der Exceptions sieht man immer noch, wo der Fehler herkommt. Zusätzlich wird die
+eigentliche Funktionalität so leichter erkennbar.
+
+_Anmerkung_: Auch hier ist das gezeigte Exception-Handling kein gutes Beispiel. Entweder
+man macht hier sinnvollere Dinge, oder man überlässt dem Aufrufer die Reaktion auf den
+Fehler.
+:::
+
+
+## Stilfrage: Wo fange ich die Exception?
+
+```java
+private static void methode1(int x) throws IOException {
+    methode2(x, x * 2);
 }
 
-private static void methode2(String path, int x, int y) throws IOException {
-    methode3(path, x, y, x + y);
+private static void methode2(int x, int y) throws IOException {
+    JFileChooser fc = new JFileChooser();
+    fc.showDialog(null, "ok");
+    methode3(fc.getSelectedFile().toString(), x, y, x + y);
 }
 
 private static void methode3(String path, int x, int y, int z) throws IOException {
-    try (FileWriter fileWriter = new FileWriter(path);
-        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
-        bufferedWriter.write("X:" + x + " Y: " + y + " Z:" + z);
-        bufferedWriter.flush();
-    }
+    FileWriter fw = new FileWriter(path);
+    BufferedWriter bw = new BufferedWriter(fw);
+    bw.write("X:" + x + " Y: " + y + " Z:" + z);
 }
 
 public static void main(String[] args) {
     try {
-        methode1("wuppi/flupp", 2);
-    } catch (IOException e) {
-        e.printStackTrace();
+        methode1(42);
+    } catch (IOException ioe) {
+        ioe.printStackTrace();
     }
 }
 ```
 
 ::: notes
-* Exceptions sollten immer beim Ursprung der Fehlerursache behandelt werden
+Prinzipiell steht es einem frei, wo man eine Exception fängt und behandelt. Wenn im
+`main()` eine nicht behandelte Exception auftritt (weiter nach oben geleitet wird),
+wird das Programm mit einem Fehler beendet.
+
+Letztlich scheint es eine gute Idee zu sein, eine Exception so nah wie möglich am
+Ursprung der Fehlerursache zu behandeln. Man sollte sich dabei die Frage stellen: Wo
+kann ich sinnvoll auf den Fehler reagieren?
 :::
 
 
 ## Stilfrage: Wann checked, wann unchecked
 
-Laut [Oracle](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
-* Wenn erwartet werden kann, das ein Client sich von der Exception erholen kann, mache sie checked
-* Wenn nicht erwartet werden kann, das ein Client sich von den Exception erholen kann, mache sie unchecked.
+### "Checked" Exceptions
 
-Laut Bloch
-TODO
+*   Für erwartbare Fehlerfälle, deren Ursprung nicht im Programm selbst liegt
+*   Aufrufer kann sich von der Exception erholen
+
+### "Unchecked" Exceptions
+
+*   Logische Programmierfehler ("Versagen" des Programmcodes)
+*   Aufrufer kann sich von der Exception vermutlich nicht erholen
+
+::: notes
+Vergleiche ["Unchecked Exceptions — The Controversy"](https://dev.java/learn/unchecked-exceptions-%E2%80%94-the-controversy/).
+:::
 
 
 ## Wrap-Up
