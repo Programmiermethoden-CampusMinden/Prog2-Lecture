@@ -1,17 +1,16 @@
 ---
 type: lecture-cg
-title: "Exceptions"
+title: "Exception-Handling"
 menuTitle: "Exceptions"
 author: "André Matutat (FH Bielefeld)"
 weight: 8
 readings:
-  - key: "Bloch2018"
-  - key: "Java-11-documentation"
-  - key: "Java-11-tutorial"
-  - key: "Java-SE-tutorial"
-  - key: "Ullenboom2016"
-  - key: "Urma2014"
-  - key: "Juneau2017"
+  - key: "LernJava"
+    comment: "Tutorials > Exceptions"
+  - key: "Ullenboom2021"
+    comment: "Kap. 8: Ausnahmen müssen sein"
+  - key: "Java-SE-Tutorial"
+    comment: "Trail: Essential Java Classes, Lesson: Exceptions"
 tldr: |
     Man unterscheidet zwischen **Exception** und *Error**. Ein Error ist ein Fehler im System, von dem man sich nicht wieder erholen kann. Eine Exception ist ein Fehlerfall innerhalb des Programmes.
 
@@ -27,19 +26,16 @@ outcomes:
   - k3: "Umgang mit Exceptions"
   - k3: "Eigene Exceptions schreiben"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: ""
+    name: "Quiz Exceptions (ILIAS)"
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Exceptions"
   - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "Demo Exceptions"
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL Exceptions"
 ---
 
 
