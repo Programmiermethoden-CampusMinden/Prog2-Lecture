@@ -12,13 +12,23 @@ readings:
   - key: "Urma2014"
     comment: "Abschnitt 7.2: The fork/join framework"
 tldr: |
-    Multi-Threading auf höherem Level: Thread-Pools und Fork/Join-Framework
+    Das Erzeugen von Threads über die Klasse `Thread` oder das Interface `Runnable` und
+    das Hantieren mit `synchronized` und `wait()`/`notify()` zählt zu den grundlegenden
+    Dingen beim Multi-Threading mit Java.
 
-    *   Feingranulareres und flexibleres Locking mit Lock-Objekten und Conditions
-    *   Wiederverwendung von Threads: Thread-Management mit Executor-Interface
-        und Thread-Pools
-    *   Fork/Join-Framework zum rekursiven Zerteilen von Aufgaben und zur
-        parallelen Bearbeitung der Teilaufgaben
+    Auf diesen Konzepten bauen viele weitere Konzepte auf, die ein flexibleres Arbeiten
+    mit Threads in Java ermöglichen.
+
+    Dazu zählt unter anderem das Arbeiten mit `Lock`-Objekten und dazugehörigen `Conditions`,
+    was `synchronized` und `wait()`/`notify()` entspricht, aber feingranulareres und
+    flexibleres Locking bietet.
+
+    Statt Threads immer wieder neu anzulegen (das Anlegen von Objekten bedeutet einen
+    gewissen Aufwand zur Laufzeit), kann man Threads über sogenannte Thread-Pools
+    wiederverwenden und über das Executor-Interface benutzen.
+
+    Schließlich bietet sich das Fork/Join-Framework zum rekursiven Zerteilen von Aufgaben
+    und zur parallelen Bearbeitung der Teilaufgaben an.
 outcomes:
   - k3: "Umgang mit High-Level-Abstraktionen: Lock-Objekten und Conditions, Executor-Interface und Thread-Pools, Fork/Join-Framework"
 quizzes:
