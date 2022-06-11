@@ -451,21 +451,19 @@ Fehler.
 
 ```java
 private static void methode1(int x) throws IOException {
-    methode2(x, x * 2);
-}
-
-private static void methode2(int x, int y) throws IOException {
     JFileChooser fc = new JFileChooser();
     fc.showDialog(null, "ok");
-    methode3(fc.getSelectedFile().toString(), x, y, x + y);
+    methode2(fc.getSelectedFile().toString(), x, x * 2);
 }
 
-private static void methode3(String path, int x, int y, int z) throws IOException {
+private static void methode2(String path, int x, int y) throws IOException {
     FileWriter fw = new FileWriter(path);
     BufferedWriter bw = new BufferedWriter(fw);
-    bw.write("X:" + x + " Y: " + y + " Z:" + z);
+    bw.write("X:" + x + " Y: " + y);
+    bw.flush();
 }
 
+/** Just to please Checkstyle */
 public static void main(String[] args) {
     try {
         methode1(42);
