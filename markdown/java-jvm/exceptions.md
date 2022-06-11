@@ -65,45 +65,48 @@ fhmedia:
 ## Fehlerfälle in Java
 
 ```java
-double div(int a, int b){
+double div(int a, int b) {
     return a/b;
 }
 
-div(3.5,0);
+div(3.5, 0);
 ```
+
 ::: notes
-**Probleme**:
-*   Programm wird abstürzen, da durch '0' geteilt wird
+**Problem**: Programm wird abstürzen, da durch '0' geteilt wird
 :::
+
 
 ## Lösung?
 
 ```java
-Double div(int a, int b){
-    if(b==0) return null;
-    return a/b;
+Optional<Double> div(int a, int b){
+    if( b==0) return Optional.empty();
+    return Optional.of(a/b);
 }
 
-Double sol = div(3.5,0);
-if(sol==null){
-    //do something
-}
-else {
-    //do something else
+Optional<Double> sol = div(3.5, 0);
+if (x.isPresent()) {
+    // do something
+} else {
+    // do something else
 }
 ```
+
 ::: notes
 **Probleme**:
 
-*   Da `double` nicht `null` sein kann, muss ein `Double` Objekt erzeugt und zurückgegeben werden
-*   Der Aufrufer muss auf `null` prüfen
-*   Es wird nicht kommuniziert warum `null` zurückgegeben wird. Was ist das Problem?
+*   Da `double` nicht `null` sein kann, muss ein `Double` Objekt erzeugt und zurückgegeben werden: Overhead wg. Auto-Boxing und -Unboxing!
+*   Der Aufrufer muss auf `null` prüfen.
+*   Es wird nicht kommuniziert, warum `null` zurückgegeben wird. Was ist das Problem?
 *   Was ist, wenn `null` ein gültiger Rückgabewert sein soll?
 :::
 
+
 ## Vererbungsstruktur Throwable
 
-![Ausschnitt aus der Vererbungsstruktur von Throwable.](images/exception.png){width="80%"}
+![](images/exception.png){width="80%"}
+
 
 ## Unchecked vs Checked Exceptions
 
