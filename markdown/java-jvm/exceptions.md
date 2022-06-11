@@ -12,15 +12,15 @@ readings:
   - key: "Java-SE-Tutorial"
     comment: "Trail: Essential Java Classes, Lesson: Exceptions"
 tldr: |
-    Man unterscheidet in Java zwischen **Exceptions** und *Errors**. Ein Error ist ein
+    Man unterscheidet in Java zwischen **Exceptions** und **Errors**. Ein Error ist ein
     Fehler im System (OS, JVM), von dem man sich nicht wieder erholen kann. Eine Exception
     ist ein Fehlerfall innerhalb des Programmes, auf den man innerhalb des Programms
     reagieren kann.
 
     Mit Hilfe von Exceptions lassen sich Fehlerfälle im Programmablauf deklarieren und
-    behandeln. Methoden können mit dem Keyword `throws` gefolgt vom Namen der Exception
-    deklarieren, dass sie im Fehlerfall diese spezifische Exception werfen (und nicht
-    selbst behandeln).
+    behandeln. Methoden können/müssen mit dem Keyword `throws` gefolgt vom Namen der
+    Exception deklarieren, dass sie im Fehlerfall diese spezifische Exception werfen
+    (und nicht selbst behandeln).
 
     Zum Exception-Handling werden die Keywords `try`, `catch` und `finally` verwendet.
     Dabei wird im `try`-Block der Code geschrieben, der einen potenziellen Fehler wirft.
@@ -31,7 +31,7 @@ tldr: |
     Es wird zwischen **checked** Exceptions und **unchecked** Exceptions unterschieden.
     Checked Exceptions sind für erwartbare Fehlerfälle gedacht, die nicht vom Programm
     ausgeschlossen werden können, wie das Fehlen einer Datei, die eingelesen werden soll.
-    Checked Exceptions müssen deklariert und behandelt werden. Dies wird vom Compiler
+    Checked Exceptions müssen deklariert oder behandelt werden. Dies wird vom Compiler
     überprüft.
 
     Unchecked Exceptions werden für Fehler in der Programmlogik verwendet, etwa das Teilen
@@ -96,7 +96,8 @@ if (x.isPresent()) {
 ::: notes
 **Probleme**:
 
-*   Da `double` nicht `null` sein kann, muss ein `Double` Objekt erzeugt und zurückgegeben werden: Overhead wg. Auto-Boxing und -Unboxing!
+*   Da `int` nicht `null` sein kann, muss ein `Integer` Objekt erzeugt und zurückgegeben werden:
+    Overhead wg. Auto-Boxing und -Unboxing!
 *   Der Aufrufer muss auf `null` prüfen.
 *   Es wird nicht kommuniziert, warum `null` zurückgegeben wird. Was ist das Problem?
 *   Was ist, wenn `null` ein gültiger Rückgabewert sein soll?
@@ -132,8 +133,8 @@ if (x.isPresent()) {
         *   `FileNotFoundException`
         *   `IOException`
     *   Alle nicht von `RuntimeException` ableitende Exceptions
-    *   Müssen behandelt (`try`/`catch`) oder deklariert (`throws`) werden: Dies
-        wird vom Compiler überprüft!
+    *   Müssen entweder behandelt (`try`/`catch`) oder deklariert (`throws`) werden:
+        Dies wird vom Compiler überprüft!
 
 *   "Unchecked" Exceptions:
     *   Logische Programmierfehler ("Versagen" des Programmcodes)
@@ -237,6 +238,11 @@ try {
 ::: notes
 *   Im `try` Block wird der Code ausgeführt, der einen Fehler werfen könnte.
 *   Mit `catch` kann eine Exception gefangen und im `catch` Block behandelt werden.
+
+**Anmerkung**: Das bloße Ausgeben des Stacktrace via `e.printStackTrace()` ist
+noch **kein sinnvolles Exception-Handling**! Hier sollte auf die jeweilige Situation
+eingegangen werden und versucht werden, den Fehler zu beheben oder dem Aufrufer
+geeignet zu melden!
 :::
 
 
