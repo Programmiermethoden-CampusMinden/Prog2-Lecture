@@ -213,80 +213,90 @@ damit umgehen (fangen oder selbst auch deklarieren). **Dies wird vom Compiler ge
 :::
 
 
-## Try-Catch
+## _Try_-_Catch_
 
 ```java
 int a = getUserInput();
 int b = getUserInput();
+
 try {
-  div(a,b);
+    div(a, b);
+} catch (IllegalArgumentException e) {
+    e.printStackTrace(); // Wird im Fehlerfall aufgerufen
 }
-catch(IllegalArgumentException e) {
-  //  Codeblock der im Fehlerfall aufgerufen wird
-  e.printStackTrace();
-}
+
 // hier geht es normal weiter
 ```
 ::: notes
-* Im `try` Block wird der Code ausgeführt, der einen Fehler werfen könnte
-* Gute Stil ist es, so wenig Code wie möglich in einem `try` Block zu schreiben, sonst könnte es unklar sein, wo genau der Fehler herkommt.
-* Mit `catch` kann eine Exception gefangen und im `catch` Block behandelt werden.
+*   Im `try` Block wird der Code ausgeführt, der einen Fehler werfen könnte.
+*   Mit `catch` kann eine Exception gefangen und im `catch` Block behandelt werden.
 :::
 
-## Try with multiple Catch
+
+## _Try_ with multiple _Catch_
 
 ```java
 try {
-    someMethod(a,b,c);
-}
-catch(IllegalArgumentException e1) {
-  e1.printStackTrace();
-}
-catch(FileNotFoundException | NullPointerException e2) {
-  e2.printStackTrace();
+    someMethod(a, b, c);
+} catch (IllegalArgumentException iae) {
+    iae.printStackTrace();
+} catch (FileNotFoundException | NullPointerException e) {
+    e.printStackTrace();
 }
 ```
+
 ::: notes
-* Die Exception wird der Reihe nach mit den `catch` Blöcken gematcht (vergleichbar mit `switch case` ).
-* Daher muss die Vererbungshierarchie beachtet werden.
+Eine im `try`-Block auftretende Exception wird der Reihe nach mit den `catch`-Blöcken
+gematcht (vergleichbar mit `switch case`).
+
+**Wichtig**: Dabei muss die Vererbungshierarchie beachtet werden. Die spezialisierteste
+Klasse muss ganz oben stehen, die allgemeinste Klasse als letztes. Sonst wird eine
+Exception u.U. in einem nicht dafür gedachten `catch`-Zweig aufgefangen.
+
+**Wichtig**: Wenn eine Exception nicht durch die `catch`-Zweige aufgefangen wird, dann
+wird sie an den Aufrufer weiter geleitet. Im Beispiel würde eine `IOException` nicht durch
+die `catch`-Zweige gefangen (`IllegalArgumentException` und `NullPointerException` sind
+im falschen Vererbungszweig, und `FileNotFoundException` ist spezieller als `IOException`)
+und entsprechend an den Aufrufer weiter gereicht. Da es sich obendrein um eine checked
+Exception handelt, müsste man diese per `throws IOException` an der Methode deklarieren.
 :::
 
-## finally
+
+## _Finally_
 
 ```java
 Scanner myScanner = new Scanner(System.in);
 try {
-    double s= 5/myScanner.nextInt();
-}
-catch(IllegalArgumentException e) {
-  e.printStackTrace();
-}
-finally {
-    //wird immer aufgerufen
+    return 5 / myScanner.nextInt();
+} catch (InputMismatchException ime) {
+    ime.printStackTrace();
+} finally {
+    // wird immer aufgerufen
     myScanner.close();
 }
 ```
 
 ::: notes
-* Der `finally` Block wird sowohl im Fehlerfall als auch im Normalfall aufgerufen
-* Wird für Aufräumarbeiten genutzt, wie zum Beispiel das Schließen von Verbindungen oder Inputstreams.
+Der `finally` Block wird sowohl im Fehlerfall als auch im Normalfall aufgerufen. Dies
+wird beispielsweise für Aufräumarbeiten genutzt, etwa zum Schließen von Verbindungen
+oder Input-Streams.
 :::
 
-## Try-with-Resources
+
+## _Try_-with-Resources
 
 ```java
-String getFirstLine(String pathToFile) throws IOException {
-	    try (FileReader fileReader = new FileReader(pathToFile);
-	         BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-	        return bufferedReader.readLine();
-	    }
-	}
+try (Scanner myScanner = new Scanner(System.in)) {
+    return 5 / myScanner.nextInt();
+} catch (InputMismatchException ime) {
+    ime.printStackTrace();
+}
 ```
 ::: notes
-* In einem `try`-Statement können Ressourcen deklariert werden, die am Ende sicher geschlossen werden
-* Eine Ressource ist ein Objekt, dass am Ende geschlossen werden muss
-* Ressourcen Objekte müssen `java.io.Closeable` implementieren
+Im `try`-Statement können Ressourcen deklariert werden, die am Ende sicher geschlossen
+werden. Diese Ressourcen müssen `java.io.Closeable` implementieren.
 :::
+
 
 ## Wann throw wann catch?
 ```java
@@ -375,6 +385,12 @@ Laut [Oracle](https://docs.oracle.com/javase/tutorial/essential/exceptions/runti
 
 Laut Bloch
 TODO
+
+
+## Stilfragen
+
+* Gute Stil ist es, so wenig Code wie möglich in einem `try` Block zu schreiben, sonst könnte es unklar sein, wo genau der Fehler herkommt.
+
 
 ## Wrap-Up
 
