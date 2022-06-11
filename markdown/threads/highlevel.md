@@ -159,7 +159,6 @@ public interface Executor {
         spezifizierter Anzahl von Worker-Threads
     *   `Executors#newCachedThreadPool` erzeugt Pool mit Threads, die nach
         60 Sekunden Idle wieder entsorgt werden
-        erzeugt neuen
 
 *   Rückgabe: `ExecutorService` (Thread-Pool)
 
