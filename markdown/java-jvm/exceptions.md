@@ -18,7 +18,7 @@ tldr: |
     kann.
 
     Mit Hilfe von Exceptions lassen sich Fehlerfälle im Programmablauf deklarieren und
-    behandeln. Methoden können mit dem Keyword `throw` gefolgt vom Namen der Exception
+    behandeln. Methoden können mit dem Keyword `throws` gefolgt vom Namen der Exception
     deklarieren, dass sie im Fehlerfall diese spezifische Exception werfen (und nicht
     selbst behandeln).
 
