@@ -298,7 +298,44 @@ werden. Diese Ressourcen müssen `java.io.Closeable` implementieren.
 :::
 
 
-## Wann throw wann catch?
+## Eigene Exceptions
+
+```java
+// Checked Exception
+public class MyCheckedException extends Exception {
+    public MyCheckedException(String errorMessage) {
+        super(errorMessage);
+    }
+}
+
+// Unchecked Exception
+public class MyUncheckedException extends RuntimeException {
+    public MyUncheckedException(String errorMessage) {
+        super(errorMessage);
+    }
+}
+```
+
+::: notes
+Eigene Exceptions können durch Spezialisierung anderer Exception-Klassen realisiert
+werden. Dabei kann man direkt von `Exception` oder `RuntimeException` ableiten oder
+bei Bedarf von spezialisierteren Exception-Klassen.
+
+Wenn die eigene Exception in der Vererbungshierachie unter `RuntimeException` steht,
+handelt es sich um eine _unchecked Exception_, sonst um eine _checked Exception_.
+
+In der Benutzung (werfen, fangen, deklarieren) verhalten sich eigene Exception-Klassen
+wie die Exceptions aus dem JDK.
+:::
+
+
+## Stilfragen
+
+### Wie viel im try?
+* Gute Stil ist es, so wenig Code wie möglich in einem `try` Block zu schreiben, sonst könnte es unklar sein, wo genau der Fehler herkommt.
+
+
+### Wann throw wann catch?
 ```java
 public static void methode1(String path, int x) throws IOException {
     methode2(path, x, x * 2);
@@ -327,57 +364,8 @@ public static void main(String[] args) {
 ::: notes
 * Exceptions sollten immer beim Ursprung der Fehlerursache behandelt werden
 :::
-## Eigene Checked-Exceptions
 
-```java
-public class MyCheckedException extends Exception {
-    public MyException(String errorMessage){
-        super(errorMessage);
-    }
-}
-```
-```java
-void myMethod(int x) throws MyCheckedException{
-    if(x>5 || x<10) throw new MyCheckedException("Ich finde x doof.");
-    //...
-}
-```
-```java
-try {
-    myMethod(12);
-} catch (MyCheckedException e) {
-    throw new RuntimeException(e);
-}
-```
-::: notes
-* Eigene Checked-Exceptions erben von `Exception` (direkt oder indirekt)
-* Können wie integrierte Exceptions verwendet werden
-:::
-
-## Eigene Unchecked-Exceptions
-
-```java
-public class MyUncheckedException extends RuntimeException {
-    public MyUncheckedException(String errorMessage){
-        super(errorMessage);
-    }
-}
-```
-```java
-void myMethod(int x) throws MyUncheckedException{
-    if(x>5 || x<10) throw new MyCheckedException("Ich finde x doof.");
-    //...
-}
-```
-```java
-myMethod(12);
-```
-::: notes
-* Eigene Unchecked-Exceptions erben von `RuntimeException` (direkt oder indirekt)
-* Können wie integrierte Exceptions verwendet werden
-:::
-
-## Wann eine Exception checked machen, wann unchecked
+### Wann eine Exception checked machen, wann unchecked
 
 Laut [Oracle](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
 * Wenn erwartet werden kann, das ein Client sich von der Exception erholen kann, mache sie checked
@@ -385,11 +373,6 @@ Laut [Oracle](https://docs.oracle.com/javase/tutorial/essential/exceptions/runti
 
 Laut Bloch
 TODO
-
-
-## Stilfragen
-
-* Gute Stil ist es, so wenig Code wie möglich in einem `try` Block zu schreiben, sonst könnte es unklar sein, wo genau der Fehler herkommt.
 
 
 ## Wrap-Up
