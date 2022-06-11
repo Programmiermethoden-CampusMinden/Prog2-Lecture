@@ -13,9 +13,9 @@ readings:
     comment: "Trail: Essential Java Classes, Lesson: Exceptions"
 tldr: |
     Man unterscheidet in Java zwischen **Exceptions** und *Errors**. Ein Error ist ein
-    Fehler im System, von dem man sich nicht wieder erholen kann. Eine Exception ist ein
-    Fehlerfall innerhalb des Programmes, auf den man innerhalb des Programms reagieren
-    kann.
+    Fehler im System (OS, JVM), von dem man sich nicht wieder erholen kann. Eine Exception
+    ist ein Fehlerfall innerhalb des Programmes, auf den man innerhalb des Programms
+    reagieren kann.
 
     Mit Hilfe von Exceptions lassen sich Fehlerfälle im Programmablauf deklarieren und
     behandeln. Methoden können mit dem Keyword `throws` gefolgt vom Namen der Exception
@@ -39,7 +39,10 @@ tldr: |
     oder beispielsweise mangelhafte Eingabeprüfung in. Unchecked Exceptions müssen nicht
     deklariert oder behandelt werden. Unchecked Exceptions leiten von `RuntimeException`
     ab.
-outcomes:
+
+    Als Faustregel gilt: Wenn der Aufrufer sich von einer Exception-Situation erholen kann,
+    sollte man eine checked Exception nutzen. Wenn der Aufrufer vermutlich nichts tun kann,
+    um sich von dem Problem zu erholen, dann sollte man eine unchecked Exception einsetzen.
   - k2: "Unterschied zwischen Error und Exception"
   - k2: "Unterschied zwischen checked und unchecked Exceptions"
   - k3: "Umgang mit Exceptions"
@@ -139,7 +142,7 @@ Error:
   * Von einem Error kann man sich  nicht erholen
   * Sollten nicht behandelt werden
 
-## Throw
+## Throws
 
 ```java
 double div(int a, int b) throws ArithmeticException{
