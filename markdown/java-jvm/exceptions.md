@@ -103,48 +103,62 @@ if (x.isPresent()) {
 :::
 
 
-## Vererbungsstruktur Throwable
+## Vererbungsstruktur _Throwable_
 
 ![](images/exception.png){width="80%"}
 
+::::::::: notes
+### _Exception_ vs. _Error_
 
-## Unchecked vs Checked Exceptions
+*   `Error`:
+    *   Liegen an Systemfehlern (Betriebssystem, JVM, ...)
+        *   `StackOverflowError`
+        *   `OutOfMemoryError`
+    *   Von einem Error kann man sich  nicht erholen
+    *   Sollten nicht behandelt werden
 
-Checked:
-  * Für erwartbare Fehler fälle, die nicht am Programm selbst liegen
-    * `FileNotFoundException`
-    * `IOException`
-  * Alle nicht von `RuntimeException` ableitende Exceptions
-  * Werden vom Compiler überprüft
-  * Müssen deklariert und behandelt werden
+*   `Exception`:
+    *   Ausnahmesituationen bei der Abarbeitung eines Programms
+    *   Können "checked" oder "unchecked" sein
+    *   Von Exceptions kann man sich erholen
 
-Unchecked:
-  * Logische Programmierfehler ("Versagen" des Programmcodes)
-    * `IndexOutOfBoundException`
-    * `NullPointerException`
-    * `ArithmeticException`
-    * `IllegalArgumentException`
-  * Alle ableitende Exceptions von `RuntimeException`
-  * Werden nicht vom Compiler überprüft
-  * Müssen nicht deklariert oder behandelt werden
+### Unchecked vs. Checked Exceptions
 
-::: notes
-Beispiel Checked Exception: Es soll eine Abfrage an eine externe API geschickt werden. Diese ist aber aktuell nicht zu erreichen. Lösung: Anfrage noch einmal schicken.
-Beispiel unchecked Exception: Ein `for`-Loop über ein Array ist falsch programmiert und will auf einen Index im Array zugreifen, der nicht existiert.
-:::
+*   "Checked" Exceptions:
+    *   Für erwartbare Fehlerfälle, deren Ursprung nicht im Programm selbst liegt
+        *   `FileNotFoundException`
+        *   `IOException`
+    *   Alle nicht von `RuntimeException` ableitende Exceptions
+    *   Müssen behandelt (`try`/`catch`) oder deklariert (`throws`) werden: Dies
+        wird vom Compiler überprüft!
 
-## Exception vs Error
+*   "Unchecked" Exceptions:
+    *   Logische Programmierfehler ("Versagen" des Programmcodes)
+        *   `IndexOutOfBoundException`
+        *   `NullPointerException`
+        *   `ArithmeticException`
+        *   `IllegalArgumentException`
+    *   Leiten von `RuntimeException` oder Unterklassen ab
+    *   Müssen nicht deklariert oder behandelt werden
 
-Exceptions:
- * Können checked oder unchecked sein
- * Von Exceptions kann man sich erholen
+Beispiele checked Exception:
+*   Es soll eine Abfrage an eine externe API geschickt werden. Diese ist aber aktuell
+    nicht zu erreichen. Lösung: Anfrage noch einmal schicken.
+*   Es soll eine Datei geöffnet werden. Diese ist aber nicht unter dem angegebenen
+    Pfad zu finden. Lösung: Aufrufer der Methode versucht es noch einmal mit einem
+    anderen Namen.
 
-Error:
-  * Liegen an Systemfehlern
-    * `StackOverflowError`
-    * `OutOfMemoryError`
-  * Von einem Error kann man sich  nicht erholen
-  * Sollten nicht behandelt werden
+Beispiele unchecked Exception:
+*   Eine `for`-Loop über ein Array ist falsch programmiert und will auf einen Index
+    im Array zugreifen, der nicht existiert. Hier kann der Aufrufer nicht Sinnvolles
+    tun, um sich von dieser Situation zu erholen.
+*   Argumente oder Rückgabewerte einer Methode können `null` sein. Wenn man das nicht
+    prüft, sondern einfach Methoden auf dem vermeintlichen Objekt aufruft, wird eine
+    `NullPointerException` ausgelöst, die eine Unterklasse von `RuntimeException` ist
+    und damit eine unchecked Exception. Auch hier handelt es sich um einen Fehler in
+    der Programmlogik, von dem sich der Aufrufer nicht sinnvoll erholen kann.
+:::::::::
+
 
 ## Throws
 
