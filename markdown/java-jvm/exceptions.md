@@ -69,6 +69,7 @@ int div(int a, int b) {
     return a / b;
 }
 
+
 div(3, 0);
 ```
 
@@ -80,11 +81,11 @@ div(3, 0);
 ## Lösung?
 
 ```java
-
 Optional<Integer> div(int a, int b) {
     if (b == 0) return Optional.empty();
     return Optional.of(a / b);
 }
+
 
 Optional<Integer> x = div(3, 0);
 if (x.isPresent()) {
@@ -112,10 +113,10 @@ if (x.isPresent()) {
 ### _Exception_ vs. _Error_
 
 *   `Error`:
-    *   Liegen an Systemfehlern (Betriebssystem, JVM, ...)
+    *  Wird für Systemfehler verwendet (Betriebssystem, JVM, ...)
         *   `StackOverflowError`
         *   `OutOfMemoryError`
-    *   Von einem Error kann man sich  nicht erholen
+    *   Von einem Error kann man sich nicht erholen
     *   Sollten nicht behandelt werden
 
 *   `Exception`:
@@ -144,10 +145,10 @@ if (x.isPresent()) {
 
 Beispiele checked Exception:
 *   Es soll eine Abfrage an eine externe API geschickt werden. Diese ist aber aktuell
-    nicht zu erreichen. Lösung: Anfrage noch einmal schicken.
+    nicht zu erreichen. "Erholung": Anfrage noch einmal schicken.
 *   Es soll eine Datei geöffnet werden. Diese ist aber nicht unter dem angegebenen
-    Pfad zu finden. Lösung: Aufrufer der Methode versucht es noch einmal mit einem
-    anderen Namen.
+    Pfad zu finden oder die Berechtigungen stimmen nicht. "Erholung": Aufrufer öffnet
+    neuen File-Picker, um es noch einmal mit einer anderen Datei zu versuchen.
 
 Beispiele unchecked Exception:
 *   Eine `for`-Loop über ein Array ist falsch programmiert und will auf einen Index
@@ -251,7 +252,7 @@ gematcht (vergleichbar mit `switch case`).
 
 **Wichtig**: Dabei muss die Vererbungshierarchie beachtet werden. Die spezialisierteste
 Klasse muss ganz oben stehen, die allgemeinste Klasse als letztes. Sonst wird eine
-Exception u.U. in einem nicht dafür gedachten `catch`-Zweig aufgefangen.
+Exception u.U. zu früh in einem nicht dafür gedachten `catch`-Zweig aufgefangen.
 
 **Wichtig**: Wenn eine Exception nicht durch die `catch`-Zweige aufgefangen wird, dann
 wird sie an den Aufrufer weiter geleitet. Im Beispiel würde eine `IOException` nicht durch
@@ -266,6 +267,7 @@ Exception handelt, müsste man diese per `throws IOException` an der Methode dek
 
 ```java
 Scanner myScanner = new Scanner(System.in);
+
 try {
     return 5 / myScanner.nextInt();
 } catch (InputMismatchException ime) {
@@ -292,6 +294,7 @@ try (Scanner myScanner = new Scanner(System.in)) {
     ime.printStackTrace();
 }
 ```
+
 ::: notes
 Im `try`-Statement können Ressourcen deklariert werden, die am Ende sicher geschlossen
 werden. Diese Ressourcen müssen `java.io.Closeable` implementieren.
@@ -321,7 +324,7 @@ Eigene Exceptions können durch Spezialisierung anderer Exception-Klassen realis
 werden. Dabei kann man direkt von `Exception` oder `RuntimeException` ableiten oder
 bei Bedarf von spezialisierteren Exception-Klassen.
 
-Wenn die eigene Exception in der Vererbungshierachie unter `RuntimeException` steht,
+Wenn die eigene Exception in der Vererbungshierarchie unter `RuntimeException` steht,
 handelt es sich um eine _unchecked Exception_, sonst um eine _checked Exception_.
 
 In der Benutzung (werfen, fangen, deklarieren) verhalten sich eigene Exception-Klassen
@@ -329,13 +332,13 @@ wie die Exceptions aus dem JDK.
 :::
 
 
-## Stilfragen
+## Stilfrage: Wie viel Code im _Try_?
 
-### Wie viel im try?
 * Gute Stil ist es, so wenig Code wie möglich in einem `try` Block zu schreiben, sonst könnte es unklar sein, wo genau der Fehler herkommt.
 
 
-### Wann throw wann catch?
+## Stilfrage:  Wann _Throw_, wann _Catch_?
+
 ```java
 public static void methode1(String path, int x) throws IOException {
     methode2(path, x, x * 2);
@@ -361,11 +364,13 @@ public static void main(String[] args) {
     }
 }
 ```
+
 ::: notes
 * Exceptions sollten immer beim Ursprung der Fehlerursache behandelt werden
 :::
 
-### Wann eine Exception checked machen, wann unchecked
+
+## Stilfrage: Wann checked, wann unchecked
 
 Laut [Oracle](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
 * Wenn erwartet werden kann, das ein Client sich von der Exception erholen kann, mache sie checked
@@ -377,15 +382,24 @@ TODO
 
 ## Wrap-Up
 
-* Behandeln von Fehlerfällen in Programmen
-* Unterschied checked und unchecked Exceptions
-* Unterschied Error und Exception
-* `throw` : Wirf eine Exception
-* `try` : Versuche Code auszuführen
-* `catch` : Verhalten im Fehlerfall
-* `finally` : Verhalten im Erfolgs- und Fehlerfall
-* Mit `extends Exception` können eigene Exceptions implementiert werden
+*   `Error` und `Exception`: System vs. Programm
+*   Checked und unchecked Exceptions: `Exception` vs. `RuntimeException`
 
+\smallskip
+
+*   `try`: Versuche Code auszuführen
+*   `catch`: Verhalten im Fehlerfall
+*   `finally`: Verhalten im Erfolgs- und Fehlerfall
+
+\smallskip
+
+*   `throw`: Wirft eine Exception
+*   `throws`: Deklariert eine Exception
+
+\smallskip
+
+*   Eigene Exceptions durch Ableiten von anderen Exceptions
+    [(werden je nach Vererbungshierarchie automatisch checked oder unchecked)]{.notes}
 
 
 
