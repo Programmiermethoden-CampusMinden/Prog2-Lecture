@@ -12,14 +12,33 @@ readings:
   - key: "Java-SE-Tutorial"
     comment: "Trail: Essential Java Classes, Lesson: Exceptions"
 tldr: |
-    Man unterscheidet zwischen **Exception** und *Error**. Ein Error ist ein Fehler im System, von dem man sich nicht wieder erholen kann. Eine Exception ist ein Fehlerfall innerhalb des Programmes.
+    Man unterscheidet in Java zwischen **Exceptions** und *Errors**. Ein Error ist ein
+    Fehler im System, von dem man sich nicht wieder erholen kann. Eine Exception ist ein
+    Fehlerfall innerhalb des Programmes, auf den man innerhalb des Programms reagieren
+    kann.
 
-    Mit Hilfe von Exceptions lassen sich Fehlerfälle im Programmablauf deklarieren und behandeln. Methoden können mit dem Keyword `throw` gefolgt vom Namen der Exception angeben, dass sie im Fehlerfall diese spezifische Exception werfen. Der Aufrufer kann dann mithilfe der Keywords `try`, `catch` und `finally` den Fehler abfangen und behandeln.
-    Dabei wird im `try`-Block der Code geschrieben, der einen potenziellen Fehler wirf, im `catch`-Block wird das Verhalten implementiert, dass im Fehlerfall ausgeführt werden soll und im `finally`-Block kann Optional Code geschrieben werden, der sowohl im Erfolgs- als auch Fehlerfall ausgeführt wird.
+    Mit Hilfe von Exceptions lassen sich Fehlerfälle im Programmablauf deklarieren und
+    behandeln. Methoden können mit dem Keyword `throw` gefolgt vom Namen der Exception
+    deklarieren, dass sie im Fehlerfall diese spezifische Exception werfen (und nicht
+    selbst behandeln).
 
-    Es wird zwischen **checked** Exceptions und **unchecked** Exceptions unterschieden. Checked Exceptions sind für erwartbare Fehlerfälle gedacht, die nicht vom Programm ausgeschlossen werden können, wie das Fehlen einer Datei, die eingelesen werden soll. Checked Exceptions müssen deklariert und behandelt werden. Dies wird vom Compiler überprüft.
+    Zum Exception-Handling werden die Keywords `try`, `catch` und `finally` verwendet.
+    Dabei wird im `try`-Block der Code geschrieben, der einen potenziellen Fehler wirft.
+    Im `catch`-Block wird das Verhalten implementiert, dass im Fehlerfall ausgeführt
+    werden soll, und im `finally`-Block kann optional Code geschrieben werden, der sowohl
+    im Erfolgs- als auch Fehlerfall ausgeführt wird.
 
-    Unchecked Exceptions werden für Fehler in der Programmlogik verwendet, wie das Teilen durch 0. Sie deuten auf fehlerhafte Programmierung oder mangelhafter Eingabeprüfung hin. Checked Exceptions müssen nicht deklariert oder behandelt werden.
+    Es wird zwischen **checked** Exceptions und **unchecked** Exceptions unterschieden.
+    Checked Exceptions sind für erwartbare Fehlerfälle gedacht, die nicht vom Programm
+    ausgeschlossen werden können, wie das Fehlen einer Datei, die eingelesen werden soll.
+    Checked Exceptions müssen deklariert und behandelt werden. Dies wird vom Compiler
+    überprüft.
+
+    Unchecked Exceptions werden für Fehler in der Programmlogik verwendet, etwa das Teilen
+    durch 0 oder Index-Fehler. Sie deuten auf fehlerhafte Programmierung, fehlerhafte Logik
+    oder beispielsweise mangelhafte Eingabeprüfung in. Unchecked Exceptions müssen nicht
+    deklariert oder behandelt werden. Unchecked Exceptions leiten von `RuntimeException`
+    ab.
 outcomes:
   - k2: "Unterschied zwischen Error und Exception"
   - k2: "Unterschied zwischen checked und unchecked Exceptions"
