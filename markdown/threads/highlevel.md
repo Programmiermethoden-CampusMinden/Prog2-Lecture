@@ -14,10 +14,8 @@ readings:
 tldr: |
     Das Erzeugen von Threads über die Klasse `Thread` oder das Interface `Runnable` und
     das Hantieren mit `synchronized` und `wait()`/`notify()` zählt zu den grundlegenden
-    Dingen beim Multi-Threading mit Java.
-
-    Auf diesen Konzepten bauen viele weitere Konzepte auf, die ein flexibleres Arbeiten
-    mit Threads in Java ermöglichen.
+    Dingen beim Multi-Threading mit Java. Auf diesen Konzepten bauen viele weitere
+    Konzepte auf, die ein flexibleres Arbeiten mit Threads in Java ermöglichen.
 
     Dazu zählt unter anderem das Arbeiten mit `Lock`-Objekten und dazugehörigen `Conditions`,
     was `synchronized` und `wait()`/`notify()` entspricht, aber feingranulareres und
@@ -29,6 +27,9 @@ tldr: |
 
     Schließlich bietet sich das Fork/Join-Framework zum rekursiven Zerteilen von Aufgaben
     und zur parallelen Bearbeitung der Teilaufgaben an.
+
+    Die in Swing integrierte Klasse `SwingWorker` ermöglicht es, in Swing Berechnungen
+    in einen parallel ausgeführten Thread auszulagern.
 outcomes:
   - k3: "Umgang mit High-Level-Abstraktionen: Lock-Objekten und Conditions, Executor-Interface und Thread-Pools, Fork/Join-Framework"
 quizzes:
