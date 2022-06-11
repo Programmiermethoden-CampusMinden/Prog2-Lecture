@@ -21,7 +21,7 @@ public class WhereToCatch {
     }
 
     /** Just to please Checkstyle */
-    public static void main(String[] args) {
+    public static void main(String... args) {
         try {
             methode1(42);
         } catch (IOException ioe) {

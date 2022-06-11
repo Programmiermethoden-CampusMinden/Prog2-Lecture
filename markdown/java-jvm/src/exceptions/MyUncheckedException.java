@@ -14,7 +14,7 @@ public class MyUncheckedException extends RuntimeException {
     }
 
     /** Just to please Checkstyle */
-    public static void main(String[] args) {
+    public static void main(String... args) {
         // Unchecked-Exceptions müssen nicht gefangen werden.
         myMethod(12);
     }

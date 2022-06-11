@@ -14,7 +14,7 @@ public class MyCheckedException extends Exception {
     }
 
     /** Just to please Checkstyle */
-    public static void main(String[] args) {
+    public static void main(String... args) {
         // Checked-Exceptions müssen gefangen werden.
         try {
             myMethod(12);
