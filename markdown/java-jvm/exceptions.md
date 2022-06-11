@@ -2,7 +2,7 @@
 type: lecture-cg
 title: "Exception-Handling"
 menuTitle: "Exceptions"
-author: "André Matutat (FH Bielefeld)"
+author: "André Matutat / Carsten Gips (FH Bielefeld)"
 weight: 8
 readings:
   - key: "LernJava"
@@ -65,11 +65,11 @@ fhmedia:
 ## Fehlerfälle in Java
 
 ```java
-double div(int a, int b) {
-    return a/b;
+int div(int a, int b) {
+    return a / b;
 }
 
-div(3.5, 0);
+div(3, 0);
 ```
 
 ::: notes
@@ -80,12 +80,13 @@ div(3.5, 0);
 ## Lösung?
 
 ```java
-Optional<Double> div(int a, int b){
-    if( b==0) return Optional.empty();
-    return Optional.of(a/b);
+
+Optional<Integer> div(int a, int b) {
+    if (b == 0) return Optional.empty();
+    return Optional.of(a / b);
 }
 
-Optional<Double> sol = div(3.5, 0);
+Optional<Integer> x = div(3, 0);
 if (x.isPresent()) {
     // do something
 } else {
@@ -160,29 +161,57 @@ Beispiele unchecked Exception:
 :::::::::
 
 
-## Throws
+## _Throws_
 
 ```java
-double div(int a, int b) throws ArithmeticException{
-    return a/b;
+int div(int a, int b) throws ArithmeticException {
+    return a / b;
 }
 ```
 
-Alternative:
-
-```java
-double div(int a, int b) throws IllegalArgumentException{
-    if(b==0) throw new IllegalArgumentException("Can't divide by zero");
-    return a/b;
-}
-```
 ::: notes
-*   Exception können an die aufrufende Stelle weitergeleiten werden
-*   Dafür wird das Keyword `throws` gefolgt vom Namen der Exception in die Methodensignatur hinzugefügt
-*   Es können auch mehrere Exceptions geworfen werden `throws Exception1, Exception2, Exception3`
-*   Wenn innerhalb der Methode die genannte Exception aufkommt (oder mit `throw` geworfen wird), wird diese an die aufrufende Stelle weitergeleitet
-*   Wenn eine Methode `throws` **muss** die aufrufende Stelle diese Exception behandeln.
+Alternativ:
 :::
+
+```java
+int div(int a, int b) throws IllegalArgumentException {
+    if (b == 0) throw new IllegalArgumentException("Can't divide by zero");
+    return a / b;
+}
+```
+
+::: notes
+Exception können an an den Aufrufer weitergeleitet werden oder selbst geworfen werden.
+
+Wenn wie im ersten Beispiel bei einer Operation eine Exception entsteht und nicht
+gefangen wird, dann wird sie automatisch an den Aufrufer weitergeleitet. Dies wird
+über die `throws`-Klausel deutlich gemacht (Keyword `throws` plus den/die Namen der
+Exception(s), angefügt an die Methodensignatur). Bei unchecked Exceptions _kann_ man
+das tun, bei checked Exceptions _muss_ man dies tun.
+
+Wenn man wie im zweiten Beispiel selbst eine neue Exception werfen will, erzeugt man
+mit `new` ein neues Objekt der gewünschten Exception und "wirft" diese mit `throw`.
+Auch diese Exception kann man dann entweder selbst fangen und bearbeiten (siehe nächste
+Folie) oder an den Aufrufer weiterleiten und dies dann entsprechend über die
+`throws`-Klausel deklarieren: nicht gefangene checked Exceptions _müssen_ deklariert
+werden, nicht gefangene unchecked Exceptions _können_ deklariert werden.
+
+Wenn mehrere Exceptions an den Aufrufer weitergeleitet werden, werden sie in der
+`throws`-Klausel mit Komma getrennt: `throws Exception1, Exception2, Exception3`.
+
+**Anmerkung**: In beiden obigen Beispielen wurde zur Verdeutlichung, dass die Methode
+`div()` eine Exception wirft, diese per `throws`-Klausel deklariert. Da es sich bei
+den beiden Beispielen aber jeweils um **unchecked Exceptions** handelt, ist dies im
+obigen Beispiel _nicht notwendig_. Der Aufrufer _muss_ auch nicht ein passendes
+Exception-Handling einsetzen!
+
+Wenn wir stattdessen eine **checked Exception** werfen würden oder in `div()` eine
+Methode aufrufen würden, die eine checked Exception deklariert hat, _muss_ diese
+checked Exception entweder in `div()` gefangen und bearbeitet werden oder aber per
+`throws`-Klausel deklariert werden. Im letzteren Fall _muss_ dann der Aufrufer analog
+damit umgehen (fangen oder selbst auch deklarieren). **Dies wird vom Compiler geprüft!**
+:::
+
 
 ## Try-Catch
 
