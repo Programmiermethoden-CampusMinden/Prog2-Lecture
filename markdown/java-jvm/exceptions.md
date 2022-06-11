@@ -43,6 +43,7 @@ tldr: |
     Als Faustregel gilt: Wenn der Aufrufer sich von einer Exception-Situation erholen kann,
     sollte man eine checked Exception nutzen. Wenn der Aufrufer vermutlich nichts tun kann,
     um sich von dem Problem zu erholen, dann sollte man eine unchecked Exception einsetzen.
+outcomes:
   - k2: "Unterschied zwischen Error und Exception"
   - k2: "Unterschied zwischen checked und unchecked Exceptions"
   - k3: "Umgang mit Exceptions"
@@ -340,15 +341,16 @@ TODO
 * `finally` : Verhalten im Erfolgs- und Fehlerfall
 * Mit `extends Exception` können eigene Exceptions implementiert werden
 
+
+
+
+
+
+
 <!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
 ::: slides
 ## LICENSE
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
