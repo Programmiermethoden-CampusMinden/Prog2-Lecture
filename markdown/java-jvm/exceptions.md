@@ -2,7 +2,7 @@
 type: lecture-cg
 title: "Exception-Handling"
 menuTitle: "Exceptions"
-author: "André Matutat / Carsten Gips (FH Bielefeld)"
+author: "André Matutat & Carsten Gips (FH Bielefeld)"
 weight: 8
 readings:
   - key: "LernJava"
@@ -72,7 +72,7 @@ div(3, 0);
 ```
 
 ::: notes
-**Problem**: Programm wird abstürzen, da durch '0' geteilt wird
+**Problem**: Programm wird abstürzen, da durch '0' geteilt wird ...
 :::
 
 
@@ -105,7 +105,10 @@ if (x.isPresent()) {
 
 ## Vererbungsstruktur _Throwable_
 
-![](images/exception.png){width="80%"}
+![](images/exception.png){web_width="80%"}
+
+[[Hinweis: checked vs. unchecked]{.bsp}]{.slides}
+
 
 ::::::::: notes
 ### _Exception_ vs. _Error_
@@ -172,6 +175,8 @@ int div(int a, int b) throws ArithmeticException {
 Alternativ:
 :::
 
+\bigskip
+
 ```java
 int div(int a, int b) throws IllegalArgumentException {
     if (b == 0) throw new IllegalArgumentException("Can't divide by zero");
@@ -211,6 +216,8 @@ checked Exception entweder in `div()` gefangen und bearbeitet werden oder aber p
 damit umgehen (fangen oder selbst auch deklarieren). **Dies wird vom Compiler geprüft!**
 :::
 
+[[Hinweis: throws und checked vs. unchecked]{.bsp}]{.slides}
+
 
 ## _Try_-_Catch_
 
@@ -226,13 +233,14 @@ try {
 
 // hier geht es normal weiter
 ```
+
 ::: notes
 *   Im `try` Block wird der Code ausgeführt, der einen Fehler werfen könnte.
 *   Mit `catch` kann eine Exception gefangen und im `catch` Block behandelt werden.
 :::
 
 
-## _Try_ with multiple _Catch_
+## _Try_und mehrstufiges _Catch_
 
 ```java
 try {
@@ -259,6 +267,8 @@ im falschen Vererbungszweig, und `FileNotFoundException` ist spezieller als `IOE
 und entsprechend an den Aufrufer weiter gereicht. Da es sich obendrein um eine checked
 Exception handelt, müsste man diese per `throws IOException` an der Methode deklarieren.
 :::
+
+[[Hinweis: catch und Vererbungshierarchie]{.bsp}]{.slides}
 
 
 ## _Finally_
@@ -308,7 +318,11 @@ public class MyCheckedException extends Exception {
         super(errorMessage);
     }
 }
+```
 
+\bigskip
+
+```java
 // Unchecked Exception
 public class MyUncheckedException extends RuntimeException {
     public MyUncheckedException(String errorMessage) {
@@ -342,7 +356,7 @@ int getFirstLineAsInt(String pathToFile) {
 }
 ```
 
-[Beispiel: [exceptions.HowMuchTry](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/exceptions/HowMuchTry.java)]{.bsp}
+[Zeigen: [exceptions.HowMuchTry](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/exceptions/HowMuchTry.java)]{.bsp}
 
 
 ::: notes
@@ -460,11 +474,9 @@ private static void methode2(String path, int x, int y) throws IOException {
     FileWriter fw = new FileWriter(path);
     BufferedWriter bw = new BufferedWriter(fw);
     bw.write("X:" + x + " Y: " + y);
-    bw.flush();
 }
 
-/** Just to please Checkstyle */
-public static void main(String[] args) {
+public static void main(String... args) {
     try {
         methode1(42);
     } catch (IOException ioe) {
@@ -491,6 +503,8 @@ kann ich sinnvoll auf den Fehler reagieren?
 *   Für erwartbare Fehlerfälle, deren Ursprung nicht im Programm selbst liegt
 *   Aufrufer kann sich von der Exception erholen
 
+\bigskip
+
 ### "Unchecked" Exceptions
 
 *   Logische Programmierfehler ("Versagen" des Programmcodes)
@@ -515,7 +529,7 @@ Vergleiche ["Unchecked Exceptions — The Controversy"](https://dev.java/learn/u
 \smallskip
 
 *   `throw`: Wirft eine Exception
-*   `throws`: Deklariert eine Exception
+*   `throws`: Deklariert eine Exception an Methode
 
 \smallskip
 
