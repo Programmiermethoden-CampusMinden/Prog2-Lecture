@@ -12,7 +12,7 @@ import java.util.concurrent.RecursiveTask;
  */
 public class ForkJoin extends RecursiveTask<Integer> {
     // Langes Array mit Wörtern, wird von allen Tasks gemeinsam genutzt
-    private static final String[] words = {
+    private static final String[] WORDS = {
         "hello", "world", "wuppie", "fluppie", "foo", "bar", "42"
     };
 
@@ -34,7 +34,7 @@ public class ForkJoin extends RecursiveTask<Integer> {
     /** Starte die Demo */
     public static void main(String[] args) {
         // neuen Task erzeugen
-        ForkJoinTask<Integer> task = new ForkJoin(0, words.length);
+        ForkJoinTask<Integer> task = new ForkJoin(0, WORDS.length);
 
         // Aufgabe an ForkJoinPool geben und Bearbeitung starten
         int erg = new ForkJoinPool().invoke(task);
@@ -42,7 +42,7 @@ public class ForkJoin extends RecursiveTask<Integer> {
 
         // Direkte Berechnung (sequentiell, zur Kontrolle)
         System.out.println(
-                Arrays.stream(words, 0, words.length)
+                Arrays.stream(WORDS, 0, WORDS.length)
                         .map(String::length)
                         .reduce(0, (a, b) -> a + b));
     }
@@ -55,7 +55,7 @@ public class ForkJoin extends RecursiveTask<Integer> {
         // Sequentielle Berechnung, wenn weniger als 2 Elemente
         // Anzahl hier willkürlich!
         if (length < 2) {
-            return Arrays.stream(words, start, end).map(String::length).reduce(0, (a, b) -> a + b);
+            return Arrays.stream(WORDS, start, end).map(String::length).reduce(0, (a, b) -> a + b);
         }
 
         // Teile Task in zwei Hälften
