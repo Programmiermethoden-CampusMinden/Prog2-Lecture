@@ -54,8 +54,6 @@ quizzes:
 youtube:
   - link: ""
     name: "VL Exceptions"
-  - link: ""
-    name: "Demo Exceptions"
 fhmedia:
   - link: ""
     name: "VL Exceptions"
