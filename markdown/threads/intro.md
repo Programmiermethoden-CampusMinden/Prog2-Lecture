@@ -54,11 +54,11 @@ quizzes:
 assignments:
   - topic: sheet10
 youtube:
-  - link: ""
+  - link: "https://youtu.be/ClfXbNPRl_8"
     name: "VL Threads Intro"
-  - link: ""
+  - link: "https://youtu.be/zcVqFAx5D0E"
     name: "Demo Threads Intro: Erzeugen von Threads"
-  - link: ""
+  - link: "https://youtu.be/lQ_JSHBGhdU"
     name: "Demo Threads Intro: Arbeiten mit Threads (`join()`)"
 fhmedia:
   - link: ""
