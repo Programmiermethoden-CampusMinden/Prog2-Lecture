@@ -38,15 +38,15 @@ quizzes:
 assignments:
   - topic: sheet10
 youtube:
-  - link: ""
+  - link: "https://youtu.be/bb_kuuhXC6A"
     name: "VL High-Level Concurrency"
-  - link: ""
+  - link: "https://youtu.be/1tJRUJddtlw"
     name: "Demo Lock-Objekte"
-  - link: ""
+  - link: "https://youtu.be/VvzlwZ6n3SI"
     name: "Demo Executor"
-  - link: ""
-    name: "Demo ForkJoin"
-  - link: ""
+  - link: "https://youtu.be/Wfq_MDFoWYY"
+    name: "Demo Fork/Join"
+  - link: "https://youtu.be/Hu3RbqiNy4M"
     name: "Demo SwingWorker"
 fhmedia:
   - link: ""
