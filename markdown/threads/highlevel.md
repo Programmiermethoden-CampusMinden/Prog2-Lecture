@@ -235,7 +235,7 @@ public class RecursiveTask extends ForkJoinTask<V> {
             berechne task sequentiell
         } else {
             teile task in zwei subtasks:
-                left, right = new RecursiveTask()
+                left, right = new RecursiveTask(task)
             rufe compute() auf beiden subtasks auf:
                 left.fork();          // starte neuen Thread
                 r = right.compute();  // nutze aktuellen Thread
@@ -330,6 +330,7 @@ Multi-Threading auf höherem Level: Thread-Pools und Fork/Join-Framework
     und Thread-Pools
 *   Fork/Join-Framework zum rekursiven Zerteilen von Aufgaben und zur
     parallelen Bearbeitung der Teilaufgaben
+*   `SwingWorker` für die parallel Bearbeitung von Aufgaben in Swing
 
 
 
