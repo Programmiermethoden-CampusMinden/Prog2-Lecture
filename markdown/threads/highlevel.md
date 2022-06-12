@@ -49,7 +49,7 @@ youtube:
   - link: "https://youtu.be/Hu3RbqiNy4M"
     name: "Demo SwingWorker"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/1d46e6b75b7e2ebe8d15edbda2340505285d886160a3b03f489024b1075f0b5176c68d9993a145fdcdb5e65c17f6be80a7ef1f0c64a72c410536e69965275a59"
     name: "VL High-Level Concurrency"
 ---
 
