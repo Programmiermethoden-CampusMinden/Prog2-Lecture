@@ -52,7 +52,7 @@ quizzes:
   - link: ""
     name: "Quiz Exceptions (ILIAS)"
 youtube:
-  - link: ""
+  - link: "https://youtu.be/k6EhexEvJDY"
     name: "VL Exceptions"
 fhmedia:
   - link: ""
