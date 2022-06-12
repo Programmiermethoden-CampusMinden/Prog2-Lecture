@@ -53,7 +53,7 @@ quizzes:
 assignments:
   - topic: sheet10
 youtube:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1092823&client_id=FH-Bielefeld"
     name: "VL Threads Synchronisation"
   - link: ""
     name: "Demo Teaser: Falscher Zugriff auf gemeinsame Ressourcen"
