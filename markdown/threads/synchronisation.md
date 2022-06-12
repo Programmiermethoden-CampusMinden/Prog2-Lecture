@@ -201,8 +201,8 @@ public class Deadlock {
 
     public synchronized String getName() { return name; }
     public synchronized void foo(Deadlock other) {
-        System.out.format("%s: %s.foo()\n", Thread.currentThread().getName(), name);
-        System.out.format("%s.getName()\n", other.getName());
+        System.out.format("%s: %s.foo() \n", Thread.currentThread().getName(), name);
+        System.out.format("%s: %s.name()\n", Thread.currentThread().getName(), other.getName());
     }
 
     public static void main(String... args) {
