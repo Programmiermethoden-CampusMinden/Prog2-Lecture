@@ -61,7 +61,7 @@ youtube:
   - link: "https://youtu.be/lQ_JSHBGhdU"
     name: "Demo Threads Intro: Arbeiten mit Threads (`join()`)"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/41a885ac4baf0e087d393b0fa9d3d6f38cc86debad5b7e563c46dac15c0ba4f214476650ad6fa288708eb8b1ccf12d19f6ab46a8c5cf7a58b61a4cff39ec727b"
     name: "VL Threads Intro"
 ---
 
