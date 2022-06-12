@@ -48,20 +48,20 @@ outcomes:
   - k2: "Unterscheidung einseitige und mehrseitige Synchronisation"
   - k3: "Synchronisation mit `synchronized`, `wait`,  `notify` und `notifyAll`"
 quizzes:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1092823&client_id=FH-Bielefeld"
     name: "Quiz Threads Synchronisation (ILIAS)"
 assignments:
   - topic: sheet10
 youtube:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1092823&client_id=FH-Bielefeld"
+  - link: "https://youtu.be/FtVaobn4NqA"
     name: "VL Threads Synchronisation"
-  - link: ""
+  - link: "https://youtu.be/SB1ngVkQdLM"
     name: "Demo Teaser: Falscher Zugriff auf gemeinsame Ressourcen"
-  - link: ""
+  - link: "https://youtu.be/YTV-oT-vmpE"
     name: "Demo Mehrseitige Synchronisation (Sperr-Objekt, synchronisierte Methode)"
-  - link: ""
+  - link: "https://youtu.be/D4B5xHqCZ-0"
     name: "Demo Mehrseitige Synchronisation: Deadlock"
-  - link: ""
+  - link: "https://youtu.be/akCl01ZAaGo"
     name: "Demo Einseitige Synchronisation"
 fhmedia:
   - link: ""
