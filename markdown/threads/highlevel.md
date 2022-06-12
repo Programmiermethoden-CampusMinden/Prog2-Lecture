@@ -330,7 +330,7 @@ Multi-Threading auf höherem Level: Thread-Pools und Fork/Join-Framework
     und Thread-Pools
 *   Fork/Join-Framework zum rekursiven Zerteilen von Aufgaben und zur
     parallelen Bearbeitung der Teilaufgaben
-*   `SwingWorker` für die parallel Bearbeitung von Aufgaben in Swing
+*   `SwingWorker` für die parallele Bearbeitung von Aufgaben in Swing
 
 
 
