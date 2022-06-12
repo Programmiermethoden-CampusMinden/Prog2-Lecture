@@ -197,12 +197,17 @@ Die Methode `incrVal()` könnte entsprechend so umgeschrieben werden:
 
 ```java
 public class Deadlock {
-    public synchronized void foo(Deadlock other) { other.bar(); }
-    public synchronized void bar() {}
+    private final String name;
+
+    public synchronized String getName() { return name; }
+    public synchronized void foo(Deadlock other) {
+        System.out.format("%s: %s.foo()\n", Thread.currentThread().getName(), name);
+        System.out.format("%s.getName()\n", other.getName());
+    }
 
     public static void main(String... args) {
-        final Deadlock a = new Deadlock();
-        final Deadlock b = new Deadlock();
+        final Deadlock a = new Deadlock("a");
+        final Deadlock b = new Deadlock("b");
 
         new Thread(() -> a.foo(b)).start();
         new Thread(() -> b.foo(a)).start();
@@ -217,20 +222,18 @@ eine Ressource, die ein anderer Thread B haben möchte und Thread B belegt eine
 Ressource, die A gerne bekommen würde. Da es dann nicht weitergeht, nennt man
 diese Situation auch "Deadlock" ("Verklemmung").
 
-Im Beispiel ruft der erste Thread für das Objekt `a` die `foo()`-Methode
-auf und holt sich damit den Lock auf `a`. Um die Methode beenden zu
-können, muss noch die `bar()`-Methode vom Objekt `b` durch diesen ersten
-Thread aufgerufen werden. Dafür muss der erste Thread den Lock auf `b`
-bekommen.
+Im Beispiel ruft der erste Thread für das Objekt `a` die `foo()`-Methode auf und
+holt sich damit den Lock auf `a`. Um die Methode beenden zu können, muss noch die
+`getName()`-Methode vom Objekt `b` durch diesen ersten Thread aufgerufen werden.
+Dafür muss der erste Thread den Lock auf `b` bekommen.
 
-Dummerweise hat parallel der zweite Thread auf dem Objekt `b` die
-`foo()`-Methode aufgerufen und sich damit den Lock auf `b` geholt. Damit
-muss der erste Thread so lange warten, bis der zweite Thread den Lock auf
-`b` freigibt.
+Dummerweise hat parallel der zweite Thread auf dem Objekt `b` die `foo()`-Methode
+aufgerufen und sich damit den Lock auf `b` geholt. Damit muss der erste Thread so
+lange warten, bis der zweite Thread den Lock auf `b` freigibt.
 
 Das wird allerdings nicht passieren, da der zweite Thread zur Beendigung der
-`foo()`-Methode noch `bar()` auf `a` ausführen muss und dazu den Lock
-auf `b` holen, den aber aktuell der erste Thread hält.
+`foo()`-Methode noch `getName()` auf `a` ausführen muss und dazu den Lock auf `b`
+holen, den aber aktuell der erste Thread hält.
 
 Und schon geht's nicht mehr weiter :-)
 :::

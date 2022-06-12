@@ -20,12 +20,12 @@ public class Deadlock {
 
     /** Einstieg: Wird von beiden Threads aufgerufen */
     public synchronized void foo(Deadlock other) {
-        System.out.format("%s: %s.foo()\n", Thread.currentThread().getId(), this.name);
-        other.bar();
+        System.out.format("%s: %s.foo()\n", Thread.currentThread().getName(), name);
+        System.out.format("%s.name()\n", other.getName());
     }
 
     /** Wird von foo() aufgerufen, führt zum Deadlock */
-    public synchronized void bar() {
-        System.out.format("%s: %s.bar()\n", Thread.currentThread().getId(), this.name);
+    public synchronized String getName() {
+        return name;
     }
 }
