@@ -55,7 +55,7 @@ youtube:
   - link: "https://youtu.be/k6EhexEvJDY"
     name: "VL Exceptions"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/99634e4bd3c017932803d555405c3921a761c6f7d788e1beaddbc4053d0013f7f2dce08a8c713c005a7352a57de556406554dca14492eaa1a982ed167e20ea5b"
     name: "VL Exceptions"
 ---
 
