@@ -8,7 +8,7 @@ import java.io.IOException;
 /** Beispiel: Wieviel Code im try? */
 public class HowMuchTry {
     private static int getFirstLineAsIntV1(String pathToFile)
-            throws FileNotFoundException, IOException {
+            throws FileNotFoundException, IOException, NumberFormatException {
         FileReader fileReader = new FileReader(pathToFile);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String firstLine = bufferedReader.readLine();
