@@ -293,7 +293,7 @@ und erstellt ein neues, welches dann die aktualisierte Software enthält.
 [Beispiel: [debian-latex.df](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/building/src/debian-latex.df)]{.bsp}
 
 
-## CI-Pipeline
+## CI-Pipeline (GitLab)
 
 ```yaml
 default:
@@ -322,6 +322,49 @@ der Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem 
 :::
 
 [[Beispiel: Gitlab, cagix/wuppie]{.bsp}]{.slides}
+
+
+## CI-Pipeline (GitHub)
+
+```yaml
+name: SLIDES
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+      container:
+        image: docker://openjdk:17
+        volumes:
+          - my_docker_volume:/volume_mount
+      steps:
+        run: |
+            echo "Java Version:"
+            java -version
+            javac Hello.java
+            java Hello
+            ls -lags
+```
+
+::: notes
+https://stackoverflow.com/questions/71283311/run-github-workflow-on-docker-image-with-a-dockerfile
+https://docs.github.com/en/actions/using-jobs/running-jobs-in-a-container
+
+In den Gitlab-CI-Pipelines (analog wie in den GitHub-Actions) kann man Docker-Container
+für die Ausführung der Pipeline nutzen.
+
+Mit `image: openjdk:17` wird das Docker-Image `openjdk:17` vom DockerHub geladen und durch
+den Runner mit dem Tag `ivyjava` für die Stages als Container ausgeführt. Die Aktionen im
+`script`-Teil, wie beispielsweise `javac Hello.java` werden vom Runner an die Standard-Eingabe
+der Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechner:
+`docker run openjdk:17 javac Hello.java`.
+:::
+
+[[Beispiel: GitHub, cagix/wuppie]{.bsp}]{.slides}
 
 <!-- TODO: Beispiel GH? -->
 
