@@ -9,14 +9,29 @@ readings:
     comment: "Abschnitt 2.5.2: Ant"
   - key: "Inden2013"
 tldr: |
-    *   Automatisieren von Arbeitsabläufen
-    *   Apache Ant: Targets, Tasks, Properties
-        *   Targets sind auswählbare Teilziele
-        *   Abhängigkeiten zwischen Targets möglich
-        *   Tasks erledigen Aufgaben (innerhalb Targets)
-        *   Properties sind nicht änderbare Variablen
-        *   Umfangreiche Operationen auf Filesystem möglich
-        *   Interaktion mit Eclipse: Ausführen von Targets, Einbinden als Builder
+    Zum Automatisieren von Arbeitsabläufen (Kompilieren, Testen, ...) stehen in der Java-Welt
+    verschiedene Tools zur Verfügung: Apache Ant, Apache Maven und Gradle sind sicher die am
+    bekanntesten darunter.
+
+    In Apache Ant werden die Build-Skripte in XML definiert. Die äußere Klammer ist dabei das
+    `<project>`. In einem Projekt kann es ein oder mehrere Teilziele (_Targets_) geben, die
+    untereinander abhängig sein können. Die Targets können quasi "aufgerufen" werden bzw. in
+    der IDE selektiert und gestartet werden.
+
+    In einem Target kann man schließlich mit _Tasks_ Aufgaben wie Kompilieren, Testen, Aufräumen,
+    ... erledigen lassen. Dazu gibt es eine breite Palette an vordefinierten Tasks. Zusätzlich
+    sind umfangreiche Operationen auf dem Filesystem möglich (Ordner erstellen, löschen, Dinge
+    kopieren, ...).
+
+    Über _Properties_ können Werte und Namen definiert werden, etwa für bestimmte Ordner. Die
+    Properties sind unveränderliche Variablen (auch wenn man sie im Skript scheinbar neu setzen
+    kann).
+
+    Über Apache Ivy können analog zu Maven und Gradle definierte Abhängigkeiten aus Maven-Central
+    aufgelöst werden.
+
+    Im Unterschied zu Maven und Gradle ist in Ant _kein_ Java-Entwicklungsmodell eingebaut. Man
+    muss sämtliche Targets selbst definieren.
 outcomes:
   - k3: "Schreiben einfacher Ant-Skripte mit Abhängigkeiten zwischen den Targets"
   - k3: "Nutzung von Ant-Filesets (Dateisystemoperationen, Classpath)"
@@ -246,14 +261,17 @@ gruppieren.
     </target>
     ```
 
-    *Anmerkung*: Neben dem `fileset` können Sie hier auch (wie oben gezeigt)
+    _Anmerkung_: Neben dem `fileset` können Sie hier auch (wie oben gezeigt)
     ein oder mehrere `pathelement` nutzen.
     :::
 
+\bigskip
+
 ::: notes
-*Anmerkung*: Laut [ant.apache.org/manual/Tasks/junit.html](https://ant.apache.org/manual/Tasks/junit.html)
+_Anmerkung_: Laut [ant.apache.org/manual/Tasks/junit.html](https://ant.apache.org/manual/Tasks/junit.html)
 benötigt man neben der aktuellen `junit.jar` noch die `ant-junit.jar` im Classpath, um mit dem `junit`-Ant-Task
 entsprechende JUnit4-Testfälle ausführen zu können.
+
 Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 [ant.apache.org/manual/Tasks/junitlauncher.html](https://ant.apache.org/manual/Tasks/junitlauncher.html)).
 :::
