@@ -55,17 +55,31 @@ fhmedia:
 ---
 
 
-::: notes
-## Arbeitsabläufe in der SW-Entwicklung
+## Automatisieren von Arbeitsabläufen
 
+::: cbox
+Works on my machine ...
+:::
+
+::: notes
 *   Übersetzen des Quellcodes
 *   Ausführen der Unit-Tests
 *   Generieren der Dokumentation
 *   Packen der Distribution
 *   Aufräumen temporärer Dateien
 *   ...
+:::
 
 \bigskip
+\bigskip
+\pause
+
+*   Build-Tools:
+    *  **Apache Ant**
+    *   Apache Maven
+    *   Gradle
+
+::: notes
 => Automatisieren mit Apache Ant: [ant.apache.org](https://ant.apache.org/)
 :::
 
@@ -415,8 +429,8 @@ in der Projekt-Deklaration im Ant-Skript die Ivy-Tasks laden. Der wichtigste Tas
 <!-- ivy.xml -->
 <ivy-module version="2.0">
     <dependencies>
-        <dependency org="commons-cli" name="commons-cli" rev="1.4"/>
-        <dependency org="junit" name="junit" rev="4.13"/>
+        <dependency org="commons-cli" name="commons-cli" rev="1.5.0" />
+        <dependency org="junit" name="junit" rev="4.13.2" />
     </dependencies>
 </ivy-module>
 ```
