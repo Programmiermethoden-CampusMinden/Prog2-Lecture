@@ -9,7 +9,7 @@ readings:
     comment: "Abschnitt 2.5.2: Ant"
   - key: "Inden2013"
 tldr: |
-    *   Automatisieren von Arbeitabläufen
+    *   Automatisieren von Arbeitsabläufen
     *   Apache Ant: Targets, Tasks, Properties
         *   Targets sind auswählbare Teilziele
         *   Abhängigkeiten zwischen Targets möglich
@@ -29,9 +29,11 @@ youtube:
   - link: ""
     name: "VL Apache Ant"
   - link: ""
-    name: "Demo "
+    name: "Demo Aufruf von Ant (Konsole, IDE: hello.xml)"
   - link: ""
-    name: "Demo "
+    name: "Demo Properties, Targets, Dependencies (build.xml)"
+  - link: ""
+    name: "Demo Abhängigkeiten mit Ivy auflösen (ivydemo.xml)"
 fhmedia:
   - link: ""
     name: "VL Apache Ant"
@@ -126,7 +128,7 @@ fhmedia:
     `ant -Dwuppie=fluppie`
 
 ::: notes
-[Beispiel [beispiel.xml](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/building/src/ant/beispiel.xml), Properties]{.bsp}
+[Beispiel [build.xml](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/building/src/ant/build.xml), Properties]{.bsp}
 :::
 
 
@@ -153,7 +155,7 @@ fhmedia:
 *   `<copy file="myfile.txt" tofile="../bak/mycopy.txt" />`
 *   `<move file="src/file.orig" tofile="bak/file.moved" />`
 
-[Beispiel [beispiel.xml](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/building/src/ant/beispiel.xml), `init` und `clean`]{.bsp}
+[Beispiel [build.xml](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/building/src/ant/build.xml), `init` und `clean`]{.bsp}
 :::
 
 
@@ -209,7 +211,7 @@ gruppieren.
     </target>
     ```
 
-    *Anmerkung*: Neben dem `pathelement` können Sie hier auch (wie im nächsten
+    _Anmerkung_: Neben dem `pathelement` können Sie hier auch (wie im nächsten
     Beispiel gezeigt) ein oder mehrere `fileset` nutzen.
     :::
 
@@ -461,11 +463,11 @@ man über Optionen im `ivy:retrieve`-Task einstellen.
 :::
 
 <!--
-ivy-2.5.0.jar nach ~/.ant/lib/ kopieren
+ivy-2.5.0.jar von /usr/share/java/ivy.jar nach ~/.ant/lib/ kopieren
 Ivy-Cache unter ~/.ivy2/cache/
 -->
 
-[Demo: build/ivydemo.xml]{.bsp}
+[Demo: [ivydemo.xml](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/building/src/ant/ivydemo.xml)]{.bsp}
 
 
 ## Ausblick: Weitere Build-Systeme
@@ -493,14 +495,15 @@ Ivy-Cache unter ~/.ivy2/cache/
 
 Apache Ant: [ant.apache.org](https://ant.apache.org/)
 
-*   Automatisieren von Arbeitabläufen
+\bigskip
+
+*   Automatisieren von Arbeitsabläufen
 *   Apache Ant: Targets, Tasks, Properties
     *   Targets sind auswählbare Teilziele
     *   Abhängigkeiten zwischen Targets möglich
     *   Tasks erledigen Aufgaben (innerhalb Targets)
     *   Properties sind nicht änderbare Variablen
     *   Umfangreiche Operationen auf Filesystem möglich
-...
 
 
 
