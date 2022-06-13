@@ -277,8 +277,10 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 :::
 
 
-::: notes
-## Beispiel-Task: Kompilieren
+::::::::: notes
+## Beispiele
+
+### Beispiel-Task: Kompilieren
 
 ```xml
 <path id="project.classpath">
@@ -291,11 +293,8 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
     </javac>
 </target>
 ```
-:::
 
-
-::: notes
-## Beispiel-Task: Packen
+### Beispiel-Task: Packen
 
 ```xml
 <target name="dist" depends="compile" description="generate the distribution" >
@@ -307,11 +306,8 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
     </jar>
 </target>
 ```
-:::
 
-
-::: notes
-## Beispiel-Task: Testen
+### Beispiel-Task: Testen
 
 *   Tests einer Testklasse ausführen:
 
@@ -374,11 +370,8 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
     ```
 
 => `junit.jar` und `ant-junit.jar` (JUnit4.x) im Pfad!
-:::
 
-
-::: notes
-## Programme ausführen
+### Programme ausführen
 
 ```xml
 <target name="run">
@@ -390,7 +383,7 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
     </ java>
 </target>
 ```
-:::
+:::::::::
 
 
 ## Ausblick: Laden von Abhängigkeiten mit Apache Ivy
