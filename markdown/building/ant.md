@@ -11,25 +11,21 @@ tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k2: "XXX"
+  - k3: "XXX"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
-assignments:
-  - topic: sheet01
+  - link: ""
+    name: "Quiz Apache Ant (ILIAS)"
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Apache Ant"
   - link: ""
     name: "Demo "
   - link: ""
     name: "Demo "
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL Apache Ant"
 ---
 
 
@@ -67,9 +63,4 @@ Lorem Ipsum. Starte mit H2-Level.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
