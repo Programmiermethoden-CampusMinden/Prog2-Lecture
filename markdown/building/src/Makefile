@@ -9,3 +9,7 @@ clean:
 .PHONY: run
 run:
 	docker run --rm -it  -v "$(shell pwd):/data" -w "/data"  -u "$(shell id -u):$(shell id -g)"  --entrypoint "bash"  ubuntu-ant-maven
+
+.PHONY: runroot
+runroot:
+	docker run --rm -it  -v "$(shell pwd):/data" -w "/data"  --entrypoint "bash"  ubuntu-ant-maven
