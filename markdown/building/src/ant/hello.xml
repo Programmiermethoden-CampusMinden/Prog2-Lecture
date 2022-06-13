@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    I'm a comment ...
+-->
+<project default="helloWorld">
+    <target name="helloWorld">
+        <echo message="Hello World :-)"/>
+    </target>
+</project>
