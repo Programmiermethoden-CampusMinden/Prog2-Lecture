@@ -10,6 +10,6 @@ clean:
 run:
 	docker run --rm -it  -v "$(shell pwd):/data" -w "/data"  -u "$(shell id -u):$(shell id -g)"  --entrypoint "bash"  ubuntu-ant-maven
 
-.PHONY: runroot
-runroot:
+.PHONY: run_as_root
+run_as_root:
 	docker run --rm -it  -v "$(shell pwd):/data" -w "/data"  --entrypoint "bash"  ubuntu-ant-maven
