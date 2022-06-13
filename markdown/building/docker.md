@@ -49,20 +49,18 @@ outcomes:
   - k3: "Einsatz von Containern im Gitlab-CI"
   - k3: "Einsatz von VSCode und Containern"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
-assignments:
-  - topic: sheet01
+  - link: ""
+    name: "Quiz Docker (ILIAS)"
 youtube:
   - link: ""
-    name: "VL "
+    name: "VL Einführung in Docker"
   - link: ""
     name: "Demo "
   - link: ""
     name: "Demo "
 fhmedia:
   - link: ""
-    name: "VL "
+    name: "VL Einführung in Docker"
 ---
 
 
