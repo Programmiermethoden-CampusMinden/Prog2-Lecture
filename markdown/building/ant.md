@@ -481,12 +481,12 @@ Ivy-Cache unter ~/.ivy2/cache/
         formuliert werden
     *   Zieht Abhängigkeiten in zentralen `.maven`-Ordner
 
-\smallskip
+\bigskip
 
 *   [Gradle](https://gradle.org/)
     *   Eine Art Mischung aus Ant und Maven unter Nutzung der Sprache Groovy
 
-\smallskip
+\bigskip
 
 *   [Make](https://www.gnu.org/software/make/)
     *   DER Klassiker, stammt aus der C-Welt. Kann aber natürlich auch Java.
