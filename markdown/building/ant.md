@@ -375,29 +375,6 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 :::
 
 
-::::::::: notes
-## Ant und Eclipse
-
-### Starten von Ant-Targets
-
-*   Default-Target: Kontextmenü auf Ant-File: `Run As > Ant Build`
-*   Einstellungen: Kontextmenü: `Run As > External Tools Configuration`
-*   Alternative: Ant-View einblenden (dort Ant-Skript auswählen)
-
-### Ant-Skript als Builder
-
-*   Kontextmenü auf Projekt: `Properties > Builders > New > Ant Builder`
-
-    Dadurch wird das konfigurierte Ant-Target beispielsweise immer beim
-    Speichern oder beim Bauen des Projekts mit ausgeführt.
-
-### Ant-Classpath
-
-*   Entweder im Ant-Skript formulieren (besser! warum?)
-*   Alternative: `Window > Preferences > Ant > Runtime > Classpath > Global Entries`, gewünschtes Jar-File hinzufügen
-:::::::::
-
-
 ## Ausblick: Laden von Abhängigkeiten mit Apache Ivy
 
 ::: notes
