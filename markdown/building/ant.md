@@ -7,7 +7,6 @@ weight: 1
 readings:
   - key: "Inden2013"
     comment: "Abschnitt 2.5.2: Ant"
-  - key: "Inden2013"
 tldr: |
     Zum Automatisieren von Arbeitsabläufen (Kompilieren, Testen, ...) stehen in der Java-Welt
     verschiedene Tools zur Verfügung: Apache Ant, Apache Maven und Gradle sind sicher die am
@@ -36,7 +35,7 @@ outcomes:
   - k3: "Schreiben einfacher Ant-Skripte mit Abhängigkeiten zwischen den Targets"
   - k3: "Nutzung von Ant-Filesets (Dateisystemoperationen, Classpath)"
   - k3: "Nutzung von Ant-Properties"
-  - k3: "Ausführen von Ant-Targets aus Eclipse heraus und Einbindung als Builder"
+  - k3: "Ausführen von Ant-Targets aus der IDE heraus"
 quizzes:
   - link: ""
     name: "Quiz Apache Ant (ILIAS)"
@@ -61,15 +60,6 @@ fhmedia:
 Works on my machine ...
 :::
 
-::: notes
-*   Übersetzen des Quellcodes
-*   Ausführen der Unit-Tests
-*   Generieren der Dokumentation
-*   Packen der Distribution
-*   Aufräumen temporärer Dateien
-*   ...
-:::
-
 \bigskip
 \bigskip
 \pause
@@ -79,7 +69,17 @@ Works on my machine ...
     *   Apache Maven
     *   Gradle
 
+\bigskip
+
 ::: notes
+*   Aufgaben:
+    *   Übersetzen des Quellcodes
+    *   Ausführen der Unit-Tests
+    *   Generieren der Dokumentation
+    *   Packen der Distribution
+    *   Aufräumen temporärer Dateien
+    *   ...
+
 => Automatisieren mit Apache Ant: [ant.apache.org](https://ant.apache.org/)
 :::
 
