@@ -29,9 +29,9 @@ youtube:
   - link: ""
     name: "VL Apache Maven"
   - link: ""
-    name: "Demo "
+    name: "Demo MavenCentral"
   - link: ""
-    name: "Demo "
+    name: "Demo Maven-Projekt"
 fhmedia:
   - link: ""
     name: "VL Apache Maven"
@@ -48,7 +48,7 @@ mvn archetype:generate -DgroupId=de.fhb.pm -DartifactId=my-project
 \bigskip
 \smallskip
 
-![](images/screenshot_maven-project){width="50%"}
+![](images/screenshot_maven-project.png){width="50%"}
 
 ::: notes
 Von der zeitlichen Entstehung her kommt Maven nach Ant, aber vor Gradle. Wie in Ant sind
@@ -81,7 +81,7 @@ genutzt. Von hier würde Maven auch als Abhängigkeit konfigurierte Bibliotheken
 
 ## Lebenszyklus (eingebaut in Maven)
 
-![](images/screenshot_maven-lifecycle){heigth="40%"}
+![](images/screenshot_maven-lifecycle.png){width="40%"}
 
 ::: notes
 In Maven ist das typische Java-Entwicklungsmodell als "Lebenszyklus" implementiert.
@@ -212,6 +212,8 @@ ein erster Einstieg ist die [Plugin-API](https://maven.apache.org/ref/3.8.1/mave
 
 Apache Maven: [maven.apache.org](https://maven.apache.org), [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/index.html)
 
+\bigskip
+
 *   Automatisieren von Arbeitabläufen
 *   Apache Maven: Goals, Properties, Dependencies => "_Convention over Configuration_",
     Java-Standard-Lebenszyklus eingebaut
@@ -220,7 +222,6 @@ Apache Maven: [maven.apache.org](https://maven.apache.org), [Maven Getting Start
     *   Properties agieren wie Variablen, etwa für Versionsnummern
     *   Abhängigkeiten zu externen Bibliotheken werden als Dependencies
         formuliert: Abschnitt von Maven-Central kopieren
-...
 
 
 
