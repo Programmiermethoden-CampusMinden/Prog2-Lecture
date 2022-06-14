@@ -48,7 +48,7 @@ mvn archetype:generate -DgroupId=de.fhb.pm -DartifactId=my-project
 \bigskip
 \smallskip
 
-![](images/screenshot_maven-project.png){width="50%"}
+![](images/screenshot_maven-project.png){width="40%"}
 
 ::: notes
 Von der zeitlichen Entstehung her kommt Maven nach Ant, aber vor Gradle. Wie in Ant sind
@@ -85,6 +85,7 @@ genutzt. Von hier würde Maven auch als Abhängigkeit konfigurierte Bibliotheken
 
 ::: notes
 In Maven ist das typische Java-Entwicklungsmodell als "Lebenszyklus" implementiert.
+
 Entsprechende Plugins stellen die jeweiligen "*Goals*" (Ziele) bereit. Dabei sind
 auch die Abhängigkeiten berücksichtigt, d.h. das Ziel `test` erfordert ein `compile` ...
 :::
@@ -92,7 +93,7 @@ auch die Abhängigkeiten berücksichtigt, d.h. das Ziel `test` erfordert ein `co
 
 ## Project Object Model: *pom.xml*
 
-```{.xml size="tiny"}
+```{.xml size="scriptsize"}
 <project>
     <!-- aktuelle Version für Maven 2.x-->
     <modelVersion>4.0.0</modelVersion>
@@ -110,7 +111,6 @@ auch die Abhängigkeiten berücksichtigt, d.h. das Ziel `test` erfordert ein `co
 
     <!-- Abhängigkeiten zu externen Bibliotheken -->
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -221,7 +221,7 @@ Apache Maven: [maven.apache.org](https://maven.apache.org), [Maven Getting Start
     *   Abhängigkeiten zwischen Goals möglich
     *   Properties agieren wie Variablen, etwa für Versionsnummern
     *   Abhängigkeiten zu externen Bibliotheken werden als Dependencies
-        formuliert: Abschnitt von Maven-Central kopieren
+        formuliert: [Abschnitt von Maven-Central kopieren]{.notes}
 
 
 
