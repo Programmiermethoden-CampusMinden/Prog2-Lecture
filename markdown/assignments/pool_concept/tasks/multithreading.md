@@ -2,7 +2,7 @@ In den Vorgaben finden Sie eine Modellierung für ein Bankensystem.
 
 Erweitern Sie die Vorgaben um Multithreading.
 
-Erweitern Sie die Klasse `Kunde` so, dass sie in einen eigenen Thread ausgeführt werden kann.
+Erweitern Sie die Klasse `Kunde` so, dass sie in einem eigenen Thread ausgeführt werden kann.
 In der `run()`-Methode soll der `Kunde` eine `Rechnung` aus der Queue `offeneRechnungen` herausnehmen und sie bezahlen. Nutzen Sie dafür die statische Methode `Bank#ueberweisen`. Ist die Queue leer, soll der Thread so lange warten, bis eine neue Rechnung eingegangen ist. Nutzen Sie dafür einseitige Synchronisation.
 
 Erweitern Sie die Klasse `Transaktion` so, dass sie in einem eigenen Thread ausgeführt werden kann.
