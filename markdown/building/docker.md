@@ -406,7 +406,11 @@ der Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem 
 
 ## Wrap-Up
 
-...
+*   Schlanke Virtualisierung mit Containern (kein eigenes OS)
+*   Begriffe: Docker-File vs. Image vs. Container
+*   Ziehen von vordefinierten Images
+*   Definition eines eigenen Images
+*   Arbeiten mit Containern: lokal, CI/CD, VSCode ...
 
 
 
