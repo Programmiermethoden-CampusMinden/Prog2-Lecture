@@ -12,4 +12,9 @@ hidden: true
 
 {{% include "assignments/pool_concept/tasks/multithreading.md" %}}
 
-**Punkte**: TODO
+**Punkte**:
+-   `Kunde`: 0.5P Runnable, 1P `run()`, 2P Synchronisation und Warten auf Rechnungen
+-   `Transaktion`: 0.5P Runnable, 1P `run()`, 2P Synchronisation mit `Konto`
+-   `Bank`: 2P Starten der Threads über Executor-API
+-   `Geldeintreiber`: 1P `run()`
+-   Abzüge: 0.5P für zu viel oder zu wenig Synchronisation
