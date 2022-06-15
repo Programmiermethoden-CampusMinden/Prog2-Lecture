@@ -71,7 +71,7 @@ fhmedia:
 
 ## Motivation Gitlab-CI: WFM (*Works For Me*)
 
-![](images/ci.png){width="60%"}
+![](images/ci.png){width="80%" web_width="60%"}
 
 ::: notes
 Auf dem CI-Server muss man eine Arbeitsumgebung konfigurieren und bereitstellen, für
@@ -102,7 +102,7 @@ In diesen Fällen kann eine Virtualisierung helfen.
 ## Virtualisierung: Container vs. VM
 
 ::: center
-![](images/virtualisierung.png){width="90%"}
+![](images/virtualisierung.png){width="80%" web_width="60%"}
 :::
 
 ::: notes
@@ -304,8 +304,7 @@ default:
   image: openjdk:17
 
 job1:
-    tags:
-        - ivyjava
+    stage: build
     script:
         - echo "Java Version:"
         - java -version
@@ -319,9 +318,9 @@ In den Gitlab-CI-Pipelines (analog wie in den GitHub-Actions) kann man Docker-Co
 für die Ausführung der Pipeline nutzen.
 
 Mit `image: openjdk:17` wird das Docker-Image `openjdk:17` vom DockerHub geladen und durch
-den Runner mit dem Tag `ivyjava` für die Stages als Container ausgeführt. Die Aktionen im
-`script`-Teil, wie beispielsweise `javac Hello.java` werden vom Runner an die Standard-Eingabe
-der Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechner:
+den Runner für die Stages als Container ausgeführt. Die Aktionen im `script`-Teil, wie
+beispielsweise `javac Hello.java` werden vom Runner an die Standard-Eingabe der Shell des
+Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechner:
 `docker run openjdk:17 javac Hello.java`.
 :::
 
@@ -331,7 +330,7 @@ der Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem 
 ## CI-Pipeline (GitHub)
 
 ```yaml
-name: SLIDES
+name: GitHub CI
 on:
   push:
     branches: [master]
@@ -346,36 +345,31 @@ jobs:
         volumes:
           - my_docker_volume:/volume_mount
       steps:
-        run: |
-            echo "Java Version:"
-            java -version
-            javac Hello.java
-            java Hello
-            ls -lags
+        - run: echo "Java Version:"
+        - run: java -version
+        - run: javac Hello.java
+        - run: java Hello
+        - run: ls -lags
 ```
 
 ::: notes
 https://stackoverflow.com/questions/71283311/run-github-workflow-on-docker-image-with-a-dockerfile
 https://docs.github.com/en/actions/using-jobs/running-jobs-in-a-container
 
-In den Gitlab-CI-Pipelines (analog wie in den GitHub-Actions) kann man Docker-Container
-für die Ausführung der Pipeline nutzen.
+In den GitHub-Actions kann man Docker-Container für die Ausführung der Pipeline nutzen.
 
-Mit `image: openjdk:17` wird das Docker-Image `openjdk:17` vom DockerHub geladen und durch
-den Runner mit dem Tag `ivyjava` für die Stages als Container ausgeführt. Die Aktionen im
-`script`-Teil, wie beispielsweise `javac Hello.java` werden vom Runner an die Standard-Eingabe
-der Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechner:
-`docker run openjdk:17 javac Hello.java`.
+Mit `docker://openjdk:17` wird das Docker-Image `openjdk:17` vom DockerHub geladen und auf dem
+Ubuntu-Runner als Container ausgeführt. Die Aktionen im `steps`-Teil, wie beispielsweise
+`javac Hello.java` werden vom Runner an die Standard-Eingabe der Shell des Containers gesendet.
+Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechner: `docker run openjdk:17 javac Hello.java`.
 :::
 
 [Demo: GitHub Actions und Docker]{.bsp}
 
-<!-- TODO: Beispiel GH? -->
-
 
 ## VSCode und das Plugin "Remote - Containers"
 
-![](images/vscode-remote.png){width="90%"}
+![](images/vscode-remote.png){width="80%"}
 
 ::: notes
 1.  VSCode (Host): Plugin "Remote - Containers" installieren
@@ -407,6 +401,10 @@ der Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem 
 ## Wrap-Up
 
 *   Schlanke Virtualisierung mit Containern (kein eigenes OS)
+*   _Kein_ Sandbox-Effekt
+
+\smallskip
+
 *   Begriffe: Docker-File vs. Image vs. Container
 *   Ziehen von vordefinierten Images
 *   Definition eines eigenen Images
