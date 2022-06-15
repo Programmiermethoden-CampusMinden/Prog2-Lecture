@@ -46,7 +46,7 @@ outcomes:
   - k3: "Container von DockerHub ziehen"
   - k3: "Container starten"
   - k3: "Eigene Container definieren und bauen"
-  - k3: "Einsatz von Containern im Gitlab-CI"
+  - k3: "Einsatz von Containern in GitLab CI/CD und GitHub Actions"
   - k3: "Einsatz von VSCode und Containern"
 quizzes:
   - link: ""
@@ -55,9 +55,13 @@ youtube:
   - link: ""
     name: "VL Einführung in Docker"
   - link: ""
-    name: "Demo "
+    name: "Demo Container in der Konsole"
   - link: ""
-    name: "Demo "
+    name: "Demo GitLab CI/CD und Docker"
+  - link: ""
+    name: "Demo GitHub Actions und Docker"
+  - link: ""
+    name: "Demo VSCode und Docker"
 fhmedia:
   - link: ""
     name: "VL Einführung in Docker"
@@ -78,7 +82,7 @@ CI-Server und werden üblicherweise nicht direkt installiert, sondern über eine
 Virtualisierung bereitgestellt.
 
 Selbst wenn man keine CI-Pipelines einsetzt, hat man in Projekten mit mehreren
-beteiligten Personen häufig das Problem "*WFM*" ("works for me"). Jeder Entwickler
+beteiligten Personen häufig das Problem "_WFM_" ("works for me"). Jeder Entwickler
 hat sich auf ihrem Rechner eine Entwicklungsumgebung aufgesetzt und nutzt in der Regel
 seine bevorzugte IDE oder sogar unterschiedliche JDK-Versionen ... Dadurch kann es
 schnell passieren, dass Probleme oder Fehler auftreten, die sich nicht von allen
@@ -107,7 +111,7 @@ unterscheiden. In beiden Fällen ist die Basis die Hardware (Laptop, Desktop-Rec
 und das darauf laufende (Host-) Betriebssystem (Linux, FreeBSD, macOS, Windows, ...).
 Darauf läuft dann wiederum die Virtualisierung.
 
-Im rechten Bild wird eine herkömmliche Virtualisierung mit virtuellen Maschinen (*VM*)
+Im rechten Bild wird eine herkömmliche Virtualisierung mit virtuellen Maschinen (_VM_)
 dargestellt. Dabei wird in der VM ein komplettes Betriebssystem (das "Gast-Betriebssystem")
 installiert und darin läuft dann die gewünschte Anwendung. Die Virtualisierung (VirtualBox,
 VMware, ...) läuft dabei als Anwendung auf dem Host-Betriebssystem und stellt dem
@@ -153,10 +157,10 @@ normalerweise keine VMs/Container basierend auf ARM-Architektur ausgeführt werd
 ::: notes
 ### Begriffe
 
-*   Docker-File: Beschreibungsdatei, wie Docker ein Image erzeugen soll.
-*   Image: Enthält die Dinge, die lt. dem Docker-File in das Image gepackt werden sollen.
+*   **Docker-File**: Beschreibungsdatei, wie Docker ein Image erzeugen soll.
+*   **Image**: Enthält die Dinge, die lt. dem Docker-File in das Image gepackt werden sollen.
     Kann gestartet werden und erzeugt damit einen Container.
-*   Container: Ein laufendes Images (genauer: eine laufende Instanz eines Images). Kann
+*   **Container**: Ein laufendes Images (genauer: eine laufende Instanz eines Images). Kann
     dann auch zusätzliche Daten enthalten.
 
 ### Beispiele
@@ -190,7 +194,7 @@ aufräumen müsste. Man kann aber einen beendeten Container auch erneut laufen l
 Daten wieder weg! Mit der Option `-it` wird der Container interaktiv gestartet und man landet
 in einer Shell.
 
-Bei der Definition eines Images kann ein "*Entry Point*" definiert werden, d.h. ein Programm,
+Bei der Definition eines Images kann ein "_Entry Point_" definiert werden, d.h. ein Programm,
 welches automatisch beim Start des Container ausgeführt wird. Häufig erlauben Images aber auch,
 beim Start ein bestimmtes auszuführendes Programm anzugeben. Im obigen Beispiel ist das `/bin/sh`,
 also eine Shell ...
@@ -224,7 +228,7 @@ im Container geschrieben und erscheint dann im Arbeitsverzeichnis auf dem Host .
 dann mit `java Hello` die Klasse ausgeführt werden.
 :::
 
-[[Kurze Demo]{.bsp}]{.slides}
+[Demo: Container in der Konsole]{.bsp}
 
 
 ## Images selbst definieren
@@ -321,7 +325,7 @@ der Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem 
 `docker run openjdk:17 javac Hello.java`.
 :::
 
-[[Beispiel: Gitlab, cagix/wuppie]{.bsp}]{.slides}
+[Demo: GitLab CI/CD und Docker]{.bsp}
 
 
 ## CI-Pipeline (GitHub)
@@ -364,7 +368,7 @@ der Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem 
 `docker run openjdk:17 javac Hello.java`.
 :::
 
-[[Beispiel: GitHub, cagix/wuppie]{.bsp}]{.slides}
+[Demo: GitHub Actions und Docker]{.bsp}
 
 <!-- TODO: Beispiel GH? -->
 
@@ -381,7 +385,7 @@ der Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem 
 5.  VSCode (Container): Dateien editieren, kompilieren, debuggen, ...
 :::
 
-[[Kurze Demo]{.bsp}]{.slides}
+[Demo: VSCode und Docker]{.bsp}
 
 
 ::::::::: notes
@@ -394,7 +398,7 @@ der Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem 
 *   [DockerHub: Suche nach fertigen Images](https://hub.docker.com/search?q=&type=image)
 *   [Docker und Java](https://docs.docker.com/language/java/)
 *   [Dockerfiles: Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
-*   [Gitlab, Docker](http://git01-ifm-min.ad.fh-bielefeld.de/help/ci/docker/using_docker_images.md#overriding-the-entrypoint-of-an-image)
+*   [Gitlab, Docker](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/docker/using_docker_images.md#overriding-the-entrypoint-of-an-image)
 *   [VSCode: Entwickeln in Docker-Containern](https://code.visualstudio.com/docs/remote/containers)
 *   @DockerInAction und @DockerInPractice
 :::::::::
