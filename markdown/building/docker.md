@@ -204,8 +204,8 @@ also eine Shell ...
 
 ```
 docker pull openjdk:latest
-docker run --rm -v "$PWD":/usr/src -w /usr/src openjdk:latest javac Hello.java
-docker run --rm -v "$PWD":/usr/src -w /usr/src openjdk:latest java Hello
+docker run  --rm  -v "$PWD":/data -w /data  openjdk:latest  javac Hello.java
+docker run  --rm  -v "$PWD":/data -w /data  openjdk:latest  java Hello
 ```
 
 ::: notes
@@ -217,13 +217,13 @@ es die Default-Einstellung für die Docker-Befehle, d.h. es kann auch weggelasse
 hier wieder eine konkrete Version angeben.
 
 Über die Option `-v` wird ein Ordner auf dem Host (hier durch `"$PWD"` dynamisch ermittelt) in den
-Container eingebunden ("gemountet"), hier auf den Ordner `/usr/src`. Dort sind dann die Dateien sichtbar,
+Container eingebunden ("gemountet"), hier auf den Ordner `/data`. Dort sind dann die Dateien sichtbar,
 die im Ordner `"$PWD"` enthalten sind. Über die Option `-w` kann ein Arbeitsverzeichnis definiert
 werden.
 
-Mit `javac Hello.java` wird `javac` im Container aufgerufen auf der Datei `/usr/src/Hello.java`
+Mit `javac Hello.java` wird `javac` im Container aufgerufen auf der Datei `/data/Hello.java`
 im Container, d.h. die Datei `Hello.java`, die im aktuellen Ordner des Hosts liegt (und in den
-Container gemountet wurde). Das Ergebnis (`Hello.class`) wird ebenfalls in den Ordner `/usr/src/`
+Container gemountet wurde). Das Ergebnis (`Hello.class`) wird ebenfalls in den Ordner `/data/`
 im Container geschrieben und erscheint dann im Arbeitsverzeichnis auf dem Host ... Analog kann
 dann mit `java Hello` die Klasse ausgeführt werden.
 :::
@@ -301,7 +301,7 @@ und erstellt ein neues, welches dann die aktualisierte Software enthält.
 
 ```yaml
 default:
-  image: openjdk:17
+    image: openjdk:17
 
 job1:
     stage: build
@@ -332,24 +332,24 @@ Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechne
 ```yaml
 name: demo
 on:
-  push:
-    branches: [master]
-  workflow_dispatch:
+    push:
+        branches: [master]
+    workflow_dispatch:
 
 
 jobs:
-  job1:
-    runs-on: ubuntu-latest
-      container:
-        image: docker://openjdk:17
-        volumes:
-          - my_docker_volume:/volume_mount
-      steps:
-        - run: echo "Java Version:"
-        - run: java -version
-        - run: javac Hello.java
-        - run: java Hello
-        - run: ls -lags
+    job1:
+        runs-on: ubuntu-latest
+        container:
+            image: docker://openjdk:17
+            volumes:
+                - "$PWD":/data
+        steps:
+            - run: echo "Java Version:"
+            - run: java -version
+            - run: javac Hello.java
+            - run: java Hello
+            - run: ls -lags
 ```
 
 ::: notes

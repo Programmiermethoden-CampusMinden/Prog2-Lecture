@@ -1,5 +1,5 @@
 default:
-  image: openjdk:17
+    image: openjdk:17
 
 job1:
     stage: build
