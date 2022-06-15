@@ -11,7 +11,7 @@ Verwenden Sie Mehrseitige Synchronisation.
 
 Passen Sie die Methode `Bank#ueberweisen` so an, dass diese einen `Transaktion`-Thread erstellt und startet. Verwenden Sie dafür eine passende Struktur.
 
-Implementieren Sie die Klasse `Geldeintreiber`. Diese bekommt einen `Kunden` Auftraggeber und eine Liste mit weiteren Kunden übergeben.
+Implementieren Sie die Klasse `Geldeintreiber`. Diese bekommt einen `Kunden` als Auftraggeber und eine Liste mit weiteren Kunden als Rechnungsempfänger übergeben.
 Implementieren Sie den `Geldeintreber` so, dass dieser in einen eigenen Thread ausgeführt werden kann.
 In der `run` Methode soll der `Geldeintreiber` eine Rechnung generieren und an einen der `Kunden` in der Liste schicken. Verwenden Sie dafür die Methode `Kunde#empfangeRechnung`. Das Ziel `Konto` der `Rechnung` soll das `Konto` des Auftraggebers sein.
 Der `Geldeintreiber` macht nach jeder versendeten Rechnung 5-sec Pause.
