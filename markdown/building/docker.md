@@ -330,7 +330,7 @@ Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechne
 ## CI-Pipeline (GitHub)
 
 ```yaml
-name: GitHub CI
+name: demo
 on:
   push:
     branches: [master]
