@@ -306,7 +306,6 @@ default:
 job1:
     stage: build
     script:
-        - echo "Java Version:"
         - java -version
         - javac Hello.java
         - java Hello
@@ -336,16 +335,12 @@ on:
         branches: [master]
     workflow_dispatch:
 
-
 jobs:
     job1:
         runs-on: ubuntu-latest
-        container:
-            image: docker://openjdk:17
-            volumes:
-                - "$PWD":/data
+        container: docker://openjdk:17
         steps:
-            - run: echo "Java Version:"
+            - uses: actions/checkout@v3
             - run: java -version
             - run: javac Hello.java
             - run: java Hello

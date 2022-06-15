@@ -4,7 +4,6 @@ default:
 job1:
     stage: build
     script:
-        - echo "Java Version:"
         - java -version
         - javac Hello.java
         - java Hello
