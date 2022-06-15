@@ -7,7 +7,7 @@ In der `run()`-Methode soll der `Kunde` eine `Rechnung` aus der Queue `offeneRec
 
 Erweitern Sie die Klasse `Transaktion` so, dass sie in einem eigenen Thread ausgeführt werden kann.
 In der `run()`-Methode soll die `Transaktion` ausgeführt werden. Dabei soll vom Konto `von` der in der Rechnung hinterlegte Betrag abgezogen werden. Nutzen Sie dafür die Methode `Konto#sendeGeld`. Wenn das Geld erfolgreich abgezogen worden ist, soll das Geld auf das Empfängerkonto überwiesen werden. Nutzen Sie dafür die Methode `Konto#empfangeGeld`.
-Verwenden Sie Mehrseitige Synchronisation.
+Verwenden Sie mehrseitige Synchronisation.
 
 Passen Sie die Methode `Bank#ueberweisen` so an, dass diese einen `Transaktion`-Thread erstellt und startet. Verwenden Sie dafür eine passende Struktur und setzen Sie die Executor-API ein.
 
