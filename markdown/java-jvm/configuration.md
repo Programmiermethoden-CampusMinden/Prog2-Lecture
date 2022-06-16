@@ -22,7 +22,7 @@ youtube:
   - link: ""
     name: "VL Konfiguration"
   - link: ""
-    name: "Demo Einbinden von Libs und Setzen von Kommandozeilenparametern"
+    name: "Demo Einbinden von Libs in IDE, setzen von Kommandozeilenparametern"
   - link: ""
     name: "Demo Apache Commons CLI"
   - link: ""
@@ -66,7 +66,7 @@ Häufig Mischung von Kurz- und Langformen
 [Demo IDE und CLI]{.bsp}
 
 ::: notes
-Hinweis Intellij: "`Edit Configurations`"; Kommandozeilenparameter unter "`Build and run`" im entsprechenden Feld eintragen
+Hinweis IntelliJ: "`Edit Configurations`" => Kommandozeilenparameter unter "`Build and run`" im entsprechenden Feld eintragen
 
 ![](images/ide-cli.png)
 :::
@@ -74,7 +74,7 @@ Hinweis Intellij: "`Edit Configurations`"; Kommandozeilenparameter unter "`Build
 
 ## Auswertung Kommandozeilenparameter
 
-*   Kommandozeilenparameter  [werden]{.notes}  als String-Array  [an `main()`-Methode übergeben:]{.notes}
+*   Kommandozeilenparameter [werden]{.notes}  als String-Array  [an `main()`-Methode übergeben:]{.notes}
 
     ```java
     public static void main(String[] args) { }
@@ -155,9 +155,8 @@ Annäherung an fremde API:
 4.  Formatierte Hilfe ausgeben: `HelpFormatter`
 
 ::: notes
-Die genaue Funktionsweise der einzelnen Klassen wird hier nicht weiter diskutiert.
-Schauen Sie sich die Javadoc dazu an! Mit dem Thema CLI beschäftigt sich auch
-ein Aufgabenblatt.
+Die Funktionsweise der einzelnen Klassen wird in der Demo kurz angerissen. Schauen Sie bitte
+zusätzlich in die Dokumentation.
 :::
 
 
@@ -173,7 +172,7 @@ ein Aufgabenblatt.
 *   Projektexplorer, Kontextmenü auf `.jar`-File: "`Build Path > Add to Build Path`"
 *   Alternativ Menü-Leiste: "`Project > Properties > Java Build Path > Libraries > Add JARs`"
 
-### Intellij
+### IntelliJ
 
 *   Variante 1:
     *   Lib von [commons.apache.org](https://commons.apache.org/proper/commons-cli/download_cli.cgi)
@@ -190,7 +189,6 @@ ein Aufgabenblatt.
 *   Lib auf [Maven Central](https://search.maven.org/) suchen: "commons-cli:commons-cli" als Suchstring eingeben
 *   Passenden Dependency-Eintrag in das Build-Skript kopieren
 :::
-
 
 ### Kommandozeilenaufruf
 
@@ -293,10 +291,8 @@ aber externe Bibliotheken, beispielsweise "Apache Commons Configuration"
 ## Wrap-Up
 
 *   Kommandozeilenparameter als `String[]` in `main()`-Methode
-*   Manuelle Auswertung komplex => *Apache Commons CLI*
+*   Manuelle Auswertung komplex => _Apache Commons CLI_
 *   Schlüssel-Wert-Paare mit `java.util.Properties`  [aus/in Dateien laden/speichern]{.notes}
-
-...
 
 
 
