@@ -42,20 +42,44 @@ sketch: true
 Lorem Ipsum. Starte mit H2-Level.
 ...
 
-## Folie 2
+## Collection
+
+![](images/collection.png){web_width="80%"}
+::: notes
+* `Collection`ist ein Interface des JDK.
+* Klassen die `Collection` implementieren speichern eine Menge an Objekten.
+* Bieten Methoden zum Verwalten dieser Mengen.
+* Unteranderen gibt es die aus ADS bekannten Datentypen wie Listen, Sets, Queues etc.
+* `List`Collections sind eine geordnete Liste an Objekten. Objekte können an jede Stell der Liste eingefügt, gelöscht oder geändert werden. Mithilfe des Index greift man auf ein spezifisches Objekt innerhalb der Liste zu.
+* `Queue` Collections sind eine geordnete Liste an Objekten. Objekte können nur an das Ende der Liste hinzugefügt werden und nur das Objekt am Anfang der Liste (head) kann verwendet oder gelöscht werden. 
+* `Set` Collections sind eine ungeordnete Menge an Objekten. Objekte können in einem Set nur einmal enthalten sein. Über das Set kann nicht direkt auf das Objekt zugegriffen werden. Es kann aber geprüft werden ob ein spezifisches Objekt in einem Set ist.
+:::
+
+## Collections
+
+![](images/collections.png){web_width="80%"}
+::: notes
+Alternativ:
+:::
+
+## Map
+
+![](images/map.png){web_width="80%"}
+::: notes
+Alternativ:
+:::
+
+## Iterator
 ...
 
-## Folie 3
+## hashCode() und equals()
 ...
 
-## Folie 4
-...
+## ADS?
 
-## Folie 5
-...
+## Anwendungsbeispiele
 
-## Folie 6
-...
+## Unterschiedliche List Typen
 
 ## Wrap-Up
 ...
