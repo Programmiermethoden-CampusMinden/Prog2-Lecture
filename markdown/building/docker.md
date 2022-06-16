@@ -372,6 +372,37 @@ Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechner: `docker run openjd
 3.  VSCode (Host): Attach to Container => neues Fenster (Container)
 4.  VSCode (Container): Plugin "Java Extension Pack" installieren
 5.  VSCode (Container): Dateien editieren, kompilieren, debuggen, ...
+
+Mit Visual Studio Code (VSC) kann man über SSH oder in einem Container arbeiten. Dazu installiert man sich
+VSC lokal auf dem Host und installiert dort das Plugin "Remote - Containers". VSC kann darüber vordefinierte
+Docker-Images herunterladen und darin arbeiten oder man kann alternativ einen Container selbst starten und
+diesen mit VSC verbinden ("attachen").
+
+Beim Verbinden öffnet VSC ein neues Fenster, welches mit dem Container verbunden ist. Nun kann man in diesem
+neuen Fenster ganz normal arbeiten, allerdings werden alle Dinge in dem Container erledigt. Man öffnet also
+Dateien in diesem Container, editiert sie im Container, übersetzt und testet im Container und nutzt dabei die
+im Container installierten Tools. Sogar die entsprechenden VSC-Plugins kann man im Container installieren.
+
+Damit benötigt man auf einem Host eigentlich nur noch VSC und Docker, aber keine Java-Tools o.ä. und kann
+diese über einen im Projekt definierten Container (über ein mit versioniertes Dockerfile) nutzen.
+
+_Anmerkung_: IntelliJ kann remote nur debuggen, d.h. das Editieren, Übersetzen, Testen läuft lokal auf dem
+Host (und benötigt dort den entsprechenden Tool-Stack). Für das Debuggen kann Idea das übersetzte Projekt
+auf ein Remote (SSH, Docker) schieben und dort debuggen.
+
+
+Noch einen Schritt weiter geht das Projekt [code-server](https://github.com/coder/code-server): Dieses stellt
+u.a. ein Docker-Image [codercom/code-server](https://hub.docker.com/r/codercom/code-server) bereit, welches
+einen Webserver startet und über diesen kann man ein im Container laufendes (angepasstes) VSC erreichen. Man
+braucht also nur noch Docker und das Image und kann dann über den Webbrowser programmieren. Der Projektordner
+wird dabei in den Container gemountet, so dass die Dateien entsprechend zur Verfügung stehen:
+
+```sh
+docker run -it --name code-server -p 127.0.0.1:8080:8080 -v "$HOME/.config:/home/coder/.config" -v "$PWD:/home/coder/project" codercom/code-server:latest
+```
+
+Auf diesem Konzept setzt auch der kommerzielle Service [GitHub Codespaces](https://github.com/features/codespaces)
+von GitHub auf.
 :::
 
 [Demo: VSCode und Docker]{.bsp}
