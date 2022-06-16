@@ -42,7 +42,7 @@ tldr: |
 outcomes:
   - k2: "Unterschied zwischen Containern und VMs"
   - k2: "Einsatzgebiete für Container"
-  - k2: "Container laufen als abgeschottete Prozesse auf dem Host -- kein Sandbox-Effekt"
+  - k2: "Container laufen als abgeschottete Prozesse auf dem Host - kein Sandbox-Effekt"
   - k3: "Container von DockerHub ziehen"
   - k3: "Container starten"
   - k3: "Eigene Container definieren und bauen"
@@ -69,7 +69,7 @@ fhmedia:
 
 
 
-## Motivation Gitlab-CI: WFM (*Works For Me*)
+## Motivation Gitlab-CI: WFM (_Works For Me_)
 
 ![](images/ci.png){width="80%" web_width="60%"}
 
@@ -135,7 +135,7 @@ hier beispielsweise Docker. Die Container sind dabei auch wieder Dateien im Host
 Dadurch benötigen Container wesentlich weniger Platz als herkömmliche VMs, der Start einer Anwendung
 geht deutlich schneller und die Hardwareressourcen (CPU, RAM, ...) werden effizient genutzt.
 Nachteilig ist, dass hier in der Regel ein Linux-Host benötigt wird (für Windows wird mittlerweile
-der Linux-Layer (*WSL*) genutzt; für macOS wurde bisher eine Linux-VM im Hintergrund hochgefahren,
+der Linux-Layer (_WSL_) genutzt; für macOS wurde bisher eine Linux-VM im Hintergrund hochgefahren,
 mittlerweile wird aber eine eigene schlanke Virtualisierung eingesetzt). Außerdem steht im Container
 üblicherweise kein graphisches Benutzerinterface zur Verfügung. Da die Prozesse direkt im
 Host-Betriebssystem laufen, stellen Container keine Sicherheitsschicht ("Sandboxen") dar!
@@ -175,7 +175,7 @@ normalerweise keine VMs/Container basierend auf ARM-Architektur ausgeführt werd
 
 ```
 docker pull debian:stable-slim
-docker run --rm -it debian:stable-slim /bin/sh
+docker run  --rm -it  debian:stable-slim  /bin/sh
 ```
 
 ::: notes
