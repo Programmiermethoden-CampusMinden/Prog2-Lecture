@@ -8,9 +8,19 @@ readings:
   - key: "Java-SE-tutorial"
     comment: "Essential Java Classes > The Platform Environment > Configuration Utilities"
 tldr: |
-    *   Kommandozeilenparameter als `String[]` in `main()`-Methode
-    *   Manuelle Auswertung komplex => *Apache Commons CLI*
-    *   Schlüssel-Wert-Paare mit `java.util.Properties`  [aus/in Dateien laden/speichern]{.notes}
+    Zu Konfiguration von Programmen kann man beim Aufruf Kommandozeilenparameter mitgeben. Diese
+    sind in der über den Parameter`String[] args` in der `main(String[] args)`-Methode zugreifbar.
+
+    Es gibt oft eine Kurzversion ("-x") und/oder eine Langversion ("--breite"). Zusätzlich können
+    Parameter noch ein Argument haben ("-x 12" oder "--breite=12"). Parameter können optional oder
+    verpflichtend sein.
+
+    Um dies nicht manuell auswerten zu müssen, kann man beispielsweise die Bibliothkek Apache
+    Commons CLI benutzen.
+
+    Ein anderer Weg zur Konfiguration sind Konfigurationsdateien, die man entsprechend einliest.
+    Hier findet man häufig das "Ini-Format", also zeilenweise "Key=Value"-Paare. Diese kann man
+    mit der Klasse `java.util.Properties` einlesen, bearbeiten und speichern (auch als XML).
 outcomes:
   - k3: "Auswertung von Kommandozeilenparametern in einem Programm"
   - k3: "Apache Commons CLI zur Verarbeitung von Kommandozeilenparametern"
@@ -201,7 +211,7 @@ zusätzlich in die Dokumentation.
     der Jar-Files eingesetzt, unter Windows ein Semikolon!
     :::
 
-    Beispiel: `java -classpath .:/home/user/wuppy.jar MyApp`
+Beispiel: `java -classpath .:/home/user/wuppy.jar MyApp`
 
 
 ::: notes
