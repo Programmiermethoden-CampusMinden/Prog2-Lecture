@@ -66,7 +66,14 @@ Alternativ:
 
 ![](images/map.png){web_width="80%"}
 ::: notes
-Alternativ:
+* Eine `Map`speichert Objekte als Paar von `Key`und `Value`.
+* Ein Paar von `Key`und `Value`ist ein Eintrag. 
+* Der `Key`ist in einer Map einzigartig und wird verwendet, um auf `Value`zuzugreifen.
+* Ein `Value`kann mehrfach im einer Map enthalten sein.
+* Über eine Map kann nicht Traversiert werden, dafür muss die Map in ein Set umgewandelt werden.
+* `HashMap`hällt keine Ordnung in den Einträgen.
+* `LinkedHashMap` hält die Einträge in der Reihenfolge in der Sie eingefügt wurden.
+* `TreeMap` hält die Einträge in aufsteigender Reihenfolge. 
 :::
 
 ## Iterator
