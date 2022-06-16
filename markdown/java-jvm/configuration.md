@@ -22,9 +22,11 @@ youtube:
   - link: ""
     name: "VL Konfiguration"
   - link: ""
-    name: "Demo "
+    name: "Demo Einbinden von Libs und Setzen von Kommandozeilenparametern"
   - link: ""
-    name: "Demo "
+    name: "Demo Apache Commons CLI"
+  - link: ""
+    name: "Demo Properties"
 fhmedia:
   - link: ""
     name: "VL Konfiguration"
@@ -61,13 +63,12 @@ fhmedia:
 \bigskip
 Häufig Mischung von Kurz- und Langformen
 
-[Hinweis/Demo Eclipse und CLI]{.bsp}
-
+[Demo IDE und CLI]{.bsp}
 
 ::: notes
-Hinweis Eclipse: Kontextmenü "`Run As > Run Configurations...`"; Kommandozeilenparameter unter "`Arguments`" eintragen
+Hinweis Intellij: "`Edit Configurations`"; Kommandozeilenparameter unter "`Build and run`" im entsprechenden Feld eintragen
 
-![](images/eclipsecli.png)
+![](images/ide-cli.png)
 :::
 
 
@@ -77,6 +78,7 @@ Hinweis Eclipse: Kontextmenü "`Run As > Run Configurations...`"; Kommandozeilen
 
     ```java
     public static void main(String[] args) { }
+    public static void main(String... argv) { }
     ```
 
     => Müssen "händisch" ausgewertet werden
@@ -85,7 +87,7 @@ Hinweis Eclipse: Kontextmenü "`Run As > Run Configurations...`"; Kommandozeilen
 \bigskip
 \bigskip
 
-*Anmerkung*: Nur Parameter! Nicht Programmname als erster Eintrag wie in C ...
+_Anmerkung_: Nur Parameter! Nicht Programmname als erster Eintrag wie in C ...
 
 
 ## Beispiel Auswertung Kommandozeilenparameter
@@ -158,23 +160,39 @@ Schauen Sie sich die Javadoc dazu an! Mit dem Thema CLI beschäftigt sich auch
 ein Aufgabenblatt.
 :::
 
-[Javadoc zu "Apache Commons CLI" anschauen]{.bsp}
-
 
 ## Exkurs: Einbinden fremder Bibliotheken/APIs
 
-**Eclipse**:
+::: notes
+### Eclipse
 
+*   Lib von [commons.apache.org](https://commons.apache.org/proper/commons-cli/download_cli.cgi)
+    herunterladen und auspacken
 *   Neuen Unterordner im Projekt anlegen: `libs/`
 *   Bibliothek (`.jar`-Files) hinein kopieren
-*   Projektexplorer, Kontextmenü auf `.jar`-File: \newline
-    "`Build Path > Add to Build Path`"
-*   Alternativ Menü-Leiste: \newline
-    "`Project > Properties > Java Build Path > Libraries > Add JARs`"
+*   Projektexplorer, Kontextmenü auf `.jar`-File: "`Build Path > Add to Build Path`"
+*   Alternativ Menü-Leiste: "`Project > Properties > Java Build Path > Libraries > Add JARs`"
 
-\bigskip
+### Intellij
 
-**Kommandozeilenaufruf**:
+*   Variante 1:
+    *   Lib von [commons.apache.org](https://commons.apache.org/proper/commons-cli/download_cli.cgi)
+        herunterladen und auspacken
+    *   Neuen Unterordner im Projekt anlegen: `libs/`
+    *   Bibliothek (`.jar`-Files) hinein kopieren
+    *   Projekteigenschaften, Eintrag "Libraries", "+", "New Project Library", "Java" und Jar-File auswählen
+*   Variante 2:
+    *   Projekteigenschaften, Eintrag "Libraries", "+", "New Project Library", "From Maven" und
+        "commons-cli:commons-cli:1.5.0" als Suchstring eingeben und die Suche abschließen
+
+### Gradle oder Ant oder Maven
+
+*   Lib auf [Maven Central](https://search.maven.org/) suchen: "commons-cli:commons-cli" als Suchstring eingeben
+*   Passenden Dependency-Eintrag in das Build-Skript kopieren
+:::
+
+
+### Kommandozeilenaufruf
 
 *   Classpath bei Aufruf setzen:
     *   Unix: `java -cp .:<jarfile>:<jarfile> <mainclass>`
@@ -200,7 +218,7 @@ von spezialisierten Servern in der im Skript definierten Version heruntergeladen
 Dies funktioniert auch bei rekursiven Abhängigkeiten ...
 :::
 
-[Hinweis/Demo Eclipse und Libs]{.bsp}
+[Demo: Einbinden von Libs, [cli.Args](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/cli/Args.java)]{.bsp}
 
 
 ## Laden und Speichern von Konfigurationsdaten
@@ -262,8 +280,7 @@ gewicht=12
     ```
     :::
 
-
-[Hinweis auf "Apache Commons Configuration"]{.bsp}
+[Demo: [cli.Props](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/cli/Props.java), Hinweis auf "Apache Commons Configuration"]{.bsp}
 
 ::: notes
 `java.util.Properties` sind eine einfache und im JDK bereits eingebaute Möglichkeit,
