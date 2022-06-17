@@ -60,9 +60,9 @@ Beispiel collection_example
 
 Beispiel: collection_example
 note:::
-* `ArrayList`: Dynamische,
-* `LinkedList`:
-* `Vector`: Ein Vector ist eine lineare Liste. Vector Methoden sind synchronized.
+* `ArrayList`: Liegt ein Array zu grunde. Wenn Elemente eingefügt werden und die Liste voll ist, wird das zugrunde liegende Array um 50% vergrößert. Besser beim Zugriff/Löschen auf Objekte, schlechter beim Einfügen als `LinkedList`
+* `LinkedList`: Besser beim Einfügen, da Elemente nur das Ende der Liste eingefügt werden. Dafür ist der Zugriff/das Löschen auf Objekte aufwendiger als bei `ArrayList`
+* `Vector`: Wie eine `ArrayList` aber die Methoden sind synchronized. Außerdem wird das Array um 100% vergrößert.
 * `Stack`: Ein erweitertet Vector der als Stack (last in first out) genutzt werden kann.
 :::
 
@@ -86,7 +86,7 @@ Beispiel iterator_example
 Beispiel collection_example
 
 ::: notes
-* `Collections`ist eine Klasse mit statischen Methoden, die auf `Collection`s ausgeführt werden.
+* `Collections`ist eine utility Klasse mit statischen Methoden, die auf `Collection`s ausgeführt werden.
 :::
 
 ## equqals() und hashCode()
