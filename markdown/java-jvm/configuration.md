@@ -32,7 +32,9 @@ youtube:
   - link: ""
     name: "VL Konfiguration"
   - link: ""
-    name: "Demo Einbinden von Libs in IDE, setzen von Kommandozeilenparametern"
+    name: "Demo Setzen von Kommandozeilenparametern"
+  - link: ""
+    name: "Demo Einbinden von Libs in IDE"
   - link: ""
     name: "Demo Apache Commons CLI"
   - link: ""
@@ -160,7 +162,7 @@ Annäherung an fremde API:
     herunterladen und auspacken
 *   Neuen Unterordner im Projekt anlegen: `libs/`
 *   Bibliothek (`.jar`-Files) hinein kopieren
-*   Projektexplorer, Kontextmenü auf `.jar`-File: "`Build Path > Add to Build Path`"
+*   Projektexplorer, Kontextmenü auf `.jar`-File: "`Add as Library`"
 *   Alternativ Menü-Leiste: "`Project > Properties > Java Build Path > Libraries > Add JARs`"
 
 ### IntelliJ
@@ -170,7 +172,8 @@ Annäherung an fremde API:
         herunterladen und auspacken
     *   Neuen Unterordner im Projekt anlegen: `libs/`
     *   Bibliothek (`.jar`-Files) hinein kopieren
-    *   Projekteigenschaften, Eintrag "Libraries", "+", "New Project Library", "Java" und Jar-File auswählen
+    *   Variante 1 (a):Projektexplorer, Kontextmenü auf `.jar`-File: "`Build Path > Add to Build Path`"
+    *   Variante 1 (b): Projekteigenschaften, Eintrag "Libraries", "+", "New Project Library", "Java" und Jar-File auswählen
 *   Variante 2:
     *   Projekteigenschaften, Eintrag "Libraries", "+", "New Project Library", "From Maven" und
         "commons-cli:commons-cli:1.5.0" als Suchstring eingeben und die Suche abschließen
