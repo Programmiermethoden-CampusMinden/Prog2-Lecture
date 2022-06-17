@@ -151,25 +151,6 @@ Annäherung an fremde API:
 *   Einbinden ins Projekt
 
 
-## Überblick Umgang mit Apache Commons CLI
-
-**Paket**: `org.apache.commons.cli`
-
-\bigskip
-
-1.  Definition der Optionen
-    *   Je Option eine Instanz der Klasse `Option`
-    *   Alle Optionen in Container `Options` sammeln
-2.  Parsen der Eingaben mit `DefaultParser`
-3.  Abfragen der Ergebnisse: `CommandLine`
-4.  Formatierte Hilfe ausgeben: `HelpFormatter`
-
-::: notes
-Die Funktionsweise der einzelnen Klassen wird in der Demo kurz angerissen. Schauen Sie bitte
-zusätzlich in die Dokumentation.
-:::
-
-
 ## Exkurs: Einbinden fremder Bibliotheken/APIs
 
 ::: notes
@@ -224,6 +205,25 @@ Auflösung von Abhängigkeiten. Dazu muss im Skript die Abhängigkeit auf geeign
 Weise beschrieben werden und wird dann beim Kompilieren des Programms automatisch
 von spezialisierten Servern in der im Skript definierten Version heruntergeladen.
 Dies funktioniert auch bei rekursiven Abhängigkeiten ...
+:::
+
+
+## Überblick Umgang mit Apache Commons CLI
+
+**Paket**: `org.apache.commons.cli`
+
+\bigskip
+
+1.  Definition der Optionen
+    *   Je Option eine Instanz der Klasse `Option`
+    *   Alle Optionen in Container `Options` sammeln
+2.  Parsen der Eingaben mit `DefaultParser`
+3.  Abfragen der Ergebnisse: `CommandLine`
+4.  Formatierte Hilfe ausgeben: `HelpFormatter`
+
+::: notes
+Die Funktionsweise der einzelnen Klassen wird in der Demo kurz angerissen. Schauen Sie bitte
+zusätzlich in die Dokumentation.
 :::
 
 [Demo: Einbinden von Libs, [cli.Args](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/cli/Args.java)]{.bsp}
