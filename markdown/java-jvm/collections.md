@@ -56,14 +56,39 @@ Beispiel collection_example
 * `Set` Collections sind eine ungeordnete Menge an Objekten. Objekte können in einem Set nur einmal enthalten sein. Über das Set kann nicht direkt auf das Objekt zugegriffen werden. Es kann aber geprüft werden, ob ein spezifisches Objekt in einem Set gespeichert ist.
 :::
 
-## Unterschiedliche List Typen
+## `ArrayList`
 
-Beispiel: collection_example
+![](images/arraylist.png){web_width="80%"}
+:::note
+* Einer `ArrayList` ist ein, sich dynamisch vergrößerendes, Array.
+* Einer `ArrayList` liegt einen Array zu grunde, wenn das Array voll ist, wird das Array um 50% vergrößert.
+* Daher kann auf ein Element per Index mit O(1) zugegriffen werden. 
+* Wird ein Element aus der Liste gelöscht, rücken alle Nachfolgenden Einträge in der Liste einen Index auf. 
+* Deshalb ist eine `ArrayList` effizient in der Abfrage und Manipulation von Einträgen aber weniger effizient beim hinzufügen und löschen von Einträgen.
+* Per default wird eine `ArrayList` mit einem Array der Länge 10 angelegt, sobald das erste Element eingefügt wird. Man kann die Startgröße auch im Konstrunktoraufruf der `ArrayList`bestimmen. `new ArrayList<>(20)`
+* Die Methoden einer `ArrayList`sind nicht synchronized.
+:::
+
+## `LinkedList`
+
+![](images/linkedlist.png){web_width="80%"}
+:::note
+* Eine `LinkedList` ist die implementierung einer doppelt verketteten Liste (diese kenne Sie bereits aus ADS) in Java.
+* Jeder Eintrag wird als Knoten repräsentiert der den eigentlich Wert speichert und zusätzlich einen Verweis auf die Speicheradresse des Vorgänger und Nachfolger Knoten.
+* Der Head der `LinkedList`zeigt auf den Anfang der Liste, der Nachfolge des letzten Eintragst ist imme `null.
+* Der Zugriff auf ein Element in einer `LinkedList` beginnt immer am Anfang der Liste und ist daher O(n).
+* Neue Elemente werden an das Ende der Liste eingefügt indem der letzte Eintrag einen Verweis auf den neuen Knoten bekommt. O(1)
+* Wenn ein Element aus der Liste gelöscht wird, muss die Liste neu verkettete werden. O(n)
+* Die Methoden einer `LinkedList`sind nicht synchronized.
+:::
+
+## `Vector und Stack`
+
 note:::
-* `ArrayList`: Liegt ein Array zu grunde. Wenn Elemente eingefügt werden und die Liste voll ist, wird das zugrunde liegende Array um 50% vergrößert. Besser beim Zugriff/Löschen auf Objekte, schlechter beim Einfügen als `LinkedList`
-* `LinkedList`: Besser beim Einfügen, da Elemente nur das Ende der Liste eingefügt werden. Dafür ist der Zugriff/das Löschen auf Objekte aufwendiger als bei `ArrayList`
-* `Vector`: Wie eine `ArrayList` aber die Methoden sind synchronized. Außerdem wird das Array um 100% vergrößert.
-* `Stack`: Ein erweitertet Vector der als Stack (last in first out) genutzt werden kann.
+* Ein `Vector`ähnelt einer `ArrayList`
+* Das Array eines Vector wird jedoch verdoppelt, wenn es vergrößert wird.
+* Die Methoden von `Vector`sind synchronized. 
+* Ein `Stack`ist ein verändertert Vector, damit dieser als Last in First out Stack genutzt werden kann.
 :::
 
 ## Iterator
