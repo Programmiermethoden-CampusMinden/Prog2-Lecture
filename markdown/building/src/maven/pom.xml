@@ -14,7 +14,7 @@
     <!-- Eigenschaften, vergleichbar zu den Properties in Ant -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
+        <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
     <!-- Abhängigkeiten zu externen Bibliotheken -->
@@ -35,7 +35,7 @@
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.10.1</version>
             </plugin>
 
             <plugin>
@@ -62,7 +62,7 @@
                         <groupId>de.fhb.pm</groupId>
                         <artifactId>my-project</artifactId>
                     </executableDependency>
-                    <mainClass>de.fhb.pm.Main</mainClass>
+                    <mainClass>Hello</mainClass>
                 </configuration>
             </plugin>
         </plugins>

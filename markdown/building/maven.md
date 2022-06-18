@@ -106,7 +106,7 @@ auch die Abhängigkeiten berücksichtigt, d.h. das Ziel `test` erfordert ein `co
     <!-- Eigenschaften, vergleichbar zu den Properties in Ant -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
+        <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
     <!-- Abhängigkeiten zu externen Bibliotheken -->
@@ -155,7 +155,7 @@ für die Dependencies findet man ebenfalls auf [MavenCentral](https://mvnreposit
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.10.1</version>
             </plugin>
 
             <plugin>
