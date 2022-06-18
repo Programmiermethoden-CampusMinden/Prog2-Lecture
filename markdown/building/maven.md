@@ -81,7 +81,7 @@ genutzt. Von hier würde Maven auch als Abhängigkeit konfigurierte Bibliotheken
 
 ## Lebenszyklus (eingebaut in Maven)
 
-![](images/screenshot_maven-lifecycle.png){width="40%"}
+![](images/screenshot_maven-lifecycle.png){width="80%"}
 
 ::: notes
 In Maven ist das typische Java-Entwicklungsmodell als "Lebenszyklus" implementiert.
