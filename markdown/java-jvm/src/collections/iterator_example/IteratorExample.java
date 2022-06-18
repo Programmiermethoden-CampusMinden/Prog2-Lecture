@@ -1,19 +1,23 @@
 package iterator_example;
 
 import java.util.Iterator;
-import java.util.Vector;
 
 public class IteratorExample {
     public static void main(String[] args) {
-        Vector<Integer> vector = new Vector<>();
-        vector.add(1);
-        vector.add(2);
-        vector.add(3);
-
-        Iterator<Integer> iterator = vector.iterator();
-        System.out.println(iterator.next()); // 1
-        iterator.forEachRemaining(x -> System.out.print(x)); // 23
-        System.out.println("\n" + iterator.hasNext()); // false
-        iterator.next(); // NoSuchElementException
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.add(4);
+        tree.add(12);
+        tree.add(5);
+        tree.add(3);
+        tree.add(9);
+        tree.add(33);
+        tree.add(-5);
+        tree.add(2);
+        // hol den iterator
+        Iterator<BinarySearchTree.Node> iterator = tree.iterator();
+        System.out.println(iterator.next().getData());
+        iterator.forEachRemaining(n -> System.out.println(n.getData()));
+        System.out.println(iterator.hasNext());
+        //  iterator.next(); //NoSuchElement Exception
     }
 }
