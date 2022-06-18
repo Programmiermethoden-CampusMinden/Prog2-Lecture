@@ -39,13 +39,24 @@ sketch: true
 
 
 ## Motivation
-Lorem Ipsum. Starte mit H2-Level.
-...
+
+```java
+private List <Entity> entities = new ArrayList<>();
+  public void add(Entity e){
+    if (!entities.contains(e))
+      entities.add(e);
+  }
+```
+:::note
+* Reales Beispiel aus der Entwicklung des PM-Dungeon.
+* Eine Liste kann ein Objekt mehrfach enthalte, dieses Verhalten ist aber an dieser Stelle nicht gewünscht deswegen findet beim Einfügen eine Prüfung statt.
+* Eine Set hingegen, kann ein Objekt nur einmal enthalten.
+* Hier wird die falsche Datenstruktur genutzt um Entitäten zu speichern.
+:::
 
 ## Collection
 
 ![](images/collection.png){web_width="80%"}
-Beispiel collection_example
 
 ::: notes
 * `Collection`ist ein Interface des JDK.
@@ -58,12 +69,12 @@ Beispiel collection_example
 
 ## `ArrayList`
 
-![](images/arraylist.png){web_width="80%"}
+![](images/arraylist.gif){web_width="80%"}
 :::note
 * Einer `ArrayList` ist ein, sich dynamisch vergrößerendes, Array.
 * Einer `ArrayList` liegt einen Array zu grunde, wenn das Array voll ist, wird das Array um 50% vergrößert.
-* Daher kann auf ein Element per Index mit O(1) zugegriffen werden. 
-* Wird ein Element aus der Liste gelöscht, rücken alle Nachfolgenden Einträge in der Liste einen Index auf. 
+* Daher kann auf ein Element per Index mit O(1) zugegriffen werden.
+* Wird ein Element aus der Liste gelöscht, rücken alle Nachfolgenden Einträge in der Liste einen Index auf.
 * Deshalb ist eine `ArrayList` effizient in der Abfrage und Manipulation von Einträgen aber weniger effizient beim hinzufügen und löschen von Einträgen.
 * Per default wird eine `ArrayList` mit einem Array der Länge 10 angelegt, sobald das erste Element eingefügt wird. Man kann die Startgröße auch im Konstrunktoraufruf der `ArrayList`bestimmen. `new ArrayList<>(20)`
 * Die Methoden einer `ArrayList`sind nicht synchronized.
@@ -87,7 +98,7 @@ Beispiel collection_example
 note:::
 * Ein `Vector`ähnelt einer `ArrayList`
 * Das Array eines Vector wird jedoch verdoppelt, wenn es vergrößert wird.
-* Die Methoden von `Vector`sind synchronized. 
+* Die Methoden von `Vector`sind synchronized.
 * Ein `Stack`ist ein verändertert Vector, damit dieser als Last in First out Stack genutzt werden kann.
 :::
 
@@ -103,12 +114,12 @@ Beispiel iterator_example
 * Mit `hasNext()`kann geprüft werden, ob noch ein weiteres Element in der Datenstruktur liegt.
 * Mit `next()`wird der Cursor einen Eintrag weiter geschoben und das Element zurückgegeben.
 * Mit `remove()`kann das letzte zurückgegebene Element aus der Datenstruktur entfernt werden. Diese Methode ist im Interface default implementiert. Sie ist optional.
+* Viele Collection in Java haben einen implementierten Interator der verwendet werden kann. z.B `vector#iterator()`
 :::
 
 ## Collections
 
 ![](images/collections.png){web_width="80%"}
-Beispiel collection_example
 
 ::: notes
 * `Collections`ist eine utility Klasse mit statischen Methoden, die auf `Collection`s ausgeführt werden.
@@ -129,12 +140,14 @@ Der `hashCode`-Vertrag
 * Der Rückgabewert der `hashCode` Methode für ein Objekt bleibt über die Laufzeit einer Anwendung immer identisch, solange sich die Werte zur prüfung der Gleichheit nicht ändern.
 * Wenn zwei objekte nach der `equals` Methode identisch sind, so ist auch der Rückgabewert der `hashCode` Methode für beide Objekte identisch.
 * Sind zwei Objekte nach der `equals`Methode nicht identisch, kann der Rückgabewert der `hashCode`Methode dennoch identisch sein. Unterschiedliche Werte für unterschiedliche Objekte verbessern allerdings die Leistung von Hash-Berechnungen wie `HashMap`.
+
+* Auch wenn es meist Sinvoll ist, ist es nicht nötig das `equals` und `compareTo` das selbe Ergebniss liefern. `Comparable` ist für die Sortierung von Objekten gedachtn, `equals` für einen Gleichheitscheck.
 :::
 
 ## Map
 
 ![](images/map.png){web_width="80%"}
-Beispiel /hash_example
+
 
 ::: notes
 * Eine `Map`speichert Objekte als Paar von `Key`und `Value`.
@@ -145,6 +158,23 @@ Beispiel /hash_example
 * `LinkedHashMap` hält die Einträge in der Reihenfolge in der Sie eingefügt wurden.
 * `TreeMap` hält die Einträge in aufsteigender Reihenfolge.
 :::
+
+## Hash-Map
+
+![](images/hashmap.png){web_width="80%"}
+Beispiel /hash_example
+
+::: notes
+* Eine `HashMap` speichert die Elemente in mehreren einfach verketteten Listen.
+* Dafür verwendet sie die inner-class `Node<K,V>`
+* Die Heads die auf den Anfang einer Liste zeigen, werden in Buckets gespeichert.
+* Initial besitzt eine HashMap 12 Buckets, diese werden bei Bedarf erweitert.
+* Um einen Eintrag hinzufügen, wird aus dem `hashCode` des Key-Objektes mithilfe der hash-funktion der Index des Buckets berechnet.
+* Ist der Bucket gefunden wird der `hashCode` des Key-Objektes genutzt, um zu prüfen ob bereits ein Eintrag mit den selben hashcode in der Liste des Buckets liegt.
+* Wenn es bereits einen Eintrag gibt, wird mit `equals` geprüft ob die Key-Objekte indentisch sind, ist dies der Fall, wird der existierende Eintrag überschrieben. Wenn dies nicht der Fall ist, oder es keinen Eintrag mit dem selben Hashcode gibt, dann wird der neue Eintrag an das Ende der Liste hinzugefügt.
+* Wenn eine Liste zu groß wird, (per default mehr als 8 Einträge) wird diese durch einen self balancing binary search tree ausgetauscht, um die effizienz beim Suchen von Einträgen zu wahren.
+:::
+
 
 ## Wrap-Up
 * Mit dem `Collection`Interface des Java Collection Frameworks können Datenstrukturen erstellt/verwendet werden, die eine Menge an Objekten speichern und verwalten.
