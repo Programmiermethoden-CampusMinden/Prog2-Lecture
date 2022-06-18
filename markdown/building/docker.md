@@ -69,7 +69,7 @@ fhmedia:
 
 
 
-## Motivation Gitlab-CI: WFM (_Works For Me_)
+## Motivation CI/CD: WFM (_Works For Me_)
 
 ![](images/ci.png){width="80%" web_width="60%"}
 
