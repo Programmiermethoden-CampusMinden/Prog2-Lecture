@@ -75,6 +75,21 @@ fhmedia:
 \bigskip
 Häufig Mischung von Kurz- und Langformen
 
+::: notes
+Häufig hat man eine Kurzform der Optionen, also etwa "-x". Dabei ist der Name der Option
+in der Regel ein Zeichen lang. Es gibt aber auch Abweichungen von dieser Konvention, denken
+Sie beispielsweise an `java -version`.
+
+In der Langform nutzt man dann einen aussagekräftigen Namen und stellt zwei Bindestriche
+voran, also beispielsweise "--breite" (als Alternative für "-x").
+
+Wenn Optionen Parameter haben, schreibt man in der Kurzform üblicherweise "-x 10" (trennt
+also den Parameter mit einem Leerzeichen von der Option) und in der Langform "--breite=10"
+(also mit einem "=" zwischen Option und Parameter). Das sind ebenfalls Konventionen, d.h.
+man kann prinzipiell auch in der Kurzform das "=" nutzen, also "-x=10", oder in der Langform
+mit einem Leerzeichen trennen, also "--breite 10".
+:::
+
 [Demo IDE und CLI]{.bsp}
 
 ::: notes
