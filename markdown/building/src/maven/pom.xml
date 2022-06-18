@@ -58,10 +58,6 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <executableDependency>
-                        <groupId>de.fhb.pm</groupId>
-                        <artifactId>my-project</artifactId>
-                    </executableDependency>
                     <mainClass>Hello</mainClass>
                 </configuration>
             </plugin>
