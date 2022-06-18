@@ -13,7 +13,7 @@ public class Args {
     /** Hier gibt's nix zu sehen, gehen Sie weiter :) */
     public static void main(String... args) throws ParseException {
         // Schritt 0: Argumente zusammenbauen (erspart die Änderung der Konfigurion in IDE)
-        String[] myArgs = new String[]{"--breite=12", "-y", "99", "--answer='wuppie'", "-d"};
+        String[] myArgs = new String[]{"-xyz", "-x", "10", "--breite=12", "-y=99", "--answer", "wuppie", "-d"};
 
         // Schritt 1: Optionen basteln
         // https://commons.apache.org/proper/commons-cli/javadocs/api-release/org/apache/commons/cli/Options.html
@@ -24,6 +24,7 @@ public class Args {
         opts.addOption("x", "breite", true, "Angabe der Breite");
         // short+arg: "-y 99"
         opts.addOption("y", true, "Angabe der Hoehe");
+        opts.addOption("xyz", "short option but long string");
         // long+arg: "--answer=wuppie": Builder notwendig, da addOption nur Short ("-x") ODER Short _und_ Long ("--xxxx")
         opts.addOption(Option.builder()
                 .longOpt("answer")
@@ -38,11 +39,16 @@ public class Args {
         CommandLine cmd = parser.parse(opts, myArgs);
 
         // Schritt 3: Ergebnisse abfragen (Beispiele)
+        if (cmd.hasOption("xyz")) {
+        }
         if (cmd.hasOption("x")) {
             int breite = Integer.parseInt(cmd.getOptionValue("x"));
         }
         if (cmd.hasOption("breite")) {
             int breite = Integer.parseInt(cmd.getOptionValue("breite"));
+        }
+        if (cmd.hasOption("y")) {
+            int breite = Integer.parseInt(cmd.getOptionValue("y"));
         }
         if (cmd.hasOption("answer")) {
             String antwort = cmd.getOptionValue("answer");
