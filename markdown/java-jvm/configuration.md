@@ -201,7 +201,7 @@ Annäherung an fremde API:
 
 ### Kommandozeilenaufruf
 
-*   Classpath bei Aufruf setzen:
+*   Class-Path bei Aufruf setzen:
     *   Unix: `java -cp .:<jarfile>:<jarfile> <mainclass>`
     *   Windows: `java -cp .;<jarfile>;<jarfile> <mainclass>`
 
