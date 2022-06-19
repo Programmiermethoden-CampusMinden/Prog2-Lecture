@@ -40,16 +40,16 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1094693&client_id=FH-Bielefeld"
     name: "Quiz Apache Ant (ILIAS)"
 youtube:
-  - link: ""
+  - link: "https://youtu.be/LRA1PeQ2pR0"
     name: "VL Apache Ant"
-  - link: ""
+  - link: "https://youtu.be/EnAQOU_zL1M"
     name: "Demo Aufruf von Ant (Konsole, IDE: hello.xml)"
-  - link: ""
+  - link: "https://youtu.be/ip8xFcSZC1c"
     name: "Demo Properties, Targets, Dependencies (build.xml)"
-  - link: ""
+  - link: "https://youtu.be/jizh0bi2TnU"
     name: "Demo Abhängigkeiten mit Ivy auflösen (ivydemo.xml)"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/31f6228dac399ec8151484367499e975959f23e6ebaf61e1869b959f903aeea256af0c2cdca66bf249862deebba48e660107feb880267017b798e0b1ee10870f"
     name: "VL Apache Ant"
 ---
 
