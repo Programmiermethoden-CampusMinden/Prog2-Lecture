@@ -8,15 +8,20 @@ readings:
   - key: "Ullenboom2016"
   - key: "Inden2013"
 tldr: |
-    *   Automatisieren von Arbeitabläufen
-    *   Apache Maven: Goals, Properties, Dependencies => "*Convention over Configuration*",
-        Java-Standard-Lebenszyklus eingebaut
-        *   Goals sind auswählbare Ziele, bereitgestellt durch Plugins
-        *   Abhängigkeiten zwischen Goals möglich
-        *   Properties agieren wie Variablen, etwa für Versionsnummern
-        *   Abhängigkeiten zu externen Bibliotheken werden als Dependencies
-            formuliert: Abschnitt von Maven-Central kopieren
-        *   Interaktion mit IDE: Ausführen von Goals, Einbinden als Builder
+    Zum Automatisieren von Arbeitsabläufen (Kompilieren, Testen, ...) stehen in der Java-Welt
+    verschiedene Tools zur Verfügung: Apache Ant, Apache Maven und Gradle sind sicher die am
+    bekanntesten darunter.
+
+    In Apache Maven ist bereits der typische Java-Standard-Lebenszyklus eingebaut und es müssen
+    nur noch Abweichungen davon und Festlegung von Versionen und Dependencies in XML formuliert
+    werden. Dies nennt man auch "_Convention over Configuration_".
+
+    Die Maven-Goals sind auswählbare Ziele und werden durch Plugins bereitgestellt. Zwischen den
+    Goals sind Abhängigkeiten möglich (und bereits eingebaut). Über Properties kann man noch
+    Namen und Versionsnummern o.ä. definieren.
+
+    Abhängigkeiten zu externen Bibliotheken werden als Dependencies formuliert: Am besten den
+    Abschnitt von Maven-Central kopieren.
 outcomes:
   - k3: "Schreiben einfacher Maven-Skripte zu Übersetzen des Projekts, zum Testen und zum Erzeugen von Jar-Files"
   - k3: "Nutzung von Maven-Properties"
