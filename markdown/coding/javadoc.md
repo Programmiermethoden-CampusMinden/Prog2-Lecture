@@ -37,8 +37,6 @@ quizzes:
 youtube:
   - link: "https://youtu.be/Qo2TTD593eQ"
     name: "VL Javadoc"
-  - link: "https://youtu.be/stt9Hm_04fs"
-    name: "Demo Javadoc"
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/15984eacd03de989ab2bce322ace5d74da962a911ae45afbb60958714ed6b16c72c962aec4b60acda9419ef15d26c5a5265129245f26beb0f905af9a7176b9fa"
     name: "VL Javadoc"
@@ -195,8 +193,6 @@ Schauen Sie sich gern mal Klassen aus der Java-API an, beispielsweise eine `java
 Unter [Documentation Best Practices](https://github.com/google/styleguide/blob/gh-pages/docguide/best_practices.md#documentation-is-the-story-of-your-code)
 finden Sie eine sehr gute Beschreibung, was das Ziel der Dokumentation sein sollte. Versuchen Sie, dieses zu erreichen!
 :::
-
-[Javadoc-Regeln an java.util.ArrayList diskutieren]{.bsp}
 
 
 ## Wrap-Up
