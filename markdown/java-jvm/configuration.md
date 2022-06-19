@@ -5,7 +5,7 @@ menuTitle: "Konfiguration"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 2
 readings:
-  - key: "Java-SE-tutorial"
+  - key: "Java-SE-Tutorial"
     comment: "Essential Java Classes > The Platform Environment > Configuration Utilities"
 tldr: |
     Zu Konfiguration von Programmen kann man beim Aufruf Kommandozeilenparameter mitgeben. Diese
