@@ -52,18 +52,18 @@ quizzes:
   - link: ""
     name: "Quiz Docker (ILIAS)"
 youtube:
-  - link: ""
+  - link: "https://youtu.be/yERVMfUAano"
     name: "VL Einführung in Docker"
-  - link: ""
+  - link: "https://youtu.be/LE_QcHqUg9Y"
     name: "Demo Container in der Konsole"
-  - link: ""
+  - link: "https://youtu.be/3Tj3lhcoKro"
     name: "Demo GitLab CI/CD und Docker"
-  - link: ""
+  - link: "https://youtu.be/jrxoax2fPRI"
     name: "Demo GitHub Actions und Docker"
-  - link: ""
+  - link: "https://youtu.be/Rs1W_rXkoNM"
     name: "Demo VSCode und Docker"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/54268841fd04fa032e9ef425acd88a576a94f572e8179fba131126a0f854adaf8118b42ebcf90451649fd07913a4d873ee5459a1f5a58250ded9749352edcb78"
     name: "VL Einführung in Docker"
 ---
 
