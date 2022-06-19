@@ -448,4 +448,9 @@ von GitHub auf.
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
+
+\bigskip
+
+### Exceptions
+*   Website [hub.docker.com](https://hub.docker.com/search?q=&image_filter=official%2Cstore%2Copen_source)
 :::
