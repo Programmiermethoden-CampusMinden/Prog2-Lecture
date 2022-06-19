@@ -1,0 +1,10 @@
+default:
+    image: openjdk:17
+
+job1:
+    stage: build
+    script:
+        - java -version
+        - javac Hello.java
+        - java Hello
+        - ls -lags

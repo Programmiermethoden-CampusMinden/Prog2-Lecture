@@ -1,0 +1,16 @@
+name: demo
+on:
+    push:
+        branches: [master]
+    workflow_dispatch:
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        container: docker://openjdk:17
+        steps:
+            - uses: actions/checkout@v3
+            - run: java -version
+            - run: javac Hello.java
+            - run: java Hello
+            - run: ls -lags
