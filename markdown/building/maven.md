@@ -26,14 +26,12 @@ quizzes:
   - link: ""
     name: "Quiz Apache Maven (ILIAS)"
 youtube:
-  - link: ""
+  - link: "https://youtu.be/YAW-_Wi4LDY"
     name: "VL Apache Maven"
-  - link: ""
-    name: "Demo MavenCentral"
-  - link: ""
+  - link: "https://youtu.be/8z0UqtzISCA"
     name: "Demo Maven-Projekt"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/fb5c1d7d3dc18c911557eeec3d91322aec7005d9b1615445f8c75378cf221bb100cffb83d30a4073179d85dfd831c9ee2466c6dec910852b90ade14924bdfcb0"
     name: "VL Apache Maven"
 ---
 
