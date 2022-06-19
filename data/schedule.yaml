@@ -166,7 +166,6 @@
     - topic: "/building/ant"
     - topic: "/building/maven"
     - topic: "/building/docker"
-    - topic: "/java-jvm/collections"
   assignment:
     - topic: "sheet10"
       due: "Di, 21.06., 18 Uhr, PR/MR"
@@ -177,6 +176,7 @@
 
 - week: "KW26"
   lecture:
+    - topic: "/java-jvm/collections"
     - topic: "/org/syllabus"
       notes: "Rückblick, Prüfungsvorbereitung (Zoom)"
   assignment:
