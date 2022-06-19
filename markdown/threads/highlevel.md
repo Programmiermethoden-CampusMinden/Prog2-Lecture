@@ -33,7 +33,7 @@ tldr: |
 outcomes:
   - k3: "Umgang mit High-Level-Abstraktionen: Lock-Objekten und Conditions, Executor-Interface und Thread-Pools, Fork/Join-Framework, SwingWorker"
 quizzes:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1094844&client_id=FH-Bielefeld"
     name: "Quiz High-Level Concurrency (ILIAS)"
 assignments:
   - topic: sheet10
