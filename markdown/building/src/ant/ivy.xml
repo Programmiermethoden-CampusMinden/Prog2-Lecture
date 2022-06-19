@@ -1,0 +1,9 @@
+<ivy-module version="2.0">
+    <info organisation="org.apache" module="hello-ivy"/>
+
+    <dependencies>
+        <dependency org="commons-cli" name="commons-cli" rev="1.5.0" />
+        <dependency org="junit" name="junit" rev="4.13.2" />
+    </dependencies>
+
+</ivy-module>

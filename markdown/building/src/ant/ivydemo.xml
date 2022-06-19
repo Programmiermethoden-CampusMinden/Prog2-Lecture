@@ -1,0 +1,11 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="hello-ivy" default="helloWorld">
+
+    <target name="init">
+        <ivy:retrieve/>
+    </target>
+
+    <target name="helloWorld" depends="init">
+        <echo message="Hello World :-)"/>
+    </target>
+
+</project>
