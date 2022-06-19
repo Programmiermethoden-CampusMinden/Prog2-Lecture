@@ -452,5 +452,5 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 \bigskip
 
 ### Exceptions
-*   Website [hub.docker.com](https://hub.docker.com/search?q=&image_filter=official%2Cstore%2Copen_source)
+*   Website [hub.docker.com](https://hub.docker.com/search?q=)
 :::
