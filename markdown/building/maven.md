@@ -26,7 +26,7 @@ quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1094826&client_id=FH-Bielefeld"
     name: "Quiz Apache Maven (ILIAS)"
 youtube:
-  - link: "https://youtu.be/YAW-_Wi4LDY"
+  - link: "`https://youtu.be/YAW-_Wi4LDY`{=markdown}"
     name: "VL Apache Maven"
   - link: "https://youtu.be/8z0UqtzISCA"
     name: "Demo Maven-Projekt"
