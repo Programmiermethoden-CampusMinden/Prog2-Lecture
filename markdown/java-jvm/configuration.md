@@ -29,18 +29,18 @@ quizzes:
   - link: ""
     name: "Quiz Konfiguration (ILIAS)"
 youtube:
-  - link: ""
+  - link: "https://youtu.be/ImkyRx4UL9M"
     name: "VL Konfiguration"
-  - link: ""
-    name: "Demo Setzen von Kommandozeilenparametern"
-  - link: ""
+  - link: "https://youtu.be/a3XUfDbD9uo"
+    name: "Demo Setzen von Kommandozeilenparametern (IDE)"
+  - link: "https://youtu.be/cmMDxdT69ZQ"
     name: "Demo Einbinden von Libs in IDE"
-  - link: ""
+  - link: "https://youtu.be/DwKNQpLX4xI"
     name: "Demo Apache Commons CLI"
-  - link: ""
+  - link: "https://youtu.be/or1t_2vld2E"
     name: "Demo Properties"
 fhmedia:
-  - link: ""
+  - link: "https://www.fh-bielefeld.de/medienportal/m/94963b57dcea201ea1cce6d9d0d61732c823ebc117710448516a259243afd239fdbaf9c10be3bdfa3eb0c0f4e9c4fc3c847eb74b8977bfa8b921d2d02ec325f4"
     name: "VL Konfiguration"
 ---
 
