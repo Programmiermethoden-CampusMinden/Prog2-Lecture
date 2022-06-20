@@ -196,6 +196,24 @@ Beispiel /hash_example
 * `Object.hashCode()` wird genutzt, um einen Hash-Wert für ein Objekt zu berechnen und in Hash-Containern zu speichern/suchen.
 * Der `hashCode`-Vertrag definiert die Verhaltensweisen von `hashCode()`.
 
+## Überblick
+
+|Collection|Sorted|allow duplicate|Synchronized|allow `null`|Einfügen|Löschen|Get|
+|----------|------|---------------|------------|------------|--------|-------|------|
+|`LinkedList`|ja|ja|nein|ja|O(1)|O(n)|O(n)|
+|`ArrayList`|ja|ja|nein|ja|O(n)|O(n)|O(1)|
+|`Vector`|ja|ja|ja|ja|O(n)|O(n)|O(1)|
+|`Stack`|ja|ja|ja|ja|O(1)|O(1)|O(1)|
+|`ArrayDeque`|ja|ja|nein|nein|O(1)|O(1)|O(1)|
+|`PriorityQueue`|ja|ja|nein|nein|O(1)|O(1)|O(1)|
+|`HashSet`|nein|nein|nein|nur eins|O(1)|O(1)|O(1)|
+|`LinkedHashSet`|ja|nein|nein|nur eins|O(1)|O(1)|O(1)|
+|`TreeSet`|ja|nein|nein|nein|O(log n)|O(log n)|O(log n)|
+|`Hashtable`|nein|Keine duplicate Keys|ja|nein|O(1)|O(1)|O(1)|
+|`HashMap`|nein|Keine duplicate Keys|nein|einmal als Key, mehrfach als Value|O(1)|O(1)|O(1)|
+|`LinkedHashMap`|ja|Keine duplicate Keys|nein|einmal als Key, mehrfach als Value|O(1)|O(1)|O(1)|
+|`TreeMap`|ja|nein|nein|nein|O(log n)|O(log n)|O(log n)|
+
 <!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
 ::: slides
 ## LICENSE
