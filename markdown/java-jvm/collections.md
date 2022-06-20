@@ -62,7 +62,7 @@ private List <Entity> entities = new ArrayList<>();
 * `Collection` ist ein Interface des JDK.
 * Klassen die `Collection` implementieren speichern und verwalten eine Menge an Objekten.
 * Unteranderem gibt es die aus ADS bekannten Datentypen wie Listen, Sets, Queues etc.
-* Man unterscheidet zwischen 'sorted' (geordnete) Collections, welche eine bestimmte Reihenfolge der Elemente halten (Reihenfolge des Einfügens, Aufsteigende Werte etc.) und 'unsorted' (ungeordnete) Collections, welche keine bestimmte Reihenfolge
+* Man unterscheidet zwischen 'sorted' (geordnete) Collections, welche eine bestimmte Reihenfolge der Elemente halten (Reihenfolge des Einfügens, Aufsteigende Werte etc.) und 'unsorted' (ungeordnete) Collections, welche keine bestimmte Reihenfolge halten.
 * Eine Übersicht, welche Collection welche Datenstrukur implementiert kann [hier](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/doc-files/coll-overview.html#:~:text=Collection%20Implementations) eingesehen werden.
 * `List` Collections sind eine geordnete Liste an Objekten. Objekte können an jede Stell der Liste eingefügt, gelöscht oder geändert werden. Mithilfe des Index greift man auf ein spezifisches Objekt innerhalb der Liste zu.
 * `Queue` Collections sind eine geordnete Liste an Objekten. Objekte können nur an das Ende der Liste hinzugefügt werden und nur das Objekt am Anfang der Liste (der Head) kann verwendet oder gelöscht werden (First in first out).
