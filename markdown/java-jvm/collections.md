@@ -62,6 +62,8 @@ private List <Entity> entities = new ArrayList<>();
 * `Collection` ist ein Interface des JDK.
 * Klassen die `Collection` implementieren speichern und verwalten eine Menge an Objekten.
 * Unteranderem gibt es die aus ADS bekannten Datentypen wie Listen, Sets, Queues etc.
+* Man unterscheidet zwischen 'sorted' (geordnete) Collections, welche eine bestimmte Reihenfolge der Elemente halten (Reihenfolge des Einfügens, Aufsteigende Werte etc.) und 'unsorted' (ungeordnete) Collections, welche keine bestimmte Reihenfolge
+* Eine Übersicht, welche Collection welche Datenstrukur implementiert kann [hier](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/doc-files/coll-overview.html#:~:text=Collection%20Implementations) eingesehen werden.
 * `List` Collections sind eine geordnete Liste an Objekten. Objekte können an jede Stell der Liste eingefügt, gelöscht oder geändert werden. Mithilfe des Index greift man auf ein spezifisches Objekt innerhalb der Liste zu.
 * `Queue` Collections sind eine geordnete Liste an Objekten. Objekte können nur an das Ende der Liste hinzugefügt werden und nur das Objekt am Anfang der Liste (der Head) kann verwendet oder gelöscht werden (First in first out).
 * `Set` Collections sind eine ungeordnete Menge an Objekten. Objekte können in einem Set nur einmal enthalten sein. Über das Set kann nicht direkt auf das Objekt zugegriffen werden. Es kann aber geprüft werden, ob ein spezifisches Objekt in einem Set gespeichert ist.
@@ -148,7 +150,6 @@ Der `hashCode`-Vertrag
 
 ![](images/map.png){web_width="80%"}
 
-
 ::: notes
 * Eine `Map` speichert Objekte als Paar von `Key` und `Value`.
 * Ein Paar von `Key` und `Value` ist ein Eintrag.
@@ -159,7 +160,7 @@ Der `hashCode`-Vertrag
 * `TreeMap` hält die Einträge in aufsteigender Reihenfolge.
 :::
 
-## Hash-Map
+## HashMap
 
 ![](images/hashmap.png){web_width="80%"}
 Beispiel /hash_example
@@ -173,7 +174,17 @@ Beispiel /hash_example
 * Ist der Bucket gefunden wird der `hashCode` des Key-Objektes genutzt, um zu prüfen ob bereits ein Eintrag mit denselben hashcode in der Liste des Buckets liegt.
 * Wenn es bereits einen Eintrag gibt, wird mit `equals` geprüft, ob die Key-Objekte indentisch sind, ist dies der Fall, wird der existierende Eintrag überschrieben. Wenn dies nicht der Fall ist, oder es keinen Eintrag mit demselben Hashcode gibt, dann wird der neue Eintrag an das Ende der Liste hinzugefügt.
 * Wenn eine Liste zu groß wird, (per Default mehr als 8 Einträge) wird diese durch einen self balancing binary search Tree ausgetauscht, um die Effizienz beim Suchen von Einträgen zu wahren.
+* `Hash-Map` Methoden sind nicht synchronized.
+* Unterstützt einen `null` Key. Es darf beliebig viele `null` Values geben.
+* Die Unterklasse `LinkedHashMap` kann Ordnung zwischen den Elementen halten. Dafür wird eine doppelt verkettete Liste verwendet.
 :::
+
+## Hashtable
+
+* Nicht zu vewechseln mit der Datenstruktur: Hash-Tabellen
+* Ist vergleichbar mit einer `HashMap`
+* `Hashtable` Methoden sind synchronized.
+* Kein Key oder Value darf `null` sein.
 
 
 ## Wrap-Up
