@@ -57,6 +57,7 @@ private List <Entity> entities = new ArrayList<>();
 ## Collection
 
 ![](images/collection.png){web_width="80%"}
+[Abstrakte Klassen im UML nicht aufgeführt.]{.notes}
 
 ::: notes
 * `Collection` ist ein Interface des JDK.
@@ -149,7 +150,7 @@ Der `hashCode`-Vertrag
 ## Map
 
 ![](images/map.png){web_width="80%"}
-
+[Abstrakte Klassen im UML nicht aufgeführt.]{.notes}
 ::: notes
 * Eine `Map` speichert Objekte als Paar von `Key` und `Value`.
 * Ein Paar von `Key` und `Value` ist ein Eintrag.
