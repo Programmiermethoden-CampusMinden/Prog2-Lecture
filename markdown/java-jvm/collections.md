@@ -72,7 +72,14 @@ private List <Entity> entities = new ArrayList<>();
 
 ## `ArrayList`
 
-![](images/arraylist.gif){web_width="80%"} //Todo: Wird überarbeitet und png für slides erstellen
+:::note
+![](images/arraylist.gif){web_width="80%"}
+:::
+
+:::slide
+tbd
+:::
+
 :::note
 * Einer `ArrayList` ist ein, sich dynamisch vergrößerndes Array.
 * Einer `ArrayList` liegt einen Array zu Grunde, wenn das Array voll ist, wird das Array um 50% vergrößert.
@@ -107,8 +114,13 @@ note:::
 
 ## Iterator
 
-![](images/iterator.gif){web_width="80%"} //Todo: WiP und png für slides erstellen/anpassen
-Beispiel iterator_example
+:::note
+![](images/iterator.gif){web_width="80%"}
+:::
+
+:::slides
+![](images/iterator.png){web_width="80%"}
+:::
 
 :::note
 * Ein Objekt welches das `Iterator<E>`Interface implementiert ist ein Iterator und läuft eine spezifische Datenstruktur sequenziell durch.
