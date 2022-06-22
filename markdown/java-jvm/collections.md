@@ -218,7 +218,7 @@ Beispiel /hash_example
 |Collection|Sorted|allow duplicate|Synchronized|allow `null`|Einfügen|Löschen|Get|
 |----------|------|---------------|------------|------------|--------|-------|------|
 |`LinkedList`|ja|ja|nein|ja|O(1)|O(n)|O(n)|
-|`ArrayList`|ja|ja|nein|ja|O(n)|O(n)|O(1)|
+|`ArrayList`|ja|ja|nein|ja|O(1)|O(n)|O(1)|
 |`Vector`|ja|ja|ja|ja|O(n)|O(n)|O(1)|
 |`Stack`|ja|ja|ja|ja|O(1)|O(1)|O(1)|
 |`ArrayDeque`|ja|ja|nein|nein|O(1)|O(1)|O(1)|
