@@ -72,7 +72,7 @@ private List <Entity> entities = new ArrayList<>();
 
 ## `ArrayList`
 
-![](images/arraylist.gif){web_width="80%"}
+![](images/arraylist.gif){web_width="80%"} //Todo: Wird überarbeitet und png für slides erstellen
 :::note
 * Einer `ArrayList` ist ein, sich dynamisch vergrößerndes Array.
 * Einer `ArrayList` liegt einen Array zu Grunde, wenn das Array voll ist, wird das Array um 50% vergrößert.
@@ -85,7 +85,7 @@ private List <Entity> entities = new ArrayList<>();
 
 ## `LinkedList`
 
-![](images/linkedlist.png){web_width="80%"}
+![](images/linkedlist.gif){web_width="80%"} //Todo: WiP
 :::note
 * Eine `LinkedList` ist die Implementierung einer doppelt verketteten Liste (diese kenne Sie bereits aus ADS) in Java.
 * Jeder Eintrag wird als Knoten repräsentiert, der den eigentlich Wert speichert und zusätzlich einen Verweis auf die Speicheradresse des Vorgänger und Nachfolger Knoten.
@@ -107,7 +107,7 @@ note:::
 
 ## Iterator
 
-![](images/iterator.png){web_width="80%"}
+![](images/iterator.gif){web_width="80%"} //Todo: WiP und png für slides erstellen/anpassen
 Beispiel iterator_example
 
 :::note
@@ -151,6 +151,7 @@ Der `hashCode`-Vertrag
 
 ![](images/map.png){web_width="80%"}
 [Abstrakte Klassen im UML nicht aufgeführt.]{.notes}
+
 ::: notes
 * Eine `Map` speichert Objekte als Paar von `Key` und `Value`.
 * Ein Paar von `Key` und `Value` ist ein Eintrag.
