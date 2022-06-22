@@ -231,6 +231,10 @@ Beispiel /hash_example
 |`LinkedHashMap`|ja|Keine duplicate Keys|nein|einmal als Key, mehrfach als Value|O(1)|O(1)|O(1)|
 |`TreeMap`|ja|nein|nein|nein|O(log n)|O(log n)|O(log n)|
 
+:::note
+* Komplexitätswerte beziehen sich auf den Regelfall. Sonderfälle, wie das vergrößern des Array einer ArrayList, können für erhöhte Komplexität sorgen.
+:::
+
 <!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
 ::: slides
 ## LICENSE
