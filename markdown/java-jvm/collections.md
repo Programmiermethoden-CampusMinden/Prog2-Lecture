@@ -76,10 +76,6 @@ private List <Entity> entities = new ArrayList<>();
 ![](images/arraylist.gif){web_width="80%"}
 :::
 
-:::slide
-tbd
-:::
-
 :::note
 * Einer `ArrayList` ist ein, sich dynamisch vergrößerndes Array.
 * Einer `ArrayList` liegt einen Array zu Grunde, wenn das Array voll ist, wird das Array um 50% vergrößert.
@@ -92,7 +88,14 @@ tbd
 
 ## `LinkedList`
 
-![](images/linkedlist.gif){web_width="80%"} //Todo: WiP
+:::note
+![](images/linkedlist.gif){web_width="80%"}
+:::
+
+:::slide
+![](images/linkedlist.png){web_width="80%"}
+:::
+
 :::note
 * Eine `LinkedList` ist die Implementierung einer doppelt verketteten Liste (diese kenne Sie bereits aus ADS) in Java.
 * Jeder Eintrag wird als Knoten repräsentiert, der den eigentlich Wert speichert und zusätzlich einen Verweis auf die Speicheradresse des Vorgänger und Nachfolger Knoten.
