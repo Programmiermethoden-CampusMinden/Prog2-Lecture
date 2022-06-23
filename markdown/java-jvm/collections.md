@@ -215,21 +215,7 @@ Beispiel /hash_example
 
 ## Überblick
 
-|Collection|Sorted|allow duplicate|Synchronized|allow `null`|Einfügen|Löschen|Get|
-|----------|------|---------------|------------|------------|--------|-------|------|
-|`LinkedList`|ja|ja|nein|ja|O(1)|O(n)|O(n)|
-|`ArrayList`|ja|ja|nein|ja|O(1)|O(n)|O(1)|
-|`Vector`|ja|ja|ja|ja|O(n)|O(n)|O(1)|
-|`Stack`|ja|ja|ja|ja|O(1)|O(1)|O(1)|
-|`ArrayDeque`|ja|ja|nein|nein|O(1)|O(1)|O(1)|
-|`PriorityQueue`|ja|ja|nein|nein|O(1)|O(1)|O(1)|
-|`HashSet`|nein|nein|nein|nur eins|O(1)|O(1)|O(1)|
-|`LinkedHashSet`|ja|nein|nein|nur eins|O(1)|O(1)|O(1)|
-|`TreeSet`|ja|nein|nein|nein|O(log n)|O(log n)|O(log n)|
-|`Hashtable`|nein|Keine duplicate Keys|ja|nein|O(1)|O(1)|O(1)|
-|`HashMap`|nein|Keine duplicate Keys|nein|einmal als Key, mehrfach als Value|O(1)|O(1)|O(1)|
-|`LinkedHashMap`|ja|Keine duplicate Keys|nein|einmal als Key, mehrfach als Value|O(1)|O(1)|O(1)|
-|`TreeMap`|ja|nein|nein|nein|O(log n)|O(log n)|O(log n)|
+![](images/collections_table.png){web_width="80%"}
 
 :::note
 * Komplexitätswerte beziehen sich auf den Regelfall. Sonderfälle, wie das vergrößern des Array einer ArrayList, können für erhöhte Komplexität sorgen.
