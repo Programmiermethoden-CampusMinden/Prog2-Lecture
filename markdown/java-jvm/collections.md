@@ -20,8 +20,8 @@ outcomes:
   - k2: "*foo*"
   - k3: "fluppie"
 quizzes:
-  - link: "XYZ"
-    name: "Quiz XXX (ILIAS)"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1097696&client_id=FH-Bielefeld"
+    name: "Quiz Collections (ILIAS)"
 assignments:
   - topic: sheet01
 youtube:
