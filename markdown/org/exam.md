@@ -1,0 +1,523 @@
+---
+type: lecture-cg
+title: "Prüfungsvorbereitung"
+author: "Carsten Gips (FH Bielefeld)"
+weight: 1
+hidden: true
+tldr: |
+  ### Durchführung: Präsenz oder Open-Book (je nach Corona-Lage)
+
+  Die Klausur wird dieses Semester elektronisch stattfinden. Dazu werden wir den Prüfungs-ILIAS der
+  FH Bielefeld nutzen.
+
+  Sofern die Situation dies zulässt, wird die Klausur in den Räumen der FH am Campus Minden unter
+  Aufsicht durchgeführt. Hier werden Ihnen Rechner für den Zugang zum Prüfungs-ILIAS zur Verfügung
+  gestellt, Sie benötigen nur Ihre FH-Zugangsdaten.
+
+  Wenn die Corona-Lage eine Durchführung in Präsenz nicht erlaubt, wird die Klausur stattdessen als
+  *Open-Book-Ausarbeitung* aus dem Home-Office durchgeführt. Sie benötigen dazu einen normalen Rechner
+  oder Laptop mit einem Standardbrowser. Tablets und Handys können wg. der Mobil-Version der Browser
+  problematisch sein. Sie müssen JavaScript aktivieren und Cookies zulassen, der Privacy-Modus ist
+  bitte ebenfalls zu deaktivieren. Sie erreichen den Prüfungs-ILIAS
+  [eassessment.fh-bielefeld.de](https://eassessment.fh-bielefeld.de) nur über VPN.
+
+  Die Entscheidung über die konkrete Durchführung wird spätestens zwei Wochen vor der Prüfung getroffen
+  und Ihnen per EMail über das LSF mitgeteilt.
+
+  ### Anmeldung zum Prüfungsraum
+
+  Ich werde Ihnen über das LSF ca. eine Woche vor der Prüfung eine Mail mit dem Link zum "Prüfungsraum"
+  schicken. Dort beantragen Sie bitte Zutritt (Verfahren wie bei den normalen ILIAS-Unterrichts-Räumen:
+  "Beitritt per Bestätigung").
+
+  ### Ablauf der Klausur
+
+  Die Prüfung (das ILIAS-Objekt) selbst schalte ich dann zum Start der Prüfung online. Parallel zur
+  Prüfung wird bei der Durchführung als Open-Book-Ausarbeitung eine Zoom-Sitzung laufen, in der Sie
+  Fragen stellen können.
+
+  Nach der Prüfung müssen Sie eine Erklärung abgeben, dass Sie die Prüfung selbstständig und ohne Hilfe
+  Dritter angefertigt haben. Dazu ist im Prüfungsraum parallel zur eigentlichen Prüfung ein weiter Test
+  angelegt, der ab Ende der Prüfung noch 24h zur Verfügung steht. Ohne diese Bestätigung wird Ihre Prüfung
+  nicht gewertet.
+
+  ### Hilfsmittel und Themen
+
+  Bei der Durchführung in Präsenz am Campus Minden ist ein Spickzettel (DIN A4, beidseitig beschrieben)
+  als Hilfsmittel zugelassen.
+
+  Bei der Durchführung als "Open-Book-Ausarbeitung" im Home-Office sind alle Hilfsmittel zugelassen.
+
+  Die Unterstützung durch Dritte bzw. jegliche Kommunikation mit Dritten ist in keinem Fall zugelassen.
+  Sie sollen die Prüfung selbstständig bearbeiten.
+
+  Es wird keines der behandelten Themen ausgeschlossen, allerdings eignen sich manche Themen etwas
+  besser für Klausurfragen als andere ;-)
+youtube:
+  - link: ""
+    name: "Hinweise zur Klausur: Technische Vorbereitung"
+  - link: ""
+    name: "Hinweise zur Klausur: Bearbeitung des E-Assessments"
+  - link: ""
+    name: "Hinweise zur Klausur: Beispiele für mögliche Fragen"
+fhmedia:
+  - link: ""
+    name: "Hinweise zur Klausur: Technische Vorbereitung"
+  - link: ""
+    name: "Hinweise zur Klausur: Bearbeitung des E-Assessments"
+  - link: ""
+    name: "Hinweise zur Klausur: Beispiele für mögliche Fragen"
+---
+
+
+## Elektronische Klausur: Termin, Materialien
+
+::: notes
+Die Prüfung des theoretischen Teils der Performanzprüfung erfolgt durch eine Klausur, die
+als digitale Prüfung auf einem Prüfungs-ILIAS durchgeführt wird.
+
+Es wird angestrebt, die Klausur in Präsenz in den Rechnerpools am Campus Minden durchzuführen.
+Falls dies wegen der Corona-Situation oder anderer Umstände nicht möglich sein sollte, wird
+die Klausur als "Open-Book-Ausarbeitung" im Home-Office durchgeführt.
+:::
+
+::: center
+[Prüfungszeitraum 1:]{.notes} E2 **Mo, 11.07.2022, 09:00 -- 09:45 Uhr**
+:::
+
+:::::: notes
+Dauer 45 Minuten (Zeitraum 1, E2) bzw. 90 Minuten (Zeitraum 2).
+
+Im ersten Prüfungszeitraum zählen die Termine E1 und E2 zusammen als **eine** Prüfung (vergleiche
+`["Note und Credits > Theoretische Teilleistung"]({{< ref "/org/grading" >}})`{=markdown}.)
+
+Im zweiten Prüfungszeitraum wird **eine** Prüfung mit 90 Minuten Dauer angeboten. Der konkrete
+Termin im zweiten Prüfungszeitraum wird noch vom Prüfungsamt bekannt gegeben.
+::::::
+
+\bigskip
+\bigskip
+
+*   Die konkrete Durchführungsform [(in Präsenz am Campus Minden oder im Home-Office)]{.notes}
+    wird Ihnen [spätestens]{.notes} zwei Wochen vor der Prüfung über das LSF bekanntgegeben
+*   Die URL [zur Prüfung]{.notes} wird Ihnen jeweils ca. eine Woche vorher per Mail über das LSF
+    [bzw. das ILIAS]{.notes} bekanntgegeben
+*   Melden Sie sich im ILIAS-Prüfungsraum vor dem Prüfungstag per "Beitritt mit Bestätigung" an
+    [(wie zu einem normalen Kurs)]{.notes}
+
+\bigskip
+
+*   **Zugelassene Materialien**: [**DIN-A4-Spickzettel (beidseitig)**]{.alert}
+
+    ::: notes
+    Sie dürfen **einen** Spickzettel im **DIN-A4**-Format benutzen, der beidseitig beschrieben
+    sein kann.
+
+    Ich möchte Sie hier noch einmal ermuntern, diesen Zettel tatsächlich manuell zu erstellen
+    (also ganz traditionell zu **schreiben**), da bereits der Schreibvorgang einen gewissen
+    Lerneffekt bewirkt!
+
+    Falls die Prüfung als Open-Book-Ausarbeitung im Home-Office durchgeführt werden sollte, dürfen
+    Sie zusätzlich auch alle anderen Unterlagen benutzen.
+    :::
+
+    *   Ausnahme: **Keine Hilfe durch Dritte!** (insb. keine Zusammenarbeit, keine Kommunikation)
+
+        ::: notes
+        Sie sollen die Prüfung eigenständig bearbeiten. Hilfe von Dritten sowie jegliche Kommunikation
+        mit Dritten ist in keinem Fall zugelassen und wird als Täuschungsversuch gewertet.
+        :::
+
+\bigskip
+
+*   Prüfungseinsicht: Zeitnah; Bekanntgabe per Mail
+    <!-- XXX Voraussichtlich XX, XX.XX.2021, XX:XX -- XX:XX Uhr -->
+
+
+## Hinweise zu technischen Vorbereitungen (Präsenzprüfung am Campus Minden)
+
+::: notes
+Diese Bemerkungen betreffen die Durchführung als Präsenzprüfung in den Räumen am Campus Minden.
+:::
+
+*   **FH-Zugangsdaten**: Username, Passwort
+
+    ::: notes
+    Bei der Durchführung der Prüfung am Campus Minden wird Ihnen ein Rechner zur Verfügung
+    gestellt. Dort läuft voraussichtlich ein Browser im Kiosk-Mode, wo Sie sich am Prüfungs-ILIAS
+    anmelden. Dazu benötigen Sie ihre FH-Zugangsdaten, mit denen Sie sich auch im "normalen"
+    ILIAS anmelden.
+    :::
+
+
+## Hinweise zu technischen Vorbereitungen (Home-Office)
+
+::: notes
+Diese Bemerkungen betreffen die Durchführung aus dem Home-Office mit Ihrer Hardware. Bei der
+Durchführung in Präsenz in den Räumen am Campus Minden werden die technischen Details von uns
+für Sie vorbereitet sein.
+:::
+
+*   **Rechner**: Nutzen Sie für die Prüfung einen stationären Rechner oder ein Notebook.
+
+    ::: notes
+    Vermeiden Sie die Verwendung von Tablets und Smartphones! Bei der Verwendung von Tablets
+    kann es unter Umständen zu Darstellungsproblemen kommen. Smartphones sind aufgrund des kleinen
+    Bildschirms für die Prüfungsdurchführung schlicht ungeeignet.
+
+    Bei fehlendem Zugang zu einem entsprechenden Endgerät kontaktieren Sie bitte frühzeitig die
+    Prüfungsverantwortlichen.
+    :::
+
+*   **Netz**: Stabil genug? Belastbar genug?
+
+    ::: notes
+    Wenn Sie keinen Zugang zu einer ausreichend stabilen Internetverbindung haben, setzen Sie sich
+    frühzeitig mit Ihren Prüfungsverantwortlichen in Verbindung.
+    :::
+
+*   **VPN**: Der Prüfungs-ILIAS ist nur im FH-VPN erreichbar.
+
+    ::: notes
+    Installieren Sie den VPN-Client (Anleitung: [fh-bielefeld.de/dvz/faq/cat/7](https://www.fh-bielefeld.de/dvz/faq/cat/7))
+    und testen Sie im Vorfeld der Prüfung bei aktivierter VPN-Verbindung den Zugang zur Prüfungsplattform
+    [eassessment.fh-bielefeld.de](https://eassessment.fh-bielefeld.de). Zugangsdaten wie im normalen
+    ILIAS.
+
+    Achtung: Auch wenn Sie sich in den Räumen der FH befinden, müssen Sie die VPN-Verbindung aktivieren,
+    um Zugang zur Prüfungsplattform zu erhalten.
+    :::
+
+*   **Browser**: [Nutzen Sie einen der]{.notes} Standardbrowser (Edge, Firefox, Safari, Chrome/Chromium)
+    in der Standardeinstellung: insbesondere JavaScript und Cookies müssen aktiviert/erlaubt sein.
+
+    ::: notes
+    Deaktivieren Sie sämtliche Browser-Erweiterungen wie z.B. Ad-Blocker (AdBlockPlus, uBlock, ...) oder
+    JavaScript-Blocker (No-Script, Ghostery, ...) für den Prüfungszeitraum.
+
+    Nutzen Sie Ihren Browser nicht im Privacy-Modus!
+    :::
+
+\bigskip
+
+*   **FH-Zugangsdaten**: Username, Passwort
+
+    ::: notes
+    Bei der Durchführung der Prüfung als Open-Book-Ausarbeitung führen Sie die Prüfung auf Ihrer
+    eigenen Hardware im Home-Office durch. Auch hier müssen Sie sich am Prüfungs-ILIAS anmelden.
+    Dazu benötigen Sie ihre FH-Zugangsdaten, mit denen Sie sich auch im "normalen" ILIAS anmelden.
+    :::
+
+
+## Hinweise zur Bearbeitung des E-Assessment
+
+1.  Lesen Sie sich die Hinweise auf der Startseite durch
+
+2.  Bearbeiten Sie die Aufgaben in **einem einzigen** Browser-Tab
+
+    ::: notes
+    [Öffnen Sie **NICHT** die Aufgaben in parallelen Tabs!]{.alert}
+    Es kann sonst zu Fehlfunktionen von ILIAS kommen.
+
+    Bewegen Sie sich nicht per Browser-Navigation ("vor", "zurück" im Browser)
+    durch die Aufgaben, sondern nutzen Sie dafür die Buttons "nächste Frage",
+    "Weiter" oder "Zurück" vom ILIAS!
+    :::
+
+3.  Hinweis zu Anzeige der restlichen Bearbeitungsdauer
+
+    ::: notes
+    Wenn Sie den Browser bzw. das Tab mit der Prüfung im Laufe der Prüfung verlassen,
+    wird Ihnen bei der Rückkehr unter Umständen eine falsche restliche Bearbeitungsdauer
+    angezeigt. Sie können die Anzeige korrigieren/aktualisieren, indem Sie einfach zu einer
+    vorigen oder nächsten Aufgabe navigieren.
+
+    Hinweis: Die restliche Bearbeitungsdauer wird im Test nur dann angezeigt, wenn diese
+    Funktion von den Prüfenden aktiviert wurde.
+    :::
+
+4.  Parallel zum E-Assessment läuft eine Zoom-Session, dort können Sie Fragen stellen
+
+    ::: notes
+    Bei Durchführung aus dem Home-Office; Daten siehe Mail über das LSF ca. eine Woche vor der Prüfung
+    :::
+
+5.  Verbindungsprobleme (Home-Office):
+    -   Bei kurzzeitigen Verbindungsabbrüchen loggen Sie sich einfach wieder ein
+    -   Wenn die Probleme länger dauern, gilt der Versuch als nicht unternommen
+        [(außer Sie haben die Probleme aktiv herbeigeführt, dann zählt das als
+        Täuschungsversuch, vgl. RPO §22a (5))]{.notes}
+
+6.  Erklärung "Eigenständige Bearbeitung" (max. 24h nach Prüfungsende)
+
+    ::: notes
+    Sie müssen eine Erklärung der eigenständigen Bearbeitung in der vorbereiteten Aufgabe im separaten
+    "Test" im Prüfungsraum abgeben. Ohne diese Erklärung wird Ihre Prüfung nicht bearbeitet/gewertet!
+
+    Dazu haben Sie maximal 24 Stunden nach Beendigung der Prüfung Zeit.
+    :::
+
+[Demo]{.bsp}
+
+
+<!-- XXX Präsenzklausur
+## Klausur: Termin, Materialien
+
+<!- XXX aktualisieren ->
+
+[XX, XX.XX.20, Raum XXX, XX:XX -- XX:XX Uhr]{.cbox}
+
+\bigskip
+
+*   Bitte [pünktlich]{.alert} erscheinen: ca. 15-20 Minuten vorher!
+
+    \smallskip
+
+*   **Zugelassene Materialien**: [**KEINE**]{.alert}!
+    *   Ausnahme: ein handbeschriebener [**DIN-A4-Zettel**]{.alert} \newline
+        => Wird am Klausurende eingesammelt, kann später
+        abgeholt werden.
+    *   Insbesondere: kein Handy, kein Taschenrechner, keine
+        programmierbaren und/oder netzwerkfähigen Geräte, ...!
+
+    \smallskip
+
+*   **Wichtig**
+    *   Stift(e) => Denken Sie auch an einen Ersatzstift!
+    *   Personal- und Studentenausweis
+
+\smallskip
+
+*   Klausureinsicht: Voraussichtlich XX, XX.XX.20, XX:XX -- XX:XX Uhr
+
+
+## Hinweise zur Bearbeitung der Klausur
+
+1.  Prüfen Sie, ob Ihr Exemplar vollständig ist.
+
+2.  Füllen Sie das Deckblatt vollständig aus.
+
+    \smallskip
+
+3.  Lesen Sie die Klausur von vorne nach hinten durch.
+    *   Fragen Sie, wenn Ihnen etwas unklar ist!
+    *   Teilen Sie alle (Teil-) Aufgaben in Kategorien ein:
+        a)  Die Aufgabe fällt Ihnen leicht und ist schnell zu beantworten
+        b)  Sie müssen zur Lösung der Aufgabe nachdenken, sind sich aber sicher,
+            die Aufgabe lösen zu können
+        c)  Sie wissen nicht, ob Sie die Aufgabe in sinnvoller Zeit lösen können
+    *   Arbeiten Sie die Aufgaben in dieser Reihenfolge ab!
+-->
+
+
+## Hinweise zu den Inhalten
+
+*   Klausurrelevant: Vorlesung und Praktikum
+    [(vergleiche `["Note und Credits > Hinweise zum ersten Prüfungszeitraum"]({{< ref "/org/grading" >}})`{=markdown})]{.notes}
+    <!-- *   [**Ausgenommen**]{.alert}: Umwandlung in Klauselform -->
+*   Für Verständnis u.U. hilfreich: Studium der vertiefenden Literaturangaben
+
+\smallskip
+
+*   **Fragen**:
+    *   Schauen Sie sich die Quizzes (Kahoot, ILIAS) an ...
+    *   Schauen Sie sich die Praktikumsaufgaben an ...
+    *   Überlegen Sie sich, was zu einem Themengebiet im Rahmen einer Prüfung
+        möglich ist und (wie) gefragt werden könnte :)
+
+\bigskip
+
+::: cbox
+Können vor Kennen :-)
+:::
+
+[Beispiele Fragetypen: Fragetypen-Demo im ILIAS]{.bsp}
+
+
+## Beispiele für mögliche Fragen
+
+::: notes
+Betrachten Sie den folgenden Java-Code:
+:::
+
+```java
+public class Person {
+    public String getInfo(Person p) { return "Person"; }
+}
+
+public class Studi extends Person {
+    public String getInfo(Studi s) { return "Studi"; }
+
+    public static void main(String[] args) {
+        Studi s = new Studi(); Person p = s;
+        System.out.println(s.getInfo(p));
+        System.out.println(s.getInfo(s));
+    }
+}
+```
+
+Geben Sie alle Ausgaben, die das obige Programm produziert, an.
+
+Begründen Sie Ihre Antwort kurz und stichhaltig (für *jede* Ausgabe!).
+Was geschieht, bzw. wieso kommt es zu der jeweiligen Ausgabe?
+
+
+## Beispiele für mögliche Fragen (cnt.)
+
+``` {.java size="tiny"}
+public class StaffelKaputt extends Thread {
+    private Object stab;
+    StaffelKaputt(Object stab) { this.stab = stab; }
+    public void run() {nimmStab(); laufen(); stabAbgeben();}
+    private void stabAbgeben() {
+        synchronized (stab) { stab.notifyAll(); }
+    }
+    private void nimmStab() {
+        synchronized (stab) {
+            try { stab.wait(); } catch (Exception e) { }
+        }}
+    void laufen() { System.out.println("laufe ... "); }
+    public static void main(String[] args) {
+        Object stab = new Object();
+        StaffelKaputt l1 = new StaffelKaputt(stab);
+        StaffelKaputt l2 = new StaffelKaputt(stab);
+        l1.start(); l2.start();
+    }}
+```
+
+Das Programm enthält einen Fehler, der sich zur Laufzeit offenbart.
+Welche Ausgabe erwarten Sie (angenommen, das Programm wäre fehlerfrei; eine
+mögliche Variante reicht)? Welche Ausgabe erhalten Sie stattdessen? Korrigieren
+Sie den Fehler.
+
+
+## Beispiele für mögliche Fragen (cnt.)
+
+Auf welche Strings passt (im Sinne von "match") der folgende reguläre
+Ausdruck: `\s*([a-zA-Z0-9_.\-]+)\s*=\s*(-?\d+\.?\d*)\s;?\s*`
+
+
+## Beispiele für mögliche Fragen (cnt.)
+
+*   Erklären Sie, wie man mit Git die Unterschiede zwischen zwei
+    bestimmten Versionsständen einer Datei herausfindet.
+
+*   Was ist der Unterschied zwischen einer Workingcopy und einem Repository?
+
+*   Worin liegt der Unterschied zwischen folgenden Arbeitsschritten:
+    a.  Editieren von Datei `A.txt`
+    b.  `git add A.txt`
+    c.  Editieren von Datei `A.txt`
+    d.  `git commit`
+
+    versus
+
+    a.  Editieren von Datei `A.txt`
+    b.  Editieren von Datei `A.txt`
+    c.  `git add A.txt`
+    d.  `git commit`
+
+*   Was würde `git diff` jeweils nach Schritt 2 anzeigen?
+
+
+## Beispiele für mögliche Fragen (cnt.)
+
+Schreiben Sie ein Programm, welches auf zwei Kommandozeilenparameter reagieren
+kann. Die erkannten Parameter sollen auf der Konsole ausgegeben werden. Nutzen
+Sie Apache Commons CLI (API siehe Anhang).
+
+*   Beim Aufruf ohne Parameter soll eine Hilfe zum korrekten Aufruf ausgegeben
+    werden und das Programm soll sich anschließend beenden.
+*   Das Programm soll den Parameter `-debug` erkennen.
+*   Das Programm soll den Parameter `-x=10` erkennen, wobei der Wert beim Aufruf
+    variieren kann (Integer).
+*   Die Parameter können in unterschiedlicher Reihenfolge auftreten.
+*   Es kann auch nur ein Parameter angegeben werden.
+
+
+## Beispiele für mögliche Fragen (cnt.)
+
+*   Was ist der Unterschied zwischen Ant-Targets und Ant-Tasks?
+*   Wie kann man Ant-Properties von außen (beim Aufruf) setzen?
+*   Schreiben Sie ein Ant-Target, welches alle `.class`-Dateien in einem Ordner
+    umbenennt.
+*   Schreiben Sie ein Ant-Target, mit dem Sie die Javadoc-Dokumentation
+    erzeugen, packen und das resultierende `.zip`-File in den Ordner `dist/`
+    verschieben.
+*   Schreiben Sie Ant-Targets, mit denen Sie JUnit-Testfälle ausführen und
+    auswerten können.
+
+
+## Beispiele für mögliche Fragen (cnt.)
+
+Was kommt hier raus? Und warum?
+
+```java
+public class X {
+    void methode(int a) {
+        System.out.println("non-generic");
+    }
+    <T> void methode(T a) {
+        System.out.println("generisch");
+    }
+    public static void main(String[] args) {
+        X x = new X();
+        x.methode(3);
+        x.methode(new Integer(4));
+        x.methode("huhu");
+    }
+}
+```
+
+
+## Beispiele für mögliche Fragen (cnt.)
+
+Erklären Sie den Code. Was passiert?
+
+``` {.java size="footnotesize"}
+class MyFormatter extends SimpleFormatter {
+    public String format(LogRecord record) {
+        return super.format(record) + "---- FAKE ----\n";
+    }
+}
+public class MoreLogging {
+    public static void main(String[] argv) {
+        Logger l = Logger.getLogger("MoreLogging");
+        l.setLevel(Level.FINE);
+
+        ConsoleHandler myHandler = new ConsoleHandler();
+        myHandler.setFormatter(new MyFormatter());
+        myHandler.setLevel(Level.FINER);
+        l.addHandler(myHandler);
+
+        l.info("Hello World :-)");
+        l.fine("fine");
+        l.finer("finer");
+        l.finest("finest");
+    }
+}
+```
+
+
+## Beispiele für mögliche Fragen (cnt.)
+
+*   Was bedeutet der folgende Code?
+
+    ```java
+    List<String> str = Arrays.asList("a", "b", "A", "B");
+    str.sort(String::compareToIgnoreCase);
+    ```
+
+
+
+
+
+
+
+<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
+::: slides
+## LICENSE
+![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
+
+Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
+:::
