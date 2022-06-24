@@ -82,7 +82,7 @@ die Klausur als "Open-Book-Ausarbeitung" im Home-Office durchgeführt.
 :::
 
 ::: center
-[Prüfungszeitraum 1:]{.notes} E2 **Mo, 11.07.2022, 09:00 -- 09:45 Uhr**
+[Prüfungszeitraum 1:]{.notes} **E2: Mo, 11.07.2022, 09:00 -- 09:45 Uhr**
 :::
 
 :::::: notes
