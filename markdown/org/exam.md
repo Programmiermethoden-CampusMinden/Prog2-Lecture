@@ -2,7 +2,7 @@
 type: lecture-cg
 title: "Prüfungsvorbereitung"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 1
+weight: 5
 hidden: true
 tldr: |
   ### Durchführung: Präsenz oder Open-Book (je nach Corona-Lage)
