@@ -131,7 +131,6 @@ Termin im zweiten Prüfungszeitraum wird noch vom Prüfungsamt bekannt gegeben.
 \bigskip
 
 *   Prüfungseinsicht: Zeitnah; Bekanntgabe per Mail
-    <!-- XXX Voraussichtlich XX, XX.XX.2021, XX:XX -- XX:XX Uhr -->
 
 
 ## Hinweise zu technischen Vorbereitungen (Präsenzprüfung am Campus Minden)
@@ -258,56 +257,6 @@ für Sie vorbereitet sein.
     :::
 
 [Demo]{.bsp}
-
-
-<!-- XXX Präsenzklausur
-## Klausur: Termin, Materialien
-
-<!- XXX aktualisieren ->
-
-[XX, XX.XX.20, Raum XXX, XX:XX -- XX:XX Uhr]{.cbox}
-
-\bigskip
-
-*   Bitte [pünktlich]{.alert} erscheinen: ca. 15-20 Minuten vorher!
-
-    \smallskip
-
-*   **Zugelassene Materialien**: [**KEINE**]{.alert}!
-    *   Ausnahme: ein handbeschriebener [**DIN-A4-Zettel**]{.alert} \newline
-        => Wird am Klausurende eingesammelt, kann später
-        abgeholt werden.
-    *   Insbesondere: kein Handy, kein Taschenrechner, keine
-        programmierbaren und/oder netzwerkfähigen Geräte, ...!
-
-    \smallskip
-
-*   **Wichtig**
-    *   Stift(e) => Denken Sie auch an einen Ersatzstift!
-    *   Personal- und Studentenausweis
-
-\smallskip
-
-*   Klausureinsicht: Voraussichtlich XX, XX.XX.20, XX:XX -- XX:XX Uhr
-
-
-## Hinweise zur Bearbeitung der Klausur
-
-1.  Prüfen Sie, ob Ihr Exemplar vollständig ist.
-
-2.  Füllen Sie das Deckblatt vollständig aus.
-
-    \smallskip
-
-3.  Lesen Sie die Klausur von vorne nach hinten durch.
-    *   Fragen Sie, wenn Ihnen etwas unklar ist!
-    *   Teilen Sie alle (Teil-) Aufgaben in Kategorien ein:
-        a)  Die Aufgabe fällt Ihnen leicht und ist schnell zu beantworten
-        b)  Sie müssen zur Lösung der Aufgabe nachdenken, sind sich aber sicher,
-            die Aufgabe lösen zu können
-        c)  Sie wissen nicht, ob Sie die Aufgabe in sinnvoller Zeit lösen können
-    *   Arbeiten Sie die Aufgaben in dieser Reihenfolge ab!
--->
 
 
 ## Hinweise zu den Inhalten
