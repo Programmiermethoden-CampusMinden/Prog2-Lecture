@@ -81,7 +81,7 @@ Falls dies wegen der Corona-Situation oder anderer Umstände nicht möglich sein
 die Klausur als "Open-Book-Ausarbeitung" im Home-Office durchgeführt.
 :::
 
-::: center
+::: cbox
 [Prüfungszeitraum 1:]{.notes} **E2: Mo, 11.07.2022, 09:00 -- 09:45 Uhr**
 :::
 
@@ -314,7 +314,6 @@ für Sie vorbereitet sein.
 
 *   Klausurrelevant: Vorlesung und Praktikum
     [(vergleiche `["Note und Credits > Hinweise zum ersten Prüfungszeitraum"]({{< ref "/org/grading" >}})`{=markdown})]{.notes}
-    <!-- *   [**Ausgenommen**]{.alert}: Umwandlung in Klauselform -->
 *   Für Verständnis u.U. hilfreich: Studium der vertiefenden Literaturangaben
 
 \smallskip
