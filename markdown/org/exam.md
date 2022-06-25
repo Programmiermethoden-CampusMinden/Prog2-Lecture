@@ -129,7 +129,7 @@ Termin im zweiten Prüfungszeitraum wird noch vom Prüfungsamt bekannt gegeben.
 *   Prüfungseinsicht: Zeitnah; Bekanntgabe per Mail
 
 
-## Hinweise zu technischen Vorbereitungen (Präsenzprüfung am Campus Minden)
+## Technische Vorbereitungen: Präsenzprüfung am Campus Minden
 
 ::: notes
 Diese Bemerkungen betreffen die Durchführung als Präsenzprüfung in den Räumen am Campus Minden.
@@ -145,7 +145,7 @@ Diese Bemerkungen betreffen die Durchführung als Präsenzprüfung in den Räume
     :::
 
 
-## Hinweise zu technischen Vorbereitungen (Home-Office)
+## Technische Vorbereitungen: Home-Office
 
 ::: notes
 Diese Bemerkungen betreffen die Durchführung aus dem Home-Office mit Ihrer Hardware. Bei der
@@ -204,7 +204,7 @@ für Sie vorbereitet sein.
     :::
 
 
-## Hinweise zur Bearbeitung des E-Assessment
+## Bearbeitung des E-Assessment
 
 1.  Lesen Sie sich die Hinweise auf der Startseite durch
 
