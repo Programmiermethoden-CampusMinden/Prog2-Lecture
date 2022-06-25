@@ -286,8 +286,6 @@ den einzelnen Aufgaben an. Sie können die Demo bei Bedarf beliebig oft wiederho
 Können vor Kennen :-)
 :::
 
-[Beispiele Fragetypen: Fragetypen-Demo im ILIAS]{.bsp}
-
 
 ## Beispiele für mögliche Fragen
 
