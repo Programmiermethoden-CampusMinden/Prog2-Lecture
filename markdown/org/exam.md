@@ -211,7 +211,7 @@ für Sie vorbereitet sein.
 2.  Bearbeiten Sie die Aufgaben in **einem einzigen** Browser-Tab
 
     ::: notes
-    [Öffnen Sie **NICHT** die Aufgaben in parallelen Tabs!]{.alert}
+    [**Öffnen Sie die Aufgaben _NICHT_ in parallelen Tabs!**]{.alert}
     Es kann sonst zu Fehlfunktionen von ILIAS kommen.
 
     Bewegen Sie sich nicht per Browser-Navigation ("vor", "zurück" im Browser)
