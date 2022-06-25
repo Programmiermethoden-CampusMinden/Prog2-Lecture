@@ -101,7 +101,8 @@ nicht fest. Es sind hier alle in der Veranstaltung besprochenen Themen relevant.
 #### Anmerkungen
 
 Die Prüfung für die theoretische Teilleistung wird als digitale Klausur über eine
-spezielle ILIAS-Instanz ("E-Assessment-Server") durchgeführt.
+spezielle ILIAS-Instanz ("E-Assessment-Server") durchgeführt. Nähere Informationen
+siehe `["Prüfungsvorbereitung"]({{< ref "/org/exam" >}})`{=markdown}.
 
 Im ersten Prüfungszeitraum besteht die theoretische Prüfung aus zwei kürzeren Teilprüfungen
 ("E-Assessments") mit je 45 Minuten Dauer, die einmal etwa in der Mitte der Vorlesungszeit
