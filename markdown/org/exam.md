@@ -256,7 +256,14 @@ für Sie vorbereitet sein.
     Dazu haben Sie maximal 24 Stunden nach Beendigung der Prüfung Zeit.
     :::
 
-[Demo]{.bsp}
+
+::: notes
+## Fragetypen-Demo
+
+In Ihrem ILIAS-Kurs finden Sie eine Fragetypen-Demo mit den wichtigsten Fragetypen. Machen
+Sie sich mit der Mechanik der Fragetypen vertraut und schauen Sie sich die Kommentare bei
+den einzelnen Aufgaben an. Sie können die Demo bei Bedarf beliebig oft wiederholen.
+:::
 
 
 ## Hinweise zu den Inhalten
