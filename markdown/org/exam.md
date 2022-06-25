@@ -194,7 +194,7 @@ für Sie vorbereitet sein.
     Deaktivieren Sie sämtliche Browser-Erweiterungen wie z.B. Ad-Blocker (AdBlockPlus, uBlock, ...) oder
     JavaScript-Blocker (No-Script, Ghostery, ...) für den Prüfungszeitraum.
 
-    Nutzen Sie Ihren Browser nicht im Privacy-Modus!
+    **Nutzen Sie Ihren Browser nicht im Privacy-Modus!**
     :::
 
 \bigskip
