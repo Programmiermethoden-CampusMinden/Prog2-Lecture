@@ -69,6 +69,8 @@ fhmedia:
 ## Elektronische Klausur: Termin, Materialien
 
 ::: notes
+### Termin
+
 Die Prüfung des theoretischen Teils der Performanzprüfung erfolgt durch eine Klausur, die
 als digitale Prüfung auf einem Prüfungs-ILIAS durchgeführt wird.
 
@@ -103,6 +105,10 @@ Termin im zweiten Prüfungszeitraum wird noch vom Prüfungsamt bekannt gegeben.
 
 \bigskip
 
+::: notes
+### Zugelassene Hilfsmittel
+:::
+
 *   **Zugelassene Materialien**: [**DIN-A4-Spickzettel (beidseitig)**]{.alert}
 
     ::: notes
@@ -125,6 +131,10 @@ Termin im zweiten Prüfungszeitraum wird noch vom Prüfungsamt bekannt gegeben.
         :::
 
 \bigskip
+
+::: notes
+### Einsicht
+:::
 
 *   Prüfungseinsicht: Zeitnah; Bekanntgabe per Mail
 
