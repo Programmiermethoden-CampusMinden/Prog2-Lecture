@@ -54,8 +54,6 @@ Objekt nur _einmal_ enthalten.
 
 ![](images/collection.png){width="80%"}
 
-[Abstrakte Klassen im UML nicht aufgeführt.]{.notes}
-
 ::: notes
 _Hinweis_: Die abstrakten (Zwischen-) Klassen wurden im obigen UML aus Gründen der
 Übersichtlichkeit _nicht_ aufgeführt.
@@ -261,16 +259,25 @@ Auch wenn es meist sinvoll ist, ist es nicht nötig das `equals` und `compareTo`
 
 ![](images/map.png){width="80%"}
 
-[Abstrakte Klassen im UML nicht aufgeführt.]{.notes}
-
 ::: notes
-*   Eine `Map` speichert Objekte als Paar von `Key` und `Value`.
-*   Ein Paar von `Key` und `Value` ist ein Eintrag.
-*   Der `Key`ist in einer Map einzigartig und wird verwendet, um auf `Value` zuzugreifen.
-*   Ein `Value`kann mehrfach im einer Map enthalten sein.
-*   `HashMap` hält keine Ordnung in den Einträgen. Verwenden den Hashwert, um Objekte zu speichern. Zugriff auf Einträge in einer `HashMap` ist O(1).
-*   `LinkedHashMap` hält die Einträge in der Reihenfolge in der Sie eingefügt wurden.
-*   `TreeMap` hält die Einträge in aufsteigender Reihenfolge.
+_Hinweis_: Die abstrakten (Zwischen-) Klassen wurden im obigen UML aus Gründen der
+Übersichtlichkeit _nicht_ aufgeführt.
+
+Eine `Map<K,V>` speichert Objekte als Key/Value-Paar mit den Typen `K` (Key) und `V` (Value).
+
+Dabei sind die Keys in einer Map einzigartig und werden verwendet, um auf das jeweilige Value
+zuzugreifen. Ein Value kann entsprechend (mit unterschiedlichen Keys) mehrfach im einer Map
+enthalten sein.
+
+Es gibt eine Reihe verschiedener Implementierungen, die unterschiedliche Datenstrukturen
+einsetzen, beispielsweise:
+
+*   `HashMap<K,V>` hält keine Ordnung in den Einträgen. Verwendet den Hashwert, um Objekte zu
+    speichern. Zugriff auf Einträge in einer `HashMap` ist O(1).
+*   `LinkedHashMap<K,V>` hält die Einträge in der Reihenfolge, in der sie eingefügt wurden.
+*   `TreeMap<K,V>` hält die Einträge in aufsteigender Reihenfolge.
+
+Siehe auch [Interface Map](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html).
 :::
 
 
