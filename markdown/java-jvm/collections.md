@@ -52,7 +52,6 @@ Objekt nur _einmal_ enthalten.
 
 ## Collection-API in Java
 
-![](images/collection.png){width="72%"}
 
 ::: notes
 _Hinweis_: Die abstrakten (Zwischen-) Klassen wurden im obigen UML aus Gründen der
@@ -225,7 +224,7 @@ genutzt werden kann, muss sie aber auch noch `Iterable<T>` implementieren.
 
 ## Hilfsklasse _Collections_
 
-![](images/collections.png){width="75%"}
+![](images/collections.png){width="75%" web_width="50%"}
 
 ::: notes
 `Collections` ist eine Utility-Klasse mit statischen Methoden, die auf `Collection<T>`s ausgeführt werden.
@@ -243,7 +242,7 @@ vermutlich die statischen Methoden in der Klasse `Collections` eher direkt als D
 
 ## _Map_
 
-![](images/map.png){width="55%"}
+![](images/map.png){width="55%" web_width="50%"}
 
 ::: notes
 _Hinweis_: Die abstrakten (Zwischen-) Klassen wurden im obigen UML aus Gründen der
@@ -269,7 +268,7 @@ Siehe auch [Interface Map](https://docs.oracle.com/en/java/javase/17/docs/api/ja
 
 ## _HashMap_
 
-![](images/hashmap.png){width="72%"}
+![](images/hashmap.png){width="72%" web_width="60%"}
 
 ::: notes
 Eine `HashMap<K,V>` speichert die Elemente in mehreren einfach verketteten Listen. Dafür
