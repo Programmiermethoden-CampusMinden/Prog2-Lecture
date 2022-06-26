@@ -161,14 +161,18 @@ Die Methoden einer `LinkedList` sind nicht `synchronized`.
 :::
 
 
-::: notes
 ## _Vector_ und _Stack_
 
-*   Ein `Vector` ähnelt einer `ArrayList`
-*   Das Array eines Vector wird jedoch verdoppelt, wenn es vergrößert wird.
-*   Die Methoden von `Vector` sind synchronized.
-*   Ein `Stack`ist ein veränderter Vector, damit dieser als Last in First out Stack genutzt werden kann.
-:::
+*   `Vector`:
+    *   Ein `Vector` ähnelt einer `ArrayList`
+    *   Das Array eines Vector wird jedoch verdoppelt, wenn es vergrößert wird
+    *   Die Methoden von `Vector` sind `synchronized`
+
+\bigskip
+
+*   `Stack`:
+    *   Schnittstelle: "last in first out"-Prinzip
+    *   Tatsächlich aber: `class Stack<E> extends Vector<E>`
 
 
 ## Iterator
