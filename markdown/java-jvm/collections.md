@@ -85,6 +85,11 @@ eingesehen werden.
     einmal in der Set enthalten sein können. In einem Set kann nicht direkt auf ein Objekt
     zugegriffen werden. Es kann aber geprüft werden, ob ein spezifisches Objekt in einer
     Set gespeichert ist.
+
+**Wichtig**: `List`, `Set`, `Queue` und `Map` sind **Interfaces**, also bestimmte
+Schnittstellen, die sich so wie aus ADS her bekannt verhalten. Diese können jeweils
+mit sehr unterschiedlichen Datenstrukturen implementiert werden und können dadurch
+auch intern ein anderes Verhalten haben (sortiert vs. nicht sortiert, Zugriffszeiten, ...).
 :::
 
 
