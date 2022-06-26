@@ -2,7 +2,7 @@
 type: lecture-cg
 title: "Java Collections Framework"
 menuTitle: "Collections"
-author: "André Matutat (FH Bielefeld)"
+author: "André Matutat & Carsten Gips (FH Bielefeld)"
 weight: 6
 readings:
   - key: "LernJava"
@@ -52,7 +52,7 @@ Objekt nur _einmal_ enthalten.
 
 ## Collection-API in Java
 
-![](images/collection.png){width="80%"}
+![](images/collection.png){width="72%"}
 
 ::: notes
 _Hinweis_: Die abstrakten (Zwischen-) Klassen wurden im obigen UML aus Gründen der
@@ -100,6 +100,7 @@ Siehe auch [Interface Collection](https://docs.oracle.com/en/java/javase/17/docs
 private List <Entity> entities = new ArrayList<>();
 ```
 
+\bigskip
 \bigskip
 
 ![](images/arraylist.png){width="80%"}
@@ -189,6 +190,9 @@ for (Entity e : entities) { ... }
 entities.forEach(x -> ...);
 ```
 
+\bigskip
+\bigskip
+
 ![](images/iteratoruml.png){width="80%"}
 
 ::: notes
@@ -221,7 +225,7 @@ genutzt werden kann, muss sie aber auch noch `Iterable<T>` implementieren.
 
 ## Hilfsklasse _Collections_
 
-![](images/collections.png){width="80%"}
+![](images/collections.png){width="75%"}
 
 ::: notes
 `Collections` ist eine Utility-Klasse mit statischen Methoden, die auf `Collection<T>`s ausgeführt werden.
@@ -239,7 +243,7 @@ vermutlich die statischen Methoden in der Klasse `Collections` eher direkt als D
 
 ## _Map_
 
-![](images/map.png){width="80%"}
+![](images/map.png){width="55%"}
 
 ::: notes
 _Hinweis_: Die abstrakten (Zwischen-) Klassen wurden im obigen UML aus Gründen der
@@ -265,7 +269,7 @@ Siehe auch [Interface Map](https://docs.oracle.com/en/java/javase/17/docs/api/ja
 
 ## _HashMap_
 
-![](images/hashmap.png){width="80%"}
+![](images/hashmap.png){width="72%"}
 
 ::: notes
 Eine `HashMap<K,V>` speichert die Elemente in mehreren einfach verketteten Listen. Dafür
@@ -349,14 +353,17 @@ Spielregeln:
 4.  Transitivität: Wenn `x.compareTo(y) > 0` und `y.compareTo(z) > 0`, dann auch `x.compareTo(z) > 0`
 5.  Wenn `x.compareTo(y)==0`, dann auch `signum(x.compareTo(z)) == signum(y.compareTo(z))`
 
-### Der _equals()_-_hashCode_-_compareTo_-Vertrag
+### Der _equals()_-_hashCode()_-_compareTo()_-Vertrag
 :::::::::
 
 ::: slides
-## Der _equals()_-_hashCode_-_compareTo_-Vertrag
+## Der _equals()_-_hashCode()_-_compareTo()_-Vertrag
 :::
 
 **Wird `equals()` überschrieben, sollte auch `hashCode()` (passend) überschrieben werden.**
+
+\bigskip
+\bigskip
 
 1.  Wenn `x.equals(y) == true`, dann auch `x.hashCode() == x.hashCode()`
 
@@ -369,6 +376,7 @@ Spielregeln:
     [(Dies _muss_ aber nicht zwingend eingehalten werden, sorgt dann aber u.U. für unerwartete Nebeneffekte
     beim Umgang mit `Collection<T>` und `Map<K,V>!)]{.notes}
 
+
 ::: notes
 [Beispiel: [hash_example.HashCodeExample](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java)]{.bsp}
 :::
@@ -379,8 +387,8 @@ Spielregeln:
 
 ![](images/collections_table.png){width="80%"}
 
-Komplexitätswerte beziehen sich auf den Regelfall. Sonderfälle, wie das Vergrößern des Array einer
-`ArrayList<T>`, können für erhöhte Komplexität sorgen.
+Komplexitätswerte beziehen sich auf den Regelfall. Sonderfälle wie das Vergrößern des Array einer
+`ArrayList<T>` können für temporär erhöhte Komplexität sorgen (das ist dem O-Kalkül aber egal).
 :::
 
 
@@ -391,6 +399,7 @@ Komplexitätswerte beziehen sich auf den Regelfall. Sonderfälle, wie das Vergr�
 *   Klasse `Collections`: Statische Hilfs-Methoden [(anwendbar auf `Collection<T>`s)]{.notes}
 *   `Iterable<T>` liefert einen `Iterator<T>` zur Iteration über eine `Collection<T>`
 *   Interface `Map<K,V`: Speichern von Key/Value-Paaren
+*   `equals()`-`hashCode()`-`compareTo()`-Vertrag beachten
 
 
 
