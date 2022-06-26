@@ -180,6 +180,7 @@
     - topic: "/org/syllabus"
       notes: "Rückblick (Zoom)"
     - topic: "/org/exam"
+      notes: "Prüfungsvorbereitung (Zoom)"
   assignment:
     - topic: "/assignments/pool_dungeon"
       due: "Fr, 01.07., 09 Uhr, PR/MR"
