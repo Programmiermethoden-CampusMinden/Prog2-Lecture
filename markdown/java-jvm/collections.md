@@ -328,19 +328,18 @@ eine doppelt verkettete Liste verwendet.
 
 ![](images/collections_table.png){width="80%"}
 
-Komplexitätswerte beziehen sich auf den Regelfall. Sonderfälle, wie das Vergrößern des Array einer ArrayList, können für erhöhte Komplexität sorgen.
+Komplexitätswerte beziehen sich auf den Regelfall. Sonderfälle, wie das Vergrößern des Array einer
+`ArrayList<T>`, können für erhöhte Komplexität sorgen.
 :::
 
 
 ## Wrap-Up
 
-*   Mit dem `Collection` Interface des Java Collection Frameworks können Datenstrukturen erstellt/verwendet werden, die eine Menge an Objekten speichern und verwalten.
-*   Die `Collections`Klasse liefert statische Methoden die auf `Collection`s angewendet werden können.
-*   Mithilfe eines `Iterator` kann über eine `Collection` iteriert werden.
-*   Das `Map`Interface wird von Klassen implementiert die Paare (Key,Value) von Objekten speichert.
-*   `Object.equals(Object o)` wird genutzt um Objekte auf inhaltliche Gleichheit zu prüfen.
-*   `Object.hashCode()` wird genutzt, um einen Hash-Wert für ein Objekt zu berechnen und in Hash-Containern zu speichern/suchen.
-*   Der `hashCode`-Vertrag definiert die Verhaltensweisen von `hashCode()`.
+*   Interface `Collection<T>`: Schnittstelle für Datenstrukturen/Sammlungen
+    [zur Verwaltung einer Menge von Objekten]{.notes}
+*   Klasse `Collections`: Statische Hilfs-Methoden [(anwendbar auf `Collection<T>`s)]{.notes}
+*   `Iterable<T>` liefert einen `Iterator<T>` zur Iteration über eine `Collection<T>`
+*   Interface `Map<K,V`: Speichern von Key/Value-Paaren
 
 
 
