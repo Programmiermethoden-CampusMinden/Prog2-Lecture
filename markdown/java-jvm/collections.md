@@ -39,14 +39,14 @@ public void add(Entity e){
 ::: notes
 Die war ein reales Beispiel aus der Entwicklung des PM-Dungeon.
 
-Es wurde eine `ArrayList` zum Verwalten der Entitäten genutzt. Allerdings sollte jedes
-Element nur einmal in der Liste vorkommen, deshalb wurde beim Einfügen einer Entität
-geprüft, ob diese bereits in der Liste ist.
+Es wurde eine `ArrayList<T>` zum Verwalten der Entitäten genutzt. Allerdings sollte
+jedes Element nur einmal in der Liste vorkommen, deshalb wurde beim Einfügen einer
+Entität geprüft, ob diese bereits in der Liste ist.
 
 Hier wird die **falsche Datenstruktur** genutzt!
 
-Eine Liste kann ein Objekt mehrfach enthalten, eine Menge (_Set_) hingegen kann ein Objekt
-nur einmal enthalten.
+Eine Liste kann ein Objekt mehrfach enthalten, eine Menge (_Set_) hingegen kann ein
+Objekt nur _einmal_ enthalten.
 :::
 
 
@@ -60,8 +60,8 @@ nur einmal enthalten.
 _Hinweis_: Die abstrakten (Zwischen-) Klassen wurden im obigen UML aus Gründen der
 Übersichtlichkeit _nicht_ aufgeführt.
 
-`Collection` ist ein zentrales Interface im JDK und stellt die gemeinsame API der
-Collection-Klassen dar. Klassen, die `Collection` implementieren, speichern und
+`Collection<T>` ist ein zentrales Interface im JDK und stellt die gemeinsame API der
+Collection-Klassen dar. Klassen, die `Collection<T>` implementieren, speichern und
 verwalten eine Menge an Objekten.
 
 Unter anderem gibt es die aus dem Modul "ADS" bekannten Datentypen wie Listen, Sets,
@@ -75,21 +75,23 @@ Eine Übersicht, welche Collection welche Datenstruktur implementiert, kann unte
 ["Collection Implementations"](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/doc-files/coll-overview.html)
 eingesehen werden.
 
-*   `List`-Collections sind eine geordnete Liste an Objekten. Objekte können an jeder
+*   `List<T>`-Collections sind eine geordnete Liste an Objekten. Objekte können an jeder
     Stelle der Liste eingefügt, gelöscht oder geändert werden. Über einen Index-Zugriff
     kann direkt auf ein spezifisches Objekt innerhalb der Liste zugegriffen werden.
-*   `Queue`-Collections sind eine geordnete Liste an Objekten. Objekte können nur am
+*   `Queue<T>`-Collections sind eine geordnete Liste an Objekten. Objekte können nur am
     Ende der Queue hinzugefügt werden und nur am Anfang der Queue (der Head) gelesen
     oder entnommen werden ("first in first out").
-*   `Set`-Collections sind eine (i.d.R.!) ungeordnete Menge an Objekten, die stets nur
+*   `Set<T>`-Collections sind eine (i.d.R.!) ungeordnete Menge an Objekten, die stets nur
     einmal in der Set enthalten sein können. In einem Set kann nicht direkt auf ein Objekt
     zugegriffen werden. Es kann aber geprüft werden, ob ein spezifisches Objekt in einer
     Set gespeichert ist.
 
-**Wichtig**: `List`, `Set`, `Queue` und `Map` sind **Interfaces**, also bestimmte
-Schnittstellen, die sich so wie aus ADS her bekannt verhalten. Diese können jeweils
-mit sehr unterschiedlichen Datenstrukturen implementiert werden und können dadurch
+**Wichtig**: `List<T>`, `Set<T>`, `Queue<T>` und `Map<K,V>` sind **Interfaces**, definieren
+also bestimmte Schnittstellen, die sich so wie aus ADS her bekannt verhalten. Diese können
+jeweils mit sehr unterschiedlichen Datenstrukturen implementiert werden und können dadurch
 auch intern ein anderes Verhalten haben (sortiert vs. nicht sortiert, Zugriffszeiten, ...).
+
+Siehe auch [Interface Collection](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html).
 :::
 
 
@@ -110,7 +112,7 @@ private List <Entity> entities = new ArrayList<>();
 :::
 
 ::: notes
-Eine `ArrayList` ist von außen betrachtet ein sich dynamisch vergrößerndes Array.
+Eine `ArrayList<T>` ist von außen betrachtet ein sich dynamisch vergrößerndes Array.
 
 Intern wird allerdings ein statisches(!) Array benutzt. Wenn dieses Array voll ist,
 wird es um 50% vergrößert und alle Inhalte in das neue Array kopiert. Davon merkt
@@ -121,14 +123,14 @@ Dank es Arrays kann auf ein Element per Index mit O(1) zugegriffen werden.
 Wird ein Element aus der Liste gelöscht, rücken alle Nachfolgenden Einträge in der
 Liste einen Index auf (interner Kopiervorgang).
 
-Deshalb ist eine `ArrayList` effizient in der Abfrage und Manipulation von Einträgen,
+Deshalb ist eine `ArrayList<T>` effizient in der Abfrage und Manipulation von Einträgen,
 aber deutlich weniger effizient beim Hinzufügen und Löschen von Einträgen.
 
-Per Default wird eine `ArrayList` mit einem Array der Länge 10 angelegt, sobald das
+Per Default wird eine `ArrayList<T>` mit einem Array der Länge 10 angelegt, sobald das
 erste Element eingefügt wird. Man kann die Startgröße auch im Konstruktoraufruf der
-`ArrayList` bestimmen: beispielsweise `new ArrayList<>(20)`.
+`ArrayList<T>` bestimmen: beispielsweise `new ArrayList<>(20)`.
 
-Die Methoden einer `ArrayList` sind nicht `synchronized`.
+Die Methoden einer `ArrayList<T>` sind nicht `synchronized`.
 :::
 
 
@@ -143,16 +145,16 @@ Die Methoden einer `ArrayList` sind nicht `synchronized`.
 :::
 
 ::: notes
-Eine `LinkedList` ist eine Implementierung einer doppelt verketteten Liste (diese
+Eine `LinkedList<T>` ist eine Implementierung einer doppelt verketteten Liste (diese
 kennen Sie bereits aus ADS) in Java.
 
 Jeder Eintrag wird als Knoten repräsentiert, der den eigentlichen Wert speichert und
 zusätzlich je einen Verweis auf den Vorgänger- und Nachfolger-Knoten hat.
 
-Der Head der `LinkedList` zeigt auf den Anfang der Liste, der Nachfolger des letzten
+Der Head der `LinkedList<T>` zeigt auf den Anfang der Liste, der Nachfolger des letzten
 Eintrag ist immer `null.
 
-Für den Zugriff auf ein Element muß man die `LinkedList` traversieren und beginnt
+Für den Zugriff auf ein Element muß man die `LinkedList<T>` traversieren und beginnt
 dabei am Anfang der Liste, deshalb ist ein Zugriff O(n).
 
 Neue Elemente können effizient an das Ende der Liste eingefügt werden, indem der letzte
@@ -162,20 +164,20 @@ Start der Liste merkt, sondern auch das aktuelle Ende).
 Wenn ein Element aus der Liste gelöscht wird, muss dieses zunächst gefundenen werden und
 die Liste danach neu verkettete werden: O(n).
 
-Die Methoden einer `LinkedList` sind nicht `synchronized`.
+Die Methoden einer `LinkedList<T>` sind nicht `synchronized`.
 :::
 
 
 ## _Vector_ und _Stack_
 
-*   `Vector`:
-    *   Ein `Vector` ähnelt einer `ArrayList`
+*   `Vector<T>`:
+    *   Ein `Vector<T>` ähnelt einer `ArrayList<T>`
     *   Das Array eines Vector wird jedoch verdoppelt, wenn es vergrößert wird
-    *   Die Methoden von `Vector` sind `synchronized`
+    *   Die Methoden von `Vector<T>` sind `synchronized`
 
 \bigskip
 
-*   `Stack`:
+*   `Stack<T>`:
     *   Schnittstelle: "last in first out"-Prinzip
     *   Tatsächlich aber: `class Stack<E> extends Vector<E>`
 
@@ -216,12 +218,21 @@ genutzt werden kann, muss sie aber auch noch `Iterable<T>` implementieren.
 :::
 
 
-## Collections
+## Hilfsklasse _Collections_
 
 ![](images/collections.png){width="80%"}
 
 ::: notes
-*    `Collections`ist eine Utility Klasse mit statischen Methoden, die auf `Collection`s ausgeführt werden.
+`Collections` ist eine Utility-Klasse mit statischen Methoden, die auf `Collection<T>`s ausgeführt werden.
+Diese Methoden nutzen das `Collection<T>`-Interface und/oder die `Iterable<T>`-Schnittstelle.
+
+Siehe auch [Class Collections](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html).
+
+Der Hintergrund für diese in Java nicht unübliche Aufsplittung in ein Interface und eine Utility-Klasse
+ist, dass bis vor kurzem Interface nur Schnittstellen definieren konnten. Erst seit einigen Java-Versionen
+kann in Interfaces auch Verhalten definiert werden (Default-Methoden). Aus heutiger Sicht würde man also
+vermutlich die statischen Methoden in der Klasse `Collections` eher direkt als Default-Methoden im Interface
+`Collection<T>` implementieren und bereitstellen, statt eine separate Utility-Klasse zu definieren.
 :::
 
 
