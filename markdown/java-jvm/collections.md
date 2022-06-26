@@ -8,8 +8,12 @@ readings:
   - key: "LernJava"
     comment: "Tutorials > Mastering the API > The Collections Framework"
 tldr: |
-  hier kommt eine tolle inline-zusammenfassung!
-  Formatierung _könnte_ auch **gehen**?
+    *   Interface `Collection<T>`: Schnittstelle für Datenstrukturen/Sammlungen
+        [zur Verwaltung einer Menge von Objekten]{.notes}
+    *   Klasse `Collections`: Statische Hilfs-Methoden [(anwendbar auf `Collection<T>`s)]{.notes}
+    *   `Iterable<T>` liefert einen `Iterator<T>` zur Iteration über eine `Collection<T>`
+    *   Interface `Map<K,V`: Speichern von Key/Value-Paaren
+    *   `equals()`-`hashCode()`-`compareTo()`-Vertrag beachten
 outcomes:
   - k2: "XXX"
   - k3: "XXX"
@@ -310,7 +314,7 @@ eine doppelt verkettete Liste verwendet.
 
 
 ::::::::: notes
-## Collection-API: _equals()_, _hashCode()_ und _compareTo()_
+## Spielregeln für _equals()_, _hashCode()_ und _compareTo()_
 
 ### _equals()_
 
