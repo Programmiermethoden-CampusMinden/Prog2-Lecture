@@ -178,7 +178,8 @@
   lecture:
     - topic: "/java-jvm/collections"
     - topic: "/org/syllabus"
-      notes: "Rückblick, Prüfungsvorbereitung (Zoom)"
+      notes: "Rückblick (Zoom)"
+    - topic: "/org/exam"
   assignment:
     - topic: "/assignments/pool_dungeon"
       due: "Fr, 01.07., 09 Uhr, PR/MR"
