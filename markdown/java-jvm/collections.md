@@ -302,9 +302,9 @@ wird mit `equals` geprüft, ob die Key-Objekte identisch sind. Ist dies der Fall
 existierende Eintrag überschrieben, anderenfalls wird der neue Eintrag an das Ende der Liste
 hinzugefügt.
 
-Implementierungsdetail: Wenn eine Liste zu groß wird (per Default mehr als 8 Einträge), wird
-diese durch einen Self-balancing-Binary-Search-Tree ausgetauscht, um die Effizienz beim Suchen
-von Einträgen zu wahren.
+Implementierungsdetail: Wenn die Listen zu groß werden, wird die Hashtabelle neu angelegt mit
+ungefähr der doppelten Anzahl der Einträge (Buckets) und die alten Einträge per _Re-Hash_ neu
+verteilt (vgl. [Class HashMap](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html)).
 
 `HashMap<K,V>` Methoden sind nicht synchronized.
 
@@ -317,10 +317,10 @@ eine doppelt verkettete Liste verwendet.
 
 ## _Hashtable_
 
-*   Nicht zu verwechseln mit der Datenstruktur: Hash-Tabellen
-*   Ist vergleichbar mit einer `HashMap`
-*   `Hashtable` Methoden sind synchronized.
-*   Kein Key oder Value darf `null` sein.
+*   Nicht zu verwechseln mit der Datenstruktur: Hash-Tabellen (!)
+*   `Hashtable<K,V>` ist vergleichbar mit einer `HashMap<K,V>`
+*   `Hashtable<K,V>`-Methoden sind synchronized
+*   Kein Key oder Value darf `null` sein
 
 
 ::: notes
