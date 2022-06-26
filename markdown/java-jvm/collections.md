@@ -288,17 +288,30 @@ Siehe auch [Interface Map](https://docs.oracle.com/en/java/javase/17/docs/api/ja
 Beispiel /hash_example
 
 ::: notes
-*   Eine `HashMap` speichert die Elemente in mehreren einfach verketteten Listen.
-*   Dafür verwendet sie die inner-class `Node<K,V>`
-*   Die Heads die auf den Anfang einer Liste zeigen, werden in Buckets gespeichert.
-*   Initial besitzt eine HashMap 12 Buckets, diese werden bei Bedarf erweitert.
-*   Um einen Eintrag hinzufügen, wird aus dem `hashCode` des Key-Objektes mithilfe der hash-funktion der Index des Buckets berechnet.
-*   Ist der Bucket gefunden wird der `hashCode` des Key-Objektes genutzt, um zu prüfen ob bereits ein Eintrag mit denselben Hashcode in der Liste des Buckets liegt.
-*   Wenn es bereits einen Eintrag gibt, wird mit `equals` geprüft, ob die Key-Objekte identisch sind, ist dies der Fall, wird der existierende Eintrag überschrieben. Wenn dies nicht der Fall ist, oder es keinen Eintrag mit demselben Hashcode gibt, dann wird der neue Eintrag an das Ende der Liste hinzugefügt.
-*   Wenn eine Liste zu groß wird, (per Default mehr als 8 Einträge) wird diese durch einen self balancing binary search Tree ausgetauscht, um die Effizienz beim Suchen von Einträgen zu wahren.
-*   `Hash-Map` Methoden sind nicht synchronized.
-*   Unterstützt einen `null` Key. Es darf beliebig viele `null` Values geben.
-*   Die Unterklasse `LinkedHashMap` kann Ordnung zwischen den Elementen halten. Dafür wird eine doppelt verkettete Liste verwendet.
+Eine `HashMap<K,V>` speichert die Elemente in mehreren einfach verketteten Listen. Dafür
+verwendet sie die innere Klasse `Node<K,V>`.
+
+Die Heads, die auf den Anfang einer Liste zeigen, werden in "Buckets" gespeichert. Initial
+besitzt eine HashMap 12 Buckets, diese werden bei Bedarf erweitert.
+
+Um einen Eintrag hinzufügen, wird zunächst aus dem `hashCode()` des Key-Objektes mithilfe der
+Hash-Funktion der Index des Buckets berechnet. Ist der Bucket gefunden, wird geprüft, ob das
+Objekt dort schon vorkommt: Mit dem `hashCode()` des Key-Objektes werden alle Objekte in der
+Liste des Buckets verglichen. Wenn es Einträge mit dem selben `hashCode()` in der Liste gibt,
+wird mit `equals` geprüft, ob die Key-Objekte identisch sind. Ist dies der Fall, wird der
+existierende Eintrag überschrieben, anderenfalls wird der neue Eintrag an das Ende der Liste
+hinzugefügt.
+
+Implementierungsdetail: Wenn eine Liste zu groß wird (per Default mehr als 8 Einträge), wird
+diese durch einen Self-balancing-Binary-Search-Tree ausgetauscht, um die Effizienz beim Suchen
+von Einträgen zu wahren.
+
+`HashMap<K,V>` Methoden sind nicht synchronized.
+
+`HashMap<K,V>` unterstützt einen `null`-Key. Es darf beliebig viele `null`-Values geben.
+
+Die Unterklasse `LinkedHashMap<K,V>` kann Ordnung zwischen den Elementen halten. Dafür wird
+eine doppelt verkettete Liste verwendet.
 :::
 
 
