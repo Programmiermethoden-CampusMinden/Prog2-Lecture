@@ -237,28 +237,6 @@ vermutlich die statischen Methoden in der Klasse `Collections` eher direkt als D
 :::
 
 
-## _equqals()_ und _hashCode()_
-
-::: notes
-*   `boolean equals(Object o)`ist eine Methode der Java `Object`-Class und wird genutzt um Objekte auf Gleichheit zu prüfen.
-*   Die Default Implementierung von `equals` gibt nur dann `true` zurück, wenn die beiden zu vergleichenden Objekte identisch sind.
-*   In der Praxis kann es sich anbieten diese Methode zu überschreieben und eigene Kriterien für Gleichheit aufzustellen.
-*   Die `int hashCode()` Methode gibt den Hash-Wert eines Objektes zurück. Der Hash-Wert eins Objektes wird genutzt, um dieses in einen Hash-basierten Container abzulegen bzw. zu finden.
-*   Wird die Methode `equals` überschrieben, sollte aich die Methode `hashCode` überschrieben werden.
-
-### Der _hashCode_-Vertrag
-
-*   Der Rückgabewert der `hashCode` Methode für ein Objekt bleibt über die Laufzeit einer Anwendung immer identisch, solange sich die Werte zur Prüfung der Gleichheit nicht ändern.
-*   Wenn zwei Objekte nach der `equals` Methode identisch sind, so ist auch der Rückgabewert der `hashCode` Methode für beide Objekte identisch.
-*   Sind zwei Objekte nach der `equals` Methode nicht identisch, kann der Rückgabewert der `hashCode` Methode dennoch identisch sein. Unterschiedliche Werte für unterschiedliche Objekte verbessern allerdings die Leistung von Hash-Berechnungen wie `HashMap`.
-
-Auch wenn es meist sinvoll ist, ist es nicht nötig das `equals` und `compareTo` dasselbe Ergebnis liefern. `Comparable` ist für die Sortierung von Objekten gedacht, `equals` für einen Gleichheitscheck.
-
-
-[Beispiel: [hash_example.HashCodeExample](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java)]{.bsp}
-:::
-
-
 ## _Map_
 
 ![](images/map.png){width="80%"}
@@ -326,6 +304,74 @@ eine doppelt verkettete Liste verwendet.
 *   `Hashtable<K,V>` ist vergleichbar mit einer `HashMap<K,V>`
 *   `Hashtable<K,V>`-Methoden sind synchronized
 *   Kein Key oder Value darf `null` sein
+
+
+::::::::: notes
+## Collection-API: _equals()_, _hashCode()_ und _compareTo()_
+
+### _equals()_
+
+`boolean equals(Object o)` ist eine Methode Klasse `Object` und wird genutzt, um Objekte auf Gleichheit zu
+prüfen. Die Default-Implementierung von `equals()` in `Object` vergleicht die beiden Objekte mit `==`, gibt
+also nur dann `true` zurück, wenn die beiden zu vergleichenden Objekte die selbe Objekt-ID haben.
+
+In der Praxis kann es sich anbieten, diese Methode zu überschreiben und eigene Kriterien für Gleichheit
+aufzustellen.
+
+Dabei sind Spielregeln zu beachten (für nicht-`null` Objekte `x`, `y` und `z`):
+
+1.  Reflexivität: `x.equals(x) == true`
+2.  Symmetrie: `x.equals(y) == y.equals(x)`
+3.  Transitivität: Wenn `x.equals(y) == true` und `y.equals(z) == true`, dann auch `x.equals(z) == true`
+4.  Konsistenz: Mehrfache Aufrufe von `equals()` mit den selben Werten müssen immer das selbe Ergebnis liefern
+5.  `x.equals(null) == false`
+
+### _hashCode()_
+
+Die Methode `int hashCode()` gibt den Hash-Wert eines Objektes zurück. Der Hash-Wert eins Objektes wird genutzt,
+um dieses in einen Hash-basierten Container abzulegen bzw. zu finden.
+
+Der Rückgabewert der Methode `hashCode()` für ein Objekt bleibt über die Laufzeit einer Anwendung immer identisch,
+solange sich die zur Prüfung der Gleichheit genutzten Attribute nicht ändern.
+
+### _compareTo()_
+
+Die Methode `int compareTo()` (Interface `Comparable<T>`) vergleicht Objekte und definiert damit eine Ordnung
+auf den Objekten. Während `equals()` für die Prüfung auf Gleichheit eingesetzt wird, wird `compareTo()` für die
+Sortierung von Objekten untereinander verwendet.
+
+Spielregeln:
+
+1.  `x.compareTo(y) < 0` wenn `x` "kleiner"  als `y` ist
+2.  `x.compareTo(y) > 0` wenn `x` "größer"  als `y` ist
+3.  `x.compareTo(y) = 0`  wenn `x` "gleich"  als `y` ist
+4.  Symmetrie: `signum(x.compareTo(y)) == -signum(y.compareTo(x))`
+4.  Transitivität: Wenn `x.compareTo(y) > 0` und `y.compareTo(z) > 0`, dann auch `x.compareTo(z) > 0`
+5.  Wenn `x.compareTo(y)==0`, dann auch `signum(x.compareTo(z)) == signum(y.compareTo(z))`
+
+### Der _equals()_-_hashCode_-_compareTo_-Vertrag
+:::::::::
+
+::: slides
+## Der _equals()_-_hashCode_-_compareTo_-Vertrag
+:::
+
+**Wird `equals()` überschrieben, sollte auch `hashCode()` (passend) überschrieben werden.**
+
+1.  Wenn `x.equals(y) == true`, dann auch `x.hashCode() == x.hashCode()`
+
+2.  Wenn `x.equals(y) == false`, _kann_ `x.hashCode() == x.hashCode()` sein
+    [(Unterschiedliche `hashCode()`-Werte für unterschiedliche Objekte verbessern allerdings die Leistung
+    von Hash-Berechnungen, etwa in einer `HashMap<K,V>`!)]{.notes}
+
+3.  [Es wird sehr empfohlen, dass `equals()` und `compareTo()` konsistente Ergebnisse liefern:]{.notes}
+    `x.compareTo(y) == 0` gdw. `x.equals(y) == true`
+    [(Dies _muss_ aber nicht zwingend eingehalten werden, sorgt dann aber u.U. für unerwartete Nebeneffekte
+    beim Umgang mit `Collection<T>` und `Map<K,V>!)]{.notes}
+
+::: notes
+[Beispiel: [hash_example.HashCodeExample](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java)]{.bsp}
+:::
 
 
 ::: notes
