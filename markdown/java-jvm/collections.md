@@ -189,7 +189,7 @@ for (Entity e : entities) { ... }
 entities.forEach(x -> ...);
 ```
 
-![](images/iteratoruml.gif){width="80%"}
+![](images/iteratoruml.png){width="80%"}
 
 ::: notes
 Die Klassen aus der Collection-API implementieren das Interface `Iterable<T>` und sind damit
