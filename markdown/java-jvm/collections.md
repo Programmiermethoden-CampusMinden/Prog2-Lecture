@@ -213,6 +213,9 @@ beispielsweise einen Binärbaum:
 Man kann auch selbst für eigene Klassen einen passenden `Iterator<T>` implementieren, der zum Ablaufen
 der Elemente der eigenen Klasse genutzt werden kann. Damit die eigene Klasse auch in einer `for`-Schleife
 genutzt werden kann, muss sie aber auch noch `Iterable<T>` implementieren.
+
+
+[Beispiel: [iterator_example.*](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/collections/iterator_example/)]{.bsp}
 :::
 
 
@@ -236,8 +239,6 @@ vermutlich die statischen Methoden in der Klasse `Collections` eher direkt als D
 
 ## _equqals()_ und _hashCode()_
 
-Beispiel /hash_example
-
 ::: notes
 *   `boolean equals(Object o)`ist eine Methode der Java `Object`-Class und wird genutzt um Objekte auf Gleichheit zu prüfen.
 *   Die Default Implementierung von `equals` gibt nur dann `true` zurück, wenn die beiden zu vergleichenden Objekte identisch sind.
@@ -252,6 +253,9 @@ Beispiel /hash_example
 *   Sind zwei Objekte nach der `equals` Methode nicht identisch, kann der Rückgabewert der `hashCode` Methode dennoch identisch sein. Unterschiedliche Werte für unterschiedliche Objekte verbessern allerdings die Leistung von Hash-Berechnungen wie `HashMap`.
 
 Auch wenn es meist sinvoll ist, ist es nicht nötig das `equals` und `compareTo` dasselbe Ergebnis liefern. `Comparable` ist für die Sortierung von Objekten gedacht, `equals` für einen Gleichheitscheck.
+
+
+[Beispiel: [hash_example.HashCodeExample](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java)]{.bsp}
 :::
 
 
@@ -285,8 +289,6 @@ Siehe auch [Interface Map](https://docs.oracle.com/en/java/javase/17/docs/api/ja
 
 ![](images/hashmap.png){width="80%"}
 
-Beispiel /hash_example
-
 ::: notes
 Eine `HashMap<K,V>` speichert die Elemente in mehreren einfach verketteten Listen. Dafür
 verwendet sie die innere Klasse `Node<K,V>`.
@@ -312,6 +314,9 @@ verteilt (vgl. [Class HashMap](https://docs.oracle.com/en/java/javase/17/docs/ap
 
 Die Unterklasse `LinkedHashMap<K,V>` kann Ordnung zwischen den Elementen halten. Dafür wird
 eine doppelt verkettete Liste verwendet.
+
+
+[Beispiel: [hash_example.HashCodeExample](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java)]{.bsp}
 :::
 
 
