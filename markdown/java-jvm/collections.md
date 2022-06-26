@@ -16,25 +16,17 @@ tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
 outcomes:
-  - k1: "**wuppie**"
-  - k2: "*foo*"
-  - k3: "fluppie"
+  - k2: "XXX"
+  - k3: "XXX"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1097696&client_id=FH-Bielefeld"
     name: "Quiz Collections (ILIAS)"
-assignments:
-  - topic: sheet01
 youtube:
   - link: ""
-    name: "VL "
-  - link: ""
-    name: "Demo "
-  - link: ""
-    name: "Demo "
+    name: "VL Collections"
 fhmedia:
   - link: ""
-    name: "VL "
-sketch: true
+    name: "VL Collections"
 ---
 
 
