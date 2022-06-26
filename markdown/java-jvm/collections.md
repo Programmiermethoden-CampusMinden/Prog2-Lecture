@@ -2,7 +2,7 @@
 type: lecture-cg
 title: "Java Collections Framework"
 menuTitle: "Collections"
-author: "André Matutat & Carsten Gips (FH Bielefeld)"
+author: "André Matutat (FH Bielefeld)"
 weight: 6
 readings:
   - key: "LernJava"
