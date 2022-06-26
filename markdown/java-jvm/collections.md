@@ -213,15 +213,21 @@ Beispiel /hash_example
 * Komplexitätswerte beziehen sich auf den Regelfall. Sonderfälle, wie das vergrößern des Array einer ArrayList, können für erhöhte Komplexität sorgen.
 :::
 
+
+## Wrap-Up
+
+TODO
+
+
+
+
+
+
+
 <!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
 ::: slides
 ## LICENSE
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   TODO (what, where, license)
 :::
