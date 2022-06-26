@@ -25,21 +25,28 @@ fhmedia:
 ---
 
 
-## Motivation
+## Motivation: Snippet aus einer Klasse im PM-Dungeon
 
 ```java
 private List <Entity> entities = new ArrayList<>();
-  public void add(Entity e){
+
+public void add(Entity e){
     if (!entities.contains(e))
-      entities.add(e);
-  }
+        entities.add(e);
+}
 ```
 
 ::: notes
-*   Reales Beispiel aus der Entwicklung des PM-Dungeon.
-*   Eine Liste kann ein Objekt mehrfach enthalte, dieses Verhalten ist aber an dieser Stelle nicht gewünscht deswegen findet beim Einfügen eine Prüfung statt.
-*   Eine Set hingegen, kann ein Objekt nur einmal enthalten.
-*   Hier wird die falsche Datenstruktur genutzt, um Entitäten zu speichern.
+Die war ein reales Beispiel aus der Entwicklung des PM-Dungeon.
+
+Es wurde eine `ArrayList` zum Verwalten der Entitäten genutzt. Allerdings sollte jedes
+Element nur einmal in der Liste vorkommen, deshalb wurde beim Einfügen einer Entität
+geprüft, ob diese bereits in der Liste ist.
+
+Hier wird die **falsche Datenstruktur** genutzt!
+
+Eine Liste kann ein Objekt mehrfach enthalten, eine Menge (_Set_) hingegen kann ein Objekt
+nur einmal enthalten.
 :::
 
 
