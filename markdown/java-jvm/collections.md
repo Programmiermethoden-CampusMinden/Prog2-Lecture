@@ -180,24 +180,39 @@ Die Methoden einer `LinkedList` sind nicht `synchronized`.
     *   Tatsächlich aber: `class Stack<E> extends Vector<E>`
 
 
-## Iterator
+## Iterierbarkeit: _Iterable_ und _Iterator_
+
+```java
+private List <Entity> entities = new ArrayList<>();
+
+for (Entity e : entities) { ... }
+entities.forEach(x -> ...);
+```
+
+![](images/iteratoruml.gif){width="80%"}
 
 ::: notes
+Die Klassen aus der Collection-API implementieren das Interface `Iterable<T>` und sind damit
+iterierbar. Man kann sie darüber in einer klassischen `for`-Schleife nutzen, oder mit der
+Methode `forEach()` direkt über die Sammlung laufen.
+
+Intern wird dabei ein passender `Iterator<T>` erzeugt, der die Elemente der Sammlung schrittweise
+mit der Methode `next()` zurückgibt. Mithilfe eines Cursor merkt sich der Iterator, bei welchem
+Eintrag der Datenstruktur er aktuell ist. Mit der Methode `hasNext()`kann geprüft werden, ob noch
+ein weiteres Element über den Iterator aus der Datenstruktur verfügbar ist.
+
+Mit `remove()`kann das letzte zurückgegebene Element aus der Datenstruktur entfernt werden. Diese
+Methode ist im Interface als Default-Methode implementiert.
+
+
+Damit kann man die Datenstrukturen auf eine von der Datenstruktur vorgegebene Weise ablaufen,
+beispielsweise einen Binärbaum:
+
 ![](images/iterator.gif){width="80%"}
-:::
 
-::: slides
-![](images/iterator.png){width="80%"}
-:::
-
-::: notes
-*   Ein Objekt welches das `Iterator<E>`Interface implementiert ist ein Iterator und läuft eine spezifische Datenstruktur sequenziell durch.
-*   Mithilfe eines Cursor merkt sich der Iterator, bei welchem Eintrag der Datenstruktur er aktuell ist.
-*   Mit `forEachRemaining(Consumer<? super E> action)` kann eine Aktion auf alle verbleibenden Elemente in der Datenstruktur angewendet werden. Diese Methode ist im Interface per Default implementiert.
-*   Mit `hasNext()`kann geprüft werden, ob noch ein weiteres Element in der Datenstruktur liegt.
-*   Mit `next()`wird der Cursor einen Eintrag weiter geschoben und das Element zurückgegeben.
-*   Mit `remove()`kann das letzte zurückgegebene Element aus der Datenstruktur entfernt werden. Diese Methode ist im Interface Default implementiert. Sie ist optional.
-*   Viele Collection in Java haben einen implementierten Interator der verwendet werden kann. z.B `vector#iterator()`
+Man kann auch selbst für eigene Klassen einen passenden `Iterator<T>` implementieren, der zum Ablaufen
+der Elemente der eigenen Klasse genutzt werden kann. Damit die eigene Klasse auch in einer `for`-Schleife
+genutzt werden kann, muss sie aber auch noch `Iterable<T>` implementieren.
 :::
 
 
