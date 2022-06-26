@@ -88,24 +88,46 @@ eingesehen werden.
 :::
 
 
-## _ArrayList_
+## Listen: _ArrayList_
+
+::: slides
+```java
+private List <Entity> entities = new ArrayList<>();
+```
+
+\bigskip
+
+![](images/arraylist.png){width="80%"}
+:::
 
 ::: notes
 ![](images/arraylist.gif){width="80%"}
 :::
 
 ::: notes
-*   Eine `ArrayList` ist ein sich dynamisch vergrößerndes Array.
-*   Einer `ArrayList` liegt einen Array zu Grunde, wenn das Array voll ist, wird das Array um 50% vergrößert.
-*   Daher kann auf ein Element per Index mit O(1) zugegriffen werden.
-*   Wird ein Element aus der Liste gelöscht, rücken alle Nachfolgenden Einträge in der Liste einen Index auf.
-*   Deshalb ist eine `ArrayList` effizient in der Abfrage und Manipulation von Einträgen aber weniger effizient beim Hinzufügen und löschen von Einträgen.
-*   Per Default wird eine `ArrayList` mit einem Array der Länge 10 angelegt, sobald das erste Element eingefügt wird. Man kann die Startgröße auch im Konstruktoraufruf der `ArrayList` bestimmen. `new ArrayList<>(20)`
-*   Die Methoden einer `ArrayList` sind nicht synchronized.
+Eine `ArrayList` ist von außen betrachtet ein sich dynamisch vergrößerndes Array.
+
+Intern wird allerdings ein statisches(!) Array benutzt. Wenn dieses Array voll ist,
+wird es um 50% vergrößert und alle Inhalte in das neue Array kopiert. Davon merkt
+man als Nutzer aber nichts.
+
+Dank es Arrays kann auf ein Element per Index mit O(1) zugegriffen werden.
+
+Wird ein Element aus der Liste gelöscht, rücken alle Nachfolgenden Einträge in der
+Liste einen Index auf (interner Kopiervorgang).
+
+Deshalb ist eine `ArrayList` effizient in der Abfrage und Manipulation von Einträgen,
+aber deutlich weniger effizient beim Hinzufügen und Löschen von Einträgen.
+
+Per Default wird eine `ArrayList` mit einem Array der Länge 10 angelegt, sobald das
+erste Element eingefügt wird. Man kann die Startgröße auch im Konstruktoraufruf der
+`ArrayList` bestimmen: beispielsweise `new ArrayList<>(20)`.
+
+Die Methoden einer `ArrayList` sind nicht synchronized.
 :::
 
 
-## _LinkedList_
+## Listen: _LinkedList_
 
 ::: notes
 ![](images/linkedlist.gif){width="80%"}
