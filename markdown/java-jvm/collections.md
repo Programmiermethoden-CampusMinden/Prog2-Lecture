@@ -5,13 +5,8 @@ menuTitle: "Collections"
 author: "André Matutat & Carsten Gips (FH Bielefeld)"
 weight: 6
 readings:
-  - key: "Bloch2018"
-  - key: "Java-11-documentation"
-  - key: "Java-11-tutorial"
-  - key: "Java-SE-tutorial"
-  - key: "Ullenboom2016"
-  - key: "Urma2014"
-  - key: "Juneau2017"
+  - key: "LernJava"
+    comment: "Tutorials > Mastering the API > The Collections Framework"
 tldr: |
   hier kommt eine tolle inline-zusammenfassung!
   Formatierung _könnte_ auch **gehen**?
