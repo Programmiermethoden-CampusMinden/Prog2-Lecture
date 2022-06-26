@@ -123,7 +123,7 @@ Per Default wird eine `ArrayList` mit einem Array der Länge 10 angelegt, sobald
 erste Element eingefügt wird. Man kann die Startgröße auch im Konstruktoraufruf der
 `ArrayList` bestimmen: beispielsweise `new ArrayList<>(20)`.
 
-Die Methoden einer `ArrayList` sind nicht synchronized.
+Die Methoden einer `ArrayList` sind nicht `synchronized`.
 :::
 
 
@@ -138,13 +138,26 @@ Die Methoden einer `ArrayList` sind nicht synchronized.
 :::
 
 ::: notes
-*   Eine `LinkedList` ist die Implementierung einer doppelt verketteten Liste (diese kenne Sie bereits aus ADS) in Java.
-*   Jeder Eintrag wird als Knoten repräsentiert, der den eigentlich Wert speichert und zusätzlich einen Verweis auf die Speicheradresse des Vorgänger und Nachfolger Knoten.
-*   Der Head der `LinkedList` zeigt auf den Anfang der Liste, der Nachfolge des letzten Eintrag ist immer `null.
-*   Der Zugriff auf ein Element in einer `LinkedList` beginnt immer am Anfang der Liste und ist daher O(n).
-*   Neue Elemente werden an das Ende der Liste eingefügt, indem der letzte Eintrag einen Verweis auf den neuen Knoten bekommt. O(1)
-*   Wenn ein Element aus der Liste gelöscht wird, muss die Liste neu verkettete werden. O(n)
-*   Die Methoden einer `LinkedList` sind nicht synchronized.
+Eine `LinkedList` ist eine Implementierung einer doppelt verketteten Liste (diese
+kennen Sie bereits aus ADS) in Java.
+
+Jeder Eintrag wird als Knoten repräsentiert, der den eigentlichen Wert speichert und
+zusätzlich je einen Verweis auf den Vorgänger- und Nachfolger-Knoten hat.
+
+Der Head der `LinkedList` zeigt auf den Anfang der Liste, der Nachfolger des letzten
+Eintrag ist immer `null.
+
+Für den Zugriff auf ein Element muß man die `LinkedList` traversieren und beginnt
+dabei am Anfang der Liste, deshalb ist ein Zugriff O(n).
+
+Neue Elemente können effizient an das Ende der Liste eingefügt werden, indem der letzte
+Eintrag einen Verweis auf den neuen Knoten bekommt: O(1) (sofern man sich nicht nur den
+Start der Liste merkt, sondern auch das aktuelle Ende).
+
+Wenn ein Element aus der Liste gelöscht wird, muss dieses zunächst gefundenen werden und
+die Liste danach neu verkettete werden: O(n).
+
+Die Methoden einer `LinkedList` sind nicht `synchronized`.
 :::
 
 
