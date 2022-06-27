@@ -12,7 +12,7 @@ tldr: |
         [zur Verwaltung einer Menge von Objekten]{.notes}
     *   Klasse `Collections`: Statische Hilfs-Methoden [(anwendbar auf `Collection<T>`s)]{.notes}
     *   `Iterable<T>` liefert einen `Iterator<T>` zur Iteration über eine `Collection<T>`
-    *   Interface `Map<K,V`: Speichern von Key/Value-Paaren
+    *   Interface `Map<K,V>`: Speichern von Key/Value-Paaren
     *   `equals()`-`hashCode()`-`compareTo()`-Vertrag beachten
 outcomes:
   - k2: "XXX"
@@ -79,11 +79,10 @@ Eine Übersicht, welche Collection welche Datenstruktur implementiert, kann unte
 ["Collection Implementations"](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/doc-files/coll-overview.html)
 eingesehen werden.
 
-*   `List<T>`-Collections sind eine geordnete Liste an Objekten. Objekte können an jeder
-    Stelle der Liste eingefügt, gelöscht oder geändert werden. Über einen Index-Zugriff
-    kann direkt auf ein spezifisches Objekt innerhalb der Liste zugegriffen werden.
-*   `Queue<T>`-Collections sind eine geordnete Liste an Objekten. Objekte können nur am
-    Ende der Queue hinzugefügt werden und nur am Anfang der Queue (der Head) gelesen
+*   `List<T>`-Collections sind eine geordnete Liste an Objekten. Per Index-Zugriff können
+    Objekte an jeder Stelle der Liste zugegriffen (oder hinzugefügt) werden.
+*   `Queue<T>`-Collections sind eine geordnete Sammlung von Objekten. Objekte können nur
+    am Ende der Queue hinzugefügt werden und nur am Anfang der Queue (der Head) gelesen
     oder entnommen werden ("first in first out").
 *   `Set<T>`-Collections sind eine (i.d.R.!) ungeordnete Menge an Objekten, die stets nur
     einmal in der Set enthalten sein können. In einem Set kann nicht direkt auf ein Objekt
@@ -103,7 +102,7 @@ Siehe auch [Interface Collection](https://docs.oracle.com/en/java/javase/17/docs
 
 ::: slides
 ```java
-private List <Entity> entities = new ArrayList<>();
+private List<Entity> entities = new ArrayList<>();
 ```
 
 \bigskip
@@ -184,6 +183,8 @@ Die Methoden einer `LinkedList<T>` sind nicht `synchronized`.
 
 *   `Stack<T>`:
     *   Schnittstelle: "last in first out"-Prinzip
+        *   `push(T)`: Pushe Element oben auf den Stack
+        *   `pop(): T`: Hole oberstes Element vom Stack
     *   Tatsächlich aber: `class Stack<E> extends Vector<E>`
 
 
@@ -253,7 +254,10 @@ vermutlich die statischen Methoden in der Klasse `Collections` eher direkt als D
 
 ::: notes
 _Hinweis_: Die abstrakten (Zwischen-) Klassen wurden im obigen UML aus Gründen der
-Übersichtlichkeit _nicht_ aufgeführt.
+Übersichtlichkeit _nicht_ aufgeführt. Aus den selben Gründen sind auch nur ausgewählte
+Methoden aufgenommen worden.
+
+_Hinweis_: Blau = Interface, Grün = Klasse.
 
 Eine `Map<K,V>` speichert Objekte als Key/Value-Paar mit den Typen `K` (Key) und `V` (Value).
 
@@ -296,7 +300,7 @@ Implementierungsdetail: Wenn die Listen zu groß werden, wird die Hashtabelle ne
 ungefähr der doppelten Anzahl der Einträge (Buckets) und die alten Einträge per _Re-Hash_ neu
 verteilt (vgl. [Class HashMap](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html)).
 
-`HashMap<K,V>` Methoden sind nicht synchronized.
+`HashMap<K,V>` Methoden sind nicht `synchronized`.
 
 `HashMap<K,V>` unterstützt einen `null`-Key. Es darf beliebig viele `null`-Values geben.
 
@@ -312,7 +316,7 @@ eine doppelt verkettete Liste verwendet.
 
 *   Nicht zu verwechseln mit der Datenstruktur: Hash-Tabellen (!)
 *   `Hashtable<K,V>` ist vergleichbar mit einer `HashMap<K,V>`
-*   `Hashtable<K,V>`-Methoden sind synchronized
+*   `Hashtable<K,V>`-Methoden sind `synchronized`
 *   Kein Key oder Value darf `null` sein
 
 
@@ -357,7 +361,7 @@ Spielregeln:
 3.  `x.compareTo(y) = 0`  wenn `x` "gleich"  als `y` ist
 4.  Symmetrie: `signum(x.compareTo(y)) == -signum(y.compareTo(x))`
 4.  Transitivität: Wenn `x.compareTo(y) > 0` und `y.compareTo(z) > 0`, dann auch `x.compareTo(z) > 0`
-5.  Wenn `x.compareTo(y)==0`, dann auch `signum(x.compareTo(z)) == signum(y.compareTo(z))`
+5.  Wenn `x.compareTo(y) == 0`, dann auch `signum(x.compareTo(z)) == signum(y.compareTo(z))`
 
 ### Der _equals()_-_hashCode()_-_compareTo()_-Vertrag
 :::::::::
@@ -371,16 +375,16 @@ Spielregeln:
 \bigskip
 \bigskip
 
-1.  Wenn `x.equals(y) == true`, dann auch `x.hashCode() == x.hashCode()`
+1.  Wenn `x.equals(y) == true`, dann _muss_ auch `x.hashCode() == y.hashCode()`
 
-2.  Wenn `x.equals(y) == false`, _kann_ `x.hashCode() == x.hashCode()` sein
+2.  Wenn `x.equals(y) == false`, _sollte_ `x.hashCode() != y.hashCode()` sein
     [(Unterschiedliche `hashCode()`-Werte für unterschiedliche Objekte verbessern allerdings die Leistung
     von Hash-Berechnungen, etwa in einer `HashMap<K,V>`!)]{.notes}
 
 3.  [Es wird sehr empfohlen, dass `equals()` und `compareTo()` konsistente Ergebnisse liefern:]{.notes}
     `x.compareTo(y) == 0` gdw. `x.equals(y) == true`
     [(Dies _muss_ aber nicht zwingend eingehalten werden, sorgt dann aber u.U. für unerwartete Nebeneffekte
-    beim Umgang mit `Collection<T>` und `Map<K,V>!)]{.notes}
+    beim Umgang mit `Collection<T>` und `Map<K,V>`!)]{.notes}
 
 
 ::: notes
@@ -404,7 +408,7 @@ Komplexitätswerte beziehen sich auf den Regelfall. Sonderfälle wie das Vergrö
     [zur Verwaltung einer Menge von Objekten]{.notes}
 *   Klasse `Collections`: Statische Hilfs-Methoden [(anwendbar auf `Collection<T>`s)]{.notes}
 *   `Iterable<T>` liefert einen `Iterator<T>` zur Iteration über eine `Collection<T>`
-*   Interface `Map<K,V`: Speichern von Key/Value-Paaren
+*   Interface `Map<K,V>`: Speichern von Key/Value-Paaren
 *   `equals()`-`hashCode()`-`compareTo()`-Vertrag beachten
 
 
