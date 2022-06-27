@@ -56,10 +56,14 @@ Objekt nur _einmal_ enthalten.
 
 ## Collection-API in Java
 
+![](images/collection.png){width="80%"}
 
 ::: notes
 _Hinweis_: Die abstrakten (Zwischen-) Klassen wurden im obigen UML aus Gründen der
-Übersichtlichkeit _nicht_ aufgeführt.
+Übersichtlichkeit _nicht_ aufgeführt. Aus den selben Gründen sind auch nur ausgewählte
+Methoden aufgenommen worden.
+
+_Hinweis_: Blau = Interface, Grün = Klasse.
 
 `Collection<T>` ist ein zentrales Interface im JDK und stellt die gemeinsame API der
 Collection-Klassen dar. Klassen, die `Collection<T>` implementieren, speichern und
