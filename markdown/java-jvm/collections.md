@@ -163,7 +163,7 @@ Jeder Eintrag wird als Knoten repräsentiert, der den eigentlichen Wert speicher
 zusätzlich je einen Verweis auf den Vorgänger- und Nachfolger-Knoten hat.
 
 Der Head der `LinkedList<T>` zeigt auf den Anfang der Liste, der Nachfolger des letzten
-Eintrag ist immer `null.
+Eintrag ist immer `null`.
 
 Für den Zugriff auf ein Element muß man die `LinkedList<T>` traversieren und beginnt
 dabei am Anfang der Liste, deshalb ist ein Zugriff O(n).
