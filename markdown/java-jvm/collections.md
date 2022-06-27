@@ -122,9 +122,8 @@ private List<Entity> entities = new ArrayList<>();
 
 ::: notes
 ![](images/arraylist.gif){width="80%"}
-:::
 
-::: notes
+
 Eine `ArrayList<T>` ist von außen betrachtet ein sich dynamisch vergrößerndes Array.
 
 Intern wird allerdings ein statisches(!) Array benutzt. Wenn dieses Array voll ist,
@@ -149,15 +148,14 @@ Die Methoden einer `ArrayList<T>` sind nicht `synchronized`.
 
 ## Listen: _LinkedList_
 
-::: notes
-![](images/linkedlist.gif){width="80%"}
-:::
-
 ::: slides
 ![](images/linkedlist.png){width="80%"}
 :::
 
 ::: notes
+![](images/linkedlist.gif){width="80%"}
+
+
 Eine `LinkedList<T>` ist eine Implementierung einer doppelt verketteten Liste (diese
 kennen Sie bereits aus ADS) in Java.
 
@@ -226,7 +224,7 @@ Methode ist im Interface als Default-Methode implementiert.
 
 
 Damit kann man die Datenstrukturen auf eine von der Datenstruktur vorgegebene Weise ablaufen,
-beispielsweise einen Binärbaum:
+beispielsweise einen Binärbaum.
 
 ![](images/iterator.gif){width="80%"}
 
