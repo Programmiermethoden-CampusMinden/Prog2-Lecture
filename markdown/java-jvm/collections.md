@@ -8,12 +8,14 @@ readings:
   - key: "LernJava"
     comment: "Tutorials > Mastering the API > The Collections Framework"
 tldr: |
-    *   Interface `Collection<T>`: Schnittstelle für Datenstrukturen/Sammlungen
-        [zur Verwaltung einer Menge von Objekten]{.notes}
-    *   Klasse `Collections`: Statische Hilfs-Methoden [(anwendbar auf `Collection<T>`s)]{.notes}
-    *   `Iterable<T>` liefert einen `Iterator<T>` zur Iteration über eine `Collection<T>`
-    *   Interface `Map<K,V>`: Speichern von Key/Value-Paaren
-    *   `equals()`-`hashCode()`-`compareTo()`-Vertrag beachten
+    Die Collection-API bietet verschiedene Sammlungen an, mit denen man Objekte speichern kann: Listen, Queues, Mengen, ...
+    Für diese Typen gibt es jeweils verschiedene Implementierungen mit einem spezifischen Verhalten. Zusätzlich gibt es noch
+    Maps für das Speichern von Key/Value-Paaren, dabei wird für die Keys eine Hash-Tabelle eingesetzt.
+
+    Die Hilfs-Klasse `Collections` bietet statische Hilfs-Methoden, die auf `Collection<T>`s anwendbar sind.
+
+    Wenn man eigene Klassen in der Collection-API oder in Map benutzen möchte, sollte man den "equals-hashCode-Contract"
+    berücksichtigen.
 outcomes:
   - k2: "XXX"
   - k3: "XXX"
