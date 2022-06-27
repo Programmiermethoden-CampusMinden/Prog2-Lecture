@@ -268,6 +268,10 @@ Methoden aufgenommen worden.
 
 _Hinweis_: Blau = Interface, Grün = Klasse.
 
+_Hinweis_: Tatsächlich ist der Typ des Keys in den Methoden `get()` und `remove()` mit `Object`
+spezifiziert und nicht mit dem Typ-Parameter `K`. Das ist aus meiner Sicht eine Inkonsistenz in
+der API.
+
 Eine `Map<K,V>` speichert Objekte als Key/Value-Paar mit den Typen `K` (Key) und `V` (Value).
 
 Dabei sind die Keys in einer Map einzigartig und werden verwendet, um auf das jeweilige Value
