@@ -1,0 +1,13 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>130</x><y>180</y><w>320</w><h>200</h></coordinates><panel_attributes>Collections
+--
+--
+addAll(c: Collection&lt;? super T&gt;, elements: T...): boolean
+replaceAll(list: List&lt;T&gt;, oldVal: T, newVal: T): boolean
+rotate(list: List&lt;?&gt;, distance: int): void
+shuffle(list: List&lt;?&gt;): void
+sort(list: List&lt;?&gt;, c: Comparator&lt;? super T&gt;): void
+swap(list. List&lt;?&gt;, i: int, j: int): void
+frequency(c: Collection&lt;?&gt;, o: Object): int
+fill(list: List&lt;? super T&gt;, obj: T): void
+disjoint(c1: Collection&lt;?&gt;, c2: Collection&lt;?&gt;): boolean
+copy(dest: List&lt;? super T&gt;, src: List&lt;? extends T&gt;): void</panel_attributes><additional_attributes></additional_attributes></element></diagram>
