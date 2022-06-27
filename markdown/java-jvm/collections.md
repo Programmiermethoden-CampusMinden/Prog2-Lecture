@@ -32,11 +32,10 @@ fhmedia:
 ## Motivation: Snippet aus einer Klasse im PM-Dungeon
 
 ```java
-private List <Entity> entities = new ArrayList<>();
+private List<Entity> entities = new ArrayList<>();
 
 public void add(Entity e){
-    if (!entities.contains(e))
-        entities.add(e);
+    if (!entities.contains(e)) entities.add(e);
 }
 ```
 
