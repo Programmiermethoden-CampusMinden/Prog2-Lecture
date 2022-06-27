@@ -56,7 +56,7 @@ Objekt nur _einmal_ enthalten.
 
 ## Collection-API in Java
 
-![](images/collection.png){width="80%"}
+![](images/collection.png){width="72%"}
 
 ::: notes
 _Hinweis_: Die abstrakten (Zwischen-) Klassen wurden im obigen UML aus Gründen der
@@ -232,7 +232,7 @@ genutzt werden kann, muss sie aber auch noch `Iterable<T>` implementieren.
 
 ## Hilfsklasse _Collections_
 
-![](images/collections.png){width="75%" web_width="50%"}
+![](images/collections.png){width="70%" web_width="50%"}
 
 ::: notes
 `Collections` ist eine Utility-Klasse mit statischen Methoden, die auf `Collection<T>`s ausgeführt werden.
