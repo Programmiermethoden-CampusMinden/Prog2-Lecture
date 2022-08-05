@@ -62,11 +62,11 @@ fhmedia:
 \bigskip
 \vfill
 
-> Refactoring is a change made to the internal structure of software to make it
-> easier to understand and cheaper to modify without changing its observable
+> Refactoring (noun): a change made to the internal structure of software to make
+> it easier to understand and cheaper to modify without changing its observable
 > behaviour.
 >
-> \hfill\ [Quelle: [@Fowler2011]]{.origin}
+> \hfill\ [Quelle: [@Fowler2011, p. 53]]{.origin}
 
 ::: notes
 **Refactoring:** Änderungen an der [**inneren Struktur**]{.alert} einer Software
@@ -465,6 +465,6 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 ### Exceptions
 *   Citation "_Refactoring ist, wenn ..._": Andreas Bogk, in: Lutz Donnerhacke: "Fachbegriffe der Informatik"  [(altlasten.lutz.donnerhacke.de)](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html)
-*   Citation "_Refactoring is a change ..._": [@Fowler2011]
+*   Citation "_Refactoring (noun): a change ..._": [@Fowler2011, p. 53]
 *   Citation "_Rule of Three_": [@Fowler2011]
 :::
