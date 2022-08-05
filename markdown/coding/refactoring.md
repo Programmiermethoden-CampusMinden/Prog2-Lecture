@@ -56,7 +56,7 @@ fhmedia:
 > Refactoring ist, wenn einem auffällt, daß der Funktionsname `foobar`
 > ziemlich bescheuert ist, und man die Funktion in `sinus` umbenennt.
 >
-> \hfill\ [Quelle: Andreas Bogk, in: Lutz Donnerhacke: "Fachbegriffe der Informatik"  [[(altlasten.lutz.donnerhacke.de)](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html)]{.notes}]{.origin}
+> \hfill\ [Quelle: ["356: Refactoring"](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html#356) by [Andreas Bogk](andreas@andreas.org) on Lutz Donnerhacke: "Fachbegriffe der Informatik"]{.origin}
 
 \pause
 \bigskip
@@ -464,7 +464,7 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 \bigskip
 
 ### Exceptions
-*   Citation "_Refactoring ist, wenn ..._": Andreas Bogk, in: Lutz Donnerhacke: "Fachbegriffe der Informatik"  [(altlasten.lutz.donnerhacke.de)](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html)
+*   Citation "_Refactoring ist, wenn ..._": ["356: Refactoring"](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html#356) by [Andreas Bogk](andreas@andreas.org) on Lutz Donnerhacke: "Fachbegriffe der Informatik"
 *   Citation "_Refactoring (noun): a change ..._": [@Fowler2011, p. 53]
 *   Citation "_The Rule of Three_": [@Fowler2011, p. 58]
 :::
