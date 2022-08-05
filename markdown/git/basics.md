@@ -350,7 +350,7 @@ Further paragraphs come after blank lines.
 \normalsize
 \smallskip
 
-[Quelle: [Tim Pope](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)]{.origin}
+[Quelle: ["A Note About Git Commit Messages"](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) by [Tim Pope](https://tpo.pe/) on tbaggery.com]{.origin}
 
 ::: notes
 Denken Sie sich die Commit-Message als E-Mail an einen zukünftigen Entwickler, der das
@@ -386,4 +386,9 @@ Siehe auch ["How to Write a Git Commit Message"](https://cbea.ms/git-commit/).
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
+
+\bigskip
+
+### Exceptions
+*   Citation ["_A Note About Git Commit Messages_"](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) by [Tim Pope](https://tpo.pe/) on tbaggery.com
 :::
