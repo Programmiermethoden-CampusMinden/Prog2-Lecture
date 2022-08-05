@@ -56,17 +56,17 @@ fhmedia:
 > Refactoring ist, wenn einem auffällt, daß der Funktionsname `foobar`
 > ziemlich bescheuert ist, und man die Funktion in `sinus` umbenennt.
 >
-> \hfill\ [Quelle: Andreas Bogk, in: Lutz Donnerhacke: "Fachbegriffe der Informatik"  [[(altlasten.lutz.donnerhacke.de)](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html)]{.notes}]{.origin}
+> \hfill\ [Quelle: ["356: Refactoring"](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html#356) by [Andreas Bogk](mailto:andreas@andreas.org) on Lutz Donnerhacke: "Fachbegriffe der Informatik"]{.origin}
 
 \pause
 \bigskip
 \vfill
 
-> Refactoring is a change made to the internal structure of software to make it
-> easier to understand and cheaper to modify without changing its observable
+> Refactoring (noun): a change made to the internal structure of software to make
+> it easier to understand and cheaper to modify without changing its observable
 > behaviour.
 >
-> \hfill\ [Quelle: [@Fowler2011]]{.origin}
+> \hfill\ [Quelle: [@Fowler2011, p. 53]]{.origin}
 
 ::: notes
 **Refactoring:** Änderungen an der [**inneren Struktur**]{.alert} einer Software
@@ -124,7 +124,7 @@ fhmedia:
 ::: cbox
 > "Three strikes and you refactor."
 >
-> \hfill\ [Quelle: [@Fowler2011]: "Rule of Three"]{.origin}
+> \hfill\ [Quelle: [@Fowler2011, p. 58]: "The Rule of Three"]{.origin}
 :::
 
 ::: notes
@@ -464,7 +464,7 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 \bigskip
 
 ### Exceptions
-*   Citation "_Refactoring ist, wenn ..._": Andreas Bogk, in: Lutz Donnerhacke: "Fachbegriffe der Informatik"  [(altlasten.lutz.donnerhacke.de)](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html)
-*   Citation "_Refactoring is a change ..._": [@Fowler2011]
-*   Citation "_Rule of Three_": [@Fowler2011]
+*   Citation "_Refactoring ist, wenn ..._": ["356: Refactoring"](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html#356) by [Andreas Bogk](mailto:andreas@andreas.org) on Lutz Donnerhacke: "Fachbegriffe der Informatik"
+*   Citation "_Refactoring (noun): a change ..._": [@Fowler2011, p. 53]
+*   Citation "_The Rule of Three_": [@Fowler2011, p. 58]
 :::
