@@ -124,7 +124,7 @@ fhmedia:
 ::: cbox
 > "Three strikes and you refactor."
 >
-> \hfill\ [Quelle: [@Fowler2011]: "Rule of Three"]{.origin}
+> \hfill\ [Quelle: [@Fowler2011, p. 58]: "The Rule of Three"]{.origin}
 :::
 
 ::: notes
@@ -466,5 +466,5 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 ### Exceptions
 *   Citation "_Refactoring ist, wenn ..._": Andreas Bogk, in: Lutz Donnerhacke: "Fachbegriffe der Informatik"  [(altlasten.lutz.donnerhacke.de)](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html)
 *   Citation "_Refactoring (noun): a change ..._": [@Fowler2011, p. 53]
-*   Citation "_Rule of Three_": [@Fowler2011]
+*   Citation "_The Rule of Three_": [@Fowler2011, p. 58]
 :::
