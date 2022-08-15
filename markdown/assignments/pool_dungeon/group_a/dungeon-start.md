@@ -24,6 +24,10 @@ Am Ende dieser Aufgaben sollen Sie ein lauffähiges Gerüst für Ihr Dungeon-Spi
 
 Implementieren Sie mithilfe des [Quickstart-Guides](https://github.com/Programmiermethoden/dungeon-starter/blob/master/documentation/quickstart_de.md) Ihren ersten Dungeon und Ihren Helden.
 
+<!-- TODO
+Repo "dungeon-starter" gibt es nicht mehr, das wird im "PM-Dungeon" weiter gepflegt. Die Doku existiert aber dort noch nicht.
+-->
+
 **Punkte**: 3P
 
 
