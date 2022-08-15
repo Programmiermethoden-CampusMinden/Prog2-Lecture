@@ -44,7 +44,7 @@ outcomes:
   - k3: "Erstellen eigener funktionaler Interfaces"
   - k3: "Einsatz von Lambda-Ausdrücken"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1087248&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106523&client_id=FH-Bielefeld"
     name: "Quiz Lambda-Ausdrücke und funktionale Interfaces (ILIAS)"
 assignments:
   - topic: sheet08

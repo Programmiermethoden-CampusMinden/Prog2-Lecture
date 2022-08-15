@@ -14,7 +14,7 @@ tldr: |
 outcomes:
   - k2: "Unterschied zwischen Frameworks und Libraries verstehen"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1086984&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106234&client_id=FH-Bielefeld"
     name: "Quiz Frameworks (ILIAS)"
 youtube:
   - link: "https://youtu.be/AV4YuF2Axgk"

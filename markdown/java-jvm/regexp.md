@@ -36,7 +36,7 @@ outcomes:
   - k3: "Nutzung von Quantifizierern"
   - k3: "Zusammenbauen von komplexen Ausdrücken (u.a. mit Gruppen)"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1088505&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106518&client_id=FH-Bielefeld"
     name: "Quiz RegExp (ILIAS)"
 assignments:
   - topic: sheet08

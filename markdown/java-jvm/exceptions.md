@@ -49,7 +49,7 @@ outcomes:
   - k3: "Umgang mit Exceptions"
   - k3: "Eigene Exceptions schreiben"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1093221&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106516&client_id=FH-Bielefeld"
     name: "Quiz Exceptions (ILIAS)"
 youtube:
   - link: "https://youtu.be/k6EhexEvJDY"

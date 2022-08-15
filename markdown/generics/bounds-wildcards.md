@@ -28,7 +28,7 @@ tldr: |
 outcomes:
   - k3: "Umgang mit Wildcards und Bounds bei generischen Klassen/Methoden"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1044734&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106236&client_id=FH-Bielefeld"
     name: "Quiz Generics: Bounds & Wildcards (ILIAS)"
 assignments:
   - topic: sheet03

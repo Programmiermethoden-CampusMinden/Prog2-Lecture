@@ -36,7 +36,7 @@ outcomes:
   - k3: "Erstellen von Interfaces mit Default-Methoden"
   - k3: "Regeln zum Auflösen der Mehrfachvererbung"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085302&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106522&client_id=FH-Bielefeld"
     name: "Quiz Default-Methoden (ILIAS)"
 assignments:
   - topic: sheet08

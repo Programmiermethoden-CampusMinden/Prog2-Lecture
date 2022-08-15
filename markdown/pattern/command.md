@@ -29,7 +29,7 @@ outcomes:
   - k2: "Aufbau des Command-Patterns"
   - k3: "Anwendung des Command-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1091088&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106532&client_id=FH-Bielefeld"
     name: "Quiz Command-Pattern (ILIAS)"
 assignments:
   - topic: sheet09

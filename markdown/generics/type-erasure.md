@@ -22,7 +22,7 @@ tldr: |
 outcomes:
   - k2: "Typ-Löschung und Auswirkungen"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1044899&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106237&client_id=FH-Bielefeld"
     name: "Quiz Generics: Type Erasure (ILIAS)"
 assignments:
   - topic: sheet03

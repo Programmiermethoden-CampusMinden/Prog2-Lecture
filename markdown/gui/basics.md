@@ -31,7 +31,7 @@ tldr: |
 outcomes:
   - k2: "Unterschied und Zusammenhang zwischen Swing und AWT"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1085303&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
   - link: "https://youtu.be/ynwu6LuSLgQ"

@@ -47,7 +47,7 @@ outcomes:
   - k2: "Aufbau des Visitor-Patterns (Besucher-Entwurfsmusters)"
   - k3: "Anwendung des Visitor-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1089939&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106543&client_id=FH-Bielefeld"
     name: "Quiz Visitor-Pattern (ILIAS)"
 assignments:
   - topic: sheet09

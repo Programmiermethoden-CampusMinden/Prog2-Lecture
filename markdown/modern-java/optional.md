@@ -41,7 +41,7 @@ outcomes:
   - k3: "Erzeugen von Optionals mit `Optional.ofNullable()`"
   - k3: "Zugriff auf Optionals entweder direkt oder per Stream-API"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1091854&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106526&client_id=FH-Bielefeld"
     name: "Quiz Optional (ILIAS)"
 assignments:
   - topic: sheet09

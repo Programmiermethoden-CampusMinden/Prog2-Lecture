@@ -30,7 +30,7 @@ tldr: |
 outcomes:
   - k3: "Fehlersuche mit Git Bisect"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1045000&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106247&client_id=FH-Bielefeld"
     name: "Quiz Git Bisect (ILIAS)"
 youtube:
   - link: "https://youtu.be/9XWwefIokPg"

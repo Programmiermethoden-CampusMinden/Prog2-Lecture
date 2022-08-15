@@ -27,7 +27,7 @@ outcomes:
   - k3: "Erklären Sie die 'Spielregeln' für die eigene Implementierung von `compareTo()`."
   - k3: "Wie müssen und wie sollten `equals()`, `hashCode()` und `compareTo()` miteinander arbeiten?"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1097696&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106513&client_id=FH-Bielefeld"
     name: "Quiz Collections (ILIAS)"
 youtube:
   - link: "https://youtu.be/QRYVt9FNY-4"

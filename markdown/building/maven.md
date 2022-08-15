@@ -28,7 +28,7 @@ outcomes:
   - k3: "Einbinden externer Bibliotheken als Dependencies"
   - k3: "Ausführen von Maven-Goals aus IDE heraus und Einbindung als Builder"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1094826&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106215&client_id=FH-Bielefeld"
     name: "Quiz Apache Maven (ILIAS)"
 youtube:
   - link: "`https://youtu.be/YAW-_Wi4LDY`{=markdown}"

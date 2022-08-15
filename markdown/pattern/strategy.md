@@ -30,7 +30,7 @@ tldr: |
 outcomes:
   - k3: "Strategie-Entwurfsmuster praktisch anwenden"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1049784&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106537&client_id=FH-Bielefeld"
     name: "Quiz Strategy-Pattern (ILIAS)"
 assignments:
   - topic: sheet03

@@ -30,7 +30,7 @@ outcomes:
   - k3: "Prüfung von Exceptions"
   - k3: "Aufbau von Testsuiten mit JUnit"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1070318&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
     name: "Quiz JUnit-Basics (ILIAS)"
 assignments:
   - topic: sheet04
