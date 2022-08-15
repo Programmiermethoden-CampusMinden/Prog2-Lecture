@@ -69,7 +69,7 @@ public class B extends A {
 }
 ```
 
-[[Beispiel: [annotations.B](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java)]{.bsp}]{.notes}
+[[Beispiel: [annotations.B](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java)]{.bsp}]{.notes}
 
 \pause
 \bigskip
@@ -108,7 +108,7 @@ generieren: `Preferences > Java > Code Style > Add @Override annotation ...`.
     *   Webservices: `@WebService`, `@WebMethod`
     *   ...
 
-[Demo: [annotations.B](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java): \@Override, \@Deprecated]{.bsp}
+[Demo: [annotations.B](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java): \@Override, \@Deprecated]{.bsp}
 
 ::::::::: notes
 Jetzt schauen wir uns erst einmal die Auswirkungen von `@Override` und `@Deprecated`
@@ -169,7 +169,7 @@ Hier noch einmal exemplarisch die wichtigsten Elemente, die an
 "`public`" sichtbaren Methoden verwendet werden.
 :::
 
-[[Beispiel: [annotations.B](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java) (Javadoc)]{.bsp}]{.notes}
+[[Beispiel: [annotations.B](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java) (Javadoc)]{.bsp}]{.notes}
 
 
 ## \@NotNull mit IntelliJ
@@ -215,7 +215,7 @@ public void foo(@NotNull Object o) {
 }
 ```
 
-[Demo: [annotations.WuppieAnnotation](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/WuppieAnnotation.java): \@NotNull]{.bsp}
+[Demo: [annotations.WuppieAnnotation](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/WuppieAnnotation.java): \@NotNull]{.bsp}
 
 ::: notes
 ### IntelliJ inferiert mit \@NotNull mögliche _null_-Werte
@@ -244,7 +244,7 @@ public @interface MyThirdAnnotation {
 public class C {}
 ```
 
-[Demo: [annotations.C](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java)]{.bsp}
+[Demo: [annotations.C](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java)]{.bsp}
 
 ::::::::: notes
 ### Definition einer Annotation
@@ -403,7 +403,7 @@ public class Foo extends AbstractProcessor {
 }
 ```
 
-[Demo: [annotations.C](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java) und [annotations.Foo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/Foo.java), [META-INF](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/META-INF/)]{.bsp}
+[Demo: [annotations.C](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java) und [annotations.Foo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/Foo.java), [META-INF](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/META-INF/)]{.bsp}
 
 ::::::::: notes
 1.  Der Annotation-Processor sollte von `AbstractProcessor` ableiten

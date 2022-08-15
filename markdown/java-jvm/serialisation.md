@@ -216,7 +216,7 @@ Weitere Links:
     *   https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html
 :::
 
-[Demo: [serial.SerializableStudi](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/serial/SerializableStudi.java)]{.bsp}
+[Demo: [serial.SerializableStudi](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/serial/SerializableStudi.java)]{.bsp}
 
 
 ## Wrap-Up

@@ -221,7 +221,7 @@ Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche St
 mit denen wir diesen Parsetree traversieren ... Und wir müssen für _jede_ Erweiterung
 immer _alle_ Expression-Klassen anpassen!
 
-[Beispiel: [direct.DemoExpr](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/visitor/direct/DemoExpr.java)]{.bsp}
+[Beispiel: [direct.DemoExpr](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/direct/DemoExpr.java)]{.bsp}
 :::
 
 \vfill

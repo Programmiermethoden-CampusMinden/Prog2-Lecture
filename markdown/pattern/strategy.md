@@ -144,7 +144,7 @@ public class Studi {
 }
 ```
 
-[Konsole [strategy.SortDefault](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/strategy/SortDefault.java), [strategy.SortOwnCrit](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/strategy/SortOwnCrit.java)]{.bsp}
+[Konsole [strategy.SortDefault](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/strategy/SortDefault.java), [strategy.SortOwnCrit](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/strategy/SortOwnCrit.java)]{.bsp}
 
 _Anmerkung_:
 Die Interfaces `Comparable` und `Comparator` und deren Nutzung wurde(n) in
@@ -180,7 +180,7 @@ Implementieren Sie das Strategie-Muster für eine Übersetzungsfunktion:
 ![](images/translator.png){width="80%"}
 :::
 
-[Konsole [strategy.TranslatorExample](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/strategy/TranslatorExample.java)]{.bsp}
+[Konsole [strategy.TranslatorExample](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/strategy/TranslatorExample.java)]{.bsp}
 
 
 ## Wrap-Up

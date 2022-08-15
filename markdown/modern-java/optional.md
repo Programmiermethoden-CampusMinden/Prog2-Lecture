@@ -226,7 +226,7 @@ _deprecated_.
 _Anmerkung_: Da `getBestStudi()` eine `NullPointerException` werfen kann, sollte der
 Aufruf möglicherweise in ein `try/catch` verpackt werden. Dito für `orElseThrow()`.
 
-[Beispiel: [optional.traditional.Demo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/optional/traditional/Demo.java)]{.bsp}
+[Beispiel: [optional.traditional.Demo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/optional/traditional/Demo.java)]{.bsp}
 :::
 
 
@@ -253,7 +253,7 @@ public static void main(String... args) {
 ```
 
 ::: notes
-[Beispiel: [optional.streams.Demo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/optional/streams/Demo.java)]{.bsp}
+[Beispiel: [optional.streams.Demo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/optional/streams/Demo.java)]{.bsp}
 
 Im Beispiel wird in `getBestStudi()` die Sammlung als Stream betrachtet, über die
 Methode `sorted()` und den Lamda-Ausdruck für den `Comparator` sortiert ("falsch"

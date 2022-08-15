@@ -244,7 +244,7 @@ Die Funktionsweise der einzelnen Klassen wird in der Demo kurz angerissen. Schau
 zusätzlich in die Dokumentation.
 :::
 
-[Demo: Einbinden von Libs, [cli.Args](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/cli/Args.java)]{.bsp}
+[Demo: Einbinden von Libs, [cli.Args](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/cli/Args.java)]{.bsp}
 
 
 ## Laden und Speichern von Konfigurationsdaten
@@ -306,7 +306,7 @@ gewicht=12
     ```
     :::
 
-[Demo: [cli.Props](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/cli/Props.java), Hinweis auf "Apache Commons Configuration"]{.bsp}
+[Demo: [cli.Props](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/cli/Props.java), Hinweis auf "Apache Commons Configuration"]{.bsp}
 
 ::: notes
 `java.util.Properties` sind eine einfache und im JDK bereits eingebaute Möglichkeit,

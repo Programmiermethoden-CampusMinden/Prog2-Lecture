@@ -300,9 +300,9 @@ TODO
 ```
 
 Sie können sich ein
-[Template](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/org/lerntagebuch.md)
+[Template](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/lerntagebuch.md)
 und ein
-[ausgefülltes Beispiel](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/org/lerntagebuch_beispiel.md)
+[ausgefülltes Beispiel](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/lerntagebuch_beispiel.md)
 herunterladen.
 
 ### Nachbearbeitung Dungeon-Aufgaben
@@ -344,7 +344,7 @@ Sie können entweder Fehler beheben oder Features implementieren, die Sie gerne 
 
 Bei der Bepunktung betrachten wir nicht nur den Fix/Code selbst, sondern auch Ihren Umgang mit Git und die Qualität der Kommunikation innerhalb von GitHub (Issue-Beschreibungen, PR-Beschreibungen etc.) sowie den Umfang des Problems. Für einen akzeptierten PR können Sie bis zu 5 Bonus-Punkte erhalten. Es lohnt sich also, aktiv beim Gestalten des Frameworks mitzuhelfen.
 
-Weitere Informationen darüber, wie Sie am Framework mitarbeiten können, finden Sie in der [Core-CONTRIBUTING.md](https://github.com/PM-Dungeon/core/blob/master/CONTRIBUTING.md).
+Weitere Informationen darüber, wie Sie am Framework mitarbeiten können, finden Sie in der [CONTRIBUTING.md](https://github.com/Programmiermethoden/PM-Dungeon/blob/master/CONTRIBUTING.md).
 
 
 ## Regelung für Wiederholer

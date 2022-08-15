@@ -83,7 +83,7 @@ fhmedia:
     radioGroup.add(b1);    radioGroup.add(b2);
     ```
 
-[Demo: [widgets.RadioButtonDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/RadioButtonDemo.java)]{.bsp}
+[Demo: [widgets.RadioButtonDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/widgets/RadioButtonDemo.java)]{.bsp}
 
 
 ## Dateien oder Verzeichnisse auswählen: _JFileChooser_
@@ -114,7 +114,7 @@ if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
     *   `String getDescription()`
 :::
 
-[Demo: [widgets.FileChooserDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/FileChooserDemo.java)]{.bsp}
+[Demo: [widgets.FileChooserDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/widgets/FileChooserDemo.java)]{.bsp}
 
 
 ## TabbedPane und Scroll-Bars
@@ -154,7 +154,7 @@ if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
 *   Wirkung der Scrollpane zeigen (letzter Tab)
 -->
 
-[Demo: [widgets.TabbedPaneDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/TabbedPaneDemo.java)]{.bsp}
+[Demo: [widgets.TabbedPaneDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/widgets/TabbedPaneDemo.java)]{.bsp}
 
 
 ## Dialoge mit _JOptionPane_
@@ -182,7 +182,7 @@ der Elternkomponente. Diese wird als Referenz übergeben und bekommt erst wieder
 Fokus, wenn der Dialog geschlossen wurde.
 :::
 
-[Demo: [widgets.DialogDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/DialogDemo.java)]{.bsp}
+[Demo: [widgets.DialogDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/widgets/DialogDemo.java)]{.bsp}
 
 
 ## Menüs mit _JMenuBar_, _JMenu_ und _JMenuItem_
@@ -212,7 +212,7 @@ Wenn man mit der Maus ein Menü ausklappt, wird eine Liste der Menüeinträge an
 sind vom Typ `JMenuItem` und verhalten sich wie Buttons.
 :::
 
-[Demo: [widgets.MenuDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/MenuDemo.java)]{.bsp}
+[Demo: [widgets.MenuDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/widgets/MenuDemo.java)]{.bsp}
 
 
 ## Kontextmenü mit _JPopupMenu_
@@ -260,7 +260,7 @@ myFrame.addMouseListener(new MouseAdapter() {
 ```
 :::
 
-[Demo: [widgets.PopupDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/widgets/PopupDemo.java)]{.bsp}
+[Demo: [widgets.PopupDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/widgets/PopupDemo.java)]{.bsp}
 
 
 ## Wrap-Up

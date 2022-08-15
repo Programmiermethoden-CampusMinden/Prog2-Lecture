@@ -233,7 +233,7 @@ der Elemente der eigenen Klasse genutzt werden kann. Damit die eigene Klasse auc
 genutzt werden kann, muss sie aber auch noch `Iterable<T>` implementieren.
 
 
-[Beispiel: [iterator_example.*](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/collections/iterator_example/)]{.bsp}
+[Beispiel: [iterator_example.*](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/collections/iterator_example/)]{.bsp}
 :::
 
 
@@ -319,7 +319,7 @@ Die Unterklasse `LinkedHashMap<K,V>` kann Ordnung zwischen den Elementen halten.
 eine doppelt verkettete Liste verwendet.
 
 
-[Beispiel: [hash_example.HashCodeExample](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java)]{.bsp}
+[Beispiel: [hash_example.HashCodeExample](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java)]{.bsp}
 :::
 
 
@@ -399,7 +399,7 @@ Spielregeln:
 
 
 ::: notes
-[Beispiel: [hash_example.HashCodeExample](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java)]{.bsp}
+[Beispiel: [hash_example.HashCodeExample](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java)]{.bsp}
 :::
 
 

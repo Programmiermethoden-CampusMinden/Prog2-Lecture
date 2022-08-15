@@ -151,7 +151,7 @@ public class DefaultTest1 {
 }
 ```
 
-[Demo: [defaultmethods.rule1.DefaultTest1](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule1/DefaultTest1.java)]{.bsp}
+[Demo: [defaultmethods.rule1.DefaultTest1](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule1/DefaultTest1.java)]{.bsp}
 
 ::: notes
 Die Klasse `E` erbt sowohl von Klasse `C` als auch vom Interface `A` die Methode `hello()`
@@ -182,7 +182,7 @@ public class DefaultTest2 {
 }
 ```
 
-[Demo: [defaultmethods.rule2.DefaultTest2](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule2/DefaultTest2.java)]{.bsp}
+[Demo: [defaultmethods.rule2.DefaultTest2](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule2/DefaultTest2.java)]{.bsp}
 
 ::: notes
 Die Klasse `D` erbt sowohl vom Interface `A` als auch vom Interface `B` die Methode `hello()`
@@ -216,7 +216,7 @@ public class DefaultTest3 {
 }
 ```
 
-[Demo: [defaultmethods.rule3.DefaultTest3](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule3/DefaultTest3.java)]{.bsp}
+[Demo: [defaultmethods.rule3.DefaultTest3](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule3/DefaultTest3.java)]{.bsp}
 
 ::: notes
 Die Klasse `D` erbt sowohl vom Interface `A` als auch vom Interface `B` die Methode `hello()`
@@ -260,7 +260,7 @@ Die Klasse `D` erbt sowohl von Klasse `C` als auch von den Interfaces `A` und `B
 `hello()` (Mehrfachvererbung). In diesem Fall "gewinnt" die Implementierung aus Klasse `C`: Klassen
 gewinnen immer (Regel 1).
 
-[Beispiel: [defaultmethods.quiz.DefaultTest](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/quiz/DefaultTest.java)]{.bsp}
+[Beispiel: [defaultmethods.quiz.DefaultTest](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/quiz/DefaultTest.java)]{.bsp}
 :::
 
 

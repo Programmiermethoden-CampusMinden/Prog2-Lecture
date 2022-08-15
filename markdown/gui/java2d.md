@@ -61,7 +61,7 @@ fhmedia:
 
 ![](images/java2d.png){width="40%"}
 
-[Demo: [java2d.simplegame.J2DTeaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/simplegame/J2DTeaser.java)]{.bsp}
+[Demo: [java2d.simplegame.J2DTeaser](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/java2d/simplegame/J2DTeaser.java)]{.bsp}
 
 
 ## Einführung in die Java 2D API
@@ -144,7 +144,7 @@ Vorher Strichfarbe setzen: `Graphics.setColor(Color color)`:
     public Color(int r, int g, int b)  // Rot/Grün/Blau, Werte zw. 0 und 255
     ```
 
-[Demo: [java2d.SimpleDrawings](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/SimpleDrawings.java)]{.bsp}
+[Demo: [java2d.SimpleDrawings](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/java2d/SimpleDrawings.java)]{.bsp}
 
 
 ## Fonts und Strings
@@ -165,7 +165,7 @@ public void drawString(String str, int x, int y);
 
 Vorher Font und Farbe setzen!
 
-[Demo: [java2d.SimpleFonts](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/SimpleFonts.java)]{.bsp}
+[Demo: [java2d.SimpleFonts](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/java2d/SimpleFonts.java)]{.bsp}
 
 
 ## Einfache Polygone definieren
@@ -204,7 +204,7 @@ Statt `drawPolygon()` ....
 
 Vorher Farbe setzen!
 
-[Demo: [java2d.SimplePoly](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/SimplePoly.java)]{.bsp}
+[Demo: [java2d.SimplePoly](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/java2d/SimplePoly.java)]{.bsp}
 
 
 ## Ausblick I: Umgang mit Bildern
@@ -365,7 +365,7 @@ Weitere evtl. nützliche Methoden:
     und damit ein Neuzeichnen aller  Objekte ausgelöst
 :::
 
-[Demo: [java2d.simplegame.J2DTeaser](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/java2d/simplegame/J2DTeaser.java)]{.bsp}
+[Demo: [java2d.simplegame.J2DTeaser](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/java2d/simplegame/J2DTeaser.java)]{.bsp}
 
 
 ## Wrap-Up

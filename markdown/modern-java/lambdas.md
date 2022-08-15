@@ -143,7 +143,7 @@ public class Outer {
 }
 ```
 
-[Beispiel mit Iterator als innere Klasse: [nested.StudiListNested](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListNested.java)]{.bsp}
+[Beispiel mit Iterator als innere Klasse: [nested.StudiListNested](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListNested.java)]{.bsp}
 
 ### Statische innere Klassen ("_Static Nested Classes_")
 
@@ -193,7 +193,7 @@ sl.sort(
 *   Nutzung typischerweise bei GUIs: Event-Handler etc.
 :::
 
-[Demo: [nested.DemoAnonymousInnerClass](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoAnonymousInnerClass.java)]{.bsp}
+[Demo: [nested.DemoAnonymousInnerClass](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoAnonymousInnerClass.java)]{.bsp}
 
 
 ## Vereinfachung mit Lambda-Ausdruck
@@ -223,7 +223,7 @@ werden kann, muss der erwartete Parameter vom Typ her ein "**funktionales Interf
 (s.u.) sein!
 :::
 
-[Demo: [nested.DemoLambda](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoLambda.java)]{.bsp}
+[Demo: [nested.DemoLambda](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoLambda.java)]{.bsp}
 
 
 ## Syntax für Lambdas
