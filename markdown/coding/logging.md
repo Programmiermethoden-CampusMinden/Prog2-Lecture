@@ -35,7 +35,7 @@ outcomes:
   - k3: "Nutzung der Java Logging API im Paket `java.util.logging`"
   - k3: "Erstellung eigener Handler und Formatter"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037706&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106228&client_id=FH-Bielefeld"
     name: "Quiz Logging (ILIAS)"
 assignments:
   - topic: sheet02
