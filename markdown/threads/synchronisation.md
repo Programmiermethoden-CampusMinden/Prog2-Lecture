@@ -48,7 +48,7 @@ outcomes:
   - k2: "Unterscheidung einseitige und mehrseitige Synchronisation"
   - k3: "Synchronisation mit `synchronized`, `wait`,  `notify` und `notifyAll`"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1092823&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106530&client_id=FH-Bielefeld"
     name: "Quiz Threads Synchronisation (ILIAS)"
 assignments:
   - topic: sheet10
