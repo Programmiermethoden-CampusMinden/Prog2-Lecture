@@ -24,7 +24,7 @@ outcomes:
   - k2: "Erklären der Ähnlichkeit zum Type-Object-Pattern"
   - k3: "Praktischer Einsatz des Flyweight-Patterns"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1077973&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106534&client_id=FH-Bielefeld"
     name: "Quiz Flyweight-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/Oo8TO8z5wQI"
