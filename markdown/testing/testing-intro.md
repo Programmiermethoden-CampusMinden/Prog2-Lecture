@@ -35,7 +35,7 @@ outcomes:
   - k2: "Ursachen von Softwarefehlern"
   - k3: "Aufbauen von Tests mit JUnit 4 und 5 unter Nutzung der Annotation `@Test`"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1070318&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
     name: "Quiz JUnit-Basics -- nur erster Teil (ILIAS)"
 assignments:
   - topic: sheet04
