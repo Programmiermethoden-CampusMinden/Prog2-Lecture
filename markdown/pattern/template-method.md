@@ -26,7 +26,7 @@ tldr: |
 outcomes:
   - k3: "Template-Method-Entwurfsmuster praktisch anwenden"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1082125&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106538&client_id=FH-Bielefeld"
     name: "Quiz Template-Method-Pattern (ILIAS)"
 assignments:
   - topic: sheet07
