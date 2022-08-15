@@ -37,7 +37,7 @@ outcomes:
   - k3: "Nutzung von Ant-Properties"
   - k3: "Ausführen von Ant-Targets aus der IDE heraus"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1094693&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106214&client_id=FH-Bielefeld"
     name: "Quiz Apache Ant (ILIAS)"
 youtube:
   - link: "https://youtu.be/LRA1PeQ2pR0"
