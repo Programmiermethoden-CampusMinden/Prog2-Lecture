@@ -23,7 +23,7 @@ tldr: |
 outcomes:
   - k3: "Entwurfsmuster Factory-Methode anwenden"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1045002&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106533&client_id=FH-Bielefeld"
     name: "Quiz Factory-Method-Pattern (ILIAS)"
 assignments:
   - topic: sheet02
