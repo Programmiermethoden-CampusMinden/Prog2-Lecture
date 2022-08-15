@@ -36,7 +36,7 @@ outcomes:
   - k3: "Aufbauen von Tests mit JUnit 4 und 5 unter Nutzung der Annotation `@Test`"
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
-    name: "Quiz JUnit-Basics -- nur erster Teil (ILIAS)"
+    name: "Quiz JUnit-Basics - nur erster Teil (ILIAS)"
 assignments:
   - topic: sheet04
 youtube:
@@ -84,7 +84,7 @@ wieder ein Server gecrasht ist ... Weniger fehlerbehaftete Software ist auch lei
 zu ändern und zu pflegen! In realen Projekten macht Maintenance den größten Teil an der
 Softwareentwicklung aus ... Während Ihre Praktikumsprojekte vermutlich nach der Abgabe
 nie wieder angeschaut werden, können echte Projekte viele Jahre bis Jahrzehnte leben!
-D.h. irgendwer muss sich dann mit Ihren Bugs herumärgern -- vermutlich sogar Sie selbst ;)
+D.h. irgendwer muss sich dann mit Ihren Bugs herumärgern - vermutlich sogar Sie selbst ;)
 :::
 
 > Always code as if the guy who ends up maintaining your code will be a

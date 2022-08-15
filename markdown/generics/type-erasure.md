@@ -159,7 +159,7 @@ Stack s = new Stack(); // Stack von Object-Objekten
 Raw-Types darf man zwar selbst im Quellcode verwenden (so wie im Beispiel
 hier), **sollte** die Verwendung aber vermeiden wegen der Typ-Unsicherheit:
 Der Compiler sieht im Beispiel nur noch einen Stack für `Object`, d.h. dort
-dürfen Objekte aller Typen abgelegt werden -- es kann keine Typprüfung
+dürfen Objekte aller Typen abgelegt werden - es kann keine Typprüfung
 durch den Compiler stattfinden. Auf einem `Stack<String>` kann der Compiler
 prüfen, ob dort wirklich nur `String`-Objekte abgelegt werden und ggf.
 entsprechend Fehler melden.

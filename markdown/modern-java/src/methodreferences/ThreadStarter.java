@@ -12,7 +12,7 @@ public class ThreadStarter {
     }
 
     /**
-     * Starter -- just to please Checkstyle
+     * Starter - just to please Checkstyle
      */
     public static void main(String[] args) {
         // Anonyme innere Klasse

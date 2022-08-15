@@ -107,7 +107,7 @@ könnte Code als "sauberen" Code bezeichnen, wenn die folgenden Eigenschaften er
 
 ::: notes
 In [@Martin2009] lässt der Autor Robert Martin verschiedene Ikonen der SW-Entwicklung
-zu diesem Thema zu Wort kommen -- eine sehr lesenswerte Lektüre!
+zu diesem Thema zu Wort kommen - eine sehr lesenswerte Lektüre!
 :::
 
 \bigskip

@@ -132,7 +132,7 @@ Arrays gab es sehr früh, Generics erst relativ spät (ab Java6) => bei
 Arrays fand man das Verhalten natürlich und pragmatisch (trotz der Laufzeit-Überprüfung).
 
 Bei der Einführung von Generics musste man Kompatibilität sicherstellen (alter
-Code soll auch mit neuen Compilern übersetzt werden können -- obwohl im alten
+Code soll auch mit neuen Compilern übersetzt werden können - obwohl im alten
 Code Raw-Types verwendet werden). Außerdem wollte man von Laufzeit-Prüfung hin zu
 Compiler-Prüfung. Da würde das von Arrays bekannte Verhalten Probleme machen ...
 

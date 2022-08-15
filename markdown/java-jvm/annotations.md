@@ -83,7 +83,7 @@ Tja, da sollte wohl die Methode `B#getInfo` die geerbte Methode `A#getInfo`
 (mit entsprechenden Folgen beim Aufruf)!
 
 Ein leider relativ häufiges Versehen, welches u.U. schwer zu finden ist.
-Annotationen (hier `@Override`) können dagegen helfen -- der Compiler "weiß"
+Annotationen (hier `@Override`) können dagegen helfen - der Compiler "weiß"
 dann, dass wir überschreiben wollen und meckert, wenn wir das nicht tun.
 
 IDEs wie Eclipse können diese Annotation bereits beim Erstellen einer Klasse

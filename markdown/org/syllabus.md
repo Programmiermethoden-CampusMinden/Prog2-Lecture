@@ -86,14 +86,14 @@ und pflegen können:
 
 *  135h Selbststudium => ca. 9h Arbeitszeit pro Woche!
 
-Zeiten sind Richtwerte! -- Manche brauchen länger, manche sind schneller ...
+Zeiten sind Richtwerte! - Manche brauchen länger, manche sind schneller ...
 
 
 Die Praktikumsaufgaben sollen Ihnen helfen, sich mit den Inhalten der
 Vorlesung auseinander zu setzen. Die Abgabeform und die Bedingungen an das
 Testat sind bewusst so gewählt, damit Sie im Praktikum untereinander in eine
 Diskussion eintreten (können). Nutzen Sie diese Chance und verhalten Sie sich
-aktiv -- so macht das Praktikum Spaß und bringt allen mehr.
+aktiv - so macht das Praktikum Spaß und bringt allen mehr.
 
 Studieren Sie! Studieren bedeutet, sich **selbstständig** mit einem Thema
 auseinander zu setzen, zu vertiefen, zu üben, Zusammenhänge herzustellen.
@@ -109,7 +109,7 @@ Fokus liegt aber auf dem "Können", also dem **Beherrschen** der jeweiligen
 Themen.
 
 
-## Kognitive Stufen -- Einordnung Lernziele
+## Kognitive Stufen - Einordnung Lernziele
 
 Kennen (K1)
 :   Abruf von Informationen (Begriffe, Fakten, Prinzipien)

@@ -239,7 +239,7 @@ die Workingcopy. Man kann also jederzeit in der Workingcopy die Branches wechsel
 und entsprechend weiterarbeiten.
 
 *Hinweis*: Während der neue `git switch`-Befehl nur Branches umschalten kann,
-funktioniert `git checkout` sowohl mit Branchnamen und Dateinamen -- damit kann
+funktioniert `git checkout` sowohl mit Branchnamen und Dateinamen - damit kann
 man also auch eine andere Version einer Datei in der Workingcopy "auschecken".
 Falls gleiche Branch- und Dateinamen existieren, muss man für das Auschecken
 einer Datei noch "`--`" nutzen: `git checkout -- <dateiname>`.

@@ -106,7 +106,7 @@ public int setDate(int date) {
     (Ausnahmen: Wenn der Text mit `<ul>` o.ä. beginnt oder der Absatz  mit den Block-Tags.)
 *   Die "Block-Tags" `@param`, `@return`, `@throws`, `@deprecated` werden durch einen
     Absatz von der restlichen Beschreibung getrennt und tauchen in exakt dieser Reihenfolge
-    auf. Die Beschreibung dieser Tags ist nicht leer -- anderenfalls lässt man das Tag weg.
+    auf. Die Beschreibung dieser Tags ist nicht leer - anderenfalls lässt man das Tag weg.
     Falls die Zeile für die Beschreibung nicht reicht, wird umgebrochen und die Folgezeile
     mit vier Leerzeichen (beginnend mit dem `@`) eingerückt.
     *   Mit `@param` erklären Sie die Bedeutung eines Parameters (von links nach rechts) einer

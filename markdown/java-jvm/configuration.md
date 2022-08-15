@@ -250,7 +250,7 @@ zusätzlich in die Dokumentation.
 ## Laden und Speichern von Konfigurationsdaten
 
 ```
-#ola -- ein Kommentar
+#ola - ein Kommentar
 hoehe=2
 breite=9
 gewicht=12
