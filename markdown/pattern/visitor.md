@@ -354,7 +354,7 @@ von Datenstrukturen ist diese Variante oft von Vorteil, da man hier unterschiedl
 Traversierungsarten haben möchte (Breitensuche vs. Tiefensuche, Pre-Order vs. Inorder vs.
 Post-Order, ...) und diese elegant in den Visitor verlagern kann.
 
-[Beispiel Traversierung intern (in den Knotenklassen): [intrav.DemoExpr](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/visitor/intrav/DemoExpr.java)]{.bsp}
+[Beispiel Traversierung intern (in den Knotenklassen): [visitor.visit.intrav.DemoExpr](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/intrav/DemoExpr.java)]{.bsp}
 
 [Beispiel Traversierung extern (im Visitor): [extrav.DemoExpr](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/visitor/extrav/DemoExpr.java)]{.bsp}
 
