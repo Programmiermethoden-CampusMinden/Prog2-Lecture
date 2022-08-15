@@ -402,7 +402,7 @@ implementieren.
 
 ![](images/parsetree_visitor_uml.png)
 
-[Demo: [extrav.DemoExpr](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/visitor/extrav/DemoExpr.java)]{.bsp}
+[Demo: [visitor.visit.extrav.DemoExpr](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/extrav/DemoExpr.java)]{.bsp}
 
 
 ## Wrap-Up
