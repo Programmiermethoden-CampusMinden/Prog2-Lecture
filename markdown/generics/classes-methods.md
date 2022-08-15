@@ -25,7 +25,7 @@ outcomes:
   - k3: "Erstellen und Nutzen von generischen Klassen und Interfaces"
   - k3: "Erstellen und Nutzen von generischen Methoden"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1044733&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106235&client_id=FH-Bielefeld"
     name: "Quiz Generics: Classes & Methods (ILIAS)"
 assignments:
   - topic: sheet03
