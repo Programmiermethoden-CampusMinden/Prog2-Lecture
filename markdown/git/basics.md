@@ -33,7 +33,7 @@ outcomes:
   - k3: "Herausfinden von Unterschieden, Ansehen der Historie"
   - k3: "Ignorieren von Dateien und Ordnern"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1037711&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106241&client_id=FH-Bielefeld"
     name: "Quiz Git Basics (ILIAS)"
 assignments:
   - topic: sheet01
