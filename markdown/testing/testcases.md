@@ -38,7 +38,7 @@ outcomes:
   - k2: "Merkmale guter Unit-Tests erklären"
   - k3: "Erstellen von Testfällen mittels Äquivalenzklassenbildung und Grenzwertanalyse"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1070359&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106546&client_id=FH-Bielefeld"
     name: "Quiz Testfallermittlung (ILIAS)"
 assignments:
   - topic: sheet04
