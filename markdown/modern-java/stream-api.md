@@ -47,7 +47,7 @@ outcomes:
   - k3: "Durchführung der Berechnung und Abschluss des Streams mit einer terminalen Operation"
   - k3: "Einsatz von `flatMap()`"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1091240&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106528&client_id=FH-Bielefeld"
     name: "Quiz Stream-API (ILIAS)"
 assignments:
   - topic: sheet09
