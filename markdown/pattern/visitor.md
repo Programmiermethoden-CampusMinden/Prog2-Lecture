@@ -356,7 +356,7 @@ Post-Order, ...) und diese elegant in den Visitor verlagern kann.
 
 [Beispiel Traversierung intern (in den Knotenklassen): [visitor.visit.intrav.DemoExpr](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/intrav/DemoExpr.java)]{.bsp}
 
-[Beispiel Traversierung extern (im Visitor): [extrav.DemoExpr](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/pattern/src/visitor/extrav/DemoExpr.java)]{.bsp}
+[Beispiel Traversierung extern (im Visitor): [visitor.visit.extrav.DemoExpr](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/extrav/DemoExpr.java)]{.bsp}
 
 ### (Double-) Dispatch
 
