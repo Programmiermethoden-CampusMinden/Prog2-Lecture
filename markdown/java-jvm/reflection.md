@@ -289,7 +289,7 @@ der Parameter und deren Typ und Annotationen fragen etc. ... Schauen Sie am best
 einmal selbst in die API hinein.
 :::
 
-[Demo: [reflection.ReflectionDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/reflection/ReflectionDemo.java)]{.bsp}
+[Demo: [reflection.ReflectionDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/reflection/ReflectionDemo.java)]{.bsp}
 
 
 ## Hinweis: Klassen außerhalb des Classpath laden
@@ -303,7 +303,7 @@ Class<?> c1 = Class.forName("org.wuppie.Fluppie", true, ucl);
 Class<?> c2 = ucl.loadClass("org.wuppie.Fluppie");
 ```
 
-[Bemerkung zu Ordnerstruktur und Classpath; Demo: [reflection.ClassLoaderDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/java-jvm/src/reflection/ClassLoaderDemo.java)]{.bsp}
+[Bemerkung zu Ordnerstruktur und Classpath; Demo: [reflection.ClassLoaderDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/reflection/ClassLoaderDemo.java)]{.bsp}
 
 ::: notes
 Mit `Class.forName("reflection.Studi")` können Sie die Klasse `Studi` im

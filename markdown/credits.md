@@ -55,4 +55,4 @@ In den generierten Webseiten werden u.a. diese Projekte genutzt:
 ## Beitragende
 
 Dieses Projekt wurde und wird erstellt und gepflegt vom Autor [Carsten Gips](https://github.com/cagix)
-sowie weiteren [Beitragenden](https://github.com/PM-Dungeon/PM-Lecture/graphs/contributors).
+sowie weiteren [Beitragenden](https://github.com/Programmiermethoden/PM-Lecture/graphs/contributors).

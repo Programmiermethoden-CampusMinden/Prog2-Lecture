@@ -208,7 +208,7 @@ ein erster Einstieg ist die [Plugin-API](https://maven.apache.org/ref/3.8.1/mave
     führt die Klasse `de.fhb.pm.Main` aus.
 :::
 
-[Demo: [pom.xml](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/building/src/maven/pom.xml)]{.bsp}
+[Demo: [pom.xml](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/building/src/maven/pom.xml)]{.bsp}
 
 
 ## Wrap-Up

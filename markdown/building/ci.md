@@ -361,7 +361,7 @@ jeweils einen Job.
     um von GitHub selbst im Namespace "actions" bereit gestellte direkt nutzbare Actions.
     Man kann Actions auch selbst im Ordner `.github/actions/` für das Repo definieren
     (Beispiel:
-    [`PM-Dungeon/PM-Lecture](https://github.com/PM-Dungeon/PM-Lecture/blob/master/.github/actions/alpine-pandoc-hugo/action.yml)).
+    [`Programmiermethoden/PM-Lecture](https://github.com/Programmiermethoden/PM-Lecture/blob/master/.github/actions/alpine-pandoc-hugo/action.yml)).
 
     Mit `run` werden Befehle in der Shell auf dem genutzten Runner (hier Ubuntu) ausgeführt.
 

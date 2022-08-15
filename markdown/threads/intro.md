@@ -76,7 +76,7 @@ fhmedia:
 Wert 42 ausprobieren (ist zeitlich ganz gut)
 -->
 
-[Demo: [misc.SwingWorkerDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/misc/SwingWorkerDemo.java)  (GUI ausprobieren)]{.bsp}
+[Demo: [misc.SwingWorkerDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/misc/SwingWorkerDemo.java)  (GUI ausprobieren)]{.bsp}
 
 
 ::: notes
@@ -112,7 +112,7 @@ public class Traditional {
 }
 ```
 
-[Demo: [intro.Traditional](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/intro/Traditional.java)]{.bsp}
+[Demo: [intro.Traditional](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/intro/Traditional.java)]{.bsp}
 
 
 ::: notes
@@ -154,7 +154,7 @@ public class Threaded extends Thread {
 }
 ```
 
-[Demo: [intro.Threaded](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/intro/Threaded.java)]{.bsp}
+[Demo: [intro.Threaded](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/intro/Threaded.java)]{.bsp}
 
 
 ## Erzeugen von Threads
@@ -166,7 +166,7 @@ public class Threaded extends Thread {
 *   Methode `run()` implementieren, aber nicht aufrufen
 *   Methode `start()` aufrufen, aber (i.d.R.) nicht implementieren
 
-[Demo: [creation.*](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/creation/)]{.bsp}
+[Demo: [creation.*](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/creation/)]{.bsp}
 
 ::: notes
 ### Ableiten von _Thread_
@@ -278,7 +278,7 @@ besprochen.
 
 \vspace{24mm}
 
-[Demo: [intro.Join](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/threads/src/intro/Join.java)]{.bsp}
+[Demo: [intro.Join](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/intro/Join.java)]{.bsp}
 
 
 ## Wrap-Up

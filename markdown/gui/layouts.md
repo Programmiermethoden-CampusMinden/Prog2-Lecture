@@ -90,7 +90,7 @@ Mit den Methoden `setHgap()` und `setVgap()` kann der Abstand zwischen den Kompo
 werden (horizontal und vertikal, Abstände in Pixel).
 :::
 
-[Demo: [layout.Border](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/layout/Border.java)]{.bsp}
+[Demo: [layout.Border](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/layout/Border.java)]{.bsp}
 
 
 ## _FlowLayout_
@@ -118,7 +118,7 @@ Per Default werden die Komponenten zentriert angeordnet. Über den Konstruktor o
 werden, ebenso wie ein vertikales und horizontales Padding zwischen den Komponenten.
 :::
 
-[Demo: [layout.Flow](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/layout/Flow.java)]{.bsp}
+[Demo: [layout.Flow](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/layout/Flow.java)]{.bsp}
 
 
 ## _GridLayout_
@@ -148,7 +148,7 @@ Auch in diesem Layout kann das Padding über die Methoden `setHgap()` bzw. `setV
 werden.
 :::
 
-[Demo: [layout.Grid](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/layout/Grid.java)]{.bsp}
+[Demo: [layout.Grid](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/layout/Grid.java)]{.bsp}
 
 
 ## Komplexer Layout-Manager: _GridBagLayout_
@@ -200,7 +200,7 @@ des Containers in der jeweiligen Richtung wird der neue Platz unter den Slots ge
 aufgeteilt.
 :::
 
-[Demo: [layout.GridBag](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/layout/GridBag.java)]{.bsp}
+[Demo: [layout.GridBag](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/layout/GridBag.java)]{.bsp}
 
 
 ## Wrap-Up

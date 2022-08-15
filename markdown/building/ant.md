@@ -128,7 +128,7 @@ Works on my machine ...
 
 => Überblick: [ant.apache.org/manual/tasksoverview.html](https://ant.apache.org/manual/tasksoverview.html)
 
-[Konsole/IDE: ant -f [hello.xml](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/building/src/ant/hello.xml)]{.bsp}
+[Konsole/IDE: ant -f [hello.xml](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/building/src/ant/hello.xml)]{.bsp}
 
 
 ## Properties: Name-Wert-Paare
@@ -157,7 +157,7 @@ Works on my machine ...
     `ant -Dwuppie=fluppie`
 
 ::: notes
-[Beispiel [build.xml](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/building/src/ant/build.xml), Properties]{.bsp}
+[Beispiel [build.xml](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/building/src/ant/build.xml), Properties]{.bsp}
 :::
 
 
@@ -184,7 +184,7 @@ Works on my machine ...
 *   `<copy file="myfile.txt" tofile="../bak/mycopy.txt" />`
 *   `<move file="src/file.orig" tofile="bak/file.moved" />`
 
-[Beispiel [build.xml](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/building/src/ant/build.xml), `init` und `clean`]{.bsp}
+[Beispiel [build.xml](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/building/src/ant/build.xml), `init` und `clean`]{.bsp}
 :::
 
 
@@ -469,7 +469,7 @@ ivy-2.5.0.jar von /usr/share/java/ivy.jar nach ~/.ant/lib/ kopieren
 Ivy-Cache unter ~/.ivy2/cache/
 -->
 
-[Demo: [ivydemo.xml](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/building/src/ant/ivydemo.xml)]{.bsp}
+[Demo: [ivydemo.xml](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/building/src/ant/ivydemo.xml)]{.bsp}
 
 
 ## Ausblick: Weitere Build-Systeme

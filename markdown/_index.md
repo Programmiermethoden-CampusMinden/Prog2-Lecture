@@ -22,8 +22,8 @@ Wir nutzen den Vorlesungsslot als Sprechstunde für den "Flipped"-Teil der Vorle
 ### Kommunikation
 
 -   **Sie-an-uns**: Praktikum, Sprechstunde (per Zoom), E-Mail,
-    [Issue](https://github.com/PM-Dungeon/PM-Lecture/issues/new/choose) im
-    [Github](https://github.com/PM-Dungeon/PM-Lecture)
+    [Issue](https://github.com/Programmiermethoden/PM-Lecture/issues/new/choose) im
+    [Github](https://github.com/Programmiermethoden/PM-Lecture)
 -   **Wir-an-Sie**: "News" im ILIAS, Antwort auf Issues
 
 Zur Verteilung der Themen siehe auch den `["Fahrplan"]({{< ref "/org/schedule" >}})`{=markdown}.

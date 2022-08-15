@@ -161,10 +161,10 @@ genauer ansehen.
 
 Siehe auch ["Concurrency in Swing"](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/index.html).
 
-[Beispiel: [basics.FirstWindow](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/basics/FirstWindow.java)]{.bsp}
+[Beispiel: [basics.FirstWindow](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/basics/FirstWindow.java)]{.bsp}
 :::
 
-[Demo: [basics.SecondWindow](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/gui/src/basics/SecondWindow.java)]{.bsp}
+[Demo: [basics.SecondWindow](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/basics/SecondWindow.java)]{.bsp}
 
 
 ## Wrap-Up

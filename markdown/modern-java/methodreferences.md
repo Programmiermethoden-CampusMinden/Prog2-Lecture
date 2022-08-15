@@ -145,7 +145,7 @@ public class Studi {
 }
 ```
 
-[Demo: [methodreferences.DemoStaticMethodReference](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoStaticMethodReference.java)]{.bsp}
+[Demo: [methodreferences.DemoStaticMethodReference](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoStaticMethodReference.java)]{.bsp}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweiten Parameter eine Instanz von
@@ -180,7 +180,7 @@ public class Studi {
 }
 ```
 
-[Demo: [methodreferences.DemoInstanceMethodReferenceObject](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceObject.java)]{.bsp}
+[Demo: [methodreferences.DemoInstanceMethodReferenceObject](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceObject.java)]{.bsp}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine Instanz
@@ -214,7 +214,7 @@ public class Studi {
 }
 ```
 
-[Demo: [methodreferences.DemoInstanceMethodReferenceType](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceType.java)]{.bsp}
+[Demo: [methodreferences.DemoInstanceMethodReferenceType](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceType.java)]{.bsp}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine Instanz
@@ -258,7 +258,7 @@ Thread t2 = new Thread(() -> System.out.println("t2: wuppie"));
 Thread t3 = new Thread(ThreadStarter::wuppie);
 ```
 
-[Beispiel: [methodreferences.ThreadStarter](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/ThreadStarter.java)]{.bsp}
+[Beispiel: [methodreferences.ThreadStarter](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/ThreadStarter.java)]{.bsp}
 
 
 ## Ausblick: Datenstrukturen als Streams
@@ -282,7 +282,7 @@ List<Integer> wordLengths = words.stream()
         .collect(toList());
 ```
 
-[Beispiel: [methodreferences.CollectionStreams](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/CollectionStreams.java)]{.bsp}
+[Beispiel: [methodreferences.CollectionStreams](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/CollectionStreams.java)]{.bsp}
 
 ::: notes
 *   Collections können als Datenstrom betrachtet werden: `stream()`

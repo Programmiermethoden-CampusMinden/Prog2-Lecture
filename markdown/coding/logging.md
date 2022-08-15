@@ -100,7 +100,7 @@ Zusätzlich gibt es noch Filter, mit denen man Nachrichten (zusätzlich zum
 Log-Level) nach weiteren Kriterien filtern kann.
 :::
 
-[Konsole: [logging.LoggingDemo](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingDemo.java)]{.bsp}
+[Konsole: [logging.LoggingDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingDemo.java)]{.bsp}
 
 
 ## Erzeugen neuer Logger
@@ -170,7 +170,7 @@ public void log(Level level, String msg);
     *   Prüfung mit `public boolean isLoggable(Level)`
     *   Setzen mit `public void setLevel(Level)`
 
-[Konsole: [logging.LoggingLevel](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingLevel.java)]{.bsp}
+[Konsole: [logging.LoggingLevel](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingLevel.java)]{.bsp}
 
 ::: notes
 => Warum wird im Beispiel nach `log.setLevel(Level.ALL);` trotzdem nur
@@ -202,7 +202,7 @@ ab `INFO` geloggt? Wer erzeugt eigentlich die Ausgaben?!
 *   Handler nutzen zur Formatierung der Ausgabe einen `Formatter`
 *   Standard-Formatter: `SimpleFormatter` und `XMLFormatter`
 
-[Konsole: [logging.LoggingHandler](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingHandler.java)]{.bsp}
+[Konsole: [logging.LoggingHandler](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingHandler.java)]{.bsp}
 
 ::: notes
 => Warum wird im Beispiel nach dem Auskommentieren von
@@ -226,7 +226,7 @@ angezeigt (ab `INFO` aufwärts)?!
         *   Abschalten mit `Logger#setUseParentHandlers(false);`
     *   Diese leiten  [an ihre Handler sowie]{.notes}  an ihren Eltern-Logger weiter (unabhängig von Log-Level!)
 
-[Konsole: [logging.LoggingParent](https://github.com/PM-Dungeon/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingParent.java); Tafel: Skizze Logger-Baum]{.bsp}
+[Konsole: [logging.LoggingParent](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingParent.java); Tafel: Skizze Logger-Baum]{.bsp}
 
 
 ## Wrap-Up
