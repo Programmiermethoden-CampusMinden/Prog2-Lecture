@@ -241,7 +241,7 @@ Wenn aber (wie in der Abbildung) der lokale und der remote `master` divergieren,
 müssen Sie den Merge wie beschrieben lokal durchführen (`fetch`/`merge` oder `pull`)
 und das Ergebnis wieder in das remote Repo pushen (dann ist ja wieder ein
 *fast forward merge* möglich, es sei denn, jemand hat den remote `master` in der
-Zwischenzeit weiter geschoben -- dann muss die Aktualisierung erneut durchgeführt
+Zwischenzeit weiter geschoben - dann muss die Aktualisierung erneut durchgeführt
 werden).
 :::::::::
 

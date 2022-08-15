@@ -70,7 +70,7 @@ Ablauf:
 -   Bearbeitung der Aufgaben in **3er Teams** vor dem Praktikum
 -   Abgabe der gelösten Aufgaben **vor** der Deadline im ILIAS
 -   Vorstellung und Diskussion der Lösung **im** Praktikum (**Präsenzpflicht**;
-    nur in Ausnahmefällen Hybrid -- bitte _zeitnah_ beim Dozenten melden)
+    nur in Ausnahmefällen Hybrid - bitte _zeitnah_ beim Dozenten melden)
 
 ::: notes
 In ausgewählten Wochen finden statt der Praktika zusätzliche Vorlesungen statt
@@ -81,7 +81,7 @@ Siehe auch `["Hinweise zum Praktikum"]({{< ref "/org/grading" >}})`{=markdown}
 
 ### Tutorium: 1 SWS
 
--   Mo, 13:30 -- 15:00 Uhr (B70) (**Achtung: Raumänderung**)
+-   Mo, 13:30 - 15:00 Uhr (B70) (**Achtung: Raumänderung**)
 
 **Anmerkung**: Das Tutorium in PM ist fester Bestandteil der Prüfungsordnung. Es besteht Teilnahmepflicht.
 

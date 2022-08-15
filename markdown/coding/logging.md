@@ -61,14 +61,14 @@ fhmedia:
 1.  Debugging
     *   Beeinflusst Code nicht
     *   Kann schnell komplex und umständlich werden
-    *   Sitzung transient -- nicht wiederholbar
+    *   Sitzung transient - nicht wiederholbar
 
 \bigskip
 
 2.  "Poor-man's-debugging" (Ausgaben mit `System.out.println`)
     *   Müssen irgendwann entfernt werden
     *   Ausgabe nur auf einem Kanal (Konsole)
-    *   Keine Filterung nach Problemgrad -- keine Unterscheidung
+    *   Keine Filterung nach Problemgrad - keine Unterscheidung
         zwischen Warnungen, einfachen Informationen, ...
 
 \bigskip
@@ -78,7 +78,7 @@ fhmedia:
         `java.util.logging` (JDK), *log4j* (Apache), *SLF4J*, *Logback*, ...
 
 
-## Java Logging API -- Überblick
+## Java Logging API - Überblick
 
 Paket `java.util.logging`
 

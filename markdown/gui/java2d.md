@@ -283,11 +283,11 @@ Idee: Je Zeitschritt:
 [Hinweis auf Push- vs. Pull-Modell]{.bsp}
 
 ::: notes
-*   Anzahl der Observer muss nicht bekannt sein -- zur Laufzeit erweiterbar!
+*   Anzahl der Observer muss nicht bekannt sein - zur Laufzeit erweiterbar!
 *   Verschiedene Update-Methoden für unterschiedliche Observer denkbar
 *   **Push-Modell**: Benötigte Daten werden der Update-Methode mitgegeben
 *   **Pull-Modell**: Update-Methode nur als Trigger, Observer holen sich die Daten selbst
-*   Referenz auf Observable mitgeben -- Observer braucht dann keine Referenz
+*   Referenz auf Observable mitgeben - Observer braucht dann keine Referenz
     auf das Observable halten und kann sich bei verschiedenen Observables
     registrieren
 *   `Observer` werden (vor allem im Swing-Umfeld) manchmal auch `Listener` genannt

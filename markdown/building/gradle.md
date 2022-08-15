@@ -96,7 +96,7 @@ verhält wie ein fest installiertes Gradle (s.u.).
 sich Gradle teilweise deutlich zwischen den Versionen. Zusätzlich sind bestimmte
 Gradle-Versionen oft noch von bestimmten JDK-Versionen abhängig. In der Praxis
 bedeutet dies, dass man Gradle-Skripte im Laufe der Zeit relativ oft überarbeiten
-muss (einfach nur, damit das Skript wieder läuft -- ohne dass man dabei
+muss (einfach nur, damit das Skript wieder läuft - ohne dass man dabei
 irgendwelche neuen Features oder sonstige Vorteile erzielen würde). Ein großer
 Vorteil ist aber der Gradle-Wrapper (s.u.).
 :::

@@ -20,7 +20,7 @@ class X {
 
 /** Beispiel: Collections über die Stream-API */
 public class CollectionStreams {
-    /** Starter -- just to please Checkstyle */
+    /** Starter - just to please Checkstyle */
     public static void main(String[] args) {
         List<String> words =
                 Arrays.asList(

@@ -477,7 +477,7 @@ Ivy-Cache unter ~/.ivy2/cache/
 *   [Maven](https://maven.apache.org/)
     *   War als Nachfolger von Ant gedacht
     *   Statt wie bei Ant explizit Targets zu formulieren, geht Maven
-        von einem Standardprojekt aus -- nur noch Abweichungen müssen
+        von einem Standardprojekt aus - nur noch Abweichungen müssen
         formuliert werden
     *   Zieht Abhängigkeiten in zentralen `.maven`-Ordner
 
