@@ -24,7 +24,7 @@ outcomes:
   - k2: "Aufbau des Observer-Patterns (Beobachter-Entwurfsmusters)"
   - k3: "Anwendung des Observer-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1074559&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106535&client_id=FH-Bielefeld"
     name: "Quiz Observer-Pattern (ILIAS)"
 assignments:
   - topic: sheet06
