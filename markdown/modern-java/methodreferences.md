@@ -29,7 +29,7 @@ outcomes:
   - k2: "Funktionales Interfaces (Definition)"
   - k3: "Einsatz von Methoden-Referenzen"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1088504&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106524&client_id=FH-Bielefeld"
     name: "Quiz Methoden-Referenzen (ILIAS)"
 assignments:
   - topic: sheet08
