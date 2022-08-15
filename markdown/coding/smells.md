@@ -26,7 +26,7 @@ outcomes:
   - k3: "Programmierprinzipien anwenden, um den Code sauberer zu gestalten"
   - k3: "Bessere Kommentare schreiben"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1070821&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106230&client_id=FH-Bielefeld"
     name: "Quiz Code Smells (ILIAS)"
 assignments:
   - topic: sheet05
