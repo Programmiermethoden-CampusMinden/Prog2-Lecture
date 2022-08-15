@@ -26,7 +26,7 @@ outcomes:
   - k3: "Apache Commons CLI zur Verarbeitung von Kommandozeilenparametern"
   - k3: "Laden von Konfigurationsdaten mit `java.util.Properties`"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1096904&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106514&client_id=FH-Bielefeld"
     name: "Quiz Konfiguration (ILIAS)"
 youtube:
   - link: "https://youtu.be/ImkyRx4UL9M"
