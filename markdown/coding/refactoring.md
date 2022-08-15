@@ -28,7 +28,7 @@ outcomes:
   - k2: "Refactoring: Nur innere Struktur ändern, nicht äußeres Verhalten!"
   - k3: "Anwendung der wichtigsten Refactoring-Methoden: _Rename_, _Extract_, _Move_, _Push Up/Pull Down_"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1070637&client_id=FH-Bielefeld"
+  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106231&client_id=FH-Bielefeld"
     name: "Quiz Refactoring (ILIAS)"
 assignments:
   - topic: sheet05
