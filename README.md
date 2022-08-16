@@ -11,16 +11,14 @@ Questions, bug reports, feature requests and pull requests are very welcome.
 Please be sure to read the [contributor guidelines](CONTRIBUTING.md) before
 opening a new issue.
 
-See also ["Workflow Erstellung Konzeptaufgaben"](https://github.com/Programmiermethoden/PM-Lecture/wiki/Workflow-Erstellung-Konzeptaufgaben).
-
 
 ## Credits
 
-The revision of this course is funded by the Ministry of Culture and Science (MKW)
+The revision of this course was funded by the Ministry of Culture and Science (MKW)
 in North Rhine-Westphalia in agreement with the Digitale Hochschule NRW (DH.NRW)
 ("Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)").
 
-See the <a href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+See the [credits](CREDITS.md) for a detailed list of contributing projects.
 
 
 ## License
