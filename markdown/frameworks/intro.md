@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Frameworks: Einstieg"
 menuTitle: "Intro"
 author: "André Matutat (FH Bielefeld)"

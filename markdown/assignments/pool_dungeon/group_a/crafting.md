@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Crafting"
 author: "André Matutat (FH Bielefeld)"
 points: 5

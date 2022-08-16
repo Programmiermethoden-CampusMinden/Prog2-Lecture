@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Items"
 author: "André Matutat (FH Bielefeld)"
 points: 2

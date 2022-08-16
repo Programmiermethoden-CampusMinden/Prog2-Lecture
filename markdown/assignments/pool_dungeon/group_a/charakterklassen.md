@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Charakterklassen"
 author: "André Matutat (FH Bielefeld)"
 points: 3

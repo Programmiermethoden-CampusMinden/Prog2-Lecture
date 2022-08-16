@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Flyweight-Pattern"
 menuTitle: "Flyweight"
 author: "Carsten Gips (FH Bielefeld)"

@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Optional"
 menuTitle: "Optional"
 author: "Carsten Gips (FH Bielefeld)"

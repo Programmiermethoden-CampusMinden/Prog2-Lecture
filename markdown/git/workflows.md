@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests"
 menuTitle: "Workflows"
 author: "Carsten Gips (FH Bielefeld)"

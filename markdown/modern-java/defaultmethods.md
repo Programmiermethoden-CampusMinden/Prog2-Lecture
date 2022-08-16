@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Interfaces: Default-Methoden"
 menuTitle: "Default-Methoden"
 author: "Carsten Gips (FH Bielefeld)"

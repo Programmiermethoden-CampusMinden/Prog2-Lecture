@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Magie"
 author: "André Matutat (FH Bielefeld)"
 points: 2

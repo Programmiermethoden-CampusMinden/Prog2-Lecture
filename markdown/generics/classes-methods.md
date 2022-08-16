@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Generische Klassen & Methoden"
 menuTitle: "Klassen & Methoden"
 author: "Carsten Gips (FH Bielefeld)"

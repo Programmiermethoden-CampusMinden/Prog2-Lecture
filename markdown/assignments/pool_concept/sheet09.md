@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Blatt 09: Stream-API, Optional, Visitor-Pattern, Command-Pattern"
 author: "André Matutat (FH Bielefeld)"
 points: 10

@@ -1,5 +1,5 @@
 ---
-chapter: true
+archetype: "chapter"
 title: "Pool Konzept"
 hidden: true
 weight: 1

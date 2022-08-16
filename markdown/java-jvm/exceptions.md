@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Exception-Handling"
 menuTitle: "Exceptions"
 author: "André Matutat & Carsten Gips (FH Bielefeld)"

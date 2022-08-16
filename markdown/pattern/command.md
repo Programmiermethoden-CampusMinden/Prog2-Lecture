@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Command-Pattern"
 menuTitle: "Command"
 author: "Carsten Gips (FH Bielefeld)"

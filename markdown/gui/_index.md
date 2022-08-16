@@ -1,5 +1,5 @@
 ---
-chapter: true
+archetype: "chapter"
 title: "GUI"
 weight: 10
 ---

@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Java Collections Framework"
 menuTitle: "Collections"
 author: "André Matutat & Carsten Gips (FH Bielefeld)"

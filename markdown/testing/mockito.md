@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Mocking mit Mockito"
 menuTitle: "Mocking"
 author: "Carsten Gips (FH Bielefeld)"

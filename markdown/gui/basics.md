@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Swing 101: Basics"
 menuTitle: "Swing: Basics"
 author: "Carsten Gips (FH Bielefeld)"

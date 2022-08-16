@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Arbeiten mit Git Remotes (dezentrale Repos)"
 menuTitle: "Remotes"
 author: "Carsten Gips (FH Bielefeld)"

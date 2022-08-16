@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Javadoc"
 menuTitle: "Javadoc"
 author: "Carsten Gips (FH Bielefeld)"

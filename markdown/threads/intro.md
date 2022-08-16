@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Einführung in die nebenläufige Programmierung mit Threads"
 menuTitle: "Intro"
 author: "Carsten Gips (FH Bielefeld)"

@@ -1,5 +1,5 @@
 ---
-chapter: true
+archetype: "chapter"
 title: "Modern Java"
 weight: 8
 ---

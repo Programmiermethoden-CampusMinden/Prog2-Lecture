@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Refactoring"
 menuTitle: "Refactoring"
 author: "Carsten Gips (FH Bielefeld)"

@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Aufzählungen (Enumerations)"
 menuTitle: "Enumerations"
 author: "Carsten Gips (FH Bielefeld)"

@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Template-Method-Pattern"
 menuTitle: "Template-Method"
 author: "Carsten Gips (FH Bielefeld)"

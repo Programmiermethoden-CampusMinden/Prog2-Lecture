@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Reguläre Ausdrücke"
 menuTitle: "RegExp"
 author: "Carsten Gips (FH Bielefeld)"

@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Testen mit JUnit (JUnit-Basics)"
 menuTitle: "JUnit-Basics"
 author: "Carsten Gips (FH Bielefeld)"

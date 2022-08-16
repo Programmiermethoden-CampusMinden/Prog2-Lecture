@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Git Branches: Features unabhängig entwickeln und mit Git verwalten"
 menuTitle: "Branches"
 author: "Carsten Gips (FH Bielefeld)"

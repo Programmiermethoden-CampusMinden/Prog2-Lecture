@@ -1,5 +1,5 @@
 ---
-chapter: true
+archetype: "chapter"
 title: "Gruppe B: Monster und Kampf"
 hidden: true
 weight: 2

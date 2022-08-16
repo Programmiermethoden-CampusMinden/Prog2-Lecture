@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Serialisierung von Objekten und Zuständen"
 menuTitle: "Serialisierung"
 author: "Carsten Gips (FH Bielefeld)"

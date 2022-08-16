@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Blatt 10: Threads, Enumeration"
 author: "André Matutat (FH Bielefeld)"
 points: 10

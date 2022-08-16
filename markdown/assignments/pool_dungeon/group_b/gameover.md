@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Game-Over"
 author: "André Matutat (FH Bielefeld)"
 points: 1

@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Intro: Versionskontrolle in der Softwareentwicklung"
 menuTitle: "Intro"
 author: "Carsten Gips (FH Bielefeld)"

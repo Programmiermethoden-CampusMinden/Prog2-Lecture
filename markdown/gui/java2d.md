@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Einführung in Graphics und Java 2D"
 menuTitle: "Java2D"
 author: "Carsten Gips (FH Bielefeld)"

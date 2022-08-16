@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Einführung in Docker"
 menuTitle: "Docker"
 author: "Carsten Gips (FH Bielefeld)"

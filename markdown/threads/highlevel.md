@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "High-Level Concurrency"
 menuTitle: "High-Level Concurrency"
 author: "Carsten Gips (FH Bielefeld)"

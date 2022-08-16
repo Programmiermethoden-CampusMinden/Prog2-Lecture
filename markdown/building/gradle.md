@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Build-Systeme: Gradle"
 menuTitle: "Gradle"
 author: "Carsten Gips (FH Bielefeld)"

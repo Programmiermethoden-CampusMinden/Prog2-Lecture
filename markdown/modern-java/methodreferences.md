@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Methoden-Referenzen"
 menuTitle: "Methoden-Referenzen"
 author: "Carsten Gips (FH Bielefeld)"

@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Java und Datenbanken: JDBC"
 menuTitle: "JDBC"
 author: "Carsten Gips (FH Bielefeld)"

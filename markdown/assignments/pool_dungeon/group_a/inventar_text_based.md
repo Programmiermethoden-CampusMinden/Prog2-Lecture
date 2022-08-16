@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Inventar (text basiert)"
 author: "André Matutat (FH Bielefeld)"
 points: 3

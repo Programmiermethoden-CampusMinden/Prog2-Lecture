@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Record-Klassen"
 menuTitle: "Records"
 author: "Carsten Gips (FH Bielefeld)"

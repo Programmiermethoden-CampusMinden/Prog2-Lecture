@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Continuous Integration (CI)"
 menuTitle: "Continuous Integration"
 author: "Carsten Gips (FH Bielefeld)"

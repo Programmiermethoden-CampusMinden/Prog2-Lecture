@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Basics der Versionsverwaltung mit Git (lokale Repos)"
 menuTitle: "Basics"
 author: "Carsten Gips (FH Bielefeld)"

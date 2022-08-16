@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Synchronisation: Verteilter Zugriff auf gemeinsame Ressourcen"
 menuTitle: "Synchronisation"
 author: "Carsten Gips (FH Bielefeld)"

@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Debugging"
 menuTitle: "Debugging"
 author: "Carsten Gips (FH Bielefeld)"

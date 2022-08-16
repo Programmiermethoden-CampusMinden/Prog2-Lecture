@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Fehlersuche mit Git Bisect"
 menuTitle: "Bisect"
 author: "Carsten Gips (FH Bielefeld)"

@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Swing: Layout-Manager"
 menuTitle: "Swing: Layout-Manager"
 author: "Carsten Gips (FH Bielefeld)"

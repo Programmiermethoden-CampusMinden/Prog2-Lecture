@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Visitor-Pattern"
 menuTitle: "Visitor"
 author: "Carsten Gips (FH Bielefeld)"
