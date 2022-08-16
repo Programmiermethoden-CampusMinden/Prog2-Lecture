@@ -1,22 +1,11 @@
----
-title: "Credits"
-disableToc: true
-hidden: true
-_build:
-  render: always
-  list: never
-  publishResources: true
----
+# Credits
+
+This is a list of external projects used to build the lecture slides and the web
+pages for the teaching material. These are licensed under their own licences and
+are not part of the CC BY-SA 4.0 licence of this project.
 
 
-Beim Generieren der Vortrags-Folien und der Webseiten für das Unterrichtsmaterial
-kommen einige externe Projekte zum Einsatz, die unter eigenen Lizenzen stehen und
-die nicht von der CC BY-SA 4.0 Lizenz dieses Projekts erfasst sind.
-
-
-## Erzeugen der Folien
-
-Für das Erzeugen der Vortrags-Folien kommen u.a. folgende Projekte zum Einsatz:
+## Building the Lecture Slides
 
 *   [Pandoc](https://github.com/jgm/pandoc)
 *   [Pandoc-Lecture](https://github.com/cagix/pandoc-lecture)
@@ -25,26 +14,21 @@ Für das Erzeugen der Vortrags-Folien kommen u.a. folgende Projekte zum Einsatz:
 *   [Metropolis](https://github.com/matze/mtheme)
 
 
-## Erzeugen der Webseiten
+## Building the Lecture Web Pages
 
-Für die Vorverarbeitung des Materials werden die beiden Projekte eingesetzt:
-
-*   [Pandoc](https://github.com/jgm/pandoc)
-*   [Pandoc-Lecture](https://github.com/cagix/pandoc-lecture)
-
-Die Webseiten für das Unterrichtsmaterial werden mit folgenden Projekten erzeugt:
-
-*   [Hugo](https://github.com/gohugoio/hugo)
-*   [Hugo Relearn Theme](https://github.com/McShelby/hugo-theme-relearn)
-*   [Hugo-Lecture](https://github.com/cagix/Hugo-Lecture)
-
-In den generierten Webseiten werden u.a. diese Projekte genutzt:
-
-*   Icons auf der Webseite stammen von [Font Awesome](https://fontawesome.com)
-*   Mathematische Formeln werden mit [MathJax](https://www.mathjax.org/) erzeugt
+*   Pre-processing:
+    *   [Pandoc](https://github.com/jgm/pandoc)
+    *   [Pandoc-Lecture](https://github.com/cagix/pandoc-lecture)
+*   Compilation of the lecture websites:
+    *   [Hugo](https://github.com/gohugoio/hugo)
+    *   [Hugo Relearn Theme](https://github.com/McShelby/hugo-theme-relearn)
+    *   [Hugo-Lecture](https://github.com/cagix/Hugo-Lecture)
+*   These projects, among others, are used in the generated web pages:
+    *   Icons: [Font Awesome](https://fontawesome.com)
+    *   Rendering of mathematical formulas: [MathJax](https://www.mathjax.org/)
 
 
-## Weitere genutzte Tools
+## Further Tools used
 
 *   [GNU Make](https://www.gnu.org/software/make/)
 *   [Pandoc Dockerfiles](https://github.com/pandoc/dockerfiles)
@@ -52,7 +36,8 @@ In den generierten Webseiten werden u.a. diese Projekte genutzt:
 *   [GitHub](https://github.com/)
 
 
-## Beitragende
+## Contributors
 
-Dieses Projekt wurde und wird erstellt und gepflegt vom Autor [Carsten Gips](https://github.com/cagix)
-sowie weiteren [Beitragenden](https://github.com/Programmiermethoden/PM-Lecture/graphs/contributors).
+This project has been created and is being maintained by the author
+[Carsten Gips](https://github.com/cagix) and various
+[contributors](https://github.com/Programmiermethoden/PM-Lecture/graphs/contributors).
