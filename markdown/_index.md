@@ -1,5 +1,5 @@
 ---
-chapter: true
+archetype: "home"
 title: "PM S22"
 hidden: true
 ---
