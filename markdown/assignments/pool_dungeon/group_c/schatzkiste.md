@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Schatzkisten"
 author: "André Matutat (FH Bielefeld)"
 points: 1

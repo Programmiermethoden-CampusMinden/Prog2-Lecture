@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Freundliche NPCs"
 author: "André Matutat (FH Bielefeld)"
 points: 2

@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Singleton-Pattern"
 menuTitle: "Singleton"
 author: "Carsten Gips (FH Bielefeld)"

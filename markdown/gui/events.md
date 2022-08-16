@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Swing Events"
 menuTitle: "Swing: Events"
 author: "Carsten Gips (FH Bielefeld)"

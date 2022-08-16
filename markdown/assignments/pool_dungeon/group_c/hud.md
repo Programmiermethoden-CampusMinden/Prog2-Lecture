@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "HUD"
 author: "André Matutat (FH Bielefeld)"
 points: 2

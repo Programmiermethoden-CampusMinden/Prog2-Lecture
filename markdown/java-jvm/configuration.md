@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Konfiguration eines Programms"
 menuTitle: "Konfiguration"
 author: "Carsten Gips (FH Bielefeld)"

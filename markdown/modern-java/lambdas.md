@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Lambda-Ausdrücke und funktionale Interfaces"
 menuTitle: "Lambda-Ausdrücke"
 author: "Carsten Gips (FH Bielefeld)"

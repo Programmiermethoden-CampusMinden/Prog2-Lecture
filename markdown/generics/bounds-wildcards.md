@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Bounds & Wildcards"
 menuTitle: "Bounds & Wildcards"
 author: "Carsten Gips (FH Bielefeld)"

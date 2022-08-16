@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Generics und Polymorphie"
 menuTitle: "Polymorphie"
 author: "Carsten Gips (FH Bielefeld)"

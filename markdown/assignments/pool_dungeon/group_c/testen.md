@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "JUnit Group C"
 author: "André Matutat (FH Bielefeld)"
 points: 5

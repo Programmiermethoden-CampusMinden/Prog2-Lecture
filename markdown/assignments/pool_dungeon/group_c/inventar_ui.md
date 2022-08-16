@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Inventar (UI)"
 author: "André Matutat (FH Bielefeld)"
 points: 2

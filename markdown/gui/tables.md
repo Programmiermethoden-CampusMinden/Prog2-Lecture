@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Swing: Tabellen"
 menuTitle: "Swing: Tabellen"
 author: "Carsten Gips (FH Bielefeld)"

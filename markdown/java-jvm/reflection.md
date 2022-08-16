@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Reflection"
 menuTitle: "Reflection"
 author: "Carsten Gips (FH Bielefeld)"

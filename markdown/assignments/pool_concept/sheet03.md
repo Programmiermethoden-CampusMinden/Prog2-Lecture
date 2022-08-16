@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Blatt 03: Generics, Strategy-Pattern"
 author: "André Matutat (FH Bielefeld)"
 points: 10

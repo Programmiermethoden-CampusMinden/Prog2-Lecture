@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Annotationen"
 menuTitle: "Annotationen"
 author: "Carsten Gips (FH Bielefeld)"

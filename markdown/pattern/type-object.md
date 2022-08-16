@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Type-Object-Pattern"
 menuTitle: "Type-Object"
 author: "Carsten Gips (FH Bielefeld)"

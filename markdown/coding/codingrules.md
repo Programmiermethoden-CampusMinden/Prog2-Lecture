@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Coding Conventions und Metriken"
 menuTitle: "Coding Conventions"
 author: "Carsten Gips (FH Bielefeld)"

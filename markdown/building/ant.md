@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Build-Systeme: Apache Ant"
 menuTitle: "Ant"
 author: "Carsten Gips (FH Bielefeld)"

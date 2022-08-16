@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Type Erasure"
 menuTitle: "Type Erasure"
 author: "Carsten Gips (FH Bielefeld)"

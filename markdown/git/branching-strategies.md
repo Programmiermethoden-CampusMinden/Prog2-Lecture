@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Branching-Strategien mit Git"
 menuTitle: "Branching-Strategien"
 author: "Carsten Gips (FH Bielefeld)"

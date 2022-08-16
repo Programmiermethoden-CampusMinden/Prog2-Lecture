@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Strategy-Pattern"
 menuTitle: "Strategy"
 author: "Carsten Gips (FH Bielefeld)"

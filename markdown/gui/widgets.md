@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Swing: Nützliche Widgets"
 menuTitle: "Swing: Widgets"
 author: "Carsten Gips (FH Bielefeld)"

@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Testbarkeit und Testdriven Development (TDD)"
 menuTitle: "Testbarkeit und TDD"
 author: "Carsten Gips (FH Bielefeld)"

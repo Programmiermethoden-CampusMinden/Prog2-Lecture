@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Stream-API"
 menuTitle: "Stream-API"
 author: "Carsten Gips (FH Bielefeld)"

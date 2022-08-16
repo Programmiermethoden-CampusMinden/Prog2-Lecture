@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Factory-Method-Pattern"
 menuTitle: "Factory-Method"
 author: "Carsten Gips (FH Bielefeld)"

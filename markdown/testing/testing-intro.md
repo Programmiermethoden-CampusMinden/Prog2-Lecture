@@ -1,5 +1,5 @@
 ---
-type: lecture-cg
+archetype: lecture-cg
 title: "Einführung Softwaretest"
 menuTitle: "Intro SW-Test"
 author: "Carsten Gips (FH Bielefeld)"

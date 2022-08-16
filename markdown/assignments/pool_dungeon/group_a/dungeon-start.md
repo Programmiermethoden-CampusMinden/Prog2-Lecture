@@ -1,5 +1,5 @@
 ---
-type: assignment
+archetype: assignment
 title: "Dungeon-Start"
 author: "André Matutat (FH Bielefeld)"
 points: 10
