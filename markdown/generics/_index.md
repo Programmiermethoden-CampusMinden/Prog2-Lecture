@@ -1,5 +1,5 @@
 ---
-chapter: true
+archetype: "chapter"
 title: "Generics"
 weight: 6
 ---

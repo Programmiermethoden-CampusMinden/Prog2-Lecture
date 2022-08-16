@@ -1,5 +1,5 @@
 ---
-chapter: true
+archetype: "chapter"
 title: "Java / JVM"
 weight: 7
 ---

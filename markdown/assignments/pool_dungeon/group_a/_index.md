@@ -1,5 +1,5 @@
 ---
-chapter: true
+archetype: "chapter"
 title: "Gruppe A: Basics"
 hidden: true
 weight: 1

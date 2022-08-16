@@ -1,5 +1,5 @@
 ---
-chapter: true
+archetype: "chapter"
 title: "Pattern"
 weight: 5
 ---
