@@ -2,7 +2,7 @@
 archetype: "chapter"
 title: "Zugriffe auf Datenbanken: JDBC"
 menuTitle: "Database"
-weight: 11
+weight: 12
 
 hidden: true
 _build:

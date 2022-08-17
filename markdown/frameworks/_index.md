@@ -2,7 +2,7 @@
 archetype: "chapter"
 title: "Umgang mit Frameworks"
 menuTitle: "Frameworks"
-weight: 12
+weight: 11
 ---
 
 
