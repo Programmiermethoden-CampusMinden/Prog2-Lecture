@@ -1,11 +1,9 @@
 ---
 archetype: "chapter"
-title: "Threads"
+title: "Multi-Threading: Parallelisierung von Programmen"
+menuTitle: "Threads"
 weight: 9
 ---
-
-
-# Multi-Threading: Parallelisierung von Programmen
 
 
 `{{< children showhidden="true" >}}`{=markdown}

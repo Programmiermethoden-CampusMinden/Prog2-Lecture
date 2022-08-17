@@ -1,11 +1,9 @@
 ---
 archetype: "chapter"
-title: "Pattern"
+title: "Entwurfsmuster"
+menuTitle: "Pattern"
 weight: 5
 ---
-
-
-# Entwurfsmuster
 
 
 `{{< children showhidden="true" >}}`{=markdown}

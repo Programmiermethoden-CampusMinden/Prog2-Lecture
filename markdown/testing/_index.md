@@ -1,11 +1,9 @@
 ---
 archetype: "chapter"
-title: "Testing"
+title: "Testen mit JUnit und Mockito"
+menuTitle: "Testing"
 weight: 2
 ---
-
-
-# Testen mit JUnit und Mockito
 
 
 `{{< children showhidden="true" >}}`{=markdown}

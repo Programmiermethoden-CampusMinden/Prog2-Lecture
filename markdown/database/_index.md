@@ -1,7 +1,8 @@
 ---
 archetype: "chapter"
-title: "Database"
-weight: 11
+title: "Zugriffe auf Datenbanken: JDBC"
+menuTitle: "Database"
+weight: 12
 
 hidden: true
 _build:
@@ -9,9 +10,6 @@ _build:
   list: never
   publishResources: false
 ---
-
-
-# Zugriffe auf Datenbanken: JDBC
 
 
 `{{< children showhidden="true" >}}`{=markdown}

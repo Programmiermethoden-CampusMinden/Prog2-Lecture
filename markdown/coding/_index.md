@@ -1,11 +1,9 @@
 ---
 archetype: "chapter"
-title: "Coding"
+title: "Programmiermethoden und Clean Code"
+menuTitle: "Coding"
 weight: 3
 ---
-
-
-# Programmiermethoden und Clean Code
 
 
 `{{< children showhidden="true" >}}`{=markdown}
