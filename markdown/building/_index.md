@@ -1,11 +1,9 @@
 ---
 archetype: "chapter"
-title: "Building"
+title: "Bauen von Programmen, Automatisierung, Continuous Integration"
+menuTitle: "Building"
 weight: 4
 ---
-
-
-# Bauen von Programmen, Automatisierung, Continuous Integration
 
 
 `{{< children showhidden="true" >}}`{=markdown}

@@ -1,12 +1,11 @@
 ---
 archetype: "chapter"
-title: "Gruppe A: Basics"
-hidden: true
+title: "Gruppe A: 'Basics'"
 weight: 1
+
+hidden: true
 ---
 
-
-# Gruppe A "Basics"
 
 Hier finden Sie die Praktikumsaufgaben aus Gruppe A "Basics". Sie benötigen diese Aufgaben, um
 einen rudimentären Dungeon zu erhalten.

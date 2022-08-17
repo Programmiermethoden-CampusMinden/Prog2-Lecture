@@ -1,11 +1,9 @@
 ---
 archetype: "chapter"
-title: "Frameworks"
+title: "Umgang mit Frameworks"
+menuTitle: "Frameworks"
 weight: 12
 ---
-
-
-# Umgang mit Frameworks
 
 
 `{{< children showhidden="true" >}}`{=markdown}

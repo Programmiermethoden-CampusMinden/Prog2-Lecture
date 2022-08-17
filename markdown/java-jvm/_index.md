@@ -1,11 +1,9 @@
 ---
 archetype: "chapter"
-title: "Java / JVM"
+title: "Fortgeschrittene Java-Themen und Umgang mit JVM"
+menuTitle: "Java / JVM"
 weight: 7
 ---
-
-
-# Fortgeschrittene Java-Themen und Umgang mit JVM
 
 
 `{{< children showhidden="true" >}}`{=markdown}

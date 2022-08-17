@@ -1,11 +1,9 @@
 ---
 archetype: "chapter"
-title: "Git"
+title: "Versionierung mit Git"
+menuTitle: "Git"
 weight: 1
 ---
-
-
-# Versionierung mit Git
 
 
 `{{< children showhidden="true" >}}`{=markdown}
