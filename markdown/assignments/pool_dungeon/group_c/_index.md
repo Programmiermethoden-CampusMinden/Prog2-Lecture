@@ -1,6 +1,6 @@
 ---
 archetype: "chapter"
-title: "Gruppe C: 'Items, Aufbewahrung und Handel'"
+title: "Gruppe C: Items, Aufbewahrung und Handel"
 weight: 3
 
 hidden: true

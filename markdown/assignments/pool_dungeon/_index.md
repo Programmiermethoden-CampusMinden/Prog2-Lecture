@@ -1,6 +1,6 @@
 ---
 archetype: "chapter"
-title: "Pool 'Dungeon'"
+title: "Pool Dungeon"
 weight: 2
 
 hidden: true

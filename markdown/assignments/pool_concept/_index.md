@@ -1,6 +1,6 @@
 ---
 archetype: "chapter"
-title: "Pool 'Konzept'"
+title: "Pool Konzept"
 weight: 1
 
 hidden: true

@@ -1,6 +1,6 @@
 ---
 archetype: "chapter"
-title: "Gruppe B: 'Monster und Kampf'"
+title: "Gruppe B: Monster und Kampf"
 weight: 2
 
 hidden: true
