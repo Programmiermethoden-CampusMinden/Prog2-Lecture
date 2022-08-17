@@ -4,6 +4,7 @@ author:
 -   "VORNAME NAME (EMAIL)"
 -   "VORNAME NAME (EMAIL)"
 -   "VORNAME NAME (EMAIL)"
+
 hidden: true
 ---
 

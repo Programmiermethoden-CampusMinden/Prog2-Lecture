@@ -4,6 +4,7 @@ title: "Fähigkeiten"
 author: "André Matutat (FH Bielefeld)"
 points: 3
 weight: 2
+
 hidden: true
 ---
 

@@ -4,6 +4,7 @@ title: "Dialogsystem"
 author: "André Matutat (FH Bielefeld)"
 points: 5
 weight: 7
+
 hidden: true
 ---
 

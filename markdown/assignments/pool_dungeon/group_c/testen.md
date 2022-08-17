@@ -4,6 +4,7 @@ title: "JUnit Group C"
 author: "André Matutat (FH Bielefeld)"
 points: 5
 weight: 10
+
 hidden: true
 ---
 

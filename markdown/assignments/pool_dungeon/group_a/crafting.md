@@ -4,6 +4,7 @@ title: "Crafting"
 author: "André Matutat (FH Bielefeld)"
 points: 5
 weight: 5
+
 hidden: true
 ---
 

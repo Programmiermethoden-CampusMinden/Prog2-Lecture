@@ -4,6 +4,7 @@ title: "JUnit Group B"
 author: "André Matutat (FH Bielefeld)"
 points: 5
 weight: 9
+
 hidden: true
 ---
 

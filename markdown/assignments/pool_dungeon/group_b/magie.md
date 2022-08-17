@@ -4,6 +4,7 @@ title: "Magie"
 author: "André Matutat (FH Bielefeld)"
 points: 2
 weight: 5
+
 hidden: true
 ---
 
