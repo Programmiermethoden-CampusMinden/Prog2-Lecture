@@ -4,6 +4,7 @@ title: "Shop"
 author: "André Matutat (FH Bielefeld)"
 points: 10
 weight: 9
+
 hidden: true
 ---
 

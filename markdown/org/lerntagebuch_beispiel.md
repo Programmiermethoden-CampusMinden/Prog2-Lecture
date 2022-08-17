@@ -1,6 +1,7 @@
 ---
 title: "Lerntagebuch Beispiel"
 author: "André Matutat"
+
 hidden: true
 ---
 

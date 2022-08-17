@@ -3,9 +3,10 @@ archetype: lecture-cg
 title: "Ressourcen"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 4
-hidden: true
 nocite: |
   @Ullenboom2021,@Chacon2014,@Fowler2011,@Bloch2018,@Martin2009,@Passig2013,@Urma2014
+
+hidden: true
 ---
 
 

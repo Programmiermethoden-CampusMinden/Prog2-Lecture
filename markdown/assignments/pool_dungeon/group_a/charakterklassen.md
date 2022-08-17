@@ -4,6 +4,7 @@ title: "Charakterklassen"
 author: "André Matutat (FH Bielefeld)"
 points: 3
 weight: 6
+
 hidden: true
 ---
 
