@@ -33,17 +33,6 @@ params:
   - "relearn-dark"
   - "green"
 
-outputs:
-  home:
-    - "HTML"
-    - "PRINT"
-  section:
-    - "HTML"
-    - "PRINT"
-  page:
-    - "HTML"
-    - "PRINT"
-
 menu:
   shortcuts:
   - name: "<i class='fas fa-bookmark'></i> Fahrplan"
