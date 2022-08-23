@@ -1,4 +1,3 @@
-#baseURL: "https://pm-dungeon.github.io/PM-Lecture/"
 baseURL: "https://www.fh-bielefeld.de/elearning/data/FH-Bielefeld/lm_data/lm_1359639/"
 # https://gohugo.io/content-management/urls/
 canonifyURLs: true   # prepend all relative URLs w/ baseURL
