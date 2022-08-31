@@ -2,7 +2,8 @@
 
 ## Overview
 
-tbd
+This represents the lecture material for the lecture "Programmiermethoden",
+a course developed and taught at Bielefeld University of Applied Sciences.
 
 
 ## Contributing
@@ -20,6 +21,8 @@ in North Rhine-Westphalia in agreement with the Digitale Hochschule NRW (DH.NRW)
 
 See the [credits](CREDITS.md) for a detailed list of contributing projects.
 
+
+---
 
 ## License
 
