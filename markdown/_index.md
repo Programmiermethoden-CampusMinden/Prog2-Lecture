@@ -4,89 +4,65 @@ title: "PM S22"
 ---
 
 
-# Willkommen zur Lehrveranstaltung Programmiermethoden im Sommer 2022
+# IFM 2.2: Programmiermethoden (Sommer 2022)
 
-## Team, Kontakt und Kommunikation
+## Kursbeschreibung
 
-### Dozenten
+Sie haben letztes Semester in OOP die _wichtigsten_ Elemente und Konzepte der
+Programmiersprache Java kennen gelernt.
+
+In diesem Modul geht es darum, diese Kenntnisse sowohl auf der Java- als auch auf der
+Methoden-Seite so zu erweitern, dass Sie gemeinsam größere Anwendungen erstellen und
+pflegen können. Sie werden fortgeschrittene Konzepte in Java kennenlernen und sich mit
+etablierten Methoden in der Softwarentwicklung wie Versionierung von Code, Einhaltung
+von Coding Conventions, Grundlagen des Softwaretests, Anwendung von Refactoring, Einsatz
+von Build-Tools und Logging auseinander setzen. Wenn uns dabei ein Entwurfsmuster "über
+den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anschauen.
+
+Siehe `["Syllabus"]({{< ref "/org/syllabus" >}})`{=markdown} zu Details.
+
+
+## Team
 
 -   [Carsten Gips](https://www.fh-bielefeld.de/minden/ueber-uns/personenverzeichnis/carsten-gips) (Vorlesung, Organisation)
 -   Jonas Posselt (Praktikum; Kontaktdaten siehe [ILIAS-Kursraum > Info](https://www.fh-bielefeld.de/elearning/ilias.php?ref_id=1015325&cmdClass=ilinfoscreengui&cmd=showSummary&cmdNode=wr:ls:er&baseClass=ilrepositorygui#after_tabs))
 -   Tutoren (siehe ILIAS-Mitgliederliste)
 
-### Sprechstunde ("Flipped"-Teil der Vorlesung)
-
-Wir nutzen den Vorlesungsslot als Sprechstunde für den "Flipped"-Teil der Vorlesung.
-
-### Kommunikation
-
--   **Sie-an-uns**: Praktikum, Sprechstunde (per Zoom), E-Mail,
-    [Issue](https://github.com/Programmiermethoden/PM-Lecture/issues/new/choose) im
-    [Github](https://github.com/Programmiermethoden/PM-Lecture)
--   **Wir-an-Sie**: "News" im ILIAS, Antwort auf Issues
-
-Zur Verteilung der Themen siehe auch den `["Fahrplan"]({{< ref "/org/schedule" >}})`{=markdown}.
-
-### Hinweis zur Förderung durch DH.NRW (Digi Fellowships)
-
-Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und Wissenschaft
-(MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert
-(["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]).
-
-["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
-
 
 ## Kursformat
 
-![](images/fahrplan.png){width="60%"}
+![](images/fahrplan.png){width="80%"}
 
 ### Vorlesung: 2 SWS
 
-=> Vorlesungszeit:
-*   Einmalig am Mo, 04.04.22: 15:45 - 17:15 Uhr (online/J104)
-*   Ab 08.04.22: **Fr, 16:00 - 17:30 Uhr**  (online/J104)
+*   Fr, 16:00 - 17:30 Uhr (online/J104)
 
-Durchführung als **Flipped Classroom**:
-*   Vorbereitung individuell \@home mit ausführlich kommentierten Skripten plus
-    Screencasts (**Selbststudium**)
-*   **Sprechstunde** ("Flipped"-Teil der Vorlesung) **per Zoom** (Zugangsdaten siehe ILIAS)
-
-::: notes
-[Achtung:]{.alert} Es gibt keine Präsenzvorlesung. Arbeiten Sie das bereitgestellte Material
-(Handouts, Screencasts, Quizzes, Literaturhinweise) **selbstständig vor** der Sprechstunde
-durch. Im VL-Slot findet eine Zoom-Sprechstunde zu den jeweiligen Themen statt. Sie können
-dafür den angegebenen Raum nutzen.
-:::
+Durchführung als **Flipped Classroom**: Sitzungen per Zoom (**Zugangsdaten siehe [ILIAS]**)
 
 ### Praktikum: 2 SWS
 
 *   Gruppe 1: Fr, 09:00 - 10:30 Uhr (D320)
-*   Gruppe 2: Fr, 12:45 - 14:15 Uhr (D320) (**Achtung: Abweichung vom Stundenplan**)
+*   Gruppe 2: Fr, 12:45 - 14:15 Uhr (D320)
 *   Gruppe 3: Fr, 10:45 - 12:15 Uhr (D320)
-
-\bigskip
-
-Ablauf:
--   Bearbeitung der Aufgaben in **3er Teams** vor dem Praktikum
--   Abgabe der gelösten Aufgaben **vor** der Deadline im ILIAS
--   Vorstellung und Diskussion der Lösung **im** Praktikum (**Präsenzpflicht**;
-    nur in Ausnahmefällen Hybrid - bitte _zeitnah_ beim Dozenten melden)
-
-::: notes
-In ausgewählten Wochen finden statt der Praktika zusätzliche Vorlesungen statt
-(Durchführungsmodus dann wie bei den Vorlesungen).
-:::
-
-Siehe auch `["Hinweise zum Praktikum"]({{< ref "/org/grading" >}})`{=markdown}
 
 ### Tutorium: 1 SWS
 
--   Mo, 13:30 - 15:00 Uhr (B70) (**Achtung: Raumänderung**)
+*   Mo, 13:30 - 15:00 Uhr (B70)
 
-**Anmerkung**: Das Tutorium in PM ist fester Bestandteil der Prüfungsordnung. Es besteht Teilnahmepflicht.
+[ILIAS]: https://www.fh-bielefeld.de/elearning/goto.php?target=crs_1015325&client_id=FH-Bielefeld
 
 ### Prüfungsform
 
 **Performanzprüfung**, 7 ECTS
 
-Siehe auch `["Hinweise zur Prüfung"]({{< ref "/org/grading" >}})`{=markdown}
+Siehe `["Hinweise zur Prüfung"]({{< ref "/org/grading" >}})`{=markdown} zu Details.
+
+
+## Materialien
+
+Siehe `["Ressourcen"]({{< ref "/org/resources" >}})`{=markdown} zu Details.
+
+
+## Fahrplan
+
+`{{< schedule >}}`{=markdown}
