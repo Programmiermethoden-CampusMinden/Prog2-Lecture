@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Note und Credits"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 2
+weight: 3
 
 hidden: true
 ---
@@ -103,7 +103,7 @@ nicht fest. Es sind hier alle in der Veranstaltung besprochenen Themen relevant.
 
 Die Prüfung für die theoretische Teilleistung wird als digitale Klausur über eine
 spezielle ILIAS-Instanz ("E-Assessment-Server") durchgeführt. Nähere Informationen
-siehe `["Prüfungsvorbereitung"]({{< ref "/org/exam" >}})`{=markdown}.
+siehe `["Prüfungsvorbereitung"]({{< ref "/org/exams" >}})`{=markdown}.
 
 Im ersten Prüfungszeitraum besteht die theoretische Prüfung aus zwei kürzeren Teilprüfungen
 ("E-Assessments") mit je 45 Minuten Dauer, die einmal etwa in der Mitte der Vorlesungszeit
@@ -116,7 +116,7 @@ Im zweiten Prüfungszeitraum besteht die theoretische Prüfung aus einer digital
 Es wird jeweils rechtzeitig bekanntgegeben, ob die Prüfungen wie bisher im Home-Office durchgeführt
 werden oder ob dafür Rechner der FH genutzt werden, d.h. eine Anwesenheit in den Räumen der FH am
 Campus Minden notwendig ist. Die Termine in den Prüfungszeiträumen werden rechtzeitig vom Prüfungsamt
-bekannt gegeben, für den Termin in der Vorlesungszeit siehe `[Fahrplan]({{< ref "/org/schedule" >}})`{=markdown}.
+bekannt gegeben.
 :::
 
 
