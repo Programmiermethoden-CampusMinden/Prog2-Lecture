@@ -14,7 +14,7 @@ Programmiersprache Java kennen gelernt.
 In diesem Modul geht es darum, diese Kenntnisse sowohl auf der Java- als auch auf der
 Methoden-Seite so zu erweitern, dass Sie gemeinsam größere Anwendungen erstellen und
 pflegen können. Sie werden fortgeschrittene Konzepte in Java kennenlernen und sich mit
-etablierten Methoden in der Softwarentwicklung wie Versionierung von Code, Einhaltung
+etablierten Methoden in der Softwareentwicklung wie Versionierung von Code, Einhaltung
 von Coding Conventions, Grundlagen des Softwaretests, Anwendung von Refactoring, Einsatz
 von Build-Tools und Logging auseinander setzen. Wenn uns dabei ein Entwurfsmuster "über
 den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anschauen.
@@ -41,9 +41,11 @@ Durchführung als **Flipped Classroom**: Sitzungen per Zoom (**Zugangsdaten sieh
 
 ### Praktikum: 2 SWS
 
-*   Gruppe 1: Fr, 09:00 - 10:30 Uhr (D320)
-*   Gruppe 2: Fr, 12:45 - 14:15 Uhr (D320)
-*   Gruppe 3: Fr, 10:45 - 12:15 Uhr (D320)
+*   Gruppe 1: Fr, 09:00 - 10:30 Uhr (online/D320)
+*   Gruppe 2: Fr, 12:45 - 14:15 Uhr (online/D320)
+*   Gruppe 3: Fr, 10:45 - 12:15 Uhr (online/D320)
+
+**Zugangsdaten siehe [ILIAS]**
 
 ### Tutorium: 1 SWS
 
@@ -51,18 +53,36 @@ Durchführung als **Flipped Classroom**: Sitzungen per Zoom (**Zugangsdaten sieh
 
 [ILIAS]: https://www.fh-bielefeld.de/elearning/goto.php?target=crs_1015325&client_id=FH-Bielefeld
 
-### Prüfungsform
+### Prüfungsform, Note und Credits
 
 **Performanzprüfung**, 7 ECTS
 
-Siehe `["Hinweise zur Prüfung"]({{< ref "/org/grading" >}})`{=markdown} zu Details.
+Hier finden Sie Informationen zum Ablauf des Praktikums sowie zur Prüfungsform:
+`["Note und Credits"]({{< ref "/org/grading" >}})`{=markdown}.
 
 
 ## Materialien
 
-Siehe `["Ressourcen"]({{< ref "/org/resources" >}})`{=markdown} zu Details.
+1.  ["**Java ist auch eine Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
+    Ullenboom, C., Rheinwerk-Verlag, 2021.
+    ISBN [978-3-8362-8745-6](https://www.digibib.net/openurl/Bi10?isbn=978-3-8362-8745-6).
+
+2.  ["**Pro Git**"](https://git-scm.com/book/en/v2).
+    Chacon, S. und Straub, B., Apress, 2014.
+    ISBN [978-1-4842-0077-3](https://www.digibib.net/openurl/Bi10?isbn=978-1-4842-0077-3).
+
+3.  ["Java Core Libraries Developer Guide"](https://docs.oracle.com/en/java/javase/17/core/index.html).
+    Oracle Corporation, 2022.
+
+4.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
+    Oracle Corporation, 2022.
+
+Weitere empfohlene Literatur siehe `["Ressourcen"]({{< ref "/org/resources" >}})`{=markdown}.
 
 
 ## Fahrplan
 
 `{{< schedule >}}`{=markdown}
+
+**Hinweis**: Abgabe der Hausaufgaben als Pull-Request bis jeweils 18:00 Uhr (Konzept-Aufgaben)
+bzw. 09.00 Uhr (Dungeon-Aufgaben) im GitHub.
