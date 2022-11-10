@@ -29,10 +29,11 @@ Zur Verteilung der Themen siehe auch den `["Fahrplan"]({{< ref "/org/schedule" >
 
 ### Hinweis zur Förderung durch DH.NRW (Digi Fellowships)
 
-Die Überarbeitung dieser Lehrveranstaltung wird vom Ministerium für Kultur und
-Wissenschaft (MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW)
-gefördert ("Fellowships für Innovationen in der digitalen Hochschulbildung
-(Digi Fellowships)").
+Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und Wissenschaft
+(MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert
+(["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]).
+
+["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
 
 
 ## Kursformat

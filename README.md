@@ -17,7 +17,7 @@ opening a new issue.
 
 The revision of this course was funded by the Ministry of Culture and Science (MKW)
 in North Rhine-Westphalia in agreement with the Digitale Hochschule NRW (DH.NRW)
-("Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)").
+(["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"](https://www.dh.nrw/kooperationen/Digi-Fellows-2)).
 
 See the [credits](CREDITS.md) for a detailed list of contributing projects.
 
