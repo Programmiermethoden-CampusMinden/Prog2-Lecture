@@ -1,24 +1,31 @@
-##########################################################################
-# Makefile for the 'Programmiermethoden' lecture
-##########################################################################
+#################################################################################
+# Makefile for building the lecture material (website and slides)
+#################################################################################
 
 ## Run 'make' or 'make help' to display commonly used targets. Targets for
 ## individual files also exist but should only be used if you know what
 ## you are doing.
 
 ## NOTE:
-## The pdf slides that can be generated for certain chapters are named by
-## taking the relative path of the respective source file and replacing
-## any '/' with an '_' (e.g. A/B/C -> A_B_C). This must be reversable in
-## order to find the prerequisites for each output file. Therefore, any
-## subdirectory of the $(SRC_DIR) directory must NOT contain an '_'.
+## The pdf slides that can be generated for certain chapters are named by taking
+## the relative path of the respective source file and replacing any '/' with an
+## '_' (e.g. A/B/C -> A_B_C).
+## This must be reversable in order to find the prerequisites for each output
+## file. Therefore, any subdirectory of the $(SRC_DIR) directory must NOT contain
+## any '_'.
 
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
+# Literature and other sources: Please adjust to your course!
+#--------------------------------------------------------------------------------
+
+## Readings data template
+READINGS = data/readings.yaml
+BIBTEX   = pm.bib
+
+#--------------------------------------------------------------------------------
 # Tools
-#-------------------------------------------------------------------------
-## Define tools to process various types of source files. By default, a
-## custom Docker image will be used. To create this image, run:
-## make create-docker-image
+#--------------------------------------------------------------------------------
+## Define tools to process various types of source files.
 ##
 ## Launching tools via a Docker container: make TARGET
 ## Launch the tools directly:              export DOCKER=false; make TARGET
@@ -68,9 +75,9 @@ DOT_ARGS = -Tpng
 HUGO_LOCAL = $(wildcard local.yaml)
 HUGO_ARGS  = --config config.yaml,$(HUGO_LOCAL)
 
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
 # I/O Directories
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
 
 ## Top level directory for source files
 SRC_DIR = markdown
@@ -95,9 +102,9 @@ WEB_OUTPUT_DIR = docs
 ## Output directory for generated slides
 SLIDES_OUTPUT_DIR = pdf
 
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
 # Helper lists
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
 
 ## TeX source and target files
 TEX_SOURCES        = $(shell find $(SRC_DIR) -type f -iname '*.tex')
@@ -147,13 +154,9 @@ SLIDES_SINGLE_PDF_TARGETS      = $(addprefix $(SLIDES_OUTPUT_DIR)/,$(subst /,_, 
 SLIDES_MARKDOWN_TARGETS        = $(SLIDES_BUNDLE_MARKDOWN_SOURCES:$(SRC_DIR)%=$(SLIDES_INTERMEDIATE_DIR)%) $(SLIDES_SINGLE_MARKDOWN_SOURCES:$(SRC_DIR)%=$(SLIDES_INTERMEDIATE_DIR)%)
 SLIDES_SHORT_TARGETS           = $(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,%,$(SLIDES_BUNDLE_PDF_TARGETS)) $(patsubst $(SLIDES_OUTPUT_DIR)/%.pdf,%,$(SLIDES_SINGLE_PDF_TARGETS))
 
-## Readings data template
-READINGS = data/readings.yaml
-BIBTEX   = pm.bib
-
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
 # Secondary Expansion
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
 
 ## Enable secondary expansion for subsequent targets. This allows the use
 ## of automatic variables like '@' in the prerequisite definitions by
@@ -163,9 +166,9 @@ BIBTEX   = pm.bib
 
 .SECONDEXPANSION:
 
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
 # Phony Targets
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
 
 .DEFAULT_GOAL:=help
 
@@ -212,53 +215,17 @@ docker: ## Build Docker image "alpine-pandoc-hugo"
 
 ##@ Cleanup
 
-.PHONY: clean-all
-clean-all: clean-temp ## Clean up all generated files and directories
+.PHONY: distclean
+distclean: clean ## Clean up all generated files and directories
 	rm -rf $(SLIDES_OUTPUT_DIR) $(WEB_OUTPUT_DIR) $(READINGS)
 
-.PHONY: clean-temp
-clean-temp: ## Clean up all intermediate files and directories
+.PHONY: clean
+clean: ## Clean up intermediate files and directories
 	rm -rf $(TEMP_DIR) $(HUGO_TEMP_DIR) $(HUGO_LOCK)
 
-.PHONY: distclean
-distclean: clean-all ## Same as clean-all
-
-.PHONY: clean
-clean: clean-temp ## Same as clean-temp
-
-##@ New Elements
-
-## Create new lecture stub based on archetype
-## Use all sections and the page name, but leave out "content/" and "index.md".
-## Example: "markdown/topic/subtopic/lecture/index.md" becomes "topic/subtopic/lecture"
-## 1. "make new_chapter TOPIC=topic"
-## 2. "make new_chapter TOPIC=topic/subtopic"
-## 3. "make new_lecture-bc TOPIC=topic/subtopic/lecture"
-TOPIC ?=
-
-PHONY: new_chapter
-new_chapter: ## Create new chapter
-	$(HUGO) new -c "$(ORIG_CONTENT)/" -k chapter $(TOPIC)
-
-PHONY: new_lecture-bc
-new_lecture-bc: ## Create new lecture for BC
-	$(HUGO) new -c "$(ORIG_CONTENT)/" -k lecture-bc $(TOPIC)
-
-PHONY: new_lecture-cg
-new_lecture-cg: ## Create new lecture for Carsten
-	$(HUGO) new -c "$(ORIG_CONTENT)/" -k lecture-cg $(TOPIC)
-
-PHONY: new_lecture-cy
-new_lecture-cy: ## Create new lecture for Canan
-	$(HUGO) new -c "$(ORIG_CONTENT)/" -k lecture-cy $(TOPIC)
-
-PHONY: new_assignment
-new_assignment: ## Create new assignment
-	$(HUGO) new -c "$(ORIG_CONTENT)/" -k assignment $(TOPIC)
-
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
 # File Targets
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
 
 ## Canned recipe for creating output folder
 define create-folder
