@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          submodules: true
       - uses: cagix/pandoc-lecture@master
         with:
           make-target: 'make web_zip'
