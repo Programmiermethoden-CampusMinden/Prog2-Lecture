@@ -5,6 +5,7 @@ uglyurls: true       # use foo.de/bar.html instead of foo.de/bar/ (our new ILIAS
 
 languageCode: "de-DE"
 metaDataFormat: "yaml"
+
 theme:
   - "hugo-lecture"
   - "hugo-theme-relearn"
@@ -16,8 +17,8 @@ publishDir: "docs"
 params:
   editURL: "https://github.com/Programmiermethoden/PM-Lecture/edit/master/markdown/"
   author: "cagix"
-  themeVariant: "green"
   titleSeparator: " "
+  collapsibleMenu: true
   showVisitedLinks: true
   disableBreadcrumb: true
   disableInlineCopyToClipBoard: true
