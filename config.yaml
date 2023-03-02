@@ -9,8 +9,9 @@ metaDataFormat: "yaml"
 theme:
   - "hugo-lecture"
   - "hugo-theme-relearn"
+#themesDir: ".hugo"  ## this is either ${HOME}/.local/share/pandoc/hugo/ (local installation)
+                     ## or ${XDG_DATA_HOME}/pandoc/hugo/ (docker container / GitHub action)
 
-themesDir: ".hugo"
 contentDir: "temp/content"
 publishDir: "docs"
 

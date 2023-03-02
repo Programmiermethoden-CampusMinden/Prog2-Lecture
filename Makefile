@@ -2,9 +2,24 @@
 # Makefile for building the lecture material (website and slides)
 #################################################################################
 
-## Run 'make' or 'make help' to display commonly used targets. Targets for
-## individual files also exist but should only be used if you know what
-## you are doing.
+## Run 'make' or 'make help' to display commonly used targets. "make slides" and
+## "make web" should be the most useful targets (also, targets for individual
+## files also exist but should only be used if you know what you are doing).
+##
+## (a) You can use the toolchain installed in the Docker image "pandoc-lecture",
+##     which comes ready to use (no other dependencies).
+## (b) Alternatively, you need to
+##         (1) install all tools (Pandoc, Hugo, TexLive) manually to your
+##             operating system, and
+##         (2) clone the pandoc-lecture repo locally to a specific location:
+##             "git clone --depth 1 https://github.com/cagix/pandoc-lecture.git ${HOME}/.local/share/pandoc/".
+##
+## To build the mentioned Docker image or for the required packages for a native
+## installation, see https://github.com/cagix/pandoc-lecture/docker.
+##
+## If you want to use the Docker image to build the lecture material, start the
+## container interactively using "make runlocal" and run the desired Make targets
+## in the interactive container shell.
 
 ## NOTE:
 ## The pdf slides that can be generated for certain chapters are named by taking
@@ -27,42 +42,31 @@ BIBTEX   = pm.bib
 #--------------------------------------------------------------------------------
 ## Define tools to process various types of source files.
 ##
-## Launching tools via a Docker container: make TARGET
-## Launch the tools directly:              export DOCKER=false; make TARGET
-##
-## Note: LaTeX needs to be called in the folder of the .tex file to
-## be processed. In the rule that generates images from tex files, the
-## variable "$<" is set to the current .tex file (incl. path in the working
-## directory). Therefore, the working directory for the Docker container is
-## set to the folder of the current .tex file. When called directly, we
-## need to first change-dir to this folder.
-ifneq ($(DOCKER), false)
-DOCKER_IMAGE      = alpine-pandoc-hugo
-DOCKER_COMMAND    = docker run --rm -i
-DOCKER_USER       = -u "$(shell id -u):$(shell id -g)"
-DOCKER_VOLUME     = -v "$(shell pwd):/data" -w "/data"
-DOCKER_TEX_VOLUME = -v "$(dir $(realpath $<)):/data" -w "/data"
-
-PANDOC = $(DOCKER_COMMAND) $(DOCKER_VOLUME)     $(DOCKER_USER) --entrypoint="pandoc" $(DOCKER_IMAGE)
-HUGO   = $(DOCKER_COMMAND) $(DOCKER_VOLUME)     $(DOCKER_USER) --entrypoint="hugo"   $(DOCKER_IMAGE)
-DOT    = $(DOCKER_COMMAND) $(DOCKER_VOLUME)     $(DOCKER_USER) --entrypoint="dot"    $(DOCKER_IMAGE)
-LATEX  = $(DOCKER_COMMAND) $(DOCKER_TEX_VOLUME) $(DOCKER_USER) --entrypoint="latex"  $(DOCKER_IMAGE)
-else
+## Note: LaTeX needs to be called in the folder of the .tex file to be processed.
+## In the rule that generates images from tex files, the variable "$<" is set to
+## the current .tex file (incl. path in the working directory). Therefore, the
+## working directory for the Docker container is set to the folder of the current
+## .tex file. When called directly, we need to first change-dir to this folder.
 PANDOC = pandoc
 HUGO   = hugo
 DOT    = dot
 LATEX  = cd $(dir $(realpath $<)) && latex
-endif
 
-## Data-Dir: Path to the Git submodule of Pandoc-Lecture
-## Resource-Path: Where to search for bib files and other resources?
-##
-## Note: If Pandoc is used via a Docker container, DATADIR must be the
-## working directory or a subdirectory, as the working directory will
-## be mounted into the Docker container! References to a parent directory
-## of the working directory therefore will not work when using a Docker
-## container!
-PANDOC_DIRS = --data-dir=.pandoc --resource-path=".:.pandoc"
+## Where do we find the content from https://github.com/cagix/pandoc-lecture,
+## i.e. the resources for Pandoc and the themes for Hugo?
+##     (a) If we run inside the Docker container, the variable CI is set to
+##         true and we find the files in ${XDG_DATA_HOME}/pandoc/.
+##     (b) If we are running locally (native installation), then we look for
+##         the contents at ${HOME}/.local/share/pandoc/.
+## Note: $(CI) is a default environment variable that GitHub sets (see
+## https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables)
+ifeq ($(CI), true)
+PANDOC_DIRS = --resource-path=".:$(XDG_DATA_HOME)/pandoc/:$(XDG_DATA_HOME)/pandoc/resources/"
+HUGO_DIRS   = --themesDir "$(XDG_DATA_HOME)/pandoc/hugo"
+else
+PANDOC_DIRS = --resource-path=".:$(HOME)/.local/share/pandoc/:$(HOME)/.local/share/pandoc/resources/"
+HUGO_DIRS   = --themesDir "$(HOME)/.local/share/pandoc/hugo"
+endif
 
 ## Define options for generating images from ".tex" files
 LATEX_ARGS = -shell-escape
@@ -73,7 +77,7 @@ DOT_ARGS = -Tpng
 ## Define options to be used by Hugo
 ## local.yaml allows to override settings in config.yaml
 HUGO_LOCAL = $(wildcard local.yaml)
-HUGO_ARGS  = --config config.yaml,$(HUGO_LOCAL)
+HUGO_ARGS  = --config config.yaml,$(HUGO_LOCAL)  $(HUGO_DIRS)
 
 #--------------------------------------------------------------------------------
 # I/O Directories
@@ -185,6 +189,11 @@ list-slides: ## List available targets for individual slides
 	@: ## Suppress 'Nothing to be done for ...' message
 
 ##@ Building
+
+## Start Docker container "pandoc-lecture" into interactive shell
+.PHONY: runlocal
+runlocal: ## Start Docker container "pandoc-lecture" into interactive shell
+	docker run  --rm -it  -v "$(shell pwd):/pandoc" -w "/pandoc"  -u "$(shell id -u):$(shell id -g)"  --env CI=true  --entrypoint "bash"  pandoc-lecture
 
 ## Make everything
 .PHONY: all
