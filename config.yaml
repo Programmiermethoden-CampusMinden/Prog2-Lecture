@@ -28,6 +28,7 @@ params:
   disableMathJax: false
   disableMermaid: true
   themeVariant:
+  - "auto"
   - "relearn-light"
   - "relearn-dark"
   - "green"
