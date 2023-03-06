@@ -19,7 +19,7 @@ params:
   editURL: "https://github.com/Programmiermethoden/PM-Lecture/edit/master/markdown/"
   author: "cagix"
   titleSeparator: " "
-  collapsibleMenu: true
+  alwaysopen: false
   showVisitedLinks: true
   disableBreadcrumb: true
   disableInlineCopyToClipBoard: true
