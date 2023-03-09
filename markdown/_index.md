@@ -22,6 +22,42 @@ den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anscha
 Siehe `["Syllabus"]({{< ref "/org/syllabus" >}})`{=markdown} zu Details.
 
 
+## Team
+
+-   [Carsten Gips](https://www.fh-bielefeld.de/minden/ueber-uns/personenverzeichnis/carsten-gips)
+-   Tutoren (siehe ILIAS-Mitgliederliste)
+
+
+## Kursformat
+
+![](images/fahrplan.png){width="80%"}
+
+### Vorlesung: 2 SWS
+
+*   Fr, 16:00 - 17:30 Uhr (online/J104)
+
+Durchführung als **Flipped Classroom**: Sitzungen per Zoom (**Zugangsdaten siehe [ILIAS]**)
+
+### Praktikum: 2+1 SWS
+
+*   Gruppe 1: Fr, 09:00 - 10:30 Uhr (online/D320)
+*   Gruppe 2: Fr, 12:45 - 14:15 Uhr (online/D320)
+*   Gruppe 3: Fr, 10:45 - 12:15 Uhr (online/D320)
+
+**Zugangsdaten siehe [ILIAS]**
+
+[ILIAS]: https://www.fh-bielefeld.de/elearning/goto.php?target=crs_1015325&client_id=FH-Bielefeld
+
+### Prüfungsform, Note und Credits
+
+**Performanzprüfung**, 7 ECTS
+
+Hier finden Sie Informationen zum Ablauf des Praktikums sowie zur Prüfungsform:
+`["Note und Credits"]({{< ref "/org/grading" >}})`{=markdown}.
+
+Weitere Hinweise zur `[Prüfungsvorbereitung]({{< ref "/org/exams" >}})`{=markdown}.
+
+
 ## Förderung durch DH.NRW (Digi Fellowships)
 
 Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und Wissenschaft
@@ -40,45 +76,6 @@ Postersessions in ILIAS technisch und inhaltlich begleitet. DigikoS wird als Ver
 von der Stiftung Innovation in der Hochschullehre gefördert.
 
 ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]: https://www.digikos.de
-
-
-## Team
-
--   [Carsten Gips](https://www.fh-bielefeld.de/minden/ueber-uns/personenverzeichnis/carsten-gips) (Vorlesung, Organisation)
--   Jonas Posselt (Praktikum; Kontaktdaten siehe [ILIAS-Kursraum > Info](https://www.fh-bielefeld.de/elearning/ilias.php?ref_id=1015325&cmdClass=ilinfoscreengui&cmd=showSummary&cmdNode=wr:ls:er&baseClass=ilrepositorygui#after_tabs))
--   Tutoren (siehe ILIAS-Mitgliederliste)
-
-
-## Kursformat
-
-![](images/fahrplan.png){width="80%"}
-
-### Vorlesung: 2 SWS
-
-*   Fr, 16:00 - 17:30 Uhr (online/J104)
-
-Durchführung als **Flipped Classroom**: Sitzungen per Zoom (**Zugangsdaten siehe [ILIAS]**)
-
-### Praktikum: 2 SWS
-
-*   Gruppe 1: Fr, 09:00 - 10:30 Uhr (online/D320)
-*   Gruppe 2: Fr, 12:45 - 14:15 Uhr (online/D320)
-*   Gruppe 3: Fr, 10:45 - 12:15 Uhr (online/D320)
-
-**Zugangsdaten siehe [ILIAS]**
-
-### Tutorium: 1 SWS
-
-*   Mo, 13:30 - 15:00 Uhr (B70)
-
-[ILIAS]: https://www.fh-bielefeld.de/elearning/goto.php?target=crs_1015325&client_id=FH-Bielefeld
-
-### Prüfungsform, Note und Credits
-
-**Performanzprüfung**, 7 ECTS
-
-Hier finden Sie Informationen zum Ablauf des Praktikums sowie zur Prüfungsform:
-`["Note und Credits"]({{< ref "/org/grading" >}})`{=markdown}.
 
 
 ## Materialien
