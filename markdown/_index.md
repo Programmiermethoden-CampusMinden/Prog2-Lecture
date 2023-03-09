@@ -22,6 +22,14 @@ den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anscha
 Siehe `["Syllabus"]({{< ref "/org/syllabus" >}})`{=markdown} zu Details.
 
 
+## Förderung durch DH.NRW (Digi Fellowships)
+
+Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und Wissenschaft
+(MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert
+(["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]).
+
+["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
+
 ## Team
 
 -   [Carsten Gips](https://www.fh-bielefeld.de/minden/ueber-uns/personenverzeichnis/carsten-gips) (Vorlesung, Organisation)
