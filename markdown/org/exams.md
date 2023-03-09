@@ -14,7 +14,7 @@ tldr: |
   gestellt, Sie benötigen nur Ihre FH-Zugangsdaten.
 
   Wenn die Corona-Lage eine Durchführung in Präsenz nicht erlaubt, wird die Klausur stattdessen als
-  *Open-Book-Ausarbeitung* aus dem Home-Office durchgeführt. Sie benötigen dazu einen normalen Rechner
+  _Open-Book-Ausarbeitung_ aus dem Home-Office durchgeführt. Sie benötigen dazu einen normalen Rechner
   oder Laptop mit einem Standardbrowser. Tablets und Handys können wg. der Mobil-Version der Browser
   problematisch sein. Sie müssen JavaScript aktivieren und Cookies zulassen, der Privacy-Modus ist
   bitte ebenfalls zu deaktivieren. Sie erreichen den Prüfungs-ILIAS
@@ -80,18 +80,13 @@ Falls dies wegen der Corona-Situation oder anderer Umstände nicht möglich sein
 die Klausur als "Open-Book-Ausarbeitung" im Home-Office durchgeführt.
 :::
 
-::: cbox
-[Prüfungszeitraum 1:]{.notes} **E2: Mo, 11.07.2022, 09:00 - 09:45 Uhr**
+::: center
+[Termin 1:]{.notes} **XX, XX.XX.XXXX, XX:XX -- XX:XX Uhr**
 :::
 
 :::::: notes
-Dauer 45 Minuten (Zeitraum 1, E2) bzw. 90 Minuten (Zeitraum 2).
-
-Im ersten Prüfungszeitraum zählen die Termine E1 und E2 zusammen als **eine** Prüfung (vergleiche
-`["Note und Credits > Theoretische Teilleistung"]({{< ref "/org/grading" >}})`{=markdown}.)
-
-Im zweiten Prüfungszeitraum wird **eine** Prüfung mit 90 Minuten Dauer angeboten. Der konkrete
-Termin im zweiten Prüfungszeitraum wird noch vom Prüfungsamt bekannt gegeben.
+Dauer 90 Minuten. Es wird in beiden Prüfungszeiträumen ein Termin angeboten (konkreter
+Termin im zweiten Prüfungszeitraum wird noch vom Prüfungsamt bekannt gegeben).
 ::::::
 
 \bigskip
@@ -140,7 +135,7 @@ Termin im zweiten Prüfungszeitraum wird noch vom Prüfungsamt bekannt gegeben.
 *   Prüfungseinsicht: Zeitnah; Bekanntgabe per Mail
 
 
-## Technische Vorbereitungen: Präsenzprüfung am Campus Minden
+## Technische Vorbereitungen I: Präsenzprüfung am Campus Minden
 
 ::: notes
 Diese Bemerkungen betreffen die Durchführung als Präsenzprüfung in den Räumen am Campus Minden.
@@ -156,7 +151,7 @@ Diese Bemerkungen betreffen die Durchführung als Präsenzprüfung in den Räume
     :::
 
 
-## Technische Vorbereitungen: Home-Office
+## Technische Vorbereitungen II: Home-Office
 
 ::: notes
 Diese Bemerkungen betreffen die Durchführung aus dem Home-Office mit Ihrer Hardware. Bei der
@@ -276,13 +271,12 @@ den einzelnen Aufgaben an. Sie können die Demo bei Bedarf beliebig oft wiederho
 ## Hinweise zu den Inhalten
 
 *   Klausurrelevant: Vorlesung und Praktikum
-    [(vergleiche `["Note und Credits > Hinweise zum ersten Prüfungszeitraum"]({{< ref "/org/grading" >}})`{=markdown})]{.notes}
 *   Für Verständnis u.U. hilfreich: Studium der vertiefenden Literaturangaben
 
 \smallskip
 
 *   **Fragen**:
-    *   Schauen Sie sich die Quizzes (Kahoot, ILIAS) an ...
+    *   Schauen Sie sich die Quizzes an ...
     *   Schauen Sie sich die Praktikumsaufgaben an ...
     *   Überlegen Sie sich, was zu einem Themengebiet im Rahmen einer Prüfung
         möglich ist und (wie) gefragt werden könnte :)
