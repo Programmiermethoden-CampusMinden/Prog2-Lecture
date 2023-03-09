@@ -1,4 +1,5 @@
 -   week: "KW14 (Mo)"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/org/syllabus"
             notes: "Kick-Off (Zoom)"
@@ -8,6 +9,7 @@
         -   notes: ">> Kein Praktikum"
 
 -   week: "KW14 (Fr)"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/git/branches"
         -   topic: "/git/branching-strategies"
@@ -18,6 +20,7 @@
         -   notes: ">> Kein Praktikum"
 
 -   week: "KW15"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/git/workflows"
         -   topic: "/coding/javadoc"
@@ -28,6 +31,7 @@
         -   notes: ">> Kein Praktikum (nur Abgabe von Blatt 01 via ILIAS; Vorstellung im Praktikum in KW16)"
 
 -   week: "KW16"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/generics/classes-methods"
         -   topic: "/generics/bounds-wildcards"
@@ -43,6 +47,7 @@
         -   notes: ">> Praktikum: Vorstellung von Blatt 01 zusammen mit Blatt 02 und der ersten Dungeon-Aufgabe 'Dungeon-Start'"
 
 -   week: "KW17"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/building/gradle"
         -   topic: "/building/ci"
@@ -58,6 +63,7 @@
         -   notes: ">> Praktikum: Vorstellung von Blatt 03 und Dungeon-Aufgabe"
 
 -   week: "KW18"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/coding/smells"
         -   topic: "/coding/codingrules"
@@ -72,6 +78,7 @@
         -   notes: ">> Praktikum: Vorstellung von Blatt 04 und Dungeon-Aufgabe"
 
 -   week: "KW19"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/git/bisect"
         -   topic: "/coding/tdd"
@@ -89,6 +96,7 @@
         -   notes: ">> Praktikum: Vorstellung von Blatt 05 und Dungeon-Aufgabe"
 
 -   week: "KW20"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/java-jvm/annotations"
         -   topic: "/java-jvm/reflection"
@@ -103,6 +111,7 @@
         -   notes: ">> Praktikum: Vorstellung von Blatt 06 und Dungeon-Aufgabe"
 
 -   week: "KW21"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/gui/basics"
         -   topic: "/gui/events"
@@ -116,6 +125,7 @@
         -   notes: ">> Kein Praktikum"
 
 -   week: "KW22"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/modern-java/lambdas"
         -   topic: "/modern-java/methodreferences"
@@ -130,6 +140,7 @@
         -   notes: ">> Praktikum: Vorstellung von Blatt 07 und Dungeon-Aufgabe"
 
 -   week: "KW23"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/modern-java/records"
         -   topic: "/modern-java/stream-api"
@@ -145,6 +156,7 @@
         -   notes: ">> Praktikum: Vorstellung von Blatt 08 und Dungeon-Aufgabe"
 
 -   week: "KW24"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/threads/intro"
         -   topic: "/threads/synchronisation"
@@ -160,6 +172,7 @@
         -   notes: ">> Praktikum: Vorstellung von Blatt 09 und Dungeon-Aufgabe"
 
 -   week: "KW25"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/java-jvm/configuration"
         -   topic: "/building/ant"
@@ -174,6 +187,7 @@
         -   notes: ">> Praktikum: Vorstellung von Blatt 10 und Dungeon-Aufgabe"
 
 -   week: "KW26"
+    date: "Mi, 21.04.23"
     lecture:
         -   topic: "/java-jvm/collections"
         -   topic: "/org/syllabus"
