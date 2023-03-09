@@ -150,13 +150,3 @@ Sie können sich das
 und ein
 [ausgefülltes Beispiel](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/lerntagebuch_beispiel.md)
 herunterladen.
-
-
-## Wiederholer
-
-Wer bereits früher in Programmiermethoden eine Prüfungsleistung abgelegt hat und diese Prüfung noch
-nicht abgeschlossen hat, ist an die damalige Prüfungsform gebunden. Praktisch kann diese entweder
-eine Wiederholung mit Performanzprüfung oder eine Wiederholung mit Parcoursprüfung bedeuten. Im ersten
-Fall (Performanzprüfung) gelten die oben beschriebenen Regelungen, im zweiten Fall (Parcoursprüfung)
-werden die Praktikumsaufgaben sowie die Klausur als Prüfungsstationen betrachtet und dafür eine Note
-vergeben. Bitte melden Sie sich zeitnah per E-Mail beim Dozenten.
