@@ -318,7 +318,7 @@ Was geschieht, bzw. wieso kommt es zu der jeweiligen Ausgabe?
 
 ## Beispiele für mögliche Fragen (cnt.)
 
-``` {.java size="tiny"}
+```java
 public class StaffelKaputt extends Thread {
     private Object stab;
     StaffelKaputt(Object stab) { this.stab = stab; }
@@ -428,7 +428,7 @@ public class X {
 
 Erklären Sie den Code. Was passiert?
 
-``` {.java size="footnotesize"}
+```java
 class MyFormatter extends SimpleFormatter {
     public String format(LogRecord record) {
         return super.format(record) + "---- FAKE ----\n";
