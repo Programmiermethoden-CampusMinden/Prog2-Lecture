@@ -64,7 +64,7 @@ Parcours-Prüfung ergeben.
 Sie müssen sich entsprechend im LSF sowohl für die **praktische Teilleistung** als auch
 für die **theoretische Teilleistung** anmelden.
 
-**Bitte melden Sie sich zeitnah per E-Mail beim Dozenten.**
+**Bitte melden Sie sich zeitnah (vor Beginn der Praktika) per E-Mail beim Dozenten.**
 
 
 ## Bearbeitung der Übungsaufgaben

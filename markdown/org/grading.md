@@ -25,15 +25,15 @@ hidden: true
     Die Prüfung für die theoretische Teilleistung wird als digitale Klausur über eine
     spezielle ILIAS-Instanz ("E-Assessment-Server") durchgeführt. Es wird in beiden
     Prüfungszeiträumen je ein Termin angeboten.
-    Siehe auch `["Prüfungsvorbereitung"]({{< ref "/org/exams" >}})`{=markdown}.
+    Tipps zur Vorbereitung siehe `["Prüfungsvorbereitung"]({{< ref "/org/exams" >}})`{=markdown}.
 
 -   **Gesamtnote**:
     Die beiden Leistungen (praktische und theoretische Teilleistung) werden separat im LSF
     erfasst und vom System automatisch zu einer Gesamtnote verrechnet (50% Praxis, 50%
     Theorie).
 
-Wiederholer mit Parcours-Prüfung absolvieren stattdessen eine Parcoursprüfung. Bitte melden
-Sie sich zeitnah per E-Mail beim Dozenten.
+Wiederholer mit bereits begonnener Parcours-Prüfung absolvieren stattdessen eine Parcoursprüfung.
+Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
 
 
 ## Hinweise zum Praktikum
