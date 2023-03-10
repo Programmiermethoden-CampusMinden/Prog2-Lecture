@@ -60,7 +60,6 @@ Hier noch eine Sammlung von Gedanken zum Berufsverständnis von Informatikern: @
     oder [Visual Studio Code](https://code.visualstudio.com/)
     oder [Vim](https://www.vim.org/)
 *   [Git](https://git-scm.com/)
-*   [Gradle Build Tool](https://gradle.org/)
 
 ### Vorgaben für die Aufgaben
 
