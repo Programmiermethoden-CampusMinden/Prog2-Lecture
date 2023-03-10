@@ -68,16 +68,6 @@ Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur un
 
 ["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
 
-### Kooperation mit dem DigikoS-Projekt
-
-Diese Vorlesung wird zudem vom Projekt ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]
-(_DigikoS_) unterstützt. Ein vom DigikoS-Projekt ausgebildeter Digital Learning Scout hat
-insbesondere die Koordination der digitalen Gruppenarbeiten, des Peer-Feedbacks und der
-Postersessions in ILIAS technisch und inhaltlich begleitet. DigikoS wird als Verbundprojekt
-von der Stiftung Innovation in der Hochschullehre gefördert.
-
-["Digitalbaukasten für kompetenzorientiertes Selbststudium"]: https://www.digikos.de
-
 
 ## Materialien
 
