@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Syllabus"
 author: "Carsten Gips (FH Bielefeld)"
-weight: 3
+weight: 1
 
 hidden: true
 ---
