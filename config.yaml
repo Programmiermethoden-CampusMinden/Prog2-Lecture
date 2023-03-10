@@ -43,7 +43,7 @@ menu:
   - name: "<i class='fas fa-bookmark'></i> Fahrplan"
     url: "/index.html#fahrplan"
     weight: 20
-  - name: "<i class='fas fa-bookmark'></i> Praktikum/Übung"
+  - name: "<i class='fas fa-bookmark'></i> Praktikum"
     url: "/assignments.html"
     weight: 30
   - name: "<i class='fas fa-bookmark'></i> Note/Credits"
