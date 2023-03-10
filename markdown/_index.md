@@ -58,7 +58,9 @@ Hier finden Sie Informationen zum Ablauf des Praktikums sowie zur Prüfungsform:
 Weitere Hinweise zur `[Prüfungsvorbereitung]({{< ref "/org/exams" >}})`{=markdown}.
 
 
-## Förderung durch DH.NRW (Digi Fellowships)
+## Förderungen und Kooperationen
+
+### Förderung durch DH.NRW (Digi Fellowships)
 
 Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und Wissenschaft
 (MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert
@@ -66,8 +68,7 @@ Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur un
 
 ["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
 
-
-## Kooperation mit dem DigikoS-Projekt
+### Kooperation mit dem DigikoS-Projekt
 
 Diese Vorlesung wird zudem vom Projekt ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]
 (_DigikoS_) unterstützt. Ein vom DigikoS-Projekt ausgebildeter Digital Learning Scout hat
