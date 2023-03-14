@@ -55,7 +55,7 @@ und pflegen können:
     *   Zusammenarbeit in Teams: Verwaltung von Software und Workflows
 :::
 
-[Warum ist *guter Code* wichtig?]{.bsp}
+[Warum ist guter Code wichtig?]{.bsp}
 
 [=> Guter Code ist vor allem wichtig [für den Entwickler]{.alert}!]{.notes}
 
