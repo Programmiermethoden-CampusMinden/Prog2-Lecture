@@ -161,7 +161,7 @@ ist ein einfaches und schlankes Framework zu bevorzugen.
 
 **Frameworks müssen ge-/erlernt werden.**
 
-[Demo: [Web-Anwendung für Zufallszahlen](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/frameworks/src/javalin/)]{.bsp}
+[Demo: Web-Anwendung für Zufallszahlen]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/frameworks/src/javalin/"}
 
 
 ## Wrap-Up
