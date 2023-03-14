@@ -184,7 +184,7 @@ Works on my machine ...
 *   `<copy file="myfile.txt" tofile="../bak/mycopy.txt" />`
 *   `<move file="src/file.orig" tofile="bak/file.moved" />`
 
-[Beispiel build.xml, `init` und `clean`]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/building/src/ant/build.xml"}
+[Beispiel build.xml, init und clean]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/building/src/ant/build.xml"}
 :::
 
 
