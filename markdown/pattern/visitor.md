@@ -221,7 +221,7 @@ Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche St
 mit denen wir diesen Parsetree traversieren ... Und wir müssen für _jede_ Erweiterung
 immer _alle_ Expression-Klassen anpassen!
 
-[Beispiel: [direct.DemoExpr](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/direct/DemoExpr.java)]{.bsp}
+[Beispiel: direct.DemoExpr]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/direct/DemoExpr.java"}
 :::
 
 \vfill
@@ -354,9 +354,9 @@ von Datenstrukturen ist diese Variante oft von Vorteil, da man hier unterschiedl
 Traversierungsarten haben möchte (Breitensuche vs. Tiefensuche, Pre-Order vs. Inorder vs.
 Post-Order, ...) und diese elegant in den Visitor verlagern kann.
 
-[Beispiel Traversierung intern (in den Knotenklassen): [visitor.visit.intrav.DemoExpr](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/intrav/DemoExpr.java)]{.bsp}
+[Beispiel Traversierung intern (in den Knotenklassen): visitor.visit.intrav.DemoExpr]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/intrav/DemoExpr.java"}
 
-[Beispiel Traversierung extern (im Visitor): [visitor.visit.extrav.DemoExpr](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/extrav/DemoExpr.java)]{.bsp}
+[Beispiel Traversierung extern (im Visitor): visitor.visit.extrav.DemoExpr]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/extrav/DemoExpr.java"}
 
 ### (Double-) Dispatch
 
@@ -402,7 +402,7 @@ implementieren.
 
 ![](images/parsetree_visitor_uml.png)
 
-[Demo: [visitor.visit.extrav.DemoExpr](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/extrav/DemoExpr.java)]{.bsp}
+[Demo: visitor.visit.extrav.DemoExpr]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/extrav/DemoExpr.java"}
 
 
 ## Wrap-Up

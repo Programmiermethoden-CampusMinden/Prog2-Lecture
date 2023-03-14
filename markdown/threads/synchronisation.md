@@ -92,7 +92,7 @@ public class Teaser implements Runnable {
 }
 ```
 
-[Demo: [synchronised.Teaser](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java)]{.bsp}
+[Demo: synchronised.Teaser]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java"}
 
 
 ## Zugriff auf gemeinsame Ressourcen: Mehrseitige Synchronisierung
@@ -140,7 +140,7 @@ geschützten Bereich einschließen und als Sperr-Objekt das eigene Objekt (`this
     }
 ```
 
-[Demo: [synchronised.ObjSync](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/synchronised/ObjSync.java)]{.bsp}
+[Demo: synchronised.ObjSync]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/synchronised/ObjSync.java"}
 
 
 ## Synchronisierte Methoden
@@ -190,7 +190,7 @@ Die Methode `incrVal()` könnte entsprechend so umgeschrieben werden:
     }
 ```
 
-[Demo: [synchronised.MethodSync](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/synchronised/MethodSync.java)]{.bsp}
+[Demo: synchronised.MethodSync]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/synchronised/MethodSync.java"}
 
 
 ## Probleme bei der (mehrseitigen) Synchronisierung: Deadlocks
@@ -238,7 +238,7 @@ holen, den aber aktuell der erste Thread hält.
 Und schon geht's nicht mehr weiter :-)
 :::
 
-[Demo: [synchronised.Deadlock](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Deadlock.java)]{.bsp}
+[Demo: synchronised.Deadlock]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Deadlock.java"}
 
 
 ## Warten auf andere Threads: Einseitige Synchronisierung
@@ -322,7 +322,7 @@ Und schon geht's nicht mehr weiter :-)
 => Geht nur innerhalb der `synchronized`-Anweisung für das Synchronisations-Objekt!
 :::
 
-[Demo: [synchronised.Staffel](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Staffel.java)]{.bsp}
+[Demo: synchronised.Staffel]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Staffel.java"}
 
 
 ## Wrap-Up

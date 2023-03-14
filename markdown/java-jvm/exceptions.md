@@ -362,7 +362,7 @@ int getFirstLineAsInt(String pathToFile) {
 }
 ```
 
-[Zeigen: [exceptions.HowMuchTry](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/exceptions/HowMuchTry.java)]{.bsp}
+[Zeigen: exceptions.HowMuchTry]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/exceptions/HowMuchTry.java"}
 
 
 ::: notes

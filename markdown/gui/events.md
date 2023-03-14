@@ -100,7 +100,7 @@ bekommt und viele weitere.
 
 *   Sequentielles Abarbeiten der Events bzw. Benachrichtigung der Observer
 
-[Demo: [events.ListenerDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/events/ListenerDemo.java)]{.bsp}
+[Demo: events.ListenerDemo]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/events/ListenerDemo.java"}
 
 
 ## Wie komme ich an die Daten eines Events?
@@ -109,7 +109,7 @@ bekommt und viele weitere.
 
 **Event-Objekte**: Quelle des Events plus aufgetretene Daten
 
-[Demo: [events.MouseListenerDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/events/MouseListenerDemo.java)]{.bsp}
+[Demo: events.MouseListenerDemo]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/events/MouseListenerDemo.java"}
 
 
 ## Listener vs. Adapter
@@ -135,7 +135,7 @@ Abhilfe: **Adapter**-Klassen:
 
 => Nur benötigte Listener-Methoden überschreiben.
 
-[Demo: [events.MouseAdapterDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/events/MouseAdapterDemo.java)]{.bsp}
+[Demo: events.MouseAdapterDemo]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/events/MouseAdapterDemo.java"}
 
 
 ## Wrap-Up

@@ -142,7 +142,7 @@ Jar-File im Maven-Repository zu finden sein (sofern es denn veröffentlicht wird
 für die Dependencies findet man ebenfalls auf [MavenCentral](https://mvnrepository.com/repos/central).
 :::
 
-[Demo für [MavenCentral](https://mvnrepository.com/repos/central) (Suche, Einträge)]{.bsp}
+[Demo für MavenCentral (Suche, Einträge)]{.bsp}
 
 
 ## Project Object Model: Plugins
@@ -208,7 +208,7 @@ ein erster Einstieg ist die [Plugin-API](https://maven.apache.org/ref/3.8.1/mave
     führt die Klasse `de.fhb.pm.Main` aus.
 :::
 
-[Demo: [pom.xml](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/building/src/maven/pom.xml)]{.bsp}
+[Demo: pom.xml]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/building/src/maven/pom.xml"}
 
 
 ## Wrap-Up

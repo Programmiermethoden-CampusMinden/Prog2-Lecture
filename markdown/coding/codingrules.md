@@ -241,7 +241,7 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
-[Demo: Konfiguration Formatter (IDE), [Spotless/Gradle](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/formatter/)]{.bsp}
+[Demo: Konfiguration Formatter (IDE), Spotless/Gradle]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/formatter/"}
 
 
 ## Metriken: Kennzahlen für verschiedene Aspekte zum Code
@@ -359,7 +359,7 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
-[Demo: IntelliJ, [Checkstyle/Gradle](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/checkstyle/)]{.bsp}
+[Demo: IntelliJ, Checkstyle/Gradle]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/checkstyle/"}
 
 
 ## Checkstyle: Konfiguration
@@ -448,7 +448,7 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
-[Demo: [SpotBugs/Gradle](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/spotbugs/)]{.bsp}
+[Demo: SpotBugs/Gradle]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/spotbugs/"}
 
 
 ## Konfiguration für das PM-Praktikum (Format, Metriken, Checkstyle, SpotBugs)

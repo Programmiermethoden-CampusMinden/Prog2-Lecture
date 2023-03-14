@@ -68,7 +68,7 @@ public class Studi {
 :::
 
 [[Probleme: Typsicherheit, Kontext]{.bsp}]{.slides}
-[[Beispiel [enums.v1.Studi](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v1/Studi.java)]{.bsp}]{.notes}
+[[Beispiel enums.v1.Studi]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v1/Studi.java"}]{.notes}
 
 
 ## Verbesserung: Einfache Aufzählung
@@ -107,7 +107,7 @@ public enum Fach {
 3.  Enumerations stellen einen neuen Typ dar: hier der Typ `Fach`
 4.  Methoden: `name()`, `ordinal()`, `values()`, `toString()`
 
-[Erinnerung: Bedeutung von *static* und *final*]{.bsp}
+[Erinnerung: Bedeutung von static und final]{.bsp}
 
 
 ::::::::: notes
@@ -146,7 +146,7 @@ public enum Fach {
     }
     ```
 
-    [Beispiel [enums.FinalDemo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/FinalDemo.java)]{.bsp}
+    [Beispiel enums.FinalDemo]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/FinalDemo.java"}
 
 *   Methoden: `final` deklarierte Methoden können bei Vererbung nicht überschrieben werden
 *   Klassen: von `final` deklarierten Klassen können keine Unterklassen gebildet werden
@@ -183,7 +183,7 @@ Außerdem können wir folgende Eigenschaften nutzen (u.a., s.u.):
 *   Enumerations haben Methode `final T[] values()` für die Iteration über die Konstanten
 :::
 
-[Demo: [enums.v2.Studi](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v2/Studi.java)]{.bsp}
+[Demo: enums.v2.Studi]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v2/Studi.java"}
 
 
 ## Enum: Genauer betrachtet
@@ -255,7 +255,7 @@ public enum Fach {
 **Hinweis**: Diese Methoden gibt es auch bei den "einfachen" Enumerationen (s.o.).
 :::
 
-[Demo: [enums.v3](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v3/)]{.bsp}
+[Demo: enums.v3]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v3/"}
 
 
 ## Wrap-Up

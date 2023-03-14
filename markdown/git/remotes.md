@@ -245,7 +245,7 @@ Zwischenzeit weiter geschoben - dann muss die Aktualisierung erneut durchgeführ
 werden).
 :::::::::
 
-[Beispiel für Zusammenführen (merge und push), Anmerkung zu _fast forward merge_]{.bsp}
+[Beispiel für Zusammenführen (merge und push), Anmerkung zu fast forward merge]{.bsp}
 
 
 ## Branches und Remotes

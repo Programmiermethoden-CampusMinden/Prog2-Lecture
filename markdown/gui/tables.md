@@ -73,7 +73,7 @@ contentPane.add(table, BorderLayout.CENTER);
 ```
 :::
 
-[Demo: [tables.SimpleTable](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/tables/SimpleTable.java)]{.bsp}
+[Demo: tables.SimpleTable]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/tables/SimpleTable.java"}
 
 
 ## Selektierbare und sortierbare Tabelle
@@ -106,7 +106,7 @@ contentPane.add(table, BorderLayout.CENTER);
     }});
     ```
 
-[Demo: [tables.SelectTable](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/tables/SelectTable.java)]{.bsp}
+[Demo: tables.SelectTable]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/tables/SelectTable.java"}
 
 
 ## Einschub: MVC-Pattern
@@ -201,7 +201,7 @@ Zusätzlich kann man beim Modell eigene Listener registrieren, die auf Events du
 Änderungen der Tabelle reagieren können.
 :::
 
-[Demo: [tables.ModelTable](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/tables/ModelTable.java)]{.bsp}
+[Demo: tables.ModelTable]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/gui/src/tables/ModelTable.java"}
 
 
 ## Wrap-Up
