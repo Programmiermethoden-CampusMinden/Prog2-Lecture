@@ -63,17 +63,4 @@ Hier noch eine Sammlung von Gedanken zum Berufsverständnis von Informatikern: @
 
 ### Vorgaben für die Aufgaben
 
-*   [GitHub](https://github.com/Programmiermethoden/Dungeon)
-*   Alternative: [Gitlab im SW-Labor](http://git03-ifm-min.ad.fh-bielefeld.de/cagix/Dungeon) (**nur aus dem FH-Netz/VPN**)
-
-::: notes
-Wir stellen die Unterlagen und Vorgaben komplett auf GitHub zur Verfügung.
-Sie können sich dort einen kostenfreien und anonymen Account einrichten. Wenn Sie dies nicht möchten, können
-Sie alternativ unseren Gitlab-Server im Software-Labor nutzen. Dieser ist nur aus dem FH-Netz bzw. VPN heraus
-erreichbar und Sie können sich dort mit Ihren _FH-Zugangsdaten_ anmelden (im Reiter "LDAP" geben Sie Ihren
-Benutzernamen ohne das `@fh-bielefeld.de` plus Ihr Passwort ein). Bitte loggen Sie sich auf einem der beiden
-Systeme mind. einmal ein, bevor Sie uns Ihre Usernamen mitteilen.
-
-Die Aufgaben werden ebenfalls über GitHub oder den internen Gitlab-Server abgegeben (Ausnahmen siehe Aufgabenblätter).
-Dafür richten Sie sich ein privates Repo ein, welches mit dem Vorgabe-Repo verknüpft ist (vgl. erstes Aufgabenblatt).
-:::
+*   [Dungeon-Framework](https://github.com/Programmiermethoden/Dungeon)
