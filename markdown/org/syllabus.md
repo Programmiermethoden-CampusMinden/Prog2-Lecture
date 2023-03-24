@@ -10,7 +10,7 @@ hidden: true
 
 ## Worum geht's hier?
 
-::: center
+::: cbox
 [**Weniger schlecht programmieren**]{.alert} \quad ;-)
 :::
 
@@ -62,7 +62,7 @@ und pflegen können:
 
 ## Überblick Modulinhalte
 
-1)  Fortgeschrittene Konzepte in Java
+1.  Fortgeschrittene Konzepte in Java
     *   Reguläre Ausdrücke, Annotationen, Generics, Reflection
     *   Parallele Programmierung (Threads)
     *   Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas
@@ -70,12 +70,12 @@ und pflegen können:
 
 \smallskip
 
-2)  Fortgeschrittenes OO-Design
+2.  Fortgeschrittenes OO-Design
     *   Entwurfsmuster: Strategy, Template-Method, Factory-Method, Singleton, ...
 
 \smallskip
 
-3)  Programmiermethoden
+3.  Programmiermethoden
     *   Versionskontrolle
     *   Testen, Coding Conventions, Refactoring
     *   Logging, Build-Tools, CI
