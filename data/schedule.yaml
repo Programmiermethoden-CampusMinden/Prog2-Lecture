@@ -169,7 +169,7 @@
     lecture:
         -   topic: "/org/syllabus"
             notes: "Rückblick (Zoom)"
-        -   topic: "/org/exam"
+        -   topic: "/org/exams"
             notes: "Prüfungsvorbereitung (Zoom)"
     assignment:
         -   topic: "/assignments/pool_dungeon"
