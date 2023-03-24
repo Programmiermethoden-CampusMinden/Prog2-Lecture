@@ -61,6 +61,7 @@ Hier noch eine Sammlung von Gedanken zum Berufsverständnis von Informatikern: @
     oder [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/)
     oder [Visual Studio Code](https://code.visualstudio.com/)
     oder [Vim](https://www.vim.org/)
+    oder ...
 *   [Git](https://git-scm.com/)
 
 ### Vorgaben für die Aufgaben
