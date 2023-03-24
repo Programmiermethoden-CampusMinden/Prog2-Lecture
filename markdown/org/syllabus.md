@@ -14,9 +14,6 @@ hidden: true
 [**Weniger schlecht programmieren**]{.alert} \quad ;-)
 :::
 
-\bigskip
-\bigskip
-\bigskip
 
 > ... And, lastly, there's the explosive growth in demand, which has led to many
 > people doing it who aren't any good at it. Code is merely a means to an end.
@@ -28,7 +25,6 @@ hidden: true
 > \hfill -- John Gruber auf [daringfireball.net](https://daringfireball.net/2020/04/cobol_programming_coding)
 
 
-::: notes
 Sie haben letztes Semester in OOP die *wichtigsten* Elemente und Konzepte der
 Programmiersprache Java kennen gelernt.
 
@@ -53,7 +49,6 @@ und pflegen können:
         *   Testen von Software
         *   Refactoring von "stinkendem" Code
     *   Zusammenarbeit in Teams: Verwaltung von Software und Workflows
-:::
 
 [Warum ist guter Code wichtig?]{.bsp}
 
