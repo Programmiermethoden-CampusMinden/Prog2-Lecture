@@ -56,7 +56,7 @@ Durchführung als **Flipped Classroom**: Sitzungen per Zoom (**Zugangsdaten sieh
 Hier finden Sie Informationen zum Ablauf des Praktikums sowie zur Prüfungsform:
 `["Note und Credits"]({{< ref "/org/grading" >}})`{=markdown}.
 
-Tipps zur Vorbereitung siehe`[Prüfungsvorbereitung]({{< ref "/org/exams" >}})`{=markdown}.
+Tipps zur Vorbereitung siehe `[Prüfungsvorbereitung]({{< ref "/org/exams" >}})`{=markdown}.
 
 
 ## Materialien
