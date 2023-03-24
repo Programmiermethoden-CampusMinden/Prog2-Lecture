@@ -69,13 +69,10 @@ Tipps zur Vorbereitung siehe `[Prüfungsvorbereitung]({{< ref "/org/exams" >}})`
     Chacon, S. und Straub, B., Apress, 2014.
     ISBN [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
 
-3.  ["Java Core Libraries Developer Guide"](https://docs.oracle.com/en/java/javase/17/core/index.html).
+3.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
     Oracle Corporation, 2023.
 
-4.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
-    Oracle Corporation, 2023.
-
-5.  ["Learn Java"](https://dev.java/learn/).
+4.  ["Learn Java"](https://dev.java/learn/).
     Oracle Corporation, 2023.
 
 Weitere empfohlene Literatur siehe `["Ressourcen"]({{< ref "/org/resources" >}})`{=markdown}.
