@@ -1,12 +1,10 @@
--   week: " "
-    date: "Fr, 07.04.23"
+-   week: "(07. April)"
     misc_lecture:
         -   notes: ">> Feiertag"
     misc_assignment:
         -   notes: ">> Feiertag"
 
--   week: "W01"
-    date: "Fr, 14.04.23"
+-   week: "W01 (14. April)"
     lecture:
         -   topic: "/org/syllabus"
             notes: "Kick-Off/Orga (Zoom)"
@@ -19,8 +17,7 @@
     misc_assignment:
         -   notes: ">> Kein Praktikum"
 
--   week: "W02"
-    date: "Fr, 21.04.23"
+-   week: "W02 (21. April)"
     lecture:
         -   topic: "/git/branches"
         -   topic: "/git/branching-strategies"
@@ -30,8 +27,7 @@
     misc_assignment:
         -   notes: ">> Kein Praktikum"
 
--   week: "W03"
-    date: "Fr, 28.04.23"
+-   week: "W03 (28. April)"
     lecture:
         -   topic: "/git/remotes"
         -   topic: "/git/workflows"
@@ -43,8 +39,7 @@
     misc_assignment:
         -   notes: ">> Kein Praktikum (nur Abgabe von Blatt 01 via ILIAS; Vorstellung im Praktikum in KW16)"
 
--   week: "W04"
-    date: "Fr, 05.05.23"
+-   week: "W04 (05. Mai)"
     lecture:
         -   topic: "/modern-java/optional"
         -   topic: "/modern-java/stream-api"
@@ -58,8 +53,7 @@
     misc_assignment:
         -   notes: ">> Praktikum: Vorstellung von Blatt 01 zusammen mit Blatt 02 und der ersten Dungeon-Aufgabe 'Dungeon-Start'"
 
--   week: "W05"
-    date: "Fr, 12.05.23"
+-   week: "W05 (12. Mai)"
     lecture:
         -   topic: "/testing/testing-intro"
         -   topic: "/testing/junit-basics"
@@ -74,8 +68,7 @@
     misc_assignment:
         -   notes: ">> Praktikum: Vorstellung von Blatt 03 und Dungeon-Aufgabe"
 
--   week: "W06"
-    date: "Fr, 19.05.23"
+-   week: "W06 (19. Mai)"
     lecture:
         -   topic: "/coding/smells"
         -   topic: "/coding/codingrules"
@@ -89,8 +82,7 @@
     misc_assignment:
         -   notes: ">> Praktikum: Vorstellung von Blatt 04 und Dungeon-Aufgabe"
 
--   week: "W07"
-    date: "Fr, 26.05.23"
+-   week: "W07 (26. Mai)"
     lecture:
         -   topic: "/generics/classes-methods"
         -   topic: "/generics/bounds-wildcards"
@@ -105,8 +97,7 @@
     misc_assignment:
         -   notes: ">> Praktikum: Vorstellung von Blatt 05 und Dungeon-Aufgabe"
 
--   week: "W08"
-    date: "Fr, 02.06.23"
+-   week: "W08 (02. Juni)"
     lecture:
         -   topic: "/modern-java/defaultmethods"
         -   topic: "/java-jvm/regexp"
@@ -131,8 +122,7 @@
     misc_assignment:
         -   notes: ">> Kein Praktikum"
 
--   week: "W10"
-    date: "Fr, 16.06.23"
+-   week: "W10 (16. Juni)"
     lecture:
         -   topic: "/java-jvm/enums"
         -   topic: "/java-jvm/configuration"
@@ -148,8 +138,7 @@
     misc_assignment:
         -   notes: ">> Praktikum: Vorstellung von Blatt 07 und Dungeon-Aufgabe"
 
--   week: "W11"
-    date: "Fr, 23.06.23"
+-   week: "W11 (23. Juni)"
     lecture:
         -   topic: "/threads/intro"
         -   topic: "/threads/synchronisation"
@@ -164,8 +153,7 @@
     misc_assignment:
         -   notes: ">> Praktikum: Vorstellung von Blatt 08 und Dungeon-Aufgabe"
 
--   week: "W12"
-    date: "Fr, 30.06.23"
+-   week: "W12 (30. Juni)"
     lecture:
         -   topic: "/org/syllabus"
             notes: "Rückblick (Zoom)"
