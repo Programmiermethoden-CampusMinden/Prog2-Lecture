@@ -25,7 +25,7 @@
         -   topic: "/modern-java/records"
         -   topic: "/pattern/strategy"
     assignment:
-        -   topic: "/assignments/pool_dungeon"
+        -   topic: "/assignments"
             due: "Di, 18.04., 09 Uhr, ILIAS"
     misc_assignment:
         -   notes: ">> Zyklus 1: Abgabe und Vorstellung Konzept"
@@ -37,7 +37,7 @@
         -   topic: "/modern-java/lambdas"
         -   topic: "/modern-java/methodreferences"
     assignment:
-        -   topic: "/assignments/pool_dungeon"
+        -   topic: "/assignments"
             due: "Di, 25.04., 09 Uhr, ILIAS"
     misc_assignment:
         -   notes: ">> Zyklus 1: Abgabe und Vorstellung Code"
@@ -49,7 +49,7 @@
         -   topic: "/coding/logging"
         -   topic: "/pattern/type-object"
     assignment:
-        -   topic: "/assignments/pool_dungeon"
+        -   topic: "/assignments"
             due: "Di, 02.05., 09 Uhr, ILIAS"
     misc_assignment:
         -   notes: ">> Zyklus 2: Abgabe und Vorstellung Konzept"
@@ -62,7 +62,7 @@
         -   topic: "/testing/mockito"
         -   topic: "/pattern/command"
     assignment:
-        -   topic: "/assignments/pool_dungeon"
+        -   topic: "/assignments"
             due: "Di, 09.05., 09 Uhr, ILIAS"
     misc_assignment:
         -   notes: ">> Zyklus 2: Abgabe und Vorstellung Code"
@@ -74,7 +74,7 @@
         -   topic: "/coding/refactoring"
         -   topic: "/building/ci"
     assignment:
-        -   topic: "/assignments/pool_dungeon"
+        -   topic: "/assignments"
             due: "Di, 16.05., 09 Uhr, ILIAS"
     misc_assignment:
         -   notes: ">> Zyklus 3: Abgabe und Vorstellung Konzept"
@@ -87,7 +87,7 @@
         -   topic: "/generics/generics-polymorphism"
         -   topic: "/building/docker"
     assignment:
-        -   topic: "/assignments/pool_dungeon"
+        -   topic: "/assignments"
             due: "Di, 23.05., 09 Uhr, ILIAS"
     misc_assignment:
         -   notes: ">> Zyklus 3: Abgabe und Vorstellung Code"
@@ -100,7 +100,7 @@
         -   topic: "/pattern/observer"
         -   topic: "/git/worktree"
     assignment:
-        -   topic: "/assignments/pool_dungeon"
+        -   topic: "/assignments"
             due: "Di, 30.05., 09 Uhr, ILIAS"
     misc_assignment:
         -   notes: ">> Zyklus 4: Abgabe und Vorstellung Konzept"
@@ -112,7 +112,7 @@
         -   topic: "/java-jvm/exceptions"
         -   topic: "/pattern/singleton"
     assignment:
-        -   topic: "/assignments/pool_dungeon"
+        -   topic: "/assignments"
             due: "Di, 06.06., 09 Uhr, ILIAS"
     misc_assignment:
         -   notes: ">> Zyklus 4: Abgabe und Vorstellung Code"
@@ -126,7 +126,7 @@
         -   topic: "/modern-java/sealed"
         -   topic: "/pattern/dependency"
     assignment:
-        -   topic: "/assignments/pool_dungeon"
+        -   topic: "/assignments"
             due: "Di, 13.06., 09 Uhr, ILIAS"
     misc_assignment:
         -   notes: ">> Zyklus 5: Abgabe und Vorstellung Konzept"
@@ -139,7 +139,7 @@
         -   topic: "/pattern/factory-method"
         -   topic: "/pattern/template-method"
     assignment:
-        -   topic: "/assignments/pool_dungeon"
+        -   topic: "/assignments"
             due: "Di, 20.06., 09 Uhr, ILIAS"
     misc_assignment:
         -   notes: ">> Zyklus 5: Abgabe und Vorstellung Code"
@@ -151,7 +151,7 @@
         -   topic: "/org/exams"
             notes: "Prüfungsvorbereitung (Zoom)"
     assignment:
-        -   topic: "/assignments/pool_dungeon"
+        -   topic: "/assignments"
             due: "Fr, 30.06., 09 Uhr, ILIAS"
     misc_assignment:
-        -   notes: ">> Sondertermin (Abgabe und Vorstellung Code)"
+        -   notes: ">> Sondertermin (bei 'nicht bestanden')"
