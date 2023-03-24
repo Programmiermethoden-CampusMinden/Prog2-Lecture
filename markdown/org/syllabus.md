@@ -40,8 +40,12 @@ und pflegen können:
     *   Wichtigste Konzepte und APIs kennen und beherrschen
     *   Merkmale größerer Applikationen wie Logging und Konfiguration einsetzen
 
+\smallskip
+
 *   **Design**
     *   Basis-Entwurfsmuster (er-)kennen und einsetzen
+
+\smallskip
 
 *   **Methoden**
     *   Code erstellen und pflegen wie die Profis
