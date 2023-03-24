@@ -1,10 +1,10 @@
 ---
 archetype: "home"
-title: "PM S22"
+title: "PM S23"
 ---
 
 
-# IFM 2.2: Programmiermethoden (Sommer 2022)
+# IFM 2.2: Programmiermethoden (Sommer 2023)
 
 ## Kursbeschreibung
 
