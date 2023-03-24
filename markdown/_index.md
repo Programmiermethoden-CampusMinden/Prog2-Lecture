@@ -85,8 +85,7 @@ Weitere empfohlene Literatur siehe `["Ressourcen"]({{< ref "/org/resources" >}})
 
 `{{< schedule >}}`{=markdown}
 
-**Hinweis**: Abgabe der Hausaufgaben als Pull-Request bis jeweils 18:00 Uhr (Konzept-Aufgaben)
-bzw. 09.00 Uhr (Dungeon-Aufgaben) im GitHub.
+**Hinweis**: Abgabe der Hausaufgaben als Pull-Request bis jeweils 18:00 Uhr im ILIAS.
 
 
 ## Förderungen und Kooperationen
