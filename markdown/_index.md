@@ -63,17 +63,20 @@ Tipps zur Vorbereitung siehe`[Prüfungsvorbereitung]({{< ref "/org/exams" >}})`{
 
 1.  ["**Java ist auch eine Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
     Ullenboom, C., Rheinwerk-Verlag, 2021.
-    ISBN [978-3-8362-8745-6](https://www.digibib.net/openurl/Bi10?isbn=978-3-8362-8745-6).
+    ISBN [978-3-8362-8745-6](https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6).
 
-2.  ["**Pro Git**"](https://git-scm.com/book/en/v2).
+2.  ["**Pro Git** (Second Edition)"](https://git-scm.com/book/en/v2).
     Chacon, S. und Straub, B., Apress, 2014.
-    ISBN [978-1-4842-0077-3](https://www.digibib.net/openurl/Bi10?isbn=978-1-4842-0077-3).
+    ISBN [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
 
 3.  ["Java Core Libraries Developer Guide"](https://docs.oracle.com/en/java/javase/17/core/index.html).
-    Oracle Corporation, 2022.
+    Oracle Corporation, 2023.
 
 4.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
-    Oracle Corporation, 2022.
+    Oracle Corporation, 2023.
+
+5.  ["Learn Java"](https://dev.java/learn/).
+    Oracle Corporation, 2023.
 
 Weitere empfohlene Literatur siehe `["Ressourcen"]({{< ref "/org/resources" >}})`{=markdown}.
 
