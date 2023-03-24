@@ -34,15 +34,16 @@ Siehe `["Syllabus"]({{< ref "/org/syllabus" >}})`{=markdown} zu Details.
 
 ### Vorlesung: 2 SWS
 
-*   Fr, 16:00 - 17:30 Uhr (online/J104)
+*   Fr, 16:30 - 18:00 Uhr (online/J104)
 
 Durchführung als **Flipped Classroom**: Sitzungen per Zoom (**Zugangsdaten siehe [ILIAS]**)
 
 ### Praktikum: 2+1 SWS
 
-*   Gruppe 1: Fr, 09:00 - 10:30 Uhr (online/D320)
-*   Gruppe 2: Fr, 12:45 - 14:15 Uhr (online/D320)
-*   Gruppe 3: Fr, 10:45 - 12:15 Uhr (online/D320)
+*   Gruppe 1: Fr, 09:00 - 10:30 Uhr (online/J104)
+*   Gruppe 2: Fr, 13:30 - 15:00 Uhr (online/J104)
+*   Gruppe 3: Fr, 10:45 - 12:15 Uhr (online/J104)
+*   Gruppe 4: Fr, 15:00 - 16:30 Uhr (online/J104)
 
 **Zugangsdaten siehe [ILIAS]**
 
