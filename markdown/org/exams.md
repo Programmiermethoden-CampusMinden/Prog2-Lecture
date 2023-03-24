@@ -31,9 +31,9 @@ tldr: |
 
   ### Ablauf der Klausur
 
-  Die Prüfung (das ILIAS-Objekt) selbst schalte ich dann zum Start der Prüfung online. Parallel zur
-  Prüfung wird bei der Durchführung als Open-Book-Ausarbeitung eine Zoom-Sitzung laufen, in der Sie
-  Fragen stellen können.
+  Die Prüfung (das ILIAS-Objekt) selbst schalte ich erst zum Start der Prüfung online. Bei der Durchführung
+  als Open-Book-Ausarbeitung wird parallel zur Prüfung eine Zoom-Sitzung laufen, in der Sie Fragen stellen
+  können.
 
   Nach der Prüfung müssen Sie eine Erklärung abgeben, dass Sie die Prüfung selbstständig und ohne Hilfe
   Dritter angefertigt haben. Dazu ist im Prüfungsraum parallel zur eigentlichen Prüfung ein weiter Test
@@ -78,15 +78,11 @@ als digitale Prüfung auf einem Prüfungs-ILIAS durchgeführt wird.
 Es wird angestrebt, die Klausur in Präsenz in den Rechnerpools am Campus Minden durchzuführen.
 Falls dies wegen der Corona-Situation oder anderer Umstände nicht möglich sein sollte, wird
 die Klausur als "Open-Book-Ausarbeitung" im Home-Office durchgeführt.
-:::
 
-::: center
-[Termin 1:]{.notes} **XX, XX.XX.XXXX, XX:XX -- XX:XX Uhr**
-:::
+Es wird in beiden Prüfungszeiträumen ein Termin angeboten. Die Termine werden vom Prüfungsamt
+bekannt gegeben.
 
-:::::: notes
-Dauer 90 Minuten. Es wird in beiden Prüfungszeiträumen ein Termin angeboten (konkreter
-Termin im zweiten Prüfungszeitraum wird noch vom Prüfungsamt bekannt gegeben).
+Dauer jeweils 90 Minuten.
 ::::::
 
 \bigskip
@@ -119,7 +115,7 @@ Termin im zweiten Prüfungszeitraum wird noch vom Prüfungsamt bekannt gegeben).
     Sie zusätzlich auch alle anderen Unterlagen benutzen.
     :::
 
-    *   Ausnahme: **Keine Hilfe durch Dritte!** (insb. keine Zusammenarbeit, keine Kommunikation)
+    *   Ausnahme: **Keine Hilfe durch Dritte!** (insbesondere keine Zusammenarbeit, keine Kommunikation)
 
         ::: notes
         Sie sollen die Prüfung eigenständig bearbeiten. Hilfe von Dritten sowie jegliche Kommunikation
@@ -185,7 +181,7 @@ für Sie vorbereitet sein.
     [eassessment.fh-bielefeld.de](https://eassessment.fh-bielefeld.de). Zugangsdaten wie im normalen
     ILIAS.
 
-    Achtung: Auch wenn Sie sich in den Räumen der FH befinden, müssen Sie die VPN-Verbindung aktivieren,
+    Achtung: Auch wenn Sie sich in den Räumen der FH befinden, müssen Sie oft die VPN-Verbindung aktivieren,
     um Zugang zur Prüfungsplattform zu erhalten.
     :::
 
@@ -240,14 +236,14 @@ für Sie vorbereitet sein.
 4.  Parallel zum E-Assessment läuft eine Zoom-Session, dort können Sie Fragen stellen
 
     ::: notes
-    Bei Durchführung aus dem Home-Office; Daten siehe Mail über das LSF ca. eine Woche vor der Prüfung
+    Nur bei Durchführung aus dem Home-Office; Daten siehe Mail über das LSF ca. eine Woche vor der Prüfung
     :::
 
 5.  Verbindungsprobleme (Home-Office):
     -   Bei kurzzeitigen Verbindungsabbrüchen loggen Sie sich einfach wieder ein
     -   Wenn die Probleme länger dauern, gilt der Versuch als nicht unternommen
-        [(außer Sie haben die Probleme aktiv herbeigeführt, dann zählt das als
-        Täuschungsversuch, vgl. RPO §22a (5))]{.notes}
+        [(außer Sie haben die Probleme aktiv herbeigeführt, dann kann das als
+        Täuschungsversuch gewertet werden, vgl. RPO §22a (4))]{.notes}
 
 6.  Erklärung "Eigenständige Bearbeitung" (max. 24h nach Prüfungsende)
 
