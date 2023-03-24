@@ -24,8 +24,11 @@
         -   topic: "/building/gradle"
         -   topic: "/modern-java/records"
         -   topic: "/pattern/strategy"
+    assignment:
+        -   topic: "/assignments/pool_dungeon"
+            due: "Di, 18.04., 09 Uhr, ILIAS"
     misc_assignment:
-        -   notes: ">> Kein Praktikum"
+        -   notes: ">> Zyklus 1: Abgabe und Vorstellung Konzept"
 
 -   week: "W03 (28. April)"
     lecture:
@@ -34,10 +37,10 @@
         -   topic: "/modern-java/lambdas"
         -   topic: "/modern-java/methodreferences"
     assignment:
-        -   topic: "sheet01"
-            due: "Di, 12.04., 18 Uhr, ILIAS"
+        -   topic: "/assignments/pool_dungeon"
+            due: "Di, 25.04., 09 Uhr, ILIAS"
     misc_assignment:
-        -   notes: ">> Kein Praktikum (nur Abgabe von Blatt 01 via ILIAS; Vorstellung im Praktikum in KW16)"
+        -   notes: ">> Zyklus 1: Abgabe und Vorstellung Code"
 
 -   week: "W04 (05. Mai)"
     lecture:
@@ -46,12 +49,10 @@
         -   topic: "/coding/logging"
         -   topic: "/pattern/type-object"
     assignment:
-        -   topic: "sheet02"
-            due: "Di, 19.04., 18 Uhr, PR/MR"
-        -   topic: "dungeon-start"
-            due: "Fr, 22.04., 09 Uhr, PR/MR"
+        -   topic: "/assignments/pool_dungeon"
+            due: "Di, 02.05., 09 Uhr, ILIAS"
     misc_assignment:
-        -   notes: ">> Praktikum: Vorstellung von Blatt 01 zusammen mit Blatt 02 und der ersten Dungeon-Aufgabe 'Dungeon-Start'"
+        -   notes: ">> Zyklus 2: Abgabe und Vorstellung Konzept"
 
 -   week: "W05 (12. Mai)"
     lecture:
@@ -61,12 +62,10 @@
         -   topic: "/testing/mockito"
         -   topic: "/pattern/command"
     assignment:
-        -   topic: "sheet03"
-            due: "Di, 26.04., 18 Uhr, PR/MR"
         -   topic: "/assignments/pool_dungeon"
-            due: "Fr, 29.04., 09 Uhr, PR/MR"
+            due: "Di, 09.05., 09 Uhr, ILIAS"
     misc_assignment:
-        -   notes: ">> Praktikum: Vorstellung von Blatt 03 und Dungeon-Aufgabe"
+        -   notes: ">> Zyklus 2: Abgabe und Vorstellung Code"
 
 -   week: "W06 (19. Mai)"
     lecture:
@@ -75,12 +74,10 @@
         -   topic: "/coding/refactoring"
         -   topic: "/building/ci"
     assignment:
-        -   topic: "sheet04"
-            due: "Di, 03.05., 18 Uhr, PR/MR"
         -   topic: "/assignments/pool_dungeon"
-            due: "Fr, 06.05., 09 Uhr, PR/MR"
+            due: "Di, 16.05., 09 Uhr, ILIAS"
     misc_assignment:
-        -   notes: ">> Praktikum: Vorstellung von Blatt 04 und Dungeon-Aufgabe"
+        -   notes: ">> Zyklus 3: Abgabe und Vorstellung Konzept"
 
 -   week: "W07 (26. Mai)"
     lecture:
@@ -90,12 +87,10 @@
         -   topic: "/generics/generics-polymorphism"
         -   topic: "/building/docker"
     assignment:
-        -   topic: "sheet05"
-            due: "Di, 10.05., 18 Uhr, PR/MR"
         -   topic: "/assignments/pool_dungeon"
-            due: "Fr, 13.05., 09 Uhr, PR/MR"
+            due: "Di, 23.05., 09 Uhr, ILIAS"
     misc_assignment:
-        -   notes: ">> Praktikum: Vorstellung von Blatt 05 und Dungeon-Aufgabe"
+        -   notes: ">> Zyklus 3: Abgabe und Vorstellung Code"
 
 -   week: "W08 (02. Juni)"
     lecture:
@@ -105,22 +100,22 @@
         -   topic: "/pattern/observer"
         -   topic: "/git/worktree"
     assignment:
-        -   topic: "sheet06"
-            due: "Di, 17.05., 18 Uhr, PR/MR"
         -   topic: "/assignments/pool_dungeon"
-            due: "Fr, 20.05., 09 Uhr, PR/MR"
+            due: "Di, 30.05., 09 Uhr, ILIAS"
     misc_assignment:
-        -   notes: ">> Praktikum: Vorstellung von Blatt 06 und Dungeon-Aufgabe"
+        -   notes: ">> Zyklus 4: Abgabe und Vorstellung Konzept"
 
--   week: "W09"
-    date: "Fr, 09.06.23"
+-   week: "W09 (09. Juni)"
     lecture:
         -   topic: "/java-jvm/annotations"
         -   topic: "/java-jvm/reflection"
         -   topic: "/java-jvm/exceptions"
         -   topic: "/pattern/singleton"
+    assignment:
+        -   topic: "/assignments/pool_dungeon"
+            due: "Di, 06.06., 09 Uhr, ILIAS"
     misc_assignment:
-        -   notes: ">> Kein Praktikum"
+        -   notes: ">> Zyklus 4: Abgabe und Vorstellung Code"
 
 -   week: "W10 (16. Juni)"
     lecture:
@@ -131,12 +126,10 @@
         -   topic: "/modern-java/sealed"
         -   topic: "/pattern/dependency"
     assignment:
-        -   topic: "sheet07"
-            due: "Di, 31.05., 18 Uhr, PR/MR"
         -   topic: "/assignments/pool_dungeon"
-            due: "Fr, 03.06., 09 Uhr, PR/MR"
+            due: "Di, 13.06., 09 Uhr, ILIAS"
     misc_assignment:
-        -   notes: ">> Praktikum: Vorstellung von Blatt 07 und Dungeon-Aufgabe"
+        -   notes: ">> Zyklus 5: Abgabe und Vorstellung Konzept"
 
 -   week: "W11 (23. Juni)"
     lecture:
@@ -146,12 +139,10 @@
         -   topic: "/pattern/factory-method"
         -   topic: "/pattern/template-method"
     assignment:
-        -   topic: "sheet08"
-            due: "Di, 07.06., 18 Uhr, PR/MR"
         -   topic: "/assignments/pool_dungeon"
-            due: "Fr, 10.06., 09 Uhr, PR/MR"
+            due: "Di, 20.06., 09 Uhr, ILIAS"
     misc_assignment:
-        -   notes: ">> Praktikum: Vorstellung von Blatt 08 und Dungeon-Aufgabe"
+        -   notes: ">> Zyklus 5: Abgabe und Vorstellung Code"
 
 -   week: "W12 (30. Juni)"
     lecture:
@@ -161,6 +152,6 @@
             notes: "Prüfungsvorbereitung (Zoom)"
     assignment:
         -   topic: "/assignments/pool_dungeon"
-            due: "Fr, 01.07., 09 Uhr, PR/MR"
+            due: "Fr, 30.06., 09 Uhr, ILIAS"
     misc_assignment:
-        -   notes: ">> Praktikum: Abgabe und Vorstellung letzte Dungeon-Aufgabe"
+        -   notes: ">> Sondertermin (Abgabe und Vorstellung Code)"
