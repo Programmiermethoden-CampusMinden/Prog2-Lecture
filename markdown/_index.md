@@ -92,10 +92,10 @@ Vorstellung der Lösungen im jeweiligen Praktikumstermin am Freitag.
 ### Förderung durch DH.NRW (Digi Fellowships)
 
 Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und Wissenschaft
-(MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert
-(["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]).
+(MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert:
+["Fellowships für Innovationen in der digitalen Hochschulbildung"] (_Digi Fellowships_).
 
-["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
+["Fellowships für Innovationen in der digitalen Hochschulbildung"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
 
 ### Kooperation mit dem DigikoS-Projekt
 
