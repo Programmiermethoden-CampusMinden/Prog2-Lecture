@@ -59,27 +59,6 @@ Hier finden Sie Informationen zum Ablauf des Praktikums sowie zur Prüfungsform:
 Tipps zur Vorbereitung siehe`[Prüfungsvorbereitung]({{< ref "/org/exams" >}})`{=markdown}.
 
 
-## Förderungen und Kooperationen
-
-### Förderung durch DH.NRW (Digi Fellowships)
-
-Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und Wissenschaft
-(MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert
-(["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]).
-
-["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
-
-### Kooperation mit dem DigikoS-Projekt
-
-Diese Vorlesung wird zudem vom Projekt ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]
-(_DigikoS_) unterstützt. Ein vom DigikoS-Projekt ausgebildeter Digital Learning Scout hat
-insbesondere die Koordination der digitalen Gruppenarbeiten, des Peer-Feedbacks und der
-Postersessions in ILIAS technisch und inhaltlich begleitet. DigikoS wird als Verbundprojekt
-von der Stiftung Innovation in der Hochschullehre gefördert.
-
-["Digitalbaukasten für kompetenzorientiertes Selbststudium"]: https://www.digikos.de
-
-
 ## Materialien
 
 1.  ["**Java ist auch eine Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
@@ -105,3 +84,24 @@ Weitere empfohlene Literatur siehe `["Ressourcen"]({{< ref "/org/resources" >}})
 
 **Hinweis**: Abgabe der Hausaufgaben als Pull-Request bis jeweils 18:00 Uhr (Konzept-Aufgaben)
 bzw. 09.00 Uhr (Dungeon-Aufgaben) im GitHub.
+
+
+## Förderungen und Kooperationen
+
+### Förderung durch DH.NRW (Digi Fellowships)
+
+Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und Wissenschaft
+(MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert
+(["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]).
+
+["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
+
+### Kooperation mit dem DigikoS-Projekt
+
+Diese Vorlesung wird zudem vom Projekt ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]
+(_DigikoS_) unterstützt. Ein vom DigikoS-Projekt ausgebildeter Digital Learning Scout hat
+insbesondere die Koordination der digitalen Gruppenarbeiten, des Peer-Feedbacks und der
+Postersessions in ILIAS technisch und inhaltlich begleitet. DigikoS wird als Verbundprojekt
+von der Stiftung Innovation in der Hochschullehre gefördert.
+
+["Digitalbaukasten für kompetenzorientiertes Selbststudium"]: https://www.digikos.de
