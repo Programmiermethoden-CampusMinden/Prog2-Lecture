@@ -13,26 +13,25 @@ hidden: true
 **Performanzprüfung, 7 ECTS**
 
 -   **Praktische Teilleistung**:
-    Durch die Bearbeitung der Praktikumsaufgaben sowie die Abgabe Ihrer Lösung vor dem
-    Praktikum und die Vorstellung der Lösung im Praktikum sammeln Sie im Laufe des
-    Semesters Punkte, die für die Berechnung der Note dieser Teilleistung genutzt werden.
+    Durch die Bearbeitung der Praktikumsaufgaben, die Abgabe Ihrer Lösung vor dem Praktikum,
+    das Erteilen von Peer-Feedback sowie die Vorstellung der Lösung im Praktikum sammeln Sie
+    im Laufe des Semesters Punkte für die Berechnung der Note der praktischen Teilleistung.
 
     Notenspiegel:
-    *   225P gesamt, 50P Puffer => “Krankheitsregelung”, 175P == 100%
-    *   4.0: ab 60% v. 175P (105P), alle 4% nächste Teilnote, 1.0: ab 96% v. 175P (168P)
+    *   100 Punkte gesamt erreichbar
+    *   4.0: ab 60% (60 Punkte), alle 4% nächste Teilnote, 1.0: ab 96% (96 Punkte)
 
 -   **Theoretische Teilleistung**:
-    Die Prüfung für die theoretische Teilleistung wird als digitale Klausur über eine
-    spezielle ILIAS-Instanz ("E-Assessment-Server") durchgeführt. Es wird in beiden
-    Prüfungszeiträumen je ein Termin angeboten.
+    Die Prüfung für die theoretische Teilleistung wird als digitale Klausur über eine spezielle
+    ILIAS-Instanz ("E-Assessment-Server") durchgeführt. Es wird in beiden Prüfungszeiträumen je
+    ein Termin angeboten.
     Tipps zur Vorbereitung siehe `["Prüfungsvorbereitung"]({{< ref "/org/exams" >}})`{=markdown}.
 
 -   **Gesamtnote**:
-    Die beiden Leistungen (praktische und theoretische Teilleistung) werden separat im LSF
-    erfasst und vom System automatisch zu einer Gesamtnote verrechnet (50% Praxis, 50%
-    Theorie).
+    Die beiden Teilleistungen (praktische und theoretische Teilleistung) werden separat im LSF
+    erfasst und vom System automatisch zu einer Gesamtnote verrechnet (50% Praxis, 50% Theorie).
 
-Wiederholer mit bereits begonnener Parcours-Prüfung absolvieren stattdessen eine Parcoursprüfung.
+Wiederholer mit bereits begonnener Parcours-Prüfung absolvieren stattdessen eine Parcours-Prüfung.
 Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
 
 
@@ -47,52 +46,62 @@ Wer Lösungen ganz oder teilweise von anderen Teams/Studierenden oder anderen Qu
 und als eigene Lösung ab-/ausgibt, begeht einen Täuschungsversuch mit entsprechenden Konsequenzen
 im Prüfungsverfahren.
 
+### 2-Wochen-Zyklen
+
+Das Praktikum erfolgt in 2-Wochen-Zyklen.
+
+Sie suchen sich in jedem Zyklus Aufgaben aus, die Sie hier bearbeiten wollen. Sie können pro Zyklus
+Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
+
+In der ersten Woche erstellen Sie jeweils eine Konzeptskizze für die Aufgaben, die Sie sich
+ausgesucht haben. Beschreiben Sie dabei mindestens folgenden Dinge:
+
+-   Worin besteht die Aufgabe, was ist das zu lösende Problem?
+-   Wie soll Ihre Lösung aussehen, was soll diese können?
+-   Mit welchen Methoden und Techniken aus der Vorlesung wollen Sie die Lösung umsetzen?
+    Warum erscheint Ihnen das sinnvoll?
+-   Wie sieht eine erste grobe Modellierung aus, welche Klassen und Methoden brauchen
+    Sie? Erstellen Sie hierfür ein UML-Diagramm.
+
+Die Beschreibung muss für Studierende der Informatik im zweiten Semester verständlich sein.
+
+Die Konzeptskizze geben Sie als PDF-Dokument ab.
+
+In der zweiten Woche setzen Sie Ihr Konzept um und implementieren Ihre Lösung. Vermutlich
+müssen Sie Ihr Konzept noch anpassen, dies ist entsprechend zu dokumentieren. Hier geben
+Sie den Code und die überarbeitete Konzeptskizze als PDF ab.
+
 ### Abgabe der Lösungen
 
-Das `[erste Blatt]({{< ref "sheet01" >}})`{=markdown} ist im
-[ILIAS](https://www.fh-bielefeld.de/elearning/goto.php?target=exc_1037695&client_id=FH-Bielefeld)
-abzugeben. Die Abgabe der anderen Aufgaben erfolgt über einen Pull- bzw. Merge-Request
-in Ihrem nicht öffentlich sichtbaren Git-Repo, welches Sie sich zu Beginn des Semesters
-einrichten. Dazu benötigen Sie entweder einen kostenfreien und ggf. anonymen GitHub-Account
-oder Sie können alternativ den Gitlab-Server im Software-Labor nutzen, den Sie aus dem
-FH-Netz bzw. über VPN erreichen und wo Sie sich mit Ihren normalen FH-Zugangsdaten einloggen
-können ("LDAP"). Klonen Sie dazu eines der beiden bereitgestellten Vorgabe-Repos (siehe
-`[Ressourcen > Vorgaben]({{< ref "/org/resources" >}})`{=markdown}) auf Ihren Rechner,
-erstellen Sie sich auf [GitHub](https://github.com/) oder alternativ auf unserem Gitlab-Server
-im SW-Labor (nur über VPN erreichbar) ein privates Repo für Ihr Team und tragen Sie dieses
-Repo als weiteres Remote in Ihre Workingcopy ein. Geben Sie `jposselt`, `amatutat` und
-`cagix` Schreibzugriff, damit wir die Pull-/Merge-Requests bearbeiten können.
+Alle Lösungen werden im ILIAS abgegeben. Sofern nichts anderes bei den Aufgaben angegeben
+ist, sind die **Lösungen jeweils bis Dienstag 09:00 Uhr im ILIAS** hochzuladen.
 
-Die Lösungen müssen jeweils **vor** dem Praktikum hochgeladen werden (Deadlines beachten!)
-**und** **im** jeweiligen Praktikum von allen Teammitgliedern vorgestellt werden. Ohne diese
-Rücksprache/Vorstellung gibt es keine Punkte.
-
-Sofern nichts anderes bei den Aufgaben angegeben ist, sind die Aufgaben aus dem Konzept-Pool
-stets bis **Dienstag 18:00 Uhr** per offenem Pull-/Merge-Request von Ihrem Feature-Branch in
-den Master-Branch in Ihrem Repo abzugeben, als Assignee ist Jonas Posselt (`jposselt`) zu
-setzen.
-
-Die Aufgaben aus dem Dungeon-Pool sind ebenfalls per (separatem) Pull-Request abzugeben, dies
-können Sie bis zum Beginn des Praktikums tun. Die Pull-/Merge-Requests werden von Jonas Posselt
-zur angegebenen Deadline gemergt, eine spätere Abgabe ist nicht möglich.
-
-Auftretende Merge-Konflikte werden wie "keine Abgabe" gewertet.
-
-### Vorstellung der Lösung im Praktikum
-
-Die Vorstellung Ihrer Lösung im Praktikum kann mit einem Medium Ihrer Wahl
-stattfinden. Sie können zum Beispiel Ihren Bildschirm teilen und Ihre Lösung
-erklären. Sie brauchen nicht extra eine Präsentation anfertigen!
+Dabei gibt jedes Team nur **eine gemeinsame Lösung** ab: Eine Person aus dem Team lädt die
+Lösung in das ILIAS und trägt die Teammitglieder mit ein.
 
 ### Peer-Feedback
 
-Nach der Ablauf der Deadline wird Ihnen durch ILIAS ein oder mehrere Reviews
-zugewiesen. Sie finden die Review-Kriterien (als Checklisten) und die
-anzufertigenden Reviews im ILIAS - gehen Sie dazu im Praktikumsbereich auf
-die jeweilige Aufgabe.
+Nach der Ablauf der Deadline werden Ihnen durch ILIAS mehrere Reviews zugewiesen. Sie finden
+die Review-Kriterien (als Checklisten) und die anzufertigenden Reviews im ILIAS - gehen Sie
+dazu im Praktikumsbereich wieder auf die jeweilige Aufgabe.
 
-Während des Praktikums füllen Sie bitte die Review-Checklisten aus und stellen
-Sie diese im ILIAS ein.
+Sofern nichts anderes angegeben, ist das **Peer-Feedback jeweils bis Mittwoch 18:00 Uhr**
+einzutragen.
+
+### Vorstellung der Lösung im Praktikum
+
+Nach dem Peer-Feedback haben Sie bis zu Ihrem Praktikumstermin die Gelegenheit, das erhaltene
+Feedback in Ihre Lösung einzuarbeiten.
+
+Die Vorstellung Ihrer finalen Lösung erfolgt im Praktikum mit einem Medium Ihrer Wahl. Sie
+können zum Beispiel Ihren Bildschirm teilen und Ihre Lösung erklären. Sie brauchen nicht
+extra eine Präsentation anfertigen!
+
+Die Vorstellung der Lösung erfolgt duch alle Teammitglieder. Ohne Teilnahme an der Vorstellung
+gibt es keine Punkte.
+
+Für die Vorstellen werden individuelle Zeitslots pro Team innerhalb Ihrer Praktikumsgruppe
+vereinbart (siehe Etherpads im ILIAS).
 
 ### Punktevergabe
 
