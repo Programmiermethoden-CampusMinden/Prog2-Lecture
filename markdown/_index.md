@@ -47,7 +47,7 @@ Durchführung als **Flipped Classroom**: Sitzungen per Zoom (**Zugangsdaten sieh
 
 **Zugangsdaten siehe [ILIAS]**
 
-[ILIAS]: https://www.fh-bielefeld.de/elearning/goto.php?target=crs_1015325&client_id=FH-Bielefeld
+[ILIAS]: https://www.fh-bielefeld.de/elearning/goto.php?target=crs_1181185&client_id=FH-Bielefeld
 
 ### Prüfungsform, Note und Credits
 
