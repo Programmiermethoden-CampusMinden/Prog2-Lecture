@@ -82,9 +82,9 @@ Weitere empfohlene Literatur siehe `["Ressourcen"]({{< ref "/org/resources" >}})
 
 `{{< schedule >}}`{=markdown}
 
-**Hinweise**: Abgabe der Hausaufgaben jeweils bis Dienstag 09:00 Uhr im ILIAS. Peer-Feedback jeweils
-bis Mittwoch 18:00 Uhr im ILIAS. Finale Überarbeitung der Hausaufgaben bis zur Vorstellung im Praktikum.
-Vorstellung der Lösungen im jeweiligen Praktikumstermin am Freitag.
+**Hinweise**: Abgabe der Hausaufgaben jeweils bis Mittwoch 15:00 Uhr im ILIAS. Peer-Feedback
+jeweils bis Donnerstag 15:00 Uhr im ILIAS. Finale Überarbeitung der Hausaufgaben bis zur
+Vorstellung im Praktikum. Vorstellung der Lösungen im jeweiligen Praktikumstermin am Freitag.
 
 
 ## Förderungen und Kooperationen

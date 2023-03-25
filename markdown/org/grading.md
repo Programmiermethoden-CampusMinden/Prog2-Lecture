@@ -72,7 +72,7 @@ Sie den Code und die überarbeitete Konzeptskizze als PDF ab.
 ### Abgabe der Lösungen
 
 Alle Lösungen werden im ILIAS abgegeben. Sofern nichts anderes bei den Aufgaben angegeben
-ist, sind die **Lösungen jeweils bis Dienstag 09:00 Uhr im ILIAS** hochzuladen.
+ist, sind die **Lösungen jeweils bis Mittwoch 15:00 Uhr im ILIAS** hochzuladen.
 
 Dabei gibt jedes Team nur **eine gemeinsame Lösung** ab: Eine Person aus dem Team lädt die
 Lösung in das ILIAS und trägt die Teammitglieder mit ein.
@@ -83,7 +83,7 @@ Nach der Ablauf der Deadline werden Ihnen durch ILIAS mehrere Reviews zugewiesen
 die Review-Kriterien (als Checklisten) und die anzufertigenden Reviews im ILIAS - gehen Sie
 dazu im Praktikumsbereich wieder auf die jeweilige Aufgabe.
 
-Sofern nichts anderes angegeben, ist das **Peer-Feedback jeweils bis Mittwoch 18:00 Uhr**
+Sofern nichts anderes angegeben, ist das **Peer-Feedback jeweils bis Donnerstag 15:00 Uhr**
 einzutragen.
 
 ### Vorstellung der Lösung im Praktikum
