@@ -1,10 +1,10 @@
 ---
 archetype: "home"
-title: "PM S22"
+title: "PM S23"
 ---
 
 
-# IFM 2.2: Programmiermethoden (Sommer 2022)
+# IFM 2.2: Programmiermethoden (Sommer 2023)
 
 ## Kursbeschreibung
 
@@ -30,23 +30,24 @@ Siehe `["Syllabus"]({{< ref "/org/syllabus" >}})`{=markdown} zu Details.
 
 ## Kursformat
 
-![](images/fahrplan.png){width="80%"}
+![](org/images/fahrplan.png){width="80%"}
 
 ### Vorlesung: 2 SWS
 
-*   Fr, 16:00 - 17:30 Uhr (online/J104)
+*   Fr, 16:30 - 18:00 Uhr (online/J104)
 
 Durchführung als **Flipped Classroom**: Sitzungen per Zoom (**Zugangsdaten siehe [ILIAS]**)
 
 ### Praktikum: 2+1 SWS
 
-*   Gruppe 1: Fr, 09:00 - 10:30 Uhr (online/D320)
-*   Gruppe 2: Fr, 12:45 - 14:15 Uhr (online/D320)
-*   Gruppe 3: Fr, 10:45 - 12:15 Uhr (online/D320)
+*   Gruppe 1: Fr, 09:00 - 10:30 Uhr (online/J104)
+*   Gruppe 2: Fr, 13:30 - 15:00 Uhr (online/J104)
+*   Gruppe 3: Fr, 10:45 - 12:15 Uhr (online/J104)
+*   Gruppe 4: Fr, 15:00 - 16:30 Uhr (online/J104)
 
 **Zugangsdaten siehe [ILIAS]**
 
-[ILIAS]: https://www.fh-bielefeld.de/elearning/goto.php?target=crs_1015325&client_id=FH-Bielefeld
+[ILIAS]: https://www.fh-bielefeld.de/elearning/goto.php?target=crs_1181185&client_id=FH-Bielefeld
 
 ### Prüfungsform, Note und Credits
 
@@ -55,7 +56,35 @@ Durchführung als **Flipped Classroom**: Sitzungen per Zoom (**Zugangsdaten sieh
 Hier finden Sie Informationen zum Ablauf des Praktikums sowie zur Prüfungsform:
 `["Note und Credits"]({{< ref "/org/grading" >}})`{=markdown}.
 
-Tipps zur Vorbereitung siehe`[Prüfungsvorbereitung]({{< ref "/org/exams" >}})`{=markdown}.
+Tipps zur Vorbereitung siehe `[Prüfungsvorbereitung]({{< ref "/org/exams" >}})`{=markdown}.
+
+
+## Materialien
+
+1.  ["**Java ist auch eine Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
+    Ullenboom, C., Rheinwerk-Verlag, 2021.
+    ISBN [978-3-8362-8745-6](https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6).
+
+2.  ["**Pro Git** (Second Edition)"](https://git-scm.com/book/en/v2).
+    Chacon, S. und Straub, B., Apress, 2014.
+    ISBN [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
+
+3.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
+    Oracle Corporation, 2023.
+
+4.  ["Learn Java"](https://dev.java/learn/).
+    Oracle Corporation, 2023.
+
+Weitere empfohlene Literatur siehe `["Ressourcen"]({{< ref "/org/resources" >}})`{=markdown}.
+
+
+## Fahrplan
+
+`{{< schedule >}}`{=markdown}
+
+**Hinweise**: Abgabe der Hausaufgaben jeweils bis Mittwoch 15:00 Uhr im ILIAS. Peer-Feedback
+jeweils bis Donnerstag 15:00 Uhr im ILIAS. Finale Überarbeitung der Hausaufgaben bis zur
+Vorstellung im Praktikum. Vorstellung der Lösungen im jeweiligen Praktikumstermin am Freitag.
 
 
 ## Förderungen und Kooperationen
@@ -63,10 +92,10 @@ Tipps zur Vorbereitung siehe`[Prüfungsvorbereitung]({{< ref "/org/exams" >}})`{
 ### Förderung durch DH.NRW (Digi Fellowships)
 
 Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und Wissenschaft
-(MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert
-(["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]).
+(MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert:
+["Fellowships für Innovationen in der digitalen Hochschulbildung"] (_Digi Fellowships_).
 
-["Fellowships für Innovationen in der digitalen Hochschulbildung (Digi Fellowships)"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
+["Fellowships für Innovationen in der digitalen Hochschulbildung"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
 
 ### Kooperation mit dem DigikoS-Projekt
 
@@ -77,30 +106,3 @@ Postersessions in ILIAS technisch und inhaltlich begleitet. DigikoS wird als Ver
 von der Stiftung Innovation in der Hochschullehre gefördert.
 
 ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]: https://www.digikos.de
-
-
-## Materialien
-
-1.  ["**Java ist auch eine Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
-    Ullenboom, C., Rheinwerk-Verlag, 2021.
-    ISBN [978-3-8362-8745-6](https://www.digibib.net/openurl/Bi10?isbn=978-3-8362-8745-6).
-
-2.  ["**Pro Git**"](https://git-scm.com/book/en/v2).
-    Chacon, S. und Straub, B., Apress, 2014.
-    ISBN [978-1-4842-0077-3](https://www.digibib.net/openurl/Bi10?isbn=978-1-4842-0077-3).
-
-3.  ["Java Core Libraries Developer Guide"](https://docs.oracle.com/en/java/javase/17/core/index.html).
-    Oracle Corporation, 2022.
-
-4.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
-    Oracle Corporation, 2022.
-
-Weitere empfohlene Literatur siehe `["Ressourcen"]({{< ref "/org/resources" >}})`{=markdown}.
-
-
-## Fahrplan
-
-`{{< schedule >}}`{=markdown}
-
-**Hinweis**: Abgabe der Hausaufgaben als Pull-Request bis jeweils 18:00 Uhr (Konzept-Aufgaben)
-bzw. 09.00 Uhr (Dungeon-Aufgaben) im GitHub.

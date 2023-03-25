@@ -10,13 +10,10 @@ hidden: true
 
 ## Worum geht's hier?
 
-::: center
+::: cbox
 [**Weniger schlecht programmieren**]{.alert} \quad ;-)
 :::
 
-\bigskip
-\bigskip
-\bigskip
 
 > ... And, lastly, there's the explosive growth in demand, which has led to many
 > people doing it who aren't any good at it. Code is merely a means to an end.
@@ -28,7 +25,6 @@ hidden: true
 > \hfill -- John Gruber auf [daringfireball.net](https://daringfireball.net/2020/04/cobol_programming_coding)
 
 
-::: notes
 Sie haben letztes Semester in OOP die *wichtigsten* Elemente und Konzepte der
 Programmiersprache Java kennen gelernt.
 
@@ -44,8 +40,12 @@ und pflegen können:
     *   Wichtigste Konzepte und APIs kennen und beherrschen
     *   Merkmale größerer Applikationen wie Logging und Konfiguration einsetzen
 
+\smallskip
+
 *   **Design**
     *   Basis-Entwurfsmuster (er-)kennen und einsetzen
+
+\smallskip
 
 *   **Methoden**
     *   Code erstellen und pflegen wie die Profis
@@ -53,7 +53,6 @@ und pflegen können:
         *   Testen von Software
         *   Refactoring von "stinkendem" Code
     *   Zusammenarbeit in Teams: Verwaltung von Software und Workflows
-:::
 
 [Warum ist guter Code wichtig?]{.bsp}
 
@@ -62,7 +61,7 @@ und pflegen können:
 
 ## Überblick Modulinhalte
 
-1)  Fortgeschrittene Konzepte in Java
+1.  Fortgeschrittene Konzepte in Java
     *   Reguläre Ausdrücke, Annotationen, Generics, Reflection
     *   Parallele Programmierung (Threads)
     *   Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas
@@ -70,12 +69,12 @@ und pflegen können:
 
 \smallskip
 
-2)  Fortgeschrittenes OO-Design
+2.  Fortgeschrittenes OO-Design
     *   Entwurfsmuster: Strategy, Template-Method, Factory-Method, Singleton, ...
 
 \smallskip
 
-3)  Programmiermethoden
+3.  Programmiermethoden
     *   Versionskontrolle
     *   Testen, Coding Conventions, Refactoring
     *   Logging, Build-Tools, CI
