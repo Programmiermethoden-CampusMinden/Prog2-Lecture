@@ -56,18 +56,20 @@ Zyklus Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
 In der ersten Woche erstellen Sie jeweils eine Konzeptskizze für die Aufgaben, die Sie sich
 ausgesucht haben. Beschreiben Sie dabei mindestens folgenden Dinge:
 
-1.  Worin besteht die Aufgabe, was ist das zu lösende Problem?
-2.  Wie soll Ihre Lösung aussehen, was soll diese können?
+1.  Aufgabe: Worin besteht die Aufgabe, was ist das zu lösende Problem?
+2.  Lösung: Wie soll Ihre Lösung aussehen, was soll diese können?
 3.  Mit welchen Methoden und Techniken aus der Vorlesung wollen Sie die Lösung umsetzen?
     Warum erscheint Ihnen das sinnvoll?
-4.  Wie sieht eine erste grobe Modellierung aus, welche Klassen und Methoden brauchen Sie?
-    Erstellen Sie hierfür ein UML-Diagramm.
+4.  Ansatz und Modellierung: Wie sieht eine erste grobe Modellierung aus, welche Klassen
+    und Methoden brauchen Sie? Erstellen Sie hierfür ein UML-Diagramm.
 
-Die Konzeptskizze geben Sie als PDF-Dokument ab.
+Die Konzeptskizze geben Sie als PDF-Dokument ab. Sie finden hier ein [ausgefülltes Beispiel].
 
 In der zweiten Woche setzen Sie Ihr Konzept um und implementieren Ihre Lösung. Vermutlich
 müssen Sie Ihr Konzept noch anpassen, dies ist entsprechend zu dokumentieren. Hier geben
 Sie den Code und die überarbeitete Konzeptskizze als PDF ab.
+
+[ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
 
 ### Abgabe der Lösungen
 
@@ -164,15 +166,3 @@ zum 30.06.23 um 09:00 Uhr im ILIAS hochzuladen und im nachfolgenden Praktikum vo
 
 Sie können hier wie bei den anderen Zyklen Aufgaben bis zu 15 Punkten bearbeiten und zusätzlich
 noch bis zu 5 Punkte für die Codequalität erhalten.
-
-### Lerntagebuch
-
-Sie führen zu jeder Abgabe von Aufgaben aus dem Dungeon-Pool ein Lerntagebuch. Wenn dies komplett
-nicht vorhanden ist oder nur ungenügend ausgearbeitet ist, bekommen Sie auf die gesamte Abgabe der
-betreffenden Dungeon-Aufgaben keine Punkte.
-
-Sie können sich das
-[Template](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/lerntagebuch.md)
-und ein
-[ausgefülltes Beispiel](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/lerntagebuch_beispiel.md)
-herunterladen.
