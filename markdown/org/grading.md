@@ -149,7 +149,7 @@ entsprechenden Punkte bei der Abgabe/Vorstellung erhalten.
 
 Wenn Sie uns Ihre Lösung zusätzlich als Pull-Request zur Verfügung stellen, können Sie bis zu
 5 Bonuspunkte erhalten, wenn wir Ihren PR akzeptieren und mergen. Angedacht ist die Aufteilung
-2P bei Merge, und bis zu 3P für das Verhalten und die Kommunikation im PR.
+bis zu 2P bei Merge, und bis zu 3P für das Verhalten und die Kommunikation im PR.
 
 **Wichtig**: Die Entscheidung über die Akzeptanz des PR liegt beim Dozenten, es gibt keinen
 Anspruch auf einen Merge. Pro Bounty-Aufgabe wird (bis auf Ausnahmefälle) maximal ein PR akzeptiert.
@@ -159,7 +159,8 @@ Anspruch auf einen Merge. Pro Bounty-Aufgabe wird (bis auf Ausnahmefälle) maxim
 ### Sonderabgabe in Woche 12
 
 Diese Abgabe ist eine Zusatztermin und ist nur für Studierende gedacht, die bis dahin unter
-der Bestehensschwelle für die praktische Teilleistung liegen.
+der Bestehensschwelle für die praktische Teilleistung liegen oder wegen Krankheit einen Termin
+nicht wahrnehmen konnten.
 
 Für diese Abgabe gibt es keine Konzeptphase und auch kein Peer-Feedback, die Lösung ist bis
 zum 30.06.23 um 09:00 Uhr im ILIAS hochzuladen und im nachfolgenden Praktikum vorzustellen.
