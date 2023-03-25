@@ -104,17 +104,24 @@ vereinbart (siehe Etherpads im ILIAS).
 ### Punktevergabe
 
 In jedem Zyklus erstellen Sie in der ersten Woche Ihr Konzept und in der zweiten Woche die
-zugehörige Implementierung.
+zugehörige Implementierung. Sie geben einmal Peer-Feedback für die Konzepte und einmal für
+die Implementierungen ab.
 
 **Konzept**:
 Für das Konzept selbst bekommen Sie keine Punkte, es ist aber die zwingende Voraussetzung
-für die Implementierung. Bitte beachten Sie deshalb, dass Sie **ohne die Abgabe des Konzepts
-in der ersten Zykluswoche in der zweiten Zykluswoche keine Punkte auf die Implementierung**
-erhalten.
+für die Implementierung. Bitte beachten Sie deshalb, dass Sie **ohne die Abgabe des Konzepts**
+in der ersten Zykluswoche nachfolgend in der zweiten Zykluswoche **keine Punkte** auf die
+Implementierung erhalten. Das gilt auch, wenn das abgegebene Konzept nicht ausreichend ist.
+
+**Peer-Feedback**:
+Für das Peer-Feedback (auf das Konzept bzw. auf die Implementierung) selbst gibt es keine
+Punkte. Beachten Sie aber bitte, dass Sie **ohne ausreichendes Peer-Feedback** nachfolgend
+für die Implementierung **keine Punkte** erhalten.
 
 **Implementierung**:
 Für die Implementierung, d.h. die sinnvolle Umsetzung der Aufgaben erhalten Sie die jeweils
-angegebenen (Teil-) Punkte. Pro Zyklus können Sie maximal 15 Punkte für die Lösung erhalten.
+angegebenen (Teil-) Punkte. **Pro Zyklus** können Sie maximal **15 Punkte für die Lösung**
+erhalten.
 
 Lösungen, die sich nicht kompilieren und/oder nicht ausführen lassen können höchstens wenige
 Teilpunkte bekommen. Dito Lösungen, bei denen sich die Vorgabe-Tests (so vorhanden) nicht
@@ -124,8 +131,8 @@ zwischen Groß- und Kleinschreibung unterschieden wird, dass Dateinamen und Klas
 sein müssen, dass die angegebenen Methodensignaturen korrekt sein müssen usw. ...
 
 **Clean Code**:
-Die Codequalität zählt. In den Zyklen 3 bis 5 bekommen Sie zusätzlich _bis_ zu 5 Punkte für
-die Einhaltung einfacher Coding-Rules:
+Die Codequalität zählt. In den **Zyklen 3 bis 5** bekommen Sie **zusätzlich _bis_ zu 5 Punkte**
+für die Einhaltung einfacher Coding-Rules:
 
 -   Einhaltung des PM-Coding-Styles: +2P
 -   Durchgängige Dokumentation mit Javadoc: +2P
