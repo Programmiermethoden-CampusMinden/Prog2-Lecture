@@ -18,8 +18,8 @@ hidden: true
     im Laufe des Semesters Punkte für die Berechnung der Note der praktischen Teilleistung.
 
     Notenspiegel:
-    *   100 Punkte gesamt erreichbar
-    *   4.0: ab 60% (60 Punkte), alle 4% nächste Teilnote, 1.0: ab 96% (96 Punkte)
+    *   90 Punkte gesamt erreichbar: Zyklus 1 und 2 je 15 Punkte, Zyklus 3 bis 5 je 20 Punkte
+    *   4.0: ab 50% (45 Punkte), alle 5% nächste Teilnote, 1.0: ab 95% (85.5 Punkte)
 
 -   **Theoretische Teilleistung**:
     Die Prüfung für die theoretische Teilleistung wird als digitale Klausur über eine spezielle
