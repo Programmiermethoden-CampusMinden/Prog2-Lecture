@@ -56,14 +56,12 @@ Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
 In der ersten Woche erstellen Sie jeweils eine Konzeptskizze für die Aufgaben, die Sie sich
 ausgesucht haben. Beschreiben Sie dabei mindestens folgenden Dinge:
 
--   Worin besteht die Aufgabe, was ist das zu lösende Problem?
--   Wie soll Ihre Lösung aussehen, was soll diese können?
--   Mit welchen Methoden und Techniken aus der Vorlesung wollen Sie die Lösung umsetzen?
+1.  Worin besteht die Aufgabe, was ist das zu lösende Problem?
+2.  Wie soll Ihre Lösung aussehen, was soll diese können?
+3.  Mit welchen Methoden und Techniken aus der Vorlesung wollen Sie die Lösung umsetzen?
     Warum erscheint Ihnen das sinnvoll?
--   Wie sieht eine erste grobe Modellierung aus, welche Klassen und Methoden brauchen
+4.  Wie sieht eine erste grobe Modellierung aus, welche Klassen und Methoden brauchen
     Sie? Erstellen Sie hierfür ein UML-Diagramm.
-
-Die Beschreibung muss für Studierende der Informatik im zweiten Semester verständlich sein.
 
 Die Konzeptskizze geben Sie als PDF-Dokument ab.
 
