@@ -131,6 +131,22 @@ die Einhaltung einfacher Coding-Rules:
 -   Durchgängige Dokumentation mit Javadoc: +2P
 -   Durchgängiger Einsatz von Logging: +1P
 
+### Bonus-Punkte: Bounty Hunting
+
+Die zusätzlichen "Bounty-Hunting"-Aufgaben, die Sie per Suchanfrage im Dungeon-Repo finden (vgl.
+[Programmiermethoden/Dungeon: offene Issues mit Label "bounty" ohne verlinkten Pull-Request]),
+zählen wie normale Aufgaben. Sie können sich diese Aufgaben zur Bearbeitung aussuchen und die
+entsprechenden Punkte bei der Abgabe/Vorstellung erhalten.
+
+Wenn Sie uns Ihre Lösung zusätzlich als Pull-Request zur Verfügung stellen, können Sie bis zu
+5 Bonuspunkte erhalten, wenn wir Ihren PR akzeptieren und mergen. Angedacht ist die Aufteilung
+2P bei Merge, und bis zu 3P für das Verhalten und die Kommunikation im PR.
+
+**Wichtig**: Die Entscheidung über die Akzeptanz des PR liegt beim Dozenten, es gibt keinen
+Anspruch auf einen Merge. Pro Bounty-Aufgabe wird (bis auf Ausnahmefälle) maximal ein PR akzeptiert.
+
+[Programmiermethoden/Dungeon: offene Issues mit Label "bounty" ohne verlinkten Pull-Request]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty+-linked%3Apr+
+
 ### Lerntagebuch
 
 Sie führen zu jeder Abgabe von Aufgaben aus dem Dungeon-Pool ein Lerntagebuch. Wenn dies komplett
