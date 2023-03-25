@@ -50,8 +50,8 @@ im Prüfungsverfahren.
 
 Das Praktikum erfolgt in 2-Wochen-Zyklen.
 
-Sie suchen sich in jedem Zyklus Aufgaben aus, die Sie hier bearbeiten wollen. Sie können pro Zyklus
-Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
+Sie suchen sich in jedem Zyklus Aufgaben aus, die Sie hier bearbeiten wollen. Sie können pro
+Zyklus Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
 
 In der ersten Woche erstellen Sie jeweils eine Konzeptskizze für die Aufgaben, die Sie sich
 ausgesucht haben. Beschreiben Sie dabei mindestens folgenden Dinge:
@@ -60,8 +60,8 @@ ausgesucht haben. Beschreiben Sie dabei mindestens folgenden Dinge:
 2.  Wie soll Ihre Lösung aussehen, was soll diese können?
 3.  Mit welchen Methoden und Techniken aus der Vorlesung wollen Sie die Lösung umsetzen?
     Warum erscheint Ihnen das sinnvoll?
-4.  Wie sieht eine erste grobe Modellierung aus, welche Klassen und Methoden brauchen
-    Sie? Erstellen Sie hierfür ein UML-Diagramm.
+4.  Wie sieht eine erste grobe Modellierung aus, welche Klassen und Methoden brauchen Sie?
+    Erstellen Sie hierfür ein UML-Diagramm.
 
 Die Konzeptskizze geben Sie als PDF-Dokument ab.
 
@@ -86,7 +86,7 @@ dazu im Praktikumsbereich wieder auf die jeweilige Aufgabe.
 Sofern nichts anderes angegeben, ist das **Peer-Feedback jeweils bis Donnerstag 15:00 Uhr**
 einzutragen.
 
-### Vorstellung der Lösung im Praktikum
+### Vorstellung der Lösung
 
 Nach dem Peer-Feedback haben Sie bis zu Ihrem Praktikumstermin die Gelegenheit, das erhaltene
 Feedback in Ihre Lösung einzuarbeiten.
