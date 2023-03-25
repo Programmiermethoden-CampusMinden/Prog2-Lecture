@@ -19,7 +19,7 @@ hidden: true
 
     Notenspiegel:
     *   90 Punkte gesamt erreichbar: Zyklus 1 und 2 je 15 Punkte, Zyklus 3 bis 5 je 20 Punkte
-    *   4.0: ab 50% (45 Punkte), alle 5% nächste Teilnote, 1.0: ab 95% (85.5 Punkte)
+    *   4.0: ab 50% (45.0 Punkte), alle 5% nächste Teilnote, 1.0: ab 95% (85.5 Punkte)
 
 -   **Theoretische Teilleistung**:
     Die Prüfung für die theoretische Teilleistung wird als digitale Klausur über eine spezielle
