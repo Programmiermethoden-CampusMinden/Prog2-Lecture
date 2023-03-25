@@ -123,7 +123,8 @@ für die Implementierung **keine Punkte** erhalten.
 **Implementierung**:
 Für die Implementierung, d.h. die sinnvolle Umsetzung der Aufgaben erhalten Sie die jeweils
 angegebenen (Teil-) Punkte. **Pro Zyklus** können Sie maximal **15 Punkte für die Lösung**
-erhalten.
+(den Code selbst) erhalten. (Dazu kommen in den Zyklen 3 bis 5 noch bis zu 5 Punkte für
+Codequalität, s.u.).
 
 Lösungen, die sich nicht kompilieren und/oder nicht ausführen lassen können höchstens wenige
 Teilpunkte bekommen. Dito Lösungen, bei denen sich die Vorgabe-Tests (so vorhanden) nicht
@@ -158,7 +159,7 @@ Anspruch auf einen Merge. Pro Bounty-Aufgabe wird (bis auf Ausnahmefälle) maxim
 
 ### Sonderabgabe in Woche 12
 
-Diese Abgabe ist eine Zusatztermin und ist nur für Studierende gedacht, die bis dahin unter
+Diese Abgabe ist eine Zusatztermin und ist nur für Studierende gedacht, die bis dahin unterhalb
 der Bestehensschwelle für die praktische Teilleistung liegen oder wegen Krankheit einen Termin
 nicht wahrnehmen konnten.
 

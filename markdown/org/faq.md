@@ -108,18 +108,18 @@ Sie können das Feedback in beiden Wochen nutzen, um Ihre Lösung zu verbessern.
 ## Bearbeitung der Übungsaufgaben
 
 Die Übungsaufgaben sollen in 3er-Teams bearbeitet und gelöst werden. Die Einteilung
-wird über Etherpads im ILIAS passieren.
+wird über Etherpads im ILIAS vorgenommen.
 
 Sie können Ihre Teams gern auch im Semester wechseln, dazu müssen Sie einfach nur den
 Eintrag in den Etherpads im ILIAS anpassen.
 
 Sie können sich in jedem Zyklus die Aufgaben relativ frei auswählen; natürlich hängen
-aber bestimmte Aufgaben von anderen Aufgaben ab.
+aber manche Aufgaben von anderen Aufgaben ab.
 
 
 ## Workload Praktikum
 
-Pro **Zyklus** sollen Sie aus Aufgaben für **15 Punkte** bearbeiten.
+Pro **Zyklus** sollen Sie Aufgaben für **15 Punkte** bearbeiten.
 
 Sie können auch mehr machen, aber wir limitieren die maximal erreichbare Punktzahl
 hier auf _15 Punkte pro Woche_.
@@ -153,7 +153,7 @@ Sie finden die angeforderten Reviews im ILIAS in der jeweiligen Aufgabe.
 
 ![](images/howtofeedback1.png){width="80%"}
 
-Gehen Sie **nach der Deadline der Aufgabe** (i.d.R. Mittwoch 18 Uhr) und
+Gehen Sie **nach der Deadline der Aufgabe** (i.d.R. Mittwoch 15 Uhr) und
 **vor der Deadline des Reviews** (i.d.R. Donnerstag 15 Uhr) ins ILIAS in die
 Aufgabe und klicken auf den Button "Feedback geben", um nachzuschauen, wem Sie
 ein Peer-Feedback geben sollen.
@@ -186,11 +186,12 @@ Sie das an Sie vergebene Feedback einsehen können.
 
 Die Reviews sollen Ihnen helfen, Ihre Lösung zu reflektieren und einzuordnen. Beim
 Erstellen der Feedbacks sehen Sie anhand der Kriterien, welche Aspekte wichtig waren
-und wo Sie vielleicht noch einmal nachschauen sollten. Das von den anderen Studierenden
-empfangene Feedback kann Sie im Lernprozess unterstützen - nutzen Sie die Chance und
-überarbeiten Sie Ihre Lösung anhand des Feedbacks. Bitte beachten Sie aber auch, dass
-das empfangene Feedback von sehr unterschiedlicher Qualität sein kann und deshalb stets
-kritisch hinterfragt werden sollte.
+und wo Sie vielleicht noch einmal nachschauen sollten. Sie bekommen durch das Prüfen
+der fremden Lösungen zusätzliche Impulse und Ideen für Ihr eigenes Spiel. Das von den
+anderen Studierenden empfangene Feedback kann Sie im Lernprozess unterstützen - nutzen
+Sie die Chance und überarbeiten Sie Ihre Lösung anhand des Feedbacks. Bitte beachten
+Sie aber auch, dass das empfangene Feedback von sehr unterschiedlicher Qualität sein
+kann und deshalb stets kritisch hinterfragt werden sollte.
 
 
 ## Vorstellung der Lösungen
@@ -198,7 +199,7 @@ kritisch hinterfragt werden sollte.
 Im Praktikum stellen Sie Ihre Lösungen vor und diskutieren darüber.
 
 Wer nicht in der Vorstellung teilnimmt oder wer zwar anwesend ist, aber nicht auf Fragen
-anworten kann/will, kann leider keine Punkte bekommen.
+antworten kann/will, kann leider keine Punkte bekommen.
 
 
 ## Zeitslots für Vorstellung
@@ -237,26 +238,26 @@ Es gibt keine verspäteten Abgaben. Das sind 0P.
 
 Bei Krankheit/familiären Notfällen:
 Es gibt eine zusätzliche Abgabe in der letzten Vorlesungswoche. Dieser Termin steht allen
-offen, die sonst zu wenig Punkte im Praktikum gesammelt haben oder wegen Krankheit einmal
-"ausgefallen" sind. Bei diesem Termin können Sie alleine oder im Team abgeben; die Konzeptphase
-und die beiden Peer-Feedbacks entfallen.
+offen, die bis dahin zu wenig Punkte für das Bestehen im Praktikum gesammelt haben oder die
+wegen Krankheit einmal "ausgefallen" sind. Bei diesem Termin können Sie alleine oder im
+Team abgeben; die Konzeptphase und die beiden Peer-Feedbacks entfallen.
 
 Wenn die persönliche Ausnahmesituation länger vorliegen sollte, müssen ggf. andere
 Lösungen gefunden werden, um das Semester erfolgreich abschließen zu können. Nehmen
-Sie in diesem Fall zeitnah Kontakt zu Ihren Dozenten auf.
+Sie in diesem Fall bitte zeitnah Kontakt zu Ihren Dozenten auf.
 
 
 ## Bonus-Punkte: Helfen im Framework
 
-Sie können aktiv dabei helfen, das Dungeon-Framework weiterzuentwickeln und sich so Bonus-Punkte
-für das Praktikum erarbeiten.
+Sie können aktiv dabei helfen, das [Dungeon-Framework](https://github.com/Programmiermethoden/Dungeon)
+weiterzuentwickeln und sich so Bonus-Punkte für das Praktikum erarbeiten.
 
-Dazu reichen Sie Ihre Lösung für die Bounty-Aufgaben als Pull-Request ein. Sie können aber auch
-Fehler beheben oder Features implementieren, die Sie gerne im Dungeon sehen würden, oder ein bereits
-bestehendes Issue mit dem Label "help wanted" bearbeiten. Wenn Sie kein bereits existierendes Issue
-bearbeiten, also ein neues Feature implementieren wollen, erstellen Sie bitte zunächst ein Issue, um
-Ihre Idee mit dem Dungeon-Team zu diskutieren und vorab zu prüfen, ob wir einen PR dazu akzeptieren
-würden!
+Dazu reichen Sie Ihre Lösung für die Bounty-Aufgaben als Pull-Request ein und führen den PR bis zum
+Merge (oder ggf. bis zur Ablehnung). Sie können aber auch Fehler beheben oder Features implementieren,
+die Sie gerne im Dungeon sehen würden, oder ein bereits bestehendes Issue mit dem Label "help wanted"
+bearbeiten. Wenn Sie kein bereits existierendes Issue bearbeiten, also ein neues Feature implementieren
+wollen, erstellen Sie bitte zunächst ein Issue, um Ihre Idee mit dem Dungeon-Team zu diskutieren und
+vorab zu prüfen, ob wir einen PR dazu akzeptieren würden!
 
 Für einen **akzeptierten PR** können Sie bis zu 5 Bonus-Punkte erhalten. Es gibt _keinen Anspruch_
 auf einen Merge, die Entscheidung liegt beim Dozenten.
