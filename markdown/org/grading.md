@@ -157,7 +157,7 @@ Anspruch auf einen Merge. Pro Bounty-Aufgabe wird (bis auf Ausnahmefälle) maxim
 ### Sonderabgabe in Woche 12
 
 Diese Abgabe ist eine Zusatztermin und ist nur für Studierende gedacht, die bis dahin unter
-der Bestehensgrenze für die praktische Teilleistung liegen.
+der Bestehensschwelle für die praktische Teilleistung liegen.
 
 Für diese Abgabe gibt es keine Konzeptphase und auch kein Peer-Feedback, die Lösung ist bis
 zum 30.06.23 um 09:00 Uhr im ILIAS hochzuladen und im nachfolgenden Praktikum vorzustellen.
