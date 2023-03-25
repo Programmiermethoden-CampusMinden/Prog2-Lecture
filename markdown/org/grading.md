@@ -154,6 +154,17 @@ Anspruch auf einen Merge. Pro Bounty-Aufgabe wird (bis auf Ausnahmefälle) maxim
 
 [Programmiermethoden/Dungeon: offene Issues mit Label "bounty" ohne verlinkten Pull-Request]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty+-linked%3Apr+
 
+### Sonderabgabe in Woche 12
+
+Diese Abgabe ist eine Zusatztermin und ist nur für Studierende gedacht, die bis dahin unter
+der Bestehensgrenze für die praktische Teilleistung liegen.
+
+Für diese Abgabe gibt es keine Konzeptphase und auch kein Peer-Feedback, die Lösung ist bis
+zum 30.06.23 um 09:00 Uhr im ILIAS hochzuladen und im nachfolgenden Praktikum vorzustellen.
+
+Sie können hier wie bei den anderen Zyklen Aufgaben bis zu 15 Punkten bearbeiten und zusätzlich
+noch bis zu 5 Punkte für die Codequalität erhalten.
+
 ### Lerntagebuch
 
 Sie führen zu jeder Abgabe von Aufgaben aus dem Dungeon-Pool ein Lerntagebuch. Wenn dies komplett
