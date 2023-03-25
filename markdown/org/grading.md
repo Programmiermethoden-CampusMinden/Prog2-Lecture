@@ -103,28 +103,18 @@ vereinbart (siehe Etherpads im ILIAS).
 
 ### Punktevergabe
 
-Sie erhalten für jeden der 7 Meilensteine und jede der beiden Poster-Sessions
-bis zu 4P:
+In jedem Zyklus erstellen Sie in der ersten Woche Ihr Konzept und in der zweiten Woche die
+zugehörige Implementierung.
 
--   1P für das Hochladen der Lösung im ILIAS
--   1P für das Vorstellen der Lösung im Praktikum
--   2P für das Erstellen des Peer-Feedbacks
+**Konzept**:
+Für das Konzept selbst bekommen Sie keine Punkte, es ist aber die zwingende Voraussetzung
+für die Implementierung. Bitte beachten Sie deshalb, dass Sie **ohne die Abgabe des Konzepts
+in der ersten Zykluswoche in der zweiten Zykluswoche keine Punkte auf die Implementierung**
+erhalten.
 
-Ihre Lösung muss nicht unbedingt 100% korrekt sein, muss aber eine intensive
-Beschäftigung mit der jeweiligen Aufgabe erkennen lassen.
-
-**Wichtig**: Beachten Sie, dass die Punkte aufeinander aufbauen: Ohne Abgabe
-der Lösung im ILIAS können Sie Ihre Lösung nicht vorstellen und auch kein
-Peer-Feedback abgeben.
-
-Für die Poster gibt es zusätzlich je bis zu 10P, die nach inhaltlichen und
-formalen Kriterien durch die Dozenten vergeben werden.
-
-Damit können Sie maximal (7+2)x 4 + 2x 10 = 56 Punkte im Praktikum erreichen.
-
-### Punktevergabe
-
-Für die sinnvolle Umsetzung der Aufgaben erhalten Sie die jeweils angegebenen (Teil-) Punkte.
+**Implementierung**:
+Für die Implementierung, d.h. die sinnvolle Umsetzung der Aufgaben erhalten Sie die jeweils
+angegebenen (Teil-) Punkte. Pro Zyklus können Sie maximal 15 Punkte für die Lösung erhalten.
 
 Lösungen, die sich nicht kompilieren und/oder nicht ausführen lassen können höchstens wenige
 Teilpunkte bekommen. Dito Lösungen, bei denen sich die Vorgabe-Tests (so vorhanden) nicht
@@ -133,18 +123,13 @@ codierten Dateien/Verzeichnisse enthält. Denken Sie daran, dass bei UNIX ebenso
 zwischen Groß- und Kleinschreibung unterschieden wird, dass Dateinamen und Klassennamen korrekt
 sein müssen, dass die angegebenen Methodensignaturen korrekt sein müssen usw. ...
 
-Die Codequalität zählt. Selbst wenn Ihre Lösung eine perfekte Funktionalität aufweist, gibt es
-Abzug für schlechte oder schlampige Programmierung. Dies betrifft u.a. fehlende/mangelhafte
-Dokumentation, Verletzung von Namenskonventionen, uneinheitliche Formatierung,
-schlechte Namen für Klassen/Methoden/Variablen/..., duplizierter Code, ...
+**Clean Code**:
+Die Codequalität zählt. In den Zyklen 3 bis 5 bekommen Sie zusätzlich _bis_ zu 5 Punkte für
+die Einhaltung einfacher Coding-Rules:
 
-Konkret können Sie für die Nichteinhaltung der formalen Kriterien folgende **Abzüge pro Abgabe**
-"erreichen" (sofern das Thema bereits in der Vorlesung besprochen wurde und hier anwendbar ist):
-
-*   ~~Keine/nicht ausreichende Tests: -4P~~
-*   Kein/nicht ausreichendes Logging: -2P
-*   Kein/nicht ausreichendes Javadoc: -2P
-*   Code-Style nicht/nur ungenügend beachtet: -2P
+-   Einhaltung des PM-Coding-Styles: +2P
+-   Durchgängige Dokumentation mit Javadoc: +2P
+-   Durchgängiger Einsatz von Logging: +1P
 
 ### Lerntagebuch
 
