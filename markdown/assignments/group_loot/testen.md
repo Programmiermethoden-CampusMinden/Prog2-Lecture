@@ -10,7 +10,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für die Aufgabe `["Quests"]({{< ref "/assignments/pool_dungeon/group_c/quests" >}})`{=markdown} oder `["Dialogsystem"]({{< ref "/assignments/pool_dungeon/group_c/dialogsystem" >}})`{=markdown} implementieren.
+In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für die Aufgabe `["Quests"]({{< ref "/assignments/group_loot/quests" >}})`{=markdown} oder `["Dialogsystem"]({{< ref "/assignments/group_loot/dialogsystem" >}})`{=markdown} implementieren.
 
 ## JUnit
 
