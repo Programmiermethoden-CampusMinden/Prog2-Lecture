@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Fallen"
 author: "André Matutat (FH Bielefeld)"
-points: 1
+points: 5
 weight: 3
 
 hidden: true
@@ -28,4 +28,8 @@ oder Zauberspruchs sichtbar sein.
 
 Fallen können einmal aktiviert werden oder auch mehrfach wirken.
 
-Fallen werden zu Beginn eines Level in diesem verteilt.
+Zu einigen Fallen kann es Schalter geben, welche die Fallen deaktivieren. 
+
+Fallen und Schalter werden zu Beginn eines Level in diesem verteilt.
+
+
