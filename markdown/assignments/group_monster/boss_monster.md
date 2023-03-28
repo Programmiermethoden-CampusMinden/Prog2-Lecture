@@ -14,7 +14,7 @@ In dieser Aufgabe implementieren Sie ein einzigartiges Boss-Monster.
 
 ## Voraussetzung
 
-Um diese Aufgabe lösen zu können, sollten Sie vorher `["Monster"]({{< ref "/assignments/pool_dungeon/group_b/monster" >}})`{=markdown} implementieren.
+Um diese Aufgabe lösen zu können, sollten Sie vorher `["Monster"]({{< ref "/assignments/group_monster/monster" >}})`{=markdown} implementieren.
 
 ## Boss-Monster
 
