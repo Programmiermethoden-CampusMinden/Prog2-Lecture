@@ -10,7 +10,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für die Aufgabe `["Schlaue-Monster"]({{< ref "/assignments/pool_dungeon/group_b/schlaue_monster" >}})`{=markdown} oder `["Fernkampf"]({{< ref "/assignments/pool_dungeon/group_b/fernkampf" >}})`{=markdown} implementieren.
+In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für die Aufgabe `["Monster"]({{< ref "/assignments/group_monster/monster" >}})`{=markdown} oder `["Fernkampf"]({{< ref "/assignments/group_monster/fernkampf" >}})`{=markdown} implementieren.
 
 ## JUnit
 
