@@ -10,7 +10,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für Ihren `["Fallen"]({{< ref "/assignments/pool_basics/fallen" >}})`{=markdown} implementieren.
+In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für Ihren `["Fallen"]({{< ref "/assignments/group_basics/fallen" >}})`{=markdown} implementieren.
 
 ## JUnit
 
