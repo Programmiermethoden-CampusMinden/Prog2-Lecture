@@ -26,5 +26,3 @@ Eine präsentierte Quest kann durch den Helden angenommen werden und ist dann ak
 Zeigen Sie aktive (angenommene) Quests an.
 
 Implementieren Sie mindestens eine nicht kampfabhängige Quest.
-
-Nutzen Sie das Observer-Pattern.
