@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Fernkampf"
 author: "André Matutat (FH Bielefeld)"
-points: 2
+points: 5
 weight: 4
 
 hidden: true
