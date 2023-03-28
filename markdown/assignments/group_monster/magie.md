@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Magie"
 author: "André Matutat (FH Bielefeld)"
-points: 2
+points: 5
 weight: 5
 
 hidden: true
@@ -21,4 +21,4 @@ Beachten Sie dabei, dass es sich nicht um Zauber handelt, die Schaden verursache
 Überlegen Sie sich zwei verschiedene Zaubersprüche wie Gedankenkontrolle oder Telekinese oder Upgrade von Waffen/Rüstungen.
 
 Überlegen Sie sich, wie der Held an die Zaubersprüche gelangt und wie er sie benutzen kann.
-
+Betrachten Sie dafür das in den Vorgaben umgesetzte Konzept für Skills. Führen Sie eine Codeanalyse durch und Erklären Sie das Konzept.
