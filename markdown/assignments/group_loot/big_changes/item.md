@@ -27,3 +27,9 @@ Implementieren Sie mindestens 3 Gegenstands-Typen (Tränke, Rüstungen, Waffen, 
 Jeder Gegenstand soll grafisch dargestellt werden.
 
 Machen Sie sich Gedanken, wie Sie Items im Sinne des OOP-Gedankens umsetzen können.
+
+## Taschen
+
+Implementieren Sie Taschen, die das Inventar des Spielers erweitern.
+
+Taschen nehmen selbst **einen** Inventarplatz ein, können aber wiederum selbst **mehrere** Gegenstände **eines** Typus (z.B. Waffen oder Tränke) aufbewahren. Taschen können nur eine begrenzte Anzahl an Gegenständen beinhalten.
