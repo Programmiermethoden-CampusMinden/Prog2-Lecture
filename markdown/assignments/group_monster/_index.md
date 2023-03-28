@@ -1,13 +1,13 @@
 ---
 archetype: "chapter"
-title: "Gruppe B: Monster und Kampf"
+title: "Gruppe Monster"
 weight: 2
 
 hidden: true
 ---
 
 
-Hier finden Sie die Praktikumsaufgaben aus Gruppe B "Monster und Kampf". Hier implementieren Sie
+Hier finden Sie die Praktikumsaufgaben aus Gruppe Monster. Hier implementieren Sie
 verschiedene Monster und unterschiedliche Kampfsysteme.
 
 
