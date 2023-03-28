@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Monster"
 author: "André Matutat (FH Bielefeld)"
-points: 3
+points: 5
 weight: 1
 
 hidden: true
@@ -16,10 +16,9 @@ In dieser Aufgabe implementieren Sie simple Gegner, welche sich selbstständig i
 
 Implementieren Sie analog zum Helden verschiedene Monster (mindestens zwei) für das Dungeon. Die Monster sollen auch jeweils eigene Animationen haben.
 
-Überlegen Sie sich, welche Eigenschaften die Monster haben sollen. Dies könnte beispielsweise die Geschwindigkeit sein, die Kampfstärke oder die Zahl der Lebenspunkte ("Gesundheit").
+Überlegen Sie sich, welche Components die Monster haben sollen. 
 
-Lassen Sie die Monster sich zufällig im Dungeon bewegen.
-
-Überlegen Sie sich, welche Entwurfsmuster hier angewendet werden können. Dokumentieren Sie Ihre Entscheidungen.
+In den Vorgaben finden sie das `AIComponent` und das. `AISystem`. Führen Sie eine Codeanalyse durch und erklären Sie, wie AI im Dungeon umgesetzt wurde.
+Lassen Sie die Monster sich zufällig im Dungeon bewegen. Nutzen Sie dafür dir vorgegebenen Strategien. Implementieren Sie jedoch mindestens eine weitere `IIdle` Strategie. 
 
 Verteilen Sie eine zufällige Anzahl von Monstern beim jedem Levelstart. Verteilen Sie mehr und stärkere Monster, je tiefer der Spieler im Dungeon vorrangeschritten ist.
