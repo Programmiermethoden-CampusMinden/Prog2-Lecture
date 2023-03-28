@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Charakterklassen"
 author: "André Matutat (FH Bielefeld)"
-points: 3
+points: 5
 weight: 6
 
 hidden: true
@@ -16,7 +16,7 @@ In dieser Aufgabe sollen Sie verschiedene Charakterklassen implementieren.
 
 ## Voraussetzungen
 
-Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsysteme (`["Nahkampf"]({{< ref "/assignments/pool_dungeon/group_b/nahkampf" >}})`{=markdown} oder `["Fernkampf"]({{< ref "/assignments/pool_dungeon/group_b/fernkampf" >}})`{=markdown}) und  `["Fähigkeiten"]({{< ref "/assignments/pool_dungeon/group_a/skills" >}})`{=markdown} umgesetzt haben.
+Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsysteme (`["Nahkampf"]({{< ref "/assignments/group_monster/nahkampf" >}})`{=markdown} oder `["Fernkampf"]({{< ref "/assignments/group_monsdter/fernkampf" >}})`{=markdown}) und  `["Fähigkeiten"]({{< ref "/assignments/group_basics/skills" >}})`{=markdown} umgesetzt haben.
 
 ## Charakterklassen
 
@@ -24,6 +24,6 @@ Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsysteme (`["N
 
 Überlegen UND notieren Sie dabei, was diese Charakterklassen gemeinsam haben und worin sie sich unterscheiden. Geben Sie jeder Charakterklasse eine passende Bezeichnung.
 
-Implementieren Sie nun die verschiedenen Charakterklassen im Sinne des OOP-Gedankens. Überlegen Sie auch, welche Pattern Sie ggf. verwenden können. Begründen Sie Ihre Entscheidungen schriftlich.
+Implementieren Sie nun die verschiedenen Charakterklassen im Sinne des ECS-Gedankens. Überlegen Sie auch, welche Pattern Sie ggf. verwenden können. Begründen Sie Ihre Entscheidungen schriftlich.
 
 Zu Beginn des Spiels soll der Spieler die Klasse auswählen können (oder haben Sie eine bessere Idee?).
