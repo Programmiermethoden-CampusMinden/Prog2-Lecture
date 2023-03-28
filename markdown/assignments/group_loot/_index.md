@@ -1,13 +1,13 @@
 ---
 archetype: "chapter"
-title: "Gruppe C: Items, Aufbewahrung und Handel"
+title: "Gruppe: Loot"
 weight: 3
 
 hidden: true
 ---
 
 
-Hier finden Sie die Praktikumsaufgaben aus Gruppe C "Items, Aufbewahrung und Handel". In diesen
+Hier finden Sie die Praktikumsaufgaben aus Gruppe Loot. In diesen
 Aufgaben implementieren Sie verschiedene Items wie Tränke, Waffen, ... und verschiedene Rucksäcke
 und Kisten sowie Händler und Quests.
 

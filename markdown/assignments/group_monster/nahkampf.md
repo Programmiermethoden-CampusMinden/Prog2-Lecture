@@ -10,7 +10,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie ein einfaches Nahkampfsystem, damit der Held gegen die Monster kämpfen kann.
+In dieser Aufgabe implementieren Sie ein einfaches Nahkampfkonzept, damit der Held gegen die Monster kämpfen kann.
 
 ## Voraussetzung
 
@@ -18,9 +18,9 @@ Um diese Aufgabe lösen zu können, müssen Sie vorher `["Monster"]({{< ref "/as
 
 ## Nahkampf
 
-In den Vorgaben ist ein System für den Fernkampf mit Projektilen implementiert.
-Führen Sie eine Codeanalyse durch und erklären Sie, wie das System funktioniert.
-Erweitern Sie das System so, dass es auch für den Nahkampf genutzt werden kann. 
+In den Vorgaben ist ein Konzept für den Fernkampf mit Projektilen implementiert.
+Führen Sie eine Codeanalyse durch und erklären Sie, wie das Konzept funktioniert.
+Erweitern Sie das Konzept so, dass es auch für den Nahkampf genutzt werden kann. 
 Implementieren Sie mindestens einen Nahkampfangriff. 
 
 Trifft der Angriff auf einen Gegner (oder den Helden), verursacht es Schaden.

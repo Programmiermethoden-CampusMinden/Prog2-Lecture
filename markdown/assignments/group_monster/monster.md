@@ -14,7 +14,7 @@ In dieser Aufgabe implementieren Sie simple Gegner, welche sich selbstständig i
 
 ## Monster
 
-Implementieren Sie analog zum Helden verschiedene Monster (mindestens zwei) für das Dungeon. Die Monster sollen auch jeweils eigene Animationen haben.
+Implementieren Sie analog zum Helden verschiedene Monster (mindestens drei) für das Dungeon. Die Monster sollen auch jeweils eigene Animationen haben.
 
 Überlegen Sie sich, welche Components die Monster haben sollen. 
 

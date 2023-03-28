@@ -32,4 +32,3 @@ Zu einigen Fallen kann es Schalter geben, welche die Fallen deaktivieren.
 
 Fallen und Schalter werden zu Beginn eines Level in diesem verteilt.
 
-

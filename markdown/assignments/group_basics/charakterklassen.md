@@ -24,6 +24,8 @@ Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsysteme (`["N
 
 Überlegen UND notieren Sie dabei, was diese Charakterklassen gemeinsam haben und worin sie sich unterscheiden. Geben Sie jeder Charakterklasse eine passende Bezeichnung.
 
+In den Vorgaben existiert bereits ein Stats-System. Führen Sie eine Codeanalyse durch und erklären Sie die Funktionalität des Systems.
+
 Implementieren Sie nun die verschiedenen Charakterklassen im Sinne des ECS-Gedankens. Überlegen Sie auch, welche Pattern Sie ggf. verwenden können. Begründen Sie Ihre Entscheidungen schriftlich.
 
 Zu Beginn des Spiels soll der Spieler die Klasse auswählen können (oder haben Sie eine bessere Idee?).

@@ -19,8 +19,8 @@ Um diese Aufgabe lösen zu können, müssen Sie vorher `["Monster"]({{< ref "/as
 
 ## Fernkampf
 
-In den Vorgaben ist ein System für den Fernkampf mit Projektilen implementiert.
-Führen Sie eine Codeanalyse durch und erklären Sie, wie das System funktioniert.
+In den Vorgaben ist ein Konzept für den Fernkampf mit Projektilen implementiert.
+Führen Sie eine Codeanalyse durch und erklären Sie, wie das Konzept funktioniert.
 
 Implementieren Sie zwei unterschiedliche Projektile, die sich vom bereits implementierten Feuerball durch ihr Flugverhalten unterscheiden. Denkbar wäre ein Bumerang, der im Bogen zurück zum Spieler fliegt, oder ein Projektil, welches über die Distanz "nach unten fällt", oder ein Projektil, das an Wänden abprallt.
 

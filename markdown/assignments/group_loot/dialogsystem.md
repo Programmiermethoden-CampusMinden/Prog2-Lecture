@@ -18,4 +18,4 @@ Nutzen Sie reguläre Ausdrücke (_RegExp_), um ein Dialogsystem zu implementiere
 
 Implementieren Sie ein Rätsel im Spiel, welches eine zu einem regulären Ausdruck passende Eingabe erfordert.
 
-_Anmerkung_: Die Aufgabe lässt sich hervorragen mit der Aufgabe `["Shop"]({{< ref "/assignments/group_loot/shop" >}})kombinieren.
+_Anmerkung_: Die Aufgabe lässt sich hervorragen mit der Aufgabe `["Shop"]({{< ref "/assignments/group_loot/shop" >}}) und `["NPC"]({{< ref "/assignments/pool_dungeon/group_loot/npc" >}})`{=markdown} kombinieren.
