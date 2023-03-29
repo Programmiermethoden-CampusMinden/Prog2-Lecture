@@ -14,6 +14,8 @@ In dieser Aufgabe implementieren Sie verschiedene Zaubersprüche.
 
 ## Magie
 
+In den Vorgaben gibt es bereits ein [Skill-System](https://github.com/Programmiermethoden/Dungeon/blob/master/game/src/ecs/systems/SkillSystem.java). Führen Sie eine Codeanalyse durch und erklären Sie, wie das Konzept funktioniert.
+
 Implementieren Sie ein Magie-Konzept. Der Spieler soll in der Lage sein verschiedene Zauber zu verwenden.
 
 Beachten Sie dabei, dass es sich nicht um Zauber handelt, die Schaden verursachen. Zauber, die Monster anderweitig manipulieren, sind erlaubt.

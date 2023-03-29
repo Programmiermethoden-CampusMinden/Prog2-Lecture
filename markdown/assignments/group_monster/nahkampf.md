@@ -18,8 +18,9 @@ Um diese Aufgabe lösen zu können, müssen Sie vorher `["Monster"]({{< ref "/as
 
 ## Nahkampf
 
-In den Vorgaben ist ein Konzept für den Fernkampf mit Projektilen implementiert.
+In den Vorgaben ist ein Konzept für den [Fernkampf mit Skills](https://github.com/Programmiermethoden/Dungeon/tree/master/game/src/ecs/components/skill) mit einen [Projektil System](https://github.com/Programmiermethoden/Dungeon/blob/master/game/src/ecs/systems/ProjectileSystem.java) implementiert.
 Führen Sie eine Codeanalyse durch und erklären Sie, wie das Konzept funktioniert.
+
 Erweitern Sie das Konzept so, dass es auch für den Nahkampf genutzt werden kann. 
 Implementieren Sie mindestens einen Nahkampfangriff. 
 
