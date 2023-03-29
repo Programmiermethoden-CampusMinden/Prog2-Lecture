@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Fähigkeiten"
 author: "André Matutat (FH Bielefeld)"
-points: 3
+points: 10
 weight: 2
 
 hidden: true
@@ -10,18 +10,25 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe sollen Sie verschiedene Fähigkeiten implementieren, die dann vom Spieler verwendet werden können.
+In dieser Aufgabe sollen Sie den Levelaufstieg und verschiedene Fähigkeiten implementieren, die dann vom Spieler verwendet werden können.
+
 
 ## Fähigkeiten
 
-Entwickeln Sie verschiedene Fähigkeiten, die der Spieler im Laufe des Spiels freischalten und benutzen kann.
+In den Vorgaben ist bereits ein [Skill-System](https://github.com/Programmiermethoden/Dungeon/blob/master/game/src/ecs/systems/SkillSystem.java) und ein [Feuerball-Skill](https://github.com/Programmiermethoden/Dungeon/blob/master/game/src/ecs/components/skill/FireballSkill.java) implementiert.
+Führen Sie eine Codeanalyse durch und erklären Sie die funktionalität 
 
-Überlegen Sie sich ein geeignetes System, um die Fähigkeiten auszurüsten, anzuzeigen, freizuschalten und zu benutzen.
+Implementieren Sie ein Magie-Konzept. Der Spieler soll in der Lage sein verschiedene Zauber zu verwenden.
 
-Implementieren Sie mindestens drei unterschiedliche Fähigkeiten, wobei mindestens eine Kampffähigkeit und eine Non-Kampffähigkeit dabei sein muss.
-Außerdem:
+Beachten Sie dabei, dass es sich nicht um Zauber handelt, die Schaden verursachen. Zauber, die Monster anderweitig manipulieren, sind erlaubt.
 
--   Eine der Fähigkeiten soll einen Cooldown bekommen. Es muss also eine gewisse Zeit vergehen, bevor die Fähigkeit erneut eingesetzt werden kann.
+Überlegen Sie sich zwei verschiedene Zaubersprüche wie Gedankenkontrolle oder Telekinese oder Upgrade von Waffen/Rüstungen.
+
 -   Eine der Fähigkeiten soll eine Form von Ressourcenkosten haben. Sie verbraucht also Lebenspunkte, Ausdauerpunkte, [Mana-Punkte](https://de.wikipedia.org/wiki/Mana_(Spiele)) o.ä.
 
-Denken Sie daran: Sie werden vermutlich noch viele unterschiedliche Fähigkeiten einbauen wollen, daher sollten Sie sich ein wiederverwendbares Konzept für die Implementierung überlegen.
+## Levelaufstieg
+
+In den Vorgaben gibt es bereits ein [XP-System](https://github.com/Programmiermethoden/Dungeon/blob/master/game/src/ecs/systems/XPSystem.java) um Erfahrungspunkte zu sammeln und Level aufzusteigen. 
+Führen Sie eine Codeanalyse durch und erklären Sie die funktionalität 
+
+Verbessern Sie beim Levelaufstieg des Helden seine Charakterwerte und lassen Sie ihn die oben implementierten Zaubersprüche erlernen. 
