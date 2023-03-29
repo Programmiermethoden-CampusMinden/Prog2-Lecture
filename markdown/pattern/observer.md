@@ -78,7 +78,7 @@ Zur Benachrichtigung der registrierten Objekte brauchen diese eine geeignete Met
 die traditionell `update()` genannt wird.
 :::
 
-[Demo: observer]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/observer/"}
+[Demo: observer]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/pattern/src/observer/"}
 
 
 ## Observer-Pattern verallgemeinert

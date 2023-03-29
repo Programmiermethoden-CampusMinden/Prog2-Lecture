@@ -517,7 +517,7 @@ kann ich sinnvoll auf den Fehler reagieren?
 *   Aufrufer kann sich von der Exception vermutlich nicht erholen
 
 ::: notes
-Vergleiche ["Unchecked Exceptions — The Controversy"](https://dev.java/learn/unchecked-exceptions-%E2%80%94-the-controversy/).
+Vergleiche ["Unchecked Exceptions — The Controversy"](https://dev.java/learn/exceptions/unchecked-exception-controversy/).
 :::
 
 

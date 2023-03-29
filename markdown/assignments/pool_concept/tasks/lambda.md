@@ -6,7 +6,7 @@ Implementierung aufgerufen und getestet wird.
 Ziel dieser Aufgabe ist es, eine Liste von Studierenden mithilfe verschiedener
 syntaktischer Strukturen (Lambda-Ausdrücke, Methoden-Referenzen) zu sortieren.
 Dabei soll bei allen Teilaufgaben die Methode
-[java.util.List#sort](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html#sort(java.util.Comparator))
+[java.util.List#sort](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html#sort(java.util.Comparator)))
 für das eigentliche Sortieren verwendet werden.
 
 

@@ -363,7 +363,7 @@ Werte - diese können nicht `null` sein.
 ::: notes
 ## Interessante Links
 
-*   ["Using Optionals"](https://dev.java/learn/using-optionals/)
+*   ["Using Optionals"](https://dev.java/learn/api/streams/optionals/)
 *   ["What You Might Not Know About Optional"](https://medium.com/javarevisited/what-you-might-not-know-about-optional-7238e3c05f63)
 *   ["Experienced Developers Use These 7 Java Optional Tips to Remove Code Clutter"](https://medium.com/javarevisited/experienced-developers-use-these-7-java-optional-tips-to-remove-code-clutter-6e8b1a639861)
 *   ["Code Smells: Null"](https://blog.jetbrains.com/idea/2017/08/code-smells-null/)

@@ -10,7 +10,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie ein _HUD_ ([_heads-up display_](https://en.wikipedia.org/wiki/Heads-up_display_(video_games))).
+In dieser Aufgabe implementieren Sie ein _HUD_ ([_heads-up display_](https://en.wikipedia.org/wiki/HUD_(video_gaming))).
 
 ## HUD
 

@@ -1,4 +1,4 @@
-Betrachten Sie das Buildskript `gradle.build` aus [Programmiermethoden/PM-Dungeon](https://github.com/Programmiermethoden/PM-Dungeon/blob/master/code/build.gradle).
+Betrachten Sie das Buildskript `gradle.build` aus [Programmiermethoden/Dungeon](https://github.com/Programmiermethoden/Dungeon/blob/master/build.gradle).
 
 Erklären Sie, in welche Abschnitte das Buildskript unterteilt ist und welche Aufgaben diese
 Abschnitte jeweils erfüllen. Gehen Sie dabei im _Detail_ auf das Plugin `java` und die dort

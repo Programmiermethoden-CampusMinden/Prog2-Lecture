@@ -1,5 +1,5 @@
 In den Vorgaben finden Sie in der Klasse `Lexer` eine einfache Implementierung
-eines [Lexers](https://de.wikipedia.org/wiki/Tokenizer), worin ein einfaches
+eines [Lexers](https://de.wikipedia.org/wiki/Lexikalische_Analyse), worin ein einfaches
 Syntax-Highlighting für Java-Code realisiert ist.
 
 Dazu arbeitet der Lexer mit sogenannten "Token" (Instanzen der Klasse `Token`).
