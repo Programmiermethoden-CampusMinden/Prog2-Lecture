@@ -1,8 +1,8 @@
 ---
 archetype: assignment
-title: "Schatzkisten"
+title: "Monster-Schatzkisten"
 author: "André Matutat (FH Bielefeld)"
-points: 1
+points: 5
 weight: 5
 
 hidden: true
@@ -10,16 +10,17 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie Schatzkisten, die der Spieler im Level finden und plündern kann.
+In dieser Aufgabe implementieren Sie eine Monster-Schatzkisten, die der Spieler im Level finden und plündern kann.
 
 ## Voraussetzung
 
-Um diese Aufgabe lösen zu können, müssen Sie vorher `["Inventar"]({{< ref "/assignments/pool_dungeon/group_a/inventar_text_based" >}})`{=markdown} und `["Item"]({{< ref "/assignments/pool_dungeon/group_c/item" >}})`{=markdown} gelöst haben.
+Um diese Aufgabe lösen zu können, müssen Sie vorher `["Monster"]({{< ref "/assignments/group_monster/monster" >}})`{=markdown} und `["Item"]({{< ref "/assignments/item" >}})`{=markdown} gelöst haben.
 
-## Schatzkiste
+## Monster-Schatzkiste
 
-Implementieren Sie Schatzkisten, die im Dungeon verteilt werden und von den Spielern geöffnet ("aktiviert") werden können. Die Kisten sind zunächst geschlossen und können durch eine (neue) Aktion des Helden geöffnet werden, sofern er in ausreichender Nähe ist. Erst dann ist der Inhalt sichtbar und für den Helden zugreifbar.
+In den Vorgaben finden Sie die Implementierung einer [Schatzkiste](https://github.com/Programmiermethoden/Dungeon/blob/master/game/src/ecs/entities/Chest.java). Führen Sie eine Codeanlyse durch und erklären Sie die Funktionalität. 
 
-Schatzkisten beinhalten (zufällige) Items, die der Spieler aufsammeln kann. Schatzkisten haben damit auch ein Inventar.
+Konzeptionieren und Implementieren Sie nun einen neuen Monster Typen, die "Monster-Schatzkiste".
+Dieses Monster soll aussehen wie eine Schatzkiste, greift den Spiler jedoch beim versuch sie zu plündern an. 
+Wenn der Spieler das Monster besiegt hat, soll das Schatzkisten-Monster sich wie eine Schatzkiste verhalten und seine Beute preisgeben. 
 
-Schatzkisten sollen nur in der Nähe des Spielers aktivierbar sein.
