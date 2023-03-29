@@ -1,0 +1,25 @@
+{
+    "ignorePatterns": [
+        {
+            "pattern": "http://git03-ifm-min.ad.fh-bielefeld.de/.*"
+        },
+        {
+            "pattern": "https://www.digikos.de/"
+        },
+        {
+            "pattern": "https://eassessment.fh-bielefeld.de/"
+        }
+
+    ],
+    "retryOn429": true,
+    "aliveStatusCodes": [200, 206],
+    "httpHeaders": [
+        {
+            "urls": ["https://github.com/", "https://guides.github.com/", "https://help.github.com/", "https://docs.github.com/"],
+            "headers":
+                {
+                    "Accept-Encoding": "zstd, br, gzip, deflate"
+                }
+        }
+    ]
+}

@@ -13,7 +13,7 @@ jobs:
         with:
           use-quiet-mode: 'yes'
           use-verbose-mode: 'yes'
-          config-file: 'mlc_config.json'
+          config-file: '.github/workflows/.mlc_config.json'
           folder-path: 'markdown/'
-          file-path: 'README.md, pm.bib'
+          file-path: './README.md, ./pm.bib'
 
