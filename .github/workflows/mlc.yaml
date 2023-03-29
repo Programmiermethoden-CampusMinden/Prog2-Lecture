@@ -15,4 +15,5 @@ jobs:
           use-verbose-mode: 'yes'
           config-file: 'mlc_config.json'
           folder-path: 'markdown/'
+          file-path: 'README.md, pm.bib'
 
