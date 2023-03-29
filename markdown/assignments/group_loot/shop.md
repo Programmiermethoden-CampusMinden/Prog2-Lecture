@@ -3,7 +3,7 @@ archetype: assignment
 title: "Shop"
 author: "André Matutat (FH Bielefeld)"
 points: 10
-weight: 9
+weight: 4
 
 hidden: true
 ---

@@ -3,7 +3,7 @@ archetype: assignment
 title: "Freundliche NPCs"
 author: "André Matutat (FH Bielefeld)"
 points: 2
-weight: 6
+weight: 2
 
 hidden: true
 ---

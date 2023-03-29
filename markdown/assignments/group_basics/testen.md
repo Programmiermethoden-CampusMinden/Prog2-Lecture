@@ -3,7 +3,7 @@ archetype: assignment
 title: "JUnit (Group Basics)"
 author: "André Matutat (FH Bielefeld)"
 points: 5
-weight: 8
+weight: 5
 
 hidden: true
 ---

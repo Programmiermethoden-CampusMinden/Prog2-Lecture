@@ -3,7 +3,7 @@ archetype: assignment
 title: "Schatzkisten"
 author: "André Matutat (FH Bielefeld)"
 points: 1
-weight: 3
+weight: 5
 
 hidden: true
 ---
