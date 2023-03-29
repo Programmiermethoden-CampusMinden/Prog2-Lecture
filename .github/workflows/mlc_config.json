@@ -4,6 +4,6 @@
             "pattern": "http://git03-ifm-min.ad.fh-bielefeld.de/.*"
         }
     ],
-  "retryOn429": true,
-  "aliveStatusCodes": [200, 206]
+    "retryOn429": true,
+    "aliveStatusCodes": [200, 206]
 }
