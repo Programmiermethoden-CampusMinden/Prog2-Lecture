@@ -3,7 +3,7 @@ archetype: assignment
 title: "Fallen"
 author: "André Matutat (FH Bielefeld)"
 points: 5
-weight: 3
+weight: 1
 
 hidden: true
 ---
