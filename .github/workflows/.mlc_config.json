@@ -7,7 +7,7 @@
             "pattern": "^https://www.digikos.de/"
         },
         {
-            "pattern": "https://eassessment.fh-bielefeld.de/"
+            "pattern": "^https://eassessment.fh-bielefeld.de/"
         }
 
     ],
