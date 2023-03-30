@@ -11,11 +11,13 @@ _build:
 ---
 
 
-Hier finden Sie die Praktikumsaufgaben. Die Aufgaben sind in drei Themenbereiche sortiert:
+Hier finden Sie die Praktikumsaufgaben. Die Aufgaben sind in vier Themenbereiche sortiert:
 
 *   `[Gruppe "Basics"]({{< ref "/assignments/group_basics" >}})`{=markdown}
 *   `[Gruppe "Monster"]({{< ref "/assignments/group_monster" >}})`{=markdown}
 *   `[Gruppe "Loot"]({{< ref "/assignments/group_loot" >}})`{=markdown}
+*   [Bounty: "is:open is:issue label:bounty -linked:pr"](https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty+-linked%3Apr+)
+
 
 | Gruppe                                                           | Aufgabe                                                                                         | Punkte | Abhängig von                                                                                                                                                                                                                                      |
 |:-----------------------------------------------------------------|:------------------------------------------------------------------------------------------------|:-------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
