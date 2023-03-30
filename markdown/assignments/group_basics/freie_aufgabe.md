@@ -12,8 +12,8 @@ hidden: true
 
 In dieser Aufgabe implementieren Sie ein großes oder mehrere kleinere Features für Ihren
 Dungeon. Sie dürfen sich diese(s) Feature(s) selbst aussuchen und konzipieren. Beachten Sie
-dabei, dass Ihr Feature nicht Teil einer anderen Dungeon-Aufgabe oder Teil der Vorgabe
-sein kann.
+dabei, dass Ihr Feature nicht Teil einer anderen Dungeon-Aufgabe oder Teil der Vorgabe sein
+kann.
 
 Formulieren Sie Ihr Vorhaben ausführlich in Ihrer Konzeptskizze. Machen Sie besonders
 deutlich, **was** Sie erreichen wollen.
