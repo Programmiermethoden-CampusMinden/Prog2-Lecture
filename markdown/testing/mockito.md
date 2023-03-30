@@ -471,7 +471,7 @@ Mockito sehr mächtig, aber unterstützt (u.a.) keine
 [\@jedi101](https://github.com/jedi101).
 
 
-[Demo: WuppiWarenlager (wuppie.stub)]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/wuppie/stub/"}
+[Demo: WuppiWarenlager (wuppie.stub)]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/testing/src/mockito/src/test/java/wuppie/stub/"}
 
 Bei dem gezeigten Beispiel unseres `WuppiStores` sieht man, dass dieser
 normalerweise von einem fertigen Warenlager die Wuppis beziehen möchte. Da
@@ -497,7 +497,7 @@ Aber es gibt da einen Ausweg. Wenn es komplexer wird, verwenden wir Mocks.
 
 Bislang haben wir noch keinen Gebrauch von Mockito gemacht. Das ändern wir nun.
 
-[Demo: WuppiWarenlager (wuppie.mock)]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/wuppie/mock/"}
+[Demo: WuppiWarenlager (wuppie.mock)]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/testing/src/mockito/src/test/java/wuppie/mock/"}
 
 Wie in diesem Beispiel gezeigt, müssen wir nun keinen Stub mehr von Hand
 erstellen, sondern überlassen dies Mockito.
@@ -544,7 +544,7 @@ Und genau dafür bietet Mockito eine Funktion: der sogenannte "Spy".
 Dieser Spion erlaubt es uns nun zusätzlich das Verhalten zu testen. Das geht in
 die Richtung von [BDD - Behavior Driven Development](https://de.wikipedia.org/wiki/Behavior_Driven_Development).
 
-[Demo: WuppiWarenlager (wuppie.spy)]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/wuppie/spy/"}
+[Demo: WuppiWarenlager (wuppie.spy)]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/testing/src/mockito/src/test/java/wuppie/spy/"}
 
 ```java
 // Spion erstellen, der unser wuppiWarenlager überwacht.
@@ -689,7 +689,7 @@ public void testVerify_InteraktionenMitHilfeDesArgumentCaptor() {
 }
 ```
 
-[Demo: WuppiWarenlager (wuppie.verify)]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/wuppie/verify/"}
+[Demo: WuppiWarenlager (wuppie.verify)]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/testing/src/mockito/src/test/java/wuppie/verify/"}
 :::::::::
 
 

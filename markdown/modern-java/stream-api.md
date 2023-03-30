@@ -421,7 +421,7 @@ bei den intermediären als auch den terminalen Operationen. Schauen Sie in die D
 *   Terminale Operation führt zur Verarbeitung und Abschluss des Streams
 
 ::: notes
-Schöne Doku: ["The Stream API"](https://dev.java/learn/the-stream-api/), und auch
+Schöne Doku: ["The Stream API"](https://dev.java/learn/api/streams/), und auch
 ["Package java.util.stream"](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/package-summary.html).
 :::
 

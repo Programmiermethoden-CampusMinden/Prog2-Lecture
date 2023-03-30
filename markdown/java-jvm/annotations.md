@@ -102,7 +102,7 @@ generieren: `Preferences > Java > Code Style > Add @Override annotation ...`.
     *   Compiler (JDK): `@Override`, `@Deprecated`, ...
     *   Javadoc: `@author`, `@version`, `@see`, `@param`, `@return`, ...
     *   JUnit: `@Test`, `@Before`, `@BeforeClass`, `@After`, `@AfterClass`
-    *   [IntelliJ](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html): `@NotNull`, `@Nullable`
+    *   [IntelliJ](https://www.jetbrains.com/help/idea/annotating-source-code.html#jetbrains-annotations): `@NotNull`, `@Nullable`
     *   [Checker Framework](https://github.com/typetools/checker-framework): `@NonNull`, `@Nullable`, ...
     *   [Project Lombok](https://github.com/projectlombok/lombok): `@Getter`, `@Setter`, `@NonNull`, ...
     *   Webservices: `@WebService`, `@WebMethod`
@@ -175,7 +175,7 @@ Hier noch einmal exemplarisch die wichtigsten Elemente, die an
 ## \@NotNull mit IntelliJ
 
 ::: notes
-[IntelliJ](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) bietet im Paket
+[IntelliJ](https://www.jetbrains.com/help/idea/annotating-source-code.html) bietet im Paket
 `org.jetbrains.annotations` u.a. die Annotation `@NotNull` an.
 
 Damit lassen sich Rückgabewerte von Methoden sowie Variablen (Attribute, lokale Variablen, Parameter) markieren:
@@ -403,7 +403,7 @@ public class Foo extends AbstractProcessor {
 }
 ```
 
-[Demo: annotations.C und annotations.Foo, META-INF]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/META-INF/"}
+[Demo: annotations.C und annotations.Foo, META-INF]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/java-jvm/src/META-INF/"}
 
 ::::::::: notes
 1.  Der Annotation-Processor sollte von `AbstractProcessor` ableiten

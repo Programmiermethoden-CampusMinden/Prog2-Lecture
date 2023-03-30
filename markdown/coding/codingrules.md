@@ -94,7 +94,7 @@ fhmedia:
 
 Beispiele: [Sun Code Conventions](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf),
 [Google Java Style](https://google.github.io/styleguide/javaguide.html),
-[AOSP Java Code Style for Contributors](https://source.android.com/setup/contribute/code-style)
+[AOSP Java Code Style for Contributors](https://source.android.com/docs/setup/contribute/code-style)
 
 
 ## Beispiel nach Google Java Style/AOSP formatiert
@@ -147,12 +147,12 @@ ist und dieses auf die selbe Zeile passt, kann auf die umschließenden geschweif
 verzichtet werden.
 
 Es wird mit Leerzeichen eingerückt. [Google Java Style](https://google.github.io/styleguide/javaguide.html#s4.2-block-indentation)
-arbeitet mit 2 Leerzeichen, während [AOSP](https://source.android.com/setup/contribute/code-style#use-spaces-for-indentation)
+arbeitet mit 2 Leerzeichen, während [AOSP](https://source.android.com/docs/setup/contribute/code-style#use-spaces-for-indentation)
 hier 4 Leerzeichen vorschreibt. Im Beispiel wurde nach AOSP eingerückt.
 
 Darüber hinaus gibt es vielfältige weitere Regeln für das Aussehen des Codes. Lesen Sie dazu entsprechend
 auf [Google Java Style](https://google.github.io/styleguide/javaguide.html) und auch auf
-[AOSP](https://source.android.com/setup/contribute/code-style) nach.
+[AOSP](https://source.android.com/docs/setup/contribute/code-style) nach.
 :::
 
 
@@ -226,7 +226,7 @@ Git-Hook definiert, wird vor jedem Commit der Code entsprechend den Richtlinien 
 
 _Hinweis_: Bei Spotless in Gradle müssen je nach den Versionen von Spotless/google-java-format
 bzw. des JDK noch Optionen in der Datei `gradle.properties` eingestellt werden (siehe
-[Demo](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/formatter/) und
+[Demo](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/coding/src/formatter/) und
 [Spotless > google-java-format (Web)](https://github.com/diffplug/spotless/tree/main/plugin-gradle#google-java-format)).
 
 **Tipp**: Die Formatierung über die IDE ist angenehm, aber in der Praxis leider oft etwas
@@ -276,8 +276,8 @@ elementarer Programmierregeln gemessen.
 ::::::::: notes
 Die obigen Grenzwerte sind typische Standardwerte, die sich in der Praxis allgemein bewährt haben
 (vergleiche u.a. [@Martin2009] oder auch in
-[AOSP: Write short methods](https://source.android.com/setup/contribute/code-style#write-short-methods)
-und [AOSP: Limit line length](https://source.android.com/setup/contribute/code-style#limit-line-length)).
+[AOSP: Write short methods](https://source.android.com/docs/setup/contribute/code-style#write-short-methods)
+und [AOSP: Limit line length](https://source.android.com/docs/setup/contribute/code-style#limit-line-length)).
 
 Dennoch sind das keine absoluten Werte an sich. Ein Übertreten der Grenzen ist ein
 **Hinweis** darauf, dass **höchstwahrscheinlich** etwas nicht stimmt, muss aber im
@@ -359,7 +359,7 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
-[Demo: IntelliJ, Checkstyle/Gradle]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/checkstyle/"}
+[Demo: IntelliJ, Checkstyle/Gradle]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/coding/src/checkstyle/"}
 
 
 ## Checkstyle: Konfiguration
@@ -448,7 +448,7 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
-[Demo: SpotBugs/Gradle]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/spotbugs/"}
+[Demo: SpotBugs/Gradle]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/coding/src/spotbugs/"}
 
 
 ## Konfiguration für das PM-Praktikum (Format, Metriken, Checkstyle, SpotBugs)
@@ -467,7 +467,7 @@ Grenzwerten. Diese sind bereits in der bereit gestellten Minimal-Konfiguration f
 Zusätzlich wenden wir den [Google Java Style](https://google.github.io/styleguide/javaguide.html)
 an. Statt der dort vorgeschriebenen Einrückung mit 2 Leerzeichen (und 4+ Leerzeichen bei Zeilenumbruch
 in einem Statement) können Sie auch mit 4 Leerzeichen einrücken (8 Leerzeichen bei Zeilenumbruch)
-([AOSP](https://source.android.com/setup/contribute/code-style)). Halten Sie sich in Ihrem
+([AOSP](https://source.android.com/docs/setup/contribute/code-style)). Halten Sie sich in Ihrem
 Team an eine einheitliche Einrückung (Google Java Style _oder_ AOSP).
 
 Formatieren Sie Ihren Code vor den Commits mit **Spotless** (über Gradle) oder stellen Sie den

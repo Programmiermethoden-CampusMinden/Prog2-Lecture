@@ -118,7 +118,7 @@ Nachteile:
     `finally`-Block!
 :::
 
-[Demo: lock.*]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/lock/"}
+[Demo: lock.*]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/threads/src/lock/"}
 
 
 ## Thread-Management: Executor-Interface und Thread-Pools

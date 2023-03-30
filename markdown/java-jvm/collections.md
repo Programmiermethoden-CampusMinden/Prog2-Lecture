@@ -233,7 +233,7 @@ der Elemente der eigenen Klasse genutzt werden kann. Damit die eigene Klasse auc
 genutzt werden kann, muss sie aber auch noch `Iterable<T>` implementieren.
 
 
-[Beispiel: iterator_example.*]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/collections/iterator_example/"}
+[Beispiel: iterator_example.*]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/java-jvm/src/collections/iterator_example/"}
 :::
 
 

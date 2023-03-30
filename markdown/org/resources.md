@@ -34,7 +34,9 @@ sind sehr gut auf @LernJava dokumentiert.
 
 Mit @Passig2013 ist ein wunderbar launiges Buch erschienen, wo typische Code-Smells diskutiert
 werden (wobei man manche Standpunkte hinterfragen sollte). Ein Standardwerk zu diesem Thema
-ist @Martin2009.
+ist @Martin2009. In @SWEGoogle werden Erfahrungen rund um die Softwareentwicklung dargestellt
+und kritisch hinterfragt - hier finden sich interessante Gedanken zum Thema Git, Testen, Code Style
+und vieles andere mehr.
 
 Zum Thema Refactoring ist @Fowler2011 _DIE_ Referenz. Auf @RefactoringGuru finden Sie eine nett
 aufbereitete Übersicht zum Thema Refactoring, aber auch eine Einbettung in die Zusammenhänge mit

@@ -255,7 +255,7 @@ public enum Fach {
 **Hinweis**: Diese Methoden gibt es auch bei den "einfachen" Enumerationen (s.o.).
 :::
 
-[Demo: enums.v3]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v3/"}
+[Demo: enums.v3]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/java-jvm/src/enums/v3/"}
 
 
 ## Wrap-Up
