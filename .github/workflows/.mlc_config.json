@@ -1,13 +1,13 @@
 {
     "ignorePatterns": [
         {
-            "pattern": "http://git03-ifm-min.ad.fh-bielefeld.de/.*"
+            "pattern": "^http://git03-ifm-min.ad.fh-bielefeld.de/.*"
         },
         {
-            "pattern": "https://www.digikos.de/"
+            "pattern": "^https://www.digikos.de/"
         },
         {
-            "pattern": "https://eassessment.fh-bielefeld.de/"
+            "pattern": "^https://eassessment.fh-bielefeld.de/"
         }
 
     ],
