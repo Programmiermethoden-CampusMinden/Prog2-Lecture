@@ -27,7 +27,7 @@ Tränke, Nahrung, Zaubersprüchen, Rüstungen, Waffen, ...).
 Jeder Gegenstand soll vom Spieler verwendbar sein. Überlegen Sie sich passende "Funktionen",
 die die einzelnen Gegenstände erfüllen.
 
-Jeder Gegenstand soll grafisch dargestellt werden.
+Jeder Gegenstand soll graphisch dargestellt werden.
 
 ## Taschen
 
