@@ -175,7 +175,7 @@ Hier noch einmal exemplarisch die wichtigsten Elemente, die an
 ## \@NotNull mit IntelliJ
 
 ::: notes
-[IntelliJ](https://www.jetbrains.com/help/idea/nullable-and-notnull-annotations.html) bietet im Paket
+[IntelliJ](https://www.jetbrains.com/help/idea/annotating-source-code.html) bietet im Paket
 `org.jetbrains.annotations` u.a. die Annotation `@NotNull` an.
 
 Damit lassen sich Rückgabewerte von Methoden sowie Variablen (Attribute, lokale Variablen, Parameter) markieren:

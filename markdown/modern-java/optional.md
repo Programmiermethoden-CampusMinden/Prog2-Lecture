@@ -390,7 +390,7 @@ Werte - diese können nicht `null` sein.
 *   Kein Ersatz für `null`-Prüfung!
 
 ::: notes
-Schöne Doku: ["Using Optionals"](https://dev.java/learn/using-optionals/).
+Schöne Doku: ["Using Optionals"](https://dev.java/learn/api/streams/optionals/).
 :::
 
 

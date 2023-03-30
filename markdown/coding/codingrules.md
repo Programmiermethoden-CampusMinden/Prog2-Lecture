@@ -467,7 +467,7 @@ Grenzwerten. Diese sind bereits in der bereit gestellten Minimal-Konfiguration f
 Zusätzlich wenden wir den [Google Java Style](https://google.github.io/styleguide/javaguide.html)
 an. Statt der dort vorgeschriebenen Einrückung mit 2 Leerzeichen (und 4+ Leerzeichen bei Zeilenumbruch
 in einem Statement) können Sie auch mit 4 Leerzeichen einrücken (8 Leerzeichen bei Zeilenumbruch)
-([AOSP](https://source.android.com/setup/contribute/code-style)). Halten Sie sich in Ihrem
+([AOSP](https://source.android.com/docs/setup/contribute/code-style)). Halten Sie sich in Ihrem
 Team an eine einheitliche Einrückung (Google Java Style _oder_ AOSP).
 
 Formatieren Sie Ihren Code vor den Commits mit **Spotless** (über Gradle) oder stellen Sie den
