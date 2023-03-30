@@ -152,7 +152,7 @@ hier 4 Leerzeichen vorschreibt. Im Beispiel wurde nach AOSP eingerückt.
 
 Darüber hinaus gibt es vielfältige weitere Regeln für das Aussehen des Codes. Lesen Sie dazu entsprechend
 auf [Google Java Style](https://google.github.io/styleguide/javaguide.html) und auch auf
-[AOSP](https://source.android.com/setup/contribute/code-style) nach.
+[AOSP](https://source.android.com/docs/setup/contribute/code-style) nach.
 :::
 
 
