@@ -17,7 +17,7 @@ knacken.
 ## Voraussetzung
 
 Um diese Aufgabe lösen zu können, müssen Sie vorher
-`["Item"]({{< ref "/assignments/item" >}})`{=markdown} gelöst haben.
+`["Item"]({{< ref "/assignments/group_loot/item" >}})`{=markdown} gelöst haben.
 
 ## Lockpicking
 
