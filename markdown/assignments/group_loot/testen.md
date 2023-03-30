@@ -1,6 +1,6 @@
 ---
 archetype: assignment
-title: "JUnit Group C"
+title: "JUnit (Gruppe Loot)"
 author: "André Matutat (FH Bielefeld)"
 points: 5
 weight: 8
@@ -10,10 +10,13 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für die Aufgabe `["Quests"]({{< ref "/assignments/group_loot/quests" >}})`{=markdown} oder `["Dialogsystem"]({{< ref "/assignments/group_loot/dialogsystem" >}})`{=markdown} implementieren.
+In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe
+`["Quests"]({{< ref "/assignments/group_loot/quests" >}})`{=markdown} oder
+`["Dialogsystem"]({{< ref "/assignments/group_loot/dialogsystem" >}})`{=markdown}
+implementierten Klassen und Methoden erstellen.
 
 ## JUnit
 
-- Überlegen Sie sich, was Sie alles testen müssen.
-- Ermitteln Sie die Testfälle mit Äquivalenzklassenbildung und Grenzwertanalyse.
-- Implementieren Sie Ihre Testfälle mit JUnit und Mockito.
+-   Überlegen Sie sich, was Sie alles testen müssen und wie Sie dies tun können.
+-   Ermitteln Sie die Testfälle mit Äquivalenzklassenbildung und Grenzwertanalyse.
+-   Implementieren Sie Ihre Testfälle mit JUnit und Mockito.

@@ -1,6 +1,6 @@
 ---
 archetype: assignment
-title: "JUnit Group B"
+title: "JUnit (Gruppe Monster)"
 author: "André Matutat (FH Bielefeld)"
 points: 5
 weight: 6
@@ -10,10 +10,13 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgaben sollen Sie eine gründliche Testabdeckung für die Aufgabe `["Monster"]({{< ref "/assignments/group_monster/monster" >}})`{=markdown} oder `["Fernkampf"]({{< ref "/assignments/group_monster/fernkampf" >}})`{=markdown} implementieren.
+In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe
+`["Monster"]({{< ref "/assignments/group_monster/monster" >}})`{=markdown} oder
+`["Fernkampf"]({{< ref "/assignments/group_monster/fernkampf" >}})`{=markdown}
+implementierten Klassen und Methoden erstellen.
 
 ## JUnit
 
-- Überlegen Sie sich, was Sie alles testen müssen.
-- Ermitteln Sie die Testfälle mit Äquivalenzklassenbildung und Grenzwertanalyse.
-- Implementieren Sie Ihre Testfälle mit JUnit und Mockito.
+-   Überlegen Sie sich, was Sie alles testen müssen und wie Sie dies tun können.
+-   Ermitteln Sie die Testfälle mit Äquivalenzklassenbildung und Grenzwertanalyse.
+-   Implementieren Sie Ihre Testfälle mit JUnit und Mockito.
