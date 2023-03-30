@@ -1,10 +1,10 @@
--   week: "(07. April)"
+-   week: "W01 (07. April)"
     misc_lecture:
         -   notes: ">> Feiertag"
     misc_assignment:
         -   notes: ">> Feiertag"
 
--   week: "W01 (14. April)"
+-   week: "W02 (14. April)"
     lecture:
         -   topic: "/org/syllabus"
             notes: "Kick-Off/Orga (Zoom)"
@@ -17,7 +17,7 @@
     misc_assignment:
         -   notes: ">> Kein Praktikum"
 
--   week: "W02 (21. April)"
+-   week: "W03 (21. April)"
     lecture:
         -   topic: "/git/branches"
         -   topic: "/git/branching-strategies"
@@ -30,7 +30,7 @@
     misc_assignment:
         -   notes: ">> Zyklus 1: Abgabe und Vorstellung Konzept"
 
--   week: "W03 (28. April)"
+-   week: "W04 (28. April)"
     lecture:
         -   topic: "/git/remotes"
         -   topic: "/git/workflows"
@@ -42,7 +42,7 @@
     misc_assignment:
         -   notes: ">> Zyklus 1: Abgabe und Vorstellung Code"
 
--   week: "W04 (05. Mai)"
+-   week: "W05 (05. Mai)"
     lecture:
         -   topic: "/modern-java/optional"
         -   topic: "/modern-java/stream-api"
@@ -54,7 +54,7 @@
     misc_assignment:
         -   notes: ">> Zyklus 2: Abgabe und Vorstellung Konzept"
 
--   week: "W05 (12. Mai)"
+-   week: "W06 (12. Mai)"
     lecture:
         -   topic: "/testing/testing-intro"
         -   topic: "/testing/junit-basics"
@@ -67,7 +67,7 @@
     misc_assignment:
         -   notes: ">> Zyklus 2: Abgabe und Vorstellung Code"
 
--   week: "W06 (19. Mai)"
+-   week: "W07 (19. Mai)"
     lecture:
         -   topic: "/coding/smells"
         -   topic: "/coding/codingrules"
@@ -79,7 +79,7 @@
     misc_assignment:
         -   notes: ">> Zyklus 3: Abgabe und Vorstellung Konzept"
 
--   week: "W07 (26. Mai)"
+-   week: "W08 (26. Mai)"
     lecture:
         -   topic: "/generics/classes-methods"
         -   topic: "/generics/bounds-wildcards"
@@ -92,7 +92,7 @@
     misc_assignment:
         -   notes: ">> Zyklus 3: Abgabe und Vorstellung Code"
 
--   week: "W08 (02. Juni)"
+-   week: "W09 (02. Juni)"
     lecture:
         -   topic: "/modern-java/defaultmethods"
         -   topic: "/java-jvm/regexp"
@@ -105,7 +105,7 @@
     misc_assignment:
         -   notes: ">> Zyklus 4: Abgabe und Vorstellung Konzept"
 
--   week: "W09 (09. Juni)"
+-   week: "W10 (09. Juni)"
     lecture:
         -   topic: "/java-jvm/annotations"
         -   topic: "/java-jvm/reflection"
@@ -117,7 +117,7 @@
     misc_assignment:
         -   notes: ">> Zyklus 4: Abgabe und Vorstellung Code"
 
--   week: "W10 (16. Juni)"
+-   week: "W11 (16. Juni)"
     lecture:
         -   topic: "/java-jvm/enums"
         -   topic: "/java-jvm/configuration"
@@ -131,7 +131,7 @@
     misc_assignment:
         -   notes: ">> Zyklus 5: Abgabe und Vorstellung Konzept"
 
--   week: "W11 (23. Juni)"
+-   week: "W12 (23. Juni)"
     lecture:
         -   topic: "/threads/intro"
         -   topic: "/threads/synchronisation"
@@ -144,7 +144,7 @@
     misc_assignment:
         -   notes: ">> Zyklus 5: Abgabe und Vorstellung Code"
 
--   week: "W12 (30. Juni)"
+-   week: "W13 (30. Juni)"
     lecture:
         -   topic: "/org/syllabus"
             notes: "Rückblick (Zoom)"
