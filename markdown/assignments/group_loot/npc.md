@@ -1,8 +1,8 @@
 ---
 archetype: assignment
-title: "Freundliche NPCs"
+title: "Freundlicher NPC Geist"
 author: "André Matutat (FH Bielefeld)"
-points: 2
+points: 5
 weight: 2
 
 hidden: true
@@ -10,12 +10,16 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie freundliche [NPCs (_Non-Player-Character_)](https://en.wikipedia.org/wiki/Non-player_character).
+In dieser Aufgabe implementieren Sie einen freundlichen Geist als [NPC (_non player character_)](https://en.wikipedia.org/wiki/Non-player_character)[^1].
 
-## Freundliche NPCs
+## Freundlicher NPC: Geist
 
-Implementieren Sie NPCs mit eigenen Texturen, Animationen und Verhaltensweisen. Anders als die normalen Monster sollen diese freundlichen NPCs den Spieler **nicht** angreifen.
+Überlegen Sie sich, welche Komponenten ein NPC braucht.
 
-Überlegen Sie sich, was diese NPCs tun können, um das Spiel zu bereichern.
+Implementieren Sie einen NPC, der aussieht wie ein Geist und sich in der Nähe des Spielers aufhält und diesen (mit Abstand) verfolgt.
+Der Geist soll auch manchmal verschwinden oder (zufällig) durch das Level wandern.
 
-_Anmerkung_: Diese Aufgabe ist als Vorbereitung für andere Aufgaben gedacht und lässt sich hervorragend mit den Aufgaben `["Shop"]({{< ref "/assignments/pool_dungeon/group_c/shop" >}})`{=markdown} und `["Dialogsystem"]({{< ref "/assignments/pool_dungeon/group_c/dialogsystem" >}})`{=markdown} kombinieren.
+Implementieren Sie einen Grabstein, der im Level mit einem Geist platziert wird. Findet der Spieler den Grabstein (und der Geist ist dabei), soll dieser den Spieler belohnen/bestrafen.
+
+
+[^1]: Ein NPC ist wie ein "normales" Monster ein _non player character_ mit bestimmten Eigenschaften, greift aber den Spieler nicht an.
