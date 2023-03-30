@@ -10,7 +10,7 @@ hidden: true
 
 ## Ziel
 
-In dieser Aufgabe implementieren Sie eine [Mini-Spiel](https://de.wikipedia.org/wiki/Minispiel), um verschlossene Schatzkiste zu knacken. 
+In dieser Aufgabe implementieren Sie ein [Mini-Spiel](https://de.wikipedia.org/wiki/Minispiel), um verschlossene Schatzkiste zu knacken. 
 
 ## Voraussetzung
 
@@ -22,4 +22,4 @@ In den Vorgaben finden Sie die Implementierung einer [Schatzkiste](https://githu
 
 Implementieren Sie eine Möglichkeit, dass Schatzkisten verschlossen sein können und nur mit einen bestimmten Schlüssel geöffnet werden können. 
 
-Recherchieren Sie nach "Lockpicking-Minigames" aus anderen Spielen und Implementieren Sie eine Umsetzung für Ihr Spiel. Wenn der Spieler nicht den passenden Schlüssel zu einer SChatzkiste gefunden hat, soll er die Schatzkiste durch das Lösen des Mini-Spiels öffnen können. 
+Recherchieren Sie nach "Lockpicking-Minigames" aus anderen Spielen und implementieren Sie eine Umsetzung für Ihr Spiel. Wenn der Spieler nicht den passenden Schlüssel zu einer Schatzkiste gefunden hat, soll er die Schatzkiste durch das Lösen des Mini-Spiels öffnen können. 
