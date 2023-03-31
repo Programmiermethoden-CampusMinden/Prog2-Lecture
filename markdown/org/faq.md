@@ -125,6 +125,55 @@ Ausnahme: Die "freien Aufgaben" können Sie gern wiederholt bearbeiten, so lange
 Sie jeweils ein Problem wählen, das nicht bereits in anderen Aufgaben vorkommt.
 
 
+## Bounty-Aufgaben
+
+Neben den "festen" Aufgaben in den Gruppen
+`["Basics"]({{< ref "/assignments/group_basics" >}})`{=markdown},
+`["Monster"]({{< ref "/assignments/group_monster" >}})`{=markdown} und
+`["Loot"]({{< ref "/assignments/group_loot" >}})`{=markdown} gibt es noch die
+["Bounty"-Aufgaben]. Hierbei handelt es sich um ausgewählte offene Issues im
+[Dungeon-Repo], die am Label "bounty" erkennbar sind und für die es jeweils
+5 Punkte oder 10 Punkte gibt (Label "5P" bzw. "10P"). Diese Aufgaben sind als
+Bereicherung für das Praktikum gedacht und sollen für mehr Abwechslung sorgen;
+es handelt sich in der Regel um kleinere Bugs oder um kleinere neue Features
+für den Dungeon.
+
+Analog zu den anderen Aufgaben können Sie sich die Bounty-Aufgaben am Beginn
+eines Zyklus aussuchen und bearbeiten und entsprechend die (per Label "5P" bzw.
+"10P") ausgeschriebenen Punkte bekommen (siehe [Verteilung der Punkte]). Ebenso
+können Sie eine Bounty-Aufgabe auch nur einmal bearbeiten. Eine Bounty-Aufgabe
+kann also wie die anderen Aufgaben auch parallel von mehreren Teams bearbeitet
+werden.
+
+Die Bounty-Aufgaben sollen aber nicht nur das Spektrum an Problemen für das
+Praktikum ergänzen, sondern auch zur Weiterentwicklung des Dungeons beitragen.
+Sie können Ihre Lösung gern **zusätzlich** als [Pull-Request] im Dungeon-Repo
+einreichen. Wenn Ihr Pull-Request akzeptiert wird, können Sie bis zu 3 Bonus-Punkte
+zusätzlich zu den Punkten für die eigentliche Lösung bekommen (siehe auch
+[Bonus-Punkte: Helfen im Framework] in der FAQ).
+
+Sobald ein entsprechender Pull-Request gestellt bzw. gemergt wird, wird diese
+Bounty-Aufgabe als gelöst betrachtet und steht damit nicht mehr zur Bearbeitung
+zur Verfügung und taucht dann auch nicht mehr in der [Suchanfrage] auf. Falls
+dies während eines laufenden Zyklus passiert und damit eine von Ihnen aktuell
+in Bearbeitung befindliche Bounty-Aufgabe aus der Suche verschwindet, können
+Sie diese natürlich im laufenden Zyklus weiter bearbeiten.
+
+So lange wie ein Pull-Request zu einer Bounty-Aufgabe noch nicht gemergt ist und
+das Ticket der Bounty-Aufgabe noch offen ist, können Sie Ihre Lösung ebenfalls
+als Pull-Request für diese Aufgabe einreichen - es kann also mehrere Pull-Requests
+für eine Bounty-Aufgabe geben. In der Regel wird aber pro Bounty-Aufgabe maximal
+ein Pull-Request akzeptiert (gemergt). Es gibt keinen Anspruch auf einen Merge
+und damit keinen Anspruch auf die Bonus-Punkte, die Entscheidung liegt beim Dozenten.
+
+["Bounty"-Aufgaben]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty+-linked%3Apr
+[Suchanfrage]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty+-linked%3Apr
+[Verteilung der Punkte]: #verteilung-der-punkte
+[Dungeon-Repo]: https://github.com/Programmiermethoden/Dungeon
+[Pull-Request]: https://github.com/Programmiermethoden/Dungeon/compare
+[Bonus-Punkte: Helfen im Framework]: #bonus-punkte-helfen-im-framework
+
+
 ## Workload Praktikum
 
 Pro **Zyklus** sollen Sie Aufgaben für **15 Punkte** bearbeiten.
@@ -239,6 +288,9 @@ Sie jeden der sechs Schritte erfolgreich durchlaufen haben:
 5.  Sinnvolles Peer-Feedback für die Implementierungen,
 6.  Vorstellung der Implementierung im Praktikum.
 
+Wie immer bestimmt der Umfang und die Qualität Ihrer Lösung, wieviele der ausgeschriebenen
+Punkte Sie für die bearbeitete Aufgabe erhalten.
+
 
 ## Konzeptskizze
 
@@ -280,26 +332,33 @@ Sie in diesem Fall bitte zeitnah Kontakt zu Ihren Dozenten auf.
 
 ## Bonus-Punkte: Helfen im Framework
 
-Sie können aktiv dabei helfen, das [Dungeon-Framework](https://github.com/Programmiermethoden/Dungeon)
-weiterzuentwickeln und sich so Bonus-Punkte für das Praktikum erarbeiten.
+Sie können aktiv dabei helfen, das [Dungeon-Framework] weiterzuentwickeln und sich so
+Bonus-Punkte für das Praktikum erarbeiten.
 
-Dazu reichen Sie Ihre Lösung für die Bounty-Aufgaben als Pull-Request ein und führen den PR bis zum
-Merge (oder ggf. bis zur Ablehnung). Sie können aber auch Fehler beheben oder Features implementieren,
-die Sie gerne im Dungeon sehen würden, oder ein bereits bestehendes Issue mit dem Label "help wanted"
-bearbeiten. Wenn Sie kein bereits existierendes Issue bearbeiten, also ein neues Feature implementieren
-wollen, erstellen Sie bitte zunächst ein Issue, um Ihre Idee mit dem Dungeon-Team zu diskutieren und
-vorab zu prüfen, ob wir einen PR dazu akzeptieren würden!
+Dazu reichen Sie Ihre Lösung für die Bounty-Aufgaben (siehe [Bounty-Aufgaben] in der FAQ)
+zusätzlich als Pull-Request ein und führen den PR bis zum Merge (oder ggf. bis zur Ablehnung).
 
-Für einen **akzeptierten PR** können Sie bis zu 5 Bonus-Punkte erhalten. Es gibt _keinen Anspruch_
-auf einen Merge, die Entscheidung liegt beim Dozenten.
+Sie können aber auch Fehler beheben oder Features implementieren, die Sie gerne im Dungeon
+sehen würden, oder ein bereits bestehendes [Issue] mit dem Label "help wanted" bearbeiten.
+Bitte diskutieren Sie in diesen Fällen (betrifft nicht die Bounty-Aufgaben) Ihre Idee zunächst
+in dem offenen Ticket (oder erstellen ein neues), um vorab zu prüfen, ob wir einen PR dazu
+akzeptieren würden und wieviele Punkte der Beitrag bekommen könnte!
 
-Bei der Bepunktung betrachten wir nicht nur den Fix/Code selbst, sondern auch Ihren Umgang mit Git
-und die Qualität der Kommunikation innerhalb von GitHub (Issue-Beschreibungen, PR-Beschreibungen etc.)
-sowie den Umfang des Problems. Angedacht ist die Aufteilung bis zu 2P bei Merge, und bis zu 3P für
-das Verhalten und die Kommunikation im PR.
+Für einen **akzeptierten PR** können Sie bis zu 2+3 Bonus-Punkte (Bounty: 5+3P bzw. 10+3P)
+erhalten. Es gibt _keinen Anspruch_ auf einen Merge, die Entscheidung liegt beim Dozenten.
+
+Bei der Bepunktung betrachten wir nicht nur den Fix/Code selbst, sondern auch Ihren Umgang mit
+Git und die Qualität der Kommunikation innerhalb von GitHub (Issue-Beschreibung, PR-Beschreibung
+etc.) sowie den Umfang des Problems. Angedacht ist die Aufteilung bis zu 2P für den Fix/Code
+(Bounty: 5P bzw. 10P) und bis zu 3P für das Verhalten und die Kommunikation im PR.
 
 Weitere Informationen darüber, wie Sie am Framework mitarbeiten können, finden Sie in der
-[CONTRIBUTING.md](https://github.com/Programmiermethoden/Dungeon/blob/master/CONTRIBUTING.MD).
+[CONTRIBUTING.md].
+
+[Dungeon-Framework]: https://github.com/Programmiermethoden/Dungeon
+[Bounty-Aufgaben]: #bounty-aufgaben
+[Issue]: https://github.com/Programmiermethoden/Dungeon/issues
+[CONTRIBUTING.md]: https://github.com/Programmiermethoden/Dungeon/blob/master/CONTRIBUTING.MD
 
 
 ## Hilflos im Dungeon?
