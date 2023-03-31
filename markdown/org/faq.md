@@ -145,9 +145,9 @@ Bounty-Aufgabe auch nur einmal bearbeiten.
 
 Die Bounty-Aufgaben sollen aber nicht nur das Spektrum an Problemen für das
 Praktikum ergänzen, sondern auch zur Weiterentwicklung des Dungeons beitragen.
-Sie können Ihre Lösung gern als [Pull-Request] im Dungeon-Repo einreichen. Wenn
-Ihr Pull-Request akzeptiert wird, können Sie bis zu 5 Bonuspunkte bekommen
-(siehe auch [Bonus-Punkte: Helfen im Framework] in der FAQ).
+Sie können Ihre Lösung gern **zusätzlich** als [Pull-Request] im Dungeon-Repo
+einreichen. Wenn Ihr Pull-Request akzeptiert wird, können Sie bis zu 5 Bonus-Punkte
+bekommen (siehe auch [Bonus-Punkte: Helfen im Framework] in der FAQ).
 
 Sobald ein entsprechender Pull-Request gestellt bzw. gemergt wird, wird diese
 Bounty-Aufgabe als gelöst betrachtet und steht damit nicht mehr zur Bearbeitung
