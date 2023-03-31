@@ -60,35 +60,18 @@ Sie können pro Zyklus Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
 
 ### Abgabe der Lösungen
 
-Alle Lösungen werden im ILIAS abgegeben. Sofern nichts anderes bei den Aufgaben angegeben
-ist, sind die **Lösungen jeweils bis Mittwoch 15:00 Uhr im ILIAS** hochzuladen.
-
-Dabei gibt jedes Team nur **eine gemeinsame Lösung** ab: Eine Person aus dem Team lädt die
-Lösung in das ILIAS und trägt die Teammitglieder mit ein.
+Sofern nichts anderes bei den Aufgaben angegeben ist, sind die
+**Lösungen jeweils bis Mittwoch 15:00 Uhr im ILIAS** hochzuladen.
 
 ### Peer-Feedback
 
-Nach der Ablauf der Deadline werden Ihnen durch ILIAS mehrere Reviews zugewiesen. Sie finden
-die Review-Kriterien (als Checklisten) und die anzufertigenden Reviews im ILIAS - gehen Sie
-dazu im Praktikumsbereich wieder auf die jeweilige Aufgabe.
-
-Sofern nichts anderes angegeben, ist das **Peer-Feedback jeweils bis Donnerstag 15:00 Uhr**
-einzutragen.
+Sofern nicht anders angegeben, ist das **Peer-Feedback jeweils bis Donnerstag 15:00 Uhr**
+im ILIAS einzutragen.
 
 ### Vorstellung der Lösung
 
-Nach dem Peer-Feedback haben Sie bis zu Ihrem Praktikumstermin die Gelegenheit, das erhaltene
-Feedback in Ihre Lösung einzuarbeiten.
-
-Die Vorstellung Ihrer finalen Lösung erfolgt im Praktikum mit einem Medium Ihrer Wahl. Sie
-können zum Beispiel Ihren Bildschirm teilen und Ihre Lösung erklären. Sie brauchen nicht
-extra eine Präsentation anfertigen!
-
-Die Vorstellung der Lösung erfolgt duch alle Teammitglieder. Ohne Teilnahme an der Vorstellung
-gibt es keine Punkte.
-
-Für die Vorstellen werden individuelle Zeitslots pro Team innerhalb Ihrer Praktikumsgruppe
-vereinbart (siehe Etherpads im ILIAS).
+Die Lösungen werden von allen Teammitgliedern im Praktikum zur Erlangung der Punkte
+vorgestellt. Ohne aktive Teilnahme an der Vorstellung gibt es keine Punkte.
 
 ### Punktevergabe
 

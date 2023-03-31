@@ -143,6 +143,8 @@ Sie können **jede Aufgabe nur einmal bearbeiten und abgeben**.
 Ausnahme: Die "freien Aufgaben" können Sie gern wiederholt bearbeiten, so lange
 Sie jeweils ein Problem wählen, das nicht bereits in anderen Aufgaben vorkommt.
 
+Sie können pro Zyklus Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
+
 
 ## Bounty-Aufgaben
 
@@ -231,8 +233,11 @@ Modellierung nicht konform zur ECS-Struktur des aktuellen Dungeons ist.
 Bitte laden Sie Ihre Lösung als eine **PDF-Datei** (Konzeptphase) oder als ein
 **Zip-Archiv** (Implementierungsphase) in die jeweilige Aufgabe im ILIAS hoch.
 
-Dies passiert jeweils **1x pro Team**: Eine Person lädt die Lösung hoch und trägt
-dabei die anderen Teammitglieder mit im ILIAS ein.
+Beachten Sie die jeweilige Deadline. Sofern nichts anderes angegeben ist, sollen
+die Lösungen jeweils bis Mittwoch 15:00 Uhr im ILIAS hochgeladen werden.
+
+Dabei gibt jedes Team nur **eine gemeinsame Lösung** ab: Eine Person aus dem Team
+lädt die Lösung in das ILIAS und trägt die Teammitglieder mit ein.
 
 _Anmerkung_: Falls Sie mehrere Dateien hochladen wollen, erzeugen Sie bitte vor
 dem Upload lokal ein Zip-Archiv, welches Sie dann per Button "Datei einreichen"
@@ -295,9 +300,20 @@ kann und deshalb stets kritisch hinterfragt werden sollte.
 
 ## Vorstellung der Lösungen
 
-Im Praktikum stellen Sie Ihre Lösungen vor und diskutieren darüber.
+Im Praktikum stellen Sie Ihre Lösungen vor und diskutieren darüber und beantworten
+kurze Fragen oder passen ad hoc im Gespräch Ihre Lösung weiter an.
 
-Wer nicht in der Vorstellung teilnimmt oder wer zwar anwesend ist, aber nicht auf Fragen
+Die Vorstellung Ihrer Lösung erfolgt mit einem Medium Ihrer Wahl. Sie können zum
+Beispiel Ihren Bildschirm teilen und Ihre Lösung erklären. Sie brauchen nicht extra
+eine Präsentation anfertigen!
+
+Die Vorstellung der Lösung erfolgt duch alle Teammitglieder. Ohne aktive Teilnahme
+an der Vorstellung gibt es keine Punkte.
+
+Für die Vorstellungen werden individuelle Zeitslots pro Team innerhalb Ihrer Praktikumszeit
+(Stundenplangruppe) vereinbart (siehe Etherpads im ILIAS).
+
+Wer nicht an der Vorstellung teilnimmt oder wer zwar anwesend ist, aber nicht auf Fragen
 antworten kann/will, kann leider keine Punkte bekommen.
 
 
@@ -305,10 +321,14 @@ antworten kann/will, kann leider keine Punkte bekommen.
 
 Wir werden mit jedem Team einen individuellen Abgabeslot in Ihrer Praktikumsgruppe
 vereinbaren, damit Sie im Praktikum zielgerichtet zu Ihrer Abgabe kommen können und
-so Wartezeiten vermeiden können.
+so längere Wartezeiten vermeiden können.
 
 Dazu gibt es vorbereitete Etherpads im ILIAS, wo Sie sich mit Ihrem Team für einen
-Abgabeslot eintragen.
+Abgabeslot in ihrer Praktikumszeit/Stundenplangruppe eintragen.
+
+Wenn ein Team mit Mitgliedern aus verschiedenen Stundenplangruppen gebildet wird, dann
+tragen Sie sich bitte in dem Praktikumsslot ein, wo die Mehrzahl der Team-Mitglieder
+zugeordnet ist.
 
 
 ## Verteilung der Punkte
