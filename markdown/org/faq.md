@@ -78,7 +78,7 @@ Parcours-Prüfung ergeben.
 Sie müssen sich entsprechend im LSF sowohl für die **praktische Teilleistung** als auch
 für die **theoretische Teilleistung** anmelden.
 
-**Bitte melden Sie sich zeitnah (_vor Beginn der Praktika_) per E-Mail beim Dozenten.**
+=> Bitte melden Sie sich zeitnah (_vor Beginn der Praktika_) per E-Mail beim Dozenten.
 
 
 ## 2-Wochen-Zyklen im Praktikum
@@ -87,15 +87,17 @@ In diesem Semester gibt es einen 2-Wochen-Rhythmus im Praktikum.
 
 ### Erste Woche: Konzeptphase
 
-In der ersten Woche suchen Sie sich die zu bearbeitenden Aufgaben aus und erstellen ein
-Lösungskonzept. Dieses laden Sie bis zur Deadline als PDF in die jeweilige ILIAS-Aufgabe
-hoch.
+In der ersten Woche suchen Sie sich die zu bearbeitenden Aufgaben aus (vgl.
+[Auswahl der Übungsaufgaben] in der FAQ) und erstellen ein Lösungskonzept (vgl.
+[Konzeptskizze] in der FAQ). Dieses laden Sie bis zur Deadline als PDF in die
+jeweilige ILIAS-Aufgabe hoch.
 
-Anschließend erfolgt eine Peer-Feedback-Phase. Das System weist Ihnen mehrere Abgaben zu
-und Sie haben einen Tag Zeit, um Ihr Feedback im ILIAS abzugeben.
+Anschließend erfolgt eine Peer-Feedback-Phase. ILIAS weist Ihnen mehrere Abgaben
+zu und Sie haben einen Tag Zeit, um Ihr Feedback im ILIAS abzugeben (vgl.
+[Peer-Feedback: How to Review] in der FAQ).
 
-Am Freitag in der ersten Woche stellen Sie Ihr Konzept im Praktikum vor. Dabei ist jedes
-Teammitglied anwesend und kann Auskunft geben.
+Am Freitag in der ersten Woche stellen Sie Ihr Konzept im Praktikum vor. Dabei
+ist jedes Teammitglied anwesend und kann Auskunft geben.
 
 ### Zweite Woche: Implementierungsphase
 
@@ -103,8 +105,9 @@ Danach treten Sie in die zweite Woche des aktuellen Zyklus ein und setzen Ihr Ko
 eine Implementierung um. Diese laden als ZIP-Datei bis zur Deadline als Abgabe in die
 jeweilige ILIAS-Aufgabe hoch.
 
-Anschließend erfolgt eine erneute Peer-Feedback-Phase. Das System weist Ihnen mehrere
-Abgaben zu und Sie haben einen Tag Zeit, um Ihr Feedback im ILIAS abzugeben.
+Anschließend erfolgt eine erneute Peer-Feedback-Phase. ILIAS weist Ihnen mehrere Abgaben
+zu und Sie haben einen Tag Zeit, um Ihr Feedback im ILIAS abzugeben (vgl.
+[Peer-Feedback: How to Review] in der FAQ).
 
 Am Freitag in der zweiten Woche stellen Sie Ihre Lösung im Praktikum vor. Dabei ist jedes
 Teammitglied anwesend und kann Auskunft geben.
@@ -112,13 +115,19 @@ Teammitglied anwesend und kann Auskunft geben.
 ### Überarbeitung nach Feedback
 
 Sie können das Feedback in beiden Wochen nutzen, um Ihre Lösung zu verbessern. Die
-Überarbeitung darf sich aber nur auf die Kritik im Feedback beziehen.
+Überarbeitung darf sich aber nur auf die Kritik im Feedback beziehen und ist geeignet
+zu dokumentieren.
+
+[Auswahl der Übungsaufgaben]: #auswahl-der-übungsaufgaben
+[Konzeptskizze]: #konzeptskizze
+[Peer-Feedback: How to Review]: #peer-feedback-how-to-review
 
 
 ## Bearbeitung der Übungsaufgaben
 
-Die Übungsaufgaben sollen in 3er-Teams bearbeitet und gelöst werden. Die Einteilung
-wird über Etherpads im ILIAS vorgenommen.
+Die Übungsaufgaben sollen in 3er-Teams (oder ausnahmsweise in 2er-Teams) bearbeitet
+und gelöst werden. Die Einteilung wird über Etherpads im ILIAS vorgenommen, dabei
+können Sie die Teams selbst bilden.
 
 Sie können Ihre Teams gern auch im Semester wechseln, dazu müssen Sie einfach nur den
 Eintrag in den Etherpads im ILIAS anpassen.
@@ -192,6 +201,29 @@ Sie können auch mehr machen, aber wir limitieren die maximal erreichbare Punktz
 hier auf _15 Punkte pro Woche_.
 
 Dazu kommen dann in den Zyklen 3 bis 5 noch je bis zu 5 Punkte für die Codequalität.
+
+
+## Konzeptskizze
+
+In der ersten Woche eines Zyklus suchen Sie sich die Aufgaben aus, die Sie in diesem Zyklus
+bearbeiten wollen und erstellen eine Konzeptskizze für diese Aufgaben.
+
+In der Skizze beschreiben Sie mindestens die folgenden Punkte:
+
+1.  Aufgabe: Worin besteht die Aufgabe, was ist das zu lösende Problem?
+2.  Lösung: Wie soll Ihre Lösung aussehen, was soll diese können?
+3.  Mit welchen Methoden und Techniken aus der Vorlesung wollen Sie die Lösung umsetzen?
+    Warum erscheint Ihnen das sinnvoll?
+4.  Ansatz und Modellierung: Wie sieht eine erste grobe Modellierung aus, welche Klassen
+    und Methoden brauchen Sie? Erstellen Sie hierfür ein UML-Diagramm.
+
+Die Konzeptskizze geben Sie als PDF-Dokument ab.
+
+Zur Orientierung stellen wir Ihnen ein [ausgefülltes Beispiel] zur Verfügung. Bitte beachten
+Sie, dass es in diesem Beispiel um eine fikitive Aufgabe im Dungeon geht und dass die gezeigte
+Modellierung nicht konform zur ECS-Struktur des aktuellen Dungeons ist.
+
+[ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
 
 
 ## Abgabe der Lösungen
@@ -300,29 +332,6 @@ Sie jeden der sechs Schritte erfolgreich durchlaufen haben:
 
 Wie immer bestimmt der Umfang und die Qualität Ihrer Lösung, wieviele der ausgeschriebenen
 Punkte Sie für die bearbeitete Aufgabe erhalten.
-
-
-## Konzeptskizze
-
-In der ersten Woche eines Zyklus suchen Sie sich die Aufgaben aus, die Sie in diesem Zyklus
-bearbeiten wollen und erstellen eine Konzeptskizze für diese Aufgaben.
-
-In der Skizze beschreiben Sie mindestens die folgenden Punkte:
-
-1.  Aufgabe: Worin besteht die Aufgabe, was ist das zu lösende Problem?
-2.  Lösung: Wie soll Ihre Lösung aussehen, was soll diese können?
-3.  Mit welchen Methoden und Techniken aus der Vorlesung wollen Sie die Lösung umsetzen?
-    Warum erscheint Ihnen das sinnvoll?
-4.  Ansatz und Modellierung: Wie sieht eine erste grobe Modellierung aus, welche Klassen
-    und Methoden brauchen Sie? Erstellen Sie hierfür ein UML-Diagramm.
-
-Die Konzeptskizze geben Sie als PDF-Dokument ab.
-
-Zur Orientierung stellen wir Ihnen ein [ausgefülltes Beispiel] zur Verfügung. Bitte beachten
-Sie, dass es in diesem Beispiel um eine fikitive Aufgabe im Dungeon geht und dass die gezeigte
-Modellierung nicht konform zur ECS-Struktur des aktuellen Dungeons ist.
-
-[ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
 
 
 ## Verspätete Abgaben, Krankheit

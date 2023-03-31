@@ -43,28 +43,20 @@ im Prüfungsverfahren.
 
 ### 2-Wochen-Zyklen
 
-Das Praktikum erfolgt in 2-Wochen-Zyklen.
+Das Praktikum erfolgt in 2-Wochen-Zyklen:
 
-Sie suchen sich in jedem Zyklus Aufgaben aus, die Sie hier bearbeiten wollen. Sie können pro
-Zyklus Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
+1.  Erste Woche: Konzeptphase
+    -   Auswahl der zu bearbeitenden Aufgaben
+    -   Erstellung und Abgabe einer Konzeptskizze (PDF)
+    -   Peer-Feedback zur Konzeptskizze
+    -   Vorstellung der Konzeptskizze im Praktikum
+2.  Zweite Woche: Implementierungsphase
+    -   Umsetzung des Konzepts
+    -   Abgabe des Quellcodes (ZIP)
+    -   Peer-Feedback zum Quellcode
+    -   Vorstellung des Quellcodes im Praktikum
 
-In der ersten Woche erstellen Sie jeweils eine Konzeptskizze für die Aufgaben, die Sie sich
-ausgesucht haben. Beschreiben Sie dabei mindestens folgenden Dinge:
-
-1.  Aufgabe: Worin besteht die Aufgabe, was ist das zu lösende Problem?
-2.  Lösung: Wie soll Ihre Lösung aussehen, was soll diese können?
-3.  Mit welchen Methoden und Techniken aus der Vorlesung wollen Sie die Lösung umsetzen?
-    Warum erscheint Ihnen das sinnvoll?
-4.  Ansatz und Modellierung: Wie sieht eine erste grobe Modellierung aus, welche Klassen
-    und Methoden brauchen Sie? Erstellen Sie hierfür ein UML-Diagramm.
-
-Die Konzeptskizze geben Sie als PDF-Dokument ab. Sie finden hier ein [ausgefülltes Beispiel].
-
-In der zweiten Woche setzen Sie Ihr Konzept um und implementieren Ihre Lösung. Vermutlich
-müssen Sie Ihr Konzept noch anpassen, dies ist entsprechend zu dokumentieren. Hier geben
-Sie den Code und die überarbeitete Konzeptskizze als PDF ab.
-
-[ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
+Sie können pro Zyklus Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
 
 ### Abgabe der Lösungen
 
