@@ -139,8 +139,8 @@ es handelt sich in der Regel um kleinere Bugs oder um kleinere neue Features
 für den Dungeon.
 
 Analog zu den anderen Aufgaben können Sie sich die Bounty-Aufgaben am Beginn
-eines Zyklus aussuchen und bearbeiten und entsprechend die ausgeschriebenen
-Punkte (Label "5P" bzw. "10P") bekommen (siehe [Verteilung der Punkte]). Ebenso
+eines Zyklus aussuchen und bearbeiten und entsprechend die (per Label "5P" bzw.
+"10P") ausgeschriebenen Punkte bekommen (siehe [Verteilung der Punkte]). Ebenso
 können Sie eine Bounty-Aufgabe auch nur einmal bearbeiten. Eine Bounty-Aufgabe
 kann also wie die anderen Aufgaben auch parallel von mehreren Teams bearbeitet
 werden.
