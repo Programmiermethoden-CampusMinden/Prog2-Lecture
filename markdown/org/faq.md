@@ -32,6 +32,16 @@ Dies sind zwei getrennte Prüfungsleistungen, für die Sie sich **jeweils separa
 anmelden müssen. Die Gesamtnote für das Modul entspricht dem Mittelwert aus den beiden
 Teilleistungen (50% Praxis, 50% Theorie).
 
+Die praktische Teilleistung besteht in der regelmäßigen Bearbeitung der Praktikumsaufgaben,
+der fristgerechten Abgabe Ihrer Lösungen im ILIAS, dem Erteilen von Peer-Feedback sowie die
+Vorstellung der Lösungen im Praktikum. Dabei sammeln Sie im Laufe des Semesters Punkte, aus
+denen die Note der praktischen Teilleistung berechnet wird.
+
+Die theoretische Teilleistung besteht aus einer als digitale Klausur angebotenen Prüfung,
+die über eine spezielle ILIAS-Instanz ("E-Assessment-Server") durchgeführt wird. Es wird
+in beiden Prüfungszeiträumen je ein Termin angeboten. Tipps zur Vorbereitung siehe
+`["Prüfungsvorbereitung"]({{< ref "/org/exams" >}})`{=markdown}.
+
 Diese Prüfungsform gilt automatisch für alle Studierenden in Programmiermethoden, die nicht
 bereits früher unter einer anderen Prüfungsform in Programmiermethoden eine Prüfungsleistung
 abgelegt oder begonnen haben.
@@ -68,7 +78,7 @@ Parcours-Prüfung ergeben.
 Sie müssen sich entsprechend im LSF sowohl für die **praktische Teilleistung** als auch
 für die **theoretische Teilleistung** anmelden.
 
-**Bitte melden Sie sich zeitnah (_vor Beginn der Praktika_) per E-Mail beim Dozenten.**
+=> Bitte melden Sie sich zeitnah (_vor Beginn der Praktika_) per E-Mail beim Dozenten.
 
 
 ## 2-Wochen-Zyklen im Praktikum
@@ -77,15 +87,17 @@ In diesem Semester gibt es einen 2-Wochen-Rhythmus im Praktikum.
 
 ### Erste Woche: Konzeptphase
 
-In der ersten Woche suchen Sie sich die zu bearbeitenden Aufgaben aus und erstellen ein
-Lösungskonzept. Dieses laden Sie bis zur Deadline als PDF in die jeweilige ILIAS-Aufgabe
-hoch.
+In der ersten Woche suchen Sie sich die zu bearbeitenden Aufgaben aus (vgl.
+[Auswahl der Übungsaufgaben] in der FAQ) und erstellen ein Lösungskonzept (vgl.
+[Konzeptskizze] in der FAQ). Dieses laden Sie bis zur Deadline als PDF in die
+jeweilige ILIAS-Aufgabe hoch.
 
-Anschließend erfolgt eine Peer-Feedback-Phase. Das System weist Ihnen mehrere Abgaben zu
-und Sie haben einen Tag Zeit, um Ihr Feedback im ILIAS abzugeben.
+Anschließend erfolgt eine Peer-Feedback-Phase. ILIAS weist Ihnen mehrere Abgaben
+zu und Sie haben einen Tag Zeit, um Ihr Feedback im ILIAS abzugeben (vgl.
+[Peer-Feedback: How to Review] in der FAQ).
 
-Am Freitag in der ersten Woche stellen Sie Ihr Konzept im Praktikum vor. Dabei ist jedes
-Teammitglied anwesend und kann Auskunft geben.
+Am Freitag in der ersten Woche stellen Sie Ihr Konzept im Praktikum vor. Dabei
+ist jedes Teammitglied anwesend und kann Auskunft geben.
 
 ### Zweite Woche: Implementierungsphase
 
@@ -93,8 +105,9 @@ Danach treten Sie in die zweite Woche des aktuellen Zyklus ein und setzen Ihr Ko
 eine Implementierung um. Diese laden als ZIP-Datei bis zur Deadline als Abgabe in die
 jeweilige ILIAS-Aufgabe hoch.
 
-Anschließend erfolgt eine erneute Peer-Feedback-Phase. Das System weist Ihnen mehrere
-Abgaben zu und Sie haben einen Tag Zeit, um Ihr Feedback im ILIAS abzugeben.
+Anschließend erfolgt eine erneute Peer-Feedback-Phase. ILIAS weist Ihnen mehrere Abgaben
+zu und Sie haben einen Tag Zeit, um Ihr Feedback im ILIAS abzugeben (vgl.
+[Peer-Feedback: How to Review] in der FAQ).
 
 Am Freitag in der zweiten Woche stellen Sie Ihre Lösung im Praktikum vor. Dabei ist jedes
 Teammitglied anwesend und kann Auskunft geben.
@@ -102,13 +115,19 @@ Teammitglied anwesend und kann Auskunft geben.
 ### Überarbeitung nach Feedback
 
 Sie können das Feedback in beiden Wochen nutzen, um Ihre Lösung zu verbessern. Die
-Überarbeitung darf sich aber nur auf die Kritik im Feedback beziehen.
+Überarbeitung darf sich aber nur auf die Kritik im Feedback beziehen und ist geeignet
+zu dokumentieren.
+
+[Auswahl der Übungsaufgaben]: #auswahl-der-übungsaufgaben
+[Konzeptskizze]: #konzeptskizze
+[Peer-Feedback: How to Review]: #peer-feedback-how-to-review
 
 
 ## Bearbeitung der Übungsaufgaben
 
-Die Übungsaufgaben sollen in 3er-Teams bearbeitet und gelöst werden. Die Einteilung
-wird über Etherpads im ILIAS vorgenommen.
+Die Übungsaufgaben sollen in 3er-Teams (oder ausnahmsweise in 2er-Teams) bearbeitet
+und gelöst werden. Die Einteilung wird über Etherpads im ILIAS vorgenommen, dabei
+können Sie die Teams selbst bilden.
 
 Sie können Ihre Teams gern auch im Semester wechseln, dazu müssen Sie einfach nur den
 Eintrag in den Etherpads im ILIAS anpassen.
@@ -123,6 +142,8 @@ Sie können **jede Aufgabe nur einmal bearbeiten und abgeben**.
 
 Ausnahme: Die "freien Aufgaben" können Sie gern wiederholt bearbeiten, so lange
 Sie jeweils ein Problem wählen, das nicht bereits in anderen Aufgaben vorkommt.
+
+Sie können pro Zyklus Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
 
 
 ## Bounty-Aufgaben
@@ -179,9 +200,32 @@ und damit keinen Anspruch auf die Bonus-Punkte, die Entscheidung liegt beim Doze
 Pro **Zyklus** sollen Sie Aufgaben für **15 Punkte** bearbeiten.
 
 Sie können auch mehr machen, aber wir limitieren die maximal erreichbare Punktzahl
-hier auf _15 Punkte pro Woche_.
+hier auf _15 Punkte pro Zyklus_.
 
 Dazu kommen dann in den Zyklen 3 bis 5 noch je bis zu 5 Punkte für die Codequalität.
+
+
+## Konzeptskizze
+
+In der ersten Woche eines Zyklus suchen Sie sich die Aufgaben aus, die Sie in diesem Zyklus
+bearbeiten wollen und erstellen eine Konzeptskizze für diese Aufgaben.
+
+In der Skizze beschreiben Sie mindestens die folgenden Punkte:
+
+1.  Aufgabe: Worin besteht die Aufgabe, was ist das zu lösende Problem?
+2.  Lösung: Wie soll Ihre Lösung aussehen, was soll diese können?
+3.  Mit welchen Methoden und Techniken aus der Vorlesung wollen Sie die Lösung umsetzen?
+    Warum erscheint Ihnen das sinnvoll?
+4.  Ansatz und Modellierung: Wie sieht eine erste grobe Modellierung aus, welche Klassen
+    und Methoden brauchen Sie? Erstellen Sie hierfür ein UML-Diagramm.
+
+Die Konzeptskizze geben Sie als PDF-Dokument ab.
+
+Zur Orientierung stellen wir Ihnen ein [ausgefülltes Beispiel] zur Verfügung. Bitte beachten
+Sie, dass es in diesem Beispiel um eine fikitive Aufgabe im Dungeon geht und dass die gezeigte
+Modellierung nicht konform zur ECS-Struktur des aktuellen Dungeons ist.
+
+[ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
 
 
 ## Abgabe der Lösungen
@@ -189,8 +233,11 @@ Dazu kommen dann in den Zyklen 3 bis 5 noch je bis zu 5 Punkte für die Codequal
 Bitte laden Sie Ihre Lösung als eine **PDF-Datei** (Konzeptphase) oder als ein
 **Zip-Archiv** (Implementierungsphase) in die jeweilige Aufgabe im ILIAS hoch.
 
-Dies passiert jeweils **1x pro Team**: Eine Person lädt die Lösung hoch und trägt
-dabei die anderen Teammitglieder mit im ILIAS ein.
+Beachten Sie die jeweilige Deadline. Sofern nichts anderes angegeben ist, sollen
+die Lösungen jeweils bis Mittwoch 15:00 Uhr im ILIAS hochgeladen werden.
+
+Dabei gibt jedes Team nur **eine gemeinsame Lösung** ab: Eine Person aus dem Team
+lädt die Lösung in das ILIAS und trägt die Teammitglieder mit ein.
 
 _Anmerkung_: Falls Sie mehrere Dateien hochladen wollen, erzeugen Sie bitte vor
 dem Upload lokal ein Zip-Archiv, welches Sie dann per Button "Datei einreichen"
@@ -253,9 +300,20 @@ kann und deshalb stets kritisch hinterfragt werden sollte.
 
 ## Vorstellung der Lösungen
 
-Im Praktikum stellen Sie Ihre Lösungen vor und diskutieren darüber.
+Im Praktikum stellen Sie Ihre Lösungen vor und diskutieren darüber und beantworten
+kurze Fragen oder passen ad hoc im Gespräch Ihre Lösung weiter an.
 
-Wer nicht in der Vorstellung teilnimmt oder wer zwar anwesend ist, aber nicht auf Fragen
+Die Vorstellung Ihrer Lösung erfolgt mit einem Medium Ihrer Wahl. Sie können zum
+Beispiel Ihren Bildschirm teilen und Ihre Lösung erklären. Sie brauchen nicht extra
+eine Präsentation anfertigen!
+
+Die Vorstellung der Lösung erfolgt duch alle Teammitglieder. Ohne aktive Teilnahme
+an der Vorstellung gibt es keine Punkte.
+
+Für die Vorstellungen werden individuelle Zeitslots pro Team innerhalb Ihrer Praktikumszeit
+(Stundenplangruppe) vereinbart (siehe Etherpads im ILIAS).
+
+Wer nicht an der Vorstellung teilnimmt oder wer zwar anwesend ist, aber nicht auf Fragen
 antworten kann/will, kann leider keine Punkte bekommen.
 
 
@@ -263,13 +321,21 @@ antworten kann/will, kann leider keine Punkte bekommen.
 
 Wir werden mit jedem Team einen individuellen Abgabeslot in Ihrer Praktikumsgruppe
 vereinbaren, damit Sie im Praktikum zielgerichtet zu Ihrer Abgabe kommen können und
-so Wartezeiten vermeiden können.
+so längere Wartezeiten vermeiden können.
 
 Dazu gibt es vorbereitete Etherpads im ILIAS, wo Sie sich mit Ihrem Team für einen
-Abgabeslot eintragen.
+Abgabeslot in ihrer Praktikumszeit/Stundenplangruppe eintragen.
+
+Wenn ein Team mit Mitgliedern aus verschiedenen Stundenplangruppen gebildet wird, dann
+tragen Sie sich bitte in dem Praktikumsslot ein, wo die Mehrzahl der Team-Mitglieder
+zugeordnet ist.
 
 
 ## Verteilung der Punkte
+
+In jedem Zyklus erstellen Sie in der ersten Woche Ihr Konzept und in der zweiten
+Woche die zugehörige Implementierung. Sie geben einmal Peer-Feedback für die Konzepte
+und einmal für die Implementierungen ab.
 
 Sie können sich in jedem Zyklus Aufgaben für 15 Punkte frei aussuchen.
 
@@ -281,38 +347,29 @@ Um in einem Zyklus die Punkte zu bekommen, ist nicht nur guter Code notwendig. S
 müssen auch an den "Vorarbeiten" ausreichend teilgenommen haben. Das bedeutet, dass
 Sie jeden der sechs Schritte erfolgreich durchlaufen haben:
 
-1.  Fristgerechte Einreichung der ausreichenden Konzeptskizze,
-2.  Sinnvolles Peer-Feedback für die Konzepte,
-3.  Vorstellung der Konzeptskizze im Praktikum,
-4.  Fristgerechte Einreichung der Implementierung,
-5.  Sinnvolles Peer-Feedback für die Implementierungen,
-6.  Vorstellung der Implementierung im Praktikum.
+-   Erste Woche: Konzeptphase
 
-Wie immer bestimmt der Umfang und die Qualität Ihrer Lösung, wieviele der ausgeschriebenen
-Punkte Sie für die bearbeitete Aufgabe erhalten.
+    1.  Fristgerechte Einreichung der ausreichenden Konzeptskizze,
+    2.  Sinnvolles Peer-Feedback für die Konzepte,
+    3.  Vorstellung der Konzeptskizze im Praktikum,
 
+-   Zweite Woche: Implementierungsphase
 
-## Konzeptskizze
+    4.  Fristgerechte Einreichung der Implementierung,
+    5.  Sinnvolles Peer-Feedback für die Implementierungen,
+    6.  Vorstellung der Implementierung im Praktikum.
 
-In der ersten Woche eines Zyklus suchen Sie sich die Aufgaben aus, die Sie in diesem Zyklus
-bearbeiten wollen und erstellen eine Konzeptskizze für diese Aufgaben.
+**Pro Zyklus** können Sie maximal **15 Punkte für die Lösung** (den Code selbst) erhalten.
+Dazu kommen in den Zyklen 3 bis 5 noch bis zu **5 Punkte für Codequalität**.
 
-In der Skizze beschreiben Sie mindestens die folgenden Punkte:
-
-1.  Aufgabe: Worin besteht die Aufgabe, was ist das zu lösende Problem?
-2.  Lösung: Wie soll Ihre Lösung aussehen, was soll diese können?
-3.  Mit welchen Methoden und Techniken aus der Vorlesung wollen Sie die Lösung umsetzen?
-    Warum erscheint Ihnen das sinnvoll?
-4.  Ansatz und Modellierung: Wie sieht eine erste grobe Modellierung aus, welche Klassen
-    und Methoden brauchen Sie? Erstellen Sie hierfür ein UML-Diagramm.
-
-Die Konzeptskizze geben Sie als PDF-Dokument ab.
-
-Zur Orientierung stellen wir Ihnen ein [ausgefülltes Beispiel] zur Verfügung. Bitte beachten
-Sie, dass es in diesem Beispiel um eine fikitive Aufgabe im Dungeon geht und dass die gezeigte
-Modellierung nicht konform zur ECS-Struktur des aktuellen Dungeons ist.
-
-[ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
+Wie immer bestimmt der Umfang und die Qualität Ihrer Lösung, wie viele der ausgeschriebenen
+Punkte Sie für die bearbeiteten Aufgaben tatsächlich erhalten. Lösungen, die sich nicht
+kompilieren und/oder nicht ausführen lassen können höchstens wenige Teilpunkte bekommen. Dito
+Lösungen, bei denen sich die Vorgabe-Tests (so vorhanden) nicht kompilieren und/oder ausführen
+lassen. Stellen Sie vor Abgabe sicher, dass Ihr Code keine fest codierten Dateien/Verzeichnisse
+enthält. Denken Sie daran, dass bei UNIX ebenso wie bei Java zwischen Groß- und Kleinschreibung
+unterschieden wird, dass Dateinamen und Klassennamen korrekt sein müssen, dass die angegebenen
+Methodensignaturen korrekt sein müssen usw. ...
 
 
 ## Verspätete Abgaben, Krankheit
@@ -342,15 +399,15 @@ Sie können aber auch Fehler beheben oder Features implementieren, die Sie gerne
 sehen würden, oder ein bereits bestehendes [Issue] mit dem Label "help wanted" bearbeiten.
 Bitte diskutieren Sie in diesen Fällen (betrifft nicht die Bounty-Aufgaben) Ihre Idee zunächst
 in dem offenen Ticket (oder erstellen ein neues), um vorab zu prüfen, ob wir einen PR dazu
-akzeptieren würden und wieviele Punkte der Beitrag bekommen könnte!
+akzeptieren würden und wie viele Punkte der Beitrag bekommen könnte!
 
-Für einen **akzeptierten PR** können Sie bis zu 2+3 Bonus-Punkte (Bounty: 5+3P bzw. 10+3P)
-erhalten. Es gibt _keinen Anspruch_ auf einen Merge, die Entscheidung liegt beim Dozenten.
+Für einen **akzeptierten PR** können Sie bis zu 2+3 Bonus-Punkte (Bounty: 3P Bonus) erhalten.
+Es gibt _keinen Anspruch_ auf einen Merge, die Entscheidung liegt beim Dozenten.
 
 Bei der Bepunktung betrachten wir nicht nur den Fix/Code selbst, sondern auch Ihren Umgang mit
 Git und die Qualität der Kommunikation innerhalb von GitHub (Issue-Beschreibung, PR-Beschreibung
-etc.) sowie den Umfang des Problems. Angedacht ist die Aufteilung bis zu 2P für den Fix/Code
-(Bounty: 5P bzw. 10P) und bis zu 3P für das Verhalten und die Kommunikation im PR.
+etc.) sowie den Umfang des Problems. Angedacht ist die Aufteilung bis zu 2P für den Fix/Code (für
+Bug-Fixing/neue Features) und bis zu 3P für das Verhalten und die Kommunikation im PR.
 
 Weitere Informationen darüber, wie Sie am Framework mitarbeiten können, finden Sie in der
 [CONTRIBUTING.md].
