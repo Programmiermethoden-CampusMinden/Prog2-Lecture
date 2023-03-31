@@ -148,7 +148,7 @@ werden.
 Die Bounty-Aufgaben sollen aber nicht nur das Spektrum an Problemen für das
 Praktikum ergänzen, sondern auch zur Weiterentwicklung des Dungeons beitragen.
 Sie können Ihre Lösung gern **zusätzlich** als [Pull-Request] im Dungeon-Repo
-einreichen. Wenn Ihr Pull-Request akzeptiert wird, können Sie bis zu 5 Bonus-Punkte
+einreichen. Wenn Ihr Pull-Request akzeptiert wird, können Sie bis zu 3 Bonus-Punkte
 zusätzlich zu den Punkten für die eigentliche Lösung bekommen (siehe auch
 [Bonus-Punkte: Helfen im Framework] in der FAQ).
 
@@ -344,13 +344,13 @@ Bitte diskutieren Sie in diesen Fällen (betrifft nicht die Bounty-Aufgaben) Ihr
 in dem offenen Ticket (oder erstellen ein neues), um vorab zu prüfen, ob wir einen PR dazu
 akzeptieren würden und wieviele Punkte der Beitrag bekommen könnte!
 
-Für einen **akzeptierten PR** können Sie bis zu 5 Bonus-Punkte erhalten. Es gibt _keinen Anspruch_
-auf einen Merge, die Entscheidung liegt beim Dozenten.
+Für einen **akzeptierten PR** können Sie bis zu 2+3 Bonus-Punkte (Bounty: 5+3P bzw. 10+3P)
+erhalten. Es gibt _keinen Anspruch_ auf einen Merge, die Entscheidung liegt beim Dozenten.
 
 Bei der Bepunktung betrachten wir nicht nur den Fix/Code selbst, sondern auch Ihren Umgang mit
 Git und die Qualität der Kommunikation innerhalb von GitHub (Issue-Beschreibung, PR-Beschreibung
 etc.) sowie den Umfang des Problems. Angedacht ist die Aufteilung bis zu 2P für den Fix/Code
-und bis zu 3P für das Verhalten und die Kommunikation im PR.
+(Bounty: 5P bzw. 10P) und bis zu 3P für das Verhalten und die Kommunikation im PR.
 
 Weitere Informationen darüber, wie Sie am Framework mitarbeiten können, finden Sie in der
 [CONTRIBUTING.md].
