@@ -336,7 +336,7 @@ Sie können aktiv dabei helfen, das [Dungeon-Framework] weiterzuentwickeln und s
 Bonus-Punkte für das Praktikum erarbeiten.
 
 Dazu reichen Sie Ihre Lösung für die Bounty-Aufgaben (siehe [Bounty-Aufgaben] in der FAQ)
-als Pull-Request ein und führen den PR bis zum Merge (oder ggf. bis zur Ablehnung).
+zusätzlich als Pull-Request ein und führen den PR bis zum Merge (oder ggf. bis zur Ablehnung).
 
 Sie können aber auch Fehler beheben oder Features implementieren, die Sie gerne im Dungeon
 sehen würden, oder ein bereits bestehendes [Issue] mit dem Label "help wanted" bearbeiten.
