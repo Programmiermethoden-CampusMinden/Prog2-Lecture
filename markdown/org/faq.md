@@ -269,3 +269,17 @@ das Verhalten und die Kommunikation im PR.
 
 Weitere Informationen darüber, wie Sie am Framework mitarbeiten können, finden Sie in der
 [CONTRIBUTING.md](https://github.com/Programmiermethoden/Dungeon/blob/master/CONTRIBUTING.MD).
+
+
+## Hilflos im Dungeon?
+
+Sie sind auf der Suche nach Ideen, was Monster so tun könnten oder was man mit Heiltränken oder
+Zaubersprüchen anstellen kann?
+
+Unser PM-Dungeon orientiert sich vage am Vorbild "Shattered Pixel Dungeon", welches Sie in den
+üblichen Stores finden. Laden Sie sich das Spiel herunter und spielen Sie eine Runde (oder zwei
+oder ...) - Vorsicht, das kann süchtig machen ;-)
+
+Anregungen für **Spielideen** können Sie beispielsweise in den folgenden Videos finden:
+-   [Shattered Pixel Dungeon Rogue Beginners Guide Playthrough](https://youtu.be/qoc_tDN0QC4)
+-   [Shattered Pixel Dungeon Duelist Update!](https://youtu.be/LgSjUWjQg0s)
