@@ -51,7 +51,7 @@ Das Praktikum erfolgt in 2-Wochen-Zyklen:
     -   Peer-Feedback zur Konzeptskizze
     -   Vorstellung der Konzeptskizze im Praktikum
 2.  Zweite Woche: Implementierungsphase
-    -   Umsetzung des Konzepts
+    -   Umsetzung des Konzepts/Implementierung der Lösung
     -   Abgabe des Quellcodes (ZIP)
     -   Peer-Feedback zum Quellcode
     -   Vorstellung des Quellcodes im Praktikum
