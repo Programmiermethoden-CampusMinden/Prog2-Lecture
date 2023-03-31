@@ -339,7 +339,7 @@ Dazu reichen Sie Ihre Lösung für die Bounty-Aufgaben (siehe [Bounty-Aufgaben] 
 als Pull-Request ein und führen den PR bis zum Merge (oder ggf. bis zur Ablehnung).
 
 Sie können aber auch Fehler beheben oder Features implementieren, die Sie gerne im Dungeon
-sehen würden, oder ein bereits bestehendes Issue mit dem Label "help wanted" bearbeiten.
+sehen würden, oder ein bereits bestehendes [Issue] mit dem Label "help wanted" bearbeiten.
 Bitte diskutieren Sie in diesen Fällen (betrifft nicht die Bounty-Aufgaben) Ihre Idee zunächst
 in dem offenen Ticket (oder erstellen ein neues), um vorab zu prüfen, ob wir einen PR dazu
 akzeptieren würden und wieviele Punkte der Beitrag bekommen könnte!
@@ -357,6 +357,7 @@ Weitere Informationen darüber, wie Sie am Framework mitarbeiten können, finden
 
 [Dungeon-Framework]: https://github.com/Programmiermethoden/Dungeon
 [Bounty-Aufgaben]: #bounty-aufgaben
+[Issue]: https://github.com/Programmiermethoden/Dungeon/issues
 [CONTRIBUTING.md]: https://github.com/Programmiermethoden/Dungeon/blob/master/CONTRIBUTING.MD
 
 
