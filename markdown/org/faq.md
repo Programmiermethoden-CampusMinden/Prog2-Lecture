@@ -32,6 +32,16 @@ Dies sind zwei getrennte Prüfungsleistungen, für die Sie sich **jeweils separa
 anmelden müssen. Die Gesamtnote für das Modul entspricht dem Mittelwert aus den beiden
 Teilleistungen (50% Praxis, 50% Theorie).
 
+Die praktische Teilleistung besteht in der regelmäßigen Bearbeitung der Praktikumsaufgaben,
+der fristgerechten Abgabe Ihrer Lösungen im ILIAS, dem Erteilen von Peer-Feedback sowie die
+Vorstellung der Lösungen im Praktikum. Dabei sammeln Sie im Laufe des Semesters Punkte, aus
+denen die Note der praktischen Teilleistung berechnet wird.
+
+Die theoretische Teilleistung besteht aus einer als digitale Klausur angebotenen Prüfung,
+die über eine spezielle ILIAS-Instanz ("E-Assessment-Server") durchgeführt wird. Es wird
+in beiden Prüfungszeiträumen je ein Termin angeboten. Tipps zur Vorbereitung siehe
+`["Prüfungsvorbereitung"]({{< ref "/org/exams" >}})`{=markdown}.
+
 Diese Prüfungsform gilt automatisch für alle Studierenden in Programmiermethoden, die nicht
 bereits früher unter einer anderen Prüfungsform in Programmiermethoden eine Prüfungsleistung
 abgelegt oder begonnen haben.

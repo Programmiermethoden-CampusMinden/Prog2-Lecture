@@ -13,23 +13,18 @@ hidden: true
 **Performanzprüfung, 7 ECTS**
 
 -   **Praktische Teilleistung**:
-    Durch die Bearbeitung der Praktikumsaufgaben, die Abgabe Ihrer Lösung vor dem Praktikum,
-    das Erteilen von Peer-Feedback sowie die Vorstellung der Lösung im Praktikum sammeln Sie
-    im Laufe des Semesters Punkte für die Berechnung der Note der praktischen Teilleistung.
+    Regelmäßige Bearbeitung der Praktikumsaufgaben, fristgerechte Abgabe der Lösungen im ILIAS,
+    Erstellung von Peer-Feedback, Vorstellung der Lösungen im Praktikum => Punkte
 
     Notenspiegel:
-    *   90 Punkte gesamt erreichbar: Zyklus 1 und 2 je 15 Punkte, Zyklus 3 bis 5 je 20 Punkte
-    *   4.0: ab 50% (45.0 Punkte), alle 5% nächste Teilnote, 1.0: ab 95% (85.5 Punkte)
+    -   90 Punkte gesamt erreichbar: Zyklus 1 und 2 je 15 Punkte, Zyklus 3 bis 5 je 20 Punkte
+    -   4.0: ab 50% (45.0 Punkte), alle 5% nächste Teilnote, 1.0: ab 95% (85.5 Punkte)
 
 -   **Theoretische Teilleistung**:
-    Die Prüfung für die theoretische Teilleistung wird als digitale Klausur über eine spezielle
-    ILIAS-Instanz ("E-Assessment-Server") durchgeführt. Es wird in beiden Prüfungszeiträumen je
-    ein Termin angeboten.
-    Tipps zur Vorbereitung siehe `["Prüfungsvorbereitung"]({{< ref "/org/exams" >}})`{=markdown}.
+    Digitale Klausur in den Prüfungszeiträumen
 
 -   **Gesamtnote**:
-    Die beiden Teilleistungen (praktische und theoretische Teilleistung) werden separat im LSF
-    erfasst und vom System automatisch zu einer Gesamtnote verrechnet (50% Praxis, 50% Theorie).
+    50% Praxis, 50% Theorie
 
 Wiederholer mit bereits begonnener Parcours-Prüfung absolvieren stattdessen eine Parcours-Prüfung.
 Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
