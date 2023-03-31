@@ -63,8 +63,7 @@ Literatur empfohlen.
 
 ### Tools
 
--   JDK: Java SE 17 (LTS) ([Oracle](https://www.oracle.com/java/technologies/downloads/)
-    oder
+-   JDK: Java SE 17 (LTS) ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder
     [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk))
 -   IDE: [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/) oder
     [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/) oder [Visual Studio
