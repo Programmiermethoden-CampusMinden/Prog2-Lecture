@@ -61,6 +61,8 @@
         -   topic: "/testing/testcases"
         -   topic: "/testing/mockito"
         -   topic: "/pattern/command"
+    misc_lecture:
+        -   notes: ">> Gastvortrag zu JUnit/Mocking in der Praxis von Daniel Rosowski (Smartsquare GmbH, Bielefeld)"
     assignment:
         -   topic: "/assignments"
             due: "Di, 09.05., 09 Uhr, ILIAS"
