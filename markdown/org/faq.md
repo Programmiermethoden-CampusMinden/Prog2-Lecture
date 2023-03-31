@@ -200,7 +200,7 @@ und damit keinen Anspruch auf die Bonus-Punkte, die Entscheidung liegt beim Doze
 Pro **Zyklus** sollen Sie Aufgaben für **15 Punkte** bearbeiten.
 
 Sie können auch mehr machen, aber wir limitieren die maximal erreichbare Punktzahl
-hier auf _15 Punkte pro Woche_.
+hier auf _15 Punkte pro Zyklus_.
 
 Dazu kommen dann in den Zyklen 3 bis 5 noch je bis zu 5 Punkte für die Codequalität.
 
@@ -348,10 +348,13 @@ müssen auch an den "Vorarbeiten" ausreichend teilgenommen haben. Das bedeutet, 
 Sie jeden der sechs Schritte erfolgreich durchlaufen haben:
 
 -   Erste Woche: Konzeptphase
+
     1.  Fristgerechte Einreichung der ausreichenden Konzeptskizze,
     2.  Sinnvolles Peer-Feedback für die Konzepte,
     3.  Vorstellung der Konzeptskizze im Praktikum,
+
 -   Zweite Woche: Implementierungsphase
+
     4.  Fristgerechte Einreichung der Implementierung,
     5.  Sinnvolles Peer-Feedback für die Implementierungen,
     6.  Vorstellung der Implementierung im Praktikum.
@@ -396,15 +399,15 @@ Sie können aber auch Fehler beheben oder Features implementieren, die Sie gerne
 sehen würden, oder ein bereits bestehendes [Issue] mit dem Label "help wanted" bearbeiten.
 Bitte diskutieren Sie in diesen Fällen (betrifft nicht die Bounty-Aufgaben) Ihre Idee zunächst
 in dem offenen Ticket (oder erstellen ein neues), um vorab zu prüfen, ob wir einen PR dazu
-akzeptieren würden und wieviele Punkte der Beitrag bekommen könnte!
+akzeptieren würden und wie viele Punkte der Beitrag bekommen könnte!
 
-Für einen **akzeptierten PR** können Sie bis zu 2+3 Bonus-Punkte (Bounty: 5+3P bzw. 10+3P)
-erhalten. Es gibt _keinen Anspruch_ auf einen Merge, die Entscheidung liegt beim Dozenten.
+Für einen **akzeptierten PR** können Sie bis zu 2+3 Bonus-Punkte (Bounty: 3P Bonus) erhalten.
+Es gibt _keinen Anspruch_ auf einen Merge, die Entscheidung liegt beim Dozenten.
 
 Bei der Bepunktung betrachten wir nicht nur den Fix/Code selbst, sondern auch Ihren Umgang mit
 Git und die Qualität der Kommunikation innerhalb von GitHub (Issue-Beschreibung, PR-Beschreibung
-etc.) sowie den Umfang des Problems. Angedacht ist die Aufteilung bis zu 2P für den Fix/Code
-(Bounty: 5P bzw. 10P) und bis zu 3P für das Verhalten und die Kommunikation im PR.
+etc.) sowie den Umfang des Problems. Angedacht ist die Aufteilung bis zu 2P für den Fix/Code (für
+Bug-Fixing/neue Features) und bis zu 3P für das Verhalten und die Kommunikation im PR.
 
 Weitere Informationen darüber, wie Sie am Framework mitarbeiten können, finden Sie in der
 [CONTRIBUTING.md].

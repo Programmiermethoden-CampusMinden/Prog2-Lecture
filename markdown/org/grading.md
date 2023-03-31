@@ -17,7 +17,7 @@ hidden: true
     Erstellung von Peer-Feedback, Vorstellung der Lösungen im Praktikum => Punkte
 
     Notenspiegel:
-    -   90 Punkte gesamt erreichbar: Zyklus 1 und 2 je 15 Punkte, Zyklus 3 bis 5 je 20 Punkte
+    -   90 Punkte gesamt erreichbar: Zyklus 1 und 2 je 15 Punkte, Zyklus 3 bis 5 je 15+5 Punkte
     -   4.0: ab 50% (45.0 Punkte), alle 5% nächste Teilnote, 1.0: ab 95% (85.5 Punkte)
 
 -   **Theoretische Teilleistung**:
@@ -85,10 +85,10 @@ einfacher Coding-Rules:
 -   Durchgängiger Einsatz von Logging: +1P
 
 Für die Vergabe der Punkte müssen Sie Ihre Konzeptskizze eingereicht und vorgestellt haben,
-in beiden Zyklen-Hälften das Peer-Feedback erstellt haben und die Lösung eingereicht und
-vorgestellt haben.
+in beiden Zyklen-Hälften das Peer-Feedback erstellt haben und die Lösung (Quellcode) eingereicht
+und vorgestellt haben.
 
-### Sonderabgabe in Woche 12
+### Sonderabgabe letzte Vorlesungswoche
 
 Zusatztermin für Studierende, die bis dahin unterhalb der Bestehensschwelle für die praktische
 Teilleistung liegen oder die wegen Krankheit einen Termin nicht wahrnehmen konnten.
