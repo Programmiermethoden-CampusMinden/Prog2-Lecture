@@ -232,6 +232,29 @@ Sie jeden der sechs Schritte erfolgreich durchlaufen haben:
 6.  Vorstellung der Implementierung im Praktikum.
 
 
+## Konzeptskizze
+
+In der ersten Woche eines Zyklus suchen Sie sich die Aufgaben aus, die Sie in diesem Zyklus
+bearbeiten wollen und erstellen eine Konzeptskizze für diese Aufgaben.
+
+In der Skizze beschreiben Sie mindestens die folgenden Punkte:
+
+1.  Aufgabe: Worin besteht die Aufgabe, was ist das zu lösende Problem?
+2.  Lösung: Wie soll Ihre Lösung aussehen, was soll diese können?
+3.  Mit welchen Methoden und Techniken aus der Vorlesung wollen Sie die Lösung umsetzen?
+    Warum erscheint Ihnen das sinnvoll?
+4.  Ansatz und Modellierung: Wie sieht eine erste grobe Modellierung aus, welche Klassen
+    und Methoden brauchen Sie? Erstellen Sie hierfür ein UML-Diagramm.
+
+Die Konzeptskizze geben Sie als PDF-Dokument ab.
+
+Zur Orientierung stellen wir Ihnen ein [ausgefülltes Beispiel] zur Verfügung. Bitte beachten
+Sie, dass es in diesem Beispiel um eine fikitive Aufgabe im Dungeon geht und dass die gezeigte
+Modellierung nicht konform zur ECS-Struktur des aktuellen Dungeons ist.
+
+[ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
+
+
 ## Verspätete Abgaben, Krankheit
 
 Es gibt keine verspäteten Abgaben. Das sind 0P.
