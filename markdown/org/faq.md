@@ -113,8 +113,16 @@ wird über Etherpads im ILIAS vorgenommen.
 Sie können Ihre Teams gern auch im Semester wechseln, dazu müssen Sie einfach nur den
 Eintrag in den Etherpads im ILIAS anpassen.
 
-Sie können sich in jedem Zyklus die Aufgaben relativ frei auswählen; natürlich hängen
-aber manche Aufgaben von anderen Aufgaben ab.
+
+## Auswahl der Übungsaufgaben
+
+Sie können sich in jedem Zyklus die Aufgaben relativ frei auswählen; natürlich
+hängen aber manche Aufgaben von anderen Aufgaben ab.
+
+Sie können **jede Aufgabe nur einmal bearbeiten und abgeben**.
+
+Ausnahme: Die "freien Aufgaben" können Sie gern wiederholt bearbeiten, so lange
+Sie jeweils ein Problem wählen, das nicht bereits in anderen Aufgaben vorkommt.
 
 
 ## Workload Praktikum
