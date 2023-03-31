@@ -140,9 +140,10 @@ für den Dungeon.
 
 Analog zu den anderen Aufgaben können Sie sich die Bounty-Aufgaben am Beginn
 eines Zyklus aussuchen und bearbeiten und entsprechend die ausgeschriebenen
-Punkte bekommen (siehe [Verteilung der Punkte]). Ebenso können Sie eine
-Bounty-Aufgabe auch nur einmal bearbeiten. Eine Bounty-Aufgabe kann also wie
-die anderen Aufgaben auch parallel von mehreren Teams bearbeitet werden.
+Punkte (Label "5P" bzw. "10P") bekommen (siehe [Verteilung der Punkte]). Ebenso
+können Sie eine Bounty-Aufgabe auch nur einmal bearbeiten. Eine Bounty-Aufgabe
+kann also wie die anderen Aufgaben auch parallel von mehreren Teams bearbeitet
+werden.
 
 Die Bounty-Aufgaben sollen aber nicht nur das Spektrum an Problemen für das
 Praktikum ergänzen, sondern auch zur Weiterentwicklung des Dungeons beitragen.
@@ -163,7 +164,7 @@ das Ticket der Bounty-Aufgabe noch offen ist, können Sie Ihre Lösung ebenfalls
 als Pull-Request für diese Aufgabe einreichen - es kann also mehrere Pull-Requests
 für eine Bounty-Aufgabe geben. In der Regel wird aber pro Bounty-Aufgabe maximal
 ein Pull-Request akzeptiert (gemergt). Es gibt keinen Anspruch auf einen Merge
-und damit keinen Anspruch auf die Bonus-Punkte.
+und damit keinen Anspruch auf die Bonus-Punkte, die Entscheidung liegt beim Dozenten.
 
 ["Bounty"-Aufgaben]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty+-linked%3Apr
 [Suchanfrage]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty+-linked%3Apr
