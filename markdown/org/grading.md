@@ -90,9 +90,8 @@ vorgestellt haben.
 
 ### Sonderabgabe in Woche 12
 
-Diese Abgabe ist eine Zusatztermin und ist nur für Studierende gedacht, die bis dahin unterhalb
-der Bestehensschwelle für die praktische Teilleistung liegen oder wegen Krankheit einen Termin
-nicht wahrnehmen konnten.
+Zusatztermin für Studierende, die bis dahin unterhalb der Bestehensschwelle für die praktische
+Teilleistung liegen oder die wegen Krankheit einen Termin nicht wahrnehmen konnten.
 
 Für diese Abgabe gibt es keine Konzeptphase und auch kein Peer-Feedback, die Lösung ist bis
 zum 30.06.23 um 09:00 Uhr im ILIAS hochzuladen und im nachfolgenden Praktikum vorzustellen.
