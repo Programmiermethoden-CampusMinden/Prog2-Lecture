@@ -21,6 +21,10 @@ hidden: true
 
 ### Weitere empfohlene Literatur
 
+Auf [The 2023 Java Programmer RoadMap](https://medium.com/javarevisited/the-java-programmer-roadmap-f9db163ef2c2)
+finden Sie eine Art Roadmap zu den verschiedenen Themen rund um die Java-Programmierung, die
+beinahe auch die Roadmap für die Veranstaltung "Programmiermethoden" sein könnte ... 
+
 Joshua Bloch, einer der "Väter" von Java, hat eine interessante Sammlung von Rezepten für
 typische Probleme und wie man diese am sinnvollsten in Java lösen kann gesammelt: @Bloch2018
 bzw. @Bloch2011 (ältere Version). Mit @Inden2013 gibt es ein extrem umfangreiches
