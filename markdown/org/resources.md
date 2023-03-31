@@ -42,8 +42,8 @@ Zum Thema Refactoring ist @Fowler2011 *DIE* Referenz. Auf @RefactoringGuru finde
 nett aufbereitete Übersicht zum Thema Refactoring, aber auch eine Einbettung in die
 Zusammenhänge mit den Themen Bad Smells und Clean Code.
 
-Wer Interesse an UML und/oder Designpattern hat, sollte in @Oestereich2012 sowie @UML25 und
-@Gamma2011 sowie @Eilebrecht2013 schauen.
+Wer Interesse an UML und/oder Designpattern hat, sollte in @Oestereich2012 sowie @UML25
+und @Gamma2011 sowie @Eilebrecht2013 schauen.
 
 Zum Thema Unit-Test seien @vogellaJUnit, @junit4, @Osherove2014 und @Beck2014 empfohlen.
 
