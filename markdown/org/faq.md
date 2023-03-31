@@ -333,6 +333,10 @@ zugeordnet ist.
 
 ## Verteilung der Punkte
 
+In jedem Zyklus erstellen Sie in der ersten Woche Ihr Konzept und in der zweiten
+Woche die zugehörige Implementierung. Sie geben einmal Peer-Feedback für die Konzepte
+und einmal für die Implementierungen ab.
+
 Sie können sich in jedem Zyklus Aufgaben für 15 Punkte frei aussuchen.
 
 Dabei kann jede Aufgabe natürlich nur einmal bearbeitet und abgeben werden. Die
@@ -343,15 +347,26 @@ Um in einem Zyklus die Punkte zu bekommen, ist nicht nur guter Code notwendig. S
 müssen auch an den "Vorarbeiten" ausreichend teilgenommen haben. Das bedeutet, dass
 Sie jeden der sechs Schritte erfolgreich durchlaufen haben:
 
-1.  Fristgerechte Einreichung der ausreichenden Konzeptskizze,
-2.  Sinnvolles Peer-Feedback für die Konzepte,
-3.  Vorstellung der Konzeptskizze im Praktikum,
-4.  Fristgerechte Einreichung der Implementierung,
-5.  Sinnvolles Peer-Feedback für die Implementierungen,
-6.  Vorstellung der Implementierung im Praktikum.
+-   Erste Woche: Konzeptphase
+    1.  Fristgerechte Einreichung der ausreichenden Konzeptskizze,
+    2.  Sinnvolles Peer-Feedback für die Konzepte,
+    3.  Vorstellung der Konzeptskizze im Praktikum,
+-   Zweite Woche: Implementierungsphase
+    4.  Fristgerechte Einreichung der Implementierung,
+    5.  Sinnvolles Peer-Feedback für die Implementierungen,
+    6.  Vorstellung der Implementierung im Praktikum.
 
-Wie immer bestimmt der Umfang und die Qualität Ihrer Lösung, wieviele der ausgeschriebenen
-Punkte Sie für die bearbeitete Aufgabe erhalten.
+**Pro Zyklus** können Sie maximal **15 Punkte für die Lösung** (den Code selbst) erhalten.
+Dazu kommen in den Zyklen 3 bis 5 noch bis zu **5 Punkte für Codequalität**.
+
+Wie immer bestimmt der Umfang und die Qualität Ihrer Lösung, wie viele der ausgeschriebenen
+Punkte Sie für die bearbeiteten Aufgaben tatsächlich erhalten. Lösungen, die sich nicht
+kompilieren und/oder nicht ausführen lassen können höchstens wenige Teilpunkte bekommen. Dito
+Lösungen, bei denen sich die Vorgabe-Tests (so vorhanden) nicht kompilieren und/oder ausführen
+lassen. Stellen Sie vor Abgabe sicher, dass Ihr Code keine fest codierten Dateien/Verzeichnisse
+enthält. Denken Sie daran, dass bei UNIX ebenso wie bei Java zwischen Groß- und Kleinschreibung
+unterschieden wird, dass Dateinamen und Klassennamen korrekt sein müssen, dass die angegebenen
+Methodensignaturen korrekt sein müssen usw. ...
 
 
 ## Verspätete Abgaben, Krankheit

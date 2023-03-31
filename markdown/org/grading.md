@@ -75,57 +75,18 @@ vorgestellt. Ohne aktive Teilnahme an der Vorstellung gibt es keine Punkte.
 
 ### Punktevergabe
 
-In jedem Zyklus erstellen Sie in der ersten Woche Ihr Konzept und in der zweiten Woche die
-zugehörige Implementierung. Sie geben einmal Peer-Feedback für die Konzepte und einmal für
-die Implementierungen ab.
+**Pro Zyklus** können Sie maximal **15 Punkte für die Lösung** (den Code selbst) erhalten.
 
-**Konzept**:
-Für das Konzept selbst bekommen Sie keine Punkte, es ist aber die zwingende Voraussetzung
-für die Implementierung. Bitte beachten Sie deshalb, dass Sie **ohne die Abgabe des Konzepts**
-in der ersten Zykluswoche nachfolgend in der zweiten Zykluswoche **keine Punkte** auf die
-Implementierung erhalten. Das gilt auch, wenn das abgegebene Konzept nicht ausreichend ist.
-
-**Peer-Feedback**:
-Für das Peer-Feedback (auf das Konzept bzw. auf die Implementierung) selbst gibt es keine
-Punkte. Beachten Sie aber bitte, dass Sie **ohne ausreichendes Peer-Feedback** nachfolgend
-für die Implementierung **keine Punkte** erhalten.
-
-**Implementierung**:
-Für die Implementierung, d.h. die sinnvolle Umsetzung der Aufgaben erhalten Sie die jeweils
-angegebenen (Teil-) Punkte. **Pro Zyklus** können Sie maximal **15 Punkte für die Lösung**
-(den Code selbst) erhalten. (Dazu kommen in den Zyklen 3 bis 5 noch bis zu 5 Punkte für
-Codequalität, s.u.).
-
-Lösungen, die sich nicht kompilieren und/oder nicht ausführen lassen können höchstens wenige
-Teilpunkte bekommen. Dito Lösungen, bei denen sich die Vorgabe-Tests (so vorhanden) nicht
-kompilieren und/oder ausführen lassen. Stellen Sie vor Abgabe sicher, dass Ihr Code keine fest
-codierten Dateien/Verzeichnisse enthält. Denken Sie daran, dass bei UNIX ebenso wie bei Java
-zwischen Groß- und Kleinschreibung unterschieden wird, dass Dateinamen und Klassennamen korrekt
-sein müssen, dass die angegebenen Methodensignaturen korrekt sein müssen usw. ...
-
-**Clean Code**:
-Die Codequalität zählt. In den **Zyklen 3 bis 5** bekommen Sie **zusätzlich _bis_ zu 5 Punkte**
-für die Einhaltung einfacher Coding-Rules:
+In den **Zyklen 3 bis 5** bekommen Sie **zusätzlich _bis_ zu 5 Punkte** für die Einhaltung
+einfacher Coding-Rules:
 
 -   Einhaltung des PM-Coding-Styles: +2P
 -   Durchgängige Dokumentation mit Javadoc: +2P
 -   Durchgängiger Einsatz von Logging: +1P
 
-### Bonus-Punkte: Bounty Hunting
-
-Die zusätzlichen "Bounty-Hunting"-Aufgaben, die Sie per Suchanfrage im Dungeon-Repo finden (vgl.
-[Programmiermethoden/Dungeon: offene Issues mit Label "bounty" ohne verlinkten Pull-Request]),
-zählen wie normale Aufgaben. Sie können sich diese Aufgaben zur Bearbeitung aussuchen und die
-entsprechenden Punkte bei der Abgabe/Vorstellung erhalten.
-
-Wenn Sie uns Ihre Lösung zusätzlich als Pull-Request zur Verfügung stellen, können Sie bis zu
-5 Bonuspunkte erhalten, wenn wir Ihren PR akzeptieren und mergen. Angedacht ist die Aufteilung
-bis zu 2P bei Merge, und bis zu 3P für das Verhalten und die Kommunikation im PR.
-
-**Wichtig**: Die Entscheidung über die Akzeptanz des PR liegt beim Dozenten, es gibt keinen
-Anspruch auf einen Merge. Pro Bounty-Aufgabe wird (bis auf Ausnahmefälle) maximal ein PR akzeptiert.
-
-[Programmiermethoden/Dungeon: offene Issues mit Label "bounty" ohne verlinkten Pull-Request]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty+-linked%3Apr+
+Für die Vergabe der Punkte müssen Sie Ihre Konzeptskizze eingereicht und vorgestellt haben,
+in beiden Zyklen-Hälften das Peer-Feedback erstellt haben und die Lösung eingereicht und
+vorgestellt haben.
 
 ### Sonderabgabe in Woche 12
 
