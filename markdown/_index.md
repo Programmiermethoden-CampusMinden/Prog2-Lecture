@@ -45,6 +45,8 @@ Durchführung als **Flipped Classroom**: Sitzungen per Zoom (**Zugangsdaten sieh
 *   Gruppe 3: Fr, 10:45 - 12:15 Uhr (online/J104)
 *   Gruppe 4: Fr, 15:00 - 16:30 Uhr (online/J104)
 
+Tutorium: Mo, 16:45 - 17:45 Uhr (online)
+
 **Zugangsdaten siehe [ILIAS]**
 
 [ILIAS]: https://www.fh-bielefeld.de/elearning/goto.php?target=crs_1181185&client_id=FH-Bielefeld
@@ -82,9 +84,9 @@ Weitere empfohlene Literatur siehe `["Ressourcen"]({{< ref "/org/resources" >}})
 
 `{{< schedule >}}`{=markdown}
 
-**Hinweise**: Abgabe der Hausaufgaben jeweils bis Mittwoch 15:00 Uhr im ILIAS. Peer-Feedback
-jeweils bis Donnerstag 15:00 Uhr im ILIAS. Finale Überarbeitung der Hausaufgaben bis zur
-Vorstellung im Praktikum. Vorstellung der Lösungen im jeweiligen Praktikumstermin am Freitag.
+**Hinweise**: Abgabe der Hausaufgaben jeweils bis zur angegebenen Deadline im ILIAS.
+Peer-Feedback jeweils bis zur angegebenen Deadline im ILIAS.
+Vorstellung der Lösungen im jeweiligen nachfolgenden Praktikumstermin.
 
 
 ## Förderungen und Kooperationen

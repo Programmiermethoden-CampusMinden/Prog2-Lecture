@@ -26,7 +26,7 @@
         -   topic: "/pattern/strategy"
     assignment:
         -   topic: "/assignments"
-            due: "Di, 18.04., 09 Uhr, ILIAS"
+            due: "Do, 20.04., 08 Uhr; Peer-Feedback: Fr, 21.04., 08 Uhr"
     misc_assignment:
         -   notes: ">> Zyklus 1: Abgabe und Vorstellung Konzept"
 
@@ -38,7 +38,7 @@
         -   topic: "/modern-java/methodreferences"
     assignment:
         -   topic: "/assignments"
-            due: "Di, 25.04., 09 Uhr, ILIAS"
+            due: "Do, 27.04., 08 Uhr; Peer-Feedback: Fr, 28.04., 08 Uhr"
     misc_assignment:
         -   notes: ">> Zyklus 1: Abgabe und Vorstellung Code"
 
@@ -50,7 +50,7 @@
         -   topic: "/pattern/type-object"
     assignment:
         -   topic: "/assignments"
-            due: "Di, 02.05., 09 Uhr, ILIAS"
+            due: "Do, 04.05., 08 Uhr; Peer-Feedback: Fr, 05.05., 08 Uhr"
     misc_assignment:
         -   notes: ">> Zyklus 2: Abgabe und Vorstellung Konzept"
 
@@ -65,7 +65,7 @@
         -   notes: ">> Gastvortrag zu JUnit/Mocking in der Praxis von Daniel Rosowski (Smartsquare GmbH, Bielefeld)"
     assignment:
         -   topic: "/assignments"
-            due: "Di, 09.05., 09 Uhr, ILIAS"
+            due: "Do, 11.05., 08 Uhr; Peer-Feedback: Fr, 12.05., 08 Uhr"
     misc_assignment:
         -   notes: ">> Zyklus 2: Abgabe und Vorstellung Code"
 
@@ -77,7 +77,7 @@
         -   topic: "/building/ci"
     assignment:
         -   topic: "/assignments"
-            due: "Di, 16.05., 09 Uhr, ILIAS"
+            due: "Do, 18.05., 08 Uhr; Peer-Feedback: Fr, 19.05., 08 Uhr"
     misc_assignment:
         -   notes: ">> Zyklus 3: Abgabe und Vorstellung Konzept"
 
@@ -90,7 +90,7 @@
         -   topic: "/building/docker"
     assignment:
         -   topic: "/assignments"
-            due: "Di, 23.05., 09 Uhr, ILIAS"
+            due: "Do, 25.05., 08 Uhr; Peer-Feedback: Fr, 26.05., 08 Uhr"
     misc_assignment:
         -   notes: ">> Zyklus 3: Abgabe und Vorstellung Code"
 
@@ -103,7 +103,7 @@
         -   topic: "/git/worktree"
     assignment:
         -   topic: "/assignments"
-            due: "Di, 30.05., 09 Uhr, ILIAS"
+            due: "Do, 01.06., 08 Uhr; Peer-Feedback: Fr, 02.06., 08 Uhr"
     misc_assignment:
         -   notes: ">> Zyklus 4: Abgabe und Vorstellung Konzept"
 
@@ -115,7 +115,7 @@
         -   topic: "/pattern/singleton"
     assignment:
         -   topic: "/assignments"
-            due: "Di, 06.06., 09 Uhr, ILIAS"
+            due: "Do, 08.06., 08 Uhr; Peer-Feedback: Fr, 09.06., 08 Uhr"
     misc_assignment:
         -   notes: ">> Zyklus 4: Abgabe und Vorstellung Code"
 
@@ -129,7 +129,7 @@
         -   topic: "/pattern/dependency"
     assignment:
         -   topic: "/assignments"
-            due: "Di, 13.06., 09 Uhr, ILIAS"
+            due: "Do, 15.06., 08 Uhr; Peer-Feedback: Fr, 16.06., 08 Uhr"
     misc_assignment:
         -   notes: ">> Zyklus 5: Abgabe und Vorstellung Konzept"
 
@@ -142,7 +142,7 @@
         -   topic: "/pattern/template-method"
     assignment:
         -   topic: "/assignments"
-            due: "Di, 20.06., 09 Uhr, ILIAS"
+            due: "Do, 22.06., 08 Uhr; Peer-Feedback: Fr, 23.06., 08 Uhr"
     misc_assignment:
         -   notes: ">> Zyklus 5: Abgabe und Vorstellung Code"
 
@@ -154,6 +154,6 @@
             notes: "Prüfungsvorbereitung (Zoom)"
     assignment:
         -   topic: "/assignments"
-            due: "Fr, 30.06., 09 Uhr, ILIAS"
+            due: "Fr, 30.06., 09 Uhr"
     misc_assignment:
         -   notes: ">> Sondertermin (bei 'nicht bestanden')"
