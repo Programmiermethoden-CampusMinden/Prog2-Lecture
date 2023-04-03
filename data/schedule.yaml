@@ -25,10 +25,8 @@
         -   topic: "/modern-java/records"
         -   topic: "/pattern/strategy"
     assignment:
-        -   topic: "/assignments"
+        -   topic: "b01a"
             due: "Do, 20.04., 08 Uhr; Peer-Feedback: Fr, 21.04., 08 Uhr"
-    misc_assignment:
-        -   notes: ">> Zyklus 1: Abgabe und Vorstellung Konzept"
 
 -   week: "W04 (28. April)"
     lecture:
@@ -37,10 +35,8 @@
         -   topic: "/modern-java/lambdas"
         -   topic: "/modern-java/methodreferences"
     assignment:
-        -   topic: "/assignments"
+        -   topic: "b01b"
             due: "Do, 27.04., 08 Uhr; Peer-Feedback: Fr, 28.04., 08 Uhr"
-    misc_assignment:
-        -   notes: ">> Zyklus 1: Abgabe und Vorstellung Code"
 
 -   week: "W05 (05. Mai)"
     lecture:
@@ -49,10 +45,8 @@
         -   topic: "/coding/logging"
         -   topic: "/pattern/type-object"
     assignment:
-        -   topic: "/assignments"
+        -   topic: "b02a"
             due: "Do, 04.05., 08 Uhr; Peer-Feedback: Fr, 05.05., 08 Uhr"
-    misc_assignment:
-        -   notes: ">> Zyklus 2: Abgabe und Vorstellung Konzept"
 
 -   week: "W06 (12. Mai)"
     lecture:
@@ -64,10 +58,8 @@
     misc_lecture:
         -   notes: ">> Gastvortrag zu JUnit/Mocking in der Praxis von Daniel Rosowski (Smartsquare GmbH, Bielefeld)"
     assignment:
-        -   topic: "/assignments"
+        -   topic: "b02b"
             due: "Do, 11.05., 08 Uhr; Peer-Feedback: Fr, 12.05., 08 Uhr"
-    misc_assignment:
-        -   notes: ">> Zyklus 2: Abgabe und Vorstellung Code"
 
 -   week: "W07 (19. Mai)"
     lecture:
@@ -76,10 +68,8 @@
         -   topic: "/coding/refactoring"
         -   topic: "/building/ci"
     assignment:
-        -   topic: "/assignments"
+        -   topic: "b03a"
             due: "Do, 18.05., 08 Uhr; Peer-Feedback: Fr, 19.05., 08 Uhr"
-    misc_assignment:
-        -   notes: ">> Zyklus 3: Abgabe und Vorstellung Konzept"
 
 -   week: "W08 (26. Mai)"
     lecture:
@@ -89,10 +79,8 @@
         -   topic: "/generics/generics-polymorphism"
         -   topic: "/building/docker"
     assignment:
-        -   topic: "/assignments"
+        -   topic: "b03b"
             due: "Do, 25.05., 08 Uhr; Peer-Feedback: Fr, 26.05., 08 Uhr"
-    misc_assignment:
-        -   notes: ">> Zyklus 3: Abgabe und Vorstellung Code"
 
 -   week: "W09 (02. Juni)"
     lecture:
@@ -102,10 +90,8 @@
         -   topic: "/pattern/observer"
         -   topic: "/git/worktree"
     assignment:
-        -   topic: "/assignments"
+        -   topic: "b04a"
             due: "Do, 01.06., 08 Uhr; Peer-Feedback: Fr, 02.06., 08 Uhr"
-    misc_assignment:
-        -   notes: ">> Zyklus 4: Abgabe und Vorstellung Konzept"
 
 -   week: "W10 (09. Juni)"
     lecture:
@@ -114,10 +100,8 @@
         -   topic: "/java-jvm/exceptions"
         -   topic: "/pattern/singleton"
     assignment:
-        -   topic: "/assignments"
+        -   topic: "b04b"
             due: "Do, 08.06., 08 Uhr; Peer-Feedback: Fr, 09.06., 08 Uhr"
-    misc_assignment:
-        -   notes: ">> Zyklus 4: Abgabe und Vorstellung Code"
 
 -   week: "W11 (16. Juni)"
     lecture:
@@ -128,10 +112,8 @@
         -   topic: "/modern-java/sealed"
         -   topic: "/pattern/dependency"
     assignment:
-        -   topic: "/assignments"
+        -   topic: "b05a"
             due: "Do, 15.06., 08 Uhr; Peer-Feedback: Fr, 16.06., 08 Uhr"
-    misc_assignment:
-        -   notes: ">> Zyklus 5: Abgabe und Vorstellung Konzept"
 
 -   week: "W12 (23. Juni)"
     lecture:
@@ -141,10 +123,8 @@
         -   topic: "/pattern/factory-method"
         -   topic: "/pattern/template-method"
     assignment:
-        -   topic: "/assignments"
+        -   topic: "b05b"
             due: "Do, 22.06., 08 Uhr; Peer-Feedback: Fr, 23.06., 08 Uhr"
-    misc_assignment:
-        -   notes: ">> Zyklus 5: Abgabe und Vorstellung Code"
 
 -   week: "W13 (30. Juni)"
     lecture:
@@ -153,7 +133,5 @@
         -   topic: "/org/exams"
             notes: "Prüfungsvorbereitung (Zoom)"
     assignment:
-        -   topic: "/assignments"
+        -   topic: "b06"
             due: "Fr, 30.06., 09 Uhr"
-    misc_assignment:
-        -   notes: ">> Sondertermin (bei 'nicht bestanden')"
