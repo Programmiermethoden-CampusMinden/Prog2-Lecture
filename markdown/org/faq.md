@@ -88,35 +88,34 @@ In diesem Semester gibt es einen 2-Wochen-Rhythmus im Praktikum.
 ### Erste Woche: Konzeptphase
 
 In der ersten Woche suchen Sie sich die zu bearbeitenden Aufgaben aus (vgl.
-[Auswahl der Übungsaufgaben] in der FAQ) und erstellen ein Lösungskonzept (vgl.
-[Konzeptskizze] in der FAQ). Dieses laden Sie bis zur Deadline als PDF in die
-jeweilige ILIAS-Aufgabe hoch.
+[Auswahl der Übungsaufgaben] in der FAQ) und erstellen im Team ein Lösungskonzept
+(vgl. [Konzeptskizze] in der FAQ).
+
+Die Konzeptskizze laden Sie bis zur Deadline als PDF in die jeweilige ILIAS-Aufgabe
+hoch. Diese Abgabe muss aus technischen Gründen bitte jedes Teammitglied einzeln machen.
 
 Anschließend erfolgt eine Peer-Feedback-Phase. ILIAS weist Ihnen mehrere Abgaben
 zu und Sie haben einen Tag Zeit, um Ihr Feedback im ILIAS abzugeben (vgl.
-[Peer-Feedback: How to Review] in der FAQ).
+[Peer-Feedback: How to Review] in der FAQ). Das Feedback muss wieder einzeln von
+jedem Teammitglied bearbeitet werden.
 
-Am Freitag in der ersten Woche stellen Sie Ihr Konzept im Praktikum vor. Dabei
-ist jedes Teammitglied anwesend und kann Auskunft geben.
+Am Freitag in der ersten Woche stellen Sie im Team Ihr Konzept im Praktikum vor.
+Dabei ist jedes Teammitglied anwesend und kann Auskunft geben.
 
 ### Zweite Woche: Implementierungsphase
 
-Danach treten Sie in die zweite Woche des aktuellen Zyklus ein und setzen Ihr Konzept in
-eine Implementierung um. Diese laden als ZIP-Datei bis zur Deadline als Abgabe in die
-jeweilige ILIAS-Aufgabe hoch.
+Danach treten Sie in die zweite Woche des aktuellen Zyklus ein und setzen im Team Ihr
+Konzept in eine Implementierung um. Diese laden als ZIP-Datei bis zur Deadline als
+Abgabe in die jeweilige ILIAS-Aufgabe hoch. Diese Abgabe muss aus technischen Gründen
+bitte jedes Teammitglied einzeln machen.
 
 Anschließend erfolgt eine erneute Peer-Feedback-Phase. ILIAS weist Ihnen mehrere Abgaben
 zu und Sie haben einen Tag Zeit, um Ihr Feedback im ILIAS abzugeben (vgl.
-[Peer-Feedback: How to Review] in der FAQ).
+[Peer-Feedback: How to Review] in der FAQ). Das Feedback muss wieder einzeln von
+jedem Teammitglied bearbeitet werden.
 
-Am Freitag in der zweiten Woche stellen Sie Ihre Lösung im Praktikum vor. Dabei ist jedes
-Teammitglied anwesend und kann Auskunft geben.
-
-### Überarbeitung nach Feedback
-
-Sie können das Feedback in beiden Wochen nutzen, um Ihre Lösung zu verbessern. Die
-Überarbeitung darf sich aber nur auf die Kritik im Feedback beziehen und ist geeignet
-zu dokumentieren.
+Am Freitag in der zweiten Woche stellen Sie im Team Ihre Lösung im Praktikum vor.
+Dabei ist jedes Teammitglied anwesend und kann Auskunft geben.
 
 [Auswahl der Übungsaufgaben]: #auswahl-der-übungsaufgaben
 [Konzeptskizze]: #konzeptskizze
@@ -125,12 +124,13 @@ zu dokumentieren.
 
 ## Bearbeitung der Übungsaufgaben
 
-Die Übungsaufgaben sollen in 3er-Teams (oder ausnahmsweise in 2er-Teams) bearbeitet
-und gelöst werden. Die Einteilung wird über Etherpads im ILIAS vorgenommen, dabei
-können Sie die Teams selbst bilden.
+Die Übungsaufgaben sollen in 3er-Teams bearbeitet und gelöst werden. Die Einteilung
+wird über Etherpads im ILIAS vorgenommen, dabei können Sie die Teams selbst bilden.
 
 Sie können Ihre Teams gern auch im Semester wechseln, dazu müssen Sie einfach nur den
 Eintrag in den Etherpads im ILIAS anpassen.
+
+In Absprache mit dem Dozenten sind in Ausnahmefällen auch 2er-Teams möglich.
 
 
 ## Auswahl der Übungsaufgaben
@@ -144,6 +144,7 @@ Ausnahme: Die "freien Aufgaben" können Sie gern wiederholt bearbeiten, so lange
 Sie jeweils ein Problem wählen, das nicht bereits in anderen Aufgaben vorkommt.
 
 Sie können pro Zyklus Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
+(Dazu kommen dann in den Zyklen 3 bis 5 noch je bis zu 5 Punkte für die Codequalität.)
 
 
 ## Bounty-Aufgaben
@@ -195,20 +196,10 @@ und damit keinen Anspruch auf die Bonus-Punkte, die Entscheidung liegt beim Doze
 [Bonus-Punkte: Helfen im Framework]: #bonus-punkte-helfen-im-framework
 
 
-## Workload Praktikum
-
-Pro **Zyklus** sollen Sie Aufgaben für **15 Punkte** bearbeiten.
-
-Sie können auch mehr machen, aber wir limitieren die maximal erreichbare Punktzahl
-hier auf _15 Punkte pro Zyklus_.
-
-Dazu kommen dann in den Zyklen 3 bis 5 noch je bis zu 5 Punkte für die Codequalität.
-
-
 ## Konzeptskizze
 
-In der ersten Woche eines Zyklus suchen Sie sich die Aufgaben aus, die Sie in diesem Zyklus
-bearbeiten wollen und erstellen eine Konzeptskizze für diese Aufgaben.
+In der ersten Woche eines Zyklus suchen Sie sich im Team die Aufgaben aus, die Sie in
+diesem Zyklus bearbeiten wollen und erstellen eine Konzeptskizze für diese Aufgaben.
 
 In der Skizze beschreiben Sie mindestens die folgenden Punkte:
 
@@ -219,7 +210,7 @@ In der Skizze beschreiben Sie mindestens die folgenden Punkte:
 4.  Ansatz und Modellierung: Wie sieht eine erste grobe Modellierung aus, welche Klassen
     und Methoden brauchen Sie? Erstellen Sie hierfür ein UML-Diagramm.
 
-Die Konzeptskizze geben Sie als PDF-Dokument ab.
+Die Konzeptskizze geben Sie als PDF-Dokument ab (jedes Teammitglied einzeln!).
 
 Zur Orientierung stellen wir Ihnen ein [ausgefülltes Beispiel] zur Verfügung. Bitte beachten
 Sie, dass es in diesem Beispiel um eine fikitive Aufgabe im Dungeon geht und dass die gezeigte
@@ -233,11 +224,9 @@ Modellierung nicht konform zur ECS-Struktur des aktuellen Dungeons ist.
 Bitte laden Sie Ihre Lösung als eine **PDF-Datei** (Konzeptphase) oder als ein
 **Zip-Archiv** (Implementierungsphase) in die jeweilige Aufgabe im ILIAS hoch.
 
-Beachten Sie die jeweilige Deadline. Sofern nichts anderes angegeben ist, sollen
-die Lösungen jeweils bis Mittwoch 15:00 Uhr im ILIAS hochgeladen werden.
+Beachten Sie dabei die jeweilige Deadline.
 
-Dabei gibt jedes Team nur **eine gemeinsame Lösung** ab: Eine Person aus dem Team
-lädt die Lösung in das ILIAS und trägt die Teammitglieder mit ein.
+**Wichtig**: Jedes Teammitglied gibt die Lösung selbst ab (einzeln).
 
 _Anmerkung_: Falls Sie mehrere Dateien hochladen wollen, erzeugen Sie bitte vor
 dem Upload lokal ein Zip-Archiv, welches Sie dann per Button "Datei einreichen"
@@ -250,17 +239,18 @@ hochladen" nutzen!
 ## Peer-Feedback: How to Review
 
 Sobald die Abgabefrist für eine Aufgabe abgelaufen ist, verteilt ILIAS automatisch
-an alle, die selbst eine Lösung hochgeladen haben, zufällige Aufforderungen zum
-Review anderer Abgaben.
+an alle, die eine Lösung hochgeladen haben, zufällige Aufforderungen zum Review
+anderer Abgaben.
 
 Sie finden die angeforderten Reviews im ILIAS in der jeweiligen Aufgabe.
 
 ![](images/howtofeedback1.png){width="80%"}
 
-Gehen Sie **nach der Deadline der Aufgabe** (i.d.R. Mittwoch 15 Uhr) und
-**vor der Deadline des Reviews** (i.d.R. Donnerstag 15 Uhr) ins ILIAS in die
-Aufgabe und klicken auf den Button "Feedback geben", um nachzuschauen, wem Sie
-ein Peer-Feedback geben sollen.
+Gehen Sie **nach der Deadline der Aufgabe** und **vor der Deadline des Reviews** ins
+ILIAS in die Aufgabe und klicken auf den Button "Feedback geben", um nachzuschauen,
+wem Sie ein Peer-Feedback geben sollen.
+
+**Wichtig**: Jedes Teammitglied erstellt seine eigenen Reviews (einzeln).
 
 ![](images/howtofeedback2.png){width="80%"}
 
@@ -271,7 +261,6 @@ einzutragen.
 
 ![](images/howtofeedback3.png){width="80%"}
 ![](images/howtofeedback4.png){width="80%"}
-
 
 _Hinweis_: Wenn bei den Review-Fragen mit den "Ja/Nein"-Checkboxen alle Kriterien
 mit "Nein" beantwortet werden mussten, also keine der Checkboxen angehakt werden
@@ -300,8 +289,8 @@ kann und deshalb stets kritisch hinterfragt werden sollte.
 
 ## Vorstellung der Lösungen
 
-Im Praktikum stellen Sie Ihre Lösungen vor und diskutieren darüber und beantworten
-kurze Fragen oder passen ad hoc im Gespräch Ihre Lösung weiter an.
+Im Praktikum stellen Sie im Team Ihre Lösungen vor und diskutieren darüber und
+beantworten kurze Fragen und passen ad hoc im Gespräch Ihre Lösung weiter an.
 
 Die Vorstellung Ihrer Lösung erfolgt mit einem Medium Ihrer Wahl. Sie können zum
 Beispiel Ihren Bildschirm teilen und Ihre Lösung erklären. Sie brauchen nicht extra
@@ -310,11 +299,11 @@ eine Präsentation anfertigen!
 Die Vorstellung der Lösung erfolgt duch alle Teammitglieder. Ohne aktive Teilnahme
 an der Vorstellung gibt es keine Punkte.
 
-Für die Vorstellungen werden individuelle Zeitslots pro Team innerhalb Ihrer Praktikumszeit
-(Stundenplangruppe) vereinbart (siehe Etherpads im ILIAS).
+Für die Vorstellungen werden individuelle Zeitslots pro Team innerhalb Ihrer
+Praktikumszeit (Stundenplangruppe) vereinbart (siehe Etherpads im ILIAS).
 
-Wer nicht an der Vorstellung teilnimmt oder wer zwar anwesend ist, aber nicht auf Fragen
-antworten kann/will, kann leider keine Punkte bekommen.
+Wer nicht an der Vorstellung teilnimmt oder wer zwar anwesend ist, aber nicht auf
+Fragen antworten kann/will, kann leider keine Punkte bekommen.
 
 
 ## Zeitslots für Vorstellung
@@ -323,25 +312,15 @@ Wir werden mit jedem Team einen individuellen Abgabeslot in Ihrer Praktikumsgrup
 vereinbaren, damit Sie im Praktikum zielgerichtet zu Ihrer Abgabe kommen können und
 so längere Wartezeiten vermeiden können.
 
-Dazu gibt es vorbereitete Etherpads im ILIAS, wo Sie sich mit Ihrem Team für einen
+Dazu finden Sie vorbereitete Etherpads im ILIAS, wo Sie sich mit Ihrem Team für einen
 Abgabeslot in ihrer Praktikumszeit/Stundenplangruppe eintragen.
 
-Wenn ein Team mit Mitgliedern aus verschiedenen Stundenplangruppen gebildet wird, dann
+Falls ein Team mit Mitgliedern aus verschiedenen Stundenplangruppen gebildet wird, dann
 tragen Sie sich bitte in dem Praktikumsslot ein, wo die Mehrzahl der Team-Mitglieder
 zugeordnet ist.
 
 
 ## Verteilung der Punkte
-
-In jedem Zyklus erstellen Sie in der ersten Woche Ihr Konzept und in der zweiten
-Woche die zugehörige Implementierung. Sie geben einmal Peer-Feedback für die Konzepte
-und einmal für die Implementierungen ab.
-
-Sie können sich in jedem Zyklus Aufgaben für 15 Punkte frei aussuchen.
-
-Dabei kann jede Aufgabe natürlich nur einmal bearbeitet und abgeben werden. Die
-"freien Aufgaben" können dagegen mehrfach bearbeitet werden, sofern Sie jedes Mal
-andere Inhalte wählen.
 
 Um in einem Zyklus die Punkte zu bekommen, ist nicht nur guter Code notwendig. Sie
 müssen auch an den "Vorarbeiten" ausreichend teilgenommen haben. Das bedeutet, dass
@@ -349,18 +328,18 @@ Sie jeden der sechs Schritte erfolgreich durchlaufen haben:
 
 -   Erste Woche: Konzeptphase
 
-    1.  Fristgerechte Einreichung der ausreichenden Konzeptskizze,
-    2.  Sinnvolles Peer-Feedback für die Konzepte,
-    3.  Vorstellung der Konzeptskizze im Praktikum,
+    1.  Fristgerechte Einreichung der ausreichenden Konzeptskizze (einzeln),
+    2.  Sinnvolles Peer-Feedback für die Konzepte (einzeln),
+    3.  Vorstellung der Konzeptskizze im Praktikum (Team),
 
 -   Zweite Woche: Implementierungsphase
 
-    4.  Fristgerechte Einreichung der Implementierung,
-    5.  Sinnvolles Peer-Feedback für die Implementierungen,
-    6.  Vorstellung der Implementierung im Praktikum.
+    4.  Fristgerechte Einreichung der Implementierung (einzeln),
+    5.  Sinnvolles Peer-Feedback für die Implementierungen (einzeln),
+    6.  Vorstellung der Implementierung im Praktikum (Team).
 
-**Pro Zyklus** können Sie maximal **15 Punkte für die Lösung** (den Code selbst) erhalten.
-Dazu kommen in den Zyklen 3 bis 5 noch bis zu **5 Punkte für Codequalität**.
+Pro Zyklus können Sie maximal 15 Punkte für die Lösung (den Code selbst) erhalten.
+Dazu kommen in den Zyklen 3 bis 5 noch bis zu 5 Punkte für Codequalität.
 
 Wie immer bestimmt der Umfang und die Qualität Ihrer Lösung, wie viele der ausgeschriebenen
 Punkte Sie für die bearbeiteten Aufgaben tatsächlich erhalten. Lösungen, die sich nicht
