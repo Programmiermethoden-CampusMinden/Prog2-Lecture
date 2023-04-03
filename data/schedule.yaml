@@ -10,7 +10,7 @@
             notes: "Kick-Off/Orga (Zoom)"
         -   topic: "/git/intro"
         -   topic: "/git/basics"
-        -   topic: "/frameworks/ecs"
+        -   topic: "/modern-java/lambdas"
         -   topic: "/coding/javadoc"
     assignment:
         -   topic: "/frameworks/dungeon"
@@ -22,7 +22,7 @@
         -   topic: "/git/branches"
         -   topic: "/git/branching-strategies"
         -   topic: "/building/gradle"
-        -   topic: "/modern-java/records"
+        -   topic: "/modern-java/methodreferences"
         -   topic: "/pattern/strategy"
     assignment:
         -   topic: "b01a"
@@ -32,29 +32,29 @@
     lecture:
         -   topic: "/git/remotes"
         -   topic: "/git/workflows"
-        -   topic: "/modern-java/lambdas"
-        -   topic: "/modern-java/methodreferences"
+        -   topic: "/modern-java/stream-api"
+        -   topic: "/modern-java/optional"
     assignment:
         -   topic: "b01b"
             due: "Do, 27.04., 08 Uhr; Peer-Feedback: Fr, 28.04., 08 Uhr"
 
 -   week: "W05 (05. Mai)"
     lecture:
-        -   topic: "/modern-java/optional"
-        -   topic: "/modern-java/stream-api"
+        -   topic: "/testing/testing-intro"
+        -   topic: "/testing/junit-basics"
+        -   topic: "/testing/testcases"
+        -   topic: "/testing/mockito"
         -   topic: "/coding/logging"
-        -   topic: "/pattern/type-object"
     assignment:
         -   topic: "b02a"
             due: "Do, 04.05., 08 Uhr; Peer-Feedback: Fr, 05.05., 08 Uhr"
 
 -   week: "W06 (12. Mai)"
     lecture:
-        -   topic: "/testing/testing-intro"
-        -   topic: "/testing/junit-basics"
-        -   topic: "/testing/testcases"
-        -   topic: "/testing/mockito"
-        -   topic: "/pattern/command"
+        -   topic: "/coding/smells"
+        -   topic: "/coding/codingrules"
+        -   topic: "/coding/refactoring"
+        -   topic: "/building/ci"
     misc_lecture:
         -   notes: ">> Gastvortrag zu JUnit/Mocking in der Praxis von Daniel Rosowski (Smartsquare GmbH, Bielefeld)"
     assignment:
@@ -63,20 +63,20 @@
 
 -   week: "W07 (19. Mai)"
     lecture:
-        -   topic: "/coding/smells"
-        -   topic: "/coding/codingrules"
-        -   topic: "/coding/refactoring"
-        -   topic: "/building/ci"
+        -   topic: "/generics/classes-methods"
+        -   topic: "/generics/bounds-wildcards"
+        -   topic: "/generics/type-erasure"
+        -   topic: "/generics/generics-polymorphism"
+        -   topic: "/java-jvm/collections"
     assignment:
         -   topic: "b03a"
             due: "Do, 18.05., 08 Uhr; Peer-Feedback: Fr, 19.05., 08 Uhr"
 
 -   week: "W08 (26. Mai)"
     lecture:
-        -   topic: "/generics/classes-methods"
-        -   topic: "/generics/bounds-wildcards"
-        -   topic: "/generics/type-erasure"
-        -   topic: "/generics/generics-polymorphism"
+        -   topic: "/java-jvm/serialisation"
+        -   topic: "/modern-java/records"
+        -   topic: "/pattern/command"
         -   topic: "/building/docker"
     assignment:
         -   topic: "b03b"
