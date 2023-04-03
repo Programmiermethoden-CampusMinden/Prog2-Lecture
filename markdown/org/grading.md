@@ -47,48 +47,26 @@ im Prüfungsverfahren.
 
 Das Praktikum erfolgt in 2-Wochen-Zyklen:
 
-1.  Erste Woche: Konzeptphase
-    -   Auswahl der zu bearbeitenden Aufgaben
-    -   Erstellung und Abgabe einer Konzeptskizze (PDF)
-    -   Peer-Feedback zur Konzeptskizze
-    -   Vorstellung der Konzeptskizze im Praktikum
-2.  Zweite Woche: Implementierungsphase
-    -   Umsetzung des Konzepts/Implementierung der Lösung
-    -   Abgabe des Quellcodes (ZIP)
-    -   Peer-Feedback zum Quellcode
-    -   Vorstellung des Quellcodes im Praktikum
+1.  Erste Zyklus-Woche: Konzeptphase
+    -   Auswahl der zu bearbeitenden Aufgaben (=> Team)
+    -   Erstellung einer Konzeptskizze (PDF) (=> Team)
+    -   Abgabe der Konzeptskizze (PDF) im ILIAS (=> Jede(r) einzeln)
+    -   Peer-Feedback zur Konzeptskizze im ILIAS (=> Jede(r) einzeln)
+    -   Vorstellung der Konzeptskizze im Praktikum (=> Team)
+2.  Zweite Zyklus-Woche: Implementierungsphase
+    -   Umsetzung des Konzepts/Implementierung der Lösung (=> Team)
+    -   Abgabe des Quellcodes (ZIP) im ILIAS (=> Jede(r) einzeln)
+    -   Peer-Feedback zum Quellcode im ILIAS (=> Jede(r) einzeln)
+    -   Vorstellung des Quellcodes im Praktikum (=> Team)
 
 Sie können pro Zyklus Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
 
-### Abgabe der Lösungen
-
-Sofern nichts anderes bei den Aufgaben angegeben ist, sind die
-**Lösungen jeweils bis Mittwoch 15:00 Uhr im ILIAS** hochzuladen.
-
-### Peer-Feedback
-
-Sofern nicht anders angegeben, ist das **Peer-Feedback jeweils bis Donnerstag 15:00 Uhr**
-im ILIAS einzutragen.
-
-### Vorstellung der Lösung
-
-Die Lösungen werden von allen Teammitgliedern im Praktikum zur Erlangung der Punkte
-vorgestellt. Ohne aktive Teilnahme an der Vorstellung gibt es keine Punkte.
-
 ### Punktevergabe
 
-**Pro Zyklus** können Sie maximal **15 Punkte für die Lösung** (den Code selbst) erhalten.
-
-In den **Zyklen 3 bis 5** bekommen Sie **zusätzlich _bis_ zu 5 Punkte** für die Einhaltung
-einfacher Coding-Rules:
-
--   Einhaltung des PM-Coding-Styles: +2P
--   Durchgängige Dokumentation mit Javadoc: +2P
--   Durchgängiger Einsatz von Logging: +1P
-
-Für die Vergabe der Punkte müssen Sie Ihre Konzeptskizze eingereicht und vorgestellt haben,
-in beiden Zyklen-Hälften das Peer-Feedback erstellt haben und die Lösung (Quellcode) eingereicht
-und vorgestellt haben.
+Für die Vergabe der Punkte müssen Sie pro Zyklus jeweils fristgerecht
+Ihre Konzeptskizze eingereicht und im Praktikum vorgestellt haben,
+in beiden Zyklen-Hälften das Peer-Feedback erstellt haben und
+die Lösung (Quellcode) eingereicht und im Praktikum vorgestellt haben.
 
 ### Sonderabgabe letzte Vorlesungswoche
 
@@ -96,7 +74,4 @@ Zusatztermin für Studierende, die bis dahin unterhalb der Bestehensschwelle fü
 Teilleistung liegen oder die wegen Krankheit einen Termin nicht wahrnehmen konnten.
 
 Für diese Abgabe gibt es keine Konzeptphase und auch kein Peer-Feedback, die Lösung ist bis
-zum 30.06.23 um 09:00 Uhr im ILIAS hochzuladen und im nachfolgenden Praktikum vorzustellen.
-
-Sie können hier wie bei den anderen Zyklen Aufgaben bis zu 15 Punkten bearbeiten und zusätzlich
-noch bis zu 5 Punkte für die Codequalität erhalten.
+zur Deadline im ILIAS hochzuladen und im nachfolgenden Praktikum vorzustellen.
