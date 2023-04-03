@@ -13,8 +13,10 @@ hidden: true
 **Performanzprüfung, 7 ECTS**
 
 -   **Praktische Teilleistung**:
-    Regelmäßige Bearbeitung der Praktikumsaufgaben, fristgerechte Abgabe der Lösungen im ILIAS,
-    Erstellung von Peer-Feedback, Vorstellung der Lösungen im Praktikum => Punkte
+    Regelmäßige Bearbeitung der Praktikumsaufgaben,
+    fristgerechte Abgabe der Lösungen im ILIAS,
+    Erstellung von Peer-Feedback im ILIAS,
+    Vorstellung der Lösungen im Praktikum => Punkte
 
     Notenspiegel:
     -   90 Punkte gesamt erreichbar: Zyklus 1 und 2 je 15 Punkte, Zyklus 3 bis 5 je 15+5 Punkte
