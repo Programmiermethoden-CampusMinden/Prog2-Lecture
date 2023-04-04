@@ -45,6 +45,42 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/662003c5cb2cdef08b5d35cefd49b05f561fa26471cf3da22c4ff4310596909d0e21300133fc2fac353dfc4a391c8bb9af0dd47293efabfa8c3464429534d719"
     name: "VL Methoden-Referenzen"
+challenges: |
+    In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/lambda)
+    finden Sie die Klassen `Student` und `StudentSort` mit
+    vorgefertigten Methoden  zu den Teilaufgaben sowie eine Testsuite
+    `SortTest` mit einzelnen Testfälllen zu den Teilaufgaben, mit der Ihre
+    Implementierung aufgerufen und getestet wird.
+
+    Ziel dieser Aufgabe ist es, eine Liste von Studierenden mithilfe verschiedener
+    syntaktischer Strukturen (Lambda-Ausdrücke, Methoden-Referenzen) zu sortieren.
+    Dabei soll bei allen Teilaufgaben die Methode
+    [java.util.List#sort](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html#sort(java.util.Comparator))
+    für das eigentliche Sortieren verwendet werden.
+
+    1.  Erweitern Sie die Klasse `Student` um eine _statische_ Methode, die zwei
+        `Student`-Objekte anhand des Alters miteinander vergleicht. Die Methode
+        soll die Signatur `static int compareByAge(Student a, Student b)` besitzen
+        und die folgenden Werte zurückliefern:
+
+        -   a > b -> -1
+        -   a < b -> 1
+        -   a == b -> 0
+
+        Verwenden Sie die neue statische Methode `compareByAge` zum Sortieren
+        der Liste in `sort_2b()`. Nutzen Sie dabei eine **Methodenreferenz**.
+
+    2.  Erweitern Sie die Klasse `Student` um eine Instanz-Methode, die das
+        `Student`-Objekt mit einem anderen (als Parameter übergebenen) `Student`-Objekt
+        vergleicht. Die Methode soll die Signatur `int compareByName(Student other)`
+        besitzen und die folgenden Werte zurückliefern:
+
+        -   self > other -> -1
+        -   self < other -> 1
+        -   self == other -> 0
+
+        Verwenden Sie die neue Methode `compareByName` zum Sortieren der Liste in `sort_3b()`.
+        Nutzen Sie dabei eine **Methodenreferenz**.
 ---
 
 

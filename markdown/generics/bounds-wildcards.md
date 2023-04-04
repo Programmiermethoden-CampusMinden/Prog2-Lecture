@@ -40,6 +40,53 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/08ef62f9367140e7ae75cd4e90fde1e63cc3ec6c9e7e4c11a1994065fd45e781f46bc6b3f1fbe4fbe8952db11812d52efe8cd8900fe88843e5eaefad62bbc7d3"
     name: "VL Generics: Bounds & Wildcards"
+challenges: |
+    **Spieler, Mannschaften und Ligen**
+    Modellieren Sie in Java verschiedene Spielertypen sowie generische Mannschaften und Ligen,
+    die jeweils bestimmte Spieler (-typen) bzw. Mannschaften aufnehmen können.
+
+    1.  Implementieren Sie die Klasse `Spieler`, die das Interface `ISpieler` erfüllt.
+
+        ```java
+        public interface ISpieler {
+            String getName();
+        }
+        ```
+
+    2.  Implementieren Sie die beiden Klassen `FussballSpieler` und `BasketballSpieler` und
+        sorgen Sie dafür, dass beide Klassen vom Compiler als Spieler betrachtet werden
+        (geeignete Vererbungshierarchie).
+
+    3.  Betrachten Sie das nicht-generische Interface `IMannschaft`. Erstellen Sie daraus ein
+        generisches Interface `IMannschaft` mit einer Typ-Variablen. Stellen Sie durch geeignete
+        Beschränkung der Typ-Variablen sicher, dass nur Mannschaften mit von `ISpieler` abgeleiteten
+        Spielern gebildet werden können.
+
+        ```java
+        public interface IMannschaft {
+            boolean aufnehmen(ISpieler spieler);
+            boolean rauswerfen(ISpieler spieler);
+        }
+        ```
+
+    4.  Betrachten Sie das nicht-generische Interface `ILiga`. Erstellen Sie daraus ein generisches
+        Interface `ILiga` mit einer Typvariablen. Stellen Sie durch geeignete Beschränkung der
+        Typvariablen sicher, dass nur Ligen mit von `IMannschaft` abgeleiteten Mannschaften angelegt
+        werden können.
+
+        ```java
+        public interface ILiga {
+            boolean aufnehmen(IMannschaft mannschaft);
+            boolean rauswerfen(IMannschaft mannschaft);
+        }
+        ```
+
+    5.  Leiten Sie von `ILiga` das **generische** Interface `IBundesLiga` ab. Stellen Sie durch
+        geeignete Formulierung der Typvariablen sicher, dass nur Ligen mit Mannschaften angelegt
+        werden können, deren Spieler vom Typ `FussballSpieler` (oder abgeleitet) sind.
+
+        Realisieren Sie nun noch die Funktionalität von `IBundesLiga` als **nicht-generisches**
+        Interface `IBundesLiga2`.
 ---
 
 

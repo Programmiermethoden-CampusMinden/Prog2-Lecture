@@ -49,6 +49,17 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/d438c8d0b87fc2934e71e539aaf32ce01126fc2145f08284235c4c4b2058b0ab9ccba925dbbcfaf90466c70aff29f79acae1f66edeb18bd794d08628545d4e07"
     name: "VL Annotationen"
+challenges: |
+    Schreiben Sie drei eigene Annotationen:
+
+    -   `@MeineKlasse` darf nur an Klassendefinitionen stehen und speichert den Namen des Autoren ab.
+    -   `@MeineMethode` darf nur an Methoden stehen.
+    -   `@TODO` darf an Methoden und Klassen stehen, ist aber nur in den Source-Dateien sichtbar.
+
+    Implementieren Sie einen Annotation-Prozessor, welcher Ihren Quellcode nach der `@MeineKlasse`-Annotation
+    durchsucht und dann den Namen der Klasse und den Namen des Autors ausgibt.
+
+    Zeigen Sie die Funktionen anhand einer Demo.
 ---
 
 

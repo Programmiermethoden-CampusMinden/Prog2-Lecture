@@ -60,6 +60,60 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/d2398cc8e1279e6b6bf1df06bd30b731e714d04d10e15b87a5f89aa07cbaf97978bb12f82ea0c7eff8a3133eb65134521933218fb94856fb6e8a6dc187dded28"
     name: "VL Lambda-Ausdrücke und funktionale Interfaces"
+challenges: |
+    In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/lambda)
+    finden Sie die Klassen `Student` und `StudentSort` mit
+    vorgefertigten Methoden  zu den Teilaufgaben sowie eine Testsuite
+    `SortTest` mit einzelnen Testfälllen zu den Teilaufgaben, mit der Ihre
+    Implementierung aufgerufen und getestet wird.
+
+    Ziel dieser Aufgabe ist es, eine Liste von Studierenden mithilfe verschiedener
+    syntaktischer Strukturen (Lambda-Ausdrücke, Methoden-Referenzen) zu sortieren.
+    Dabei soll bei allen Teilaufgaben die Methode
+    [java.util.List#sort](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html#sort(java.util.Comparator))
+    für das eigentliche Sortieren verwendet werden.
+
+    1.  In dieser Teilaufgabe sollen Sie der Methode `List#sort` das Sortierkriterium
+        mithilfe eines **Lambda-Ausdrucks** übergeben. Greifen Sie im Lambda-Ausdruck
+        für den Vergleich der Objekte auf die Getter der Objekte zu.
+
+        _Hinweis_: Erstellen Sie hierzu keine neuen Methoden, sondern verwenden Sie
+        nur Lambda-Ausdrücke innerhalb des Aufrufs von `List#sort`.
+
+        **1a** Sortieren Sie die Studierendenliste aufsteigend nach dem Geburtsdatum (`sort_1a()`).
+        **1b** Sortieren Sie die Studierendenliste absteigend nach dem Namen (`sort_1b()`).
+
+    2.  Erweitern Sie die Klasse `Student` um eine _statische_ Methode, die zwei
+        `Student`-Objekte anhand des Alters miteinander vergleicht. Die Methode
+        soll die Signatur `static int compareByAge(Student a, Student b)` besitzen
+        und die folgenden Werte zurückliefern:
+
+        -   a > b -> -1
+        -   a < b -> 1
+        -   a == b -> 0
+
+        Verwenden Sie die neue statische Methode `compareByAge` zum Sortieren
+        der Liste in `sort_2a()`. Nutzen Sie dabei einen **Lambda-Ausdruck**.
+
+    3.  Erweitern Sie die Klasse `Student` um eine Instanz-Methode, die das
+        `Student`-Objekt mit einem anderen (als Parameter übergebenen) `Student`-Objekt
+        vergleicht. Die Methode soll die Signatur `int compareByName(Student other)`
+        besitzen und die folgenden Werte zurückliefern:
+
+        -   self > other -> -1
+        -   self < other -> 1
+        -   self == other -> 0
+
+        Verwenden Sie die neue Methode `compareByName` zum Sortieren der Liste in `sort_3a()`.
+        Nutzen Sie dabei einen **Lambda-Ausdruck**.
+
+    4.  Erstellen Sie ein generisches Funktionsinterface, dass die Methode `compare`
+        definiert und zum Vergleichen von zwei Objekten mit generischen Typen dient.
+
+        Erzeugen Sie mithilfe eines **Lambda-Ausdrucks** eine **Instanz** Ihres
+        Interfaces, um damit zwei Objekte vom Typ `Student` in Bezug auf ihr Alter
+        vergleichen zu können. Verwenden Sie die erzeugte Instanz, um die
+        Studierendenliste absteigend zu sortieren (`sort_4a()`).
 ---
 
 

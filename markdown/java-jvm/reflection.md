@@ -48,8 +48,20 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/9ebd01cdab64351e7b52863f4a442d3199d3322eef1ba277ba979ce756d2892a1317ddd6e1fc34e6b4d28b237dec99e56810fe8bb35b9e95db325edbb14d7719"
     name: "VL Reflection"
----
+challenges: |
+    In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/java-jvm/src/challenges/reflection)
+    finden Sie eine einfache Implementierung für einen Taschenrechner mit Java-Swing.
+    Dieser Taschenrechner kann nur mit `int`-Werten rechnen.
+    Der Taschenrechner verfügt über keinerlei vordefinierte mathematische Operationen (Addieren, Subtrahieren etc.).
 
+    Erstellen Sie eigene mathematische Operationen, die `IOperation` implementieren. Jede Ihrer Klassen soll mit einer Annotation vermerkt werden, in welcher der Name der jeweiligen Operation gespeichert wird.
+
+    Der Taschenrechner lädt seine Operationen dynamisch über die statische Methode `OperationLoader.loadOperations` ein.
+    In den Vorgaben ist diese Methode noch nicht ausimplementiert. Implementieren Sie die Funktion so, dass sie mit Hilfe von Reflection Ihre Operationen einliest. Geben Sie dazu den Ordner an, in dem die entsprechenden `.class`-Dateien liegen. (Dieser Ordner soll sich außerhalb Ihres Java-Projekts befinden!)
+    Verändern Sie nicht die Signatur der Methode.
+
+    Ihre Operation-Klassen dürfen Sie nicht vorher bekannt machen. Diese müssen in einem vom aktuellen Projekt separierten Ordner/Projekt liegen.
+---
 
 ## Ausgaben und Einblicke zur Laufzeit
 

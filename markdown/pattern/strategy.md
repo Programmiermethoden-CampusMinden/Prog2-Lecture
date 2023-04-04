@@ -42,6 +42,26 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/5ffcaeeee30c133dad50fcb19b5277f4c38f24ced7541531ac8212c56db3114fdb1b435f4eb8e76c8fef3df0e1a49fa510ffa97dee4a7b568ecbc56d1e483692"
     name: "VL Strategy-Pattern"
+challenges: |
+    Implementieren Sie das Spiel "Schere,Stein,Papier" (Spielregeln vergleiche
+    [wikipedia.org/wiki/Schere,Stein,Papier](https://de.wikipedia.org/wiki/Schere,_Stein,_Papier)) in Java.
+
+    Nutzen Sie das Strategy-Pattern, um den Spielerinstanzen zur Laufzeit eine konkrete Spielstrategie mitzugeben, nach denen die Spieler ihre Züge _berechnen_.
+    Implementieren Sie mindestens drei unterschiedliche konkrete Strategien.
+
+    _Hinweis_: Eine mögliche Strategie könnte sein, den Nutzer via Tastatureingabe nach dem nächsten Zug zu fragen.
+
+    **Gehen Sie bei der Lösung der Aufgabe methodisch vor**:
+
+    1.  Stellen Sie sich eine Liste mit relevanten Anforderungen zusammen.
+    2.  Erstellen Sie (von Hand) ein Modell (UML-Klassendiagramm):
+        *   Welche Klassen und Interfaces werden benötigt?
+        *   Welche Aufgaben sollen die Klassen haben?
+        *   Welche Attribute und Methoden sind nötig?
+        *   Wie sollen die Klassen interagieren, wer hängt von wem ab?
+    3.  Implementieren Sie Ihr Modell in Java. Schreiben Sie ein Hauptprogramm, welches das Spiel startet,
+        die Spieler ziehen lässt und dann das Ergebnis ausgibt.
+    4.  Überlegen Sie, wie Sie Ihr Programm sinnvoll manuell testen können und tun Sie das.
 ---
 
 

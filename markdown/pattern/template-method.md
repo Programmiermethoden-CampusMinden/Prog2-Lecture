@@ -36,6 +36,21 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/a368cbd0990f4f58e5ee776bb4d6a1443c0a7cd443177eaa35ba35558e5c01307f689be5c9c239c6ffb41c74d2726397f2ba6be086df30737eec1df17ac4827a"
     name: "VL Template-Method-Pattern"
+challenges: |
+    Schreiben Sie eine abstrakte Klasse Drucker. Implementieren Sie die Funktion
+    `kopieren`, bei der zuerst die Funktion `scannen` und dann die Funktion `drucken`
+    aufgerufen wird. Der Kopiervorgang ist für alle Druckertypen identisch,
+    das Scannen und Drucken ist abhängig vom Druckertyp.
+
+    Implementieren Sie zusätzlich zwei unterschiedliche Druckertypen.
+    - `Tintendrucker extends Drucker`
+    - `Laserdrucker extends Drucker`
+    - `Tintendrucker#scannen` loggt den Text "Scanne das Dokument mit dem Tintendrucker."
+    - `Laserdrucker#scannen` loggt den Text "Scanne das Dokument mit dem Laserdrucker."
+    - `Tintendrucker#drucken` loggt den Text "Drucke das Dokument auf dem Tintendrucker."
+    - `Laserdrucker#drucken` loggt den Text "Drucke das Dokument auf dem Laserdrucker."
+
+    Nutzen Sie das Template-Method-Pattern.
 ---
 
 

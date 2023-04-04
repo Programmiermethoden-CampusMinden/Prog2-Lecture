@@ -46,6 +46,86 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/9531e04dd11458ea45915269aca452ba6b9978ef7b1b3a777a424d673573f75724a3fbedd0a2bec5e4d14de4025ea92ae4a966f95ee312e9f6ecca4fde4c98ef"
     name: "VL Mocking"
+challenges: |
+    Betrachten Sie die drei Klassen `Utility.java`, `Evil.java`
+    und `UtilityTest.java`:
+
+    ```java
+    public class Utility {
+        private int intResult = 0;
+        private Evil evilClass;
+
+        public Utility(Evil evilClass) {
+            this.evilClass = evilClass;
+        }
+
+        public void evilMethod() {
+            int i = 2 / 0;
+        }
+
+        public int nonEvilAdd(int a, int b) {
+            return a + b;
+        }
+
+        public int evilAdd(int a, int b) {
+            evilClass.evilMethod();
+            return a + b;
+        }
+
+        public void veryEvilAdd(int a, int b) {
+            evilMethod();
+            evilClass.evilMethod();
+            intResult = a + b;
+        }
+
+        public int getIntResult() {
+            return intResult;
+        }
+    }
+
+    public class Evil {
+        public void evilMethod() {
+            int i = 3 / 0;
+        }
+    }
+
+    public class UtilityTest {
+        private Utility utilityClass;
+        // Initialisieren Sie die Attribute entsprechend vor jedem Test.
+
+        @Test
+        void test_nonEvilAdd() {
+            Assertions.assertEquals(10, utilityClass.nonEvilAdd(9, 1));
+        }
+
+        @Test
+        void test_evilAdd() {
+            Assertions.assertEquals(10, utilityClass.evilAdd(9, 1));
+        }
+
+        @Test
+        void test_veryEvilAdd() {
+            utilityClass.veryEvilAdd(9, 1);
+            Assertions.assertEquals(10, utilityClass.getIntResult());
+        }
+    }
+    ```
+
+    Testen Sie die Methoden `nonEvilAdd`, `evilAdd` und `veryEvilAdd` der
+    Klasse `Utility.java` mit dem [JUnit-](https://junit.org/) und dem
+    [Mockito-Framework](https://github.com/mockito/mockito).
+
+    Vervollständigen Sie dazu die Klasse `UtilityTest.java` und nutzen Sie
+    Mocking mit [Mockito](https://github.com/mockito/mockito), um die Tests
+    zum Laufen zu bringen. Die Tests dürfen Sie entsprechend verändern, aber
+    die Aufrufe aus der Vorgabe müssen erhalten bleiben. Die Klassen `Evil.java`
+    und `Utility.java` dürfen Sie nicht ändern.
+
+    _Hinweis:_ Die Klasse `Evil.java` und die Methode `evilMethod()` aus
+    `Utility.java` lösen eine ungewollte bzw. "zufällige" Exception aus,
+    auf deren Auftreten jedoch _nicht_ getestet werden soll. Stattdessen
+    sollen diese Klassen bzw. Methoden mit Mockito "weggemockt" werden, so
+    dass die vorgegebenen Testmethoden (wieder) funktionieren.
 ---
 
 

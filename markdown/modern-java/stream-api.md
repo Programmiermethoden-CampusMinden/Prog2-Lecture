@@ -59,6 +59,16 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/429bb37eaea02582785bfb46a92d68a3ed76cb18bdc98ec0f04ae438cecf82a595e1e46947d2ffcc2fd868d67ca1ed3beba73f216ae4886f2a9492167c006784"
     name: "VL Stream-API"
+challenges: |
+    In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/streams)
+    finden Sie die Klasse `Main`, in der die Methoden
+    `Main#a`, `Main#b` und `Main#c` "klassisch" mit `for`-Schleifen
+    implementiert wurden.
+
+    Führen Sie für die drei Methoden `Main#a`, `Main#b` und `Main#c`
+    ein Refactoring durch, so dass in diesen Methoden jeweils die
+    Java Stream-API genutzt wird und es keine `for`-/`foreach`-/`while`-Schleifen
+    mehr gibt.
 ---
 
 

@@ -39,6 +39,20 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/a0484bfdc0f388075a01b88f20bde97709aae4d4fe34d517e0889407b2d7b095b9b781856870f21d638e4ed4bf35b534717f5bac227ecc17ea4b6e0a195248b9"
     name: "VL Command-Pattern"
+challenges: |
+    Schreiben Sie für den `Dwarf` in den
+    [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/pattern/src/challenges/command)
+    einen Controller, welcher das Command-Pattern verwendet.
+
+    * "W" führt Springen aus
+    * "A" bewegt den Zwerg nach links
+    * "D" bewegt den Zwerg nach rechts
+    * "S" führt Ducken aus
+
+    Schreiben Sie zusätzlich für den `Cursor` einen Controller, welcher das Command-Pattern mit Historie
+    erfüllt (ebenfalls über die Tasten "W", "A", "S" und "D").
+
+    Schreiben Sie eine Demo, um die Funktionalität Ihres Programmes zu demonstrieren.
 ---
 
 
