@@ -37,8 +37,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106228&client_id=FH-Bielefeld"
     name: "Quiz Logging (ILIAS)"
-assignments:
-  - topic: sheet02
 youtube:
   - link: "`https://youtu.be/_jYWJzr1rkA`{=markdown}"
     name: "VL Logging"

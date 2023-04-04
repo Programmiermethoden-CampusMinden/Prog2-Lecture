@@ -43,8 +43,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106526&client_id=FH-Bielefeld"
     name: "Quiz Optional (ILIAS)"
-assignments:
-  - topic: sheet09
 youtube:
   - link: "https://youtu.be/JDG_hUSBfSA"
     name: "VL Optional"

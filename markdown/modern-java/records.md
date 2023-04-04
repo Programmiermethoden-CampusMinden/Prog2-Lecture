@@ -44,8 +44,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106527&client_id=FH-Bielefeld"
     name: "Quiz Record-Klassen (ILIAS)"
-assignments:
-  - topic: sheet09
 youtube:
   - link: "https://youtu.be/5RMhdCsZL6Y"
     name: "VL Record-Klassen"

@@ -30,8 +30,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106220&client_id=FH-Bielefeld"
     name: "Quiz Gradle (ILIAS)"
-assignments:
-  - topic: sheet04
 youtube:
   - link: "https://youtu.be/aVtDkFpwd_E"
     name: "VL Build-Systeme: Gradle"

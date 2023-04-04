@@ -33,8 +33,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106512&client_id=FH-Bielefeld"
     name: "Quiz Annotationen (ILIAS)"
-assignments:
-  - topic: sheet07
 youtube:
   - link: "https://youtu.be/7u4_I4W_1JY"
     name: "VL Annotationen"

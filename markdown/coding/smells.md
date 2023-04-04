@@ -28,8 +28,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106230&client_id=FH-Bielefeld"
     name: "Quiz Code Smells (ILIAS)"
-assignments:
-  - topic: sheet05
 youtube:
   - link: "https://youtu.be/ALDuLxm71tg"
     name: "VL Code Smells"

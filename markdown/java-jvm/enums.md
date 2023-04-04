@@ -26,8 +26,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106515&client_id=FH-Bielefeld"
     name: "Quiz Enumerations (ILIAS)"
-assignments:
-  - topic: sheet06
 youtube:
   - link: "https://youtu.be/qoeT9jVuQZc"
     name: "VL Enumerations"

@@ -37,8 +37,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
     name: "Quiz JUnit-Basics - nur erster Teil (ILIAS)"
-assignments:
-  - topic: sheet04
 youtube:
   - link: "https://youtu.be/WGd83crqu4I"
     name: "VL Einführung Softwaretest"

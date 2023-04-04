@@ -35,8 +35,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106241&client_id=FH-Bielefeld"
     name: "Quiz Git Basics (ILIAS)"
-assignments:
-  - topic: sheet01
 youtube:
   - link: "https://youtu.be/GxJI8nmZVE8"
     name: "VL Git Basics"

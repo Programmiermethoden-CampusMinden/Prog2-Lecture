@@ -43,8 +43,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106245&client_id=FH-Bielefeld"
     name: "Quiz Git Remotes (ILIAS)"
-assignments:
-  - topic: sheet01
 youtube:
   - link: "`https://youtu.be/_uhEseblDYU`{=markdown}"
     name: "VL Git Remotes"

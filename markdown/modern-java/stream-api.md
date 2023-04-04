@@ -49,8 +49,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106528&client_id=FH-Bielefeld"
     name: "Quiz Stream-API (ILIAS)"
-assignments:
-  - topic: sheet09
 youtube:
   - link: "https://youtu.be/zZMyk0u5hJk"
     name: "VL Stream-API"

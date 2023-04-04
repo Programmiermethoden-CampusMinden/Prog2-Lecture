@@ -46,8 +46,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106523&client_id=FH-Bielefeld"
     name: "Quiz Lambda-Ausdrücke und funktionale Interfaces (ILIAS)"
-assignments:
-  - topic: sheet08
 youtube:
   - link: "https://youtu.be/Wd8KG7xtp4c"
     name: "VL Lambda-Ausdrücke und funktionale Interfaces"

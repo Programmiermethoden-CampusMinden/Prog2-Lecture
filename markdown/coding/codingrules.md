@@ -57,8 +57,6 @@ outcomes:
   - k3: "Nutzung des Tools Spotless (Formatierung des Codes)"
   - k3: "Nutzung des Tools Checkstyle (Coding Conventions und Metriken)"
   - k3: "Nutzung des Tools SpotBugs (Vermeiden von Anti-Pattern)"
-assignments:
-  - topic: sheet05
 youtube:
   - link: "https://youtu.be/nLAEak6Fwfk"
     name: "VL Coding Conventions"

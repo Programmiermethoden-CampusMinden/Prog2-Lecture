@@ -51,8 +51,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106529&client_id=FH-Bielefeld"
     name: "Quiz Threads Intro (ILIAS)"
-assignments:
-  - topic: sheet10
 youtube:
   - link: "https://youtu.be/ClfXbNPRl_8"
     name: "VL Threads Intro"

@@ -27,8 +27,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106235&client_id=FH-Bielefeld"
     name: "Quiz Generics: Classes & Methods (ILIAS)"
-assignments:
-  - topic: sheet03
 youtube:
   - link: "https://youtu.be/k6MFPW-shh8"
     name: "VL Generische Klassen & Methoden"

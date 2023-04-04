@@ -24,8 +24,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106536&client_id=FH-Bielefeld"
     name: "Quiz Singleton-Pattern (ILIAS)"
-assignments:
-  - topic: sheet06
 youtube:
   - link: "https://youtu.be/ZT3rl1t85aY"
     name: "VL Singleton-Pattern"

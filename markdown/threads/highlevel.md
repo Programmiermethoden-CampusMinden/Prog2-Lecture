@@ -35,8 +35,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106531&client_id=FH-Bielefeld"
     name: "Quiz High-Level Concurrency (ILIAS)"
-assignments:
-  - topic: sheet10
 youtube:
   - link: "https://youtu.be/bb_kuuhXC6A"
     name: "VL High-Level Concurrency"

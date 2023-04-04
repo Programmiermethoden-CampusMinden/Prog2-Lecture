@@ -37,8 +37,6 @@ quizzes:
     name: "Tutorial: Welcome to Learn Git Branching"
   - link: "https://marklodato.github.io/visual-git-guide/index-en.html"
     name: "Tutorial: A Visual Git Reference"
-assignments:
-  - topic: sheet01
 youtube:
   - link: "https://youtu.be/WXPJOsgeR10"
     name: "VL Git Branches"
