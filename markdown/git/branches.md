@@ -443,6 +443,15 @@ und Message bleiben aber erhalten.)
 [Konsole: Commit auschecken]{.bsp}
 
 
+::::::::: notes
+## Link-Sammlung mit interaktiven Git-Tutorials
+
+*   [Learn Git Branching](https://learngitbranching.js.org/)
+*   [Oh My Git!](https://ohmygit.org/)
+*   [Git Time](https://git.bradwoods.io/)
+:::::::::
+
+
 ## Wrap-Up
 
 *   Anlegen von Branches mit `git branch`

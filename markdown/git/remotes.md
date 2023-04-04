@@ -371,6 +371,15 @@ Beispiel: `git fetch andi` oder `git push origin master`
 [[Beispiel]{.bsp}]{.slides}
 
 
+::::::::: notes
+## Link-Sammlung mit interaktiven Git-Tutorials
+
+*   [Learn Git Branching](https://learngitbranching.js.org/)
+*   [Oh My Git!](https://ohmygit.org/)
+*   [Git Time](https://git.bradwoods.io/)
+:::::::::
+
+
 ## Wrap-Up
 
 *   Synchronisierung des lokalen Repos mit anderen Repos
