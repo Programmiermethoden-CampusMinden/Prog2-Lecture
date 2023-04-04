@@ -63,21 +63,21 @@
 
 -   week: "W07 (19. Mai)"
     lecture:
-        -   topic: "/generics/classes-methods"
-        -   topic: "/generics/bounds-wildcards"
-        -   topic: "/generics/type-erasure"
-        -   topic: "/generics/generics-polymorphism"
-        -   topic: "/java-jvm/collections"
+        -   topic: "/java-jvm/serialisation"
+        -   topic: "/modern-java/records"
+        -   topic: "/pattern/command"
+        -   topic: "/building/docker"
     assignment:
         -   topic: "b03a"
             due: "Do, 18.05., 08 Uhr; Peer-Feedback: Fr, 19.05., 08 Uhr"
 
 -   week: "W08 (26. Mai)"
     lecture:
-        -   topic: "/java-jvm/serialisation"
-        -   topic: "/modern-java/records"
-        -   topic: "/pattern/command"
-        -   topic: "/building/docker"
+        -   topic: "/generics/classes-methods"
+        -   topic: "/generics/bounds-wildcards"
+        -   topic: "/generics/type-erasure"
+        -   topic: "/generics/generics-polymorphism"
+        -   topic: "/java-jvm/collections"
     assignment:
         -   topic: "b03b"
             due: "Do, 25.05., 08 Uhr; Peer-Feedback: Fr, 26.05., 08 Uhr"
