@@ -388,9 +388,6 @@ Git und die Qualität der Kommunikation innerhalb von GitHub (Issue-Beschreibung
 etc.) sowie den Umfang des Problems. Angedacht ist die Aufteilung bis zu 2P für den Fix/Code (für
 Bug-Fixing/neue Features) und bis zu 3P für das Verhalten und die Kommunikation im PR.
 
-Weitere Informationen darüber, wie Sie am Framework mitarbeiten können, finden Sie in der
-[CONTRIBUTING.md].
-
 [Dungeon-Framework]: https://github.com/Programmiermethoden/Dungeon
 [Bounty-Aufgaben]: #bounty-aufgaben
 [Issue]: https://github.com/Programmiermethoden/Dungeon/issues
