@@ -28,8 +28,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106547&client_id=FH-Bielefeld"
     name: "Quiz Mocking (ILIAS)"
-assignments:
-  - topic: sheet05
 youtube:
   - link: "https://youtu.be/8deFZKtjXSk"
     name: "VL Mocking"

@@ -31,8 +31,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106524&client_id=FH-Bielefeld"
     name: "Quiz Methoden-Referenzen (ILIAS)"
-assignments:
-  - topic: sheet08
 youtube:
   - link: "https://youtu.be/z0mfvvrsRzc"
     name: "VL Methoden-Referenzen"

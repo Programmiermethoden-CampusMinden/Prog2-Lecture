@@ -30,8 +30,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106231&client_id=FH-Bielefeld"
     name: "Quiz Refactoring (ILIAS)"
-assignments:
-  - topic: sheet05
 youtube:
   - link: "https://youtu.be/n0RaQ_Qve0Y"
     name: "VL Refactoring"

@@ -25,8 +25,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106533&client_id=FH-Bielefeld"
     name: "Quiz Factory-Method-Pattern (ILIAS)"
-assignments:
-  - topic: sheet02
 youtube:
   - link: "https://youtu.be/mJWe-2BS2W0"
     name: "VL Factory-Method-Pattern"

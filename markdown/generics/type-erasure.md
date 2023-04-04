@@ -24,8 +24,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106237&client_id=FH-Bielefeld"
     name: "Quiz Generics: Type Erasure (ILIAS)"
-assignments:
-  - topic: sheet03
 youtube:
   - link: "https://youtu.be/vo0WKkPBMAM"
     name: "VL Generics: Type Erasure"

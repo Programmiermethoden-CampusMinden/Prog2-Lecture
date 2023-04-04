@@ -26,8 +26,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106238&client_id=FH-Bielefeld"
     name: "Quiz Generics und Polymorphie (ILIAS)"
-assignments:
-  - topic: sheet03
 youtube:
   - link: "https://youtu.be/RiTA43wTixQ"
     name: "VL Generics und Polymorphie"

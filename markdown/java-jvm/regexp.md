@@ -38,8 +38,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106518&client_id=FH-Bielefeld"
     name: "Quiz RegExp (ILIAS)"
-assignments:
-  - topic: sheet08
 youtube:
   - link: "https://youtu.be/K9R1Bwa73uI"
     name: "VL RegExp"

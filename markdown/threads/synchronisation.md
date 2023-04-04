@@ -50,8 +50,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106530&client_id=FH-Bielefeld"
     name: "Quiz Threads Synchronisation (ILIAS)"
-assignments:
-  - topic: sheet10
 youtube:
   - link: "https://youtu.be/FtVaobn4NqA"
     name: "VL Threads Synchronisation"

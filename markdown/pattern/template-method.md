@@ -28,8 +28,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106538&client_id=FH-Bielefeld"
     name: "Quiz Template-Method-Pattern (ILIAS)"
-assignments:
-  - topic: sheet07
 youtube:
   - link: "https://youtu.be/EE-n2T6AO-g"
     name: "VL Template-Method-Pattern"

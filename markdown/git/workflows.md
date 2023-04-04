@@ -37,8 +37,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106246&client_id=FH-Bielefeld"
     name: "Quiz Git Workflows (ILIAS)"
-assignments:
-  - topic: sheet01
 youtube:
   - link: "https://youtu.be/3xqmNGN39wE"
     name: "VL Git Workflows"

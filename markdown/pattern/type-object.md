@@ -33,8 +33,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106539&client_id=FH-Bielefeld"
     name: "Quiz Type-Object-Pattern (ILIAS)"
-assignments:
-  - topic: sheet06
 youtube:
   - link: "https://youtu.be/No-xduTVlt0"
     name: "VL Type-Object-Pattern"

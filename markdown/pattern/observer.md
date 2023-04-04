@@ -26,8 +26,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106535&client_id=FH-Bielefeld"
     name: "Quiz Observer-Pattern (ILIAS)"
-assignments:
-  - topic: sheet06
 youtube:
   - link: "https://youtu.be/833lHcoxeog"
     name: "VL Observer-Pattern"

@@ -49,8 +49,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106543&client_id=FH-Bielefeld"
     name: "Quiz Visitor-Pattern (ILIAS)"
-assignments:
-  - topic: sheet09
 youtube:
   - link: "https://youtu.be/zW_2oQmjp8M"
     name: "VL Visitor-Pattern"

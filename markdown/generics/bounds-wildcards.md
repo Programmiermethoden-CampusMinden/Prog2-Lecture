@@ -30,8 +30,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106236&client_id=FH-Bielefeld"
     name: "Quiz Generics: Bounds & Wildcards (ILIAS)"
-assignments:
-  - topic: sheet03
 youtube:
   - link: "https://youtu.be/OV2vEn2EkWo"
     name: "VL Generics: Bounds & Wildcards"

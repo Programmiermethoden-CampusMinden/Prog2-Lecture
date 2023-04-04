@@ -31,8 +31,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106532&client_id=FH-Bielefeld"
     name: "Quiz Command-Pattern (ILIAS)"
-assignments:
-  - topic: sheet09
 youtube:
   - link: "https://youtu.be/F7RJ7YCVMS4"
     name: "VL Command-Pattern"

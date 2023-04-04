@@ -36,8 +36,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106517&client_id=FH-Bielefeld"
     name: "Quiz Reflection (ILIAS)"
-assignments:
-  - topic: sheet07
 youtube:
   - link: "https://youtu.be/7wTKl8-KYd0"
     name: "VL Reflection"

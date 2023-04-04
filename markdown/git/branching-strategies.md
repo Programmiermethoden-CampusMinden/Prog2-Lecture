@@ -36,8 +36,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106243&client_id=FH-Bielefeld"
     name: "Quiz Git Branching-Strategien (ILIAS)"
-assignments:
-  - topic: sheet01
 youtube:
   - link: "https://youtu.be/v1WHIPdoA0k"
     name: "VL Git Branching-Strategien"

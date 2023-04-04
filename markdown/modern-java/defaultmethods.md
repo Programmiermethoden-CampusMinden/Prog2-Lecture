@@ -38,8 +38,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106522&client_id=FH-Bielefeld"
     name: "Quiz Default-Methoden (ILIAS)"
-assignments:
-  - topic: sheet08
 youtube:
   - link: "https://youtu.be/qQ8BPkL9X5o"
     name: "VL Default-Methoden"

@@ -40,8 +40,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106546&client_id=FH-Bielefeld"
     name: "Quiz Testfallermittlung (ILIAS)"
-assignments:
-  - topic: sheet04
 youtube:
   - link: "https://youtu.be/AR1WWt4AFqI"
     name: "VL Testfallermittlung"

@@ -32,8 +32,6 @@ outcomes:
 quizzes:
   - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
     name: "Quiz JUnit-Basics (ILIAS)"
-assignments:
-  - topic: sheet04
 youtube:
   - link: "https://youtu.be/2SC40rO0ZOE"
     name: "VL JUnit Basics"
