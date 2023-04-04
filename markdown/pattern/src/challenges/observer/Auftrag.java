@@ -1,4 +1,4 @@
-package challenges;
+package challenges.observer;
 
 class Auftrag {
     private WarenTyp warenTyp;

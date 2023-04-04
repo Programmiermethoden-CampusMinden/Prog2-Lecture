@@ -37,7 +37,7 @@ fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/e00888ac91978bb3694491a722e61bba5d836d403d7f94e7d3ef6b28c07dae841b5852488bdf8f64e1628a58a2e5f3410dbb08699ded346ec2da34fd877a831f"
     name: "VL Observer-Pattern"
 challenges: |
-    In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/pattern/src/challenges)
+    In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/pattern/src/challenges/observer)
     finden Sie ein Modell für eine Lieferkette zwischen Großhandel und Einzelhandel.
 
     Wenn beim Einzelhändler eine Bestellung von einem Kunden eingeht (`Einzelhandel#bestellen`), speichert

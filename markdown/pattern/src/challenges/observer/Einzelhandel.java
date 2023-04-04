@@ -1,4 +1,4 @@
-package challenges;
+package challenges.observer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
