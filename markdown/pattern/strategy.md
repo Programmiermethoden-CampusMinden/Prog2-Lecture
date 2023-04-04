@@ -54,16 +54,13 @@ challenges: |
     **Gehen Sie bei der Lösung der Aufgabe methodisch vor**:
 
     1.  Stellen Sie sich eine Liste mit relevanten Anforderungen zusammen.
-
     2.  Erstellen Sie (von Hand) ein Modell (UML-Klassendiagramm):
         *   Welche Klassen und Interfaces werden benötigt?
         *   Welche Aufgaben sollen die Klassen haben?
         *   Welche Attribute und Methoden sind nötig?
         *   Wie sollen die Klassen interagieren, wer hängt von wem ab?
-
     3.  Implementieren Sie Ihr Modell in Java. Schreiben Sie ein Hauptprogramm, welches das Spiel startet,
         die Spieler ziehen lässt und dann das Ergebnis ausgibt.
-
     4.  Überlegen Sie, wie Sie Ihr Programm sinnvoll manuell testen können und tun Sie das.
 ---
 
