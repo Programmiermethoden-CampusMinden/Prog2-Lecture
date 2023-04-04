@@ -82,14 +82,13 @@ challenges: |
             return intResult;
         }
     }
+
     public class Evil {
         public void evilMethod() {
             int i = 3 / 0;
         }
     }
-    // Ergänzen Sie UtilityTest so, dass alle Testmethoden grün werden.
-    // Die anderen beiden Klassen dürfen nicht geändert werden.
-    // Die Testaufrufe müssen auch erhalten bleiben.
+
     public class UtilityTest {
         private Utility utilityClass;
         // Initialisieren Sie die Attribute entsprechend vor jedem Test.
