@@ -55,6 +55,12 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/8aa3f0e96448352e436aead353f54a3de6bbd3737bf33b6bd935b098352690544dc527e59424068ec65b6e0d67f6aff6bd6aa0a602127ce2a02a360658e0151d"
     name: "VL Git Remotes"
+challenges: |
+    **Interaktive Git-Tutorials**: Schaffen Sie die Rätsel?
+
+    *   [Learn Git Branching](https://learngitbranching.js.org/)
+    *   [Oh My Git!](https://ohmygit.org/)
+    *   [Git Time](https://git.bradwoods.io/)
 ---
 
 
@@ -369,15 +375,6 @@ Beispiel: `git fetch andi` oder `git push origin master`
 :::
 
 [[Beispiel]{.bsp}]{.slides}
-
-
-::::::::: notes
-## Link-Sammlung mit interaktiven Git-Tutorials
-
-*   [Learn Git Branching](https://learngitbranching.js.org/)
-*   [Oh My Git!](https://ohmygit.org/)
-*   [Git Time](https://git.bradwoods.io/)
-:::::::::
 
 
 ## Wrap-Up
