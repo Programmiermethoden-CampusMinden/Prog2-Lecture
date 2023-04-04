@@ -1,18 +1,6 @@
 
 
 
-## Git Branches (4 Punkte)
-
-{{% include "assignments/pool_concept/tasks/git_branches.md" %}}
-
-Abgabe: Schreiben Sie Ihre Schritte, die Antworten auf die Fragen und Ihre Beobachtungen zu den einzelnen
-Schritten in eine Textdatei und geben Sie diese als Teil der Lösung im Zip-Archiv ab. Das erstellte Repo
-samt Workingcopy fügen Sie ebenfalls dem Zip-Archiv hinzu. Im Praktikum demonstrieren Sie den Umgang mit
-den Schritten noch einmal live.
-
-**Punkte**: Je 2P für die beiden Teilaufgaben
-
-
 ## Git Remotes: Vorbereitung Repo für die Abgabe (2 Punkte)
 
 Sie sollen alle zukünftigen Aufgaben aus dem Dungeon- und Konzept-Pool in einem
