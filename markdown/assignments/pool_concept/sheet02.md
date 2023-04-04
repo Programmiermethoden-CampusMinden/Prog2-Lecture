@@ -14,10 +14,3 @@ hidden: true
 besprochen und sind ab diesem Blatt im Praktikum einzusetzen (vgl.
 `["Note und Credits > Hinweise zum Praktikum > Punkte und formale Abzüge"]({{< ref "/org/grading" >}})`{=markdown}).
 
-
-## Entwurfsmuster "Factory-Method" (4 Punkte)
-
-{{% include "assignments/pool_concept/tasks/factory_method.md" %}}
-
-**Punkte**: Je 2P für das Erzeugen eines passenden neuen Computers und für
-das korrekte Umsetzen des Factory-Method-Patterns.
