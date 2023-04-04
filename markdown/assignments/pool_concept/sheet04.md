@@ -7,11 +7,3 @@ weight: 4
 
 hidden: true
 ---
-
-
-## Testfallermittlung (5 Punkte)
-
-{{% include "assignments/pool_concept/tasks/junit_advanced_rsv.md" %}}
-
-**Punkte**: 2P für ÄK-Bildung, 1P GW-Analyse, 1P TF-Erstellung, 1P Umsetzung als JUnit-Tests
-
