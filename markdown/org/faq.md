@@ -391,7 +391,6 @@ Bug-Fixing/neue Features) und bis zu 3P für das Verhalten und die Kommunikation
 [Dungeon-Framework]: https://github.com/Programmiermethoden/Dungeon
 [Bounty-Aufgaben]: #bounty-aufgaben
 [Issue]: https://github.com/Programmiermethoden/Dungeon/issues
-[CONTRIBUTING.md]: https://github.com/Programmiermethoden/Dungeon/blob/master/CONTRIBUTING.MD
 
 
 ## Hilflos im Dungeon?
