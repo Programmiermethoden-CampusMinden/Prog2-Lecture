@@ -59,6 +59,49 @@ fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/d2398cc8e1279e6b6bf1df06bd30b731e714d04d10e15b87a5f89aa07cbaf97978bb12f82ea0c7eff8a3133eb65134521933218fb94856fb6e8a6dc187dded28"
     name: "VL Lambda-Ausdrücke und funktionale Interfaces"
 challenges: |
+    **Beispiel aus einem Code-Review im [Programmiermethoden/Dungeon](https://github.com/Programmiermethoden/Dungeon)**
+
+    Erklären Sie folgenden Code:
+
+    ```java
+    public interface IFightAI {
+        void fight(Entity entity);
+    }
+
+    public class AIComponent extends Component {
+        private final IFightAI fightAI;
+
+        fightAI =
+                    entity1 -> {
+                        System.out.println("TIME TO FIGHT!");
+                        // todo replace with melee skill
+                    };
+    }
+    ```
+
+    <!--
+    aus https://github.com/Programmiermethoden/Dungeon/pull/128#pullrequestreview-1261631606
+
+    hmmm. auf der rechten seite steht ein lambda-ausdruck: `entity1` ist der parameter, und hinter dem `->` kommt der "funktionskörper".
+    geschweifte klammern, weil du keine einzelne expression hast, sondern ein statement (`println()`) und ij vermutlich wg. des kommentars
+    noch weitere statements erwartet.
+
+    die frage ist, warum die zuweisung und was bedeutet die linke seite? `fightAI` ist vom typ `IFightAI`, und das ding ist ein
+    "funktionales interface", hat also genau eine abstrakte methode `void fight(Entity entity);`.
+
+    d.h. die ganze rechte seite ist eine anonyme "on-the-fly"-implementierung für `void fight(Entity entity);`. oder andersherum, du kannst
+    anschließend `fightAI(entity)` aufrufen :)
+
+    aber letztlich ist es genau das. vorher hattest du dort eine anonyme klasse, die direkt instanziiert wurde - also ein objekt, welches vom
+    typ her das interface erfüllt und diese eine methode anbietet. jetzt (nachher) hast du das auch, aber hier als lambda und es macht den fokus
+    auf diese eine methode im interface deutlich.
+
+    (diese ersetzung klappt aber tatsächlich nur bei funktionalen interfaces, also wenn es nur genau eine abstrakte methode im interface gibt.)
+    -->
+
+
+    **Sortieren mit Lambdas und funktionalen Interfaces**
+
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/lambda)
     finden Sie die Klassen `Student` und `StudentSort` mit
     vorgefertigten Methoden  zu den Teilaufgaben sowie eine Testsuite
@@ -79,6 +122,7 @@ challenges: |
         nur Lambda-Ausdrücke innerhalb des Aufrufs von `List#sort`.
 
         **1a** Sortieren Sie die Studierendenliste aufsteigend nach dem Geburtsdatum (`sort_1a()`).
+        
         **1b** Sortieren Sie die Studierendenliste absteigend nach dem Namen (`sort_1b()`).
 
     2.  Erweitern Sie die Klasse `Student` um eine _statische_ Methode, die zwei
