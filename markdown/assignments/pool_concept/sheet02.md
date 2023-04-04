@@ -15,13 +15,6 @@ besprochen und sind ab diesem Blatt im Praktikum einzusetzen (vgl.
 `["Note und Credits > Hinweise zum Praktikum > Punkte und formale Abzüge"]({{< ref "/org/grading" >}})`{=markdown}).
 
 
-## Logging (6 Punkte)
-
-{{% include "assignments/pool_concept/tasks/logging.md" %}}
-
-**Punkte**: Je 2P für die beiden Formatter und das Einbauen des Loggings.
-
-
 ## Entwurfsmuster "Factory-Method" (4 Punkte)
 
 {{% include "assignments/pool_concept/tasks/factory_method.md" %}}
