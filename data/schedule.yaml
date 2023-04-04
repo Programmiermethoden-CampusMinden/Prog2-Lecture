@@ -65,8 +65,9 @@
     lecture:
         -   topic: "/java-jvm/serialisation"
         -   topic: "/modern-java/records"
-        -   topic: "/pattern/command"
+        -   topic: "/modern-java/defaultmethods"
         -   topic: "/building/docker"
+        -   topic: "/git/worktree"
     assignment:
         -   topic: "b03a"
             due: "Do, 18.05., 08 Uhr; Peer-Feedback: Fr, 19.05., 08 Uhr"
@@ -84,11 +85,10 @@
 
 -   week: "W09 (02. Juni)"
     lecture:
-        -   topic: "/modern-java/defaultmethods"
         -   topic: "/java-jvm/regexp"
         -   topic: "/pattern/visitor"
         -   topic: "/pattern/observer"
-        -   topic: "/git/worktree"
+        -   topic: "/pattern/command"
     assignment:
         -   topic: "b04a"
             due: "Do, 01.06., 08 Uhr; Peer-Feedback: Fr, 02.06., 08 Uhr"
