@@ -40,6 +40,12 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/3af48428e1b62bd42410e2a802cf355309212ea621509aa20833c5e1c486ffe9214b027c29e55d775f135f45ab7d3fcd59d735812d64bc04a71de8d59df8a3f5"
     name: "VL Build-Systeme: Gradle"
+challenges: |
+    Betrachten Sie das Buildskript `gradle.build` aus [Programmiermethoden/Dungeon](https://github.com/Programmiermethoden/Dungeon/blob/master/build.gradle).
+
+    Erklären Sie, in welche Abschnitte das Buildskript unterteilt ist und welche Aufgaben diese
+    Abschnitte jeweils erfüllen. Gehen Sie dabei im _Detail_ auf das Plugin `java` und die dort
+    bereitgestellten Tasks und deren Abhängigkeiten untereinander ein.
 ---
 
 

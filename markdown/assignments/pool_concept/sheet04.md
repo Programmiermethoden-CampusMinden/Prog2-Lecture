@@ -29,9 +29,3 @@ besprochen und sind ab diesem Blatt im Praktikum einzusetzen (vgl.
 
 **Punkte**: 2P für ÄK-Bildung, 1P GW-Analyse, 1P TF-Erstellung, 1P Umsetzung als JUnit-Tests
 
-
-## Buildscripte: Gradle (2 Punkte)
-
-{{% include "assignments/pool_concept/tasks/gradle.md" %}}
-
-**Punkte**: 1P für Erklärung der Elemente, 1P für Erklärung Plugin "java" samt Tasks im Detail
