@@ -344,7 +344,7 @@ immer noch zur Verfügung und bietet über `git restore` hinaus weitere Anwendun
 ::: notes
 Ein Commit sollte in sich geschlossen sein, d.h. die kleinste Menge an Änderungen
 enthalten, die gemeinsam einen Sinn ergeben und die (bei Bedarf) gemeinsam
-zurückgesetzt oder verschoben werden können. Das nennt sich auch **atomic commit**.
+zurückgesetzt oder verschoben werden können. Das nennt man auch **atomic commit**.
 
 Wenn Sie versuchen, die Änderungen in Ihrem Commit zu beschreiben (siehe nächste Folie
 "Commit-Messages"), dann werden Sie einen _atomic commit_ mit einem kurzen Satz (natürlich
