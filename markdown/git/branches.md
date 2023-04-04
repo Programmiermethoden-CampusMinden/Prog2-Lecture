@@ -50,6 +50,8 @@ fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/858546c533e356ef9cdbf1341719281a76d4f9b4405b654dfa6e96c0043ebb87a098da0d8bdca88088d1deb52433f117ab880c24495ce6dafa64ba02cfaabcf2"
     name: "VL Git Branches"
 challenges: |
+    **Branches und Merges**
+
     1.  Legen Sie in Ihrem Projekt einen Branch an. Ändern Sie einige Dateien
         und committen Sie die Änderungen. Checken Sie den Master-Branch aus und
         mergen Sie die Änderungen. Was beobachten Sie?
@@ -67,6 +69,13 @@ challenges: |
 
         Mergen Sie den Branch jetzt in den Master-Branch. Was beobachten Sie? Wie
         lösen Sie Konflikte auf?
+
+
+    **Interaktive Git-Tutorials**: Schaffen Sie die Rätsel?
+
+    *   [Learn Git Branching](https://learngitbranching.js.org/)
+    *   [Oh My Git!](https://ohmygit.org/)
+    *   [Git Time](https://git.bradwoods.io/)
 ---
 
 

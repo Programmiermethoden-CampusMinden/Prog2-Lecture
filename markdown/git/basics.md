@@ -54,6 +54,8 @@ fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/3a44c8a32e7699db77ae922c6b8944acf0d8c65b78d02859e707ffdf783ea45a78200312cdb8102c1052f382101b69a5092bcaf0a11ded36b98f4552a4aca345"
     name: "VL Git Basics"
 challenges: |
+    **Versionierung 101**
+
     1.  Legen Sie ein Repository an.
     2.  Fügen Sie Dateien dem Verzeichnis hinzu und stellen Sie *einige* davon
         unter Versionskontrolle.
@@ -72,6 +74,13 @@ challenges: |
     11. Legen Sie sich ein Java-Projekt in Ihrer IDE an an. Stellen Sie dieses
         Projekt unter Git-Versionskontrolle. Führen Sie die vorigen Schritte mit
         Ihrer IDE durch.
+
+
+    **Interaktive Git-Tutorials**: Schaffen Sie die Rätsel?
+
+    *   [Learn Git Branching](https://learngitbranching.js.org/)
+    *   [Oh My Git!](https://ohmygit.org/)
+    *   [Git Time](https://git.bradwoods.io/)
 ---
 
 
