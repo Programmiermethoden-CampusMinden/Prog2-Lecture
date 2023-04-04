@@ -335,11 +335,24 @@ immer noch zur Verfügung und bietet über `git restore` hinaus weitere Anwendun
 [Typische Regeln:]{.notes}
 
 *   Kleinere "Häppchen" einchecken: ein Feature oder Task
-    [(das nennt man auch "atomic commit": das kleinste Set an Änderungen, die
+    [(das nennt man auch _atomic commit_: das kleinste Set an Änderungen, die
     gemeinsam Sinn machen und die ggf. gemeinsam zurückgesetzt werden können)]{.notes}
 *   Logisch zusammenhängende Änderungen gemeinsam einchecken
 *   Projekt muss nach Commit compilierbar sein
 *   Projekt sollte nach Commit lauffähig sein
+
+::: notes
+Ein Commit sollte in sich geschlossen sein, d.h. die kleinste Menge an Änderungen
+enthalten, die gemeinsam einen Sinn ergeben und die (bei Bedarf) gemeinsam
+zurückgesetzt oder verschoben werden können. Das nennt sich auch **atomic commit**.
+
+Wenn Sie versuchen, die Änderungen in Ihrem Commit zu beschreiben (siehe nächste Folie
+"Commit-Messages"), dann werden Sie einen _atomic commit_ mit einem kurzen Satz (natürlich
+im Imperativ!) beschreiben können. Wenn Sie mehr Text brauchen, haben Sie wahrscheinlich
+keinen _atomic commit_ mehr vor sich.
+
+**Lesen Sie dazu auch [How atomic Git commits dramatically increased my productivity - and will increase yours too ](https://dev.to/samuelfaure/how-atomic-git-commits-dramatically-increased-my-productivity-and-will-increase-yours-too-4a84).**
+:::
 
 
 ## Schreiben von Commit-Messages: WARUM?!
