@@ -32,6 +32,17 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/48c5b1437b5f1ff4023295d0a95c12d893510d0980ff5c6a37ab4e5814990c82b769ff505e727fc3d1ee6b71facb92955639400c01d269ad74e69d9788470c53"
     name: "VL Flyweight-Pattern"
+challenges: |
+    In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/pattern/src/challenges/flyweight)
+    finden Sie ein Modellierung eines Schachspiels.
+
+    Identifizieren Sie die Stellen im Vorgabe-Code, wo Sie das Flyweight-Pattern
+    sinnvoll anwenden können und bauen Sie dieses Pattern über ein Refactoring ein.
+    Begründen Sie, wie Sie das Pattern eingesetzt haben und warum Sie welche Elemente
+    _immutable_ oder _mutable_ deklariert haben.
+
+    Wieso eignet sich das Flyweight-Pattern besonders im Bereich von Computerspielen?
+    Geben Sie mögliche Vor- und Nachteile an und begründen Sie Ihre Antwort.
 ---
 
 
