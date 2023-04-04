@@ -1,28 +1,4 @@
----
-archetype: assignment
-title: "Blatt 01: Git (Basics, Branches, Remotes)"
-author: "André Matutat (FH Bielefeld)"
-points: 10
-weight: 1
 
-hidden: true
----
-
-
-**Abgabe**: Die Lösung für dieses Blatt ist als **Zip**-Archiv (`.zip`) im Objekt "Praktikum"
-im ILIAS hochzuladen. Beachten Sie die Deadline (s.o.)!
-
-
-## Git Basics (4 Punkte)
-
-{{% include "assignments/pool_concept/tasks/git_basics.md" %}}
-
-Abgabe: Schreiben Sie Ihre Schritte, die Antworten auf die Fragen und Ihre Beobachtungen zu den einzelnen
-Schritten in eine Textdatei und geben Sie diese als Teil der Lösung im Zip-Archiv ab. Das erstellte Repo
-samt Workingcopy fügen Sie ebenfalls dem Zip-Archiv hinzu. Im Praktikum demonstrieren Sie den Umgang mit
-den Schritten noch einmal live. Für Teilaufgabe (11) - Git in der IDE - reicht die Demonstration im Praktikum.
-
-**Punkte**: Je 1P für je 3 Teilaufgaben (2 ... 10) sowie 1P für Teilaufgabe (11)
 
 
 ## Git Branches (4 Punkte)

@@ -55,6 +55,25 @@ youtube:
 fhmedia:
   - link: "https://www.fh-bielefeld.de/medienportal/m/3a44c8a32e7699db77ae922c6b8944acf0d8c65b78d02859e707ffdf783ea45a78200312cdb8102c1052f382101b69a5092bcaf0a11ded36b98f4552a4aca345"
     name: "VL Git Basics"
+challenges: |
+    1.  Legen Sie ein Repository an.
+    2.  Fügen Sie Dateien dem Verzeichnis hinzu und stellen Sie *einige* davon
+        unter Versionskontrolle.
+    3.  Ändern Sie eine Datei und versionieren Sie die Änderung.
+    4.  Was ist der Unterschied zwischen "`git add .; git commit`" und
+        "`git commit -a`"?
+    5.  Wie finden Sie heraus, welche Dateien geändert wurden?
+    6.  Entfernen Sie eine Datei aus der Versionskontrolle, aber nicht aus dem
+        Verzeichnis!
+    7.  Entfernen Sie eine Datei komplett (Versionskontrolle und Verzeichnis).
+    8.  Ändern Sie eine Datei und betrachten die Unterschiede zum letzten Commit.
+    9.  Fügen Sie eine geänderte Datei zum Index hinzu. Was erhalten Sie bei
+        `git diff <datei>`?
+    10. Wie können Sie einen früheren Stand einer Datei wiederherstellen? Wie
+        finden Sie überhaupt den Stand?
+    11. Legen Sie sich ein Java-Projekt in Ihrer IDE an an. Stellen Sie dieses
+        Projekt unter Git-Versionskontrolle. Führen Sie die vorigen Schritte mit
+        Ihrer IDE durch.
 ---
 
 
