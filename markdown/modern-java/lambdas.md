@@ -80,8 +80,8 @@ challenges: |
         _Hinweis_: Erstellen Sie hierzu keine neuen Methoden, sondern verwenden Sie
         nur Lambda-Ausdrücke innerhalb des Aufrufs von `List#sort`.
 
-        1.  Sortieren Sie die Studierendenliste aufsteigend nach dem Geburtsdatum.
-        2.  Sortieren Sie die Studierendenliste absteigend nach dem Namen.
+        **1a** Sortieren Sie die Studierendenliste aufsteigend nach dem Geburtsdatum (`sort_1a()`).
+        **1b** Sortieren Sie die Studierendenliste absteigend nach dem Namen (`sort_1b()`).
 
     2.  Erweitern Sie die Klasse `Student` um eine _statische_ Methode, die zwei
         `Student`-Objekte anhand des Alters miteinander vergleicht. Die Methode
@@ -92,10 +92,8 @@ challenges: |
         -   a < b -> 1
         -   a == b -> 0
 
-        1.  Verwenden Sie die neue statische Methode `compareByAge` zum Sortieren
-            der Liste. Nutzen Sie dabei einen **Lambda-Ausdruck**.
-        2.  Verwenden Sie die neue statische Methode `compareByAge` zum Sortieren
-            der Liste. Nutzen Sie dabei eine **Methodenreferenz**.
+        Verwenden Sie die neue statische Methode `compareByAge` zum Sortieren
+        der Liste in `sort_2a()`. Nutzen Sie dabei einen **Lambda-Ausdruck**.
 
     3.  Erweitern Sie die Klasse `Student` um eine Instanz-Methode, die das
         `Student`-Objekt mit einem anderen (als Parameter übergebenen) `Student`-Objekt
@@ -106,28 +104,16 @@ challenges: |
         -   self < other -> 1
         -   self == other -> 0
 
-        1.  Verwenden Sie die neue Methode `compareByName` zum Sortieren der Liste.
-            Nutzen Sie dabei einen **Lambda-Ausdruck**.
-        2.  Verwenden Sie die neue Methode `compareByName` zum Sortieren der Liste.
-            Nutzen Sie dabei eine **Methodenreferenz**.
+        Verwenden Sie die neue Methode `compareByName` zum Sortieren der Liste in `sort_3a()`.
+        Nutzen Sie dabei einen **Lambda-Ausdruck**.
 
     4.  Erstellen Sie ein generisches Funktionsinterface, dass die Methode `compare`
         definiert und zum Vergleichen von zwei Objekten mit generischen Typen dient.
 
-        1.  Erzeugen Sie mithilfe eines **Lambda-Ausdrucks** eine **Instanz** Ihres
-            Interfaces, um damit zwei Objekte vom Typ `Student` in Bezug auf ihr Alter
-            vergleichen zu können. Verwenden Sie die erzeugte Instanz, um die
-            Studierendenliste absteigend zu sortieren.
-        2.  Erzeugen Sie eine weitere Instanz Ihres Interfaces mit einem passenden
-            Lamda-Ausdruck, so dass die Liste der `Student`-Objekte aufsteigend nach
-            ihrem Namen sortieren können. Erstellen Sie zudem die statische und
-            generische Methode `mySort`. Diese Methode soll die Sortierung einer
-            generischen Liste unter der Verwendung Ihres Funktionsinterfaces durchführen.
-            Die Methode soll als Parameter die zu sortierende Liste sowie eine Instanz
-            Ihres Funktionsinterfaces erwarten. Innerhalb dieser Methode dürfen Sie wie
-            bisher die Methode `List#sort` verwenden. Rufen Sie diese Methode wie in
-            den anderen Teilaufgaben in `StudentSort` ein, hier also in der Methode
-            `StudentSort#sort_4b()`.
+        Erzeugen Sie mithilfe eines **Lambda-Ausdrucks** eine **Instanz** Ihres
+        Interfaces, um damit zwei Objekte vom Typ `Student` in Bezug auf ihr Alter
+        vergleichen zu können. Verwenden Sie die erzeugte Instanz, um die
+        Studierendenliste absteigend zu sortieren (`sort_4a()`).
 ---
 
 

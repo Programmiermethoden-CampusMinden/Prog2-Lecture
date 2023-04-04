@@ -86,16 +86,4 @@ public class StudentSort {
         // TODO
         return students;
     }
-
-    /**
-     * 4b: Sortiert die Studierendenliste aufsteigend nach dem Name unter Verwendung einer Instanz
-     * ihres Funktionsinterfaces.
-     *
-     * @param students die zu sortierende Liste der Studierenden
-     * @return die sortierte Liste mit Studierenden
-     */
-    public static List<Student> sort_4b(List<Student> students) {
-        // TODO
-        return students;
-    }
 }
