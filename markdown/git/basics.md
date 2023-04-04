@@ -335,16 +335,58 @@ immer noch zur Verfügung und bietet über `git restore` hinaus weitere Anwendun
 [Typische Regeln:]{.notes}
 
 *   Kleinere "Häppchen" einchecken: ein Feature oder Task
-    [(das nennt man auch "atomic commit": das kleinste Set an Änderungen, die
+    [(das nennt man auch _atomic commit_: das kleinste Set an Änderungen, die
     gemeinsam Sinn machen und die ggf. gemeinsam zurückgesetzt werden können)]{.notes}
 *   Logisch zusammenhängende Änderungen gemeinsam einchecken
 *   Projekt muss nach Commit compilierbar sein
 *   Projekt sollte nach Commit lauffähig sein
 
+::: notes
+Ein Commit sollte in sich geschlossen sein, d.h. die kleinste Menge an Änderungen
+enthalten, die gemeinsam einen Sinn ergeben und die (bei Bedarf) gemeinsam
+zurückgesetzt oder verschoben werden können. Das nennt man auch **atomic commit**.
 
-## Hinweise für Commit-Messages: WARUM?!
+Wenn Sie versuchen, die Änderungen in Ihrem Commit zu beschreiben (siehe nächste Folie
+"Commit-Messages"), dann werden Sie einen _atomic commit_ mit einem kurzen Satz (natürlich
+im Imperativ!) beschreiben können. Wenn Sie mehr Text brauchen, haben Sie wahrscheinlich
+keinen _atomic commit_ mehr vor sich.
 
-\small
+**Lesen Sie dazu auch [How atomic Git commits dramatically increased my productivity - and will increase yours too](https://dev.to/samuelfaure/how-atomic-git-commits-dramatically-increased-my-productivity-and-will-increase-yours-too-4a84).**
+:::
+
+
+## Schreiben von Commit-Messages: WARUM?!
+
+:::::: notes
+Schauen Sie sich einmal einen Screenshot eines `git log --oneline 61e48f0..e2c8076`
+im [Programmiermethoden/Dungeon](https://github.com/Programmiermethoden/Dungeon) an:
+
+![](images/screenshot_git_log.png)
+
+Nun stellen Sie sich vor, Sie sind auf der Suche nach Informationen, suchen einen
+bestimmten Commit oder wollen eine bestimmte Änderung finden ...
+
+Wenn man das genauer analysiert, dann stören bestimmte Dinge:
+
+*   Mischung aus Deutsch und Englisch
+*   "Vor-sich-hin-Murmeln": "Layer system 5"
+*   Teileweise werden Tags genutzt wie `[BUG]`, aber nicht durchgängig
+*   Mischung zwischen verschiedenen Formen: "Repo umbenennen", "Benenne Repo um", "Repo umbenannt"
+*   Unterschiedliche Groß- und Kleinschreibung
+*   Sehr unterschiedlich lange Zeilen/Kommentare
+
+**Das Beachten einheitlicher Regeln ist enorm wichtig!**
+
+Leider sagt sich das so leicht - in der Praxis macht man es dann
+doch schnell wieder unsauber. Dennoch, auch im Dungeon-Repo gibt
+es einen positiven Trend (`git log --oneline 8039d6c..7f49e89`):
+
+![](images/screenshot_git_log_recent.png)
+
+Typische Regeln und Konventionen tauchen überall auf, beispielsweise
+in @Chacon2014 oder bei Tim Pope (siehe nächstes Beispiel) oder bei
+["How to Write a Git Commit Message"](https://cbea.ms/git-commit/).
+::::::
 
 ```markdown
 Short (50 chars or less) summary of changes
@@ -364,20 +406,20 @@ Further paragraphs come after blank lines.
    vary here
 ```
 
-\normalsize
-\smallskip
-
 [Quelle: ["A Note About Git Commit Messages"](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) by [Tim Pope](https://tpo.pe/) on tbaggery.com]{.origin}
 
-::: notes
-Denken Sie sich die Commit-Message als E-Mail an einen zukünftigen Entwickler, der das
-in fünf Jahren liest!
+:::::: notes
+Denken Sie sich die Commit-Message als E-Mail an einen zukünftigen Entwickler,
+der das in fünf Jahren liest!
+
 Vom Aufbau her hat eine E-Mail auch eine Summary und dann den eigentlichen Inhalt ...
 Erklären Sie das **"WARUM"** der Änderung! (Das "WER", "WAS", "WANN" wird bereits
 automatisch von Git aufgezeichnet ...)
 
-Siehe auch ["How to Write a Git Commit Message"](https://cbea.ms/git-commit/).
+::: center
+[**Lesen (und beachten) Sie unbedingt auch ["How to Write a Git Commit Message"](https://cbea.ms/git-commit/)!**]{.alert}
 :::
+::::::
 
 [[Analogie E-Mail an zukünftigen Entwickler]{.bsp}]{.slides}
 
