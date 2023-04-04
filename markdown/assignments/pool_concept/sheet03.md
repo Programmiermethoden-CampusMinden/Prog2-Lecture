@@ -22,10 +22,3 @@ hidden: true
 
 **Punkte**: Je 1P für jede der vier Teilaufgaben.
 
-
-## Entwurfsmuster "Strategy Pattern" (4 Punkte)
-
-{{% include "assignments/pool_concept/tasks/strategy_pattern.md" %}}
-
-**Punkte**: 1P für die Liste der Anforderungen, 1P für das UML-Diagramm, 2P für die Implementierung
-und die Gedanken zum manuellen Test des Spiels (ohne JUnit).
