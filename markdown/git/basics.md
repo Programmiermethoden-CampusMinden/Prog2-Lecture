@@ -351,7 +351,7 @@ Wenn Sie versuchen, die Änderungen in Ihrem Commit zu beschreiben (siehe nächs
 im Imperativ!) beschreiben können. Wenn Sie mehr Text brauchen, haben Sie wahrscheinlich
 keinen _atomic commit_ mehr vor sich.
 
-**Lesen Sie dazu auch [How atomic Git commits dramatically increased my productivity - and will increase yours too ](https://dev.to/samuelfaure/how-atomic-git-commits-dramatically-increased-my-productivity-and-will-increase-yours-too-4a84).**
+**Lesen Sie dazu auch [How atomic Git commits dramatically increased my productivity - and will increase yours too](https://dev.to/samuelfaure/how-atomic-git-commits-dramatically-increased-my-productivity-and-will-increase-yours-too-4a84).**
 :::
 
 
