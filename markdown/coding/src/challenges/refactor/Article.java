@@ -1,4 +1,4 @@
-package challenges;
+package challenges.refactor;
 
 public class Article {
 

@@ -1,4 +1,4 @@
-package challenges;
+package challenges.refactor;
 
 import java.util.ArrayList;
 import java.util.Date;
