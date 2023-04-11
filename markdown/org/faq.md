@@ -285,13 +285,13 @@ kann und deshalb stets kritisch hinterfragt werden sollte.
 
 ## Peer-Feedback: Eigenes Team
 
-Es kann passieren, dass ILIAS Ihnen die Lösung Ihres eigenen Teams zuweist, da
-jedes Team-Mitglied die Lösung einzeln abgibt.
+Es kann passieren, dass ILIAS Ihnen die Lösung Ihres eigenen Teams zum Review zuweist,
+da jedes Team-Mitglied die Lösung einzeln abgibt.
 
-In diesem Fall führen Sie bitte kein Review durch. Wählen Sie stattdessen den
-entsprechenden Punkt auf der Checkliste aus ("eigenes Team"). In den restlichen
-Textfeldern tragen Sie einfach einen "\*" ein, die "Ja/Nein"-Checkboxen und die
-Sterne-Fragen brauchen Sie nicht auszufüllen.
+In diesem Fall führen Sie bitte für diese Lösung kein vollständiges Review durch. Wählen
+Sie stattdessen den entsprechenden Punkt auf der Checkliste aus ("eigenes Team"). In den
+restlichen Textfeldern tragen Sie einfach einen "\*" ein, die "Ja/Nein"-Checkboxen und
+die Sterne-Fragen brauchen Sie nicht auszufüllen.
 
 
 ## Vorstellung der Lösungen
