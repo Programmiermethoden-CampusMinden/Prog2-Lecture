@@ -135,8 +135,8 @@ In Absprache mit dem Dozenten sind in Ausnahmefällen auch 2er-Teams möglich.
 
 ## Git-Server für die Bearbeitung der Aufgaben
 
-Der sichere Umgang mit Git und Git-Workflows sind wichtige Bausteine in der
-Lehrveranstaltung PM. Entsprechend sollen Sie bei der Bearbeitung der
+Der sichere Umgang mit Git und Git-Workflows ist ein wichtiger Baustein in
+der Lehrveranstaltung PM. Entsprechend sollen Sie bei der Bearbeitung der
 Übungsaufgaben Git sowohl lokal und remote einsetzen.
 
 Lokal können Sie [Git](https://git-scm.com/) einfach selbst installieren und
