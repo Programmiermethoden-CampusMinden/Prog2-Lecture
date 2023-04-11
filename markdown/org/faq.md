@@ -133,6 +133,36 @@ Eintrag in den Etherpads im ILIAS anpassen.
 In Absprache mit dem Dozenten sind in Ausnahmefällen auch 2er-Teams möglich.
 
 
+## Git-Server für die Bearbeitung der Aufgaben
+
+Der sichere Umgang mit Git und Git-Workflows sind wichtige Bausteine in der
+Lehrveranstaltung PM. Entsprechend sollen Sie bei der Bearbeitung der
+Übungsaufgaben Git sowohl lokal und remote einsetzen.
+
+Lokal können Sie [Git](https://git-scm.com/) einfach selbst installieren und
+über die Konsole oder die IDE benutzen.
+
+Für die Zusammenarbeit und die Workflows brauchen Sie einen _kostenfreien_
+Account auf einem Git-Server, wo Sie ein Repo für den gemeinsamen Zugriff
+im Team anlegen können. Zu den "üblichen Verdächtigen" zählen beispielsweise:
+
+-   [GitHub.com](https://github.com)
+-   [GitLab.com](https://gitlab.com)
+-   [Bitbucket](https://bitbucket.org)
+
+Wir haben im Software-Labor für die Lehre eine GitLab-Instanz eingerichtet
+([git03-ifm-min.ad.fh-bielefeld.de]), falls Sie kein kommerzielles System
+nutzen möchten. Unser Server ist nur im FH-Netz bzw. über VPN erreichbar und
+Sie können sich dort mit Ihren FH-Zugangsdaten (LDAP) anmelden. Bitte nutzen
+Sie diesen Server ausschließlich für Ihre Projekte in PM und ähnlichen
+Lehrveranstaltungen; es gibt keinerlei Backups und es kann sein, dass dieser
+Server nicht so stabil läuft oder permanent erreichbar ist wie die kommerziellen
+Angebote. Außerdem wird dieser Server ohne weitere Vorwarnung jeweils nach
+dem Semester neu aufgesetzt.
+
+[git03-ifm-min.ad.fh-bielefeld.de]: http://git03-ifm-min.ad.fh-bielefeld.de
+
+
 ## Auswahl der Übungsaufgaben
 
 Sie können sich in jedem Zyklus die Aufgaben relativ frei auswählen; natürlich
