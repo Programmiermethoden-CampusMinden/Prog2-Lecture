@@ -265,7 +265,8 @@ welches für die Abgabe öffentlich einsehbar ist.
 
 Für die Abgabe erstellen Sie einen _öffentlich zugreifbaren_ Pull- oder Merge-Request
 innerhalb Ihres Repos auf Ihrem Git-Server und geben nur die **URL zu diesem PR/MR** im
-ILIAS als Link ab.
+ILIAS als Link ab. Lassen Sie diesen PR/MR bitte so lange offen, bis die Vorstellung im
+Praktikum erfolgt ist. Danach können Sie den PR/MR ganz nach Belieben mergen oder schließen.
 
 Achten Sie bitte darauf, dass der PR/MR nur die für dieses Blatt abzugebenden Dateien
 enthalten darf. Dies können Sie beispielsweise erreichen, indem Sie vor der Bearbeitung
