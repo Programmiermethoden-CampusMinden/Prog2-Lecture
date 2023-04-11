@@ -252,6 +252,30 @@ ist.
 [ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
 
 
+## Link zum Pull-/Merge-Request
+
+Bei der Implementierung setzen Sie aktiv Git und einen beliebigen Git-basierten
+Workflow für die Zusammenarbeit im Team ein. Sie haben entsprechend ein Repo auf
+einem Server (vgl. [Git-Server für die Bearbeitung der Aufgaben] in der FAQ),
+welches für die Abgabe öffentlich einsehbar ist.
+
+Für die Abgabe erstellen Sie einen _öffentlich zugreifbaren_ Pull- oder Merge-Request
+innerhalb Ihres Repos auf Ihrem Git-Server und geben nur die **URL zu diesem PR/MR** im
+ILIAS als Link ab.
+
+Achten Sie bitte darauf, dass der PR/MR nur die für dieses Blatt abzugebenden Dateien
+enthalten darf. Dies können Sie beispielsweise erreichen, indem Sie vor der Bearbeitung
+eines Blattes einen entsprechenden Feature-Branch anlegen und die Lösung in diesem Branch
+implementieren. Der PR/MR geht dann von diesem Feature-Branch in den Hauptbranch Ihres
+Repos (oder in den Branch, von dem Sie den Feature-Branch abgezweigt haben).
+
+Im Peer-Feedback können Sie dann einfach über die von den anderen Teams abgegebenen Links
+auf die PR/MR gehen und sich gezielt die geänderten Dateien anschauen und dann im ILIAS
+die Review-Fragen beantworten.
+
+[Git-Server für die Bearbeitung der Aufgaben]: #git-server-für-die-bearbeitung-der-aufgaben
+
+
 ## Abgabe der Lösungen
 
 Bitte laden Sie Ihre Lösung als eine **PDF-Datei** (Konzeptphase) oder als ein
