@@ -155,9 +155,9 @@ Wir haben im Software-Labor für die Lehre eine GitLab-Instanz eingerichtet
 ([git03-ifm-min.ad.fh-bielefeld.de]), falls Sie kein kommerzielles System
 nutzen möchten. Unser Server ist nur im FH-Netz bzw. über VPN erreichbar und
 Sie können sich dort mit Ihren FH-Zugangsdaten (LDAP) anmelden. Bitte nutzen
-Sie diesen Server ausschließlich für Ihre Projekte in PM und ähnlichen
-Lehrveranstaltungen; es gibt keinerlei Backups und es kann sein, dass dieser
-Server nicht so stabil läuft oder permanent erreichbar ist wie die kommerziellen
+Sie diesen Server ausschließlich für Ihre Übungen in Lehrveranstaltungen wie
+PM; für den Server gibt es keine Backups und es kann sein, dass dieser Server
+nicht so stabil läuft oder permanent erreichbar ist wie die kommerziellen
 Angebote. Außerdem wird dieser Server ohne weitere Vorwarnung jeweils nach
 dem Semester neu aufgesetzt.
 
