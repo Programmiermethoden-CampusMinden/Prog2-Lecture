@@ -14,7 +14,7 @@ hidden: true
 
 -   **Praktische Teilleistung**:
     Regelmäßige Bearbeitung der Praktikumsaufgaben,
-    fristgerechte Abgabe der Lösungen im ILIAS,
+    fristgerechte Abgabe der Lösungen (PDF, ZIP, Link) im ILIAS,
     Erstellung von Peer-Feedback im ILIAS,
     Vorstellung der Lösungen im Praktikum => Punkte
 
@@ -55,7 +55,7 @@ Das Praktikum erfolgt in 2-Wochen-Zyklen:
     -   Vorstellung der Konzeptskizze im Praktikum (=> Team)
 2.  Zweite Zyklus-Woche: Implementierungsphase
     -   Umsetzung des Konzepts/Implementierung der Lösung (=> Team)
-    -   Abgabe des Quellcodes (ZIP) im ILIAS (=> Jede(r) einzeln)
+    -   Abgabe des Quellcodes (ZIP bzw. Link) im ILIAS (=> Jede(r) einzeln)
     -   Peer-Feedback zum Quellcode im ILIAS (=> Jede(r) einzeln)
     -   Vorstellung des Quellcodes im Praktikum (=> Team)
 
@@ -64,14 +64,15 @@ Sie können pro Zyklus Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
 ### Punktevergabe
 
 Für die Vergabe der Punkte müssen Sie pro Zyklus jeweils fristgerecht
-Ihre Konzeptskizze eingereicht und im Praktikum vorgestellt haben,
+Ihre Konzeptskizze als PDF eingereicht und im Praktikum vorgestellt haben,
 in beiden Zyklen-Hälften das Peer-Feedback erstellt haben und
-die Lösung (Quellcode) eingereicht und im Praktikum vorgestellt haben.
+die Lösung (Quellcode: Abgabe per ZIP oder Link, vgl. Anweisungen auf den
+Übungsblättern) eingereicht und im Praktikum vorgestellt haben.
 
 ### Sonderabgabe letzte Vorlesungswoche
 
 Zusatztermin für Studierende, die bis dahin unterhalb der Bestehensschwelle für die praktische
 Teilleistung liegen oder die wegen Krankheit einen Termin nicht wahrnehmen konnten.
 
-Für diese Abgabe gibt es keine Konzeptphase und auch kein Peer-Feedback, die Lösung ist bis
-zur Deadline im ILIAS hochzuladen und im nachfolgenden Praktikum vorzustellen.
+Für diese Abgabe gibt es keine Konzeptphase und auch kein Peer-Feedback, die Lösung (Link)
+ist bis zur Deadline im ILIAS hochzuladen und im nachfolgenden Praktikum vorzustellen.
