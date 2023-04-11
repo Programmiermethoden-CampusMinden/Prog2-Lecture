@@ -105,9 +105,10 @@ Dabei ist jedes Teammitglied anwesend und kann Auskunft geben.
 ### Zweite Woche: Implementierungsphase
 
 Danach treten Sie in die zweite Woche des aktuellen Zyklus ein und setzen im Team Ihr
-Konzept in eine Implementierung um. Diese laden als ZIP-Datei bis zur Deadline als
-Abgabe in die jeweilige ILIAS-Aufgabe hoch. Diese Abgabe muss aus technischen Gründen
-bitte jedes Teammitglied einzeln machen.
+Konzept in eine Implementierung um. Diese laden als ZIP-Datei bzw. als Link zum öffentlich
+sichtbaren Pull- oder Merge-Request (vgl. Arbeitsanweisungen auf den Aufgabenblättern)
+bis zur Deadline als Abgabe in die jeweilige ILIAS-Aufgabe hoch. Diese Abgabe muss aus
+technischen Gründen bitte jedes Teammitglied einzeln machen.
 
 Anschließend erfolgt eine erneute Peer-Feedback-Phase. ILIAS weist Ihnen mehrere Abgaben
 zu und Sie haben einen Tag Zeit, um Ihr Feedback im ILIAS abzugeben (vgl.
@@ -169,7 +170,7 @@ dem Semester neu aufgesetzt.
 Sie können sich in jedem Zyklus die Aufgaben relativ frei auswählen; natürlich
 hängen aber manche Aufgaben von anderen Aufgaben ab.
 
-Sie können **jede Aufgabe nur einmal bearbeiten und abgeben**.
+Sie können **jede Aufgabe maximal einmal bearbeiten und abgeben**.
 
 Ausnahme: Die "freien Aufgaben" können Sie gern wiederholt bearbeiten, so lange
 Sie jeweils ein Problem wählen, das nicht bereits in anderen Aufgaben vorkommt.
@@ -243,9 +244,10 @@ In der Skizze beschreiben Sie mindestens die folgenden Punkte:
 
 Die Konzeptskizze geben Sie als PDF-Dokument ab (jedes Teammitglied einzeln!).
 
-Zur Orientierung stellen wir Ihnen ein [ausgefülltes Beispiel] zur Verfügung. Bitte beachten
-Sie, dass es in diesem Beispiel um eine fikitive Aufgabe im Dungeon geht und dass die gezeigte
-Modellierung nicht konform zur ECS-Struktur des aktuellen Dungeons ist.
+Zur Orientierung stellen wir Ihnen ein [ausgefülltes Beispiel] als Markdown zur Verfügung.
+Bitte beachten Sie, dass es in diesem Beispiel um eine fikitive Aufgabe im Dungeon geht
+und dass die gezeigte Modellierung nicht konform zur ECS-Struktur des aktuellen PM-Dungeons
+ist.
 
 [ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
 
@@ -253,11 +255,12 @@ Modellierung nicht konform zur ECS-Struktur des aktuellen Dungeons ist.
 ## Abgabe der Lösungen
 
 Bitte laden Sie Ihre Lösung als eine **PDF-Datei** (Konzeptphase) oder als ein
-**Zip-Archiv** (Implementierungsphase) in die jeweilige Aufgabe im ILIAS hoch.
+**Zip-Archiv** bzw. **Link zum Pull-/Merge-Request** (Implementierungsphase) in
+die jeweilige Aufgabe im ILIAS hoch.
 
 Beachten Sie dabei die jeweilige Deadline.
 
-**Wichtig**: Jedes Teammitglied gibt die Lösung selbst ab (einzeln).
+[**Wichtig**: Jedes Teammitglied gibt die Lösung selbst ab (einzeln).]{.alert}
 
 _Anmerkung_: Falls Sie mehrere Dateien hochladen wollen, erzeugen Sie bitte vor
 dem Upload lokal ein Zip-Archiv, welches Sie dann per Button "Datei einreichen"
@@ -281,7 +284,7 @@ Gehen Sie **nach der Deadline der Aufgabe** und **vor der Deadline des Reviews**
 ILIAS in die Aufgabe und klicken auf den Button "Feedback geben", um nachzuschauen,
 wem Sie ein Peer-Feedback geben sollen.
 
-**Wichtig**: Jedes Teammitglied erstellt seine eigenen Reviews (einzeln).
+[**Wichtig**: Jedes Teammitglied erstellt seine eigenen Reviews (einzeln).]{.alert}
 
 ![](images/howtofeedback2.png){width="80%"}
 
