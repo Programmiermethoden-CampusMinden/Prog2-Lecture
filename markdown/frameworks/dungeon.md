@@ -33,13 +33,13 @@ ersten Einstieg versuchen: Wir programmieren einen einfachen Helden.
 
 Das Projekt PM-Dungeon entstand in verschiedenen Forschungsprojekten und
 wurde (und wird) aktiv von Studierenden und wissenschaftlichen
-Mitarbeitern entwickelt.
+Mitarbeitern am Campus Minden entwickelt.
 
 Sie werden merken, dass trotz klarer Richtlinien und Ideen die
 Entwicklung in der Praxis doch nicht so einfach ist und dass viele Dinge
-immer wieder geübt werden müssen: Namen von Klassen und Methoden,
-sinnvolles Javadoc, Dokumentation jenseits des Javadoc, aber auch
-Commit-Messages und PR-Summaries.
+immer wieder geübt und erinnert werden müssen: Namen von Klassen und
+Methoden, sinnvolles Javadoc, Dokumentation jenseits des Javadoc, aber
+auch Commit-Messages und PR-Summaries.
 
 Aktuell läuft das Forschungsprojekt "Dungeon", gefödert durch die
 [Stiftung für Innovation in der Hochschullehre](https://stiftung-hochschullehre.de)
@@ -56,6 +56,8 @@ Aufgaben lösen.
 
 Sie finden das Projekt auf GitHub:
 https://github.com/Programmiermethoden/Dungeon.
+
+![](images/screenshot_dungeon_clone.png)
 
 Laden Sie sich den Quellcode herunter, um damit in der IDE arbeiten zu
 können. Prinzipiell gibt es viele verschiedene Wege, wir laden es hier
@@ -86,7 +88,8 @@ In der Konsole sollte
 java -version
 ```
 
-ungefähr diese Ausgabe erzeugen:
+ungefähr diese Ausgabe erzeugen (ignorieren Sie die Minor-Version,
+wichtig ist Version 17 bzw. "LTS"):
 
     java version "17.0.6" 2023-01-17 LTS
     Java(TM) SE Runtime Environment (build 17.0.6+9-LTS-190)
@@ -95,8 +98,8 @@ ungefähr diese Ausgabe erzeugen:
 
 ## Erster Test
 
-Für einen ersten Test gehen Sie in der Konsole in den neuen Ordner
-`pm-dungeon/` und führen Sie dort den Befehl
+Für einen ersten Test gehen Sie in der Konsole in den vorhin erzeugten
+neuen Ordner `pm-dungeon/` und führen Sie dort den Befehl
 
 ``` sh
 ./gradlew run
@@ -108,7 +111,7 @@ Java-Bibliotheken herunterladen und schließlich das Spiel in einer
 Minimalversion starten - Sie sollten also ein Level sehen und einen
 hüpfenden Helden.
 
-![](images/)
+![](images/screenshot_dungeon_defaultlevel.png)
 
 Dies dauert je nach Internetanbindung etwas - beim nächsten Start geht
 es dann aber deutlich schneller, weil ja bereits alles da ist.
@@ -119,9 +122,9 @@ es dann aber deutlich schneller, weil ja bereits alles da ist.
 Importieren Sie das Projekt als Gradle-basiertes Projekt, dann übernimmt
 die IDE die Konfiguration für Sie.
 
-![](images/)
+![](images/screenshot_dungeon_import_intellij.png)
 
-![](images/)
+![](images/screenshot_dungeon_import_intellij_asgradle.png)
 
 Über das Gradle-Menü können Sie nun in der IDE den "run"-Task starten,
 und es erscheint wieder ein minimales Level mit einem wartenden Helden.
@@ -133,7 +136,7 @@ Sie sehen im Package-Explorer eine Reihe von Unterprojekten. Für PM ist
 eigentlich nur "`game/`" relevant und "`doc/`" für die Dokumentation
 (die derzeit leider noch eine ziemliche Baustelle ist).
 
-![](images/)
+![](images/screenshot_dungeon_intellij_gradle.png)
 
 In diesem Projekt finden Sie unter `game/src/` die Java-Packages, die
 wir im Projekt für Sie bereitstellen. In `game/assets/` finden sich ein
@@ -142,7 +145,7 @@ paar Beispieltexturen für den Boden, die Wände und den Helden.
 <!-- TODO
 nach dem Merge von https://github.com/Programmiermethoden/Dungeon/pull/496 URL aktualisieren
 -->
-![](https://github.com/Programmiermethoden/Dungeon/blob/4af360849999b54d1b775597050df778aa5431c5/doc/ecs/img/ecs.png)
+![](https://github.com/Programmiermethoden/Dungeon/raw/dk_lg/Documentation_Basics/doc/ecs/img/ecs.png)
 
 Die Klasse `starter.Game` ist der zentrale Einstiegspunkt. Hier werden
 alle wichtigen Dinge konfiguriert, und es gibt die
