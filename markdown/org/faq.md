@@ -260,7 +260,7 @@ In der Skizze beschreiben Sie mindestens die folgenden Punkte:
 Die Konzeptskizze geben Sie als PDF-Dokument ab (jedes Teammitglied einzeln!).
 
 Zur Orientierung stellen wir Ihnen ein [ausgefülltes Beispiel] als Markdown zur Verfügung.
-Bitte beachten Sie, dass es in diesem Beispiel um eine fikitive Aufgabe im Dungeon geht
+Bitte beachten Sie, dass es in diesem Beispiel um eine fiktive Aufgabe im Dungeon geht
 und dass die gezeigte Modellierung nicht konform zur ECS-Struktur des aktuellen PM-Dungeons
 ist.
 
