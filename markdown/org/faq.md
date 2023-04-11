@@ -123,15 +123,18 @@ Dabei ist jedes Teammitglied anwesend und kann Auskunft geben.
 [Peer-Feedback: How to Review]: #peer-feedback-how-to-review
 
 
-## Bearbeitung der Übungsaufgaben
+## Teams im Praktikum
 
 Die Übungsaufgaben sollen in 3er-Teams bearbeitet und gelöst werden. Die Einteilung
-wird über Etherpads im ILIAS vorgenommen, dabei können Sie die Teams selbst bilden.
+wird über Etherpads im ILIAS vorgenommen, dabei können Sie die Teams selbst bilden
+(siehe auch [Zeitslots für Vorstellung] in der FAQ).
 
 Sie können Ihre Teams gern auch im Semester wechseln, dazu müssen Sie einfach nur den
 Eintrag in den Etherpads im ILIAS anpassen.
 
 In Absprache mit dem Dozenten sind in Ausnahmefällen auch 2er-Teams möglich.
+
+[Zeitslots für Vorstellung]: #zeitslots-für-vorstellung
 
 
 ## Git-Server für die Bearbeitung der Aufgaben
@@ -152,7 +155,7 @@ beispielsweise:
 -   [GitLab.com](https://gitlab.com)
 -   [Bitbucket](https://bitbucket.org)
 
-Wir haben im Software-Labor für die Lehre eine GitLab-Instanz eingerichtet
+Wir haben im Software-Labor für die Lehre eine [GitLab-Instanz] eingerichtet
 ([git03-ifm-min.ad.fh-bielefeld.de]), falls Sie kein kommerzielles System
 nutzen möchten. Unser Server ist nur im FH-Netz bzw. über VPN erreichbar und
 Sie können sich dort mit Ihren FH-Zugangsdaten (LDAP) anmelden. Bitte nutzen
@@ -163,6 +166,7 @@ Angebote. Außerdem wird dieser Server ohne weitere Vorwarnung jeweils nach
 dem Semester neu aufgesetzt.
 
 [git03-ifm-min.ad.fh-bielefeld.de]: http://git03-ifm-min.ad.fh-bielefeld.de
+[GitLab-Instanz]: http://git03-ifm-min.ad.fh-bielefeld.de
 
 
 ## Auswahl der Übungsaufgaben
@@ -279,8 +283,8 @@ die Review-Fragen beantworten.
 ## Abgabe der Lösungen
 
 Bitte laden Sie Ihre Lösung als eine **PDF-Datei** (Konzeptphase) oder als ein
-**Zip-Archiv** bzw. **Link zum Pull-/Merge-Request** (Implementierungsphase) in
-die jeweilige Aufgabe im ILIAS hoch.
+**Zip-Archiv** bzw. **Link zum Pull-/Merge-Request** (Implementierungsphase, vgl.
+Arbeitsanweisungen auf dem Blatt) in die jeweilige Aufgabe im ILIAS hoch.
 
 Beachten Sie dabei die jeweilige Deadline.
 
