@@ -144,7 +144,8 @@ Lokal können Sie [Git](https://git-scm.com/) einfach selbst installieren und
 
 Für die Zusammenarbeit und die Workflows brauchen Sie einen _kostenfreien_
 Account auf einem Git-Server, wo Sie ein Repo für den gemeinsamen Zugriff
-im Team anlegen können. Zu den "üblichen Verdächtigen" zählen beispielsweise:
+im Team anlegen und freigeben können. Zu den "üblichen Verdächtigen" zählen
+beispielsweise:
 
 -   [GitHub.com](https://github.com)
 -   [GitLab.com](https://gitlab.com)
