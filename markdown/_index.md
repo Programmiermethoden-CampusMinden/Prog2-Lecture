@@ -84,7 +84,7 @@ Weitere empfohlene Literatur siehe `["Ressourcen"]({{< ref "/org/resources" >}})
 
 `{{< schedule >}}`{=markdown}
 
-**Hinweise**: Abgabe der Hausaufgaben jeweils bis zur angegebenen Deadline im ILIAS.
+**Hinweise**: Abgabe der Hausaufgaben (PDF, ZIP, Link) jeweils bis zur angegebenen Deadline im ILIAS.
 Peer-Feedback jeweils bis zur angegebenen Deadline im ILIAS.
 Vorstellung der Lösungen im jeweiligen nachfolgenden Praktikumstermin.
 
