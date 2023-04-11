@@ -273,6 +273,8 @@ eines Blattes einen entsprechenden Feature-Branch anlegen und die Lösung in die
 implementieren. Der PR/MR geht dann von diesem Feature-Branch in den Hauptbranch Ihres
 Repos (oder in den Branch, von dem Sie den Feature-Branch abgezweigt haben).
 
+[Mergen Sie diese PR/MR erst _nach_ der Vorstellung im Praktikum!]{.alert}
+
 Im Peer-Feedback können Sie dann einfach über die von den anderen Teams abgegebenen Links
 auf die PR/MR gehen und sich gezielt die geänderten Dateien anschauen und dann im ILIAS
 die Review-Fragen beantworten.
