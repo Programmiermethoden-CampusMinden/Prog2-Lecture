@@ -105,9 +105,10 @@ Dabei ist jedes Teammitglied anwesend und kann Auskunft geben.
 ### Zweite Woche: Implementierungsphase
 
 Danach treten Sie in die zweite Woche des aktuellen Zyklus ein und setzen im Team Ihr
-Konzept in eine Implementierung um. Diese laden als ZIP-Datei bis zur Deadline als
-Abgabe in die jeweilige ILIAS-Aufgabe hoch. Diese Abgabe muss aus technischen Gründen
-bitte jedes Teammitglied einzeln machen.
+Konzept in eine Implementierung um. Diese laden als ZIP-Datei bzw. als Link zum öffentlich
+sichtbaren Pull- oder Merge-Request (vgl. Arbeitsanweisungen auf den Aufgabenblättern)
+bis zur Deadline als Abgabe in die jeweilige ILIAS-Aufgabe hoch. Diese Abgabe muss aus
+technischen Gründen bitte jedes Teammitglied einzeln machen.
 
 Anschließend erfolgt eine erneute Peer-Feedback-Phase. ILIAS weist Ihnen mehrere Abgaben
 zu und Sie haben einen Tag Zeit, um Ihr Feedback im ILIAS abzugeben (vgl.
@@ -122,15 +123,18 @@ Dabei ist jedes Teammitglied anwesend und kann Auskunft geben.
 [Peer-Feedback: How to Review]: #peer-feedback-how-to-review
 
 
-## Bearbeitung der Übungsaufgaben
+## Teams im Praktikum
 
 Die Übungsaufgaben sollen in 3er-Teams bearbeitet und gelöst werden. Die Einteilung
-wird über Etherpads im ILIAS vorgenommen, dabei können Sie die Teams selbst bilden.
+wird über Etherpads im ILIAS vorgenommen, dabei können Sie die Teams selbst bilden
+(siehe auch [Zeitslots für Vorstellung] in der FAQ).
 
 Sie können Ihre Teams gern auch im Semester wechseln, dazu müssen Sie einfach nur den
 Eintrag in den Etherpads im ILIAS anpassen.
 
 In Absprache mit dem Dozenten sind in Ausnahmefällen auch 2er-Teams möglich.
+
+[Zeitslots für Vorstellung]: #zeitslots-für-vorstellung
 
 
 ## Git-Server für die Bearbeitung der Aufgaben
@@ -151,7 +155,7 @@ beispielsweise:
 -   [GitLab.com](https://gitlab.com)
 -   [Bitbucket](https://bitbucket.org)
 
-Wir haben im Software-Labor für die Lehre eine GitLab-Instanz eingerichtet
+Wir haben im Software-Labor für die Lehre eine [GitLab-Instanz] eingerichtet
 ([git03-ifm-min.ad.fh-bielefeld.de]), falls Sie kein kommerzielles System
 nutzen möchten. Unser Server ist nur im FH-Netz bzw. über VPN erreichbar und
 Sie können sich dort mit Ihren FH-Zugangsdaten (LDAP) anmelden. Bitte nutzen
@@ -162,6 +166,7 @@ Angebote. Außerdem wird dieser Server ohne weitere Vorwarnung jeweils nach
 dem Semester neu aufgesetzt.
 
 [git03-ifm-min.ad.fh-bielefeld.de]: http://git03-ifm-min.ad.fh-bielefeld.de
+[GitLab-Instanz]: http://git03-ifm-min.ad.fh-bielefeld.de
 
 
 ## Auswahl der Übungsaufgaben
@@ -169,7 +174,7 @@ dem Semester neu aufgesetzt.
 Sie können sich in jedem Zyklus die Aufgaben relativ frei auswählen; natürlich
 hängen aber manche Aufgaben von anderen Aufgaben ab.
 
-Sie können **jede Aufgabe nur einmal bearbeiten und abgeben**.
+Sie können **jede Aufgabe maximal einmal bearbeiten und abgeben**.
 
 Ausnahme: Die "freien Aufgaben" können Sie gern wiederholt bearbeiten, so lange
 Sie jeweils ein Problem wählen, das nicht bereits in anderen Aufgaben vorkommt.
@@ -243,21 +248,50 @@ In der Skizze beschreiben Sie mindestens die folgenden Punkte:
 
 Die Konzeptskizze geben Sie als PDF-Dokument ab (jedes Teammitglied einzeln!).
 
-Zur Orientierung stellen wir Ihnen ein [ausgefülltes Beispiel] zur Verfügung. Bitte beachten
-Sie, dass es in diesem Beispiel um eine fikitive Aufgabe im Dungeon geht und dass die gezeigte
-Modellierung nicht konform zur ECS-Struktur des aktuellen Dungeons ist.
+Zur Orientierung stellen wir Ihnen ein [ausgefülltes Beispiel] als Markdown zur Verfügung.
+Bitte beachten Sie, dass es in diesem Beispiel um eine fikitive Aufgabe im Dungeon geht
+und dass die gezeigte Modellierung nicht konform zur ECS-Struktur des aktuellen PM-Dungeons
+ist.
 
 [ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
+
+
+## Link zum Pull-/Merge-Request
+
+Bei der Implementierung setzen Sie aktiv Git und einen beliebigen Git-basierten
+Workflow für die Zusammenarbeit im Team ein. Sie haben entsprechend ein Repo auf
+einem Server (vgl. [Git-Server für die Bearbeitung der Aufgaben] in der FAQ),
+welches für die Abgabe öffentlich einsehbar ist.
+
+Für die Abgabe erstellen Sie einen _öffentlich zugreifbaren_ Pull- oder Merge-Request
+innerhalb Ihres Repos auf Ihrem Git-Server und geben nur die **URL zu diesem PR/MR** im
+ILIAS als Link ab. Lassen Sie diesen PR/MR bitte so lange offen, bis die Vorstellung im
+Praktikum erfolgt ist. Danach können Sie den PR/MR ganz nach Belieben mergen oder schließen.
+
+Achten Sie bitte darauf, dass der PR/MR nur die für dieses Blatt abzugebenden Dateien
+enthalten darf. Dies können Sie beispielsweise erreichen, indem Sie vor der Bearbeitung
+eines Blattes einen entsprechenden Feature-Branch anlegen und die Lösung in diesem Branch
+implementieren. Der PR/MR geht dann von diesem Feature-Branch in den Hauptbranch Ihres
+Repos (oder in den Branch, von dem Sie den Feature-Branch abgezweigt haben).
+
+[Mergen Sie diese PR/MR erst _nach_ der Vorstellung im Praktikum!]{.alert}
+
+Im Peer-Feedback können Sie dann einfach über die von den anderen Teams abgegebenen Links
+auf die PR/MR gehen und sich gezielt die geänderten Dateien anschauen und dann im ILIAS
+die Review-Fragen beantworten.
+
+[Git-Server für die Bearbeitung der Aufgaben]: #git-server-für-die-bearbeitung-der-aufgaben
 
 
 ## Abgabe der Lösungen
 
 Bitte laden Sie Ihre Lösung als eine **PDF-Datei** (Konzeptphase) oder als ein
-**Zip-Archiv** (Implementierungsphase) in die jeweilige Aufgabe im ILIAS hoch.
+**Zip-Archiv** bzw. **Link zum Pull-/Merge-Request** (Implementierungsphase, vgl.
+Arbeitsanweisungen auf dem Blatt) in die jeweilige Aufgabe im ILIAS hoch.
 
 Beachten Sie dabei die jeweilige Deadline.
 
-**Wichtig**: Jedes Teammitglied gibt die Lösung selbst ab (einzeln).
+[**Wichtig**: Jedes Teammitglied gibt die Lösung selbst ab (einzeln).]{.alert}
 
 _Anmerkung_: Falls Sie mehrere Dateien hochladen wollen, erzeugen Sie bitte vor
 dem Upload lokal ein Zip-Archiv, welches Sie dann per Button "Datei einreichen"
@@ -281,7 +315,7 @@ Gehen Sie **nach der Deadline der Aufgabe** und **vor der Deadline des Reviews**
 ILIAS in die Aufgabe und klicken auf den Button "Feedback geben", um nachzuschauen,
 wem Sie ein Peer-Feedback geben sollen.
 
-**Wichtig**: Jedes Teammitglied erstellt seine eigenen Reviews (einzeln).
+[**Wichtig**: Jedes Teammitglied erstellt seine eigenen Reviews (einzeln).]{.alert}
 
 ![](images/howtofeedback2.png){width="80%"}
 
