@@ -23,7 +23,7 @@ ein komplexes Spiele-Framework einarbeiten müssen, haben wir das Projekt
 Der PM-Dungeon stellt wichtige Bausteine für das Spiel bereit,
 beispielsweise eine Game-Loop und eine API für das Generieren und
 Benutzen von Leveln und vieles andere mehr. Im Hintergrund werkelt das
-etablierte Open-Source-Spieleframework [`libGDX`](https://libgdx.com).
+etablierte Open-Source-Spieleframework [libGDX](https://libgdx.com).
 
 Wir werden uns in diesem How-To einen Überblick verschaffen und einen
 ersten Einstieg versuchen: Wir programmieren einen einfachen Helden.
@@ -43,7 +43,8 @@ auch Commit-Messages und PR-Summaries.
 
 Aktuell läuft das Forschungsprojekt "Dungeon", gefödert durch die
 [Stiftung für Innovation in der Hochschullehre](https://stiftung-hochschullehre.de)
-(["Freiraum 2022"](https://stiftung-hochschullehre.de/foerderung/freiraum2022/)).
+im
+["Freiraum 2022"](https://stiftung-hochschullehre.de/foerderung/freiraum2022/).
 Dabei sollen diesmal nicht die Studierenden selbst Code schreiben,
 sondern die Lehrenden sollen Aufgaben in einer speziellen (von uns
 entwickelten) Programmiersprache schreiben (können), woraus dann ein
@@ -74,9 +75,7 @@ Inhalt.
 ## Java: Java SE 17 (LTS)
 
 Wir benutzen im Dungeon-Projekt die aktuelle LTS-Version des JDK, d.h.
-**Java SE 17 (LTS)**.
-
-Sie können sich das JDK bei
+**Java SE 17 (LTS)**. Sie können sich das JDK bei
 [Oracle](https://www.oracle.com/java/technologies/downloads/)
 herunterladen oder
 [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk)
@@ -185,7 +184,7 @@ im Dungeon integriert (zu ECS später mehr).
 ## Mein Held
 
 Um einen besseren Blick in das System zu bekommen, erstellen wir einen
-eigenen kleinen Helden.
+eigenen einfachen Helden.
 
 Dazu schalten wir zunächst in `starter.Game#setup()` in Zeile 118 die
 Initialisierung des Default-Helden ab (einfach die Zeile
@@ -216,7 +215,7 @@ Beispielsweise könnte man die Lebenspunkte u.ä. in einer
 `HealthComponent` verpacken und dann in einer Entität speichern. Oder
 man könnte in einer `VelocityComponent` hinterlegen, wie schnell eine
 Entität in x- und in y-Richtung bewegt werden kann (Wände würden dabei
-einfach den Wert 0 speichern). Oder man könnte in einer
+einfach den Wert 0 bekommen). Oder man könnte in einer
 `PositionComponent` speichern, wo die Entität gerade ist. Schauen Sie
 einfach mal in das Package `ecs.components`. Die Basisklasse für
 Components ist derzeit `ecs.components.Component`. Wichtig ist: Eine
@@ -253,7 +252,7 @@ Also legen wir eine neue Heldenklasse als Unterklasse von
 public class MyHero extends Entity {}
 ```
 
-Den nutzen wir `starter.Game#setup()` in Zeile 118 an Stelle des
+Den nutzen wir `starter.Game#setup()` in Zeile 118 an Stelle des vorhin
 auskommentierten Default-Helden: `hero = new MyHero();`.
 
 Damit sollten Sie das Spiel starten können. Aber außer dem Level werden
@@ -284,15 +283,16 @@ Helden registriert wird.
 
 Wenn man keine Position mitgibt, wird einfach eine zufällige Position im
 Level genutzt. Alternativ kann man eine eigene Position mitgeben. Im
-Dungeon existieren aktuell zwei Koordinatensysteme: `Coordinate`
-(Integer-basiert) und `Point` (Float-basiert). Die Level werden als
-Matrix von `Tile` (Boden, Wand, Loch, ...) gespeichert. Die Position
-dieser `Tile` werden als `Coordinate` gespeichert, was dem Index des
-Tiles in der Matrix entspricht. Entitäten können aktuell aber auch
-zwischen zwei Tiles oder schräg-links-oben auf einem Tile stehen, dafür
-gibt es die Positionen als `Point`. Entsprechend könnte man den neuen
-Helden bei `(0,0)` in das Level setzen:
-`new PositionComponent(this, new Point(0, 0));`.
+Dungeon existieren aktuell zwei Koordinatensysteme:
+`level.tools.Coordinate` (Integer-basiert) und `tools.Point`
+(Float-basiert). Die Level werden als Matrix von `Tile` (Boden, Wand,
+Loch, ...) gespeichert. Die Position dieser `Tile` werden als
+`Coordinate` gespeichert, was dem Index des Tiles in der Matrix
+entspricht. Entitäten können aktuell aber auch zwischen zwei Tiles oder
+schräg-links-oben auf einem Tile stehen, dafür gibt es die Positionen
+als `Point`. Entsprechend könnte man den neuen Helden bei `(0,0)` in das
+Level setzen: `new PositionComponent(this, new Point(0, 0));` (wobei
+diese Position möglicherweise nicht spielbar ist).
 
 Wenn Sie jetzt das Spiel starten, sehen Sie - immer noch nichts (außer
 den Wänden). Hmmm.
@@ -315,6 +315,9 @@ public class MyHero extends Entity {
     }
 }
 ```
+
+Wir brauchen dabei nur die Pfade unterhalb von `game/assets/` angeben
+(dieser Ordner ist im `build.gradle` entsprechend konfiguriert).
 
 Jetzt wackelt der Held auf der Stelle herum :)
 
