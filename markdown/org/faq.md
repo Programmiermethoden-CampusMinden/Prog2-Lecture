@@ -23,6 +23,17 @@ passende Fallstudien lösen.
 Das setzt voraus, dass Sie vorbereitet in die Stunde kommen und sich aktiv einbringen.
 
 
+## Online-Modus
+
+Aus persönlichen Gründen wird diese Veranstaltung im Sommer 2023 komplett online angeboten.
+Alle Sitzungen finden über Zoom statt, die Zugangsdaten finden Sie im ILIAS.
+
+Zusätzlich wurden Räume gebucht, so dass Sie auch vor Ort in der FH sein können und sich von
+dort mit Ihrem Laptop in die Zoom-Sitzungen einwählen können.
+
+Siehe Startseite unter "Vorlesung".
+
+
 ## Prüfungsform "Performanzprüfung"
 
 Die Performanzprüfung besteht aus **zwei Teilprüfungen**, die Sie unabhängig voneinander
