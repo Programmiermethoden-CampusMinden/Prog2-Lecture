@@ -262,14 +262,10 @@ einzutragen.
 ![](images/howtofeedback3.png){width="80%"}
 ![](images/howtofeedback4.png){width="80%"}
 
-_Hinweis_: Wenn bei den Review-Fragen mit den "Ja/Nein"-Checkboxen alle Kriterien
+_Hinweis_: Wenn bei den Review-Fragen mit "Ja/Nein"-Checkboxen _alle_ Kriterien
 mit "Nein" beantwortet werden mussten, also keine der Checkboxen angehakt werden
 kann, schreiben Sie bitte einen entsprechenden Kommentar in das Freitextfeld. Sonst
 können Sie das Review nicht absenden.
-
-_Hinweis_: Es kann passieren, dass ILIAS Ihnen die Lösung Ihres eigenen Teams zuweist.
-In diesem Fall führen Sie bitte kein vollständiges Review durch, sondern wählen Sie
-den entsprechenden Punkt auf der Checkliste aus ("eigenes Team").
 
 Nachdem Sie fristgemäß die geforderte Anzahl an Feedbacks vergeben haben, wird in der
 Aufgabe ein weiterer Button "Erhaltenes Feedback zeigen" freigeschaltet, über welchen
@@ -285,6 +281,17 @@ anderen Studierenden empfangene Feedback kann Sie im Lernprozess unterstützen -
 Sie die Chance und überarbeiten Sie Ihre Lösung anhand des Feedbacks. Bitte beachten
 Sie aber auch, dass das empfangene Feedback von sehr unterschiedlicher Qualität sein
 kann und deshalb stets kritisch hinterfragt werden sollte.
+
+
+## Peer-Feedback: Eigenes Team
+
+Es kann passieren, dass ILIAS Ihnen die Lösung Ihres eigenen Teams zum Review zuweist,
+da jedes Team-Mitglied die Lösung einzeln abgibt.
+
+In diesem Fall führen Sie bitte für diese Lösung kein vollständiges Review durch. Wählen
+Sie stattdessen den entsprechenden Punkt auf der Checkliste aus ("eigenes Team"). In den
+restlichen Textfeldern tragen Sie einfach einen "\*" ein, die "Ja/Nein"-Checkboxen und
+die Sterne-Fragen brauchen Sie nicht auszufüllen.
 
 
 ## Vorstellung der Lösungen
