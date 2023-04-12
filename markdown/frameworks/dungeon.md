@@ -79,7 +79,7 @@ Wir benutzen im Dungeon-Projekt die aktuelle LTS-Version des JDK, d.h.
 [Oracle](https://www.oracle.com/java/technologies/downloads/)
 herunterladen oder
 [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk)
-ausprobieren.
+ausprobieren. Bitte unbedingt die jeweilige 64-bit Version nutzen!
 
 In der Konsole sollte
 

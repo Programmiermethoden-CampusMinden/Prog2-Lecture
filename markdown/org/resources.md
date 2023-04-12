@@ -23,7 +23,7 @@ hidden: true
 
 Auf [The 2023 Java Programmer RoadMap](https://medium.com/javarevisited/the-java-programmer-roadmap-f9db163ef2c2)
 finden Sie eine Art Roadmap zu den verschiedenen Themen rund um die Java-Programmierung, die
-beinahe auch die Roadmap für die Veranstaltung "Programmiermethoden" sein könnte ... 
+beinahe auch die Roadmap für die Veranstaltung "Programmiermethoden" sein könnte ...
 
 Joshua Bloch, einer der "Väter" von Java, hat eine interessante Sammlung von Rezepten für
 typische Probleme und wie man diese am sinnvollsten in Java lösen kann gesammelt: @Bloch2018
@@ -68,7 +68,8 @@ Literatur empfohlen.
 ### Tools
 
 -   JDK: Java SE 17 (LTS) ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder
-    [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk))
+    [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk),
+    bitte 64-bit Version nutzen)
 -   IDE: [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/) oder
     [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/) oder
     [Visual Studio Code](https://code.visualstudio.com/) oder [Vim](https://www.vim.org/) oder ...
