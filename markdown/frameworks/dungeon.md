@@ -16,8 +16,8 @@ In diesem Semester werden Sie im Praktikum schrittweise ein eigenes
 Rogue-like Computerspiel programmieren und dabei (hoffentlich) die
 Methoden aus der Vorlesung einsetzen können.
 
-Damit Sie dabei nicht ganz am Anfang anfangen müssen oder sich selbst in
-ein komplexes Spiele-Framework einarbeiten müssen, haben wir das Projekt
+Damit Sie dabei nicht von Scratch starten müssen oder sich selbst in ein
+komplexes Spiele-Framework einarbeiten müssen, haben wir das Projekt
 "PM-Dungeon" ins Leben gerufen.
 
 Der PM-Dungeon stellt wichtige Bausteine für das Spiel bereit,
@@ -61,8 +61,8 @@ https://github.com/Programmiermethoden/Dungeon.
 ![](images/screenshot_dungeon_clone.png)
 
 Laden Sie sich den Quellcode herunter, um damit in der IDE arbeiten zu
-können. Prinzipiell gibt es viele verschiedene Wege, wir laden es hier
-per Git in der Konsole herunter:
+können. Prinzipiell gibt es viele verschiedene Wege, in diesem Tutorial
+laden wir es per Git in der Konsole herunter:
 
 ``` sh
 git clone git@github.com:Programmiermethoden/Dungeon.git pm-dungeon
@@ -88,7 +88,7 @@ java -version
 ```
 
 ungefähr diese Ausgabe erzeugen (ignorieren Sie die Minor-Version,
-wichtig ist Version 17 bzw. "LTS"):
+wichtig ist Major-Version: 17 bzw. "LTS"):
 
     java version "17.0.6" 2023-01-17 LTS
     Java(TM) SE Runtime Environment (build 17.0.6+9-LTS-190)
@@ -158,7 +158,7 @@ Methoden, die für Sie relevant sind:
     beispielsweise für jeden Controller die `update()`-Methode
     aufgerufen, wodurch u.a. Spielmechaniken ausgeführt werden und
     Objekte bewegt werden und ein Neuzeichnen ausgelöst wird. Im Prinzip
-    stellt diese Methode unseren Teil der Game-Loop dar. *Achtung*: Sie
+    stellt diese Methode unseren Teil der Game-Loop dar. _Achtung_: Sie
     rufen diese Methode nicht selbst auf - sie wird automatisch von
     libGDX in der Game-Loop aufgerufen!
 -   `Game#setup()`: Diese Methode wird einmal beim Start des Spiels
@@ -194,51 +194,68 @@ Initialisierung des Default-Helden ab (einfach die Zeile
 ## Einschub: ECS oder Entities, Components und Systems
 
 Der Held ist ein Element im Spiel. Dieses muss geeignet modelliert
-werden. Unser Dungeon implementiert dabei eine Variante eines
+werden.
+
+Unser Dungeon implementiert dabei eine Variante eines
 [Entity Component System (*ECS*)](https://en.wikipedia.org/wiki/Entity_component_system)
 und folgt damit "großen Vorbildern" wie beispielsweise
 [Unity](https://learn.unity.com/tutorial/entity-component-system).
 
 ### Entity
 
-Die Idee dahinter ist: Alle Elemente im Spiel werden als *Entität*
-realisiert, also der Held und die Monster und die Items, die man so
+Die Idee dahinter ist: Alle Elemente im Spiel werden als _Entität_
+realisiert, d.h. der Held und die Monster und die Items, die man so
 finden kann, sind alles Entitäten. Im Prinzip könnten sogar die Boden-
-und Wandkacheln Entitäten sein. Eine Entität an sich kann erst einmal
-nichts und dient nur als Container für *Components*. Unsere Basisklasse
-für Entitäten ist im Moment `ecs.entities.Entity`.
+und Wandkacheln Entitäten sein.
+
+Eine Entität an sich kann erst einmal nichts und dient nur als Container
+für _Components_. Das Spiel kennt alle derzeit vorhandenen Entitäten.
+
+Unsere Basisklasse für Entitäten ist im Moment `ecs.entities.Entity`.
 
 ### Component
 
-Components bündeln bestimmte Werte einer Entität für bestimmte Zwecke.
+Components bündeln bestimmte Werte einer Entität für bestimmte Zwecke,
+d.h. statt der Attribute in einer Klasse (Entität) nutzen wir hier eine
+weitere Kapselung.
+
 Beispielsweise könnte man die Lebenspunkte u.ä. in einer
 `HealthComponent` verpacken und dann in einer Entität speichern. Oder
 man könnte in einer `VelocityComponent` hinterlegen, wie schnell eine
 Entität in x- und in y-Richtung bewegt werden kann (Wände würden dabei
 einfach den Wert 0 bekommen). Oder man könnte in einer
 `PositionComponent` speichern, wo die Entität gerade ist. Schauen Sie
-einfach mal in das Package `ecs.components`. Die Basisklasse für
-Components ist derzeit `ecs.components.Component`. Wichtig ist: Eine
-Instanz einer Component ist immer an eine Entität gekoppelt, es kann
-keine Components ohne (Bindung an) Entitäten geben. Andersherum kann
-eine Entität immer nur ein Objekt einer bestimmten Component haben, also
-nicht zwei Objekte vom Typ `PositionComponent`. Components speichern vor
-allem Werte und haben nur in Ausnahmefällen eigenes Verhalten.
+einfach mal in das Package `ecs.components`.
+
+Wichtig ist: Eine Instanz einer Component ist immer an eine Entität
+gekoppelt, es kann keine Components ohne (Bindung an) Entitäten geben.
+Andersherum kann eine Entität immer nur ein Objekt einer bestimmten
+Component (eines Component-Typs) haben, also nicht zwei Objekte vom
+Typ `PositionComponent`. Components speichern vor allem Werte und
+haben nur in Ausnahmefällen eigenes Verhalten.
+
+Die Basisklasse für Components ist derzeit `ecs.components.Component`.
+
 
 ### System
 
-Damit können wir Dinge im Dungeon repräsentieren: Wir brauchen eine
-Entität plus die passenden Components, über die wir die Eigenschaften
-ausdrücken. Für die Bewegung und Interaktion sorgen nun passende
-Systeme. Das Spiel kennt alle Systeme und ruft diese pro Frame immer
-wieder auf. Dabei könnte beispielsweise ein `HealthSystem` sich alle
-Entitäten filtern, deren `HealthComponent` unterhalb einer kritischen
-Schwelle liegen und diese rot anmalen lassen. Oder ein `PlayerSystem`
-könnte dafür sorgen, dass die Eingaben auf der Tastatur geeignet an den
-Helden weitergegeben werden und in eine Bewegung oder Kampf o.ä.
-umgewandelt werden. Sie finden unsere Systeme im Package `ecs.systems`,
-und die Basisklasse ist `ecs.systems.ECS_System` - falls Sie einmal
-eigene Systeme implementieren wollen.
+Mit Entitäten und passenden Components, über die wir die Eigenschaften
+ausdrücken, können wir bereits Spielelemente im Dungeon repräsentieren.
+
+Für die Bewegung und Interaktion sorgen nun passende Systeme. Das Spiel
+kennt alle Systeme und ruft deren `update()`-Methode in der Game-Loop
+(also pro Frame) auf.
+
+Dabei könnte beispielsweise ein `HealthSystem` sich alle Entitäten
+filtern, deren `HealthComponent` unterhalb einer kritischen Schwelle
+liegen und diese rot anmalen lassen. Oder ein `PlayerSystem` könnte
+dafür sorgen, dass die Eingaben auf der Tastatur geeignet an den Helden
+weitergegeben werden und in eine Bewegung oder Kampf o.ä. umgewandelt
+werden.
+
+Sie finden unsere Systeme im Package `ecs.systems`, und die Basisklasse
+ist derzeit `ecs.systems.ECS_System` - falls Sie einmal eigene Systeme
+implementieren wollen.
 
 
 ## Nun aber Helden!
@@ -252,12 +269,21 @@ Also legen wir eine neue Heldenklasse als Unterklasse von
 public class MyHero extends Entity {}
 ```
 
-Den nutzen wir `starter.Game#setup()` in Zeile 118 an Stelle des vorhin
-auskommentierten Default-Helden: `hero = new MyHero();`.
+Den nutzen wir in `starter.Game#setup()` in Zeile 118 an Stelle des
+vorhin auskommentierten Default-Helden: `hero = new MyHero();`.
 
-Damit sollten Sie das Spiel starten können. Aber außer dem Level werden
-Sie (noch) nichts sehen - der Held hat ja noch gar keine Merkmale
-(Components).
+Prinzipiell haben Sie damit alles, um das Spiel starten zu können. In
+der Praxis bekommen Sie aber eine Exception, weil die neue Entität vom
+Typ `MyHero` keine `PositionComponent` hat und das Spiel nicht sicher
+ist, wo es diese Entität nun anzeigen soll.
+
+_Hinweis_: Eine Entität ist nur ein Container für Components. Insofern
+bräuchten wir eigentlich nicht von `Entity` ableiten, sondern könnten
+direkt eine Instanz von `Entity` anlegen und dort die gewünschten
+Components hineintun. In der Praxis mag es aber vielleicht ganz nett
+sein, trotzdem eine eigene Klasse zu spendieren, weil man hier Dinge
+für die Initialisierung kapseln kann - die würden sonst "frei" im
+`starter.Game#setup()` o.ä. "herumfliegen".
 
 ### Wo bin ich grad?
 
@@ -277,16 +303,16 @@ public class MyHero extends Entity {
 
 Eine Component ist immer an eine Entität gebunden, deshalb wird der
 neuen `PositionComponent` eine Referenz auf das eigene Objekt (den
-Helden, `this`) mitgegeben. Das sorgt dann im Konstruktor der
-`PositionComponent` automatisch dafür, dass die neue Component auch im
-Helden registriert wird.
+Helden, `this`) mitgegeben. Der Konstruktor der `PositionComponent`
+sorgt automatisch dafür, dass die neue Component gleich auch im Helden
+registriert wird.
 
 Wenn man keine Position mitgibt, wird einfach eine zufällige Position im
 Level genutzt. Alternativ kann man eine eigene Position mitgeben. Im
 Dungeon existieren aktuell zwei Koordinatensysteme:
 `level.tools.Coordinate` (Integer-basiert) und `tools.Point`
 (Float-basiert). Die Level werden als Matrix von `Tile` (Boden, Wand,
-Loch, ...) gespeichert. Die Position dieser `Tile` werden als
+Loch, ...) gespeichert. Die Position dieser `Tile` wird als
 `Coordinate` gespeichert, was dem Index des Tiles in der Matrix
 entspricht. Entitäten können aktuell aber auch zwischen zwei Tiles oder
 schräg-links-oben auf einem Tile stehen, dafür gibt es die Positionen
