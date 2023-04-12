@@ -42,8 +42,8 @@ Durchführung als **Flipped Classroom**: Sitzungen per Zoom (**Zugangsdaten sieh
 
 *   Gruppe 1: Fr, 09:00 - 10:30 Uhr (online/J104)
 *   Gruppe 2: Fr, 13:30 - 15:00 Uhr (online/J104)
-*   Gruppe 3: Fr, 10:45 - 12:15 Uhr (online/J104)
-*   Gruppe 4: Fr, 15:00 - 16:30 Uhr (online/J104)
+*   Gruppe 3: Fr, 15:00 - 16:30 Uhr (online/J104)
+*   Gruppe 4: Fr, 10:45 - 12:15 Uhr (online/J104)
 
 Tutorium: Mo, 16:45 - 17:45 Uhr (online)
 
