@@ -35,12 +35,6 @@ Das Projekt PM-Dungeon entstand in verschiedenen Forschungsprojekten und
 wurde (und wird) aktiv von Studierenden und wissenschaftlichen
 Mitarbeitern am Campus Minden entwickelt.
 
-Sie werden merken, dass trotz klarer Richtlinien und Ideen die
-Entwicklung in der Praxis doch nicht so einfach ist und dass viele Dinge
-immer wieder geübt und erinnert werden müssen: Namen von Klassen und
-Methoden, sinnvolles Javadoc, Dokumentation jenseits des Javadoc, aber
-auch Commit-Messages und PR-Summaries.
-
 Aktuell läuft das Forschungsprojekt "Dungeon", gefödert durch die
 [Stiftung für Innovation in der Hochschullehre](https://stiftung-hochschullehre.de)
 im
@@ -51,6 +45,12 @@ entwickelten) Programmiersprache schreiben (können), woraus dann ein
 fertiges Dungeon-Spiel generiert wird (mit der Aufgabe als Quest o.ä. im
 Dungeon eingebettet) und die Studierenden können durch das Spielen die
 Aufgaben lösen.
+
+Sie werden merken, dass trotz klarer Richtlinien und Ideen die
+Entwicklung in der Praxis doch nicht so einfach ist und dass viele Dinge
+immer wieder geübt und erinnert werden müssen: Namen von Klassen und
+Methoden, sinnvolles Javadoc, Dokumentation jenseits des Javadoc, aber
+auch Commit-Messages und PR-Summaries.
 
 
 ## Installation des Frameworks
