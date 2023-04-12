@@ -26,7 +26,7 @@
         -   topic: "/pattern/strategy"
     assignment:
         -   topic: "b01a"
-            due: "Do, 20.04., 08 Uhr; Peer-Feedback: Fr, 21.04., 08 Uhr; Praktikum: Fr, 21.04."
+            due: "Abgabe: Do, 20.04., 08 Uhr; Peer-Feedback: Fr, 21.04., 08 Uhr; Praktikum: Fr, 21.04."
 
 -   week: "W04 (28. April)"
     lecture:
@@ -36,7 +36,7 @@
         -   topic: "/modern-java/optional"
     assignment:
         -   topic: "b01b"
-            due: "Do, 27.04., 08 Uhr; Peer-Feedback: Fr, 28.04., 08 Uhr; Praktikum: Fr, 28.04."
+            due: "Abgabe: Do, 27.04., 08 Uhr; Peer-Feedback: Fr, 28.04., 08 Uhr; Praktikum: Fr, 28.04."
 
 -   week: "W05 (05. Mai)"
     lecture:
@@ -47,7 +47,7 @@
         -   topic: "/coding/logging"
     assignment:
         -   topic: "b02a"
-            due: "Do, 04.05., 08 Uhr; Peer-Feedback: Fr, 05.05., 08 Uhr; Praktikum: Fr, 05.05."
+            due: "Abgabe: Do, 04.05., 08 Uhr; Peer-Feedback: Fr, 05.05., 08 Uhr; Praktikum: Fr, 05.05."
 
 -   week: "W06 (12. Mai)"
     lecture:
@@ -59,7 +59,7 @@
         -   notes: ">> Gastvortrag zu JUnit/Mocking in der Praxis von Daniel Rosowski (Smartsquare GmbH, Bielefeld)"
     assignment:
         -   topic: "b02b"
-            due: "Do, 11.05., 08 Uhr; Peer-Feedback: Fr, 12.05., 08 Uhr; Praktikum: Fr, 12.05."
+            due: "Abgabe: Do, 11.05., 08 Uhr; Peer-Feedback: Fr, 12.05., 08 Uhr; Praktikum: Fr, 12.05."
 
 -   week: "W07 (19. Mai)"
     lecture:
@@ -70,7 +70,7 @@
         -   topic: "/git/worktree"
     assignment:
         -   topic: "b03a"
-            due: "Do, 18.05., 08 Uhr; Peer-Feedback: Fr, 19.05., 08 Uhr; Praktikum: Fr, 19.05."
+            due: "Abgabe: Do, 18.05., 08 Uhr; Peer-Feedback: Fr, 19.05., 08 Uhr; Praktikum: Fr, 19.05."
 
 -   week: "W08 (26. Mai)"
     lecture:
@@ -81,7 +81,7 @@
         -   topic: "/java-jvm/collections"
     assignment:
         -   topic: "b03b"
-            due: "Do, 25.05., 08 Uhr; Peer-Feedback: Fr, 26.05., 08 Uhr; Praktikum: Fr, 26.05."
+            due: "Abgabe: Do, 25.05., 08 Uhr; Peer-Feedback: Fr, 26.05., 08 Uhr; Praktikum: Fr, 26.05."
 
 -   week: "W09 (02. Juni)"
     lecture:
@@ -91,7 +91,7 @@
         -   topic: "/pattern/command"
     assignment:
         -   topic: "b04a"
-            due: "Do, 01.06., 08 Uhr; Peer-Feedback: Fr, 02.06., 08 Uhr; Praktikum: Fr, 02.06."
+            due: "Abgabe: Do, 01.06., 08 Uhr; Peer-Feedback: Fr, 02.06., 08 Uhr; Praktikum: Fr, 02.06."
 
 -   week: "W10 (09. Juni)"
     lecture:
@@ -101,7 +101,7 @@
         -   topic: "/pattern/singleton"
     assignment:
         -   topic: "b04b"
-            due: "Do, 08.06., 08 Uhr; Peer-Feedback: Fr, 09.06., 08 Uhr; Praktikum: Fr, 09.06."
+            due: "Abgabe: Do, 08.06., 08 Uhr; Peer-Feedback: Fr, 09.06., 08 Uhr; Praktikum: Fr, 09.06."
 
 -   week: "W11 (16. Juni)"
     lecture:
@@ -113,7 +113,7 @@
         -   topic: "/pattern/dependency"
     assignment:
         -   topic: "b05a"
-            due: "Do, 15.06., 08 Uhr; Peer-Feedback: Fr, 16.06., 08 Uhr; Praktikum: Fr, 16.06."
+            due: "Abgabe: Do, 15.06., 08 Uhr; Peer-Feedback: Fr, 16.06., 08 Uhr; Praktikum: Fr, 16.06."
 
 -   week: "W12 (23. Juni)"
     lecture:
@@ -124,7 +124,7 @@
         -   topic: "/pattern/template-method"
     assignment:
         -   topic: "b05b"
-            due: "Do, 22.06., 08 Uhr; Peer-Feedback: Fr, 23.06., 08 Uhr; Praktikum: Fr, 23.06."
+            due: "Abgabe: Do, 22.06., 08 Uhr; Peer-Feedback: Fr, 23.06., 08 Uhr; Praktikum: Fr, 23.06."
 
 -   week: "W13 (30. Juni)"
     lecture:
@@ -134,4 +134,4 @@
             notes: "Prüfungsvorbereitung (Zoom)"
     assignment:
         -   topic: "b06"
-            due: "Fr, 30.06., 08 Uhr; Praktikum: Fr, 30.06."
+            due: "Abgabe: Fr, 30.06., 08 Uhr; Praktikum: Fr, 30.06."
