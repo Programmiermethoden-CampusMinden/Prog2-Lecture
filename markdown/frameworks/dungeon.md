@@ -385,6 +385,15 @@ mitgegeben.
 
 Nun sollten Sie Ihren Helden bewegen können.
 
+_Hinweis_: Normalerweise sollten Systeme bei der Iteration über alle
+Entitäten nur diejenigen Entitäten wirklich bearbeiten, die alle
+benötigten Components aufweisen. In der aktuellen Implementierung kann
+aber leider passieren, dass ein System mehrere Components braucht und
+sich dann mit einer `MissingComponentException` über das
+Nichtvorhandensein selbiger beschwert. Diese Abhängigkeiten sind in
+https://github.com/Programmiermethoden/Dungeon/blob/master/doc/ecs/systems/readme.md
+dokumentiert.
+
 
 ## Ausblick
 
