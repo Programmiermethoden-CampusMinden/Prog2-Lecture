@@ -10,6 +10,10 @@ youtube:
 ---
 
 
+<!-- XXX
+Dieses Dokument ist nicht für die Nutzung als Foliensatz vorbereitet.
+-->
+
 ## How-To Dungeon
 
 In diesem Semester werden Sie im Praktikum schrittweise ein eigenes
@@ -399,10 +403,10 @@ dokumentiert.
 
 ::: notes
 Damit endet der kurze Ausflug in den Dungeon.
+:::
 
 Schauen Sie gern in die vorhandenen Klassen und Packages und in die
 Dokumentation hinein:
-:::
 
 -   Default-Held: `ecs.entities.Hero`
 -   Klassen in "`game/`"
@@ -418,10 +422,14 @@ die im Laufe des Semesters schrittweise weiter wachsen wird.
 \bigskip
 
 Anregungen für **Spielideen** [können Sie beispielsweise in den folgenden
-Videos finden]{.notes}:
+Videos finden:]{.notes}
 
 -   [Shattered Pixel Dungeon Rogue Beginners Guide Playthrough](https://youtu.be/qoc_tDN0QC4)
 -   [Shattered Pixel Dungeon Duelist Update!](https://youtu.be/LgSjUWjQg0s)
+
+::: notes
+Viel Spass im PM-Dungeon!
+:::
 
 
 
