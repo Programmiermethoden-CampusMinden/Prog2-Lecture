@@ -395,19 +395,30 @@ https://github.com/Programmiermethoden/Dungeon/blob/master/doc/ecs/systems/readm
 dokumentiert.
 
 
-## Ausblick
+## Wrap-Up
 
+::: notes
 Damit endet der kurze Ausflug in den Dungeon.
 
-Schauen Sie gern in unseren Default-Helden hinein: `ecs.entities.Hero`.
-Schauen Sie sich gern die Klassen in "`game/`" an, die
-Javadoc-Kommentare sollten Ihnen erste Ideen zur Funktionsweise geben
-(auch wenn für das angestrebte Ideal noch einiges an Arbeit notwendig
-ist). Schauen Sie gern die Dokumentation unter "`doc/`" an, die im Laufe
-des Semesters schrittweise weiter wachsen wird.
+Schauen Sie gern in die vorhandenen Klassen und Packages und in die
+Dokumentation hinein:
+:::
 
-Anregungen für **Spielideen** können Sie beispielsweise in den folgenden
-Videos finden:
+-   Default-Held: `ecs.entities.Hero`
+-   Klassen in "`game/`"
+-   Dokumentation unter "`doc/`"
+
+::: notes
+Die Javadoc-Kommentare sollten Ihnen erste Ideen zur Funktionsweise
+geben (auch wenn für das angestrebte Ideal noch einiges an Arbeit
+notwendig ist). Schauen Sie gern die Dokumentation unter "`doc/`" an,
+die im Laufe des Semesters schrittweise weiter wachsen wird.
+:::
+
+\bigskip
+
+Anregungen für **Spielideen** [können Sie beispielsweise in den folgenden
+Videos finden]{.notes}:
 
 -   [Shattered Pixel Dungeon Rogue Beginners Guide Playthrough](https://youtu.be/qoc_tDN0QC4)
 -   [Shattered Pixel Dungeon Duelist Update!](https://youtu.be/LgSjUWjQg0s)
