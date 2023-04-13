@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Nahkampf"
 author: "André Matutat (FH Bielefeld)"
-points: 5
+points: "5 Punkte"
 weight: 3
 
 hidden: true

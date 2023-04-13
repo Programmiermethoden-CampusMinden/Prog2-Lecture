@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Lockpicking"
 author: "André Matutat (FH Bielefeld)"
-points: 10
+points: "10 Punkte"
 weight: 7
 
 hidden: true

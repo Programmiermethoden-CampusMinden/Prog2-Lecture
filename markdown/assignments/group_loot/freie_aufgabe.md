@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Freie Aufgabe"
 author: "André Matutat (FH Bielefeld)"
-points: 10
+points: "10 Punkte"
 weight: 9
 
 hidden: true

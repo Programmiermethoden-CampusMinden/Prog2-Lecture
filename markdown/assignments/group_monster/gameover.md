@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Game-Over"
 author: "André Matutat (FH Bielefeld)"
-points: 5
+points: "5 Punkte"
 weight: 5
 
 hidden: true

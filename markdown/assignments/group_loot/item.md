@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Items"
 author: "André Matutat (FH Bielefeld)"
-points: 5
+points: "5 Punkte"
 weight: 1
 
 hidden: true
