@@ -6,7 +6,10 @@ author: "Carsten Gips (FH Bielefeld)"
 weight: 2
 youtube:
   - link: "https://youtu.be/-Tw7BpoN33Q"
-    name: "Tutorial How-To Dungeon"
+    name: "VL How-To Dungeon"
+fhmedia:
+  - link: "https://www.fh-bielefeld.de/medienportal/m/b007a85da6537d9504466dbb4ee585c939bac3ad7533e90362ffcd4153ba4c5273d589ba367a038ed93b819364297cd231b603d68f9ae2c101496a72610f9ccc"
+    name: "VL How-To Dungeon"
 ---
 
 
