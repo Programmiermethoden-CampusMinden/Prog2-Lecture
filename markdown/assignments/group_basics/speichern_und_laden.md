@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Speichern und Laden"
 author: "André Matutat (FH Bielefeld)"
-points: 5
+points: "5 Punkte"
 weight: 4
 
 hidden: true

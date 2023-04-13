@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Freundlicher NPC-Geist"
 author: "André Matutat (FH Bielefeld)"
-points: 5
+points: "5 Punkte"
 weight: 2
 
 hidden: true

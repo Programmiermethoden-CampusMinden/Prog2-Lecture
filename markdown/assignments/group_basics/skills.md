@@ -2,7 +2,7 @@
 archetype: assignment
 title: "Fähigkeiten"
 author: "André Matutat (FH Bielefeld)"
-points: 10
+points: "10 Punkte"
 weight: 2
 
 hidden: true
