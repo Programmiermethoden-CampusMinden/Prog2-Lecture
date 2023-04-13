@@ -5,7 +5,7 @@ menuTitle: "How-To Dungeon"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 2
 youtube:
-  - link: "https://youtu.be/"
+  - link: "https://youtu.be/-Tw7BpoN33Q"
     name: "Tutorial How-To Dungeon"
 ---
 
