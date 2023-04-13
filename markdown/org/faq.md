@@ -267,6 +267,22 @@ ist.
 [ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
 
 
+## Implementierung: Umsetzung des Konzepts
+
+In der jeweils zweiten Zyklushälfte setzen Sie Ihre Konzeptskizze aus der
+ersten Zyklushälfte um.
+
+Möglicherweise werden Sie dabei gelegentlich auf unvorhergesehene
+Schwierigkeiten stoßen. Das kann viele Ursachen haben, vielleicht haben
+Sie beim Erstellen des Konzepts relevante Dinge nicht mit bedacht oder
+haben etwas übersehen o.ä. ...
+
+Wenn dies passiert, können Sie gern Ihr Konzept nachträglich anpassen und
+entsprechend ergänzen bzw. korrigieren. Sie können sich aber keine anderen
+Aufgaben für diesen Zyklus aussuchen, d.h. Sie sind für diesen Zyklus an
+die angefangenen Aufgaben gebunden.
+
+
 ## Link zum Pull-/Merge-Request
 
 Bei der Implementierung setzen Sie aktiv Git und einen beliebigen Git-basierten
