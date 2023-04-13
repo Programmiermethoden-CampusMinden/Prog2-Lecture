@@ -4,6 +4,41 @@ title: "Frameworks: How-To Dungeon"
 menuTitle: "How-To Dungeon"
 author: "Carsten Gips (FH Bielefeld)"
 weight: 2
+tldr: |
+    Der PM-Dungeon ist ein Framework zum Entwickeln von Rogue-like Dungeon-Crawlern, also einfachen 2D-Spielen in Java.
+    Das Framework bietet die wichtigsten benötigten Grundstrukturen für ein Computer-Spiel: Es hat eine Game-Loop, kann
+    Level generieren und darstellen und hat eine _E_ntity-_C_omponent-_S_ystem-Struktur (ECS), über die die Spielinhalte
+    erstellt werden können. Im Hintergrund arbeitet die Open-Source-Bibliothek libGDX.
+
+    Sie können das Projekt direkt von GitHub clonen und über den im Projekt integrierten Gradle-Wrapper starten. Dazu
+    brauchen Sie Java 17 LTS (in einer 64-bit Version). Sie können das Projekt als Gradle-Projekt in Ihre IDE laden.
+
+    Die Klasse `starter.Game` ist der zentrale Einstiegspunkt. Hier finden Sie "unseren" Teil der Game-Loop (der in der
+    eigentlichen Game-Loop von libGDX aufgerufen wird), hier finden Sie die Konfiguration und die `main()`-Methode.
+
+    Im ECS werden die im Spiel befindlichen Elemente als _Entitäten_ modelliert. Diese Entitäten sind lediglich Container
+    für _Components_, die dann ihrerseits die entsprechenden Eigenschaften der Entitäten modellieren. Entitäten haben
+    normalerweise über die Components hinaus keine weiteren Eigenschaften (Attribute, Methoden). Das Game kennt alle zum
+    aktuellen Zeitpunkt "lebenden" Entitäten.
+
+    Components gruppieren Eigenschaften, beispielsweise für Positionen oder Lebenspunkte. Components haben normalerweise
+    keine Methoden (halten also nur Werte/Attribute). Jede Component-Instanz ist immer einer konkreten Entität zugeordnet
+    und kann ohne diese nicht existieren.
+
+    _Systeme_ implementieren das Verhalten im ECS. Das Game kennt alle aktiven Systeme und ruft in jedem Durchlauf der
+    Game-Loop die `update()`-Methode der Systeme auf. Üblicherweise holt sich dann ein System alle Entitäten vom Game und
+    iteriert darüber und fragt ab, ob die betrachtete Entität die notwendigen Components hat - falls ja, dann kann das
+    System auf dieser Entität die entsprechenden Operationen ausführen (Animation, Bewegung, ...); falls nein, wird diese
+    Entität ignoriert und mit der Iteration fortgefahren.
+
+    Wir programmieren in dieser Einheit einen einfachen Helden. Der Held ist eine `Entity` und braucht verschiedene
+    Components, um im Spiel angezeigt zu werden und bewegt werden zu können.
+outcomes:
+  - k2: "Überblick über die wichtigsten Strukturen im PM-Dungeon"
+  - k2: "Aufbau eines ECS: Entitäten, Komponenten, Systeme"
+  - k3: "Herunterladen und installieren des PM-Dungeon"
+  - k3: "Laden in der IDE"
+  - k3: "Erstellen eines Helden mit Animation und Bewegung"
 youtube:
   - link: "https://youtu.be/-Tw7BpoN33Q"
     name: "VL How-To Dungeon"
