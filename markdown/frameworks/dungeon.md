@@ -7,7 +7,7 @@ weight: 2
 tldr: |
     Der PM-Dungeon ist ein Framework zum Entwickeln von Rogue-like Dungeon-Crawlern, also einfachen 2D-Spielen in Java.
     Das Framework bietet die wichtigsten benötigten Grundstrukturen für ein Computer-Spiel: Es hat eine Game-Loop, kann
-    Level generieren und darstellen und hat eine _E_ntity-_C_omponent-_S_ystem-Struktur (ECS), über die die Spielinhalte
+    Level generieren und darstellen und hat eine Entity-Component-System-Struktur (ECS), über die die Spielinhalte
     erstellt werden können. Im Hintergrund arbeitet die Open-Source-Bibliothek libGDX.
 
     Sie können das Projekt direkt von GitHub clonen und über den im Projekt integrierten Gradle-Wrapper starten. Dazu
