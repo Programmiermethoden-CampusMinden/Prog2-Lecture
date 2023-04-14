@@ -63,16 +63,16 @@ und pflegen können:
 ## Überblick Modulinhalte
 
 1.  Fortgeschrittene Konzepte in Java
-    *   Reguläre Ausdrücke, Annotationen, Reflection
+    *   Funktionale Programmierung: Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas, Stream-API
     *   Generische Programmierung: Generics
     *   Parallele Programmierung: Threads
-    *   Funktionale Programmierung: Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas, Stream-API
+    *   Reguläre Ausdrücke, Annotationen, Reflection
     *   CLI, Konfiguration, Fremde APIs nutzen
 
 \smallskip
 
 2.  Fortgeschrittenes OO-Design
-    *   Entwurfsmuster: Strategy, Template-Method, Factory-Method, Singleton, Observer, Visitor, ...
+    *   Entwurfsmuster: Strategy, Template-Method, Factory-Method, Singleton, Observer, Visitor, Command, ...
 
 \smallskip
 
