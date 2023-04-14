@@ -10,7 +10,7 @@ hidden: true
 
 ## Worum geht's hier?
 
-::: cbox
+::: center
 [**Weniger schlecht programmieren**]{.alert} \quad ;-)
 :::
 
@@ -52,6 +52,7 @@ und pflegen können:
         *   Build-Tools einsetzen
         *   Testen von Software
         *   Refactoring von "stinkendem" Code
+        *   Versionsverwaltung: Git
     *   Zusammenarbeit in Teams: Verwaltung von Software und Workflows
 
 [Warum ist guter Code wichtig?]{.bsp}
@@ -62,20 +63,21 @@ und pflegen können:
 ## Überblick Modulinhalte
 
 1.  Fortgeschrittene Konzepte in Java
-    *   Reguläre Ausdrücke, Annotationen, Generics, Reflection
-    *   Parallele Programmierung (Threads)
-    *   Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas
+    *   Funktionale Programmierung: Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas, Stream-API
+    *   Generische Programmierung: Generics
+    *   Parallele Programmierung: Threads
+    *   Reguläre Ausdrücke, Annotationen, Reflection
     *   CLI, Konfiguration, Fremde APIs nutzen
 
 \smallskip
 
 2.  Fortgeschrittenes OO-Design
-    *   Entwurfsmuster: Strategy, Template-Method, Factory-Method, Singleton, ...
+    *   Entwurfsmuster: Strategy, Template-Method, Factory-Method, Singleton, Observer, Visitor, Command, ...
 
 \smallskip
 
 3.  Programmiermethoden
-    *   Versionskontrolle
+    *   Versionskontrolle: Git
     *   Testen, Coding Conventions, Refactoring
     *   Logging, Build-Tools, CI
 
