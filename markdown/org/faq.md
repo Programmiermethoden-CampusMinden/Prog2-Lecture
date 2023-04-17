@@ -180,6 +180,21 @@ dem Semester neu aufgesetzt.
 [GitLab-Instanz]: http://git03-ifm-min.ad.fh-bielefeld.de
 
 
+## SSH-Key für die Git-Server
+
+Die meisten Git-Server erlauben keinen Push per User+Password mehr, stattdessen
+muss man sich mit einem SSH-Key authentifizieren.
+
+Sofern Sie noch kein Schlüsselpaar haben oder für den Git-Server ein neues Paar
+nutzen wollen, generieren Sie sich lokal auf Ihrem Rechner ein neues Schlüsselpaar
+und laden den öffentlichen Teil (den _public key_) in die Konfiguration Ihres
+Accounts auf dem Server hoch.
+
+Eine gute Anleitung finden Sie beispielsweise auf [Connecting to GitHub with SSH].
+
+[Connecting to GitHub with SSH]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/
+
+
 ## Auswahl der Übungsaufgaben
 
 Sie können sich in jedem Zyklus die Aufgaben relativ frei auswählen; natürlich
