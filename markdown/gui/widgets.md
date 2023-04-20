@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Swing: Nützliche Widgets"
 menuTitle: "Swing: Widgets"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 3
 readings:
   - key: "Java-SE-Tutorial"
@@ -28,7 +28,7 @@ outcomes:
   - k3: "Umgang mit komplexeren Swing-Komponenten: JRadioButton, JFileChooser, JOptionPane, JTabbedPane, JScrollPane, JMenuBar, JPopupMenu"
   - k3: "Nutzung von ActionListener, MouseListener, KeyListener, FocusListener"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
   - link: "https://youtu.be/cUtK-yL5Wpw"
@@ -46,7 +46,7 @@ youtube:
   - link: "https://youtu.be/ftHDFIkaC-E"
     name: "Demo JPopupMenu"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/b6208b6b99b3510b6ecc59d4acc2152536c124c45e7b28ac853327dacb237f74ffedecb414549809d806d2f7a0bb7ee9af6361b985cbe339bc2de9f52392fafb"
+  - link: "https://www.hsbi.de/medienportal/m/b6208b6b99b3510b6ecc59d4acc2152536c124c45e7b28ac853327dacb237f74ffedecb414549809d806d2f7a0bb7ee9af6361b985cbe339bc2de9f52392fafb"
     name: "VL Swing Widgets"
 ---
 

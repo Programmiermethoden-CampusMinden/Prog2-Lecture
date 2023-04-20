@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Einführung Softwaretest"
 menuTitle: "Intro SW-Test"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 1
 readings:
   - key: "vogellaJUnit"
@@ -35,7 +35,7 @@ outcomes:
   - k2: "Ursachen von Softwarefehlern"
   - k3: "Aufbauen von Tests mit JUnit 4 und 5 unter Nutzung der Annotation `@Test`"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
     name: "Quiz JUnit-Basics - nur erster Teil (ILIAS)"
 youtube:
   - link: "https://youtu.be/WGd83crqu4I"
@@ -43,7 +43,7 @@ youtube:
   - link: "https://youtu.be/xcogVwHUo5o"
     name: "Demo Anlegen von Testfällen mit JUnit"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/87e2aa545269a6d4c0502a18a3e800c82bc767de66612f488f17e0ff60c3a66097884212745aff556c2b76eee7a0fd8a8225d912c3a39c274020fd5b8055bb10"
+  - link: "https://www.hsbi.de/medienportal/m/87e2aa545269a6d4c0502a18a3e800c82bc767de66612f488f17e0ff60c3a66097884212745aff556c2b76eee7a0fd8a8225d912c3a39c274020fd5b8055bb10"
     name: "VL Einführung Softwaretest"
 ---
 

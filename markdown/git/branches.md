@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Git Branches: Features unabhängig entwickeln und mit Git verwalten"
 menuTitle: "Branches"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 3
 readings:
   - key: "Chacon2014"
@@ -31,7 +31,7 @@ outcomes:
   - k3: "Mergen von Branches, Auflösen möglicher Konflikte"
   - k3: "Rebasen von Branches"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106242&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106242&client_id=FH-Bielefeld"
     name: "Quiz Git Branches (ILIAS)"
   - link: "https://learngitbranching.js.org/"
     name: "Tutorial: Welcome to Learn Git Branching"
@@ -47,7 +47,7 @@ youtube:
   - link: "https://youtu.be/U4gd0FBBqZQ"
     name: "Demo HEAD"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/858546c533e356ef9cdbf1341719281a76d4f9b4405b654dfa6e96c0043ebb87a098da0d8bdca88088d1deb52433f117ab880c24495ce6dafa64ba02cfaabcf2"
+  - link: "https://www.hsbi.de/medienportal/m/858546c533e356ef9cdbf1341719281a76d4f9b4405b654dfa6e96c0043ebb87a098da0d8bdca88088d1deb52433f117ab880c24495ce6dafa64ba02cfaabcf2"
     name: "VL Git Branches"
 challenges: |
     **Branches und Merges**

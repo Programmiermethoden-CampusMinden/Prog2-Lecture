@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Git Worktree"
 menuTitle: "Worktree"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 8
 
 sketch: true

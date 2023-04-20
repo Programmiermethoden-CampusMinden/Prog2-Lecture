@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Mocking mit Mockito"
 menuTitle: "Mocking"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 4
 readings:
   - key: "Mockito"
@@ -26,7 +26,7 @@ outcomes:
   - k3: "Prüfen von Interaktion mit _verify()_"
   - k3: "Einsatz von _ArgumentMatcher_"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106547&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106547&client_id=FH-Bielefeld"
     name: "Quiz Mocking (ILIAS)"
 youtube:
   - link: "https://youtu.be/8deFZKtjXSk"
@@ -42,7 +42,7 @@ youtube:
   - link: "https://youtu.be/JNouzOd0s-w"
     name: "Demo Mocking: Matcher"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/9531e04dd11458ea45915269aca452ba6b9978ef7b1b3a777a424d673573f75724a3fbedd0a2bec5e4d14de4025ea92ae4a966f95ee312e9f6ecca4fde4c98ef"
+  - link: "https://www.hsbi.de/medienportal/m/9531e04dd11458ea45915269aca452ba6b9978ef7b1b3a777a424d673573f75724a3fbedd0a2bec5e4d14de4025ea92ae4a966f95ee312e9f6ecca4fde4c98ef"
     name: "VL Mocking"
 challenges: |
     Betrachten Sie die drei Klassen `Utility.java`, `Evil.java`
@@ -310,7 +310,7 @@ des LSF ändert, muss auch der Stub nachgezogen werden).
 Wenn man im Test andere Antworten braucht, müsste man einen weiteren Stub anlegen ...
 :::
 
-[Demo fhb.StudiStubTest]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/StudiStubTest.java"}
+[Demo hsbi.StudiStubTest]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/hsbi/StudiStubTest.java"}
 
 
 ## Mockito: Mocking von ganzen Klassen
@@ -361,7 +361,7 @@ Dies kann man in weiten Grenzen flexibel anpassen.
 Mit Hilfe der Argument-Matcher `anyString()` wird jedes String-Argument akzeptiert.
 :::
 
-[Demo fhb.StudiMockTest]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/StudiMockTest.java"}
+[Demo hsbi.StudiMockTest]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/hsbi/StudiMockTest.java"}
 
 
 ## Mockito: Spy = Wrapper um ein Objekt
@@ -414,7 +414,7 @@ Wenn man die Methoden nicht mit einem partiellen Mock überschreibt, dann wird e
 Auch hier können Argument-Matcher wie `anyString()` eingesetzt werden.
 :::
 
-[Demo fhb.StudiSpyTest]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/StudiSpyTest.java"}
+[Demo hsbi.StudiSpyTest]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/hsbi/StudiSpyTest.java"}
 
 
 ## Wurde eine Methode aufgerufen?
@@ -475,7 +475,7 @@ Mit `InOrder` lassen sich Aufrufe auf einem Mock/Spy oder auch auf verschiedenen
 Reihenfolge bringen und so überprüfen.
 :::
 
-[Demo fhb.VerifyTest]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/VerifyTest.java"}
+[Demo hsbi.VerifyTest]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/hsbi/VerifyTest.java"}
 
 
 ## Fangen von Argumenten
@@ -523,7 +523,7 @@ Argumente in gemockten Methoden zu reagieren. Schauen Sie sich dazu die Javadoc
 von [Mockito](https://javadoc.io/doc/org.mockito/mockito-core/) an.
 :::
 
-[Demo fhb.MatcherTest]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/fhb/MatcherTest.java"}
+[Demo hsbi.MatcherTest]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/testing/src/mockito/src/test/java/hsbi/MatcherTest.java"}
 
 
 ## Ausblick: PowerMock

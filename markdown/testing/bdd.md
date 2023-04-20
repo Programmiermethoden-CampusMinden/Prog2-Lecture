@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Behaviour-driven Development und Test"
 menuTitle: "BDD"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 5
 
 sketch: true

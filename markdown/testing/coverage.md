@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Test Coverage"
 menuTitle: "Test Coverage"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 6
 
 sketch: true

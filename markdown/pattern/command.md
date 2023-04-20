@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Command-Pattern"
 menuTitle: "Command"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 6
 readings:
   - key: "Gamma2011"
@@ -29,13 +29,13 @@ outcomes:
   - k2: "Aufbau des Command-Patterns"
   - k3: "Anwendung des Command-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106532&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106532&client_id=FH-Bielefeld"
     name: "Quiz Command-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/F7RJ7YCVMS4"
     name: "VL Command-Pattern"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/a0484bfdc0f388075a01b88f20bde97709aae4d4fe34d517e0889407b2d7b095b9b781856870f21d638e4ed4bf35b534717f5bac227ecc17ea4b6e0a195248b9"
+  - link: "https://www.hsbi.de/medienportal/m/a0484bfdc0f388075a01b88f20bde97709aae4d4fe34d517e0889407b2d7b095b9b781856870f21d638e4ed4bf35b534717f5bac227ecc17ea4b6e0a195248b9"
     name: "VL Command-Pattern"
 challenges: |
     Schreiben Sie für den `Dwarf` in den

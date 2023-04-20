@@ -1,4 +1,4 @@
-package fhb;
+package hsbi;
 
 import org.junit.Test;
 

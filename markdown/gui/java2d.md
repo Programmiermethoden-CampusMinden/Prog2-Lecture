@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Einführung in Graphics und Java 2D"
 menuTitle: "Java2D"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 6
 readings:
   - key: "Java-SE-Tutorial"
@@ -38,7 +38,7 @@ outcomes:
   - k3: "Einstellung von Farbe und Font"
   - k3: "Erzeugen von Bewegung ohne Nutzung von Threads"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106249&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106249&client_id=FH-Bielefeld"
     name: "Quiz Java2D (ILIAS)"
 youtube:
   - link: "https://youtu.be/LDE_Kbc9w7k"
@@ -52,7 +52,7 @@ youtube:
   - link: "https://youtu.be/wfVwSyTgm-w"
     name: "Demo Bewegung und 2D-Spiel"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/b5f92913ea6f152f6e38b71776fb665ebd0e823d907bb8eb5268964cbe5e1cbdd0c810e99638ef9d9bbe6d011b7cd11aa24f2e150a6d705ccad4d829fe177ae4"
+  - link: "https://www.hsbi.de/medienportal/m/b5f92913ea6f152f6e38b71776fb665ebd0e823d907bb8eb5268964cbe5e1cbdd0c810e99638ef9d9bbe6d011b7cd11aa24f2e150a6d705ccad4d829fe177ae4"
     name: "VL Java2D"
 ---
 

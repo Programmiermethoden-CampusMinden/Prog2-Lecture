@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Coding Conventions und Metriken"
 menuTitle: "Coding Conventions"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 5
 readings:
   - key: "Martin2009"
@@ -69,7 +69,7 @@ youtube:
   - link: "https://youtu.be/tSczcf_EOwI"
     name: "Demo SpotBugs"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/31a425902a7d01e5fd4b3b082259d9d71bcff55030eb4564c98bb044c554162088d7ab02edbf50aff0503232dfd4c3bed43341ec058e272a0cd6f9a388584d84"
+  - link: "https://www.hsbi.de/medienportal/m/31a425902a7d01e5fd4b3b082259d9d71bcff55030eb4564c98bb044c554162088d7ab02edbf50aff0503232dfd4c3bed43341ec058e272a0cd6f9a388584d84"
     name: "VL Coding Conventions"
 ---
 

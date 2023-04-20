@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Build-Systeme: Apache Maven"
 menuTitle: "Maven"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 2
 readings:
   - key: "Ullenboom2016"
@@ -28,7 +28,7 @@ outcomes:
   - k3: "Einbinden externer Bibliotheken als Dependencies"
   - k3: "Ausführen von Maven-Goals aus IDE heraus und Einbindung als Builder"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106215&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106215&client_id=FH-Bielefeld"
     name: "Quiz Apache Maven (ILIAS)"
 youtube:
   - link: "`https://youtu.be/YAW-_Wi4LDY`{=markdown}"
@@ -36,7 +36,7 @@ youtube:
   - link: "https://youtu.be/8z0UqtzISCA"
     name: "Demo Maven-Projekt"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/fb5c1d7d3dc18c911557eeec3d91322aec7005d9b1615445f8c75378cf221bb100cffb83d30a4073179d85dfd831c9ee2466c6dec910852b90ade14924bdfcb0"
+  - link: "https://www.hsbi.de/medienportal/m/fb5c1d7d3dc18c911557eeec3d91322aec7005d9b1615445f8c75378cf221bb100cffb83d30a4073179d85dfd831c9ee2466c6dec910852b90ade14924bdfcb0"
     name: "VL Apache Maven"
 ---
 
@@ -44,7 +44,7 @@ fhmedia:
 ## Build-Tool Maven: Alternative zu Ant oder Gradle
 
 ```maven
-mvn archetype:generate -DgroupId=de.fhb.pm -DartifactId=my-project
+mvn archetype:generate -DgroupId=de.hsbi.pm -DartifactId=my-project
                        -DarchetypeArtifactId=maven-archetype-quickstart
 ```
 
@@ -65,10 +65,10 @@ implementiert, d.h. hier muss man lediglich zusätzliche oder abweichende Dinge 
 konfigurieren. Das nennt man auch ["*convention over configuration*"](https://en.wikipedia.org/wiki/Convention_over_configuration).
 
 Der Maven-Aufruf
-`mvn archetype:generate -DgroupId=de.fhb.pm -DartifactId=my-project -DarchetypeArtifactId=maven-archetype-quickstart`
+`mvn archetype:generate -DgroupId=de.hsbi.pm -DartifactId=my-project -DarchetypeArtifactId=maven-archetype-quickstart`
 erzeugt mit Hilfe des Plugins `archetype`, welches das Ziel (engl.: "*Maven goal*") `generate`
 bereitstellt, ein neues Projekt mit dem Namen `my-project` und der initialen Package-Struktur
-`de.fhb.pm`. Das von Maven für die Projekterstellung genutzte Plugin ist unter der ID
+`de.hsbi.pm`. Das von Maven für die Projekterstellung genutzte Plugin ist unter der ID
 `maven-archetype-quickstart` in den Maven-Repositories (etwa [Maven-Central](https://mvnrepository.com/repos/central))
 verfügbar, hier kann man mit der zusätzlichen Option `-DarchetypeVersion=1.4` auf die letzte
 Version schalten.
@@ -102,7 +102,7 @@ auch die Abhängigkeiten berücksichtigt, d.h. das Ziel `test` erfordert ein `co
     <modelVersion>4.0.0</modelVersion>
 
     <!-- Basisinformationen -->
-    <groupId>de.fhb.pm</groupId>
+    <groupId>de.hsbi.pm</groupId>
     <artifactId>my-project</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -204,8 +204,8 @@ ein erster Einstieg ist die [Plugin-API](https://maven.apache.org/ref/3.8.1/mave
     "artifactId-version.jar" im Ordner `target/`. Mit `mvn install` kann man dieses
     Jar-File dann auch dem lokalen Repository im Home-Verzeichnis des Users (`.m2/`)
     hinzufügen.
-*   `mvn exec:java -Dexec.mainClass="de.fhb.pm.Main"`: Hängt von `compile` ab und
-    führt die Klasse `de.fhb.pm.Main` aus.
+*   `mvn exec:java -Dexec.mainClass="de.hsbi.pm.Main"`: Hängt von `compile` ab und
+    führt die Klasse `de.hsbi.pm.Main` aus.
 :::
 
 [Demo: pom.xml]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/building/src/maven/pom.xml"}

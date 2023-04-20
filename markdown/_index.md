@@ -24,7 +24,7 @@ Siehe `["Syllabus"]({{< ref "/org/syllabus" >}})`{=markdown} zu Details.
 
 ## Team
 
--   [Carsten Gips](https://www.fh-bielefeld.de/minden/ueber-uns/personenverzeichnis/carsten-gips)
+-   [Carsten Gips](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips)
 -   Tutoren (siehe ILIAS-Mitgliederliste)
 
 
@@ -49,7 +49,7 @@ Tutorium: Mo, 16:45 - 17:45 Uhr (online)
 
 Sitzungen per Zoom (**Zugangsdaten siehe [ILIAS]**)
 
-[ILIAS]: https://www.fh-bielefeld.de/elearning/goto.php?target=crs_1181185&client_id=FH-Bielefeld
+[ILIAS]: https://www.hsbi.de/elearning/goto.php?target=crs_1181185&client_id=FH-Bielefeld
 
 ### Prüfungsform, Note und Credits
 

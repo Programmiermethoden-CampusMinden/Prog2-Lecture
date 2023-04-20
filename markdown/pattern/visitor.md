@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Visitor-Pattern"
 menuTitle: "Visitor"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 2
 readings:
   - key: "Eilebrecht2013"
@@ -47,7 +47,7 @@ outcomes:
   - k2: "Aufbau des Visitor-Patterns (Besucher-Entwurfsmusters)"
   - k3: "Anwendung des Visitor-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106543&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106543&client_id=FH-Bielefeld"
     name: "Quiz Visitor-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/zW_2oQmjp8M"
@@ -57,7 +57,7 @@ youtube:
   - link: "https://youtu.be/4rBRkXKhuN4"
     name: "Demo Visitor-Pattern (Part II: Traversierung mit Visitor)"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/8a307719da2fd87b9cba54d34c05715a2fdaf115e80feb8ef29e53dcfe45f02e587ae0f76c7700e8d82fe102a234a2922af549aeaa261034dba59cbacfaaa8c3"
+  - link: "https://www.hsbi.de/medienportal/m/8a307719da2fd87b9cba54d34c05715a2fdaf115e80feb8ef29e53dcfe45f02e587ae0f76c7700e8d82fe102a234a2922af549aeaa261034dba59cbacfaaa8c3"
     name: "VL Visitor-Pattern"
 challenges: |
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/pattern/src/challenges/visitor)

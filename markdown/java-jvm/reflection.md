@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Reflection"
 menuTitle: "Reflection"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 5
 readings:
   - key: "Java-SE-Tutorial"
@@ -34,7 +34,7 @@ outcomes:
   - k3: "Inspection von Klassen zur Laufzeit mit Reflection"
   - k3: "Einbindung von zur Compilezeit unbekannten Klassen, Aufruf von Konstruktoren und Methoden (mit und ohne Parameter/Rückgabewerte)"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106517&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106517&client_id=FH-Bielefeld"
     name: "Quiz Reflection (ILIAS)"
 youtube:
   - link: "https://youtu.be/7wTKl8-KYd0"
@@ -44,7 +44,7 @@ youtube:
   - link: "https://youtu.be/HI_ZJFbvoNY"
     name: "Demo Class-Loader"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/9ebd01cdab64351e7b52863f4a442d3199d3322eef1ba277ba979ce756d2892a1317ddd6e1fc34e6b4d28b237dec99e56810fe8bb35b9e95db325edbb14d7719"
+  - link: "https://www.hsbi.de/medienportal/m/9ebd01cdab64351e7b52863f4a442d3199d3322eef1ba277ba979ce756d2892a1317ddd6e1fc34e6b4d28b237dec99e56810fe8bb35b9e95db325edbb14d7719"
     name: "VL Reflection"
 challenges: |
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/java-jvm/src/challenges/reflection)

@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "High-Level Concurrency"
 menuTitle: "High-Level Concurrency"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 3
 readings:
   - key: "Ullenboom2021"
@@ -33,7 +33,7 @@ tldr: |
 outcomes:
   - k3: "Umgang mit High-Level-Abstraktionen: Lock-Objekten und Conditions, Executor-Interface und Thread-Pools, Fork/Join-Framework, SwingWorker"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106531&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106531&client_id=FH-Bielefeld"
     name: "Quiz High-Level Concurrency (ILIAS)"
 youtube:
   - link: "https://youtu.be/bb_kuuhXC6A"
@@ -47,7 +47,7 @@ youtube:
   - link: "https://youtu.be/Hu3RbqiNy4M"
     name: "Demo SwingWorker"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/1d46e6b75b7e2ebe8d15edbda2340505285d886160a3b03f489024b1075f0b5176c68d9993a145fdcdb5e65c17f6be80a7ef1f0c64a72c410536e69965275a59"
+  - link: "https://www.hsbi.de/medienportal/m/1d46e6b75b7e2ebe8d15edbda2340505285d886160a3b03f489024b1075f0b5176c68d9993a145fdcdb5e65c17f6be80a7ef1f0c64a72c410536e69965275a59"
     name: "VL High-Level Concurrency"
 ---
 

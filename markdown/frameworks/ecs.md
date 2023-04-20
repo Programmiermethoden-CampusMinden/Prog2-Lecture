@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Frameworks: ECS"
 menuTitle: "ECS"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 3
 
 sketch: true

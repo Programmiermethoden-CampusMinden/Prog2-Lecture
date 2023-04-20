@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Swing: Tabellen"
 menuTitle: "Swing: Tabellen"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 5
 readings:
   - key: "Java-SE-Tutorial"
@@ -20,7 +20,7 @@ outcomes:
   - k3: "Anzeige von Tabellen mit JTable"
   - k3: "Einsatz eines eigenen Datenmodells"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
   - link: "`https://youtu.be/_iq_Grvhk90`{=markdown}"
@@ -32,7 +32,7 @@ youtube:
   - link: "https://youtu.be/cZhXVcRsTLY"
     name: "Demo Swing: Tabellen mit Daten-Modell"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/411be806527dfa1a27b15be19aa1e65abf193c24416432fc6bf04e376d11937cb2335d6b0c78e286c7483772268c37a15bdc06858b6acfd773d48f3f2aabddfa"
+  - link: "https://www.hsbi.de/medienportal/m/411be806527dfa1a27b15be19aa1e65abf193c24416432fc6bf04e376d11937cb2335d6b0c78e286c7483772268c37a15bdc06858b6acfd773d48f3f2aabddfa"
     name: "VL Swing: Tabellen"
 ---
 

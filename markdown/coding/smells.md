@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Code Smells"
 menuTitle: "Code Smells"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 4
 readings:
   - key: "Martin2009"
@@ -26,13 +26,13 @@ outcomes:
   - k3: "Programmierprinzipien anwenden, um den Code sauberer zu gestalten"
   - k3: "Bessere Kommentare schreiben"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106230&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106230&client_id=FH-Bielefeld"
     name: "Quiz Code Smells (ILIAS)"
 youtube:
   - link: "https://youtu.be/ALDuLxm71tg"
     name: "VL Code Smells"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/9d53c3536ada817eee76c9f6e8f7838bfb2308a79d220b8dab0a3cf339f90c52e28ae25e85a652d6da31c8f38c581463bc1679fa5f9cc376115558f7fee41217"
+  - link: "https://www.hsbi.de/medienportal/m/9d53c3536ada817eee76c9f6e8f7838bfb2308a79d220b8dab0a3cf339f90c52e28ae25e85a652d6da31c8f38c581463bc1679fa5f9cc376115558f7fee41217"
     name: "VL Code Smells"
 ---
 

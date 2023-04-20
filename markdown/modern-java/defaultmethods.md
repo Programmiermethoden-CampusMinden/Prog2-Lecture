@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Interfaces: Default-Methoden"
 menuTitle: "Default-Methoden"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 1
 readings:
   - key: "Java-SE-tutorial"
@@ -36,7 +36,7 @@ outcomes:
   - k3: "Erstellen von Interfaces mit Default-Methoden"
   - k3: "Regeln zum Auflösen der Mehrfachvererbung"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106522&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106522&client_id=FH-Bielefeld"
     name: "Quiz Default-Methoden (ILIAS)"
 youtube:
   - link: "https://youtu.be/qQ8BPkL9X5o"
@@ -48,7 +48,7 @@ youtube:
   - link: "https://youtu.be/J3gJnwz8Rf0"
     name: "Demo Regel 3"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/a86bc2fc9d692f6ca307cfabd09c7860c06b8fd53b60e281586c8b51414b7139d061328b2160a988045952f92fc13a921b6148c0dd2f790ea7324634c491006e"
+  - link: "https://www.hsbi.de/medienportal/m/a86bc2fc9d692f6ca307cfabd09c7860c06b8fd53b60e281586c8b51414b7139d061328b2160a988045952f92fc13a921b6148c0dd2f790ea7324634c491006e"
     name: "VL Default-Methoden"
 challenges: |
     Erklären Sie die Code-Schnipsel in der

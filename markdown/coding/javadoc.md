@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Javadoc"
 menuTitle: "Javadoc"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 3
 readings:
   - key: "Ullenboom2021"
@@ -32,13 +32,13 @@ outcomes:
   - k3: "Schreiben einer sinnvollen Summary"
   - k3: "Einsatz von Annotationen zur Dokumentation von Parametern, Rückgabetypen, Exceptions, veralteten Elementen"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106229&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106229&client_id=FH-Bielefeld"
     name: "Quiz Javadoc (ILIAS)"
 youtube:
   - link: "https://youtu.be/Qo2TTD593eQ"
     name: "VL Javadoc"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/15984eacd03de989ab2bce322ace5d74da962a911ae45afbb60958714ed6b16c72c962aec4b60acda9419ef15d26c5a5265129245f26beb0f905af9a7176b9fa"
+  - link: "https://www.hsbi.de/medienportal/m/15984eacd03de989ab2bce322ace5d74da962a911ae45afbb60958714ed6b16c72c962aec4b60acda9419ef15d26c5a5265129245f26beb0f905af9a7176b9fa"
     name: "VL Javadoc"
 ---
 

@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Template-Method-Pattern"
 menuTitle: "Template-Method"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 5
 readings:
   - key: "Eilebrecht2013"
@@ -26,13 +26,13 @@ tldr: |
 outcomes:
   - k3: "Template-Method-Entwurfsmuster praktisch anwenden"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106538&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106538&client_id=FH-Bielefeld"
     name: "Quiz Template-Method-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/EE-n2T6AO-g"
     name: "VL Template-Method-Pattern"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/a368cbd0990f4f58e5ee776bb4d6a1443c0a7cd443177eaa35ba35558e5c01307f689be5c9c239c6ffb41c74d2726397f2ba6be086df30737eec1df17ac4827a"
+  - link: "https://www.hsbi.de/medienportal/m/a368cbd0990f4f58e5ee776bb4d6a1443c0a7cd443177eaa35ba35558e5c01307f689be5c9c239c6ffb41c74d2726397f2ba6be086df30737eec1df17ac4827a"
     name: "VL Template-Method-Pattern"
 challenges: |
     Schreiben Sie eine abstrakte Klasse Drucker. Implementieren Sie die Funktion

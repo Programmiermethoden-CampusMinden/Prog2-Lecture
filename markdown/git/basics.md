@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Basics der Versionsverwaltung mit Git (lokale Repos)"
 menuTitle: "Basics"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 2
 readings:
   - key: "Chacon2014"
@@ -33,7 +33,7 @@ outcomes:
   - k3: "Herausfinden von Unterschieden, Ansehen der Historie"
   - k3: "Ignorieren von Dateien und Ordnern"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106241&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106241&client_id=FH-Bielefeld"
     name: "Quiz Git Basics (ILIAS)"
 youtube:
   - link: "https://youtu.be/GxJI8nmZVE8"
@@ -51,7 +51,7 @@ youtube:
   - link: "https://youtu.be/F1W0RqrxCho"
     name: "Demo Tag"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/3a44c8a32e7699db77ae922c6b8944acf0d8c65b78d02859e707ffdf783ea45a78200312cdb8102c1052f382101b69a5092bcaf0a11ded36b98f4552a4aca345"
+  - link: "https://www.hsbi.de/medienportal/m/3a44c8a32e7699db77ae922c6b8944acf0d8c65b78d02859e707ffdf783ea45a78200312cdb8102c1052f382101b69a5092bcaf0a11ded36b98f4552a4aca345"
     name: "VL Git Basics"
 challenges: |
     **Versionierung 101**

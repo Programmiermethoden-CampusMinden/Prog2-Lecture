@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Build-Systeme: Gradle"
 menuTitle: "Gradle"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 3
 readings:
   - key: "Gradle"
@@ -28,7 +28,7 @@ tldr: |
 outcomes:
   - k3: "Schreiben und Verstehen einfacher Gradle-Skripte"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106220&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106220&client_id=FH-Bielefeld"
     name: "Quiz Gradle (ILIAS)"
 youtube:
   - link: "https://youtu.be/aVtDkFpwd_E"
@@ -36,7 +36,7 @@ youtube:
   - link: "https://youtu.be/OhQRGaNO4iA"
     name: "Demo Gradle"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/3af48428e1b62bd42410e2a802cf355309212ea621509aa20833c5e1c486ffe9214b027c29e55d775f135f45ab7d3fcd59d735812d64bc04a71de8d59df8a3f5"
+  - link: "https://www.hsbi.de/medienportal/m/3af48428e1b62bd42410e2a802cf355309212ea621509aa20833c5e1c486ffe9214b027c29e55d775f135f45ab7d3fcd59d735812d64bc04a71de8d59df8a3f5"
     name: "VL Build-Systeme: Gradle"
 challenges: |
     Betrachten Sie das Buildskript `gradle.build` aus [Programmiermethoden/Dungeon](https://github.com/Programmiermethoden/Dungeon/blob/master/build.gradle).

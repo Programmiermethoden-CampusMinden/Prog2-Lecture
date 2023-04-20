@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Sealed Classes und Pattern Matching"
 menuTitle: "Sealed Classes"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 7
 
 sketch: true

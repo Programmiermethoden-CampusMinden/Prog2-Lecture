@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Build-Systeme: Apache Ant"
 menuTitle: "Ant"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 1
 readings:
   - key: "Inden2013"
@@ -37,7 +37,7 @@ outcomes:
   - k3: "Nutzung von Ant-Properties"
   - k3: "Ausführen von Ant-Targets aus der IDE heraus"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106214&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106214&client_id=FH-Bielefeld"
     name: "Quiz Apache Ant (ILIAS)"
 youtube:
   - link: "https://youtu.be/LRA1PeQ2pR0"
@@ -49,7 +49,7 @@ youtube:
   - link: "https://youtu.be/jizh0bi2TnU"
     name: "Demo Abhängigkeiten mit Ivy auflösen (ivydemo.xml)"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/31f6228dac399ec8151484367499e975959f23e6ebaf61e1869b959f903aeea256af0c2cdca66bf249862deebba48e660107feb880267017b798e0b1ee10870f"
+  - link: "https://www.hsbi.de/medienportal/m/31f6228dac399ec8151484367499e975959f23e6ebaf61e1869b959f903aeea256af0c2cdca66bf249862deebba48e660107feb880267017b798e0b1ee10870f"
     name: "VL Apache Ant"
 ---
 

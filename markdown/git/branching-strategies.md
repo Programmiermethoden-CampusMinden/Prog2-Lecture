@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Branching-Strategien mit Git"
 menuTitle: "Branching-Strategien"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 4
 readings:
   - key: "Chacon2014"
@@ -34,13 +34,13 @@ outcomes:
   - k3: "Git-Flow-Modell anwenden"
   - k3: "GitHub Flow-Modell anwenden"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106243&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106243&client_id=FH-Bielefeld"
     name: "Quiz Git Branching-Strategien (ILIAS)"
 youtube:
   - link: "https://youtu.be/v1WHIPdoA0k"
     name: "VL Git Branching-Strategien"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/aad8053a927c859084bf51c4145ed70f49a0e87a1cf246b3d232d266d6d77bd57c140bda4159b09ab8218345523463036bcb92ebef2591cd573ebdf3745f4ede"
+  - link: "https://www.hsbi.de/medienportal/m/aad8053a927c859084bf51c4145ed70f49a0e87a1cf246b3d232d266d6d77bd57c140bda4159b09ab8218345523463036bcb92ebef2591cd573ebdf3745f4ede"
     name: "VL Git Branching-Strategien"
 ---
 

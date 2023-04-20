@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Swing 101: Basics"
 menuTitle: "Swing: Basics"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 1
 readings:
   - key: "Java-SE-Tutorial"
@@ -31,7 +31,7 @@ tldr: |
 outcomes:
   - k2: "Unterschied und Zusammenhang zwischen Swing und AWT"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
   - link: "https://youtu.be/ynwu6LuSLgQ"
@@ -39,7 +39,7 @@ youtube:
   - link: "https://youtu.be/L3Y2mB7-jRQ"
     name: "Demo Einfaches Fenster"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/4b3f17de4155c07ed1b7e568d19eea47a865912d93a68adba04f22601c0c509034d5328f3e66131bbfdb8fe31c2a23bf95d67a3df57e3df4e548612d9f4bfd16"
+  - link: "https://www.hsbi.de/medienportal/m/4b3f17de4155c07ed1b7e568d19eea47a865912d93a68adba04f22601c0c509034d5328f3e66131bbfdb8fe31c2a23bf95d67a3df57e3df4e548612d9f4bfd16"
     name: "VL Swing 101"
 ---
 

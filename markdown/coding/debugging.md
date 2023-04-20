@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Debugging"
 menuTitle: "Debugging"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 2
 readings:
   - key: "Martin2009"

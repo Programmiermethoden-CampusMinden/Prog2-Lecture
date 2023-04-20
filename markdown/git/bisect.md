@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Fehlersuche mit Git Bisect"
 menuTitle: "Bisect"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 7
 readings:
   - key: "Chacon2014"
@@ -30,7 +30,7 @@ tldr: |
 outcomes:
   - k3: "Fehlersuche mit Git Bisect"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106247&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106247&client_id=FH-Bielefeld"
     name: "Quiz Git Bisect (ILIAS)"
 youtube:
   - link: "https://youtu.be/9XWwefIokPg"
@@ -38,7 +38,7 @@ youtube:
   - link: "https://youtu.be/hiiugrQMNR4"
     name: "Demo Git Bisect"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/c844865038e41cf59adebab0244758e61af9cf2c76233962be711920ff8f2d614d1a8012ec85d47cf421eaa94a9efedf0917bf369f3adb495c018796d3d89b13"
+  - link: "https://www.hsbi.de/medienportal/m/c844865038e41cf59adebab0244758e61af9cf2c76233962be711920ff8f2d614d1a8012ec85d47cf421eaa94a9efedf0917bf369f3adb495c018796d3d89b13"
     name: "VL Git Bisect"
 ---
 

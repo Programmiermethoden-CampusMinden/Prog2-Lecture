@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Type-Object-Pattern"
 menuTitle: "Type-Object"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 8
 readings:
   - key: "Nystrom2014"
@@ -31,13 +31,13 @@ outcomes:
   - k2: "Erklären der Ähnlichkeit zum Flyweight-Pattern"
   - k3: "Praktischer Einsatz des Type-Object-Patterns"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106539&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106539&client_id=FH-Bielefeld"
     name: "Quiz Type-Object-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/No-xduTVlt0"
     name: "VL Type-Object-Pattern"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/cbd631e6a505ed773555ab6ebf3b3618496dbca65b07027db5a8655e018336f234a562e1648f312964d796b449ba9fea15db9e07ef6ec13c9d0928ab50ba6d78"
+  - link: "https://www.hsbi.de/medienportal/m/cbd631e6a505ed773555ab6ebf3b3618496dbca65b07027db5a8655e018336f234a562e1648f312964d796b449ba9fea15db9e07ef6ec13c9d0928ab50ba6d78"
     name: "VL Type-Object-Pattern"
 challenges: |
     Betrachten Sie das folgende `IMonster`-Interface:

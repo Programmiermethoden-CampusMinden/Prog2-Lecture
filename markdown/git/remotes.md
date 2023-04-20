@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Arbeiten mit Git Remotes (dezentrale Repos)"
 menuTitle: "Remotes"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 5
 readings:
   - key: "Chacon2014"
@@ -41,7 +41,7 @@ outcomes:
   - k3: "Anlegen von lokalen Branches vs. Anlegen von entfernten Branches"
   - k3: "Anlegen eines Tracking Branches zum Vereinfachen der Arbeit"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106245&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106245&client_id=FH-Bielefeld"
     name: "Quiz Git Remotes (ILIAS)"
 youtube:
   - link: "`https://youtu.be/_uhEseblDYU`{=markdown}"
@@ -53,7 +53,7 @@ youtube:
   - link: "https://youtu.be/jL4AvSsjjKg"
     name: "Demo Verknüpfen weiterer Remotes"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/8aa3f0e96448352e436aead353f54a3de6bbd3737bf33b6bd935b098352690544dc527e59424068ec65b6e0d67f6aff6bd6aa0a602127ce2a02a360658e0151d"
+  - link: "https://www.hsbi.de/medienportal/m/8aa3f0e96448352e436aead353f54a3de6bbd3737bf33b6bd935b098352690544dc527e59424068ec65b6e0d67f6aff6bd6aa0a602127ce2a02a360658e0151d"
     name: "VL Git Remotes"
 challenges: |
     **Interaktive Git-Tutorials**: Schaffen Sie die Rätsel?

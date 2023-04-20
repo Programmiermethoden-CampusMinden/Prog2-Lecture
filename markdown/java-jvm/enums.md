@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Aufzählungen (Enumerations)"
 menuTitle: "Enumerations"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 3
 readings:
   - key: "Java-SE-Tutorial"
@@ -24,7 +24,7 @@ outcomes:
   - k3: "Erstellung komplexer Enumerationen mit Feldern und Konstruktoren"
   - k3: "Nutzung von `name()`, `ordinal()` und `values()` in Enum-Klassen"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106515&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106515&client_id=FH-Bielefeld"
     name: "Quiz Enumerations (ILIAS)"
 youtube:
   - link: "https://youtu.be/qoeT9jVuQZc"
@@ -32,7 +32,7 @@ youtube:
   - link: "https://youtu.be/ZCE9AmTluyk"
     name: "Demo Enumerations"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/5c9330cb4425a5b33f89b491d007990642765bf0ca7ea9fd6b8b7536f46691b86bba9bde65cdbce308fb467f2d0183391dd0d1247c142e4e28d9b9eaf8c0ff67"
+  - link: "https://www.hsbi.de/medienportal/m/5c9330cb4425a5b33f89b491d007990642765bf0ca7ea9fd6b8b7536f46691b86bba9bde65cdbce308fb467f2d0183391dd0d1247c142e4e28d9b9eaf8c0ff67"
     name: "VL Enumerations"
 ---
 

@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Continuous Integration (CI)"
 menuTitle: "Continuous Integration"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 4
 readings:
   - key: "GitlabCI"
@@ -35,7 +35,7 @@ tldr: |
 outcomes:
   - k2: "Arbeitsweise von/mit CI"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106219&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106219&client_id=FH-Bielefeld"
     name: "Quiz Continuous Integration (ILIAS)"
 youtube:
   - link: "https://youtu.be/NCWxo-PN4gs"
@@ -45,7 +45,7 @@ youtube:
   - link: "https://youtu.be/2ydDA4WY1wA"
     name: "Demo Demo GitLab CI/CD"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/74a8f8c2e1a07d9fb70c8984e522d884141b2260c27dadfd7a23884bee8c0573136475ce66f28562097ca34a63fcf9c6d1c45ff695485d79465a4131878180ca"
+  - link: "https://www.hsbi.de/medienportal/m/74a8f8c2e1a07d9fb70c8984e522d884141b2260c27dadfd7a23884bee8c0573136475ce66f28562097ca34a63fcf9c6d1c45ff695485d79465a4131878180ca"
     name: "VL Continuous Integration"
 ---
 
@@ -113,7 +113,7 @@ fhmedia:
 ::::::::: notes
 ## GitLab CI/CD
 
-Siehe auch ["Get started with Gitlab CI/CD"](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/quick_start/index.md).
+Siehe auch ["Get started with Gitlab CI/CD"](http://git03-ifm-min.ad.hsbi.de/help/ci/quick_start/index.md).
 (Für den Zugriff wird VPN benötigt!)
 
 
@@ -187,7 +187,7 @@ und die Jobs der nächsten Stage werden erst dann gestartet, wenn alle Jobs der
 aktuellen Stage erfolgreich beendet wurden.
 
 Wenn keine eigenen `stages` definiert werden, kann man
-([lt. Doku](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/yaml/index.md#stages))
+([lt. Doku](http://git03-ifm-min.ad.hsbi.de/help/ci/yaml/index.md#stages))
 auf die Default-Stages `build`, `test` und `deploy` zurückgreifen. **Achtung**: Sobald
 man eigene Stages definiert, stehen diese Default-Stages *nicht* mehr zur Verfügung!
 
@@ -206,7 +206,7 @@ man eigene Stages definiert, stehen diese Default-Stages *nicht* mehr zur Verfü
     ausgeführt werden.
 
     Wenn ein Job nicht explizit einer Stage zugeordnet ist, wird er
-    ([lt. Doku](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/yaml/index.md#stages))
+    ([lt. Doku](http://git03-ifm-min.ad.hsbi.de/help/ci/yaml/index.md#stages))
     zur Default-Stage `test` zugewiesen. (Das geht nur, wenn es diese
     Stage auch gibt!)
 

@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Einführung in Docker"
 menuTitle: "Docker"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 5
 readings:
   - key: "Ullenboom2016"
@@ -49,7 +49,7 @@ outcomes:
   - k3: "Einsatz von Containern in GitLab CI/CD und GitHub Actions"
   - k3: "Einsatz von VSCode und Containern"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106227&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106227&client_id=FH-Bielefeld"
     name: "Quiz Docker (ILIAS)"
 youtube:
   - link: "https://youtu.be/yERVMfUAano"
@@ -63,7 +63,7 @@ youtube:
   - link: "https://youtu.be/Rs1W_rXkoNM"
     name: "Demo VSCode und Docker"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/54268841fd04fa032e9ef425acd88a576a94f572e8179fba131126a0f854adaf8118b42ebcf90451649fd07913a4d873ee5459a1f5a58250ded9749352edcb78"
+  - link: "https://www.hsbi.de/medienportal/m/54268841fd04fa032e9ef425acd88a576a94f572e8179fba131126a0f854adaf8118b42ebcf90451649fd07913a4d873ee5459a1f5a58250ded9749352edcb78"
     name: "VL Einführung in Docker"
 ---
 
@@ -418,7 +418,7 @@ von GitHub auf.
 *   [DockerHub: Suche nach fertigen Images](https://hub.docker.com/search?q=&type=image)
 *   [Docker und Java](https://docs.docker.com/language/java/)
 *   [Dockerfiles: Best Practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
-*   [Gitlab, Docker](http://git03-ifm-min.ad.fh-bielefeld.de/help/ci/docker/using_docker_images.md#overriding-the-entrypoint-of-an-image)
+*   [Gitlab, Docker](http://git03-ifm-min.ad.hsbi.de/help/ci/docker/using_docker_images.md#overriding-the-entrypoint-of-an-image)
 *   [VSCode: Entwickeln in Docker-Containern](https://code.visualstudio.com/docs/remote/containers)
 *   @DockerInAction und @DockerInPractice
 :::::::::

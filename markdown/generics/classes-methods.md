@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Generische Klassen & Methoden"
 menuTitle: "Klassen & Methoden"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 1
 readings:
   - key: "Ullenboom2021"
@@ -25,7 +25,7 @@ outcomes:
   - k3: "Erstellen und Nutzen von generischen Klassen und Interfaces"
   - k3: "Erstellen und Nutzen von generischen Methoden"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106235&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106235&client_id=FH-Bielefeld"
     name: "Quiz Generics: Classes & Methods (ILIAS)"
 youtube:
   - link: "https://youtu.be/k6MFPW-shh8"
@@ -33,7 +33,7 @@ youtube:
   - link: "https://youtu.be/ekXBXge6VvE"
     name: "Demo Generische Methoden"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/5497f0d31a9d0ac4d46e781040b1fd9f20ca7e0103cccc1abe0089c7c36a9251de0126f11fe376341a7b077dcdd43e8683f2c165b895da1a70da6c17d5c4576f"
+  - link: "https://www.hsbi.de/medienportal/m/5497f0d31a9d0ac4d46e781040b1fd9f20ca7e0103cccc1abe0089c7c36a9251de0126f11fe376341a7b077dcdd43e8683f2c165b895da1a70da6c17d5c4576f"
     name: "VL Generische Klassen & Methoden"
 ---
 

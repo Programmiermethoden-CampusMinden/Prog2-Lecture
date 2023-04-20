@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Testen mit JUnit (JUnit-Basics)"
 menuTitle: "JUnit-Basics"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 2
 readings:
   - key: "vogellaJUnit"
@@ -30,7 +30,7 @@ outcomes:
   - k3: "Prüfung von Exceptions"
   - k3: "Aufbau von Testsuiten mit JUnit"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
     name: "Quiz JUnit-Basics (ILIAS)"
 youtube:
   - link: "https://youtu.be/2SC40rO0ZOE"
@@ -42,7 +42,7 @@ youtube:
   - link: "https://youtu.be/0H-OCICktS0"
     name: "Demo Parametrisierte Tests mit JUnit5"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/e10dd378f9b18ba4a42ffbb2c13bfb83685b60fd39a221dba8658b8edcb0df032c2dcf9a1dcd44cf59aa6b483a00a19195cb5a8d117a6fbda52cfcfcf9efe5da"
+  - link: "https://www.hsbi.de/medienportal/m/e10dd378f9b18ba4a42ffbb2c13bfb83685b60fd39a221dba8658b8edcb0df032c2dcf9a1dcd44cf59aa6b483a00a19195cb5a8d117a6fbda52cfcfcf9efe5da"
     name: "VL JUnit Basics"
 challenges: |
     Schreiben Sie eine JUnit-Testklasse (JUnit 4.x oder 5.x) und testen Sie eine
