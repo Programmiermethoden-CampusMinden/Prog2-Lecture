@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Serialisierung von Objekten und Zuständen"
 menuTitle: "Serialisierung"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 7
 readings:
   - key: "Java-SE-Tutorial"
@@ -38,7 +38,7 @@ outcomes:
   - k3: "Serialisierung von Objekten und Programmzuständen"
   - k3: "Serialisierung eigener Klassen und Typen"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106519&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106519&client_id=FH-Bielefeld"
     name: "Quiz Serialisierung (ILIAS)"
 youtube:
   - link: "https://youtu.be/wnwCMtKpXAQ"
@@ -46,7 +46,7 @@ youtube:
   - link: "https://youtu.be/zpWLPIRPTeQ"
     name: "Demo Serialisierung"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/ab8df96555932244456b9ac3dc332fbe39c09029605959af2eea790b5bd5966c5212c9c0184700d6e3785b7af8bdc03e3e6b948bad9392fa01e79309677df68a"
+  - link: "https://www.hsbi.de/medienportal/m/ab8df96555932244456b9ac3dc332fbe39c09029605959af2eea790b5bd5966c5212c9c0184700d6e3785b7af8bdc03e3e6b948bad9392fa01e79309677df68a"
     name: "VL Serialisierung"
 challenges: |
     Implementieren Sie die beiden Klassen entsprechend dem UML-Diagram:

@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Optional"
 menuTitle: "Optional"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 6
 readings:
   - key: "LernJava"
@@ -41,7 +41,7 @@ outcomes:
   - k3: "Erzeugen von Optionals mit `Optional.ofNullable()`"
   - k3: "Zugriff auf Optionals entweder direkt oder per Stream-API"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106526&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106526&client_id=FH-Bielefeld"
     name: "Quiz Optional (ILIAS)"
 youtube:
   - link: "https://youtu.be/JDG_hUSBfSA"
@@ -49,7 +49,7 @@ youtube:
   - link: "https://youtu.be/vL2c0iB4uSk"
     name: "Demo Optional"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/b62e544bff3a9a25982052bd761b9971f7e67caca90e3ed66c2b794b95d35c2c479f8d72189159345ac018e34ec55866c5558a256ce63b5e9c43a30fc8787d1b"
+  - link: "https://www.hsbi.de/medienportal/m/b62e544bff3a9a25982052bd761b9971f7e67caca90e3ed66c2b794b95d35c2c479f8d72189159345ac018e34ec55866c5558a256ce63b5e9c43a30fc8787d1b"
     name: "VL Optional"
 challenges: |
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/optional)

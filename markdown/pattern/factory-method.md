@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Factory-Method-Pattern"
 menuTitle: "Factory-Method"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 1
 readings:
   - key: "Eilebrecht2013"
@@ -23,7 +23,7 @@ tldr: |
 outcomes:
   - k3: "Entwurfsmuster Factory-Methode anwenden"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106533&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106533&client_id=FH-Bielefeld"
     name: "Quiz Factory-Method-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/mJWe-2BS2W0"
@@ -31,7 +31,7 @@ youtube:
   - link: "https://youtu.be/14rt1YIoiME"
     name: "Demo Factory-Method-Pattern"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/54f1c0ac6b5a7670788efdd88e63dd9eb5de4179d342bce82f5c04268c469beba149891305c81181f1d23c2cf89194f06cdac809396d2e7bff7607078a1a621e"
+  - link: "https://www.hsbi.de/medienportal/m/54f1c0ac6b5a7670788efdd88e63dd9eb5de4179d342bce82f5c04268c469beba149891305c81181f1d23c2cf89194f06cdac809396d2e7bff7607078a1a621e"
     name: "VL Factory-Method-Pattern"
 challenges: |
     Ein Kunde kommt in unser Computergeschäft und möchte bei uns einen Computer

@@ -1,4 +1,4 @@
-package fhb;
+package hsbi;
 
 public class Studi {
     String name;

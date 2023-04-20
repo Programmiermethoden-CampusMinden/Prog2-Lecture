@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Logging"
 menuTitle: "Logging"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 1
 readings:
   - key: "JDK-Doc"
@@ -35,7 +35,7 @@ outcomes:
   - k3: "Nutzung der Java Logging API im Paket `java.util.logging`"
   - k3: "Erstellung eigener Handler und Formatter"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106228&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106228&client_id=FH-Bielefeld"
     name: "Quiz Logging (ILIAS)"
 youtube:
   - link: "`https://youtu.be/_jYWJzr1rkA`{=markdown}"
@@ -49,7 +49,7 @@ youtube:
   - link: "https://youtu.be/19Bki4IglWQ"
     name: "Demo Weiterleitung an den Elternlogger"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/a91451640b7833daed3f6fb212fff9490ef6b8885783cc0297603a418055f1a8c2ff7b51f3cb9fb2c4344132eb95bef5af55201f8958f24d767dbd075120bce2"
+  - link: "https://www.hsbi.de/medienportal/m/a91451640b7833daed3f6fb212fff9490ef6b8885783cc0297603a418055f1a8c2ff7b51f3cb9fb2c4344132eb95bef5af55201f8958f24d767dbd075120bce2"
     name: "VL Logging"
 challenges: |
     1.  Schreiben Sie einen Formatter, welcher die Meldungen in folgendem Format auf der

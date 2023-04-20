@@ -1,7 +1,7 @@
 ---
 archetype: assignment
 title: "Monster"
-author: "André Matutat (FH Bielefeld)"
+author: "André Matutat (HSBI)"
 points: "5 Punkte"
 weight: 1
 

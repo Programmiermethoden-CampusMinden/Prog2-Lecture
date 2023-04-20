@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Intro: Versionskontrolle in der Softwareentwicklung"
 menuTitle: "Intro"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 1
 readings:
   - key: "Chacon2014"
@@ -33,7 +33,7 @@ outcomes:
   - k2: "Erstellung von lokalen Git-Repositories"
   - k3: "Umgang mit entsprechenden Git-Befehlen auf der Konsole"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106239&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106239&client_id=FH-Bielefeld"
     name: "Quiz Git Intro (ILIAS)"
 youtube:
   - link: "https://youtu.be/Ac3-pZhVf_c"
@@ -43,7 +43,7 @@ youtube:
   - link: "https://youtu.be/ZaWEwIpER-U"
     name: "Demo Repo"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/12ee47d53c582cf255d80fd186bb79bebeb65e63ca954a8070cb270eb82c4e5d492dc812da74cbdcdb3e697eeccdaf0b585852697306ac82d890229adffbf401"
+  - link: "https://www.hsbi.de/medienportal/m/12ee47d53c582cf255d80fd186bb79bebeb65e63ca954a8070cb270eb82c4e5d492dc812da74cbdcdb3e697eeccdaf0b585852697306ac82d890229adffbf401"
     name: "VL Git Intro"
 ---
 

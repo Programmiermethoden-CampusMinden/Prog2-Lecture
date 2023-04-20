@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Testbarkeit und Testdriven Development (TDD)"
 menuTitle: "Testbarkeit und TDD"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 7
 readings:
   - key: "Beck2014"
@@ -31,7 +31,7 @@ tldr: |
 outcomes:
   - k3: "Einsatz von TDD bei der Softwareentwicklung"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106232&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106232&client_id=FH-Bielefeld"
     name: "Quiz TDD (ILIAS)"
 youtube:
   - link: "https://youtu.be/oqiESd5N1lY"
@@ -39,7 +39,7 @@ youtube:
   - link: "https://youtu.be/4NAcu8I8fJk"
     name: "Demo TDD"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/7001d744808baccc1e1e8ba3194d94fe49f56d92bffbed3f327bb75ad1a872b9356d71c2419c08b2b4950546468ab0a30c31a86fa2654419e5c5c118368415d8"
+  - link: "https://www.hsbi.de/medienportal/m/7001d744808baccc1e1e8ba3194d94fe49f56d92bffbed3f327bb75ad1a872b9356d71c2419c08b2b4950546468ab0a30c31a86fa2654419e5c5c118368415d8"
     name: "VL TDD"
 ---
 

@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Annotationen"
 menuTitle: "Annotationen"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 4
 readings:
   - key: "Ullenboom2021"
@@ -31,7 +31,7 @@ outcomes:
   - k3: "Erstellen eigener Annotationen sowie Einstellen der Sichtbarkeit und Verwendbarkeit"
   - k3: "Erstellen eigener einfacher Annotation-Processors"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106512&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106512&client_id=FH-Bielefeld"
     name: "Quiz Annotationen (ILIAS)"
 youtube:
   - link: "https://youtu.be/7u4_I4W_1JY"
@@ -45,7 +45,7 @@ youtube:
   - link: "https://youtu.be/ypHMxunNZpg"
     name: "Demo Annotation-Prozessor"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/d438c8d0b87fc2934e71e539aaf32ce01126fc2145f08284235c4c4b2058b0ab9ccba925dbbcfaf90466c70aff29f79acae1f66edeb18bd794d08628545d4e07"
+  - link: "https://www.hsbi.de/medienportal/m/d438c8d0b87fc2934e71e539aaf32ce01126fc2145f08284235c4c4b2058b0ab9ccba925dbbcfaf90466c70aff29f79acae1f66edeb18bd794d08628545d4e07"
     name: "VL Annotationen"
 challenges: |
     Schreiben Sie drei eigene Annotationen:

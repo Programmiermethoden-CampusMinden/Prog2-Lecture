@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Strategy-Pattern"
 menuTitle: "Strategy"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 4
 readings:
   - key: "Eilebrecht2013"
@@ -30,7 +30,7 @@ tldr: |
 outcomes:
   - k3: "Strategie-Entwurfsmuster praktisch anwenden"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106537&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106537&client_id=FH-Bielefeld"
     name: "Quiz Strategy-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/WI2riW7yOSE"
@@ -38,7 +38,7 @@ youtube:
   - link: "https://youtu.be/IgjlFr2ZcW4"
     name: "Demo Strategy-Pattern"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/5ffcaeeee30c133dad50fcb19b5277f4c38f24ced7541531ac8212c56db3114fdb1b435f4eb8e76c8fef3df0e1a49fa510ffa97dee4a7b568ecbc56d1e483692"
+  - link: "https://www.hsbi.de/medienportal/m/5ffcaeeee30c133dad50fcb19b5277f4c38f24ced7541531ac8212c56db3114fdb1b435f4eb8e76c8fef3df0e1a49fa510ffa97dee4a7b568ecbc56d1e483692"
     name: "VL Strategy-Pattern"
 challenges: |
     Implementieren Sie das Spiel "Schere,Stein,Papier" (Spielregeln vergleiche

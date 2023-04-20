@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Frameworks: Einstieg"
 menuTitle: "Intro"
-author: "André Matutat (FH Bielefeld)"
+author: "André Matutat (HSBI)"
 weight: 1
 tldr: |
   Frameworks sind ein Softwaregerüst, um wiederkehrende Softwarestrukturen schnell
@@ -14,7 +14,7 @@ tldr: |
 outcomes:
   - k2: "Unterschied zwischen Frameworks und Libraries verstehen"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106234&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106234&client_id=FH-Bielefeld"
     name: "Quiz Frameworks (ILIAS)"
 youtube:
   - link: "https://youtu.be/AV4YuF2Axgk"
@@ -22,7 +22,7 @@ youtube:
   - link: "https://youtu.be/5jTbIBeZj7M"
     name: "Demo Frameworks"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/13e57ec21c8d4a1786b04a54dd51d832e55a924305d2df2ab50da7f85ee59075769c00aa74993d05dc66a6168f5786489d22bfda1c49910f749da7d67517edc5"
+  - link: "https://www.hsbi.de/medienportal/m/13e57ec21c8d4a1786b04a54dd51d832e55a924305d2df2ab50da7f85ee59075769c00aa74993d05dc66a6168f5786489d22bfda1c49910f749da7d67517edc5"
     name: "VL Frameworks"
 ---
 

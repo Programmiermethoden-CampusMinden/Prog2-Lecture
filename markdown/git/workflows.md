@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests"
 menuTitle: "Workflows"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 6
 readings:
   - key: "Chacon2014"
@@ -35,7 +35,7 @@ outcomes:
   - k3: "Aktualisierung von Merge-Requests"
   - k3: "Diskussion über den Code in Merge-Requests"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106246&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106246&client_id=FH-Bielefeld"
     name: "Quiz Git Workflows (ILIAS)"
 youtube:
   - link: "https://youtu.be/3xqmNGN39wE"
@@ -45,7 +45,7 @@ youtube:
   - link: "https://youtu.be/4LaZc080Ajo"
     name: "Demo Arbeiten mit einem PR, Review eines PR"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/b673fe50e18f064b2b5c81108c81dfea940b2eb81790d54b27e8ade26f0afa10d0d05f8a0c0c852e8e9da6c558065f053033d83384810b47a6ca7f5110482153"
+  - link: "https://www.hsbi.de/medienportal/m/b673fe50e18f064b2b5c81108c81dfea940b2eb81790d54b27e8ade26f0afa10d0d05f8a0c0c852e8e9da6c558065f053033d83384810b47a6ca7f5110482153"
     name: "VL Git Workflows"
 ---
 

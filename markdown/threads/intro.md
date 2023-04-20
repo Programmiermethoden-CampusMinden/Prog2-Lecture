@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Einführung in die nebenläufige Programmierung mit Threads"
 menuTitle: "Intro"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 1
 readings:
   - key: "Ullenboom2021"
@@ -49,7 +49,7 @@ outcomes:
   - k3: "Erzeugen und Starten von Threads"
   - k3: "Kommunikation mit Objekten"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106529&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106529&client_id=FH-Bielefeld"
     name: "Quiz Threads Intro (ILIAS)"
 youtube:
   - link: "https://youtu.be/ClfXbNPRl_8"
@@ -59,7 +59,7 @@ youtube:
   - link: "https://youtu.be/lQ_JSHBGhdU"
     name: "Demo Threads Intro: Arbeiten mit Threads (`join()`)"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/41a885ac4baf0e087d393b0fa9d3d6f38cc86debad5b7e563c46dac15c0ba4f214476650ad6fa288708eb8b1ccf12d19f6ab46a8c5cf7a58b61a4cff39ec727b"
+  - link: "https://www.hsbi.de/medienportal/m/41a885ac4baf0e087d393b0fa9d3d6f38cc86debad5b7e563c46dac15c0ba4f214476650ad6fa288708eb8b1ccf12d19f6ab46a8c5cf7a58b61a4cff39ec727b"
     name: "VL Threads Intro"
 ---
 

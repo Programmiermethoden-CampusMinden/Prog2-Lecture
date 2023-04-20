@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Flyweight-Pattern"
 menuTitle: "Flyweight"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 7
 readings:
   - key: "Nystrom2014"
@@ -24,13 +24,13 @@ outcomes:
   - k2: "Erklären der Ähnlichkeit zum Type-Object-Pattern"
   - k3: "Praktischer Einsatz des Flyweight-Patterns"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106534&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106534&client_id=FH-Bielefeld"
     name: "Quiz Flyweight-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/Oo8TO8z5wQI"
     name: "VL Flyweight-Pattern"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/48c5b1437b5f1ff4023295d0a95c12d893510d0980ff5c6a37ab4e5814990c82b769ff505e727fc3d1ee6b71facb92955639400c01d269ad74e69d9788470c53"
+  - link: "https://www.hsbi.de/medienportal/m/48c5b1437b5f1ff4023295d0a95c12d893510d0980ff5c6a37ab4e5814990c82b769ff505e727fc3d1ee6b71facb92955639400c01d269ad74e69d9788470c53"
     name: "VL Flyweight-Pattern"
 challenges: |
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/pattern/src/challenges/flyweight)

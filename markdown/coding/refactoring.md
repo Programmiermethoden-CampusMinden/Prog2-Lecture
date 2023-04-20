@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Refactoring"
 menuTitle: "Refactoring"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 6
 readings:
   - key: "Fowler2011"
@@ -28,7 +28,7 @@ outcomes:
   - k2: "Refactoring: Nur innere Struktur ändern, nicht äußeres Verhalten!"
   - k3: "Anwendung der wichtigsten Refactoring-Methoden: _Rename_, _Extract_, _Move_, _Push Up/Pull Down_"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106231&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106231&client_id=FH-Bielefeld"
     name: "Quiz Refactoring (ILIAS)"
 youtube:
   - link: "https://youtu.be/n0RaQ_Qve0Y"
@@ -44,7 +44,7 @@ youtube:
   - link: "https://youtu.be/t24c88RshL8"
     name: "Demo Refactoring: Pull up"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/36389f8fe4befc6370c28cda4475690224942c00c854e6dfc953b60c26acdf62093345ae1ee0698f71dc0a7f02739253d4ba29b7c05b69036cbb09fb1e361549"
+  - link: "https://www.hsbi.de/medienportal/m/36389f8fe4befc6370c28cda4475690224942c00c854e6dfc953b60c26acdf62093345ae1ee0698f71dc0a7f02739253d4ba29b7c05b69036cbb09fb1e361549"
     name: "VL Refactoring"
 challenges: |
     In der [Vorgabe](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/coding/src/challenges/refactor)

@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Testfallermittlung: Wie viel und was muss man testen?"
 menuTitle: "Testfallermittlung"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 3
 readings:
   - key: "vogellaJUnit"
@@ -38,13 +38,13 @@ outcomes:
   - k2: "Merkmale guter Unit-Tests erklären"
   - k3: "Erstellen von Testfällen mittels Äquivalenzklassenbildung und Grenzwertanalyse"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106546&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106546&client_id=FH-Bielefeld"
     name: "Quiz Testfallermittlung (ILIAS)"
 youtube:
   - link: "https://youtu.be/AR1WWt4AFqI"
     name: "VL Testfallermittlung"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/6719b852fd1ce5516a7110089ca465626826ef1e6d35ab62e8ef0ca5a71e2daab68631e2ff891d9562552ba7fa1ec97033e3d6c2ac65cf22b62377d2ceb4ea37"
+  - link: "https://www.hsbi.de/medienportal/m/6719b852fd1ce5516a7110089ca465626826ef1e6d35ab62e8ef0ca5a71e2daab68631e2ff891d9562552ba7fa1ec97033e3d6c2ac65cf22b62377d2ceb4ea37"
     name: "VL Testfallermittlung"
 challenges: |
     Der RSV Flotte Speiche hat in seiner Mitgliederverwaltung (`MitgliederVerwaltung`) die Methode

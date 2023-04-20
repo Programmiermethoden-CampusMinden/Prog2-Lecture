@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Stream-API"
 menuTitle: "Stream-API"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 4
 readings:
   - key: "LernJava"
@@ -47,7 +47,7 @@ outcomes:
   - k3: "Durchführung der Berechnung und Abschluss des Streams mit einer terminalen Operation"
   - k3: "Einsatz von `flatMap()`"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106528&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106528&client_id=FH-Bielefeld"
     name: "Quiz Stream-API (ILIAS)"
 youtube:
   - link: "https://youtu.be/zZMyk0u5hJk"
@@ -55,7 +55,7 @@ youtube:
   - link: "https://youtu.be/KBP72tCkBt8"
     name: "Demo Stream-API"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/429bb37eaea02582785bfb46a92d68a3ed76cb18bdc98ec0f04ae438cecf82a595e1e46947d2ffcc2fd868d67ca1ed3beba73f216ae4886f2a9492167c006784"
+  - link: "https://www.hsbi.de/medienportal/m/429bb37eaea02582785bfb46a92d68a3ed76cb18bdc98ec0f04ae438cecf82a595e1e46947d2ffcc2fd868d67ca1ed3beba73f216ae4886f2a9492167c006784"
     name: "VL Stream-API"
 challenges: |
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/streams)

@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Bounds & Wildcards"
 menuTitle: "Bounds & Wildcards"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 2
 readings:
   - key: "Ullenboom2021"
@@ -28,7 +28,7 @@ tldr: |
 outcomes:
   - k3: "Umgang mit Wildcards und Bounds bei generischen Klassen/Methoden"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106236&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106236&client_id=FH-Bielefeld"
     name: "Quiz Generics: Bounds & Wildcards (ILIAS)"
 youtube:
   - link: "https://youtu.be/OV2vEn2EkWo"
@@ -36,7 +36,7 @@ youtube:
   - link: "https://youtu.be/D2hIicsho7I"
     name: "Demo Wildcards"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/08ef62f9367140e7ae75cd4e90fde1e63cc3ec6c9e7e4c11a1994065fd45e781f46bc6b3f1fbe4fbe8952db11812d52efe8cd8900fe88843e5eaefad62bbc7d3"
+  - link: "https://www.hsbi.de/medienportal/m/08ef62f9367140e7ae75cd4e90fde1e63cc3ec6c9e7e4c11a1994065fd45e781f46bc6b3f1fbe4fbe8952db11812d52efe8cd8900fe88843e5eaefad62bbc7d3"
     name: "VL Generics: Bounds & Wildcards"
 challenges: |
     **Spieler, Mannschaften und Ligen**

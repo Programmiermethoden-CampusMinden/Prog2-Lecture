@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Konfiguration eines Programms"
 menuTitle: "Konfiguration"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 2
 readings:
   - key: "Java-SE-Tutorial"
@@ -26,7 +26,7 @@ outcomes:
   - k3: "Apache Commons CLI zur Verarbeitung von Kommandozeilenparametern"
   - k3: "Laden von Konfigurationsdaten mit `java.util.Properties`"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106514&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106514&client_id=FH-Bielefeld"
     name: "Quiz Konfiguration (ILIAS)"
 youtube:
   - link: "https://youtu.be/ImkyRx4UL9M"
@@ -40,7 +40,7 @@ youtube:
   - link: "https://youtu.be/or1t_2vld2E"
     name: "Demo Properties"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/94963b57dcea201ea1cce6d9d0d61732c823ebc117710448516a259243afd239fdbaf9c10be3bdfa3eb0c0f4e9c4fc3c847eb74b8977bfa8b921d2d02ec325f4"
+  - link: "https://www.hsbi.de/medienportal/m/94963b57dcea201ea1cce6d9d0d61732c823ebc117710448516a259243afd239fdbaf9c10be3bdfa3eb0c0f4e9c4fc3c847eb74b8977bfa8b921d2d02ec325f4"
     name: "VL Konfiguration"
 ---
 

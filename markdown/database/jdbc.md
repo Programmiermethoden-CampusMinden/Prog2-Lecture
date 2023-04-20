@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Java und Datenbanken: JDBC"
 menuTitle: "JDBC"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 1
 readings:
   - key: "Ullenboom2016"

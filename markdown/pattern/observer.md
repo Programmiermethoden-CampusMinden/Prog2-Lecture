@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Observer-Pattern"
 menuTitle: "Observer"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 3
 readings:
   - key: "Nystrom2014"
@@ -24,7 +24,7 @@ outcomes:
   - k2: "Aufbau des Observer-Patterns (Beobachter-Entwurfsmusters)"
   - k3: "Anwendung des Observer-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106535&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106535&client_id=FH-Bielefeld"
     name: "Quiz Observer-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/833lHcoxeog"
@@ -32,7 +32,7 @@ youtube:
   - link: "https://youtu.be/0mgB8RfcNuM"
     name: "Demo Observer-Pattern"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/e00888ac91978bb3694491a722e61bba5d836d403d7f94e7d3ef6b28c07dae841b5852488bdf8f64e1628a58a2e5f3410dbb08699ded346ec2da34fd877a831f"
+  - link: "https://www.hsbi.de/medienportal/m/e00888ac91978bb3694491a722e61bba5d836d403d7f94e7d3ef6b28c07dae841b5852488bdf8f64e1628a58a2e5f3410dbb08699ded346ec2da34fd877a831f"
     name: "VL Observer-Pattern"
 challenges: |
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/pattern/src/challenges/observer)

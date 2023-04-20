@@ -1,24 +1,24 @@
 ---
 archetype: lecture-cg
 title: "Prüfungsvorbereitung"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 4
 tldr: |
   ### Durchführung: Präsenz oder Open-Book (je nach Corona-Lage)
 
   Die Klausur wird dieses Semester elektronisch stattfinden. Dazu werden wir den Prüfungs-ILIAS der
-  FH Bielefeld nutzen.
+  HSBI nutzen.
 
-  Sofern die Situation dies zulässt, wird die Klausur in den Räumen der FH am Campus Minden unter
+  Sofern die Situation dies zulässt, wird die Klausur in den Räumen der HSBI am Campus Minden unter
   Aufsicht durchgeführt. Hier werden Ihnen Rechner für den Zugang zum Prüfungs-ILIAS zur Verfügung
-  gestellt, Sie benötigen nur Ihre FH-Zugangsdaten.
+  gestellt, Sie benötigen nur Ihre HSBI-Zugangsdaten.
 
   Wenn die Corona-Lage eine Durchführung in Präsenz nicht erlaubt, wird die Klausur stattdessen als
   _Open-Book-Ausarbeitung_ aus dem Home-Office durchgeführt. Sie benötigen dazu einen normalen Rechner
   oder Laptop mit einem Standardbrowser. Tablets und Handys können wg. der Mobil-Version der Browser
   problematisch sein. Sie müssen JavaScript aktivieren und Cookies zulassen, der Privacy-Modus ist
   bitte ebenfalls zu deaktivieren. Sie erreichen den Prüfungs-ILIAS
-  [eassessment.fh-bielefeld.de](https://eassessment.fh-bielefeld.de) nur über VPN.
+  [eassessment.hsbi.de](https://eassessment.hsbi.de) nur über VPN.
 
   Die Entscheidung über die konkrete Durchführung wird spätestens zwei Wochen vor der Prüfung getroffen
   und Ihnen per EMail über das LSF mitgeteilt.
@@ -58,9 +58,9 @@ youtube:
   - link: "`https://youtu.be/_cVhJX-D6zM`{=markdown}"
     name: "Hinweise zur Prüfung: Technische Vorbereitung"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/4f7c425ae13cec9dc1b3bed28c1cadd666e4ba87c4afd9fe131913187fe110d2296ef62b36696efc3f19e151c7f18fe1bd4b83aad9f86eb9a5f384d38f2a7fbf"
+  - link: "https://www.hsbi.de/medienportal/m/4f7c425ae13cec9dc1b3bed28c1cadd666e4ba87c4afd9fe131913187fe110d2296ef62b36696efc3f19e151c7f18fe1bd4b83aad9f86eb9a5f384d38f2a7fbf"
     name: "Hinweise zur Prüfung: Fragetypen-Demo"
-  - link: "https://www.fh-bielefeld.de/medienportal/m/66febead31c0b01deec2ffb47adf8abfa247b51a76a539b6681423d9206f819e4df8c93ee7affd4be3f7144e035dfbaf997af8cd9314d4dbc65244bf11cd9de8"
+  - link: "https://www.hsbi.de/medienportal/m/66febead31c0b01deec2ffb47adf8abfa247b51a76a539b6681423d9206f819e4df8c93ee7affd4be3f7144e035dfbaf997af8cd9314d4dbc65244bf11cd9de8"
     name: "Hinweise zur Prüfung: Technische Vorbereitung"
 
 hidden: true
@@ -124,11 +124,11 @@ Sie alle Unterlagen benutzen.
 
 Diese Bemerkungen betreffen die Durchführung als Präsenzprüfung in den Räumen am Campus Minden.
 
-*   **FH-Zugangsdaten**: Username, Passwort
+*   **HSBI-Zugangsdaten**: Username, Passwort
 
     Bei der Durchführung der Prüfung am Campus Minden wird Ihnen ein Rechner zur Verfügung
     gestellt. Dort läuft voraussichtlich ein Browser im Kiosk-Mode, wo Sie sich am Prüfungs-ILIAS
-    anmelden. Dazu benötigen Sie ihre FH-Zugangsdaten, mit denen Sie sich auch im "normalen"
+    anmelden. Dazu benötigen Sie ihre HSBI-Zugangsdaten, mit denen Sie sich auch im "normalen"
     ILIAS anmelden.
 
 ### Home-Office
@@ -151,14 +151,14 @@ für Sie vorbereitet sein.
     Wenn Sie keinen Zugang zu einer ausreichend stabilen Internetverbindung haben, setzen Sie sich
     frühzeitig mit Ihren Prüfungsverantwortlichen in Verbindung.
 
-*   **VPN**: Der Prüfungs-ILIAS ist nur im FH-VPN erreichbar.
+*   **VPN**: Der Prüfungs-ILIAS ist nur im HSBI-VPN erreichbar.
 
-    Installieren Sie den VPN-Client (Anleitung: [fh-bielefeld.de/dvz/faq/cat/7](https://www.fh-bielefeld.de/dvz/faq/cat/7))
+    Installieren Sie den VPN-Client (Anleitung: [hsbi.de/dvz/faq/cat/7](https://www.hsbi.de/dvz/faq/cat/7))
     und testen Sie im Vorfeld der Prüfung bei aktivierter VPN-Verbindung den Zugang zur Prüfungsplattform
-    [eassessment.fh-bielefeld.de](https://eassessment.fh-bielefeld.de). Zugangsdaten wie im normalen
+    [eassessment.hsbi.de](https://eassessment.hsbi.de). Zugangsdaten wie im normalen
     ILIAS.
 
-    Achtung: Auch wenn Sie sich in den Räumen der FH befinden, müssen Sie oft die VPN-Verbindung aktivieren,
+    Achtung: Auch wenn Sie sich in den Räumen der HSBI befinden, müssen Sie oft die VPN-Verbindung aktivieren,
     um Zugang zur Prüfungsplattform zu erhalten.
 
 *   **Browser**: [Nutzen Sie einen der]{.notes} Standardbrowser (Edge, Firefox, Safari, Chrome/Chromium)
@@ -169,11 +169,11 @@ für Sie vorbereitet sein.
 
     **Nutzen Sie Ihren Browser nicht im Privacy-Modus!**
 
-*   **FH-Zugangsdaten**: Username, Passwort
+*   **HSBI-Zugangsdaten**: Username, Passwort
 
     Bei der Durchführung der Prüfung als Open-Book-Ausarbeitung führen Sie die Prüfung auf Ihrer
     eigenen Hardware im Home-Office durch. Auch hier müssen Sie sich am Prüfungs-ILIAS anmelden.
-    Dazu benötigen Sie ihre FH-Zugangsdaten, mit denen Sie sich auch im "normalen" ILIAS anmelden.
+    Dazu benötigen Sie ihre HSBI-Zugangsdaten, mit denen Sie sich auch im "normalen" ILIAS anmelden.
 
 
 ## Bearbeitung des E-Assessment

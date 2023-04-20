@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Record-Klassen"
 menuTitle: "Records"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 5
 readings:
   - key: "LernJava"
@@ -42,7 +42,7 @@ outcomes:
   - k2: "Record-Klassen können nicht von anderen Klassen erben, können aber Interfaces implementieren"
   - k3: "Einsatz von Record-Klassen"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106527&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106527&client_id=FH-Bielefeld"
     name: "Quiz Record-Klassen (ILIAS)"
 youtube:
   - link: "https://youtu.be/5RMhdCsZL6Y"
@@ -50,7 +50,7 @@ youtube:
   - link: "https://youtu.be/jWBAXWH0MUc"
     name: "Demo Record-Klassen"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/461caa1e97e1655109ce66647c169cf01b35d4b268bfaa64a6289c505f247a5ebfde054a98b08a1b5235195ff21b1fffa4d12e3968c7a68a0f001b0dabe6b695"
+  - link: "https://www.hsbi.de/medienportal/m/461caa1e97e1655109ce66647c169cf01b35d4b268bfaa64a6289c505f247a5ebfde054a98b08a1b5235195ff21b1fffa4d12e3968c7a68a0f001b0dabe6b695"
     name: "VL Record-Klassen"
 ---
 

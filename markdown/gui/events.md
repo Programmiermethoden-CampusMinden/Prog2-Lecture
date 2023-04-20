@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Swing Events"
 menuTitle: "Swing: Events"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 2
 readings:
   - key: "Java-SE-Tutorial"
@@ -27,7 +27,7 @@ outcomes:
   - k3: "Anwendung des Observer-Pattern, beispielsweise als Listener in Swing, aber auch in eigenen Programmen"
   - k3: "Nutzung von ActionListener, MouseListener, KeyListener, FocusListener"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
   - link: "`https://youtu.be/Un-FS88__VU`{=markdown}"
@@ -37,7 +37,7 @@ youtube:
   - link: "https://youtu.be/GaKMBAXY19w"
     name: "Demo MouseListener vs. MouseAdapter"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/75585089cf1cf8f79e8edd8639cdbeef9ebb7f4bc08344ad482be8e76e342588969e4d0e65c0c3196cee6b11a060b6271ec7b22a997f14e967bf075232eab1a7"
+  - link: "https://www.hsbi.de/medienportal/m/75585089cf1cf8f79e8edd8639cdbeef9ebb7f4bc08344ad482be8e76e342588969e4d0e65c0c3196cee6b11a060b6271ec7b22a997f14e967bf075232eab1a7"
     name: "VL Swing Events"
 ---
 

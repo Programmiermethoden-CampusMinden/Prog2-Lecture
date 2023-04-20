@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Synchronisation: Verteilter Zugriff auf gemeinsame Ressourcen"
 menuTitle: "Synchronisation"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 2
 readings:
   - key: "Java-SE-Tutorial"
@@ -48,7 +48,7 @@ outcomes:
   - k2: "Unterscheidung einseitige und mehrseitige Synchronisation"
   - k3: "Synchronisation mit `synchronized`, `wait`,  `notify` und `notifyAll`"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106530&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106530&client_id=FH-Bielefeld"
     name: "Quiz Threads Synchronisation (ILIAS)"
 youtube:
   - link: "https://youtu.be/FtVaobn4NqA"
@@ -62,7 +62,7 @@ youtube:
   - link: "https://youtu.be/akCl01ZAaGo"
     name: "Demo Einseitige Synchronisation"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/08f819d3002d7658801ff15fdb14cbdba82defee0ae97d929f5c4a03eeb0e3e9b751e90f5e0fe0ac3d55a551a53065c04f505f23a6c9f41d69d504474ea28c04"
+  - link: "https://www.hsbi.de/medienportal/m/08f819d3002d7658801ff15fdb14cbdba82defee0ae97d929f5c4a03eeb0e3e9b751e90f5e0fe0ac3d55a551a53065c04f505f23a6c9f41d69d504474ea28c04"
     name: "VL Threads Synchronisation"
 challenges: |
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/threads/src/challenges) finden Sie eine Modellierung für ein Bankensystem.

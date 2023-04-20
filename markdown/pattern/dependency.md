@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Dependency Injection"
 menuTitle: "Dependency Injection"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 10
 
 sketch: true

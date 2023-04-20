@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Java Collections Framework"
 menuTitle: "Collections"
-author: "André Matutat & Carsten Gips (FH Bielefeld)"
+author: "André Matutat & Carsten Gips (HSBI)"
 weight: 6
 readings:
   - key: "LernJava"
@@ -27,13 +27,13 @@ outcomes:
   - k3: "Erklären Sie die 'Spielregeln' für die eigene Implementierung von `compareTo()`."
   - k3: "Wie müssen und wie sollten `equals()`, `hashCode()` und `compareTo()` miteinander arbeiten?"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106513&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106513&client_id=FH-Bielefeld"
     name: "Quiz Collections (ILIAS)"
 youtube:
   - link: "https://youtu.be/QRYVt9FNY-4"
     name: "VL Collections"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/8dca2e36ac9656873b0d6509557d6934b1a8a38c2b730a30b2fef7f67b42dc11ef8fc7bfea4e819bfa026364201a41f38c86d0aeaccfb456b94d1e25feebc2fe"
+  - link: "https://www.hsbi.de/medienportal/m/8dca2e36ac9656873b0d6509557d6934b1a8a38c2b730a30b2fef7f67b42dc11ef8fc7bfea4e819bfa026364201a41f38c86d0aeaccfb456b94d1e25feebc2fe"
     name: "VL Collections"
 ---
 

@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Type Erasure"
 menuTitle: "Type Erasure"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 3
 readings:
   - key: "Ullenboom2021"
@@ -22,13 +22,13 @@ tldr: |
 outcomes:
   - k2: "Typ-Löschung und Auswirkungen"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106237&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106237&client_id=FH-Bielefeld"
     name: "Quiz Generics: Type Erasure (ILIAS)"
 youtube:
   - link: "https://youtu.be/vo0WKkPBMAM"
     name: "VL Generics: Type Erasure"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/5fad3671a098d262206f0b0eb995b2d692a6e9914a336b1c28fc99753b0c874a637d310dcdc639afdd200d831b4e3ee5924ea8073b4a32751aebe4fa91c32bef"
+  - link: "https://www.hsbi.de/medienportal/m/5fad3671a098d262206f0b0eb995b2d692a6e9914a336b1c28fc99753b0c874a637d310dcdc639afdd200d831b4e3ee5924ea8073b4a32751aebe4fa91c32bef"
     name: "VL Generics: Type Erasure"
 ---
 

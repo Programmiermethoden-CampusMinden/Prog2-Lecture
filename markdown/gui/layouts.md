@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Swing: Layout-Manager"
 menuTitle: "Swing: Layout-Manager"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 4
 readings:
   - key: "Java-SE-Tutorial"
@@ -23,7 +23,7 @@ tldr: |
 outcomes:
   - k3: "Anwenden der verschiedenen Layout-Manager: BorderLayout, FlowLayout, GridLayout, GridBagLayout"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
   - link: "https://youtu.be/An7tQMW1A3E"
@@ -37,7 +37,7 @@ youtube:
   - link: "https://youtu.be/95PG2alVTSo"
     name: "Demo GridBagLayout"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/16d8509024067614df7909666ebb26ac42eb672180fd8b9f846d61f6d9d5c7d75a7430799469971666cbbe531fab23f7b78884c9bd432e901bfe81975e84da2b"
+  - link: "https://www.hsbi.de/medienportal/m/16d8509024067614df7909666ebb26ac42eb672180fd8b9f846d61f6d9d5c7d75a7430799469971666cbbe531fab23f7b78884c9bd432e901bfe81975e84da2b"
     name: "VL Swing: Layout-Manager"
 challenges: |
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/gui/src/challenges)

@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Lambda-Ausdrücke und funktionale Interfaces"
 menuTitle: "Lambda-Ausdrücke"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 2
 readings:
   - key: "Java-SE-tutorial"
@@ -44,7 +44,7 @@ outcomes:
   - k3: "Erstellen eigener funktionaler Interfaces"
   - k3: "Einsatz von Lambda-Ausdrücken"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106523&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106523&client_id=FH-Bielefeld"
     name: "Quiz Lambda-Ausdrücke und funktionale Interfaces (ILIAS)"
 youtube:
   - link: "https://youtu.be/Wd8KG7xtp4c"
@@ -56,7 +56,7 @@ youtube:
   - link: "https://youtu.be/93O1oDL5_5c"
     name: "Demo Funktionales Interface"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/d2398cc8e1279e6b6bf1df06bd30b731e714d04d10e15b87a5f89aa07cbaf97978bb12f82ea0c7eff8a3133eb65134521933218fb94856fb6e8a6dc187dded28"
+  - link: "https://www.hsbi.de/medienportal/m/d2398cc8e1279e6b6bf1df06bd30b731e714d04d10e15b87a5f89aa07cbaf97978bb12f82ea0c7eff8a3133eb65134521933218fb94856fb6e8a6dc187dded28"
     name: "VL Lambda-Ausdrücke und funktionale Interfaces"
 challenges: |
     **Beispiel aus einem Code-Review im [Programmiermethoden/Dungeon](https://github.com/Programmiermethoden/Dungeon)**
@@ -122,7 +122,7 @@ challenges: |
         nur Lambda-Ausdrücke innerhalb des Aufrufs von `List#sort`.
 
         **1a** Sortieren Sie die Studierendenliste aufsteigend nach dem Geburtsdatum (`sort_1a()`).
-        
+
         **1b** Sortieren Sie die Studierendenliste absteigend nach dem Namen (`sort_1b()`).
 
     2.  Erweitern Sie die Klasse `Student` um eine _statische_ Methode, die zwei

@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Reguläre Ausdrücke"
 menuTitle: "RegExp"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 1
 readings:
   - key: "Java-SE-Tutorial"
@@ -36,7 +36,7 @@ outcomes:
   - k3: "Nutzung von Quantifizierern"
   - k3: "Zusammenbauen von komplexen Ausdrücken (u.a. mit Gruppen)"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106518&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106518&client_id=FH-Bielefeld"
     name: "Quiz RegExp (ILIAS)"
 youtube:
   - link: "https://youtu.be/K9R1Bwa73uI"
@@ -52,7 +52,7 @@ youtube:
   - link: "https://youtu.be/SRZyT3EAB94"
     name: "Demo Backref"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/35288af40bdf53fe210d0f8c4d25fd38d4c5f4cde5c04ffd49500f815723448b0bc16b305c7b05b0d57d670019d52dd5ff9da5f4a43afc0c85ed870b44f93e00"
+  - link: "https://www.hsbi.de/medienportal/m/35288af40bdf53fe210d0f8c4d25fd38d4c5f4cde5c04ffd49500f815723448b0bc16b305c7b05b0d57d670019d52dd5ff9da5f4a43afc0c85ed870b44f93e00"
     name: "VL RegExp"
 challenges: |
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/java-jvm/src/challenges/regexp)

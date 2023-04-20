@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Exception-Handling"
 menuTitle: "Exceptions"
-author: "André Matutat & Carsten Gips (FH Bielefeld)"
+author: "André Matutat & Carsten Gips (HSBI)"
 weight: 8
 readings:
   - key: "LernJava"
@@ -49,13 +49,13 @@ outcomes:
   - k3: "Umgang mit Exceptions"
   - k3: "Eigene Exceptions schreiben"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106516&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106516&client_id=FH-Bielefeld"
     name: "Quiz Exceptions (ILIAS)"
 youtube:
   - link: "https://youtu.be/k6EhexEvJDY"
     name: "VL Exceptions"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/99634e4bd3c017932803d555405c3921a761c6f7d788e1beaddbc4053d0013f7f2dce08a8c713c005a7352a57de556406554dca14492eaa1a982ed167e20ea5b"
+  - link: "https://www.hsbi.de/medienportal/m/99634e4bd3c017932803d555405c3921a761c6f7d788e1beaddbc4053d0013f7f2dce08a8c713c005a7352a57de556406554dca14492eaa1a982ed167e20ea5b"
     name: "VL Exceptions"
 challenges: |
     Betrachten Sie die [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/java-jvm/src/challenges/exceptions).

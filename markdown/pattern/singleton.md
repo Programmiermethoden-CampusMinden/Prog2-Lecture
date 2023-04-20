@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Singleton-Pattern"
 menuTitle: "Singleton"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 9
 readings:
   - key: "Nystrom2014"
@@ -22,13 +22,13 @@ outcomes:
   - k2: "Was ist ein _Singleton_? Was ist der Unterschied zw. einem _Lazy_ und einem _Eager_ Singleton?"
   - k3: "Anwendung des Singleton-Patterns"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106536&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106536&client_id=FH-Bielefeld"
     name: "Quiz Singleton-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/ZT3rl1t85aY"
     name: "VL Singleton-Pattern"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/22cc77330d6a5fd8784bdf83dc050be4173622cf4ea3c1ef7ddbefa1350d12ea144e228fdded23a4b96aa6948c3b4613f51f99de8c3cd0d3b858577e67851bb5"
+  - link: "https://www.hsbi.de/medienportal/m/22cc77330d6a5fd8784bdf83dc050be4173622cf4ea3c1ef7ddbefa1350d12ea144e228fdded23a4b96aa6948c3b4613f51f99de8c3cd0d3b858577e67851bb5"
     name: "VL Singleton-Pattern"
 ---
 

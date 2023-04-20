@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "FAQ"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 5
 
 hidden: true
@@ -28,7 +28,7 @@ Das setzt voraus, dass Sie vorbereitet in die Stunde kommen und sich aktiv einbr
 Aus persönlichen Gründen wird diese Veranstaltung im Sommer 2023 komplett online angeboten.
 Alle Sitzungen finden über Zoom statt, die Zugangsdaten finden Sie im ILIAS.
 
-Zusätzlich wurden Räume gebucht, so dass Sie auch vor Ort in der FH sein können und sich von
+Zusätzlich wurden Räume gebucht, so dass Sie auch vor Ort in der HSBI sein können und sich von
 dort mit Ihrem Laptop in die Zoom-Sitzungen einwählen können.
 
 Siehe Startseite unter "Vorlesung".
@@ -167,17 +167,17 @@ beispielsweise:
 -   [Bitbucket](https://bitbucket.org)
 
 Wir haben im Software-Labor für die Lehre eine [GitLab-Instanz] eingerichtet
-([git03-ifm-min.ad.fh-bielefeld.de]), falls Sie kein kommerzielles System
-nutzen möchten. Unser Server ist nur im FH-Netz bzw. über VPN erreichbar und
-Sie können sich dort mit Ihren FH-Zugangsdaten (LDAP) anmelden. Bitte nutzen
+([git03-ifm-min.ad.hsbi.de]), falls Sie kein kommerzielles System
+nutzen möchten. Unser Server ist nur im HSBI-Netz bzw. über VPN erreichbar und
+Sie können sich dort mit Ihren HSBI-Zugangsdaten (LDAP) anmelden. Bitte nutzen
 Sie diesen Server ausschließlich für Ihre Übungen in Lehrveranstaltungen wie
 PM; für den Server gibt es keine Backups und es kann sein, dass dieser Server
 nicht so stabil läuft oder permanent erreichbar ist wie die kommerziellen
 Angebote. Außerdem wird dieser Server ohne weitere Vorwarnung jeweils nach
 dem Semester neu aufgesetzt.
 
-[git03-ifm-min.ad.fh-bielefeld.de]: http://git03-ifm-min.ad.fh-bielefeld.de
-[GitLab-Instanz]: http://git03-ifm-min.ad.fh-bielefeld.de
+[git03-ifm-min.ad.hsbi.de]: http://git03-ifm-min.ad.hsbi.de
+[GitLab-Instanz]: http://git03-ifm-min.ad.hsbi.de
 
 
 ## SSH-Key für die Git-Server

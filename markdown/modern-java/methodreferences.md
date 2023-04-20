@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Methoden-Referenzen"
 menuTitle: "Methoden-Referenzen"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 3
 readings:
   - key: "Java-SE-tutorial"
@@ -29,7 +29,7 @@ outcomes:
   - k2: "Funktionales Interfaces (Definition)"
   - k3: "Einsatz von Methoden-Referenzen"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106524&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106524&client_id=FH-Bielefeld"
     name: "Quiz Methoden-Referenzen (ILIAS)"
 youtube:
   - link: "https://youtu.be/z0mfvvrsRzc"
@@ -41,7 +41,7 @@ youtube:
   - link: "https://youtu.be/DVz2x27WHU8"
     name: "Demo Referenz auf Instanz-Methode (Typ)"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/662003c5cb2cdef08b5d35cefd49b05f561fa26471cf3da22c4ff4310596909d0e21300133fc2fac353dfc4a391c8bb9af0dd47293efabfa8c3464429534d719"
+  - link: "https://www.hsbi.de/medienportal/m/662003c5cb2cdef08b5d35cefd49b05f561fa26471cf3da22c4ff4310596909d0e21300133fc2fac353dfc4a391c8bb9af0dd47293efabfa8c3464429534d719"
     name: "VL Methoden-Referenzen"
 challenges: |
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/lambda)

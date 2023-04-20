@@ -2,7 +2,7 @@
 archetype: lecture-cg
 title: "Generics und Polymorphie"
 menuTitle: "Polymorphie"
-author: "Carsten Gips (FH Bielefeld)"
+author: "Carsten Gips (HSBI)"
 weight: 4
 readings:
   - key: "Ullenboom2021"
@@ -24,13 +24,13 @@ outcomes:
   - k3: "Vererbungsbeziehungen mit generischen Klassen"
   - k3: "Umgang mit Arrays und generischen Typen"
 quizzes:
-  - link: "https://www.fh-bielefeld.de/elearning/goto.php?target=tst_1106238&client_id=FH-Bielefeld"
+  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106238&client_id=FH-Bielefeld"
     name: "Quiz Generics und Polymorphie (ILIAS)"
 youtube:
   - link: "https://youtu.be/RiTA43wTixQ"
     name: "VL Generics und Polymorphie"
 fhmedia:
-  - link: "https://www.fh-bielefeld.de/medienportal/m/a0d6f4ada3f85cd9f78dfde923f045f5fd43819a4930c5ef989ff6acb150c2f53208a061cf87f3c3f03823f6d645e10b1388009bfd9cfe474cfb4bdc93302fc2"
+  - link: "https://www.hsbi.de/medienportal/m/a0d6f4ada3f85cd9f78dfde923f045f5fd43819a4930c5ef989ff6acb150c2f53208a061cf87f3c3f03823f6d645e10b1388009bfd9cfe474cfb4bdc93302fc2"
     name: "VL Generics und Polymorphie"
 ---
 
