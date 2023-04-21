@@ -183,10 +183,7 @@ In diesem Projekt finden Sie unter `game/src/` die Java-Packages, die
 wir im Projekt für Sie bereitstellen. In `game/assets/` finden sich ein
 paar Beispieltexturen für den Boden, die Wände und den Helden.
 
-<!-- TODO
-nach dem Merge von https://github.com/Programmiermethoden/Dungeon/pull/496 URL aktualisieren
--->
-![](https://github.com/Programmiermethoden/Dungeon/raw/dk_lg/Documentation_Basics/doc/ecs/img/ecs.png)
+![](https://github.com/Programmiermethoden/Dungeon/raw/master/doc/ecs/img/ecs.png)
 
 Die Klasse `starter.Game` ist der zentrale Einstiegspunkt. Hier werden
 alle wichtigen Dinge konfiguriert, und es gibt die
