@@ -118,6 +118,82 @@ public static void main(String... args) {
 *   `null` ist **kein** Ersatz für vernünftiges Error-Handling!
     Das häufig zu beobachtende "Irgendwas Unerwartetes ist passiert, hier ist `null`"
     ist ein **Anti-Pattern**!
+
+### Beispiel aus der Praxis im PM-Dungeon
+
+Schauen Sie sich einmal das Review zu den `ecs.components.ai.AITools` in
+https://github.com/Programmiermethoden/Dungeon/pull/128#pullrequestreview-1254025874
+an.
+
+![](images/screenshot_review1.png)
+
+Die Methode `AITools#calculateNewPath` soll in der Umgebung einer als Parameter
+übergebenen Entität nach einem Feld (`Tile`) suchen, welches für die Entität
+betretbar ist und einen Pfad von der Position der Entität zu diesem Feld an den
+Aufrufer zurückliefern.
+
+Zunächst wird in der Entität nach einer `PositionComponent` und einer `VelocityComponent`
+gesucht. Wenn es (eine) diese(r) Components nicht in der Entität gibt, wird der Wert
+`null` an den Aufrufer von `AITools#calculateNewPath` zurückgeliefert.
+(_Anmerkung_: Interessanterweise wird in der Methode nicht mit der `VelocityComponent`
+gearbeitet.)
+
+Dann wird in der `PositionComponent` die Position der Entität im aktuellen Level
+abgerufen. In einer Schleife werden alle Felder im gegebenen Radius in eine Liste
+gespeichert.
+(_Anmerkung_: Da dies über die `float`-Werte passiert und nicht über die Feld-Indizes
+wird ein `Tile` u.U. recht oft in der Liste abgelegt. Können Sie sich hier einfache
+Verbesserungen überlegen?)
+
+Da `level.getTileAt()` offenbar als Antwort auch `null` zurückliefern kann, werden
+nun zunächst per `tiles.removeIf(Objects::isNull);` all diese `null`-Werte wieder aus
+der Liste entfernt. Danach erfolgt die Prüfung, ob die verbleibenden Felder betretbar
+sind und nicht-betretbare Felder werden entfernt.
+
+Aus den verbleibenden (betretbaren) Feldern in der Liste wird nun eines zufällig
+ausgewählt und per `level.findPath()` ein Pfad von der Position der Entität zu diesem
+Feld berechnet und zurückgeliefert.
+
+Zusammengefasst:
+
+*   Die als Parameter `entity` übergebene Referenz darf offenbar _nicht_ `null` sein.
+    Die ersten beiden Statements in der Methode rufen auf dieser Referenz Methoden
+    auf, was bei einer `null`-Referenz zu einer `NullPointer`-Exception führen
+    würde. Hier wäre `null` ein Fehlerzustand.
+*   `entity.getComponent()` kann offenbar `null` zurückliefern, wenn die gesuchte
+    Component nicht vorhanden ist. Hier wird `null` als "kein Wert vorhanden"
+    genutzt, was dann nachfolgende `null`-Checks notwendig macht.
+*   Wenn es die gewünschten Components nicht gibt, wird dem Aufrufer der Methode
+    `null` zurückgeliefert. Hier ist nicht ganz klar, ob das einfach nur "kein
+    Wert vorhanden" ist oder eigentlich ein Fehlerzustand?
+*   `level.getTileAt()` kann offenbar `null` zurückliefern, wenn kein Feld an der
+    Position vorhanden ist. Hier wird `null` wieder als "kein Wert vorhanden"
+    genutzt, was dann nachfolgende `null`-Checks notwendig macht (Entfernen aller
+    `null`-Referenzen aus der Liste).
+*   `level.findPath()` kann auch wieder `null` zurückliefern, wenn kein Pfad berechnet
+    werden konnte. Hier ist wieder nicht ganz klar, ob das einfach nur "kein Wert
+    vorhanden" ist oder eigentlich ein Fehlerzustand? Man könnte beispielsweise in
+    diesem Fall ein anderes Feld probieren?
+
+Der Aufrufer bekommt also eine `NullPointer`-Exception, wenn der übergebene Parameter
+`entity` nicht vorhanden ist oder den Wert `null`, wenn in der Methode etwas schief
+lief oder schlicht kein Pfad berechnet werden konnte oder tatsächlich einen Pfad.
+Damit wird der Aufrufer gezwungen, den Rückgabewert vor der Verwendung zu untersuchen.
+
+**Allein in dieser einen kurzen Methode macht `null` so viele extra Prüfungen notwendig
+und den Code dadurch schwerer lesbar und fehleranfälliger! `null` wird als (unvollständige)
+Initialisierung und als Rückgabewert und für den Fehlerfall genutzt, zusätzlich ist
+die Semantik von `null` nicht immer klar.**
+(_Anmerkung_: Der Gebrauch von `null` hat nicht wirklich etwas mit "der Natur eines ECS"
+zu tun. Die Methode wurde mittlerweile komplett überarbeitet und ist in der hier gezeigten
+Form nicht mehr zu finden.)
+
+Entsprechend hat sich in diesem [Review](https://github.com/Programmiermethoden/Dungeon/pull/128#pullrequestreview-1254025874)
+diese Diskussion ergeben:
+
+![](images/screenshot_review2.png)
+
+![](images/screenshot_review3.png)
 :::
 
 
