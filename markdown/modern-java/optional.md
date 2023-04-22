@@ -155,6 +155,10 @@ sind und nicht-betretbare Felder werden entfernt.
 Aus den verbleibenden (betretbaren) Feldern in der Liste wird nun eines zufällig
 ausgewählt und per `level.findPath()` ein Pfad von der Position der Entität zu diesem
 Feld berechnet und zurückgeliefert.
+(_Anmerkung_: Hier wird ein zufälliges Tile in der Liste der umgebenden Felder gewählt,
+von diesem die Koordinaten bestimmt, und dann noch einmal aus dem Level das dazugehörige
+Feld geholt - dabei hatte man die Referenz auf das Feld bereits in der Liste. Können
+Sie sich hier eine einfache Verbesserung überlegen?)
 
 Zusammengefasst:
 
