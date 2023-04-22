@@ -95,30 +95,29 @@ public static void main(String... args) {
 ```
 
 ::: notes
-*   **Problem**: `null` wird an (zu) vielen Stellen genutzt:
-    *   Es gibt keinen Wert ("not found")
-    *   Felder wurden (noch) nicht initialisiert
-    *   Es ist ein Problem oder etwas Unerwartetes aufgetreten
+### Problem: `null` wird an (zu) vielen Stellen genutzt
 
-    => Parameter und Rückgabewerte müssen stets auf `null` geprüft werden
-    (oder Annotationen wie `@NotNull` eingesetzt werden ...)
+*   Es gibt keinen Wert ("not found")
+*   Felder wurden (noch) nicht initialisiert
+*   Es ist ein Problem oder etwas Unerwartetes aufgetreten
 
-\smallskip
+=> Parameter und Rückgabewerte müssen stets auf `null` geprüft werden
+(oder Annotationen wie `@NotNull` eingesetzt werden ...)
 
-*   **Lösung**:
-    *   `Optional<T>` für Rückgabewerte, die "kein Wert vorhanden" mit einschließen
-        (statt `null` bei Abwesenheit von Werten)
-    *   `@NotNull`/`@Nullable` für Parameter einsetzen (oder separate Prüfung)
-    *   Exceptions werfen in Fällen, wo ein Problem aufgetreten ist
+### Lösung
 
-\smallskip
+*   `Optional<T>` für Rückgabewerte, die "kein Wert vorhanden" mit einschließen
+    (statt `null` bei Abwesenheit von Werten)
+*   `@NotNull`/`@Nullable` für Parameter einsetzen (oder separate Prüfung)
+*   Exceptions werfen in Fällen, wo ein Problem aufgetreten ist
 
-*   **Anmerkungen**:
-    *   Verwendung von `null` auf Attribut-Ebene (Klassen-interne Verwendung) ist okay!
-    *   `Optional<T>` ist **kein** Ersatz für `null`-Checks!
-    *   `null` ist **kein** Ersatz für vernünftiges Error-Handling!
-        Das häufig zu beobachtende "Irgendwas Unerwartetes ist passiert, hier ist `null`"
-        ist ein **Anti-Pattern**!
+### Anmerkungen
+
+*   Verwendung von `null` auf Attribut-Ebene (Klassen-interne Verwendung) ist okay!
+*   `Optional<T>` ist **kein** Ersatz für `null`-Checks!
+*   `null` ist **kein** Ersatz für vernünftiges Error-Handling!
+    Das häufig zu beobachtende "Irgendwas Unerwartetes ist passiert, hier ist `null`"
+    ist ein **Anti-Pattern**!
 :::
 
 
