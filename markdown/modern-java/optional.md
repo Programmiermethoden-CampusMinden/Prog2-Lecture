@@ -188,10 +188,10 @@ Initialisierung und als Rückgabewert und für den Fehlerfall genutzt, zusätzli
 die Semantik von `null` nicht immer klar.**
 (_Anmerkung_: Der Gebrauch von `null` hat nicht wirklich etwas mit "der Natur eines ECS"
 zu tun. Die Methode wurde mittlerweile komplett überarbeitet und ist in der hier gezeigten
-Form nicht mehr zu finden.)
+Form glücklicherweise nicht mehr zu finden.)
 
 Entsprechend hat sich in diesem [Review](https://github.com/Programmiermethoden/Dungeon/pull/128#pullrequestreview-1254025874)
-diese Diskussion ergeben:
+die nachfolgende Diskussion ergeben:
 
 ![](images/screenshot_review2.png)
 
