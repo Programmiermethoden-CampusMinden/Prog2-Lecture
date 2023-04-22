@@ -5,5 +5,5 @@ public enum Material {
     KARTON,
     HOLZ,
     KISSEN,
-    TAPE;
+    TAPE
 }
