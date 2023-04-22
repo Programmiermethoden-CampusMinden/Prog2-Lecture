@@ -6,4 +6,5 @@ package challenges.optional;
  * @param zSize Höhe des Kartons
  * @param material Material des Karton
  */
-public record Box(float xSize, float ySize, float zSize, Material material) {}
+public record Box(float xSize, float ySize, float zSize, Material material) {
+}

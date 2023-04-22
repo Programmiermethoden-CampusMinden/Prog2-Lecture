@@ -52,10 +52,12 @@ public class KatzenCafe {
 
     public static void main(String[] args) {
         KatzenCafe cafe = new KatzenCafe();
-        Box b = new Box(5, 5, 5, Material.KARTON);
-        Katze mize = cafe.getKatzeByGewicht(10, 20);
-        if (mize != null) System.out.println(mize.name());
-        List<Katze> katzen = cafe.getKatzenZurBox(b);
+        
+        Katze greebo = cafe.getKatzeByGewicht(10, 20);
+        if (greebo != null) System.out.println(greebo.name());
+
+        Box box = new Box(5, 5, 5, Material.KARTON);
+        List<Katze> katzen = cafe.getKatzenZurBox(box);
         if (katzen != null) {
             for (Katze k : katzen) {
                 if (k != null) {
