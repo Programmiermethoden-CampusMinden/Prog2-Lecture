@@ -54,6 +54,8 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/b62e544bff3a9a25982052bd761b9971f7e67caca90e3ed66c2b794b95d35c2c479f8d72189159345ac018e34ec55866c5558a256ce63b5e9c43a30fc8787d1b"
     name: "VL Optional"
 challenges: |
+    **Katzen-Café**
+
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/optional)
     finden Sie eine Implementierung für ein Katzencafé.
 
@@ -62,6 +64,44 @@ challenges: |
     Ergänzen Sie die Vorgaben um ein ausführliches Beispiel und bevölkern Sie das Café mit verschiedenen Katzen und geben Sie diese mit Hilfe der verschiedenen Methoden aus.
 
     Begründen Sie die Relevanz der verbleibenden `null`-Vorkommen im Code.
+
+
+    **String-Handling**
+
+    Können Sie den folgenden Code so umschreiben, dass Sie statt der `if`-Abfragen und der einzelnen direkten Methodenaufrufe
+    die Stream-API und `Optional<T>` nutzen?
+
+    ```java
+    String format(final String text, String replacement) {
+        if (text.isEmpty()) {
+            return "";
+        }
+
+        final String trimmed = text.trim();
+        final String withSpacesReplaced = trimmed.replaceAll(" +", replacement);
+
+        return replacement + withSpacesReplaced + replacement;
+    }
+    ```
+
+    Ein Aufruf `format(" Hello World ... ", "_");` liefert den String "`_Hello_World_..._`".
+
+    <!-- Notes
+    ```java
+    String formatFP(final String text, String replacement) {
+        final Predicate<String> isNotEmpty = s -> !s.isEmpty();
+        final Function<String, String> replaceSpaces = s -> s.replaceAll(" +", replacement);
+        final Function<String, String> appendReplacement = s -> String.format("%s%s%s", replacement, s, replacement);
+
+        return Optional.ofNullable(text)
+                .filter(isNotEmpty)
+                .map(String::trim)
+                .map(replaceSpaces)
+                .map(appendReplacement)
+                .orElse("");
+    }
+    ```
+    -->
 ---
 
 
