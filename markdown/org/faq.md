@@ -470,6 +470,10 @@ Methodensignaturen korrekt sein müssen usw. ...
 Es gibt keine verspäteten Abgaben. Das sind 0P.
 
 Bei Krankheit/familiären Notfällen:
+Wenn Sie an der Team-Arbeit teilgenommen haben und auch die Abgabe hochgeladen und Feedback
+erstellt haben, können Sie in vorheriger Absprache mit dem Dozenten einmal im Semester bei
+der Vorstellung im Praktikum fehlen und bekommen dann ausnahmsweise die Punkte, die die Gruppe
+erreicht hat.
 Es gibt eine zusätzliche Abgabe in der letzten Vorlesungswoche. Dieser Termin steht allen
 offen, die bis dahin zu wenig Punkte für das Bestehen im Praktikum gesammelt haben oder die
 wegen Krankheit einmal "ausgefallen" sind. Bei diesem Termin können Sie alleine oder im
