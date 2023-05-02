@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 
 import static java.util.function.Predicate.not;
 
-/*
+/**
  * Demo für Package java.util.function
  * (https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html)
  * (https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)
