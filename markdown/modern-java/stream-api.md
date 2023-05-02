@@ -54,6 +54,8 @@ youtube:
     name: "VL Stream-API"
   - link: "https://youtu.be/KBP72tCkBt8"
     name: "Demo Stream-API"
+  - link: "https://youtu.be/jzEw8IH8Mfc"
+    name: "Demo Vordefinierte funktionale Interfaces im JDK"
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/429bb37eaea02582785bfb46a92d68a3ed76cb18bdc98ec0f04ae438cecf82a595e1e46947d2ffcc2fd868d67ca1ed3beba73f216ae4886f2a9492167c006784"
     name: "VL Stream-API"

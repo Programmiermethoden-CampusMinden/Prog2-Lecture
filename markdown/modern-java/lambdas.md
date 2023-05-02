@@ -54,7 +54,9 @@ youtube:
   - link: "https://youtu.be/2LJIxsVw4pM"
     name: "Demo Lambda-Ausdruck"
   - link: "https://youtu.be/93O1oDL5_5c"
-    name: "Demo Funktionales Interface"
+    name: "Demo Funktionale Interfaces selbst definiert"
+  - link: "https://youtu.be/jzEw8IH8Mfc"
+    name: "Demo Vordefinierte funktionale Interfaces im JDK"
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/d2398cc8e1279e6b6bf1df06bd30b731e714d04d10e15b87a5f89aa07cbaf97978bb12f82ea0c7eff8a3133eb65134521933218fb94856fb6e8a6dc187dded28"
     name: "VL Lambda-Ausdrücke und funktionale Interfaces"
