@@ -213,6 +213,26 @@ geändert werden!
 :::
 
 
+::: notes
+## Beispiel aus den Challenges
+
+In den Challenges zum Thema Optional gibt es die Klasse `Katze` in den
+[Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/challenges/optional/Katze.java).
+
+Die Katze wurde zunächst "klassisch" modelliert: Es gibt drei Eigenschaften `name`,
+`gewicht`und `lieblingsBox`. Ein Konstruktor setzt diese Felder und es gibt drei
+Getter für die einzelnen Eigenschaften. Das braucht 18 Zeilen Code (ohne Kommentare
+Leerzeilen). Zudem erzeugt der Boilerplate-Code relativ viel "visual noise", so dass
+der eigentliche Kern der Klasse schwerer zu erkennen ist.
+
+In einem Refactoring wurde diese Klasse durch eine äquivalente Record-Klasse ersetzt,
+die nur noch 2 Zeilen Code (je nach Code-Style auch nur 1 Zeile) benötigt. Gleichzeitig
+wurde die Les- und Wartbarkeit deutlich verbessert.
+
+![](images/screenshot_katze.png)
+:::
+
+
 ## Wrap-Up
 
 *   Records sind immutable Klassen:
