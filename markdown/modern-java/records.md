@@ -222,7 +222,8 @@ In den Challenges zum Thema Optional gibt es die Klasse `Katze` in den
 Die Katze wurde zunächst "klassisch" modelliert: Es gibt drei Eigenschaften `name`,
 `gewicht`und `lieblingsBox`. Ein Konstruktor setzt diese Felder und es gibt drei
 Getter für die einzelnen Eigenschaften. Das braucht 18 Zeilen Code (ohne Kommentare
-Leerzeilen).
+Leerzeilen). Zudem erzeugt der Boilerplate-Code relativ viel "visual noise", so dass
+der eigentliche Kern der Klasse schwerer zu erkennen ist.
 
 In einem Refactoring wurde diese Klasse durch eine äquivalente Record-Klasse ersetzt,
 die nur noch 2 Zeilen Code (je nach Code-Style auch nur 1 Zeile) benötigt. Gleichzeitig
