@@ -131,6 +131,10 @@ Um also mit einem Worktree arbeiten zu können, wechseln Sie einfach das Verzeic
 einer IDE würden Sie entsprechend ein neues Projekt anlegen. So können Sie gleichzeitig
 in verschiedenen Branches arbeiten.
 
+Änderungen in einem Worktree werden automatisch in die ursprüngliche Workingcopy gespiegelt.
+Analog können Sie in einem Worktree auf die aktuelle Historie aus der ursprünglichen Workingcopy
+zugreifen.
+
 _Hinweis_: Sie können zwar Branches wechseln in den Ordnern, aber nicht auf einen Branch,
 der bereits in einem anderen Ordner ausgecheckt ist. Es ist gute Praxis, dass die Ordnernamen
 dem ausgecheckten Branch (linked Worktree) entsprechen, um Verwirrungen zu vermeiden.
