@@ -139,7 +139,16 @@ dem ausgecheckten Branch (linked Worktree) entsprechen, um Verwirrungen zu verme
 
 ## Worktree löschen
 
-Git Worktree Remove (aus dem Hauptordner/Workingcopy-Ordner)
+::: center
+`git worktree remove <worktree>`
+:::
+
+::: notes
+Sofern der Worktree "clean" ist, es also keine nicht comitteten Änderungen gibt, können
+Sie mit `git worktree remove <worktree>` einen Worktree `<worktree>` wieder löschen.
+
+Dabei bleibt der Ordner erhalten - Sie können ihn selbst löschen oder später wiederverwenden.
+:::
 
 
 ## Wrap-Up
@@ -160,9 +169,4 @@ https://git-scm.com/docs/git-worktree
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   XXX
 :::
