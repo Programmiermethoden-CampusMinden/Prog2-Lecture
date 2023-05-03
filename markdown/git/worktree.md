@@ -68,25 +68,54 @@ youtube:
 
 ### Git Worktree kann helfen!
 
-[**=> mehrere Branches gleichzeitig auschecken (als neue Ordner im Dateisystem)**]{.alert}
+[**=> Mehrere Branches gleichzeitig auschecken (als neue Ordner im Dateisystem)**]{.alert}
 
 
 ## How to use Git Worktree
 
-Man-Page: git worktree add, list, remove
-https://git-scm.com/docs/git-worktree
-
-Bild: Repo, Ordner pro ausgechecktem Branch (Worktree)
-
-Warnung: nicht in selben oder in Unterordner auschecken, also _außerhalb_ der Workingcopy!
+Bildchen
 
 
 ## Worktree anlegen
 
-Beispiel: Branch auschecken, worktree list
-Arbeiten in beiden Branches: Änderungen, Commit, Push
+::: center
+`git worktree add <path> <branch>`
+:::
 
-Hinweis: in Konsole sind wir zwar im anderen Ordner, die IDE aber nicht - ggf. neu öffnen
+\bigskip
+
+Legt neuen Ordner `<path>` an und checkt darin `<branch>` als "linked worktree" aus.
+
+::: notes
+Mit `git worktree add ../wuppie foo` würden Sie also parallel zum aktuellen Ordner
+(wo Ihre Workingcopy enthalten ist) einen neuen Ordner `wuppie/` anlegen und darin
+den Branch `foo` auschecken.
+
+Wenn Sie in den Ordner `foo` wechseln, finden Sie auch eine _Datei_ `.git`. In dieser
+ist lediglich der Pfad zur Workingcopy vermerkt, damit Git Änderungen auch in die
+eigentliche Workingcopy spiegeln kann. Dies ist der sogenannte "linked worktree".
+
+Im Vergleich dazu finden Sie in der eigentlichen Workingcopy einen _Ordner_ `.git`,
+der üblicherweise die gesamte Historie etc. enthält und entsprechend groß werden kann.
+
+Den Befehl `git worktree add` gibt es in verschiedenen Versionen. In der Kurzform
+`git worktree add <path>` würde ein neuer Branch angelegt und ausgecheckt, der der
+letzten Komponente von `<path>` entspricht ...
+:::
+
+\bigskip
+\vfill
+
+[**Warnung: Nicht in selben Ordner oder in Unterordner auschecken!**]{.alert}
+
+::: notes
+Die neuen Worktrees sollten immer **außerhalb** der Workingcopy liegen! Sie können
+Git sehr schnell durcheinanderbringen, wenn Sie einen Worktree im selben Ordner oder
+in einem Unterordner anlegen.
+
+`git worktree` sollte nach Möglichkeit nicht zusammen mit Git Submodules eingesetzt
+werden (unstabiles Verhalten)!
+:::
 
 
 ## Worktree wechseln
@@ -100,6 +129,8 @@ Git Worktree Remove (aus dem Hauptordner/Workingcopy-Ordner)
 
 
 ## Wrap-Up
+
+https://git-scm.com/docs/git-worktree
 
 *   XXX
 
