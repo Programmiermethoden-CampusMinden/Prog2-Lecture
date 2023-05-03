@@ -120,7 +120,21 @@ werden (unstabiles Verhalten)!
 
 ## Worktree wechseln
 
-xxx
+*   Worktrees anzeigen: `git worktree list`
+*   Worktree wechseln: Ordner wechseln (IDE: neues Projekt)
+
+::: notes
+Die Worktrees sind aus Sicht des Dateisystems einfach Ordner. Die `.git`-Datei verlinkt
+für Git den Ordner mit der ursprünglichen Workingcopy.
+
+Um also mit einem Worktree arbeiten zu können, wechseln Sie einfach das Verzeichnis. In
+einer IDE würden Sie entsprechend ein neues Projekt anlegen. So können Sie gleichzeitig
+in verschiedenen Branches arbeiten.
+
+_Hinweis_: Sie können zwar Branches wechseln in den Ordnern, aber nicht auf einen Branch,
+der bereits in einem anderen Ordner ausgecheckt ist. Es ist gute Praxis, dass die Ordnernamen
+dem ausgecheckten Branch (linked Worktree) entsprechen, um Verwirrungen zu vermeiden.
+:::
 
 
 ## Worktree löschen
