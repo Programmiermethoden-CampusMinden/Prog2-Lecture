@@ -157,9 +157,15 @@ Dabei bleibt der Ordner erhalten - Sie können ihn selbst löschen oder später 
 
 ## Wrap-Up
 
-https://git-scm.com/docs/git-worktree
+Git Worktree: Auschecken von Branches in separate Ordner
 
-*   XXX
+*   Anlegen: `git worktree add <path> <branch>`
+*   Anschauen: `git worktree list`
+*   Löschen: `git worktree remove <worktree>`
+
+\bigskip
+
+*   Dokumentation: https://git-scm.com/docs/git-worktree
 
 
 
