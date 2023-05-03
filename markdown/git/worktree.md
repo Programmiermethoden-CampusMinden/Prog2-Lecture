@@ -5,11 +5,25 @@ menuTitle: "Worktree"
 author: "Carsten Gips (HSBI)"
 weight: 8
 tldr: |
-  XXX
+  Git Worktree erlaubt es, Branches in separaten Ordnern auszuchecken. Diese Ordner sind
+  mit der Workingcopy verknüpft, d.h. alle Änderungen über Git-Befehle werden automatisch
+  mit der Workingcopy "synchronisiert". Im Unterschied zum erneuten Clonen hat man in den
+  verknüpften Ordnern aber nicht die gesamte Historie noch einmal neu als `.git`-Ordner,
+  sondern nur den Link auf die Workingcopy, wodurch viel Platz gespart wird. Damit bilden
+  Git Worktrees eine elegante Möglichkeit, parallel an verschiedenen Branches zu arbeiten.
 outcomes:
-  - k2: "XXX"
+  - k2: "Vorteile von Git Worktree"
+  - k2: "Prinzipielle Arbeitsweise von Git Worktree"
+  - k3: "Anlegen von Worktrees"
+  - k3: "Anzeigen von Worktrees"
+  - k3: "Löschen von Worktrees"
 youtube:
-  - link: "https://youtu.be/"
+  - link: "https://youtu.be/nDkg6WvA0bk"
+    name: "VL Git Worktree"
+  - link: "https://youtu.be/RtXrv0oK3-w"
+    name: "Demo Git Worktree"
+fhmedia:
+  - link: "https://www.hsbi.de/medienportal/m/b76b9f68f573856669e52ebe4cf4cf8803afb356c6c5d448bb46ab3582457bfb6c111310ce0359bb0a3348f5ab93d7ea58ac73e4fdfdfecd691590640f184af7"
     name: "VL Git Worktree"
 ---
 
