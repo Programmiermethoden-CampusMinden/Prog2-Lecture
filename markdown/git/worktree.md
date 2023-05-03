@@ -73,7 +73,7 @@ youtube:
 
 ## How to use Git Worktree
 
-Bildchen
+![](images/linkedworktrees.png){width="80%"}
 
 
 ## Worktree anlegen
@@ -135,7 +135,7 @@ in verschiedenen Branches arbeiten.
 Analog können Sie in einem Worktree auf die aktuelle Historie aus der ursprünglichen Workingcopy
 zugreifen.
 
-_Hinweis_: Sie können zwar Branches wechseln in den Ordnern, aber nicht auf einen Branch,
+_Hinweis_: Sie können in den Ordnern zwar Branches wechseln, aber nicht auf einen Branch,
 der bereits in einem anderen Ordner ausgecheckt ist. Es ist gute Praxis, dass die Ordnernamen
 dem ausgecheckten Branch (linked Worktree) entsprechen, um Verwirrungen zu vermeiden.
 :::
