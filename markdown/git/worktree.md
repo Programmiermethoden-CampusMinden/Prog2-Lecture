@@ -105,7 +105,7 @@ Mit `git worktree add ../wuppie foo` würden Sie also parallel zum aktuellen Ord
 (wo Ihre Workingcopy enthalten ist) einen neuen Ordner `wuppie/` anlegen und darin
 den Branch `foo` auschecken.
 
-Wenn Sie in den Ordner `foo` wechseln, finden Sie auch eine _Datei_ `.git`. In dieser
+Wenn Sie in den Ordner `wuppie` wechseln, finden Sie auch eine _Datei_ `.git`. Darin
 ist lediglich der Pfad zur Workingcopy vermerkt, damit Git Änderungen auch in die
 eigentliche Workingcopy spiegeln kann. Dies ist der sogenannte "linked worktree".
 
@@ -124,8 +124,8 @@ letzten Komponente von `<path>` entspricht ...
 
 ::: notes
 Die neuen Worktrees sollten immer **außerhalb** der Workingcopy liegen! Sie können
-Git sehr schnell durcheinanderbringen, wenn Sie einen Worktree im selben Ordner oder
-in einem Unterordner anlegen.
+Git sehr schnell sehr gründlich durcheinanderbringen, wenn Sie einen Worktree im
+selben Ordner oder in einem Unterordner anlegen.
 
 `git worktree` sollte nach Möglichkeit nicht zusammen mit Git Submodules eingesetzt
 werden (unstabiles Verhalten)!
@@ -150,8 +150,9 @@ Analog können Sie in einem Worktree auf die aktuelle Historie aus der ursprüng
 zugreifen.
 
 _Hinweis_: Sie können in den Ordnern zwar Branches wechseln, aber nicht auf einen Branch,
-der bereits in einem anderen Ordner ausgecheckt ist. Es ist gute Praxis, dass die Ordnernamen
-dem ausgecheckten Branch (linked Worktree) entsprechen, um Verwirrungen zu vermeiden.
+der bereits in einem anderen Ordner (Worktree) ausgecheckt ist. Es ist gute Praxis, dass
+die Ordnernamen dem ausgecheckten Branch (linked Worktree) entsprechen, um Verwirrungen
+zu vermeiden.
 :::
 
 
