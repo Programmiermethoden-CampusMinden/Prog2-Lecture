@@ -61,10 +61,10 @@ Anregungen für **Spielideen** können Sie beispielsweise in den folgenden Video
 
 ## Gruppe "Bounty"
 
-| Aufgabe                                                                                                                            | Punkte |
-|:-----------------------------------------------------------------------------------------------------------------------------------|:-------|
-| [5P Bounty](https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty+-linked%3Apr+label%3A5P)   | 5      |
-| [10P Bounty](https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty+-linked%3Apr+label%3A10P) | 10     |
+| Aufgabe                                                                                                                      | Punkte |
+|:-----------------------------------------------------------------------------------------------------------------------------|:-------|
+| [5P Bounty](https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty%3A5p+-linked%3Apr)   | 5      |
+| [10P Bounty](https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty%3A10p+-linked%3Apr) | 10     |
 
 _Hinweis_: Die Liste der Bounty-Aufgaben wird sich dynamisch verändern. Es wird vorkommen,
 dass Aufgaben im Laufe des Semesters nicht mehr zur Verfügung stehen. Ebenso können im Laufe

@@ -250,8 +250,8 @@ für eine Bounty-Aufgabe geben. In der Regel wird aber pro Bounty-Aufgabe maxima
 ein Pull-Request akzeptiert (gemergt). Es gibt keinen Anspruch auf einen Merge
 und damit keinen Anspruch auf die Bonus-Punkte, die Entscheidung liegt beim Dozenten.
 
-["Bounty"-Aufgaben]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty+-linked%3Apr
-[Suchanfrage]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty+-linked%3Apr
+["Bounty"-Aufgaben]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty%3A5p%2Cbounty%3A10p+-linked%3Apr
+[Suchanfrage]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty%3A5p%2Cbounty%3A10p+-linked%3Apr
 [Verteilung der Punkte]: #verteilung-der-punkte
 [Dungeon-Repo]: https://github.com/Programmiermethoden/Dungeon
 [Pull-Request]: https://github.com/Programmiermethoden/Dungeon/compare
