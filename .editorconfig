@@ -17,3 +17,7 @@ end_of_line = lf
 
 [{*.bat, *.cmd}]
 end_of_line = crlf
+
+[*.{hs,yaml}]
+indent_style = space
+indent_size = 2
