@@ -109,7 +109,6 @@ Siehe auch [Interface Collection](https://docs.oracle.com/en/java/javase/17/docs
 
 ## Listen: _ArrayList_
 
-::: slides
 ```java
 private List<Entity> entities = new ArrayList<>();
 ```
@@ -118,11 +117,9 @@ private List<Entity> entities = new ArrayList<>();
 \bigskip
 
 ![](images/arraylist.png){width="80%"}
-:::
 
 ::: notes
-![](images/arraylist.gif){width="80%"}
-
+[Link zu einer netten Animation](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/images/arraylist.gif)
 
 Eine `ArrayList<T>` ist von außen betrachtet ein sich dynamisch vergrößerndes Array.
 
@@ -148,13 +145,10 @@ Die Methoden einer `ArrayList<T>` sind nicht `synchronized`.
 
 ## Listen: _LinkedList_
 
-::: slides
 ![](images/linkedlist.png){width="80%"}
-:::
 
 ::: notes
-![](images/linkedlist.gif){width="80%"}
-
+[Link zu einer netten Animation](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/images/linkedlist.gif)
 
 Eine `LinkedList<T>` ist eine Implementierung einer doppelt verketteten Liste (diese
 kennen Sie bereits aus ADS) in Java.
@@ -226,7 +220,7 @@ Methode ist im Interface als Default-Methode implementiert.
 Damit kann man die Datenstrukturen auf eine von der Datenstruktur vorgegebene Weise ablaufen,
 beispielsweise einen Binärbaum.
 
-![](images/iterator.gif){width="80%"}
+[Link zu einer netten Animation](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/images/iterator.gif)
 
 Man kann auch selbst für eigene Klassen einen passenden `Iterator<T>` implementieren, der zum Ablaufen
 der Elemente der eigenen Klasse genutzt werden kann. Damit die eigene Klasse auch in einer `for`-Schleife
