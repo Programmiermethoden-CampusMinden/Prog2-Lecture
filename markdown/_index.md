@@ -30,8 +30,6 @@ Siehe `["Syllabus"]({{< ref "/org/syllabus" >}})`{=markdown} zu Details.
 
 ## Kursformat
 
-![](org/images/fahrplan.png){width="80%"}
-
 ### Vorlesung: 2 SWS
 
 *   Fr, 16:30 - 18:00 Uhr (online/J104)

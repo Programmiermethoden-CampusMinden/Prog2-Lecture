@@ -107,10 +107,9 @@
     lecture:
         -   topic: "/java-jvm/enums"
         -   topic: "/java-jvm/configuration"
-        -   topic: "/testing/coverage"
-        -   topic: "/testing/bdd"
-        -   topic: "/modern-java/sealed"
-        -   topic: "/pattern/dependency"
+        -   topic: "/building/ant"
+        -   topic: "/pattern/template-method"
+        -   topic: "/pattern/factory-method"
     assignment:
         -   topic: "b05a"
             due: "Abgabe: Do, 15.06., 08 Uhr; Peer-Feedback: Fr, 16.06., 08 Uhr; Praktikum: Fr, 16.06."
@@ -120,8 +119,8 @@
         -   topic: "/threads/intro"
         -   topic: "/threads/synchronisation"
         -   topic: "/threads/highlevel"
-        -   topic: "/pattern/factory-method"
-        -   topic: "/pattern/template-method"
+        -   topic: "/building/maven"
+        -   topic: "/pattern/type-object"
     assignment:
         -   topic: "b05b"
             due: "Abgabe: Do, 22.06., 08 Uhr; Peer-Feedback: Fr, 23.06., 08 Uhr; Praktikum: Fr, 23.06."
