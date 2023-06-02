@@ -282,6 +282,15 @@ ist.
 [ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
 
 
+## UML-Klassendiagramme
+
+Wir benutzen in PM eigentlich fast nur Klassendiagramme. Das Thema sollte
+in OOP dran gewesen sein. Eine ganz gute Zusammenfassung finden Sie auf
+[wikipedia.org/wiki/Class_diagram].
+
+[wikipedia.org/wiki/Class_diagram]: https://en.wikipedia.org/wiki/Class_diagram
+
+
 ## Implementierung: Umsetzung des Konzepts
 
 In der jeweils zweiten Zyklushälfte setzen Sie Ihre Konzeptskizze aus der
