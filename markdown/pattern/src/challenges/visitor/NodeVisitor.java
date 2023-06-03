@@ -8,7 +8,7 @@ package challenges.visitor;
 public interface NodeVisitor<T> {
 
     /**
-     * Visit a unary search tree (leaf).
+     * Visit an unary search tree (leaf).
      *
      * @param node to visit
      * @return the result of visiting the node (recursively)
