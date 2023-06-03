@@ -89,7 +89,7 @@ challenges: |
             `nodeVisitor.visit(tree)` (3c)?
 
     4.  Implementieren Sie analog zu `nodeVisitor` einen weiteren Visitor, der die Bäume _postorder_ traversiert
-        und wiederholen Sie dafür die Aufrufe in (3a) bis (3c).
+        und wiederholen Sie für diesen neuen Visitor die Aufrufe in (3a) bis (3c).
 
     5.  Erklären Sie, wieso im Visitor-Pattern für den Start der Traversierung statt `visitor.visit(tree)` der Aufruf
         `tree.accept(visitor)` genutzt wird.
