@@ -36,8 +36,8 @@ public class Main {
         String result;
 
         // a) Objekt binaryTree: Worin besteht der Unterschied der Aufrufe?
-//        result = binaryTree.accept(nodeVisitor);
-//        result = nodeVisitor.visit(binaryTree);
+        result = binaryTree.accept(nodeVisitor);
+        result = nodeVisitor.visit(binaryTree);
 
         // b) Objekt mixedTree: Worin besteht der Unterschied der Aufrufe?
 //        result = mixedTree.accept(nodeVisitor);

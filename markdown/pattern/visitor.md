@@ -61,14 +61,45 @@ fhmedia:
     name: "VL Visitor-Pattern"
 challenges: |
     In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/pattern/src/challenges/visitor)
-    finden Sie die Klasse `Node` zur Realisierung von binären Suchbäumen, die verschiedene Quartettkarten speichern (`Card`).
+    finden Sie Code zur Realisierung von (rudimentären) binären Suchbäumen.
 
-    Implementieren Sie das Visitor-Pattern für den Baum (Klasse `Node`).
+    1.  Betrachten Sie die Klassen `BinaryNode` und `Main`. Die Klasse `BinaryNode` dient zur einfachen Repräsentierung von
+        binären Suchbäumen, in `Main` ist ein Versuchsaufbau vorbereitet.
+        -   Implementieren Sie das Visitor-Pattern für den Binärbaum (in den Klassen `BinaryNode` und `Main`). Der
+            `nodeVisitor` soll einen Binärbaum _inorder_ traversieren.
+        -   Führen Sie in `Main` die Aufrufe auf `binaryTree` aus (3a).
+        -   Worin besteht der Unterschied zwischen den Aufrufen `binaryTree.accept(nodeVisitor)` und
+            `nodeVisitor.visit(binaryTree)` (3a)?
 
-    Implementieren Sie einen konkreten Visitor, welcher den Baum _inorder_ traversiert, und einen konkreten  Visitor, der den
-    Baum _postorder_ traversiert. Beim Besuchen eines Knoten soll der Name der gespeicherten Karte sowie deren Preis ausgegeben werden.
+    2.  In `BinaryNode` wird ein Blatt aktuell durch einen Knoten repräsentiert, der für beide Kindbäume den Wert `null`
+        hat. Um Blätter besser zu repräsentieren, gibt es die Klasse `UnaryNode`.
+        -   Passen Sie `BinaryNode` so an, dass die Kindbäume auch `UnaryNode` sein können.
+        -   Entfernen Sie in `Main` die Auskommentierung um die Definition von `mixedTree`.
+        -   Führen Sie in `Main` die Aufrufe auf `mixedTree` aus (3b). Passen Sie dazu ggf. Ihre Implementierung des
+            Visitor-Patterns an.
+        -   Worin besteht der Unterschied zwischen den Aufrufen `mixedTree.accept(nodeVisitor)` und
+            `nodeVisitor.visit(mixedTree)` (3b)?
 
-    Rufen Sie Ihre Visitoren auf dem Binärbaum `root` in der `main()` auf (Zeile 38).
+    3.  Sowohl `binaryTree` als auch `mixedTree` werden in `Main` als `BinaryNode<String>` deklariert.  Das ist eine
+        unschöne Praxis: Es soll nach Möglichkeit der Obertyp genutzt werden. Dies ist in diesem Fall `Node<String>`.
+        -   Entfernen Sie in `Main` die Auskommentierung um die Definition von `tree`.
+        -   Führen Sie in `Main` die Aufrufe auf `tree` aus (3c). Passen Sie dazu ggf. Ihre Implementierung des
+            Visitor-Patterns an.
+        -   Worin besteht der Unterschied zwischen den Aufrufen `tree.accept(nodeVisitor)` und
+            `nodeVisitor.visit(tree)` (3c)?
+
+    4.  Implementieren Sie analog zu `nodeVisitor` einen weiteren Visitor, der die Bäume _postorder_ traversiert
+        und wiederholen Sie dafür die Aufrufe in (3a) bis (3c).
+
+    5.  Erklären Sie, wieso im Visitor-Pattern für den Start der Traversierung statt `visitor.visit(tree)` der Aufruf
+        `tree.accept(visitor)` genutzt wird.
+
+    6.  Erklären Sie, wieso im Visitor-Pattern in der `accept`-Methode der Knoten der Aufruf `visitor.visit(this)`
+        genutzt wird. Erklären Sie, wieso dieser Aufruf nicht in der Oberklasse bzw. im gemeinsamen Interface der
+        Knoten implementiert werden kann.
+
+    7.  Erklären Sie, wieso im Visitor-Pattern in der `visit`-Methode der Visitoren statt `visit(node.left())` der
+        Aufruf `node.left().accept(this)` genutzt wird.
 ---
 
 
