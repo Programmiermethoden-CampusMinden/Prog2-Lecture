@@ -9,7 +9,7 @@ readings:
   - key: "Gamma2011"
 tldr: |
     Häufig bietet es sich bei Datenstrukturen an, die Traversierung nicht direkt in den Klassen
-    der Datenstrukturen zu implementieren, sondern in Hilfsklassen zu verlangern. Dies gilt vor
+    der Datenstrukturen zu implementieren, sondern in Hilfsklassen zu verlagern. Dies gilt vor
     allem dann, wenn die Datenstruktur aus mehreren Klassen besteht (etwa ein Baum mit verschiedenen
     Knotentypen) und/oder wenn man nicht nur eine Traversierungsart ermöglichen will oder/und wenn
     man immer wieder neue Arten der Traversierung ergänzen will. Das würde nämlich bedeuten, dass
