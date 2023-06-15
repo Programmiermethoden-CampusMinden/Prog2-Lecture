@@ -12,10 +12,18 @@ jobs:
   hugo:
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          echo "XDG_DATA_HOME=$(pwd)" >> $GITHUB_ENV
+          echo "ARCH=amd64" >> $GITHUB_ENV
+          echo "DATE=$(date)" >> $GITHUB_ENV
+
       - uses: actions/checkout@v3
+
       - uses: cagix/pandoc-lecture@master
         with:
-          make-target: 'make web_zip'
+          hugo: 'true'
+      - run: make web_zip
+
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
