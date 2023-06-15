@@ -11,8 +11,12 @@
 ## (b) Alternatively, you need to
 ##         (1) install all tools (Pandoc, Hugo, TexLive) manually to your
 ##             operating system, and
-##         (2) clone the pandoc-lecture repo locally to a specific location:
-##             "git clone --depth 1 https://github.com/cagix/pandoc-lecture.git ${HOME}/.local/share/pandoc/".
+##         (2) clone the pandoc-lecture repo plus relearn theme locally to a
+##             specific location (${HOME}/.local/share/pandoc/):
+##             "git clone --depth 1 https://github.com/cagix/pandoc-lecture.git ${HOME}/.local/share/pandoc/"
+##             "wget https://github.com/McShelby/hugo-theme-relearn/archive/refs/tags/${RELEARN}.tar.gz"
+##             "tar -zxf ${RELEARN}.tar.gz --strip-components 1 -C ${HOME}/.local/share/pandoc/hugo/hugo-theme-relearn/"
+##             (Alternatively, just use "make install_scripts_locally" using https://github.com/cagix/pandoc-lecture/)
 ##
 ## To build the mentioned Docker image or for the required packages for a native
 ## installation, see https://github.com/cagix/pandoc-lecture/docker.
