@@ -197,7 +197,7 @@ list-slides: ## List available targets for individual slides
 ## Start Docker container "pandoc-lecture" into interactive shell
 .PHONY: runlocal
 runlocal: ## Start Docker container "pandoc-lecture" into interactive shell
-	docker run  --rm -it  -v "$(shell pwd):/pandoc" -w "/pandoc"  -u "$(shell id -u):$(shell id -g)"  -e CI=true  --entrypoint "bash"  pandoc-lecture
+	docker run  --rm -it  -v "$(shell pwd):/pandoc" -w "/pandoc"  -u "$(shell id -u):$(shell id -g)"  --entrypoint "bash"  pandoc-lecture
 
 ## Make everything
 .PHONY: all
