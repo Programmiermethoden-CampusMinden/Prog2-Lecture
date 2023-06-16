@@ -12,11 +12,6 @@ jobs:
   slides:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "XDG_DATA_HOME=$(pwd)" >> $GITHUB_ENV
-          echo "ARCH=amd64" >> $GITHUB_ENV
-          echo "DATE=$(date)" >> $GITHUB_ENV
-
       - uses: actions/checkout@v3
 
       - uses: cagix/pandoc-lecture@master

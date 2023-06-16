@@ -58,19 +58,14 @@ LATEX  = cd $(dir $(realpath $<)) && latex
 
 ## Where do we find the content from https://github.com/cagix/pandoc-lecture,
 ## i.e. the resources for Pandoc and the themes for Hugo?
-##     (a) If we run inside the Docker container, the variable CI is set to
-##         true and we find the files in ${XDG_DATA_HOME}/pandoc/.
-##     (b) If we are running locally (native installation), then we look for
-##         the contents at ${HOME}/.local/share/pandoc/.
-## Note: $(CI) is a default environment variable that GitHub sets (see
-## https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables)
-ifeq ($(CI), true)
+##     (a) If we run inside the Docker container or inside the GitHub action,
+##         we find the files in ${XDG_DATA_HOME}/pandoc/.
+##     (b) If we are running locally (native installation), we look for the
+##         files at ${HOME}/.local/share/pandoc/.
+## XDG_DATA_HOME can be set externally
+XDG_DATA_HOME ?= $(HOME)/.local/share
 PANDOC_DIRS = --resource-path=".:$(XDG_DATA_HOME)/pandoc/:$(XDG_DATA_HOME)/pandoc/resources/"
 HUGO_DIRS   = --themesDir "$(XDG_DATA_HOME)/pandoc/hugo"
-else
-PANDOC_DIRS = --resource-path=".:$(HOME)/.local/share/pandoc/:$(HOME)/.local/share/pandoc/resources/"
-HUGO_DIRS   = --themesDir "$(HOME)/.local/share/pandoc/hugo"
-endif
 
 ## Define options for generating images from ".tex" files
 LATEX_ARGS = -shell-escape
@@ -197,7 +192,7 @@ list-slides: ## List available targets for individual slides
 ## Start Docker container "pandoc-lecture" into interactive shell
 .PHONY: runlocal
 runlocal: ## Start Docker container "pandoc-lecture" into interactive shell
-	docker run  --rm -it  -v "$(shell pwd):/pandoc" -w "/pandoc"  -u "$(shell id -u):$(shell id -g)"  -e CI=true  --entrypoint "bash"  pandoc-lecture
+	docker run  --rm -it  -v "$(shell pwd):/pandoc" -w "/pandoc"  -u "$(shell id -u):$(shell id -g)"  --entrypoint "bash"  pandoc-lecture
 
 ## Make everything
 .PHONY: all
