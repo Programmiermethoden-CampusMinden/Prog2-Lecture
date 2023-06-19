@@ -11,7 +11,8 @@ tldr: |
 
   Sofern die Situation dies zulässt, wird die Klausur in den Räumen der HSBI am Campus Minden unter
   Aufsicht durchgeführt. Hier werden Ihnen Rechner für den Zugang zum Prüfungs-ILIAS zur Verfügung
-  gestellt, Sie benötigen nur Ihre HSBI-Zugangsdaten.
+  gestellt, Sie benötigen nur Ihre HSBI-Zugangsdaten (User, Passwort), einen Studierendenausweis und
+  Personalausweis sowie Ihren DIN-A4-Spickzettel.
 
   Wenn die Corona-Lage eine Durchführung in Präsenz nicht erlaubt, wird die Klausur stattdessen als
   _Open-Book-Ausarbeitung_ aus dem Home-Office durchgeführt. Sie benötigen dazu einen normalen Rechner
@@ -130,6 +131,12 @@ Diese Bemerkungen betreffen die Durchführung als Präsenzprüfung in den Räume
     gestellt. Dort läuft voraussichtlich ein Browser im Kiosk-Mode, wo Sie sich am Prüfungs-ILIAS
     anmelden. Dazu benötigen Sie ihre HSBI-Zugangsdaten, mit denen Sie sich auch im "normalen"
     ILIAS anmelden.
+
+*   **Studierendenausweis** und Personalausweis
+
+    An der Prüfung dürfen nur Personen teilnehmen, die dafür im LSF angemeldet sind. Es findet
+    eine entsprechende Kontrolle statt. Halten Sie Ihren Studierendenausweis und Personalausweis
+    bereit.
 
 ### Home-Office
 

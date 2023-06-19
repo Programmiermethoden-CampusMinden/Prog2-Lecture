@@ -32,7 +32,7 @@ Wiederholer mit bereits begonnener Parcours-Prüfung absolvieren stattdessen ein
 Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
 
 
-## Hinweise zum Praktikum
+## Hinweise zum Praktikum (praktische Teilleistung)
 
 ### Bearbeitung der Aufgaben
 
@@ -76,3 +76,25 @@ Teilleistung liegen oder die wegen Krankheit einen Termin nicht wahrnehmen konnt
 
 Für diese Abgabe gibt es keine Konzeptphase und auch kein Peer-Feedback, die Lösung (Link)
 ist bis zur Deadline im ILIAS hochzuladen und im nachfolgenden Praktikum vorzustellen.
+
+
+## Hinweise zur Klausur (theoretische Teilleistung)
+
+Prüfung Theorie (Termin 1): Die Prüfung zum theoretischen Teil findet am Mittwoch, 05.07.23,
+im B40 am Campus Minden auf dem HSBI-Prüfungs-ILIAS statt.
+
+Da in diesem Raum nur 30 Personen gleichzeitig geprüft werden können, werden wir in zwei
+Durchläufen arbeiten: 09:00-10:30 Uhr und 11:00-12:30 Uhr. Sie können nur an einer der beiden
+Sitzungen teilnehmen.
+
+Es gibt entsprechend zwei Einträge im Prüfungs-ILIAS. Die Zugangsdaten wurden an alle im LSF
+für die Prüfung angemeldeten Studierenden geschickt. Bitte melden Sie sich bis Freitag,
+30.06.23, in einem der beiden Prüfungskursräume an ("Beitritt mit Bestätigung"). Beachten Sie
+die Gruppengröße, es können sich max. 30 Personen pro Durchlauf anmelden. Es gibt keine
+Wartelisten - wenn einer der beiden Prüfungskursräume voll ist, melden Sie sich bitte beim
+anderen Prüfungskursraum an.
+
+Sie benötigen am Prüfungstag Ihre HSBI-Zugangsdaten (User, Passwort), einen Studierendenausweis
+und Personalausweis sowie Ihren DIN-A4-Spickzettel.
+
+Prüfungsrelevant sind die im "Fahrplan" verlinkten Inhalte.
