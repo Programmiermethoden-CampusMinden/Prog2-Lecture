@@ -1,13 +1,13 @@
 - week: "W01 (07. April)"
   misc_lecture:
-    - notes: '>> Feiertag'
+    - notes: ">> Feiertag"
   misc_assignment:
-    - notes: '>> Feiertag'
+    - notes: ">> Feiertag"
 
 - week: "W02 (14. April)"
   lecture:
     - topic: /org/syllabus
-      notes: Kick-Off/Orga (Zoom)
+      notes: "Kick-Off/Orga (Zoom)"
     - topic: /git/intro
     - topic: /git/basics
     - topic: /modern-java/lambdas
@@ -15,7 +15,7 @@
   assignment:
     - topic: /frameworks/dungeon
   misc_assignment:
-    - notes: '>> Kein Praktikum'
+    - notes: ">> Kein Praktikum"
 
 - week: "W03 (21. April)"
   lecture:
@@ -128,9 +128,9 @@
 - week: "W13 (30. Juni)"
   lecture:
     - topic: /org/syllabus
-      notes: Rückblick (Zoom)
+      notes: "Rückblick (Zoom)"
     - topic: /org/exams
-      notes: Prüfungsvorbereitung (Zoom)
+      notes: "Prüfungsvorbereitung (Zoom)"
   assignment:
     - topic: b06
       due: "Abgabe: Fr, 30.06., 08 Uhr; Praktikum: Fr, 30.06."
