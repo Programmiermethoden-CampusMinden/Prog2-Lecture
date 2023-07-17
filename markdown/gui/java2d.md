@@ -273,14 +273,14 @@ Idee: Je Zeitschritt:
     => Observer-Pattern nutzen
 :::
 
-[Hinweis: Zentrale Struktur vs. Observer-Pattern]{.bsp}
+[[Hinweis: Zentrale Struktur vs. Observer-Pattern]{.bsp}]{.slides}
 
 
 ## Erinnerung: Observer Pattern
 
 ![](images/observer.png){width="80%"}
 
-[Hinweis auf Push- vs. Pull-Modell]{.bsp}
+[[Hinweis auf Push- vs. Pull-Modell]{.bsp}]{.slides}
 
 ::: notes
 *   Anzahl der Observer muss nicht bekannt sein - zur Laufzeit erweiterbar!

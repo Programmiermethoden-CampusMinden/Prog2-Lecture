@@ -128,7 +128,7 @@ challenges: |
 
 **Abfrage mit `git status`**
 
-[Konsole]{.bsp}
+[[Konsole]{.bsp}]{.slides}
 
 
 ## Änderungen einpflegen
@@ -164,7 +164,7 @@ das von SVN bekannte Verhalten. Achtung: Nicht versionierte Dateien bleiben
 dabei außen vor!
 :::
 
-[Konsole]{.bsp}
+[[Konsole]{.bsp}]{.slides}
 
 
 ## Letzten Commit ergänzen
@@ -186,7 +186,7 @@ dabei außen vor!
     [In beiden Fällen ändert sich die Commit-ID!]{.alert}
     :::
 
-[Konsole]{.bsp}
+[[Konsole]{.bsp}]{.slides}
 
 
 ::: notes
@@ -237,7 +237,7 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 
 *   Inhalt eines Commits: `git show`
 
-[Konsole]{.bsp}
+[[Konsole]{.bsp}]{.slides}
 
 
 ## Änderungen und Logs betrachten
@@ -266,7 +266,7 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 
     Wer hat was wann gemacht?
 
-[Konsole]{.bsp}
+[[Konsole]{.bsp}]{.slides}
 
 
 ## Dateien ignorieren: _.gitignore_
@@ -294,7 +294,7 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
     bin/**/*
 ```
 
-[man 5 gitignore]{.bsp}
+[man 5 gitignore]{.bsp href="https://linux.die.net/man/5/gitignore"}
 
 
 ## Zeitmaschine
@@ -326,7 +326,7 @@ immer noch zur Verfügung und bietet über `git restore` hinaus weitere Anwendun
     `git tag <tagname> <commit>`
 *   Tags anzeigen: `git tag` und `git show <tagname>`
 
-[Konsole]{.bsp}
+[[Konsole]{.bsp}]{.slides}
 
 
 ## Wann und wie committen?

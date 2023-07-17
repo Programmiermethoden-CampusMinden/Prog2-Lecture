@@ -142,7 +142,7 @@ Jar-File im Maven-Repository zu finden sein (sofern es denn veröffentlicht wird
 für die Dependencies findet man ebenfalls auf [MavenCentral](https://mvnrepository.com/repos/central).
 :::
 
-[Demo für MavenCentral (Suche, Einträge)]{.bsp}
+[[Demo für MavenCentral (Suche, Einträge)]{.bsp}]{.slides}
 
 
 ## Project Object Model: Plugins

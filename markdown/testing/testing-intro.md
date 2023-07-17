@@ -52,7 +52,7 @@ fhmedia:
 
 ![](images/swfehler.png){width="80%"}
 
-[Ursachen für Fehler?]{.bsp}
+[[Ursachen für Fehler?]{.bsp}]{.slides}
 
 
 ::: notes

@@ -204,7 +204,7 @@ in Ordnung ...
 
 *   _Hinweis_: Betrifft vor allem die (äußere) Form!
 
-[Hinweis: Genauere Betrachtung in "Coding Rules"]{.bsp}
+[[Hinweis: Genauere Betrachtung in "Coding Rules"]{.bsp}]{.slides}
 
 
 ## Code Smells: Schlechte Kommentare I
