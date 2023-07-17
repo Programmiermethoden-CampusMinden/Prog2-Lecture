@@ -411,7 +411,7 @@ Properties und deren Default-Einstellungen.
 Alternativen/Ergänzungen: beispielsweise [MetricsReloaded](https://github.com/BasLeijdekkers/MetricsReloaded).
 :::
 
-[Demo: Konfiguration mit Eclipse-CS, Hinweis auf Formatter]{.bsp}
+[Demo: Konfiguration mit Eclipse-CS, Hinweis auf Formatter]{.bsp href="https://youtu.be/0ny6e6CNTF8"}
 
 
 ## SpotBugs: Finde Anti-Pattern und potentielle Bugs (Linter)
