@@ -228,7 +228,7 @@ im Container geschrieben und erscheint dann im Arbeitsverzeichnis auf dem Host .
 dann mit `java Hello` die Klasse ausgeführt werden.
 :::
 
-[Demo: Container in der Konsole]{.bsp}
+[Demo: Container in der Konsole]{.bsp href="https://youtu.be/LE_QcHqUg9Y"}
 
 
 ## Images selbst definieren
@@ -323,7 +323,7 @@ Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechne
 `docker run openjdk:17 javac Hello.java`.
 :::
 
-[Demo: GitLab CI/CD und Docker]{.bsp}
+[Demo: GitLab CI/CD und Docker]{.bsp href="https://youtu.be/3Tj3lhcoKro"}
 
 
 ## CI-Pipeline (GitHub)
@@ -359,7 +359,7 @@ Ubuntu-Runner als Container ausgeführt. Die Aktionen im `steps`-Teil, wie beisp
 Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechner: `docker run openjdk:17 javac Hello.java`.
 :::
 
-[Demo: GitHub Actions und Docker]{.bsp}
+[Demo: GitHub Actions und Docker]{.bsp href="https://youtu.be/jrxoax2fPRI"}
 
 
 ## VSCode und das Plugin "Remote - Containers"
@@ -405,7 +405,7 @@ Auf diesem Konzept setzt auch der kommerzielle Service [GitHub Codespaces](https
 von GitHub auf.
 :::
 
-[Demo: VSCode und Docker]{.bsp}
+[Demo: VSCode und Docker]{.bsp href="https://youtu.be/Rs1W_rXkoNM"}
 
 
 ::::::::: notes
