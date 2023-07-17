@@ -105,7 +105,7 @@ public enum Fach {
 3.  Enumerations stellen einen neuen Typ dar: hier der Typ `Fach`
 4.  Methoden: `name()`, `ordinal()`, `values()`, `toString()`
 
-[Erinnerung: Bedeutung von static und final]{.bsp}
+[[Erinnerung: Bedeutung von static und final]{.bsp}]{.slides}
 
 
 ::::::::: notes

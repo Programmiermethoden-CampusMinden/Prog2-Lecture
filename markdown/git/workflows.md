@@ -176,7 +176,7 @@ zu bringen, führt man dann einfach folgendes aus (im Beispiel für den `master`
     $ git push origin master      # Pushe lokalen master in den Fork
 :::::::::
 
-[Beispiel: Forken mit Gitlab, Namen für Remotes]{.bsp}
+[[Beispiel: Forken mit Gitlab, Namen für Remotes]{.bsp}]{.slides}
 
 
 ## Feature-Branches aktualisieren: Mergen mit _master_ vs. Rebase auf _master_
