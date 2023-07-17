@@ -123,7 +123,7 @@ String[] y = x;  // String[] ist KEIN Object[]!!!
 *   Arrays besitzen Typinformationen über gespeicherte Elemente
 *   Prüfung auf Typ-Kompatibilität zur **Laufzeit** (nicht Kompilierzeit!)
 
-[Hinweis auf Java-Geschichte]{.bsp}
+[Hinweis auf Java-Geschichte [(Java-Insel: "Type Erasure")]{.notes}]{.bsp href="https://openbook.rheinwerk-verlag.de/javainsel/11_002.html#u11.2.2"}
 
 ::: notes
 Arrays gab es sehr früh, Generics erst relativ spät (ab Java6) => bei
