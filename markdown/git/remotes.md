@@ -249,7 +249,7 @@ Zwischenzeit weiter geschoben - dann muss die Aktualisierung erneut durchgeführ
 werden).
 :::::::::
 
-[Beispiel für Zusammenführen (merge und push), Anmerkung zu fast forward merge]{.bsp}
+[Beispiel für Zusammenführen (merge und push), Anmerkung zu fast forward merge]{.bsp href="https://youtu.be/moqywsxtEy8"}
 
 
 ## Branches und Remotes
@@ -264,7 +264,7 @@ werden).
     *   Lokale Änderungen an remote Branches nicht möglich! \newline
         => **Remote Branch in lokalen Branch mergen** (oder auschecken)
 
-[Beispiel]{.bsp}
+[[Beispiel]{.bsp}]{.slides}
 
 
 ## Zusammenfassung: Arbeiten mit Remotes

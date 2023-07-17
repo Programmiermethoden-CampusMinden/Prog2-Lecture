@@ -90,7 +90,7 @@ man kann prinzipiell auch in der Kurzform das "=" nutzen, also "-x=10", oder in 
 mit einem Leerzeichen trennen, also "--breite 10".
 :::
 
-[Demo IDE und CLI]{.bsp}
+[Demo IDE und CLI]{.bsp href="https://youtu.be/a3XUfDbD9uo"}
 
 ::: notes
 Hinweis IntelliJ: "`Edit Configurations`" => Kommandozeilenparameter unter "`Build and run`" im entsprechenden Feld eintragen
