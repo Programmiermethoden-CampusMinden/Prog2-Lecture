@@ -360,7 +360,7 @@ Manuelles Editieren nötig (Auflösung des Konflikts):
 Alternativ: Nutzung graphischer Oberflächen mittels `git mergetool`
 :::
 
-[Konsole: Branchen und Mergen]{.bsp}
+[Konsole: Branchen und Mergen]{.bsp href="https://youtu.be/B8sesK1GyiE"}
 
 
 ## Rebasen: Verschieben von Branches
@@ -449,7 +449,7 @@ und Message bleiben aber erhalten.)
         "kopflosen" Commits irgendwann tatsächlich verschwinden.
         :::
 
-[Konsole: Commit auschecken]{.bsp}
+[[Konsole: Commit auschecken]{.bsp}]{.slides}
 
 
 ## Wrap-Up
