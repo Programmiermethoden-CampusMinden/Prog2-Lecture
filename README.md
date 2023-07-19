@@ -2,7 +2,7 @@
 
 ## Overview
 
-This represents the lecture material for the lecture "Programmiermethoden", a course developed and taught at Bielefeld University of Applied Sciences.
+This represents the lecture material for the lecture ["Programmiermethoden"](https://www.hsbi.de/elearning/goto.php?target=crs_1089782&client_id=FH-Bielefeld), a course developed and taught at Bielefeld University of Applied Sciences.
 
 
 ## Contributing
