@@ -16,7 +16,7 @@ When submitting pull requests, please make sure that your **feature branch start
 
 ## Building Stuff
 
-Please see [https://github.com/cagix/pandoc-lecture](https://github.com/cagix/pandoc-lecture/blob/master/README.md#installing-and-using-pandoc-lecture) for detailed instructions on how to produce teaching materials (PDF slides, website) from the sources in this repository.
+Please see [https://github.com/cagix/pandoc-lecture](https://github.com/cagix/pandoc-lecture/blob/master/README.md#installing-and-using-pandoc-lecture) for detailed instructions on how to produce teaching materials (PDF slides, website) from the sources maintained in this repository.
 
 
 ## Credits
