@@ -11,7 +11,7 @@ Questions, bug reports, feature requests and pull requests are very welcome.
 
 Please first check whether your request has already been dealt with in other (open or closed) issues. Feel free to reopen relevant closed issues to add your request there.
 
-When submitting pull requests, please make sure that your **feature branch starts on top of the current `master` branch**. Upon acceptance (i.e. merging your pull request), your contribution automatically becomes subject to the licence of this repository (CC BY-SA 4.0).
+When submitting pull requests, please make sure that your **feature branch starts at the tip of the current `master` branch**. Upon acceptance (i.e. merging your pull request), your contribution automatically becomes subject to the licence of this repository (CC BY-SA 4.0).
 
 
 ## Building Stuff
