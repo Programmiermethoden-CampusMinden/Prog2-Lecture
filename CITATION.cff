@@ -1,0 +1,30 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Lecture "Programmiermethoden"
+message: >-
+  If you use this lecture material, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Carsten
+    family-names: Gips
+    email: cagix@hsbi.de
+    affiliation: HSBI
+    orcid: 'https://orcid.org/0000-0002-4230-9060'
+repository-code: 'https://github.com/Programmiermethoden/PM-Lecture'
+url: >-
+  https://www.hsbi.de/elearning/goto.php?target=crs_1089782&client_id=FH-Bielefeld
+abstract: >-
+  This represents the lecture material for the lecture
+  "Programmiermethoden", a course developed and taught at
+  Bielefeld University of Applied Sciences.
+keywords:
+  - java
+  - git
+  - refactoring
+  - testing
+  - clean code
+  - oer
+license: CC-BY-SA-4.0
