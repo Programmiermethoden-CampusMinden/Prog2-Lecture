@@ -1,5 +1,5 @@
 ---
-archetype: "chapter"
+archetype: "default"
 title: "Testen mit JUnit und Mockito"
 menuTitle: "Testing"
 weight: 2

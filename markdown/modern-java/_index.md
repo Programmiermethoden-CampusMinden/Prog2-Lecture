@@ -1,5 +1,5 @@
 ---
-archetype: "chapter"
+archetype: "default"
 title: "Modern Java: Funktionaler Stil und Stream-API"
 menuTitle: "Modern Java"
 weight: 8

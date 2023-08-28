@@ -1,5 +1,5 @@
 ---
-archetype: "chapter"
+archetype: "default"
 title: "Programmiermethoden und Clean Code"
 menuTitle: "Coding"
 weight: 3

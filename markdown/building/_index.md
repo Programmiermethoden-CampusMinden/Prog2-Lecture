@@ -1,5 +1,5 @@
 ---
-archetype: "chapter"
+archetype: "default"
 title: "Bauen von Programmen, Automatisierung, Continuous Integration"
 menuTitle: "Building"
 weight: 4

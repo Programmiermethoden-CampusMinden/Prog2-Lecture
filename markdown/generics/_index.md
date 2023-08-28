@@ -1,5 +1,5 @@
 ---
-archetype: "chapter"
+archetype: "default"
 title: "Generics: Umgang mit parametrisierten Typen"
 menuTitle: "Generics"
 weight: 6

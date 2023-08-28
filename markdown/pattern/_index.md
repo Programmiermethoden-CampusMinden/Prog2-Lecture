@@ -1,5 +1,5 @@
 ---
-archetype: "chapter"
+archetype: "default"
 title: "Entwurfsmuster"
 menuTitle: "Pattern"
 weight: 5

@@ -1,5 +1,5 @@
 ---
-archetype: "chapter"
+archetype: "default"
 title: "Multi-Threading: Parallelisierung von Programmen"
 menuTitle: "Threads"
 weight: 9
