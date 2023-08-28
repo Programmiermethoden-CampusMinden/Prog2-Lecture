@@ -1,5 +1,5 @@
 ---
-archetype: "chapter"
+archetype: "default"
 title: "Versionierung mit Git"
 menuTitle: "Git"
 weight: 1

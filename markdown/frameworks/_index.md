@@ -1,5 +1,5 @@
 ---
-archetype: "chapter"
+archetype: "default"
 title: "Umgang mit Frameworks"
 menuTitle: "Frameworks"
 weight: 11

@@ -1,5 +1,5 @@
 ---
-archetype: "chapter"
+archetype: "default"
 title: "Zugriffe auf Datenbanken: JDBC"
 menuTitle: "Database"
 weight: 12

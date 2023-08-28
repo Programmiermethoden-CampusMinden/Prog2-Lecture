@@ -1,5 +1,5 @@
 ---
-archetype: "chapter"
+archetype: "default"
 title: "Praktikumsaufgaben Gruppe Basics"
 weight: 1
 
