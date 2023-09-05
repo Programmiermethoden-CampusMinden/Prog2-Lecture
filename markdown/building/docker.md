@@ -340,7 +340,7 @@ jobs:
         runs-on: ubuntu-latest
         container: docker://openjdk:17
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
             - run: java -version
             - run: javac Hello.java
             - run: java Hello
