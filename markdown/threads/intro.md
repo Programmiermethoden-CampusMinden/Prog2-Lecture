@@ -66,9 +66,7 @@ fhmedia:
 
 ## 42
 
-::: center
 ![](images/screenshot_swingworker.png){width="80%"}
-:::
 
 <!-- XXX
 Wert 42 ausprobieren (ist zeitlich ganz gut)
