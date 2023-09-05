@@ -304,7 +304,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-java@v3
         with:
           java-version: '17'
@@ -318,7 +318,7 @@ jobs:
     needs: job1
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-java@v3
         with:
           java-version: '17'
@@ -350,7 +350,7 @@ jeweils einen Job.
     virtualisierten Ubuntu-Runner ausgeführt werden.
 
     Es wird zunächst das Repo mit Hilfe der Checkout-Action ausgecheckt
-    (`uses: actions/checkout@v3`), das JDK eingerichtet/installiert
+    (`uses: actions/checkout@v4`), das JDK eingerichtet/installiert
     (`uses: actions/setup-java@v3`) und der im Repo enthaltene Gradle-Wrapper
     auf Unversehrtheit geprüft (`uses: gradle/wrapper-validation-action@v1`).
 
