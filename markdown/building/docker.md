@@ -101,9 +101,7 @@ In diesen Fällen kann eine Virtualisierung helfen.
 
 ## Virtualisierung: Container vs. VM
 
-::: center
 ![](images/virtualisierung.png){width="80%" web_width="60%"}
-:::
 
 ::: notes
 Wenn man über Virtualisierung auf dem Desktop spricht, kann man grob zwei Varianten
