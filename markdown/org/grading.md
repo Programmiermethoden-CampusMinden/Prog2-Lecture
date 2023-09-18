@@ -80,7 +80,7 @@ ist bis zur Deadline im ILIAS hochzuladen und im nachfolgenden Praktikum vorzust
 
 ## Hinweise zur Klausur (theoretische Teilleistung)
 
-**Prüfung Theorie (Termin 1)**: Die Prüfung zum theoretischen Teil findet am Mittwoch, 05.07.23,
+**Prüfung Theorie (Termin 1)**: Die Prüfung zum theoretischen Teil findet am Mittwoch, den 05.07.23,
 im B40 am Campus Minden als digitale Klausur auf dem HSBI-Prüfungs-ILIAS statt.
 
 Da in diesem Raum nur 30 Personen gleichzeitig geprüft werden können, werden wir in zwei
