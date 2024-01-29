@@ -77,4 +77,4 @@ Literatur empfohlen.
 
 ### Vorgaben für die Aufgaben
 
--   [Dungeon-Framework](https://github.com/Programmiermethoden/Dungeon)
+-   [Dungeon-Framework](https://github.com/Dungeon-CampusMinden/Dungeon)

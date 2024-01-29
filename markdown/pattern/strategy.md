@@ -162,7 +162,7 @@ public class Studi {
 }
 ```
 
-[Konsole strategy.SortDefault, strategy.SortOwnCrit]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/pattern/src/strategy/"}
+[Konsole strategy.SortDefault, strategy.SortOwnCrit]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/pattern/src/strategy/"}
 
 _Anmerkung_:
 Die Interfaces `Comparable` und `Comparator` und deren Nutzung wurde(n) in
@@ -198,7 +198,7 @@ Implementieren Sie das Strategie-Muster für eine Übersetzungsfunktion:
 ![](images/translator.png){width="80%"}
 :::
 
-[Konsole strategy.TranslatorExample]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/pattern/src/strategy/TranslatorExample.java"}
+[Konsole strategy.TranslatorExample]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/pattern/src/strategy/TranslatorExample.java"}
 
 
 ## Wrap-Up

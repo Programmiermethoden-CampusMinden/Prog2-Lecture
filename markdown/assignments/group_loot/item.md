@@ -16,9 +16,9 @@ kann.
 ## Items
 
 In den Vorgaben sind bereits
-[Items](https://github.com/Programmiermethoden/Dungeon/tree/master/game/src/ecs/items) und
+[Items](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/game/src/ecs/items) und
 ein
-[Inventory-Component](https://github.com/Programmiermethoden/Dungeon/blob/master/game/src/ecs/components/InventoryComponent.java)
+[Inventory-Component](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/components/InventoryComponent.java)
 implementiert. Führen Sie eine Codeanalyse durch und erklären Sie die Funktionalität.
 
 Implementieren Sie mindestens drei verschiedene Typen von Gegenständen (beispielsweise

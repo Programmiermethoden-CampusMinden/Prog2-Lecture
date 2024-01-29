@@ -98,7 +98,7 @@ auch Commit-Messages und PR-Summaries.
 ## Installation des Frameworks
 
 Sie finden das Projekt auf GitHub:
-https://github.com/Programmiermethoden/Dungeon.
+https://github.com/Dungeon-CampusMinden/Dungeon.
 
 ![](images/screenshot_dungeon_clone.png)
 
@@ -107,7 +107,7 @@ können. Prinzipiell gibt es viele verschiedene Wege, in diesem Tutorial
 laden wir es per Git in der Konsole herunter:
 
 ``` sh
-git clone git@github.com:Programmiermethoden/Dungeon.git pm-dungeon
+git clone git@github.com:Dungeon-CampusMinden/Dungeon.git pm-dungeon
 ```
 
 Dabei entsteht der Ordner `pm-dungeon/` mit dem Dungeon-Projekt als
@@ -183,7 +183,7 @@ In diesem Projekt finden Sie unter `game/src/` die Java-Packages, die
 wir im Projekt für Sie bereitstellen. In `game/assets/` finden sich ein
 paar Beispieltexturen für den Boden, die Wände und den Helden.
 
-![](https://github.com/Programmiermethoden/Dungeon/raw/master/doc/ecs/img/ecs.png)
+![](https://raw.githubusercontent.com/Dungeon-CampusMinden/Dungeon/master/game/doc/img/ecs.png)
 
 Die Klasse `starter.Game` ist der zentrale Einstiegspunkt. Hier werden
 alle wichtigen Dinge konfiguriert, und es gibt die
@@ -430,7 +430,7 @@ benötigten Components aufweisen. In der aktuellen Implementierung kann
 aber leider passieren, dass ein System mehrere Components braucht und
 sich dann mit einer `MissingComponentException` über das
 Nichtvorhandensein selbiger beschwert. Diese Abhängigkeiten sind in
-https://github.com/Programmiermethoden/Dungeon/blob/master/doc/ecs/systems/readme.md
+https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/doc/ecs/systems/readme.md
 dokumentiert.
 
 

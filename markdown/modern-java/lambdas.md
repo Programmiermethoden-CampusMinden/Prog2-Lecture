@@ -61,7 +61,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/d2398cc8e1279e6b6bf1df06bd30b731e714d04d10e15b87a5f89aa07cbaf97978bb12f82ea0c7eff8a3133eb65134521933218fb94856fb6e8a6dc187dded28"
     name: "VL Lambda-Ausdrücke und funktionale Interfaces"
 challenges: |
-    **Beispiel aus einem Code-Review im [Programmiermethoden/Dungeon](https://github.com/Programmiermethoden/Dungeon)**
+    **Beispiel aus einem Code-Review im [Dungeon-CampusMinden/Dungeon](https://github.com/Dungeon-CampusMinden/Dungeon)**
 
     Erklären Sie folgenden Code:
 
@@ -82,7 +82,7 @@ challenges: |
     ```
 
     <!--
-    aus https://github.com/Programmiermethoden/Dungeon/pull/128#pullrequestreview-1261631606
+    aus https://github.com/Dungeon-CampusMinden/Dungeon/pull/128#pullrequestreview-1261631606
 
     hmmm. auf der rechten seite steht ein lambda-ausdruck: `entity1` ist der parameter, und hinter dem `->` kommt der "funktionskörper".
     geschweifte klammern, weil du keine einzelne expression hast, sondern ein statement (`println()`) und ij vermutlich wg. des kommentars
@@ -104,7 +104,7 @@ challenges: |
 
     **Sortieren mit Lambdas und funktionalen Interfaces**
 
-    In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/lambda)
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/lambda)
     finden Sie die Klassen `Student` und `StudentSort` mit
     vorgefertigten Methoden  zu den Teilaufgaben sowie eine Testsuite
     `SortTest` mit einzelnen Testfälllen zu den Teilaufgaben, mit der Ihre
@@ -241,7 +241,7 @@ public class Outer {
 }
 ```
 
-[Beispiel mit Iterator als innere Klasse: nested.StudiListNested]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListNested.java"}
+[Beispiel mit Iterator als innere Klasse: nested.StudiListNested]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListNested.java"}
 
 ### Statische innere Klassen ("_Static Nested Classes_")
 
@@ -291,7 +291,7 @@ sl.sort(
 *   Nutzung typischerweise bei GUIs: Event-Handler etc.
 :::
 
-[Demo: nested.DemoAnonymousInnerClass]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoAnonymousInnerClass.java"}
+[Demo: nested.DemoAnonymousInnerClass]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoAnonymousInnerClass.java"}
 
 
 ## Vereinfachung mit Lambda-Ausdruck
@@ -321,7 +321,7 @@ werden kann, muss der erwartete Parameter vom Typ her ein "**funktionales Interf
 (s.u.) sein!
 :::
 
-[Demo: nested.DemoLambda]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoLambda.java"}
+[Demo: nested.DemoLambda]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoLambda.java"}
 
 
 ## Syntax für Lambdas

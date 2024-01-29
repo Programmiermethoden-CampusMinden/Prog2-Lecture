@@ -63,8 +63,8 @@ Anregungen für **Spielideen** können Sie beispielsweise in den folgenden Video
 
 | Aufgabe                                                                                                                      | Punkte |
 |:-----------------------------------------------------------------------------------------------------------------------------|:-------|
-| [5P Bounty](https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty%3A5p+-linked%3Apr)   | 5      |
-| [10P Bounty](https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty%3A10p+-linked%3Apr) | 10     |
+| [5P Bounty](https://github.com/Dungeon-CampusMinden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty%3A5p+-linked%3Apr)   | 5      |
+| [10P Bounty](https://github.com/Dungeon-CampusMinden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty%3A10p+-linked%3Apr) | 10     |
 
 _Hinweis_: Die Liste der Bounty-Aufgaben wird sich dynamisch verändern. Es wird vorkommen,
 dass Aufgaben im Laufe des Semesters nicht mehr zur Verfügung stehen. Ebenso können im Laufe
@@ -72,7 +72,7 @@ des Semesters neue Aufgaben hinzu kommen. Nicht mehr angebotene Aufgaben können
 mehr zur Bearbeitung wählen.
 
 _Hinweis_: Für die Bounty-Aufgaben können Sie zusätzlich bis zu 3 Bonus-Punkte bekommen, wenn
-Sie Ihre Lösung als [Pull-Request](https://github.com/Programmiermethoden/Dungeon/compare) im
-[Dungeon-Repo](https://github.com/Programmiermethoden/Dungeon) einreichen und Ihr PR vom
+Sie Ihre Lösung als [Pull-Request](https://github.com/Dungeon-CampusMinden/Dungeon/compare) im
+[Dungeon-Repo](https://github.com/Dungeon-CampusMinden/Dungeon) einreichen und Ihr PR vom
 Dungeon-Team akzeptiert (gemergt) wird. Es kann nur ein PR pro Bounty-Aufgabe gemergt werden,
 die Entscheidung liegt beim Dozenten.

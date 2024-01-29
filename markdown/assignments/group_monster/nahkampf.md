@@ -21,9 +21,9 @@ Um diese Aufgabe lösen zu können, müssen Sie vorher
 ## Nahkampf
 
 In den Vorgaben ist ein Konzept für den
-[Fernkampf mit Skills](https://github.com/Programmiermethoden/Dungeon/tree/master/game/src/ecs/components/skill)
+[Fernkampf mit Skills](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/game/src/ecs/components/skill)
 mit einen
-[Projektil System](https://github.com/Programmiermethoden/Dungeon/blob/master/game/src/ecs/systems/ProjectileSystem.java)
+[Projektil System](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/systems/ProjectileSystem.java)
 implementiert. Führen Sie eine Codeanalyse durch und erklären Sie, wie das Konzept
 funktioniert.
 

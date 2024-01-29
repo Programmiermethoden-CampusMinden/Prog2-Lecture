@@ -16,7 +16,7 @@ public final class DialogDemo extends JPanel {
     private final JButton b2;
     private final JButton b3;
     private final String path =
-            "https://raw.githubusercontent.com/Programmiermethoden/PM-Lecture/master/static/images/logo.png";
+            "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/PM-Lecture/master/static/images/logo.png";
 
     /** Erzeuge ein Demo-Panel */
     public DialogDemo() {

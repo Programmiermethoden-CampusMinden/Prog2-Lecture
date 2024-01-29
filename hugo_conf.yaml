@@ -16,7 +16,7 @@ contentDir: "temp/content"
 publishDir: "docs"
 
 params:
-  editURL: "https://github.com/Programmiermethoden/PM-Lecture/edit/master/markdown/"
+  editURL: "https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/edit/master/markdown/"
   author: "cagix"
   titleSeparator: " "
   alwaysopen: false

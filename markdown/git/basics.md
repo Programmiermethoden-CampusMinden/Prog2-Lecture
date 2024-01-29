@@ -368,7 +368,7 @@ keinen _atomic commit_ mehr vor sich.
 
 :::::: notes
 Schauen Sie sich einmal einen Screenshot eines `git log --oneline 61e48f0..e2c8076`
-im [Programmiermethoden/Dungeon](https://github.com/Programmiermethoden/Dungeon) an:
+im [Dungeon-CampusMinden/Dungeon](https://github.com/Dungeon-CampusMinden/Dungeon) an:
 
 ![](images/screenshot_git_log.png)
 

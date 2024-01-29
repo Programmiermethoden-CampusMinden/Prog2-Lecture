@@ -66,7 +66,7 @@ public class Studi {
 :::
 
 [[Probleme: Typsicherheit, Kontext]{.bsp}]{.slides}
-[[Beispiel enums.v1.Studi]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v1/Studi.java"}]{.notes}
+[[Beispiel enums.v1.Studi]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v1/Studi.java"}]{.notes}
 
 
 ## Verbesserung: Einfache Aufzählung
@@ -144,7 +144,7 @@ public enum Fach {
     }
     ```
 
-    [Beispiel enums.FinalDemo]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/FinalDemo.java"}
+    [Beispiel enums.FinalDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/FinalDemo.java"}
 
 *   Methoden: `final` deklarierte Methoden können bei Vererbung nicht überschrieben werden
 *   Klassen: von `final` deklarierten Klassen können keine Unterklassen gebildet werden
@@ -181,7 +181,7 @@ Außerdem können wir folgende Eigenschaften nutzen (u.a., s.u.):
 *   Enumerations haben Methode `final T[] values()` für die Iteration über die Konstanten
 :::
 
-[Demo: enums.v2.Studi]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v2/Studi.java"}
+[Demo: enums.v2.Studi]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v2/Studi.java"}
 
 
 ## Enum: Genauer betrachtet
@@ -253,7 +253,7 @@ public enum Fach {
 **Hinweis**: Diese Methoden gibt es auch bei den "einfachen" Enumerationen (s.o.).
 :::
 
-[Demo: enums.v3]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/java-jvm/src/enums/v3/"}
+[Demo: enums.v3]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/java-jvm/src/enums/v3/"}
 
 
 ## Wrap-Up

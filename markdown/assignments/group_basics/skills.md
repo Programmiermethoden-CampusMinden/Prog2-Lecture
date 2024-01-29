@@ -16,9 +16,9 @@ implementieren, die dann vom Spieler verwendet werden können.
 ## Fähigkeiten
 
 In den Vorgaben ist bereits ein
-[Skill-System](https://github.com/Programmiermethoden/Dungeon/blob/master/game/src/ecs/systems/SkillSystem.java)
+[Skill-System](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/systems/SkillSystem.java)
 und ein
-[Feuerball-Skill](https://github.com/Programmiermethoden/Dungeon/blob/master/game/src/ecs/components/skill/FireballSkill.java)
+[Feuerball-Skill](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/components/skill/FireballSkill.java)
 implementiert. Führen Sie eine Codeanalyse durch und erklären Sie die Funktionalität.
 
 Implementieren Sie ein Magie-Konzept. Der Spieler soll in der Lage sein, verschiedene Zauber
@@ -37,7 +37,7 @@ oder ähnliches.
 ## Levelaufstieg
 
 In den Vorgaben gibt es bereits ein
-[XP-System](https://github.com/Programmiermethoden/Dungeon/blob/master/game/src/ecs/systems/XPSystem.java)
+[XP-System](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/systems/XPSystem.java)
 um Erfahrungspunkte zu sammeln und um Level aufzusteigen. Führen Sie eine Codeanalyse durch
 und erklären Sie die Funktionalität.
 
