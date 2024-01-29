@@ -22,7 +22,7 @@ Um diese Aufgabe lösen zu können, müssen Sie vorher
 ## Lockpicking
 
 In den Vorgaben finden Sie die Implementierung einer
-[Schatzkiste](https://github.com/Programmiermethoden/Dungeon/blob/master/game/src/ecs/entities/Chest.java).
+[Schatzkiste](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/entities/Chest.java).
 Führen Sie eine Codeanalyse durch und erklären Sie die Funktionalität.
 
 Implementieren Sie eine Möglichkeit, dass Schatzkisten verschlossen sein können und nur mit

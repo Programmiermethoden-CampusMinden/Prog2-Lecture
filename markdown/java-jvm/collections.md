@@ -119,7 +119,7 @@ private List<Entity> entities = new ArrayList<>();
 ![](images/arraylist.png){width="80%"}
 
 ::: notes
-[Link zu einer netten Animation](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/images/arraylist.gif)
+[Link zu einer netten Animation](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/images/arraylist.gif)
 
 Eine `ArrayList<T>` ist von außen betrachtet ein sich dynamisch vergrößerndes Array.
 
@@ -148,7 +148,7 @@ Die Methoden einer `ArrayList<T>` sind nicht `synchronized`.
 ![](images/linkedlist.png){width="80%"}
 
 ::: notes
-[Link zu einer netten Animation](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/images/linkedlist.gif)
+[Link zu einer netten Animation](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/images/linkedlist.gif)
 
 Eine `LinkedList<T>` ist eine Implementierung einer doppelt verketteten Liste (diese
 kennen Sie bereits aus ADS) in Java.
@@ -220,14 +220,14 @@ Methode ist im Interface als Default-Methode implementiert.
 Damit kann man die Datenstrukturen auf eine von der Datenstruktur vorgegebene Weise ablaufen,
 beispielsweise einen Binärbaum.
 
-[Link zu einer netten Animation](https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/images/iterator.gif)
+[Link zu einer netten Animation](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/images/iterator.gif)
 
 Man kann auch selbst für eigene Klassen einen passenden `Iterator<T>` implementieren, der zum Ablaufen
 der Elemente der eigenen Klasse genutzt werden kann. Damit die eigene Klasse auch in einer `for`-Schleife
 genutzt werden kann, muss sie aber auch noch `Iterable<T>` implementieren.
 
 
-[Beispiel: iterator_example.*]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/java-jvm/src/collections/iterator_example/"}
+[Beispiel: iterator_example.*]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/java-jvm/src/collections/iterator_example/"}
 :::
 
 
@@ -313,7 +313,7 @@ Die Unterklasse `LinkedHashMap<K,V>` kann Ordnung zwischen den Elementen halten.
 eine doppelt verkettete Liste verwendet.
 
 
-[Beispiel: hash_example.HashCodeExample]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java"}
+[Beispiel: hash_example.HashCodeExample]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java"}
 :::
 
 
@@ -393,7 +393,7 @@ Spielregeln:
 
 
 ::: notes
-[Beispiel: hash_example.HashCodeExample]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java"}
+[Beispiel: hash_example.HashCodeExample]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/collections/hash_example/HashCodeExample.java"}
 :::
 
 

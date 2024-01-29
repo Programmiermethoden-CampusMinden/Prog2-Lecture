@@ -116,7 +116,7 @@ Nachteile:
     `finally`-Block!
 :::
 
-[Demo: lock.*]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/threads/src/lock/"}
+[Demo: lock.*]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/threads/src/lock/"}
 
 
 ## Thread-Management: Executor-Interface und Thread-Pools
@@ -184,7 +184,7 @@ pool.execute(x);    // x.start()
 pool.shutdown();    // Feierabend :)
 ```
 
-[Demo: executor.ExecutorDemo]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/executor/ExecutorDemo.java"}
+[Demo: executor.ExecutorDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/executor/ExecutorDemo.java"}
 
 
 ::::::::: notes
@@ -244,7 +244,7 @@ public class RecursiveTask extends ForkJoinTask<V> {
 }
 ```
 
-[Demo: forkjoin.ForkJoin]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/forkjoin/ForkJoin.java"}
+[Demo: forkjoin.ForkJoin]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/forkjoin/ForkJoin.java"}
 
 
 ## Swing und Threads
@@ -286,7 +286,7 @@ public class RecursiveTask extends ForkJoinTask<V> {
     *   `V` Typ für Zwischenergebnisse
 :::
 
-[Demo: misc.SwingWorkerDemo]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/threads/src/misc/SwingWorkerDemo.java"}
+[Demo: misc.SwingWorkerDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/misc/SwingWorkerDemo.java"}
 
 
 ## Letzte Worte :-)

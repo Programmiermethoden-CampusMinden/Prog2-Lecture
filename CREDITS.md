@@ -38,7 +38,7 @@ not part of the CC BY-SA 4.0 licence of this project.
 
 ## Contributors
 
-[This project](https://github.com/Programmiermethoden/PM-Lecture)
+[This project](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture)
 has been created and is being maintained by the author
 [Carsten Gips](https://github.com/cagix) and various
-[contributors](https://github.com/Programmiermethoden/PM-Lecture/graphs/contributors).
+[contributors](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/graphs/contributors).

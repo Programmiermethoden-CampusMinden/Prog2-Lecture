@@ -46,7 +46,7 @@ tldr: |
 
   Für die Praktika in der Veranstaltung Programmiermethoden wird der Google Java Style oder
   AOSP genutzt. Für die passende Checkstyle-Konfiguration wird eine minimale
-  [checkstyle.xml](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/coding/src/checkstyle.xml)
+  [checkstyle.xml](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/checkstyle.xml)
   bereitgestellt (vgl. Folie "Konfiguration für das PM-Praktikum").
 outcomes:
   - k2: "Erklären verschiedener Coding Conventions"
@@ -224,7 +224,7 @@ Git-Hook definiert, wird vor jedem Commit der Code entsprechend den Richtlinien 
 
 _Hinweis_: Bei Spotless in Gradle müssen je nach den Versionen von Spotless/google-java-format
 bzw. des JDK noch Optionen in der Datei `gradle.properties` eingestellt werden (siehe
-[Demo](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/coding/src/formatter/) und
+[Demo](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/formatter/) und
 [Spotless > google-java-format (Web)](https://github.com/diffplug/spotless/tree/main/plugin-gradle#google-java-format)).
 
 **Tipp**: Die Formatierung über die IDE ist angenehm, aber in der Praxis leider oft etwas
@@ -239,7 +239,7 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
-[Demo: Konfiguration Formatter (IDE), Spotless/Gradle]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/coding/src/formatter/"}
+[Demo: Konfiguration Formatter (IDE), Spotless/Gradle]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/coding/src/formatter/"}
 
 
 ## Metriken: Kennzahlen für verschiedene Aspekte zum Code
@@ -357,7 +357,7 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
-[Demo: IntelliJ, Checkstyle/Gradle]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/coding/src/checkstyle/"}
+[Demo: IntelliJ, Checkstyle/Gradle]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/checkstyle/"}
 
 
 ## Checkstyle: Konfiguration
@@ -446,7 +446,7 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
-[Demo: SpotBugs/Gradle]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/coding/src/spotbugs/"}
+[Demo: SpotBugs/Gradle]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/spotbugs/"}
 
 
 ## Konfiguration für das PM-Praktikum (Format, Metriken, Checkstyle, SpotBugs)
@@ -546,8 +546,8 @@ ein.
 </module>
 ```
 
-Sie können diese Basis-Einstellungen auch aus dem Programmiermethoden/PM-Lecture-Repo direkt herunterladen:
-[checkstyle.xml](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/coding/src/checkstyle.xml).
+Sie können diese Basis-Einstellungen auch aus dem Programmiermethoden-CampusMinden/PM-Lecture-Repo direkt herunterladen:
+[checkstyle.xml](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/checkstyle.xml).
 
 Sie können zusätzlich gern noch die weiteren (und strengeren) Regeln aus der vom Checkstyle-Projekt
 bereitgestellten Konfigurationsdatei für den
@@ -596,7 +596,7 @@ Fehler beinhalten, die SpotBugs melden würde.
 
 *   Metriken: Einhaltung von Regeln in Zahlen ausdrücken
 *   Prüfung manuell durch Code Reviews oder durch Tools wie **Checkstyle** oder **SpotBugs**
-*   Definition des ["PM-Styles"](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/coding/src/checkstyle.xml)
+*   Definition des ["PM-Styles"](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/checkstyle.xml)
     [(siehe Folie "Konfiguration für das PM-Praktikum")]{.notes}
 
 

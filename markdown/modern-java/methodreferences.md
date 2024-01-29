@@ -44,7 +44,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/662003c5cb2cdef08b5d35cefd49b05f561fa26471cf3da22c4ff4310596909d0e21300133fc2fac353dfc4a391c8bb9af0dd47293efabfa8c3464429534d719"
     name: "VL Methoden-Referenzen"
 challenges: |
-    In den [Vorgaben](https://github.com/Programmiermethoden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/lambda)
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/lambda)
     finden Sie die Klassen `Student` und `StudentSort` mit
     vorgefertigten Methoden  zu den Teilaufgaben sowie eine Testsuite
     `SortTest` mit einzelnen Testfälllen zu den Teilaufgaben, mit der Ihre
@@ -179,7 +179,7 @@ public class Studi {
 }
 ```
 
-[Demo: methodreferences.DemoStaticMethodReference]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoStaticMethodReference.java"}
+[Demo: methodreferences.DemoStaticMethodReference]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoStaticMethodReference.java"}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweiten Parameter eine Instanz von
@@ -214,7 +214,7 @@ public class Studi {
 }
 ```
 
-[Demo: methodreferences.DemoInstanceMethodReferenceObject]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceObject.java"}
+[Demo: methodreferences.DemoInstanceMethodReferenceObject]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceObject.java"}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine Instanz
@@ -248,7 +248,7 @@ public class Studi {
 }
 ```
 
-[Demo: methodreferences.DemoInstanceMethodReferenceType]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceType.java"}
+[Demo: methodreferences.DemoInstanceMethodReferenceType]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceType.java"}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine Instanz
@@ -292,7 +292,7 @@ Thread t2 = new Thread(() -> System.out.println("t2: wuppie"));
 Thread t3 = new Thread(ThreadStarter::wuppie);
 ```
 
-[Beispiel: methodreferences.ThreadStarter]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/ThreadStarter.java"}
+[Beispiel: methodreferences.ThreadStarter]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/ThreadStarter.java"}
 
 
 ## Ausblick: Datenstrukturen als Streams
@@ -316,7 +316,7 @@ List<Integer> wordLengths = words.stream()
         .collect(toList());
 ```
 
-[Beispiel: methodreferences.CollectionStreams]{.bsp href="https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/CollectionStreams.java"}
+[Beispiel: methodreferences.CollectionStreams]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/CollectionStreams.java"}
 
 ::: notes
 *   Collections können als Datenstrom betrachtet werden: `stream()`

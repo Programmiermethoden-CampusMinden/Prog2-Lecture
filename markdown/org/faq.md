@@ -250,11 +250,11 @@ für eine Bounty-Aufgabe geben. In der Regel wird aber pro Bounty-Aufgabe maxima
 ein Pull-Request akzeptiert (gemergt). Es gibt keinen Anspruch auf einen Merge
 und damit keinen Anspruch auf die Bonus-Punkte, die Entscheidung liegt beim Dozenten.
 
-["Bounty"-Aufgaben]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty%3A5p%2Cbounty%3A10p+-linked%3Apr
-[Suchanfrage]: https://github.com/Programmiermethoden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty%3A5p%2Cbounty%3A10p+-linked%3Apr
+["Bounty"-Aufgaben]: https://github.com/Dungeon-CampusMinden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty%3A5p%2Cbounty%3A10p+-linked%3Apr
+[Suchanfrage]: https://github.com/Dungeon-CampusMinden/Dungeon/issues?q=is%3Aopen+is%3Aissue+label%3Abounty%3A5p%2Cbounty%3A10p+-linked%3Apr
 [Verteilung der Punkte]: #verteilung-der-punkte
-[Dungeon-Repo]: https://github.com/Programmiermethoden/Dungeon
-[Pull-Request]: https://github.com/Programmiermethoden/Dungeon/compare
+[Dungeon-Repo]: https://github.com/Dungeon-CampusMinden/Dungeon
+[Pull-Request]: https://github.com/Dungeon-CampusMinden/Dungeon/compare
 [Bonus-Punkte: Helfen im Framework]: #bonus-punkte-helfen-im-framework
 
 
@@ -279,7 +279,7 @@ Bitte beachten Sie, dass es in diesem Beispiel um eine fiktive Aufgabe im Dungeo
 und dass die gezeigte Modellierung nicht konform zur ECS-Struktur des aktuellen PM-Dungeons
 ist.
 
-[ausgefülltes Beispiel]: https://github.com/Programmiermethoden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
+[ausgefülltes Beispiel]: https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/org/konzeptskizze_beispiel.md
 
 
 ## UML-Klassendiagramme
@@ -515,9 +515,9 @@ Git und die Qualität der Kommunikation innerhalb von GitHub (Issue-Beschreibung
 etc.) sowie den Umfang des Problems. Angedacht ist die Aufteilung bis zu 2P für den Fix/Code (für
 Bug-Fixing/neue Features) und bis zu 3P für das Verhalten und die Kommunikation im PR.
 
-[Dungeon-Framework]: https://github.com/Programmiermethoden/Dungeon
+[Dungeon-Framework]: https://github.com/Dungeon-CampusMinden/Dungeon
 [Bounty-Aufgaben]: #bounty-aufgaben
-[Issue]: https://github.com/Programmiermethoden/Dungeon/issues
+[Issue]: https://github.com/Dungeon-CampusMinden/Dungeon/issues
 
 
 ## Hilflos im Dungeon?
