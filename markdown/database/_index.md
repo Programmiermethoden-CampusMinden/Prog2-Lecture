@@ -1,7 +1,7 @@
 ---
 archetype: "default"
 title: "Zugriffe auf Datenbanken: JDBC"
-menuTitle: "Database"
+linkTitle: "Database"
 weight: 12
 
 hidden: true

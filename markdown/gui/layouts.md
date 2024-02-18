@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Swing: Layout-Manager"
-menuTitle: "Swing: Layout-Manager"
+linkTitle: "Swing: Layout-Manager"
 author: "Carsten Gips (HSBI)"
 weight: 4
 readings:

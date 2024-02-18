@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Konfiguration eines Programms"
-menuTitle: "Konfiguration"
+linkTitle: "Konfiguration"
 author: "Carsten Gips (HSBI)"
 weight: 2
 readings:

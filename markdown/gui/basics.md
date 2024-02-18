@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Swing 101: Basics"
-menuTitle: "Swing: Basics"
+linkTitle: "Swing: Basics"
 author: "Carsten Gips (HSBI)"
 weight: 1
 readings:

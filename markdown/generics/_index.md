@@ -1,7 +1,7 @@
 ---
 archetype: "default"
 title: "Generics: Umgang mit parametrisierten Typen"
-menuTitle: "Generics"
+linkTitle: "Generics"
 weight: 6
 ---
 

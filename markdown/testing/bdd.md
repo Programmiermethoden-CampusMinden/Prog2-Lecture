@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Behaviour-driven Development und Test"
-menuTitle: "BDD"
+linkTitle: "BDD"
 author: "Carsten Gips (HSBI)"
 weight: 5
 

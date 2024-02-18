@@ -1,7 +1,7 @@
 ---
 archetype: "default"
 title: "Entwurfsmuster"
-menuTitle: "Pattern"
+linkTitle: "Pattern"
 weight: 5
 ---
 

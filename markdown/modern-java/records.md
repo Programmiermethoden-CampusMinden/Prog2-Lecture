@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Record-Klassen"
-menuTitle: "Records"
+linkTitle: "Records"
 author: "Carsten Gips (HSBI)"
 weight: 5
 readings:

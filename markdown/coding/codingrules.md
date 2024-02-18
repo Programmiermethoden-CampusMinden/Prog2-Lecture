@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Coding Conventions und Metriken"
-menuTitle: "Coding Conventions"
+linkTitle: "Coding Conventions"
 author: "Carsten Gips (HSBI)"
 weight: 5
 readings:

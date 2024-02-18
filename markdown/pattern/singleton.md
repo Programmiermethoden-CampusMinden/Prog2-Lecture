@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Singleton-Pattern"
-menuTitle: "Singleton"
+linkTitle: "Singleton"
 author: "Carsten Gips (HSBI)"
 weight: 9
 readings:

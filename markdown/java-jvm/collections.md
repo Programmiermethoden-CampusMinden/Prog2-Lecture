@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Java Collections Framework"
-menuTitle: "Collections"
+linkTitle: "Collections"
 author: "André Matutat & Carsten Gips (HSBI)"
 weight: 6
 readings:

@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Strategy-Pattern"
-menuTitle: "Strategy"
+linkTitle: "Strategy"
 author: "Carsten Gips (HSBI)"
 weight: 4
 readings:

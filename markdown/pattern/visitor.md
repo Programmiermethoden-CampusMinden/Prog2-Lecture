@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Visitor-Pattern"
-menuTitle: "Visitor"
+linkTitle: "Visitor"
 author: "Carsten Gips (HSBI)"
 weight: 2
 readings:

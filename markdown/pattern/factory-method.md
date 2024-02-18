@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Factory-Method-Pattern"
-menuTitle: "Factory-Method"
+linkTitle: "Factory-Method"
 author: "Carsten Gips (HSBI)"
 weight: 1
 readings:

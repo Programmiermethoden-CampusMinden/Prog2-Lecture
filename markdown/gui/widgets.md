@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Swing: Nützliche Widgets"
-menuTitle: "Swing: Widgets"
+linkTitle: "Swing: Widgets"
 author: "Carsten Gips (HSBI)"
 weight: 3
 readings:

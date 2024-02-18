@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Einführung in Docker"
-menuTitle: "Docker"
+linkTitle: "Docker"
 author: "Carsten Gips (HSBI)"
 weight: 5
 readings:

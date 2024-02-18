@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "High-Level Concurrency"
-menuTitle: "High-Level Concurrency"
+linkTitle: "High-Level Concurrency"
 author: "Carsten Gips (HSBI)"
 weight: 3
 readings:

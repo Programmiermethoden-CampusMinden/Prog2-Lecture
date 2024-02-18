@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Build-Systeme: Apache Ant"
-menuTitle: "Ant"
+linkTitle: "Ant"
 author: "Carsten Gips (HSBI)"
 weight: 1
 readings:

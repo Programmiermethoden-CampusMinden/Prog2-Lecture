@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Testen mit JUnit (JUnit-Basics)"
-menuTitle: "JUnit-Basics"
+linkTitle: "JUnit-Basics"
 author: "Carsten Gips (HSBI)"
 weight: 2
 readings:

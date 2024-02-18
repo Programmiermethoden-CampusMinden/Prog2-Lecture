@@ -1,7 +1,7 @@
 ---
 archetype: "default"
 title: "Testen mit JUnit und Mockito"
-menuTitle: "Testing"
+linkTitle: "Testing"
 weight: 2
 ---
 

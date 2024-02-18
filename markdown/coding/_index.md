@@ -1,7 +1,7 @@
 ---
 archetype: "default"
 title: "Programmiermethoden und Clean Code"
-menuTitle: "Coding"
+linkTitle: "Coding"
 weight: 3
 ---
 

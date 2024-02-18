@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Code Smells"
-menuTitle: "Code Smells"
+linkTitle: "Code Smells"
 author: "Carsten Gips (HSBI)"
 weight: 4
 readings:

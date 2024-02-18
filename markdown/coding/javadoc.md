@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Javadoc"
-menuTitle: "Javadoc"
+linkTitle: "Javadoc"
 author: "Carsten Gips (HSBI)"
 weight: 3
 readings:

@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Type-Object-Pattern"
-menuTitle: "Type-Object"
+linkTitle: "Type-Object"
 author: "Carsten Gips (HSBI)"
 weight: 8
 readings:

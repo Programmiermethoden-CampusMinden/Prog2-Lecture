@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Stream-API"
-menuTitle: "Stream-API"
+linkTitle: "Stream-API"
 author: "Carsten Gips (HSBI)"
 weight: 4
 readings:

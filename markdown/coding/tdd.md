@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Testbarkeit und Testdriven Development (TDD)"
-menuTitle: "Testbarkeit und TDD"
+linkTitle: "Testbarkeit und TDD"
 author: "Carsten Gips (HSBI)"
 weight: 7
 readings:

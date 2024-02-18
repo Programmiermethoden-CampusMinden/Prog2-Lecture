@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Einführung in Graphics und Java 2D"
-menuTitle: "Java2D"
+linkTitle: "Java2D"
 author: "Carsten Gips (HSBI)"
 weight: 6
 readings:

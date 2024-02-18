@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Swing Events"
-menuTitle: "Swing: Events"
+linkTitle: "Swing: Events"
 author: "Carsten Gips (HSBI)"
 weight: 2
 readings:
