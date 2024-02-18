@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Lambda-Ausdrücke und funktionale Interfaces"
-menuTitle: "Lambda-Ausdrücke"
+linkTitle: "Lambda-Ausdrücke"
 author: "Carsten Gips (HSBI)"
 weight: 2
 readings:

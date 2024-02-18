@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Continuous Integration (CI)"
-menuTitle: "Continuous Integration"
+linkTitle: "Continuous Integration"
 author: "Carsten Gips (HSBI)"
 weight: 4
 readings:

@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Flyweight-Pattern"
-menuTitle: "Flyweight"
+linkTitle: "Flyweight"
 author: "Carsten Gips (HSBI)"
 weight: 7
 readings:

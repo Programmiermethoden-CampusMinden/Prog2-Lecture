@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Logging"
-menuTitle: "Logging"
+linkTitle: "Logging"
 author: "Carsten Gips (HSBI)"
 weight: 1
 readings:

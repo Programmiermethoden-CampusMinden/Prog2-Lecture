@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Build-Systeme: Gradle"
-menuTitle: "Gradle"
+linkTitle: "Gradle"
 author: "Carsten Gips (HSBI)"
 weight: 3
 readings:

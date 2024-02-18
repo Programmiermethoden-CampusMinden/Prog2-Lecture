@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests"
-menuTitle: "Workflows"
+linkTitle: "Workflows"
 author: "Carsten Gips (HSBI)"
 weight: 6
 readings:

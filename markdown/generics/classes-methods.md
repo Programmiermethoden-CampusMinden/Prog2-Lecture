@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Generische Klassen & Methoden"
-menuTitle: "Klassen & Methoden"
+linkTitle: "Klassen & Methoden"
 author: "Carsten Gips (HSBI)"
 weight: 1
 readings:

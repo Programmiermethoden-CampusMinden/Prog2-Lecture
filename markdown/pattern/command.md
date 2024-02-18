@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Command-Pattern"
-menuTitle: "Command"
+linkTitle: "Command"
 author: "Carsten Gips (HSBI)"
 weight: 6
 readings:

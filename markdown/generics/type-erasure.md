@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Type Erasure"
-menuTitle: "Type Erasure"
+linkTitle: "Type Erasure"
 author: "Carsten Gips (HSBI)"
 weight: 3
 readings:

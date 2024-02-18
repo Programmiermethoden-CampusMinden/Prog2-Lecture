@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Template-Method-Pattern"
-menuTitle: "Template-Method"
+linkTitle: "Template-Method"
 author: "Carsten Gips (HSBI)"
 weight: 5
 readings:

@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Optional"
-menuTitle: "Optional"
+linkTitle: "Optional"
 author: "Carsten Gips (HSBI)"
 weight: 6
 readings:

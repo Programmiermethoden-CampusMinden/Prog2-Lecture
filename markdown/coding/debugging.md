@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Debugging"
-menuTitle: "Debugging"
+linkTitle: "Debugging"
 author: "Carsten Gips (HSBI)"
 weight: 2
 readings:

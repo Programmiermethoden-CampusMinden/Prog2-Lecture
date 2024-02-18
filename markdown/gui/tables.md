@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Swing: Tabellen"
-menuTitle: "Swing: Tabellen"
+linkTitle: "Swing: Tabellen"
 author: "Carsten Gips (HSBI)"
 weight: 5
 readings:

@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Bounds & Wildcards"
-menuTitle: "Bounds & Wildcards"
+linkTitle: "Bounds & Wildcards"
 author: "Carsten Gips (HSBI)"
 weight: 2
 readings:

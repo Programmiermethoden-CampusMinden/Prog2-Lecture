@@ -1,7 +1,7 @@
 ---
 archetype: "default"
 title: "Bauen von Programmen, Automatisierung, Continuous Integration"
-menuTitle: "Building"
+linkTitle: "Building"
 weight: 4
 ---
 

@@ -1,7 +1,7 @@
 ---
 archetype: "default"
 title: "Fortgeschrittene Java-Themen und Umgang mit JVM"
-menuTitle: "Java / JVM"
+linkTitle: "Java / JVM"
 weight: 7
 ---
 

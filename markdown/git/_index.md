@@ -1,7 +1,7 @@
 ---
 archetype: "default"
 title: "Versionierung mit Git"
-menuTitle: "Git"
+linkTitle: "Git"
 weight: 1
 ---
 

@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Fehlersuche mit Git Bisect"
-menuTitle: "Bisect"
+linkTitle: "Bisect"
 author: "Carsten Gips (HSBI)"
 weight: 7
 readings:

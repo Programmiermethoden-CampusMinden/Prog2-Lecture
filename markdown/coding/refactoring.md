@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Refactoring"
-menuTitle: "Refactoring"
+linkTitle: "Refactoring"
 author: "Carsten Gips (HSBI)"
 weight: 6
 readings:

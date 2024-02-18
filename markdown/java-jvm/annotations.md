@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Annotationen"
-menuTitle: "Annotationen"
+linkTitle: "Annotationen"
 author: "Carsten Gips (HSBI)"
 weight: 4
 readings:

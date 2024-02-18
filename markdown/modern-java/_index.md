@@ -1,7 +1,7 @@
 ---
 archetype: "default"
 title: "Modern Java: Funktionaler Stil und Stream-API"
-menuTitle: "Modern Java"
+linkTitle: "Modern Java"
 weight: 8
 ---
 

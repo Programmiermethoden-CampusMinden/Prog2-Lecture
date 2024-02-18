@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Reflection"
-menuTitle: "Reflection"
+linkTitle: "Reflection"
 author: "Carsten Gips (HSBI)"
 weight: 5
 readings:

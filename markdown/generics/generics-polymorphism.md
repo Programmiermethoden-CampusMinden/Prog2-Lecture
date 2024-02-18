@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Generics und Polymorphie"
-menuTitle: "Polymorphie"
+linkTitle: "Polymorphie"
 author: "Carsten Gips (HSBI)"
 weight: 4
 readings:

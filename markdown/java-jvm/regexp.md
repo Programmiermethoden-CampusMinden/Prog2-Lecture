@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Reguläre Ausdrücke"
-menuTitle: "RegExp"
+linkTitle: "RegExp"
 author: "Carsten Gips (HSBI)"
 weight: 1
 readings:

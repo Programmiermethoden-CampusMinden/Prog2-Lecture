@@ -1,7 +1,7 @@
 ---
 archetype: "default"
 title: "Multi-Threading: Parallelisierung von Programmen"
-menuTitle: "Threads"
+linkTitle: "Threads"
 weight: 9
 ---
 

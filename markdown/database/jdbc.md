@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Java und Datenbanken: JDBC"
-menuTitle: "JDBC"
+linkTitle: "JDBC"
 author: "Carsten Gips (HSBI)"
 weight: 1
 readings:
@@ -46,7 +46,7 @@ _build:
 - JDBC konvertiert die SQL-Datentypen in Java-Datentypen und umgedreht.
 - Die JDBC API ist universal und Datenbanksystem unabhängig
 - Die einzelnen Datenbanksystem-Hersteller stellen JDBC-Treiber zur Verfügung.
-- Was machen die Treiber? Implementieren die von JDBC vorgegebene Schnittstelle, damit der Treiber vom JDBC-Driver-Manager genutzt werden kann.  
+- Was machen die Treiber? Implementieren die von JDBC vorgegebene Schnittstelle, damit der Treiber vom JDBC-Driver-Manager genutzt werden kann.
 - Der JDBC Driver Manager lädt den Datenbanksystem spezifischen Treiber in die Anwendung.
 
 
@@ -72,7 +72,7 @@ MySQL:
   Class.forName("com.mysql.jdbc.Driver");
 ```
 
-- Treiber-Registrationen kann so konfigurierbar und portierbar gemacht werden. (Man muss "nur" den String-Parameter von `Class.forName` austauschen). 
+- Treiber-Registrationen kann so konfigurierbar und portierbar gemacht werden. (Man muss "nur" den String-Parameter von `Class.forName` austauschen).
 - Gängiges/Bevorzugtes Vorgehen
 
 Möglichkeit 2: Statisch `DriverManager.registerDriver()`

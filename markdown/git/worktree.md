@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Git Worktree"
-menuTitle: "Worktree"
+linkTitle: "Worktree"
 author: "Carsten Gips (HSBI)"
 weight: 8
 tldr: |

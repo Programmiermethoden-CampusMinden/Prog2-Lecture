@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Einführung in die nebenläufige Programmierung mit Threads"
-menuTitle: "Intro"
+linkTitle: "Intro"
 author: "Carsten Gips (HSBI)"
 weight: 1
 readings:

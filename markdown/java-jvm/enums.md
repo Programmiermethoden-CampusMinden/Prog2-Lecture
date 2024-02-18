@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Aufzählungen (Enumerations)"
-menuTitle: "Enumerations"
+linkTitle: "Enumerations"
 author: "Carsten Gips (HSBI)"
 weight: 3
 readings:

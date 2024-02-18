@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Test Coverage"
-menuTitle: "Test Coverage"
+linkTitle: "Test Coverage"
 author: "Carsten Gips (HSBI)"
 weight: 6
 

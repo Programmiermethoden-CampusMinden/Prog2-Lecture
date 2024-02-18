@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
 title: "Branching-Strategien mit Git"
-menuTitle: "Branching-Strategien"
+linkTitle: "Branching-Strategien"
 author: "Carsten Gips (HSBI)"
 weight: 4
 readings:
