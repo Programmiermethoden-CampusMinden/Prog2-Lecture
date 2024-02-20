@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Strategy-Pattern"
 linkTitle: "Strategy"
 author: "Carsten Gips (HSBI)"
-weight: 4
 readings:
   - key: "Eilebrecht2013"
   - key: "Gamma2011"

@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Frameworks: How-To Dungeon"
 linkTitle: "How-To Dungeon"
 author: "Carsten Gips (HSBI)"
-weight: 2
 tldr: |
     Der PM-Dungeon ist ein Framework zum Entwickeln von Rogue-like Dungeon-Crawlern, also einfachen 2D-Spielen in Java.
     Das Framework bietet die wichtigsten benötigten Grundstrukturen für ein Computer-Spiel: Es hat eine Game-Loop, kann

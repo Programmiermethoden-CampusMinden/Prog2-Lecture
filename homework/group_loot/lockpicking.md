@@ -3,7 +3,6 @@ archetype: assignment
 title: "Lockpicking"
 author: "André Matutat (HSBI)"
 points: "10 Punkte"
-weight: 7
 
 hidden: true
 ---

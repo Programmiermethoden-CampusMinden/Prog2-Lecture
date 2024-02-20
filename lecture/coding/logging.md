@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Logging"
 linkTitle: "Logging"
 author: "Carsten Gips (HSBI)"
-weight: 1
 readings:
   - key: "JDK-Doc"
     notes: "Kapitel 8: Java Logging Overview"

@@ -3,7 +3,6 @@ archetype: assignment
 title: "Fernkampf"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"
-weight: 2
 
 hidden: true
 ---

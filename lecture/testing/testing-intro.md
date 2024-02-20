@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Einführung Softwaretest"
 linkTitle: "Intro SW-Test"
 author: "Carsten Gips (HSBI)"
-weight: 1
 readings:
   - key: "vogellaJUnit"
   - key: "junit4"

@@ -3,7 +3,6 @@ archetype: assignment
 title: "Game-Over"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"
-weight: 5
 
 hidden: true
 ---

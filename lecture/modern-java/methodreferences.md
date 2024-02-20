@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Methoden-Referenzen"
 linkTitle: "Methoden-Referenzen"
 author: "Carsten Gips (HSBI)"
-weight: 3
 readings:
   - key: "Java-SE-tutorial"
     comment: "Learning the Java Language: Classes and Objects: Abschnitt Method References und Abschnitt Lambda Expressions"

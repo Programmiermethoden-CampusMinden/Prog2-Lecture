@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Type Erasure"
 linkTitle: "Type Erasure"
 author: "Carsten Gips (HSBI)"
-weight: 3
 readings:
   - key: "Ullenboom2021"
     comment: "Kapitel 11.2 und 11.6"

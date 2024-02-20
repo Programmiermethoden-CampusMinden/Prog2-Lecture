@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Reguläre Ausdrücke"
 linkTitle: "RegExp"
 author: "Carsten Gips (HSBI)"
-weight: 1
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Essential Java Classes > Regular Expressions"

@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Singleton-Pattern"
 linkTitle: "Singleton"
 author: "Carsten Gips (HSBI)"
-weight: 9
 readings:
   - key: "Nystrom2014"
     comment: "Kap. 6: Singleton"

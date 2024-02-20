@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Git Worktree"
 linkTitle: "Worktree"
 author: "Carsten Gips (HSBI)"
-weight: 8
 tldr: |
   Git Worktree erlaubt es, Branches in separaten Ordnern auszuchecken. Diese Ordner sind
   mit der Workingcopy verknüpft, d.h. alle Änderungen über Git-Befehle werden automatisch

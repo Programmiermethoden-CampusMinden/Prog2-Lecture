@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Einführung in Docker"
 linkTitle: "Docker"
 author: "Carsten Gips (HSBI)"
-weight: 5
 readings:
   - key: "Ullenboom2016"
   - key: "Inden2013"

@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Command-Pattern"
 linkTitle: "Command"
 author: "Carsten Gips (HSBI)"
-weight: 6
 readings:
   - key: "Gamma2011"
   - key: "Nystrom2014"

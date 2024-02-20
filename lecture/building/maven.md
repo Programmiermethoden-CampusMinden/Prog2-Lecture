@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Build-Systeme: Apache Maven"
 linkTitle: "Maven"
 author: "Carsten Gips (HSBI)"
-weight: 2
 readings:
   - key: "Ullenboom2016"
   - key: "Inden2013"

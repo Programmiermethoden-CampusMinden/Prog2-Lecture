@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Swing Events"
 linkTitle: "Swing: Events"
 author: "Carsten Gips (HSBI)"
-weight: 2
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Creating Graphical User Interfaces > Creating a GUI With Swing"

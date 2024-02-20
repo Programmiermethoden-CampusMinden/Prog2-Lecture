@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Flyweight-Pattern"
 linkTitle: "Flyweight"
 author: "Carsten Gips (HSBI)"
-weight: 7
 readings:
   - key: "Nystrom2014"
     comment: "Kap. 3: Flyweight"

@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Aufzählungen (Enumerations)"
 linkTitle: "Enumerations"
 author: "Carsten Gips (HSBI)"
-weight: 3
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Trail: Learning the Java Language :: Classes and Objects :: Enum Types"

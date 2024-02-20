@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Interfaces: Default-Methoden"
 linkTitle: "Default-Methoden"
 author: "Carsten Gips (HSBI)"
-weight: 1
 readings:
   - key: "Java-SE-tutorial"
     comment: "Learning the Java Language: Interfaces and Inheritance: Abschnitt Default Methods"

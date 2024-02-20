@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Einführung in Graphics und Java 2D"
 linkTitle: "Java2D"
 author: "Carsten Gips (HSBI)"
-weight: 6
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Creating Graphical User Interfaces > Creating a GUI With Swing"

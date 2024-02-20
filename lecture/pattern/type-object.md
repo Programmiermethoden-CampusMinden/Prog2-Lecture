@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Type-Object-Pattern"
 linkTitle: "Type-Object"
 author: "Carsten Gips (HSBI)"
-weight: 8
 readings:
   - key: "Nystrom2014"
     comment: "Kap. 13: Type Object"

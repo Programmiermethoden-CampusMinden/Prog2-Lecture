@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Refactoring"
 linkTitle: "Refactoring"
 author: "Carsten Gips (HSBI)"
-weight: 6
 readings:
   - key: "Fowler2011"
   - key: "Inden2013"

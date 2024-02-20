@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Swing: Layout-Manager"
 linkTitle: "Swing: Layout-Manager"
 author: "Carsten Gips (HSBI)"
-weight: 4
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Creating Graphical User Interfaces > Creating a GUI With Swing"

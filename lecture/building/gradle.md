@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Build-Systeme: Gradle"
 linkTitle: "Gradle"
 author: "Carsten Gips (HSBI)"
-weight: 3
 readings:
   - key: "Gradle"
   - key: "Ullenboom2016"

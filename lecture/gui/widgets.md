@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Swing: Nützliche Widgets"
 linkTitle: "Swing: Widgets"
 author: "Carsten Gips (HSBI)"
-weight: 3
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Creating Graphical User Interfaces > Creating a GUI With Swing"

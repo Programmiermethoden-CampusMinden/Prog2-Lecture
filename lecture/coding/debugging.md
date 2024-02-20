@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Debugging"
 linkTitle: "Debugging"
 author: "Carsten Gips (HSBI)"
-weight: 2
 readings:
   - key: "Martin2009"
   - key: "Dietz2018"

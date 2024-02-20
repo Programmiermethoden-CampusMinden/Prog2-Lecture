@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Lambda-Ausdrücke und funktionale Interfaces"
 linkTitle: "Lambda-Ausdrücke"
 author: "Carsten Gips (HSBI)"
-weight: 2
 readings:
   - key: "Java-SE-tutorial"
     comment: "Learning the Java Language: Classes and Objects: Abschnitt Nested Classes, Abschnitt Anonymous Classes und Abschnitt Lambda Expressions"

@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Reflection"
 linkTitle: "Reflection"
 author: "Carsten Gips (HSBI)"
-weight: 5
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Specialized Trails and Lessons > The Reflection API"

@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Sealed Classes und Pattern Matching"
 linkTitle: "Sealed Classes"
 author: "Carsten Gips (HSBI)"
-weight: 7
 
 sketch: true
 

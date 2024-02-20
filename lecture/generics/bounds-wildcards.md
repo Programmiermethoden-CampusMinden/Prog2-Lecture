@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Bounds & Wildcards"
 linkTitle: "Bounds & Wildcards"
 author: "Carsten Gips (HSBI)"
-weight: 2
 readings:
   - key: "Ullenboom2021"
     comment: "Kapitel 11.3"

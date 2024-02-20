@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Swing 101: Basics"
 linkTitle: "Swing: Basics"
 author: "Carsten Gips (HSBI)"
-weight: 1
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Creating Graphical User Interfaces > Creating a GUI With Swing"

@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Exception-Handling"
 linkTitle: "Exceptions"
 author: "André Matutat & Carsten Gips (HSBI)"
-weight: 8
 readings:
   - key: "LernJava"
     comment: "Tutorials > Exceptions"

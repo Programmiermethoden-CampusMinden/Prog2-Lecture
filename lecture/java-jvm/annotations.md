@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Annotationen"
 linkTitle: "Annotationen"
 author: "Carsten Gips (HSBI)"
-weight: 4
 readings:
   - key: "Ullenboom2021"
     comment: "Kap. 10.8: Annotationen in der Java SE, 23.4: Dokumentationskommentare mit Javadoc"

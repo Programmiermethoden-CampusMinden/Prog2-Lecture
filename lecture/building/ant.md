@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Build-Systeme: Apache Ant"
 linkTitle: "Ant"
 author: "Carsten Gips (HSBI)"
-weight: 1
 readings:
   - key: "Inden2013"
     comment: "Abschnitt 2.5.2: Ant"

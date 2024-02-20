@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Intro: Versionskontrolle in der Softwareentwicklung"
 linkTitle: "Intro"
 author: "Carsten Gips (HSBI)"
-weight: 1
 readings:
   - key: "Chacon2014"
     comment: "Kapitel 1 und 2"

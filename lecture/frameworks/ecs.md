@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Frameworks: ECS"
 linkTitle: "ECS"
 author: "Carsten Gips (HSBI)"
-weight: 3
 
 sketch: true
 

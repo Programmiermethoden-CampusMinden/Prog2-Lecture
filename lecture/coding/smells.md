@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Code Smells"
 linkTitle: "Code Smells"
 author: "Carsten Gips (HSBI)"
-weight: 4
 readings:
   - key: "Martin2009"
   - key: "Passig2013"

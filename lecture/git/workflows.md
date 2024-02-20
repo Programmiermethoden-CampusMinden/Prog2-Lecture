@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests"
 linkTitle: "Workflows"
 author: "Carsten Gips (HSBI)"
-weight: 6
 readings:
   - key: "Chacon2014"
     comment: "Kapitel 5 (Distributed Git) sowie Abschnitt 4.8 (Gitlab) und Kapitel 6 (GitHub)"

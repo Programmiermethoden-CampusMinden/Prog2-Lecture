@@ -3,7 +3,6 @@ archetype: assignment
 title: "Charakterklassen"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"
-weight: 3
 
 hidden: true
 ---

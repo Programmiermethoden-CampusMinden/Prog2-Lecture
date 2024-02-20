@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Fehlersuche mit Git Bisect"
 linkTitle: "Bisect"
 author: "Carsten Gips (HSBI)"
-weight: 7
 readings:
   - key: "Chacon2014"
     comment: "Abschnitt 7.10 (Git Tools)"

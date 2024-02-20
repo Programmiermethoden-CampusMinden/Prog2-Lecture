@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Basics der Versionsverwaltung mit Git (lokale Repos)"
 linkTitle: "Basics"
 author: "Carsten Gips (HSBI)"
-weight: 2
 readings:
   - key: "Chacon2014"
     comment: "Kapitel 2"

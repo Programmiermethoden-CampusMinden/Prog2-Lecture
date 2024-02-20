@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Observer-Pattern"
 linkTitle: "Observer"
 author: "Carsten Gips (HSBI)"
-weight: 3
 readings:
   - key: "Nystrom2014"
     comment: "Kap. 4: Observer"

@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Record-Klassen"
 linkTitle: "Records"
 author: "Carsten Gips (HSBI)"
-weight: 5
 readings:
   - key: "LernJava"
     comment: "Tutorials > Using Record to Model Immutable Data"

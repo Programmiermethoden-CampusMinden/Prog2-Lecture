@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Stream-API"
 linkTitle: "Stream-API"
 author: "Carsten Gips (HSBI)"
-weight: 4
 readings:
   - key: "LernJava"
     comment: "Tutorials > The Stream API"

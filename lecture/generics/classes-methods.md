@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Generische Klassen & Methoden"
 linkTitle: "Klassen & Methoden"
 author: "Carsten Gips (HSBI)"
-weight: 1
 readings:
   - key: "Ullenboom2021"
     comment: "Kapitel 11.1: Einführung in Java Generics"

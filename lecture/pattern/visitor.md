@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Visitor-Pattern"
 linkTitle: "Visitor"
 author: "Carsten Gips (HSBI)"
-weight: 2
 readings:
   - key: "Eilebrecht2013"
   - key: "Gamma2011"

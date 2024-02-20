@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Javadoc"
 linkTitle: "Javadoc"
 author: "Carsten Gips (HSBI)"
-weight: 3
 readings:
   - key: "Ullenboom2021"
     comment: "Kap. 23.4: Dokumentationskommentare mit Javadoc"

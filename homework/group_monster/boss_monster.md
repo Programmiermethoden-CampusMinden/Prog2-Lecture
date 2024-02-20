@@ -3,7 +3,6 @@ archetype: assignment
 title: "Boss-Monster"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"
-weight: 4
 
 hidden: true
 ---

@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Konfiguration eines Programms"
 linkTitle: "Konfiguration"
 author: "Carsten Gips (HSBI)"
-weight: 2
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Essential Java Classes > The Platform Environment > Configuration Utilities"

@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Java und Datenbanken: JDBC"
 linkTitle: "JDBC"
 author: "Carsten Gips (HSBI)"
-weight: 1
 readings:
   - key: "Ullenboom2016"
 tldr: |

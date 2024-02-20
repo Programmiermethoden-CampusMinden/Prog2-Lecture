@@ -2,7 +2,6 @@
 archetype: "default"
 title: "Zugriffe auf Datenbanken: JDBC"
 linkTitle: "Database"
-weight: 12
 
 hidden: true
 _build:

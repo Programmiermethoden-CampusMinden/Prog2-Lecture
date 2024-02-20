@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Java Collections Framework"
 linkTitle: "Collections"
 author: "André Matutat & Carsten Gips (HSBI)"
-weight: 6
 readings:
   - key: "LernJava"
     comment: "Tutorials > Mastering the API > The Collections Framework"

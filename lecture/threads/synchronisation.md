@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Synchronisation: Verteilter Zugriff auf gemeinsame Ressourcen"
 linkTitle: "Synchronisation"
 author: "Carsten Gips (HSBI)"
-weight: 2
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Trail: Essential Java Classes, Lesson: Concurrency"

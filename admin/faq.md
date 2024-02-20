@@ -2,7 +2,6 @@
 archetype: lecture-cg
 title: "FAQ"
 author: "Carsten Gips (HSBI)"
-weight: 5
 
 hidden: true
 ---

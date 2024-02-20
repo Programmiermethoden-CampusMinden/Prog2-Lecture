@@ -3,7 +3,6 @@ archetype: assignment
 title: "JUnit (Gruppe Monster)"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"
-weight: 6
 
 hidden: true
 ---

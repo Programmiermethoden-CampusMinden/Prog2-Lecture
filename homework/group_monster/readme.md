@@ -1,7 +1,6 @@
 ---
 archetype: "default"
 title: "Praktikumsaufgaben Gruppe Monster"
-weight: 2
 
 hidden: true
 ---

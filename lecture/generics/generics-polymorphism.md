@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Generics und Polymorphie"
 linkTitle: "Polymorphie"
 author: "Carsten Gips (HSBI)"
-weight: 4
 readings:
   - key: "Ullenboom2021"
     comment: "Kapitel 11.5"

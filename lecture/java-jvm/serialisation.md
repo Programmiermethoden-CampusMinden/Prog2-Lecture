@@ -3,7 +3,6 @@ archetype: lecture-cg
 title: "Serialisierung von Objekten und Zuständen"
 linkTitle: "Serialisierung"
 author: "Carsten Gips (HSBI)"
-weight: 7
 readings:
   - key: "Java-SE-Tutorial"
     comment: "Essential Java Classes > Basic I/O > Object Streams"
