@@ -197,7 +197,7 @@ public void ausgabe(...) {
         Methodenrumpf mit "Leben". Aber nur genau so viel Code schreiben, bis
         der Test "grün" ist.
 3.  Überarbeite Code-Struktur: "Refactor" (Refactoring ist Thema einer
-    [späteren VL](refact‚‚‚oring.md)
+    [späteren VL](refactoring.md)
     *   Durch das reine Erfüllen des neuen Test gibt es im Laufe der Zeit sehr
         wahrscheinlich doppelten Code oder zu große Methoden o.ä. ... Dies wird
         durch diesen Schritt konsequent aufgeräumt.
