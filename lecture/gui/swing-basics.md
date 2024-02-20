@@ -155,7 +155,7 @@ SwingUtilities.invokeLater(
 Mit `new Runnable()` wird ein neues Objekt vom Typ `Runnable` anlegt - im Prinzip ein neuer, noch nicht
 gestarteter Thread mit der Hauptmethode `run()`. Dieses Runnable wird mit `SwingUtilities.invokeLater()`
 dem EDT zu Ausführung übergeben. Wir werden uns das Thema Erzeugen und Starten von Threads in der Einheit
-["Einführung in die nebenläufige Programmierung mit Threads"](../threads/threads_intro.md)
+["Einführung in die nebenläufige Programmierung mit Threads"](../threads/threads-intro.md)
 genauer ansehen.
 
 Siehe auch ["Concurrency in Swing"](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/index.html).
