@@ -385,8 +385,8 @@ mehr erkennt! Ein weiterer schwerwiegender Nachteil ist, dass alle Commits im ve
 umgeschrieben werden und damit neue Commit-IDs bekommen. Das verursacht bei der Zusammenarbeit in
 Projekten massive Probleme! Als Vorteil gilt, dass man mögliche Merge-Konflikte bereits beim Rebasen
 auflösen muss, d.h. hier muss derjenige, der den Merge "beantragt", durch einen vorherigen Rebase den
-konfliktfreien Merge sicherstellen. Mehr dazu in `["Branching-Strategien"]({{<ref "/git/branching-strategies" >}})`{=markdown}
-und `["Workflows"]({{<ref "/git/workflows" >}})`{=markdown}.
+konfliktfreien Merge sicherstellen. Mehr dazu in ["Branching-Strategien"](branching-strategies.md)
+und ["Workflows"](workflows.md).
 :::
 
 \pause

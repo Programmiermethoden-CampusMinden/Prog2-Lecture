@@ -342,7 +342,7 @@ public class Level {
 ## Verwandtschaft zum Type-Object-Pattern
 
 Das [Flyweight-Pattern](https://gameprogrammingpatterns.com/flyweight.html) ist sehr ähnlich zum
-`[Type-Object-Pattern]({{< ref "/pattern/type-object" >}})`{=markdown}. In beiden Pattern teilen
+[Type-Object-Pattern](type-object.md). In beiden Pattern teilen
 sich mehrere Objekte gemeinsame Daten, die über Referenzen auf gemeinsame Hilfsobjekte eingebunden
 werden. Die Zielrichtung unterscheidet sich aber deutlich:
 

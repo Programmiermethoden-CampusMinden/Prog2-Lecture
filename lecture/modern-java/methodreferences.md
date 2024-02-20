@@ -263,7 +263,7 @@ aufgerufen.
 ## Ausblick: Threads
 
 ::: notes
-Erinnerung an bzw. Vorgriff auf `["Threads: Intro"]({{< ref "/threads/intro" >}})`{=markdown}:
+Erinnerung an bzw. Vorgriff auf ["Threads: Intro"](../threads/threads_intro.md):
 
 ```java
 public interface Runnable {
@@ -297,7 +297,7 @@ Thread t3 = new Thread(ThreadStarter::wuppie);
 ## Ausblick: Datenstrukturen als Streams
 
 ::: notes
-Erinnerung an bzw. Vorgriff auf `["Stream-API"]({{< ref "/modern-java/stream-api" >}})`{=markdown}:
+Erinnerung an bzw. Vorgriff auf ["Stream-API"](stream-api.md):
 :::
 
 ```java

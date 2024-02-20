@@ -50,7 +50,7 @@ denen die Note der praktischen Teilleistung berechnet wird.
 Die theoretische Teilleistung besteht aus einer als digitale Klausur angebotenen Prüfung,
 die über eine spezielle ILIAS-Instanz ("E-Assessment-Server") durchgeführt wird. Es wird
 in beiden Prüfungszeiträumen je ein Termin angeboten. Tipps zur Vorbereitung siehe
-`["Prüfungsvorbereitung"]({{< ref "/org/exams" >}})`{=markdown}.
+["Prüfungsvorbereitung"](exams.md).
 
 Diese Prüfungsform gilt automatisch für alle Studierenden in Programmiermethoden, die nicht
 bereits früher unter einer anderen Prüfungsform in Programmiermethoden eine Prüfungsleistung
@@ -211,9 +211,9 @@ Sie können pro Zyklus Aufgaben im Umfang von 15 Punkten abgeben/vorstellen.
 ## Bounty-Aufgaben
 
 Neben den "festen" Aufgaben in den Gruppen
-`["Basics"]({{< ref "/assignments/group_basics" >}})`{=markdown},
-`["Monster"]({{< ref "/assignments/group_monster" >}})`{=markdown} und
-`["Loot"]({{< ref "/assignments/group_loot" >}})`{=markdown} gibt es noch die
+["Basics"](group_basics.md),
+["Monster"](group_monster.md) und
+["Loot"](group_loot.md) gibt es noch die
 ["Bounty"-Aufgaben]. Hierbei handelt es sich um ausgewählte offene Issues im
 [Dungeon-Repo], die am Label "bounty" erkennbar sind und für die es jeweils
 5 Punkte oder 10 Punkte gibt (Label "5P" bzw. "10P"). Diese Aufgaben sind als

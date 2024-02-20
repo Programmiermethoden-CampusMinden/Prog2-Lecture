@@ -485,7 +485,7 @@ public class CreditsCalculator {
 
         ::: notes
         In dieser Sitzung haben wir vor allem auf Kommentare geschaut. Zum Thema Dokumentieren
-        siehe die Einheit zu `["Javadoc"]({{< ref "/coding/javadoc" >}})`{=markdown}.
+        siehe die Einheit zu ["Javadoc"](javadoc.md).
         :::
 
     *   Einhalten von Coding Conventions

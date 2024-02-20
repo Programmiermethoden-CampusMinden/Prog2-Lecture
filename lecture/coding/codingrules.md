@@ -251,7 +251,7 @@ verschiedener Regeln des objektorientierten Programmierens.
 ### Beispiele für wichtige Metriken (jeweils Max-Werte für PM)
 
 Die folgenden Metriken und deren Maximal-Werte sind gute Erfahrungswerte aus der Praxis und helfen,
-den Code Smell "Langer Code"  (vgl. `["Code Smells"]({{< ref "/coding/smells" >}})`{=markdown}) zu
+den Code Smell "Langer Code"  (vgl. ["Code Smells"](smells.md)) zu
 erkennen und damit zu vermeiden. Über die Metriken _BEC_, _McCabe_ und _DAC_ wird auch die Einhaltung
 elementarer Programmierregeln gemessen.
 :::::::::
@@ -581,7 +581,7 @@ Fehler beinhalten, die SpotBugs melden würde.
 
     *   Formatieren mit **Spotless**
 
-    *   Prinzipien des objektorientierten Programmierens [(vgl. `["Code Smells"]({{< ref "/coding/smells" >}})`{=markdown})]{.notes}
+    *   Prinzipien des objektorientierten Programmierens [(vgl. ["Code Smells"](smells.md))]{.notes}
 
         ::: notes
         *   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.

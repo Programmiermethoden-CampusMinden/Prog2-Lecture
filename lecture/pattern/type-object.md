@@ -200,7 +200,7 @@ Davon legt man zur Laufzeit Objekte an (das sind dann die möglichen Monster-Typ
 und bestückt damit die zu erzeugenden Monster.
 
 Im Monster selbst rufen die Monster-Methoden dann einfach nur die Methoden des Type-Objects
-auf (Delegation => `[Strategie-Pattern]({{< ref "/pattern/strategy" >}})`{=markdown}). Man
+auf (Delegation => [Strategie-Pattern](strategy.md)). Man
 kann aber auch Attribute im Monster selbst pflegen und durch das Type-Object nur passend
 initialisieren.
 
@@ -233,7 +233,7 @@ public static void main(String[] args) {
 ::: notes
 Das Hantieren mit den Type-Objects und den Monstern ist nicht so schön. Deshalb kann
 man in der Klasse für die Type-Objects noch eine Fabrikmethode (=>
-`[Factory-Method-Pattern]({{< ref "/pattern/factory-method" >}})`{=markdown}) mit
+[Factory-Method-Pattern](factory-method.md)) mit
 einbauen, über die dann die Monster erzeugt werden.
 :::
 
@@ -329,7 +329,7 @@ Das [Type-Object-Pattern](https://gameprogrammingpatterns.com/type-object.html) 
 der ["klassischen" Design-Pattern](https://en.wikipedia.org/wiki/Design_Patterns) der "Gang
 of Four" [@Gamma2011]. Dennoch ist es gerade in der Spiele-Entwicklung häufig anzutreffen.
 
-Das Type-Object-Pattern ist sehr ähnlich zum `[Flyweight-Pattern]({{< ref "/pattern/flyweight" >}})`{=markdown}.
+Das Type-Object-Pattern ist sehr ähnlich zum [Flyweight-Pattern](flyweight.md).
 In beiden Pattern teilen sich mehrere Objekte gemeinsame Daten, die über Referenzen auf
 gemeinsame Hilfsobjekte eingebunden werden. Die Zielrichtung unterscheidet sich aber deutlich:
 

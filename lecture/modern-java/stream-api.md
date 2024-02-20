@@ -369,7 +369,7 @@ Streams müssen mit **_einer_ terminalen Operation** abgeschlossen werden, damit
 tatsächlich angestoßen wird (_lazy evaluation_).
 
 Es gibt viele verschiedene terminale Operationen. Wir haben bereits `count()` und `forEach()`
-gesehen. In der Sitzung zu `["Optionals"]({{< ref "/modern-java/optional" >}})`{=markdown}
+gesehen. In der Sitzung zu ["Optionals"](optional.md)
 werden wir noch `findFirst()` näher kennenlernen.
 
 Daneben gibt es beispielsweise noch `allMatch()`, `anyMatch()` und `noneMatch()`, die jeweils

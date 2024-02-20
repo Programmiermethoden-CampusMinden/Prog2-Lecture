@@ -195,7 +195,7 @@ mit einem Merge in den Feature-Branch holt, also sinngemäß:
 Das funktioniert rein technisch betrachtet.
 
 Allerdings spielt in den meisten Git-Projekten der `master` üblicherweise eine besondere Rolle
-(vgl. `[Branching-Strategien]({{< ref "/git/branching-strategies" >}})`{=markdown}) und ist
+(vgl. [Branching-Strategien](branching-strategies.md)) und ist
 üblicherweise stets das **Ziel** eines Merge, aber nie die Quelle! D.h. per Konvention geht der
 Fluß von Änderungen stets **in** den `master` (und nicht heraus).
 

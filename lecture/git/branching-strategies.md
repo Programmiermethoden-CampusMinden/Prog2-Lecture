@@ -280,7 +280,7 @@ Entwicklung des Features, d.h. mehrere Commits. Das Mergen des Features in den
 `master` erfolgt dann aber nicht lokal, sondern mit einem "Pull-Request" auf dem
 Server: Sobald man im Feature-Branch einen "diskussionswürdigen" Stand hat, wird ein
 **Pull-Request** (*PR*) über die Weboberfläche aufgemacht (streng genommen gehört
-dies in die Kategorie `["Zusammenarbeit" bzw. "Workflows"]({{<ref "/git/workflows" >}})`{=markdown};
+dies in die Kategorie ["Zusammenarbeit" bzw. "Workflows"](workflows.md);
 außerdem gehört ein PR nicht zu Git selbst, sondern zum Tooling von Github). In
 einem PR können andere Entwickler den Code kommentieren und ergänzen. Jeder weitere
 Commit auf dem Themenbranch wird ebenfalls Bestandteil des Pull-Requests. Parallel
