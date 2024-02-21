@@ -52,17 +52,30 @@ den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anscha
 
 ## Kursformat
 
-| Vorlesung (2 SWS)     | Praktikum (2+1 SWS)             |
-|:----------------------|:--------------------------------|
-| Fr, 16:30 - 18:00 Uhr | Gruppe 1: Fr, 09:00 - 10:30 Uhr |
-|                       | Gruppe 2: Fr, 13:30 - 15:00 Uhr |
-|                       | Gruppe 3: Fr, 15:00 - 16:30 Uhr |
-|                       | Gruppe 4: Fr, 10:45 - 12:15 Uhr |
+:::::: {.tabs groupid="vl-pr"}
+::: {.tab title="Vorlesung"}
+
+**Vorlesung (2 SWS)**
+
+Fr, 16:30 - 18:00 Uhr (online/J104)
+
+:::
+::: {.tab title="Praktikum"}
+
+**Praktikum (2+1 SWS)**
+
+| Praktikumsgruppe | Zeit                  | Raum        |
+|:-----------------|:----------------------|:------------|
+| Gruppe 1         | Fr, 09:00 - 10:30 Uhr | online/J104 |
+| Gruppe 2         | Fr, 13:30 - 15:00 Uhr | online/J104 |
+| Gruppe 3         | Fr, 15:00 - 16:30 Uhr | online/J104 |
+| Gruppe 4         | Fr, 10:45 - 12:15 Uhr | online/J104 |
+
+:::
+::::::
 
 Durchführung als **Flipped Classroom**:
-alle Sitzungen online/per Zoom (**Zugangsdaten siehe [ILIAS]**)
-
-Es ist zusätzlich für alle Termine der Raum J104 für Sie gebucht.
+Alle Sitzungen online/per Zoom (**Zugangsdaten siehe [ILIAS]**)
 
 [ILIAS]: https://www.hsbi.de/elearning/goto.php?target=crs_1181185&client_id=FH-Bielefeld
 
@@ -119,24 +132,24 @@ Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
 
 ## Fahrplan
 
-### Vorlesung
+:::::: {.tabs groupid="vl-pr"}
+::: {.tab title="Vorlesung"}
 
-| Woche | Datum Vorlesung                           | Themen                                                                                                                       | Praktikum        |
-|:-----:|:------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------|:-----------------|
-|  15   | Fr, 14.04.                                | Orga (**Zoom**) \|\| [Einführung Versionierung] \| [Git Basics] \|\| [Lambda-Ausdrücke] \|\| [Javadoc]                       |                  |
-|  16   | Fr, 21.04.                                | Git: [Branches] \| [Branching-Strategies] \|\| [Gradle] \|\| [Methodenreferenzen] \|\| [Strategy-Pattern]                    | [B01a]           |
-|  17   | Fr, 28.04.                                | Git: [Remotes] \| [Workflows] \|\| [Stream-API] \| [Optional]                                                                | [B01b]           |
-|  18   | Fr, 05.05.                                | Testen: [Einführung] \| [JUnit-Basics] \| [Testfallermittlung] \| [Mocking] \|\| [Logging]                                   | [B02a]           |
-|  19   | Fr, 12.05.                                | [Code-Smells] \| [Coding-Rules] \| [Refactoring] \|\| [CI]                                                                   | [B02b]           |
-|  19   | Fr, 12.05.                                | **Gastvortrag zu JUnit/Mocking in der Praxis von Daniel Rosowski (Smartsquare GmbH, Bielefeld)**                             |                  |
-|  20   | Fr, 19.05.                                | [Serialisierung] \|\| [Records] \| [Default-Methoden] \|\| [Docker] \|\| [Git-Worktree]                                      | [B03a]           |
-|  21   | Fr, 26.05.                                | Generics: [Klassen und Methoden] \| [Bounds und Wildcards] \| [Type Erasure] \| [Polymorphie] \|\| [Collections]             | [B03b]           |
-|  22   | Fr, 02.06.                                | [RegExp] \|\| Pattern: [Visitor] \| [Observer] \| [Command]                                                                  | [B04a]           |
-|  23   | Fr, 09.06.                                | [Annotationen] \| [Reflection] \| [Exception-Handling] \|\| [Singleton-Pattern]                                              | [B04b]           |
-|  24   | Fr, 16.06.                                | [Enumerationen] \| [Konfiguration] \| [ANT] \|\| [Template-Method-Pattern] \| [Factory-Method-Pattern]                       | [B05a]           |
-|  25   | Fr, 23.06.                                | Multi-Threading: [Intro Threads] \| [Synchronisierung] \| [Highlevel Threadkonzepte] \|\| [Maven] \|\| [Type-Object-Pattern] | [B05b]           |
-|  26   | Fr, 30.06.                                | Rückblick (**Zoom**) \| [Prüfungsvorbereitung]                                                                               | [B06] (optional) |
-| _27_  | _Mi, 05.07._ (Start: 09:00 und 11:00 Uhr) | Klausur (Campus Minden, B40)                                                                                                 |                  |
+| Woche | Datum Vorlesung                           | Themen                                                                                                                       | Bemerkungen                                                                                      |
+|:-----:|:------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|
+|  15   | Fr, 14.04.                                | Orga (**Zoom**) \|\| [Einführung Versionierung] \| [Git Basics] \|\| [Lambda-Ausdrücke] \|\| [Javadoc]                       |                                                                                                  |
+|  16   | Fr, 21.04.                                | Git: [Branches] \| [Branching-Strategies] \|\| [Gradle] \|\| [Methodenreferenzen] \|\| [Strategy-Pattern]                    |                                                                                                  |
+|  17   | Fr, 28.04.                                | Git: [Remotes] \| [Workflows] \|\| [Stream-API] \| [Optional]                                                                |                                                                                                  |
+|  18   | Fr, 05.05.                                | Testen: [Einführung] \| [JUnit-Basics] \| [Testfallermittlung] \| [Mocking] \|\| [Logging]                                   |                                                                                                  |
+|  19   | Fr, 12.05.                                | [Code-Smells] \| [Coding-Rules] \| [Refactoring] \|\| [CI]                                                                   | **Gastvortrag zu JUnit/Mocking in der Praxis von Daniel Rosowski (Smartsquare GmbH, Bielefeld)** |
+|  20   | Fr, 19.05.                                | [Serialisierung] \|\| [Records] \| [Default-Methoden] \|\| [Docker] \|\| [Git-Worktree]                                      |                                                                                                  |
+|  21   | Fr, 26.05.                                | Generics: [Klassen und Methoden] \| [Bounds und Wildcards] \| [Type Erasure] \| [Polymorphie] \|\| [Collections]             |                                                                                                  |
+|  22   | Fr, 02.06.                                | [RegExp] \|\| Pattern: [Visitor] \| [Observer] \| [Command]                                                                  |                                                                                                  |
+|  23   | Fr, 09.06.                                | [Annotationen] \| [Reflection] \| [Exception-Handling] \|\| [Singleton-Pattern]                                              |                                                                                                  |
+|  24   | Fr, 16.06.                                | [Enumerationen] \| [Konfiguration] \| [ANT] \|\| [Template-Method-Pattern] \| [Factory-Method-Pattern]                       |                                                                                                  |
+|  25   | Fr, 23.06.                                | Multi-Threading: [Intro Threads] \| [Synchronisierung] \| [Highlevel Threadkonzepte] \|\| [Maven] \|\| [Type-Object-Pattern] |                                                                                                  |
+|  26   | Fr, 30.06.                                | Rückblick (**Zoom**) \| [Prüfungsvorbereitung]                                                                               |                                                                                                  |
+| _27_  | _Mi, 05.07._ (Start: 09:00 und 11:00 Uhr) | Klausur (Campus Minden, B40)                                                                                                 |                                                                                                  |
 
 [Prüfungsvorbereitung]: admin/exams.md
 
@@ -220,8 +233,8 @@ Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
 [Synchronisierung]: lecture/threads/threads-synchronisation.md
 [Highlevel Threadkonzepte]: lecture/threads/threads-highlevel.md
 
-
-### Praktikum
+:::
+::: {.tab title="Praktikum"}
 
 | Woche | Blatt  | Abgabe ILIAS und Peer-Feedback (ILIAS)                        | Vorstellung Praktikum |
 |:-----:|:-------|:--------------------------------------------------------------|:----------------------|
@@ -248,6 +261,9 @@ Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
 [B05a]: homework/b05a.md
 [B05b]: homework/b05b.md
 [B06]:  homework/b06.md
+
+:::
+::::::
 
 
 ## Förderungen und Kooperationen
