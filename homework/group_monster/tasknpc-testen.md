@@ -1,6 +1,6 @@
 ---
 archetype: assignment
-title: "JUnit (Gruppe Basics)"
+title: "JUnit (Gruppe Monster)"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"
 
@@ -10,8 +10,9 @@ hidden: true
 ## Ziel
 
 In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe
-`["Fallen"]({{< ref "/assignments/group_basics/fallen" >}})`{=markdown} implementierten
-Klassen und Methoden erstellen.
+["Monster"](tasknpc-monster.md) oder
+["Fernkampf"](tasknpc-fernkampf.md)
+implementierten Klassen und Methoden erstellen.
 
 ## JUnit
 

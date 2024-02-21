@@ -14,7 +14,7 @@ In dieser Aufgabe implementieren Sie ein einzigartiges Boss-Monster.
 ## Voraussetzung
 
 Um diese Aufgabe lösen zu können, sollten Sie vorher
-`["Monster"]({{< ref "/assignments/group_monster/monster" >}})`{=markdown} implementieren.
+["Monster"](tasknpc-monster.md) implementieren.
 
 ## Boss-Monster
 
