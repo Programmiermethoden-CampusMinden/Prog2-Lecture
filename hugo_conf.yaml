@@ -45,18 +45,15 @@ menu:
     - name: "<i class='fas fa-bookmark'></i> Fahrplan"
       url: "/index.html#fahrplan"
       weight: 20
-    - name: "<i class='fas fa-bookmark'></i> Praktikum"
-      url: "/index.html#praktikum"
-      weight: 30
     - name: "<i class='fas fa-bookmark'></i> Note/Credits"
       url: "/index.html#prüfungsform-note-und-credits"
-      weight: 40
+      weight: 30
     - name: "<i class='fas fa-external-link-alt'></i> FAQ"
       url: "https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/discussions/categories/q-a"
-      weight: 50
+      weight: 40
     - name: "<i class='fas fa-external-link-alt'></i> News"
       url: "https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/discussions/categories/announcements"
-      weight: 60
+      weight: 50
 
 outputs:
   home:
