@@ -236,7 +236,7 @@ für Sie vorbereitet sein.
 ## Fragetypen-Demo
 
 In Ihrem ILIAS-Kurs finden Sie eine
-[**Fragetypen-Demo**](https://www.hsbi.de/elearning/goto.php?target=tst_1221158&client_id=FH-Bielefeld)
+[**Fragetypen-Demo**](https://www.hsbi.de/elearning/goto.php?target=tst_1352273&client_id=FH-Bielefeld)
 mit den wichtigsten Fragetypen. Machen Sie sich mit der Mechanik der Fragetypen vertraut und schauen
 Sie sich die Kommentare bei den einzelnen Aufgaben an. Sie können die Demo bei Bedarf beliebig oft
 wiederholen.
