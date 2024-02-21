@@ -55,7 +55,6 @@ den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anscha
 | Vorlesung (2 SWS)     | Praktikum (2+1 SWS)             |
 |:----------------------|:--------------------------------|
 | Fr, 16:30 - 18:00 Uhr | Gruppe 1: Fr, 09:00 - 10:30 Uhr |
-|                       | Gruppe 1: Fr, 09:00 - 10:30 Uhr |
 |                       | Gruppe 2: Fr, 13:30 - 15:00 Uhr |
 |                       | Gruppe 3: Fr, 15:00 - 16:30 Uhr |
 |                       | Gruppe 4: Fr, 10:45 - 12:15 Uhr |
@@ -99,14 +98,11 @@ Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
 1.  ["**Java ist auch eine Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
     Ullenboom, C., Rheinwerk-Verlag, 2021.
     ISBN [978-3-8362-8745-6](https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6).
-
 2.  ["**Pro Git** (Second Edition)"](https://git-scm.com/book/en/v2).
     Chacon, S. und Straub, B., Apress, 2014.
     ISBN [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
-
 3.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
     Oracle Corporation, 2023.
-
 4.  ["Learn Java"](https://dev.java/learn/).
     Oracle Corporation, 2023.
 
@@ -225,7 +221,7 @@ Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
 [Highlevel Threadkonzepte]: lecture/threads/threads-highlevel.md
 
 
-### Praktikum/Übung
+### Praktikum
 
 | Woche | Blatt  | Abgabe ILIAS und Peer-Feedback (ILIAS)                        | Vorstellung Praktikum |
 |:-----:|:-------|:--------------------------------------------------------------|:----------------------|
