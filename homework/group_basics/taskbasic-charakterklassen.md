@@ -19,9 +19,9 @@ In dieser Aufgabe sollen Sie verschiedene Charakterklassen implementieren.
 ## Voraussetzungen
 
 Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsystem
-(`["Nahkampf"]({{< ref "/assignments/group_monster/nahkampf" >}})`{=markdown} oder
-`["Fernkampf"]({{< ref "/assignments/group_monster/fernkampf" >}})`{=markdown} und
-`["Fähigkeiten"]({{< ref "/assignments/group_basics/skills" >}})`{=markdown}) umgesetzt haben.
+(["Nahkampf"](../group_monster/tasknpc-nahkampf.md) oder
+["Fernkampf"](../group_monster/tasknpc-fernkampf.md) und
+["Fähigkeiten"](taskbasic-skills.md)) umgesetzt haben.
 
 ## Charakterklassen
 

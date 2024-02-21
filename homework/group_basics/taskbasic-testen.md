@@ -10,7 +10,7 @@ hidden: true
 ## Ziel
 
 In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe
-`["Fallen"]({{< ref "/assignments/group_basics/fallen" >}})`{=markdown} implementierten
+["Fallen"](taskbasic-fallen.md) implementierten
 Klassen und Methoden erstellen.
 
 ## JUnit

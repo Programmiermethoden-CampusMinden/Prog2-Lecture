@@ -23,5 +23,5 @@ Implementieren Sie ein Rätsel im Spiel, welches eine zu einem regulären Ausdru
 Eingabe erfordert.
 
 _Anmerkung_: Diese Aufgabe lässt sich hervorragend mit den Aufgaben
-`["Shop"]({{< ref "/assignments/group_loot/shop" >}})`{=markdown} und
-`["NPC"]({{< ref "/assignments/group_loot/npc" >}})`{=markdown} kombinieren.
+["Shop"](taskloot-shop.md) und
+["NPC"](taskloot-npc.md) kombinieren.

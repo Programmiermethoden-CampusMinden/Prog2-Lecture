@@ -10,8 +10,8 @@ hidden: true
 ## Ziel
 
 In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe
-`["Monster"]({{< ref "/assignments/group_monster/monster" >}})`{=markdown} oder
-`["Fernkampf"]({{< ref "/assignments/group_monster/fernkampf" >}})`{=markdown}
+["Monster"](tasknpc-monster.md) oder
+["Fernkampf"](tasknpc-fernkampf.md)
 implementierten Klassen und Methoden erstellen.
 
 ## JUnit

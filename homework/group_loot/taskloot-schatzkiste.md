@@ -15,8 +15,8 @@ finden und plündern kann. Vor dem Plündern muss die Kiste aber erst besiegt we
 ## Voraussetzung
 
 Um diese Aufgabe lösen zu können, müssen Sie vorher
-`["Monster"]({{< ref "/assignments/group_monster/monster" >}})`{=markdown} und
-`["Item"]({{< ref "/assignments/group_loot/item" >}})`{=markdown} gelöst haben.
+["Monster"](../group_monster/tasknpc-monster.md) und
+["Item"](taskloot-item.md) gelöst haben.
 
 ## Monster-Schatzkiste
 

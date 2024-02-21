@@ -15,7 +15,7 @@ Monster kämpfen kann.
 ## Voraussetzung
 
 Um diese Aufgabe lösen zu können, müssen Sie vorher
-`["Monster"]({{< ref "/assignments/group_monster/monster" >}})`{=markdown} implementiert haben.
+["Monster"](tasknpc-monster.md) implementiert haben.
 
 ## Nahkampf
 
