@@ -1,6 +1,6 @@
 ---
 archetype: assignment
-title: "JUnit (Gruppe Monster)"
+title: "JUnit (Gruppe Loot)"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"
 
@@ -10,8 +10,8 @@ hidden: true
 ## Ziel
 
 In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe
-`["Monster"]({{< ref "/assignments/group_monster/monster" >}})`{=markdown} oder
-`["Fernkampf"]({{< ref "/assignments/group_monster/fernkampf" >}})`{=markdown}
+["Quests"](taskloot-quests.md) oder
+["Dialogsystem"](taskloot-dialogsystem.md)
 implementierten Klassen und Methoden erstellen.
 
 ## JUnit

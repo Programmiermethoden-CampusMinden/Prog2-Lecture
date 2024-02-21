@@ -1,6 +1,6 @@
 ---
 archetype: assignment
-title: "JUnit (Gruppe Loot)"
+title: "JUnit (Gruppe Basics)"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"
 
@@ -10,9 +10,8 @@ hidden: true
 ## Ziel
 
 In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe
-`["Quests"]({{< ref "/assignments/group_loot/quests" >}})`{=markdown} oder
-`["Dialogsystem"]({{< ref "/assignments/group_loot/dialogsystem" >}})`{=markdown}
-implementierten Klassen und Methoden erstellen.
+["Fallen"](taskbasic-fallen.md) implementierten
+Klassen und Methoden erstellen.
 
 ## JUnit
 

@@ -16,8 +16,8 @@ oder Verbesserungen kaufen und verkaufen kann.
 
 Um diese Aufgabe lösen zu können, sollten Sie vorher folgende Aufgaben gelöst haben:
 
--   `["Item"]({{< ref "/assignments/group_loot/item" >}})`{=markdown}
--   `["Dialogsystem"]({{< ref "/assignments/group_loot/dialogsystem" >}})`{=markdown}
+-   ["Item"](taskloot-item.md)
+-   ["Dialogsystem"](taskloot-dialogsystem.md)
 
 ## Shop
 

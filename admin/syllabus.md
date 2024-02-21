@@ -14,14 +14,6 @@ hidden: true
 :::
 
 
-> ... And, lastly, there's the explosive growth in demand, which has led to many
-> people doing it who aren't any good at it. Code is merely a means to an end.
-> **Programming is an art and code is merely its medium.**
-> Pointing a camera at a subject does not make one a proper photographer. There are
-> a lot of self-described coders out there who couldn't program their way out of a
-> paper bag.
->
-> \hfill -- John Gruber auf [daringfireball.net](https://daringfireball.net/2020/04/cobol_programming_coding)
 
 
 Sie haben letztes Semester in OOP die *wichtigsten* Elemente und Konzepte der
@@ -62,24 +54,7 @@ und pflegen können:
 
 ## Überblick Modulinhalte
 
-1.  Fortgeschrittene Konzepte in Java
-    *   Funktionale Programmierung: Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas, Stream-API
-    *   Generische Programmierung: Generics
-    *   Parallele Programmierung: Threads
-    *   Reguläre Ausdrücke, Annotationen, Reflection
-    *   CLI, Konfiguration, Fremde APIs nutzen
 
-\smallskip
-
-2.  Fortgeschrittenes OO-Design
-    *   Entwurfsmuster: Strategy, Template-Method, Factory-Method, Singleton, Observer, Visitor, Command, ...
-
-\smallskip
-
-3.  Programmiermethoden
-    *   Versionskontrolle: Git
-    *   Testen, Coding Conventions, Refactoring
-    *   Logging, Build-Tools, CI
 
 
 ## Erwartungen an Sie

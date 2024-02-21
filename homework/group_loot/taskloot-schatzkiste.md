@@ -15,13 +15,13 @@ finden und plündern kann. Vor dem Plündern muss die Kiste aber erst besiegt we
 ## Voraussetzung
 
 Um diese Aufgabe lösen zu können, müssen Sie vorher
-`["Monster"]({{< ref "/assignments/group_monster/monster" >}})`{=markdown} und
-`["Item"]({{< ref "/assignments/group_loot/item" >}})`{=markdown} gelöst haben.
+["Monster"](../group_monster/tasknpc-monster.md) und
+["Item"](taskloot-item.md) gelöst haben.
 
 ## Monster-Schatzkiste
 
 In den Vorgaben finden Sie die Implementierung einer
-[Schatzkiste](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/entities/Chest.java).
+[Schatzkiste](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/entities/MiscFactory.java).
 Führen Sie eine Codeanalyse durch und erklären Sie die Funktionalität.
 
 Konzipieren und implementieren Sie nun die "Monster-Schatzkiste" als einen neuen
