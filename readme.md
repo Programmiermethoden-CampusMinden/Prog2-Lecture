@@ -4,14 +4,17 @@ title: "IFM 2.2: Programmiermethoden (Sommer 2023)"
 ---
 
 
-> ... And, lastly, there's the explosive growth in demand, which has led to many
-> people doing it who aren't any good at it. Code is merely a means to an end.
-> **Programming is an art and code is merely its medium.**
-> Pointing a camera at a subject does not make one a proper photographer. There are
-> a lot of self-described coders out there who couldn't program their way out of a
-> paper bag.
->
-> \hfill -- John Gruber auf [daringfireball.net](https://daringfireball.net/2020/04/cobol_programming_coding)
+::: center
+[**Das Modul "Programmiermethoden" wurde im Rahmen der Reakkreditierung im Herbst 2023 durch das kleinere Modul ["Programmieren 2"] ersetzt.**]{.alert}
+
+[**Die Inhalte von "Programmiermethoden" werden hier für Wiederholende weiterhin angeboten und gepflegt.**]{.alert}
+[**Es finden auch weiterhin Prüfungen für Wiederholende statt (siehe auch [Abkündigung des Moduls "Programmiermethoden"]).**]{.alert}
+
+["Programmieren 2"]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
+[PO10]: https://www.hsbi.de/multimedia/Hochschulverwaltung/Dezernat+II/StudServ/Prüfungsangelegenheiten/Studiengangs_Downloads/Informatik+_+IFM/Prüfungsordnung+und+Modulhandbuch+Bachelor+Informatik+Version+10+%28Fassung+09_2023%29-p-174010.pdf
+[PO18]: https://www.hsbi.de/multimedia/Hochschulverwaltung/Dezernat+II/StudServ/Prüfungsangelegenheiten/Studiengangs_Downloads/Informatik+_+IFM/Studiengangsprüfungsordnung+und+Modulhandbuch+Bachelor+Informatik+Version+18+%28Fassung+09_2023%29-p-169988.pdf
+[Abkündigung des Moduls "Programmiermethoden"]: https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/discussions/24
+:::
 
 
 ## Kursbeschreibung
