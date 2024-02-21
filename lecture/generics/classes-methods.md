@@ -152,7 +152,7 @@ b.foo("huhu");  // Fehlermeldung vom Compiler
 ```
 
 ::::::::: notes
-[Beispiel: classes.GenericClasses]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/generics/src/classes/GenericClasses.java"}
+[Beispiel: classes.GenericClasses]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/generics/src/classes/GenericClasses.java"}
 
 ### Typ-Inferenz
 
@@ -286,7 +286,7 @@ m.myst("Essen", "lecker");   // String, String  => T: String
 m.myst(1.0, 1);              // Double, Integer => T: Number
 ```
 
-[Beispiel methods.GenericMethods]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/generics/src/methods/GenericMethods.java"}
+[Beispiel methods.GenericMethods]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/generics/src/methods/GenericMethods.java"}
 
 ::::::::: notes
 Reihenfolge der Suche nach passender Methode gilt auch für nicht-generisch überladene Methoden

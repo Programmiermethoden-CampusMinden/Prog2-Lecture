@@ -32,7 +32,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/48c5b1437b5f1ff4023295d0a95c12d893510d0980ff5c6a37ab4e5814990c82b769ff505e727fc3d1ee6b71facb92955639400c01d269ad74e69d9788470c53"
     name: "VL Flyweight-Pattern"
 challenges: |
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/pattern/src/challenges/flyweight)
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/pattern/src/challenges/flyweight)
     finden Sie ein Modellierung eines Schachspiels.
 
     Identifizieren Sie die Stellen im Vorgabe-Code, wo Sie das Flyweight-Pattern

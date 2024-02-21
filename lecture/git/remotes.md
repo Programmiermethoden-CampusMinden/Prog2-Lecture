@@ -77,17 +77,17 @@ ich sinnvoll über Git mit anderen Kollegen und Teams zusammen? Welche Modelle h
 
 ## Clonen kann sich lohnen ...
 
-    https://github.com/Programmiermethoden-CampusMinden/PM-Lecture
+    https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
 
     ---C---D---E  master
 
 \bigskip
 
-=> `git clone https://github.com/Programmiermethoden-CampusMinden/PM-Lecture`
+=> `git clone https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture`
 
 \bigskip
 
-    ./PM-Lecture/  (lokaler Rechner)
+    ./Prog2-Lecture/  (lokaler Rechner)
 
     ---C---D---E  master
                ^origin/master
@@ -119,7 +119,7 @@ Für die URL sind verschiedene Protokolle möglich, beispielsweise:
 
 ## Eigener und entfernter _master_ entwickeln sich weiter ...
 
-    https://github.com/Programmiermethoden-CampusMinden/PM-Lecture
+    https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
 
     ---C---D---E---F---G  master
 
@@ -127,7 +127,7 @@ Für die URL sind verschiedene Protokolle möglich, beispielsweise:
 
 [`<p></p>`{=markdown}]{.notes}
 
-    ./PM-Lecture/  (lokaler Rechner)
+    ./Prog2-Lecture/  (lokaler Rechner)
 
     ---C---D---E---H  master
                ^origin/master
@@ -169,7 +169,7 @@ wurde, zeigt der remote Branch `origin/master` immer noch auf den Commit
 
 ## Änderungen im Remote holen und Branches zusammenführen
 
-    https://github.com/Programmiermethoden-CampusMinden/PM-Lecture
+    https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
 
     ---C---D---E---F---G  master
 
@@ -179,7 +179,7 @@ wurde, zeigt der remote Branch `origin/master` immer noch auf den Commit
 
 \bigskip
 
-    ./PM-Lecture/  (lokaler Rechner)
+    ./Prog2-Lecture/  (lokaler Rechner)
 
     ---C---D---E---H  master
                 \
@@ -211,7 +211,7 @@ Mit `git fetch origin` alle Änderungen holen
 
 [`<p></p>`{=markdown}]{.notes}
 
-    https://github.com/Programmiermethoden-CampusMinden/PM-Lecture
+    https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
 
     ---C---D---E---H---I  master
                 \     /
@@ -220,7 +220,7 @@ Mit `git fetch origin` alle Änderungen holen
 [`<p></p>`{=markdown}]{.notes}
 
 
-    ./PM-Lecture/  (lokaler Rechner)
+    ./Prog2-Lecture/  (lokaler Rechner)
 
     ---C---D---E---H---I  master
                 \     /^origin/master

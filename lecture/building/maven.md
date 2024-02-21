@@ -207,7 +207,7 @@ ein erster Einstieg ist die [Plugin-API](https://maven.apache.org/ref/3.8.1/mave
     führt die Klasse `de.hsbi.pm.Main` aus.
 :::
 
-[Demo: pom.xml]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/building/src/maven/pom.xml"}
+[Demo: pom.xml]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/maven/pom.xml"}
 
 
 ## Wrap-Up

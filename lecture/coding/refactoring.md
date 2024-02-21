@@ -46,7 +46,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/36389f8fe4befc6370c28cda4475690224942c00c854e6dfc953b60c26acdf62093345ae1ee0698f71dc0a7f02739253d4ba29b7c05b69036cbb09fb1e361549"
     name: "VL Refactoring"
 challenges: |
-    In der [Vorgabe](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/challenges/refactor)
+    In der [Vorgabe](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/coding/src/challenges/refactor)
     finden Sie einige Klassen mit unübersichtlichem und schlecht strukturierten Code.
 
     Welche _Bad Smells_ können Sie hier identifizieren?
