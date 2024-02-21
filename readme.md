@@ -1,6 +1,6 @@
 ---
 archetype: "home"
-title: "IFM 2.2: Programmiermethoden (Sommer 2023)"
+title: "IFM 2.1: Programmieren 2 (Sommer 2024)"
 ---
 
 
@@ -82,7 +82,7 @@ Alle Sitzungen online/per Zoom (**Zugangsdaten siehe [ILIAS]**)
 
 ## Prüfungsform, Note und Credits
 
-**Performanzprüfung**, 7 ECTS
+**Parcoursprüfung**, 5 ECTS (PO23)
 
 *   **Praktische Teilleistung**:
     Regelmäßige Bearbeitung der Praktikumsaufgaben,
