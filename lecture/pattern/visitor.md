@@ -59,7 +59,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/8a307719da2fd87b9cba54d34c05715a2fdaf115e80feb8ef29e53dcfe45f02e587ae0f76c7700e8d82fe102a234a2922af549aeaa261034dba59cbacfaaa8c3"
     name: "VL Visitor-Pattern"
 challenges: |
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/markdown/pattern/src/challenges/visitor)
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/pattern/src/challenges/visitor)
     finden Sie Code zur Realisierung von (rudimentären) binären Suchbäumen.
 
     1.  Betrachten Sie die Klassen `BinaryNode` und `Main`. Die Klasse `BinaryNode` dient zur einfachen Repräsentierung von
@@ -259,7 +259,7 @@ Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche St
 mit denen wir diesen Parsetree traversieren ... Und wir müssen für _jede_ Erweiterung
 immer _alle_ Expression-Klassen anpassen!
 
-[Beispiel: direct.DemoExpr]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/pattern/src/visitor/direct/DemoExpr.java"}
+[Beispiel: direct.DemoExpr]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/direct/DemoExpr.java"}
 :::
 
 \vfill
@@ -392,9 +392,9 @@ von Datenstrukturen ist diese Variante oft von Vorteil, da man hier unterschiedl
 Traversierungsarten haben möchte (Breitensuche vs. Tiefensuche, Pre-Order vs. Inorder vs.
 Post-Order, ...) und diese elegant in den Visitor verlagern kann.
 
-[Beispiel Traversierung intern (in den Knotenklassen): visitor.visit.intrav.DemoExpr]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/pattern/src/visitor/visit/intrav/DemoExpr.java"}
+[Beispiel Traversierung intern (in den Knotenklassen): visitor.visit.intrav.DemoExpr]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/intrav/DemoExpr.java"}
 
-[Beispiel Traversierung extern (im Visitor): visitor.visit.extrav.DemoExpr]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/pattern/src/visitor/visit/extrav/DemoExpr.java"}
+[Beispiel Traversierung extern (im Visitor): visitor.visit.extrav.DemoExpr]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/extrav/DemoExpr.java"}
 
 ### (Double-) Dispatch
 
@@ -440,7 +440,7 @@ implementieren.
 
 ![](images/parsetree_visitor_uml.png)
 
-[Demo: visitor.visit.extrav.DemoExpr]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/pattern/src/visitor/visit/extrav/DemoExpr.java"}
+[Demo: visitor.visit.extrav.DemoExpr]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/extrav/DemoExpr.java"}
 
 
 ## Wrap-Up

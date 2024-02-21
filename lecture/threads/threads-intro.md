@@ -71,7 +71,7 @@ fhmedia:
 Wert 42 ausprobieren (ist zeitlich ganz gut)
 -->
 
-[Demo: misc.SwingWorkerDemo (GUI ausprobieren)]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/threads/src/misc/SwingWorkerDemo.java"}
+[Demo: misc.SwingWorkerDemo (GUI ausprobieren)]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/misc/SwingWorkerDemo.java"}
 
 
 ::: notes
@@ -107,7 +107,7 @@ public class Traditional {
 }
 ```
 
-[Demo: intro.Traditional]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/threads/src/intro/Traditional.java"}
+[Demo: intro.Traditional]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/intro/Traditional.java"}
 
 
 ::: notes
@@ -149,7 +149,7 @@ public class Threaded extends Thread {
 }
 ```
 
-[Demo: intro.Threaded]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/threads/src/intro/Threaded.java"}
+[Demo: intro.Threaded]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/intro/Threaded.java"}
 
 
 ## Erzeugen von Threads
@@ -161,7 +161,7 @@ public class Threaded extends Thread {
 *   Methode `run()` implementieren, aber nicht aufrufen
 *   Methode `start()` aufrufen, aber (i.d.R.) nicht implementieren
 
-[Demo: creation.*]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/threads/src/creation/"}
+[Demo: creation.*]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/creation/"}
 
 ::: notes
 ### Ableiten von _Thread_
@@ -273,7 +273,7 @@ besprochen.
 
 \vspace{24mm}
 
-[Demo: intro.Join]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/threads/src/intro/Join.java"}
+[Demo: intro.Join]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/intro/Join.java"}
 
 
 ## Wrap-Up

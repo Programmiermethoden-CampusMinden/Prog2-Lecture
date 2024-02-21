@@ -106,7 +106,7 @@ challenges: |
 Implementieren Sie eine Ticket-App, die verschiedene Tickets mit
 Hilfe des Factory-Method Entwurfsmusters generiert.
 
-[UML; Konsole: factory.FactoryBeispiel]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/pattern/src/factory/FactoryBeispiel.java"}
+[UML; Konsole: factory.FactoryBeispiel]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/factory/FactoryBeispiel.java"}
 
 
 ## Wrap-Up

@@ -291,7 +291,7 @@ auch die selben Versionsstände haben. In der Praxis löscht man deshalb das alt
 und erstellt ein neues, welches dann die aktualisierte Software enthält.
 :::
 
-[Beispiel: debian-latex.df]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/building/src/docker/debian-latex.df"}
+[Beispiel: debian-latex.df]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/docker/debian-latex.df"}
 
 
 ## CI-Pipeline (GitLab)

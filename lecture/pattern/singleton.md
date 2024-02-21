@@ -84,7 +84,7 @@ public class SingletonEager {
 }
 ```
 
-[Beispiel: singleton.SingletonEager]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/pattern/src/singleton/SingletonEager.java"}
+[Beispiel: singleton.SingletonEager]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/singleton/SingletonEager.java"}
 
 
 ## Umsetzung: "Lazy" Singleton Pattern
@@ -113,7 +113,7 @@ public class SingletonLazy {
 }
 ```
 
-[Beispiel: singleton.SingletonLazy]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/pattern/src/singleton/SingletonLazy.java"}
+[Beispiel: singleton.SingletonLazy]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/singleton/SingletonLazy.java"}
 
 
 ## Vorsicht!

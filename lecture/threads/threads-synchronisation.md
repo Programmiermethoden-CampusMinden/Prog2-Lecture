@@ -64,7 +64,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/08f819d3002d7658801ff15fdb14cbdba82defee0ae97d929f5c4a03eeb0e3e9b751e90f5e0fe0ac3d55a551a53065c04f505f23a6c9f41d69d504474ea28c04"
     name: "VL Threads Synchronisation"
 challenges: |
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/markdown/threads/src/challenges) finden Sie eine Modellierung für ein Bankensystem.
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/threads/src/challenges) finden Sie eine Modellierung für ein Bankensystem.
 
     Erweitern Sie die Vorgaben um Multithreading.
 
@@ -110,7 +110,7 @@ public class Teaser implements Runnable {
 }
 ```
 
-[Demo: synchronised.Teaser]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java"}
+[Demo: synchronised.Teaser]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/Teaser.java"}
 
 
 ## Zugriff auf gemeinsame Ressourcen: Mehrseitige Synchronisierung
@@ -158,7 +158,7 @@ geschützten Bereich einschließen und als Sperr-Objekt das eigene Objekt (`this
     }
 ```
 
-[Demo: synchronised.ObjSync]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/threads/src/synchronised/ObjSync.java"}
+[Demo: synchronised.ObjSync]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/ObjSync.java"}
 
 
 ## Synchronisierte Methoden
@@ -208,7 +208,7 @@ Die Methode `incrVal()` könnte entsprechend so umgeschrieben werden:
     }
 ```
 
-[Demo: synchronised.MethodSync]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/threads/src/synchronised/MethodSync.java"}
+[Demo: synchronised.MethodSync]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/MethodSync.java"}
 
 
 ## Probleme bei der (mehrseitigen) Synchronisierung: Deadlocks
@@ -256,7 +256,7 @@ holen, den aber aktuell der erste Thread hält.
 Und schon geht's nicht mehr weiter :-)
 :::
 
-[Demo: synchronised.Deadlock]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/threads/src/synchronised/Deadlock.java"}
+[Demo: synchronised.Deadlock]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/Deadlock.java"}
 
 
 ## Warten auf andere Threads: Einseitige Synchronisierung
@@ -340,7 +340,7 @@ Und schon geht's nicht mehr weiter :-)
 => Geht nur innerhalb der `synchronized`-Anweisung für das Synchronisations-Objekt!
 :::
 
-[Demo: synchronised.Staffel]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/threads/src/synchronised/Staffel.java"}
+[Demo: synchronised.Staffel]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/Staffel.java"}
 
 
 ## Wrap-Up

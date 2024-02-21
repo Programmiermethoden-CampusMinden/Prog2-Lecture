@@ -103,7 +103,7 @@ challenges: |
 
     **Sortieren mit Lambdas und funktionalen Interfaces**
 
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/markdown/modern-java/src/challenges/lambda)
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/modern-java/src/challenges/lambda)
     finden Sie die Klassen `Student` und `StudentSort` mit
     vorgefertigten Methoden  zu den Teilaufgaben sowie eine Testsuite
     `SortTest` mit einzelnen Testfälllen zu den Teilaufgaben, mit der Ihre
@@ -240,7 +240,7 @@ public class Outer {
 }
 ```
 
-[Beispiel mit Iterator als innere Klasse: nested.StudiListNested]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/modern-java/src/nested/StudiListNested.java"}
+[Beispiel mit Iterator als innere Klasse: nested.StudiListNested]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/nested/StudiListNested.java"}
 
 ### Statische innere Klassen ("_Static Nested Classes_")
 
@@ -290,7 +290,7 @@ sl.sort(
 *   Nutzung typischerweise bei GUIs: Event-Handler etc.
 :::
 
-[Demo: nested.DemoAnonymousInnerClass]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/modern-java/src/nested/DemoAnonymousInnerClass.java"}
+[Demo: nested.DemoAnonymousInnerClass]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/nested/DemoAnonymousInnerClass.java"}
 
 
 ## Vereinfachung mit Lambda-Ausdruck
@@ -320,7 +320,7 @@ werden kann, muss der erwartete Parameter vom Typ her ein "**funktionales Interf
 (s.u.) sein!
 :::
 
-[Demo: nested.DemoLambda]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/modern-java/src/nested/DemoLambda.java"}
+[Demo: nested.DemoLambda]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/nested/DemoLambda.java"}
 
 
 ## Syntax für Lambdas

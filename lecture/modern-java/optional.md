@@ -55,7 +55,7 @@ fhmedia:
 challenges: |
     **Katzen-Café**
 
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/markdown/modern-java/src/challenges/optional)
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/modern-java/src/challenges/optional)
     finden Sie eine Implementierung für ein Katzencafé.
 
     Verändern Sie die Vorgaben so, dass möglich wenig `null` verwendet wird.
@@ -353,7 +353,7 @@ _deprecated_.
 _Anmerkung_: Da `getBestStudi()` eine `NullPointerException` werfen kann, sollte der
 Aufruf möglicherweise in ein `try/catch` verpackt werden. Dito für `orElseThrow()`.
 
-[Beispiel: optional.traditional.Demo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/modern-java/src/optional/traditional/Demo.java"}
+[Beispiel: optional.traditional.Demo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/optional/traditional/Demo.java"}
 :::
 
 
@@ -380,7 +380,7 @@ public static void main(String... args) {
 ```
 
 ::: notes
-[Beispiel: optional.streams.Demo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/modern-java/src/optional/streams/Demo.java"}
+[Beispiel: optional.streams.Demo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/optional/streams/Demo.java"}
 
 Im Beispiel wird in `getBestStudi()` die Sammlung als Stream betrachtet, über die
 Methode `sorted()` und den Lamda-Ausdruck für den `Comparator` sortiert ("falsch"

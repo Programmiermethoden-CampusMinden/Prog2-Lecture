@@ -127,7 +127,7 @@ Works on my machine ...
 
 => Überblick: [ant.apache.org/manual/tasksoverview.html](https://ant.apache.org/manual/tasksoverview.html)
 
-[Konsole/IDE: ant -f hello.xml]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/building/src/ant/hello.xml"}
+[Konsole/IDE: ant -f hello.xml]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/hello.xml"}
 
 
 ## Properties: Name-Wert-Paare
@@ -156,7 +156,7 @@ Works on my machine ...
     `ant -Dwuppie=fluppie`
 
 ::: notes
-[Beispiel build.xml, Properties]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/building/src/ant/build.xml"}
+[Beispiel build.xml, Properties]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/build.xml"}
 :::
 
 
@@ -183,7 +183,7 @@ Works on my machine ...
 *   `<copy file="myfile.txt" tofile="../bak/mycopy.txt" />`
 *   `<move file="src/file.orig" tofile="bak/file.moved" />`
 
-[Beispiel build.xml, init und clean]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/building/src/ant/build.xml"}
+[Beispiel build.xml, init und clean]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/build.xml"}
 :::
 
 
@@ -468,7 +468,7 @@ ivy-2.5.0.jar von /usr/share/java/ivy.jar nach ~/.ant/lib/ kopieren
 Ivy-Cache unter ~/.ivy2/cache/
 -->
 
-[Demo: ivydemo.xml]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/building/src/ant/ivydemo.xml"}
+[Demo: ivydemo.xml]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/ivydemo.xml"}
 
 
 ## Ausblick: Weitere Build-Systeme

@@ -39,7 +39,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/16d8509024067614df7909666ebb26ac42eb672180fd8b9f846d61f6d9d5c7d75a7430799469971666cbbe531fab23f7b78884c9bd432e901bfe81975e84da2b"
     name: "VL Swing: Layout-Manager"
 challenges: |
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/markdown/gui/src/challenges)
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/gui/src/challenges)
     eine Implementierung für ein TicTacToe-Spiel. Ihre
     Aufgabe ist es, eine grafische Benutzeroberfläche für das Spiel zu entwickeln.
 
@@ -130,7 +130,7 @@ Mit den Methoden `setHgap()` und `setVgap()` kann der Abstand zwischen den Kompo
 werden (horizontal und vertikal, Abstände in Pixel).
 :::
 
-[Demo: layout.Border]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/gui/src/layout/Border.java"}
+[Demo: layout.Border]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/Border.java"}
 
 
 ## _FlowLayout_
@@ -158,7 +158,7 @@ Per Default werden die Komponenten zentriert angeordnet. Über den Konstruktor o
 werden, ebenso wie ein vertikales und horizontales Padding zwischen den Komponenten.
 :::
 
-[Demo: layout.Flow]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/gui/src/layout/Flow.java"}
+[Demo: layout.Flow]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/Flow.java"}
 
 
 ## _GridLayout_
@@ -188,7 +188,7 @@ Auch in diesem Layout kann das Padding über die Methoden `setHgap()` bzw. `setV
 werden.
 :::
 
-[Demo: layout.Grid]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/gui/src/layout/Grid.java"}
+[Demo: layout.Grid]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/Grid.java"}
 
 
 ## Komplexer Layout-Manager: _GridBagLayout_
@@ -240,7 +240,7 @@ des Containers in der jeweiligen Richtung wird der neue Platz unter den Slots ge
 aufgeteilt.
 :::
 
-[Demo: layout.GridBag]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/gui/src/layout/GridBag.java"}
+[Demo: layout.GridBag]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/GridBag.java"}
 
 
 ## Wrap-Up
