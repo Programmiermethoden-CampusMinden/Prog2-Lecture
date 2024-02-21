@@ -136,7 +136,7 @@ Compiler-Prüfung. Da würde das von Arrays bekannte Verhalten Probleme machen .
 **Kovarianz**: Arrays sind _kovariant_, d.h. ein Array vom Typ `String[]` ist wegen
 `String extends Object` ein Untertyp von `Object[]`.
 
-[Beispiel arrays.X]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/generics/src/arrays/X.java"}
+[Beispiel arrays.X]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/generics/src/arrays/X.java"}
 :::
 
 

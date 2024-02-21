@@ -243,7 +243,7 @@ Die Funktionsweise der einzelnen Klassen wird in der Demo kurz angerissen. Schau
 zusätzlich in die Dokumentation.
 :::
 
-[Demo: Einbinden von Libs, cli.Args]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/cli/Args.java"}
+[Demo: Einbinden von Libs, cli.Args]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/java-jvm/src/cli/Args.java"}
 
 
 ## Laden und Speichern von Konfigurationsdaten
@@ -305,7 +305,7 @@ gewicht=12
     ```
     :::
 
-[Demo: cli.Props, Hinweis auf "Apache Commons Configuration"]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/cli/Props.java"}
+[Demo: cli.Props, Hinweis auf "Apache Commons Configuration"]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/java-jvm/src/cli/Props.java"}
 
 ::: notes
 `java.util.Properties` sind eine einfache und im JDK bereits eingebaute Möglichkeit,

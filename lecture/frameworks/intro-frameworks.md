@@ -153,14 +153,14 @@ ist ein einfaches und schlankes Framework zu bevorzugen.
     [(Achtung: In der Doku fehlt:  `implementation 'org.slf4j:slf4j-simple:1.8.0-beta4'`!)]{.notes}
 3.  Schrittweises Erweitern der Startanwendung, bis ein Verständnis für
     das Framework erlangt wurde \newline (MWE: _Minimal Working Example_):
-    [JavalinHelloWorld](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/frameworks/src/javalin/src/main/java/JavalinHelloWorld.java)
-4.  Anwendung erweitern: [JavalinRandomNumber](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/frameworks/src/javalin/src/main/java/JavalinRandomNumber.java)
+    [JavalinHelloWorld](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/frameworks/src/javalin/src/main/java/JavalinHelloWorld.java)
+4.  Anwendung erweitern: [JavalinRandomNumber](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/frameworks/src/javalin/src/main/java/JavalinRandomNumber.java)
 
 \bigskip
 
 **Frameworks müssen ge-/erlernt werden.**
 
-[Demo: Web-Anwendung für Zufallszahlen]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/frameworks/src/javalin/"}
+[Demo: Web-Anwendung für Zufallszahlen]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/markdown/frameworks/src/javalin/"}
 
 
 ## Wrap-Up

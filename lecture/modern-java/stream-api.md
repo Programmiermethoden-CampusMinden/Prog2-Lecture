@@ -59,7 +59,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/429bb37eaea02582785bfb46a92d68a3ed76cb18bdc98ec0f04ae438cecf82a595e1e46947d2ffcc2fd868d67ca1ed3beba73f216ae4886f2a9492167c006784"
     name: "VL Stream-API"
 challenges: |
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/streams)
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/markdown/modern-java/src/challenges/streams)
     finden Sie die Klasse `Main`, in der die Methoden
     `Main#a`, `Main#b` und `Main#c` "klassisch" mit `for`-Schleifen
     implementiert wurden.
@@ -391,7 +391,7 @@ laufen lassen und eine `Collection` erzeugen lassen:
 Die ist nur die sprichwörtliche "Spitze des Eisbergs"! Es gibt viele weitere Möglichkeiten, sowohl
 bei den intermediären als auch den terminalen Operationen. Schauen Sie in die Dokumentation!
 
-[Demo: streams.Demo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/streams/Demo.java"}
+[Demo: streams.Demo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/modern-java/src/streams/Demo.java"}
 :::
 
 

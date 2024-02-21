@@ -126,7 +126,7 @@ Zusätzlich gibt es noch Filter, mit denen man Nachrichten (zusätzlich zum
 Log-Level) nach weiteren Kriterien filtern kann.
 :::
 
-[Konsole: logging.LoggingDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingDemo.java"}
+[Konsole: logging.LoggingDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/coding/src/logging/LoggingDemo.java"}
 
 
 ## Erzeugen neuer Logger
@@ -196,7 +196,7 @@ public void log(Level level, String msg);
     *   Prüfung mit `public boolean isLoggable(Level)`
     *   Setzen mit `public void setLevel(Level)`
 
-[Konsole: logging.LoggingLevel]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingLevel.java"}
+[Konsole: logging.LoggingLevel]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/coding/src/logging/LoggingLevel.java"}
 
 ::: notes
 => Warum wird im Beispiel nach `log.setLevel(Level.ALL);` trotzdem nur
@@ -228,7 +228,7 @@ ab `INFO` geloggt? Wer erzeugt eigentlich die Ausgaben?!
 *   Handler nutzen zur Formatierung der Ausgabe einen `Formatter`
 *   Standard-Formatter: `SimpleFormatter` und `XMLFormatter`
 
-[Konsole: logging.LoggingHandler]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingHandler.java"}
+[Konsole: logging.LoggingHandler]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/coding/src/logging/LoggingHandler.java"}
 
 ::: notes
 => Warum wird im Beispiel nach dem Auskommentieren von
@@ -252,7 +252,7 @@ angezeigt (ab `INFO` aufwärts)?!
         *   Abschalten mit `Logger#setUseParentHandlers(false);`
     *   Diese leiten  [an ihre Handler sowie]{.notes}  an ihren Eltern-Logger weiter (unabhängig von Log-Level!)
 
-[Konsole: logging.LoggingParent; Tafel: Skizze Logger-Baum]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingParent.java"}
+[Konsole: logging.LoggingParent; Tafel: Skizze Logger-Baum]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/markdown/coding/src/logging/LoggingParent.java"}
 
 
 ## Wrap-Up

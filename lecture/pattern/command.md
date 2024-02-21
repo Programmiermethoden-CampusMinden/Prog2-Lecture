@@ -38,7 +38,7 @@ fhmedia:
     name: "VL Command-Pattern"
 challenges: |
     Schreiben Sie für den `Dwarf` in den
-    [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/pattern/src/challenges/command)
+    [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/markdown/pattern/src/challenges/command)
     einen Controller, welcher das Command-Pattern verwendet.
 
     * "W" führt Springen aus
