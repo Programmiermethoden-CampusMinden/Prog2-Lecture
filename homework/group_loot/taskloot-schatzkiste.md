@@ -21,7 +21,7 @@ Um diese Aufgabe lösen zu können, müssen Sie vorher
 ## Monster-Schatzkiste
 
 In den Vorgaben finden Sie die Implementierung einer
-[Schatzkiste](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/entities/Chest.java).
+[Schatzkiste](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/entities/MiscFactory.java).
 Führen Sie eine Codeanalyse durch und erklären Sie die Funktionalität.
 
 Konzipieren und implementieren Sie nun die "Monster-Schatzkiste" als einen neuen

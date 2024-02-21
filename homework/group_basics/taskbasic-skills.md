@@ -15,9 +15,9 @@ implementieren, die dann vom Spieler verwendet werden können.
 ## Fähigkeiten
 
 In den Vorgaben ist bereits ein
-[Skill-System](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/systems/SkillSystem.java)
+[Projectile-System](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/systems/ProjectileSystem.java)
 und ein
-[Feuerball-Skill](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/components/skill/FireballSkill.java)
+[Feuerball-Skill](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/utils/components/skill/FireballSkill.java)
 implementiert. Führen Sie eine Codeanalyse durch und erklären Sie die Funktionalität.
 
 Implementieren Sie ein Magie-Konzept. Der Spieler soll in der Lage sein, verschiedene Zauber

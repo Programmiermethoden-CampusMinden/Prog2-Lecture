@@ -22,7 +22,7 @@ Um diese Aufgabe lösen zu können, müssen Sie vorher
 In den Vorgaben ist ein Konzept für den
 [Fernkampf mit Skills](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/game/src/ecs/components/skill)
 mit einen
-[Projektil System](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/systems/ProjectileSystem.java)
+[Projektil System](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/systems/ProjectileSystem.java)
 implementiert. Führen Sie eine Codeanalyse durch und erklären Sie, wie das Konzept
 funktioniert.
 

@@ -16,12 +16,12 @@ knacken.
 ## Voraussetzung
 
 Um diese Aufgabe lösen zu können, müssen Sie vorher
-["Item"](taskloot-itemmd) gelöst haben.
+["Item"](taskloot-item.md) gelöst haben.
 
 ## Lockpicking
 
 In den Vorgaben finden Sie die Implementierung einer
-[Schatzkiste](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/entities/Chest.java).
+[Schatzkiste](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/entities/MiscFactory.java).
 Führen Sie eine Codeanalyse durch und erklären Sie die Funktionalität.
 
 Implementieren Sie eine Möglichkeit, dass Schatzkisten verschlossen sein können und nur mit

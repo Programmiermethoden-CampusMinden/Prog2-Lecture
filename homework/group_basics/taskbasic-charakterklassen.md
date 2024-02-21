@@ -32,7 +32,7 @@ mindestens drei unterschiedliche Charakterklassen anbieten.
 sich unterscheiden. Geben Sie jeder Charakterklasse eine passende Bezeichnung.
 
 In den Vorgaben existiert bereits ein
-[Stats-Component](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/game/src/ecs/components/stats).
+[Stats-Component](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/entities/EntityFactory.java).
 Führen Sie eine Codeanalyse durch und erklären Sie die Funktionalität des Components.
 
 Implementieren Sie nun die verschiedenen Charakterklassen im Sinne des ECS-Gedankens.
