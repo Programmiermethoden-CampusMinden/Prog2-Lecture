@@ -16,7 +16,7 @@ title: "IFM 2.1: Programmieren 2 (Sommer 2024)"
 
 ## Kursbeschreibung
 
-Sie haben letztes Semester in **OOP** die _wichtigsten_ Elemente und Konzepte der
+Sie haben letztes Semester in **Prog1** die _wichtigsten_ Elemente und Konzepte der
 Programmiersprache Java kennen gelernt.
 
 In diesem Modul geht es darum, diese Kenntnisse sowohl auf der Java- als auch auf der
