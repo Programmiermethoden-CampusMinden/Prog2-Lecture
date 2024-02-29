@@ -42,7 +42,7 @@ READINGS   = data/readings.yaml
 BIBTEX     = pm.bib
 
 ## Metadata (for Pandoc)
-METADATA   = pandoc_meta.yaml
+METADATA   = pm.yaml
 
 ## Top level directory for source files
 SRC_DIR    = lecture
