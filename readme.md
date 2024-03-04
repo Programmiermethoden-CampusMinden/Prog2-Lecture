@@ -46,7 +46,7 @@ den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anscha
 
 ## Team
 
-*   [Carsten Gips](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips)
+*   [Carsten Gips](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips) (Sprechstunde nach Vereinbarung per EMail)
 *   Tutoren (siehe ILIAS-Mitgliederliste)
 
 
