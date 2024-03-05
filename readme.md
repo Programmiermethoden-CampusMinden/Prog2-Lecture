@@ -89,24 +89,20 @@ Sie _können_ hierzu den Raum J104 nutzen.
 
 **Parcoursprüfung**, 5 ECTS (PO23)
 
-*   **Praktische Teilleistung**:
-    Regelmäßige Bearbeitung der Praktikumsaufgaben,
-    fristgerechte Abgabe der Lösungen (PDF, ZIP, Link) im ILIAS,
-    Erstellung von Peer-Feedback im ILIAS,
-    Vorstellung der Lösungen im Praktikum => Punkte
+1.  Prüfung im ersten Zeitraum
+    *   Stationen:
+        *   Praktikum: 10x Übungsblätter mit jeweils 1P
+            (fristgerechte Abgabe der Lösungen im ILIAS,
+            Vorstellung der Lösungen im Praktikum => Punkte)
+        *   Schriftliche Prüfung (digitale Klausur) mit 100P;
+            [Prüfungsvorbereitung]
+    *   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
 
-    Notenspiegel:
-    *   90 Punkte gesamt erreichbar: Zyklus 1 und 2 je 15 Punkte, Zyklus 3 bis 5 je 15+5 Punkte
-    *   4.0: ab 50% (45.0 Punkte), alle 5% nächste Teilnote, 1.0: ab 95% (85.5 Punkte)
-
-*   **Theoretische Teilleistung**:
-    Digitale Klausur ("**Klausur**") in den Prüfungszeiträumen; [Prüfungsvorbereitung](admin/exams.md).
-
-*   **Gesamtnote**:
-    50% Praxis, 50% Theorie
-
-Wiederholer mit bereits begonnener Parcours-Prüfung absolvieren stattdessen eine Parcours-Prüfung.
-Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
+2.  Prüfung im zweiten Zeitraum
+    *   Stationen:
+        *   Schriftliche Prüfung (digitale Klausur) mit 100P;
+            [Prüfungsvorbereitung]
+    *   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
 
 
 ## Materialien
