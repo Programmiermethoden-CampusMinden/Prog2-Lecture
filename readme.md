@@ -89,20 +89,27 @@ Sie _können_ hierzu den Raum J104 nutzen.
 
 **Parcoursprüfung**, 5 ECTS (PO23)
 
-1.  Prüfung im ersten Zeitraum
-    *   Stationen:
-        *   Praktikum: 10x Übungsblätter mit jeweils 1P
-            (fristgerechte Abgabe der Lösungen im ILIAS,
-            Vorstellung der Lösungen im Praktikum => Punkte)
-        *   Schriftliche Prüfung (digitale Klausur) mit 100P;
-            [Prüfungsvorbereitung]
-    *   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
+:::::: {.tabs groupid="exams"}
+::: {.tab title="Prüfung im ersten Zeitraum"}
 
-2.  Prüfung im zweiten Zeitraum
-    *   Stationen:
-        *   Schriftliche Prüfung (digitale Klausur) mit 100P;
-            [Prüfungsvorbereitung]
-    *   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
+*   Stationen:
+    *   Praktikum: 10x Übungsblätter mit jeweils 1P
+        (fristgerechte Abgabe der Lösungen im ILIAS,
+        Vorstellung der Lösungen im Praktikum => Punkte)
+    *   Schriftliche Prüfung (digitale Klausur) mit 100P;
+        [Prüfungsvorbereitung]
+*   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
+
+:::
+::: {.tab title="Prüfung im zweiten Zeitraum"}
+
+*   Stationen:
+    *   Schriftliche Prüfung (digitale Klausur) mit 100P;
+        [Prüfungsvorbereitung]
+*   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
+
+:::
+::::::
 
 
 ## Materialien
