@@ -59,7 +59,7 @@ den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anscha
 
 Mi, 08:00 - 09:30 Uhr (online/J104)
 
-Durchführung als **[Flipped Classroom]**.
+Durchführung als **Flipped Classroom**.
 
 :::
 ::: {.tab title="Praktikum"}
@@ -81,7 +81,6 @@ Praktika Gruppen 1 und 4 in **Präsenz**.
 Online-Sitzungen per Zoom (**Zugangsdaten siehe [ILIAS]**).
 Sie _können_ hierzu den Raum J104 nutzen.
 
-[Flipped Classroom]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/797
 [ILIAS]: https://www.hsbi.de/elearning/goto.php?target=crs_1337540&client_id=FH-Bielefeld
 
 
