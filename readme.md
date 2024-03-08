@@ -242,7 +242,7 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Highlevel Threadkonzepte]: lecture/threads/threads-highlevel.md
 
 [B01]: homework/b01a.md
-[B02]: homework/b01b.md
+[B02]: homework/b02.md
 [B03]: homework/b02a.md
 [B04]: homework/b02b.md
 [B05]: homework/b03a.md
