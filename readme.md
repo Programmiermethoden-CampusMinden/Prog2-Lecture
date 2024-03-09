@@ -93,7 +93,8 @@ Sie _können_ hierzu den Raum J104 nutzen.
 
 *   Stationen:
     *   Praktikum: 10x Übungsblätter mit jeweils 1P
-        (fristgerechte Abgabe der Lösungen im ILIAS,
+        (Einzelbearbeitung, mindestens 60% bearbeitet,
+        fristgerechte Abgabe der Lösungen im ILIAS,
         Vorstellung der Lösungen im Praktikum => Punkte)
     *   Schriftliche Prüfung (digitale Klausur) mit 100P;
         [Prüfungsvorbereitung]
