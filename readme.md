@@ -241,7 +241,7 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Synchronisierung]: lecture/threads/threads-synchronisation.md
 [Highlevel Threadkonzepte]: lecture/threads/threads-highlevel.md
 
-[B01]: homework/b01a.md
+[B01]: homework/b01.md
 [B02]: homework/b02.md
 [B03]: homework/b02a.md
 [B04]: homework/b02b.md
