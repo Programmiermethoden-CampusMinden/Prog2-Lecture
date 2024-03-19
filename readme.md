@@ -142,7 +142,7 @@ Sie _können_ hierzu den Raum J104 nutzen.
 
 | Monat | Tag   | Vorlesung                                                                                              | Praktikum |
 |:------|:------|:-------------------------------------------------------------------------------------------------------|:----------|
-| April | 17.   | Orga (**Zoom**)                                                                                        |           |
+| April | 17.   | Orga (**Zoom**), [FAQ]                                                                                 |           |
 |       | 24.   | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Collections] | [B01]     |
 | Mai   | 01.   | **Mai-Feiertag**                                                                                       |           |
 |       | 08.   | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Javadoc]                                | [B02]     |
@@ -161,6 +161,7 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 
 
 [Prüfungsvorbereitung]: admin/exams.md
+[FAQ]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a
 
 [Gradle]: lecture/building/gradle.md
 <!-- [ANT]: lecture/building/ant.md -->
