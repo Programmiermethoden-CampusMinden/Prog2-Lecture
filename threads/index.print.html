@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.26.2">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Multi-Threading: Parallelisierung von Programmen">
+    <meta name="twitter:description" content="">
+    <meta property="og:title" content="Multi-Threading: Parallelisierung von Programmen">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html">
+    <title>Multi-Threading: Parallelisierung von Programmen</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html" rel="canonical" type="text/html" title="Multi-Threading: Parallelisierung von Programmen">
+
+    
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1711605715" rel="icon" type="image/png">
+
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1711605716" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1711605716" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1711605716" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/ie.css?1711605716" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/url.js?1711605716"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1711605716"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='.';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Multi-Threading: Parallelisierung von Programmen
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="multi-threading-parallelisierung-von-programmen">Multi-Threading: Parallelisierung von Programmen</h1>
+
+
+<ul class="children children-li children-sort-">
+	
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html">Einführung in die nebenläufige Programmierung mit Threads</a></li>
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html">Synchronisation: Verteilter Zugriff auf gemeinsame Ressourcen</a></li>
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html">High-Level Concurrency</a></li>
+</ul>
+
+            <footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Multi-Threading: Parallelisierung von Programmen</h1>
+<article class="default">
+<h1>Einführung in die nebenläufige Programmierung mit Threads</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Threads sind weitere Kontrollflussfäden, die von der Java-VM (oder (selten) vom OS)
+verwaltet werden. Damit ist sind sie leichtgewichtiger als der Start neuer Prozesse
+direkt auf Betriebssystem-Ebene.</p>
+<p>Beim Start eines Java-Programms wird die <code>main()</code>-Methode automatisch in einem
+(Haupt-) Thread ausgeführt. Alle Anweisungen in einem Thread werden sequentiell
+ausgeführt.</p>
+<p>Um einen neuen Thread zu erzeugen, leitet man von <code>Thread</code> ab oder implementiert
+das Interface <code>Runnable</code>. Von diesen eigenen Klassen kann man wie üblich ein neues
+Objekt anlegen. Die Methode <code>run()</code> enthält dabei den im Thread auszuführenden
+Code. Um einen Thread als neuen parallelen Kontrollfluss zu starten, muss man die
+geerbte Methode <code>start()</code> auf dem Objekt aufrufen. Im Fall der Implementierung von
+<code>Runnable</code> muss man das Objekt zuvor noch in den Konstruktor von <code>Thread</code> stecken
+und so ein neues <code>Thread</code>-Objekt erzeugen, auf dem man dann <code>start()</code> aufrufen kann.</p>
+<p>Threads haben einen Lebenszyklus: Nach dem Erzeugen der Objekte mit <code>new</code> wird
+der Thread noch nicht ausgeführt. Durch den Aufruf der Methode <code>start()</code> gelangt
+der Thread in einen Zustand &quot;ausführungsbereit&quot;. Sobald er vom Scheduler eine
+Zeitscheibe zugeteilt bekommt, wechselt er in den Zustand &quot;rechnend&quot;. Von hier kann
+er nach Ablauf der Zeitscheibe durch den Scheduler wieder nach &quot;ausführungsbereit&quot;
+zurück überführt werden. Dieses Wechselspiel passiert automatisch und i.d.R. schnell,
+so dass selbst auf Maschinen mit nur einem Prozessor/Kern der Eindruck einer parallelen
+Verarbeitung entsteht. Nach Abarbeitung der <code>run()</code>-Methode wird der Thread beendet
+und kann nicht wieder neu gestartet werden. Bei Zugriff auf gesperrte Ressourcen
+oder durch <code>sleep()</code> oder <code>join()</code> kann ein Thread blockiert werden. Aus diesem
+Zustand gelangt er durch Interrupts oder nach Ablauf der Schlafzeit oder durch <code>notify</code>
+wieder zurück nach &quot;ausführungsbereit&quot;.</p>
+<p>Die Thread-Objekte sind normale Java-Objekte. Man kann hier Attribute und Methoden
+haben und diese entsprechend zugreifen/aufrufen. Das klappt auch, wenn der Thread
+noch nicht gestartet wurde oder bereits abgearbeitet wurde.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/ClfXbNPRl_8' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Threads Intro</a></li> <li><a href='https://youtu.be/zcVqFAx5D0E' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Threads Intro: Erzeugen von Threads</a></li> <li><a href='https://youtu.be/lQ_JSHBGhdU' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Threads Intro: Arbeiten mit Threads (`join()`)</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/41a885ac4baf0e087d393b0fa9d3d6f38cc86debad5b7e563c46dac15c0ba4f214476650ad6fa288708eb8b1ccf12d19f6ab46a8c5cf7a58b61a4cff39ec727b' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Threads Intro</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Grundsätzlicher Unterschied zw. Threads und Prozessen</li> <li>(K2) Lebenszyklus von Threads</li> <li>(K3) Erzeugen und Starten von Threads</li> <li>(K3) Kommunikation mit Objekten</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="42">42</h2>
+<p><a href="#R-image-8fcb555acbb944bc511a5a90cd530829" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro/screenshot_swingworker.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8fcb555acbb944bc511a5a90cd530829"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro/screenshot_swingworker.png?width=80%25&height=auto"></a></p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/misc/SwingWorkerDemo.java" target="_blank"><span class="title">Demo: misc.SwingWorkerDemo (GUI ausprobieren)</span></a></span></div>
+<h2 id="einführung-in-nebenläufige-programmierung">Einführung in nebenläufige Programmierung</h2>
+<h3 id="traditionelle-programmierung">Traditionelle Programmierung</h3>
+<ul>
+<li>Aufruf einer Methode verlagert Kontrollfluss in diese Methode</li>
+<li>Code hinter Methodenaufruf wird erst <strong>nach Beendigung</strong> der Methode ausgeführt</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Traditional</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>        Traditional x <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Traditional();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;main(): vor run()&#34;</span>);
+</span></span><span style="display:flex;"><span>        x.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;main(): nach run()&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>        IntStream.<span style="color:#a6e22e">range</span>(0, 10).<span style="color:#a6e22e">mapToObj</span>(i <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;in run()&#34;</span>).<span style="color:#a6e22e">forEach</span>(System.<span style="color:#a6e22e">out</span>::println);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/intro/Traditional.java" target="_blank"><span class="title">Demo: intro.Traditional</span></a></span></div>
+<h3 id="nebenläufige-programmierung">Nebenläufige Programmierung</h3>
+<ul>
+<li>Erzeugung eines neuen Kontrollflussfadens (Thread)
+<ul>
+<li><strong>Läuft (quasi-) parallel zu bisherigem Kontrollfluss</strong></li>
+</ul>
+</li>
+<li>Threads können unabhängig von einander arbeiten</li>
+<li>Zustandsverwaltung durch Java-VM (oder Unterstützung durch Betriebssystem)
+<ul>
+<li>Aufruf einer bestimmten Methode erzeugt neuen Kontrollflussfaden</li>
+<li>Der neue Thread arbeitet &quot;parallel&quot; zum bisherigen Thread</li>
+<li>Kontrolle kehrt sofort wieder zurück: Code hinter dem Methodenaufruf
+wird ausgeführt ohne auf die Beendigung der aufgerufenen Methode zu
+warten</li>
+<li>Verteilung der Threads auf die vorhandenen Prozessorkerne abhängig
+von der Java-VM</li>
+</ul>
+</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Threaded</span> <span style="color:#66d9ef">extends</span> Thread {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>        Threaded x <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Threaded();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;main(): vor run()&#34;</span>);
+</span></span><span style="display:flex;"><span>        x.<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;main(): nach run()&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>        IntStream.<span style="color:#a6e22e">range</span>(0, 10).<span style="color:#a6e22e">mapToObj</span>(i <span style="color:#f92672">-&gt;</span> <span style="color:#e6db74">&#34;in run()&#34;</span>).<span style="color:#a6e22e">forEach</span>(System.<span style="color:#a6e22e">out</span>::println);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/intro/Threaded.java" target="_blank"><span class="title">Demo: intro.Threaded</span></a></span></div>
+<h2 id="erzeugen-von-threads">Erzeugen von Threads</h2>
+<ul>
+<li>
+<p>Ableiten von <code>Thread</code> oder Implementierung von <code>Runnable</code></p>
+<p><a href="#R-image-a0c8b1eee2615b34e31bcbc9f49b0ab5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro/ThreadRunnable.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a0c8b1eee2615b34e31bcbc9f49b0ab5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro/ThreadRunnable.png?width=80%25&height=auto"></a></p>
+</li>
+<li>
+<p>Methode <code>run()</code> implementieren, aber nicht aufrufen</p>
+</li>
+<li>
+<p>Methode <code>start()</code> aufrufen, aber (i.d.R.) nicht implementieren</p>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/creation/" target="_blank"><span class="title">Demo: creation.*</span></a></span></div>
+<h3 id="ableiten-von-thread">Ableiten von <em>Thread</em></h3>
+<ul>
+<li><code>start()</code> startet den Thread und sorgt für Ausführung von <code>run()</code></li>
+<li><code>start()</code> nur einmal aufrufen</li>
+</ul>
+<h3 id="implementierung-von-runnable">Implementierung von <em>Runnable</em></h3>
+<ul>
+<li>Ebenfalls <code>run()</code> implementieren</li>
+<li>Neues <code>Thread</code>-Objekt erzeugen, Konstruktor das eigene Runnable übergeben</li>
+<li>Für Thread-Objekt die Methode <code>start()</code> aufrufen
+<ul>
+<li>Startet den Thread (das Runnable) und sorgt für Ausführung von <code>run()</code></li>
+</ul>
+</li>
+</ul>
+<p>Vorteil von <code>Runnable</code>: Ist ein Interface, d.h. man kann noch von einer anderen Klasse erben</p>
+<h2 id="zustandsmodell-von-threads-vereinfacht">Zustandsmodell von Threads (vereinfacht)</h2>
+<p>Threads haben einen Lebenszyklus: Nach dem Erzeugen der Objekte mit <code>new</code> wird
+der Thread noch nicht ausgeführt. Er ist sozusagen in einem Zustand &quot;erzeugt&quot;.
+Man kann bereits mit dem Objekt interagieren, also auf Attribute zugreifen und
+Methoden aufrufen.</p>
+<p>Durch den Aufruf der Methode <code>start()</code> gelangt der Thread in einen Zustand
+&quot;ausführungsbereit&quot;, er läuft also aus Nutzersicht. Allerdings hat er noch keine
+Ressourcen zugeteilt (CPU, ...), so dass er tatsächlich noch nicht rechnet. Sobald
+er vom Scheduler eine Zeitscheibe zugeteilt bekommt, wechselt er in den Zustand
+&quot;rechnend&quot; und führt den Inhalt der <code>run()</code>-Methode aus. Von hier kann er nach
+Ablauf der Zeitscheibe durch den Scheduler wieder nach &quot;ausführungsbereit&quot; zurück
+überführt werden. Dieses Wechselspiel passiert automatisch und i.d.R. schnell,
+so dass selbst auf Maschinen mit nur einem Prozessor/Kern der Eindruck einer parallelen
+Verarbeitung entsteht.</p>
+<p>Nach der Abarbeitung der <code>run()</code>-Methode oder bei einer nicht gefangenen Exception
+wird der Thread beendet und kann nicht wieder neu gestartet werden. Auch wenn der
+Thread abgelaufen ist, kann man mit dem Objekt wie üblich interagieren (nur eben
+nicht mehr parallel).</p>
+<p>Bei Zugriff auf gesperrte Ressourcen oder durch Aufrufe von Methoden wie <code>sleep()</code>
+oder <code>join()</code> kann ein Thread blockiert werden. Hier führt der Thread nichts aus,
+bekommt durch den Scheduler aber auch keine neue Zeitscheibe zugewiesen. Aus diesem
+Zustand gelangt der Thread wieder heraus, etwa durch Interrupts (Aufruf der Methode
+<code>interrupt()</code> auf dem Thread-Objekt) oder nach Ablauf der Schlafzeit (in <code>sleep()</code>)
+oder durch ein <code>notify</code>, und wird wieder zurück nach &quot;ausführungsbereit&quot; versetzt
+und wartet auf die Zuteilung einer Zeitscheibe durch den Scheduler.</p>
+<p>Sie finden in <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html#id_Boles2008">[Boles2008, Kapitel 5.2 &quot;Thread-Zustände&quot;]</a> eine schöne
+ausführliche Darstellung.</p>
+<h3 id="threads-können-wie-normale-objekte-kommunizieren">Threads können wie normale Objekte kommunizieren</h3>
+<ul>
+<li>Zugriff auf (<code>public</code>) Attribute (oder eben über Methoden)</li>
+<li>Aufruf von Methoden</li>
+</ul>
+<h3 id="threads-können-noch-mehr">Threads können noch mehr</h3>
+<ul>
+<li>
+<p>Eine Zeitlang schlafen: <code>Thread.sleep(&lt;duration_ms&gt;)</code></p>
+<ul>
+<li>Statische Methode der Klasse <code>Thread</code> (Klassenmethode)</li>
+<li>Aufrufender Thread wird bis zum Ablauf der Zeit oder bis zum Aufruf
+der <code>interrupt()</code>-Methode des Threads blockiert</li>
+<li>&quot;Moderne&quot; Alternative: <code>TimeUnit</code>, beispielsweise <code>TimeUnit.SECONDS.sleep( 2 );</code></li>
+</ul>
+</li>
+<li>
+<p>Prozessor abgeben und hinten in Warteschlange einreihen: <code>yield()</code></p>
+</li>
+<li>
+<p>Andere Threads stören: <code>otherThreadObj.interrupt()</code></p>
+<ul>
+<li>Die Methoden <code>sleep()</code>, <code>wait()</code> und <code>join()</code> im empfangenden Thread
+<code>otherThreadObj</code> lösen eine <code>InterruptedException</code> aus, wenn sie
+durch die Methode <code>interrupt()</code> unterbrochen werden. Das heißt,
+<code>interrupt()</code> beendet diese Methoden mit der Ausnahme.</li>
+<li>Empfangender Thread verlässt ggf. den Zustand &quot;blockiert&quot; und wechselt
+in den Zustand &quot;ausführungsbereit&quot;</li>
+</ul>
+</li>
+<li>
+<p>Warten auf das Ende anderer Threads: <code>otherThreadObj.join()</code></p>
+<ul>
+<li>Ausführender Thread wird blockiert (also nicht <code>otherThreadObj</code>!)</li>
+<li>Blockade des Aufrufers wird beendet, wenn der andere Thread
+(<code>otherThreadObj</code>) beendet wird.</li>
+</ul>
+</li>
+</ul>
+<p><em>Hinweis:</em> Ein Thread wird beendet, wenn</p>
+<ul>
+<li>die <code>run()</code>-Methode normal endet, oder</li>
+<li>die <code>run()</code>-Methode durch eine nicht gefangene Exception beendet wird, oder</li>
+<li>von außen die Methode <code>stop()</code> aufgerufen wird (Achtung: Deprecated!
+Einen richtigen Ersatz gibt es aber auch nicht.).</li>
+</ul>
+<p><em>Hinweis:</em> Die Methoden <code>wait()</code>, <code>notify()</code>/<code>notifyAll()</code> und die &quot;<code>synchronized</code>-Sperre&quot;
+werden in der Sitzung [&quot;Threads: Synchronisation&quot;](threads-intro.
+besprochen.</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/intro/Join.java" target="_blank"><span class="title">Demo: intro.Join</span></a></span></div>
+<h2 id="wrap-up">Wrap-Up</h2>
+<p>Threads sind weitere Kontrollflussfäden, von Java-VM (oder (selten) von OS) verwaltet</p>
+<ul>
+<li>Ableiten von <code>Thread</code> oder implementieren von <code>Runnable</code></li>
+<li>Methode <code>run</code> enthält den auszuführenden Code</li>
+<li>Starten des Threads mit <code>start</code> (nie mit <code>run</code>!)</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106529&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Threads Intro (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Boles2008'>[Boles2008] <a href='http://www.boles.de/hamster/band3.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Parallele Programmierung spielend gelernt mit dem Java-Hamster-Modell</strong></a><br>Boles, D., Vieweg+Teubne, 2008. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8351-0229-3' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8351-0229-3</a>.</li> <li id='id_Java-SE-Tutorial'>[Java-SE-Tutorial] <a href='https://docs.oracle.com/javase/tutorial/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>The Java Tutorials</strong></a><br>Oracle Corporation, 2022.<br><em>Trail: Essential Java Classes, Lesson: Concurrency</em></li> <li id='id_Ullenboom2021'>[Ullenboom2021] <a href='https://openbook.rheinwerk-verlag.de/javainsel/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java ist auch eine Insel</strong></a><br>Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8362-8745-6</a>.<br><em>Kap. 16: Einführung in die nebenläufige Programmierung</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+<article class="default">
+<h1>Synchronisation: Verteilter Zugriff auf gemeinsame Ressourcen</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Bei verteiltem Zugriff auf gemeinsame Ressourcen besteht Synchronisierungsbedarf,
+insbesondere sollten nicht mehrere Threads gleichzeitig geteilte Daten modifizieren.
+Dazu kommt das Problem, dass ein Thread in einer komplexen Folge von Aktionen die
+Zeitscheibe verlieren kann und dann später mit veralteten Daten weiter macht.</p>
+<p>Um den Zugriff auf gemeinsame Ressourcen oder den Eintritt in kritische Bereiche
+zu schützen und zu synchronisieren, kann man diese Zugriffe oder Bereiche in einen
+<code>synchronized</code>-Block legen. Dazu benötigt man noch ein beliebiges (gemeinsam
+sichtbares) Objekt, welches als Wächter- oder Sperr-Objekt fungiert. Beim Eintritt
+in den geschützten Block muss ein Thread einen Lock auf dem Sperr-Objekt erlangen.
+Hat bereits ein anderer Thread den Lock, wird der neue Thread so lange blockiert,
+bis der Lock wieder &quot;frei&quot; ist. Beim Eintritt in den Bereich wird dann durch den
+Thread auf dem Sperr-Objekt der Lock gesetzt und beim Austritt automatisch wieder
+aufgehoben. Dies nennt man auch <strong>mehrseitige Synchronisierung</strong> (mehrere Threads
+&quot;stimmen&quot; sich quasi untereinander über den Zugriff auf eine Ressource ab).</p>
+<p>Um auf den Eintritt eines Ereignisses oder die Erfüllung einer Bedingung zu warten,
+kann man <code>wait</code> und <code>notify</code> nutzen. In einem <code>synchronized</code>-Block prüft man, ob
+die Bedingung erfüllt oder ein Ereignis eingetreten ist, und falls ja arbeitet man
+damit normal weiter. Falls die Bedingung nicht erfüllt ist oder das Ereignis nicht
+eingetreten ist, kann man auf dem im <code>synchronized</code>-Block genutzten Sperr-Objekt
+die Methode <code>wait()</code> aufrufen. Damit wird der Thread in die entsprechende Schlange
+auf dem Sperr-Objekt eingereiht und blockiert. Zusätzlich wird der Lock auf dem
+Sperr-Objekt freigegeben. Zum &quot;Aufwecken&quot; nutzt man an geeigneter Stelle auf dem
+<strong>selben Sperr-Objekt</strong> die Methode <code>notify()</code> oder <code>notifyALl()</code> (erstere weckt
+einen in der Liste des Sperr-Objekts wartenden Thread, die letztere alle). Nach
+dem Aufwachen macht der Thread nach seinem <code>wait()</code> weiter. Es ist also wichtig,
+dass die Bedingung, wegen der ursprünglich das <code>wait()</code> aufgerufen wurde, erneut
+abgefragt wird und ggf. erneut in das <code>wait()</code> gegangen wird. Dies nennt man
+<strong>einseitige Synchronisierung</strong>.</p>
+<p>Es gibt darüber hinaus viele weitere Mechanismen und Probleme, die aber den Rahmen
+dieser Lehrveranstaltung deutlich übersteigen. Diese werden teilweise in den
+Veranstaltungen &quot;Betriebssysteme&quot; und/oder &quot;Verteilte Systeme&quot; besprochen.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/FtVaobn4NqA' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Threads Synchronisation</a></li> <li><a href='https://youtu.be/SB1ngVkQdLM' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Teaser: Falscher Zugriff auf gemeinsame Ressourcen</a></li> <li><a href='https://youtu.be/YTV-oT-vmpE' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Mehrseitige Synchronisation (Sperr-Objekt, synchronisierte Methode)</a></li> <li><a href='https://youtu.be/D4B5xHqCZ-0' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Mehrseitige Synchronisation: Deadlock</a></li> <li><a href='https://youtu.be/akCl01ZAaGo' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Einseitige Synchronisation</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/08f819d3002d7658801ff15fdb14cbdba82defee0ae97d929f5c4a03eeb0e3e9b751e90f5e0fe0ac3d55a551a53065c04f505f23a6c9f41d69d504474ea28c04' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Threads Synchronisation</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Notwendigkeit zur Synchronisation</li> <li>(K2) Unterscheidung einseitige und mehrseitige Synchronisation</li> <li>(K3) Synchronisation mit <code>synchronized</code>, <code>wait</code>, <code>notify</code> und <code>notifyAll</code></li></ul></div>
+</div>
+
+
+
+
+    <h2 id="motivation-verteilter-zugriff-auf-gemeinsame-ressourcen">Motivation: Verteilter Zugriff auf gemeinsame Ressourcen</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Teaser</span> <span style="color:#66d9ef">implements</span> Runnable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> val <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>        Teaser x <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Teaser();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Thread(x).<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Thread(x).<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">incrVal</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">++</span>val;
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Thread.<span style="color:#a6e22e">currentThread</span>().<span style="color:#a6e22e">getId</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> val);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+</span></span><span style="display:flex;"><span>        IntStream.<span style="color:#a6e22e">range</span>(0, 5).<span style="color:#a6e22e">forEach</span>(i <span style="color:#f92672">-&gt;</span> incrVal());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/Teaser.java" target="_blank"><span class="title">Demo: synchronised.Teaser</span></a></span></div>
+<h2 id="zugriff-auf-gemeinsame-ressourcen-mehrseitige-synchronisierung">Zugriff auf gemeinsame Ressourcen: Mehrseitige Synchronisierung</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">synchronized</span> (<span style="color:#f92672">&lt;</span>Object reference<span style="color:#f92672">&gt;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span>statements (<span style="color:#66d9ef">synchronized</span>)<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>=&gt; <span class='alert'><strong>&quot;Mehrseitige Synchronisierung&quot;</strong></span></p>
+<p>Fallunterscheidung: Thread T1 führt <code>synchronized</code>-Anweisung aus:</p>
+<ul>
+<li>Sperre im Sperr-Objekt nicht gesetzt:
+<ol>
+<li>T1 setzt Sperre beim Eintritt,</li>
+<li>führt den Block aus, und</li>
+<li>löst Sperre beim Verlassen</li>
+</ol>
+</li>
+<li>Sperre durch T1 gesetzt:
+<ol>
+<li>T1 führt den Block aus, und</li>
+<li>löst Sperre beim Verlassen <strong>nicht</strong></li>
+</ol>
+</li>
+<li>Sperre durch T2 gesetzt:
+=&gt; T1 wird blockiert, bis T2 die Sperre löst</li>
+</ul>
+<p><em>Anmerkung</em>: Das für die Synchronisierung genutzte Objekt nennt man &quot;Wächter-Objekt&quot;
+oder auch &quot;Sperr-Objekt&quot; oder auch &quot;Synchronisations-Objekt&quot;.</p>
+<p>Damit könnte man den relevanten Teil der Methode <code>incrVal()</code> beispielsweise in einen
+geschützten Bereich einschließen und als Sperr-Objekt das eigene Objekt (<code>this</code>) einsetzen:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">incrVal</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">synchronized</span> (<span style="color:#66d9ef">this</span>) { <span style="color:#f92672">++</span>val; }
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/ObjSync.java" target="_blank"><span class="title">Demo: synchronised.ObjSync</span></a></span></div>
+<h2 id="synchronisierte-methoden">Synchronisierte Methoden</h2>
+<div class='columns'>
+<div class='column'>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">f</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">synchronized</span> (<span style="color:#66d9ef">this</span>) {
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+<div class='column'>
+<p>... ist äquivalent zu ...</p>
+</div>
+<div class='column'>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">f</span>() {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div>
+</div>
+<p>Kurzschreibweise: Man spart das separate Wächter-Objekt und synchronisiert auf sich selbst ...</p>
+<p>Die Methode <code>incrVal()</code> könnte entsprechend so umgeschrieben werden:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">incrVal</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">++</span>val;
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/MethodSync.java" target="_blank"><span class="title">Demo: synchronised.MethodSync</span></a></span></div>
+<h2 id="probleme-bei-der-mehrseitigen-synchronisierung-deadlocks">Probleme bei der (mehrseitigen) Synchronisierung: Deadlocks</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Deadlock</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> String <span style="color:#a6e22e">getName</span>() { <span style="color:#66d9ef">return</span> name; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">foo</span>(Deadlock other) {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#34;%s: %s.foo() \n&#34;</span>, Thread.<span style="color:#a6e22e">currentThread</span>().<span style="color:#a6e22e">getName</span>(), name);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#34;%s: %s.name()\n&#34;</span>, Thread.<span style="color:#a6e22e">currentThread</span>().<span style="color:#a6e22e">getName</span>(), other.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> Deadlock a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Deadlock(<span style="color:#e6db74">&#34;a&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> Deadlock b <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Deadlock(<span style="color:#e6db74">&#34;b&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Thread(() <span style="color:#f92672">-&gt;</span> a.<span style="color:#a6e22e">foo</span>(b)).<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Thread(() <span style="color:#f92672">-&gt;</span> b.<span style="color:#a6e22e">foo</span>(a)).<span style="color:#a6e22e">start</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Viel hilft hier nicht viel! Durch zu großzügige mehrseitige Synchronisierung
+kann es passieren, dass Threads gegenseitig aufeinander warten: Thread A belegt
+eine Ressource, die ein anderer Thread B haben möchte und Thread B belegt eine
+Ressource, die A gerne bekommen würde. Da es dann nicht weitergeht, nennt man
+diese Situation auch &quot;Deadlock&quot; (&quot;Verklemmung&quot;).</p>
+<p>Im Beispiel ruft der erste Thread für das Objekt <code>a</code> die <code>foo()</code>-Methode auf und
+holt sich damit den Lock auf <code>a</code>. Um die Methode beenden zu können, muss noch die
+<code>getName()</code>-Methode vom Objekt <code>b</code> durch diesen ersten Thread aufgerufen werden.
+Dafür muss der erste Thread den Lock auf <code>b</code> bekommen.</p>
+<p>Dummerweise hat parallel der zweite Thread auf dem Objekt <code>b</code> die <code>foo()</code>-Methode
+aufgerufen und sich damit den Lock auf <code>b</code> geholt. Damit muss der erste Thread so
+lange warten, bis der zweite Thread den Lock auf <code>b</code> freigibt.</p>
+<p>Das wird allerdings nicht passieren, da der zweite Thread zur Beendigung der
+<code>foo()</code>-Methode noch <code>getName()</code> auf <code>a</code> ausführen muss und dazu den Lock auf <code>b</code>
+holen, den aber aktuell der erste Thread hält.</p>
+<p>Und schon geht's nicht mehr weiter :-)</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/Deadlock.java" target="_blank"><span class="title">Demo: synchronised.Deadlock</span></a></span></div>
+<h2 id="warten-auf-andere-threads-einseitige-synchronisierung">Warten auf andere Threads: Einseitige Synchronisierung</h2>
+<h3 id="problem">Problem</h3>
+<ul>
+<li>Thread T1 wartet auf Arbeitsergebnis von T2</li>
+<li>T2 ist noch nicht fertig</li>
+</ul>
+<h3 id="mögliche-lösungen">Mögliche Lösungen</h3>
+<ol>
+<li>Aktives Warten (Polling): Permanente Abfrage
+<ul>
+<li>Kostet unnötig Rechenzeit</li>
+</ul>
+</li>
+<li>Schlafen mit <code>Thread.sleep()</code>
+<ul>
+<li>Etwas besser; aber wie lange soll man idealerweise schlafen?</li>
+</ul>
+</li>
+<li>Warten mit <code>T2.join()</code>
+<ul>
+<li>Macht nur Sinn, wenn T1 auf das <em>Ende</em> von T2 wartet</li>
+</ul>
+</li>
+<li><strong>Einseitige Synchronisierung</strong> mit <code>wait()</code> und <code>notify()</code>
+<ul>
+<li>Das ist DIE Lösung für das Problem :)</li>
+</ul>
+</li>
+</ol>
+<h2 id="einseitige-synchronisierung-mit-wait-und-notify">Einseitige Synchronisierung mit <em>wait</em> und <em>notify</em></h2>
+<ul>
+<li>
+<p><span class='alert'><strong>wait</strong></span>: Warten auf Erfüllung einer Bedingung (Thread blockiert):</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">synchronized</span> (obj) {    <span style="color:#75715e">// Geschützten Bereich betreten</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>condition) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>            obj.<span style="color:#a6e22e">wait</span>(); <span style="color:#75715e">// Thread wird blockiert</span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (InterruptedException e) {}
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...     <span style="color:#75715e">// Condition erfüllt: Tue Deine Arbeit</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>=&gt; Bedingung nach Rückkehr von <code>wait</code> erneut prüfen!</p>
+</li>
+</ul>
+<h3 id="eigenschaften-von-wait">Eigenschaften von <em>wait</em></h3>
+<ul>
+<li>Thread ruft auf Synchronisations-Objekt die Methode <code>wait</code> auf</li>
+<li>Prozessor wird entzogen, Thread blockiert</li>
+<li>Thread wird in interne Warteschlange des Synchronisations-Objekts eingetragen</li>
+<li>Sperre auf Synchronisations-Objekt wird freigegeben</li>
+</ul>
+<p>=&gt; Geht nur innerhalb der <code>synchronized</code>-Anweisung für das Synchronisations-Objekt!</p>
+<h2 id="einseitige-synchronisierung-mit-wait-und-notify-cnt">Einseitige Synchronisierung mit <em>wait</em> und <em>notify</em> (cnt.)</h2>
+<ul>
+<li>
+<p><span class='alert'><strong>notify</strong></span>: Aufwecken von wartenden (blockierten) Threads:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">synchronized</span> (obj) {
+</span></span><span style="display:flex;"><span>    obj.<span style="color:#a6e22e">notify</span>();       <span style="color:#75715e">// einen Thread &#34;in&#34; obj aufwecken</span>
+</span></span><span style="display:flex;"><span>    obj.<span style="color:#a6e22e">notifyAll</span>();    <span style="color:#75715e">// alle Threads &#34;in&#34; obj wecken</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></li>
+</ul>
+<h3 id="eigenschaften-von-notify-bzw-notifyall">Eigenschaften von <em>notify</em> bzw. <em>notifyAll</em></h3>
+<ul>
+<li>Thread ruft auf einem Synchronisations-Objekt die Methode <code>notify</code>
+oder <code>notifyAll</code> auf</li>
+<li>Falls Thread(s) in Warteschlange des Objekts vorhanden, dann
+<ul>
+<li><code>notify</code>: Ein <em>zufälliger</em> Thread wird aus Warteschlange entfernt und
+in den Zustand &quot;ausführungsbereit&quot; versetzt</li>
+<li><code>notifyAll</code>: Alle Threads werden aus Warteschlange entfernt und in
+den Zustand &quot;ausführungsbereit&quot; versetzt</li>
+</ul>
+</li>
+</ul>
+<p>=&gt; Geht nur innerhalb der <code>synchronized</code>-Anweisung für das Synchronisations-Objekt!</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/Staffel.java" target="_blank"><span class="title">Demo: synchronised.Staffel</span></a></span></div>
+<h2 id="wrap-up">Wrap-Up</h2>
+<p>Synchronisierungsbedarf bei verteiltem Zugriff auf gemeinsame Ressourcen:</p>
+<ul>
+<li>
+<p>Vorsicht mit konkurrierendem Ressourcenzugriff:
+Synchronisieren mit <code>synchronized</code> =&gt; <strong>Mehrseitige Synchronisierung</strong></p>
+</li>
+<li>
+<p>Warten auf Ereignisse mit <code>wait</code> und <code>notify</code>/<code>notifyAll</code> =&gt; <strong>Einseitige Synchronisierung</strong></p>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106530&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Threads Synchronisation (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p>In den <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/threads/src/challenges" target="_blank">Vorgaben</a> finden Sie eine Modellierung für ein Bankensystem.</p>
+<p>Erweitern Sie die Vorgaben um Multithreading.</p>
+<p>Erweitern Sie die Klasse <code>Kunde</code> so, dass sie in einem eigenen Thread ausgeführt werden kann.
+In der <code>run()</code>-Methode soll der <code>Kunde</code> eine <code>Rechnung</code> aus der Queue <code>offeneRechnungen</code> herausnehmen und sie bezahlen. Nutzen Sie dafür die statische Methode <code>Bank#ueberweisen</code>. Ist die Queue leer, soll der Thread so lange warten, bis eine neue Rechnung eingegangen ist. Nutzen Sie dafür einseitige Synchronisation.</p>
+<p>Erweitern Sie die Klasse <code>Transaktion</code> so, dass sie in einem eigenen Thread ausgeführt werden kann.
+In der <code>run()</code>-Methode soll die <code>Transaktion</code> ausgeführt werden. Dabei soll vom Konto <code>von</code> der in der Rechnung hinterlegte Betrag abgezogen werden. Nutzen Sie dafür die Methode <code>Konto#sendeGeld</code>. Wenn das Geld erfolgreich abgezogen worden ist, soll das Geld auf das Empfängerkonto überwiesen werden. Nutzen Sie dafür die Methode <code>Konto#empfangeGeld</code>.
+Verwenden Sie mehrseitige Synchronisation.</p>
+<p>Passen Sie die Methode <code>Bank#ueberweisen</code> so an, dass diese einen <code>Transaktion</code>-Thread erstellt und startet. Verwenden Sie dafür eine passende Struktur und setzen Sie die Executor-API ein.</p>
+<p>Implementieren Sie die Klasse <code>Geldeintreiber</code>. Diese bekommt einen <code>Kunden</code> als Auftraggeber und eine Liste mit weiteren Kunden als Rechnungsempfänger übergeben.
+Implementieren Sie den <code>Geldeintreber</code> so, dass dieser in einem eigenen Thread ausgeführt werden kann.
+In der <code>run()</code>-Methode soll der <code>Geldeintreiber</code> eine Rechnung generieren und an einen der <code>Kunden</code> in der Liste schicken. Verwenden Sie dafür die Methode <code>Kunde#empfangeRechnung</code>. Das Ziel-<code>Konto</code> der <code>Rechnung</code> soll das <code>Konto</code> des Auftraggebers sein.
+Der <code>Geldeintreiber</code> macht nach jeder versendeten Rechnung fünf Sekunden Pause.</p>
+<p><strong>Hinweis</strong>: Achten Sie darauf, nur die nötigsten Ressourcen zu blockieren und auch nur so lange wie unbedingt nötig.</p>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Boles2008'>[Boles2008] <a href='http://www.boles.de/hamster/band3.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Parallele Programmierung spielend gelernt mit dem Java-Hamster-Modell</strong></a><br>Boles, D., Vieweg+Teubne, 2008. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8351-0229-3' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8351-0229-3</a>.</li> <li id='id_Java-SE-Tutorial'>[Java-SE-Tutorial] <a href='https://docs.oracle.com/javase/tutorial/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>The Java Tutorials</strong></a><br>Oracle Corporation, 2022.<br><em>Trail: Essential Java Classes, Lesson: Concurrency</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+<article class="default">
+<h1>High-Level Concurrency</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Das Erzeugen von Threads über die Klasse <code>Thread</code> oder das Interface <code>Runnable</code> und
+das Hantieren mit <code>synchronized</code> und <code>wait()</code>/<code>notify()</code> zählt zu den grundlegenden
+Dingen beim Multi-Threading mit Java. Auf diesen Konzepten bauen viele weitere
+Konzepte auf, die ein flexibleres Arbeiten mit Threads in Java ermöglichen.</p>
+<p>Dazu zählt unter anderem das Arbeiten mit <code>Lock</code>-Objekten und dazugehörigen <code>Conditions</code>,
+was <code>synchronized</code> und <code>wait()</code>/<code>notify()</code> entspricht, aber feingranulareres und
+flexibleres Locking bietet.</p>
+<p>Statt Threads immer wieder neu anzulegen (das Anlegen von Objekten bedeutet einen
+gewissen Aufwand zur Laufzeit), kann man Threads über sogenannte Thread-Pools
+wiederverwenden und über das Executor-Interface benutzen.</p>
+<p>Schließlich bietet sich das Fork/Join-Framework zum rekursiven Zerteilen von Aufgaben
+und zur parallelen Bearbeitung der Teilaufgaben an.</p>
+<p>Die in Swing integrierte Klasse <code>SwingWorker</code> ermöglicht es, in Swing Berechnungen
+in einen parallel ausgeführten Thread auszulagern.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/bb_kuuhXC6A' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL High-Level Concurrency</a></li> <li><a href='https://youtu.be/1tJRUJddtlw' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Lock-Objekte</a></li> <li><a href='https://youtu.be/VvzlwZ6n3SI' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Executor</a></li> <li><a href='https://youtu.be/Wfq_MDFoWYY' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Fork/Join</a></li> <li><a href='https://youtu.be/Hu3RbqiNy4M' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo SwingWorker</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/1d46e6b75b7e2ebe8d15edbda2340505285d886160a3b03f489024b1075f0b5176c68d9993a145fdcdb5e65c17f6be80a7ef1f0c64a72c410536e69965275a59' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL High-Level Concurrency</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K3) Umgang mit High-Level-Abstraktionen: Lock-Objekten und Conditions, Executor-Interface und Thread-Pools, Fork/Join-Framework, SwingWorker</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="explizite-lock-objekte">Explizite Lock-Objekte</h2>
+<p>Sie kennen bereits die Synchronisierung mit dem Schlüsselwort <code>synchronized</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Synchronisierung der gesamten Methode</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">incrVal</span>() {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Synchronisierung eines Blocks (eines Teils einer Methode)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">incrVal</span>() {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">synchronized</span> (someObj) {
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Dabei wird implizit ein Lock über ein Objekt (das eigene Objekt im ersten Fall,
+das Sperrobjekt im zweiten Fall) benutzt.</p>
+<p>Seit Java5 kann man alternativ auch explizite Lock-Objekte nutzen:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Synchronisierung eines Teils einer Methode über ein</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Lock-Objekt (seit Java 5)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Package `java.util.concurrent.locks`</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">incrVal</span>() {
+</span></span><span style="display:flex;"><span>    Lock waechter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ReentrantLock();
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    waechter.<span style="color:#a6e22e">lock</span>();
+</span></span><span style="display:flex;"><span>    ... <span style="color:#75715e">// Geschützter Bereich</span>
+</span></span><span style="display:flex;"><span>    waechter.<span style="color:#a6e22e">unlock</span>();
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Locks aus dem Paket <code>java.util.concurrent.locks</code> arbeiten analog zum
+impliziten Locken über <code>synchronized</code>. Sie haben darüber hinaus aber einige
+Vorteile:</p>
+<ul>
+<li>Methoden zum Abfragen, ob ein Lock möglich ist: <code>Lock#tryLock</code></li>
+<li>Methoden zum Abfragen der aktuellen Warteschlangengröße: <code>Lock#getQueueLength</code></li>
+<li>Verfeinerung <code>ReentrantReadWriteLock</code> mit Methoden <code>readLock</code> und <code>writeLock</code>
+<ul>
+<li>Locks nur zum Lesen bzw. nur zum Schreiben</li>
+</ul>
+</li>
+<li><code>Lock#newCondition</code> liefert ein Condition-Objekt zur Benachrichtigung
+ala <code>wait</code>/<code>notify</code>: <code>await</code>/<code>signal</code> =&gt; zusätzliches Timeout beim
+Warten möglich</li>
+</ul>
+<p>Nachteile:</p>
+<ul>
+<li>Bei Exceptions werden implizite Locks durch <code>synchronized</code> automatisch
+durch das Verlassen der Methode freigegeben. Explizite Locks müssen
+<strong>durch den Programmierer</strong> freigegeben werden! =&gt; Nutzung des
+<code>finally</code>-Block!</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/threads/src/lock/" target="_blank"><span class="title">Demo: lock.*</span></a></span></div>
+<h2 id="thread-management-executor-interface-und-thread-pools">Thread-Management: Executor-Interface und Thread-Pools</h2>
+<h3 id="wiederverwendung-von-threads">Wiederverwendung von Threads</h3>
+<ul>
+<li>
+<p>Normale Threads sind immer Einmal-Threads: Man kann sie nur <strong>einmal</strong> in
+ihrem Leben starten (auch wenn das Objekt anschließend noch auf
+Nachrichten bzw. Methodenaufrufe reagiert)</p>
+</li>
+<li>
+<p>Zusätzliches Problem: Threads sind Objekte:</p>
+<ul>
+<li>Threads brauchen relativ viel Arbeitsspeicher</li>
+<li>Erzeugen und Entsorgen von Threads kostet Ressourcen</li>
+<li>Zu viele Threads: Gesamte Anwendung hält an</li>
+</ul>
+</li>
+<li>
+<p>Idee: Threads wiederverwenden und Thread-Management auslagern
+=&gt; <strong>Executor-Interface</strong> und <strong>Thread-Pool</strong></p>
+</li>
+</ul>
+<h3 id="executor-interface">Executor-Interface</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Executor</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">execute</span>(Runnable command);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><ul>
+<li>Neue Aufgaben als Runnable an einen Executor via <code>execute</code> übergeben</li>
+<li>Executor könnte damit sofort neuen Thread starten (oder alten
+wiederverwenden):
+<code>e.execute(r);</code> =&gt; entspricht in der Wirkung <code>(new Thread(r)).start();</code></li>
+</ul>
+<h3 id="thread-pool-hält-menge-von-worker-threads">Thread-Pool hält Menge von &quot;Worker-Threads&quot;</h3>
+<ul>
+<li>
+<p>Statische Methoden von <code>java.util.concurrent.Executors</code> erzeugen
+Thread-Pools mit verschiedenen Eigenschaften:</p>
+<ul>
+<li><code>Executors#newFixedThreadPool</code> erzeugt ExecutorService mit
+spezifizierter Anzahl von Worker-Threads</li>
+<li><code>Executors#newCachedThreadPool</code> erzeugt Pool mit Threads, die nach
+60 Sekunden Idle wieder entsorgt werden</li>
+</ul>
+</li>
+<li>
+<p>Rückgabe: <code>ExecutorService</code> (Thread-Pool)</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ExecutorService</span> <span style="color:#66d9ef">extends</span> Executor { ... }</span></span></code></pre></div></li>
+<li>
+<p><code>Executor#execute</code> übergibt Runnable dem nächsten freien Worker-Thread
+(oder erzeugt ggf. neuen Worker-Thread bzw. hängt Runnable in Warteschlange,
+je nach erzeugtem Pool)</p>
+</li>
+<li>
+<p>Methoden zum Beenden eines Thread-Pools (Freigabe): <code>shutdown()</code>, <code>isShutdown()</code>, ...</p>
+</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>MyThread x <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyThread();    <span style="color:#75715e">// Runnable oder Thread</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ExecutorService pool <span style="color:#f92672">=</span> Executors.<span style="color:#a6e22e">newCachedThreadPool</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pool.<span style="color:#a6e22e">execute</span>(x);    <span style="color:#75715e">// x.start()</span>
+</span></span><span style="display:flex;"><span>pool.<span style="color:#a6e22e">execute</span>(x);    <span style="color:#75715e">// x.start()</span>
+</span></span><span style="display:flex;"><span>pool.<span style="color:#a6e22e">execute</span>(x);    <span style="color:#75715e">// x.start()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pool.<span style="color:#a6e22e">shutdown</span>();    <span style="color:#f92672">//</span> Feierabend :)</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/executor/ExecutorDemo.java" target="_blank"><span class="title">Demo: executor.ExecutorDemo</span></a></span></div>
+<h3 id="hintergrund-vereinfacht">Hintergrund (vereinfacht)</h3>
+<p>Der Thread-Pool reserviert sich &quot;nackten&quot; Speicher, der der Größe von 
+<span class="math align-center">$n$</span>
+Threads entspricht, und &quot;prägt&quot; die Objektstruktur durch einen Cast direkt auf
+(ohne wirkliche neue Objekte zu erzeugen). Dieses Vorgehen ist in der C-Welt
+wohlbekannt und schnell (vgl. Thema Speicherverwaltung in der LV
+&quot;Systemprogrammierung&quot;). In Java wird dies durch eine wohldefinierte
+Schnittstelle vor dem Nutzer verborgen.</p>
+<h3 id="ausblick">Ausblick</h3>
+<p>Hier haben wir nur die absoluten Grundlagen angerissen. Wir können auch
+<code>Callables</code> anstatt von <code>Runnables</code> übergeben, auf Ergebnisse aus der Zukunft
+warten (<code>Futures</code>), Dinge zeitgesteuert (immer wieder) starten, ...</p>
+<p>Schauen Sie sich bei Interesse die weiterführende Literatur an, beispielsweise die
+Oracle-Dokumentation oder auch <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html#id_Ullenboom2021">[Ullenboom2021]</a> (insbesondere den Abschnitt 16.4
+<a href="https://openbook.rheinwerk-verlag.de/javainsel/16_004.html#u16.4" target="_blank">&quot;Der Ausführer (Executor) kommt&quot;</a>).</p>
+<h2 id="forkjoin-framework-teile-und-herrsche">Fork/Join-Framework: Teile und Herrsche</h2>
+<p>Spezieller Thread-Pool zur rekursiven Bearbeitung parallelisierbarer Tasks</p>
+<ul>
+<li>
+<p><code>java.util.concurrent.ForkJoinPool#invoke</code> startet Task</p>
+</li>
+<li>
+<p>Task muss von <code>RecursiveTask&lt;V&gt;</code> erben:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RecursiveTask</span><span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> ForkJoinTask<span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">abstract</span> V <span style="color:#a6e22e">compute</span>();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></li>
+</ul>
+<p>Prinzipieller Ablauf:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RecursiveTask</span> <span style="color:#66d9ef">extends</span> ForkJoinTask<span style="color:#f92672">&lt;</span>V<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> V <span style="color:#a6e22e">compute</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (task klein genug) {
+</span></span><span style="display:flex;"><span>            berechne task sequentiell
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            teile task in zwei subtasks:
+</span></span><span style="display:flex;"><span>                left, right <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RecursiveTask(task)
+</span></span><span style="display:flex;"><span>            rufe <span style="color:#a6e22e">compute</span>() auf beiden subtasks auf:
+</span></span><span style="display:flex;"><span>                left.<span style="color:#a6e22e">fork</span>();          <span style="color:#75715e">// starte neuen Thread</span>
+</span></span><span style="display:flex;"><span>                r <span style="color:#f92672">=</span> right.<span style="color:#a6e22e">compute</span>();  <span style="color:#75715e">// nutze aktuellen Thread</span>
+</span></span><span style="display:flex;"><span>            warte auf ende der beiden subtasks: l <span style="color:#f92672">=</span> left.<span style="color:#a6e22e">join</span>()
+</span></span><span style="display:flex;"><span>            kombiniere die ergebnisse der beiden subtasks: l<span style="color:#f92672">+</span>r
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/forkjoin/ForkJoin.java" target="_blank"><span class="title">Demo: forkjoin.ForkJoin</span></a></span></div>
+<h2 id="swing-und-threads">Swing und Threads</h2>
+<h3 id="lange-berechnungen-in-listenern-blockieren-swing-gui">Lange Berechnungen in Listenern blockieren Swing-GUI</h3>
+<ul>
+<li>Problem: Events werden durch <span class='alert'><strong>einen</strong></span> <em>Event Dispatch Thread</em> (EDT)
+<span class='alert'><strong>sequentiell</strong></span> bearbeitet</li>
+<li>Lösung: Berechnungen in neuen Thread auslagern</li>
+<li><span class='alert'><strong>Achtung</strong></span>: Swing ist <strong>nicht Thread-safe</strong>! Komponenten nicht
+durch verschiedene Threads manipulieren!</li>
+</ul>
+<h3 id="lösung">Lösung</h3>
+<p>=&gt; <code>javax.swing.SwingWorker</code> ist eine spezielle Thread-Klasse, eng mit Swing/Event-Modell verzahnt.</p>
+<ul>
+<li>
+<p>Implementieren:</p>
+<ul>
+<li><code>SwingWorker#doInBackground</code>: Für die langwierige Berechnung (muss man selbst implementieren)</li>
+<li><code>SwingWorker#done</code>: Wird vom EDT aufgerufen, wenn <code>doInBackground</code> fertig ist</li>
+</ul>
+</li>
+<li>
+<p>Aufrufen:</p>
+<ul>
+<li><code>SwingWorker#execute</code>: Started neuen Thread nach Anlegen einer Instanz und führt dann automatisch <code>doInBackground</code> aus</li>
+<li><code>SwingWorker#get</code>: Return-Wert von <code>doInBackground</code> abfragen</li>
+</ul>
+</li>
+</ul>
+<h3 id="anmerkungen">Anmerkungen</h3>
+<ul>
+<li><code>SwingWorker#done</code> ist optional: <em>kann</em> überschrieben werden
+<ul>
+<li>Beispielweise, wenn nach Beendigung der langwierigen Berechnung
+GUI-Bestandteile mit dem Ergebnis aktualisiert werden sollen</li>
+</ul>
+</li>
+<li><code>SwingWorker&lt;T, V&gt;</code> ist eine generische Klasse:
+<ul>
+<li><code>T</code> Typ für das Ergebnis der Berechnung, d.h. Rückgabetyp für
+<code>doInBackground</code> und <code>get</code></li>
+<li><code>V</code> Typ für Zwischenergebnisse</li>
+</ul>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/misc/SwingWorkerDemo.java" target="_blank"><span class="title">Demo: misc.SwingWorkerDemo</span></a></span></div>
+<h2 id="letzte-worte--">Letzte Worte :-)</h2>
+<ul>
+<li>
+<p>Viele weitere Konzepte</p>
+<ul>
+<li>Semaphoren, Monitore, ...</li>
+<li>Leser-Schreiber-Probleme, Verklemmungen, ...</li>
+</ul>
+<p>=&gt; Verweis auf LV &quot;Betriebssysteme&quot; und &quot;Verteilte Systeme&quot;</p>
+</li>
+<li>
+<p><span class='alert'><strong>Achtung</strong></span>: Viele Klassen sind nicht Thread-safe!</p>
+<p>Es gibt aber meist ein &quot;Gegenstück&quot;, welches Thread-safe ist.</p>
+<p>Beispiel Listen:</p>
+<ul>
+<li><code>java.util.ArrayList</code> ist <strong>nicht</strong> Thread-safe</li>
+<li><code>java.util.Vector</code> ist Thread-sicher</li>
+</ul>
+<p>=&gt; Siehe Javadoc in den JDK-Klassen!</p>
+</li>
+<li>
+<p>Thread-safe bedeutet <strong>Overhead</strong> (Synchronisierung)!</p>
+</li>
+</ul>
+<h2 id="wrap-up">Wrap-Up</h2>
+<p>Multi-Threading auf höherem Level: Thread-Pools und Fork/Join-Framework</p>
+<ul>
+<li>Feingranulareres und flexibleres Locking mit Lock-Objekten und Conditions</li>
+<li>Wiederverwendung von Threads: Thread-Management mit Executor-Interface
+und Thread-Pools</li>
+<li>Fork/Join-Framework zum rekursiven Zerteilen von Aufgaben und zur
+parallelen Bearbeitung der Teilaufgaben</li>
+<li><code>SwingWorker</code> für die parallele Bearbeitung von Aufgaben in Swing</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106531&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz High-Level Concurrency (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Java-SE-Tutorial'>[Java-SE-Tutorial] <a href='https://docs.oracle.com/javase/tutorial/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>The Java Tutorials</strong></a><br>Oracle Corporation, 2022.<br><em>Trail: Essential Java Classes, Lesson: Concurrency</em></li> <li id='id_Ullenboom2021'>[Ullenboom2021] <a href='https://openbook.rheinwerk-verlag.de/javainsel/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java ist auch eine Insel</strong></a><br>Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8362-8745-6</a>.<br><em>Kap. 16: Einführung in die nebenläufige Programmierung</em></li> <li id='id_Urma2014'>[Urma2014] <strong>Java 8 in Action: Lambdas, Streams, and Functional-Style Programming</strong><br>Urma, R.-G. und Fusco, M. und Mycroft, A., Manning Publications, 2014. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-6172-9199-9' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-1-6172-9199-9</a>.<br><em>Abschnitt 7.2: The fork/join framework</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1711605716" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1711605716" defer></script>
+    <script>
+      function useMathJax( config ){
+        if( !Object.assign ){
+          
+          return;
+        }
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          loader: {
+            load: ['[tex]/mhchem']
+          },
+          startup: {
+            elements: [
+              '.math'
+            ]
+          },
+          tex: {
+            inlineMath: [
+              ['$', '$'], 
+              ['\\(', '\\)']
+            ]
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1711605716"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1711605716" defer></script>
+  </body>
+</html>

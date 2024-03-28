@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.26.2">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Exception-Handling">
+    <meta name="twitter:description" content="">
+    <meta property="og:title" content="Exception-Handling">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/exceptions.html">
+    <title>Exception-Handling</title>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/exceptions/index.print.html" rel="alternate" type="text/html" title="Exception-Handling">
+
+    
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1711605715" rel="icon" type="image/png">
+
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1711605716" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1711605716" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1711605716" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/ie.css?1711605716" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/url.js?1711605716"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1711605716"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/exceptions.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#fehlerfälle-in-java">Fehlerfälle in Java</a></li>
+    <li><a href="#lösung">Lösung?</a></li>
+    <li><a href="#vererbungsstruktur-throwable">Vererbungsstruktur <em>Throwable</em></a>
+      <ul>
+        <li><a href="#exception-vs-error"><em>Exception</em> vs. <em>Error</em></a></li>
+        <li><a href="#unchecked-vs-checked-exceptions">Unchecked vs. Checked Exceptions</a></li>
+      </ul>
+    </li>
+    <li><a href="#throws"><em>Throws</em></a></li>
+    <li><a href="#try-catch"><em>Try</em>-<em>Catch</em></a></li>
+    <li><a href="#_try_und-mehrstufiges-catch">_Try_und mehrstufiges <em>Catch</em></a></li>
+    <li><a href="#finally"><em>Finally</em></a></li>
+    <li><a href="#try-with-resources"><em>Try</em>-with-Resources</a></li>
+    <li><a href="#eigene-exceptions">Eigene Exceptions</a></li>
+    <li><a href="#stilfrage-wie-viel-code-im-try">Stilfrage: Wie viel Code im <em>Try</em>?</a>
+      <ul>
+        <li><a href="#handling-an-den-aufrufer-übergeben">Handling an den Aufrufer übergeben</a></li>
+        <li><a href="#jede-exception-einzeln-fangen-und-bearbeiten">Jede Exception einzeln fangen und bearbeiten</a></li>
+        <li><a href="#funktionaler-teil-in-gemeinsames-try-und-mehrstufiges-catch">Funktionaler Teil in gemeinsames <em>Try</em> und mehrstufiges <em>Catch</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#stilfrage-wo-fange-ich-die-exception">Stilfrage: Wo fange ich die Exception?</a></li>
+    <li><a href="#stilfrage-wann-checked-wann-unchecked">Stilfrage: Wann checked, wann unchecked</a>
+      <ul>
+        <li><a href="#checked-exceptions">&quot;Checked&quot; Exceptions</a></li>
+        <li><a href="#unchecked-exceptions">&quot;Unchecked&quot; Exceptions</a></li>
+      </ul>
+    </li>
+    <li><a href="#wrap-up">Wrap-Up</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Exception-Handling
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/exceptions/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Exception-Handling</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Man unterscheidet in Java zwischen <strong>Exceptions</strong> und <strong>Errors</strong>. Ein Error ist ein
+Fehler im System (OS, JVM), von dem man sich nicht wieder erholen kann. Eine Exception
+ist ein Fehlerfall innerhalb des Programmes, auf den man innerhalb des Programms
+reagieren kann.</p>
+<p>Mit Hilfe von Exceptions lassen sich Fehlerfälle im Programmablauf deklarieren und
+behandeln. Methoden können/müssen mit dem Keyword <code>throws</code> gefolgt vom Namen der
+Exception deklarieren, dass sie im Fehlerfall diese spezifische Exception werfen
+(und nicht selbst behandeln).</p>
+<p>Zum Exception-Handling werden die Keywords <code>try</code>, <code>catch</code> und <code>finally</code> verwendet.
+Dabei wird im <code>try</code>-Block der Code geschrieben, der einen potenziellen Fehler wirft.
+Im <code>catch</code>-Block wird das Verhalten implementiert, dass im Fehlerfall ausgeführt
+werden soll, und im <code>finally</code>-Block kann optional Code geschrieben werden, der sowohl
+im Erfolgs- als auch Fehlerfall ausgeführt wird.</p>
+<p>Es wird zwischen <strong>checked</strong> Exceptions und <strong>unchecked</strong> Exceptions unterschieden.
+Checked Exceptions sind für erwartbare Fehlerfälle gedacht, die nicht vom Programm
+ausgeschlossen werden können, wie das Fehlen einer Datei, die eingelesen werden soll.
+Checked Exceptions müssen deklariert oder behandelt werden. Dies wird vom Compiler
+überprüft.</p>
+<p>Unchecked Exceptions werden für Fehler in der Programmlogik verwendet, etwa das Teilen
+durch 0 oder Index-Fehler. Sie deuten auf fehlerhafte Programmierung, fehlerhafte Logik
+oder beispielsweise mangelhafte Eingabeprüfung in. Unchecked Exceptions müssen nicht
+deklariert oder behandelt werden. Unchecked Exceptions leiten von <code>RuntimeException</code>
+ab.</p>
+<p>Als Faustregel gilt: Wenn der Aufrufer sich von einer Exception-Situation erholen kann,
+sollte man eine checked Exception nutzen. Wenn der Aufrufer vermutlich nichts tun kann,
+um sich von dem Problem zu erholen, dann sollte man eine unchecked Exception einsetzen.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/k6EhexEvJDY' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Exceptions</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/99634e4bd3c017932803d555405c3921a761c6f7d788e1beaddbc4053d0013f7f2dce08a8c713c005a7352a57de556406554dca14492eaa1a982ed167e20ea5b' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Exceptions</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Unterschied zwischen Error und Exception</li> <li>(K2) Unterschied zwischen checked und unchecked Exceptions</li> <li>(K3) Umgang mit Exceptions</li> <li>(K3) Eigene Exceptions schreiben</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="fehlerfälle-in-java">Fehlerfälle in Java</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">div</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">/</span> b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>div(3, 0);</span></span></code></pre></div><p><strong>Problem</strong>: Programm wird abstürzen, da durch '0' geteilt wird ...</p>
+<h2 id="lösung">Lösung?</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">div</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (b <span style="color:#f92672">==</span> 0) <span style="color:#66d9ef">return</span> Optional.<span style="color:#a6e22e">empty</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Optional.<span style="color:#a6e22e">of</span>(a <span style="color:#f92672">/</span> b);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> x <span style="color:#f92672">=</span> div(3, 0);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (x.<span style="color:#a6e22e">isPresent</span>()) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// do something</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// do something else</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p><strong>Probleme</strong>:</p>
+<ul>
+<li>Da <code>int</code> nicht <code>null</code> sein kann, muss ein <code>Integer</code> Objekt erzeugt und zurückgegeben werden:
+Overhead wg. Auto-Boxing und -Unboxing!</li>
+<li>Der Aufrufer muss auf <code>null</code> prüfen.</li>
+<li>Es wird nicht kommuniziert, warum <code>null</code> zurückgegeben wird. Was ist das Problem?</li>
+<li>Was ist, wenn <code>null</code> ein gültiger Rückgabewert sein soll?</li>
+</ul>
+<h2 id="vererbungsstruktur-throwable">Vererbungsstruktur <em>Throwable</em></h2>
+<p><a href="#R-image-bd141bbf21d4b2227a5e668515e4bd42" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/exceptions/exception.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bd141bbf21d4b2227a5e668515e4bd42"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/exceptions/exception.png?width=80%25&height=auto"></a></p>
+<h3 id="exception-vs-error"><em>Exception</em> vs. <em>Error</em></h3>
+<ul>
+<li><code>Error</code>:
+<ul>
+<li>Wird für Systemfehler verwendet (Betriebssystem, JVM, ...)
+<ul>
+<li><code>StackOverflowError</code></li>
+<li><code>OutOfMemoryError</code></li>
+</ul>
+</li>
+<li>Von einem Error kann man sich nicht erholen</li>
+<li>Sollten nicht behandelt werden</li>
+</ul>
+</li>
+<li><code>Exception</code>:
+<ul>
+<li>Ausnahmesituationen bei der Abarbeitung eines Programms</li>
+<li>Können &quot;checked&quot; oder &quot;unchecked&quot; sein</li>
+<li>Von Exceptions kann man sich erholen</li>
+</ul>
+</li>
+</ul>
+<h3 id="unchecked-vs-checked-exceptions">Unchecked vs. Checked Exceptions</h3>
+<ul>
+<li>&quot;Checked&quot; Exceptions:
+<ul>
+<li>Für erwartbare Fehlerfälle, deren Ursprung nicht im Programm selbst liegt
+<ul>
+<li><code>FileNotFoundException</code></li>
+<li><code>IOException</code></li>
+</ul>
+</li>
+<li>Alle nicht von <code>RuntimeException</code> ableitende Exceptions</li>
+<li>Müssen entweder behandelt (<code>try</code>/<code>catch</code>) oder deklariert (<code>throws</code>) werden:
+Dies wird vom Compiler überprüft!</li>
+</ul>
+</li>
+<li>&quot;Unchecked&quot; Exceptions:
+<ul>
+<li>Logische Programmierfehler (&quot;Versagen&quot; des Programmcodes)
+<ul>
+<li><code>IndexOutOfBoundException</code></li>
+<li><code>NullPointerException</code></li>
+<li><code>ArithmeticException</code></li>
+<li><code>IllegalArgumentException</code></li>
+</ul>
+</li>
+<li>Leiten von <code>RuntimeException</code> oder Unterklassen ab</li>
+<li>Müssen nicht deklariert oder behandelt werden</li>
+</ul>
+</li>
+</ul>
+<p>Beispiele checked Exception:</p>
+<ul>
+<li>Es soll eine Abfrage an eine externe API geschickt werden. Diese ist aber aktuell
+nicht zu erreichen. &quot;Erholung&quot;: Anfrage noch einmal schicken.</li>
+<li>Es soll eine Datei geöffnet werden. Diese ist aber nicht unter dem angegebenen
+Pfad zu finden oder die Berechtigungen stimmen nicht. &quot;Erholung&quot;: Aufrufer öffnet
+neuen File-Picker, um es noch einmal mit einer anderen Datei zu versuchen.</li>
+</ul>
+<p>Beispiele unchecked Exception:</p>
+<ul>
+<li>Eine <code>for</code>-Loop über ein Array ist falsch programmiert und will auf einen Index
+im Array zugreifen, der nicht existiert. Hier kann der Aufrufer nicht Sinnvolles
+tun, um sich von dieser Situation zu erholen.</li>
+<li>Argumente oder Rückgabewerte einer Methode können <code>null</code> sein. Wenn man das nicht
+prüft, sondern einfach Methoden auf dem vermeintlichen Objekt aufruft, wird eine
+<code>NullPointerException</code> ausgelöst, die eine Unterklasse von <code>RuntimeException</code> ist
+und damit eine unchecked Exception. Auch hier handelt es sich um einen Fehler in
+der Programmlogik, von dem sich der Aufrufer nicht sinnvoll erholen kann.</li>
+</ul>
+<h2 id="throws"><em>Throws</em></h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">div</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) <span style="color:#66d9ef">throws</span> ArithmeticException {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">/</span> b;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Alternativ:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">div</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) <span style="color:#66d9ef">throws</span> IllegalArgumentException {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (b <span style="color:#f92672">==</span> 0) <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException(<span style="color:#e6db74">&#34;Can&#39;t divide by zero&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">/</span> b;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Exception können an an den Aufrufer weitergeleitet werden oder selbst geworfen werden.</p>
+<p>Wenn wie im ersten Beispiel bei einer Operation eine Exception entsteht und nicht
+gefangen wird, dann wird sie automatisch an den Aufrufer weitergeleitet. Dies wird
+über die <code>throws</code>-Klausel deutlich gemacht (Keyword <code>throws</code> plus den/die Namen der
+Exception(s), angefügt an die Methodensignatur). Bei unchecked Exceptions <em>kann</em> man
+das tun, bei checked Exceptions <em>muss</em> man dies tun.</p>
+<p>Wenn man wie im zweiten Beispiel selbst eine neue Exception werfen will, erzeugt man
+mit <code>new</code> ein neues Objekt der gewünschten Exception und &quot;wirft&quot; diese mit <code>throw</code>.
+Auch diese Exception kann man dann entweder selbst fangen und bearbeiten (siehe nächste
+Folie) oder an den Aufrufer weiterleiten und dies dann entsprechend über die
+<code>throws</code>-Klausel deklarieren: nicht gefangene checked Exceptions <em>müssen</em> deklariert
+werden, nicht gefangene unchecked Exceptions <em>können</em> deklariert werden.</p>
+<p>Wenn mehrere Exceptions an den Aufrufer weitergeleitet werden, werden sie in der
+<code>throws</code>-Klausel mit Komma getrennt: <code>throws Exception1, Exception2, Exception3</code>.</p>
+<p><strong>Anmerkung</strong>: In beiden obigen Beispielen wurde zur Verdeutlichung, dass die Methode
+<code>div()</code> eine Exception wirft, diese per <code>throws</code>-Klausel deklariert. Da es sich bei
+den beiden Beispielen aber jeweils um <strong>unchecked Exceptions</strong> handelt, ist dies im
+obigen Beispiel <em>nicht notwendig</em>. Der Aufrufer <em>muss</em> auch nicht ein passendes
+Exception-Handling einsetzen!</p>
+<p>Wenn wir stattdessen eine <strong>checked Exception</strong> werfen würden oder in <code>div()</code> eine
+Methode aufrufen würden, die eine checked Exception deklariert hat, <em>muss</em> diese
+checked Exception entweder in <code>div()</code> gefangen und bearbeitet werden oder aber per
+<code>throws</code>-Klausel deklariert werden. Im letzteren Fall <em>muss</em> dann der Aufrufer analog
+damit umgehen (fangen oder selbst auch deklarieren). <strong>Dies wird vom Compiler geprüft!</strong></p>
+<h2 id="try-catch"><em>Try</em>-<em>Catch</em></h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> getUserInput();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> getUserInput();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    div(a, b);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IllegalArgumentException e) {
+</span></span><span style="display:flex;"><span>    e.<span style="color:#a6e22e">printStackTrace</span>(); <span style="color:#75715e">// Wird im Fehlerfall aufgerufen</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">//</span> hier geht es normal weiter</span></span></code></pre></div><ul>
+<li>Im <code>try</code> Block wird der Code ausgeführt, der einen Fehler werfen könnte.</li>
+<li>Mit <code>catch</code> kann eine Exception gefangen und im <code>catch</code> Block behandelt werden.</li>
+</ul>
+<p><strong>Anmerkung</strong>: Das bloße Ausgeben des Stacktrace via <code>e.printStackTrace()</code> ist
+noch <strong>kein sinnvolles Exception-Handling</strong>! Hier sollte auf die jeweilige Situation
+eingegangen werden und versucht werden, den Fehler zu beheben oder dem Aufrufer
+geeignet zu melden!</p>
+<h2 id="_try_und-mehrstufiges-catch">_Try_und mehrstufiges <em>Catch</em></h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    someMethod(a, b, c);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (IllegalArgumentException iae) {
+</span></span><span style="display:flex;"><span>    iae.<span style="color:#a6e22e">printStackTrace</span>();
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (FileNotFoundException <span style="color:#f92672">|</span> NullPointerException e) {
+</span></span><span style="display:flex;"><span>    e.<span style="color:#a6e22e">printStackTrace</span>();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Eine im <code>try</code>-Block auftretende Exception wird der Reihe nach mit den <code>catch</code>-Blöcken
+gematcht (vergleichbar mit <code>switch case</code>).</p>
+<p><strong>Wichtig</strong>: Dabei muss die Vererbungshierarchie beachtet werden. Die spezialisierteste
+Klasse muss ganz oben stehen, die allgemeinste Klasse als letztes. Sonst wird eine
+Exception u.U. zu früh in einem nicht dafür gedachten <code>catch</code>-Zweig aufgefangen.</p>
+<p><strong>Wichtig</strong>: Wenn eine Exception nicht durch die <code>catch</code>-Zweige aufgefangen wird, dann
+wird sie an den Aufrufer weiter geleitet. Im Beispiel würde eine <code>IOException</code> nicht durch
+die <code>catch</code>-Zweige gefangen (<code>IllegalArgumentException</code> und <code>NullPointerException</code> sind
+im falschen Vererbungszweig, und <code>FileNotFoundException</code> ist spezieller als <code>IOException</code>)
+und entsprechend an den Aufrufer weiter gereicht. Da es sich obendrein um eine checked
+Exception handelt, müsste man diese per <code>throws IOException</code> an der Methode deklarieren.</p>
+<h2 id="finally"><em>Finally</em></h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Scanner myScanner <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner(System.<span style="color:#a6e22e">in</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> 5 <span style="color:#f92672">/</span> myScanner.<span style="color:#a6e22e">nextInt</span>();
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (InputMismatchException ime) {
+</span></span><span style="display:flex;"><span>    ime.<span style="color:#a6e22e">printStackTrace</span>();
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">finally</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// wird immer aufgerufen</span>
+</span></span><span style="display:flex;"><span>    myScanner.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Der <code>finally</code> Block wird sowohl im Fehlerfall als auch im Normalfall aufgerufen. Dies
+wird beispielsweise für Aufräumarbeiten genutzt, etwa zum Schließen von Verbindungen
+oder Input-Streams.</p>
+<h2 id="try-with-resources"><em>Try</em>-with-Resources</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> (Scanner myScanner <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner(System.<span style="color:#a6e22e">in</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> 5 <span style="color:#f92672">/</span> myScanner.<span style="color:#a6e22e">nextInt</span>();
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (InputMismatchException ime) {
+</span></span><span style="display:flex;"><span>    ime.<span style="color:#a6e22e">printStackTrace</span>();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Im <code>try</code>-Statement können Ressourcen deklariert werden, die am Ende sicher geschlossen
+werden. Diese Ressourcen müssen <code>java.io.Closeable</code> implementieren.</p>
+<h2 id="eigene-exceptions">Eigene Exceptions</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Checked Exception</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyCheckedException</span> <span style="color:#66d9ef">extends</span> Exception {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyCheckedException</span>(String errorMessage) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(errorMessage);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Unchecked Exception</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyUncheckedException</span> <span style="color:#66d9ef">extends</span> RuntimeException {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyUncheckedException</span>(String errorMessage) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(errorMessage);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Eigene Exceptions können durch Spezialisierung anderer Exception-Klassen realisiert
+werden. Dabei kann man direkt von <code>Exception</code> oder <code>RuntimeException</code> ableiten oder
+bei Bedarf von spezialisierteren Exception-Klassen.</p>
+<p>Wenn die eigene Exception in der Vererbungshierarchie unter <code>RuntimeException</code> steht,
+handelt es sich um eine <em>unchecked Exception</em>, sonst um eine <em>checked Exception</em>.</p>
+<p>In der Benutzung (werfen, fangen, deklarieren) verhalten sich eigene Exception-Klassen
+wie die Exceptions aus dem JDK.</p>
+<h2 id="stilfrage-wie-viel-code-im-try">Stilfrage: Wie viel Code im <em>Try</em>?</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getFirstLineAsInt</span>(String pathToFile) {
+</span></span><span style="display:flex;"><span>    FileReader fileReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileReader(pathToFile);
+</span></span><span style="display:flex;"><span>    BufferedReader bufferedReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader(fileReader);
+</span></span><span style="display:flex;"><span>    String firstLine <span style="color:#f92672">=</span> bufferedReader.<span style="color:#a6e22e">readLine</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Integer.<span style="color:#a6e22e">parseInt</span>(firstLine);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/src/exceptions/HowMuchTry.java" target="_blank"><span class="title">Zeigen: exceptions.HowMuchTry</span></a></span></div>
+<p>Hier lassen sich verschiedene &quot;Ausbaustufen&quot; unterscheiden.</p>
+<h3 id="handling-an-den-aufrufer-übergeben">Handling an den Aufrufer übergeben</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getFirstLineAsIntV1</span>(String pathToFile) <span style="color:#66d9ef">throws</span> FileNotFoundException, IOException {
+</span></span><span style="display:flex;"><span>    FileReader fileReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileReader(pathToFile);
+</span></span><span style="display:flex;"><span>    BufferedReader bufferedReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader(fileReader);
+</span></span><span style="display:flex;"><span>    String firstLine <span style="color:#f92672">=</span> bufferedReader.<span style="color:#a6e22e">readLine</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Integer.<span style="color:#a6e22e">parseInt</span>(firstLine);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Der Aufrufer hat den Pfad als String übergeben und ist vermutlich in der Lage, auf
+Probleme mit dem Pfad sinnvoll zu reagieren. Also könnte man in der Methode selbst
+auf ein <code>try</code>/<code>catch</code> verzichten und stattdessen die <code>FileNotFoundException</code> (vom
+<code>FileReader</code>) und die <code>IOException</code> (vom <code>bufferedReader.readLine()</code>) per <code>throws</code>
+deklarieren.</p>
+<p><em>Anmerkung</em>: Da <code>FileNotFoundException</code> eine Spezialisierung von <code>IOException</code> ist,
+reicht es aus, lediglich die <code>IOException</code> zu deklarieren.</p>
+<h3 id="jede-exception-einzeln-fangen-und-bearbeiten">Jede Exception einzeln fangen und bearbeiten</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getFirstLineAsIntV2</span>(String pathToFile) {
+</span></span><span style="display:flex;"><span>    FileReader fileReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        fileReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileReader(pathToFile);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (FileNotFoundException fnfe) {
+</span></span><span style="display:flex;"><span>        fnfe.<span style="color:#a6e22e">printStackTrace</span>(); <span style="color:#75715e">// Datei nicht gefunden</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    BufferedReader bufferedReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader(fileReader);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    String firstLine <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        firstLine <span style="color:#f92672">=</span> bufferedReader.<span style="color:#a6e22e">readLine</span>();
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (IOException ioe) {
+</span></span><span style="display:flex;"><span>        ioe.<span style="color:#a6e22e">printStackTrace</span>(); <span style="color:#75715e">// Datei kann nicht gelesen werden</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Integer.<span style="color:#a6e22e">parseInt</span>(firstLine);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (NumberFormatException nfe) {
+</span></span><span style="display:flex;"><span>        nfe.<span style="color:#a6e22e">printStackTrace</span>(); <span style="color:#75715e">// Das war wohl kein Integer</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> 0;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In dieser Variante wird jede Operation, die eine Exception werfen kann, separat in
+ein <code>try</code>/<code>catch</code> verpackt und jeweils separat auf den möglichen Fehler reagiert.</p>
+<p>Dadurch kann man die Fehler sehr einfach dem jeweiligen Statement zuordnen.</p>
+<p>Allerdings muss man nun mit Behelfsinitialisierungen arbeiten und der Code wird sehr
+in die Länge gezogen und man erkennt die eigentlichen funktionalen Zusammenhänge nur
+noch schwer.</p>
+<p><em>Anmerkung</em>: Das &quot;Behandeln&quot; der Exceptions ist im obigen Beispiel kein gutes Beispiel
+für das Behandeln von Exceptions. Einfach nur einen Stacktrace zu printen und weiter
+zu machen, als ob nichts passiert wäre, ist <strong>kein sinnvolles Exception-Handling</strong>.
+Wenn Sie solchen Code schreiben oder sehen, ist das ein Anzeichen, dass auf dieser Ebene
+nicht sinnvoll mit dem Fehler umgegangen werden kann und dass man ihn besser an den
+Aufrufer weiter reichen sollte (siehe nächste Folie).</p>
+<h3 id="funktionaler-teil-in-gemeinsames-try-und-mehrstufiges-catch">Funktionaler Teil in gemeinsames <em>Try</em> und mehrstufiges <em>Catch</em></h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getFirstLineAsIntV3</span>(String pathToFile) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        FileReader fileReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileReader(pathToFile);
+</span></span><span style="display:flex;"><span>        BufferedReader bufferedReader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader(fileReader);
+</span></span><span style="display:flex;"><span>        String firstLine <span style="color:#f92672">=</span> bufferedReader.<span style="color:#a6e22e">readLine</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Integer.<span style="color:#a6e22e">parseInt</span>(firstLine);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (FileNotFoundException fnfe) {
+</span></span><span style="display:flex;"><span>        fnfe.<span style="color:#a6e22e">printStackTrace</span>(); <span style="color:#75715e">// Datei nicht gefunden</span>
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (IOException ioe) {
+</span></span><span style="display:flex;"><span>        ioe.<span style="color:#a6e22e">printStackTrace</span>(); <span style="color:#75715e">// Datei kann nicht gelesen werden</span>
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (NumberFormatException nfe) {
+</span></span><span style="display:flex;"><span>        nfe.<span style="color:#a6e22e">printStackTrace</span>(); <span style="color:#75715e">// Das war wohl kein Integer</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> 0;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Hier wurde der eigentliche funktionale Kern der Methode in ein gemeinsames <code>try</code>/<code>catch</code>
+verpackt und mit einem mehrstufigen <code>catch</code> auf die einzelnen Fehler reagiert. Durch die
+Art der Exceptions sieht man immer noch, wo der Fehler herkommt. Zusätzlich wird die
+eigentliche Funktionalität so leichter erkennbar.</p>
+<p><em>Anmerkung</em>: Auch hier ist das gezeigte Exception-Handling kein gutes Beispiel. Entweder
+man macht hier sinnvollere Dinge, oder man überlässt dem Aufrufer die Reaktion auf den
+Fehler.</p>
+<h2 id="stilfrage-wo-fange-ich-die-exception">Stilfrage: Wo fange ich die Exception?</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">methode1</span>(<span style="color:#66d9ef">int</span> x) <span style="color:#66d9ef">throws</span> IOException {
+</span></span><span style="display:flex;"><span>    JFileChooser fc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> JFileChooser();
+</span></span><span style="display:flex;"><span>    fc.<span style="color:#a6e22e">showDialog</span>(<span style="color:#66d9ef">null</span>, <span style="color:#e6db74">&#34;ok&#34;</span>);
+</span></span><span style="display:flex;"><span>    methode2(fc.<span style="color:#a6e22e">getSelectedFile</span>().<span style="color:#a6e22e">toString</span>(), x, x <span style="color:#f92672">*</span> 2);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">methode2</span>(String path, <span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) <span style="color:#66d9ef">throws</span> IOException {
+</span></span><span style="display:flex;"><span>    FileWriter fw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileWriter(path);
+</span></span><span style="display:flex;"><span>    BufferedWriter bw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedWriter(fw);
+</span></span><span style="display:flex;"><span>    bw.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#34;X:&#34;</span> <span style="color:#f92672">+</span> x <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; Y: &#34;</span> <span style="color:#f92672">+</span> y);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        methode1(42);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (IOException ioe) {
+</span></span><span style="display:flex;"><span>        ioe.<span style="color:#a6e22e">printStackTrace</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Prinzipiell steht es einem frei, wo man eine Exception fängt und behandelt. Wenn im
+<code>main()</code> eine nicht behandelte Exception auftritt (weiter nach oben geleitet wird),
+wird das Programm mit einem Fehler beendet.</p>
+<p>Letztlich scheint es eine gute Idee zu sein, eine Exception so nah wie möglich am
+Ursprung der Fehlerursache zu behandeln. Man sollte sich dabei die Frage stellen: Wo
+kann ich sinnvoll auf den Fehler reagieren?</p>
+<h2 id="stilfrage-wann-checked-wann-unchecked">Stilfrage: Wann checked, wann unchecked</h2>
+<h3 id="checked-exceptions">&quot;Checked&quot; Exceptions</h3>
+<ul>
+<li>Für erwartbare Fehlerfälle, deren Ursprung nicht im Programm selbst liegt</li>
+<li>Aufrufer kann sich von der Exception erholen</li>
+</ul>
+<h3 id="unchecked-exceptions">&quot;Unchecked&quot; Exceptions</h3>
+<ul>
+<li>Logische Programmierfehler (&quot;Versagen&quot; des Programmcodes)</li>
+<li>Aufrufer kann sich von der Exception vermutlich nicht erholen</li>
+</ul>
+<p>Vergleiche <a href="https://dev.java/learn/exceptions/unchecked-exception-controversy/" target="_blank">&quot;Unchecked Exceptions &mdash; The Controversy&quot;</a>.</p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p><code>Error</code> und <code>Exception</code>: System vs. Programm</p>
+</li>
+<li>
+<p>Checked und unchecked Exceptions: <code>Exception</code> vs. <code>RuntimeException</code></p>
+</li>
+<li>
+<p><code>try</code>: Versuche Code auszuführen</p>
+</li>
+<li>
+<p><code>catch</code>: Verhalten im Fehlerfall</p>
+</li>
+<li>
+<p><code>finally</code>: Verhalten im Erfolgs- und Fehlerfall</p>
+</li>
+<li>
+<p><code>throw</code>: Wirft eine Exception</p>
+</li>
+<li>
+<p><code>throws</code>: Deklariert eine Exception an Methode</p>
+</li>
+<li>
+<p>Eigene Exceptions durch Ableiten von anderen Exceptions
+(werden je nach Vererbungshierarchie automatisch checked oder unchecked)</p>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106516&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Exceptions (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p>Betrachten Sie die <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-jvm/src/challenges/exceptions" target="_blank">Vorgaben</a>.</p>
+<p><strong>Verbessern Sie das Exception-Handling</strong></p>
+<p>Im package <code>better_try_catch</code> finden Sie die Klasse <code>BetterTryCatchMain</code>, in der
+verschiedene Methoden der Klasse <code>MyFunctions</code> aufgerufen werden.</p>
+<p>Erklären Sie, warum das dort implementierte Exception-Handling nicht gut ist und
+verbessern Sie es.</p>
+<p><strong>Checked vs. unckecked Exceptions</strong></p>
+<p>Erklären Sie den Unterschied zwischen checked und unchecked Exceptions.</p>
+<p>Im Folgenden werden verschiedene Exceptions beschrieben. Erklären Sie, ob diese
+jeweils &quot;checked&quot; oder &quot;unchecked&quot; sein sollten.</p>
+<ul>
+<li><code>IntNotBetweenException</code> soll geworfen werden, wenn ein Integer-Parameter nicht
+im definierten Wertebereich liegt.</li>
+<li><code>NoPicturesFoundException</code> soll geworfen werden, wenn in einem übergebenen
+Verzeichnis keine Bilddateien gefunden werden konnten.</li>
+<li><code>NotAPrimeNumberException</code> soll geworfen werden, wenn eine vom User eingegebene
+Zahl keine Primzahl ist.</li>
+</ul>
+<p><strong>Freigeben von Ressourcen</strong></p>
+<p>Im Package <code>finally_resources</code> finden Sie die Klasse <code>MyResource</code>.</p>
+<p>Rufen Sie die Methode <code>MyResource#doSomething</code> auf, im Anschluss müssen Sie <strong>immer</strong>
+die Methode <code>MyResource#close</code> aufrufen.</p>
+<ol>
+<li>Zeigen Sie den Aufruf mit <code>try-catch-finally</code>.</li>
+<li>Verändern Sie die Vorgaben so, dass Sie den Aufruf mit der &quot;try-with-resources&quot;-Technik
+ausführen können.</li>
+</ol>
+<p><strong>Where to catch?</strong></p>
+<p>Erklären Sie, wann und wo eine Exception gefangen und bearbeitet werden sollte.</p>
+<p>Im Package <code>where_to_catch</code> finden Sie die Klasse <code>JustThrow</code>. Alle Methoden in der Klasse
+werfen aufkommende Exceptions bis zur <code>main</code> hoch.</p>
+<p>Verändern Sie die Vorgaben so, dass die Exceptions an den passenden Stellen gefangen und
+sinnvoll bearbeitet werden. Begründen Sie Ihre Entscheidungen.</p>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Java-SE-Tutorial'>[Java-SE-Tutorial] <a href='https://docs.oracle.com/javase/tutorial/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>The Java Tutorials</strong></a><br>Oracle Corporation, 2022.<br><em>Trail: Essential Java Classes, Lesson: Exceptions</em></li> <li id='id_LernJava'>[LernJava] <a href='https://dev.java/learn/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Learn Java</strong></a><br>Oracle Corporation, 2022.<br><em>Tutorials \> Exceptions</em></li> <li id='id_Ullenboom2021'>[Ullenboom2021] <a href='https://openbook.rheinwerk-verlag.de/javainsel/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java ist auch eine Insel</strong></a><br>Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8362-8745-6</a>.<br><em>Kap. 8: Ausnahmen müssen sein</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+
+
+
+
+<a id="logo" href='https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234//index.html'>
+    <img style="max-width:35%" alt="icon" src='/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png'>
+</a>
+
+        </div>
+        <form action="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/search.html" method="get"><div class="searchbox default-animation">
+          <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+          <label class="a11y-only" for="R-search-by">Search</label>
+          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+        </div></form>
+        <script>
+          var contentLangs=['de'];
+        </script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/auto-complete.js?1711605716" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.min.js?1711605716" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.stemmer.support.min.js?1711605716" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.multi.min.js?1711605716" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.de.min.js?1711605716" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/search.js?1711605716" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics.html">Generics<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3ec7939463ceb6f931083967c060bb2f" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/classes-methods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/classes-methods.html">Klassen &amp; Methoden<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/bounds-wildcards.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/bounds-wildcards.html">Bounds &amp; Wildcards<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/type-erasure.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/type-erasure.html">Type Erasure<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html">Polymorphie<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm.html" class="parent "><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm.html">Java / JVM<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a8baeaa8292f03e30c60ce3f78cb8329" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections.html">Collections<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html">Enumerations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/regexp.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/regexp.html">RegExp<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/configuration.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/configuration.html">Konfiguration<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/exceptions.html" class="active"><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/exceptions.html">Exceptions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html">Serialisierung<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html">Git<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b7b75b08ea746eeb407fc7d37ea4cda5" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html">Intro<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html">Basics<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html">Branches<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">Branching-Strategien<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html">Remotes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">Workflows<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/worktree.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/worktree.html">Worktree<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java.html">Modern Java<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b7e7192fdbaa6715e2f6bf2cf57a6598" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html">Lambda-Ausdrücke<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/methodreferences.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/methodreferences.html">Methoden-Referenzen<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/stream-api.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/stream-api.html">Stream-API<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html">Optional<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/records.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/records.html">Records<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/sealed.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/sealed.html">Sealed Classes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html">Default-Methoden<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html">Coding<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ed36829f63ded441f98bbebba385ea7c" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html">Javadoc<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html">Logging<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html">Code Smells<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html">Coding Conventions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html">Refactoring<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html">Building<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f4e18db244c71e7d5fbee7579907c4cd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html">Gradle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html">Continuous Integration<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing.html">Testing<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-95ac3b8a0580d3c0c5ec1b9e2c19e15b" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html">Intro SW-Test<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/junit-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/junit-basics.html">JUnit-Basics<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testcases.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testcases.html">Testfallermittlung<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/mockito.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/mockito.html">Mocking<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html">Pattern<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-88c6ccdca00adeca83d4957e66bb44bd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html">Visitor<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html">Template-Method<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html">Observer<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html">Threads<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-69dad497cee2a112d69e7153cccf3928" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html">Intro<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html">Synchronisation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html">High-Level Concurrency<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#kursformat"><i class='fas fa-bookmark'></i> Zeiten</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> Fahrplan</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#pr%C3%BCfungsform-note-und-credits"><i class='fas fa-bookmark'></i> Note/Credits</a></li>
+            <li><a class="padding" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a"><i class='fas fa-external-link-alt'></i> FAQ</a></li>
+            <li><a class="padding" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/announcements"><i class='fas fa-external-link-alt'></i> News</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/exceptions.html" lang="de-DE" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                      <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                      <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-select-variant-relearn-bright" value="relearn-bright">Relearn Bright</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter"><p style="text-align: center;">
+<i class='fab fa-fw fa-github'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">GitHub</a>
+<i class='fas fa-fw fa-tags'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/issues">Issues</a>
+<i class='fas fa-fw fa-bullhorn'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">Credits</a>
+<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+
+</p>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1711605716" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1711605716" defer></script>
+    <script>
+      function useMathJax( config ){
+        if( !Object.assign ){
+          
+          return;
+        }
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          loader: {
+            load: ['[tex]/mhchem']
+          },
+          startup: {
+            elements: [
+              '.math'
+            ]
+          },
+          tex: {
+            inlineMath: [
+              ['$', '$'], 
+              ['\\(', '\\)']
+            ]
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1711605716"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1711605716" defer></script>
+  </body>
+</html>

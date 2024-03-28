@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.26.2">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Entwurfsmuster">
+    <meta name="twitter:description" content="">
+    <meta property="og:title" content="Entwurfsmuster">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html">
+    <title>Entwurfsmuster</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html" rel="canonical" type="text/html" title="Entwurfsmuster">
+
+    
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1711605715" rel="icon" type="image/png">
+
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1711605716" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1711605716" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1711605716" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/ie.css?1711605716" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/url.js?1711605716"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1711605716"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='.';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Entwurfsmuster
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="entwurfsmuster">Entwurfsmuster</h1>
+
+
+<ul class="children children-li children-sort-">
+	
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html">Visitor-Pattern</a></li>
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html">Template-Method-Pattern</a></li>
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html">Observer-Pattern</a></li>
+</ul>
+
+            <footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Entwurfsmuster</h1>
+<article class="default">
+<h1>Visitor-Pattern</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Häufig bietet es sich bei Datenstrukturen an, die Traversierung nicht direkt in den Klassen
+der Datenstrukturen zu implementieren, sondern in Hilfsklassen zu verlagern. Dies gilt vor
+allem dann, wenn die Datenstruktur aus mehreren Klassen besteht (etwa ein Baum mit verschiedenen
+Knotentypen) und/oder wenn man nicht nur eine Traversierungsart ermöglichen will oder/und wenn
+man immer wieder neue Arten der Traversierung ergänzen will. Das würde nämlich bedeuten, dass
+man für jede weitere Form der Traversierung in <em>allen</em> Klassen eine entsprechende neue Methode
+implementieren müsste.</p>
+<p>Das Visitor-Pattern lagert die Traversierung in eigene Klassenstruktur aus.</p>
+<p>Die Klassen der Datenstruktur bekommen nur noch eine <code>accept()</code>-Methode, in der ein Visitor
+übergeben wird und rufen auf diesem Visitor einfach dessen <code>visit()</code>-Methode auf (mit einer
+Referenz auf sich selbst als Argument).</p>
+<p>Der Visitor hat für jede Klasse der Datenstruktur eine Überladung der <code>visit()</code>-Methode. In
+diesen kann er je nach Klasse die gewünschte Verarbeitung vornehmen. Üblicherweise gibt es
+ein Interface oder eine abstrakte Klasse für die Visitoren, von denen dann konkrete Visitoren
+ableiten.</p>
+<p>Bei Elementen mit &quot;Kindern&quot; muss man sich entscheiden, wie die Traversierung implementiert
+werden soll. Man könnte in der <code>accept()</code>-Methode den Visitor an die Kinder weiter reichen
+(also auf den Kindern <code>accept()</code> mit dem Visitor aufrufen), bevor man die <code>visit()</code>-Methode
+des Visitors mit sich selbst als Referenz aufruft. Damit ist die Form der Traversierung in
+den Klassen der Datenstruktur fest verankert und über den Visitor findet &quot;nur&quot; noch eine
+unterschiedliche Form der Verarbeitung statt. Alternativ überlässt man es dem Visitor, die
+Traversierung durchzuführen: Hier muss in den <code>visit()</code>-Methoden für die einzelnen Elemente
+entsprechend auf mögliche Kinder reagiert werden.</p>
+<p>In diesem Pattern findet ein sogenannter &quot;Double-Dispatch&quot; statt: Zur Laufzeit wird ein konkreter
+Visitor instantiiert und über <code>accept()</code> an ein Element der Datenstruktur übergeben. Dort ist
+zur Compile-Zeit aber nur der Obertyp der Visitoren bekannt, d.h. zur Laufzeit wird hier der
+konkrete Typ bestimmt und entsprechend die richtige <code>visit()</code>-Methode auf der &quot;echten&quot; Klasse
+des Visitors aufgerufen (erster Dispatch). Da im Visitor die <code>visit()</code>-Methoden für jeden Typ
+der Datenstrukur überladen sind, findet nun zur Laufzeit die Auflösung der korrekten Überladung
+statt (zweiter Dispatch).</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/zW_2oQmjp8M' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Visitor-Pattern</a></li> <li><a href='https://youtu.be/9dvcufpyQdw' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Visitor-Pattern (Part I: Traversierung ohne Visitor)</a></li> <li><a href='https://youtu.be/4rBRkXKhuN4' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Visitor-Pattern (Part II: Traversierung mit Visitor)</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/8a307719da2fd87b9cba54d34c05715a2fdaf115e80feb8ef29e53dcfe45f02e587ae0f76c7700e8d82fe102a234a2922af549aeaa261034dba59cbacfaaa8c3' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Visitor-Pattern</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Aufbau des Visitor-Patterns (Besucher-Entwurfsmusters)</li> <li>(K3) Anwendung des Visitor-Patterns auf konkrete Beispiele, etwa den PM-Dungeon</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="motivation-parsen-von-543">Motivation: Parsen von &quot;5*4+3&quot;</h2>
+<div class='columns'>
+<div class='column'>
+<p>Zum Parsen von Ausdrücken (<em>Expressions</em>) könnte man diese einfache Grammatik
+einsetzen. Ein Ausdruck ist dabei entweder ein einfacher Integer oder eine
+Addition oder Multiplikation zweier Ausdrücke.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code class="language-yacc" data-lang="yacc">expr : e1=expr &#39;*&#39; e2=expr      # MUL
+     | e1=expr &#39;+&#39; e2=expr      # ADD
+     | INT                      # NUM
+     ;</code></pre></div></div>
+<div class='column'>
+<p>Beim Parsen von &quot;5*4+3&quot; würde dabei der folgende Parsetree entstehen:</p>
+<p><a href="#R-image-2609124589eb4cce62b5b2fe3359f7e0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor/parsetree.png?width=20%25&height=auto" style=" height: auto; width: 20%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2609124589eb4cce62b5b2fe3359f7e0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor/parsetree.png?width=20%25&height=auto"></a></p>
+</div>
+</div>
+<h2 id="strukturen-für-den-parsetree">Strukturen für den Parsetree</h2>
+<p><a href="#R-image-921e40f31d3a93f5423fc0465bb57406" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor/parsetree_classes_uml.png?width=70%25&height=auto" style=" height: auto; width: 70%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-921e40f31d3a93f5423fc0465bb57406"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor/parsetree_classes_uml.png?width=70%25&height=auto"></a></p>
+<p>Der Parsetree für diese einfache Grammatik ist ein Binärbaum. Die Regeln
+werden auf Knoten im Baum zurückgeführt. Es gibt Knoten mit zwei Kindknoten,
+und es gibt Knoten ohne Kindknoten (&quot;Blätter&quot;).</p>
+<p>Entsprechend kann man sich einfache Klassen definieren, die die verschiedenen
+Knoten in diesem Parsetree repräsentieren. Als Obertyp könnte es ein (noch
+leeres) Interface <code>Expr</code> geben.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Expr</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NumExpr</span> <span style="color:#66d9ef">implements</span> Expr {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> d;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">NumExpr</span>(<span style="color:#66d9ef">int</span> d) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> d; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MulExpr</span> <span style="color:#66d9ef">implements</span> Expr {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Expr e1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Expr e2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MulExpr</span>(Expr e1, Expr e2) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e1</span> <span style="color:#f92672">=</span> e1;  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e2</span> <span style="color:#f92672">=</span> e2;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddExpr</span> <span style="color:#66d9ef">implements</span> Expr {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Expr e1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Expr e2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AddExpr</span>(Expr e1, Expr e2) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e1</span> <span style="color:#f92672">=</span> e1;  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e2</span> <span style="color:#f92672">=</span> e2;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DemoExpr</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">final</span> String... args) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 5*4+3</span>
+</span></span><span style="display:flex;"><span>        Expr e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AddExpr(<span style="color:#66d9ef">new</span> MulExpr(<span style="color:#66d9ef">new</span> NumExpr(5), <span style="color:#66d9ef">new</span> NumExpr(4)), <span style="color:#66d9ef">new</span> NumExpr(3));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="ergänzung-i-ausrechnen-des-ausdrucks">Ergänzung I: Ausrechnen des Ausdrucks</h2>
+<p>Es wäre nun schön, wenn man mit dem Parsetree etwas anfangen könnte. Vielleicht
+möchte man den Ausdruck ausrechnen?</p>
+<p><a href="#R-image-f582dca347df3c64257c8bd50fa9d0b3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor/parsetree_eval_uml.png?width=70%25&height=auto" style=" height: auto; width: 70%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f582dca347df3c64257c8bd50fa9d0b3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor/parsetree_eval_uml.png?width=70%25&height=auto"></a></p>
+<p>Zum Ausrechnen des Ausdrucks könnte man dem Interface eine <code>eval()</code>-Methode
+spendieren. Jeder Knoten kann für sich entscheiden, wie die entsprechende
+Operation ausgewertet werden soll: Bei einer <code>NumExpr</code> ist dies einfach der
+gespeicherte Wert, bei Addition oder Multiplikation entsprechend die Addition
+oder Multiplikation der Auswertungsergebnisse der beiden Kindknoten.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Expr</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">eval</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NumExpr</span> <span style="color:#66d9ef">implements</span> Expr {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> d;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">NumExpr</span>(<span style="color:#66d9ef">int</span> d) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> d; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">eval</span>() { <span style="color:#66d9ef">return</span> d; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MulExpr</span> <span style="color:#66d9ef">implements</span> Expr {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Expr e1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Expr e2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MulExpr</span>(Expr e1, Expr e2) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e1</span> <span style="color:#f92672">=</span> e1;  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e2</span> <span style="color:#f92672">=</span> e2;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">eval</span>() { <span style="color:#66d9ef">return</span> e1.<span style="color:#a6e22e">eval</span>() <span style="color:#f92672">*</span> e2.<span style="color:#a6e22e">eval</span>(); }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddExpr</span> <span style="color:#66d9ef">implements</span> Expr {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Expr e1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Expr e2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AddExpr</span>(Expr e1, Expr e2) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e1</span> <span style="color:#f92672">=</span> e1;  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e2</span> <span style="color:#f92672">=</span> e2;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">eval</span>() { <span style="color:#66d9ef">return</span> e1.<span style="color:#a6e22e">eval</span>() <span style="color:#f92672">+</span> e2.<span style="color:#a6e22e">eval</span>(); }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DemoExpr</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">final</span> String... args) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 5*4+3</span>
+</span></span><span style="display:flex;"><span>        Expr e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AddExpr(<span style="color:#66d9ef">new</span> MulExpr(<span style="color:#66d9ef">new</span> NumExpr(5), <span style="color:#66d9ef">new</span> NumExpr(4)), <span style="color:#66d9ef">new</span> NumExpr(3));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> erg <span style="color:#f92672">=</span> e.<span style="color:#a6e22e">eval</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="ergänzung-ii-pretty-print-des-ausdrucks">Ergänzung II: Pretty-Print des Ausdrucks</h2>
+<p>Nachdem das Ausrechnen so gut geklappt hat, will der Chef nun noch flink eine Funktion,
+mit der man den Ausdruck hübsch ausgeben kann:</p>
+<p><a href="#R-image-53982526393d0e8b39d1df52d4ee9fe6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor/parsetree_eval_print_uml.png?width=70%25&height=auto" style=" height: auto; width: 70%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-53982526393d0e8b39d1df52d4ee9fe6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor/parsetree_eval_print_uml.png?width=70%25&height=auto"></a></p>
+<p>Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche Strukturen,
+mit denen wir diesen Parsetree traversieren ... Und wir müssen für <em>jede</em> Erweiterung
+immer <em>alle</em> Expression-Klassen anpassen!</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/direct/DemoExpr.java" target="_blank"><span class="title">Beispiel: direct.DemoExpr</span></a></span></div>
+<p><strong>Das geht besser.</strong></p>
+<h2 id="visitor-pattern-besucher-entwurfsmuster">Visitor-Pattern (Besucher-Entwurfsmuster)</h2>
+<p><a href="#R-image-e4439881eaa4800bcdb9ad23f78400a6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor/visitor.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e4439881eaa4800bcdb9ad23f78400a6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor/visitor.png?width=80%25&height=auto"></a></p>
+<p>Das Entwurfsmuster &quot;Besucher&quot; (<em>Visitor Pattern</em>) lagert die Aktion beim Besuchen eines
+Knotens in eine separate Klasse aus.</p>
+<p>Dazu bekommt jeder Knoten im Baum eine neue Methode, die einen Besucher akzeptiert.
+Dieser Besucher kümmert sich dann um die entsprechende Verarbeitung des Knotens, also
+um das Auswerten oder Ausgeben im obigen Beispiel.</p>
+<p>Die Besucher haben eine Methode, die für jeden zu bearbeitenden Knoten überladen wird.
+In dieser Methode findet dann die eigentliche Verarbeitung statt: Auswerten des Knotens
+oder Ausgeben des Knotens ...</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Expr</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">accept</span>(ExprVisitor v);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NumExpr</span> <span style="color:#66d9ef">implements</span> Expr {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> d;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">NumExpr</span>(<span style="color:#66d9ef">int</span> d) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> d; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getValue</span>() { <span style="color:#66d9ef">return</span> d; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">accept</span>(ExprVisitor v) { v.<span style="color:#a6e22e">visit</span>(<span style="color:#66d9ef">this</span>); }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MulExpr</span> <span style="color:#66d9ef">implements</span> Expr {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Expr e1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Expr e2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MulExpr</span>(Expr e1, Expr e2) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e1</span> <span style="color:#f92672">=</span> e1;  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e2</span> <span style="color:#f92672">=</span> e2;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Expr <span style="color:#a6e22e">getE1</span>() { <span style="color:#66d9ef">return</span> e1; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Expr <span style="color:#a6e22e">getE2</span>() { <span style="color:#66d9ef">return</span> e2; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">accept</span>(ExprVisitor v) { v.<span style="color:#a6e22e">visit</span>(<span style="color:#66d9ef">this</span>); }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AddExpr</span> <span style="color:#66d9ef">implements</span> Expr {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Expr e1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Expr e2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AddExpr</span>(Expr e1, Expr e2) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e1</span> <span style="color:#f92672">=</span> e1;  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">e2</span> <span style="color:#f92672">=</span> e2;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Expr <span style="color:#a6e22e">getE1</span>() { <span style="color:#66d9ef">return</span> e1; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Expr <span style="color:#a6e22e">getE2</span>() { <span style="color:#66d9ef">return</span> e2; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">accept</span>(ExprVisitor v) { v.<span style="color:#a6e22e">visit</span>(<span style="color:#66d9ef">this</span>); }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ExprVisitor</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">visit</span>(NumExpr e);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">visit</span>(MulExpr e);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">visit</span>(AddExpr e);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EvalVisitor</span> <span style="color:#66d9ef">implements</span> ExprVisitor {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Stack<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> erg <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">visit</span>(NumExpr e) { erg.<span style="color:#a6e22e">push</span>(e.<span style="color:#a6e22e">getValue</span>()); }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">visit</span>(MulExpr e) {
+</span></span><span style="display:flex;"><span>        e.<span style="color:#a6e22e">getE1</span>().<span style="color:#a6e22e">accept</span>(<span style="color:#66d9ef">this</span>);  e.<span style="color:#a6e22e">getE1</span>().<span style="color:#a6e22e">accept</span>(<span style="color:#66d9ef">this</span>);
+</span></span><span style="display:flex;"><span>        erg.<span style="color:#a6e22e">push</span>(erg.<span style="color:#a6e22e">pop</span>() <span style="color:#f92672">*</span> erg.<span style="color:#a6e22e">pop</span>());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">visit</span>(AddExpr e) {
+</span></span><span style="display:flex;"><span>        e.<span style="color:#a6e22e">getE1</span>().<span style="color:#a6e22e">accept</span>(<span style="color:#66d9ef">this</span>);  e.<span style="color:#a6e22e">getE1</span>().<span style="color:#a6e22e">accept</span>(<span style="color:#66d9ef">this</span>);
+</span></span><span style="display:flex;"><span>        erg.<span style="color:#a6e22e">push</span>(erg.<span style="color:#a6e22e">pop</span>() <span style="color:#f92672">+</span> erg.<span style="color:#a6e22e">pop</span>());
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getResult</span>() { <span style="color:#66d9ef">return</span> erg.<span style="color:#a6e22e">peek</span>(); }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrintVisitor</span> <span style="color:#66d9ef">implements</span> ExprVisitor {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Stack<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> erg <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">visit</span>(NumExpr e) { erg.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#34;NumExpr(&#34;</span> <span style="color:#f92672">+</span> e.<span style="color:#a6e22e">getValue</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;)&#34;</span>); }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">visit</span>(MulExpr e) {
+</span></span><span style="display:flex;"><span>        e.<span style="color:#a6e22e">getE1</span>().<span style="color:#a6e22e">accept</span>(<span style="color:#66d9ef">this</span>);  e.<span style="color:#a6e22e">getE1</span>().<span style="color:#a6e22e">accept</span>(<span style="color:#66d9ef">this</span>);
+</span></span><span style="display:flex;"><span>        erg.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#34;MulExpr(&#34;</span> <span style="color:#f92672">+</span> erg.<span style="color:#a6e22e">pop</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> erg.<span style="color:#a6e22e">pop</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;)&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">visit</span>(AddExpr e) {
+</span></span><span style="display:flex;"><span>        e.<span style="color:#a6e22e">getE1</span>().<span style="color:#a6e22e">accept</span>(<span style="color:#66d9ef">this</span>);  e.<span style="color:#a6e22e">getE1</span>().<span style="color:#a6e22e">accept</span>(<span style="color:#66d9ef">this</span>);
+</span></span><span style="display:flex;"><span>        erg.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">&#34;AddExpr(&#34;</span> <span style="color:#f92672">+</span> erg.<span style="color:#a6e22e">pop</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, &#34;</span> <span style="color:#f92672">+</span> erg.<span style="color:#a6e22e">pop</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;)&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getResult</span>() { <span style="color:#66d9ef">return</span> erg.<span style="color:#a6e22e">peek</span>(); }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DemoExpr</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">final</span> String... args) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 5*4+3</span>
+</span></span><span style="display:flex;"><span>        Expr e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AddExpr(<span style="color:#66d9ef">new</span> MulExpr(<span style="color:#66d9ef">new</span> NumExpr(5), <span style="color:#66d9ef">new</span> NumExpr(4)), <span style="color:#66d9ef">new</span> NumExpr(3));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        EvalVisitor v1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> EvalVisitor();
+</span></span><span style="display:flex;"><span>        e.<span style="color:#a6e22e">accept</span>(v1);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> erg <span style="color:#f92672">=</span> v1.<span style="color:#a6e22e">getResult</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        PrintVisitor v2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PrintVisitor();
+</span></span><span style="display:flex;"><span>        e.<span style="color:#a6e22e">accept</span>(v2);
+</span></span><span style="display:flex;"><span>        String s <span style="color:#f92672">=</span> v2.<span style="color:#a6e22e">getResult</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="implementierungsdetail">Implementierungsdetail</h3>
+<p>In den beiden Klasse <code>AddExpr</code> und <code>MulExpr</code> müssen auch die beiden Kindknoten besucht
+werden, d.h. hier muss der Baum weiter traversiert werden.</p>
+<p>Man kann sich überlegen, diese Traversierung in den Klassen <code>AddExpr</code> und <code>MulExpr</code>
+selbst anzustoßen.</p>
+<p>Alternativ könnte auch der Visitor die Traversierung vornehmen. Gerade bei der Traversierung
+von Datenstrukturen ist diese Variante oft von Vorteil, da man hier unterschiedliche
+Traversierungsarten haben möchte (Breitensuche vs. Tiefensuche, Pre-Order vs. Inorder vs.
+Post-Order, ...) und diese elegant in den Visitor verlagern kann.</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/intrav/DemoExpr.java" target="_blank"><span class="title">Beispiel Traversierung intern (in den Knotenklassen): visitor.visit.intrav.DemoExpr</span></a></span></div>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/extrav/DemoExpr.java" target="_blank"><span class="title">Beispiel Traversierung extern (im Visitor): visitor.visit.extrav.DemoExpr</span></a></span></div>
+<h3 id="double--dispatch">(Double-) Dispatch</h3>
+<p>Zur Laufzeit wird in <code>accept()</code> der Typ des Visitors aufgelöst und dann in <code>visit()</code> der
+Typ der zu besuchenden Klasse. Dies nennt man auch &quot;Double-Dispatch&quot;.</p>
+<h3 id="hinweis-i">Hinweis I</h3>
+<p>Man könnte versucht sein, die <code>accept()</code>-Methode aus den Knotenklassen in die gemeinsame
+Basisklasse zu verlagern: Statt</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">accept</span>(ExprVisitor v) {
+</span></span><span style="display:flex;"><span>        v.<span style="color:#a6e22e">visit</span>(<span style="color:#66d9ef">this</span>);
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div><p>in <em>jeder</em> Knotenklasse einzeln zu definieren, könnte man das doch <em>einmalig</em> in der
+Basisklasse definieren:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Expr</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/** Akzeptiere einen Visitor für die Verarbeitung */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">accept</span>(ExprVisitor v) {
+</span></span><span style="display:flex;"><span>        v.<span style="color:#a6e22e">visit</span>(<span style="color:#66d9ef">this</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Dies wäre tatsächlich schön, weil man so Code-Duplizierung vermeiden könnte. Aber es
+funktioniert in Java leider nicht. (Warum?)</p>
+<h3 id="hinweis-ii">Hinweis II</h3>
+<p>Während die <code>accept()</code>-Methode nicht in die Basisklasse der besuchten Typen (im Bild oben
+die Klasse <code>Elem</code> bzw. im Beispiel oben die Klasse <code>Expr</code>) verlagert werden kann, kann man
+aber die <code>visit()</code>-Methoden im Interface <code>Visitor</code> durchaus als Default-Methoden im Interface
+implementieren.</p>
+<h2 id="ausrechnen-des-ausdrucks-mit-einem-visitor">Ausrechnen des Ausdrucks mit einem Visitor</h2>
+<p><a href="#R-image-7750bba069744cb8902fcf4321a65fa7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor/parsetree_visitor_uml.png?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7750bba069744cb8902fcf4321a65fa7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor/parsetree_visitor_uml.png?width=auto&height=auto"></a></p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/extrav/DemoExpr.java" target="_blank"><span class="title">Demo: visitor.visit.extrav.DemoExpr</span></a></span></div>
+<h2 id="wrap-up">Wrap-Up</h2>
+<p><strong>Visitor-Pattern</strong>: Auslagern der Traversierung in eigene Klassenstruktur</p>
+<ul>
+<li>
+<p>Klassen der Datenstruktur</p>
+<ul>
+<li>bekommen eine <code>accept()</code>-Methode für einen Visitor</li>
+<li>rufen den Visitor mit sich selbst als Argument auf</li>
+</ul>
+</li>
+<li>
+<p>Visitor</p>
+<ul>
+<li>hat für jede Klasse eine Überladung der <code>visit()</code>-Methode</li>
+<li>Rückgabewerte schwierig: Intern halten oder per <code>return</code>
+(dann aber unterschiedliche <code>visit()</code>-Methoden für die verschiedenen Rückgabetypen!)</li>
+</ul>
+</li>
+<li>
+<p>(Double-) Dispatch: Zur Laufzeit wird in <code>accept()</code> der Typ des Visitors
+und in <code>visit()</code> der Typ der zu besuchenden Klasse aufgelöst</p>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106543&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Visitor-Pattern (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p>In den <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/pattern/src/challenges/visitor" target="_blank">Vorgaben</a>
+finden Sie Code zur Realisierung von (rudimentären) binären Suchbäumen.</p>
+<ol>
+<li>
+<p>Betrachten Sie die Klassen <code>BinaryNode</code> und <code>Main</code>. Die Klasse <code>BinaryNode</code> dient zur einfachen Repräsentierung von
+binären Suchbäumen, in <code>Main</code> ist ein Versuchsaufbau vorbereitet.</p>
+<ul>
+<li>Implementieren Sie das Visitor-Pattern für den Binärbaum (in den Klassen <code>BinaryNode</code> und <code>Main</code>). Der
+<code>nodeVisitor</code> soll einen Binärbaum <em>inorder</em> traversieren.</li>
+<li>Führen Sie in <code>Main</code> die Aufrufe auf <code>binaryTree</code> aus (3a).</li>
+<li>Worin besteht der Unterschied zwischen den Aufrufen <code>binaryTree.accept(nodeVisitor)</code> und
+<code>nodeVisitor.visit(binaryTree)</code> (3a)?</li>
+</ul>
+</li>
+<li>
+<p>In <code>BinaryNode</code> wird ein Blatt aktuell durch einen Knoten repräsentiert, der für beide Kindbäume den Wert <code>null</code>
+hat. Um Blätter besser zu repräsentieren, gibt es die Klasse <code>UnaryNode</code>.</p>
+<ul>
+<li>Passen Sie <code>BinaryNode</code> so an, dass die Kindbäume auch <code>UnaryNode</code> sein können.</li>
+<li>Entfernen Sie in <code>Main</code> die Auskommentierung um die Definition von <code>mixedTree</code>.</li>
+<li>Führen Sie in <code>Main</code> die Aufrufe auf <code>mixedTree</code> aus (3b). Passen Sie dazu ggf. Ihre Implementierung des
+Visitor-Patterns an.</li>
+<li>Worin besteht der Unterschied zwischen den Aufrufen <code>mixedTree.accept(nodeVisitor)</code> und
+<code>nodeVisitor.visit(mixedTree)</code> (3b)?</li>
+</ul>
+</li>
+<li>
+<p>Sowohl <code>binaryTree</code> als auch <code>mixedTree</code> werden in <code>Main</code> als <code>BinaryNode&lt;String&gt;</code> deklariert. Das ist eine
+unschöne Praxis: Es soll nach Möglichkeit der Obertyp genutzt werden. Dies ist in diesem Fall <code>Node&lt;String&gt;</code>.</p>
+<ul>
+<li>Entfernen Sie in <code>Main</code> die Auskommentierung um die Definition von <code>tree</code>.</li>
+<li>Führen Sie in <code>Main</code> die Aufrufe auf <code>tree</code> aus (3c). Passen Sie dazu ggf. Ihre Implementierung des
+Visitor-Patterns an.</li>
+<li>Worin besteht der Unterschied zwischen den Aufrufen <code>tree.accept(nodeVisitor)</code> und
+<code>nodeVisitor.visit(tree)</code> (3c)?</li>
+</ul>
+</li>
+<li>
+<p>Implementieren Sie analog zu <code>nodeVisitor</code> einen weiteren Visitor, der die Bäume <em>postorder</em> traversiert
+und wiederholen Sie für diesen neuen Visitor die Aufrufe in (3a) bis (3c).</p>
+</li>
+<li>
+<p>Erklären Sie, wieso im Visitor-Pattern für den Start der Traversierung statt <code>visitor.visit(tree)</code> der Aufruf
+<code>tree.accept(visitor)</code> genutzt wird.</p>
+</li>
+<li>
+<p>Erklären Sie, wieso im Visitor-Pattern in der <code>accept</code>-Methode der Knoten der Aufruf <code>visitor.visit(this)</code>
+genutzt wird. Erklären Sie, wieso dieser Aufruf nicht in der Oberklasse bzw. im gemeinsamen Interface der
+Knoten implementiert werden kann.</p>
+</li>
+<li>
+<p>Erklären Sie, wieso im Visitor-Pattern in der <code>visit</code>-Methode der Visitoren statt <code>visit(node.left())</code> der
+Aufruf <code>node.left().accept(this)</code> genutzt wird.</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Eilebrecht2013'>[Eilebrecht2013] <strong>Patterns kompakt</strong><br>Eilebrecht, K. und Starke, G., Springer, 2013. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-6423-4718-4' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-6423-4718-4</a>.</li> <li id='id_Gamma2011'>[Gamma2011] <strong>Design Patterns</strong><br>Gamma, E. und Helm, R. und Johnson, R. E. und Vlissides, J., Addison-Wesley, 2011. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-0-2016-3361-0' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-0-2016-3361-0</a>.</li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+<article class="default">
+<h1>Template-Method-Pattern</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Das Template-Method-Pattern ist ein Entwurfsmuster, bei dem ein gewisses Verhalten
+in einer Methode implementiert wird, die wie eine Schablone agiert, der sogenannten
+&quot;Template-Methode&quot;. Darin werden dann u.a. Hilfsmethoden aufgerufen, die in der
+Basisklasse entweder als <code>abstract</code> markiert sind oder mit einem leeren Body
+implementiert sind (&quot;Hook-Methoden&quot;). Über diese Template-Methode legt also die
+Basisklasse ein gewisses Verhaltensschema fest (&quot;Template&quot;) - daher auch der Name.</p>
+<p>In den ableitenden Klassen werden dann die abstrakten Methoden und/oder die Hook-Methoden
+implementiert bzw. überschrieben und damit das Verhalten verfeinert.</p>
+<p>Zur Laufzeit ruft man auf den Objekten die Template-Methode auf. Dabei wird von der
+Laufzeitumgebung der konkrete Typ der Objekte bestimmt (auch wenn man sie unter dem
+Typ der Oberklasse führt) und die am tiefsten in der Vererbungshierarchie implementierten
+Methoden aufgerufen. D.h. die Aufrufe der Hilfsmethoden in der Template-Methode führen
+zu den in der jeweiligen ableitenden Klasse implementierten Varianten.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/EE-n2T6AO-g' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Template-Method-Pattern</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/a368cbd0990f4f58e5ee776bb4d6a1443c0a7cd443177eaa35ba35558e5c01307f689be5c9c239c6ffb41c74d2726397f2ba6be086df30737eec1df17ac4827a' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Template-Method-Pattern</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K3) Template-Method-Entwurfsmuster praktisch anwenden</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="motivation-syntax-highlighting-im-tokenizer">Motivation: Syntax-Highlighting im Tokenizer</h2>
+<p>In einem Compiler ist meist der erste Arbeitsschritt, den Eingabestrom in einzelne
+Token aufzubrechen. Dies sind oft die verschiedenen Schlüsselwörter, Operationen,
+Namen von Variablen, Methoden, Klassen etc. ... Aus der Folge von Zeichen (also dem
+eingelesenen Programmcode) wird ein Strom von Token, mit dem die nächste Stufe im
+Compiler dann weiter arbeiten kann.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Lexer</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> List<span style="color:#f92672">&lt;</span>Token<span style="color:#f92672">&gt;</span> allToken;  <span style="color:#75715e">// alle verfügbaren Token-Klassen</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>Token<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">tokenize</span>(String string) {
+</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>Token<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> (string.<span style="color:#a6e22e">length</span>() <span style="color:#f92672">&gt;</span> 0) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (Token t : allToken) {
+</span></span><span style="display:flex;"><span>                Token token <span style="color:#f92672">=</span> t.<span style="color:#a6e22e">match</span>(string);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (token <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>                    result.<span style="color:#a6e22e">add</span>(token);
+</span></span><span style="display:flex;"><span>                    string <span style="color:#f92672">=</span> string.<span style="color:#a6e22e">substring</span>(token.<span style="color:#a6e22e">getContent</span>().<span style="color:#a6e22e">length</span>(), string.<span style="color:#a6e22e">length</span>());
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Dazu prüft man jedes Token, ob es auf den aktuellen Anfang des Eingabestroms passt.
+Wenn ein Token passt, erzeugt man eine Instanz dieser Token-Klasse und speichert darin
+den gematchten Eingabeteil, den man dann vom Eingabestrom entfernt. Danach geht man
+in die Schleife und prüft wieder alle Token ... bis irgendwann der Eingabestrom leer
+ist und man den gesamten eingelesenen Programmcode in eine dazu passende Folge von
+Token umgewandelt hat.</p>
+<p><em>Anmerkung</em>: Abgesehen von fehlenden Javadoc etc. hat das obige Code-Beispiel mehrere
+Probleme: Man würde im realen Leben nicht mit <code>String</code>, sondern mit einem Zeichenstrom
+arbeiten. Außerdem fehlt noch eine Fehlerbehandlung, wenn nämlich keines der Token in
+der Liste <code>allToken</code> auf den aktuellen Anfang des Eingabestroms passt.</p>
+<h2 id="token-klassen-mit-formatiertem-inhalt">Token-Klassen mit formatiertem Inhalt</h2>
+<p>Um den eigenen Tokenizer besser testen zu können, wurde beschlossen, dass jedes Token
+seinen Inhalt als formatiertes HTML-Schnipsel zurückliefern soll. Damit kann man dann
+alle erkannten Token formatiert ausgeben und erhält eine Art Syntax-Highlighting für
+den eingelesenen Programmcode.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Token</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> String content;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">protected</span> String <span style="color:#a6e22e">getHtml</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KeyWord</span> <span style="color:#66d9ef">extends</span> Token {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> String <span style="color:#a6e22e">getHtml</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;font color=\&#34;red\&#34;&gt;&lt;b&gt;&#34;</span> <span style="color:#f92672">+</span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">content</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;/b&gt;&lt;/font&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StringContent</span> <span style="color:#66d9ef">extends</span> Token {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> String <span style="color:#a6e22e">getHtml</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;font color=\&#34;green\&#34;&gt;&#34;</span> <span style="color:#f92672">+</span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">content</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;/font&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Token t <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> KeyWord();
+</span></span><span style="display:flex;"><span>LOG.<span style="color:#a6e22e">info</span>(t.<span style="color:#a6e22e">getHtml</span>());</span></span></code></pre></div><p>In der ersten Umsetzung erhält die Basisklasse <code>Token</code> eine weitere abstrakte
+Methode, die jede Token-Klasse implementieren muss und in der die Token-Klassen
+einen String mit dem Token-Inhalt und einer Formatierung für HTML zurückgeben.</p>
+<p>Dabei fällt auf, dass der Aufbau immer gleich ist: Es werden ein oder mehrere
+Tags zum Start der Format-Sequenz mit dem Token-Inhalt verbunden, gefolgt mit
+einem zum verwendeten startenden HTML-Format-Tag passenden End-Tag.</p>
+<p>Auch wenn die Inhalte unterschiedlich sind, sieht das stark nach einer Verletzung
+von DRY aus ...</p>
+<h2 id="dont-call-us-well-call-you">Don't call us, we'll call you</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Token</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> String content;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> String <span style="color:#a6e22e">getHtml</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> htmlStart() <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">content</span> <span style="color:#f92672">+</span> htmlEnd();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">protected</span> String <span style="color:#a6e22e">htmlStart</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">protected</span> String <span style="color:#a6e22e">htmlEnd</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KeyWord</span> <span style="color:#66d9ef">extends</span> Token {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">protected</span> String <span style="color:#a6e22e">htmlStart</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;font color=\&#34;red\&#34;&gt;&lt;b&gt;&#34;</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">protected</span> String <span style="color:#a6e22e">htmlEnd</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;/b&gt;&lt;/font&gt;&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StringContent</span> <span style="color:#66d9ef">extends</span> Token {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">protected</span> String <span style="color:#a6e22e">htmlStart</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;font color=\&#34;green\&#34;&gt;&#34;</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">protected</span> String <span style="color:#a6e22e">htmlEnd</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;/font&gt;&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Token t <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> KeyWord();
+</span></span><span style="display:flex;"><span>LOG.<span style="color:#a6e22e">info</span>(t.<span style="color:#a6e22e">getHtml</span>());</span></span></code></pre></div><p>Wir können den Spaß einfach umdrehen (<a href="https://en.wikipedia.org/wiki/Inversion_of_control" target="_blank">&quot;inversion of control&quot;</a>)
+und die Methode zum Zusammenbasteln des HTML-Strings bereits in der Basisklasse
+implementieren. Dazu &quot;rufen&quot; wir dort drei Hilfsmethoden auf, die die jeweiligen
+Bestandteile des Strings (Format-Start, Inhalt, Format-Ende) erzeugen und deren
+konkrete Implementierung wir in der Basisklasse nicht kennen. Dies ist dann Sache
+der ableitenden konkreten Token-Klassen.</p>
+<p>Objekte vom Typ <code>KeyWord</code> sind dank der Vererbungsbeziehung auch <code>Token</code> (Vererbung:
+<em>is-a-Beziehung</em>). Wenn man nun auf einem <code>Token t</code> die Methode <code>getHtml()</code> aufruft,
+wird zur Laufzeit geprüft, welchen Typ <code>t</code> tatsächlich hat (im Beispiel <code>KeyWord</code>).
+Methodenaufrufe werden dann mit den am tiefsten in der vorliegenden Vererbungshierarchie
+implementierten Methoden durchgeführt: Hier wird also die von <code>Token</code> geerbte Methode
+<code>getHtml()</code> in <code>KeyWord</code> aufgerufen, die ihrerseits die Methoden <code>htmlStart()</code> und
+<code>htmlEnd()</code> aufruft. Diese sind in <code>KeyWord</code> implementiert und liefern nun die passenden
+Ergebnisse.</p>
+<p>Die Methode <code>getHtml()</code> wird auch als &quot;<em>Template-Methode</em>&quot; bezeichnet. Die beiden darin
+aufgerufenen Methoden <code>htmlStart()</code> und <code>htmlEnd()</code> in <code>Token</code> werden auch als &quot;Hilfsmethoden&quot;
+(oder &quot;<em>Helper Methods</em>&quot;) bezeichnet.</p>
+<p>Dies ist ein Beispiel für das <strong><a href="https://en.wikipedia.org/wiki/Template_method_pattern" target="_blank">Template-Method-Pattern</a></strong>.</p>
+<h2 id="template-method-pattern">Template-Method-Pattern</h2>
+<p><a href="#R-image-b943bb246be70e97db7453c74ffa9dd7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method/template-method.png?width=50%25&height=auto" style=" height: auto; width: 50%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b943bb246be70e97db7453c74ffa9dd7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method/template-method.png?width=50%25&height=auto"></a></p>
+<h3 id="aufbau-template-method-pattern">Aufbau Template-Method-Pattern</h3>
+<p>In der Basisklasse implementiert man eine Template-Methode (in der Skizze <code>templateMethod</code>),
+die sich auf anderen in der Basisklasse deklarierten (Hilfs-) Methoden &quot;abstützt&quot; (diese also
+aufruft; in der Skizze <code>method1</code>, <code>method2</code>, <code>method3</code>). Diese Hilfsmethoden können als
+<code>abstract</code> markiert werden und müssen dann von den ableitenden Klassen implementiert werden
+(in der Skizze <code>method1</code> und <code>method2</code>). Man kann aber auch einige/alle dieser aufgerufenen
+Hilfsmethoden in der Basisklasse implementieren (beispielsweise mit einem leeren Body - sogenannte
+&quot;Hook&quot;-Methoden) und die ableitenden Klassen <em>können</em> dann diese Methoden überschreiben und das
+Verhalten so neu formulieren (in der Skizze <code>method3</code>).</p>
+<p>Damit werden Teile des Verhaltens an die ableitenden Klassen ausgelagert.</p>
+<h3 id="verwandtschaft-zum-strategy-pattern">Verwandtschaft zum Strategy-Pattern</h3>
+<p>Das Template-Method-Pattern hat eine starke Verwandtschaft zum Strategy-Pattern.</p>
+<p>Im Strategy-Pattern haben wir Verhalten komplett an andere Objekte <em>delegiert</em>, indem wir in
+einer Methode einfach die passende Methode auf dem übergebenen Strategie-Objekt aufgerufen haben.</p>
+<p>Im Template-Method-Pattern nutzen wir statt Delegation die Mechanismen Vererbung und dynamische
+Polymorphie und definieren in der Basis-Klasse abstrakte oder Hook-Methoden, die wir bereits in
+der Template-Methode der Basis-Klasse aufrufen. Damit ist das grobe Verhalten in der Basis-Klasse
+festgelegt, wird aber in den ableitenden Klassen durch das dortige Definieren oder Überschreiben
+der Hilfsmethoden verfeinert. Zur Laufzeit werden dann durch die dynamische Polymorphie die
+tatsächlich implementierten Hilfsmethoden in den ableitenden Klassen aufgerufen. Damit lagert man
+im Template-Method-Pattern gewissermaßen nur Teile des Verhaltens an die ableitenden Klassen aus.</p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<p>Template-Method-Pattern: Verhaltensänderung durch Vererbungsbeziehungen</p>
+<ul>
+<li>Basis-Klasse:
+<ul>
+<li>Template-Methode, die Verhalten definiert und Hilfsmethoden aufruft</li>
+<li>Hilfsmethoden: Abstrakte Methoden (oder &quot;Hook&quot;: Basis-Implementierung)</li>
+</ul>
+</li>
+<li>Ableitende Klassen: Verfeinern Verhalten durch Implementieren der Hilfsmethoden</li>
+<li>Zur Laufzeit: Dynamische Polymorphie: Aufruf der Template-Methode nutzt
+die im tatsächlichen Typ des Objekts implementierten Hilfsmethoden</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106538&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Template-Method-Pattern (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p>Schreiben Sie eine abstrakte Klasse Drucker. Implementieren Sie die Funktion
+<code>kopieren</code>, bei der zuerst die Funktion <code>scannen</code> und dann die Funktion <code>drucken</code>
+aufgerufen wird. Der Kopiervorgang ist für alle Druckertypen identisch,
+das Scannen und Drucken ist abhängig vom Druckertyp.</p>
+<p>Implementieren Sie zusätzlich zwei unterschiedliche Druckertypen.</p>
+<ul>
+<li><code>Tintendrucker extends Drucker</code></li>
+<li><code>Laserdrucker extends Drucker</code></li>
+<li><code>Tintendrucker#scannen</code> loggt den Text &quot;Scanne das Dokument mit dem Tintendrucker.&quot;</li>
+<li><code>Laserdrucker#scannen</code> loggt den Text &quot;Scanne das Dokument mit dem Laserdrucker.&quot;</li>
+<li><code>Tintendrucker#drucken</code> loggt den Text &quot;Drucke das Dokument auf dem Tintendrucker.&quot;</li>
+<li><code>Laserdrucker#drucken</code> loggt den Text &quot;Drucke das Dokument auf dem Laserdrucker.&quot;</li>
+</ul>
+<p>Nutzen Sie das Template-Method-Pattern.</p>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Eilebrecht2013'>[Eilebrecht2013] <strong>Patterns kompakt</strong><br>Eilebrecht, K. und Starke, G., Springer, 2013. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-6423-4718-4' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-6423-4718-4</a>.</li> <li id='id_Gamma2011'>[Gamma2011] <strong>Design Patterns</strong><br>Gamma, E. und Helm, R. und Johnson, R. E. und Vlissides, J., Addison-Wesley, 2011. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-0-2016-3361-0' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-0-2016-3361-0</a>.</li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+<article class="default">
+<h1>Observer-Pattern</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Eine Reihe von Objekten möchte über eine Änderung in einem anderen (&quot;zentralen&quot;) Objekt informiert werden.
+Dazu könnte das &quot;zentrale&quot; Objekt eine Zugriffsmethode anbieten, die die anderen Objekte regelmäßig
+abrufen (&quot;pollen&quot;).</p>
+<p>Mit dem Observer-Pattern kann man das aktive Polling vermeiden. Die interessierten Objekte &quot;registrieren&quot;
+sich beim &quot;zentralen&quot; Objekt. Sobald dieses eine Änderung erfährt oder Informationen bereitstehen o.ä.,
+wird das &quot;zentrale&quot; Objekt alle registrierten Objekte über den Aufruf einer Methode benachrichtigen. Dazu
+müssen diese eine gemeinsame Schnittstelle implementieren.</p>
+<p>Das &quot;zentrale&quot; Objekt, welches abgefragt wird, nennt man &quot;<em>Observable</em>&quot; oder &quot;<em>Subject</em>&quot;. Die Objekte, die
+die Information abfragen möchten, nennt man &quot;<em>Observer</em>&quot;.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/833lHcoxeog' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Observer-Pattern</a></li> <li><a href='https://youtu.be/0mgB8RfcNuM' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Observer-Pattern</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/e00888ac91978bb3694491a722e61bba5d836d403d7f94e7d3ef6b28c07dae841b5852488bdf8f64e1628a58a2e5f3410dbb08699ded346ec2da34fd877a831f' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Observer-Pattern</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Aufbau des Observer-Patterns (Beobachter-Entwurfsmusters)</li> <li>(K3) Anwendung des Observer-Patterns auf konkrete Beispiele, etwa den PM-Dungeon</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="verteilung-der-prüfungsergebnisse">Verteilung der Prüfungsergebnisse</h2>
+<p><a href="#R-image-1d5a9f5079703391e997b921e9636c27" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer/lsf.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1d5a9f5079703391e997b921e9636c27"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer/lsf.png?width=80%25&height=auto"></a></p>
+<p>Die Studierenden möchten nach einer Prüfung wissen, ob für einen bestimmten Kurs
+die/ihre Prüfungsergebnisse im LSF bereit stehen.</p>
+<p>Dazu modelliert man eine Klasse <code>LSF</code> und implementiert eine Abfragemethode, die
+dann alle Objekte regelmäßig aufrufen können. Dies sieht dann praktisch etwa so
+aus:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">final</span> Person<span style="color:#f92672">[]</span> persons <span style="color:#f92672">=</span> { <span style="color:#66d9ef">new</span> Lecturer(<span style="color:#e6db74">&#34;Frau Holle&#34;</span>),
+</span></span><span style="display:flex;"><span>                           <span style="color:#66d9ef">new</span> Student(<span style="color:#e6db74">&#34;Heinz&#34;</span>),
+</span></span><span style="display:flex;"><span>                           <span style="color:#66d9ef">new</span> Student(<span style="color:#e6db74">&#34;Karla&#34;</span>),
+</span></span><span style="display:flex;"><span>                           <span style="color:#66d9ef">new</span> Tutor(<span style="color:#e6db74">&#34;Kolja&#34;</span>),
+</span></span><span style="display:flex;"><span>                           <span style="color:#66d9ef">new</span> Student(<span style="color:#e6db74">&#34;Wuppie&#34;</span>) };
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">final</span> LSF lsf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LSF();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Person p : persons) {
+</span></span><span style="display:flex;"><span>    lsf.<span style="color:#a6e22e">getGradings</span>(p, <span style="color:#e6db74">&#34;My Module&#34;</span>);   <span style="color:#75715e">// ???!</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="elegantere-lösung-observer-entwurfsmuster">Elegantere Lösung: Observer-Entwurfsmuster</h2>
+<p><a href="#R-image-c8f3590e5ad24d7b76af37e3efae2f86" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer/observerexample.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c8f3590e5ad24d7b76af37e3efae2f86"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer/observerexample.png?width=80%25&height=auto"></a></p>
+<p>Sie erstellen im <code>LSF</code> eine Methode <code>register()</code>, mit der sich interessierte Objekte
+beim <code>LSF</code> registrieren können.</p>
+<p>Zur Benachrichtigung der registrierten Objekte brauchen diese eine geeignete Methode,
+die traditionell <code>update()</code> genannt wird.</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/pattern/src/observer/" target="_blank"><span class="title">Demo: observer</span></a></span></div>
+<h2 id="observer-pattern-verallgemeinert">Observer-Pattern verallgemeinert</h2>
+<p><a href="#R-image-156baf2df00a6b2949cba59a69d0ac39" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer/observer.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-156baf2df00a6b2949cba59a69d0ac39"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer/observer.png?width=80%25&height=auto"></a></p>
+<p>Im vorigen Beispiel wurde die Methode <code>update()</code> einfach der gemeinsamen Basisklasse <code>Person</code>
+hinzugefügt. Normalerweise möchte man die Aspekte <code>Person</code> und <code>Observer</code> aber sauber trennen
+und definiert sich dazu ein <em>separates</em> Interface <code>Observer</code> mit der Methode <code>update()</code>, die
+dann alle &quot;interessierten&quot; Klassen (zusätzlich zur bestehenden Vererbungshierarchie) implementieren.</p>
+<p>Die Klasse für das zu beobachtende Objekt benötigt dann eine Methode <code>register()</code>, mit der sich
+Observer registrieren können. Die Objektreferenzen werden dabei einfach einer internen Sammlung
+hinzugefügt.</p>
+<p>Häufig findet sich dann noch eine Methode <code>unregister()</code>, mit der sich bereits registrierte
+Beobachter wieder abmelden können. Weiterhin findet man häufig eine Methode <code>notifyObservers()</code>,
+die man von außen auf dem beobachteten Objekt aufrufen kann und die dann auf allen registrierten
+Beobachtern deren Methoden <code>update()</code> aufruft. (Dieser Vorgang kann aber auch durch eine sonstige
+Zustandsänderung im beobachteten Objekt durchgeführt werden.)</p>
+<p>In der Standarddefinition des Observer-Patterns nach <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html#id_Gamma2011">[Gamma2011]</a> werden beim Aufruf der Methode
+<code>update()</code> keine Werte an die Beobachter mitgegeben. Der Beobachter muss sich entsprechend eine
+eigene Referenz auf das beobachtete Objekt halten, um dort dann weitere Informationen erhalten
+zu können. Dies kann vereinfacht werden, indem das beobachtete Objekt beim Aufruf der
+<code>update()</code>-Methode die Informationen als Parameter mitgibt, beispielsweise eine Referenz auf sich
+selbst o.ä. ... Dies muss dann natürlich im <code>Observer</code>-Interface nachgezogen werden.</p>
+<p><strong>Hinweis</strong>: Es gibt in Swing bereits die Interfaces <code>Observer</code> und <code>Observable</code>, die aber als
+&quot;deprecated&quot; gekennzeichnet sind. Sinnvollerweise nutzen Sie nicht diese Interfaces aus Swing,
+sondern implementieren Ihre eigenen Interfaces, wenn Sie das Observer-Pattern einsetzen wollen!</p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<p>Observer-Pattern: Benachrichtige registrierte Objekte über Statusänderungen</p>
+<ul>
+<li>Interface <code>Observer</code> mit Methode <code>update()</code></li>
+<li>Interessierte Objekte
+<ol>
+<li>implementieren das Interface <code>Observer</code></li>
+<li>registrieren sich beim zu beobachtenden Objekt (<code>Observable</code>)</li>
+</ol>
+</li>
+<li>Beobachtetes Objekt ruft auf allen registrierten Objekten <code>update()</code> auf</li>
+<li><code>update()</code> kann auch Parameter haben</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106535&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Observer-Pattern (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p>In den <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/pattern/src/challenges/observer" target="_blank">Vorgaben</a>
+finden Sie ein Modell für eine Lieferkette zwischen Großhandel und Einzelhandel.</p>
+<p>Wenn beim Einzelhändler eine Bestellung von einem Kunden eingeht (<code>Einzelhandel#bestellen</code>), speichert
+dieser den <code>Auftrag</code> zunächst in einer Liste ab. In regelmäßigen Abständen (<code>Einzelhandel#loop</code>) sendet
+der Einzelhändler die offenen Bestellungen an seinen Großhändler (<code>Grosshandel#bestellen</code>). Hat der
+Großhändler die benötigte Ware vorrätig, sendet er diese an den Einzelhändler (<code>Einzelhandel#empfangen</code>).
+Dieser kann dann den Auftrag gegenüber seinem Kunden erfüllen (keine Methode vorgesehen).</p>
+<p>Anders als der Einzelhandel speichert der Großhandel keine Aufträge ab. Ist die benötigte Ware bei einer
+Bestellung also nicht oder nicht in ausreichender Zahl auf Lager, wird diese nicht geliefert und der
+Einzelhandel muss (später) eine neue Bestellung aufgeben.</p>
+<p>Der Großhandel bekommt regelmäßig (<code>Grosshandel#loop</code>) neue Ware für die am wenigsten vorrätigen Positionen.</p>
+<p>Im aktuellen Modell wird der Einzelhandel nicht über den neuen Lagerbestand des Großhändlers informiert
+und kann daher nur &quot;zufällig&quot; neue Bestellanfragen an den Großhändler senden.</p>
+<p>Verbessern Sie das Modell, indem Sie das Observer-Pattern integrieren. Wer ist Observer? Wer ist Observable?
+Welche Informationen werden bei einem <code>update</code> mitgeliefert?</p>
+<p>Bauen Sie in alle Aktionen vom Einzelhändler und vom Großhändler passendes Logging ein.</p>
+<p><em>Anmerkung</em>: Sie dürfen nur die Vorgaben-Klassen <code>Einzelhandel</code> und <code>Grosshandel</code> verändern, die anderen
+Vorgaben-Klassen dürfen Sie nicht bearbeiten. Sie können zusätzlich benötigte eigene Klassen/Interfaces
+implementieren.</p>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Gamma2011'>[Gamma2011] <strong>Design Patterns</strong><br>Gamma, E. und Helm, R. und Johnson, R. E. und Vlissides, J., Addison-Wesley, 2011. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-0-2016-3361-0' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-0-2016-3361-0</a>.</li> <li id='id_Nystrom2014'>[Nystrom2014] <a href='https://github.com/munificent/game-programming-patterns' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Game Programming Patterns</strong></a><br>Nystrom, R., Genever Benning, 2014. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-0-9905-8290-8' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-0-9905-8290-8</a>.<br><em>Kap. 4: Observer</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1711605716" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1711605716" defer></script>
+    <script>
+      function useMathJax( config ){
+        if( !Object.assign ){
+          
+          return;
+        }
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          loader: {
+            load: ['[tex]/mhchem']
+          },
+          startup: {
+            elements: [
+              '.math'
+            ]
+          },
+          tex: {
+            inlineMath: [
+              ['$', '$'], 
+              ['\\(', '\\)']
+            ]
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1711605716"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1711605716" defer></script>
+  </body>
+</html>

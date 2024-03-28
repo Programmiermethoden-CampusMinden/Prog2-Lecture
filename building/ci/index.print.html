@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.26.2">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Continuous Integration (CI)">
+    <meta name="twitter:description" content="">
+    <meta property="og:title" content="Continuous Integration (CI)">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html">
+    <title>Continuous Integration (CI)</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html" rel="canonical" type="text/html" title="Continuous Integration (CI)">
+
+    
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1711605715" rel="icon" type="image/png">
+
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1711605716" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1711605716" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1711605716" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/ie.css?1711605716" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/url.js?1711605716"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1711605716"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Continuous Integration (CI)
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Continuous Integration (CI)</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>In größeren Projekten mit mehreren Teams werden die Beteiligten i.d.R. nur noch &quot;ihre&quot;
+Codestellen compilieren und testen. Dennoch ist es wichtig, das gesamte Projekt regelmäßig
+zu &quot;bauen&quot; und auch umfangreichere Testsuiten regelmäßig laufen zu lassen. Außerdem ist
+es wichtig, das in einer definierten Umgebung zu tun und nicht auf einem oder mehreren
+Entwicklerrechnern, die i.d.R. (leicht) unterschiedlich konfiguriert sind, um zuverlässige
+und nachvollziehbare Ergebnisse zu bekommen. Weiterhin möchte man auf bestimmte Ereignisse
+reagieren, wie etwa neue Commits im Git-Server, oder bei Pull-Requests möchte man vor dem
+Merge automatisiert sicherstellen, dass damit die vorhandenen Tests alle &quot;grün&quot; sind und
+auch die Formatierung etc. stimmt.</p>
+<p>Dafür hat sich &quot;Continuous Integration&quot; etabliert. Hier werden die angesprochenen Prozesse
+regelmäßig auf einem dafür eingerichteten System durchgeführt. Aktivitäten wie Übersetzen,
+Testen, Style-Checks etc. werden in sogenannten &quot;Pipelines&quot; oder &quot;Workflows&quot; zusammengefasst
+und automatisiert durch Commits, Pull-Requests oder Merges auf dem Git-Server ausgelöst. Die
+Aktionen können dabei je nach Trigger und Branch unterschiedlich sein, d.h. man könnte etwa
+bei PR gegen den Master umfangreichere Tests laufen lassen als bei einem PR gegen einen
+Develop-Branch. In einem Workflow oder einer Pipeline können einzelne Aktionen wiederum von
+anderen Aktionen abhängen. Das Ergebnis kann man dann auf dem Server einsehen oder bekommt
+man komfortabel als Report per Mail zugeschickt.</p>
+<p>Wir schauen uns hier exemplarisch GitHub Actions und GitLab CI/CD an. Um CI sinnvoll einsetzen
+zu können, benötigt man Kenntnisse über Build-Tools. &quot;CI&quot; tritt üblicherweise zusammen mit &quot;CD&quot;
+(Continuous Delivery) auf, also als &quot;CI/CD&quot;. Der &quot;CD&quot;-Teil ist nicht Gegenstand der Betrachtung
+in dieser Lehrveranstaltung.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/NCWxo-PN4gs' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Continuous Integration</a></li> <li><a href='https://youtu.be/rpkZvuiyvTU' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo GitHub Actions</a></li> <li><a href='https://youtu.be/2ydDA4WY1wA' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Demo GitLab CI/CD</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/74a8f8c2e1a07d9fb70c8984e522d884141b2260c27dadfd7a23884bee8c0573136475ce66f28562097ca34a63fcf9c6d1c45ff695485d79465a4131878180ca' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Continuous Integration</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Arbeitsweise von/mit CI</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="motivation-zusammenarbeit-in-teams">Motivation: Zusammenarbeit in Teams</h2>
+<h3 id="szenario">Szenario</h3>
+<ul>
+<li>Projekt besteht aus diversen Teilprojekten</li>
+<li>Verschiedene Entwicklungs-Teams arbeiten (getrennt) an verschiedenen Projekten</li>
+<li>Tester entwickeln Testsuiten für die Teilprojekte</li>
+<li>Tester entwickeln Testsuiten für das Gesamtprojekt</li>
+</ul>
+<h3 id="manuelle-ausführung-der-testsuiten-reicht-nicht">Manuelle Ausführung der Testsuiten reicht nicht</h3>
+<ul>
+<li>Belastet den Entwicklungsprozess</li>
+<li>Keine (einheitliche) Veröffentlichung der Ergebnisse</li>
+<li>Keine (einheitliche) Eskalation bei Fehlern</li>
+<li>Keine regelmäßige Integration in Gesamtprojekt</li>
+</ul>
+<h3 id="continuous-integration">Continuous Integration</h3>
+<ul>
+<li>Regelmäßige, automatische Ausführung: Build und Tests</li>
+<li>Reporting</li>
+<li>Weiterführung der Idee: Regelmäßiges Deployment (<em>Continuous Deployment</em>)</li>
+</ul>
+<h2 id="continuous-integration-ci">Continuous Integration (CI)</h2>
+<p><a href="#R-image-b57ef2da7d8332b7a848dc5e49d70c73" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/ci.png?width=60%25&height=auto" style=" height: auto; width: 60%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b57ef2da7d8332b7a848dc5e49d70c73"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/ci.png?width=60%25&height=auto"></a></p>
+<h3 id="vorgehen">Vorgehen</h3>
+<ul>
+<li>Entwickler und Tester committen ihre Änderungen regelmäßig (Git, SVN, ...)</li>
+<li>CI-Server arbeitet Build-Skripte ab, getriggert durch Events: Push-Events, Zeit/Datum, ...
+<ul>
+<li>Typischerweise wird dabei:
+<ul>
+<li>Das Gesamtprojekt übersetzt (&quot;gebaut&quot;)</li>
+<li>Die Unit- und die Integrationstests abgearbeitet</li>
+<li>Zu festen Zeiten werden zusätzlich Systemtests gefahren</li>
+</ul>
+</li>
+<li>Typische weitere Builds: &quot;Nightly Build&quot;, Release-Build, ...</li>
+<li>Ergebnisse jeweils auf der Weboberfläche einsehbar (und per E-Mail)</li>
+</ul>
+</li>
+</ul>
+<h3 id="einige-vorteile">Einige Vorteile</h3>
+<ul>
+<li>Tests werden regelmäßig durchgeführt (auch wenn sie lange dauern oder die
+Maschine stark belasten)</li>
+<li>Es wird regelmäßig ein Gesamt-Build durchgeführt</li>
+<li>Alle Teilnehmer sind über aktuellen Projekt(-zu-)stand informiert</li>
+</ul>
+<h3 id="beispiele-für-verbreitete-ci-umgebungen">Beispiele für verbreitete CI-Umgebungen</h3>
+<ul>
+<li><a href="https://www.jenkins.io/" target="_blank">Jenkins</a></li>
+<li><a href="https://docs.gitlab.com/ee/ci/" target="_blank">GitLab CI/CD</a></li>
+<li><a href="https://github.com/features/actions" target="_blank">GitHub Actions</a> und <a href="https://resources.github.com/ci-cd/" target="_blank">GitHub CI/CD</a></li>
+<li><a href="https://www.atlassian.com/software/bamboo" target="_blank">Bamboo</a></li>
+<li><a href="https://www.travis-ci.com/" target="_blank">Travis CI</a></li>
+</ul>
+<h2 id="gitlab-cicd">GitLab CI/CD</h2>
+<p>Siehe auch <a href="http://git03-ifm-min.ad.hsbi.de/help/ci/quick_start/index.md" target="_blank">&quot;Get started with Gitlab CI/CD&quot;</a>.
+(Für den Zugriff wird VPN benötigt!)</p>
+<h3 id="übersicht-über-pipelines">Übersicht über Pipelines</h3>
+<p><a href="#R-image-a96e6656e05c94263bed3623957af4d8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot-gitlabci-pipelines.png?width=60%25&height=auto" style=" height: auto; width: 60%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a96e6656e05c94263bed3623957af4d8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot-gitlabci-pipelines.png?width=60%25&height=auto"></a></p>
+<ul>
+<li>In Spalte &quot;Status&quot; sieht man das Ergebnis der einzelnen Pipelines:
+&quot;pending&quot; (die Pipeline läuft gerade), &quot;cancelled&quot; (Pipeline wurde manuell
+abgebrochen), &quot;passed&quot; (alle Jobs der Pipeline sind sauber durchgelaufen),
+&quot;failed&quot; (ein Job ist fehlgeschlagen, Pipeline wurde deshalb abgebrochen)</li>
+<li>In Spalte &quot;Pipeline&quot; sind die Pipelines eindeutig benannt aufgeführt,
+inkl. Trigger (Commit und Branch)</li>
+<li>In Spalte &quot;Stages&quot; sieht man den Zustand der einzelnen Stages</li>
+</ul>
+<p>Wenn man mit der Maus auf den Status oder die Stages geht, erfährt man mehr bzw.
+kann auf eine Seite mit mehr Informationen kommen.</p>
+<h3 id="detailansicht-einer-pipeline">Detailansicht einer Pipeline</h3>
+<p><a href="#R-image-ddaf6269a91079ef901e02a44eb11a1f" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot-gitlabci-triggeredpipeline.png?width=60%25&height=auto" style=" height: auto; width: 60%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ddaf6269a91079ef901e02a44eb11a1f"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot-gitlabci-triggeredpipeline.png?width=60%25&height=auto"></a></p>
+<p>Wenn man in eine Pipeline in der Übersicht klickt, werden die einzelnen
+Stages dieser Pipeline genauer dargestellt.</p>
+<h3 id="detailansicht-eines-jobs">Detailansicht eines Jobs</h3>
+<p><a href="#R-image-2685737082fe8d947a88bb77c4c7a621" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot-gitlabci-job.png?width=60%25&height=auto" style=" height: auto; width: 60%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2685737082fe8d947a88bb77c4c7a621"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot-gitlabci-job.png?width=60%25&height=auto"></a></p>
+<p>Wenn man in einen Job einer Stage klickt, bekommt man quasi die Konsolenausgabe
+dieses Jobs. Hier kann man ggf. Fehler beim Ausführen der einzelnen Skripte
+oder die Ergebnisse beispielsweise der JUnit-Läufe anschauen.</p>
+<h3 id="gitlab-cicd-konfiguration-mit-yaml-datei">GitLab CI/CD: Konfiguration mit YAML-Datei</h3>
+<p>Datei <code>.gitlab-ci.yml</code> im Projekt-Ordner:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">stages</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">my.compile</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">my.test</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">job1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">script</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">echo &#34;Hello&#34;</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">./gradlew compileJava</span>
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">echo &#34;wuppie!&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">stage</span>: <span style="color:#ae81ff">my.compile</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">only</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">wuppie</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">job2</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">script</span>: <span style="color:#e6db74">&#34;./gradlew test&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">stage</span>: <span style="color:#ae81ff">my.test</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">job3</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">script</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#ae81ff">echo &#34;Job 3&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">stage</span>: <span style="color:#ae81ff">my.compile</span></span></span></code></pre></div><h4 id="stages">Stages</h4>
+<p>Unter <code>stages</code> werden die einzelnen Stages einer Pipeline definiert. Diese werden
+in der hier spezifizierten Reihenfolge durchgeführt, d.h. zuerst würde <code>my.compile</code>
+ausgeführt, und erst wenn alle Jobs in <code>my.compile</code> erfolgreich ausgeführt wurden,
+würde anschließend <code>my.test</code> ausgeführt.</p>
+<p>Dabei gilt: Die Jobs einer Stage werden (potentiell) parallel zueinander ausgeführt,
+und die Jobs der nächsten Stage werden erst dann gestartet, wenn alle Jobs der
+aktuellen Stage erfolgreich beendet wurden.</p>
+<p>Wenn keine eigenen <code>stages</code> definiert werden, kann man
+(<a href="http://git03-ifm-min.ad.hsbi.de/help/ci/yaml/index.md#stages" target="_blank">lt. Doku</a>)
+auf die Default-Stages <code>build</code>, <code>test</code> und <code>deploy</code> zurückgreifen. <strong>Achtung</strong>: Sobald
+man eigene Stages definiert, stehen diese Default-Stages <em>nicht</em> mehr zur Verfügung!</p>
+<h4 id="jobs">Jobs</h4>
+<p><code>job1</code>, <code>job2</code> und <code>job3</code> definieren jeweils einen Job.</p>
+<ul>
+<li>
+<p><code>job1</code> besteht aus mehreren Befehlen (unter <code>script</code>). Alternativ
+kann man die bei <code>job2</code> gezeigte Syntax nutzen, wenn nur ein
+Befehl zu bearbeiten ist.</p>
+<p>Die Befehle werden von GitLab CI/CD in einer Shell ausgeführt.</p>
+</li>
+<li>
+<p>Die Jobs <code>job1</code> und <code>job2</code> sind der Stage <code>my.compile</code> zugeordnet (Abschnitt
+<code>stage</code>). Einer Stage können mehrere Jobs zugeordnet sein, die dann parallel
+ausgeführt werden.</p>
+<p>Wenn ein Job nicht explizit einer Stage zugeordnet ist, wird er
+(<a href="http://git03-ifm-min.ad.hsbi.de/help/ci/yaml/index.md#stages" target="_blank">lt. Doku</a>)
+zur Default-Stage <code>test</code> zugewiesen. (Das geht nur, wenn es diese
+Stage auch gibt!)</p>
+</li>
+<li>
+<p>Mit <code>only</code> und <code>except</code> kann man u.a. Branches oder Tags angeben,
+für die dieser Job ausgeführt (bzw. nicht ausgeführt) werden soll.</p>
+</li>
+</ul>
+<p>Durch die Kombination von Jobs mit der Zuordnung zu Stages und Events lassen
+sich unterschiedliche Pipelines für verschiedene Zwecke definieren.</p>
+<h3 id="hinweise-zur-konfiguration-von-gitlab-cicd">Hinweise zur Konfiguration von GitLab CI/CD</h3>
+<p>Im Browser in den Repo-Einstellungen arbeiten:</p>
+<ol>
+<li>Unter <code>Settings &gt; General &gt; Visibility, project features, permissions</code>
+das <code>CI/CD</code> aktivieren</li>
+<li>Prüfen unter <code>Settings &gt; CI/CD &gt; Runners</code>, dass unter
+<code>Available shared Runners</code> mind. ein shared Runner verfügbar ist
+(mit grün markiert ist)</li>
+<li>Unter <code>Settings &gt; CI/CD &gt; General pipelines</code> einstellen:
+<ul>
+<li><code>Git strategy</code>: <code>git clone</code></li>
+<li><code>Timeout</code>: <code>10m</code></li>
+<li><code>Public pipelines</code>: <code>false</code> (nicht angehakt)</li>
+</ul>
+</li>
+<li>YAML-File (<code>.gitlab-ci.yml</code>) in Projektwurzel anlegen,
+Aufbau siehe oben</li>
+<li>Build-Skript erstellen, <strong>lokal</strong> lauffähig bekommen, dann in Jobs nutzen</li>
+<li>Im <code>.gitlab-ci.yml</code> die relevanten Branches einstellen (s.o.)</li>
+<li>Pushen, und unter <code>CI/CD &gt; Pipelines</code> das Builden beobachten
+<ul>
+<li>in Status reinklicken und schauen, ob und wo es hakt</li>
+</ul>
+</li>
+<li><code>README.md</code> anlegen in Projektwurzel (neben <code>.gitlab-ci.yml</code>),
+Markdown-Schnipsel aus <code>Settings &gt; CI/CD &gt; General pipelines &gt; Pipeline status</code>
+auswählen und einfügen .&hellip;</li>
+</ol>
+<p><em>Optional</em>:</p>
+<ol start="9">
+<li>Ggf. Schedules unter <code>CI/CD &gt; Schedules</code> anlegen</li>
+<li>Ggf. extra Mails einrichten: <code>Settings &gt; Integrations &gt; Pipeline status emails</code></li>
+</ol>
+<h2 id="github-actions">GitHub Actions</h2>
+<p>Siehe <a href="https://github.com/features/actions" target="_blank">&quot;GitHub Actions: Automate your workflow from idea to production&quot;</a>
+und auch <a href="https://resources.github.com/ci-cd/" target="_blank">&quot;GitHub: CI/CD explained&quot;</a>.</p>
+<h3 id="übersicht-über-workflows">Übersicht über Workflows</h3>
+<p><a href="#R-image-a9c0be4d9bf7412708936f0f512fed8c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot-githubci-workflows.png?width=60%25&height=auto" style=" height: auto; width: 60%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a9c0be4d9bf7412708936f0f512fed8c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot-githubci-workflows.png?width=60%25&height=auto"></a></p>
+<p>Hier sieht man das Ergebnis der letzten Workflows. Dazu sieht man den
+Commit und den Branch, auf dem der Workflow gelaufen ist sowie wann er
+gelaufen ist. Über die Spalten kann man beispielsweise nach Status oder
+Event filtern.</p>
+<p>In der Abbildung ist ein Workflow mit dem Namen &quot;GitHub CI&quot; zu sehen, der
+aktuell noch läuft.</p>
+<h3 id="detailansicht-eines-workflows">Detailansicht eines Workflows</h3>
+<p><a href="#R-image-696864f163ad24e6d376286dff011367" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot-githubci-triggeredworkflow.png?width=60%25&height=auto" style=" height: auto; width: 60%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-696864f163ad24e6d376286dff011367"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot-githubci-triggeredworkflow.png?width=60%25&height=auto"></a></p>
+<p>Wenn man in einen Workflow in der Übersicht anklickt, werden die einzelnen
+Jobs dieses Workflows genauer dargestellt. &quot;job3&quot; ist erfolgreich gelaufen, &quot;job1&quot;
+läuft gerade, und &quot;job2&quot; hängt von &quot;job1&quot; ab, d.h. kann erst nach dem erfolgreichen
+Lauf von &quot;job2&quot; starten.</p>
+<h3 id="detailansicht-eines-jobs-1">Detailansicht eines Jobs</h3>
+<p><a href="#R-image-95df567b64f3f5079c607f7e1482070a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot-githubci-job.png?width=60%25&height=auto" style=" height: auto; width: 60%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-95df567b64f3f5079c607f7e1482070a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot-githubci-job.png?width=60%25&height=auto"></a></p>
+<p>Wenn man in einen Job anklickt, bekommt man quasi die Konsolenausgabe
+dieses Jobs. Hier kann man ggf. Fehler beim Ausführen der einzelnen Skripte
+oder die Ergebnisse beispielsweise der JUnit-Läufe anschauen.</p>
+<h3 id="github-actions-konfiguration-mit-yaml-datei">GitHub Actions: Konfiguration mit YAML-Datei</h3>
+<p>Workflows werden als YAML-Dateien im Ordner <code>.github/workflows/</code> angelegt.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">GitHub CI</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># push on master branch</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>: [<span style="color:#ae81ff">master]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># manually triggered</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">workflow_dispatch</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">job1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/setup-java@v3</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">java-version</span>: <span style="color:#e6db74">&#39;17&#39;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">distribution</span>: <span style="color:#e6db74">&#39;temurin&#39;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">gradle/wrapper-validation-action@v1</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo &#34;Hello&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">./gradlew compileJava</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo &#34;wuppie!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">job2</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">needs</span>: <span style="color:#ae81ff">job1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/setup-java@v3</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">java-version</span>: <span style="color:#e6db74">&#39;17&#39;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">distribution</span>: <span style="color:#e6db74">&#39;temurin&#39;</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">gradle/wrapper-validation-action@v1</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">./gradlew test</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">job3</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo &#34;Job 3&#34;</span></span></span></code></pre></div><h4 id="workflowname-und-trigger-events">Workflowname und Trigger-Events</h4>
+<p>Der Name des Workflows wird mit dem Eintrag <code>name</code> spezifiziert und sollte sich im
+Dateinamen widerspiegeln, also im Beispiel <code>.github/workflows/github_ci.yml</code>.</p>
+<p>Im Eintrag <code>on</code> können die Events definiert werden, die den Workflow triggern. Im
+Beispiel ist ein Push-Event auf dem <code>master</code>-Branch definiert sowie mit <code>workflow_dispatch:</code>
+das manuelle Triggern (auf einem beliebigen Branch) freigeschaltet.</p>
+<h4 id="jobs-1">Jobs</h4>
+<p>Die Jobs werden unter dem Eintrag <code>jobs</code> definiert: <code>job1</code>, <code>job2</code> und <code>job3</code> definieren
+jeweils einen Job.</p>
+<ul>
+<li>
+<p><code>job1</code> besteht aus mehreren Befehlen (unter <code>steps</code>), die auf einem aktuellen
+virtualisierten Ubuntu-Runner ausgeführt werden.</p>
+<p>Es wird zunächst das Repo mit Hilfe der Checkout-Action ausgecheckt
+(<code>uses: actions/checkout@v4</code>), das JDK eingerichtet/installiert
+(<code>uses: actions/setup-java@v3</code>) und der im Repo enthaltene Gradle-Wrapper
+auf Unversehrtheit geprüft (<code>uses: gradle/wrapper-validation-action@v1</code>).</p>
+<p>Die Actions sind vordefinierte Actions und im Github unter <code>github.com/</code> + Action
+zu finden, d.h. <a href="https://github.com/actions/checkout" target="_blank"><code>actions/checkout</code></a> oder
+<a href="https://github.com/actions/setup-java" target="_blank"><code>actions/setup-java</code></a>. Actions können
+von jedermann definiert und bereitgestellt werden, in diesem Fall handelt es sich
+um von GitHub selbst im Namespace &quot;actions&quot; bereit gestellte direkt nutzbare Actions.
+Man kann Actions auch selbst im Ordner <code>.github/actions/</code> für das Repo definieren
+(Beispiel:
+<a href="https://github.com/plfa/plfa.github.io/blob/dev/.github/actions/setup-haskell/action.yml" target="_blank">plfa.github.io</a>).</p>
+<p>Mit <code>run</code> werden Befehle in der Shell auf dem genutzten Runner (hier Ubuntu) ausgeführt.</p>
+</li>
+<li>
+<p>Die Jobs <code>job2</code> ist von <code>job1</code> abhängig und wird erst gestartet, wenn <code>job1</code> erfolgreich
+abgearbeitet ist.</p>
+<p>Ansonsten können die Jobs prinzipiell parallel ausgeführt werden.</p>
+</li>
+</ul>
+<p>Durch die Kombination von Workflows mit verschiedenen Jobs und Abhängigkeiten zwischen Jobs
+lassen sich unterschiedliche Pipelines (&quot;Workflows&quot;) für verschiedene Zwecke definieren.</p>
+<p>Es lassen sich auch andere Runner benutzen, etwa ein virtualisiertes Windows oder macOS.
+Man kann auch über einen &quot;Matrix-Build&quot; den Workflow auf mehreren Betriebssystemen gleichzeitig
+laufen lassen.</p>
+<p>Man kann auch einen Docker-Container benutzen. Dabei muss man beachten, dass dieser am besten
+aus einer Registry (etwa von Docker-Hub oder aus der GitHub-Registry) &quot;gezogen&quot; wird, weil das
+Bauen des Docker-Containers aus einem Docker-File in der Action u.U. relativ lange dauert.</p>
+<h3 id="hinweise-zur-konfiguration-von-github-actions">Hinweise zur Konfiguration von GitHub Actions</h3>
+<p>Im Browser in den Repo-Einstellungen arbeiten:</p>
+<ol>
+<li>
+<p>Unter <code>Settings &gt; Actions &gt; General &gt; Actions permissions</code> die Actions aktivieren
+(Auswahl, welche Actions erlaubt sind)</p>
+<p><a href="#R-image-e53363af2bfcdf5e3b2211f796330e12" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot_github_settings_actions.png?width=60%25&height=auto" style=" height: auto; width: 60%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e53363af2bfcdf5e3b2211f796330e12"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot_github_settings_actions.png?width=60%25&height=auto"></a></p>
+</li>
+<li>
+<p>Unter <code>Settings &gt; Actions &gt; General &gt; Workflow permissions</code> ggf. bestimmen, ob die
+Actions das Repo nur lesen dürfen oder auch zusätzlich schreiben dürfen</p>
+<p><a href="#R-image-3dae051909e15e628528d25f74bc9f00" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot_github_settings_permissions.png?width=60%25&height=auto" style=" height: auto; width: 60%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3dae051909e15e628528d25f74bc9f00"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot_github_settings_permissions.png?width=60%25&height=auto"></a></p>
+</li>
+<li>
+<p>Unter <code>Actions &gt; &lt;WORKFLOW&gt;</code> den Workflow ggf. deaktivieren:</p>
+<p><a href="#R-image-e0ddcc6edf959c1185450cf21295f40a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot_github_actions.png?width=60%25&height=auto" style=" height: auto; width: 60%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e0ddcc6edf959c1185450cf21295f40a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci/screenshot_github_actions.png?width=60%25&height=auto"></a></p>
+</li>
+</ol>
+<h2 id="wrap-up">Wrap-Up</h2>
+<p>Überblick über Continuous Integration:</p>
+<ul>
+<li>Konfigurierbare Aktionen, die auf dem Gitlab-/GitHub-Server ausgeführt werden</li>
+<li>Unterschiedliche Trigger: Commit, Merge, ...</li>
+<li>Aktionen können Branch-spezifisch sein</li>
+<li>Aktionen können von anderen Aktionen abhängen</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106219&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Continuous Integration (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_GitHubCI'>[GitHubCI] <a href='https://resources.github.com/ci-cd/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Documentation GitHub CI</strong></a><br>GitHub Inc., 2022.</li> <li id='id_GitlabCI'>[GitlabCI] <a href='http://git03-ifm-min.ad.hsbi.de/help/ci/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Documentation Gitlab CI</strong></a></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1711605716" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1711605716" defer></script>
+    <script>
+      function useMathJax( config ){
+        if( !Object.assign ){
+          
+          return;
+        }
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          loader: {
+            load: ['[tex]/mhchem']
+          },
+          startup: {
+            elements: [
+              '.math'
+            ]
+          },
+          tex: {
+            inlineMath: [
+              ['$', '$'], 
+              ['\\(', '\\)']
+            ]
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1711605716"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1711605716" defer></script>
+  </body>
+</html>

@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.26.2">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Java Collections Framework">
+    <meta name="twitter:description" content="">
+    <meta property="og:title" content="Java Collections Framework">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections.html">
+    <title>Java Collections Framework</title>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/index.print.html" rel="alternate" type="text/html" title="Java Collections Framework">
+
+    
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1711605715" rel="icon" type="image/png">
+
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1711605716" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1711605716" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1711605716" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/ie.css?1711605716" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/url.js?1711605716"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1711605716"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#motivation-snippet-aus-einer-klasse-im-pm-dungeon">Motivation: Snippet aus einer Klasse im PM-Dungeon</a></li>
+    <li><a href="#collection-api-in-java">Collection-API in Java</a></li>
+    <li><a href="#listen-arraylist">Listen: <em>ArrayList</em></a></li>
+    <li><a href="#listen-linkedlist">Listen: <em>LinkedList</em></a></li>
+    <li><a href="#vector-und-stack"><em>Vector</em> und <em>Stack</em></a></li>
+    <li><a href="#iterierbarkeit-iterable-und-iterator">Iterierbarkeit: <em>Iterable</em> und <em>Iterator</em></a></li>
+    <li><a href="#hilfsklasse-collections">Hilfsklasse <em>Collections</em></a></li>
+    <li><a href="#map"><em>Map</em></a></li>
+    <li><a href="#hashmap"><em>HashMap</em></a></li>
+    <li><a href="#hashtable"><em>Hashtable</em></a></li>
+    <li><a href="#spielregeln-für-equals-hashcode-und-compareto">Spielregeln für <em>equals()</em>, <em>hashCode()</em> und <em>compareTo()</em></a>
+      <ul>
+        <li><a href="#equals"><em>equals()</em></a></li>
+        <li><a href="#hashcode"><em>hashCode()</em></a></li>
+        <li><a href="#compareto"><em>compareTo()</em></a></li>
+        <li><a href="#der-equals-hashcode-compareto-vertrag">Der <em>equals()</em>-<em>hashCode()</em>-<em>compareTo()</em>-Vertrag</a></li>
+      </ul>
+    </li>
+    <li><a href="#überblick">Überblick</a></li>
+    <li><a href="#wrap-up">Wrap-Up</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Java Collections Framework
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Java Collections Framework</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Die Collection-API bietet verschiedene Sammlungen an, mit denen man Objekte speichern kann: Listen, Queues, Mengen, ...
+Für diese Typen gibt es jeweils verschiedene Implementierungen mit einem spezifischen Verhalten. Zusätzlich gibt es noch
+Maps für das Speichern von Key/Value-Paaren, dabei wird für die Keys eine Hash-Tabelle eingesetzt.</p>
+<p>Die Hilfs-Klasse <code>Collections</code> bietet statische Hilfs-Methoden, die auf <code>Collection&lt;T&gt;</code>s anwendbar sind.</p>
+<p>Wenn man eigene Klassen in der Collection-API oder in Map benutzen möchte, sollte man den &quot;equals-hashCode-Contract&quot;
+berücksichtigen.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/QRYVt9FNY-4' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Collections</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/8dca2e36ac9656873b0d6509557d6934b1a8a38c2b730a30b2fef7f67b42dc11ef8fc7bfea4e819bfa026364201a41f38c86d0aeaccfb456b94d1e25feebc2fe' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Collections</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Was ist der Unterschied zwischen <code>Collection&lt;T&gt;</code> und <code>List&lt;T&gt;</code>?</li> <li>(K2) Was ist der Unterschied zwischen einer <code>List&lt;T&gt;</code>, einer <code>Queue&lt;T&gt;</code> und einer <code>Set&lt;T&gt;</code>?</li> <li>(K2) Nennen Sie charakteristische Merkmale von <code>ArrayList&lt;T&gt;</code>, <code>LinkedList&lt;T&gt;</code> und <code>Vector&lt;T&gt;</code>.</li> <li>(K2) Was ist der Unterschied zwischen einer <code>Queue&lt;T&gt;</code> und einem <code>Stack&lt;T&gt;</code>?</li> <li>(K2) Was ist eine <code>Map&lt;K,V&gt;</code>? Welche Vertreter kennen Sie?</li> <li>(K3) Erklären Sie die 'Spielregeln' für die eigene Implementierung von <code>equals()</code>.</li> <li>(K3) Erklären Sie die 'Spielregeln' für die eigene Implementierung von <code>hashCode()</code>.</li> <li>(K3) Erklären Sie die 'Spielregeln' für die eigene Implementierung von <code>compareTo()</code>.</li> <li>(K3) Wie müssen und wie sollten <code>equals()</code>, <code>hashCode()</code> und <code>compareTo()</code> miteinander arbeiten?</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="motivation-snippet-aus-einer-klasse-im-pm-dungeon">Motivation: Snippet aus einer Klasse im PM-Dungeon</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>Entity<span style="color:#f92672">&gt;</span> entities <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(Entity e){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>entities.<span style="color:#a6e22e">contains</span>(e)) entities.<span style="color:#a6e22e">add</span>(e);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Die war ein reales Beispiel aus der Entwicklung des PM-Dungeon.</p>
+<p>Es wurde eine <code>ArrayList&lt;T&gt;</code> zum Verwalten der Entitäten genutzt. Allerdings sollte
+jedes Element nur einmal in der Liste vorkommen, deshalb wurde beim Einfügen einer
+Entität geprüft, ob diese bereits in der Liste ist.</p>
+<p>Hier wird die <strong>falsche Datenstruktur</strong> genutzt!</p>
+<p>Eine Liste kann ein Objekt mehrfach enthalten, eine Menge (<em>Set</em>) hingegen kann ein
+Objekt nur <em>einmal</em> enthalten.</p>
+<h2 id="collection-api-in-java">Collection-API in Java</h2>
+<p><a href="#R-image-2574bb8bf22c8b633b798e95f56c4751" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/collection.png?width=72%25&height=auto" style=" height: auto; width: 72%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2574bb8bf22c8b633b798e95f56c4751"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/collection.png?width=72%25&height=auto"></a></p>
+<p><em>Hinweis</em>: Die abstrakten (Zwischen-) Klassen wurden im obigen UML aus Gründen der
+Übersichtlichkeit <em>nicht</em> aufgeführt. Aus den selben Gründen sind auch nur ausgewählte
+Methoden aufgenommen worden.</p>
+<p><em>Hinweis</em>: Blau = Interface, Grün = Klasse.</p>
+<p><code>Collection&lt;T&gt;</code> ist ein zentrales Interface im JDK und stellt die gemeinsame API der
+Collection-Klassen dar. Klassen, die <code>Collection&lt;T&gt;</code> implementieren, speichern und
+verwalten eine Menge an Objekten.</p>
+<p>Unter anderem gibt es die aus dem Modul &quot;ADS&quot; bekannten Datentypen wie Listen, Sets,
+Queues etc.</p>
+<p>Man unterscheidet zwischen &quot;sorted&quot; (geordnete) Collections, welche eine bestimmte
+Reihenfolge der Elemente halten (Reihenfolge des Einfügens, aufsteigende Werte etc.)
+und &quot;unsorted&quot; (ungeordnete) Collections, welche keine bestimmte Reihenfolge halten.</p>
+<p>Eine Übersicht, welche Collection welche Datenstruktur implementiert, kann unter
+<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/doc-files/coll-overview.html" target="_blank">&quot;Collection Implementations&quot;</a>
+eingesehen werden.</p>
+<ul>
+<li><code>List&lt;T&gt;</code>-Collections sind eine geordnete Liste an Objekten. Per Index-Zugriff können
+Objekte an jeder Stelle der Liste zugegriffen (oder hinzugefügt) werden.</li>
+<li><code>Queue&lt;T&gt;</code>-Collections sind eine geordnete Sammlung von Objekten. Objekte können nur
+am Ende der Queue hinzugefügt werden und nur am Anfang der Queue (der Head) gelesen
+oder entnommen werden (&quot;first in first out&quot;).</li>
+<li><code>Set&lt;T&gt;</code>-Collections sind eine (i.d.R.!) ungeordnete Menge an Objekten, die stets nur
+einmal in der Set enthalten sein können. In einem Set kann nicht direkt auf ein Objekt
+zugegriffen werden. Es kann aber geprüft werden, ob ein spezifisches Objekt in einer
+Set gespeichert ist.</li>
+</ul>
+<p><strong>Wichtig</strong>: <code>List&lt;T&gt;</code>, <code>Set&lt;T&gt;</code>, <code>Queue&lt;T&gt;</code> und <code>Map&lt;K,V&gt;</code> sind <strong>Interfaces</strong>, definieren
+also bestimmte Schnittstellen, die sich so wie aus ADS her bekannt verhalten. Diese können
+jeweils mit sehr unterschiedlichen Datenstrukturen implementiert werden und können dadurch
+auch intern ein anderes Verhalten haben (sortiert vs. nicht sortiert, Zugriffszeiten, ...).</p>
+<p>Siehe auch <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collection.html" target="_blank">Interface Collection</a>.</p>
+<h2 id="listen-arraylist">Listen: <em>ArrayList</em></h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>Entity<span style="color:#f92672">&gt;</span> entities <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();</span></span></code></pre></div><p><a href="#R-image-d463b269eb7f2d6907a177aa9d6ed0fb" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/arraylist.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d463b269eb7f2d6907a177aa9d6ed0fb"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/arraylist.png?width=80%25&height=auto"></a></p>
+<p><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/images/arraylist.gif" target="_blank">Link zu einer netten Animation</a></p>
+<p>Eine <code>ArrayList&lt;T&gt;</code> ist von außen betrachtet ein sich dynamisch vergrößerndes Array.</p>
+<p>Intern wird allerdings ein statisches(!) Array benutzt. Wenn dieses Array voll ist,
+wird es um 50% vergrößert und alle Inhalte in das neue Array kopiert. Davon merkt
+man als Nutzer aber nichts.</p>
+<p>Dank es Arrays kann auf ein Element per Index mit O(1) zugegriffen werden.</p>
+<p>Wird ein Element aus der Liste gelöscht, rücken alle Nachfolgenden Einträge in der
+Liste einen Index auf (interner Kopiervorgang).</p>
+<p>Deshalb ist eine <code>ArrayList&lt;T&gt;</code> effizient in der Abfrage und Manipulation von Einträgen,
+aber deutlich weniger effizient beim Hinzufügen und Löschen von Einträgen.</p>
+<p>Per Default wird eine <code>ArrayList&lt;T&gt;</code> mit einem Array der Länge 10 angelegt, sobald das
+erste Element eingefügt wird. Man kann die Startgröße auch im Konstruktoraufruf der
+<code>ArrayList&lt;T&gt;</code> bestimmen: beispielsweise <code>new ArrayList&lt;&gt;(20)</code>.</p>
+<p>Die Methoden einer <code>ArrayList&lt;T&gt;</code> sind nicht <code>synchronized</code>.</p>
+<h2 id="listen-linkedlist">Listen: <em>LinkedList</em></h2>
+<p><a href="#R-image-931fd7573c6ba695d737416038b369ba" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/linkedlist.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-931fd7573c6ba695d737416038b369ba"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/linkedlist.png?width=80%25&height=auto"></a></p>
+<p><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/images/linkedlist.gif" target="_blank">Link zu einer netten Animation</a></p>
+<p>Eine <code>LinkedList&lt;T&gt;</code> ist eine Implementierung einer doppelt verketteten Liste (diese
+kennen Sie bereits aus ADS) in Java.</p>
+<p>Jeder Eintrag wird als Knoten repräsentiert, der den eigentlichen Wert speichert und
+zusätzlich je einen Verweis auf den Vorgänger- und Nachfolger-Knoten hat.</p>
+<p>Der Head der <code>LinkedList&lt;T&gt;</code> zeigt auf den Anfang der Liste, der Nachfolger des letzten
+Eintrag ist immer <code>null</code>.</p>
+<p>Für den Zugriff auf ein Element muß man die <code>LinkedList&lt;T&gt;</code> traversieren und beginnt
+dabei am Anfang der Liste, deshalb ist ein Zugriff O(n).</p>
+<p>Neue Elemente können effizient an das Ende der Liste eingefügt werden, indem der letzte
+Eintrag einen Verweis auf den neuen Knoten bekommt: O(1) (sofern man sich nicht nur den
+Start der Liste merkt, sondern auch das aktuelle Ende).</p>
+<p>Wenn ein Element aus der Liste gelöscht wird, muss dieses zunächst gefundenen werden und
+die Liste danach neu verkettete werden: O(n).</p>
+<p>Die Methoden einer <code>LinkedList&lt;T&gt;</code> sind nicht <code>synchronized</code>.</p>
+<h2 id="vector-und-stack"><em>Vector</em> und <em>Stack</em></h2>
+<ul>
+<li>
+<p><code>Vector&lt;T&gt;</code>:</p>
+<ul>
+<li>Ein <code>Vector&lt;T&gt;</code> ähnelt einer <code>ArrayList&lt;T&gt;</code></li>
+<li>Das Array eines Vector wird jedoch verdoppelt, wenn es vergrößert wird</li>
+<li>Die Methoden von <code>Vector&lt;T&gt;</code> sind <code>synchronized</code></li>
+</ul>
+</li>
+<li>
+<p><code>Stack&lt;T&gt;</code>:</p>
+<ul>
+<li>Schnittstelle: &quot;last in first out&quot;-Prinzip
+<ul>
+<li><code>push(T)</code>: Pushe Element oben auf den Stack</li>
+<li><code>pop(): T</code>: Hole oberstes Element vom Stack</li>
+</ul>
+</li>
+<li>Tatsächlich aber: <code>class Stack&lt;E&gt; extends Vector&lt;E&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="iterierbarkeit-iterable-und-iterator">Iterierbarkeit: <em>Iterable</em> und <em>Iterator</em></h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> List <span style="color:#f92672">&lt;</span>Entity<span style="color:#f92672">&gt;</span> entities <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (Entity e : entities) { ... }
+</span></span><span style="display:flex;"><span>entities.<span style="color:#a6e22e">forEach</span>(x <span style="color:#f92672">-&gt;</span> ...);</span></span></code></pre></div><p><a href="#R-image-54bf7d3906ca6058c213fdfcc249c0c4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/iteratoruml.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-54bf7d3906ca6058c213fdfcc249c0c4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/iteratoruml.png?width=80%25&height=auto"></a></p>
+<p>Die Klassen aus der Collection-API implementieren das Interface <code>Iterable&lt;T&gt;</code> und sind damit
+iterierbar. Man kann sie darüber in einer klassischen <code>for</code>-Schleife nutzen, oder mit der
+Methode <code>forEach()</code> direkt über die Sammlung laufen.</p>
+<p>Intern wird dabei ein passender <code>Iterator&lt;T&gt;</code> erzeugt, der die Elemente der Sammlung schrittweise
+mit der Methode <code>next()</code> zurückgibt. Mithilfe eines Cursor merkt sich der Iterator, bei welchem
+Eintrag der Datenstruktur er aktuell ist. Mit der Methode <code>hasNext()</code>kann geprüft werden, ob noch
+ein weiteres Element über den Iterator aus der Datenstruktur verfügbar ist.</p>
+<p>Mit <code>remove()</code>kann das letzte zurückgegebene Element aus der Datenstruktur entfernt werden. Diese
+Methode ist im Interface als Default-Methode implementiert.</p>
+<p>Damit kann man die Datenstrukturen auf eine von der Datenstruktur vorgegebene Weise ablaufen,
+beispielsweise einen Binärbaum.</p>
+<p><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/images/iterator.gif" target="_blank">Link zu einer netten Animation</a></p>
+<p>Man kann auch selbst für eigene Klassen einen passenden <code>Iterator&lt;T&gt;</code> implementieren, der zum Ablaufen
+der Elemente der eigenen Klasse genutzt werden kann. Damit die eigene Klasse auch in einer <code>for</code>-Schleife
+genutzt werden kann, muss sie aber auch noch <code>Iterable&lt;T&gt;</code> implementieren.</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-jvm/src/collections/iterator_example/" target="_blank"><span class="title">Beispiel: iterator_example.*</span></a></span></div>
+<h2 id="hilfsklasse-collections">Hilfsklasse <em>Collections</em></h2>
+<p><a href="#R-image-49a27fdb2eeabaf5cb3a8b7caf1cf37c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/collections.png?width=50%25&height=auto" style=" height: auto; width: 50%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-49a27fdb2eeabaf5cb3a8b7caf1cf37c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/collections.png?width=50%25&height=auto"></a></p>
+<p><code>Collections</code> ist eine Utility-Klasse mit statischen Methoden, die auf <code>Collection&lt;T&gt;</code>s ausgeführt werden.
+Diese Methoden nutzen das <code>Collection&lt;T&gt;</code>-Interface und/oder die <code>Iterable&lt;T&gt;</code>-Schnittstelle.</p>
+<p>Siehe auch <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Collections.html" target="_blank">Class Collections</a>.</p>
+<p>Der Hintergrund für diese in Java nicht unübliche Aufsplittung in ein Interface und eine Utility-Klasse
+ist, dass bis vor kurzem Interface nur Schnittstellen definieren konnten. Erst seit einigen Java-Versionen
+kann in Interfaces auch Verhalten definiert werden (Default-Methoden). Aus heutiger Sicht würde man also
+vermutlich die statischen Methoden in der Klasse <code>Collections</code> eher direkt als Default-Methoden im Interface
+<code>Collection&lt;T&gt;</code> implementieren und bereitstellen, statt eine separate Utility-Klasse zu definieren.</p>
+<h2 id="map"><em>Map</em></h2>
+<p><a href="#R-image-a7076fd2b6f6c1e19c24e33bd3da27a4" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/map.png?width=50%25&height=auto" style=" height: auto; width: 50%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a7076fd2b6f6c1e19c24e33bd3da27a4"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/map.png?width=50%25&height=auto"></a></p>
+<p><em>Hinweis</em>: Die abstrakten (Zwischen-) Klassen wurden im obigen UML aus Gründen der
+Übersichtlichkeit <em>nicht</em> aufgeführt. Aus den selben Gründen sind auch nur ausgewählte
+Methoden aufgenommen worden.</p>
+<p><em>Hinweis</em>: Blau = Interface, Grün = Klasse.</p>
+<p><em>Hinweis</em>: Tatsächlich ist der Typ des Keys in den Methoden <code>get()</code> und <code>remove()</code> mit <code>Object</code>
+spezifiziert und nicht mit dem Typ-Parameter <code>K</code>. Das ist aus meiner Sicht eine Inkonsistenz in
+der API.</p>
+<p>Eine <code>Map&lt;K,V&gt;</code> speichert Objekte als Key/Value-Paar mit den Typen <code>K</code> (Key) und <code>V</code> (Value).</p>
+<p>Dabei sind die Keys in einer Map einzigartig und werden verwendet, um auf das jeweilige Value
+zuzugreifen. Ein Value kann entsprechend (mit unterschiedlichen Keys) mehrfach im einer Map
+enthalten sein.</p>
+<p>Es gibt eine Reihe verschiedener Implementierungen, die unterschiedliche Datenstrukturen
+einsetzen, beispielsweise:</p>
+<ul>
+<li><code>HashMap&lt;K,V&gt;</code> hält keine Ordnung in den Einträgen. Verwendet den Hashwert, um Objekte zu
+speichern. Zugriff auf Einträge in einer <code>HashMap</code> ist O(1).</li>
+<li><code>LinkedHashMap&lt;K,V&gt;</code> hält die Einträge in der Reihenfolge, in der sie eingefügt wurden.</li>
+<li><code>TreeMap&lt;K,V&gt;</code> hält die Einträge in aufsteigender Reihenfolge.</li>
+</ul>
+<p>Siehe auch <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html" target="_blank">Interface Map</a>.</p>
+<h2 id="hashmap"><em>HashMap</em></h2>
+<p><a href="#R-image-08ab688709d33c86be78626ae0c73b0e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/hashmap.png?width=60%25&height=auto" style=" height: auto; width: 60%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-08ab688709d33c86be78626ae0c73b0e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/hashmap.png?width=60%25&height=auto"></a></p>
+<p>Eine <code>HashMap&lt;K,V&gt;</code> speichert die Elemente in mehreren einfach verketteten Listen. Dafür
+verwendet sie die innere Klasse <code>Node&lt;K,V&gt;</code>.</p>
+<p>Die Heads, die auf den Anfang einer Liste zeigen, werden in &quot;Buckets&quot; gespeichert. Initial
+besitzt eine HashMap 12 Buckets, diese werden bei Bedarf erweitert.</p>
+<p>Um einen Eintrag hinzufügen, wird zunächst aus dem <code>hashCode()</code> des Key-Objektes mithilfe der
+Hash-Funktion der Index des Buckets berechnet. Ist der Bucket gefunden, wird geprüft, ob das
+Objekt dort schon vorkommt: Mit dem <code>hashCode()</code> des Key-Objektes werden alle Objekte in der
+Liste des Buckets verglichen. Wenn es Einträge mit dem selben <code>hashCode()</code> in der Liste gibt,
+wird mit <code>equals</code> geprüft, ob die Key-Objekte identisch sind. Ist dies der Fall, wird der
+existierende Eintrag überschrieben, anderenfalls wird der neue Eintrag an das Ende der Liste
+hinzugefügt.</p>
+<p>Implementierungsdetail: Wenn die Listen zu groß werden, wird die Hashtabelle neu angelegt mit
+ungefähr der doppelten Anzahl der Einträge (Buckets) und die alten Einträge per <em>Re-Hash</em> neu
+verteilt (vgl. <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html" target="_blank">Class HashMap</a>).</p>
+<p><code>HashMap&lt;K,V&gt;</code> Methoden sind nicht <code>synchronized</code>.</p>
+<p><code>HashMap&lt;K,V&gt;</code> unterstützt einen <code>null</code>-Key. Es darf beliebig viele <code>null</code>-Values geben.</p>
+<p>Die Unterklasse <code>LinkedHashMap&lt;K,V&gt;</code> kann Ordnung zwischen den Elementen halten. Dafür wird
+eine doppelt verkettete Liste verwendet.</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/src/collections/hash_example/HashCodeExample.java" target="_blank"><span class="title">Beispiel: hash_example.HashCodeExample</span></a></span></div>
+<h2 id="hashtable"><em>Hashtable</em></h2>
+<ul>
+<li>Nicht zu verwechseln mit der Datenstruktur: Hash-Tabellen (!)</li>
+<li><code>Hashtable&lt;K,V&gt;</code> ist vergleichbar mit einer <code>HashMap&lt;K,V&gt;</code></li>
+<li><code>Hashtable&lt;K,V&gt;</code>-Methoden sind <code>synchronized</code></li>
+<li>Kein Key oder Value darf <code>null</code> sein</li>
+</ul>
+<h2 id="spielregeln-für-equals-hashcode-und-compareto">Spielregeln für <em>equals()</em>, <em>hashCode()</em> und <em>compareTo()</em></h2>
+<h3 id="equals"><em>equals()</em></h3>
+<p><code>boolean equals(Object o)</code> ist eine Methode Klasse <code>Object</code> und wird genutzt, um Objekte auf Gleichheit zu
+prüfen. Die Default-Implementierung von <code>equals()</code> in <code>Object</code> vergleicht die beiden Objekte mit <code>==</code>, gibt
+also nur dann <code>true</code> zurück, wenn die beiden zu vergleichenden Objekte die selbe Objekt-ID haben.</p>
+<p>In der Praxis kann es sich anbieten, diese Methode zu überschreiben und eigene Kriterien für Gleichheit
+aufzustellen.</p>
+<p>Dabei sind Spielregeln zu beachten (für nicht-<code>null</code> Objekte <code>x</code>, <code>y</code> und <code>z</code>):</p>
+<ol>
+<li>Reflexivität: <code>x.equals(x) == true</code></li>
+<li>Symmetrie: <code>x.equals(y) == y.equals(x)</code></li>
+<li>Transitivität: Wenn <code>x.equals(y) == true</code> und <code>y.equals(z) == true</code>, dann auch <code>x.equals(z) == true</code></li>
+<li>Konsistenz: Mehrfache Aufrufe von <code>equals()</code> mit den selben Werten müssen immer das selbe Ergebnis liefern</li>
+<li><code>x.equals(null) == false</code></li>
+</ol>
+<h3 id="hashcode"><em>hashCode()</em></h3>
+<p>Die Methode <code>int hashCode()</code> gibt den Hash-Wert eines Objektes zurück. Der Hash-Wert eins Objektes wird genutzt,
+um dieses in einen Hash-basierten Container abzulegen bzw. zu finden.</p>
+<p>Der Rückgabewert der Methode <code>hashCode()</code> für ein Objekt bleibt über die Laufzeit einer Anwendung immer identisch,
+solange sich die zur Prüfung der Gleichheit genutzten Attribute nicht ändern.</p>
+<h3 id="compareto"><em>compareTo()</em></h3>
+<p>Die Methode <code>int compareTo()</code> (Interface <code>Comparable&lt;T&gt;</code>) vergleicht Objekte und definiert damit eine Ordnung
+auf den Objekten. Während <code>equals()</code> für die Prüfung auf Gleichheit eingesetzt wird, wird <code>compareTo()</code> für die
+Sortierung von Objekten untereinander verwendet.</p>
+<p>Spielregeln:</p>
+<ol>
+<li><code>x.compareTo(y) &lt; 0</code> wenn <code>x</code> &quot;kleiner&quot; als <code>y</code> ist</li>
+<li><code>x.compareTo(y) &gt; 0</code> wenn <code>x</code> &quot;größer&quot; als <code>y</code> ist</li>
+<li><code>x.compareTo(y) = 0</code> wenn <code>x</code> &quot;gleich&quot; als <code>y</code> ist</li>
+<li>Symmetrie: <code>signum(x.compareTo(y)) == -signum(y.compareTo(x))</code></li>
+<li>Transitivität: Wenn <code>x.compareTo(y) &gt; 0</code> und <code>y.compareTo(z) &gt; 0</code>, dann auch <code>x.compareTo(z) &gt; 0</code></li>
+<li>Wenn <code>x.compareTo(y) == 0</code>, dann auch <code>signum(x.compareTo(z)) == signum(y.compareTo(z))</code></li>
+</ol>
+<h3 id="der-equals-hashcode-compareto-vertrag">Der <em>equals()</em>-<em>hashCode()</em>-<em>compareTo()</em>-Vertrag</h3>
+<p><strong>Wird <code>equals()</code> überschrieben, sollte auch <code>hashCode()</code> (passend) überschrieben werden.</strong></p>
+<ol>
+<li>
+<p>Wenn <code>x.equals(y) == true</code>, dann <em>muss</em> auch <code>x.hashCode() == y.hashCode()</code></p>
+</li>
+<li>
+<p>Wenn <code>x.equals(y) == false</code>, <em>sollte</em> <code>x.hashCode() != y.hashCode()</code> sein
+(Unterschiedliche <code>hashCode()</code>-Werte für unterschiedliche Objekte verbessern allerdings die Leistung
+von Hash-Berechnungen, etwa in einer <code>HashMap&lt;K,V&gt;</code>!)</p>
+</li>
+<li>
+<p>Es wird sehr empfohlen, dass <code>equals()</code> und <code>compareTo()</code> konsistente Ergebnisse liefern:
+<code>x.compareTo(y) == 0</code> gdw. <code>x.equals(y) == true</code>
+(Dies <em>muss</em> aber nicht zwingend eingehalten werden, sorgt dann aber u.U. für unerwartete Nebeneffekte
+beim Umgang mit <code>Collection&lt;T&gt;</code> und <code>Map&lt;K,V&gt;</code>!)</p>
+</li>
+</ol>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/src/collections/hash_example/HashCodeExample.java" target="_blank"><span class="title">Beispiel: hash_example.HashCodeExample</span></a></span></div>
+<h2 id="überblick">Überblick</h2>
+<p><a href="#R-image-1912986fe27d5441f2fbdd94aaad97d6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/collections_table.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1912986fe27d5441f2fbdd94aaad97d6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections/collections_table.png?width=80%25&height=auto"></a></p>
+<p>Komplexitätswerte beziehen sich auf den Regelfall. Sonderfälle wie das Vergrößern des Array einer
+<code>ArrayList&lt;T&gt;</code> können für temporär erhöhte Komplexität sorgen (das ist dem O-Kalkül aber egal).</p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>Interface <code>Collection&lt;T&gt;</code>: Schnittstelle für Datenstrukturen/Sammlungen
+zur Verwaltung einer Menge von Objekten</li>
+<li>Klasse <code>Collections</code>: Statische Hilfs-Methoden (anwendbar auf <code>Collection&lt;T&gt;</code>s)</li>
+<li><code>Iterable&lt;T&gt;</code> liefert einen <code>Iterator&lt;T&gt;</code> zur Iteration über eine <code>Collection&lt;T&gt;</code></li>
+<li>Interface <code>Map&lt;K,V&gt;</code>: Speichern von Key/Value-Paaren</li>
+<li><code>equals()</code>-<code>hashCode()</code>-<code>compareTo()</code>-Vertrag beachten</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106513&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Collections (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_LernJava'>[LernJava] <a href='https://dev.java/learn/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Learn Java</strong></a><br>Oracle Corporation, 2022.<br><em>Tutorials \> Mastering the API \> The Collections Framework</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation showVisitedLinks">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+
+
+
+
+<a id="logo" href='https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234//index.html'>
+    <img style="max-width:35%" alt="icon" src='/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png'>
+</a>
+
+        </div>
+        <form action="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/search.html" method="get"><div class="searchbox default-animation">
+          <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+          <label class="a11y-only" for="R-search-by">Search</label>
+          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+        </div></form>
+        <script>
+          var contentLangs=['de'];
+        </script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/auto-complete.js?1711605716" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.min.js?1711605716" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.stemmer.support.min.js?1711605716" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.multi.min.js?1711605716" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.de.min.js?1711605716" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/search.js?1711605716" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics.html">Generics<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3ec7939463ceb6f931083967c060bb2f" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/classes-methods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/classes-methods.html">Klassen &amp; Methoden<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/bounds-wildcards.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/bounds-wildcards.html">Bounds &amp; Wildcards<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/type-erasure.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/type-erasure.html">Type Erasure<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html">Polymorphie<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm.html" class="parent "><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm.html">Java / JVM<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a8baeaa8292f03e30c60ce3f78cb8329" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections.html" class="active"><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections.html">Collections<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html">Enumerations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/regexp.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/regexp.html">RegExp<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/configuration.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/configuration.html">Konfiguration<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/exceptions.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/exceptions.html">Exceptions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html">Serialisierung<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html">Git<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b7b75b08ea746eeb407fc7d37ea4cda5" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html">Intro<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html">Basics<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html">Branches<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">Branching-Strategien<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html">Remotes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">Workflows<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/worktree.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/worktree.html">Worktree<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java.html">Modern Java<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b7e7192fdbaa6715e2f6bf2cf57a6598" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html">Lambda-Ausdrücke<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/methodreferences.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/methodreferences.html">Methoden-Referenzen<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/stream-api.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/stream-api.html">Stream-API<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html">Optional<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/records.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/records.html">Records<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/sealed.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/sealed.html">Sealed Classes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html">Default-Methoden<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html">Coding<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ed36829f63ded441f98bbebba385ea7c" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html">Javadoc<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html">Logging<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html">Code Smells<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html">Coding Conventions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html">Refactoring<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html">Building<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f4e18db244c71e7d5fbee7579907c4cd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html">Gradle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html">Continuous Integration<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing.html">Testing<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-95ac3b8a0580d3c0c5ec1b9e2c19e15b" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html">Intro SW-Test<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/junit-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/junit-basics.html">JUnit-Basics<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testcases.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testcases.html">Testfallermittlung<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/mockito.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/mockito.html">Mocking<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html">Pattern<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-88c6ccdca00adeca83d4957e66bb44bd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html">Visitor<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html">Template-Method<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html">Observer<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html">Threads<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-69dad497cee2a112d69e7153cccf3928" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html">Intro<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html">Synchronisation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html">High-Level Concurrency<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#kursformat"><i class='fas fa-bookmark'></i> Zeiten</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> Fahrplan</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#pr%C3%BCfungsform-note-und-credits"><i class='fas fa-bookmark'></i> Note/Credits</a></li>
+            <li><a class="padding" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a"><i class='fas fa-external-link-alt'></i> FAQ</a></li>
+            <li><a class="padding" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/announcements"><i class='fas fa-external-link-alt'></i> News</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showVisitedLinks showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showVisitedLinks showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch showVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/collections.html" lang="de-DE" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                      <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                      <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-select-variant-relearn-bright" value="relearn-bright">Relearn Bright</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks showVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter"><p style="text-align: center;">
+<i class='fab fa-fw fa-github'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">GitHub</a>
+<i class='fas fa-fw fa-tags'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/issues">Issues</a>
+<i class='fas fa-fw fa-bullhorn'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">Credits</a>
+<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+
+</p>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1711605716" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1711605716" defer></script>
+    <script>
+      function useMathJax( config ){
+        if( !Object.assign ){
+          
+          return;
+        }
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          loader: {
+            load: ['[tex]/mhchem']
+          },
+          startup: {
+            elements: [
+              '.math'
+            ]
+          },
+          tex: {
+            inlineMath: [
+              ['$', '$'], 
+              ['\\(', '\\)']
+            ]
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1711605716"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1711605716" defer></script>
+  </body>
+</html>

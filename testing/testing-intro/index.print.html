@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.26.2">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Einführung Softwaretest">
+    <meta name="twitter:description" content="">
+    <meta property="og:title" content="Einführung Softwaretest">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html">
+    <title>Einführung Softwaretest</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html" rel="canonical" type="text/html" title="Einführung Softwaretest">
+
+    
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1711605715" rel="icon" type="image/png">
+
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1711605716" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1711605716" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1711605716" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1711605716" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1711605716" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1711605716" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/ie.css?1711605716" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/url.js?1711605716"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1711605716"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js";
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Einführung Softwaretest
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Einführung Softwaretest</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Fehler schleichen sich durch Zeitdruck und hohe Komplexität schnell in ein Softwareprodukt ein. Die
+Folgen können von &quot;ärgerlich&quot; über &quot;teuer&quot; bis hin zu (potentiell) &quot;tödlich&quot; reichen. Richtiges
+Testen ist also ein wichtiger Aspekt bei der Softwareentwicklung!</p>
+<p>JUnit ist ein Java-Framework, mit dem Unit-Tests (aber auch andere Teststufen) implementiert werden
+können. In JUnit 4 und 5 zeichnet man eine Testmethode mit Hilfe der Annotation <code>@Test</code> an der
+entsprechenden Methode aus. Dadurch kann man Produktiv- und Test-Code prinzipiell mischen; Best
+Practice ist aber das Anlegen eines weiteren Ordners <code>test/</code> und das Spiegeln der Package-Strukturen.
+Für die zu testende Klasse wird eine korrespondierende Testklasse mit dem Suffix &quot;Test&quot; (Konvention)
+angelegt und dort die Testmethoden implementiert. Der IDE muss der neue <code>test/</code>-Ordner noch als
+Ordner für Sourcen bzw. Tests bekannt gemacht werden. In den Testmethoden baut man den Test auf,
+führt schließlich den Testschritt durch (beispielsweise konkreter Aufruf der zu testenden Methode)
+und prüft anschließend mit einem <code>assert*()</code>, ob das erzielte Ergebnis dem erwarteten Ergebnis
+entspricht. Ist alles OK, ist der Test &quot;grün&quot;, sonst &quot;rot&quot;.</p>
+<p>Da ein fehlschlagendes <code>assert*()</code> den Test abbricht, werden eventuell danach folgende Prüfungen
+<strong>nicht</strong> mehr durchgeführt und damit ggf. weitere Fehler maskiert. Deshalb ist es gute Praxis, in
+einer Testmethode nur einen Testfall zu implementieren und i.d.R. auch nur ein (oder wenige) Aufrufe
+von <code>assert*()</code> pro Testmethode zu haben.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/WGd83crqu4I' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Einführung Softwaretest</a></li> <li><a href='https://youtu.be/xcogVwHUo5o' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Anlegen von Testfällen mit JUnit</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/87e2aa545269a6d4c0502a18a3e800c82bc767de66612f488f17e0ff60c3a66097884212745aff556c2b76eee7a0fd8a8225d912c3a39c274020fd5b8055bb10' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Einführung Softwaretest</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Ursachen von Softwarefehlern</li> <li>(K3) Aufbauen von Tests mit JUnit 4 und 5 unter Nutzung der Annotation <code>@Test</code></li></ul></div>
+</div>
+
+
+
+
+    <h2 id="software-fehler-und-ihre-folgen">Software-Fehler und ihre Folgen</h2>
+<p><a href="#R-image-83f243a825da01c7f3f083c64e52c8dc" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro/swfehler.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-83f243a825da01c7f3f083c64e52c8dc"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro/swfehler.png?width=80%25&height=auto"></a></p>
+<h2 id="einige-ursachen-für-fehler">(Einige) Ursachen für Fehler</h2>
+<ul>
+<li>Zeit- und Kostendruck</li>
+<li>Mangelhafte Anforderungsanalyse</li>
+<li>Hohe Komplexität</li>
+<li>Mangelhafte Kommunikation</li>
+<li>Keine/schlechte Teststrategie</li>
+<li>Mangelhafte Beherrschung der Technologie</li>
+<li>...</li>
+</ul>
+<h2 id="irgendjemand-muss-mit-deinen-bugs-leben">Irgendjemand muss mit Deinen Bugs leben!</h2>
+<p>Leider gibt es im Allgemeinen keinen Weg zu zeigen, dass eine Software korrekt ist.
+Man kann (neben formalen Beweisansätzen) eine Software nur unter möglichst vielen
+Bedingungen ausprobieren, um zu schauen, wie sie sich verhält, und um die dabei zu
+Tage tretenden Bugs zu fixen.</p>
+<p>Mal abgesehen von der verbesserten <em>User-Experience</em> führt weniger fehlerbehaftete
+Software auch dazu, dass man seltener mitten in der Nacht geweckt wird, weil irgendwo
+wieder ein Server gecrasht ist ... Weniger fehlerbehaftete Software ist auch leichter
+zu ändern und zu pflegen! In realen Projekten macht Maintenance den größten Teil an der
+Softwareentwicklung aus ... Während Ihre Praktikumsprojekte vermutlich nach der Abgabe
+nie wieder angeschaut werden, können echte Projekte viele Jahre bis Jahrzehnte leben!
+D.h. irgendwer muss sich dann mit Ihren Bugs herumärgern - vermutlich sogar Sie selbst ;)</p>
+<blockquote>
+<p>Always code as if the guy who ends up maintaining your code will be a
+violent psychopath who knows where you live. Code for readability.</p>
+<p>-- <a href="https://groups.google.com/g/comp.lang.c++/c/rYCO5yn4lXw/m/oITtSkZOtoUJ" target="_blank">John F. Woods</a></p>
+</blockquote>
+<p>Dieses Zitat taucht immer mal wieder auf, beispielsweise auf der <a href="https://twitter.com/andypiper/status/490952891058757632" target="_blank">OSCON 2014</a> ...
+Es scheint aber tatsächlich, dass <a href="https://groups.google.com/g/comp.lang.c++/c/rYCO5yn4lXw/m/oITtSkZOtoUJ" target="_blank">John F. Woods</a>
+die ursprüngliche Quelle war (vgl. <a href="https://stackoverflow.com/questions/876089/who-wrote-this-programing-saying-always-code-as-if-the-guy-who-ends-up-maintai#878436" target="_blank">Stackoverflow: 876089</a>).</p>
+<p>Da wir nur wenig Zeit haben und zudem vergesslich sind und obendrein die Komplexität
+eines Projekts mit der Anzahl der Code-Zeilen i.d.R. nicht-linear ansteigt, müssen wir
+das Testen automatisieren. Und hier kommt JUnit ins Spiel :)</p>
+<h2 id="was-wann-testen-wichtigste-teststufen">Was wann testen? Wichtigste Teststufen</h2>
+<ul>
+<li>
+<p><strong>Modultest</strong></p>
+<ul>
+<li>Testen einer Klasse und ihrer Methoden</li>
+<li>Test auf gewünschtes Verhalten (Parameter, Schleifen, ...)</li>
+</ul>
+</li>
+<li>
+<p><strong>Integrationstest</strong></p>
+<ul>
+<li>Test des korrekten Zusammenspiels mehrerer Komponenten</li>
+<li>Konzentration auf Schnittstellentests</li>
+</ul>
+</li>
+<li>
+<p><strong>Systemtest</strong></p>
+<ul>
+<li>Test des kompletten Systems unter produktiven Bedingungen</li>
+<li>Orientiert sich an den aufgestellten Use Cases</li>
+<li>Funktionale und nichtfunktionale Anforderungen testen</li>
+</ul>
+</li>
+</ul>
+<p>=&gt; Verweis auf Wahlfach &quot;Softwarequalität&quot;</p>
+<h2 id="junit-test-framework-für-java">JUnit: Test-Framework für Java</h2>
+<p><strong>JUnit</strong> --- Open Source Java Test-Framework zur Erstellung und
+Durchführung wiederholbarer Tests</p>
+<ul>
+<li>
+<p>JUnit 3</p>
+<ul>
+<li>Tests müssen in eigenen Testklassen stehen</li>
+<li>Testklassen müssen von Klasse <code>TestCase</code> erben</li>
+<li>Testmethoden müssen mit dem Präfix &quot;<code>test</code>&quot; beginnen</li>
+</ul>
+</li>
+<li>
+<p><strong>JUnit 4</strong></p>
+<ul>
+<li>Annotation <code>@Test</code> für Testmethoden</li>
+<li>Kein Zwang zu spezialisierten Testklassen (insbesondere kein Zwang mehr zur Ableitung von <code>TestCase</code>)</li>
+<li>Freie Namenswahl für Testmethoden (benötigen nicht mehr Präfix &quot;<code>test</code>&quot;)</li>
+</ul>
+<p>Damit können prinzipiell auch direkt im Source-Code Methoden als
+JUnit-Testmethoden ausgezeichnet werden ... (das empfiehlt sich in der
+Regel aber nicht)</p>
+</li>
+<li>
+<p><em>JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage</em></p>
+<ul>
+<li>Erweiterung um mächtigere Annotationen</li>
+<li>Aufteilung in spezialisierte Teilprojekte</li>
+</ul>
+<p>Das Teilprojekt &quot;JUnit Platform&quot; ist die Grundlage für das JUnit-Framework. Es bietet
+u.a. einen Console-Launcher, um Testsuiten manuell in der Konsole zu starten oder über
+Builder wie Ant oder Gradle.</p>
+<p>Das Teilprojekt &quot;JUnit Jupiter&quot; ist das neue Programmiermodell zum Schreiben von Tests
+in JUnit 5. Es beinhaltet eine TestEngine zum Ausführen der in Jupiter geschriebenen
+Tests.</p>
+<p>Das Teilprojekt &quot;JUnit Vintage&quot; beinhaltet eine TestEngine zum Ausführen von Tests,
+die in JUnit 3 oder JUnit 4 geschrieben sind.</p>
+</li>
+</ul>
+<p><em>Anmerkung</em>: Wie der Name schon sagt, ist das Framework für Modultests
+(&quot;Unit-Tests&quot;) gedacht. Man kann damit aber auch auf anderen Teststufen
+arbeiten!</p>
+<p><em>Anmerkung</em>: Im Folgenden besprechen wir JUnit am Beispiel <strong>JUnit 4</strong>, da diese Version
+des Frameworks besonders stark verbreitet ist und JUnit 5 (trotz offiziellem Release) immer
+noch stellenweise unfertig wirkt. Auf Unterschiede zu JUnit 5 wird an geeigneter Stelle
+hingewiesen (abgesehen von Import-Statements). Mit JUnit 3 sollte nicht mehr aktiv
+gearbeitet werden, d.h. insbesondere keine neuen Tests mehr erstellt werden, da diese
+Version nicht mehr weiterentwickelt wird.</p>
+<h2 id="anlegen-und-organisation-der-tests-mit-junit">Anlegen und Organisation der Tests mit JUnit</h2>
+<div class='columns'>
+<div class='column'>
+<ul>
+<li>
+<p>Anlegen neuer Tests: Klasse auswählen, Kontextmenü <code>New &gt; JUnit Test Case</code></p>
+</li>
+<li>
+<p><strong>Best Practice</strong>:  <span class='alert'>Spiegeln der Paket-Hierarchie</span></p>
+<ul>
+<li>Toplevel-Ordner <code>test</code> (statt <code>src</code>)</li>
+<li>Package-Strukturen spiegeln</li>
+<li>Testklassen mit Suffix &quot;<code>Test</code>&quot;</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class='column'>
+<p><a href="#R-image-c4eba1afd297b86554313ddbefe825d9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro/newJUnit.png?width=40%25&height=auto" style=" height: auto; width: 40%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c4eba1afd297b86554313ddbefe825d9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro/newJUnit.png?width=40%25&height=auto"></a></p>
+</div>
+</div>
+<p>Vorteile dieses Vorgehens:</p>
+<ul>
+<li>Die Testklassen sind aus Java-Sicht im selben Package wie die Source-Klassen,
+d.h. Zugriff auf Package-sichtbare Methoden etc. ist gewährleistet</li>
+<li>Durch die Spiegelung der Packages in einem separaten Testordner erhält man
+eine gute getrennte Übersicht über jeweils die Tests und die Sourcen</li>
+<li>Die Wiederverwendung des Klassennamens mit dem Anhang &quot;Test&quot; erlaubt die
+schnelle Erkennung, welche Tests hier vorliegen</li>
+</ul>
+<p>In der Paketansicht liegen dann die Source- und die Testklassen immer direkt
+hintereinander (da sie im selben Paket sind und mit dem selben Namen anfangen)
+=&gt; besserer Überblick!</p>
+<h2 id="anmerkung-die-richtige-junit-bibliothek-muss-im-classpath-liegen">Anmerkung: Die (richtige) JUnit-Bibliothek muss im Classpath liegen!</h2>
+<p>Eclipse bringt für JUnit 4 und JUnit 5 die nötigen Jar-Dateien mit und fragt beim
+erstmaligen Anlegen einer neuen Testklasse, ob die für die ausgewählte Version
+<strong>passenden JUnit-Jars zum Build-Path hinzugefügt</strong> werden sollen.</p>
+<p>IntelliJ bringt ebenfalls eine JUnit 4 Bibliothek mit, die zum Projekt als Abhängigkeit
+hinzugefügt werden muss. Für JUnit 5 bietet IntelliJ an, die Jar-Dateien herunterzuladen
+und in einem passenden Ordner abzulegen.</p>
+<p>Alternativ lädt man die Bibliotheken entsprechend der Anleitung unter <a href="https://junit.org/" target="_blank">junit.org</a>
+herunter und bindet sie in das Projekt ein.</p>
+<h2 id="junit-45-definition-von-tests">JUnit 4+5: Definition von Tests</h2>
+<p>Annotation <code>@Test</code> vor Testmethode schreiben</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.Test;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.junit.Assert.*;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FactoryBeispielTest4</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Test</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testGetTicket</span>() {
+</span></span><span style="display:flex;"><span>        fail(<span style="color:#e6db74">&#34;not implemented&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Für JUnit 5 muss statt <code>org.junit.Test</code> entsprechend <code>org.junit.jupiter.api.Test</code> importiert werden.</p>
+<p>Während in JUnit 4 die Testmethoden mit der Sichtbarkeit <code>public</code> versehen sein müssen und keine
+Parameter haben (dürfen), spielt die Sichtbarkeit in JUnit 5 keine Rolle (und die Testmethoden dürfen Parameter
+aufweisen =&gt; vgl. Abschnitt &quot;Dependency Injection for Constructors and Methods&quot; in der JUnit-Doku).</p>
+<h2 id="junit-4-ergebnis-prüfen">JUnit 4: Ergebnis prüfen</h2>
+<p>Klasse <strong><code>org.junit.Assert</code></strong> enthält diverse <strong>statische</strong> Methoden zum Prüfen:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Argument muss true bzw. false sein</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">assertTrue</span>(<span style="color:#66d9ef">boolean</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">assertFalse</span>(<span style="color:#66d9ef">boolean</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Gleichheit im Sinne von equals()</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">assertEquals</span>(Object, Object);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Test sofort fehlschlagen lassen</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fail</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...</span></span></code></pre></div><p>Für JUnit 5 finden sich die Assert-Methoden im Package <code>org.junit.jupiter.api.Assertions</code>.</p>
+<h2 id="anmerkung-zum-statischen-import">Anmerkung zum statischen Import</h2>
+<p>Bei normalem Import der Klasse <code>Assert</code> muss man jeweils den voll qualifizierten Namen
+einer statischen Methode nutzen: <code>Assert.fail()</code>.</p>
+<p>Alternative statischer Import: <code>import static org.junit.Assert.fail;</code>
+=&gt; <em>Statische Member</em> der importierten Klasse (oder Interface)
+werden über ihre <em>unqualifizierten Namen</em> zugreifbar.
+<span class='alert'>Achtung:</span> Namenskollisionen möglich!</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// nur bestimmtes Member importieren</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> packageName.className.staticMemberName;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// alle statischen Member importieren</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import static</span> packageName.className.*;</span></span></code></pre></div><ul>
+<li>
+<p>Beispiel normaler Import:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> org.junit.Assert;
+</span></span><span style="display:flex;"><span>Assert.<span style="color:#a6e22e">fail</span>(<span style="color:#e6db74">&#34;message&#34;</span>);</span></span></code></pre></div></li>
+<li>
+<p>Beispiel statischer Import:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import static</span> org.junit.Assert.fail;
+</span></span><span style="display:flex;"><span>fail(<span style="color:#e6db74">&#34;message&#34;</span>);</span></span></code></pre></div></li>
+</ul>
+<h2 id="mögliche-testausgänge-bei-junit">Mögliche Testausgänge bei JUnit</h2>
+<div class='columns'>
+<div class='column'>
+<p><a href="#R-image-eee445502c9885a961059fb7799444d6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro/junitErgebnis.png?width=40%25&height=auto" style=" height: auto; width: 40%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-eee445502c9885a961059fb7799444d6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro/junitErgebnis.png?width=40%25&height=auto"></a></p>
+</div>
+<div class='column'>
+<ol>
+<li>
+<p><strong>Error</strong>: Fehler im Programm (Test)</p>
+<ul>
+<li>Unbehandelte Exception</li>
+<li>Abbruch (Timeout)</li>
+</ul>
+</li>
+<li>
+<p><strong>Failure</strong>: Testausgang negativ</p>
+<ul>
+<li>Assert fehlgeschlagen</li>
+<li><code>Assert.fail()</code> aufgerufen</li>
+</ul>
+</li>
+<li>
+<p><strong>OK</strong></p>
+</li>
+</ol>
+</div>
+</div>
+<h2 id="anmerkungen-zu-assert">Anmerkungen zu Assert</h2>
+<ul>
+<li>Pro Testmethode möglichst nur <strong>ein</strong> Assert verwenden!</li>
+<li>Anderenfalls: Schlägt ein Assert fehl, wird der Rest nicht mehr überprüft ...</li>
+</ul>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Testen ist genauso wichtig wie Coden</p>
+</li>
+<li>
+<p>Richtiges Testen spart Geld, Zeit, ...</p>
+</li>
+<li>
+<p>Tests auf verschiedenen Abstraktionsstufen</p>
+</li>
+<li>
+<p>JUnit als Framework für (Unit-) Tests; hier JUnit 4 (mit Ausblick auf JUnit 5)</p>
+<ul>
+<li>Testmethoden mit Annotation <code>@Test</code></li>
+<li>Testergebnis mit <code>assert*</code> prüfen</li>
+</ul>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz JUnit-Basics - nur erster Teil (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+                    
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_fernunihagenJunit'>[fernunihagenJunit] <a href='https://wiki.fernuni-hagen.de/eclipse/index.php/Einführung_in_JUnit' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Einführung in JUnit</strong></a><br>Thies, A. und Noelke, C. und Ungerc, Fernuniversität in Hagen.</li> <li id='id_junit4'>[junit4] <a href='https://junit.org/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>JUnit 5</strong></a><br>The JUnit Team, 2022.</li> <li id='id_Kleuker2019'>[Kleuker2019] <strong>Qualitätssicherung durch Softwaretests</strong><br>Kleuker, S., Springer Vieweg, 2019. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-658-24886-4' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-658-24886-4</a>. DOI <a href='https://doi.org/10.1007/978-3-658-24886-4' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>10.1007/978-3-658-24886-4</a>.</li> <li id='id_Osherove2014'>[Osherove2014] <strong>The Art of Unit Testing</strong><br>Osherove, R., Manning, 2014. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-6172-9089-3' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-1-6172-9089-3</a>.</li> <li id='id_Spillner2012'>[Spillner2012] <strong>Basiswissen Softwaretest</strong><br>Spillner, A. und Linz, T., dpunkt, 2012. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-86490-024-2' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-86490-024-2</a>.</li> <li id='id_vogellaJUnit'>[vogellaJUnit] <a href='https://www.vogella.com/tutorials/JUnit/article.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>JUnit 5 tutorial - Learn how to write unit tests</strong></a><br>vogella GmbH, 2021.</li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1711605716" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1711605716" defer></script>
+    <script>
+      function useMathJax( config ){
+        if( !Object.assign ){
+          
+          return;
+        }
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          loader: {
+            load: ['[tex]/mhchem']
+          },
+          startup: {
+            elements: [
+              '.math'
+            ]
+          },
+          tex: {
+            inlineMath: [
+              ['$', '$'], 
+              ['\\(', '\\)']
+            ]
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1711605716"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1711605716" defer></script>
+  </body>
+</html>
