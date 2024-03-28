@@ -249,7 +249,7 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [B04]: homework/b04.md
 [B05]: homework/b05.md
 [B06]: homework/b06.md
-[B07]: homework/b04a.md
+[B07]: homework/b07.md
 [B08]: homework/b04b.md
 [B09]: homework/b05a.md
 [B10]: homework/b05b.md
