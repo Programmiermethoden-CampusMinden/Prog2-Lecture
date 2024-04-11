@@ -57,7 +57,7 @@ den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anscha
 
 **Vorlesung (2 SWS)**
 
-Mi, 08:00 - 09:30 Uhr (online/J104)
+Mi, 08:00 - 09:30 Uhr (online)
 
 Durchführung als **Flipped Classroom**.
 
@@ -66,14 +66,14 @@ Durchführung als **Flipped Classroom**.
 
 **Praktikum (2 SWS)**
 
-| Praktikumsgruppe | Zeit                  | Raum            |
-|:-----------------|:----------------------|:----------------|
-| Gruppe 1         | Mi, 10:15 - 11:45 Uhr | D320 (Präsenz)  |
-| Gruppe 2         | Mi, 12:15 - 13:45 Uhr | online/J104     |
-| Gruppe 3         | Mi, 10:15 - 11:45 Uhr | online/J104     |
-| Gruppe 4         | Mi, 12:15 - 13:45 Uhr | D320 (Präsenz)  |
+| Praktikumsgruppe | Zeit                  | Raum   |
+|:-----------------|:----------------------|:-------|
+| Gruppe 1         | Mi, 11:30 - 13:00 Uhr | online |
+| Gruppe 2         | Mi, 09:45 - 11:15 Uhr | D320   |
+| Gruppe 3         | Mi, 09:45 - 11:15 Uhr | online |
+| Gruppe 4         | Mi, 11:30 - 13:00 Uhr | D320   |
 
-Praktika Gruppen 1 und 4 in **Präsenz**.
+Praktika Gruppen 2 und 4 in **Präsenz**.
 
 :::
 ::::::
@@ -91,7 +91,7 @@ Sie _können_ hierzu den Raum J104 nutzen.
 :::::: {.tabs groupid="exams"}
 ::: {.tab title="Prüfung im ersten Zeitraum"}
 
-*   Stationen:
+*   **Stationen**:
     *   Praktikum: 10x Übungsblätter mit jeweils 1P
         (Einzelbearbeitung, mindestens 60% bearbeitet,
         fristgerechte Abgabe der Lösungen im ILIAS,
@@ -103,7 +103,7 @@ Sie _können_ hierzu den Raum J104 nutzen.
 :::
 ::: {.tab title="Prüfung im zweiten Zeitraum"}
 
-*   Stationen:
+*   **Stationen**:
     *   Schriftliche Prüfung (digitale Klausur) mit 100P;
         [Prüfungsvorbereitung]
 *   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
@@ -140,8 +140,7 @@ Sie _können_ hierzu den Raum J104 nutzen.
 
 ## Fahrplan
 
-Hier finden Sie einen abonierbaren [Google Kalender](https://calendar.google.com/calendar/ical/5121604486803dcdb5cfaa8602b8b09ce76743d8b9216795606617cac807e595%40group.calendar.google.com/public/basic.ics)
-mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
+Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
 | Monat | Tag   | Vorlesung                                                                                              | Praktikum |
 |:------|:------|:-------------------------------------------------------------------------------------------------------|:----------|
@@ -162,6 +161,8 @@ mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
 Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1356670&client_id=FH-Bielefeld).
 
+
+[Google Kalender]: https://calendar.google.com/calendar/ical/5121604486803dcdb5cfaa8602b8b09ce76743d8b9216795606617cac807e595%40group.calendar.google.com/public/basic.ics
 
 [Prüfungsvorbereitung]: admin/exams.md
 [FAQ]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a
