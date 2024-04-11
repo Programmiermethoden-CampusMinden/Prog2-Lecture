@@ -140,6 +140,9 @@ Sie _können_ hierzu den Raum J104 nutzen.
 
 ## Fahrplan
 
+Hier finden Sie einen abonierbaren [Google Kalender](https://calendar.google.com/calendar/ical/5121604486803dcdb5cfaa8602b8b09ce76743d8b9216795606617cac807e595%40group.calendar.google.com/public/basic.ics)
+mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
+
 | Monat | Tag   | Vorlesung                                                                                              | Praktikum |
 |:------|:------|:-------------------------------------------------------------------------------------------------------|:----------|
 | April | 17.   | Orga (**Zoom**), [FAQ]                                                                                 |           |
