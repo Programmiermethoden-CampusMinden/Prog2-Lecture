@@ -34,14 +34,17 @@ den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anscha
     *   Funktionale Programmierung: Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas, Stream-API
     *   Generische Programmierung: Generics
     *   Parallele Programmierung: Threads
-    *   Reguläre Ausdrücke, Annotationen, Reflection
-    *   CLI, Konfiguration, Fremde APIs nutzen
+    *   Reguläre Ausdrücke, ~~Annotationen~~, ~~Reflection~~
+    *   CLI, Konfiguration, fremde APIs nutzen
+    *   ~~Graphische Oberflächen mit Swing~~
 2.  Fortgeschrittenes OO-Design
-    *   Entwurfsmuster: Strategy, Template-Method, Factory-Method, Singleton, Observer, Visitor, Command, ...
+    *   Entwurfsmuster: ~~Strategy~~, Template-Method, ~~Factory-Method~~, ~~Singleton~~, Observer, Visitor, Command, ...
 3.  Programmiermethoden
     *   Versionskontrolle: Git
     *   Testen, Coding Conventions, Refactoring
     *   Logging, Build-Tools, CI
+
+(_durchgestrichene Themen nicht im Sommersemester 2024_)
 
 
 ## Team
@@ -142,22 +145,22 @@ Sie _können_ hierzu den Raum J104 nutzen.
 
 Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
-| Monat | Tag   | Vorlesung                                                                                              | Praktikum |
-|:------|:------|:-------------------------------------------------------------------------------------------------------|:----------|
-| April | 17.   | Orga (**Zoom**), [FAQ]                                                                                 |           |
-|       | 24.   | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Collections] | [B01]     |
-| Mai   | 01.   | **Mai-Feiertag**                                                                                       |           |
-|       | 08.   | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Javadoc]                                | [B02]     |
-|       | 15.   | [Git-Branches], [Branching-Strategies]; [Methodenreferenzen]; [Gradle]                                 | [B03]     |
-|       | 22.   | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Debugging]                                              | [B04]     |
-|       | 29.   | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                     | [B05]     |
-| Juni  | 05.   | [Testfallermittlung], [Mocking]; [Record-Klassen], [Sealed Classes]; [Logging]                         | [B06]     |
-|       | 12.   | [Code-Smells], [Coding-Rules], [Refactoring]; [CI]                                                     | [B07]     |
-|       | 19.   | [Enumerationen], [RegExp]; [Template-Method-Pattern]; [Default-Methoden]                               | [B08]     |
-|       | 26.   | [Konfiguration]; [Git-Worktree]; [Observer-Pattern]; [Exception-Handling]                              | [B09]     |
-| Juli  | 03.   | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Serialisierung]                      | [B10]     |
-|       | 10.   | Rückblick (**Zoom**), [Prüfungsvorbereitung]                                                           |           |
-|       | _tbd_ | Klausur (Campus Minden, B40)                                                                           |           |
+| Monat | Tag   | Vorlesung                                                                                         | Praktikum        |
+|:------|:------|:--------------------------------------------------------------------------------------------------|:-----------------|
+| April | 17.   | Orga (**Zoom**), [FAQ]                                                                            |                  |
+|       | 24.   | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Gradle] | [B01]            |
+| Mai   | 01.   | **Mai-Feiertag**                                                                                  | **Mai-Feiertag** |
+|       | 08.   | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Javadoc]                           | [B02]            |
+|       | 15.   | **Dienstbesprechung**                                                                             | [B03]            |
+|       | 22.   | [Git-Branches], [Branching-Strategien]; [Methodenreferenzen]; [Logging]                           | [B04]            |
+|       | 29.   | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Record-Klassen]                                    | [B05]            |
+| Juni  | 05.   | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                | [B06]            |
+|       | 12.   | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Serialisierung]         | [B07]            |
+|       | 19.   | [Code-Smells], [Coding-Rules], [Refactoring]; [Continuous Integration (CI)]                       | [B08]            |
+|       | 26.   | [RegExp]; [Template-Method-Pattern], [Command-Pattern]; [Enumerationen]                           | [B09]            |
+| Juli  | 03.   | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Konfiguration]                  | [B10]            |
+|       | 10.   | Rückblick (**Zoom**), [Prüfungsvorbereitung]                                                      |                  |
+|       | _tbd_ | Klausur (Campus Minden, B40)                                                                      |                  |
 
 Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1356670&client_id=FH-Bielefeld).
 
@@ -170,7 +173,7 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Gradle]: lecture/building/gradle.md
 <!-- [ANT]: lecture/building/ant.md -->
 <!-- [Maven]: lecture/building/maven.md -->
-[CI]: lecture/building/ci.md
+[Continuous Integration (CI)]: lecture/building/ci.md
 <!-- [Docker]: lecture/building/docker.md -->
 
 [Javadoc]: lecture/coding/javadoc.md
@@ -178,7 +181,7 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Code-Smells]: lecture/coding/smells.md
 [Coding-Rules]: lecture/coding/codingrules.md
 [Refactoring]: lecture/coding/refactoring.md
-[Debugging]: lecture/coding/debugging.md
+<!-- [Debugging]: lecture/coding/debugging.md -->
 <!-- [TDD]: lecture/coding/tdd.md -->
 
 <!-- [JDBC]: lecture/database/jdbc.md  -->
@@ -195,10 +198,10 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Einführung Versionierung]: lecture/git/git-intro.md
 [Git Basics]: lecture/git/git-basics.md
 [Git-Branches]: lecture/git/branches.md
-[Branching-Strategies]: lecture/git/branching-strategies.md
+[Branching-Strategien]: lecture/git/branching-strategies.md
 [Git-Remotes]: lecture/git/remotes.md
 [Git-Workflows]: lecture/git/workflows.md
-[Git-Worktree]: lecture/git/worktree.md
+<!-- [Git-Worktree]: lecture/git/worktree.md -->
 <!-- [Git-Bisect]: lecture/git/bisect.md -->
 
 <!-- [Swing Basics]: lecture/gui/swing-basics.md -->
@@ -209,11 +212,11 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 <!-- [Java2D]: lecture/gui/java2d.md -->
 
 [Serialisierung]: lecture/java-jvm/serialisation.md
-[Collections]: lecture/java-jvm/collections.md
+<!-- [Collections]: lecture/java-jvm/collections.md -->
 [RegExp]: lecture/java-jvm/regexp.md
 <!-- [Annotationen]: lecture/java-jvm/annotations.md -->
 <!-- [Reflection]: lecture/java-jvm/reflection.md -->
-[Exception-Handling]: lecture/java-jvm/exceptions.md
+<!-- [Exception-Handling]: lecture/java-jvm/exceptions.md -->
 [Enumerationen]: lecture/java-jvm/enums.md
 [Konfiguration]: lecture/java-jvm/configuration.md
 
@@ -223,12 +226,12 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Optional]: lecture/modern-java/optional.md
 [Record-Klassen]: lecture/modern-java/records.md
 [Default-Methoden]: lecture/modern-java/defaultmethods.md
-[Sealed Classes]: lecture/modern-java/sealed.md
+<!-- [Sealed Classes]: lecture/modern-java/sealed.md -->
 
 <!-- [Strategy-Pattern]: lecture/pattern/strategy.md -->
 [Visitor-Pattern]: lecture/pattern/visitor.md
 [Observer-Pattern]: lecture/pattern/observer.md
-<!-- [Command]: lecture/pattern/command.md -->
+[Command-Pattern]: lecture/pattern/command.md
 <!-- [Singleton-Pattern]: lecture/pattern/singleton.md -->
 [Template-Method-Pattern]: lecture/pattern/template-method.md
 <!-- [Factory-Method-Pattern]: lecture/pattern/factory-method.md -->
@@ -254,9 +257,9 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [B05]: homework/b05.md
 [B06]: homework/b06.md
 [B07]: homework/b07.md
-[B08]: homework/b04b.md
-[B09]: homework/b05a.md
-[B10]: homework/b05b.md
+[B08]: homework/b08.md
+[B09]: homework/b09.md
+[B10]: homework/b10.md
 
 
 ## Förderungen und Kooperationen
