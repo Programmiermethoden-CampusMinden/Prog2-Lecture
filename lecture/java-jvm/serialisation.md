@@ -50,7 +50,7 @@ fhmedia:
 challenges: |
     Implementieren Sie die beiden Klassen entsprechend dem UML-Diagram:
 
-    ![](images/uml_serialisierung.png)
+    ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/images/uml_serialisierung.png?raw=true)
 
     Objekte vom Typ `Person` sowie `Address` sollen serialisierbar sein (vgl. Vorlesung).
     Dabei soll das Passwort nicht serialisiert bzw. gespeichert werden, alle anderen
