@@ -36,7 +36,7 @@ fhmedia:
 
 ## Generische Polymorphie
 
-::: cbox
+::: center
 `B<E> extends A<E>`
 :::
 
@@ -75,7 +75,7 @@ sein.
 
 \bigskip
 
-::: cbox
+::: center
 "`B extends A`" [**bedeutet nicht**]{.alert} "`C<B> extends C<A>`"
 :::
 
@@ -104,7 +104,7 @@ s.push(new Double(2.0)); // waere dann auch erlaubt ...
 
 ## Abgrenzung: Polymorphie bei Arrays
 
-::: cbox
+::: center
 Wenn "`B extends A`" dann "`B[] extends A[]`"
 :::
 

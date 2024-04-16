@@ -459,7 +459,7 @@ Matche zwei Ziffern, gefolgt von den selben zwei Ziffern
 
 \pause
 
-::: cbox
+::: center
 `(\d\d)\1`
 :::
 

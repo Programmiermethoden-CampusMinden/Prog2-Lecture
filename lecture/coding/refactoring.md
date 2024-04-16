@@ -138,7 +138,7 @@ challenges: |
 \bigskip
 \vfill
 
-::: cbox
+::: center
 > "Three strikes and you refactor."
 >
 > \hfill\ [Quelle: [@Fowler2011, p. 58]: "The Rule of Three"]{.origin}

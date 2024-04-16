@@ -97,7 +97,7 @@ Objekt vom Typ `Graphics` stellt graphischen Kontext dar
 
 \bigskip
 
-::: cbox
+::: center
 => [**Methode überschreiben und auf der GUI malen**]{.alert}
 :::
 

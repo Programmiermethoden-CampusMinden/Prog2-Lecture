@@ -55,7 +55,7 @@ fhmedia:
 
 ## Automatisieren von Arbeitsabläufen
 
-::: cbox
+::: center
 Works on my machine ...
 :::
 

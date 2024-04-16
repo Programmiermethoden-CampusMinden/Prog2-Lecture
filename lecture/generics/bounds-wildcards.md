@@ -121,7 +121,7 @@ _Anmerkung_: Der Typ-Parameter ist analog auch mit `super` (nach unten) einschrÃ
 
 \bigskip
 
-::: cbox
+::: center
 Wildcard mit "`?`" => steht fÃ¼r unbestimmten Typ
 :::
 

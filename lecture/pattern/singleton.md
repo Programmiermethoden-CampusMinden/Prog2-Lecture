@@ -118,7 +118,7 @@ public class SingletonLazy {
 
 ## Vorsicht!
 
-::: cbox
+::: center
 Sie schaffen damit eine globale Variable!
 :::
 
