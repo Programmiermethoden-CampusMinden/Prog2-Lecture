@@ -39,6 +39,18 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/15984eacd03de989ab2bce322ace5d74da962a911ae45afbb60958714ed6b16c72c962aec4b60acda9419ef15d26c5a5265129245f26beb0f905af9a7176b9fa"
     name: "VL Javadoc"
+challenges: |
+    Betrachten Sie die Javadoc einiger Klassen im Dungeon-Projekt:
+    [dojo.rooms.LevelRoom](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dojo-dungeon/src/dojo/rooms/LevelRoom.java),
+    [dojo.rooms.MonsterRoom](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dojo-dungeon/src/dojo/rooms/MonsterRoom.java), und
+    [contrib.components.HealthComponent](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/components/HealthComponent.java).
+
+    Stellen Sie sich vor, Sie müssten diese Klassen in einer Übungsaufgabe nutzen (das könnte tatsächlich passieren!) ...
+
+    Können Sie anhand der Javadoc verstehen, wozu die drei Klassen dienen und wie Sie diese Klassen benutzen sollten?
+    Vergleichen Sie die Qualität der Dokumentation.
+    Was würden Sie gern in der Dokumentation finden?
+    Was würden Sie ändern?
 ---
 
 
