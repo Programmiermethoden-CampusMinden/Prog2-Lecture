@@ -103,60 +103,63 @@ challenges: |
 
     **Sortieren mit Lambdas und funktionalen Interfaces**
 
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/modern-java/src/challenges/lambda)
-    finden Sie die Klassen `Student` und `StudentSort` mit
-    vorgefertigten Methoden  zu den Teilaufgaben sowie eine Testsuite
-    `SortTest` mit einzelnen Testfälllen zu den Teilaufgaben, mit der Ihre
-    Implementierung aufgerufen und getestet wird.
+    Betrachten Sie die Klasse [Student](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/challenges/lambda/Student.java).
 
-    Ziel dieser Aufgabe ist es, eine Liste von Studierenden mithilfe verschiedener
-    syntaktischer Strukturen (Lambda-Ausdrücke, Methoden-Referenzen) zu sortieren.
-    Dabei soll bei allen Teilaufgaben die Methode
-    [java.util.List#sort](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html#sort(java.util.Comparator))
-    für das eigentliche Sortieren verwendet werden.
+    1.  Definieren Sie eine Methode, die das Sortieren einer `Student`-Liste erlaubt. Übergeben Sie die Liste als Parameter.
+    2.  Schaffen Sie es, das Sortierkriterium ebenfalls als Parameter zu übergeben (als Lambda-Ausdruck)?
+    3.  Definieren Sie eine weitere Methode, die wieder eine `Student`-Liste als Parameter bekommt und liefern sie das erste
+        `Student`-Objekt zurück, welches einer als Lambda-Ausdruck übergebenen Bedingung genügt.
+    4.  Definieren Sie noch eine Methode, die wieder eine `Student`-Liste als Parameter bekommt sowie einen Lambda-Ausdruck,
+        welcher aus einem `Student`-Objekt ein Objekt eines anderen Typen `T` berechnet. Wenden Sie in der Methode den
+        Lambda-Ausdruck auf jedes Objekt der Liste an und geben sie die resultierende neue Liste als Ergebnis zurück.
 
-    1.  In dieser Teilaufgabe sollen Sie der Methode `List#sort` das Sortierkriterium
-        mithilfe eines **Lambda-Ausdrucks** übergeben. Greifen Sie im Lambda-Ausdruck
-        für den Vergleich der Objekte auf die Getter der Objekte zu.
+    Verwenden Sie in dieser Aufgabe jeweils Lambda-Ausdrücke. Rufen Sie alle drei/vier Methoden an einem kleinen Beispiel auf.
 
-        _Hinweis_: Erstellen Sie hierzu keine neuen Methoden, sondern verwenden Sie
-        nur Lambda-Ausdrücke innerhalb des Aufrufs von `List#sort`.
+    <!--
+    ```java
+    public class Main {
+        public static void main(String[] args) throws ParseException {
+            List<Student> l = new ArrayList<>();
+            l.add(new Student("ute", "01.01.1970"));
+            l.add(new Student("horst", "09.09.2009"));
+            l.add(new Student("hanna", "05.05.2000"));
+            l.add(new Student("arne", "07.07.1997"));
 
-        **1a** Sortieren Sie die Studierendenliste aufsteigend nach dem Geburtsdatum (`sort_1a()`).
+            sortEasy(l);
+            sortFlex(l, (a, b) -> a.getBirthday().compareTo(b.getBirthday()));
+            findFirst(l, a -> a.getName().equals("hanno"));
+            map(l, a -> a.getName());
+        }
 
-        **1b** Sortieren Sie die Studierendenliste absteigend nach dem Namen (`sort_1b()`).
 
-    2.  Erweitern Sie die Klasse `Student` um eine _statische_ Methode, die zwei
-        `Student`-Objekte anhand des Alters miteinander vergleicht. Die Methode
-        soll die Signatur `static int compareByAge(Student a, Student b)` besitzen
-        und die folgenden Werte zurückliefern:
+        public static void sortEasy(List<Student> l) {
+            l.sort((a, b) -> a.getName().compareTo(b.getName()));
+        }
 
-        -   a > b -> -1
-        -   a < b -> 1
-        -   a == b -> 0
+        public static void sortFlex(List<Student> l, Comparator<Student> c) {
+            l.sort((a, b) -> c.compare(a, b));
+        }
 
-        Verwenden Sie die neue statische Methode `compareByAge` zum Sortieren
-        der Liste in `sort_2a()`. Nutzen Sie dabei einen **Lambda-Ausdruck**.
+        public static Student findFirst(List<Student> l, Predicate<Student> p) {
+            for (Student s : l) {
+                if (p.test(s)) return s;
+            }
+            return null;
+        }
 
-    3.  Erweitern Sie die Klasse `Student` um eine Instanz-Methode, die das
-        `Student`-Objekt mit einem anderen (als Parameter übergebenen) `Student`-Objekt
-        vergleicht. Die Methode soll die Signatur `int compareByName(Student other)`
-        besitzen und die folgenden Werte zurückliefern:
+        public static <T> List<T> map(List<Student> l, Function<Student, T> f) {
+            List<T> result = new ArrayList<>();
 
-        -   self > other -> -1
-        -   self < other -> 1
-        -   self == other -> 0
+            for (Student s : l) {
+                result.add(f.apply(s));
+            }
 
-        Verwenden Sie die neue Methode `compareByName` zum Sortieren der Liste in `sort_3a()`.
-        Nutzen Sie dabei einen **Lambda-Ausdruck**.
+            return result;
+        }
 
-    4.  Erstellen Sie ein generisches Funktionsinterface, dass die Methode `compare`
-        definiert und zum Vergleichen von zwei Objekten mit generischen Typen dient.
-
-        Erzeugen Sie mithilfe eines **Lambda-Ausdrucks** eine **Instanz** Ihres
-        Interfaces, um damit zwei Objekte vom Typ `Student` in Bezug auf ihr Alter
-        vergleichen zu können. Verwenden Sie die erzeugte Instanz, um die
-        Studierendenliste absteigend zu sortieren (`sort_4a()`).
+    }
+    ```
+    -->
 ---
 
 
