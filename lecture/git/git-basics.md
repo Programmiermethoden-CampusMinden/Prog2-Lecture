@@ -73,13 +73,6 @@ challenges: |
     11. Legen Sie sich ein Java-Projekt in Ihrer IDE an an. Stellen Sie dieses
         Projekt unter Git-Versionskontrolle. Führen Sie die vorigen Schritte mit
         Ihrer IDE durch.
-
-
-    **Interaktive Git-Tutorials**: Schaffen Sie die Rätsel?
-
-    *   [Learn Git Branching](https://learngitbranching.js.org/)
-    *   [Oh My Git!](https://ohmygit.org/)
-    *   [Git Time](https://git.bradwoods.io/)
 ---
 
 
