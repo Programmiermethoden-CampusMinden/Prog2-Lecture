@@ -425,6 +425,120 @@ automatisch von Git aufgezeichnet ...)
 [[Analogie E-Mail an zukünftigen Entwickler]{.bsp}]{.slides}
 
 
+::: notes
+## Ausflug "Conventional Commits"
+
+Die Commit-Messages dienen vor allem der Dokumentation und werden von Entwicklern gelesen.
+
+Wenn man die Messages ein wenig stärker formalisieren würde, dann könnte man diese aber auch
+mit Tools verarbeiten und beispielsweise automatisiert Changelogs oder Release-Texte verfassen!
+
+Betrachten Sie einmal das Projekt [ConventionalCommits.org](https://github.com/conventional-commits/conventionalcommits.org).
+Dies ist ein solcher Versuch, die Commit-Messages (a) einheitlicher und lesbarer zu gestalten
+und (b) auch eine Tool-gestützte Auswertung zu erlauben.
+
+Das Projekt schlägt als Erweitung der üblichen Regeln zum Formatieren von Commit-Messages vor,
+dass in der ersten Zeile der _Summary_ noch eine Abkürzung für die in diesem Commit erfolgte
+Änderung (Bug-Fix, neues Feature, ...) vorangestellt wird. Dieser Abkürzung kann in Klammern
+noch der Scope der Änderung hinzugefügt werden, beispielsweise den Bereich im Projekt, der von
+diesem Commit berührt wird. Wenn es eine _breaking change_ ist, also alter Code nach dieser Änderung
+sich anders verhält oder vielleicht sogar nicht mehr kompiliert, wird noch ein "!" hinter dem
+Typ der Änderung ergänzt.
+
+**Beispiel**: Stellen Sie sich vor, im Dungeon-Projekt wurde ein neues Verhalten hinzugefügt.
+
+1.  Normalerweise hätten Sie vielleicht diese Message geschrieben (angepasste Version aus [Dungeon-CampusMinden/Dungeon/pull/469](https://github.com/Dungeon-CampusMinden/Dungeon/pull/469)):
+
+    ```
+    add fight skill
+
+    -   `DamageProjectileSkill` creates a new entity which causes `HealthDamage` when hitting another entity
+    -   `FireballSkill` is a more concrete implementation of this
+    -   Melee skills can be created with `DamageProjectileSkill` using a customised range
+        -   Example: the `FireballSkill` has a range of 10, a melee would have a considerably smaller range
+
+    fixes #24
+    fixes #126
+    fixes #224
+    ```
+
+2.  Mit [ConventionalCommits.org](https://www.conventionalcommits.org/en/v1.0.0/#examples) könnte
+    das dann so aussehen:
+
+    ```
+    feat: add fight skill
+
+    -   `DamageProjectileSkill` creates a new entity which causes `HealthDamage` when hitting another entity
+    -   `FireballSkill` is a more concrete implementation of this
+    -   Melee skills can be created with `DamageProjectileSkill` using a customised range
+        -   Example: the `FireballSkill` has a range of 10, a melee would have a considerably smaller range
+
+    fixes #24
+    fixes #126
+    fixes #224
+    ```
+
+    Da es sich um ein neues Feature handelt, wurde der Summary in der ersten Zeile ein `feat: ` vorangestellt.
+
+    Die zu verwendenden Typen/Abkürzungen sind im Prinzip frei definierbar. Das Projekt
+    [ConventionalCommits.org](https://github.com/conventional-commits/conventionalcommits.org)
+    schlägt eine Reihe von Abkürzungen vor. Auf diese Weise sollen in möglichst allen Projekten, die Conventional
+    Commits nutzen, die selben Abkürzungen/Typen eingesetzt werden und so eine Tool-gestützte Auswertung möglich
+    werden.
+
+3.  Oder zusätzlich mit dem Scope der Änderung:
+
+    ```
+    feat(game): add fight skill
+
+    -   `DamageProjectileSkill` creates a new entity which causes `HealthDamage` when hitting another entity
+    -   `FireballSkill` is a more concrete implementation of this
+    -   Melee skills can be created with `DamageProjectileSkill` using a customised range
+        -   Example: the `FireballSkill` has a range of 10, a melee would have a considerably smaller range
+
+    fixes #24
+    fixes #126
+    fixes #224
+    ```
+
+    Der Typ `feat` wurde hier noch ergänzt um einen frei definierbaren Identifier für den Projektbereich. Dieser
+    wird in Klammern direkt hinter den Typ notiert (hier `feat(game): `).
+
+    Im Beispiel habe ich als Bereich "game" genommen, weil die Änderung sich auf den Game-Aspekt des Projekts
+    bezieht. Im konkreten Projekt wären andere Bereiche eventuell "dsl" (für die im Projekt entwickelte
+    Programmiersprache plus Interpreter) und "blockly" (für die Integration von Google Blockly zur Programmierung
+    des Dungeons mit LowCode-Ansätzen). Das ist aber letztlich vom Projekt abhängig und weitestgehend
+    Geschmackssache.
+
+4.  Oder zusätzlich noch als Auszeichnung "breaking change" (hier mit _scope_, geht aber auch ohne _scope_):
+
+    ```
+    feat(game)!: add fight skill
+
+    -   `DamageProjectileSkill` creates a new entity which causes `HealthDamage` when hitting another entity
+    -   `FireballSkill` is a more concrete implementation of this
+    -   Melee skills can be created with `DamageProjectileSkill` using a customised range
+        -   Example: the `FireballSkill` has a range of 10, a melee would have a considerably smaller range
+
+    fixes #24
+    fixes #126
+    fixes #224
+    ```
+
+    Angenommen, das neue Feature muss in der API etwas ändern, so dass existierender Code nun nicht mehr
+    funktionieren würde. Dies wird mit dem extra Ausrufezeichen hinter dem Typ/Scope kenntlich gemacht
+    (hier `feat(game)!: `).
+
+    Zusätzlich kann man einen "Footer" in die Message einbauen, also eine extra Zeile am Ende, die mit dem String
+    "BREAKING CHANGE:" eingeleitet wird. (vgl. [Conventional Commits > Examples](https://www.conventionalcommits.org/en/v1.0.0/#examples))
+
+
+Es gibt noch viele weitere Initiativen, Commit-Messages lesbarer zu gestalten und zu vereinheitlichen.
+Schauen Sie sich beispielsweise einmal [gitmoji.dev](https://github.com/carloscuesta/gitmoji) an.
+(_Mit einem Einsatz in einem professionellen Umfeld wäre ich hier aber sehr ... vorsichtig._)
+:::
+
+
 ## Wrap-Up
 
 *   Änderungen einpflegen zweistufig (`add`, `commit`)
