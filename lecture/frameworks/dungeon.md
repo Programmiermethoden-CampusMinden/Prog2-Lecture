@@ -44,8 +44,6 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/b007a85da6537d9504466dbb4ee585c939bac3ad7533e90362ffcd4153ba4c5273d589ba367a038ed93b819364297cd231b603d68f9ae2c101496a72610f9ccc"
     name: "VL How-To Dungeon"
-
-sketch: true
 ---
 
 
