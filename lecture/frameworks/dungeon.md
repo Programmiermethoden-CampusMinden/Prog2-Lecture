@@ -10,10 +10,12 @@ tldr: |
     erstellt werden können. Im Hintergrund arbeitet die Open-Source-Bibliothek libGDX.
 
     Sie können das Projekt direkt von GitHub clonen und über den im Projekt integrierten Gradle-Wrapper starten. Dazu
-    brauchen Sie Java 17 LTS (in einer 64-bit Version). Sie können das Projekt als Gradle-Projekt in Ihre IDE laden.
+    brauchen Sie Java 21 LTS (in einer 64-bit Version). Sie können das Projekt als Gradle-Projekt in Ihre IDE laden.
 
-    Die Klasse `starter.Game` ist der zentrale Einstiegspunkt. Hier finden Sie "unseren" Teil der Game-Loop (der in der
-    eigentlichen Game-Loop von libGDX aufgerufen wird), hier finden Sie die Konfiguration und die `main()`-Methode.
+    Die Starter-Klassen (z.B. `starter.Starter` im "dungeon"-Subprojekt, `starter.DojoStarter` im "dojo-dungeon"-Subprojekt
+    oder `starter.DevDungeon` im "devDungeon"-Subprojekt) sind die zentralen Einstiegspunkte. Hier finden Sie "unseren"
+    Teil der Game-Loop (der in der eigentlichen Game-Loop von libGDX aufgerufen wird), hier finden Sie die Konfiguration
+    und die `main()`-Methode.
 
     Im ECS werden die im Spiel befindlichen Elemente als _Entitäten_ modelliert. Diese Entitäten sind lediglich Container
     für _Components_, die dann ihrerseits die entsprechenden Eigenschaften der Entitäten modellieren. Entitäten haben
@@ -53,71 +55,59 @@ Dieses Dokument ist nicht für die Nutzung als Foliensatz vorbereitet.
 
 ## How-To Dungeon
 
-In diesem Semester werden Sie im Praktikum schrittweise ein eigenes
-Rogue-like Computerspiel programmieren und dabei (hoffentlich) die
-Methoden aus der Vorlesung einsetzen können.
+In diesem Semester werden Sie im Praktikum schrittweise Erweiterungen in verschiedenen
+"fertigen" Rogue-like Computerspielen programmieren und dabei (hoffentlich) die Methoden aus
+der Vorlesung einsetzen können.
 
-Damit Sie dabei nicht von Scratch starten müssen oder sich selbst in ein
-komplexes Spiele-Framework einarbeiten müssen, haben wir das Projekt
-"PM-Dungeon" ins Leben gerufen.
+Das Projekt "PM-Dungeon" stellt wichtige Bausteine für das Spiel bereit, beispielsweise eine
+Game-Loop und eine API für das Generieren und Benutzen von Leveln und vieles andere mehr. Im
+Hintergrund werkelt das etablierte Open-Source-Spieleframework [libGDX](https://libgdx.com).
 
-Der PM-Dungeon stellt wichtige Bausteine für das Spiel bereit,
-beispielsweise eine Game-Loop und eine API für das Generieren und
-Benutzen von Leveln und vieles andere mehr. Im Hintergrund werkelt das
-etablierte Open-Source-Spieleframework [libGDX](https://libgdx.com).
-
-Wir werden uns in diesem How-To einen Überblick verschaffen und einen
-ersten Einstieg versuchen: Wir programmieren einen einfachen Helden.
+Wir werden uns in diesem How-To einen Überblick verschaffen und einen ersten Einstieg
+versuchen: Wir programmieren einen einfachen Helden.
 
 
 ## Projekt PM-Dungeon
 
-Das Projekt PM-Dungeon entstand in verschiedenen Forschungsprojekten und
-wurde (und wird) aktiv von Studierenden und wissenschaftlichen
-Mitarbeitern am Campus Minden entwickelt.
+Das Projekt PM-Dungeon entstand in verschiedenen Forschungsprojekten und wurde (und wird)
+aktiv von Studierenden und wissenschaftlichen Mitarbeitern am Campus Minden entwickelt.
 
-Aktuell läuft das Forschungsprojekt "Dungeon", gefödert durch die
-[Stiftung für Innovation in der Hochschullehre](https://stiftung-hochschullehre.de)
-im
-["Freiraum 2022"](https://stiftung-hochschullehre.de/foerderung/freiraum2022/).
-Dabei sollen diesmal nicht die Studierenden selbst Code schreiben,
-sondern die Lehrenden sollen Aufgaben in einer speziellen (von uns
-entwickelten) Programmiersprache schreiben (können), woraus dann ein
-fertiges Dungeon-Spiel generiert wird (mit der Aufgabe als Quest o.ä. im
-Dungeon eingebettet) und die Studierenden können durch das Spielen die
-Aufgaben lösen.
+Zuletzt lief das Forschungsprojekt "Dungeon", gefördert durch die [Stiftung für Innovation in
+der Hochschullehre](https://stiftung-hochschullehre.de) im ["Freiraum
+2022"](https://stiftung-hochschullehre.de/foerderung/freiraum2022/). Dabei sollten diesmal
+nicht die Studierenden selbst Code schreiben, sondern die Lehrenden sollen Aufgaben in einer
+speziellen (von uns entwickelten) Programmiersprache schreiben (können), woraus dann ein
+fertiges Dungeon-Spiel generiert wird (mit der Aufgabe als Quest o.ä. im Dungeon eingebettet)
+und die Studierenden können durch das Spielen die Aufgaben lösen.
 
-Sie werden merken, dass trotz klarer Richtlinien und Ideen die
-Entwicklung in der Praxis doch nicht so einfach ist und dass viele Dinge
-immer wieder geübt und erinnert werden müssen: Namen von Klassen und
-Methoden, sinnvolles Javadoc, Dokumentation jenseits des Javadoc, aber
-auch Commit-Messages und PR-Summaries.
+Sie werden merken, dass trotz klarer Richtlinien und Ideen die Entwicklung in der Praxis doch
+nicht so einfach ist und dass viele Dinge immer wieder geübt und erinnert werden müssen: Namen
+von Klassen und Methoden, sinnvolles Javadoc, Dokumentation jenseits des Javadoc, aber auch
+Commit-Messages und PR-Summaries.
 
 
 ## Installation des Frameworks
 
 Sie finden das Projekt auf GitHub:
-https://github.com/Dungeon-CampusMinden/Dungeon.
+[github.com/Dungeon-CampusMinden/Dungeon](https://github.com/Dungeon-CampusMinden/Dungeon).
 
 ![](images/screenshot_dungeon_clone.png)
 
-Laden Sie sich den Quellcode herunter, um damit in der IDE arbeiten zu
-können. Prinzipiell gibt es viele verschiedene Wege, in diesem Tutorial
-laden wir es per Git in der Konsole herunter:
+Laden Sie sich den Quellcode herunter, um damit in der IDE arbeiten zu können. Prinzipiell
+gibt es viele verschiedene Wege, in diesem Tutorial laden wir es per Git in der Konsole
+herunter:
 
 ``` sh
 git clone git@github.com:Dungeon-CampusMinden/Dungeon.git pm-dungeon
 ```
 
-Dabei entsteht der Ordner `pm-dungeon/` mit dem Dungeon-Projekt als
-Inhalt.
+Dabei entsteht der Ordner `pm-dungeon/` mit dem Dungeon-Projekt als Inhalt.
 
 
-## Java: Java SE 17 (LTS)
+## Java: Java SE 21 (LTS)
 
-Wir benutzen im Dungeon-Projekt die aktuelle LTS-Version des JDK, d.h.
-**Java SE 17 (LTS)**. Sie können sich das JDK bei
-[Oracle](https://www.oracle.com/java/technologies/downloads/)
+Wir benutzen im Dungeon-Projekt die aktuelle LTS-Version des JDK, d.h. **Java SE 21 (LTS)**.
+Sie können sich das JDK bei [Oracle](https://www.oracle.com/java/technologies/downloads/)
 herunterladen oder
 [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk)
 ausprobieren. Bitte unbedingt die jeweilige 64-bit Version nutzen!
@@ -128,33 +118,31 @@ In der Konsole sollte
 java -version
 ```
 
-ungefähr diese Ausgabe erzeugen (ignorieren Sie die Minor-Version,
-wichtig ist Major-Version: 17 bzw. "LTS"):
+ungefähr diese Ausgabe erzeugen (ignorieren Sie die Minor-Version, wichtig ist Major-Version:
+21 bzw. "LTS"):
 
-    java version "17.0.6" 2023-01-17 LTS
-    Java(TM) SE Runtime Environment (build 17.0.6+9-LTS-190)
-    Java HotSpot(TM) 64-Bit Server VM (build 17.0.6+9-LTS-190, mixed mode, sharing)
+    java version "21.0.3" 2024-04-16 LTS
+    Java(TM) SE Runtime Environment (build 21.0.3+7-LTS-152)
+    Java HotSpot(TM) 64-Bit Server VM (build 21.0.3+7-LTS-152, mixed mode, sharing)
 
 
 ## Erster Test
 
-Für einen ersten Test gehen Sie in der Konsole in den vorhin erzeugten
-neuen Ordner `pm-dungeon/` und führen Sie dort den Befehl
+Für einen ersten Test gehen Sie in der Konsole in den vorhin erzeugten neuen Ordner
+`pm-dungeon/` und führen Sie dort den Befehl
 
 ``` sh
-./gradlew run
+./gradlew game:runBasicStarter
 ```
 
-aus. Dabei sollte das (mitgelieferte) Build-Tool
-[Gradle](https://gradle.org/) starten und die benötigten
-Java-Bibliotheken herunterladen und schließlich das Spiel in einer
-Minimalversion starten - Sie sollten also ein Level sehen und einen
-hüpfenden Helden.
+aus. Dabei sollte das (mitgelieferte) Build-Tool [Gradle](https://gradle.org/) starten und die
+benötigten Java-Bibliotheken herunterladen und schließlich das Spiel in einer Minimalversion
+starten - Sie sollten also ein Level sehen und einen hüpfenden Helden.
 
 ![](images/screenshot_dungeon_defaultlevel.png)
 
-Dies dauert je nach Internetanbindung etwas - beim nächsten Start geht
-es dann aber deutlich schneller, weil ja bereits alles da ist.
+Dies dauert je nach Internetanbindung etwas - beim nächsten Start geht es dann aber deutlich
+schneller, weil ja bereits alles da ist.
 
 
 ## Import in der IDE
