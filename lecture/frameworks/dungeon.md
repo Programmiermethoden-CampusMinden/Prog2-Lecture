@@ -147,15 +147,15 @@ schneller, weil ja bereits alles da ist.
 
 ## Import in der IDE
 
-Importieren Sie das Projekt als Gradle-basiertes Projekt, dann übernimmt
-die IDE die Konfiguration für Sie.
+Importieren Sie das Projekt als Gradle-basiertes Projekt, dann übernimmt die IDE die
+Konfiguration für Sie.
 
 ![](images/screenshot_dungeon_import_intellij.png)
 
 ![](images/screenshot_dungeon_import_intellij_asgradle.png)
 
-Über das Gradle-Menü können Sie nun in der IDE den "run"-Task starten,
-und es erscheint wieder ein minimales Level mit einem wartenden Helden.
+Über das Gradle-Menü können Sie nun in der IDE den "runBasicStarter"-Task (Menüpunkt "game")
+starten, und es erscheint wieder ein minimales Level mit einem wartenden Helden.
 
 
 ## Überblick über die Strukturen
