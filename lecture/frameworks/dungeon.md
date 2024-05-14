@@ -103,6 +103,9 @@ git clone git@github.com:Dungeon-CampusMinden/Dungeon.git pm-dungeon
 
 Dabei entsteht der Ordner `pm-dungeon/` mit dem Dungeon-Projekt als Inhalt.
 
+[**WICHTIG**: Achten Sie darauf, dass im Projektpfad keine Leerzeichen und keine Sonderzeichen
+(Umlaute o.ä.) vorkommen! Dies kann zu unterschiedlichen Fehler führen.]{.alert}
+
 
 ## Java: Java SE 21 (LTS)
 
