@@ -261,6 +261,19 @@ public class Main {
 }
 ```
 
+In IntelliJ können Sie nun die `main()`-Funktion direkt ausführen, dazu wird im Hintergrund
+die vorhandene Gradle-Konfiguration genutzt. Mit anderen IDEs funktioniert das vielleicht
+nicht direkt, dann erweitern Sie einfach die Gradle-Konfiguration um einen entsprechenden
+Task:
+
+``` groovy
+tasks.register('run', JavaExec) {
+    mainClass = 'starter.Main'
+    classpath = sourceSets.main.runtimeClasspath
+}
+```
+
+
 ## Einschub: ECS oder Entities, Components und Systems
 
 Der Held ist ein Element im Spiel. Diese Struktur muss geeignet modelliert werden.
