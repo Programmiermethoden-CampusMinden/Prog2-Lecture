@@ -42,10 +42,10 @@ outcomes:
   - k3: "Erstellen eines Helden mit Animation und Bewegung"
 youtube:
   - link: "https://youtu.be/-Tw7BpoN33Q"
-    name: "VL How-To Dungeon"
+    name: "VL How-To Dungeon (ACHTUNG: Das Video bezieht sich noch auf die Version vom letzten Jahr - bitte arbeiten Sie auch das Skript durch!)"
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/b007a85da6537d9504466dbb4ee585c939bac3ad7533e90362ffcd4153ba4c5273d589ba367a038ed93b819364297cd231b603d68f9ae2c101496a72610f9ccc"
-    name: "VL How-To Dungeon"
+    name: "VL How-To Dungeon (ACHTUNG: Das Video bezieht sich noch auf die Version vom letzten Jahr - bitte arbeiten Sie auch das Skript durch!)"
 ---
 
 
