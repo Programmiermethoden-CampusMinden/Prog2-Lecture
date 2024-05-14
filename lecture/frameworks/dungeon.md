@@ -201,43 +201,42 @@ deren Aufbau und Javadoc Sie sich ebenfalls anschauen sollten. Zusätzlich gibt 
 Dungeon noch weitere Dokumentation in den `doc/`-Ordnern.
 
 
-## Überblick über die Strukturen
+## Überblick über die Java-Strukturen
 
-![](https://raw.githubusercontent.com/Dungeon-CampusMinden/Dungeon/master/game/doc/img/ecs.png)
+![](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/img/gameloop.png?raw=true)
 
-Die Klasse `starter.Game` ist der zentrale Einstiegspunkt. Hier werden
-alle wichtigen Dinge konfiguriert, und es gibt die
-`Game#main()`-Methode, die das Spiel startet. Zusätzlich gibt es weitere
-Methoden, die für Sie relevant sind:
+Jedes Spiel besteht aus einer Game-Loop, die je nach Konfiguration 30 Mal oder 60 Mal pro
+Sekunde ausgeführt wird. Diese Game-Loop wird mit Hilfe der `Game#run()`-Methode gestartet und
+die Kontrolle geht dabei vollständig an libGDX über. Im Wesentlichen werden pro Durchlauf
+("Frame") die Aktionen berechnet und das Spielfeld neu gezeichnet. Alle Aktionen im Spiel,
+etwa das Bewegen von Spielelementen oder das Berechnen von Angriffen o.ä., werden über
+sogenannte Systeme berechnet. Diese werden einmal pro Frame aufgerufen und bestimmen den neuen
+Zustand (Position, Animation, Stats, ...) der Spielelemente, die dann beim nächsten Rendern im
+Spiel angezeigt werden.
 
--   `Game#render()`: Diese Methode wird von libGDX in der Game-Loop
-    automatisch einmal pro Frame (per Default 30-mal pro Sekunde - 30
-    FPS) aufgerufen, d.h. hier können Sie die Dinge realisieren, die pro
-    Frame passieren bzw. berechnet werden sollen. Hier wird
-    beispielsweise für jeden Controller die `update()`-Methode
-    aufgerufen, wodurch u.a. Spielmechaniken ausgeführt werden und
-    Objekte bewegt werden und ein Neuzeichnen ausgelöst wird. Im Prinzip
-    stellt diese Methode unseren Teil der Game-Loop dar. _Achtung_: Sie
-    rufen diese Methode nicht selbst auf - sie wird automatisch von
-    libGDX in der Game-Loop aufgerufen!
--   `Game#setup()`: Diese Methode wird einmal beim Start des Spiels
-    aufgerufen und kann für die Konfiguration und Initialisierung der
-    verschiedenen Systeme genutzt werden. Im Auslieferungszustand wird
-    hier u.a. auch das erste Level geladen.
--   `Game#frame()`: Diese Methode wird zu Beginn eines jeden Frame
-    aufgerufen, noch bevor die `update()`-Methode der Controller
-    aufgerufen wird.
--   `Game#onLevelLoad()`: Diese Methode wird aufgerufen, wenn ein Level
-    geladen wird. Hier können Sie später die Entitäten erstellen, die
-    initial im Level verteilt werden sollen.
+![](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/img/ecs.png?raw=true)
 
-Es gibt noch eine ganze Reihe von Packages, beispielsweise `graphic` mit
-der `DungeonCamera` (damit man auch was sieht im Dungeon) oder `level`
-mit der `LevelAPI` zum Generieren zufälliger neuer Level und zum Laden
-und zum Zugriff (wo bin ich und warum?) oder `controller` mit den
-"Controllern", die bestimmte Dinge im Spiel zu managen. Der wichtigste
-Controller ist sicherlich der `SystemController`, der im Moment das ECS
-im Dungeon integriert (zu ECS später mehr).
+Die Klasse `core.Game` ist der zentrale Einstiegspunkt. Hier werden alle wichtigen Dinge
+konfiguriert, und es gibt die `Game#run()`-Methode, die das Spiel startet. Zusätzlich gibt es
+weitere Methoden, die für Sie relevant sind:
+
+-   `Game#onUserSetup()`: Diese Methode wird einmal beim Start des Spiels aufgerufen und kann
+    für die Konfiguration und Initialisierung der verschiedenen Systeme genutzt werden. Hier
+    wird beispielsweise u.a. auch das erste Level geladen.
+-   `Game#userOnFrame()`: Diese Methode wird zu Beginn eines jeden Frame aufgerufen, noch
+    bevor die `execute()`-Methode der verschiedenen Systeme aufgerufen wird.
+-   `Game#userOnLevelLoad()`: Diese Methode wird aufgerufen, wenn ein Level geladen wird. Hier
+    können Sie später die Entitäten erstellen, die initial im Level verteilt werden sollen.
+
+Es gibt noch eine ganze Reihe von Packages, beispielsweise `core.Component` mit verschiedenen
+wichtigen Components oder `core.level` mit Klassen zum Generieren zufälliger neuer Level und
+zum Laden und zum Zugriff (wo bin ich und warum?) oder `core.systems` mit den Systemen, die
+bestimmte Dinge im Spiel managen. Die Gliederung in Entitäten (*entities*), Komponenten
+(*components*) und Systeme (*systems*) nennt sich auch "ECS-Architektur" (zu ECS später mehr).
+
+Sie finden im ["Quickstart: How to
+Dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/quickstart.md)
+eine gute Anleitung, die auf die Strukturen tiefer eingeht.
 
 
 ## Mein Held
