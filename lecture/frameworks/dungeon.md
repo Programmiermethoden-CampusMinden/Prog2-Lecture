@@ -540,6 +540,12 @@ zugeordnet, der die `VelocityComponent` der Entität (also des Helden) holt, die
 Geschwindigkeit in y-Richtung ausliest und diese als aktuelle Geschwindigkeit in y-Richtung
 setzt. Damit kann mit der Taste "W" der Held nach oben laufen.
 
+*Anmerkung*: Das `entity.fetch` liefert nicht direkt ein `Component`-Objekt zurück, sondern
+ein `Optional<T>`. Darüber sprechen wir (später) noch in der Lektion
+["Optional"](../modern-java/optional.md). Für jetzt soll es zunächst genügen, dass Sie das
+gewünschte "verpackte" Objekt mit der Methode `get()` aus dem `Optional` wieder
+herausbekommen.
+
 *Anmerkung*: Das gezeigte Schema ist insofern typisch, als dass verschiedene Systeme aus der
 Maximalgeschwindigkeit und weiteren Parametern die aktuelle Geschwindigkeit berechnen und in
 der `VelocityComponent` einer Entität setzen. Das `VelocitySystem` nutzt dann die aktuelle
