@@ -255,7 +255,8 @@ package starter;
 import core.Game;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String... args) {
+        // Start the game loop
         Game.run();
     }
 }
@@ -350,137 +351,215 @@ Doku](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/creat
 
 ### Ein Held ist eine Entität
 
-Also legen wir eine neue Heldenklasse als Unterklasse von
-`ecs.entities.Entity` an:
+Also legen wir nun endlich einen neuen Helden als Instanz von `core.Entity` an und
+registrieren diese Entität im Spiel:
 
 ``` java
-public class MyHero extends Entity {}
+public class Main {
+    public static void main(String... args) {
+
+        // Add some one-time configuration
+        Game.userOnSetup(
+                () -> {
+                    Entity hero = new Entity();
+                    Game.add(hero);
+                });
+
+        // Start the game loop
+        Game.run();
+    }
+}
 ```
 
-Den nutzen wir in `starter.Game#setup()` in Zeile 118 an Stelle des
-vorhin auskommentierten Default-Helden: `hero = new MyHero();`.
+Der in der Methode `Game#userOnSetup` übergebene Lamda-Ausdruck wird (später) einmalig in der
+Game-Loop von libGDX aufgerufen. Auf diese Weise können wir unseren Helden ins Spiel bekommen.
+(Alle anderen Entitäten sollten Sie besser über die Methode `Game#onLevelLoad` anlegen, also
+beim Laden eines neuen Levels.)
 
-Prinzipiell haben Sie damit alles, um das Spiel starten zu können. In
-der Praxis bekommen Sie aber eine Exception, weil die neue Entität vom
-Typ `MyHero` keine `PositionComponent` hat und das Spiel nicht sicher
-ist, wo es diese Entität nun anzeigen soll.
-
-_Hinweis_: Eine Entität ist nur ein Container für Components. Insofern
-bräuchten wir eigentlich nicht von `Entity` ableiten, sondern könnten
-direkt eine Instanz von `Entity` anlegen und dort die gewünschten
-Components hineintun. In der Praxis mag es aber vielleicht ganz nett
-sein, trotzdem eine eigene Klasse zu spendieren, weil man hier Dinge
-für die Initialisierung kapseln kann - die würden sonst "frei" im
-`starter.Game#setup()` o.ä. "herumfliegen".
+Prinzipiell haben Sie damit alles, um das Spiel starten zu können. In der Praxis sehen Sie
+aber keinen Helden: Der hat nämlich weder eine Position noch eine Textur, kann also gar nicht
+angezeigt werden.
 
 ### Wo bin ich grad?
 
-Der Held braucht eine Position. Dazu gibt es
-`ecs.components.PositionComponent`, und wir legen im Konstruktor einfach
-eine an:
+Der Held braucht eine Position. Dazu gibt es `core.components.PositionComponent`. Fügen wir
+diese einfach dem Helden hinzu:
 
 ``` java
-public class MyHero extends Entity {
-    public MyHero() {
-        super();
+public class Main {
+    public static void main(String... args) {
 
-        new PositionComponent(this);
+        // Add some one-time configuration
+        Game.userOnSetup(
+                () -> {
+                    Entity hero = new Entity();
+
+                    hero.add(new PositionComponent());
+
+                    Game.add(hero);
+                });
+
+        // Start the game loop
+        Game.run();
     }
 }
 ```
 
-Eine Component ist immer an eine Entität gebunden, deshalb wird der
-neuen `PositionComponent` eine Referenz auf das eigene Objekt (den
-Helden, `this`) mitgegeben. Der Konstruktor der `PositionComponent`
-sorgt automatisch dafür, dass die neue Component gleich auch im Helden
-registriert wird.
+Wenn man keine Position mitgibt, wird einfach eine zufällige Position im Level genutzt.
+Alternativ kann man eine eigene Position mitgeben. Im Dungeon existieren aktuell zwei
+Koordinatensysteme: `core.level.utils.Coordinate` (Integer-basiert) und `core.utils.Point`
+(Float-basiert). Die Level werden als Matrix von `Tile` (Boden, Wand, Loch, ...) gespeichert.
+Die Position dieser `Tile` wird als `Coordinate` gespeichert, was dem Index des Tiles in der
+Matrix entspricht. Entitäten können aktuell aber auch zwischen zwei Tiles oder
+schräg-links-oben auf einem Tile stehen, dafür gibt es die Positionen als `Point`.
+Entsprechend könnte man den neuen Helden bei `(0,0)` in das Level setzen:
+`new PositionComponent(new Point(0, 0))` bzw. kurz `new PositionComponent(0f, 0f)` (wobei
+diese Position möglicherweise nicht spielbar ist, da hier eine Wand oder sogar nichts ist).
 
-Wenn man keine Position mitgibt, wird einfach eine zufällige Position im
-Level genutzt. Alternativ kann man eine eigene Position mitgeben. Im
-Dungeon existieren aktuell zwei Koordinatensysteme:
-`level.tools.Coordinate` (Integer-basiert) und `tools.Point`
-(Float-basiert). Die Level werden als Matrix von `Tile` (Boden, Wand,
-Loch, ...) gespeichert. Die Position dieser `Tile` wird als
-`Coordinate` gespeichert, was dem Index des Tiles in der Matrix
-entspricht. Entitäten können aktuell aber auch zwischen zwei Tiles oder
-schräg-links-oben auf einem Tile stehen, dafür gibt es die Positionen
-als `Point`. Entsprechend könnte man den neuen Helden bei `(0,0)` in das
-Level setzen: `new PositionComponent(this, new Point(0, 0));` (wobei
-diese Position möglicherweise nicht spielbar ist).
-
-Wenn Sie jetzt das Spiel starten, sehen Sie - immer noch nichts (außer
-den Wänden). Hmmm.
+Wenn Sie jetzt das Spiel starten, sehen Sie - immer noch nichts (außer den Wänden). Hmmm.
 
 ### Animateure
 
-Um den Held zeichnen zu können, brauchen wir eine Animation - also eine
-`AnimationComponent`.
+Um den Held zeichnen zu können, brauchen wir eine Animation - also eine `DrawComponent`.
 
 ``` java
-public class MyHero extends Entity {
-    public MyHero() {
-        super();
+public class Main {
+    public static void main(String... args) {
 
-        new PositionComponent(this);
+        // Add some one-time configuration
+        Game.userOnSetup(
+                () -> {
+                    Entity hero = new Entity();
 
-        Animation idleLeft = AnimationBuilder.buildAnimation("character/knight/idleLeft");
-        Animation idleRight = AnimationBuilder.buildAnimation("character/knight/idleRight");
-        new AnimationComponent(this, idleLeft, idleRight);
+                    hero.add(new PositionComponent());
+
+                    try {
+                        hero.add(new DrawComponent(new SimpleIPath("character/knight")));
+                    } catch (IOException e) {
+                        System.err.println("Could not load textures for hero.");
+                        throw new RuntimeException(e);
+                    }
+
+                    hero.add(new CameraComponent());
+                    hero.add(new PlayerComponent());
+
+                    Game.add(hero);
+                });
+
+        // Start the game loop
+        Game.run();
     }
 }
 ```
 
-Wir brauchen dabei nur die Pfade unterhalb von `game/assets/` angeben
-(dieser Ordner ist im `build.gradle` entsprechend konfiguriert).
+In den Asset-Ordnern der Sub-Projekte Game und Dungeon gibt es bereits vordefinierte Texturen.
+Im Beispiel wird (nur) im Sub-Projekt "game" gesucht (weil unsere `Main`-Klasse dort liegt),
+und zwar in `<game>/assets/character/knight/`. Dort finden sich Unterordner für verschiedene
+Zustände des Ritters, und darin jeweils einige Texturen (einfache kleine .png-Dateien), die
+als Animation in einem bestimmten Zustand nacheinander abgespielt werden. Über den angegebenen
+(Teil-) Pfad werden in `DrawComponent` automatisch die entsprechenden Animationen erzeugt und
+geladen. Die Asset-Ordner sind in der Gradle-Konfiguration definiert. (Wenn Sie Ihre
+`Main`-Klasse in Dungeon ansiedeln, stehen Ihnen automatisch die Texturen aus Dungeon plus aus
+Game zur Verfügung.)
 
-Jetzt wackelt der Held auf der Stelle herum :)
+Da es passieren kann, dass der übergebene Pfad nicht gefunden wird, muss hier mit
+Exception-Handling gearbeitet werden. Wir geben hier erstmal eine Fehlermeldung aus und
+propagieren eine neue `RuntimeException`, die letztlich dafür sorgt, dass das Spiel
+abgebrochen würde.
+
+Zusätzlich brauchen wir für den Helden noch eine `CameraComponent`. Das
+`core.systems.CameraSystem` wird dafür sorgen, dass die Entität mit dieser Component immer im
+Fokus der Kamera ist. Da wir den Held später noch manuell steuern wollen, bekommt er auch
+gleich noch eine `PlayerComponent`.
+
+Jetzt wackelt der Held auf der Stelle herum ...
 
 ### Bewege mich
 
-Für die Bewegung ist das `VelocitySystem` zuständig. Dieses fragt in
-allen Entitäten die `VelocityComponent` ab und setzt bei tatsächlicher
-Bewegung auch eine passende Bewegungsanimation.
+Für die Bewegung ist das `VelocitySystem` zuständig. Dieses fragt in allen Entitäten die
+`VelocityComponent` sowie die `PositionComponent` ab, berechnet die nächste neue Position und
+speichert diese in der `PositionComponent`, und setzt bei tatsächlicher Bewegung auch eine
+passende Bewegungsanimation in der `DrawComponent`.
 
-Um auf Tastatureingaben reagieren zu können, braucht das `PlayerSystem`
-in der Helden-Entität ein `PlayableComponent`.
+Das `PlayerSystem` und die `PlayerComponent` sorgen im Zusammenspiel für eine Reaktion auf die
+Tastatureingaben.
 
 ``` java
-public class MyHero extends Entity {
-    public MyHero() {
-        super();
+public class Main {
+    public static void main(String... args) {
 
-        new PositionComponent(this);
+        // Add some one-time configuration
+        Game.userOnSetup(
+                () -> {
+                    Entity hero = new Entity();
 
-        Animation idleLeft = AnimationBuilder.buildAnimation("character/knight/idleLeft");
-        Animation idleRight = AnimationBuilder.buildAnimation("character/knight/idleRight");
-        new AnimationComponent(this, idleLeft, idleRight);
+                    hero.add(new PositionComponent());
 
-        new PlayableComponent(this);
+                    try {
+                        hero.add(new DrawComponent(new SimpleIPath("character/knight")));
+                    } catch (IOException e) {
+                        System.err.println("Could not load textures for hero.");
+                        throw new RuntimeException(e);
+                    }
 
-        float xSpeed = 0.3f;
-        float ySpeed = 0.3f;
-        Animation runLeft = AnimationBuilder.buildAnimation("character/knight/runLeft");
-        Animation runRight = AnimationBuilder.buildAnimation("character/knight/runRight");
-        new VelocityComponent(this, xSpeed, ySpeed, runLeft, runRight);
+                    hero.add(new CameraComponent());
+                    hero.add(new PlayerComponent());
+
+                    hero.add(new VelocityComponent(5f, 5f));
+
+                    PlayerComponent pc = new PlayerComponent();
+                    pc.registerCallback(
+                            KeyboardConfig.MOVEMENT_UP.value(),
+                            entity -> {
+                                VelocityComponent vc = entity.fetch(VelocityComponent.class).get();
+                                vc.currentYVelocity(vc.yVelocity());
+                            });
+                    hero.add(pc);
+
+                    Game.add(hero);
+                });
+
+        // Start the game loop
+        Game.run();
     }
 }
 ```
 
-Aktuell kennt die `VelocityComponent` nicht nur die (Maximal-)
-Geschwindigkeit, sondern auch die Texturen, wenn der Held sich nach
-links oder rechts bewegt. Diese Daten werden der Component entsprechend
-mitgegeben.
+Die `VelocityComponent` wird im Konstruktor mit einer (maximalen) Geschwindigkeit in x- und
+y-Richtung erzeugt. Nutzen Sie hier nicht zu große Werte - unter Umständen reicht dann ein
+einziger Tastendruck, um einmal über das Spielfeld geschleudert zu werden.
 
-Nun sollten Sie Ihren Helden bewegen können.
+Über die Methoden `VelocityComponent#xVelocity` und `VelocityComponent#yVelocity` können Sie
+die Maximalgeschwindigkeit abfragen und auch setzen. Mit `VelocityComponent#currentXVelocity`
+bzw. `VelocityComponent#currentYVelocity` holen und setzen Sie dagegen die aktuelle
+Geschwindigkeit, die vom `VelocitySystem` zur Berechnung der nächsten Position genutzt wird
+(wobei die Maximalgeschwindigkeit als Obergrenze verwendet wird).
 
-_Hinweis_: Normalerweise sollten Systeme bei der Iteration über alle
-Entitäten nur diejenigen Entitäten wirklich bearbeiten, die alle
-benötigten Components aufweisen. In der aktuellen Implementierung kann
-aber leider passieren, dass ein System mehrere Components braucht und
-sich dann mit einer `MissingComponentException` über das
-Nichtvorhandensein selbiger beschwert. Diese Abhängigkeiten sind in
-https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/doc/ecs/systems/readme.md
-dokumentiert.
+Im Beispiel wird in der `PlayerComponent` des Helden der Taste "W" ein Lambda-Ausdruck
+zugeordnet, der die `VelocityComponent` der Entität (also des Helden) holt, die maximale
+Geschwindigkeit in y-Richtung ausliest und diese als aktuelle Geschwindigkeit in y-Richtung
+setzt. Damit kann mit der Taste "W" der Held nach oben laufen.
+
+*Anmerkung*: Das gezeigte Schema ist insofern typisch, als dass verschiedene Systeme aus der
+Maximalgeschwindigkeit und weiteren Parametern die aktuelle Geschwindigkeit berechnen und in
+der `VelocityComponent` einer Entität setzen. Das `VelocitySystem` nutzt dann die aktuelle
+Geschwindigkeit für die tatsächliche Bewegung. Sie sollten in der Praxis also die Methoden
+`VelocityComponent#currentXVelocity` bzw. `VelocityComponent#currentYVelocity` eher nicht
+selbst aufrufen, sondern dies den Systemen überlassen. Wenn Sie einen Geschwindigkeitsboost
+haben wollen, würde es bei der obigen Konfiguration ausreichen, `VelocityComponent#xVelocity`
+und/oder `VelocityComponent#yVelocity` zu setzen/zu erhöhen - den Rest übernehmen dann das
+`PlayerSystem` und vor allem das `VelocitySystem` ...
+
+Nun sollten Sie Ihren Helden (nach oben) bewegen können. (Tipp: Probieren Sie "W".)
+
+*Hinweis*: Üblicherweise bearbeiten die Systeme bei der Iteration über alle Entitäten nur
+diejenigen Entitäten, die alle benötigten Components aufweisen.
+
+
+
+
+
+
 
 
 ## Wrap-Up
