@@ -291,11 +291,13 @@ Neben verschiedenen Hilfsstrukturen gibt es dabei nur **Entitäten**, **Komponen
 Die Idee dahinter ist: Alle Elemente im Spiel werden als *Entität* realisiert, d.h. der Held
 und die Monster und die Items, die man so finden kann, sind alles Entitäten. Sogar Feuerbälle
 sind letztlich Entitäten. (Im Prinzip könnten sogar die Boden- und Wandkacheln Entitäten
-sein - sind es aus Effizienzgründen im Moment aber nicht.)
+sein - sind es aus Effizienzgründen aktuell aber nicht.)
 
-Eine Entität an sich kann erst einmal nichts und dient nur als Container für *Components*. Das
-Spiel kennt alle zu einem Zeitpunkt vorhandenen Entitäten, man kann diese über die API
-abrufen.
+Eine Entität an sich kann erst einmal nichts und dient nur als Container für *Components*.
+
+Das Spiel kennt alle zu einem Zeitpunkt vorhandenen Entitäten, diese müssen per `Game#add`
+registriert werden. Man kann die Entitäten über die API abrufen (`Game#allEntities`,
+`Game#find` und `Game#hero`).
 
 Unsere Basisklasse für Entitäten ist aktuell `core.Entity`.
 
@@ -311,11 +313,12 @@ den Wert 0 bekommen). Oder man könnte in einer `PositionComponent` speichern, w
 gerade ist. Schauen Sie einfach mal in die Packages `core.components` und
 `contrib.components`.
 
-Wichtig ist: Eine Instanz einer Component ist immer an eine Entität gekoppelt, es kann keine
-Components ohne (Bindung an) Entitäten geben. Andersherum kann eine Entität immer nur ein
-einziges Objekt einer bestimmten Component (eines Component-Typs) haben, also beispielsweise
-nicht zwei Objekte vom Typ `PositionComponent`. Components speichern vor allem Werte und haben
-nur in Ausnahmefällen eigenes Verhalten.
+Wichtig ist: Eine Instanz einer Component ist immer an eine Entität gekoppelt, eine Component
+ohne (Bindung an eine) Entität ist sinnfrei. Andersherum kann eine Entität immer nur eine
+einzige Instanz einer bestimmten Component (eines Component-Typs) haben, also beispielsweise
+nicht zwei Objekte vom Typ `PositionComponent`.
+
+Components speichern vor allem Werte und haben nur in Ausnahmefällen eigenes Verhalten.
 
 Das Basisinterface für Components ist derzeit `core.Component`.
 
@@ -325,14 +328,17 @@ Mit Entitäten und passenden Components, über die wir die Eigenschaften ausdrü
 bereits Spielelemente im Dungeon repräsentieren.
 
 Für die Bewegung und Interaktion sorgen nun passende Systeme. Das Spiel kennt alle Systeme
-(diese werden einmal beim Start im Spiel registriert) und ruft in der Game-Loop pro Frame
-deren `execute()`-Methode auf.
+(diese werden einmal beim Start im Spiel per `Game#add` registriert) und ruft in der Game-Loop
+pro Frame deren `execute()`-Methode auf. In der Regel iterieren die Systeme beim Ausführen der
+`execute()`-Methode über die Entitäten des Spiels (via `Game#allEntities`), suchen sich
+Entitäten mit bestimmten Components heraus und bearbeiten den Zustand dieser Components.
 
 Dabei könnte beispielsweise ein `HealthSystem` sich alle Entitäten filtern, deren
-`HealthComponent` unterhalb einer kritischen Schwelle liegen und diese rot anmalen lassen.
-Oder ein `PlayerSystem` könnte dafür sorgen, dass die Eingaben auf der Tastatur geeignet an
-den Helden weitergegeben werden und (über andere Systeme) in eine Bewegung oder Kampf o.ä.
-umgewandelt werden.
+`HealthComponent` unterhalb einer kritischen Schwelle liegen und diese rot anmalen lassen,
+d.h. in der `DrawComponent` wird die Textur ("Animation") ausgetauscht. Oder ein
+`PlayerSystem` könnte dafür sorgen, dass die Eingaben auf der Tastatur geeignet an den Helden
+weitergegeben werden und (über andere Systeme) in eine Bewegung oder Kampf o.ä. umgewandelt
+werden.
 
 Sie finden unsere Systeme in den Packages `core.systems` und `contrib.systems`, und die
 Basisklasse ist derzeit `core.System` - falls Sie einmal eigene Systeme implementieren wollen.
