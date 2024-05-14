@@ -158,17 +158,50 @@ Konfiguration für Sie.
 starten, und es erscheint wieder ein minimales Level mit einem wartenden Helden.
 
 
-## Überblick über die Strukturen
+## Überblick über die (Sub-) Projekte
 
-Sie sehen im Package-Explorer eine Reihe von Unterprojekten. Für PM ist
-eigentlich nur "`game/`" relevant und "`doc/`" für die Dokumentation
-(die derzeit leider noch eine ziemliche Baustelle ist).
+Sie finden im Package-Explorer eine Reihe von Unterprojekten (Gradle-Subprojekte). Für PR2
+sind eigentlich nur die Subprojekte
+["dojo-dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dojo-dungeon) und
+["devDungeon"](https://github.com/Dungeon-CampusMinden/dev-dungeon/tree/master/devDungeon)
+relevant sowie die Dokumentation in den verschiedenen `doc/`-Ordnern (die derzeit leider noch
+eine ziemliche Baustelle ist).
 
 ![](images/screenshot_dungeon_intellij_gradle.png)
 
-In diesem Projekt finden Sie unter `game/src/` die Java-Packages, die
-wir im Projekt für Sie bereitstellen. In `game/assets/` finden sich ein
-paar Beispieltexturen für den Boden, die Wände und den Helden.
+Dojo-Dungeon und DevDungeon stellen zwei verschiedene (mehr oder weniger fertige) Spiele dar,
+die von Studierenden erstellt wurden (Dojo-Dungeon: [\@Denniso3](https://github.com/Denniso3),
+[\@tgrothe](https://github.com/tgrothe) und [\@JudiTeller](https://github.com/JudiTeller);
+DevDungeon: [\@Flamtky](https://github.com/Flamtky)). Diese Spiele nutzen wir an einigen
+Stellen im Praktikum.
+
+Die Basis für die beiden Spiele stellt das Dungeon-Framework dar, welches in den
+Gradle-Subprojekten ["game"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/game)
+und ["dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dungeon) zu finden
+ist. Game stellt dabei eine Art minimale Basis zum Programmieren eigener Spiele dar (alle
+Klassen im Package `core`), und Dungeon erweitert diese Basis und fügt einige häufig benötigte
+Elemente und weitere Texturen (Package `contrib`) hinzu. Zusätzlich gibt es hier noch einige
+Klassen für die DSL, was für PR2 aber nicht relevant ist.
+
+Das Subprojekt
+["blockly"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/blockly) ist die
+Einbindung einer blockbasierten Programmiersprache in das Dungeon-Framework und spielt für PR2
+ebenfalls keine Rolle.
+
+Die Strukturen in allen Sub-Projekten ist ähnlich: Sie finden unter `<subproject>/src/` die
+Java-Packages und in `<subproject>/assets/` vordefinierte Texturen und Soundfiles sowie
+Crafting-Rezepte (beispielsweise für Boden, Wände und den Hero). Alle Sourcen sind (mehr oder
+weniger) mit Javadoc dokumentiert, zusätzlich gibt es jeweils in `<subproject>/doc/` weitere
+Anleitungen und Hinweise.
+
+Für die Aufgaben im Praktikum starten Sie am besten zunächst beim relevanten Code in den
+Sub-Projekten Dojo-Dungeon und DevDungeon. Schauen Sie sich die für die Aufgabe benutzten
+Klassen und deren Javadoc an. In der Regel nutzen diese auch Klassen aus Dungeon und Game,
+deren Aufbau und Javadoc Sie sich ebenfalls anschauen sollten. Zusätzlich gibt es für Game und
+Dungeon noch weitere Dokumentation in den `doc/`-Ordnern.
+
+
+## Überblick über die Strukturen
 
 ![](https://raw.githubusercontent.com/Dungeon-CampusMinden/Dungeon/master/game/doc/img/ecs.png)
 
