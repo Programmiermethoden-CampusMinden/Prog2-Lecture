@@ -241,79 +241,87 @@ eine gute Anleitung, die auf die Strukturen tiefer eingeht.
 
 ## Mein Held
 
-Um einen besseren Blick in das System zu bekommen, erstellen wir einen
-eigenen einfachen Helden.
+Um einen besseren Blick in das System zu bekommen, erstellen wir schrittweise einen eigenen
+einfachen Helden.
 
-Dazu schalten wir zunächst in `starter.Game#setup()` in Zeile 118 die
-Initialisierung des Default-Helden ab (einfach die Zeile
-`hero = new Hero();` auskommentieren).
+Legen Sie sich im `starter`-Package eine neue Klasse an, mit der Sie das Spiel konfigurieren
+und starten können:
 
+``` java
+package starter;
+import core.Game;
+
+public class Main {
+    public static void main(String[] args) {
+        Game.run();
+    }
+}
+```
 
 ## Einschub: ECS oder Entities, Components und Systems
 
-Der Held ist ein Element im Spiel. Dieses muss geeignet modelliert
-werden.
+Der Held ist ein Element im Spiel. Diese Struktur muss geeignet modelliert werden.
 
-Unser Dungeon implementiert dabei eine Variante eines
-[Entity Component System (*ECS*)](https://en.wikipedia.org/wiki/Entity_component_system)
-und folgt damit "großen Vorbildern" wie beispielsweise
+Unser Dungeon implementiert dabei eine Variante eines [Entity Component System
+(*ECS*)](https://en.wikipedia.org/wiki/Entity_component_system) und folgt damit "großen
+Vorbildern" wie beispielsweise
 [Unity](https://learn.unity.com/tutorial/entity-component-system).
+
+Neben verschiedenen Hilfsstrukturen gibt es dabei nur **Entitäten**, **Komponenten** und
+**Systeme**. Hier werden sämtliche Informationen und Verhalten modelliert.
 
 ### Entity
 
-Die Idee dahinter ist: Alle Elemente im Spiel werden als _Entität_
-realisiert, d.h. der Held und die Monster und die Items, die man so
-finden kann, sind alles Entitäten. Im Prinzip könnten sogar die Boden-
-und Wandkacheln Entitäten sein.
+Die Idee dahinter ist: Alle Elemente im Spiel werden als *Entität* realisiert, d.h. der Held
+und die Monster und die Items, die man so finden kann, sind alles Entitäten. Sogar Feuerbälle
+sind letztlich Entitäten. (Im Prinzip könnten sogar die Boden- und Wandkacheln Entitäten
+sein - sind es aus Effizienzgründen im Moment aber nicht.)
 
-Eine Entität an sich kann erst einmal nichts und dient nur als Container
-für _Components_. Das Spiel kennt alle derzeit vorhandenen Entitäten.
+Eine Entität an sich kann erst einmal nichts und dient nur als Container für *Components*. Das
+Spiel kennt alle zu einem Zeitpunkt vorhandenen Entitäten, man kann diese über die API
+abrufen.
 
-Unsere Basisklasse für Entitäten ist im Moment `ecs.entities.Entity`.
+Unsere Basisklasse für Entitäten ist aktuell `core.Entity`.
 
 ### Component
 
-Components bündeln bestimmte Werte einer Entität für bestimmte Zwecke,
-d.h. statt der Attribute in einer Klasse (Entität) nutzen wir hier eine
-weitere Kapselung.
+Components bündeln bestimmte Werte einer Entität für bestimmte Zwecke, d.h. statt der
+Attribute in einer Klasse (Entität) nutzen wir hier eine weitere Kapselung.
 
-Beispielsweise könnte man die Lebenspunkte u.ä. in einer
-`HealthComponent` verpacken und dann in einer Entität speichern. Oder
-man könnte in einer `VelocityComponent` hinterlegen, wie schnell eine
-Entität in x- und in y-Richtung bewegt werden kann (Wände würden dabei
-einfach den Wert 0 bekommen). Oder man könnte in einer
-`PositionComponent` speichern, wo die Entität gerade ist. Schauen Sie
-einfach mal in das Package `ecs.components`.
+Beispielsweise könnte man die Lebenspunkte u.ä. in einer `HealthComponent` verpacken und dann
+in einer Entität speichern. Oder man könnte in einer `VelocityComponent` hinterlegen, wie
+schnell eine Entität in x- und in y-Richtung bewegt werden kann (Wände würden dabei einfach
+den Wert 0 bekommen). Oder man könnte in einer `PositionComponent` speichern, wo die Entität
+gerade ist. Schauen Sie einfach mal in die Packages `core.components` und
+`contrib.components`.
 
-Wichtig ist: Eine Instanz einer Component ist immer an eine Entität
-gekoppelt, es kann keine Components ohne (Bindung an) Entitäten geben.
-Andersherum kann eine Entität immer nur ein Objekt einer bestimmten
-Component (eines Component-Typs) haben, also nicht zwei Objekte vom
-Typ `PositionComponent`. Components speichern vor allem Werte und
-haben nur in Ausnahmefällen eigenes Verhalten.
+Wichtig ist: Eine Instanz einer Component ist immer an eine Entität gekoppelt, es kann keine
+Components ohne (Bindung an) Entitäten geben. Andersherum kann eine Entität immer nur ein
+einziges Objekt einer bestimmten Component (eines Component-Typs) haben, also beispielsweise
+nicht zwei Objekte vom Typ `PositionComponent`. Components speichern vor allem Werte und haben
+nur in Ausnahmefällen eigenes Verhalten.
 
-Die Basisklasse für Components ist derzeit `ecs.components.Component`.
-
+Das Basisinterface für Components ist derzeit `core.Component`.
 
 ### System
 
-Mit Entitäten und passenden Components, über die wir die Eigenschaften
-ausdrücken, können wir bereits Spielelemente im Dungeon repräsentieren.
+Mit Entitäten und passenden Components, über die wir die Eigenschaften ausdrücken, können wir
+bereits Spielelemente im Dungeon repräsentieren.
 
-Für die Bewegung und Interaktion sorgen nun passende Systeme. Das Spiel
-kennt alle Systeme und ruft deren `update()`-Methode in der Game-Loop
-(also pro Frame) auf.
+Für die Bewegung und Interaktion sorgen nun passende Systeme. Das Spiel kennt alle Systeme
+(diese werden einmal beim Start im Spiel registriert) und ruft in der Game-Loop pro Frame
+deren `execute()`-Methode auf.
 
-Dabei könnte beispielsweise ein `HealthSystem` sich alle Entitäten
-filtern, deren `HealthComponent` unterhalb einer kritischen Schwelle
-liegen und diese rot anmalen lassen. Oder ein `PlayerSystem` könnte
-dafür sorgen, dass die Eingaben auf der Tastatur geeignet an den Helden
-weitergegeben werden und in eine Bewegung oder Kampf o.ä. umgewandelt
-werden.
+Dabei könnte beispielsweise ein `HealthSystem` sich alle Entitäten filtern, deren
+`HealthComponent` unterhalb einer kritischen Schwelle liegen und diese rot anmalen lassen.
+Oder ein `PlayerSystem` könnte dafür sorgen, dass die Eingaben auf der Tastatur geeignet an
+den Helden weitergegeben werden und (über andere Systeme) in eine Bewegung oder Kampf o.ä.
+umgewandelt werden.
 
-Sie finden unsere Systeme im Package `ecs.systems`, und die Basisklasse
-ist derzeit `ecs.systems.ECS_System` - falls Sie einmal eigene Systeme
-implementieren wollen.
+Sie finden unsere Systeme in den Packages `core.systems` und `contrib.systems`, und die
+Basisklasse ist derzeit `core.System` - falls Sie einmal eigene Systeme implementieren wollen.
+([vgl. auch
+Doku](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/create_own_content.md))
 
 
 ## Nun aber Helden!
