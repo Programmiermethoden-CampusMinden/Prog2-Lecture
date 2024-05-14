@@ -562,36 +562,27 @@ Nun sollten Sie Ihren Helden (nach oben) bewegen können. (Tipp: Probieren Sie "
 diejenigen Entitäten, die alle benötigten Components aufweisen.
 
 
-
-
-
-
-
-
 ## Wrap-Up
 
 ::: notes
 Damit endet der kurze Ausflug in den Dungeon.
 :::
 
-Schauen Sie gern in die vorhandenen Klassen und Packages und in die
-Dokumentation hinein:
+Schauen Sie gern in die vorhandenen Klassen und Packages und in die Dokumentation hinein:
 
--   Default-Held: `ecs.entities.Hero`
--   Klassen in "`game/`"
--   Dokumentation unter "`doc/`"
+-   Klassen in `game/src/` und `dungeon/src`
+-   Dokumentation unter `game/doc/` und `dungeon/doc/`
 
 ::: notes
-Die Javadoc-Kommentare sollten Ihnen erste Ideen zur Funktionsweise
-geben (auch wenn für das angestrebte Ideal noch einiges an Arbeit
-notwendig ist). Schauen Sie gern die Dokumentation unter "`doc/`" an,
-die im Laufe des Semesters schrittweise weiter wachsen wird.
+Die Javadoc-Kommentare sollten Ihnen erste Ideen zur Funktionsweise geben (auch wenn für das
+angestrebte Ideal noch einiges an Arbeit notwendig ist). Schauen Sie gern die Dokumentation
+unter "`doc/`" an, die im Laufe des Semesters schrittweise weiter wachsen wird.
 :::
 
 \bigskip
 
-Anregungen für **Spielideen** [können Sie beispielsweise in den folgenden
-Videos finden:]{.notes}
+Anregungen für **Spielideen** [können Sie beispielsweise in den folgenden Videos
+finden:]{.notes}
 
 -   [Shattered Pixel Dungeon Rogue Beginners Guide Playthrough](https://youtu.be/qoc_tDN0QC4)
 -   [Shattered Pixel Dungeon Duelist Update!](https://youtu.be/LgSjUWjQg0s)
