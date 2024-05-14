@@ -166,7 +166,7 @@ starten, und es erscheint wieder ein minimales Level mit einem wartenden Helden.
 Sie finden im Package-Explorer eine Reihe von Unterprojekten (Gradle-Subprojekte). Für PR2
 sind eigentlich nur die Subprojekte
 ["dojo-dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dojo-dungeon) und
-["devDungeon"](https://github.com/Dungeon-CampusMinden/dev-dungeon/tree/master/devDungeon)
+["devDungeon"](https://github.com/Dungeon-CampusMinden/dev-dungeon/tree/master/devDungeon) <!-- TODO: Update Link nach Merge von DevDungeon -->
 relevant sowie die Dokumentation in den verschiedenen `doc/`-Ordnern (die derzeit leider noch
 eine ziemliche Baustelle ist).
 
