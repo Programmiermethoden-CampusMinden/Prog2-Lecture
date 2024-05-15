@@ -27,7 +27,7 @@ tldr: |
     und kann ohne diese nicht existieren.
 
     _Systeme_ implementieren das Verhalten im ECS. Das Game kennt alle aktiven Systeme und ruft in jedem Durchlauf der
-    Game-Loop die `update()`-Methode der Systeme auf. Üblicherweise holt sich dann ein System alle Entitäten vom Game und
+    Game-Loop die `execute()`-Methode der Systeme auf. Üblicherweise holt sich dann ein System alle Entitäten vom Game und
     iteriert darüber und fragt ab, ob die betrachtete Entität die notwendigen Components hat - falls ja, dann kann das
     System auf dieser Entität die entsprechenden Operationen ausführen (Animation, Bewegung, ...); falls nein, wird diese
     Entität ignoriert und mit der Iteration fortgefahren.
