@@ -141,9 +141,9 @@ Für einen ersten Test gehen Sie in der Konsole in den vorhin erzeugten neuen Or
 
 aus. Dabei sollte das (mitgelieferte) Build-Tool [Gradle](https://gradle.org/) starten und die
 benötigten Java-Bibliotheken herunterladen und schließlich das Spiel in einer Minimalversion
-starten - Sie sollten also ein Level sehen und einen hüpfenden Helden.
+starten - Sie sollten also ein Level sehen.
 
-![](images/screenshot_dungeon_defaultlevel.png)
+![](images/screenshot_dungeon_defaultlevel.png){width="80%"}
 
 Dies dauert je nach Internetanbindung etwas - beim nächsten Start geht es dann aber deutlich
 schneller, weil ja bereits alles da ist.
@@ -154,12 +154,12 @@ schneller, weil ja bereits alles da ist.
 Importieren Sie das Projekt als Gradle-basiertes Projekt, dann übernimmt die IDE die
 Konfiguration für Sie.
 
-![](images/screenshot_dungeon_import_intellij.png)
+![](images/screenshot_dungeon_import_intellij.png){width="80%"}
 
-![](images/screenshot_dungeon_import_intellij_asgradle.png)
+![](images/screenshot_dungeon_import_intellij_asgradle.png){width="40%"}
 
 Über das Gradle-Menü können Sie nun in der IDE den "runBasicStarter"-Task (Menüpunkt "game")
-starten, und es erscheint wieder ein minimales Level mit einem wartenden Helden.
+starten, und es erscheint wieder ein minimales Level.
 
 
 ## Überblick über die (Sub-) Projekte
@@ -167,7 +167,7 @@ starten, und es erscheint wieder ein minimales Level mit einem wartenden Helden.
 Sie finden im Package-Explorer eine Reihe von Unterprojekten (Gradle-Subprojekte). Für PR2
 sind eigentlich nur die Subprojekte
 ["dojo-dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dojo-dungeon) und
-["devDungeon"](https://github.com/Dungeon-CampusMinden/dev-dungeon/tree/master/devDungeon) <!-- TODO: Update Link nach Merge von DevDungeon -->
+["devDungeon"](https://github.com/Dungeon-CampusMinden/dev-dungeon/tree/master/devDungeon)
 relevant sowie die Dokumentation in den verschiedenen `doc/`-Ordnern (die derzeit leider noch
 eine ziemliche Baustelle ist).
 
@@ -372,10 +372,10 @@ public class Main {
 }
 ```
 
-Der in der Methode `Game#userOnSetup` übergebene Lamda-Ausdruck wird (später) einmalig in der
-Game-Loop von libGDX aufgerufen. Auf diese Weise können wir unseren Helden ins Spiel bekommen.
-(Alle anderen Entitäten sollten Sie besser über die Methode `Game#onLevelLoad` anlegen, also
-beim Laden eines neuen Levels.)
+Der in der Methode `Game#userOnSetup` übergebene Lamda-Ausdruck wird (später) einmalig beim
+Start der Game-Loop von libGDX aufgerufen. Auf diese Weise können wir unseren Helden ins Spiel
+bekommen. (Alle anderen Entitäten sollten Sie besser über die Methode `Game#onLevelLoad`
+anlegen, also beim Laden eines neuen Levels.)
 
 Prinzipiell haben Sie damit alles, um das Spiel starten zu können. In der Praxis sehen Sie
 aber keinen Helden: Der hat nämlich weder eine Position noch eine Textur, kann also gar nicht
@@ -407,15 +407,17 @@ public class Main {
 ```
 
 Wenn man keine Position mitgibt, wird einfach eine zufällige Position im Level genutzt.
-Alternativ kann man eine eigene Position mitgeben. Im Dungeon existieren aktuell zwei
-Koordinatensysteme: `core.level.utils.Coordinate` (Integer-basiert) und `core.utils.Point`
-(Float-basiert). Die Level werden als Matrix von `Tile` (Boden, Wand, Loch, ...) gespeichert.
-Die Position dieser `Tile` wird als `Coordinate` gespeichert, was dem Index des Tiles in der
-Matrix entspricht. Entitäten können aktuell aber auch zwischen zwei Tiles oder
-schräg-links-oben auf einem Tile stehen, dafür gibt es die Positionen als `Point`.
-Entsprechend könnte man den neuen Helden bei `(0,0)` in das Level setzen:
-`new PositionComponent(new Point(0, 0))` bzw. kurz `new PositionComponent(0f, 0f)` (wobei
-diese Position möglicherweise nicht spielbar ist, da hier eine Wand oder sogar nichts ist).
+Alternativ kann man eine eigene Position mitgeben.
+
+Im Dungeon existieren aktuell zwei Koordinatensysteme: `core.level.utils.Coordinate`
+(Integer-basiert) und `core.utils.Point` (Float-basiert). Die Level werden als Matrix von
+`Tile` (Boden, Wand, Loch, ...) gespeichert. Die Position dieser `Tile` wird als `Coordinate`
+gespeichert, was dem Index des Tiles in der Matrix entspricht. Entitäten können aktuell aber
+auch zwischen zwei Tiles oder schräg-links-oben auf einem Tile stehen, dafür gibt es die
+Positionen als `Point`. Entsprechend könnte man den neuen Helden bei `(0,0)` in das Level
+setzen: `new PositionComponent(new Point(0, 0))` bzw. kurz `new PositionComponent(0f, 0f)`
+(wobei diese Position möglicherweise nicht spielbar ist, da hier eine Wand oder sogar nichts
+ist).
 
 Wenn Sie jetzt das Spiel starten, sehen Sie - immer noch nichts (außer den Wänden). Hmmm.
 
@@ -532,7 +534,7 @@ einziger Tastendruck, um einmal über das Spielfeld geschleudert zu werden.
 
 Über die Methoden `VelocityComponent#xVelocity` und `VelocityComponent#yVelocity` können Sie
 die Maximalgeschwindigkeit abfragen und auch setzen. Mit `VelocityComponent#currentXVelocity`
-bzw. `VelocityComponent#currentYVelocity` holen und setzen Sie dagegen die aktuelle
+bzw. `VelocityComponent#currentYVelocity` holen und setzen Sie dagegen die *aktuelle*
 Geschwindigkeit, die vom `VelocitySystem` zur Berechnung der nächsten Position genutzt wird
 (wobei die Maximalgeschwindigkeit als Obergrenze verwendet wird).
 
@@ -828,7 +830,7 @@ werden.
 
 Unser Feuerball kann leider nichts, außer sich automatisch zu bewegen. Man könnte nun noch ein
 `CollisionSystem` entwickeln, welches Entitäten immer paarweise auf ihre Positionen vergleicht
-und eine Kollision feststellen, wenn sich die Entitäten zu nah kommen und diese Information in
+und eine Kollision feststellt, wenn sich die Entitäten zu nah kommen und diese Information in
 einer `CollisionComponent` speichern (wer mit wem und wann). Dann könnte man noch ein
 `HealthSystem` bauen, welches eine `HealthComponent` aktualisiert. Zusätzlich könnte man ein
 `FightSystem` schreiben, welches bei einer Kollision der getroffenen Entität (zufälligen?)
