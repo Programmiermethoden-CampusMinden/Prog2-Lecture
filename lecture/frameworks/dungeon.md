@@ -876,8 +876,8 @@ wachsen wird.
 Anregungen für **Spielideen** [können Sie beispielsweise in den folgenden Videos
 finden:]{.notes}
 
--   [Shattered Pixel Dungeon Rogue Beginners Guide Playthrough]
--   [Shattered Pixel Dungeon Duelist Update!]
+-   [Shattered Pixel Dungeon Rogue Beginners Guide Playthrough](https://youtu.be/qoc_tDN0QC4)
+-   [Shattered Pixel Dungeon Duelist Update!](https://youtu.be/LgSjUWjQg0s)
 
 ::: notes
 Viel Spass im PM-Dungeon!
