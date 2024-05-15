@@ -563,11 +563,301 @@ Nun sollten Sie Ihren Helden (nach oben) bewegen können. (Tipp: Probieren Sie "
 diejenigen Entitäten, die alle benötigten Components aufweisen.
 
 
+## Walking mit System
+
+### Neue Monster
+
+Wie kann ich ein Monster beim Laden des Levels erzeugen?
+
+Beim Laden eines Levels wird der mit `Game#userOnLevelLoad` registrierte Lambda-Ausdruck
+ausgeführt. Hier kann man beispielsweise ein neues Monster erzeugen (lassen):
+
+``` java
+public class Main {
+    public static void main(String... args) {
+
+        // Add some one-time configuration
+        Game.userOnSetup( ... );
+
+
+        // Create a new monster in every new level
+        Game.userOnLevelLoad(first -> {
+            Entity fb = new Entity("HUGO");
+
+            fb.add(new PositionComponent(Game.hero().get().fetch(PositionComponent.class).get().position()));
+
+            try {
+                fb.add(new DrawComponent(new SimpleIPath("character/knight")));
+            } catch (IOException e) {
+                System.err.println("Could not load textures for HUGO.");
+                throw new RuntimeException(e);
+            }
+
+            VelocityComponent vc = new VelocityComponent(10f, 10f);
+            vc.currentYVelocity(vc.yVelocity());
+            fb.add(vc);
+
+            Game.add(fb);
+        });
+
+
+        // Start the game loop
+        Game.run();
+    }
+}
+```
+
+Im Lambda-Ausdruck erzeugen wir hier einfach eine neue Entität und fügen dieser wie vorhin
+beim Hero eine `DrawComponent` für die Anzeige sowie eine `PositionComponent` und eine
+`VelocityComponent` für die Position und Bewegung hinzu, und am Ende registrieren wir die
+Entität beim Spiel.
+
+Wenn man das Spiel jetzt startet, wird an der Position des Helden eine neue Entität sichtbar
+(mit der selben Textur).
+
+Aber warum bewegt die neue Figur sich nicht? Wir haben doch eine `VelocityComponent`
+hinzugefügt und eine aktuelle Geschwindigkeit gesetzt?!
+
+Wenn man in `VelocitySystem#execute` (bzw. die dort aufgerufene Methode
+`VelocitySystem#updatePosition`) schaut, wird klar, dass die aktuelle Geschwindigkeit zwar neu
+berechnet und gesetzt wird, aber dass ein "Reibungsfaktor" (abhängig vom Feld, auf dem die
+Figur steht) eingerechnet wird und somit die aktuelle Geschwindigkeit schnell auf Null geht.
+Der Hintergrund ist einfach: Normalerweise soll eine Entität nicht einmal angeschubst werden
+und dann "ewig" laufen, insbesondere bei Reaktion auf Tastatureingaben. Deshalb werden die
+Entitäten kurz bewegt und bremsen dann wieder ab. Das Aufrechterhalten der Bewegung erfolgt
+normalerweise über Systeme ...
+
+### Systems für das selbstständige Laufen
+
+Wir brauchen ein System, welches die aktuelle Geschwindigkeit einer Entität in jedem Frame
+wieder auf den alten Wert setzt. Dazu leiten wir von `core.System` ab. (Achtung: Es gibt auch
+eine Klasse `System` im JDK - hier müssen Sie genau hinschauen!)
+
+``` java
+import core.System;
+
+public class WalkerSystem extends System {
+    @Override
+    public void execute() {
+        entityStream().forEach(e -> {
+                VelocityComponent vc = e.fetch(VelocityComponent.class).get();
+                vc.currentXVelocity(vc.xVelocity());
+                vc.currentYVelocity(vc.yVelocity());
+        });
+    }
+}
+
+
+public class Main {
+    public static void main(String... args) {
+
+        // Add some one-time configuration
+        Game.userOnSetup( ... );
+
+        // Create a new monster in every new level
+        Game.userOnLevelLoad( ... );
+
+
+        // Register our new system
+        Game.add(new WalkerSystem());
+
+
+        // Start the game loop
+        Game.run();
+    }
+}
+```
+
+Wir leiten also von `core.System` ab und implementieren die `execute`-Methode. Wir holen uns
+dabei von jeder Entität die `VelocityComponent` und setzen die aktuelle Geschwindigkeit neu
+auf die maximale Geschwindigkeit. Zusätzlich registrieren wir das neue System im Spiel, damit
+es in jedem Frame einmal aufgerufen wird.
+
+Nun läuft das neue Monster los (bis es gegen eine Wand läuft).
+
+Aber der Held bewegt sich nun ebenfalls dauerhaft :(
+
+### Components für das selbstständige Laufen
+
+Das Problem ist, dass unser neues `WalkerSystem` **alle** Entitäten automatisch bewegt. (Ein
+weiteres Problem ist, dass das `WalkerSystem` davon ausgeht, dass es immer eine
+`VelocityComponent` gibt, was nicht unbedingt erfüllt ist!)
+
+Wir brauchen also noch eine Component, mit der wir die zu bewegenden Entitäten markieren
+können.
+
+``` java
+import core.System;
+import core.Component;
+
+public class WalkerComponent implements Component {}
+
+
+public class WalkerSystem extends System {
+    public WalkerSystem() {
+        super(WalkerComponent.class);
+    }
+
+    @Override
+    public void execute() {
+        entityStream().forEach(e -> {
+            if (e.isPresent(WalkerComponent.class)) {
+                VelocityComponent vc = e.fetch(VelocityComponent.class).get();
+                vc.currentXVelocity(vc.xVelocity());
+                vc.currentYVelocity(vc.yVelocity());
+            }
+        });
+    }
+}
+
+
+public class Main {
+    public static void main(String... args) {
+
+        // Add some one-time configuration
+        Game.userOnSetup( ... );
+
+
+        // Create a new monster in every new level
+        Game.userOnLevelLoad(first -> {
+            Entity fb = new Entity("HUGO");
+
+            ...
+
+            fb.add(new WalkerComponent());
+
+            Game.add(fb);
+        });
+
+
+        // Register our new system
+        Game.add(new WalkerSystem());
+
+        // Start the game loop
+        Game.run();
+    }
+}
+```
+
+Die neue Component (`WalkerComponent`) ist einfach eine leere Klasse, die von `core.Component`
+erbt. Wir brauchen keine Werte o.ä., die wir hier ablegen wollen - eine leere Klasse reicht
+für das Beispiel. Dem neuen Monster geben wir diese neue Component nun mit.
+
+Das `WalkerSystem` wird auch etwas ergänzt: Im Konstruktor rufen wir den Super-Konstruktor auf
+und übergeben die `WalkerComponent`-Klasse - dies ist die Component, für die sich das System
+interessiert. Zusätzlich legen wir noch eine `if`-Abfrage um das Aktualisieren der aktuellen
+Geschwindigkeit: Der Block soll nur dann ausgeführt werden, wenn die im aktuellen
+Schleifendurchlauf gerade betrachtete Entität eine `WalkerComponent` hat.
+
+Nun läuft nur das neue Monster automatisch, der Held bleibt stehen und reagiert erst auf
+Tastendrücke. Prima!
+
+Auf diese Weise können Sie beispielsweise den Monstern einen Gesundheitszustand geben und
+diese bei zu schlechter Gesundheit "sterben" lassen (aus dem Spiel entfernen). Sie könnten
+aber auch komplexere Dinge wie die Kollision zwischen zwei Entitäten realisieren.
+
+Tatsächlich gibt es im Sub-Projekt "dungeon" (Package `contrib`) bereits eine Vielzahl an
+Components und passenden Systems, die solche typischen Aufgaben bereits realisieren.
+
+
+## Kämpfe wie ein NPC
+
+Wir haben beim Hero über das `PlayerComponent` eine Reaktion auf Tastatureingaben
+implementiert. Hier könnte man einer Taste auch den Start einer neuen Entität zuordnen, die
+sich dann automatisch bewegt. Man könnte also Feuerbälle schleudern ...
+
+``` java
+public class Main {
+    public static void main(String... args) {
+
+
+        // Add some one-time configuration
+        Game.userOnSetup( () -> {
+            Entity hero = new Entity();
+
+            ...
+
+            PlayerComponent pc = new PlayerComponent();
+            pc.registerCallback(KeyboardConfig.FIRST_SKILL.value(), entity -> {
+                Entity fb = new Entity("Fireball");
+
+                fb.add(new PositionComponent(entity.fetch(PositionComponent.class).get().position()));
+
+                try {
+                    fb.add(new DrawComponent(new SimpleIPath("character/knight")));
+                } catch (IOException e) {
+                    System.err.println("Could not load textures for fireball.");
+                    throw new RuntimeException(e);
+                }
+
+                fb.add(new VelocityComponent(2f, 2f));
+
+                fb.add(new WalkerComponent());
+
+                Game.add(fb);
+            }, false);
+
+            Game.add(hero);
+        });
+
+
+        // Create a new monster in every new level
+        Game.userOnLevelLoad( ... );
+
+        // Register our new system
+        Game.add(new WalkerSystem());
+
+        // Start the game loop
+        Game.run();
+    }
+}
+```
+
+Wir registrieren einfach die Taste `FIRST_SKILL` (das ist ein "Q") in der `PlayerComponent`.
+Im hinterlegten Lamda-Ausdruck wird eine neue Entität erzeugt mit einer `WalkerComponent`,
+also ganz analog zu dem neuen Monster vorhin beim Laden eines neuen Levels. Zusätzlich wird
+hier noch ein dritter Parameter mit dem Wert `false` mitgegeben: Die `PlayerComponent` wird in
+*jedem* Frame ausgewertet - wenn die Taste "Q" also über mehrere Frames hinweg gedrückt ist
+(was sehr wahrscheinlich ist), würde in jedem dieser Frames je eine neue Entität erzeugt und
+losgeschickt. Über diesen dritten Parameter können wir steuern, dass genau das nicht passiert.
+Man muss also die Taste "Q" zunächst wieder loslassen und dann erneut drücken, um noch einen
+Feuerball zu erzeugen und auf den Weg zu schicken. Als Textur habe ich einfach die im
+Sub-Projekt "game" vorhandene Textur für die Heros genommen - im Sub-Projekt "dungeon" gibt es
+dagegen auch Feuerbälle u.ä., aber dann müsste die Klasse auch in dieses Sub-Projekt umgezogen
+werden.
+
+Unser Feuerball kann leider nichts, außer sich automatisch zu bewegen. Man könnte nun noch ein
+`CollisionSystem` entwickeln, welches Entitäten immer paarweise auf ihre Positionen vergleicht
+und eine Kollision feststellen, wenn sich die Entitäten zu nah kommen und diese Information in
+einer `CollisionComponent` speichern (wer mit wem und wann). Dann könnte man noch ein
+`HealthSystem` bauen, welches eine `HealthComponent` aktualisiert. Zusätzlich könnte man ein
+`FightSystem` schreiben, welches bei einer Kollision der getroffenen Entität (zufälligen?)
+Schaden zufügt, also die Werte in ihrer `HealthComponent` reduziert. (Alternativ könnte das
+`CollisionSystem` bei Kollision einen in der `CollisionComponent` gespeicherten
+Lambda-Ausdruck ausführen.) ... Die einzelnen Klassen interagieren also nicht direkt
+miteinander, sondern immer über den Umweg der Systems und Components.
+
+All diese (und viele weitere) Components und Systems gibt es bereits im Package `contrib` im
+Sub-Projekt ["dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dungeon).
+
+
 ## Wrap-Up
 
 ::: notes
 Damit endet der kurze Ausflug in den Dungeon.
 :::
+
+In einem ECS haben wir Entities, Components und Systems.
+
+-   Die Entitäten sind nur Hüllen und gruppieren verschiedene Components.
+-   In diesen Components werden die Werte für die jeweiligen Zustände gehalten.
+-   Die Systems werden in jedem Durchlauf der Game-Loop aufgerufen und führen dabei ihre
+    `execute()`-Methode aus. Typischerweise iterieren die Systeme dabei über alle Entitäten
+    und verändern die Components der Entitäten.
+
+Denken Sie daran, dass alles in einer Game-Loop läuft, die 30x oder 60x pro Sekunde aufgerufen
+wird. Sie können in der Regel keine direkte Interaktion zwischen verschiedenen Objekten
+realisieren, sondern müssen immer den Weg über die Systems gehen.
 
 Schauen Sie gern in die vorhandenen Klassen und Packages und in die Dokumentation hinein:
 
@@ -577,7 +867,8 @@ Schauen Sie gern in die vorhandenen Klassen und Packages und in die Dokumentatio
 ::: notes
 Die Javadoc-Kommentare sollten Ihnen erste Ideen zur Funktionsweise geben (auch wenn für das
 angestrebte Ideal noch einiges an Arbeit notwendig ist). Schauen Sie gern die Dokumentation
-unter "`doc/`" an, die im Laufe des Semesters schrittweise weiter wachsen wird.
+unter `game/doc/` und `dungeon/doc/` an, die im Laufe des Semesters schrittweise weiter
+wachsen wird.
 :::
 
 \bigskip
@@ -585,8 +876,8 @@ unter "`doc/`" an, die im Laufe des Semesters schrittweise weiter wachsen wird.
 Anregungen für **Spielideen** [können Sie beispielsweise in den folgenden Videos
 finden:]{.notes}
 
--   [Shattered Pixel Dungeon Rogue Beginners Guide Playthrough](https://youtu.be/qoc_tDN0QC4)
--   [Shattered Pixel Dungeon Duelist Update!](https://youtu.be/LgSjUWjQg0s)
+-   [Shattered Pixel Dungeon Rogue Beginners Guide Playthrough]
+-   [Shattered Pixel Dungeon Duelist Update!]
 
 ::: notes
 Viel Spass im PM-Dungeon!
