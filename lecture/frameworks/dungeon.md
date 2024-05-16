@@ -224,7 +224,7 @@ Die Klasse `core.Game` ist der zentrale Einstiegspunkt. Hier werden alle wichtig
 konfiguriert, und es gibt die `Game#run()`-Methode, die das Spiel startet. Zusätzlich gibt es
 weitere Methoden, die für Sie relevant sind:
 
--   `Game#onUserSetup()`: Diese Methode wird einmal beim Start des Spiels aufgerufen und kann
+-   `Game#userOnSetup()`: Diese Methode wird einmal beim Start des Spiels aufgerufen und kann
     für die Konfiguration und Initialisierung der verschiedenen Systeme genutzt werden. Hier
     wird beispielsweise u.a. auch das erste Level geladen.
 -   `Game#userOnFrame()`: Diese Methode wird zu Beginn eines jeden Frame aufgerufen, noch
@@ -362,7 +362,7 @@ public class Main {
         // Add some one-time configuration
         Game.userOnSetup(
                 () -> {
-                    Entity hero = new Entity();
+                    Entity hero = new Entity("Hero");
                     Game.add(hero);
                 });
 
@@ -393,7 +393,7 @@ public class Main {
         // Add some one-time configuration
         Game.userOnSetup(
                 () -> {
-                    Entity hero = new Entity();
+                    Entity hero = new Entity("Hero");
 
                     hero.add(new PositionComponent());
 
@@ -432,7 +432,7 @@ public class Main {
         // Add some one-time configuration
         Game.userOnSetup(
                 () -> {
-                    Entity hero = new Entity();
+                    Entity hero = new Entity("Hero");
 
                     hero.add(new PositionComponent());
 
@@ -494,7 +494,7 @@ public class Main {
         // Add some one-time configuration
         Game.userOnSetup(
                 () -> {
-                    Entity hero = new Entity();
+                    Entity hero = new Entity("Hero");
 
                     hero.add(new PositionComponent());
 
@@ -506,7 +506,6 @@ public class Main {
                     }
 
                     hero.add(new CameraComponent());
-                    hero.add(new PlayerComponent());
 
                     hero.add(new VelocityComponent(5f, 5f));
 
@@ -775,7 +774,7 @@ public class Main {
 
         // Add some one-time configuration
         Game.userOnSetup( () -> {
-            Entity hero = new Entity();
+            Entity hero = new Entity("Hero");
 
             ...
 
