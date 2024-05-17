@@ -41,11 +41,12 @@ outcomes:
   - k3: "Laden in der IDE"
   - k3: "Erstellen eines Helden mit Animation und Bewegung"
 youtube:
-  - link: "https://youtu.be/-Tw7BpoN33Q"
-    name: "VL How-To Dungeon (ACHTUNG: Das Video bezieht sich noch auf die Version vom letzten Jahr - bitte arbeiten Sie auch das Skript durch!)"
-fhmedia:
-  - link: "https://www.hsbi.de/medienportal/m/b007a85da6537d9504466dbb4ee585c939bac3ad7533e90362ffcd4153ba4c5273d589ba367a038ed93b819364297cd231b603d68f9ae2c101496a72610f9ccc"
-    name: "VL How-To Dungeon (ACHTUNG: Das Video bezieht sich noch auf die Version vom letzten Jahr - bitte arbeiten Sie auch das Skript durch!)"
+  - link: "https://youtu.be/kGKDcKIDHok"
+    name: "VL How-To Dungeon: Teil 1 (Überblick): Wir schauen uns gemeinsam an, wie man sich den PM-Dungeon herunterladen und installieren kann und wie man das Spiel startet. Und wir verschaffen uns einen Überblick über die wichtigsten Packages und Klassen und verstehen die prinzipielle Arbeitsweise eines ECS."
+  - link: "https://youtu.be/uPNt7OWpMBs"
+    name: "VL How-To Dungeon: Teil 2 (Hero): Wir bauen unseren ersten einfachen Helden!"
+  - link: "`https://youtu.be/_YVYoFgvU04`{=markdown}"
+    name: "VL How-To Dungeon: Teil 3 (Monster und Feuerbälle): Wie geht das mit Monstern und Feuerbällen? Wir programmieren ein erstes kleines System für die Bewegungssteuerung."
 ---
 
 
