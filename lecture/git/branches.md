@@ -70,6 +70,35 @@ challenges: |
         lösen Sie Konflikte auf?
 
 
+    **Mergen am Beispiel**
+
+    Sie verwalten Ihr Projekt mit Git. Es existieren zwei Branches: `master` (zeigt
+    auf Commit $C$) und `feature` (zeigt auf Version $F$). In Ihrer Workingcopy
+    haben Sie den Branch `feature` ausgecheckt:
+
+    ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/before.png?raw=true)
+
+    (1) Mit welcher Befehlsfolge können Sie den Branch `feature` in den Branch `master`
+    mergen, so dass nach dem Merge die im folgenden Bild dargestellte Situation
+    entsteht?
+
+    ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/after.png?raw=true)
+
+    (Der Merge läuft ohne Konflikte ab. Es ist irrelevant, welcher Branch am Ende
+    in der Workingcopy ausgecheckt ist.)
+
+    <!--
+    `git checkout master  &&  git merge feature`
+    -->
+
+    (2) Wie können Sie erreichen, dass es keinen Merge-Commit gibt, sondern dass die Änderungen
+    in $D$ und $F$ im `master` als eine lineare Folge von Commits erscheinen?
+
+    <!--
+    `git rebase master feature  &&  git switch master  &&  git merge feature`
+    -->
+
+
     **Interaktive Git-Tutorials**: Schaffen Sie die Rätsel?
 
     *   [Learn Git Branching](https://learngitbranching.js.org/)
