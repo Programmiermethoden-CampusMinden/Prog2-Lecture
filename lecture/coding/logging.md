@@ -51,34 +51,51 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/a91451640b7833daed3f6fb212fff9490ef6b8885783cc0297603a418055f1a8c2ff7b51f3cb9fb2c4344132eb95bef5af55201f8958f24d767dbd075120bce2"
     name: "VL Logging"
 challenges: |
-    1.  Schreiben Sie einen Formatter, welcher die Meldungen in folgendem Format auf der
-        _Konsole_ ausgibt. Bauen Sie diesen Formatter in alle Logger ein.
+    Betrachten Sie den folgenden Java-Code:
 
-        ```
-        ------------
-        Logger: record.getLoggerName()
-        Level: record.getLevel()
-        Class: record.getSourceClassName()
-        Method: record.getSourceMethodName()
-        Message: record.getMessage()
-        ------------
-        ```
+    ```java
+    import java.util.logging.*;
 
-    2.  Schreiben Sie einen weiteren Formatter, welcher die Daten als Komma-separierte Werte
-        (CSV-Format) mit der folgenden Reihenfolge in eine _Datei_ ausgibt (durch Anfügen
-        einer neuen Zeile an bereits bestehenden Inhalt). Bauen Sie diesen Formatter in den
-        Logger für den Ringpuffer ein.
+    public class Logging {
+        public static void main(String... args) {
+            Logger l = Logger.getLogger("Logging");
+            l.setLevel(Level.FINE);
 
-        ```
-        record.getLoggerName(),record.getLevel(),record.getSourceMethodName(),record.getSourceClassName(),record.getMessage()
-        ```
+            ConsoleHandler myHandler = new ConsoleHandler();
+            myHandler.setFormatter(new SimpleFormatter() {
+                public String format(LogRecord record) {
+                    return "WUPPIE\n";
+                }
+            });
+            l.addHandler(myHandler);
 
-    3.  Ersetzen Sie in einem Beispielprogramm sämtliche Konsolenausgaben (`System.out.println`
-        und `System.err.println`) in der Vorgabe durch geeignete Logger-Aufrufe mit passendem
-        Log-Level.
+            l.info("A");
+            l.fine("B");
+            l.finer("C");
+            l.finest("D");
+            l.severe("E");
+        }
+    }
+    ```
 
-        Alle Warnungen und Fehler sollen zusätzlich in eine `.csv`-Datei geschrieben werden.
-        Auf der Konsole sollen alle Log-Meldungen ausgegeben werden.
+    Welche Ausgaben entstehen durch den obigen Code? Erklären Sie, welche der Logger-Aufrufe zu einer Ausgabe
+    führen und wieso und wie diese Ausgaben zustande kommen bzw. es keine Ausgabe bei einem Logger-Aufruf gibt.
+    Gehen Sie dabei auf jeden der fünf Aufrufe ein.
+
+    <!--
+    Die beiden Aufrufe `l.finer` und `l.finest` führen zu keiner Ausgabe, da das jeweilige Log-Level
+    unterhalb des eingestellten Levels des Loggers liegt -- beide Logmeldungen werden vom Logger verworfen.
+
+    Der Aufruf `l.fine` führt zu keiner Ausgabe. Der Logger nimmt die Logmeldung zwar an, aber der Handler
+    verwirft die Logmeldung, da sie unterhalb seines Default-Levels liegt. Die Meldung wird zusätzlich an den
+    Eltern-Logger (hier der Root-Logger) weiter gereicht, der diese akzeptiert (trotz zu kleinem Level, da
+    weitergeleitet!). Der Default-Handler des Eltern-Loggers nimmt aber keine Ausgabe vor, da sein Log-Level
+    auf `Info` steht.
+
+    Für die Aufrufe `l.info` und `l.severe` werden je zwei Ausgaben gemacht: Eine durch den eigenen Handler
+    ("WUPPIE") und eine weitere durch die Weiterleitung an den Eltern-Logger ("A" bzw. "E" mit der
+    Default-Formatierung). Alle beteiligten Logger und Handler akzeptieren das Level `Info` bzw. `SEVERE`.
+    -->
 ---
 
 
