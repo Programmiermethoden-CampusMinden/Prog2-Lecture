@@ -51,6 +51,8 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/a91451640b7833daed3f6fb212fff9490ef6b8885783cc0297603a418055f1a8c2ff7b51f3cb9fb2c4344132eb95bef5af55201f8958f24d767dbd075120bce2"
     name: "VL Logging"
 challenges: |
+    ****
+
     Betrachten Sie den folgenden Java-Code:
 
     ```java
@@ -95,6 +97,25 @@ challenges: |
     Für die Aufrufe `l.info` und `l.severe` werden je zwei Ausgaben gemacht: Eine durch den eigenen Handler
     ("WUPPIE") und eine weitere durch die Weiterleitung an den Eltern-Logger ("A" bzw. "E" mit der
     Default-Formatierung). Alle beteiligten Logger und Handler akzeptieren das Level `Info` bzw. `SEVERE`.
+    -->
+
+
+    **Analyse eines Live-Beispiels aus dem Dungeon**
+
+    Analysieren Sie die Konfiguration des Loggers im Dungeon-Projekt:
+    [Dungeon-CampusMinden/Dungeon: core/utils/logging/LoggerConfig.java](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/core/utils/logging/LoggerConfig.java).
+
+    <!--
+    - Code Qualität, Kommentar-Qualität?
+    - Umgang mit Dateien (alte vs. neue API, bunter Mix):
+        Path.of() => Path-Objekt. Damit dann in Files.createDirectories() (schließt Files.createFile() bereits ein!)
+        und FileHandler() gehen (*single source of truth*)
+
+        Path path = FileSystems.getDefault().getPath("logs", "foo.log");
+        BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8);
+
+    - Umgang mit Typen: keine Typsicherheit, immer wieder manuelle String, String, String, ...
+    - Mögliche Probleme, die hier entstehen können (Start der App, Ordner/Package: Auflösen relativ zum Start)
     -->
 ---
 
