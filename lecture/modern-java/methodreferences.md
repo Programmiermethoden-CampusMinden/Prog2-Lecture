@@ -43,41 +43,75 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/662003c5cb2cdef08b5d35cefd49b05f561fa26471cf3da22c4ff4310596909d0e21300133fc2fac353dfc4a391c8bb9af0dd47293efabfa8c3464429534d719"
     name: "VL Methoden-Referenzen"
 challenges: |
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/modern-java/src/challenges/lambda)
-    finden Sie die Klassen `Student` und `StudentSort` mit
-    vorgefertigten Methoden  zu den Teilaufgaben sowie eine Testsuite
-    `SortTest` mit einzelnen Testfälllen zu den Teilaufgaben, mit der Ihre
-    Implementierung aufgerufen und getestet wird.
+    Betrachten Sie den folgenden Java-Code:
 
-    Ziel dieser Aufgabe ist es, eine Liste von Studierenden mithilfe verschiedener
-    syntaktischer Strukturen (Lambda-Ausdrücke, Methoden-Referenzen) zu sortieren.
-    Dabei soll bei allen Teilaufgaben die Methode
-    [java.util.List#sort](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html#sort(java.util.Comparator))
-    für das eigentliche Sortieren verwendet werden.
+    ```java
+    public class Cat {
+        int gewicht;
+        public Cat(int gewicht) { this.gewicht = gewicht; }
 
-    1.  Erweitern Sie die Klasse `Student` um eine _statische_ Methode, die zwei
-        `Student`-Objekte anhand des Alters miteinander vergleicht. Die Methode
-        soll die Signatur `static int compareByAge(Student a, Student b)` besitzen
-        und die folgenden Werte zurückliefern:
+        public static void main(String... args) {
+            List<Cat> clouder = new ArrayList<>();
+            clouder.add(new Cat(100));  clouder.add(new Cat(1));  clouder.add(new Cat(10));
 
-        -   a > b -> -1
-        -   a < b -> 1
-        -   a == b -> 0
+            clouder.sort(...);
+        }
+    }
+    ```
 
-        Verwenden Sie die neue statische Methode `compareByAge` zum Sortieren
-        der Liste in `sort_2b()`. Nutzen Sie dabei eine **Methodenreferenz**.
+    1.  Ergänzen Sie den Methodenaufruf `clouder.sort(...);` mit einer geeigneten
+        anonymen Klasse, daß der `clouder` aufsteigend nach Gewicht sortiert wird.
+    2.  Statt einer anonymen Klasse kann man auch Lambda-Ausdrücke einsetzen. Geben
+        Sie eine konkrete Form an.
+    3.  Statt einer anonymen Klasse kann man auch Methodenreferenzen einsetzen. Dafür
+        gibt es mehrere Formen. Geben Sie für zwei Formen der Methodenreferenz sowohl
+        den Aufruf als auch die Implementierung der entsprechenden Methoden in der
+        Klasse `Cat` an.
 
-    2.  Erweitern Sie die Klasse `Student` um eine Instanz-Methode, die das
-        `Student`-Objekt mit einem anderen (als Parameter übergebenen) `Student`-Objekt
-        vergleicht. Die Methode soll die Signatur `int compareByName(Student other)`
-        besitzen und die folgenden Werte zurückliefern:
+    <!--
+    ```java
+    import java.util.ArrayList;
+    import java.util.Comparator;
+    import java.util.List;
 
-        -   self > other -> -1
-        -   self < other -> 1
-        -   self == other -> 0
+    public class Cat {
+        int gewicht;
+        public Cat(int gewicht) { this.gewicht = gewicht; }
 
-        Verwenden Sie die neue Methode `compareByName` zum Sortieren der Liste in `sort_3b()`.
-        Nutzen Sie dabei eine **Methodenreferenz**.
+        public static void main(String... args) {
+            List<Cat> clouder = new ArrayList<>();
+            clouder.add(new Cat(100));  clouder.add(new Cat(1));  clouder.add(new Cat(10));
+
+            // anonyme Klasse
+            clouder.sort(new Comparator<Cat>() {
+                @Override
+                public int compare(Cat c1, Cat c2) {
+                    return c1.gewicht - c2.gewicht;
+                }
+            });
+
+            // Lambda-Ausdruck
+            clouder.sort((c1, c2) -> c1.gewicht - c2.gewicht);
+
+            // Methodenreferenzen
+            clouder.sort(Cat::cmp1);
+            clouder.sort(Cat::cmp2);
+            clouder.sort(clouder.get(0)::cmp3);
+        }
+
+
+        public static int cmp1(Cat c1, Cat c2) {
+            return c1.gewicht - c2.gewicht;
+        }
+        public int cmp2(Cat c) {
+            return this.gewicht - c.gewicht;
+        }
+        public int cmp3(Cat c1, Cat c2) {
+            return c1.gewicht - c2.gewicht;
+        }
+    }
+    ```
+    -->
 ---
 
 
