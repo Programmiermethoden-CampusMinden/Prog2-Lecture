@@ -153,7 +153,7 @@ Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Ver
 |       | 08.   | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Javadoc]                           | [B02]            |
 |       | 15.   | **Dienstbesprechung**                                                                             | [B03]            |
 |       | 22.   | [Git-Branches], [Branching-Strategien]; [Methodenreferenzen]; [Logging]                           | [B04]            |
-|       | 29.   | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Record-Klassen]                                    | [B05]            |
+|       | 29.   | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Record-Klassen]; [Intro Dungeon]                   | [B05]            |
 | Juni  | 05.   | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                | [B06]            |
 |       | 12.   | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Serialisierung]         | [B07]            |
 |       | 19.   | [Code-Smells], [Coding-Rules], [Refactoring]; [Continuous Integration (CI)]                       | [B08]            |
@@ -188,7 +188,7 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 
 <!-- [Intro Frameworks]: lecture/frameworks/intro-frameworks.md -->
 <!-- [ECS]: lecture/frameworks/ecs.md -->
-<!-- [Dungeon]: lecture/frameworks/dungeon.md -->
+[Intro Dungeon]: lecture/frameworks/dungeon.md
 
 [Klassen und Methoden]: lecture/generics/classes-methods.md
 [Bounds und Wildcards]: lecture/generics/bounds-wildcards.md
