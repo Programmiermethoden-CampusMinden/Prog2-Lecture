@@ -59,15 +59,58 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/429bb37eaea02582785bfb46a92d68a3ed76cb18bdc98ec0f04ae438cecf82a595e1e46947d2ffcc2fd868d67ca1ed3beba73f216ae4886f2a9492167c006784"
     name: "VL Stream-API"
 challenges: |
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/modern-java/src/challenges/streams)
-    finden Sie die Klasse `Main`, in der die Methoden
-    `Main#a`, `Main#b` und `Main#c` "klassisch" mit `for`-Schleifen
-    implementiert wurden.
+    Betrachten Sie den folgenden Java-Code:
 
-    Führen Sie für die drei Methoden `Main#a`, `Main#b` und `Main#c`
-    ein Refactoring durch, so dass in diesen Methoden jeweils die
-    Java Stream-API genutzt wird und es keine `for`-/`foreach`-/`while`-Schleifen
-    mehr gibt.
+    ```java
+    record Cat(int weight){};
+
+    public class Main {
+        public static void main(String... args) {
+            List<Cat> clouder = new ArrayList<>();
+            clouder.add(new Cat(100));  clouder.add(new Cat(1));  clouder.add(new Cat(10));
+
+            sumOverWeight(8, clouder);
+        }
+
+        private static int sumOverWeight(int threshold, List<Cat> cats) {
+            int result = 0;
+            for (Cat c : cats) {
+                int weight = c.weight();
+                if (weight > threshold) {
+                    result += weight;
+                }
+            }
+            return result;
+        }
+    }
+    ```
+
+    Schreiben Sie die Methode `sumOverWeight` unter Beibehaltung der Funktionalität so
+    um, dass statt der `for`-Schleife und der `if`-Abfrage Streams und Stream-Operationen
+    eingesetzt werden. Nutzen Sie passende Lambda-Ausdrücke und nach Möglichkeit
+    Methodenreferenzen.
+
+    <!--
+    ```java
+    record Cat(int weight){};
+
+    public class Main {
+        public static void main(String... args) {
+            List<Cat> clouder = new ArrayList<>();
+            clouder.add(new Cat(100));  clouder.add(new Cat(1));  clouder.add(new Cat(10));
+
+            sumOverWeight2(8, clouder);
+        }
+
+        private static int sumOverWeight2(int threshold, List<Cat> cats) {
+            return cats.stream()
+                    .mapToInt(Cat::weight)
+                    .filter(age -> age > threshold)
+                    .sum();
+        }
+    }
+    ```
+    -->
 ---
 
 
