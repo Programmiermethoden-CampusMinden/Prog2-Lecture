@@ -51,6 +51,48 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/461caa1e97e1655109ce66647c169cf01b35d4b268bfaa64a6289c505f247a5ebfde054a98b08a1b5235195ff21b1fffa4d12e3968c7a68a0f001b0dabe6b695"
     name: "VL Record-Klassen"
+challenges: |
+    Betrachen Sie den folgenden Code:
+
+    ```java
+    public interface Person {
+        String getName();
+        Date getBirthday();
+    }
+
+    public class Student implements Person {
+        private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
+
+        private final String name;
+        private final Date birthday;
+
+        public Student(String name, String birthday) throws ParseException {
+            this.name = name;
+            this.birthday = DATE_FORMAT.parse(birthday);
+        }
+
+        public String getName() { return name; }
+        public Date getBirthday() { return birthday; }
+    }
+    ```
+
+    Schreiben Sie die Klasse `Student` in eine Record-Klasse um. Was müssen Sie zusätzlich noch tun,
+    damit die aktuelle API erhalten bleibt?
+
+    <!--
+    ```java
+    public record Student(String name, Date birthday) implements Person {
+        private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy");
+
+        public Student(String name, String birthday) throws ParseException {
+            this(name, DATE_FORMAT.parse(birthday));
+        }
+
+        public String getName() { return name; }
+        public Date getBirthday() { return birthday; }
+    }
+    ```
+    -->
 ---
 
 
