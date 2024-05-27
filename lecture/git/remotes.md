@@ -55,6 +55,34 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/8aa3f0e96448352e436aead353f54a3de6bbd3737bf33b6bd935b098352690544dc527e59424068ec65b6e0d67f6aff6bd6aa0a602127ce2a02a360658e0151d"
     name: "VL Git Remotes"
 challenges: |
+    **Synchronisierung mit Remote-Repos**
+
+    Sie haben ein Repo von github.com geklont. Beide Repos, das Original auf dem Server
+    als auch Ihre lokale Kopie, haben sich danach unabhängig voneinander weiter
+    entwickelt (siehe Skizze).
+
+    ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/remote-branches-2.png?raw=true)
+
+    Wie können Sie Ihre Änderung im lokalen Repo auf den Server pushen? Analysieren Sie die
+    Situation und erklären Sie zwei verschiedene Lösungsansätze und geben Sie jeweils die
+    entsprechenden Git-Befehle an.
+
+    <!--
+    Ein einfaches `git push (origin master)` wird nicht gehen, da beide Master-Branches sich
+    auseinander entwickelt haben und kein Fast-Forward möglich ist.
+
+    Variante A: Änderungen vom Server in die Working-Copy holen, den eigenen Master-Branch
+    mergen und das Ergebnis wieder pushen.
+    `(git checkout master) && git pull && git push` oder
+    `(git checkout master) && git fetch && git merge origin/master && git push (origin master)`
+
+    Variante B: Änderungen vom Server in die Working-Copy holen, den eigenen Master-Branch
+    rebasen und das Ergebnis wieder pushen.
+    `(git checkout master) && git pull --rebase && git push` oder
+    `git fetch && git rebase origin/master master && git push (origin master)`
+    -->
+
+
     **Interaktive Git-Tutorials**: Schaffen Sie die Rätsel?
 
     *   [Learn Git Branching](https://learngitbranching.js.org/)
