@@ -1,8 +1,8 @@
 plugins {
     id "java"
     id "checkstyle"
-    id "com.diffplug.spotless" version "6.5.0"
-    id "com.github.spotbugs" version "5.0.6"
+    id "com.diffplug.spotless" version "6.25.0"
+    id "com.github.spotbugs" version "6.0.15"
 }
 
 repositories {
@@ -11,12 +11,12 @@ repositories {
 
 dependencies {
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.mockito:mockito-core:4.5.1'
+    testImplementation 'org.mockito:mockito-core:5.12.0'
 }
 
 checkstyle {
     configFile file('checkstyle.xml')
-    toolVersion '10.2'
+    toolVersion '10.17.0'
 }
 
 spotless {
@@ -28,6 +28,7 @@ spotless {
 spotbugs {
     ignoreFailures = true
     showStackTraces = false
+    toolVersion = '4.8.5'
 }
 spotbugsMain {
     reports {
