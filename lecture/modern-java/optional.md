@@ -53,18 +53,6 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/b62e544bff3a9a25982052bd761b9971f7e67caca90e3ed66c2b794b95d35c2c479f8d72189159345ac018e34ec55866c5558a256ce63b5e9c43a30fc8787d1b"
     name: "VL Optional"
 challenges: |
-    **Katzen-Café**
-
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/modern-java/src/challenges/optional)
-    finden Sie eine Implementierung für ein Katzencafé.
-
-    Verändern Sie die Vorgaben so, dass möglich wenig `null` verwendet wird.
-    Setzen Sie dazu gezielt und sinnvoll Exception-Handling und `Optional<T>` ein.
-    Ergänzen Sie die Vorgaben um ein ausführliches Beispiel und bevölkern Sie das Café mit verschiedenen Katzen und geben Sie diese mit Hilfe der verschiedenen Methoden aus.
-
-    Begründen Sie die Relevanz der verbleibenden `null`-Vorkommen im Code.
-
-
     **String-Handling**
 
     Können Sie den folgenden Code so umschreiben, dass Sie statt der `if`-Abfragen und der einzelnen direkten Methodenaufrufe
