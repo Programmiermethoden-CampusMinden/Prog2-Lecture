@@ -598,6 +598,70 @@ auf der "JUnit 5"-Plattform ausgeführt, sondern mit der JUnit 4-Infrastuktur!
 :::
 
 
+::: notes
+## Best Practices
+
+1.  Ein Testfall behandelt exakt eine Idee/ein Szenario. Das bedeutet auch, dass man in der
+    Regel nur ein bis wenige `assert*` pro Testmethode benutzt.
+
+    (Wenn man verschiedene Ideen in eine Testmethode kombiniert, wird der Testfall
+    unübersichtlicher und auch auch schwerer zu warten.
+
+    Außerdem können so leichter versteckte Fehler auftreten: Das erste oder zweite oder dritte
+    `assert*` schlägt fehl - und alle dahinter kommenden `assert*` werden nicht mehr
+    ausgewertet!)
+
+2.  Wenn die selbe Testidee mehrfach wiederholt wird, sollte man diese Tests zu einem
+    parametrisierten Test zusammenfassen.
+
+    (Das erhöht die Lesbarkeit drastisch - und man läuft auch nicht in das Problem der
+    Benennung der Testmethoden.)
+
+3.  Es wird nur das Verhalten der öffentlichen Schnittstelle getestet, nicht die inneren
+    Strukturen einer Klasse oder Methode.
+
+    (Es ist verlockend, auch private Methoden zu testen und in den Tests auch die
+    Datenstrukturen o.ä. im Blick zu behalten und zu testen. Das führt aber zu sehr
+    "zerbrechlichen" (*brittle*) Tests: Sobald sich etwas an der inneren Struktur ändert, ohne
+    dass sich das von außen beobachtbare Verhalten ändert und also die Klasse/Methode immer
+    noch ordnungsgemäß funktioniert, gehen all diese "internen" Tests kaputt. Nicht ohne
+    Grund wird in der objektorientierten Programmierung mit Kapselung (Klassen, Methoden, ...)
+    gearbeitet.)
+
+4.  Von Setup- und Teardown-Methoden sollte eher sparsam Gebrauch gemacht werden.
+
+    (Normalerweise folgen wir in der objektorientierten Programmierung dem DRY-Prinzip ([Don't
+    repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)). Entsprechend
+    liegt es nahe, häufig benötigte Elemente in einer Setup-Methode zentral zu initialisieren
+    und ggf. in einer Teardown-Methode wieder freizugeben.
+
+    Das führt aber speziell bei Unit-Tests dazu, dass die einzelnen Testmethoden schwerer
+    lesbar werden: Sie hängen von einer gemeinsamen, zentralen Konfiguration ab, die man
+    üblicherweise nicht gleichzeitig mit dem Code der Testmethode sehen kann (begrenzter Platz
+    auf der Bildschirmseite).
+
+    Wenn nun in einem oder vielleicht mehreren Testfällen der Wunsch nach einer leicht anderen
+    Konfiguration auftaucht, muss man die gemeinsame Konfiguration entsprechend anpassen bzw.
+    erweitern. Dabei muss man dann aber *alle* anderen Testmethoden mit bedenken, die ja
+    ebenfalls von dieser Konfiguration abhängen! Das führt in der Praxis dann häufig dazu,
+    dass die gemeinsame Konfiguration sehr schnell sehr groß und verschachtelt und
+    entsprechend unübersichtlich wird.
+
+    Jede Änderung an dieser Konfiguration kann leicht einen oder mehrere Testfälle kaputt
+    machen (man hat ja i.d.R. nie alle Testfälle gleichzeitig im Blick), weshalb man hier
+    unbedingt mit passenden `assume*` arbeiten muss - aber dann kann man eigentlich auch
+    stattdessen die Konfiguration direkt passend für den jeweiligen Testfall in der jeweiligen
+    Testmethode erledigen!)
+
+5.  Wie immer sollten auch die Namen der Testmethoden klar über ihren Zweck Auskunft geben.
+    Der Präfix "test" wird seit JUnit 4.x nicht mehr benötigt, aber dennoch ist es in vielen
+    Projekten Praxis, diesen Präfix beizubehalten - damit kann man in der Package-Ansicht in
+    der IDE leichter zwischen den "normalen" und den Testmethoden unterscheiden.
+
+Diese Erfahrungen werden ausführlich in [@SWEGoogle, pp. 231-256] diskutiert.
+:::
+
+
 ## Wrap-Up
 
 JUnit als Framework für (Unit-) Tests; hier JUnit 4 (mit Ausblick auf JUnit 5)
