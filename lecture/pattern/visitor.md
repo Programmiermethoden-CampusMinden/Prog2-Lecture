@@ -59,46 +59,83 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/8a307719da2fd87b9cba54d34c05715a2fdaf115e80feb8ef29e53dcfe45f02e587ae0f76c7700e8d82fe102a234a2922af549aeaa261034dba59cbacfaaa8c3"
     name: "VL Visitor-Pattern"
 challenges: |
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/pattern/src/challenges/visitor)
-    finden Sie Code zur Realisierung von (rudimentären) binären Suchbäumen.
+    **Visitor-Pattern praktisch (und einfach)**
 
-    1.  Betrachten Sie die Klassen `BinaryNode` und `Main`. Die Klasse `BinaryNode` dient zur einfachen Repräsentierung von
-        binären Suchbäumen, in `Main` ist ein Versuchsaufbau vorbereitet.
-        -   Implementieren Sie das Visitor-Pattern für den Binärbaum (in den Klassen `BinaryNode` und `Main`). Der
-            `nodeVisitor` soll einen Binärbaum _inorder_ traversieren.
-        -   Führen Sie in `Main` die Aufrufe auf `binaryTree` aus (3a).
-        -   Worin besteht der Unterschied zwischen den Aufrufen `binaryTree.accept(nodeVisitor)` und
-            `nodeVisitor.visit(binaryTree)` (3a)?
+    Betrachten Sie den folgenden Code und erklären Sie das Ergebnis:
 
-    2.  In `BinaryNode` wird ein Blatt aktuell durch einen Knoten repräsentiert, der für beide Kindbäume den Wert `null`
-        hat. Um Blätter besser zu repräsentieren, gibt es die Klasse `UnaryNode`.
-        -   Passen Sie `BinaryNode` so an, dass die Kindbäume auch `UnaryNode` sein können.
-        -   Entfernen Sie in `Main` die Auskommentierung um die Definition von `mixedTree`.
-        -   Führen Sie in `Main` die Aufrufe auf `mixedTree` aus (3b). Passen Sie dazu ggf. Ihre Implementierung des
-            Visitor-Patterns an.
-        -   Worin besteht der Unterschied zwischen den Aufrufen `mixedTree.accept(nodeVisitor)` und
-            `nodeVisitor.visit(mixedTree)` (3b)?
+    ```java
+    interface Fruit { }
+    class Apple implements Fruit { }
+    class Orange implements Fruit { }
+    class Banana implements Fruit { }
+    class Foo extends Apple { }
 
-    3.  Sowohl `binaryTree` als auch `mixedTree` werden in `Main` als `BinaryNode<String>` deklariert.  Das ist eine
-        unschöne Praxis: Es soll nach Möglichkeit der Obertyp genutzt werden. Dies ist in diesem Fall `Node<String>`.
-        -   Entfernen Sie in `Main` die Auskommentierung um die Definition von `tree`.
-        -   Führen Sie in `Main` die Aufrufe auf `tree` aus (3c). Passen Sie dazu ggf. Ihre Implementierung des
-            Visitor-Patterns an.
-        -   Worin besteht der Unterschied zwischen den Aufrufen `tree.accept(nodeVisitor)` und
-            `nodeVisitor.visit(tree)` (3c)?
+    public class FruitBasketDirect {
+        public static void main(String... args) {
+            List<Fruit> basket = List.of(new Apple(), new Apple(), new Banana(), new Foo());
 
-    4.  Implementieren Sie analog zu `nodeVisitor` einen weiteren Visitor, der die Bäume _postorder_ traversiert
-        und wiederholen Sie für diesen neuen Visitor die Aufrufe in (3a) bis (3c).
+            int oranges = 0;  int apples = 0;  int bananas = 0;  int foo = 0;
 
-    5.  Erklären Sie, wieso im Visitor-Pattern für den Start der Traversierung statt `visitor.visit(tree)` der Aufruf
-        `tree.accept(visitor)` genutzt wird.
+            for (Fruit f : basket) {
+                if (f instanceof Apple) apples++;
+                if (f instanceof Orange) oranges++;
+                if (f instanceof Banana) bananas++;
+                if (f instanceof Foo) foo++;
+            }
+        }
+    }
+    ```
 
-    6.  Erklären Sie, wieso im Visitor-Pattern in der `accept`-Methode der Knoten der Aufruf `visitor.visit(this)`
-        genutzt wird. Erklären Sie, wieso dieser Aufruf nicht in der Oberklasse bzw. im gemeinsamen Interface der
-        Knoten implementiert werden kann.
+    <!--
+    3x Apple, 1x Banana, 0x Orange, 1x Foo
+    -->
 
-    7.  Erklären Sie, wieso im Visitor-Pattern in der `visit`-Methode der Visitoren statt `visit(node.left())` der
-        Aufruf `node.left().accept(this)` genutzt wird.
+    Das Verwenden von `instanceof` ist unschön und fehleranfällig. Schreiben Sie den
+    Code unter Einsatz des Visitor-Patterns um.
+
+    <!--
+    ```java
+    interface FruitCounter {
+        void count(Apple a);
+        void count(Orange o);
+        void count(Banana b);
+        void count(Foo f);
+    }
+
+
+    interface Fruit { void accept(FruitCounter fc); }
+    class Apple implements Fruit { public void accept(FruitCounter fc) { fc.count(this); } }
+    class Orange implements Fruit { public void accept(FruitCounter fc) { fc.count(this); } }
+    class Banana implements Fruit { public void accept(FruitCounter fc) { fc.count(this); } }
+    class Foo extends Apple { public void accept(FruitCounter fc) { fc.count(this); } }
+
+
+    public class FruitBasketVisitor {
+        public static void main(String... args) {
+            List<Fruit> basket = List.of(new Apple(), new Apple(), new Banana(), new Foo());
+
+            FruitCounter cnt = new FruitCounter() {
+                int oranges = 0;  int apples = 0;  int bananas = 0;  int foo = 0;
+
+                public void count(Apple a) { apples++; }
+                public void count(Orange o) { oranges++; }
+                public void count(Banana b) { bananas++;  }
+                public void count(Foo f) { foo++;  }
+            };
+
+            for (Fruit f : basket) {
+                f.accept(cnt);
+            }
+        }
+    }
+    ```
+    -->
+
+    <!--
+    2x Apple, 1x Banana, 0x Orange, 1x Foo
+    -->
+
+    Diskutieren Sie Vor- und Nachteile des Visitor-Patterns.
 ---
 
 
