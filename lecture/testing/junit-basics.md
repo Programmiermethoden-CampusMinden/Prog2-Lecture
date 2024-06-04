@@ -46,8 +46,8 @@ fhmedia:
 challenges: |
     **Setup und Teardown**
 
-    Sie haben in den Challenges in [Einführung Softwaretest](testing-intro.md)
-    erste JUnit-Tests für die Klasse `MyList<T>` implementiert.
+    Sie haben in den Challenges in "Intro SW-Test" erste JUnit-Tests für
+    die Klasse `MyList<T>` implementiert.
 
     Wie müssten Sie Ihre JUnit-Tests anpassen, wenn Sie im obigen Szenario
     Setup- und Teardown-Methoden einsetzen würden?
@@ -654,9 +654,10 @@ auf der "JUnit 5"-Plattform ausgeführt, sondern mit der JUnit 4-Infrastuktur!
     Testmethode erledigen!)
 
 5.  Wie immer sollten auch die Namen der Testmethoden klar über ihren Zweck Auskunft geben.
-    Der Präfix "test" wird seit JUnit 4.x nicht mehr benötigt, aber dennoch ist es in vielen
+
+    (Der Präfix "test" wird seit JUnit 4.x nicht mehr benötigt, aber dennoch ist es in vielen
     Projekten Praxis, diesen Präfix beizubehalten - damit kann man in der Package-Ansicht in
-    der IDE leichter zwischen den "normalen" und den Testmethoden unterscheiden.
+    der IDE leichter zwischen den "normalen" und den Testmethoden unterscheiden.)
 
 Diese Erfahrungen werden ausführlich in [@SWEGoogle, pp. 231-256] diskutiert.
 :::
