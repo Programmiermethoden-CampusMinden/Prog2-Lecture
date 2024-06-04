@@ -91,8 +91,8 @@ challenges: |
 
     ```java
     public class MyMath {
-        public static int add(int a, int b) {
-            return a + b;
+        public static String add(String s, int c) {
+            return s.repeat(c);
         }
     }
     ```
@@ -113,14 +113,14 @@ challenges: |
     class MyMathTest {
         @ParameterizedTest
         @CsvSource(textBlock = """
-                # a,  b,   a+b
-                0,    0,   0
-                10,   0,   10
-                0,    11,  11
-                -2,   10,  8
+                # s,  c,   s.repeat(c)
+                '',   0,   ''
+                foo,  0,   ''
+                foo,  1,   foo
+                foo,  2,   foofoo
                 """)
-        void add(int a, int b, int expected) {
-            Assertions.assertEquals(expected, MyMath.add(a, b));
+        void add(String s, int c, String expected) {
+            Assertions.assertEquals(expected, MyMath.add(s, c));
         }
     }
     ```
@@ -378,7 +378,7 @@ durchführen.
 
 ```java
 class Sum {
-    public int sum(int i, int j) {
+    public static int sum(int i, int j) {
         return i + j;
     }
 }
@@ -421,12 +421,12 @@ muss eine Testklasse in JUnit 4 folgende Bedingungen erfüllen:
     Element dieser Collection ein Array mit den Parametern für einen
     Durchlauf der Testmethoden ist.
 3.  Die Parameter müssen gesetzt werden. Dafür gibt es zwei Varianten:
-    a)  Für jeden Parameter gibt es ein öffentliches Attribut. Diese Attribute
+    *   (A) Für jeden Parameter gibt es ein öffentliches Attribut. Diese Attribute
         müssen mit der Annotation `@Parameter` markiert sein und können in den
         Testmethoden normal genutzt werden. JUnit sorgt dafür, dass für jeden
         Eintrag in der Collection aus der statischen `@Parameters`-Methode
         diese Felder gesetzt werden und die Testmethoden aufgerufen werden.
-    b)  Alternativ gibt es einen Konstruktor, der diese Werte setzt. Die Anzahl
+    *   (B) Alternativ gibt es einen Konstruktor, der diese Werte setzt. Die Anzahl
         der Parameter im Konstruktor muss dabei exakt der Anzahl (und
         Reihenfolge) der Werte in jedem Array in der von der statischen
         `@Parameters`-Methode gelieferten Collection entsprechen. Der
@@ -436,8 +436,12 @@ muss eine Testklasse in JUnit 4 folgende Bedingungen erfüllen:
 Letztlich wird damit das Kreuzprodukt aus Testmethoden und Testdaten durchgeführt.
 :::
 
-::::::::: slides
+::: slides
 ## Parametrisierte Tests: Konstruktor (JUnit 4)
+:::
+::: notes
+#### (A) Parametrisierte Tests: Konstruktor (JUnit 4)
+:::
 
 ```java
 @RunWith(Parameterized.class)
@@ -460,8 +464,12 @@ public class SumTestConstructor {
 }
 ```
 
-
+::: slides
 ## Parametrisierte Tests: Parameter (JUnit 4)
+:::
+::: notes
+#### (B) Parametrisierte Tests: Parameter (JUnit 4)
+:::
 
 ```java
 @RunWith(Parameterized.class)
@@ -482,7 +490,6 @@ public class SumTestParameters {
     }
 }
 ```
-:::::::::
 
 [Beispiel: junit4.SumTestConstructor, junit4.SumTestParameters]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/testing/src/junit4/"}
 
@@ -490,14 +497,14 @@ public class SumTestParameters {
 ::: notes
 ### Parametrisierte Tests mit JUnit 5
 
-In JUnit 5 werden parametrisierte Tests mit der Annotation `@ParameterizedTest`
+In JUnit 5 werden [parametrisierte Tests] mit der Annotation [`@ParameterizedTest`]
 gekennzeichnet (statt mit `@Test`).
 
-Mit Hilfe von `@ValueSource` kann man ein einfaches Array von Werten (Strings
-oder primitive Datentypen) angeben, mit denen der Test ausgeführt wird. Dazu
-bekommt die Testmethode einen entsprechenden passenden Parameter:
+Mit Hilfe von [`@ValueSource`] kann man ein einfaches Array von Werten (Strings oder primitive
+Datentypen) angeben, mit denen der Test ausgeführt wird. Dazu bekommt die Testmethode einen
+entsprechenden passenden Parameter:
 
-```java
+``` java
 @ParameterizedTest
 @ValueSource(strings = {"wuppie", "fluppie", "foo"})
 void testWuppie(String candidate) {
@@ -505,13 +512,37 @@ void testWuppie(String candidate) {
 }
 ```
 
-Alternativ lassen sich als Parameterquelle u.a. Aufzählungen (`@EnumSource`)
-oder Methoden (`@MethodSource`) angeben.
+Alternativ lassen sich als Parameterquelle u.a. Aufzählungen ([`@EnumSource`]) oder Methoden
+([`@MethodSource`]) oder auch Komma-separierte Daten ([`@CsvSource`]) angeben.
 
-*Hinweis*: Parametrisierte Tests werden in JUnit 5 derzeit noch als "*experimentell*"
-angesehen!
+Das obige Beispiel aus JUnit 4.x könnte mit Hilfe von `@CsvSource` so in JUnit 5.x umgesetzt
+werden:
+
+``` java
+public class SumTest {
+    @ParameterizedTest
+    @CsvSource(textBlock = """
+            # s1,  s2,  s1+s2
+            0,     0,   0
+            10,    0,   10
+            0,     11,  11
+            -2,    10,  8
+            """)
+    public void testSum(int s1, int s2, int erg) {
+        assertEquals(Sum.sum(s1, s2), erg);
+    }
+}
+```
 
 [Beispiel: junit5.TestValueSource, junit5.TestMethodSource]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/testing/src/junit5/"}
+
+  [parametrisierte Tests]: https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests
+  [`@ParameterizedTest`]: https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html
+  [`@ValueSource`]: https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/ValueSource.html
+  [`@EnumSource`]: https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/EnumSource.html
+  [`@MethodSource`]: https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/MethodSource.html
+  [`@CsvSource`]: https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/CsvSource.html
+
 :::
 
 
