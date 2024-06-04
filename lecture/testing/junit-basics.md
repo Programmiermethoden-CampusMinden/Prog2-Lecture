@@ -44,63 +44,87 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/e10dd378f9b18ba4a42ffbb2c13bfb83685b60fd39a221dba8658b8edcb0df032c2dcf9a1dcd44cf59aa6b483a00a19195cb5a8d117a6fbda52cfcfcf9efe5da"
     name: "VL JUnit Basics"
 challenges: |
-    Schreiben Sie eine JUnit-Testklasse (JUnit 4.x oder 5.x) und testen Sie eine
-    `ArrayList<String>`. Prüfen Sie dabei, ob das Einfügen und Entfernen wie
-    erwartet funktioniert.
+    **Setup und Teardown**
 
-    1.  Initialisieren Sie in einer `setUp()`-Methode das Testobjekt und fügen
-        Sie zwei Elemente ein. Stellen Sie mit einer passenden `assume*`-Methode
-        sicher, dass die Liste genau diese beiden Elemente enthält.
-        Die `setUp()`-Methode soll vor jedem Testfall ausgeführt werden.
+    Sie haben in den Challenges in [Einführung Softwaretest](testing-intro.md)
+    erste JUnit-Tests für die Klasse `MyList<T>` implementiert.
 
-    2.  Setzen Sie in einer `tearDown()`-Methode das Testobjekt wieder auf `null`
-        und stellen Sie mit einer passenden `assume*`-Methode sicher, dass das
-        Testobjekt tatsächlich `null` ist.
-        Die `tearDown()`-Methode soll nach jedem Testfall ausgeführt werden.
+    Wie müssten Sie Ihre JUnit-Tests anpassen, wenn Sie im obigen Szenario
+    Setup- und Teardown-Methoden einsetzen würden?
 
-    3.  Schreiben Sie eine Testmethode `testAdd()`.
-        Fügen Sie ein weiteres Element zum Testobjekt hinzu und prüfen Sie mit
-        einer passenden `assert*`-Methode, ob die Liste nach dem Einfügen den
-        gewünschten Zustand hat: Die Länge der Liste muss 3 Elemente betragen
-        und alle Elemente müssen in der richtigen Reihenfolge in der Liste stehen.
+    <!--
+    ```java
+    import org.junit.jupiter.api.*;
 
-    4.  Schreiben Sie eine Testmethode `testRemoveObject()`.
-        Entfernen Sie ein vorhandenes Element (über die Referenz auf das Objekt)
-        aus dem Testobjekt und prüfen Sie mit einer passenden `assert*`-Methode,
-        ob die Liste nach dem Entfernen den gewünschten Zustand hat: Die Liste
-        darf nur noch das verbleibende Element enthalten.
+    public class MyListTest {
+        private MyList<String> sut;
 
-    5.  Schreiben Sie eine Testmethode `testRemoveIndex()`.
-        Entfernen Sie ein vorhandenes Element über dessen _Index_ in der Liste
-        und prüfen Sie mit einer passenden `assert*`-Methode, ob die Liste nach
-        dem Entfernen den gewünschten Zustand hat: Die Liste darf nur noch das
-        verbleibende Element enthalten.
-        (Nutzen Sie zum Entfernen die `remove(int)`-Methode der Liste.)
-
-    6.  Schreiben Sie zusätzlich einen **parametrisierten JUnit-Test** für die
-        folgende Klasse:
-
-        ```java
-        import java.util.ArrayList;
-
-        public class SpecialArrayList extends ArrayList<String> {
-            public void concatAddStrings(String a, String b) {
-                this.add(a + b);
-            }
+        @BeforeEach
+        void setUp() {
+            sut = new MyList<>();
+            sut.add("foo");
         }
-        ```
 
-        Testen Sie, ob die Methode `concatAddStrings` der Klasse `SpecialArrayList`
-        die beiden übergebenen Strings korrekt konkateniert und das Ergebnis richtig
-        in die Liste einfügt. Testen Sie dabei mit mindestens den folgenden
-        Parameter-Tripeln:
+        @AfterEach
+        void tearDown() {
+            sut = null;
+        }
 
-        |   a   |   b   | expected |
-        |:-----:|:-----:|:--------:|
-        |  ""   |  ""   |    ""    |
-        |  ""   |  "a"  |   "a"    |
-        |  "a"  |  ""   |   "a"    |
-        | "abc" | "123" | "abc123" |
+        @Test
+        void addWithBefore() {
+            Assumptions.assumeTrue(sut.size() == 1);
+
+            boolean erg = sut.add("wuppie");
+
+            Assertions.assertTrue(erg);
+            Assertions.assertEquals(2, sut.size());
+
+        }
+    }
+    ```
+    -->
+
+
+    **Parametrisierte Tests**
+
+    Betrachten Sie die folgende einfache Klasse `MyMath`:
+
+    ```java
+    public class MyMath {
+        public static int add(int a, int b) {
+            return a + b;
+        }
+    }
+    ```
+
+    Beim Testen der Methode `MyMath#add` fällt auf, dass man hier immer
+    wieder den selben Testfall mit lediglich anderen Werten ausführt - ein
+    Fall für parametrisierte Tests.
+
+    Schreiben Sie mit Hilfe von JUnit (4.x oder 5.x) einige parametrisierte
+    Unit-Tests für die Methode `MyMath#add`.
+
+    <!--
+    ```java
+    import org.junit.jupiter.api.Assertions;
+    import org.junit.jupiter.params.ParameterizedTest;
+    import org.junit.jupiter.params.provider.CsvSource;
+
+    class MyMathTest {
+        @ParameterizedTest
+        @CsvSource(textBlock = """
+                # a,  b,   a+b
+                0,    0,   0
+                10,   0,   10
+                0,    11,  11
+                -2,   10,  8
+                """)
+        void add(int a, int b, int expected) {
+            Assertions.assertEquals(expected, MyMath.add(a, b));
+        }
+    }
+    ```
+    -->
 ---
 
 

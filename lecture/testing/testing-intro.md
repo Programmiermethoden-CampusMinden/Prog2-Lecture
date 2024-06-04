@@ -44,6 +44,70 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/87e2aa545269a6d4c0502a18a3e800c82bc767de66612f488f17e0ff60c3a66097884212745aff556c2b76eee7a0fd8a8225d912c3a39c274020fd5b8055bb10"
     name: "VL Einführung Softwaretest"
+challenges: |
+    **Einfache JUnit-Tests**
+
+    Betrachten Sie die folgende einfache (und nicht besonders sinnvolle)
+    Klasse `MyList<T>`:
+
+    ```java
+    public class MyList<T> {
+        protected final List<T> list = new ArrayList<>();
+
+        public boolean add(T element) { return list.add(element); }
+        public int size() { return list.size(); }
+    }
+    ```
+
+    Schreiben Sie mit Hilfe von JUnit (4.x oder 5.x) einige Unit-Tests für
+    die beiden Methoden `MyList<T>#add` und `MyList<T>#size`.
+
+    <!--
+    ```java
+    import org.junit.jupiter.api.*;
+
+    public class MyListTest {
+        @Test
+        void sizeEmptyList() {
+            MyList<String> sut = new MyList<>();
+
+            Assertions.assertEquals(0, sut.size());
+        }
+
+        @Test
+        void sizeNonEmptyList() {
+            MyList<String> sut = new MyList<>();
+            sut.list.add("wuppie");
+            sut.list.add("fluppie");
+
+            Assertions.assertEquals(2, sut.size());
+        }
+
+        @Test
+        void add() {
+            MyList<String> sut = new MyList<>();
+
+            boolean erg = sut.add("wuppie");
+
+            Assertions.assertTrue(erg);
+            Assertions.assertEquals(1, sut.size());
+        }
+
+        @Test
+        void addDouble() {
+            MyList<String> sut = new MyList<>();
+            String wuppie = "wuppie";
+
+            boolean erg;
+            sut.add(wuppie);
+            erg = sut.add(wuppie);
+
+            Assertions.assertTrue(erg);
+            Assertions.assertEquals(2, sut.size());
+        }
+    }
+    ```
+    -->
 ---
 
 
