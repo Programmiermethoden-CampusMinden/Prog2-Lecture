@@ -36,9 +36,9 @@ Prüfungsverfahren:
         Klausur teil und die Gesamtnote wird sich wie bisher aus den beiden Teilnoten
         zusammensetzen.
 
-### Nächste Klausur: Freitag, 19. Juni 2024
+### Nächste Klausur: Freitag, 19. Juli 2024
 
-Die nächste Klausur für "Programmiermethoden" wird am Freitag, 19. Juni 2024 angeboten. Die
+Die nächste Klausur für "Programmiermethoden" wird am Freitag, 19. Juli 2024 angeboten. Die
 Klausur wird als digitale Klausur auf dem Prüfungs-ILIAS der HSBI vor Ort in Minden im Raum
 B40 durchgeführt. Die Prüfung beginnt um 08:00 Uhr und dauert 90 Minuten. Ein DIN-A4-Zettel
 ist als Hilfsmittel zugelassen. Der geprüfte Stoff bezieht sich auf den zuletzt durchgeführten

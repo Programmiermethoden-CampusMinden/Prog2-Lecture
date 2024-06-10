@@ -90,9 +90,9 @@ Dauer jeweils 90 Minuten.
 *   Melden Sie sich im ILIAS-Prüfungsraum vor dem Prüfungstag per "Beitritt mit Bestätigung" an
     [(wie zu einem normalen Kurs)]{.notes}
 
-#### Termin 1: Klausur PM (19.06.24)
+#### Termin 1: Klausur PM (19.07.24)
 
-Die Klausur in Programmiermethoden findet an Termin 1 (Freitag, 19. Juni 2024) als digitale
+Die Klausur in Programmiermethoden findet an Termin 1 (Freitag, 19. Juli 2024) als digitale
 Klausur in Präsenz am Campus Minden im Raum B40 statt.
 
 Die Klausur wird als digitale Klausur auf dem Prüfungs-ILIAS der HSBI vor Ort in Minden im
