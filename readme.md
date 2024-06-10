@@ -4,17 +4,56 @@ title: "IFM 2.2: Programmiermethoden (Sommer 2023)"
 ---
 
 
-::: center
-[**Das Modul "Programmiermethoden" wurde im Rahmen der Reakkreditierung im Herbst 2023 durch das kleinere Modul ["Programmieren 2"] ersetzt.**]{.alert}
 
-[**Die Inhalte von "Programmiermethoden" werden hier für Wiederholende weiterhin angeboten und gepflegt.**]{.alert}
-[**Es finden auch weiterhin Prüfungen für Wiederholende statt (siehe auch [Abkündigung des Moduls "Programmiermethoden"]).**]{.alert}
+`{{% notice style="note" %}}`{=markdown}
 
-["Programmieren 2"]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
-[PO10]: https://www.hsbi.de/multimedia/Hochschulverwaltung/Dezernat+II/StudServ/Prüfungsangelegenheiten/Studiengangs_Downloads/Informatik+_+IFM/Prüfungsordnung+und+Modulhandbuch+Bachelor+Informatik+Version+10+%28Fassung+09_2023%29-p-174010.pdf
-[PO18]: https://www.hsbi.de/multimedia/Hochschulverwaltung/Dezernat+II/StudServ/Prüfungsangelegenheiten/Studiengangs_Downloads/Informatik+_+IFM/Studiengangsprüfungsordnung+und+Modulhandbuch+Bachelor+Informatik+Version+18+%28Fassung+09_2023%29-p-169988.pdf
-[Abkündigung des Moduls "Programmiermethoden"]: https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/discussions/24
-:::
+### Abkündigung des Moduls "Programmiermethoden"
+
+Das Modul "Programmiermethoden" wurde im Rahmen der Reakkreditierung im Herbst 2023 durch das
+kleinere Modul ["Programmieren 2"] ersetzt und kann nicht mehr belegt werden (es werden keine
+Vorlesungen und keine Praktika mehr für "Programmiermethoden" angeboten).
+
+Die Inhalte von "Programmiermethoden" werden hier für Wiederholende weiterhin gepflegt. Das
+zugehörige Lernmodul finden Sie im [offenen ILIAS-Bereich] der HSBI.
+
+Bis zum Auslaufen der zugehörigen Prüfungsordnungen [PO10] und [PO18] finden auch weiterhin
+Prüfungen für Wiederholende statt.
+
+### Regelung für noch offene Prüfungen
+
+Wer in "Programmiermethoden" noch eine Prüfung benötigt, kann diese in den Prüfungszeiträumen
+des Sommersemesters (und ggf. des Wintersemesters, falls angeboten) als Klausur nachholen.
+
+Dabei gelten folgende Regelungen (vgl. Mail von Frau Seele vom 28.09.2023) für offene
+Prüfungsverfahren:
+
+-   Parcoursprüfung: Bei einer offenen Parcoursprüfung bildet die Klausur die gesamte Prüfung.
+-   Performanzprüfung:
+    -   Der praktische Teil der Performanzprüfung entfällt, die Note und CP werden über eine
+        Klausur bestimmt.
+    -   Wenn Sie aber bereits eine Note bzw. CP für den praktischen Teil haben (und nur die
+        theoretische Leistung noch fehlt), dann nehmen Sie an der weiterhin angebotenen
+        Klausur teil und die Gesamtnote wird sich wie bisher aus den beiden Teilnoten
+        zusammensetzen.
+
+### Nächste Klausur: Freitag, 19. Juni 2024
+
+Die nächste Klausur für "Programmiermethoden" wird am Freitag, 19. Juni 2024 angeboten. Die
+Klausur wird als digitale Klausur auf dem Prüfungs-ILIAS der HSBI vor Ort in Minden im Raum
+B40 durchgeführt. Die Prüfung beginnt um 08:00 Uhr und dauert 90 Minuten. Ein DIN-A4-Zettel
+ist als Hilfsmittel zugelassen. Der geprüfte Stoff bezieht sich auf den zuletzt durchgeführten
+Kurs (Sommer 2023, s.u.). Weitere Informationen siehe
+[Prüfungsvorbereitung](admin/exams.md).
+
+  ["Programmieren 2"]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
+  [offenen ILIAS-Bereich]: https://www.hsbi.de/elearning/goto.php?target=crs_1181185&client_id=FH-Bielefeld
+  [PO10]: https://www.hsbi.de/multimedia/Hochschulverwaltung/Dezernat+II/StudServ/Prüfungsangelegenheiten/Studiengangs_Downloads/Informatik+_+IFM/Prüfungsordnung+und+Modulhandbuch+Bachelor+Informatik+Version+10+%28Fassung+09_2023%29-p-174010.pdf
+  [PO18]: https://www.hsbi.de/multimedia/Hochschulverwaltung/Dezernat+II/StudServ/Prüfungsangelegenheiten/Studiengangs_Downloads/Informatik+_+IFM/Studiengangsprüfungsordnung+und+Modulhandbuch+Bachelor+Informatik+Version+18+%28Fassung+09_2023%29-p-169988.pdf
+
+`{{% /notice %}}`{=markdown}
+
+* * * * *
+
 
 
 ## Kursbeschreibung
