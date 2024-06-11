@@ -53,6 +53,22 @@ challenges: |
     Erklären Sie die Code-Schnipsel in der
     [Vorgabe](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/modern-java/src/challenges/defaults)
     und die jeweils entstehenden Ausgaben.
+
+    <!--
+    ```
+    new Voegel.Schornsteinsegler().gleiten();
+    "Sub-Interfaces gewinnen"
+
+    new Enten.Ente().fortbewegen();
+    "Methode explizit auswählen"
+
+    new Pinguine.Kaiserpinguin().schwimmen();
+    "Sub-Interfaces gewinnen" da Pinguin nicht die Methode implementiert.
+
+    new Kolibris.Adlerschnabel().schweben();
+    "Klassen gewinnen"
+    ```
+    -->
 ---
 
 
