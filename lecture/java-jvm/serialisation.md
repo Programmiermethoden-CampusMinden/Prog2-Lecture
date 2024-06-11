@@ -56,7 +56,7 @@ challenges: |
     Dabei soll das Passwort nicht serialisiert bzw. gespeichert werden, alle anderen
     Eigenschaften von `Person` sollen serialisierbar sein.
 
-    _Hinweis_: Verwenden Sie zur Umsetzung [java.io.Serializable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html).
+    _Hinweis_: Verwenden Sie zur Umsetzung [java.io.Serializable](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/Serializable.html).
 
     Erstellen Sie in Ihrem `main()` einige Instanzen von Person und speichern Sie diese in
     serialisierter Form und laden (deserialisieren) Sie diese anschließend in neue Variablen.
@@ -64,6 +64,148 @@ challenges: |
     Betrachten Sie die ursprünglichen und die wieder deserialisierten Objekte mit Hilfe des
     Debuggers. Alternativ können Sie die Objekte auch in übersichtlicher Form über den Logger
     ausgeben.
+
+    <!--
+    ```java
+    import java.io.Serial;
+    import java.io.Serializable;
+
+    class Address implements Serializable {
+        @Serial
+        private static final long serialVersionUID = 2L;
+        private String street;
+        private Integer number;
+        private String city;
+        private Integer plz;
+
+        public Address(String street, Integer number, String city, Integer plz) {
+            this.street = street;
+            this.number = number;
+            this.city = city;
+            this.plz = plz;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder output = new StringBuilder();
+            output.append(street);
+            output.append(" ");
+            output.append(number);
+            output.append("\n");
+            output.append(plz);
+            output.append(" ");
+            output.append(city);
+            output.append("\n");
+            return output.toString();
+        }
+    }
+
+
+    class Person implements Serializable {
+        @Serial
+        private static final long serialVersionUID = 1L;
+        private String name;
+        private Integer age;
+        private String username;
+        private transient String password;
+        private List<Address> addressList;
+        private Person friend;
+
+        public Person(String name, Integer age, String username, String password, List<Address> addressList) {
+            this.name = name;
+            this.age = age;
+            this.username = username;
+            this.password = password;
+            this.addressList = addressList;
+        }
+
+        public void setFriend(Person person) {
+            this.friend = person;
+        }
+
+        public Person getFriend() {
+            return this.friend;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder output = new StringBuilder();
+            output.append("Name: ");
+            output.append(name);
+            output.append("\nAlter: ");
+            output.append(age);
+            output.append("\nNutzername: ");
+            output.append(username);
+            output.append("\nPasswort: ");
+            output.append(password);
+            output.append("\nAdress Liste: \n");
+            output.append(addressList);
+            return output.toString();
+        }
+    }
+
+
+    class FileHandler<T> {
+
+        private final String filename;
+
+        public FileHandler(String filename) {
+            this.filename = filename;
+        }
+
+        public void writeObjectToFile(T object) throws IOException {
+            try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename))) {
+                out.writeObject(object);
+                out.flush();
+            }
+        }
+
+        public T readObjectFromFile() throws IOException, ClassNotFoundException {
+            try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(filename))) {
+                return (T) in.readObject();
+            }
+        }
+    }
+
+
+    public class Main {
+        private static final String FILENAME = "test.txt";
+        private static final Logger LOGGER = Logger.getLogger("Serialisierung");
+
+
+        public static void main(String... args) {
+            FileHandler<Person> fileHandler = new FileHandler<>(FILENAME);
+            List<Address> addressList = new ArrayList<>();
+            addressList.add(new Address("Ringstraße", 52, "Minden", 32425));
+            addressList.add(new Address("Stiftsallee", 36, "Minden", 32425));
+            Person originPerson = new Person("Bob", 23, "PM-Bob", "123456", addressList);
+            Person otherPerson = new Person("Max", 36, "PM-Max", "test123", addressList);
+            originPerson.setFriend(otherPerson);
+            otherPerson.setFriend(originPerson);
+            Person deserializedPerson = null;
+
+            try {
+                fileHandler.writeObjectToFile(originPerson);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                deserializedPerson = fileHandler.readObjectFromFile();
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+            LOGGER.info("Origin:\n" + originPerson.toString());
+            LOGGER.info("Origin_Friend:\n" + originPerson.getFriend().toString());
+            LOGGER.info("Origin_Friend_Friend:\n" + originPerson.getFriend().getFriend().toString());
+            LOGGER.info("Deserialized:\n" + deserializedPerson.toString());
+            LOGGER.info("Deserialized_Friend:\n" + deserializedPerson.getFriend().toString());
+            LOGGER.info("Deserialized_Friend_Friend:\n" + deserializedPerson.getFriend().getFriend().toString());
+        }
+    }
+    ```
+    -->
 ---
 
 
