@@ -123,6 +123,49 @@ challenges: |
     auf deren Auftreten jedoch _nicht_ getestet werden soll. Stattdessen
     sollen diese Klassen bzw. Methoden mit Mockito "weggemockt" werden, so
     dass die vorgegebenen Testmethoden (wieder) funktionieren.
+
+    <!--
+    ```java
+    import org.junit.jupiter.api.Assertions;
+    import org.junit.jupiter.api.BeforeEach;
+    import org.junit.jupiter.api.Test;
+    import org.mockito.Mockito;
+
+    // Ergänzen Sie UtilityTest so, dass alle Testmethoden grün werden.
+    // Die vorgegebenen Klassen dürfen nicht geändert werden.
+    // Die Testaufrufe müssen auch erhalten bleiben.
+    public class UtilityTest {
+        private Utility utilityClassSpy;
+        // Initialisieren Sie die Attribute entsprechend vor jedem Test.
+
+        @BeforeEach
+        void setUp() {
+            Evil evilUtilityClassMock = Mockito.mock(Evil.class);
+            Utility utilityClass = new Utility(evilUtilityClassMock);
+            utilityClassSpy = Mockito.spy(utilityClass);
+
+            Mockito.doNothing().when(evilUtilityClassMock).evilMethod();
+            Mockito.doNothing().when(utilityClassSpy).evilMethod();
+        }
+
+        @Test
+        void test_nonEvilAdd() {
+            Assertions.assertEquals(10, utilityClassSpy.nonEvilAdd(9, 1));
+        }
+
+        @Test
+        void test_evilAdd() {
+            Assertions.assertEquals(10, utilityClassSpy.evilAdd(9, 1));
+        }
+
+        @Test
+        void test_veryEvilAdd() {
+            utilityClassSpy.veryEvilAdd(9, 1);
+            Assertions.assertEquals(10, utilityClassSpy.getIntResult());
+        }
+    }
+    ```
+    -->
 ---
 
 
