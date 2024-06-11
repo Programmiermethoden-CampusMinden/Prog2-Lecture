@@ -56,18 +56,27 @@ challenges: |
         /**
          * Testet, ob ein Mitglied in den Verein aufgenommen werden kann.
          *
+         * <p>Interessierte Personen müssen mindestens 16 Jahre alt sein, um aufgenommen
+         * werden zu können. Die Motivation darf nicht zu niedrig und auch nicht zu hoch
+         * sein und muss zwischen 4 und 7 (inklusive) liegen, sonst wird der Antrag
+         * abgelehnt.
+         *
+         * <p>Der Wertebereich beim Alter umfasst die natürlichen Zahlen zwischen 0 und 99
+         * (inklusive), bei der Motivation sind die natürlichen Zahlen zwischen 0 und 10
+         * (inklusive) erlaubt.
+         *
+         * <p>Bei Verletzung der zulässigen Wertebereiche der Parameter wird eine
+         * <code>IllegalArgumentException</code> geworfen.
+         *
          * @param alter       Alter in Lebensjahren, Bereich [0, 99]
          * @param motivation  Motivation auf einer Scala von 0 bis 10
-         * @return <code>true</code>, wenn das Mitglied aufgenommen werden kann, sonst <code>false</code>
+         * @return <code>true</code>, wenn das Mitglied aufgenommen werden kann,
+         *         sonst <code>false</code>
+         * @throws <code>IllegalArgumentException</code>, wenn Parameter außerhalb
+         *                                                der zulässigen Wertebereiche
          */
         public boolean testBeitritt(int alter, int motivation) {
-            if (alter < 0 || alter > 99 || motivation < 0 || motivation > 10) {
-                throw new IllegalArgumentException("Alter oder/und Motivation ungültig");
-            }
-            if (alter < 16) {
-                return false;
-            }
-            return motivation >= 4 && motivation <= 7;
+            // Implementierung versteckt
         }
     }
     ```
@@ -87,6 +96,52 @@ challenges: |
     4.  Implementieren Sie die Testfälle in JUnit (JUnit 4 oder 5). Fassen Sie die Testfälle der gültigen ÄK in
         einem parametrisierten Test zusammen. Für die ungültigen ÄKs erstellen Sie jeweils eine eigene
         JUnit-Testmethode. Beachten Sie, dass Sie auch die Exceptions testen müssen.
+
+    <!--
+    ÄK/GW Alter:
+
+    | Nr. | ÄK | ÄK-Bereich | GW-Nr. | GW  | Gültig? | Beitritt? | Wert für TF |
+    |-----|----|------------|--------|-----|---------|-----------|-------------|
+    | 1   | 1  | [0, 15]    | --     | --  | j       | f         | 12          |
+    | 2   | 2  | [16, 99]   | --     | --  | j       | t         | 42          |
+    | 3   | 3  | <0         | --     | --  | n       | --        | -3          |
+    | 4   | 4  | >99        | --     | --  | n       | --        | 199         |
+    | 5   | 3  | --         | 1      | -1  | n       | --        | gw          |
+    | 6   | 1  | --         | 2      | 0   | j       | f         | gw          |
+    | 7   | 1  | --         | 3      | 15  | j       | f         | gw          |
+    | 8   | 2  | --         | 4      | 16  | j       | t         | gw          |
+    | 9   | 2  | --         | 5      | 99  | j       | t         | gw          |
+    | 10  | 4  | --         | 6      | 100 | n       | --        | gw          |
+
+    ÄK/GW  Motivation:
+
+    | Nr. | ÄK | ÄK-Bereich | GW-Nr. | GW | Gültig? | Beitritt? | Wert für TF |
+    |-----|----|------------|--------|----|---------|-----------|-------------|
+    | 1   | 1  | [0, 3]     | --     | -- | j       | f         | 2           |
+    | 2   | 2  | [4, 7]     | --     | -- | j       | t         | 5           |
+    | 3   | 3  | [8, 10]    | --     | -- | j       | f         | 10          |
+    | 4   | 4  | <0         | --     | -- | n       | --        | -32         |
+    | 5   | 5  | >10        | --     | -- | n       | --        | 13          |
+    | 6   | 4  | --         | 1      | -1 | n       | --        | gw          |
+    | 7   | 1  | --         | 2      | 0  | j       | f         | gw          |
+    | 8   | 1  | --         | 3      | 3  | j       | f         | gw          |
+    | 9   | 2  | --         | 4      | 4  | j       | t         | gw          |
+    | 10  | 2  | --         | 5      | 7  | j       | t         | gw          |
+    | 11  | 3  | --         | 6      | 8  | j       | f         | gw          |
+    | 12  | 3  | --         | 7      | 10 | j       | f         | gw          |
+    | 13  | 5  | --         | 8      | 11 | n       | --        | gw          |
+
+    Jede ÄK und jeder GW muss in mind. einem Testfall auftauchen. Dabei dürfen gültige
+    ÄK für Alter und Motivation in einem TF kombiniert werden.
+
+    Die in der Tabelle gezeigten Repräsentanten (Spalte "Wert für TF") für die ÄK sind
+    Beispiele. Es kann auch ein anderer Wert aus dem jeweiligen Intervall genommen werden.
+
+    Für den Test der ungültigen ÄK muss der jeweils andere Parameter mit einem Wert aus
+    seiner gültigen ÄK aufgefüllt werden. Analog für das Testen der gültigen und ungültigen
+    GW, hier muss der andere Parameter stets aus seiner gültigen ÄK bedient werden.
+    Wichtig: In diesen beiden Fällen gelten die genutzten gültigen ÄK noch nicht als getestet!
+    -->
 ---
 
 
