@@ -34,6 +34,33 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/e00888ac91978bb3694491a722e61bba5d836d403d7f94e7d3ef6b28c07dae841b5852488bdf8f64e1628a58a2e5f3410dbb08699ded346ec2da34fd877a831f"
     name: "VL Observer-Pattern"
 challenges: |
+    **Observer: Restaurant**
+
+    Stellen Sie sich ein Restaurant vor, in welchem man nicht eine komplette Mahlzeit bestellt, sondern aus
+    einzelnen Komponenten auswählen kann. Die Kunden bestellen also die gewünschten Komponenten, suchen sich
+    einen Tisch und warten auf die Fertigstellung ihrer Bestellung. Da die Küche leider nur sehr klein ist,
+    werden immer alle Bestellungen einer bestimmten Komponente zusammen bearbeitet - also beispielsweise werden
+    alle bestellten Salate angerichtet oder die alle bestellten Pommes-Portionen zubereitet. Sobald eine solche
+    Komponente fertig ist, werden alle Kunden aufgerufen, die diese Komponente bestellt haben ...
+
+    Modellieren Sie dies in Java. Nutzen Sie dazu das Observer-Pattern, welches Sie ggf. leicht anpassen
+    müssen.
+
+    <!--
+    -   Typ für Komponenten (Enum reicht)
+    -   Kunden als Observer (`update`-Methode)
+    -   Restaurant als Observable (`register`-Methode)
+    -   Kunden registrieren sich, aber jeweils für eine bestimmte Komponente
+        (die Registrierung passiert also mehrfach pro Kunde, aber nur einmal pro Komponente):
+        -   (a) Je Komponente eine eigene `registerXYZ()`-Methode im Restaurant
+        -   (b) Eine gemeinsame `register()`-Methode, die zusätzlich eine Komponente mit aufnimmt
+    -   Das `update()` im Kunden ist dann analog mit Parameter (Komponente) oder es gibt pro
+        Komponente eine eigene `update`-Methode
+    -->
+
+
+    **Observer: Einzel- und Großhandel**
+
     In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/pattern/src/challenges/observer)
     finden Sie ein Modell für eine Lieferkette zwischen Großhandel und Einzelhandel.
 
