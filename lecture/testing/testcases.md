@@ -46,6 +46,8 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/6719b852fd1ce5516a7110089ca465626826ef1e6d35ab62e8ef0ca5a71e2daab68631e2ff891d9562552ba7fa1ec97033e3d6c2ac65cf22b62377d2ceb4ea37"
     name: "VL Testfallermittlung"
 challenges: |
+    **ÄK/GW: RSV Flotte Speiche**
+
     Der RSV Flotte Speiche hat in seiner Mitgliederverwaltung (`MitgliederVerwaltung`) die Methode
     `testBeitritt` implementiert. Mit dieser Methode wird geprüft, ob neue Mitglieder in den Radsportverein
     aufgenommen werden können.
@@ -93,9 +95,10 @@ challenges: |
         _Hinweis_: Erstellen Sie separate (zusätzliche) TF für die GW, d.h. integrieren Sie diese _nicht_ in die
         ÄK-TF.
 
-    4.  Implementieren Sie die Testfälle in JUnit (JUnit 4 oder 5). Fassen Sie die Testfälle der gültigen ÄK in
-        einem parametrisierten Test zusammen. Für die ungültigen ÄKs erstellen Sie jeweils eine eigene
-        JUnit-Testmethode. Beachten Sie, dass Sie auch die Exceptions testen müssen.
+    4.  Implementieren Sie die Testfälle in JUnit (JUnit 4 oder 5).
+        -   Fassen Sie die Testfälle der gültigen ÄK in einem parametrisierten Test zusammen.
+        -   Für die ungültigen ÄKs erstellen Sie jeweils eine eigene JUnit-Testmethode. Beachten
+            Sie, dass Sie auch die Exceptions testen müssen.
 
     <!--
     ÄK/GW Alter:
@@ -136,6 +139,57 @@ challenges: |
 
     Die in der Tabelle gezeigten Repräsentanten (Spalte "Wert für TF") für die ÄK sind
     Beispiele. Es kann auch ein anderer Wert aus dem jeweiligen Intervall genommen werden.
+
+    Für den Test der ungültigen ÄK muss der jeweils andere Parameter mit einem Wert aus
+    seiner gültigen ÄK aufgefüllt werden. Analog für das Testen der gültigen und ungültigen
+    GW, hier muss der andere Parameter stets aus seiner gültigen ÄK bedient werden.
+    Wichtig: In diesen beiden Fällen gelten die genutzten gültigen ÄK noch nicht als getestet!
+    -->
+
+
+    **ÄK/GW: LSF**
+
+    Das LSF bestimmt mit der Methode `LSF#checkStudentCPS`, ob ein Studierender bereits zur
+    Bachelorarbeit oder Praxisphase zugelassen werden kann:
+
+    ```java
+    class LSF {
+        public static Status checkStudentCPS(Student student) {
+            if (student.credits() >= Status.BACHELOR.credits) return Status.BACHELOR;
+            else if (student.credits() >= Status.PRAXIS.credits) return Status.PRAXIS;
+            else return Status.NONE;
+        }
+    }
+
+    record Student(String name, int credits, int semester) { }
+
+    enum Status {
+        NONE(0), PRAXIS(110), BACHELOR(190);  // min: 0, max: 210
+
+        public final int credits;
+        Status(int credits) { this.credits = credits; }
+    }
+    ```
+
+    1.  Führen Sie eine Äquivalenzklassenbildung für die Methode `LSF#checkStudentCPS` durch.
+    2.  Führen Sie zusätzlich eine Grenzwertanalyse für die Methode `LSF#checkStudentCPS` durch.
+    3.  Erstellen Sie aus den ÄK und GW wie in der Vorlesung diskutiert Testfälle.
+    4.  Implementieren Sie die Testfälle in JUnit (JUnit 4 oder 5).
+        -   Fassen Sie die Testfälle der gültigen ÄK in einem parametrisierten Test zusammen.
+        -   Für die ungültigen ÄKs erstellen Sie jeweils eine eigene JUnit-Testmethode. Beachten
+            Sie, dass Sie auch die Exceptions testen müssen.
+
+    <!--
+    Die Methode hat nur einen Parameter vom Typ `Student`. Der innere Zustand muss in den ÄK/GW
+    berücksichtigt werden.
+
+    -   Student: `null` (ungültige ÄK)
+        -   Name: `null`, `""`, `"..."` (gültige ÄK, da nicht weiter definiert)
+        -   Semester: `[0, .., 20]` (gültige ÄK), `<0` und `>20` (ungültige oder gültige ÄK, da nicht weiter definiert)
+        -   Credits: `[0, ..., 109]` (gültige ÄK), `[110, ..., 189]` (gültige ÄK), `[190, ..., 210]` (gültige ÄK), `<0` und `>210` (ungültige ÄK)
+
+    Jede ÄK und jeder GW muss in mind. einem Testfall auftauchen. Dabei dürfen gültige
+    ÄK für Alter und Motivation in einem TF kombiniert werden.
 
     Für den Test der ungültigen ÄK muss der jeweils andere Parameter mit einem Wert aus
     seiner gültigen ÄK aufgefüllt werden. Analog für das Testen der gültigen und ungültigen
