@@ -46,25 +46,15 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/36389f8fe4befc6370c28cda4475690224942c00c854e6dfc953b60c26acdf62093345ae1ee0698f71dc0a7f02739253d4ba29b7c05b69036cbb09fb1e361549"
     name: "VL Refactoring"
 challenges: |
-    In der [Vorgabe](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/coding/src/challenges/refactor)
-    finden Sie einige Klassen mit unübersichtlichem und schlecht strukturierten Code.
+    Betrachten Sie das [Theatrical Players Refactoring Kata](https://github.com/emilybache/Theatrical-Players-Refactoring-Kata).
+    Dort finden Sie im Unterordner [java/](https://github.com/emilybache/Theatrical-Players-Refactoring-Kata/tree/main/java)
+    einige Klassen mit unübersichtlichem und schlecht strukturierten Code.
 
     Welche _Bad Smells_ können Sie hier identifizieren?
 
     Beheben Sie die Smells durch die _schrittweise Anwendung_ von den aus der Vorlesung
-    bekannten Refactoring-Methoden. Wenden Sie dabei _mindestens_ die unten genannten
-    Methoden an. Wenn Sie keinen passenden Smell identifizieren können, suchen Sie sich
-    eine geeignete Stelle, um die jeweilige Methode anzuwenden. Denken Sie auch daran,
-    dass Refactoring immer durch eine entsprechende Testsuite abgesichert sein muss.
-
-    Ergänzend zu der Übersicht aus der Vorlesung finden sie unter
-    [Refactoring Guru](https://refactoring.guru/refactoring/techniques) eine erweiterte
-    Auflistung der gängigen Refactoring-Techniken.
-
-    1.  Extract Method/Class
-    2.  Move Method/Field
-    3.  Encapsulate Method/Field
-    4.  Pull Up oder Push Down
+    bekannten Refactoring-Methoden. Denken Sie auch daran, dass Refactoring immer durch
+    eine entsprechende Testsuite abgesichert sein muss - ergänzen Sie ggf. die Testfälle.
 ---
 
 
