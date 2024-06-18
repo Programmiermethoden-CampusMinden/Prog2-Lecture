@@ -46,6 +46,56 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/74a8f8c2e1a07d9fb70c8984e522d884141b2260c27dadfd7a23884bee8c0573136475ce66f28562097ca34a63fcf9c6d1c45ff695485d79465a4131878180ca"
     name: "VL Continuous Integration"
+challenges: |
+    Betrachten Sie erneut das Projekt [Theatrical Players Refactoring Kata](https://github.com/emilybache/Theatrical-Players-Refactoring-Kata).
+    Erstellen Sie für dieses Projekt einen GitHub-Workflow, der das Projekt kompiliert und die Testsuite ausführt
+    (nur für den Java-Teil, den restlichen Code können Sie ignorieren).
+
+    Dabei soll das Ausführen der JUnit-Tests nur dann erfolgen, wenn das Kompilieren erfolgreich durchgeführt wurde.
+
+    Der Workflow soll automatisch für Commits in den Hauptbranch sowie für Pull-Requests loslaufen. Es soll zusätzlich
+    auch manuell aktivierbar sein.
+
+    <!--
+    ```yaml
+    name: WUPPIE
+    on:
+        push:
+            branches: [master]  # push on master branch
+        pull_request:         # triggered by pull requests
+        workflow_dispatch:    # manually triggered
+
+    jobs:
+        build:
+            name: Build
+            runs-on: ubuntu-latest
+            steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Set up JDK 21
+              uses: actions/setup-java@v4
+              with:
+                  java-version: '21'
+                  distribution: 'temurin'
+            - name: Build with Gradle
+              run: cd java/ && ./gradlew assemble
+
+        junit:
+            name: JUnit
+            needs: build
+            runs-on: ubuntu-latest
+            steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Set up JDK 21
+              uses: actions/setup-java@v4
+              with:
+                  java-version: '21'
+                  distribution: 'temurin'
+            - name: JUnit
+              run: cd java/ && ./gradlew test
+    ```
+    -->
 ---
 
 
