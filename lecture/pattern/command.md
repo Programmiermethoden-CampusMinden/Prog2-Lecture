@@ -50,6 +50,10 @@ challenges: |
     erfüllt (ebenfalls über die Tasten "W", "A", "S" und "D").
 
     Schreiben Sie eine Demo, um die Funktionalität Ihres Programmes zu demonstrieren.
+
+    <!--
+    Lösung siehe https://github.com/Programmiermethoden-CampusMinden/prog2_intern_solutions/blob/solution_challenge_commandpattern/src/main/java/commandpattern/Main.java
+    -->
 ---
 
 
