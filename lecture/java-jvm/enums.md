@@ -33,6 +33,15 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/5c9330cb4425a5b33f89b491d007990642765bf0ca7ea9fd6b8b7536f46691b86bba9bde65cdbce308fb467f2d0183391dd0d1247c142e4e28d9b9eaf8c0ff67"
     name: "VL Enumerations"
+challenges: |
+    Im [Dungeon](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/configuration/KeyboardConfig.java)
+    sollen Key-Codes aus libGDX (Integer-Werte) als Konstanten zugreifbar sein. Zusätzlich soll es es noch einen String geben, der
+    beschreibt, wo und wie diese Taste im Spiel eingesetzt wird. Aus historischen Gründen ist dies im Dungeon recht komplex gelöst.
+
+    Definieren Sie eine neue Enum-Klasse, die Konstanten für Tasten aufzählt (beispielsweise `ESCAPE`, `W`, `A` oder `LEFT`). Jede
+    dieser Konstanten soll den der Taste zugeordneten Integerwert speichern können und einen String haben, der als Hilfestring
+    verstanden werden könnte (nutzen Sie hier einfach Phantasiewerte). Zeigen Sie in einer kleinen Demo, wie Sie mit diesem Enum
+    arbeiten würden: Zugriff auf die Konstanten, Zugriff auf den Zahlenwert und/oder den String, Übergabe als Funktionsparameter.
 ---
 
 
