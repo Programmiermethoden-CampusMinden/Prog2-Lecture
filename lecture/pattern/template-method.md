@@ -39,15 +39,20 @@ challenges: |
     aufgerufen wird. Der Kopiervorgang ist für alle Druckertypen identisch,
     das Scannen und Drucken ist abhängig vom Druckertyp.
 
-    Implementieren Sie zusätzlich zwei unterschiedliche Druckertypen.
+    Implementieren Sie zusätzlich zwei unterschiedliche Druckertypen:
+
     - `Tintendrucker extends Drucker`
+        - `Tintendrucker#drucken` loggt den Text "Drucke das Dokument auf dem Tintendrucker."
+        - `Tintendrucker#scannen` loggt den Text "Scanne das Dokument mit dem Tintendrucker."
     - `Laserdrucker extends Drucker`
-    - `Tintendrucker#scannen` loggt den Text "Scanne das Dokument mit dem Tintendrucker."
-    - `Laserdrucker#scannen` loggt den Text "Scanne das Dokument mit dem Laserdrucker."
-    - `Tintendrucker#drucken` loggt den Text "Drucke das Dokument auf dem Tintendrucker."
-    - `Laserdrucker#drucken` loggt den Text "Drucke das Dokument auf dem Laserdrucker."
+        - `Laserdrucker#drucken` loggt den Text "Drucke das Dokument auf dem Laserdrucker."
+        - `Laserdrucker#scannen` loggt den Text "Scanne das Dokument mit dem Laserdrucker."
 
     Nutzen Sie das Template-Method-Pattern.
+
+    <!--
+    Lösung siehe https://github.com/Programmiermethoden-CampusMinden/prog2_intern_solutions/blob/solution_challenge_templatemethodpattern/src/main/java/templatemethodpattern/Drucker.java
+    -->
 ---
 
 
