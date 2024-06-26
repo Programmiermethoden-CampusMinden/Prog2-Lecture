@@ -145,6 +145,8 @@ Sie _können_ hierzu den Raum J104 nutzen.
 
 Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
+[**Bitte geben Sie uns Feedback: Nehmen Sie bitte an der [anonymen Umfrage zu "Programmieren 2"](https://www.hsbi.de/elearning/goto.php?target=svy_1394428&client_id=FH-Bielefeld) teil.**]{.alert}
+
 | Monat | Tag   | Vorlesung                                                                                         | Praktikum        |
 |:------|:------|:--------------------------------------------------------------------------------------------------|:-----------------|
 | April | 17.   | Orga (**Zoom**), [FAQ]                                                                            |                  |
