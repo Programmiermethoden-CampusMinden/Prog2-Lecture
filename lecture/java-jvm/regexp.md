@@ -343,7 +343,8 @@ Sie im Java-String "`a\\\\\\\\bc`" schreiben!
 Pattern p = Pattern.compile("A.*A");
 Matcher m = p.matcher("A 12 A 45 A");
 
-String result = m.group(); // ???
+if (m.matches())
+    String result = m.group(); // ???
 ```
 
 [Demo: regexp.Quantifier]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/regexp/Quantifier.java"}
@@ -443,6 +444,11 @@ zuzugreifen:
     durchgezählt, beginnend bei 1(!).
 
     Konvention: Gruppe 0 ist das gesamte Pattern, d.h. `m.group(0) == m.group();` ...
+
+*Hinweis*: Damit der Zugriff auf die Gruppen klappt, muss auch erst ein Match gemacht
+werden, d.h. das Erzeugen des Matcher-Objekts reicht noch nicht, sondern es muss auch
+noch ein `matcher.find()` oder `matcher.matches()` ausgeführt werden. Danach kann man
+bei Vorliegen eines Matches auf die Gruppen zugreifen.
 :::
 
 \pause
