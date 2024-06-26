@@ -113,7 +113,6 @@ Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
 
 ## Einfachste reguläre Ausdrücke
 
-::: slides
 | **Zeichenkette** | **Beschreibt**         |
 |:-----------------|:-----------------------|
 | `x`              | "x"                    |
@@ -122,41 +121,21 @@ Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
 | `\n`             | Newline                |
 | `\r`             | Carriage-return        |
 | `\\`             | Backslash              |
-:::
-
-::: notes
-| **Zeichenkette** | **Beschreibt**         |
-|:-----------------|:-----------------------|
-| `x`              | "x"                    |
-| `.`              | ein beliebiges Zeichen |
-| `\t`             | Tabulator              |
-| `\n`             | Newline                |
-| `\r`             | Carriage-return        |
-| `\\\\`           | Backslash              |
-:::
 
 ::: notes
 ### Beispiel
 :::
 
-::: slides
 *   `abc` => "abc"
 *   `A.B` => "AAB" oder "A2B" oder ...
 *   `a\\bc` => "a\\bc"
-:::
-
-::: notes
-*   `abc` => "abc"
-*   `A.B` => "AAB" oder "A2B" oder ...
-*   `a\\\\bc` => "a\\bc"
-:::
 
 ::: notes
 ### Anmerkung
 
 In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein.
 Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
-=> Statt "`\n`" müssen Sie im Java-Code "`\\\\n`" schreiben!
+=> Statt "`\n`" müssen Sie im Java-Code "`\\n`" schreiben!
 :::
 
 
@@ -260,10 +239,10 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein.
 Deshalb muss der Backslash i.d.R. extra geschützt ("escaped") werden.
 
-=> Statt "`\n`" (regulärer Ausdruck) müssen Sie im Java-String "`\\\\n`" schreiben!
+=> Statt "`\n`" (regulärer Ausdruck) müssen Sie im Java-String "`\\n`" schreiben!
 
-=> Statt "`a\\\\bc`" (regulärer Ausdruck, passt auf die Zeichenkette "a\\bc") müssen
-Sie im Java-String "`a\\\\\\\\bc`" schreiben!
+=> Statt "`a\\bc`" (regulärer Ausdruck, passt auf die Zeichenkette "a\\bc") müssen
+Sie im Java-String "`a\\\\bc`" schreiben!
 :::
 
 [Demo: regexp.MatchFind]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/src/regexp/MatchFind.java"}
