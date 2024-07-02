@@ -64,26 +64,53 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/08f819d3002d7658801ff15fdb14cbdba82defee0ae97d929f5c4a03eeb0e3e9b751e90f5e0fe0ac3d55a551a53065c04f505f23a6c9f41d69d504474ea28c04"
     name: "VL Threads Synchronisation"
 challenges: |
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/threads/src/challenges) finden Sie eine Modellierung für ein Bankensystem.
+    **Hamster-Welt**
 
-    Erweitern Sie die Vorgaben um Multithreading.
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/threads/src/challenges)
+    finden Sie eine Modellierung für eine Hamsterwelt.
 
-    Erweitern Sie die Klasse `Kunde` so, dass sie in einem eigenen Thread ausgeführt werden kann.
-    In der `run()`-Methode soll der `Kunde` eine `Rechnung` aus der Queue `offeneRechnungen` herausnehmen und sie bezahlen. Nutzen Sie dafür die statische Methode `Bank#ueberweisen`. Ist die Queue leer, soll der Thread so lange warten, bis eine neue Rechnung eingegangen ist. Nutzen Sie dafür einseitige Synchronisation.
-
-    Erweitern Sie die Klasse `Transaktion` so, dass sie in einem eigenen Thread ausgeführt werden kann.
-    In der `run()`-Methode soll die `Transaktion` ausgeführt werden. Dabei soll vom Konto `von` der in der Rechnung hinterlegte Betrag abgezogen werden. Nutzen Sie dafür die Methode `Konto#sendeGeld`. Wenn das Geld erfolgreich abgezogen worden ist, soll das Geld auf das Empfängerkonto überwiesen werden. Nutzen Sie dafür die Methode `Konto#empfangeGeld`.
-    Verwenden Sie mehrseitige Synchronisation.
-
-    Passen Sie die Methode `Bank#ueberweisen` so an, dass diese einen `Transaktion`-Thread erstellt und startet. Verwenden Sie dafür eine passende Struktur und setzen Sie die Executor-API ein.
-
-    Implementieren Sie die Klasse `Geldeintreiber`. Diese bekommt einen `Kunden` als Auftraggeber und eine Liste mit weiteren Kunden als Rechnungsempfänger übergeben.
-    Implementieren Sie den `Geldeintreber` so, dass dieser in einem eigenen Thread ausgeführt werden kann.
-    In der `run()`-Methode soll der `Geldeintreiber` eine Rechnung generieren und an einen der `Kunden` in der Liste schicken. Verwenden Sie dafür die Methode `Kunde#empfangeRechnung`. Das Ziel-`Konto` der `Rechnung` soll das `Konto` des Auftraggebers sein.
-    Der `Geldeintreiber` macht nach jeder versendeten Rechnung fünf Sekunden Pause.
+    Es gibt rote und blaue Hamster, die sich unabhängig von einander bewegen können. Es gibt einen Tunnel, den die Hamster betreten
+    und durchqueren können. In der Vorgabe ist ein kleines Hauptprogramm enthalten, welches einige Hamster anlegt und herumlaufen
+    lässt.
 
 
-    **Hinweis**: Achten Sie darauf, nur die nötigsten Ressourcen zu blockieren und auch nur so lange wie unbedingt nötig.
+    **Teil I: Stau im Tunnel**
+
+    Die Hamster sind sehr neugierig und wollen gern durch den Tunnel gehen, um die Höhle auf der anderen Seite zu erkunden. Leider
+    mussten sie feststellen, dass immer nur ein Hamster zu einem Zeitpunkt im Tunnel sein darf, sonst wird die Luft zu knapp.
+
+    Ergänzen Sie die Vorgaben, so dass sich immer nur ein paralleler Hamster (egal welcher Farbe) im Tunnel aufhalten kann. Wenn ein
+    Hamster in den Tunnel will, aber nicht hinein kann, dann soll er am Eingang warten, also nicht noch einmal in seiner Höhle
+    herumlaufen. (Das passiert eigentlich automatisch, wenn Sie alles richtig machen.)
+
+    <!-- XXX
+    Mehrseitige Synchronisierung auf das gemeinsame Tunnel-Objekt -- von Ein- bis Austritt
+    Hamster: `synchronized (tunnel()) { moveThroughTunnel(); }`
+    -->
+
+
+    **Teil II: Schlaue Hamster**
+
+    Die Hamster sind schlau und haben bemerkt, dass die Einschränkung aus der letzten Aufgabe zu stark war. Sie überleben auch, wenn
+    sich beliebig viele blaue Hamster oder nur genau ein roter Hamster im Tunnel aufhalten.
+
+    Erweitern Sie die Implementierung aus der letzten Aufgabe, so dass folgende Bedingungen eingehalten werden:
+
+    *   Es dürfen sich beliebig viele blaue Hamster gleichzeitig im Tunnel befinden.
+
+        Das bedeutet, dass in diesem Fall zwar weitere blaue Hamster den Tunnel betreten dürfen, aber kein roter Hamster in den Tunnel
+        hinein darf.
+
+    *   Wenn sich ein roter Hamster im Tunnel aufhält, dürfen keine anderen Hamster (unabhängig von deren Farbe) den Tunnel betreten.
+
+    <!-- XXX
+    Einseitige Synchronisierung auf Tunnel -- Ein- und Austritt, zusätzlich wait/notifyAll
+    Tunnel muss zwei Listen führen, auf denen die jeweiligen Hamster `wait` bzw. `notifyAll` aufrufen
+    -->
+
+    <!--
+    Lösung siehe https://github.com/Programmiermethoden-CampusMinden/prog2_intern_solutions/tree/solution_challenge_multithreading/src/main/java/threads
+    -->
 ---
 
 
