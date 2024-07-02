@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.1">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Motivation: Persistierung von Objekten und Spielzuständen public class Studi { private final int credits = 42; private String name = &#34;Hilde&#34;; ... } Wie kann ich Objekte speichern und wieder laden?
+Ich möchte ein Spiel (einen Lauf) im Dungeon abspeichern, um es später fortsetzen zu können. Wie kann ich den aktuellen Zustand (also Level, Monster, Held, Inventar, XP/Health/...) so speichern, dass ich später das Spiel nach einem Neustart einfach fortsetzen kann?">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Serialisierung von Objekten und Zuständen">
+    <meta name="twitter:description" content="Motivation: Persistierung von Objekten und Spielzuständen public class Studi { private final int credits = 42; private String name = &#34;Hilde&#34;; ... } Wie kann ich Objekte speichern und wieder laden?
+Ich möchte ein Spiel (einen Lauf) im Dungeon abspeichern, um es später fortsetzen zu können. Wie kann ich den aktuellen Zustand (also Level, Monster, Held, Inventar, XP/Health/...) so speichern, dass ich später das Spiel nach einem Neustart einfach fortsetzen kann?">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html">
+    <meta property="og:title" content="Serialisierung von Objekten und Zuständen">
+    <meta property="og:description" content="Motivation: Persistierung von Objekten und Spielzuständen public class Studi { private final int credits = 42; private String name = &#34;Hilde&#34;; ... } Wie kann ich Objekte speichern und wieder laden?
+Ich möchte ein Spiel (einen Lauf) im Dungeon abspeichern, um es später fortsetzen zu können. Wie kann ich den aktuellen Zustand (also Level, Monster, Held, Inventar, XP/Health/...) so speichern, dass ich später das Spiel nach einem Neustart einfach fortsetzen kann?">
+    <meta property="og:locale" content="de-DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Serialisierung von Objekten und Zuständen">
+    <meta itemprop="description" content="Motivation: Persistierung von Objekten und Spielzuständen public class Studi { private final int credits = 42; private String name = &#34;Hilde&#34;; ... } Wie kann ich Objekte speichern und wieder laden?
+Ich möchte ein Spiel (einen Lauf) im Dungeon abspeichern, um es später fortsetzen zu können. Wie kann ich den aktuellen Zustand (also Level, Monster, Held, Inventar, XP/Health/...) so speichern, dass ich später das Spiel nach einem Neustart einfach fortsetzen kann?">
+    <meta itemprop="wordCount" content="646">
+    <title>Serialisierung von Objekten und Zuständen</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html" rel="canonical" type="text/html" title="Serialisierung von Objekten und Zuständen">
+
+    
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1719943321" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1719943322" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1719943322" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1719943322" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1719943322" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1719943322"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Serialisierung von Objekten und Zuständen
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Serialisierung von Objekten und Zuständen</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Objekte lassen sich mit der Methode <code>void writeObject(Object)</code> in <code>ObjectOutputStream</code>
+einfach in einen Datenstrom schreiben. Dies kann beispielsweise eine Datei o.ä. sein.
+Mit Hilfe von <code>Object readObject()</code> in <code>ObjectInputStream</code> lassen sich Objekte aus dem
+Datenstrom auch wieder herstellen. Dies nennt man Serialisierung und De-Serialisierung.</p>
+<p>Um Objekte einer Klasse serialisieren zu können, muss diese das leere Interface
+<code>Serializable</code> implementieren (&quot;Marker-Interface&quot;). Damit wird quasi die Unterstützung
+in <code>Object*Stream</code> freigeschaltet.</p>
+<p>Wenn ein Objekt serialisiert wird, werden alle Attribute in den Datenstrom geschrieben,
+d.h. die Typen der Attribute müssen ihrerseits serialisierbar sein. Dies gilt für alle
+primitiven Typen und die meisten eingebauten Typen. Die Serialisierung erfolgt ggf.
+rekursiv, Zirkelreferenzen werden erkannt und aufgebrochen.</p>
+<p><code>static</code> und <code>transient</code> Attribute werden nicht serialisiert.</p>
+<p>Beim De-Serialisieren wird das neue Objekt von der Laufzeitumgebung aus dem Datenstrom
+rekonstruiert. Dies geschieht direkt, es wird kein Konstruktor involviert.</p>
+<p>Beim Serialisieren wird für die Klasse des zu schreibenden Objekts eine <code>serialVersionUID</code>
+berechnet und mit gespeichert. Beim Einlesen wird dann geprüft, ob die serialisierten
+Daten zur aktuellen Version der Klasse passen. Da dies relativ empfindlich gegenüber
+Änderungen an einer Klasse ist, wird empfohlen, selbst eine <code>serialVersionUID</code> pro
+Klasse zu definieren.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/wnwCMtKpXAQ' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Serialisierung</a></li> <li><a href='https://youtu.be/zpWLPIRPTeQ' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Serialisierung</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/ab8df96555932244456b9ac3dc332fbe39c09029605959af2eea790b5bd5966c5212c9c0184700d6e3785b7af8bdc03e3e6b948bad9392fa01e79309677df68a' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Serialisierung</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Was ist ein Marker-Interface und warum ist dies eine der großen Design-Sünden in Java?</li> <li>(K2) Erklären Sie den Prozess der Serialisierung und De-Serialisierung. Worauf müssen Sie achten?</li> <li>(K3) Serialisierung von Objekten und Programmzuständen</li> <li>(K3) Serialisierung eigener Klassen und Typen</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="motivation-persistierung-von-objekten-und-spielzuständen">Motivation: Persistierung von Objekten und Spielzuständen</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> credits <span style="color:#f92672">=</span> 42;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hilde&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class='center'>
+<p>Wie kann ich Objekte speichern und wieder laden?</p>
+</div>
+<p>Ich möchte ein Spiel (einen Lauf) im Dungeon abspeichern, um es später fortsetzen
+zu können. Wie kann ich den aktuellen Zustand (also Level, Monster, Held, Inventar,
+XP/Health/...) so speichern, dass ich später das Spiel nach einem Neustart einfach
+fortsetzen kann?</p>
+<h2 id="serialisierung-von-objekten">Serialisierung von Objekten</h2>
+<ul>
+<li>
+<p>Klassen müssen Marker-Interface <code>Serializable</code> implementieren</p>
+<p>&quot;Marker-Interface&quot;: Interface ohne Methoden. Ändert das Verhalten
+des Compilers, wenn eine Klasse dieses Interface implementiert:
+Weitere Funktionen werden &quot;freigeschaltet&quot;, beispielsweise die
+Fähigkeit, Klone zu erstellen (<code>Cloneable</code>) oder bei <code>Serializable</code>
+Objekte serialisierbar zu machen.</p>
+<p>Das ist in meinen Augen eine &quot;Design-Sünde&quot; in Java (neben der
+Einführung von <code>null</code>): Normalerweise definieren Interfaces eine
+Schnittstelle, die eine das Interface implementierende Klasse
+dann erfüllen muss. Damit agiert das Interface wie ein Typ. Hier
+ist das Interface aber leer, es wird also keine Schnittstelle
+definiert. Aber es werden damit stattdessen Tooling-Optionen
+aktiviert, was Interfaces vom Konzept her eigentlich nicht machen
+sollten/dürften - dazu gibt es Annotationen!</p>
+</li>
+<li>
+<p>Schreiben von Objekten (samt Zustand) in Streams</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ObjectOutputStream: <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">writeObject</span>(Object)</span></span></code></pre></div><p>Die Serialisierung erfolgt dabei für alle Attribute
+(außer <code>static</code> und <code>transient</code>, s.u.) rekursiv.</p>
+<p>Dabei werden auch Zirkelreferenzen automatisch
+aufgelöst/unterbrochen.</p>
+</li>
+<li>
+<p>Lesen und &quot;Wiedererwecken&quot; der Objekte aus Streams</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ObjectInputStream: Object <span style="color:#a6e22e">readObject</span>()</span></span></code></pre></div><p>Dabei erfolgt KEIN Konstruktor-Aufruf!</p>
+</li>
+</ul>
+<h2 id="einfaches-beispiel">Einfaches Beispiel</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span> <span style="color:#66d9ef">implements</span> Serializable {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> credits <span style="color:#f92672">=</span> 42;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hilde&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">writeObject</span>(Studi studi, String filename) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> (FileOutputStream fos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileOutputStream(filename);
+</span></span><span style="display:flex;"><span>            ObjectOutputStream oos <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectOutputStream(fos)) {
+</span></span><span style="display:flex;"><span>            oos.<span style="color:#a6e22e">writeObject</span>(studi);    oos.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (IOException ex) {}
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Studi <span style="color:#a6e22e">readObject</span>(String filename) {
+</span></span><span style="display:flex;"><span>        Studi studi <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> (FileInputStream fis <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> FileInputStream(filename);
+</span></span><span style="display:flex;"><span>            ObjectInputStream ois <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ObjectInputStream(fis)) {
+</span></span><span style="display:flex;"><span>            studi <span style="color:#f92672">=</span> (Studi) ois.<span style="color:#a6e22e">readObject</span>();    ois.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (IOException <span style="color:#f92672">|</span> ClassNotFoundException ex) {}
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> studi;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="bedingungen-für-objekt-serialisierung">Bedingungen für Objekt-Serialisierung</h2>
+<ul>
+<li>Klassen implementieren Marker-Interface <code>Serializable</code></li>
+<li>Alle Attribute müssen ebenfalls serialisierbar sein (oder Deklaration &quot;<code>transient</code>&quot;)</li>
+<li>Alle primitiven Typen sind per Default serialisierbar</li>
+<li>Es wird automatisch rekursiv serialisiert, aber jedes Objekt
+nur einmal (bei Mehrfachreferenzierung)</li>
+<li>Serialisierbarkeit vererbt sich</li>
+</ul>
+<h2 id="ausnahmen">Ausnahmen</h2>
+<ul>
+<li>Als <code>static</code> deklarierte Attribute werden nicht serialisiert</li>
+<li>Als <code>transient</code> deklarierte Attribute werden nicht serialisiert</li>
+<li>Nicht serialisierbare Attribut-Typen führen zu <code>NotSerializableException</code></li>
+</ul>
+<h2 id="version-uid">Version-UID</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">long</span> serialVersionUID <span style="color:#f92672">=</span> 42L;</span></span></code></pre></div><ul>
+<li>Dient zum Vergleich der serialisierten Version und der aktuellen Klasse</li>
+<li>Über IDE generieren oder manuell vergeben</li>
+<li>Wenn das Attribut fehlt, wird eine Art Checksumme von der Runtime-Umgebung
+berechnet (basierend auf diversen Eigenschaften der Klasse)</li>
+</ul>
+<p>Dieser Wert wird beim Einlesen verglichen: Das Objekt wird nur dann wieder de-serialisiert,
+wenn die <code>serialVersionUID</code> mit der einzulesenden Klasse übereinstimmt!</p>
+<p>Bei automatischer Berechnung der <code>serialVersionUID</code> durch die JVM kann jede kleine Änderung an
+der Klasse (beispielsweise Refactoring: Änderung der Methodennamen) eine neue <code>serialVersionUID</code>
+zur Folge haben. Das würde bedeuten, dass bereits serialisierte Objekte nicht mehr eingelesen
+werden können, auch wenn sich nur Methoden o.ä. verändert haben und die Attribute noch so vorhanden
+sind. Deshalb bietet es sich an, hier selbst eine <code>serialVersionUID</code> zu definieren - dann muss
+man aber auch selbst darauf achten, diese zu verändern, wenn sich wesentliche strukturelle
+Änderungen an der Klasse ergeben!</p>
+<h2 id="bemerkungen">Bemerkungen</h2>
+<p>Es existieren diverse weitere Fallstricke und Probleme, siehe <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html#id_Bloch2018">[Bloch2018]</a> Kapitel 11 &quot;Serialization&quot;.</p>
+<p>Man kann in den <code>ObjectOutputStream</code> nicht nur ein Objekt schreiben, sondern mehrere Objekte und
+Variablen schreiben lassen. In dieser Reihenfolge muss man diese dann aber auch wieder aus dem
+Stream herauslesen (vgl. <a href="https://docs.oracle.com/javase/tutorial/essential/io/objectstreams.html" rel="external" target="_blank">Object Streams</a>).</p>
+<p>Man kann die zu serialisierenden Attribute mit der Annotation <code>@Serial</code> markieren. Dies ist in
+der Wirkung ähnlich zu <code>@Override</code>: Der Compiler prüft dann, ob die markierten Attribute wirklich
+serialisierbar sind und würde sonst zur Compile-Zeit einen Fehler werfen.</p>
+<p>Weitere Links:</p>
+<ul>
+<li>Tutorials:
+<ul>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/specs/serialization/input.html" rel="external" target="_blank">https://docs.oracle.com/en/java/javase/17/docs/specs/serialization/input.html</a></li>
+<li><a href="https://www.baeldung.com/java-serialization" rel="external" target="_blank">https://www.baeldung.com/java-serialization</a></li>
+</ul>
+</li>
+<li>API:
+<ul>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectOutputStream.html" rel="external" target="_blank">https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectOutputStream.html</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectInputStream.html" rel="external" target="_blank">https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/ObjectInputStream.html</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html" rel="external" target="_blank">https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html</a></li>
+</ul>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/src/serial/SerializableStudi.java" target="_blank"><span class="title">Demo: serial.SerializableStudi</span></a></span></div>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Markerinterface <code>Serializable</code> schaltet Serialisierbarkeit frei</p>
+</li>
+<li>
+<p>Objekte schreiben: <code>ObjectOutputStream</code>: <code>void writeObject(Object)</code></p>
+</li>
+<li>
+<p>Objekte lesen: <code>ObjectInputStream</code>: <code>Object readObject()</code></p>
+</li>
+<li>
+<p>Wichtigste Eigenschaften:</p>
+<ul>
+<li>Attribute müssen serialisierbar sein</li>
+<li><code>transient</code> und <code>static</code> Attribute werden nicht serialisiert</li>
+<li>De-Serialisierung: KEIN Konstruktor-Aufruf!</li>
+<li>Serialisierbarkeit vererbt sich</li>
+<li>Objekt-Referenz-Graph wird automatisch beachtet</li>
+</ul>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106519&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Serialisierung (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p>Implementieren Sie die beiden Klassen entsprechend dem UML-Diagram:</p>
+<p><a href="#R-image-fe702d113e28f00c118fb52eebd54575" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/images/uml_serialisierung.png?raw=true?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fe702d113e28f00c118fb52eebd54575"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/images/uml_serialisierung.png?raw=true?width=auto&height=auto"></a></p>
+<p>Objekte vom Typ <code>Person</code> sowie <code>Address</code> sollen serialisierbar sein (vgl. Vorlesung).
+Dabei soll das Passwort nicht serialisiert bzw. gespeichert werden, alle anderen
+Eigenschaften von <code>Person</code> sollen serialisierbar sein.</p>
+<p><em>Hinweis</em>: Verwenden Sie zur Umsetzung <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/Serializable.html" rel="external" target="_blank">java.io.Serializable</a>.</p>
+<p>Erstellen Sie in Ihrem <code>main()</code> einige Instanzen von Person und speichern Sie diese in
+serialisierter Form und laden (deserialisieren) Sie diese anschließend in neue Variablen.</p>
+<p>Betrachten Sie die ursprünglichen und die wieder deserialisierten Objekte mit Hilfe des
+Debuggers. Alternativ können Sie die Objekte auch in übersichtlicher Form über den Logger
+ausgeben.</p>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Bloch2018'>[Bloch2018] <strong>Effective Java</strong><br>Bloch, J., Addison-Wesley, 2018. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-0-13-468599-1' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-0-13-468599-1</a>.</li> <li id='id_Java-SE-Tutorial'>[Java-SE-Tutorial] <a href='https://docs.oracle.com/javase/tutorial/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>The Java Tutorials</strong></a><br>Oracle Corporation, 2022.<br><em>Essential Java Classes \> Basic I/O \> Object Streams</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1719943322" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1719943322" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1719943322"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1719943322" defer></script>
+  </body>
+</html>

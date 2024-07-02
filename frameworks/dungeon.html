@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.1">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="How-To Dungeon In diesem Semester werden Sie im Praktikum schrittweise Erweiterungen in verschiedenen &#34;fertigen&#34; Rogue-like Computerspielen programmieren und dabei (hoffentlich) die Methoden aus der Vorlesung einsetzen können.
+Das Projekt &#34;PM-Dungeon&#34; stellt wichtige Bausteine für das Spiel bereit, beispielsweise eine Game-Loop und eine API für das Generieren und Benutzen von Leveln und vieles andere mehr. Im Hintergrund werkelt das etablierte Open-Source-Spieleframework libGDX.
+Wir werden uns in diesem How-To einen Überblick verschaffen und einen ersten Einstieg versuchen: Wir programmieren einen einfachen Helden.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Frameworks: How-To Dungeon">
+    <meta name="twitter:description" content="How-To Dungeon In diesem Semester werden Sie im Praktikum schrittweise Erweiterungen in verschiedenen &#34;fertigen&#34; Rogue-like Computerspielen programmieren und dabei (hoffentlich) die Methoden aus der Vorlesung einsetzen können.
+Das Projekt &#34;PM-Dungeon&#34; stellt wichtige Bausteine für das Spiel bereit, beispielsweise eine Game-Loop und eine API für das Generieren und Benutzen von Leveln und vieles andere mehr. Im Hintergrund werkelt das etablierte Open-Source-Spieleframework libGDX.
+Wir werden uns in diesem How-To einen Überblick verschaffen und einen ersten Einstieg versuchen: Wir programmieren einen einfachen Helden.">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon.html">
+    <meta property="og:title" content="Frameworks: How-To Dungeon">
+    <meta property="og:description" content="How-To Dungeon In diesem Semester werden Sie im Praktikum schrittweise Erweiterungen in verschiedenen &#34;fertigen&#34; Rogue-like Computerspielen programmieren und dabei (hoffentlich) die Methoden aus der Vorlesung einsetzen können.
+Das Projekt &#34;PM-Dungeon&#34; stellt wichtige Bausteine für das Spiel bereit, beispielsweise eine Game-Loop und eine API für das Generieren und Benutzen von Leveln und vieles andere mehr. Im Hintergrund werkelt das etablierte Open-Source-Spieleframework libGDX.
+Wir werden uns in diesem How-To einen Überblick verschaffen und einen ersten Einstieg versuchen: Wir programmieren einen einfachen Helden.">
+    <meta property="og:locale" content="de-DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Frameworks: How-To Dungeon">
+    <meta itemprop="description" content="How-To Dungeon In diesem Semester werden Sie im Praktikum schrittweise Erweiterungen in verschiedenen &#34;fertigen&#34; Rogue-like Computerspielen programmieren und dabei (hoffentlich) die Methoden aus der Vorlesung einsetzen können.
+Das Projekt &#34;PM-Dungeon&#34; stellt wichtige Bausteine für das Spiel bereit, beispielsweise eine Game-Loop und eine API für das Generieren und Benutzen von Leveln und vieles andere mehr. Im Hintergrund werkelt das etablierte Open-Source-Spieleframework libGDX.
+Wir werden uns in diesem How-To einen Überblick verschaffen und einen ersten Einstieg versuchen: Wir programmieren einen einfachen Helden.">
+    <meta itemprop="wordCount" content="4052">
+    <title>Frameworks: How-To Dungeon</title>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon/index.print.html" rel="alternate" type="text/html" title="Frameworks: How-To Dungeon">
+
+    
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1719943321" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1719943322" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1719943322" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1719943322" rel="stylesheet" media="print">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1719943322"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#how-to-dungeon">How-To Dungeon</a></li>
+    <li><a href="#projekt-pm-dungeon">Projekt PM-Dungeon</a></li>
+    <li><a href="#installation-des-frameworks">Installation des Frameworks</a></li>
+    <li><a href="#java-java-se-21-lts">Java: Java SE 21 (LTS)</a></li>
+    <li><a href="#erster-test">Erster Test</a></li>
+    <li><a href="#import-in-der-ide">Import in der IDE</a></li>
+    <li><a href="#überblick-über-die-sub--projekte">Überblick über die (Sub-) Projekte</a></li>
+    <li><a href="#überblick-über-die-java-strukturen">Überblick über die Java-Strukturen</a></li>
+    <li><a href="#mein-held">Mein Held</a></li>
+    <li><a href="#einschub-ecs-oder-entities-components-und-systems">Einschub: ECS oder Entities, Components und Systems</a>
+      <ul>
+        <li><a href="#entity">Entity</a></li>
+        <li><a href="#component">Component</a></li>
+        <li><a href="#system">System</a></li>
+      </ul>
+    </li>
+    <li><a href="#nun-aber-helden">Nun aber Helden!</a>
+      <ul>
+        <li><a href="#ein-held-ist-eine-entität">Ein Held ist eine Entität</a></li>
+        <li><a href="#wo-bin-ich-grad">Wo bin ich grad?</a></li>
+        <li><a href="#animateure">Animateure</a></li>
+        <li><a href="#bewege-mich">Bewege mich</a></li>
+      </ul>
+    </li>
+    <li><a href="#walking-mit-system">Walking mit System</a>
+      <ul>
+        <li><a href="#neue-monster">Neue Monster</a></li>
+        <li><a href="#systems-für-das-selbstständige-laufen">Systems für das selbstständige Laufen</a></li>
+        <li><a href="#components-für-das-selbstständige-laufen">Components für das selbstständige Laufen</a></li>
+      </ul>
+    </li>
+    <li><a href="#kämpfe-wie-ein-npc">Kämpfe wie ein NPC</a></li>
+    <li><a href="#wrap-up">Wrap-Up</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Frameworks: How-To Dungeon
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Frameworks: How-To Dungeon</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Der PM-Dungeon ist ein Framework zum Entwickeln von Rogue-like Dungeon-Crawlern, also einfachen 2D-Spielen in Java.
+Das Framework bietet die wichtigsten benötigten Grundstrukturen für ein Computer-Spiel: Es hat eine Game-Loop, kann
+Level generieren und darstellen und hat eine Entity-Component-System-Struktur (ECS), über die die Spielinhalte
+erstellt werden können. Im Hintergrund arbeitet die Open-Source-Bibliothek libGDX.</p>
+<p>Sie können das Projekt direkt von GitHub clonen und über den im Projekt integrierten Gradle-Wrapper starten. Dazu
+brauchen Sie Java 21 LTS (in einer 64-bit Version). Sie können das Projekt als Gradle-Projekt in Ihre IDE laden.</p>
+<p>Die Starter-Klassen (z.B. <code>starter.Starter</code> im &quot;dungeon&quot;-Subprojekt, <code>starter.DojoStarter</code> im &quot;dojo-dungeon&quot;-Subprojekt
+oder <code>starter.DevDungeon</code> im &quot;devDungeon&quot;-Subprojekt) sind die zentralen Einstiegspunkte. Hier finden Sie &quot;unseren&quot;
+Teil der Game-Loop (der in der eigentlichen Game-Loop von libGDX aufgerufen wird), hier finden Sie die Konfiguration
+und die <code>main()</code>-Methode.</p>
+<p>Im ECS werden die im Spiel befindlichen Elemente als <em>Entitäten</em> modelliert. Diese Entitäten sind lediglich Container
+für <em>Components</em>, die dann ihrerseits die entsprechenden Eigenschaften der Entitäten modellieren. Entitäten haben
+normalerweise über die Components hinaus keine weiteren Eigenschaften (Attribute, Methoden). Das Game kennt alle zum
+aktuellen Zeitpunkt &quot;lebenden&quot; Entitäten.</p>
+<p>Components gruppieren Eigenschaften, beispielsweise für Positionen oder Lebenspunkte. Components haben normalerweise
+keine Methoden (halten also nur Werte/Attribute). Jede Component-Instanz ist immer einer konkreten Entität zugeordnet
+und kann ohne diese nicht existieren.</p>
+<p><em>Systeme</em> implementieren das Verhalten im ECS. Das Game kennt alle aktiven Systeme und ruft in jedem Durchlauf der
+Game-Loop die <code>execute()</code>-Methode der Systeme auf. Üblicherweise holt sich dann ein System alle Entitäten vom Game und
+iteriert darüber und fragt ab, ob die betrachtete Entität die notwendigen Components hat - falls ja, dann kann das
+System auf dieser Entität die entsprechenden Operationen ausführen (Animation, Bewegung, ...); falls nein, wird diese
+Entität ignoriert und mit der Iteration fortgefahren.</p>
+<p>Wir programmieren in dieser Einheit einen einfachen Helden. Der Held ist eine <code>Entity</code> und braucht verschiedene
+Components, um im Spiel angezeigt zu werden und bewegt werden zu können.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/kGKDcKIDHok' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL How-To Dungeon: Teil 1 (Überblick): Wir schauen uns gemeinsam an, wie man sich den PM-Dungeon herunterladen und installieren kann und wie man das Spiel startet. Und wir verschaffen uns einen Überblick über die wichtigsten Packages und Klassen und verstehen die prinzipielle Arbeitsweise eines ECS.</a></li> <li><a href='https://youtu.be/uPNt7OWpMBs' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL How-To Dungeon: Teil 2 (Hero): Wir bauen unseren ersten einfachen Helden!</a></li> <li><a href='https://youtu.be/_YVYoFgvU04' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL How-To Dungeon: Teil 3 (Monster und Feuerbälle): Wie geht das mit Monstern und Feuerbällen? Wir programmieren ein erstes kleines System für die Bewegungssteuerung.</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Überblick über die wichtigsten Strukturen im PM-Dungeon</li> <li>(K2) Aufbau eines ECS: Entitäten, Komponenten, Systeme</li> <li>(K3) Herunterladen und installieren des PM-Dungeon</li> <li>(K3) Laden in der IDE</li> <li>(K3) Erstellen eines Helden mit Animation und Bewegung</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="how-to-dungeon">How-To Dungeon</h2>
+<p>In diesem Semester werden Sie im Praktikum schrittweise Erweiterungen in verschiedenen
+&quot;fertigen&quot; Rogue-like Computerspielen programmieren und dabei (hoffentlich) die Methoden aus
+der Vorlesung einsetzen können.</p>
+<p>Das Projekt &quot;PM-Dungeon&quot; stellt wichtige Bausteine für das Spiel bereit, beispielsweise eine
+Game-Loop und eine API für das Generieren und Benutzen von Leveln und vieles andere mehr. Im
+Hintergrund werkelt das etablierte Open-Source-Spieleframework <a href="https://libgdx.com" rel="external" target="_blank">libGDX</a>.</p>
+<p>Wir werden uns in diesem How-To einen Überblick verschaffen und einen ersten Einstieg
+versuchen: Wir programmieren einen einfachen Helden.</p>
+<h2 id="projekt-pm-dungeon">Projekt PM-Dungeon</h2>
+<p>Das Projekt PM-Dungeon entstand in verschiedenen Forschungsprojekten und wurde (und wird)
+aktiv von Studierenden und wissenschaftlichen Mitarbeitern am Campus Minden entwickelt.</p>
+<p>Zuletzt lief das Forschungsprojekt &quot;Dungeon&quot;, gefördert durch die <a href="https://stiftung-hochschullehre.de" rel="external" target="_blank">Stiftung für Innovation in
+der Hochschullehre</a> im <a href="https://stiftung-hochschullehre.de/foerderung/freiraum2022/" rel="external" target="_blank">&quot;Freiraum
+2022&quot;</a>. Dabei sollten diesmal
+nicht die Studierenden selbst Code schreiben, sondern die Lehrenden sollen Aufgaben in einer
+speziellen (von uns entwickelten) Programmiersprache schreiben (können), woraus dann ein
+fertiges Dungeon-Spiel generiert wird (mit der Aufgabe als Quest o.ä. im Dungeon eingebettet)
+und die Studierenden können durch das Spielen die Aufgaben lösen.</p>
+<p>Sie werden merken, dass trotz klarer Richtlinien und Ideen die Entwicklung in der Praxis doch
+nicht so einfach ist und dass viele Dinge immer wieder geübt und erinnert werden müssen: Namen
+von Klassen und Methoden, sinnvolles Javadoc, Dokumentation jenseits des Javadoc, aber auch
+Commit-Messages und PR-Summaries.</p>
+<h2 id="installation-des-frameworks">Installation des Frameworks</h2>
+<p>Sie finden das Projekt auf GitHub:
+<a href="https://github.com/Dungeon-CampusMinden/Dungeon" rel="external" target="_blank">github.com/Dungeon-CampusMinden/Dungeon</a>.</p>
+<p><a href="#R-image-c4e221210d9b0d1e69829877268e3866" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon/screenshot_dungeon_clone.png?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c4e221210d9b0d1e69829877268e3866"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon/screenshot_dungeon_clone.png?width=auto&height=auto"></a></p>
+<p>Laden Sie sich den Quellcode herunter, um damit in der IDE arbeiten zu können. Prinzipiell
+gibt es viele verschiedene Wege, in diesem Tutorial laden wir es per Git in der Konsole
+herunter:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone git@github.com:Dungeon-CampusMinden/Dungeon.git pm-dungeon</span></span></code></pre></div><p>Dabei entsteht der Ordner <code>pm-dungeon/</code> mit dem Dungeon-Projekt als Inhalt.</p>
+<p><span class='alert'><strong>WICHTIG</strong>: Achten Sie bitte darauf, dass im Projektpfad <strong>keine Leerzeichen</strong> und keine
+Sonderzeichen (Umlaute o.ä.) vorkommen! Dies kann zu seltsamen Fehler führen. Bitte auch
+darauf achten, dass Sie als JDK ein <strong>Java SE 21 (LTS)</strong> verwenden.</span></p>
+<h2 id="java-java-se-21-lts">Java: Java SE 21 (LTS)</h2>
+<p>Wir benutzen im Dungeon-Projekt die aktuelle LTS-Version des JDK, d.h. <strong>Java SE 21 (LTS)</strong>.
+Sie können sich das JDK bei <a href="https://www.oracle.com/java/technologies/downloads/" rel="external" target="_blank">Oracle</a>
+herunterladen oder
+<a href="https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk" rel="external" target="_blank">Alternativen</a>
+ausprobieren. Bitte unbedingt die jeweilige 64-bit Version nutzen!</p>
+<p>In der Konsole sollte</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>java -version</span></span></code></pre></div><p>ungefähr diese Ausgabe erzeugen (ignorieren Sie die Minor-Version, wichtig ist Major-Version:
+21 bzw. &quot;LTS&quot;):</p>
+<pre><code>java version &quot;21.0.3&quot; 2024-04-16 LTS
+Java(TM) SE Runtime Environment (build 21.0.3+7-LTS-152)
+Java HotSpot(TM) 64-Bit Server VM (build 21.0.3+7-LTS-152, mixed mode, sharing)
+</code></pre>
+<h2 id="erster-test">Erster Test</h2>
+<p>Für einen ersten Test gehen Sie in der Konsole in den vorhin erzeugten neuen Ordner
+<code>pm-dungeon/</code> und führen Sie dort den Befehl</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>./gradlew game:runBasicStarter</span></span></code></pre></div><p>aus. Dabei sollte das (mitgelieferte) Build-Tool <a href="https://gradle.org/" rel="external" target="_blank">Gradle</a> starten und die
+benötigten Java-Bibliotheken herunterladen und schließlich das Spiel in einer Minimalversion
+starten - Sie sollten also ein Level sehen.</p>
+<p><a href="#R-image-7c7bf25cfb85ef18901de833cad02097" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon/screenshot_dungeon_defaultlevel.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7c7bf25cfb85ef18901de833cad02097"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon/screenshot_dungeon_defaultlevel.png?width=80%25&height=auto"></a></p>
+<p>Dies dauert je nach Internetanbindung etwas - beim nächsten Start geht es dann aber deutlich
+schneller, weil ja bereits alles da ist.</p>
+<h2 id="import-in-der-ide">Import in der IDE</h2>
+<p>Importieren Sie das Projekt als Gradle-basiertes Projekt, dann übernimmt die IDE die
+Konfiguration für Sie.</p>
+<p><a href="#R-image-5ec2f8de34e8ed7a0d000f4e7824696e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon/screenshot_dungeon_import_intellij.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5ec2f8de34e8ed7a0d000f4e7824696e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon/screenshot_dungeon_import_intellij.png?width=80%25&height=auto"></a></p>
+<p><a href="#R-image-6be90e09a0288b9fb364550fa40f7844" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon/screenshot_dungeon_import_intellij_asgradle.png?width=40%25&height=auto" style=" height: auto; width: 40%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6be90e09a0288b9fb364550fa40f7844"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon/screenshot_dungeon_import_intellij_asgradle.png?width=40%25&height=auto"></a></p>
+<p>Über das Gradle-Menü können Sie nun in der IDE den &quot;runBasicStarter&quot;-Task (Menüpunkt &quot;game&quot;)
+starten, und es erscheint wieder ein minimales Level.</p>
+<h2 id="überblick-über-die-sub--projekte">Überblick über die (Sub-) Projekte</h2>
+<p>Sie finden im Package-Explorer eine Reihe von Unterprojekten (Gradle-Subprojekte). Für PR2
+sind eigentlich nur die Subprojekte
+<a href="https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dojo-dungeon" rel="external" target="_blank">&quot;dojo-dungeon&quot;</a> und
+<a href="https://github.com/Dungeon-CampusMinden/dev-dungeon/tree/master/devDungeon" rel="external" target="_blank">&quot;devDungeon&quot;</a>
+relevant sowie die Dokumentation in den verschiedenen <code>doc/</code>-Ordnern (die derzeit leider noch
+eine ziemliche Baustelle ist).</p>
+<p><a href="#R-image-5d329c514c750e61d2c0e78beceac1c3" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon/screenshot_dungeon_intellij_gradle.png?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5d329c514c750e61d2c0e78beceac1c3"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon/screenshot_dungeon_intellij_gradle.png?width=auto&height=auto"></a></p>
+<p>Dojo-Dungeon und DevDungeon stellen zwei verschiedene (mehr oder weniger fertige) Spiele dar,
+die von Studierenden erstellt wurden (Dojo-Dungeon: <a href="https://github.com/Denniso3" rel="external" target="_blank">@Denniso3</a>,
+<a href="https://github.com/tgrothe" rel="external" target="_blank">@tgrothe</a> und <a href="https://github.com/JudiTeller" rel="external" target="_blank">@JudiTeller</a>;
+DevDungeon: <a href="https://github.com/Flamtky" rel="external" target="_blank">@Flamtky</a>). Diese Spiele nutzen wir an einigen
+Stellen im Praktikum.</p>
+<p>Die Basis für die beiden Spiele stellt das Dungeon-Framework dar, welches in den
+Gradle-Subprojekten <a href="https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/game" rel="external" target="_blank">&quot;game&quot;</a>
+und <a href="https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dungeon" rel="external" target="_blank">&quot;dungeon&quot;</a> zu finden
+ist. Game stellt dabei eine Art minimale Basis zum Programmieren eigener Spiele dar (alle
+Klassen im Package <code>core</code>), und Dungeon erweitert diese Basis und fügt einige häufig benötigte
+Elemente und weitere Texturen (Package <code>contrib</code>) hinzu. Zusätzlich gibt es hier noch einige
+Klassen für die DSL, was für PR2 aber nicht relevant ist.</p>
+<p>Das Subprojekt
+<a href="https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/blockly" rel="external" target="_blank">&quot;blockly&quot;</a> ist die
+Einbindung einer blockbasierten Programmiersprache in das Dungeon-Framework und spielt für PR2
+ebenfalls keine Rolle.</p>
+<p>Die Strukturen in allen Sub-Projekten ist ähnlich: Sie finden unter <code>&lt;subproject&gt;/src/</code> die
+Java-Packages und in <code>&lt;subproject&gt;/assets/</code> vordefinierte Texturen und Soundfiles sowie
+Crafting-Rezepte (beispielsweise für Boden, Wände und den Hero). Alle Sourcen sind (mehr oder
+weniger) mit Javadoc dokumentiert, zusätzlich gibt es jeweils in <code>&lt;subproject&gt;/doc/</code> weitere
+Anleitungen und Hinweise.</p>
+<p>Für die Aufgaben im Praktikum starten Sie am besten zunächst beim relevanten Code in den
+Sub-Projekten Dojo-Dungeon und DevDungeon. Schauen Sie sich die für die Aufgabe benutzten
+Klassen und deren Javadoc an. In der Regel nutzen diese auch Klassen aus Dungeon und Game,
+deren Aufbau und Javadoc Sie sich ebenfalls anschauen sollten. Zusätzlich gibt es für Game und
+Dungeon noch weitere Dokumentation in den <code>doc/</code>-Ordnern.</p>
+<h2 id="überblick-über-die-java-strukturen">Überblick über die Java-Strukturen</h2>
+<p><a href="#R-image-a61c9f974268f9e277430f52e85936ae" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/img/gameloop.png?raw=true?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a61c9f974268f9e277430f52e85936ae"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/img/gameloop.png?raw=true?width=auto&height=auto"></a></p>
+<p>Jedes Spiel besteht aus einer Game-Loop, die je nach Konfiguration 30 Mal oder 60 Mal pro
+Sekunde ausgeführt wird. Diese Game-Loop wird mit Hilfe der <code>Game#run()</code>-Methode gestartet und
+die Kontrolle geht dabei vollständig an libGDX über. Im Wesentlichen werden pro Durchlauf
+(&quot;Frame&quot;) die Aktionen berechnet und das Spielfeld neu gezeichnet. Alle Aktionen im Spiel,
+etwa das Bewegen von Spielelementen oder das Berechnen von Angriffen o.ä., werden über
+sogenannte Systeme berechnet. Diese werden einmal pro Frame aufgerufen und bestimmen den neuen
+Zustand (Position, Animation, Stats, ...) der Spielelemente, die dann beim nächsten Rendern im
+Spiel angezeigt werden.</p>
+<p><a href="#R-image-babfc534499a0a0a791dab2ef4fa5f95" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/img/ecs.png?raw=true?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-babfc534499a0a0a791dab2ef4fa5f95"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/img/ecs.png?raw=true?width=auto&height=auto"></a></p>
+<p>Die Klasse <code>core.Game</code> ist der zentrale Einstiegspunkt. Hier werden alle wichtigen Dinge
+konfiguriert, und es gibt die <code>Game#run()</code>-Methode, die das Spiel startet. Zusätzlich gibt es
+weitere Methoden, die für Sie relevant sind:</p>
+<ul>
+<li><code>Game#userOnSetup()</code>: Diese Methode wird einmal beim Start des Spiels aufgerufen und kann
+für die Konfiguration und Initialisierung der verschiedenen Systeme genutzt werden. Hier
+wird beispielsweise u.a. auch das erste Level geladen.</li>
+<li><code>Game#userOnFrame()</code>: Diese Methode wird zu Beginn eines jeden Frame aufgerufen, noch
+bevor die <code>execute()</code>-Methode der verschiedenen Systeme aufgerufen wird.</li>
+<li><code>Game#userOnLevelLoad()</code>: Diese Methode wird aufgerufen, wenn ein Level geladen wird. Hier
+können Sie später die Entitäten erstellen, die initial im Level verteilt werden sollen.</li>
+</ul>
+<p>Es gibt noch eine ganze Reihe von Packages, beispielsweise <code>core.Component</code> mit verschiedenen
+wichtigen Components oder <code>core.level</code> mit Klassen zum Generieren zufälliger neuer Level und
+zum Laden und zum Zugriff (wo bin ich und warum?) oder <code>core.systems</code> mit den Systemen, die
+bestimmte Dinge im Spiel managen. Die Gliederung in Entitäten (<em>entities</em>), Komponenten
+(<em>components</em>) und Systeme (<em>systems</em>) nennt sich auch &quot;ECS-Architektur&quot; (zu ECS später mehr).</p>
+<p>Sie finden im <a href="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/quickstart.md" rel="external" target="_blank">&quot;Quickstart: How to
+Dungeon&quot;</a>
+eine gute Anleitung, die auf die Strukturen tiefer eingeht.</p>
+<h2 id="mein-held">Mein Held</h2>
+<p>Um einen besseren Blick in das System zu bekommen, erstellen wir schrittweise einen eigenen
+einfachen Helden.</p>
+<p>Legen Sie sich im <code>starter</code>-Package eine neue Klasse an, mit der Sie das Spiel konfigurieren
+und starten können:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> starter;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> core.Game;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Start the game loop</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In IntelliJ können Sie nun die <code>main()</code>-Funktion direkt ausführen, dazu wird im Hintergrund
+die vorhandene Gradle-Konfiguration genutzt. Mit anderen IDEs funktioniert das vielleicht
+nicht direkt, dann erweitern Sie einfach die Gradle-Konfiguration um einen entsprechenden
+Task:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>tasks<span style="color:#f92672">.</span><span style="color:#a6e22e">register</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;run&#39;</span><span style="color:#f92672">,</span> JavaExec<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    mainClass <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;starter.Main&#39;</span>
+</span></span><span style="display:flex;"><span>    classpath <span style="color:#f92672">=</span> sourceSets<span style="color:#f92672">.</span><span style="color:#a6e22e">main</span><span style="color:#f92672">.</span><span style="color:#a6e22e">runtimeClasspath</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div><h2 id="einschub-ecs-oder-entities-components-und-systems">Einschub: ECS oder Entities, Components und Systems</h2>
+<p>Der Held ist ein Element im Spiel. Diese Struktur muss geeignet modelliert werden.</p>
+<p>Unser Dungeon implementiert dabei eine Variante eines <a href="https://en.wikipedia.org/wiki/Entity_component_system" rel="external" target="_blank">Entity Component System
+(<em>ECS</em>)</a> und folgt damit &quot;großen
+Vorbildern&quot; wie beispielsweise
+<a href="https://learn.unity.com/tutorial/entity-component-system" rel="external" target="_blank">Unity</a>.</p>
+<p>Neben verschiedenen Hilfsstrukturen gibt es dabei nur <strong>Entitäten</strong>, <strong>Komponenten</strong> und
+<strong>Systeme</strong>. Hier werden sämtliche Informationen und Verhalten modelliert.</p>
+<h3 id="entity">Entity</h3>
+<p>Die Idee dahinter ist: Alle Elemente im Spiel werden als <em>Entität</em> realisiert, d.h. der Held
+und die Monster und die Items, die man so finden kann, sind alles Entitäten. Sogar Feuerbälle
+sind letztlich Entitäten. (Im Prinzip könnten sogar die Boden- und Wandkacheln Entitäten
+sein - sind es aus Effizienzgründen aktuell aber nicht.)</p>
+<p>Eine Entität an sich kann erst einmal nichts und dient nur als Container für <em>Components</em>.</p>
+<p>Das Spiel kennt alle zu einem Zeitpunkt vorhandenen Entitäten, diese müssen per <code>Game#add</code>
+registriert werden. Man kann die Entitäten über die API abrufen (<code>Game#allEntities</code>,
+<code>Game#find</code> und <code>Game#hero</code>).</p>
+<p>Unsere Basisklasse für Entitäten ist aktuell <code>core.Entity</code>.</p>
+<h3 id="component">Component</h3>
+<p>Components bündeln bestimmte Werte einer Entität für bestimmte Zwecke, d.h. statt der
+Attribute in einer Klasse (Entität) nutzen wir hier eine weitere Kapselung.</p>
+<p>Beispielsweise könnte man die Lebenspunkte u.ä. in einer <code>HealthComponent</code> verpacken und dann
+in einer Entität speichern. Oder man könnte in einer <code>VelocityComponent</code> hinterlegen, wie
+schnell eine Entität in x- und in y-Richtung bewegt werden kann (Wände würden dabei einfach
+den Wert 0 bekommen). Oder man könnte in einer <code>PositionComponent</code> speichern, wo die Entität
+gerade ist. Schauen Sie einfach mal in die Packages <code>core.components</code> und
+<code>contrib.components</code>.</p>
+<p>Wichtig ist: Eine Instanz einer Component ist immer an eine Entität gekoppelt, eine Component
+ohne (Bindung an eine) Entität ist sinnfrei. Andersherum kann eine Entität immer nur eine
+einzige Instanz einer bestimmten Component (eines Component-Typs) haben, also beispielsweise
+nicht zwei Objekte vom Typ <code>PositionComponent</code>.</p>
+<p>Components speichern vor allem Werte und haben nur in Ausnahmefällen eigenes Verhalten.</p>
+<p>Das Basisinterface für Components ist derzeit <code>core.Component</code>.</p>
+<h3 id="system">System</h3>
+<p>Mit Entitäten und passenden Components, über die wir die Eigenschaften ausdrücken, können wir
+bereits Spielelemente im Dungeon repräsentieren.</p>
+<p>Für die Bewegung und Interaktion sorgen nun passende Systeme. Das Spiel kennt alle Systeme
+(diese werden einmal beim Start im Spiel per <code>Game#add</code> registriert) und ruft in der Game-Loop
+pro Frame deren <code>execute()</code>-Methode auf. In der Regel iterieren die Systeme beim Ausführen der
+<code>execute()</code>-Methode über die Entitäten des Spiels (via <code>Game#allEntities</code>), suchen sich
+Entitäten mit bestimmten Components heraus und bearbeiten den Zustand dieser Components.</p>
+<p>Dabei könnte beispielsweise ein <code>HealthSystem</code> sich alle Entitäten filtern, deren
+<code>HealthComponent</code> unterhalb einer kritischen Schwelle liegen und diese rot anmalen lassen,
+d.h. in der <code>DrawComponent</code> wird die Textur (&quot;Animation&quot;) ausgetauscht. Oder ein
+<code>PlayerSystem</code> könnte dafür sorgen, dass die Eingaben auf der Tastatur geeignet an den Helden
+weitergegeben werden und (über andere Systeme) in eine Bewegung oder Kampf o.ä. umgewandelt
+werden.</p>
+<p>Sie finden unsere Systeme in den Packages <code>core.systems</code> und <code>contrib.systems</code>, und die
+Basisklasse ist derzeit <code>core.System</code> - falls Sie einmal eigene Systeme implementieren wollen.
+(<a href="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/create_own_content.md" rel="external" target="_blank">vgl. auch
+Doku</a>)</p>
+<h2 id="nun-aber-helden">Nun aber Helden!</h2>
+<h3 id="ein-held-ist-eine-entität">Ein Held ist eine Entität</h3>
+<p>Also legen wir nun endlich einen neuen Helden als Instanz von <code>core.Entity</code> an und
+registrieren diese Entität im Spiel:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add some one-time configuration</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">userOnSetup</span>(
+</span></span><span style="display:flex;"><span>                () <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                    Entity hero <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Entity(<span style="color:#e6db74">&#34;Hero&#34;</span>);
+</span></span><span style="display:flex;"><span>                    Game.<span style="color:#a6e22e">add</span>(hero);
+</span></span><span style="display:flex;"><span>                });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Start the game loop</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Der in der Methode <code>Game#userOnSetup</code> übergebene Lamda-Ausdruck wird (später) einmalig beim
+Start der Game-Loop von libGDX aufgerufen. Auf diese Weise können wir unseren Helden ins Spiel
+bekommen. (Alle anderen Entitäten sollten Sie besser über die Methode <code>Game#onLevelLoad</code>
+anlegen, also beim Laden eines neuen Levels.)</p>
+<p>Prinzipiell haben Sie damit alles, um das Spiel starten zu können. In der Praxis sehen Sie
+aber keinen Helden: Der hat nämlich weder eine Position noch eine Textur, kann also gar nicht
+angezeigt werden.</p>
+<h3 id="wo-bin-ich-grad">Wo bin ich grad?</h3>
+<p>Der Held braucht eine Position. Dazu gibt es <code>core.components.PositionComponent</code>. Fügen wir
+diese einfach dem Helden hinzu:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add some one-time configuration</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">userOnSetup</span>(
+</span></span><span style="display:flex;"><span>                () <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                    Entity hero <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Entity(<span style="color:#e6db74">&#34;Hero&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    hero.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> PositionComponent());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    Game.<span style="color:#a6e22e">add</span>(hero);
+</span></span><span style="display:flex;"><span>                });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Start the game loop</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Wenn man keine Position mitgibt, wird einfach eine zufällige Position im Level genutzt.
+Alternativ kann man eine eigene Position mitgeben.</p>
+<p>Im Dungeon existieren aktuell zwei Koordinatensysteme: <code>core.level.utils.Coordinate</code>
+(Integer-basiert) und <code>core.utils.Point</code> (Float-basiert). Die Level werden als Matrix von
+<code>Tile</code> (Boden, Wand, Loch, ...) gespeichert. Die Position dieser <code>Tile</code> wird als <code>Coordinate</code>
+gespeichert, was dem Index des Tiles in der Matrix entspricht. Entitäten können aktuell aber
+auch zwischen zwei Tiles oder schräg-links-oben auf einem Tile stehen, dafür gibt es die
+Positionen als <code>Point</code>. Entsprechend könnte man den neuen Helden bei <code>(0,0)</code> in das Level
+setzen: <code>new PositionComponent(new Point(0, 0))</code> bzw. kurz <code>new PositionComponent(0f, 0f)</code>
+(wobei diese Position möglicherweise nicht spielbar ist, da hier eine Wand oder sogar nichts
+ist).</p>
+<p>Wenn Sie jetzt das Spiel starten, sehen Sie - immer noch nichts (außer den Wänden). Hmmm.</p>
+<h3 id="animateure">Animateure</h3>
+<p>Um den Held zeichnen zu können, brauchen wir eine Animation - also eine <code>DrawComponent</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add some one-time configuration</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">userOnSetup</span>(
+</span></span><span style="display:flex;"><span>                () <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                    Entity hero <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Entity(<span style="color:#e6db74">&#34;Hero&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    hero.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> PositionComponent());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>                        hero.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> DrawComponent(<span style="color:#66d9ef">new</span> SimpleIPath(<span style="color:#e6db74">&#34;character/knight&#34;</span>)));
+</span></span><span style="display:flex;"><span>                    } <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>                        System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Could not load textures for hero.&#34;</span>);
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    hero.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> CameraComponent());
+</span></span><span style="display:flex;"><span>                    hero.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> PlayerComponent());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    Game.<span style="color:#a6e22e">add</span>(hero);
+</span></span><span style="display:flex;"><span>                });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Start the game loop</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In den Asset-Ordnern der Sub-Projekte Game und Dungeon gibt es bereits vordefinierte Texturen.
+Im Beispiel wird (nur) im Sub-Projekt &quot;game&quot; gesucht (weil unsere <code>Main</code>-Klasse dort liegt),
+und zwar in <code>&lt;game&gt;/assets/character/knight/</code>. Dort finden sich Unterordner für verschiedene
+Zustände des Ritters, und darin jeweils einige Texturen (einfache kleine .png-Dateien), die
+als Animation in einem bestimmten Zustand nacheinander abgespielt werden. Über den angegebenen
+(Teil-) Pfad werden in <code>DrawComponent</code> automatisch die entsprechenden Animationen erzeugt und
+geladen. Die Asset-Ordner sind in der Gradle-Konfiguration definiert. (Wenn Sie Ihre
+<code>Main</code>-Klasse in Dungeon ansiedeln, stehen Ihnen automatisch die Texturen aus Dungeon plus aus
+Game zur Verfügung.)</p>
+<p>Da es passieren kann, dass der übergebene Pfad nicht gefunden wird, muss hier mit
+Exception-Handling gearbeitet werden. Wir geben hier erstmal eine Fehlermeldung aus und
+propagieren eine neue <code>RuntimeException</code>, die letztlich dafür sorgt, dass das Spiel
+abgebrochen würde.</p>
+<p>Zusätzlich brauchen wir für den Helden noch eine <code>CameraComponent</code>. Das
+<code>core.systems.CameraSystem</code> wird dafür sorgen, dass die Entität mit dieser Component immer im
+Fokus der Kamera ist. Da wir den Held später noch manuell steuern wollen, bekommt er auch
+gleich noch eine <code>PlayerComponent</code>.</p>
+<p>Jetzt wackelt der Held auf der Stelle herum ...</p>
+<h3 id="bewege-mich">Bewege mich</h3>
+<p>Für die Bewegung ist das <code>VelocitySystem</code> zuständig. Dieses fragt in allen Entitäten die
+<code>VelocityComponent</code> sowie die <code>PositionComponent</code> ab, berechnet die nächste neue Position und
+speichert diese in der <code>PositionComponent</code>, und setzt bei tatsächlicher Bewegung auch eine
+passende Bewegungsanimation in der <code>DrawComponent</code>.</p>
+<p>Das <code>PlayerSystem</code> und die <code>PlayerComponent</code> sorgen im Zusammenspiel für eine Reaktion auf die
+Tastatureingaben.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add some one-time configuration</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">userOnSetup</span>(
+</span></span><span style="display:flex;"><span>                () <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                    Entity hero <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Entity(<span style="color:#e6db74">&#34;Hero&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    hero.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> PositionComponent());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>                        hero.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> DrawComponent(<span style="color:#66d9ef">new</span> SimpleIPath(<span style="color:#e6db74">&#34;character/knight&#34;</span>)));
+</span></span><span style="display:flex;"><span>                    } <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>                        System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Could not load textures for hero.&#34;</span>);
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    hero.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> CameraComponent());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    hero.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> VelocityComponent(5f, 5f));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    PlayerComponent pc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PlayerComponent();
+</span></span><span style="display:flex;"><span>                    pc.<span style="color:#a6e22e">registerCallback</span>(
+</span></span><span style="display:flex;"><span>                            KeyboardConfig.<span style="color:#a6e22e">MOVEMENT_UP</span>.<span style="color:#a6e22e">value</span>(),
+</span></span><span style="display:flex;"><span>                            entity <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                                VelocityComponent vc <span style="color:#f92672">=</span> entity.<span style="color:#a6e22e">fetch</span>(VelocityComponent.<span style="color:#a6e22e">class</span>).<span style="color:#a6e22e">get</span>();
+</span></span><span style="display:flex;"><span>                                vc.<span style="color:#a6e22e">currentYVelocity</span>(vc.<span style="color:#a6e22e">yVelocity</span>());
+</span></span><span style="display:flex;"><span>                            });
+</span></span><span style="display:flex;"><span>                    hero.<span style="color:#a6e22e">add</span>(pc);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    Game.<span style="color:#a6e22e">add</span>(hero);
+</span></span><span style="display:flex;"><span>                });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Start the game loop</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Die <code>VelocityComponent</code> wird im Konstruktor mit einer (maximalen) Geschwindigkeit in x- und
+y-Richtung erzeugt. Nutzen Sie hier nicht zu große Werte - unter Umständen reicht dann ein
+einziger Tastendruck, um einmal über das Spielfeld geschleudert zu werden.</p>
+<p>Über die Methoden <code>VelocityComponent#xVelocity</code> und <code>VelocityComponent#yVelocity</code> können Sie
+die Maximalgeschwindigkeit abfragen und auch setzen. Mit <code>VelocityComponent#currentXVelocity</code>
+bzw. <code>VelocityComponent#currentYVelocity</code> holen und setzen Sie dagegen die <em>aktuelle</em>
+Geschwindigkeit, die vom <code>VelocitySystem</code> zur Berechnung der nächsten Position genutzt wird
+(wobei die Maximalgeschwindigkeit als Obergrenze verwendet wird).</p>
+<p>Im Beispiel wird in der <code>PlayerComponent</code> des Helden der Taste &quot;W&quot; ein Lambda-Ausdruck
+zugeordnet, der die <code>VelocityComponent</code> der Entität (also des Helden) holt, die maximale
+Geschwindigkeit in y-Richtung ausliest und diese als aktuelle Geschwindigkeit in y-Richtung
+setzt. Damit kann mit der Taste &quot;W&quot; der Held nach oben laufen.</p>
+<p><em>Anmerkung</em>: Das <code>entity.fetch(VelocityComponent.class)</code> liefert nicht direkt ein
+<code>VelocityComponent</code>-Objekt zurück, sondern ein <code>Optional&lt;VelocityComponent&gt;</code>. Darüber sprechen
+wir (später) noch in der Lektion <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html">&ldquo;Optional&rdquo;</a>. Für jetzt soll es
+zunächst genügen, dass Sie das gewünschte &quot;verpackte&quot; Objekt mit der Methode <code>get()</code> aus dem
+<code>Optional</code> wieder herausbekommen.</p>
+<p><em>Anmerkung</em>: Das gezeigte Schema ist insofern typisch, als dass verschiedene Systeme aus der
+Maximalgeschwindigkeit und weiteren Parametern die aktuelle Geschwindigkeit berechnen und in
+der <code>VelocityComponent</code> einer Entität setzen. Das <code>VelocitySystem</code> nutzt dann die aktuelle
+Geschwindigkeit für die tatsächliche Bewegung. Sie sollten in der Praxis also die Methoden
+<code>VelocityComponent#currentXVelocity</code> bzw. <code>VelocityComponent#currentYVelocity</code> eher nicht
+selbst aufrufen, sondern dies den Systemen überlassen. Wenn Sie einen Geschwindigkeitsboost
+haben wollen, würde es bei der obigen Konfiguration ausreichen, <code>VelocityComponent#xVelocity</code>
+und/oder <code>VelocityComponent#yVelocity</code> zu setzen/zu erhöhen - den Rest übernehmen dann das
+<code>PlayerSystem</code> und vor allem das <code>VelocitySystem</code> ...</p>
+<p>Nun sollten Sie Ihren Helden (nach oben) bewegen können. (Tipp: Probieren Sie &quot;W&quot;.)</p>
+<p><em>Hinweis</em>: Üblicherweise bearbeiten die Systeme bei der Iteration über alle Entitäten nur
+diejenigen Entitäten, die alle benötigten Components aufweisen.</p>
+<h2 id="walking-mit-system">Walking mit System</h2>
+<h3 id="neue-monster">Neue Monster</h3>
+<p>Wie kann ich ein Monster beim Laden des Levels erzeugen?</p>
+<p>Beim Laden eines Levels wird der mit <code>Game#userOnLevelLoad</code> registrierte Lambda-Ausdruck
+ausgeführt. Hier kann man beispielsweise ein neues Monster erzeugen (lassen):</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add some one-time configuration</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">userOnSetup</span>( ... );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create a new monster in every new level</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">userOnLevelLoad</span>(first <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>            Entity fb <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Entity(<span style="color:#e6db74">&#34;HUGO&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            fb.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> PositionComponent(Game.<span style="color:#a6e22e">hero</span>().<span style="color:#a6e22e">get</span>().<span style="color:#a6e22e">fetch</span>(PositionComponent.<span style="color:#a6e22e">class</span>).<span style="color:#a6e22e">get</span>().<span style="color:#a6e22e">position</span>()));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>                fb.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> DrawComponent(<span style="color:#66d9ef">new</span> SimpleIPath(<span style="color:#e6db74">&#34;character/knight&#34;</span>)));
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>                System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Could not load textures for HUGO.&#34;</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            VelocityComponent vc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> VelocityComponent(10f, 10f);
+</span></span><span style="display:flex;"><span>            vc.<span style="color:#a6e22e">currentYVelocity</span>(vc.<span style="color:#a6e22e">yVelocity</span>());
+</span></span><span style="display:flex;"><span>            fb.<span style="color:#a6e22e">add</span>(vc);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            Game.<span style="color:#a6e22e">add</span>(fb);
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Start the game loop</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Im Lambda-Ausdruck erzeugen wir hier einfach eine neue Entität und fügen dieser wie vorhin
+beim Hero eine <code>DrawComponent</code> für die Anzeige sowie eine <code>PositionComponent</code> und eine
+<code>VelocityComponent</code> für die Position und Bewegung hinzu, und am Ende registrieren wir die
+Entität beim Spiel.</p>
+<p>Wenn man das Spiel jetzt startet, wird an der Position des Helden eine neue Entität sichtbar
+(mit der selben Textur).</p>
+<p>Aber warum bewegt die neue Figur sich nicht? Wir haben doch eine <code>VelocityComponent</code>
+hinzugefügt und eine aktuelle Geschwindigkeit gesetzt?!</p>
+<p>Wenn man in <code>VelocitySystem#execute</code> (bzw. die dort aufgerufene Methode
+<code>VelocitySystem#updatePosition</code>) schaut, wird klar, dass die aktuelle Geschwindigkeit zwar neu
+berechnet und gesetzt wird, aber dass ein &quot;Reibungsfaktor&quot; (abhängig vom Feld, auf dem die
+Figur steht) eingerechnet wird und somit die aktuelle Geschwindigkeit schnell auf Null geht.
+Der Hintergrund ist einfach: Normalerweise soll eine Entität nicht einmal angeschubst werden
+und dann &quot;ewig&quot; laufen, insbesondere bei Reaktion auf Tastatureingaben. Deshalb werden die
+Entitäten kurz bewegt und bremsen dann wieder ab. Das Aufrechterhalten der Bewegung erfolgt
+normalerweise über Systeme ...</p>
+<h3 id="systems-für-das-selbstständige-laufen">Systems für das selbstständige Laufen</h3>
+<p>Wir brauchen ein System, welches die aktuelle Geschwindigkeit einer Entität in jedem Frame
+wieder auf den alten Wert setzt. Dazu leiten wir von <code>core.System</code> ab. (Achtung: Es gibt auch
+eine Klasse <code>System</code> im JDK - hier müssen Sie genau hinschauen!)</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> core.System;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WalkerSystem</span> <span style="color:#66d9ef">extends</span> System {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">execute</span>() {
+</span></span><span style="display:flex;"><span>        entityStream().<span style="color:#a6e22e">forEach</span>(e <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                VelocityComponent vc <span style="color:#f92672">=</span> e.<span style="color:#a6e22e">fetch</span>(VelocityComponent.<span style="color:#a6e22e">class</span>).<span style="color:#a6e22e">get</span>();
+</span></span><span style="display:flex;"><span>                vc.<span style="color:#a6e22e">currentXVelocity</span>(vc.<span style="color:#a6e22e">xVelocity</span>());
+</span></span><span style="display:flex;"><span>                vc.<span style="color:#a6e22e">currentYVelocity</span>(vc.<span style="color:#a6e22e">yVelocity</span>());
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add some one-time configuration</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">userOnSetup</span>( ... );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create a new monster in every new level</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">userOnLevelLoad</span>( ... );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Register our new system</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> WalkerSystem());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Start the game loop</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Wir leiten also von <code>core.System</code> ab und implementieren die <code>execute</code>-Methode. Wir holen uns
+dabei von jeder Entität die <code>VelocityComponent</code> und setzen die aktuelle Geschwindigkeit neu
+auf die maximale Geschwindigkeit. Zusätzlich registrieren wir das neue System im Spiel, damit
+es in jedem Frame einmal aufgerufen wird.</p>
+<p>Nun läuft das neue Monster los (bis es gegen eine Wand läuft).</p>
+<p>Aber der Held bewegt sich nun ebenfalls dauerhaft :(</p>
+<h3 id="components-für-das-selbstständige-laufen">Components für das selbstständige Laufen</h3>
+<p>Das Problem ist, dass unser neues <code>WalkerSystem</code> <strong>alle</strong> Entitäten automatisch bewegt. (Ein
+weiteres Problem ist, dass das <code>WalkerSystem</code> davon ausgeht, dass es immer eine
+<code>VelocityComponent</code> gibt, was nicht unbedingt erfüllt ist!)</p>
+<p>Wir brauchen also noch eine Component, mit der wir die zu bewegenden Entitäten markieren
+können.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> core.System;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> core.Component;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WalkerComponent</span> <span style="color:#66d9ef">implements</span> Component {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">WalkerSystem</span> <span style="color:#66d9ef">extends</span> System {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">WalkerSystem</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">super</span>(WalkerComponent.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">execute</span>() {
+</span></span><span style="display:flex;"><span>        entityStream().<span style="color:#a6e22e">forEach</span>(e <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (e.<span style="color:#a6e22e">isPresent</span>(WalkerComponent.<span style="color:#a6e22e">class</span>)) {
+</span></span><span style="display:flex;"><span>                VelocityComponent vc <span style="color:#f92672">=</span> e.<span style="color:#a6e22e">fetch</span>(VelocityComponent.<span style="color:#a6e22e">class</span>).<span style="color:#a6e22e">get</span>();
+</span></span><span style="display:flex;"><span>                vc.<span style="color:#a6e22e">currentXVelocity</span>(vc.<span style="color:#a6e22e">xVelocity</span>());
+</span></span><span style="display:flex;"><span>                vc.<span style="color:#a6e22e">currentYVelocity</span>(vc.<span style="color:#a6e22e">yVelocity</span>());
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add some one-time configuration</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">userOnSetup</span>( ... );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create a new monster in every new level</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">userOnLevelLoad</span>(first <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>            Entity fb <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Entity(<span style="color:#e6db74">&#34;HUGO&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            fb.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> WalkerComponent());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            Game.<span style="color:#a6e22e">add</span>(fb);
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Register our new system</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> WalkerSystem());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Start the game loop</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Die neue Component (<code>WalkerComponent</code>) ist einfach eine leere Klasse, die von <code>core.Component</code>
+erbt. Wir brauchen keine Werte o.ä., die wir hier ablegen wollen - eine leere Klasse reicht
+für das Beispiel. Dem neuen Monster geben wir diese neue Component nun mit.</p>
+<p>Das <code>WalkerSystem</code> wird auch etwas ergänzt: Im Konstruktor rufen wir den Super-Konstruktor auf
+und übergeben die <code>WalkerComponent</code>-Klasse - dies ist die Component, für die sich das System
+interessiert. Zusätzlich legen wir noch eine <code>if</code>-Abfrage um das Aktualisieren der aktuellen
+Geschwindigkeit: Der Block soll nur dann ausgeführt werden, wenn die im aktuellen
+Schleifendurchlauf gerade betrachtete Entität eine <code>WalkerComponent</code> hat.</p>
+<p>Nun läuft nur das neue Monster automatisch, der Held bleibt stehen und reagiert erst auf
+Tastendrücke. Prima!</p>
+<p>Auf diese Weise können Sie beispielsweise den Monstern einen Gesundheitszustand geben und
+diese bei zu schlechter Gesundheit &quot;sterben&quot; lassen (aus dem Spiel entfernen). Sie könnten
+aber auch komplexere Dinge wie die Kollision zwischen zwei Entitäten realisieren.</p>
+<p>Tatsächlich gibt es im Sub-Projekt &quot;dungeon&quot; (Package <code>contrib</code>) bereits eine Vielzahl an
+Components und passenden Systems, die solche typischen Aufgaben bereits realisieren.</p>
+<h2 id="kämpfe-wie-ein-npc">Kämpfe wie ein NPC</h2>
+<p>Wir haben beim Hero über das <code>PlayerComponent</code> eine Reaktion auf Tastatureingaben
+implementiert. Hier könnte man einer Taste auch den Start einer neuen Entität zuordnen, die
+sich dann automatisch bewegt. Man könnte also Feuerbälle schleudern ...</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Add some one-time configuration</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">userOnSetup</span>( () <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>            Entity hero <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Entity(<span style="color:#e6db74">&#34;Hero&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            PlayerComponent pc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> PlayerComponent();
+</span></span><span style="display:flex;"><span>            pc.<span style="color:#a6e22e">registerCallback</span>(KeyboardConfig.<span style="color:#a6e22e">FIRST_SKILL</span>.<span style="color:#a6e22e">value</span>(), entity <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                Entity fb <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Entity(<span style="color:#e6db74">&#34;Fireball&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                fb.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> PositionComponent(entity.<span style="color:#a6e22e">fetch</span>(PositionComponent.<span style="color:#a6e22e">class</span>).<span style="color:#a6e22e">get</span>().<span style="color:#a6e22e">position</span>()));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>                    fb.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> DrawComponent(<span style="color:#66d9ef">new</span> SimpleIPath(<span style="color:#e6db74">&#34;character/knight&#34;</span>)));
+</span></span><span style="display:flex;"><span>                } <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>                    System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Could not load textures for fireball.&#34;</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                fb.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> VelocityComponent(2f, 2f));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                fb.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> WalkerComponent());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                Game.<span style="color:#a6e22e">add</span>(fb);
+</span></span><span style="display:flex;"><span>            }, <span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            Game.<span style="color:#a6e22e">add</span>(hero);
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Create a new monster in every new level</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">userOnLevelLoad</span>( ... );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Register our new system</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> WalkerSystem());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Start the game loop</span>
+</span></span><span style="display:flex;"><span>        Game.<span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Wir registrieren einfach die Taste <code>FIRST_SKILL</code> (das ist ein &quot;Q&quot;) in der <code>PlayerComponent</code>.
+Im hinterlegten Lamda-Ausdruck wird eine neue Entität erzeugt mit einer <code>WalkerComponent</code>,
+also ganz analog zu dem neuen Monster vorhin beim Laden eines neuen Levels. Zusätzlich wird
+hier noch ein dritter Parameter mit dem Wert <code>false</code> mitgegeben: Die <code>PlayerComponent</code> wird in
+<em>jedem</em> Frame ausgewertet - wenn die Taste &quot;Q&quot; also über mehrere Frames hinweg gedrückt ist
+(was sehr wahrscheinlich ist), würde in jedem dieser Frames je eine neue Entität erzeugt und
+losgeschickt. Über diesen dritten Parameter können wir steuern, dass genau das nicht passiert.
+Man muss also die Taste &quot;Q&quot; zunächst wieder loslassen und dann erneut drücken, um noch einen
+Feuerball zu erzeugen und auf den Weg zu schicken. Als Textur habe ich einfach die im
+Sub-Projekt &quot;game&quot; vorhandene Textur für die Heros genommen - im Sub-Projekt &quot;dungeon&quot; gibt es
+dagegen auch Feuerbälle u.ä., aber dann müsste die Klasse auch in dieses Sub-Projekt umgezogen
+werden.</p>
+<p>Unser Feuerball kann leider nichts, außer sich automatisch zu bewegen. Man könnte nun noch ein
+<code>CollisionSystem</code> entwickeln, welches Entitäten immer paarweise auf ihre Positionen vergleicht
+und eine Kollision feststellt, wenn sich die Entitäten zu nah kommen und diese Information in
+einer <code>CollisionComponent</code> speichern (wer mit wem und wann). Dann könnte man noch ein
+<code>HealthSystem</code> bauen, welches eine <code>HealthComponent</code> aktualisiert. Zusätzlich könnte man ein
+<code>FightSystem</code> schreiben, welches bei einer Kollision der getroffenen Entität (zufälligen?)
+Schaden zufügt, also die Werte in ihrer <code>HealthComponent</code> reduziert. (Alternativ könnte das
+<code>CollisionSystem</code> bei Kollision einen in der <code>CollisionComponent</code> gespeicherten
+Lambda-Ausdruck ausführen.) ... Die einzelnen Klassen interagieren also nicht direkt
+miteinander, sondern immer über den Umweg der Systems und Components.</p>
+<p>All diese (und viele weitere) Components und Systems gibt es bereits im Package <code>contrib</code> im
+Sub-Projekt <a href="https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dungeon" rel="external" target="_blank">&quot;dungeon&quot;</a>.</p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<p>Damit endet der kurze Ausflug in den Dungeon.</p>
+<p>In einem ECS haben wir Entities, Components und Systems.</p>
+<ul>
+<li>Die Entitäten sind nur Hüllen und gruppieren verschiedene Components.</li>
+<li>In diesen Components werden die Werte für die jeweiligen Zustände gehalten.</li>
+<li>Die Systems werden in jedem Durchlauf der Game-Loop aufgerufen und führen dabei ihre
+<code>execute()</code>-Methode aus. Typischerweise iterieren die Systeme dabei über alle Entitäten
+und verändern die Components der Entitäten.</li>
+</ul>
+<p>Denken Sie daran, dass alles in einer Game-Loop läuft, die 30x oder 60x pro Sekunde aufgerufen
+wird. Sie können in der Regel keine direkte Interaktion zwischen verschiedenen Objekten
+realisieren, sondern müssen immer den Weg über die Systems gehen.</p>
+<p>Schauen Sie gern in die vorhandenen Klassen und Packages und in die Dokumentation hinein:</p>
+<ul>
+<li>Klassen in <code>game/src/</code> und <code>dungeon/src</code></li>
+<li>Dokumentation unter <code>game/doc/</code> und <code>dungeon/doc/</code></li>
+</ul>
+<p>Die Javadoc-Kommentare sollten Ihnen erste Ideen zur Funktionsweise geben (auch wenn für das
+angestrebte Ideal noch einiges an Arbeit notwendig ist). Schauen Sie gern die Dokumentation
+unter <code>game/doc/</code> und <code>dungeon/doc/</code> an, die im Laufe des Semesters schrittweise weiter
+wachsen wird.</p>
+<p>Anregungen für <strong>Spielideen</strong> können Sie beispielsweise in den folgenden Videos
+finden:</p>
+<ul>
+<li><a href="https://youtu.be/qoc_tDN0QC4" rel="external" target="_blank">Shattered Pixel Dungeon Rogue Beginners Guide Playthrough</a></li>
+<li><a href="https://youtu.be/LgSjUWjQg0s" rel="external" target="_blank">Shattered Pixel Dungeon Duelist Update!</a></li>
+</ul>
+<p>Viel Spass im PM-Dungeon!</p>
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+
+
+
+
+<a id="logo" href='https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234//index.html'>
+    <img style="max-width:35%" alt="icon" src='/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png'>
+</a>
+
+        </div>
+
+        <search><form action="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/search.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['de'];
+        </script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/auto-complete.js?1719943322" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.min.js?1719943322" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.stemmer.support.min.js?1719943322" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.multi.min.js?1719943322" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.de.min.js?1719943322" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/search.js?1719943322" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics.html">Generics</a><ul id="R-subsections-3ec7939463ceb6f931083967c060bb2f" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/classes-methods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/classes-methods.html">Klassen &amp; Methoden</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/bounds-wildcards.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/bounds-wildcards.html">Bounds &amp; Wildcards</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/type-erasure.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/type-erasure.html">Type Erasure</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html">Polymorphie</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html">Building</a><ul id="R-subsections-f4e18db244c71e7d5fbee7579907c4cd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html">Gradle</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html">Continuous Integration</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html">Git</a><ul id="R-subsections-b7b75b08ea746eeb407fc7d37ea4cda5" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html">Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html">Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html">Branches</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">Branching-Strategien</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html">Remotes</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">Workflows</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java.html">Modern Java</a><ul id="R-subsections-b7e7192fdbaa6715e2f6bf2cf57a6598" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html">Lambda-Ausdrücke</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/methodreferences.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/methodreferences.html">Methoden-Referenzen</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/stream-api.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/stream-api.html">Stream-API</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/records.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/records.html">Records</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html">Optional</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html">Default-Methoden</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html">Coding</a><ul id="R-subsections-ed36829f63ded441f98bbebba385ea7c" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html">Javadoc</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html">Logging</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html">Code Smells</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html">Coding Conventions</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html">Refactoring</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks.html" class="parent "><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks.html">Frameworks</a><ul id="R-subsections-8a7f48c592022db704353f5d4f8a5f78" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon.html" class="active"><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon.html">How-To Dungeon</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing.html">Testing</a><ul id="R-subsections-95ac3b8a0580d3c0c5ec1b9e2c19e15b" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html">Intro SW-Test</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/junit-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/junit-basics.html">JUnit-Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testcases.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testcases.html">Testfallermittlung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/mockito.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/mockito.html">Mocking</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html">Pattern</a><ul id="R-subsections-88c6ccdca00adeca83d4957e66bb44bd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html">Visitor</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html">Observer</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html">Template-Method</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html">Command</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm.html">Java / JVM</a><ul id="R-subsections-a8baeaa8292f03e30c60ce3f78cb8329" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html">Serialisierung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/regexp.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/regexp.html">RegExp</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html">Enumerations</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/configuration.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/configuration.html">Konfiguration</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html">Threads</a><ul id="R-subsections-69dad497cee2a112d69e7153cccf3928" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html">Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html">Synchronisation</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html">High-Level Concurrency</a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#kursformat"><i class='fas fa-bookmark'></i> Zeiten</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> Fahrplan</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#pr%C3%BCfungsform-note-und-credits"><i class='fas fa-bookmark'></i> Note/Credits</a></li>
+            <li><a class="padding" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a"><i class='fas fa-external-link-alt'></i> FAQ</a></li>
+            <li><a class="padding" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/announcements"><i class='fas fa-external-link-alt'></i> News</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon.html" lang="de-DE" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                      <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                      <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-select-variant-relearn-bright" value="relearn-bright">Relearn Bright</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter"><p style="text-align: center;">
+<i class='fab fa-fw fa-github'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">GitHub</a>
+<i class='fas fa-fw fa-tags'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/issues">Issues</a>
+<i class='fas fa-fw fa-bullhorn'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">Credits</a>
+<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+
+</p>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1719943322" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1719943322" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1719943322"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1719943322" defer></script>
+  </body>
+</html>

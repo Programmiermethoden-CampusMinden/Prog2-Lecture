@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.1">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Generische Polymorphie B&lt;E&gt; extends A&lt;E&gt;
+class A&lt;E&gt; { ... } class B&lt;E&gt; extends A&lt;E&gt; { ... } A&lt;Double&gt; ad = new B&lt;Double&gt;(); A&lt;String&gt; as = new B&lt;String&gt;();class Vector&lt;E&gt; { ... } class Stack&lt;E&gt; extends Vector&lt;E&gt; { ... } Vector&lt;Double&gt; vd = new Stack&lt;Double&gt;(); Vector&lt;String&gt; vs = new Stack&lt;String&gt;();=&gt; Polymorphie bei Generics bezieht sich auf Typ (nicht Typ-Parameter)
+Invarianz: Generics sind invariant, d.h. ein HashSet&lt;String&gt; ist ein Untertyp von Set&lt;String&gt;. Bei der Vererbung muss der Typ-Parameter identisch sein.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Generics und Polymorphie">
+    <meta name="twitter:description" content="Generische Polymorphie B&lt;E&gt; extends A&lt;E&gt;
+class A&lt;E&gt; { ... } class B&lt;E&gt; extends A&lt;E&gt; { ... } A&lt;Double&gt; ad = new B&lt;Double&gt;(); A&lt;String&gt; as = new B&lt;String&gt;();class Vector&lt;E&gt; { ... } class Stack&lt;E&gt; extends Vector&lt;E&gt; { ... } Vector&lt;Double&gt; vd = new Stack&lt;Double&gt;(); Vector&lt;String&gt; vs = new Stack&lt;String&gt;();=&gt; Polymorphie bei Generics bezieht sich auf Typ (nicht Typ-Parameter)
+Invarianz: Generics sind invariant, d.h. ein HashSet&lt;String&gt; ist ein Untertyp von Set&lt;String&gt;. Bei der Vererbung muss der Typ-Parameter identisch sein.">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html">
+    <meta property="og:title" content="Generics und Polymorphie">
+    <meta property="og:description" content="Generische Polymorphie B&lt;E&gt; extends A&lt;E&gt;
+class A&lt;E&gt; { ... } class B&lt;E&gt; extends A&lt;E&gt; { ... } A&lt;Double&gt; ad = new B&lt;Double&gt;(); A&lt;String&gt; as = new B&lt;String&gt;();class Vector&lt;E&gt; { ... } class Stack&lt;E&gt; extends Vector&lt;E&gt; { ... } Vector&lt;Double&gt; vd = new Stack&lt;Double&gt;(); Vector&lt;String&gt; vs = new Stack&lt;String&gt;();=&gt; Polymorphie bei Generics bezieht sich auf Typ (nicht Typ-Parameter)
+Invarianz: Generics sind invariant, d.h. ein HashSet&lt;String&gt; ist ein Untertyp von Set&lt;String&gt;. Bei der Vererbung muss der Typ-Parameter identisch sein.">
+    <meta property="og:locale" content="de-DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Generics und Polymorphie">
+    <meta itemprop="description" content="Generische Polymorphie B&lt;E&gt; extends A&lt;E&gt;
+class A&lt;E&gt; { ... } class B&lt;E&gt; extends A&lt;E&gt; { ... } A&lt;Double&gt; ad = new B&lt;Double&gt;(); A&lt;String&gt; as = new B&lt;String&gt;();class Vector&lt;E&gt; { ... } class Stack&lt;E&gt; extends Vector&lt;E&gt; { ... } Vector&lt;Double&gt; vd = new Stack&lt;Double&gt;(); Vector&lt;String&gt; vs = new Stack&lt;String&gt;();=&gt; Polymorphie bei Generics bezieht sich auf Typ (nicht Typ-Parameter)
+Invarianz: Generics sind invariant, d.h. ein HashSet&lt;String&gt; ist ein Untertyp von Set&lt;String&gt;. Bei der Vererbung muss der Typ-Parameter identisch sein.">
+    <meta itemprop="wordCount" content="420">
+    <title>Generics und Polymorphie</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html" rel="canonical" type="text/html" title="Generics und Polymorphie">
+
+    
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1719943321" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1719943322" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1719943322" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1719943322" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1719943322" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1719943322"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Generics und Polymorphie
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Generics und Polymorphie</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Auch mit generischen Klassen stehen die Mechanismen Vererbung und Überladen zur Verfügung. Dabei muss
+aber beachtet werden, dass generische Klassen sich <strong>&quot;invariant&quot;</strong> verhalten: Der Typ selbst folgt der
+Vererbungsbeziehung, eine Vererbung des Typ-Parameters begründet <em>keine</em> Vererbungsbeziehung! D.h.
+aus <code>U extends O</code> folgt <strong>nicht</strong> <code>A&lt;U&gt; extends A&lt;O&gt;</code>.</p>
+<p>Bei Arrays ist es genau anders herum: Wenn <code>U extends O</code> dann gilt auch <code>U[] extends O[]</code> ... (Dies
+nennt man &quot;<em>kovariantes</em>&quot; Verhalten.)</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/RiTA43wTixQ' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Generics und Polymorphie</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/a0d6f4ada3f85cd9f78dfde923f045f5fd43819a4930c5ef989ff6acb150c2f53208a061cf87f3c3f03823f6d645e10b1388009bfd9cfe474cfb4bdc93302fc2' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Generics und Polymorphie</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K3) Vererbungsbeziehungen mit generischen Klassen</li> <li>(K3) Umgang mit Arrays und generischen Typen</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="generische-polymorphie">Generische Polymorphie</h2>
+<div class='center'>
+<p><code>B&lt;E&gt; extends A&lt;E&gt;</code></p>
+</div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span><span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> { ... }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span><span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> A<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> { ... }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>A<span style="color:#f92672">&lt;</span>Double<span style="color:#f92672">&gt;</span> ad <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> B<span style="color:#f92672">&lt;</span>Double<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>A<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> as <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> B<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>();</span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Vector</span><span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> { ... }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Stack</span><span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Vector<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> { ... }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Vector<span style="color:#f92672">&lt;</span>Double<span style="color:#f92672">&gt;</span> vd <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">&lt;</span>Double<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>Vector<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> vs <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>();</span></span></code></pre></div><p>=&gt; Polymorphie bei Generics bezieht sich auf <strong>Typ</strong> (nicht Typ-Parameter)</p>
+<p><strong>Invarianz</strong>: Generics sind <em>invariant</em>, d.h. ein <code>HashSet&lt;String&gt;</code> ist ein
+Untertyp von <code>Set&lt;String&gt;</code>. Bei der Vererbung muss der Typ-Parameter identisch
+sein.</p>
+<h2 id="polymorphie-bei-generics-bezieht-sich-nur-auf-typ">Polymorphie bei Generics bezieht sich nur auf Typ!</h2>
+<div class='center'>
+<p>&quot;<code>B extends A</code>&quot; <span class='alert'><strong>bedeutet nicht</strong></span> &quot;<code>C&lt;B&gt; extends C&lt;A&gt;</code>&quot;</p>
+</div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stack<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;</span> s <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>(); <span style="color:#75715e">// DAS GEHT SO NICHT!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Folgen (wenn obiges gehen wuerde):</span>
+</span></span><span style="display:flex;"><span>s.<span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">new</span> Integer(3)); <span style="color:#75715e">// das ginge sowieso ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Folgen (wenn obiges gehen wuerde):</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Stack&lt;Number&gt; waere Oberklasse auch von Stack&lt;Double&gt;</span>
+</span></span><span style="display:flex;"><span>s.<span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">new</span> Double(2.<span style="color:#a6e22e">0</span>)); <span style="color:#75715e">// waere dann auch erlaubt ...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Das Objekt (Stack&lt;Integer&gt;) kann aber keine Double speichern!</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">//</span> Zur Laufzeit keine Typ<span style="color:#f92672">-</span>Informationen mehr<span style="color:#f92672">!</span></span></span></code></pre></div><ul>
+<li>Typ-Löschung =&gt; zur Laufzeit keine Typinformationen vorhanden</li>
+<li>Compiler muss Typen prüfen (können)!</li>
+</ul>
+<h2 id="abgrenzung-polymorphie-bei-arrays">Abgrenzung: Polymorphie bei Arrays</h2>
+<div class='center'>
+<p>Wenn &quot;<code>B extends A</code>&quot; dann &quot;<code>B[] extends A[]</code>&quot;</p>
+</div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Object<span style="color:#f92672">[]</span> x <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]</span> {<span style="color:#e6db74">&#34;Hello&#34;</span>, <span style="color:#e6db74">&#34;World&#34;</span>, <span style="color:#e6db74">&#34;:-)&#34;</span>};
+</span></span><span style="display:flex;"><span>x<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hallo&#34;</span>;
+</span></span><span style="display:flex;"><span>x<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Double(2.<span style="color:#a6e22e">0</span>);  <span style="color:#75715e">// Laufzeitfehler</span>
+</span></span><span style="display:flex;"><span>String<span style="color:#f92672">[]</span> y <span style="color:#f92672">=</span> x;  <span style="color:#f92672">//</span> String<span style="color:#f92672">[]</span> ist KEIN Object<span style="color:#f92672">[]!!!</span></span></span></code></pre></div><ul>
+<li>Arrays besitzen Typinformationen über gespeicherte Elemente</li>
+<li>Prüfung auf Typ-Kompatibilität zur <strong>Laufzeit</strong> (nicht Kompilierzeit!)</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://openbook.rheinwerk-verlag.de/javainsel/11_002.html#u11.2.2" target="_blank"><span class="title">Hinweis auf Java-Geschichte (Java-Insel: &quot;Type Erasure&quot;)</span></a></span></div>
+<p>Arrays gab es sehr früh, Generics erst relativ spät (ab Java6) =&gt; bei
+Arrays fand man das Verhalten natürlich und pragmatisch (trotz der Laufzeit-Überprüfung).</p>
+<p>Bei der Einführung von Generics musste man Kompatibilität sicherstellen (alter
+Code soll auch mit neuen Compilern übersetzt werden können - obwohl im alten
+Code Raw-Types verwendet werden). Außerdem wollte man von Laufzeit-Prüfung hin zu
+Compiler-Prüfung. Da würde das von Arrays bekannte Verhalten Probleme machen ...</p>
+<p><strong>Kovarianz</strong>: Arrays sind <em>kovariant</em>, d.h. ein Array vom Typ <code>String[]</code> ist wegen
+<code>String extends Object</code> ein Untertyp von <code>Object[]</code>.</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/generics/src/arrays/X.java" target="_blank"><span class="title">Beispiel arrays.X</span></a></span></div>
+<h2 id="arrays-vs-parametrisierte-klassen">Arrays vs. parametrisierte Klassen</h2>
+<p>=&gt; Keine Arrays mit parametrisierten Klassen!</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Foo<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;[]</span> x <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Foo<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;[</span>2<span style="color:#f92672">]</span>;   <span style="color:#75715e">// Compilerfehler</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Foo<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">[]&gt;</span> y <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Foo<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">[]&gt;</span>();  <span style="color:#f92672">//</span> OK :)</span></span></code></pre></div><p>Arrays mit parametrisierten Klassen sind nicht erlaubt! Arrays brauchen zur
+Laufzeit Typinformationen, die aber durch die Typ-Löschung entfernt werden.</p>
+<h2 id="diskussion-vererbung-vs-generics">Diskussion Vererbung vs. Generics</h2>
+<p><strong>Vererbung:</strong></p>
+<ul>
+<li><em>IS-A</em>-Beziehung</li>
+<li>Anwendung: Vererbungsbeziehung vorliegend, Eigenschaften verfeinern</li>
+<li>Beispiel: Ein Student <em>ist eine</em> Person</li>
+</ul>
+<p><strong>Generics:</strong></p>
+<ul>
+<li>Schablone (Template) für viele Datentypen</li>
+<li>Anwendung: Identischer Code für unterschiedliche Typen</li>
+<li>Beispiel: Datenstrukturen, Algorithmen generisch realisieren</li>
+</ul>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Generics: Vererbung und Überladen möglich, aber:
+<strong>Aus &quot;<code>U extends O</code>&quot; folgt <span class='alert'><strong>nicht</strong></span> &quot;<code>A&lt;U&gt; extends A&lt;O&gt;</code>&quot;</strong></p>
+</li>
+<li>
+<p>Achtung: Bei Arrays gilt aber: Wenn &quot;<code>U extends O</code>&quot; dann gilt auch &quot;<code>U[] extends O[]</code>&quot; ...</p>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106238&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Generics und Polymorphie (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Bloch2018'>[Bloch2018] <strong>Effective Java</strong><br>Bloch, J., Addison-Wesley, 2018. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-0-13-468599-1' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-0-13-468599-1</a>.</li> <li id='id_Java-SE-Tutorial'>[Java-SE-Tutorial] <a href='https://docs.oracle.com/javase/tutorial/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>The Java Tutorials</strong></a><br>Oracle Corporation, 2022.<br><em>Specialized Trails: Generics</em></li> <li id='id_LernJava'>[LernJava] <a href='https://dev.java/learn/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Learn Java</strong></a><br>Oracle Corporation, 2022.<br><em>Kapitel Generics</em></li> <li id='id_Ullenboom2021'>[Ullenboom2021] <a href='https://openbook.rheinwerk-verlag.de/javainsel/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java ist auch eine Insel</strong></a><br>Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8362-8745-6</a>.<br><em>Kapitel 11.5</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1719943322" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1719943322" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1719943322"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1719943322" defer></script>
+  </body>
+</html>

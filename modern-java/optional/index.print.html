@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.1">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Motivation public class LSF { private Set&lt;Studi&gt; sl; public Studi getBestStudi() { if (sl == null) return null; // Fehler: Es gibt noch keine Sammlung Studi best = null; for (Studi s : sl) { if (best == null) best = s; if (best.credits() &lt; s.credits()) best = s; } return best; } } public static void main(String... args) { LSF lsf = new LSF(); Studi best = lsf.getBestStudi(); if (best !">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Optional">
+    <meta name="twitter:description" content="Motivation public class LSF { private Set&lt;Studi&gt; sl; public Studi getBestStudi() { if (sl == null) return null; // Fehler: Es gibt noch keine Sammlung Studi best = null; for (Studi s : sl) { if (best == null) best = s; if (best.credits() &lt; s.credits()) best = s; } return best; } } public static void main(String... args) { LSF lsf = new LSF(); Studi best = lsf.getBestStudi(); if (best !">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html">
+    <meta property="og:title" content="Optional">
+    <meta property="og:description" content="Motivation public class LSF { private Set&lt;Studi&gt; sl; public Studi getBestStudi() { if (sl == null) return null; // Fehler: Es gibt noch keine Sammlung Studi best = null; for (Studi s : sl) { if (best == null) best = s; if (best.credits() &lt; s.credits()) best = s; } return best; } } public static void main(String... args) { LSF lsf = new LSF(); Studi best = lsf.getBestStudi(); if (best !">
+    <meta property="og:locale" content="de-DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Optional">
+    <meta itemprop="description" content="Motivation public class LSF { private Set&lt;Studi&gt; sl; public Studi getBestStudi() { if (sl == null) return null; // Fehler: Es gibt noch keine Sammlung Studi best = null; for (Studi s : sl) { if (best == null) best = s; if (best.credits() &lt; s.credits()) best = s; } return best; } } public static void main(String... args) { LSF lsf = new LSF(); Studi best = lsf.getBestStudi(); if (best !">
+    <meta itemprop="wordCount" content="1874">
+    <title>Optional</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html" rel="canonical" type="text/html" title="Optional">
+
+    
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1719943321" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1719943322" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1719943322" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1719943322" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1719943322" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1719943322"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Optional
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Optional</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Häufig hat man in Methoden den Fall, dass es keinen Wert gibt, und man liefert dann
+<code>null</code> als &quot;kein Wert vorhanden&quot; zurück. Dies führt dazu, dass die Aufrufer eine
+entsprechende <code>null</code>-Prüfung für die Rückgabewerte durchführen müssen, bevor sie
+das Ergebnis nutzen können.</p>
+<p><code>Optional</code> schließt elegant den Fall &quot;kein Wert vorhanden&quot; ein: Es kann mit der Methode
+<code>Optional.ofNullable()</code> das Argument in ein Optional verpacken (Argument != <code>null</code>)
+oder ein <code>Optional.empty()</code> zurückliefern (&quot;leeres&quot; Optional, wenn Argument == <code>null</code>).</p>
+<p>Man kann Optionals prüfen mit <code>isEmpty()</code> und <code>ifPresent()</code> und dann direkt mit
+<code>ifPresent()</code>, <code>orElse()</code> und <code>orElseThrow()</code> auf den verpackten Wert zugreifen.
+Besser ist aber der Zugriff über die Stream-API von <code>Optional</code>: <code>map()</code>, <code>filter</code>,
+<code>flatMap()</code>, ...</p>
+<p><code>Optional</code> ist vor allem für Rückgabewerte gedacht, die den Fall &quot;kein Wert vorhanden&quot;
+einschließen sollen. Attribute, Parameter und Sammlungen sollten nicht <code>Optional</code>-Referenzen
+speichern, sondern &quot;richtige&quot; (unverpackte) Werte (und eben zur Not <code>null</code>). <code>Optional</code>
+ist kein Ersatz für <code>null</code>-Prüfung von Methoden-Parametern (nutzen Sie hier beispielsweise
+passende Annotationen). <code>Optional</code> ist auch kein Ersatz für vernünftiges Exception-Handling
+im Fall, dass etwas Unerwartetes passiert ist. Liefern Sie <strong>niemals</strong> <code>null</code> zurück, wenn
+der Rückgabetyp der Methode ein <code>Optional</code> ist!</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/JDG_hUSBfSA' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Optional</a></li> <li><a href='https://youtu.be/vL2c0iB4uSk' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Optional</a></li> <li><a href='https://youtu.be/vyN-vOV9_CU' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Optional: Beispiel aus der Praxis im PM-Dungeon</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/b62e544bff3a9a25982052bd761b9971f7e67caca90e3ed66c2b794b95d35c2c479f8d72189159345ac018e34ec55866c5558a256ce63b5e9c43a30fc8787d1b' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Optional</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Optionals sind kein Ersatz für <code>null</code>-Prüfung!</li> <li>(K2) Optionals sollen nicht für Attribute oder Parameter genutzt werden</li> <li>(K2) Es darf kein <code>null</code> zurückgeliefert werden, wenn der Rückgabetyp ein Optional ist</li> <li>(K2) Optionals und <code>null</code> sind kein Ersatz für Exception-Handling</li> <li>(K3) Einsatz von <code>Optional</code> in Rückgabewerten</li> <li>(K3) Erzeugen von Optionals mit <code>Optional.ofNullable()</code></li> <li>(K3) Zugriff auf Optionals entweder direkt oder per Stream-API</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="motivation">Motivation</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LSF</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Set<span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span> sl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Studi <span style="color:#a6e22e">getBestStudi</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (sl <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;  <span style="color:#75715e">// Fehler: Es gibt noch keine Sammlung</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Studi best <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (Studi s : sl) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (best <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) best <span style="color:#f92672">=</span> s;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (best.<span style="color:#a6e22e">credits</span>() <span style="color:#f92672">&lt;</span> s.<span style="color:#a6e22e">credits</span>()) best <span style="color:#f92672">=</span> s;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> best;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>    LSF lsf <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LSF();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Studi best <span style="color:#f92672">=</span> lsf.<span style="color:#a6e22e">getBestStudi</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (best <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>        String name <span style="color:#f92672">=</span> best.<span style="color:#a6e22e">name</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (name <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// mach was mit dem Namen ...</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="problem-null-wird-an-zu-vielen-stellen-genutzt">Problem: <code>null</code> wird an (zu) vielen Stellen genutzt</h3>
+<ul>
+<li>Es gibt keinen Wert (&quot;not found&quot;)</li>
+<li>Felder wurden (noch) nicht initialisiert</li>
+<li>Es ist ein Problem oder etwas Unerwartetes aufgetreten</li>
+</ul>
+<p>=&gt; Parameter und Rückgabewerte müssen stets auf <code>null</code> geprüft werden
+(oder Annotationen wie <code>@NotNull</code> eingesetzt werden ...)</p>
+<h3 id="lösung">Lösung</h3>
+<ul>
+<li><code>Optional&lt;T&gt;</code> für Rückgabewerte, die &quot;kein Wert vorhanden&quot; mit einschließen
+(statt <code>null</code> bei Abwesenheit von Werten)</li>
+<li><code>@NotNull</code>/<code>@Nullable</code> für Parameter einsetzen (oder separate Prüfung)</li>
+<li>Exceptions werfen in Fällen, wo ein Problem aufgetreten ist</li>
+</ul>
+<h3 id="anmerkungen">Anmerkungen</h3>
+<ul>
+<li>Verwendung von <code>null</code> auf Attribut-Ebene (Klassen-interne Verwendung) ist okay!</li>
+<li><code>Optional&lt;T&gt;</code> ist <strong>kein</strong> Ersatz für <code>null</code>-Checks!</li>
+<li><code>null</code> ist <strong>kein</strong> Ersatz für vernünftiges Error-Handling!
+Das häufig zu beobachtende &quot;Irgendwas Unerwartetes ist passiert, hier ist <code>null</code>&quot;
+ist ein <strong>Anti-Pattern</strong>!</li>
+</ul>
+<h3 id="beispiel-aus-der-praxis-im-pm-dungeon">Beispiel aus der Praxis im PM-Dungeon</h3>
+<p>Schauen Sie sich einmal das Review zu den <code>ecs.components.ai.AITools</code> in
+<a href="https://github.com/Dungeon-CampusMinden/Dungeon/pull/128#pullrequestreview-1254025874" rel="external" target="_blank">https://github.com/Dungeon-CampusMinden/Dungeon/pull/128#pullrequestreview-1254025874</a>
+an.</p>
+<p><a href="#R-image-a8f889bce99e681368c82bacbf7f39a5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional/screenshot_review1.png?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a8f889bce99e681368c82bacbf7f39a5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional/screenshot_review1.png?width=auto&height=auto"></a></p>
+<p>Die Methode <code>AITools#calculateNewPath</code> soll in der Umgebung einer als Parameter
+übergebenen Entität nach einem Feld (<code>Tile</code>) suchen, welches für die Entität
+betretbar ist und einen Pfad von der Position der Entität zu diesem Feld an den
+Aufrufer zurückliefern.</p>
+<p>Zunächst wird in der Entität nach einer <code>PositionComponent</code> und einer <code>VelocityComponent</code>
+gesucht. Wenn es (eine) diese(r) Components nicht in der Entität gibt, wird der Wert
+<code>null</code> an den Aufrufer von <code>AITools#calculateNewPath</code> zurückgeliefert.
+(<em>Anmerkung</em>: Interessanterweise wird in der Methode nicht mit der <code>VelocityComponent</code>
+gearbeitet.)</p>
+<p>Dann wird in der <code>PositionComponent</code> die Position der Entität im aktuellen Level
+abgerufen. In einer Schleife werden alle Felder im gegebenen Radius in eine Liste
+gespeichert.
+(<em>Anmerkung</em>: Da dies über die <code>float</code>-Werte passiert und nicht über die Feld-Indizes
+wird ein <code>Tile</code> u.U. recht oft in der Liste abgelegt. Können Sie sich hier einfache
+Verbesserungen überlegen?)</p>
+<p>Da <code>level.getTileAt()</code> offenbar als Antwort auch <code>null</code> zurückliefern kann, werden
+nun zunächst per <code>tiles.removeIf(Objects::isNull);</code> all diese <code>null</code>-Werte wieder aus
+der Liste entfernt. Danach erfolgt die Prüfung, ob die verbleibenden Felder betretbar
+sind und nicht-betretbare Felder werden entfernt.</p>
+<p>Aus den verbleibenden (betretbaren) Feldern in der Liste wird nun eines zufällig
+ausgewählt und per <code>level.findPath()</code> ein Pfad von der Position der Entität zu diesem
+Feld berechnet und zurückgeliefert.
+(<em>Anmerkung</em>: Hier wird ein zufälliges Tile in der Liste der umgebenden Felder gewählt,
+von diesem die Koordinaten bestimmt, und dann noch einmal aus dem Level das dazugehörige
+Feld geholt - dabei hatte man die Referenz auf das Feld bereits in der Liste. Können
+Sie sich hier eine einfache Verbesserung überlegen?)</p>
+<p>Zusammengefasst:</p>
+<ul>
+<li>Die als Parameter <code>entity</code> übergebene Referenz darf offenbar <em>nicht</em> <code>null</code> sein.
+Die ersten beiden Statements in der Methode rufen auf dieser Referenz Methoden
+auf, was bei einer <code>null</code>-Referenz zu einer <code>NullPointer</code>-Exception führen
+würde. Hier wäre <code>null</code> ein Fehlerzustand.</li>
+<li><code>entity.getComponent()</code> kann offenbar <code>null</code> zurückliefern, wenn die gesuchte
+Component nicht vorhanden ist. Hier wird <code>null</code> als &quot;kein Wert vorhanden&quot;
+genutzt, was dann nachfolgende <code>null</code>-Checks notwendig macht.</li>
+<li>Wenn es die gewünschten Components nicht gibt, wird dem Aufrufer der Methode
+<code>null</code> zurückgeliefert. Hier ist nicht ganz klar, ob das einfach nur &quot;kein
+Wert vorhanden&quot; ist oder eigentlich ein Fehlerzustand?</li>
+<li><code>level.getTileAt()</code> kann offenbar <code>null</code> zurückliefern, wenn kein Feld an der
+Position vorhanden ist. Hier wird <code>null</code> wieder als &quot;kein Wert vorhanden&quot;
+genutzt, was dann nachfolgende <code>null</code>-Checks notwendig macht (Entfernen aller
+<code>null</code>-Referenzen aus der Liste).</li>
+<li><code>level.findPath()</code> kann auch wieder <code>null</code> zurückliefern, wenn kein Pfad berechnet
+werden konnte. Hier ist wieder nicht ganz klar, ob das einfach nur &quot;kein Wert
+vorhanden&quot; ist oder eigentlich ein Fehlerzustand? Man könnte beispielsweise in
+diesem Fall ein anderes Feld probieren?</li>
+</ul>
+<p>Der Aufrufer bekommt also eine <code>NullPointer</code>-Exception, wenn der übergebene Parameter
+<code>entity</code> nicht vorhanden ist oder den Wert <code>null</code>, wenn in der Methode etwas schief
+lief oder schlicht kein Pfad berechnet werden konnte oder tatsächlich einen Pfad.
+Damit wird der Aufrufer gezwungen, den Rückgabewert vor der Verwendung zu untersuchen.</p>
+<p><strong>Allein in dieser einen kurzen Methode macht <code>null</code> so viele extra Prüfungen notwendig
+und den Code dadurch schwerer lesbar und fehleranfälliger! <code>null</code> wird als (unvollständige)
+Initialisierung und als Rückgabewert und für den Fehlerfall genutzt, zusätzlich ist
+die Semantik von <code>null</code> nicht immer klar.</strong>
+(<em>Anmerkung</em>: Der Gebrauch von <code>null</code> hat nicht wirklich etwas mit &quot;der Natur eines ECS&quot;
+zu tun. Die Methode wurde mittlerweile komplett überarbeitet und ist in der hier gezeigten
+Form glücklicherweise nicht mehr zu finden.)</p>
+<p>Entsprechend hat sich in diesem <a href="https://github.com/Dungeon-CampusMinden/Dungeon/pull/128#pullrequestreview-1254025874" rel="external" target="_blank">Review</a>
+die nachfolgende Diskussion ergeben:</p>
+<p><a href="#R-image-6af84b8209e06996a40a88c66587a09d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional/screenshot_review2.png?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6af84b8209e06996a40a88c66587a09d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional/screenshot_review2.png?width=auto&height=auto"></a></p>
+<p><a href="#R-image-9e2e23abd70b2f7cf333d1c2ed9d8629" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional/screenshot_review3.png?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9e2e23abd70b2f7cf333d1c2ed9d8629"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional/screenshot_review3.png?width=auto&height=auto"></a></p>
+<h2 id="erzeugen-von-optional-objekten">Erzeugen von <em>Optional</em>-Objekten</h2>
+<p>Konstruktor ist <code>private</code> ...</p>
+<ul>
+<li>
+<p>&quot;Kein Wert&quot;: <code>Optional.empty()</code></p>
+</li>
+<li>
+<p>Verpacken eines non-<code>null</code> Elements: <code>Optional.of()</code>
+(<code>NullPointerException</code> wenn Argument <code>null</code>!)</p>
+</li>
+<li>
+<p>Verpacken eines &quot;unsicheren&quot;/beliebigen Elements: <code>Optional.ofNullable()</code></p>
+<ul>
+<li>Liefert verpacktes Element, oder</li>
+<li><code>Optional.empty()</code>, falls Element <code>null</code> war</li>
+</ul>
+</li>
+</ul>
+<p>Es sollte in der Praxis eigentlich nur wenige Fälle geben, wo ein Aufruf von
+<code>Optional.of()</code> sinnvoll ist. Ebenso ist <code>Optional.empty()</code> nur selten sinnvoll.</p>
+<p>Stattdessen sollte stets <code>Optional.ofNullable()</code> verwendet werden.</p>
+<p><strong><code>null</code> kann nicht nicht in <code>Optional&lt;T&gt;</code> verpackt werden!</strong>
+(Das wäre dann eben <code>Optional.empty()</code>.)</p>
+<h2 id="lsf-liefert-jetzt-optional-zurück">LSF liefert jetzt <em>Optional</em> zurück</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LSF</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Set<span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span> sl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getBestStudi</span>() <span style="color:#66d9ef">throws</span> NullPointerException {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Fehler: Es gibt noch keine Sammlung</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (sl <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> NullPointerException(<span style="color:#e6db74">&#34;There ain&#39;t any collection&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Studi best <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (Studi s : sl) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (best <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) best <span style="color:#f92672">=</span> s;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (best.<span style="color:#a6e22e">credits</span>() <span style="color:#f92672">&lt;</span> s.<span style="color:#a6e22e">credits</span>()) best <span style="color:#f92672">=</span> s;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Entweder Optional.empty() (wenn best==null) oder Optional.of(best) sonst</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Optional.<span style="color:#a6e22e">ofNullable</span>(best);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Das Beispiel soll verdeutlichen, dass man im Fehlerfall nicht einfach <code>null</code> oder
+<code>Optional.empty()</code> zurückliefern soll, sondern eine passende Exception werfen soll.</p>
+<p>Wenn die Liste aber leer ist, stellt dies keinen Fehler dar! Es handelt sich um den
+Fall &quot;kein Wert vorhanden&quot;. In diesem Fall wird statt <code>null</code> nun ein <code>Optional.empty()</code>
+zurückgeliefert, also ein Objekt, auf dem der Aufrufer die üblichen Methoden aufrufen
+kann.</p>
+<h2 id="zugriff-auf-optional-objekte">Zugriff auf <em>Optional</em>-Objekte</h2>
+<p>In der funktionalen Programmierung gibt es schon lange das Konzept von <code>Optional</code>,
+in Haskell ist dies beispielsweise die Monade <code>Maybe</code>. Allerdings ist die Einbettung
+in die Sprache von vornherein mit berücksichtigt worden, insbesondere kann man hier
+sehr gut mit <em>Pattern Matching</em> in der Funktionsdefinition auf den verpackten Inhalt
+reagieren.</p>
+<p>In Java gibt es die Methode <code>Optional#isEmpty()</code>, die einen Boolean zurückliefert und
+prüft, ob es sich um ein leeres <code>Optional</code> handelt oder ob hier ein Wert &quot;verpackt&quot; ist.</p>
+<p>Für den direkten Zugriff auf die Werte gibt es die Methoden <code>Optional#orElseThrow()</code>
+und <code>Optional#orElse()</code>. Damit kann man auf den verpackten Wert zugreifen, oder es
+wird eine Exception geworfen bzw. ein Ersatzwert geliefert.</p>
+<p>Zusätzlich gibt es <code>Optional#isPresent()</code>, die als Parameter ein <code>java.util.function.Consumer</code>
+erwartet, also ein funktionales Interface mit einer Methode <code>void accept(T)</code>, die das
+Objekt verarbeitet.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Studi best;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Testen und dann verwenden</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>lsf.<span style="color:#a6e22e">getBestStudi</span>().<span style="color:#a6e22e">isEmpty</span>()) {
+</span></span><span style="display:flex;"><span>    best <span style="color:#f92672">=</span> lsf.<span style="color:#a6e22e">getBestStudi</span>().<span style="color:#a6e22e">get</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// mach was mit dem Studi ...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Arbeite mit Consumer</span>
+</span></span><span style="display:flex;"><span>lsf.<span style="color:#a6e22e">getBestStudi</span>().<span style="color:#a6e22e">ifPresent</span>(studi <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// mach was mit dem Studi ...</span>
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Studi oder Alternative (wenn Optional.empty())</span>
+</span></span><span style="display:flex;"><span>best <span style="color:#f92672">=</span> lsf.<span style="color:#a6e22e">getBestStudi</span>().<span style="color:#a6e22e">orElse</span>(anne);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Studi oder NoSuchElementException (wenn Optional.empty())</span>
+</span></span><span style="display:flex;"><span>best <span style="color:#f92672">=</span> lsf.<span style="color:#a6e22e">getBestStudi</span>().<span style="color:#a6e22e">orElseThrow</span>();</span></span></code></pre></div><p>Es gibt noch eine Methode <code>get()</code>, die so verhält wie <code>orElseThrow()</code>. Da man diese
+Methode vom Namen her schnell mit einem Getter verwechselt, ist sie mittlerweile
+<em>deprecated</em>.</p>
+<p><em>Anmerkung</em>: Da <code>getBestStudi()</code> eine <code>NullPointerException</code> werfen kann, sollte der
+Aufruf möglicherweise in ein <code>try/catch</code> verpackt werden. Dito für <code>orElseThrow()</code>.</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/optional/traditional/Demo.java" target="_blank"><span class="title">Beispiel: optional.traditional.Demo</span></a></span></div>
+<h2 id="einsatz-mit-stream-api">Einsatz mit Stream-API</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LSF</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Optional<span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getBestStudi</span>() <span style="color:#66d9ef">throws</span> NullPointerException {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (sl <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> NullPointerException(<span style="color:#e6db74">&#34;There ain&#39;t any collection&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> sl.<span style="color:#a6e22e">stream</span>()
+</span></span><span style="display:flex;"><span>                 .<span style="color:#a6e22e">sorted</span>((s1, s2) <span style="color:#f92672">-&gt;</span> s2.<span style="color:#a6e22e">credits</span>() <span style="color:#f92672">-</span> s1.<span style="color:#a6e22e">credits</span>())
+</span></span><span style="display:flex;"><span>                 .<span style="color:#a6e22e">findFirst</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    String name <span style="color:#f92672">=</span> lsf.<span style="color:#a6e22e">getBestStudi</span>()
+</span></span><span style="display:flex;"><span>                     .<span style="color:#a6e22e">map</span>(Studi::name)
+</span></span><span style="display:flex;"><span>                     .<span style="color:#a6e22e">orElseThrow</span>();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/optional/streams/Demo.java" target="_blank"><span class="title">Beispiel: optional.streams.Demo</span></a></span></div>
+<p>Im Beispiel wird in <code>getBestStudi()</code> die Sammlung als Stream betrachtet, über die
+Methode <code>sorted()</code> und den Lamda-Ausdruck für den <code>Comparator</code> sortiert (&quot;falsch&quot;
+herum: absteigend in den Credits der Studis in der Sammlung), und <code>findFirst()</code>
+ist die terminale Operation auf dem Stream, die ein <code>Optional&lt;Studi&gt;</code> zurückliefert:
+entweder den Studi mit den meisten Credits (verpackt in <code>Optional&lt;Studi&gt;</code>) oder
+<code>Optional.empty()</code>, wenn es überhaupt keine Studis in der Sammlung gab.</p>
+<p>In <code>main()</code> wird dieses <code>Optional&lt;Studi&gt;</code> mit den Stream-Methoden von <code>Optional&lt;T&gt;</code>
+bearbeitet, zunächst mit <code>Optional#map()</code>. Man braucht nicht selbst prüfen, ob das
+von <code>getBestStudi()</code> erhaltene Objekt leer ist oder nicht, da dies von <code>Optional#map()</code>
+erledigt wird: Es wendet die Methodenreferenz auf den verpackten Wert an (sofern
+dieser vorhanden ist) und liefert damit den Namen des Studis als <code>Optional&lt;String&gt;</code>
+verpackt zurück. Wenn es keinen Wert, also nur <code>Optional.empty()</code> von <code>getBestStudi()</code>
+gab, dann ist der Rückgabewert von <code>Optional#map()</code> ein <code>Optional.empty()</code>. Wenn
+der Name, also der Rückgabewert von <code>Studi::name</code>, <code>null</code> war, dann wird ebenfalls
+ein <code>Optional.empty()</code> zurückgeliefert. Dadurch wirft <code>orElseThrow()</code> dann eine
+<code>NoSuchElementException</code>. Man kann also direkt mit dem String <code>name</code> weiterarbeiten
+ohne extra <code>null</code>-Prüfung - allerdings will man noch ein Exception-Handling einbauen
+(dies fehlt im obigen Beispiel aus Gründen der Übersicht) ...</p>
+<h2 id="weitere-optionals">Weitere <em>Optionals</em></h2>
+<p>Für die drei primitiven Datentypen <code>int</code>, <code>long</code> und <code>double</code> gibt es passende
+Wrapper-Klassen von <code>Optional&lt;T&gt;</code>: <code>OptionalInt</code>, <code>OptionalLong</code> und <code>OptionalDouble</code>.</p>
+<p>Diese verhalten sich analog zu <code>Optional&lt;T&gt;</code>, haben aber keine Methode <code>ofNullable()</code>,
+da dies hier keinen Sinn ergeben würde: Die drei primitiven Datentypen repräsentieren
+Werte - diese können nicht <code>null</code> sein.</p>
+<h2 id="regeln-für-optional">Regeln für <em>Optional</em></h2>
+<ol>
+<li>
+<p>Nutze <code>Optional</code> nur als Rückgabe für &quot;kein Wert vorhanden&quot;</p>
+<p><code>Optional</code> ist nicht als Ersatz für eine <code>null</code>-Prüfung o.ä.
+gedacht, sondern als Repräsentation, um auch ein &quot;kein Wert
+vorhanden&quot; zurückliefern zu können.</p>
+</li>
+<li>
+<p>Nutze nie <code>null</code> für eine <code>Optional</code>-Variable oder einen <code>Optional</code>-Rückgabewert</p>
+<p>Wenn man ein <code>Optional</code> als Rückgabe bekommt, sollte das
+niemals selbst eine <code>null</code>-Referenz sein. Das macht das
+gesamte Konzept kaputt!</p>
+<p>Nutzen Sie stattdessen <code>Optional.empty()</code>.</p>
+</li>
+<li>
+<p>Nutze <code>Optional.ofNullable()</code> zum Erzeugen eines <code>Optional</code></p>
+<p>Diese Methode verhält sich &quot;freundlich&quot; und erzeugt automatisch
+ein <code>Optional.empty()</code>, wenn das Argument <code>null</code> ist. Es gibt
+also keinen Grund, dies mit einer Fallunterscheidung selbst
+erledigen zu wollen.</p>
+<p>Bevorzugen Sie <code>Optional.ofNullable()</code> vor einer manuellen
+Fallunterscheidung und dem entsprechenden Einsatz von
+<code>Optional.of()</code> und <code>Optional.empty()</code>.</p>
+</li>
+<li>
+<p>Erzeuge keine <code>Optional</code> als Ersatz für die Prüfung auf <code>null</code></p>
+<p>Wenn Sie auf <code>null</code> prüfen müssen, müssen Sie auf <code>null</code> prüfen.
+Der ersatzweise Einsatz von <code>Optional</code> macht es nur komplexer -
+prüfen müssen Sie hinterher ja immer noch.</p>
+</li>
+<li>
+<p>Nutze <code>Optional</code> nicht in Attributen, Methoden-Parametern und Sammlungen</p>
+<p>Nutzen Sie <code>Optional</code> vor allem für Rückgabewerte.</p>
+<p>Attribute sollten immer direkt einen Wert haben oder <code>null</code>,
+analog Parameter von Methoden o.ä. ... Hier hilft <code>Optional</code>
+nicht, Sie müssten ja trotzdem eine <code>null</code>-Prüfung machen,
+nur eben dann über den <code>Optional</code>, wodurch dies komplexer und
+schlechter lesbar wird.</p>
+<p>Aus einem ähnlichen Grund sollten Sie auch in Sammlungen
+keine <code>Optional</code> speichern!</p>
+</li>
+<li>
+<p>Vermeide den direkten Zugriff (<code>ifPresent()</code>, <code>orElseThrow()</code> ...)</p>
+<p>Der direkte Zugriff auf ein <code>Optional</code> entspricht dem
+Prüfen auf <code>null</code> und dann dem Auspacken. Dies ist nicht
+nur Overhead, sondern auch schlechter lesbar.</p>
+<p>Vermeiden Sie den direkten Zugriff und nutzen Sie <code>Optional</code>
+mit den Stream-Methoden. So ist dies von den Designern
+gedacht.</p>
+</li>
+</ol>
+<h2 id="interessante-links">Interessante Links</h2>
+<ul>
+<li><a href="https://dev.java/learn/api/streams/optionals/" rel="external" target="_blank">&quot;Using Optionals&quot;</a></li>
+<li><a href="https://medium.com/javarevisited/what-you-might-not-know-about-optional-7238e3c05f63" rel="external" target="_blank">&quot;What You Might Not Know About Optional&quot;</a></li>
+<li><a href="https://medium.com/javarevisited/experienced-developers-use-these-7-java-optional-tips-to-remove-code-clutter-6e8b1a639861" rel="external" target="_blank">&quot;Experienced Developers Use These 7 Java Optional Tips to Remove Code Clutter&quot;</a></li>
+<li><a href="https://blog.jetbrains.com/idea/2017/08/code-smells-null/" rel="external" target="_blank">&quot;Code Smells: Null&quot;</a></li>
+<li><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html" rel="external" target="_blank">&quot;Class Optional&quot;</a></li>
+</ul>
+<h2 id="wrap-up">Wrap-Up</h2>
+<p><code>Optional</code> als Rückgabe für &quot;kein Wert vorhanden&quot;</p>
+<ul>
+<li>
+<p><code>Optional.ofNullable()</code>: Erzeugen eines <code>Optional</code></p>
+<ul>
+<li>Entweder Objekt &quot;verpackt&quot; (Argument != <code>null</code>)</li>
+<li>Oder <code>Optional.empty()</code> (Argument == <code>null</code>)</li>
+</ul>
+</li>
+<li>
+<p>Prüfen mit <code>isEmpty()</code> und <code>ifPresent()</code></p>
+</li>
+<li>
+<p>Direkter Zugriff mit <code>ifPresent()</code>, <code>orElse()</code> und <code>orElseThrow()</code></p>
+</li>
+<li>
+<p>Stream-API: <code>map()</code>, <code>filter()</code>, <code>flatMap()</code>, ...</p>
+</li>
+<li>
+<p>Attribute, Parameter und Sammlungen: nicht <code>Optional</code> nutzen</p>
+</li>
+<li>
+<p>Kein Ersatz für <code>null</code>-Prüfung!</p>
+</li>
+</ul>
+<p>Schöne Doku: <a href="https://dev.java/learn/api/streams/optionals/" rel="external" target="_blank">&quot;Using Optionals&quot;</a>.</p>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106526&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Optional (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p><strong>String-Handling</strong></p>
+<p>Können Sie den folgenden Code so umschreiben, dass Sie statt der <code>if</code>-Abfragen und der einzelnen direkten Methodenaufrufe
+die Stream-API und <code>Optional&lt;T&gt;</code> nutzen?</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String <span style="color:#a6e22e">format</span>(<span style="color:#66d9ef">final</span> String text, String replacement) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (text.<span style="color:#a6e22e">isEmpty</span>()) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> String trimmed <span style="color:#f92672">=</span> text.<span style="color:#a6e22e">trim</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> String withSpacesReplaced <span style="color:#f92672">=</span> trimmed.<span style="color:#a6e22e">replaceAll</span>(<span style="color:#e6db74">&#34; +&#34;</span>, replacement);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> replacement <span style="color:#f92672">+</span> withSpacesReplaced <span style="color:#f92672">+</span> replacement;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Ein Aufruf <code>format(&quot; Hello World ... &quot;, &quot;_&quot;);</code> liefert den String &quot;<code>_Hello_World_..._</code>&quot;.</p>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_LernJava'>[LernJava] <a href='https://dev.java/learn/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Learn Java</strong></a><br>Oracle Corporation, 2022.<br><em>Tutorials \> The Stream API \> Using Optionals</em></li> <li id='id_Ullenboom2021'>[Ullenboom2021] <a href='https://openbook.rheinwerk-verlag.de/javainsel/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java ist auch eine Insel</strong></a><br>Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8362-8745-6</a>.<br><em>Kap. 12.6: Optional ist keine Nullnummer</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1719943322" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1719943322" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1719943322"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1719943322" defer></script>
+  </body>
+</html>

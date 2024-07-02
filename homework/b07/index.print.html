@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.1">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="A07.1: DevDungeon: Fackeln im Sturm (Streams, Optional) (30%) Klonen Sie das Projekt DevDungeon und laden Sie es in Ihrer IDE als Gradle-Projekt. Betrachten Sie das Sub-Projekt &#34;devDungeon&#34;. Dies ist ein von einem Studierenden (@Flamtky) erstelltes Spiel mit mehreren Leveln, in denen Sie spielerisch verschiedene Aufgaben in-game und ex-game lösen müssen.
+Starten Sie den DevDungeon mit ./gradlew devDungeon:runDevDungeon. Spielen Sie sich für diese Aufgabe durch das zweite Level (&#34;Torch Riddle&#34;)1.
+Sie befinden sich in einem Raum mit Fackeln, welche Sie per Interaktion an- und ausschalten können.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Blatt 07: Torch-Riddle und Katzen-Café (Streams, JUnit, Optional, Visitor)">
+    <meta name="twitter:description" content="A07.1: DevDungeon: Fackeln im Sturm (Streams, Optional) (30%) Klonen Sie das Projekt DevDungeon und laden Sie es in Ihrer IDE als Gradle-Projekt. Betrachten Sie das Sub-Projekt &#34;devDungeon&#34;. Dies ist ein von einem Studierenden (@Flamtky) erstelltes Spiel mit mehreren Leveln, in denen Sie spielerisch verschiedene Aufgaben in-game und ex-game lösen müssen.
+Starten Sie den DevDungeon mit ./gradlew devDungeon:runDevDungeon. Spielen Sie sich für diese Aufgabe durch das zweite Level (&#34;Torch Riddle&#34;)1.
+Sie befinden sich in einem Raum mit Fackeln, welche Sie per Interaktion an- und ausschalten können.">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/homework/b07.html">
+    <meta property="og:title" content="Blatt 07: Torch-Riddle und Katzen-Café (Streams, JUnit, Optional, Visitor)">
+    <meta property="og:description" content="A07.1: DevDungeon: Fackeln im Sturm (Streams, Optional) (30%) Klonen Sie das Projekt DevDungeon und laden Sie es in Ihrer IDE als Gradle-Projekt. Betrachten Sie das Sub-Projekt &#34;devDungeon&#34;. Dies ist ein von einem Studierenden (@Flamtky) erstelltes Spiel mit mehreren Leveln, in denen Sie spielerisch verschiedene Aufgaben in-game und ex-game lösen müssen.
+Starten Sie den DevDungeon mit ./gradlew devDungeon:runDevDungeon. Spielen Sie sich für diese Aufgabe durch das zweite Level (&#34;Torch Riddle&#34;)1.
+Sie befinden sich in einem Raum mit Fackeln, welche Sie per Interaktion an- und ausschalten können.">
+    <meta property="og:locale" content="de-DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Blatt 07: Torch-Riddle und Katzen-Café (Streams, JUnit, Optional, Visitor)">
+    <meta itemprop="description" content="A07.1: DevDungeon: Fackeln im Sturm (Streams, Optional) (30%) Klonen Sie das Projekt DevDungeon und laden Sie es in Ihrer IDE als Gradle-Projekt. Betrachten Sie das Sub-Projekt &#34;devDungeon&#34;. Dies ist ein von einem Studierenden (@Flamtky) erstelltes Spiel mit mehreren Leveln, in denen Sie spielerisch verschiedene Aufgaben in-game und ex-game lösen müssen.
+Starten Sie den DevDungeon mit ./gradlew devDungeon:runDevDungeon. Spielen Sie sich für diese Aufgabe durch das zweite Level (&#34;Torch Riddle&#34;)1.
+Sie befinden sich in einem Raum mit Fackeln, welche Sie per Interaktion an- und ausschalten können.">
+    <meta itemprop="wordCount" content="767">
+    <title>Blatt 07: Torch-Riddle und Katzen-Café (Streams, JUnit, Optional, Visitor)</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/homework/b07.html" rel="canonical" type="text/html" title="Blatt 07: Torch-Riddle und Katzen-Café (Streams, JUnit, Optional, Visitor)">
+
+    
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1719943321" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1719943322" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1719943322" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1719943322" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1719943322" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1719943322"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/homework/b07.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Blatt 07: Torch-Riddle und Katzen-Café (Streams, JUnit, Optional, Visitor)
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Blatt 07: Torch-Riddle und Katzen-Café (Streams, JUnit, Optional, Visitor)</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <p><strong>(1 Punkt)</strong></p>
+    
+
+    <h2 id="a071-devdungeon-fackeln-im-sturm-streams-optional-30">A07.1: DevDungeon: Fackeln im Sturm (Streams, Optional) (30%)</h2>
+<p>Klonen Sie das Projekt <a href="https://github.com/Dungeon-CampusMinden/dev-dungeon" rel="external" target="_blank">DevDungeon</a> und laden Sie es in Ihrer IDE als Gradle-Projekt.
+Betrachten Sie das Sub-Projekt &quot;devDungeon&quot;. Dies ist ein von einem Studierenden (<a href="https://github.com/Flamtky" rel="external" target="_blank">@Flamtky</a>)
+erstelltes Spiel mit mehreren Leveln, in denen Sie spielerisch verschiedene Aufgaben <em>in-game</em>
+und <em>ex-game</em> lösen müssen.</p>
+<p>Starten Sie den DevDungeon mit <code>./gradlew devDungeon:runDevDungeon</code>. Spielen Sie sich für
+diese Aufgabe durch das <strong>zweite Level</strong> (&quot;Torch Riddle&quot;)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>Sie befinden sich in einem Raum mit Fackeln, welche Sie per Interaktion an- und ausschalten
+können. Neben jeder Fackel ist ein Briefkasten, der der Fackel einen Zahlenwert zuordnet.
+Irgendwo führt eine Tür zu einem zunächst versteckten Raum mit einer Belohnung - aber diese
+Tür geht erst auf, wenn Sie (a) die richtigen Fackeln an- bzw. ausgeschaltet haben, und wenn
+Sie (b) die defekte Methode <code>TorchRiddleRiddleHandler#getSumOfLitTorches</code> (im Package
+<code>level.devlevel.riddleHandler</code>) korrekt implementiert haben. Beachten Sie die entsprechenden
+Hinweise im Javadoc der Methode.</p>
+<p>Das Tor zum nächsten Level geht unabhängig davon erst auf, wenn Sie den Boss-Gegner<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> in
+diesem Level besiegt haben ... Hierzu ist <em>keine</em> Programmierung notwendig, lediglich
+geschicktes Spielen und gegebenenfalls rechtzeitiges Trinken von (dann hoffentlich
+vorhandenen) Heil-Tränken.</p>
+<p><strong>Hinweis</strong>: Aktuell ist das Projekt DevDungeon an einigen Stellen noch <em>Work-in-Progress</em>,
+beispielsweise fehlt häufig noch die Javadoc. Alle Gradle-Tasks, die von Checkstyle-Tasks
+abhängen (<code>checkstyleMain</code>, <code>check</code>, <code>build</code>, ...) werden deshalb fehlschlagen. Sie können den
+DevDungeon aber wie oben beschrieben mit <code>./gradlew devDungeon:runDevDungeon</code> (bzw. über den
+Task <code>devDungeon:runDevDungeon</code> aus der IDE heraus) starten.</p>
+<p><span class='alert'><strong>WICHTIG</strong>: Achten Sie bitte darauf, dass im Projektpfad <strong>keine Leerzeichen</strong> und keine
+Sonderzeichen (Umlaute o.ä.) vorkommen! Dies kann zu seltsamen Fehler führen. Bitte auch
+darauf achten, dass Sie als JDK ein <strong>Java SE 21 (LTS)</strong> verwenden.</span></p>
+<h2 id="katzen-café">Katzen-Café</h2>
+<p>Forken Sie das <a href="https://github.com/Programmiermethoden-CampusMinden/prog2_ybel_catcafe" rel="external" target="_blank">&quot;Cat-Cafe&quot;</a>-Repo und erzeugen Sie sich eine lokale Arbeitskopie von Ihrem
+Fork.</p>
+<p>Bearbeiten Sie die folgenden Teilaufgaben jeweils in einem eigenen Branch. Pushen Sie Ihre
+Änderungen in Ihren Fork zurück und erstellen Sie dort je einen Pull-Request auf <strong>Ihren</strong>
+eigenen <code>master</code>-Branch.</p>
+<p><strong>Bitte lassen Sie die Pull-Requests bis zur Vorstellung im Praktikum offen.</strong></p>
+<p>Achten Sie darauf, alle Schritte nachvollziehbar in Ihrer Arbeitskopie per Git-Commit
+festzuhalten. Demonstrieren Sie im Praktikum, wie Sie mit den Pull-Requests arbeiten.</p>
+<p>Ihr Code soll einheitlich formatiert und dokumentiert sein. Sie können beides prüfen:
+<code>./gradlew spotlessCheck</code> für die Formatierung und <code>./gradlew checkstyleMain</code> für die
+Dokumentation<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> mit Javadoc.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> Während Sie die Dokumentation bei Fehlern manuell anpassen
+müssen (siehe Lektion <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html">&ldquo;Javadoc&rdquo;</a>), können Sie mit <code>./gradlew spotlessApply</code> den Code
+automatisch formatieren lassen - tun Sie das am besten vor jedem Commit.</p>
+<h3 id="a072-code-analyse-10">A07.2: Code-Analyse (10%)</h3>
+<p>Analysieren Sie die Modellierung des Binärbaums (<code>Tree</code>, <code>Empty</code>, <code>Node</code>) und erklären Sie die
+Funktionsweise:</p>
+<ul>
+<li>Was sind Vorteile, was sind Nachteile dieser Modellierung?</li>
+<li>Was musste getan werden, um die selbst implementierten Bäume in Schleifen
+(<code>Tree&lt;X&gt; mytree; for (Tree&lt;X&gt; t: mytree) {...}</code>) und in Streams
+<code>Tree&lt;X&gt; mytree; mytree.stream(). ...</code> nutzen zu können?</li>
+<li>Wie funktioniert der <code>TreeIterator</code>?</li>
+</ul>
+<h3 id="a073-optional-10">A07.3: Optional (10%)</h3>
+<p>Bauen Sie die beiden Methoden <code>CatCafe#getCatByName</code> und <code>CatCafe#getCatByWeight</code> so um, dass
+ein passendes <code>Optional</code> zurückgeliefert wird. Passen Sie die entsprechenden Methodenaufrufe
+in <code>Main#main</code> entsprechend an.</p>
+<p>In der Klasse <code>CatCafe</code> in der Vorgabe fehlen die Javadoc-Kommentare. Korrigieren Sie dies und
+ergänzen Sie hier die fehlenden Javadoc-Kommentare.</p>
+<p><em>Tipp</em>: Stellen Sie in den beiden Methoden auf die <a href="https://dev.java/learn/api/streams/" rel="external" target="_blank">Java-Stream-API</a> um, dann ergibt sich die
+Nutzung von <code>Optional</code> fast von selbst.</p>
+<h3 id="a074-junit-30">A07.4: JUnit (30%)</h3>
+<p>Erstellen Sie mit JUnit 4 oder 5 mindestens 10 unterschiedliche Testfälle für die Klasse
+<code>CatCafe</code>. Dokumentieren Sie Ihre Testfälle mit Javadoc.</p>
+<p><em>Tipp</em>: In der Gradle-Konfiguration der Vorgabe ist bereits JUnit5 konfiguriert, d.h. die
+entsprechenden Abhängigkeiten werden durch Gradle aufgelöst. Wenn Sie die Vorgaben als
+Gradle-Projekt in Ihrer IDE öffnen, dann steht Ihnen dort auch die JUnit5-Bibliothek
+automatisch zur Verfügung. Wenn Sie JUnit4 nutzen möchten, müssten Sie bitte die
+Gradle-Konfiguration entsprechend anpassen. Mit <code>./gradlew test</code> können Sie entsprechende
+Testfälle ausführen.</p>
+<h3 id="a075-visitor-pattern-20">A07.5: Visitor-Pattern (20%)</h3>
+<p>Die Klasse <code>CatCafe</code> hat eine Methode <code>CatCafe#accept</code>, die einen Visitor mit dem
+parametrischen Typ <code>TreeVisitor</code> an das intern genutzte Feld <code>Tree&lt;FelineOverLord&gt; clowder</code>
+weiterleitet.</p>
+<p>Implementieren Sie das Visitor-Pattern für den Baum (<code>Tree</code>), indem Sie das Interface
+<code>TreeVisitor</code> implementieren:</p>
+<ol>
+<li>Erstellen Sie einen konkreten Visitor <code>InOrderVisitor</code>, der den Baum <strong>inorder</strong>
+traversiert.</li>
+<li>Erstellen Sie einen weiteren konkreten Visitor <code>PostOrderVisitor</code>, der den Baum
+<strong>postorder</strong> traversiert.</li>
+</ol>
+<p>Beim Besuch eines Knotens soll jeweils die Methode <code>toString()</code> für den Datenanteil aufgerufen
+werden und passend mit den Ergebnissen der Traversierung der linken und rechten Teilbäume
+konkateniert werden und der resultierende String zurückgeben werden.</p>
+<p>Fügen Sie passende Aufrufe der beiden Visitoren in <code>Main#main</code> hinzu.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Das zweite richtige Level, also das zweite Level <em>nach</em> dem Demo-Level. Oder eben das
+dritte Level, wenn man das Demo-Level mitzählt :-)&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>... sieht aus wie eine wandelnde Kerze ...&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>zumindest für den syntaktischen Aspekt ...&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Sie können auch beides zusammen per <code>./gradlew check</code> prüfen lassen.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1719943322" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1719943322" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1719943322"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1719943322" defer></script>
+  </body>
+</html>

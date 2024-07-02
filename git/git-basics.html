@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.128.1">
+    <meta name="generator" content="Relearn 6.0.0">
+    <meta name="description" content="Versionsverwaltung mit Git: Typische Arbeitsschritte Repository anlegen (oder clonen)
+Dateien neu erstellen (und löschen, umbenennen, verschieben)
+Änderungen einpflegen (&#34;committen&#34;)
+Änderungen und Logs betrachten
+Änderungen rückgängig machen
+Projektstand markieren (&#34;taggen&#34;)
+Entwicklungszweige anlegen (&#34;branchen&#34;)
+Entwicklungszweige zusammenführen (&#34;mergen&#34;)
+Änderungen verteilen (verteiltes Arbeiten, Workflows)
+Dateien unter Versionskontrolle stellen git add . (oder git add &lt;file&gt;)
+=&gt; Stellt alle Dateien (bzw. die Datei &lt;file&gt;) im aktuellen Verzeichnis unter Versionskontrolle
+git commit
+=&gt; Fügt die Dateien dem Repository hinzu">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Basics der Versionsverwaltung mit Git (lokale Repos)">
+    <meta name="twitter:description" content="Versionsverwaltung mit Git: Typische Arbeitsschritte Repository anlegen (oder clonen)
+Dateien neu erstellen (und löschen, umbenennen, verschieben)
+Änderungen einpflegen (&#34;committen&#34;)
+Änderungen und Logs betrachten
+Änderungen rückgängig machen
+Projektstand markieren (&#34;taggen&#34;)
+Entwicklungszweige anlegen (&#34;branchen&#34;)
+Entwicklungszweige zusammenführen (&#34;mergen&#34;)
+Änderungen verteilen (verteiltes Arbeiten, Workflows)
+Dateien unter Versionskontrolle stellen git add . (oder git add &lt;file&gt;)
+=&gt; Stellt alle Dateien (bzw. die Datei &lt;file&gt;) im aktuellen Verzeichnis unter Versionskontrolle
+git commit
+=&gt; Fügt die Dateien dem Repository hinzu">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html">
+    <meta property="og:title" content="Basics der Versionsverwaltung mit Git (lokale Repos)">
+    <meta property="og:description" content="Versionsverwaltung mit Git: Typische Arbeitsschritte Repository anlegen (oder clonen)
+Dateien neu erstellen (und löschen, umbenennen, verschieben)
+Änderungen einpflegen (&#34;committen&#34;)
+Änderungen und Logs betrachten
+Änderungen rückgängig machen
+Projektstand markieren (&#34;taggen&#34;)
+Entwicklungszweige anlegen (&#34;branchen&#34;)
+Entwicklungszweige zusammenführen (&#34;mergen&#34;)
+Änderungen verteilen (verteiltes Arbeiten, Workflows)
+Dateien unter Versionskontrolle stellen git add . (oder git add &lt;file&gt;)
+=&gt; Stellt alle Dateien (bzw. die Datei &lt;file&gt;) im aktuellen Verzeichnis unter Versionskontrolle
+git commit
+=&gt; Fügt die Dateien dem Repository hinzu">
+    <meta property="og:locale" content="de-DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Basics der Versionsverwaltung mit Git (lokale Repos)">
+    <meta itemprop="description" content="Versionsverwaltung mit Git: Typische Arbeitsschritte Repository anlegen (oder clonen)
+Dateien neu erstellen (und löschen, umbenennen, verschieben)
+Änderungen einpflegen (&#34;committen&#34;)
+Änderungen und Logs betrachten
+Änderungen rückgängig machen
+Projektstand markieren (&#34;taggen&#34;)
+Entwicklungszweige anlegen (&#34;branchen&#34;)
+Entwicklungszweige zusammenführen (&#34;mergen&#34;)
+Änderungen verteilen (verteiltes Arbeiten, Workflows)
+Dateien unter Versionskontrolle stellen git add . (oder git add &lt;file&gt;)
+=&gt; Stellt alle Dateien (bzw. die Datei &lt;file&gt;) im aktuellen Verzeichnis unter Versionskontrolle
+git commit
+=&gt; Fügt die Dateien dem Repository hinzu">
+    <meta itemprop="wordCount" content="2025">
+    <title>Basics der Versionsverwaltung mit Git (lokale Repos)</title>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics/index.print.html" rel="alternate" type="text/html" title="Basics der Versionsverwaltung mit Git (lokale Repos)">
+
+    
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1719943321" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1719943322" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1719943322" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1719943322" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1719943322" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1719943322" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1719943322" rel="stylesheet" media="print">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1719943322"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#versionsverwaltung-mit-git-typische-arbeitsschritte">Versionsverwaltung mit Git: Typische Arbeitsschritte</a></li>
+    <li><a href="#dateien-unter-versionskontrolle-stellen">Dateien unter Versionskontrolle stellen</a></li>
+    <li><a href="#änderungen-einpflegen">Änderungen einpflegen</a></li>
+    <li><a href="#letzten-commit-ergänzen">Letzten Commit ergänzen</a></li>
+    <li><a href="#weitere-datei-operationen-hinzufügen-umbenennen-löschen">Weitere Datei-Operationen: hinzufügen, umbenennen, löschen</a></li>
+    <li><a href="#commits-betrachten">Commits betrachten</a></li>
+    <li><a href="#änderungen-und-logs-betrachten">Änderungen und Logs betrachten</a></li>
+    <li><a href="#dateien-ignorieren-gitignore">Dateien ignorieren: <em>.gitignore</em></a></li>
+    <li><a href="#zeitmaschine">Zeitmaschine</a></li>
+    <li><a href="#wann-und-wie-committen">Wann und wie committen?</a></li>
+    <li><a href="#schreiben-von-commit-messages-warum">Schreiben von Commit-Messages: WARUM?!</a></li>
+    <li><a href="#ausflug-conventional-commits">Ausflug &quot;Conventional Commits&quot;</a></li>
+    <li><a href="#wrap-up">Wrap-Up</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Basics der Versionsverwaltung mit Git (lokale Repos)
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Basics der Versionsverwaltung mit Git (lokale Repos)</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Änderungen an Dateien (in der Workingcopy) werden mit <code>git add</code> zum &quot;Staging&quot; (Index) hinzugefügt.
+Dies ist eine Art Sammelbereich für Änderungen, die mit dem nächsten Commit in das Repository
+überführt werden. Neue (bisher nicht versionierte Dateien) müssen ebenfalls zunächst mit
+<code>git add</code> zum Staging hinzugefügt werden.</p>
+<p>Änderungen kann man mit <code>git log</code> betrachten, dabei erhält man u.a. eine Liste der Commits und der
+jeweiligen Commmit-Messages.</p>
+<p>Mit <code>git diff</code> kann man gezielt Änderungen zwischen Commits oder Branches betrachten.</p>
+<p>Mit <code>git tag</code> kann man bestimmte Commits mit einem &quot;Stempel&quot; (zusätzlicher Name) versehen, um diese
+leichter finden zu können.</p>
+<p>Wichtig sind die Commit-Messages: Diese sollten eine kurze Zusammenfassung haben, die <strong>aktiv</strong>
+formuliert wird (was ändert dieser Commit: &quot;Formatiere den Java-Code entsprechend Style&quot;; nicht aber
+&quot;Java-Code nach Style formatiert&quot;). Falls der Kommentar länger sein soll, folgt eine Leerzeile auf
+die erste Zeile (Zusammenfassung) und danach ein Block mit der längeren Erklärung.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/GxJI8nmZVE8' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Git Basics</a></li> <li><a href='https://youtu.be/ITF8wj8GluM' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo New Files</a></li> <li><a href='https://youtu.be/SFIVudlVUhg' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Arbeitsablauf: Datei ändern - stagen - committen</a></li> <li><a href='https://youtu.be/0uczjI7wsrQ' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Amend</a></li> <li><a href='https://youtu.be/vmb-PZ1Efkg' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Log</a></li> <li><a href='https://youtu.be/XB8lfGuU6ZI' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Diff</a></li> <li><a href='https://youtu.be/F1W0RqrxCho' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Tag</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/3a44c8a32e7699db77ae922c6b8944acf0d8c65b78d02859e707ffdf783ea45a78200312cdb8102c1052f382101b69a5092bcaf0a11ded36b98f4552a4aca345' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Git Basics</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K3) Umgang mit Dateien: Hinzufügen zum und Löschen aus Repo</li> <li>(K3) Umgang mit Änderungen: Hinzufügen zum Staging und Commit</li> <li>(K3) Herausfinden von Unterschieden, Ansehen der Historie</li> <li>(K3) Ignorieren von Dateien und Ordnern</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="versionsverwaltung-mit-git-typische-arbeitsschritte">Versionsverwaltung mit Git: Typische Arbeitsschritte</h2>
+<ol>
+<li>
+<p>Repository anlegen (oder clonen)</p>
+</li>
+<li>
+<p>Dateien neu erstellen (und löschen, umbenennen, verschieben)</p>
+</li>
+<li>
+<p>Änderungen einpflegen (&quot;committen&quot;)</p>
+</li>
+<li>
+<p>Änderungen und Logs betrachten</p>
+</li>
+<li>
+<p>Änderungen rückgängig machen</p>
+</li>
+<li>
+<p>Projektstand markieren (&quot;taggen&quot;)</p>
+</li>
+<li>
+<p>Entwicklungszweige anlegen (&quot;branchen&quot;)</p>
+</li>
+<li>
+<p>Entwicklungszweige zusammenführen (&quot;mergen&quot;)</p>
+</li>
+<li>
+<p>Änderungen verteilen (verteiltes Arbeiten, Workflows)</p>
+</li>
+</ol>
+<h2 id="dateien-unter-versionskontrolle-stellen">Dateien unter Versionskontrolle stellen</h2>
+<p><a href="#R-image-c33aea85af7291a2326459860fbab871" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics/workflow.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c33aea85af7291a2326459860fbab871"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics/workflow.png?width=80%25&height=auto"></a></p>
+<ol>
+<li>
+<p><code>git add .</code> (oder <code>git add &lt;file&gt;</code>)</p>
+<p>=&gt; Stellt <span class='alert'>alle</span> Dateien (bzw. die Datei <code>&lt;file&gt;</code>)
+im aktuellen Verzeichnis unter Versionskontrolle</p>
+</li>
+<li>
+<p><code>git commit</code></p>
+<p>=&gt; Fügt die Dateien dem Repository hinzu</p>
+</li>
+</ol>
+<p><strong>Abfrage mit <code>git status</code></strong></p>
+<h2 id="änderungen-einpflegen">Änderungen einpflegen</h2>
+<p><a href="#R-image-6bc4fd5425980b80d9a982704f98d8a6" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics/lifecycle.png?width=70%25&height=auto" style=" height: auto; width: 70%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6bc4fd5425980b80d9a982704f98d8a6"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics/lifecycle.png?width=70%25&height=auto"></a></p>
+<ul>
+<li>Abfrage mit: <code>git status</code></li>
+<li>&quot;Staging&quot; von modifizierten Dateien: <code>git add &lt;file&gt;</code></li>
+<li>Committen der Änderungen im Stage: <code>git commit</code></li>
+</ul>
+<p><em>Anmerkung</em>: Alternativ auch mit <code>git commit -m &quot;Kommentar&quot;</code>, um das Öffnen
+des Editors zu vermeiden ... geht einfach schneller ;)</p>
+<p>Das &quot;staging area&quot; stellt eine Art Zwischenebene zwischen Working Copy und
+Repository dar: Die Änderungen sind temporär &quot;gesichert&quot;, aber noch nicht
+endgültig im Repository eingepflegt (&quot;committed&quot;).</p>
+<p>Man kann den Stage dazu nutzen, um Änderungen an einzelnen Dateien zu sammeln
+und diese dann (in einem Commit) gemeinsam einzuchecken.</p>
+<p>Man kann den Stage in der Wirkung umgehen, indem man alle in der Working Copy
+vorliegenden Änderungen per <code>git commit -a -m &quot;Kommentar&quot;</code> eincheckt. Der
+Schalter &quot;<code>-a</code>&quot; nimmt alle vorliegenden Änderungen an <strong>bereits versionierten</strong>
+Dateien, fügt diese dem Stage hinzu und führt dann den Commit durch. Das ist
+das von SVN bekannte Verhalten. Achtung: Nicht versionierte Dateien bleiben
+dabei außen vor!</p>
+<h2 id="letzten-commit-ergänzen">Letzten Commit ergänzen</h2>
+<ul>
+<li>
+<p><code>git commit --amend -m &quot;Eigentlich wollte ich das so sagen&quot;</code></p>
+<p>Wenn keine Änderungen im Stage sind, wird so die letzte Commit-Message geändert.</p>
+</li>
+<li>
+<p><code>git add &lt;file&gt;; git commit --amend</code></p>
+<p>Damit können vergessene Änderungen an der Datei <code>&lt;file&gt;</code>
+zusätzlich im letzten Commit aufgezeichnet werden.</p>
+<p><span class='alert'>In beiden Fällen ändert sich die Commit-ID!</span></p>
+</li>
+</ul>
+<h2 id="weitere-datei-operationen-hinzufügen-umbenennen-löschen">Weitere Datei-Operationen: hinzufügen, umbenennen, löschen</h2>
+<ul>
+<li>Neue (unversionierte) Dateien und Änderungen an versionierten Dateien zum Staging hinzufügen: <code>git add &lt;file&gt;</code></li>
+<li>Löschen von Dateien (Repo+Workingcopy): <code>git rm &lt;file&gt;</code></li>
+<li>Löschen von Dateien (nur Repo): <code>git rm --cached &lt;file&gt;</code></li>
+<li>Verschieben/Umbenennen: <code>git mv &lt;fileAlt&gt; &lt;fileNeu&gt;</code></li>
+</ul>
+<p>Aus Sicht von Git sind zunächst alle Dateien &quot;untracked&quot;, d.h. stehen nicht
+unter Versionskontrolle.</p>
+<p>Mit <code>git add &lt;file&gt;</code> (und <code>git commit</code>) werden Dateien in den Index (den
+Staging-Bereich, d.h. nach dem Commit letztlich in das Repository) aufgenommen.
+Danach stehen sie unter &quot;Beobachtung&quot; (Versionskontrolle). So lange, wie eine
+Datei identisch zur Version im Repository ist, gilt sie als unverändert
+(&quot;unmodified&quot;). Eine Änderung führt entsprechend zum Zustand &quot;modified&quot;, und
+ein <code>git add &lt;file&gt;</code> speichert die Änderungen im Stage. Ein Commit überführt
+die im Stage vorgemerkte Änderung in das Repo, d.h. die Datei gilt wieder
+als &quot;unmodified&quot;.</p>
+<p>Wenn eine Datei nicht weiter versioniert werden soll, kann sie aus dem Repo
+entfernt werden. Dies kann mit <code>git rm &lt;file&gt;</code> geschehen, wobei die Datei auch
+aus der Workingcopy gelöscht wird. Wenn die Datei erhalten bleiben soll, aber
+nicht versioniert werden soll (also als &quot;untracked&quot; markiert werden soll), dann
+muss sie mit <code>git rm --cached &lt;file&gt;</code> aus der Versionskontrolle gelöscht werden.
+Achtung: Die Datei ist dann nur ab dem aktuellen Commit gelöscht, d.h. frühere
+Revisionen enthalten die Datei noch!</p>
+<p>Wenn eine Datei umbenannt werden soll, geht das mit <code>git mv &lt;fileAlt&gt; &lt;fileNeu&gt;</code>.
+Letztlich ist dies nur eine Abkürzung für die Folge <code>git rm --cached &lt;fileAlt&gt;</code>,
+manuelles Umbenennen der Datei in der Workingcopy und <code>git add &lt;fileNeu&gt;</code>.</p>
+<h2 id="commits-betrachten">Commits betrachten</h2>
+<ul>
+<li>
+<p>Liste aller Commits: <code>git log</code></p>
+<ul>
+<li><code>git log -&lt;n&gt;</code> oder <code>git log --since=&quot;3 days ago&quot;</code>
+Meldungen eingrenzen ...</li>
+<li><code>git log --stat</code> Statistik ...</li>
+<li><code>git log --author=&quot;pattern&quot;</code> Commits eines Autors</li>
+<li><code>git log &lt;file&gt;</code> Änderungen einer Datei</li>
+</ul>
+</li>
+<li>
+<p>Inhalt eines Commits: <code>git show</code></p>
+</li>
+</ul>
+<h2 id="änderungen-und-logs-betrachten">Änderungen und Logs betrachten</h2>
+<ul>
+<li>
+<p><code>git diff [&lt;file&gt;]</code></p>
+<p>Änderungen zwischen Workingcopy und letztem Commit (ohne Stage)</p>
+<p>Das &quot;staging area&quot; wird beim Diff von Git behandelt, als wären die dort
+hinzugefügten Änderungen bereits eingecheckt (genauer: als letzter Commit
+im aktuellen Branch im Repo vorhanden).
+D.h. wenn Änderungen in einer Datei mittels <code>git add &lt;datei&gt;</code> dem Stage
+hinzugefügt wurden, zeigt <code>git diff &lt;datei&gt;</code> keine Änderungen an!</p>
+</li>
+<li>
+<p><code>git diff commitA commitB</code></p>
+<p>Änderungen zwischen Commits</p>
+</li>
+<li>
+<p>Blame: <code>git blame &lt;file&gt;</code></p>
+<p>Wer hat was wann gemacht?</p>
+</li>
+</ul>
+<h2 id="dateien-ignorieren-gitignore">Dateien ignorieren: <em>.gitignore</em></h2>
+<ul>
+<li>Nicht alle Dateien gehören ins Repo:
+<ul>
+<li>generierte Dateien: <code>.class</code></li>
+<li>temporäre Dateien</li>
+</ul>
+</li>
+<li>Datei <code>.gitignore</code> anlegen und committen
+<ul>
+<li>Wirkt auch für Unterordner</li>
+<li>Inhalt: Reguläre Ausdrücke für zu ignorierende Dateien und Ordner</li>
+</ul>
+</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0"><code class="language-gitignore" data-lang="gitignore">    # Compiled source #
+    *.class
+    *.o
+    *.so
+
+    # Packages #
+    *.zip
+
+    # All directories and files in a directory #
+    bin/**/*</code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://linux.die.net/man/5/gitignore" target="_blank"><span class="title">man 5 gitignore</span></a></span></div>
+<h2 id="zeitmaschine">Zeitmaschine</h2>
+<ul>
+<li>
+<p>Änderungen in Workingcopy rückgängig machen</p>
+<ul>
+<li>Änderungen nicht in Stage: <code>git checkout &lt;file&gt;</code> oder <code>git restore &lt;file&gt;</code></li>
+<li>Änderungen in Stage: <code>git reset HEAD &lt;file&gt;</code> oder <code>git restore --staged &lt;file&gt;</code></li>
+</ul>
+<p>=&gt; Hinweise von <code>git status</code> beachten!</p>
+</li>
+<li>
+<p>Datei aus altem Stand holen:</p>
+<ul>
+<li><code>git checkout &lt;commit&gt; &lt;file&gt;</code>, oder</li>
+<li><code>git restore --source &lt;commit&gt; &lt;file&gt;</code></li>
+</ul>
+</li>
+<li>
+<p>Commit verwerfen, Geschichte neu: <code>git revert &lt;commit&gt;</code></p>
+</li>
+</ul>
+<p><em>Hinweis</em>: In den neueren Versionen von Git ist der Befehl <code>git restore</code> hinzugekommen, mit
+dem Änderungen rückgängig gemacht werden können. Der bisherige Befehl <code>git checkout</code> steht
+immer noch zur Verfügung und bietet über <code>git restore</code> hinaus weitere Anwendungsmöglichkeiten.</p>
+<ul>
+<li>Stempel (Tag) vergeben:
+<code>git tag &lt;tagname&gt; &lt;commit&gt;</code></li>
+<li>Tags anzeigen: <code>git tag</code> und <code>git show &lt;tagname&gt;</code></li>
+</ul>
+<h2 id="wann-und-wie-committen">Wann und wie committen?</h2>
+<div class='center'>
+<p><span class='alert'><strong>Jeder Commit stellt einen Rücksetzpunkt dar!</strong></span></p>
+</div>
+<p>Typische Regeln:</p>
+<ul>
+<li>Kleinere &quot;Häppchen&quot; einchecken: ein Feature oder Task
+(das nennt man auch <em>atomic commit</em>: das kleinste Set an Änderungen, die
+gemeinsam Sinn machen und die ggf. gemeinsam zurückgesetzt werden können)</li>
+<li>Logisch zusammenhängende Änderungen gemeinsam einchecken</li>
+<li>Projekt muss nach Commit compilierbar sein</li>
+<li>Projekt sollte nach Commit lauffähig sein</li>
+</ul>
+<p>Ein Commit sollte in sich geschlossen sein, d.h. die kleinste Menge an Änderungen
+enthalten, die gemeinsam einen Sinn ergeben und die (bei Bedarf) gemeinsam
+zurückgesetzt oder verschoben werden können. Das nennt man auch <strong>atomic commit</strong>.</p>
+<p>Wenn Sie versuchen, die Änderungen in Ihrem Commit zu beschreiben (siehe nächste Folie
+&quot;Commit-Messages&quot;), dann werden Sie einen <em>atomic commit</em> mit einem kurzen Satz (natürlich
+im Imperativ!) beschreiben können. Wenn Sie mehr Text brauchen, haben Sie wahrscheinlich
+keinen <em>atomic commit</em> mehr vor sich.</p>
+<p><strong>Lesen Sie dazu auch <a href="https://dev.to/samuelfaure/how-atomic-git-commits-dramatically-increased-my-productivity-and-will-increase-yours-too-4a84" rel="external" target="_blank">How atomic Git commits dramatically increased my productivity - and will increase yours too</a>.</strong></p>
+<h2 id="schreiben-von-commit-messages-warum">Schreiben von Commit-Messages: WARUM?!</h2>
+<p>Schauen Sie sich einmal einen Screenshot eines <code>git log --oneline 61e48f0..e2c8076</code>
+im <a href="https://github.com/Dungeon-CampusMinden/Dungeon" rel="external" target="_blank">Dungeon-CampusMinden/Dungeon</a> an:</p>
+<p><a href="#R-image-0906352b5f7a59f0f8eef17daf2a5528" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics/screenshot_git_log.png?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0906352b5f7a59f0f8eef17daf2a5528"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics/screenshot_git_log.png?width=auto&height=auto"></a></p>
+<p>Nun stellen Sie sich vor, Sie sind auf der Suche nach Informationen, suchen einen
+bestimmten Commit oder wollen eine bestimmte Änderung finden ...</p>
+<p>Wenn man das genauer analysiert, dann stören bestimmte Dinge:</p>
+<ul>
+<li>Mischung aus Deutsch und Englisch</li>
+<li>&quot;Vor-sich-hin-Murmeln&quot;: &quot;Layer system 5&quot;</li>
+<li>Teileweise werden Tags genutzt wie <code>[BUG]</code>, aber nicht durchgängig</li>
+<li>Mischung zwischen verschiedenen Formen: &quot;Repo umbenennen&quot;, &quot;Benenne Repo um&quot;, &quot;Repo umbenannt&quot;</li>
+<li>Unterschiedliche Groß- und Kleinschreibung</li>
+<li>Sehr unterschiedlich lange Zeilen/Kommentare</li>
+</ul>
+<p><strong>Das Beachten einheitlicher Regeln ist enorm wichtig!</strong></p>
+<p>Leider sagt sich das so leicht - in der Praxis macht man es dann
+doch schnell wieder unsauber. Dennoch, auch im Dungeon-Repo gibt
+es einen positiven Trend (<code>git log --oneline 8039d6c..7f49e89</code>):</p>
+<p><a href="#R-image-e34922a3467f8db50138874d77960a5e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics/screenshot_git_log_recent.png?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e34922a3467f8db50138874d77960a5e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics/screenshot_git_log_recent.png?width=auto&height=auto"></a></p>
+<p>Typische Regeln und Konventionen tauchen überall auf, beispielsweise
+in <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html#id_Chacon2014">[Chacon2014]</a> oder bei Tim Pope (siehe nächstes Beispiel) oder bei
+<a href="https://cbea.ms/git-commit/" rel="external" target="_blank">&quot;How to Write a Git Commit Message&quot;</a>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>Short (50 chars or less) summary of changes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>More detailed explanatory text, if necessary.  Wrap it to about
+</span></span><span style="display:flex;"><span>72 characters or so.  In some contexts, the first line is treated
+</span></span><span style="display:flex;"><span>as the subject of an email and the rest of the text as the body.
+</span></span><span style="display:flex;"><span>The blank line separating the summary from the body is critical
+</span></span><span style="display:flex;"><span>(unless you omit the body entirely); tools like rebase can get
+</span></span><span style="display:flex;"><span>confused if you run the two together.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Further paragraphs come after blank lines.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">-</span> Bullet points are okay, too
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">-</span> Typically a hyphen or asterisk is used for the bullet, preceded
+</span></span><span style="display:flex;"><span>   by a single space, with blank lines in between, but conventions
+</span></span><span style="display:flex;"><span>   vary here</span></span></code></pre></div><p><span class='origin'>Quelle: <a href="https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html" rel="external" target="_blank">&quot;A Note About Git Commit Messages&quot;</a> by <a href="https://tpo.pe/" rel="external" target="_blank">Tim Pope</a> on tbaggery.com</span></p>
+<p>Denken Sie sich die Commit-Message als E-Mail an einen zukünftigen Entwickler,
+der das in fünf Jahren liest!</p>
+<p>Vom Aufbau her hat eine E-Mail auch eine Summary und dann den eigentlichen Inhalt ...
+Erklären Sie das <strong>&quot;WARUM&quot;</strong> der Änderung! (Das &quot;WER&quot;, &quot;WAS&quot;, &quot;WANN&quot; wird bereits
+automatisch von Git aufgezeichnet ...)</p>
+<div class='center'>
+<p><span class='alert'><strong>Lesen (und beachten) Sie unbedingt auch <a href="https://cbea.ms/git-commit/" rel="external" target="_blank">&quot;How to Write a Git Commit Message&quot;</a>!</strong></span></p>
+</div>
+<h2 id="ausflug-conventional-commits">Ausflug &quot;Conventional Commits&quot;</h2>
+<p>Die Commit-Messages dienen vor allem der Dokumentation und werden von Entwicklern gelesen.</p>
+<p>Wenn man die Messages ein wenig stärker formalisieren würde, dann könnte man diese aber auch
+mit Tools verarbeiten und beispielsweise automatisiert Changelogs oder Release-Texte verfassen!</p>
+<p>Betrachten Sie einmal das Projekt <a href="https://github.com/conventional-commits/conventionalcommits.org" rel="external" target="_blank">ConventionalCommits.org</a>.
+Dies ist ein solcher Versuch, die Commit-Messages (a) einheitlicher und lesbarer zu gestalten
+und (b) auch eine Tool-gestützte Auswertung zu erlauben.</p>
+<p>Das Projekt schlägt als Erweitung der üblichen Regeln zum Formatieren von Commit-Messages vor,
+dass in der ersten Zeile der <em>Summary</em> noch eine Abkürzung für die in diesem Commit erfolgte
+Änderung (Bug-Fix, neues Feature, ...) vorangestellt wird. Dieser Abkürzung kann in Klammern
+noch der Scope der Änderung hinzugefügt werden, beispielsweise den Bereich im Projekt, der von
+diesem Commit berührt wird. Wenn es eine <em>breaking change</em> ist, also alter Code nach dieser Änderung
+sich anders verhält oder vielleicht sogar nicht mehr kompiliert, wird noch ein &quot;!&quot; hinter dem
+Typ der Änderung ergänzt.</p>
+<p><strong>Beispiel</strong>: Stellen Sie sich vor, im Dungeon-Projekt wurde ein neues Verhalten hinzugefügt.</p>
+<ol>
+<li>
+<p>Normalerweise hätten Sie vielleicht diese Message geschrieben (angepasste Version aus <a href="https://github.com/Dungeon-CampusMinden/Dungeon/pull/469" rel="external" target="_blank">Dungeon-CampusMinden/Dungeon/pull/469</a>):</p>
+<pre><code>add fight skill
+
+-   `DamageProjectileSkill` creates a new entity which causes `HealthDamage` when hitting another entity
+-   `FireballSkill` is a more concrete implementation of this
+-   Melee skills can be created with `DamageProjectileSkill` using a customised range
+    -   Example: the `FireballSkill` has a range of 10, a melee would have a considerably smaller range
+
+fixes #24
+fixes #126
+fixes #224
+</code></pre>
+</li>
+<li>
+<p>Mit <a href="https://www.conventionalcommits.org/en/v1.0.0/#examples" rel="external" target="_blank">ConventionalCommits.org</a> könnte
+das dann so aussehen:</p>
+<pre><code>feat: add fight skill
+
+-   `DamageProjectileSkill` creates a new entity which causes `HealthDamage` when hitting another entity
+-   `FireballSkill` is a more concrete implementation of this
+-   Melee skills can be created with `DamageProjectileSkill` using a customised range
+    -   Example: the `FireballSkill` has a range of 10, a melee would have a considerably smaller range
+
+fixes #24
+fixes #126
+fixes #224
+</code></pre>
+<p>Da es sich um ein neues Feature handelt, wurde der Summary in der ersten Zeile ein <code>feat:</code> vorangestellt.</p>
+<p>Die zu verwendenden Typen/Abkürzungen sind im Prinzip frei definierbar. Das Projekt
+<a href="https://github.com/conventional-commits/conventionalcommits.org" rel="external" target="_blank">ConventionalCommits.org</a>
+schlägt eine Reihe von Abkürzungen vor. Auf diese Weise sollen in möglichst allen Projekten, die Conventional
+Commits nutzen, die selben Abkürzungen/Typen eingesetzt werden und so eine Tool-gestützte Auswertung möglich
+werden.</p>
+</li>
+<li>
+<p>Oder zusätzlich mit dem Scope der Änderung:</p>
+<pre><code>feat(game): add fight skill
+
+-   `DamageProjectileSkill` creates a new entity which causes `HealthDamage` when hitting another entity
+-   `FireballSkill` is a more concrete implementation of this
+-   Melee skills can be created with `DamageProjectileSkill` using a customised range
+    -   Example: the `FireballSkill` has a range of 10, a melee would have a considerably smaller range
+
+fixes #24
+fixes #126
+fixes #224
+</code></pre>
+<p>Der Typ <code>feat</code> wurde hier noch ergänzt um einen frei definierbaren Identifier für den Projektbereich. Dieser
+wird in Klammern direkt hinter den Typ notiert (hier <code>feat(game):</code>).</p>
+<p>Im Beispiel habe ich als Bereich &quot;game&quot; genommen, weil die Änderung sich auf den Game-Aspekt des Projekts
+bezieht. Im konkreten Projekt wären andere Bereiche eventuell &quot;dsl&quot; (für die im Projekt entwickelte
+Programmiersprache plus Interpreter) und &quot;blockly&quot; (für die Integration von Google Blockly zur Programmierung
+des Dungeons mit LowCode-Ansätzen). Das ist aber letztlich vom Projekt abhängig und weitestgehend
+Geschmackssache.</p>
+</li>
+<li>
+<p>Oder zusätzlich noch als Auszeichnung &quot;breaking change&quot; (hier mit <em>scope</em>, geht aber auch ohne <em>scope</em>):</p>
+<pre><code>feat(game)!: add fight skill
+
+-   `DamageProjectileSkill` creates a new entity which causes `HealthDamage` when hitting another entity
+-   `FireballSkill` is a more concrete implementation of this
+-   Melee skills can be created with `DamageProjectileSkill` using a customised range
+    -   Example: the `FireballSkill` has a range of 10, a melee would have a considerably smaller range
+
+fixes #24
+fixes #126
+fixes #224
+</code></pre>
+<p>Angenommen, das neue Feature muss in der API etwas ändern, so dass existierender Code nun nicht mehr
+funktionieren würde. Dies wird mit dem extra Ausrufezeichen hinter dem Typ/Scope kenntlich gemacht
+(hier <code>feat(game)!:</code>).</p>
+<p>Zusätzlich kann man einen &quot;Footer&quot; in die Message einbauen, also eine extra Zeile am Ende, die mit dem String
+&quot;BREAKING CHANGE:&quot; eingeleitet wird. (vgl. <a href="https://www.conventionalcommits.org/en/v1.0.0/#examples" rel="external" target="_blank">Conventional Commits &gt; Examples</a>)</p>
+</li>
+</ol>
+<p>Es gibt noch viele weitere Initiativen, Commit-Messages lesbarer zu gestalten und zu vereinheitlichen.
+Schauen Sie sich beispielsweise einmal <a href="https://github.com/carloscuesta/gitmoji" rel="external" target="_blank">gitmoji.dev</a> an.
+(<em>Mit einem Einsatz in einem professionellen Umfeld wäre ich hier aber sehr ... vorsichtig.</em>)</p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>Änderungen einpflegen zweistufig (<code>add</code>, <code>commit</code>)</li>
+<li>Status der Workingcopy mit <code>status</code> ansehen</li>
+<li>Logmeldungen mit <code>log</code> ansehen</li>
+<li>Änderungen auf einem File mit <code>diff</code> bzw. <code>blame</code> ansehen</li>
+<li>Projektstand markieren mit <code>tag</code></li>
+<li>Ignorieren von Dateien/Ordnern: Datei <code>.gitignore</code></li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106241&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Git Basics (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p><strong>Versionierung 101</strong></p>
+<ol>
+<li>Legen Sie ein Repository an.</li>
+<li>Fügen Sie Dateien dem Verzeichnis hinzu und stellen Sie <em>einige</em> davon
+unter Versionskontrolle.</li>
+<li>Ändern Sie eine Datei und versionieren Sie die Änderung.</li>
+<li>Was ist der Unterschied zwischen &quot;<code>git add .; git commit</code>&quot; und
+&quot;<code>git commit -a</code>&quot;?</li>
+<li>Wie finden Sie heraus, welche Dateien geändert wurden?</li>
+<li>Entfernen Sie eine Datei aus der Versionskontrolle, aber nicht aus dem
+Verzeichnis!</li>
+<li>Entfernen Sie eine Datei komplett (Versionskontrolle und Verzeichnis).</li>
+<li>Ändern Sie eine Datei und betrachten die Unterschiede zum letzten Commit.</li>
+<li>Fügen Sie eine geänderte Datei zum Index hinzu. Was erhalten Sie bei
+<code>git diff &lt;datei&gt;</code>?</li>
+<li>Wie können Sie einen früheren Stand einer Datei wiederherstellen? Wie
+finden Sie überhaupt den Stand?</li>
+<li>Legen Sie sich ein Java-Projekt in Ihrer IDE an an. Stellen Sie dieses
+Projekt unter Git-Versionskontrolle. Führen Sie die vorigen Schritte mit
+Ihrer IDE durch.</li>
+</ol></div>
+</div>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_AtlassianGit'>[AtlassianGit] <a href='https://www.atlassian.com/git/tutorials' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Become a git guru.</strong></a><br>Atlassian Pty Ltd, 2022.</li> <li id='id_Chacon2014'>[Chacon2014] <a href='https://git-scm.com/book/en/v2' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Pro Git</strong></a><br>Chacon, S. und Straub, B., Apress, 2014. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-1-4842-0077-3</a>.<br><em>Kapitel 2</em></li> <li id='id_GitCheatSheet'>[GitCheatSheet] <a href='https://training.github.com/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Git Cheat Sheets</strong></a><br>Github Inc., 2022.</li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+
+
+
+
+<a id="logo" href='https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234//index.html'>
+    <img style="max-width:35%" alt="icon" src='/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png'>
+</a>
+
+        </div>
+
+        <search><form action="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/search.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['de'];
+        </script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/auto-complete.js?1719943322" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.min.js?1719943322" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.stemmer.support.min.js?1719943322" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.multi.min.js?1719943322" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.de.min.js?1719943322" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/search.js?1719943322" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics.html">Generics</a><ul id="R-subsections-3ec7939463ceb6f931083967c060bb2f" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/classes-methods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/classes-methods.html">Klassen &amp; Methoden</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/bounds-wildcards.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/bounds-wildcards.html">Bounds &amp; Wildcards</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/type-erasure.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/type-erasure.html">Type Erasure</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html">Polymorphie</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html">Building</a><ul id="R-subsections-f4e18db244c71e7d5fbee7579907c4cd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html">Gradle</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html">Continuous Integration</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html" class="parent "><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html">Git</a><ul id="R-subsections-b7b75b08ea746eeb407fc7d37ea4cda5" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html">Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html" class="active"><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html">Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html">Branches</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">Branching-Strategien</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html">Remotes</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">Workflows</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java.html">Modern Java</a><ul id="R-subsections-b7e7192fdbaa6715e2f6bf2cf57a6598" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html">Lambda-Ausdrücke</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/methodreferences.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/methodreferences.html">Methoden-Referenzen</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/stream-api.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/stream-api.html">Stream-API</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/records.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/records.html">Records</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html">Optional</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html">Default-Methoden</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html">Coding</a><ul id="R-subsections-ed36829f63ded441f98bbebba385ea7c" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html">Javadoc</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html">Logging</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html">Code Smells</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html">Coding Conventions</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html">Refactoring</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks.html">Frameworks</a><ul id="R-subsections-8a7f48c592022db704353f5d4f8a5f78" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon.html">How-To Dungeon</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing.html">Testing</a><ul id="R-subsections-95ac3b8a0580d3c0c5ec1b9e2c19e15b" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html">Intro SW-Test</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/junit-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/junit-basics.html">JUnit-Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testcases.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testcases.html">Testfallermittlung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/mockito.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/mockito.html">Mocking</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html">Pattern</a><ul id="R-subsections-88c6ccdca00adeca83d4957e66bb44bd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html">Visitor</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html">Observer</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html">Template-Method</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html">Command</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm.html">Java / JVM</a><ul id="R-subsections-a8baeaa8292f03e30c60ce3f78cb8329" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html">Serialisierung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/regexp.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/regexp.html">RegExp</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html">Enumerations</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/configuration.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/configuration.html">Konfiguration</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html">Threads</a><ul id="R-subsections-69dad497cee2a112d69e7153cccf3928" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html">Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html">Synchronisation</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html">High-Level Concurrency</a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#kursformat"><i class='fas fa-bookmark'></i> Zeiten</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> Fahrplan</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#pr%C3%BCfungsform-note-und-credits"><i class='fas fa-bookmark'></i> Note/Credits</a></li>
+            <li><a class="padding" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a"><i class='fas fa-external-link-alt'></i> FAQ</a></li>
+            <li><a class="padding" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/announcements"><i class='fas fa-external-link-alt'></i> News</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html" lang="de-DE" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                      <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                      <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-select-variant-relearn-bright" value="relearn-bright">Relearn Bright</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter"><p style="text-align: center;">
+<i class='fab fa-fw fa-github'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">GitHub</a>
+<i class='fas fa-fw fa-tags'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/issues">Issues</a>
+<i class='fas fa-fw fa-bullhorn'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">Credits</a>
+<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+
+</p>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1719943322" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1719943322" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1719943322"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1719943322" defer></script>
+  </body>
+</html>
