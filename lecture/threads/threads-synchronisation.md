@@ -66,7 +66,7 @@ fhmedia:
 challenges: |
     **Hamster-Welt**
 
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/threads/src/challenges)
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/threads/src/challenges/threads)
     finden Sie eine Modellierung für eine Hamsterwelt.
 
     Es gibt rote und blaue Hamster, die sich unabhängig von einander bewegen können. Es gibt einen Tunnel, den die Hamster betreten

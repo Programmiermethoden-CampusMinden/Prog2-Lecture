@@ -10,10 +10,10 @@ public class Tunnel {
     }
 
     public void enter(Hamster hamster) {
-        System.out.println("\t in tunnel (" + hamster.name() + ")");
+        System.out.println("\ttunnel: " + hamster.name() + ": in");
     }
 
     public void leave(Hamster hamster) {
-        System.out.println("\t cleared tunnel (" + hamster.name() + ")");
+        System.out.println("\ttunnel: " + hamster.name() + ": cleared");
     }
 }
