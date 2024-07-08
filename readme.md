@@ -55,6 +55,8 @@ den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anscha
 
 ## Kursformat
 
+![](admin/images/fahrplan.png){width="80%"}
+
 :::::: {.tabs groupid="vl-pr"}
 ::: {.tab title="Vorlesung"}
 
