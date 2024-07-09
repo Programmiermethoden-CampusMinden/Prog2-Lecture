@@ -40,10 +40,10 @@ Prüfungsverfahren:
 
 Die nächste Klausur für "Programmiermethoden" wird am ~~Freitag, 19. Juli 2024~~ 
 **Donnerstag, 25. Juli 2024** angeboten. Die Klausur wird als digitale Klausur auf dem
-Prüfungs-ILIAS der HSBI vor Ort in Minden im Raum B40 durchgeführt. Die Prüfung beginnt um
-08:00 Uhr und dauert 90 Minuten. Ein DIN-A4-Zettel ist als Hilfsmittel zugelassen. Der
-geprüfte Stoff bezieht sich auf den zuletzt durchgeführten Kurs (Sommer 2023, s.u.). Weitere
-Informationen siehe [Prüfungsvorbereitung](admin/exams.md).
+Prüfungs-ILIAS der HSBI in Präsenz vor Ort in **Minden im Raum B40** durchgeführt. Die
+Prüfung beginnt um **08:00 Uhr und dauert 90 Minuten**. Ein DIN-A4-Zettel ist als
+Hilfsmittel zugelassen. Der geprüfte Stoff bezieht sich auf den zuletzt durchgeführten
+Kurs (Sommer 2023, s.u.). Weitere Informationen siehe [Prüfungsvorbereitung](admin/exams.md).
 
 [**Achtung neuer Termin: Donnerstag, 25. Juli 2024, 08:00-09:30 Uhr, B40 (Campus Minden)**]{.alert}
 
