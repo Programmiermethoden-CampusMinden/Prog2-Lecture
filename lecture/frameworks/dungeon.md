@@ -42,11 +42,18 @@ outcomes:
   - k3: "Erstellen eines Helden mit Animation und Bewegung"
 youtube:
   - link: "https://youtu.be/kGKDcKIDHok"
-    name: "VL How-To Dungeon: Teil 1 (Überblick): Wir schauen uns gemeinsam an, wie man sich den PM-Dungeon herunterladen und installieren kann und wie man das Spiel startet. Und wir verschaffen uns einen Überblick über die wichtigsten Packages und Klassen und verstehen die prinzipielle Arbeitsweise eines ECS."
+    name: "VL How-To Dungeon: Teil 1 (Überblick)"
   - link: "https://youtu.be/uPNt7OWpMBs"
-    name: "VL How-To Dungeon: Teil 2 (Hero): Wir bauen unseren ersten einfachen Helden!"
+    name: "VL How-To Dungeon: Teil 2 (Hero)"
   - link: "`https://youtu.be/_YVYoFgvU04`{=markdown}"
-    name: "VL How-To Dungeon: Teil 3 (Monster und Feuerbälle): Wie geht das mit Monstern und Feuerbällen? Wir programmieren ein erstes kleines System für die Bewegungssteuerung."
+    name: "VL How-To Dungeon: Teil 3 (Monster und Feuerbälle)"
+tibav:
+  - link: "https://av.tib.eu/media/67783"
+    name: "VL How-To Dungeon: Teil 1 (Überblick)"
+  - link: "https://av.tib.eu/media/67785"
+    name: "VL How-To Dungeon: Teil 2 (Hero)"
+  - link: "https://av.tib.eu/media/67784"
+    name: "VL How-To Dungeon: Teil 3 (Monster und Feuerbälle)"
 ---
 
 
