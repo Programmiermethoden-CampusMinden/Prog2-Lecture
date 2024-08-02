@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.131.0">
+    <meta name="generator" content="Relearn 6.1.0">
+    <meta name="description" content="DevDungeon: Brücken-Troll Klonen Sie das Projekt DevDungeon und laden Sie es in Ihrer IDE als Gradle-Projekt. Betrachten Sie das Sub-Projekt &#34;devDungeon&#34;. Dies ist ein von einem Studierenden (@Flamtky) erstelltes Spiel mit mehreren Leveln, in denen Sie spielerisch verschiedene Aufgaben in-game und ex-game lösen müssen.
+Starten Sie den DevDungeon mit ./gradlew devDungeon:runDevDungeon. Spielen Sie sich für diese Aufgabe durch das vierte Level (&#34;Bridge Guard Riddle&#34;)1.
+In diesem Level gibt es im oberen Teil eine Art Brücke, die von einem Brücken-Troll bewacht wird.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Blatt 10: DevDungeon &amp; Syntax Highlighting (Reguläre Ausdrücke)">
+    <meta name="twitter:description" content="DevDungeon: Brücken-Troll Klonen Sie das Projekt DevDungeon und laden Sie es in Ihrer IDE als Gradle-Projekt. Betrachten Sie das Sub-Projekt &#34;devDungeon&#34;. Dies ist ein von einem Studierenden (@Flamtky) erstelltes Spiel mit mehreren Leveln, in denen Sie spielerisch verschiedene Aufgaben in-game und ex-game lösen müssen.
+Starten Sie den DevDungeon mit ./gradlew devDungeon:runDevDungeon. Spielen Sie sich für diese Aufgabe durch das vierte Level (&#34;Bridge Guard Riddle&#34;)1.
+In diesem Level gibt es im oberen Teil eine Art Brücke, die von einem Brücken-Troll bewacht wird.">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/homework/b10.html">
+    <meta property="og:title" content="Blatt 10: DevDungeon &amp; Syntax Highlighting (Reguläre Ausdrücke)">
+    <meta property="og:description" content="DevDungeon: Brücken-Troll Klonen Sie das Projekt DevDungeon und laden Sie es in Ihrer IDE als Gradle-Projekt. Betrachten Sie das Sub-Projekt &#34;devDungeon&#34;. Dies ist ein von einem Studierenden (@Flamtky) erstelltes Spiel mit mehreren Leveln, in denen Sie spielerisch verschiedene Aufgaben in-game und ex-game lösen müssen.
+Starten Sie den DevDungeon mit ./gradlew devDungeon:runDevDungeon. Spielen Sie sich für diese Aufgabe durch das vierte Level (&#34;Bridge Guard Riddle&#34;)1.
+In diesem Level gibt es im oberen Teil eine Art Brücke, die von einem Brücken-Troll bewacht wird.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Blatt 10: DevDungeon &amp; Syntax Highlighting (Reguläre Ausdrücke)">
+    <meta itemprop="description" content="DevDungeon: Brücken-Troll Klonen Sie das Projekt DevDungeon und laden Sie es in Ihrer IDE als Gradle-Projekt. Betrachten Sie das Sub-Projekt &#34;devDungeon&#34;. Dies ist ein von einem Studierenden (@Flamtky) erstelltes Spiel mit mehreren Leveln, in denen Sie spielerisch verschiedene Aufgaben in-game und ex-game lösen müssen.
+Starten Sie den DevDungeon mit ./gradlew devDungeon:runDevDungeon. Spielen Sie sich für diese Aufgabe durch das vierte Level (&#34;Bridge Guard Riddle&#34;)1.
+In diesem Level gibt es im oberen Teil eine Art Brücke, die von einem Brücken-Troll bewacht wird.">
+    <meta itemprop="wordCount" content="972">
+    <title>Blatt 10: DevDungeon &amp; Syntax Highlighting (Reguläre Ausdrücke)</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/homework/b10.html" rel="canonical" type="text/html" title="Blatt 10: DevDungeon &amp; Syntax Highlighting (Reguläre Ausdrücke)">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1722610113" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1722610113" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1722610113" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1722610113" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1722610113" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1722610113"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1722610113";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/homework/b10.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Blatt 10: DevDungeon &amp; Syntax Highlighting (Reguläre Ausdrücke)
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Blatt 10: DevDungeon &amp; Syntax Highlighting (Reguläre Ausdrücke)</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <p><strong>(1 Punkt)</strong></p>
+    
+
+    <h2 id="devdungeon-brücken-troll">DevDungeon: Brücken-Troll</h2>
+<p>Klonen Sie das Projekt <a href="https://github.com/Dungeon-CampusMinden/dev-dungeon" rel="external" target="_blank">DevDungeon</a> und laden Sie es in Ihrer IDE als Gradle-Projekt.
+Betrachten Sie das Sub-Projekt &quot;devDungeon&quot;. Dies ist ein von einem Studierenden (<a href="https://github.com/Flamtky" rel="external" target="_blank">@Flamtky</a>)
+erstelltes Spiel mit mehreren Leveln, in denen Sie spielerisch verschiedene Aufgaben <em>in-game</em>
+und <em>ex-game</em> lösen müssen.</p>
+<p>Starten Sie den DevDungeon mit <code>./gradlew devDungeon:runDevDungeon</code>. Spielen Sie sich für
+diese Aufgabe durch das <strong>vierte Level</strong> (&quot;Bridge Guard Riddle&quot;)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>In diesem Level gibt es im oberen Teil eine Art Brücke, die von einem Brücken-Troll bewacht
+wird.</p>
+<p><a href="#R-image-1488313f59d43ddee343245652f92db7" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/homework/b10/bridgetroll-annot.png?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1488313f59d43ddee343245652f92db7"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/homework/b10/bridgetroll-annot.png?width=auto&height=auto"></a></p>
+<p>Diesen müssen Sie besiegen, um die Brücke passieren und die Belohnung (einen magischen Schild)
+zu bekommen. Den Schild können Sie im nächsten Level gut gebrauchen: Der Schild schützt Ihren
+Hero vor Schäden, auch wenn er nur einen Treffer verträgt und sich dann über eine gewisse Zeit
+regenerieren muss, bevor er wieder funktionstüchtig ist.</p>
+<p><em>Hinweis</em>: Sie können natürlich wie immer auch &quot;außen herum&quot; gehen und die Brücke vermeiden,
+um ins nächste Level zu kommen. Das ist aber ziemlich gefährlich, und Sie bekommen den
+magischen Schild nicht, den Sie für das letzte Level ziemlich dringend brauchen.</p>
+<p><strong>Hinweis</strong>: Aktuell ist das Projekt DevDungeon an einigen Stellen noch <em>Work-in-Progress</em>,
+beispielsweise fehlt häufig noch die Javadoc. Alle Gradle-Tasks, die von Checkstyle-Tasks
+abhängen (<code>checkstyleMain</code>, <code>check</code>, <code>build</code>, ...) werden deshalb fehlschlagen. Sie können den
+DevDungeon aber wie oben beschrieben mit <code>./gradlew devDungeon:runDevDungeon</code> (bzw. über den
+Task <code>devDungeon:runDevDungeon</code> aus der IDE heraus) starten.</p>
+<p><span class='alert'><strong>WICHTIG</strong>: Achten Sie bitte darauf, dass im Projektpfad <strong>keine Leerzeichen</strong> und keine
+Sonderzeichen (Umlaute o.ä.) vorkommen! Dies kann zu seltsamen Fehler führen. Bitte auch
+darauf achten, dass Sie als JDK ein <strong>Java SE 21 (LTS)</strong> verwenden.</span></p>
+<h3 id="a101-regexp-mit-dem-brücken-troll-20">A10.1: RegExp mit dem Brücken-Troll (20%)</h3>
+<p>Suchen Sie den Brücken-Troll auf und sprechen Sie ihn an. Er wird Ihnen eine Reihe von Fragen
+zum Thema reguläre Ausdrücke stellen, die Sie korrekt beantworten müssen.</p>
+<p>Machen Sie Screenshots von den Fragen und Ihren Antworten, die Sie im Praktikum vorstellen und
+diskutieren.</p>
+<h3 id="a102-command-pattern-mit-der-klasse-bridgecontrolcommand-30">A10.2: Command-Pattern mit der Klasse <em>BridgeControlCommand</em> (30%)</h3>
+<p>Leider lässt sich der Brücken-Troll offenbar weder durch Diskussion noch durch Kampf besiegen.
+Aber vielleicht können Sie die Brücke &quot;aufmachen&quot;, so dass er in die Tiefe stürzt? Die <em>Tiles</em>
+der Brücke bestehen aus sogenannten <code>PitTile</code>s: Wenn diese offen sind, fällt man hindurch;
+wenn sie geschlossen sind, kann man gefahrlos darauf treten (außer, es ist eine Verzögerung
+aktiviert :-) ... Allerdings müssten Sie danach die Brücke auch wieder schließen, um selbst
+darüber hinweg laufen zu können ...</p>
+<p>Schauen Sie sich die Info-Box am Eingang zur Brücke an. Der Hebel bedient mit Hilfe des
+Command-Patterns die Brücke. Für die <em>Commands</em> gibt es die Klasse <code>BridgeControlCommand</code> im
+Package <code>entities.levercommands</code>, wobei die Methode <code>BridgeControlCommand#execute</code> das
+<em>Command</em> ausführt und die Methode <code>BridgeControlCommand#undo</code> das <em>Command</em> wieder rückgängig
+macht.</p>
+<p>Implementieren Sie die beiden Methoden und starten Sie das Spiel erneut.</p>
+<p><strong>Hinweis</strong>: Mit der Methode <code>Game.currentLevel().tileAt()</code> können Sie auf ein <code>Tile</code> an einer
+bestimmte Koordinate zugreifen.</p>
+<h2 id="a103-syntaxhighlighting-mit-regexp-50">A10.3: Syntaxhighlighting mit RegExp (50%)</h2>
+<p>Klonen Sie die <a href="https://github.com/Programmiermethoden-CampusMinden/prog2_ybel_highlighting" rel="external" target="_blank">Vorgaben &quot;Syntax Highlighting&quot;</a> und laden Sie das Projekt als Gradle-Projekt
+in Ihre IDE.</p>
+<p>Im Package <code>highlighting</code> finden Sie einige Klassen, mit denen man ein einfaches Syntax
+Highlighting durchführen kann. Dazu arbeitet der Lexer mit sogenannten &quot;Token&quot; (Instanzen der
+Klasse <code>Token</code>). Diese haben einen regulären Ausdruck, um bestimmte Teile im Code zu erkennen,
+beispielsweise Keywords oder Kommentare und anderes. Der Lexer wendet alle Token auf den
+aktuellen Eingabezeichenstrom an (Methode <code>Token#test()</code>), und die Token prüfen mit &quot;ihrem&quot;
+regulären Ausdruck, ob die jeweils passende Eingabesequenz vorliegt. Die regulären Ausdrücke
+übergeben Sie dem <code>Token</code>-Konstruktor als entsprechendes <code>Pattern</code>-Objekt.</p>
+<ul>
+<li>
+<p>Die Klasse <code>Token</code> speichert dazu ein <code>Pattern</code> (einen vorkompilierten regulären Ausdruck)
+sowie eine Farbe, die später beim Syntax Highlighting für dieses Token genutzt werden
+soll. Bei der Anwendung eines Tokens auf einen String (Methode <code>Token#test</code>) wird das
+gespeicherte Pattern auf den String angewendet und eine Liste aller passenden Stellen im
+String zurückgegeben (<code>List&lt;Lexem&gt;</code>).</p>
+<p>Neben dem jeweiligen Pattern kennt jedes Token noch eine <code>matchingGroup</code>: Dies ist ein
+Integer, der die relevante Matching-Group im regulären Ausdruck bezeichnet. Wenn Sie keine
+eigenen Gruppen in einem regulären Ausdruck eingebaut haben, nutzen Sie hier einfach den
+Wert 0.</p>
+<p>Zusätzlich kennt jedes Token noch die Farbe für das Syntax-Highlighting in der von uns als
+Vorgabe realisierten Swing-GUI (Instanz von <code>Color</code>).</p>
+</li>
+<li>
+<p>Der <code>Lexer</code> sammelt eine Liste von <code>Token</code> und wendet sie in der übergebenen Reihenfolge
+auf den Eingabestring an (Methode <code>Lexer#tokenize</code>).</p>
+</li>
+<li>
+<p>Die Klasse <code>LexerUI</code> dient zum Anzeigen des ursprünglichen Textes und des Ergebnisses.
+Hier sieht man recht schnell, ob die Pattern bereits passen ... Man kann auf der linken
+Seite auch den Text editieren, und auf der rechten Seite des Fensters wird dann
+automatisch das Syntax Highlighting erneut durchgeführt.</p>
+</li>
+<li>
+<p>Die Klasse <code>Main</code> dient zum Definieren der konkreten Token (=&gt; Aufgabe) und auch zum
+Starten der Demo.</p>
+</li>
+</ul>
+<p><strong>Aufgabe</strong>:
+Definieren Sie alle in <code>Main#setupTokens</code> genannten Token, indem Sie jeweils einen passenden
+regulären Ausdruck formulieren und als Pattern in den Konstruktor geben zusammen mit einer
+Farbe, mit der dieses Token hervorgehoben werden soll:</p>
+<ul>
+<li>Strings: alles zwischen <code>&quot;</code> und dem nächsten <code>&quot;</code></li>
+<li>Character: genau ein Zeichen zwischen <code>'</code> und <code>'</code></li>
+<li>Keywords: <code>package</code>, <code>import</code>, <code>class</code>, <code>public</code>, <code>private</code>, <code>final</code>, <code>return</code>, <code>null</code>,
+<code>new</code> (jeweils freistehend, also nicht &quot;newx&quot; o.ä.)</li>
+<li>Annotation: beginnt mit <code>@</code>, enthält Buchstaben oder Minuszeichen</li>
+<li>Einzeiliger Kommentar: beginnend mit <code>//</code> bis zum Zeilenende</li>
+<li>Mehrzeiliger Kommentar: alles zwischen <code>/*</code> und dem nächsten <code>*/</code></li>
+<li>Javadoc-Kommentar: alles zwischen <code>/**</code> und dem nächsten <code>*/</code></li>
+</ul>
+<p>Sie können auch mit <em>Matching Groups</em> arbeiten und im Token eine bestimmte Gruppe hervorheben
+lassen. Dazu geben Sie einfach die Nummer der Matching-Group mit in den Token-Konstruktor.
+(Wenn Sie nichts übergeben, wird der gesamte Match genommen - das entspricht dem Wert 0).</p>
+<p>Sollten Token ineinander geschachtelt sein, erkennt der Lexer dies automatisch. Sie brauchen
+sich keine Gedanken dazu machen, in welcher Reihenfolge die Token eingefügt und abgearbeitet
+werden. Beispiel: Im regulären Ausdruck für den einzeiligen Kommentar brauchen Sie keine
+Keywords, Annotationen, Strings usw. erkennen.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Das vierte richtige Level, also das vierte Level <em>nach</em> dem Demo-Level. Oder eben das
+fünfte Level, wenn man das Demo-Level mitzählt :-)&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1722610113" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1722610113" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1722610113"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1722610113" defer></script>
+  </body>
+</html>

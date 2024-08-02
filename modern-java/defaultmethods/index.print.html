@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.131.0">
+    <meta name="generator" content="Relearn 6.1.0">
+    <meta name="description" content="Problem: Etablierte API (Interfaces) erweitern interface Klausur { void anmelden(Studi s); void abmelden(Studi s); }=&gt; Nachträglich noch void schreiben(Studi s); ergänzen?
+Wenn ein Interface nachträglich erweitert wird, müssen alle Kunden (also alle Klassen, die das Interface implementieren) auf die neuen Signaturen angepasst werden. Dies kann viel Aufwand verursachen und API-Änderungen damit unmöglich machen.
+Default-Methoden: Interfaces mit Implementierung Seit Java8 können Interfaces auch Methoden implementieren. Es gibt zwei Varianten: Default-Methoden und statische Methoden.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Interfaces: Default-Methoden">
+    <meta name="twitter:description" content="Problem: Etablierte API (Interfaces) erweitern interface Klausur { void anmelden(Studi s); void abmelden(Studi s); }=&gt; Nachträglich noch void schreiben(Studi s); ergänzen?
+Wenn ein Interface nachträglich erweitert wird, müssen alle Kunden (also alle Klassen, die das Interface implementieren) auf die neuen Signaturen angepasst werden. Dies kann viel Aufwand verursachen und API-Änderungen damit unmöglich machen.
+Default-Methoden: Interfaces mit Implementierung Seit Java8 können Interfaces auch Methoden implementieren. Es gibt zwei Varianten: Default-Methoden und statische Methoden.">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html">
+    <meta property="og:title" content="Interfaces: Default-Methoden">
+    <meta property="og:description" content="Problem: Etablierte API (Interfaces) erweitern interface Klausur { void anmelden(Studi s); void abmelden(Studi s); }=&gt; Nachträglich noch void schreiben(Studi s); ergänzen?
+Wenn ein Interface nachträglich erweitert wird, müssen alle Kunden (also alle Klassen, die das Interface implementieren) auf die neuen Signaturen angepasst werden. Dies kann viel Aufwand verursachen und API-Änderungen damit unmöglich machen.
+Default-Methoden: Interfaces mit Implementierung Seit Java8 können Interfaces auch Methoden implementieren. Es gibt zwei Varianten: Default-Methoden und statische Methoden.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Interfaces: Default-Methoden">
+    <meta itemprop="description" content="Problem: Etablierte API (Interfaces) erweitern interface Klausur { void anmelden(Studi s); void abmelden(Studi s); }=&gt; Nachträglich noch void schreiben(Studi s); ergänzen?
+Wenn ein Interface nachträglich erweitert wird, müssen alle Kunden (also alle Klassen, die das Interface implementieren) auf die neuen Signaturen angepasst werden. Dies kann viel Aufwand verursachen und API-Änderungen damit unmöglich machen.
+Default-Methoden: Interfaces mit Implementierung Seit Java8 können Interfaces auch Methoden implementieren. Es gibt zwei Varianten: Default-Methoden und statische Methoden.">
+    <meta itemprop="wordCount" content="985">
+    <title>Interfaces: Default-Methoden</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html" rel="canonical" type="text/html" title="Interfaces: Default-Methoden">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1722610113" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1722610113" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1722610113" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1722610113" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1722610113" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1722610113"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1722610113";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Interfaces: Default-Methoden
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Interfaces: Default-Methoden</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Seit Java8 können Methoden in Interfaces auch fertig implementiert sein: Sogenannte
+<strong>Default-Methoden</strong>.</p>
+<p>Dazu werden die Methoden mit dem neuen Schlüsselwort <code>default</code> gekennzeichnet. Die
+Implementierung wird an die das Interface implementierenden Klassen (oder Interfaces)
+vererbt und kann bei Bedarf überschrieben werden.</p>
+<p>Da eine Klasse von einer anderen Klasse erben darf, aber mehrere Interfaces implementieren
+kann, könnte es zu einer Mehrfachvererbung einer Methode kommen: Eine Methode könnte
+beispielsweise in verschiedenen Interfaces als Default-Methode angeboten werden, und wenn
+eine Klasse diese Interfaces implementiert, steht eine Methode mit der selben Signatur
+auf einmal mehrfach zur Verfügung. Dies muss (u.U. manuell) aufgelöst werden.</p>
+<p>Auflösung von Mehrfachvererbung:</p>
+<ul>
+<li>Regel 1: Klassen gewinnen</li>
+<li>Regel 2: Sub-Interfaces gewinnen</li>
+<li>Regel 3: Methode explizit auswählen</li>
+</ul>
+<p>Aktuell ist der Unterschied zu abstrakten Klassen: Interfaces können <strong>keinen Zustand</strong>
+haben, d.h. keine Attribute/Felder.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/qQ8BPkL9X5o' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Default-Methoden</a></li> <li><a href='https://youtu.be/gm6ttKlAEJc' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Regel 1</a></li> <li><a href='https://youtu.be/3j9i7iMVmMM' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Regel 2</a></li> <li><a href='https://youtu.be/J3gJnwz8Rf0' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Regel 3</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/a86bc2fc9d692f6ca307cfabd09c7860c06b8fd53b60e281586c8b51414b7139d061328b2160a988045952f92fc13a921b6148c0dd2f790ea7324634c491006e' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Default-Methoden</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Interfaces mit Default-Methoden, Unterschied zu abstrakten Klassen</li> <li>(K2) Problem der Mehrfachvererbung</li> <li>(K3) Erstellen von Interfaces mit Default-Methoden</li> <li>(K3) Regeln zum Auflösen der Mehrfachvererbung</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="problem-etablierte-api-interfaces-erweitern">Problem: Etablierte API (Interfaces) erweitern</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Klausur</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">anmelden</span>(Studi s);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">abmelden</span>(Studi s);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>=&gt; Nachträglich noch <code>void schreiben(Studi s);</code> ergänzen?</p>
+<p>Wenn ein Interface nachträglich erweitert wird, müssen alle Kunden (also
+alle Klassen, die das Interface implementieren) auf die neuen Signaturen
+angepasst werden. Dies kann viel Aufwand verursachen und API-Änderungen
+damit unmöglich machen.</p>
+<h2 id="default-methoden-interfaces-mit-implementierung">Default-Methoden: Interfaces mit Implementierung</h2>
+<p>Seit Java8 können Interfaces auch Methoden implementieren.
+Es gibt zwei Varianten: Default-Methoden und statische Methoden.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Klausur</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">anmelden</span>(Studi s);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">abmelden</span>(Studi s);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">schreiben</span>(Studi s) {
+</span></span><span style="display:flex;"><span>        ...     <span style="color:#75715e">// Default-Implementierung</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wuppie</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> java.<span style="color:#a6e22e">lang</span>.<span style="color:#a6e22e">UnsupportedOperationException</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Methoden können in Interfaces seit Java8 implementiert werden. Für Default-Methoden
+muss das Schlüsselwort <code>default</code> vor die Signatur gesetzt werden. Klassen, die das
+Interface implementieren, können diese Default-Implementierung erben oder selbst
+neu implementieren (überschreiben). Alternativ kann die Klasse eine Default-Methode
+neu <em>deklarieren</em> und wird damit zur abstrakten Klasse.</p>
+<p>Dies ähnelt abstrakten Klassen. Allerdings kann in abstrakten Klassen neben dem
+Verhalten (implementierten Methoden) auch Zustand über die Attribute gespeichert werden.</p>
+<h2 id="problem-mehrfachvererbung">Problem: Mehrfachvererbung</h2>
+<p>Drei Regeln zum Auflösen bei Konflikten:</p>
+<ol>
+<li><strong>Klassen gewinnen</strong>:
+Methoden aus Klasse oder Superklasse haben höhere Priorität als Default-Methoden</li>
+<li><strong>Sub-Interfaces gewinnen</strong>:
+Methode aus am meisten spezialisiertem Interface mit Default-Methode wird gewählt
+Beispiel: Wenn <code>B extends A</code> dann ist <code>B</code> spezialisierter als <code>A</code></li>
+<li>Sonst: Klasse muss <strong>Methode explizit auswählen</strong>:
+Methode überschreiben und gewünschte (geerbte) Variante aufrufen:
+<code>X.super.m(...)</code> (<code>X</code> ist das gewünschte Interface)</li>
+</ol>
+<p>Auf den folgenden Folien wird dies anhand kleiner Beispiele verdeutlicht.</p>
+<h2 id="auflösung-mehrfachvererbung-1-klassen-gewinnen">Auflösung Mehrfachvererbung: 1. Klassen gewinnen</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> String <span style="color:#a6e22e">hello</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;A&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">hello</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;C&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">E</span> <span style="color:#66d9ef">extends</span> C <span style="color:#66d9ef">implements</span> A {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/** Mehrfachvererbung: 1. Klassen gewinnen */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DefaultTest1</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>        String e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> E().<span style="color:#a6e22e">hello</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/defaultmethods/rule1/DefaultTest1.java" target="_blank"><span class="title">Demo: defaultmethods.rule1.DefaultTest1</span></a></span></div>
+<p>Die Klasse <code>E</code> erbt sowohl von Klasse <code>C</code> als auch vom Interface <code>A</code> die Methode <code>hello()</code>
+(Mehrfachvererbung). In diesem Fall &quot;gewinnt&quot; die Implementierung aus Klasse <code>C</code>.</p>
+<p><strong>1. Regel</strong>: Klassen gewinnen immer. Deklarationen einer Methode in einer Klasse oder
+einer Oberklasse haben Vorrang von allen Default-Methoden.</p>
+<h2 id="auflösung-mehrfachvererbung-2-sub-interfaces-gewinnen">Auflösung Mehrfachvererbung: 2. Sub-Interfaces gewinnen</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> String <span style="color:#a6e22e">hello</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;A&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">B</span> <span style="color:#66d9ef">extends</span> A {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">default</span> String <span style="color:#a6e22e">hello</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;B&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">D</span> <span style="color:#66d9ef">implements</span> A, B {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/** Mehrfachvererbung: 2. Sub-Interfaces gewinnen */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DefaultTest2</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>        String e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> D().<span style="color:#a6e22e">hello</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/defaultmethods/rule2/DefaultTest2.java" target="_blank"><span class="title">Demo: defaultmethods.rule2.DefaultTest2</span></a></span></div>
+<p>Die Klasse <code>D</code> erbt sowohl vom Interface <code>A</code> als auch vom Interface <code>B</code> die Methode <code>hello()</code>
+(Mehrfachvererbung). In diesem Fall &quot;gewinnt&quot; die Implementierung aus Klasse <code>B</code>: Interface
+<code>B</code> ist spezialisierter als <code>A</code>.</p>
+<p><strong>2. Regel</strong>: Falls Regel 1 nicht zutrifft, gewinnt die Default-Methode, die am meisten
+spezialisiert ist.</p>
+<h2 id="auflösung-mehrfachvererbung-3-methode-explizit-auswählen">Auflösung Mehrfachvererbung: 3. Methode explizit auswählen</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> String <span style="color:#a6e22e">hello</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;A&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">B</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> String <span style="color:#a6e22e">hello</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;B&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">D</span> <span style="color:#66d9ef">implements</span> A, B {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">hello</span>() { <span style="color:#66d9ef">return</span> A.<span style="color:#a6e22e">super</span>.<span style="color:#a6e22e">hello</span>(); }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/** Mehrfachvererbung: 3. Methode explizit auswählen */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DefaultTest3</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>        String e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> D().<span style="color:#a6e22e">hello</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/defaultmethods/rule3/DefaultTest3.java" target="_blank"><span class="title">Demo: defaultmethods.rule3.DefaultTest3</span></a></span></div>
+<p>Die Klasse <code>D</code> erbt sowohl vom Interface <code>A</code> als auch vom Interface <code>B</code> die Methode <code>hello()</code>
+(Mehrfachvererbung). In diesem Fall <em>muss</em> zur Auflösung die Methode in <code>D</code> neu implementiert
+werden und die gewünschte geerbte Methode explizit aufgerufen werden. (Wenn dies unterlassen
+wird, führt das selbst bei Nicht-Nutzung der Methode <code>hello()</code> zu einem Compiler-Fehler!)</p>
+<p><em>Achtung</em>: Der Aufruf der Default-Methode aus Interface <code>A</code> erfolgt mit <code>A.super.hello();</code>
+(nicht einfach durch <code>A.hello();</code>)!</p>
+<p><strong>3. Regel</strong>: Falls weder Regel 1 noch 2 zutreffen bzw. die Auflösung noch uneindeutig ist,
+muss man manuell durch die explizite Angabe der gewünschten Methode auflösen.</p>
+<h2 id="quiz-was-kommt-hier-raus">Quiz: Was kommt hier raus?</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> String <span style="color:#a6e22e">hello</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;A&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">B</span> <span style="color:#66d9ef">extends</span> A {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">default</span> String <span style="color:#a6e22e">hello</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;B&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span> <span style="color:#66d9ef">implements</span> B {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span> <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">hello</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;C&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">D</span> <span style="color:#66d9ef">extends</span> C <span style="color:#66d9ef">implements</span> A, B {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/** Quiz Mehrfachvererbung */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DefaultTest</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>        String e <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> D().<span style="color:#a6e22e">hello</span>(); <span style="color:#75715e">// ???</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Die Klasse <code>D</code> erbt sowohl von Klasse <code>C</code> als auch von den Interfaces <code>A</code> und <code>B</code> die Methode
+<code>hello()</code> (Mehrfachvererbung). In diesem Fall &quot;gewinnt&quot; die Implementierung aus Klasse <code>C</code>: Klassen
+gewinnen immer (Regel 1).</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/defaultmethods/quiz/DefaultTest.java" target="_blank"><span class="title">Beispiel: defaultmethods.quiz.DefaultTest</span></a></span></div>
+<h2 id="statische-methoden-in-interfaces">Statische Methoden in Interfaces</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Collection</span><span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Iterable<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">add</span>(E e);
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Collections</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Collections</span>() { }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">addAll</span>(Collection<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> T<span style="color:#f92672">&gt;</span> c, T... elements) {...}
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Typisches Pattern in Java: Interface plus Utility-Klasse (Companion-Klasse) mit statischen Hilfsmethoden
+zum einfacheren Umgang mit Instanzen des Interfaces (mit Objekten, deren Klasse das Interface implementiert).
+Beispiel: <code>Collections</code> ist eine Hilfs-Klasse zum Umgang mit <code>Collection</code>-Objekten.</p>
+<p>Seit Java8 können in Interfaces neben Default-Methoden auch statische Methoden implementiert werden.</p>
+<p>Die Hilfsmethoden können jetzt ins Interface wandern =&gt; Utility-Klassen werden obsolet ... Aus
+Kompatibilitätsgründen würde man die bisherige Companion-Klasse weiterhin anbieten, wobei die Implementierungen
+auf die statischen Methoden im Interface verweisen (<em>SKIZZE, nicht real!</em>):</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">CollectionX</span><span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> Iterable<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">add</span>(E e);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">addAll</span>(CollectionX<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> T<span style="color:#f92672">&gt;</span> c, T... elements) { ... }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CollectionsX</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">addAll</span>(CollectionX<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> T<span style="color:#f92672">&gt;</span> c, T... elements) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> CollectionX.<span style="color:#a6e22e">addAll</span>(c, elements);  <span style="color:#75715e">// Verweis auf Interface</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="interfaces-vs-abstrakte-klassen">Interfaces vs. Abstrakte Klassen</h2>
+<ul>
+<li>
+<p><strong>Abstrakte Klassen</strong>: Schnittstelle und Verhalten und Zustand</p>
+</li>
+<li>
+<p><strong>Interfaces</strong>:</p>
+<ul>
+<li>vor Java 8 nur Schnittstelle</li>
+<li>ab Java 8 Schnittstelle und Verhalten</li>
+</ul>
+<p>Unterschied zu abstrakten Klassen: Kein Zustand, d.h. keine Attribute</p>
+</li>
+<li>
+<p>Design:</p>
+<ul>
+<li>Interfaces sind beinahe wie abstrakte Klassen, nur ohne Zustand</li>
+<li>Klassen können nur von <strong>einer</strong> (abstrakten) Klasse erben, aber
+<strong>viele</strong> Interfaces implementieren</li>
+</ul>
+</li>
+</ul>
+<h2 id="wrap-up">Wrap-Up</h2>
+<p>Seit Java8: Interfaces mit Implementierung: <strong>Default-Methoden</strong></p>
+<ul>
+<li>Methoden mit dem Schlüsselwort <code>default</code> können Implementierung im Interface haben</li>
+<li>Die Implementierung wird vererbt und kann bei Bedarf überschrieben werden</li>
+<li>Auflösung von Mehrfachvererbung:
+<ul>
+<li>Regel 1: Klassen gewinnen</li>
+<li>Regel 2: Sub-Interfaces gewinnen</li>
+<li>Regel 3: Methode explizit auswählen</li>
+</ul>
+</li>
+<li>Unterschied zu abstrakten Klassen: <strong>Kein Zustand</strong></li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106522&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Default-Methoden (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+<p>
+Erklären Sie die Code-Schnipsel in der
+<a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/modern-java/src/challenges/defaults" rel="external" target="_blank">Vorgabe</a>
+und die jeweils entstehenden Ausgaben.</div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Urma2014'>[Urma2014] <strong>Java 8 in Action: Lambdas, Streams, and Functional-Style Programming</strong><br>Urma, R.-G. und Fusco, M. und Mycroft, A., Manning Publications, 2014. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-6172-9199-9' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-1-6172-9199-9</a>.<br><em>Kapitel 9: Default Methods</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1722610113" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1722610113" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1722610113"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1722610113" defer></script>
+  </body>
+</html>

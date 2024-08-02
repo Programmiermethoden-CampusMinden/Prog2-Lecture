@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.131.0">
+    <meta name="generator" content="Relearn 6.1.0">
+    <meta name="description" content="Problem: Sortieren einer Studi-Liste List&lt;Studi&gt; sl = new ArrayList&lt;&gt;(); // Liste sortieren? sl.sort(???); // Parameter: java.util.Comparator&lt;Studi&gt;public class MyCompare implements Comparator&lt;Studi&gt; { @Override public int compare(Studi o1, Studi o2) { return o1.getCredits() - o2.getCredits(); } }// Liste sortieren? MyCompare mc = new MyCompare(); sl.sort(mc);Da Comparator&lt;T&gt; ein Interface ist, muss man eine extra Klasse anlegen, die die abstrakte Methode aus dem Interface implementiert und ein Objekt von dieser Klasse erzeugen und dieses dann der sort()-Methode übergeben.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Lambda-Ausdrücke und funktionale Interfaces">
+    <meta name="twitter:description" content="Problem: Sortieren einer Studi-Liste List&lt;Studi&gt; sl = new ArrayList&lt;&gt;(); // Liste sortieren? sl.sort(???); // Parameter: java.util.Comparator&lt;Studi&gt;public class MyCompare implements Comparator&lt;Studi&gt; { @Override public int compare(Studi o1, Studi o2) { return o1.getCredits() - o2.getCredits(); } }// Liste sortieren? MyCompare mc = new MyCompare(); sl.sort(mc);Da Comparator&lt;T&gt; ein Interface ist, muss man eine extra Klasse anlegen, die die abstrakte Methode aus dem Interface implementiert und ein Objekt von dieser Klasse erzeugen und dieses dann der sort()-Methode übergeben.">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html">
+    <meta property="og:title" content="Lambda-Ausdrücke und funktionale Interfaces">
+    <meta property="og:description" content="Problem: Sortieren einer Studi-Liste List&lt;Studi&gt; sl = new ArrayList&lt;&gt;(); // Liste sortieren? sl.sort(???); // Parameter: java.util.Comparator&lt;Studi&gt;public class MyCompare implements Comparator&lt;Studi&gt; { @Override public int compare(Studi o1, Studi o2) { return o1.getCredits() - o2.getCredits(); } }// Liste sortieren? MyCompare mc = new MyCompare(); sl.sort(mc);Da Comparator&lt;T&gt; ein Interface ist, muss man eine extra Klasse anlegen, die die abstrakte Methode aus dem Interface implementiert und ein Objekt von dieser Klasse erzeugen und dieses dann der sort()-Methode übergeben.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Lambda-Ausdrücke und funktionale Interfaces">
+    <meta itemprop="description" content="Problem: Sortieren einer Studi-Liste List&lt;Studi&gt; sl = new ArrayList&lt;&gt;(); // Liste sortieren? sl.sort(???); // Parameter: java.util.Comparator&lt;Studi&gt;public class MyCompare implements Comparator&lt;Studi&gt; { @Override public int compare(Studi o1, Studi o2) { return o1.getCredits() - o2.getCredits(); } }// Liste sortieren? MyCompare mc = new MyCompare(); sl.sort(mc);Da Comparator&lt;T&gt; ein Interface ist, muss man eine extra Klasse anlegen, die die abstrakte Methode aus dem Interface implementiert und ein Objekt von dieser Klasse erzeugen und dieses dann der sort()-Methode übergeben.">
+    <meta itemprop="wordCount" content="1197">
+    <title>Lambda-Ausdrücke und funktionale Interfaces</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html" rel="canonical" type="text/html" title="Lambda-Ausdrücke und funktionale Interfaces">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1722610113" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1722610113" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1722610113" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1722610113" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1722610113" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1722610113"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1722610113";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Lambda-Ausdrücke und funktionale Interfaces
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Lambda-Ausdrücke und funktionale Interfaces</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Mit einer anonymen inneren Klasse erstellt man gewissermaßen ein Objekt einer &quot;Wegwerf&quot;-Klasse:
+Man leitet <em>on-the-fly</em> von einem Interface ab oder erweitert eine Klasse und implementiert die
+benötigten Methoden und erzeugt von dieser Klasse sofort eine Instanz (Objekt). Diese neue Klasse
+ist im restlichen Code nicht sichtbar.</p>
+<p>Anonyme innere Klassen sind beispielsweise in Swing recht nützlich, wenn man einer Komponente einen
+Listener mitgeben will: Hier erzeugt man eine anonyme innere Klasse basierend auf dem passenden
+Listener-Interface, implementiert die entsprechenden Methoden und übergibt das mit dieser Klasse
+erzeugte Objekt als neuen Listener der Swing-Komponente.</p>
+<p>Mit Java 8 können unter gewissen Bedingungen diese anonymen inneren Klassen zu Lambda-Ausdrücken
+(und Methoden-Referenzen) vereinfacht werden. Dazu muss die anonyme innere Klasse ein sogenanntes
+<strong>funktionales Interface</strong> implementieren.</p>
+<p>Funktionale Interfaces sind Interfaces mit <em>genau einer abstrakten Methode</em>. Es können beliebig
+viele Default-Methoden im Interface enthalten sein, und es können <code>public</code> sichtbare abstrakte
+Methoden von <code>java.lang.Object</code> geerbt/überschrieben werden.</p>
+<p>Die Lambda-Ausdrücke entsprechen einer anonymen Methode: Die Parameter werden aufgelistet (in
+Klammern), und hinter einem Pfeil kommt entweder <em>ein</em> Ausdruck (Wert - gleichzeitig Rückgabewert
+des Lambda-Ausdrucks) oder beliebig viele Anweisungen (in geschweiften Klammern, mit Semikolon):</p>
+<ul>
+<li>Form 1: <code>(parameters)  -&gt;  expression</code></li>
+<li>Form 2: <code>(parameters)  -&gt;  { statements; }</code></li>
+</ul>
+<p>Der Lambda-Ausdruck muss von der Signatur her genau der einen abstrakten Methode im unterliegenden
+funktionalen Interface entsprechen.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/Wd8KG7xtp4c' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Lambda-Ausdrücke und funktionale Interfaces</a></li> <li><a href='https://youtu.be/QEXpQwRYoYc' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Anonyme innere Klasse</a></li> <li><a href='https://youtu.be/2LJIxsVw4pM' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Lambda-Ausdruck</a></li> <li><a href='https://youtu.be/93O1oDL5_5c' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Funktionale Interfaces selbst definiert</a></li> <li><a href='https://youtu.be/jzEw8IH8Mfc' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Vordefinierte funktionale Interfaces im JDK</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/d2398cc8e1279e6b6bf1df06bd30b731e714d04d10e15b87a5f89aa07cbaf97978bb12f82ea0c7eff8a3133eb65134521933218fb94856fb6e8a6dc187dded28' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Lambda-Ausdrücke und funktionale Interfaces</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Funktionales Interfaces (Definition)</li> <li>(K3) Einsatz innerer und anonymer Klassen</li> <li>(K3) Erstellen eigener funktionaler Interfaces</li> <li>(K3) Einsatz von Lambda-Ausdrücken</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="problem-sortieren-einer-studi-liste">Problem: Sortieren einer Studi-Liste</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span> sl <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Liste sortieren?</span>
+</span></span><span style="display:flex;"><span>sl.<span style="color:#a6e22e">sort</span>(<span style="color:#f92672">???</span>);  <span style="color:#f92672">//</span> Parameter: java.<span style="color:#a6e22e">util</span>.<span style="color:#a6e22e">Comparator</span><span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span></span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyCompare</span> <span style="color:#66d9ef">implements</span> Comparator<span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(Studi o1, Studi o2) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> o1.<span style="color:#a6e22e">getCredits</span>() <span style="color:#f92672">-</span> o2.<span style="color:#a6e22e">getCredits</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Liste sortieren?</span>
+</span></span><span style="display:flex;"><span>MyCompare mc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyCompare();
+</span></span><span style="display:flex;"><span>sl.<span style="color:#a6e22e">sort</span>(mc);</span></span></code></pre></div><p>Da <code>Comparator&lt;T&gt;</code> ein Interface ist, muss man eine extra Klasse anlegen, die die
+abstrakte Methode aus dem Interface implementiert und ein Objekt von dieser Klasse
+erzeugen und dieses dann der <code>sort()</code>-Methode übergeben.</p>
+<p>Die Klasse bekommt wie in Java üblich eine eigene Datei und ist damit in der
+Package-Struktur offen sichtbar und &quot;verstopft&quot; mir damit die Strukturen: Diese
+Klasse ist doch nur eine Hilfsklasse ... Noch schlimmer: Ich brauche einen Namen
+für diese Klasse!</p>
+<p>Den ersten Punkt könnte man über verschachtelte Klassen lösen: Die Hilfsklasse
+wird innerhalb der Klasse definiert, die das Objekt benötigt. Für den zweiten
+Punkt brauchen wir mehr Anlauf ...</p>
+<h2 id="erinnerung-verschachtelte-klassen-nested-classes">Erinnerung: Verschachtelte Klassen (&quot;<em>Nested Classes</em>&quot;)</h2>
+<p>Man kann Klassen innerhalb von Klassen definieren: Verschachtelte Klassen.</p>
+<ul>
+<li>Implizite Referenz auf Instanz der äußeren Klasse, Zugriff auf <strong>alle</strong> Elemente</li>
+<li><strong>Begriffe</strong>:
+<ul>
+<li>&quot;normale&quot; innere Klassen: &quot;<em>inner classes</em>&quot;</li>
+<li>statische innere Klassen: &quot;<em>static nested classes</em>&quot;</li>
+</ul>
+</li>
+<li>Einsatzzweck:
+<ul>
+<li>Hilfsklassen: Zusätzliche Funktionalität kapseln; Nutzung <strong>nur</strong> in äußerer Klasse</li>
+<li>Kapselung von Rückgabewerten</li>
+</ul>
+</li>
+</ul>
+<p>Sichtbarkeit: Wird u.U. von äußerer Klasse &quot;überstimmt&quot;</p>
+<h3 id="innere-klassen-inner-classes">Innere Klassen (&quot;<em>Inner Classes</em>&quot;)</h3>
+<ul>
+<li>Objekt der äußeren Klasse muss existieren</li>
+<li>Innere Klasse ist normales Member der äußeren Klasse</li>
+<li>Implizite Referenz auf Instanz äußerer Klasse</li>
+<li>Zugriff auf <strong>alle</strong> Elemente der äußeren Klasse</li>
+<li>Sonderfall: Definition innerhalb von Methoden (&quot;local classes&quot;)
+<ul>
+<li>Nur innerhalb der Methode sichtbar</li>
+<li>Kennt zusätzlich <code>final</code> Attribute der Methode</li>
+</ul>
+</li>
+</ul>
+<p>Beispiel:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Outer</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Inner</span> {
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Outer.<span style="color:#a6e22e">Inner</span> inner <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Outer().<span style="color:#a6e22e">new</span> Inner();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/nested/StudiListNested.java" target="_blank"><span class="title">Beispiel mit Iterator als innere Klasse: nested.StudiListNested</span></a></span></div>
+<h3 id="statische-innere-klassen-static-nested-classes">Statische innere Klassen (&quot;<em>Static Nested Classes</em>&quot;)</h3>
+<ul>
+<li>Keine implizite Referenz auf Objekt</li>
+<li>Nur Zugriff auf Klassenmethoden und -attribute</li>
+</ul>
+<p>Beispiel:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Outer</span> {
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StaticNested</span> {
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Outer.<span style="color:#a6e22e">StaticNested</span> nested <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Outer.<span style="color:#a6e22e">StaticNested</span>();</span></span></code></pre></div><h2 id="lösung-comparator-als-anonyme-innere-klasse">Lösung: Comparator als anonyme innere Klasse</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span> sl <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Parametrisierung mit anonymer Klasse</span>
+</span></span><span style="display:flex;"><span>sl.<span style="color:#a6e22e">sort</span>(
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Comparator<span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(Studi o1, Studi o2) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> o1.<span style="color:#a6e22e">getCredits</span>() <span style="color:#f92672">-</span> o2.<span style="color:#a6e22e">getCredits</span>();
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        });  <span style="color:#f92672">//</span> Semikolon nicht vergessen<span style="color:#f92672">!!!</span></span></span></code></pre></div><p>=&gt; Instanz einer anonymen inneren Klasse, die das Interface <code>Comparator&lt;Studi&gt;</code> implementiert</p>
+<ul>
+<li>Für spezielle, einmalige Aufgabe: nur eine Instanz möglich</li>
+<li>Kein Name, kein Konstruktor, oft nur eine Methode</li>
+<li>Müssen Interface implementieren oder andere Klasse erweitern
+<ul>
+<li>Achtung Schreibweise: ohne <code>implements</code> oder <code>extends</code>!</li>
+</ul>
+</li>
+<li>Konstruktor kann auch Parameter aufweisen</li>
+<li>Zugriff auf alle Attribute der äußeren Klasse plus alle <code>final</code> lokalen
+Variablen</li>
+<li>Nutzung typischerweise bei GUIs: Event-Handler etc.</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/nested/DemoAnonymousInnerClass.java" target="_blank"><span class="title">Demo: nested.DemoAnonymousInnerClass</span></a></span></div>
+<h2 id="vereinfachung-mit-lambda-ausdruck">Vereinfachung mit Lambda-Ausdruck</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span> sl <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Parametrisierung mit anonymer Klasse</span>
+</span></span><span style="display:flex;"><span>sl.<span style="color:#a6e22e">sort</span>(
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">new</span> Comparator<span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span>() {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(Studi o1, Studi o2) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> o1.<span style="color:#a6e22e">getCredits</span>() <span style="color:#f92672">-</span> o2.<span style="color:#a6e22e">getCredits</span>();
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        });  <span style="color:#75715e">// Semikolon nicht vergessen!!!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Parametrisierung mit Lambda-Ausdruck</span>
+</span></span><span style="display:flex;"><span>sl.<span style="color:#a6e22e">sort</span>( (Studi o1, Studi o2) <span style="color:#f92672">-&gt;</span> o1.<span style="color:#a6e22e">getCredits</span>() <span style="color:#f92672">-</span> o2.<span style="color:#a6e22e">getCredits</span>() );</span></span></code></pre></div><p><strong>Anmerkung</strong>: Damit für den Parameter alternativ auch ein Lambda-Ausdruck verwendet
+werden kann, muss der erwartete Parameter vom Typ her ein &quot;<strong>funktionales Interface</strong>&quot;
+(s.u.) sein!</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/nested/DemoLambda.java" target="_blank"><span class="title">Demo: nested.DemoLambda</span></a></span></div>
+<h2 id="syntax-für-lambdas">Syntax für Lambdas</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>(Studi o1, Studi o2)  <span style="color:#f92672">-&gt;</span>  o1.<span style="color:#a6e22e">getCredits</span>() <span style="color:#f92672">-</span> o2.<span style="color:#a6e22e">getCredits</span>()</span></span></code></pre></div><p>Ein Lambda-Ausdruck ist eine Funktion ohne Namen und besteht aus drei Teilen:</p>
+<ol>
+<li>Parameterliste (in runden Klammern),</li>
+<li>Pfeil</li>
+<li>Funktionskörper (rechte Seite)</li>
+</ol>
+<p>Falls es <em>genau einen</em> Parameter gibt, <em>können</em> die runden Klammern um den Parameter
+entfallen.</p>
+<p>Dabei kann der Funktionskörper aus <em>einem Ausdruck</em> (&quot;<em>expression</em>&quot;) bestehen oder
+einer <em>Menge von Anweisungen</em> (&quot;<em>statements&quot;</em>), die dann in geschweifte Klammern
+eingeschlossen werden müssen (Block mit Anweisungen).</p>
+<p>Der Wert des Ausdrucks ist zugleich der Rückgabewert des Lambda-Ausdrucks.</p>
+<p>Varianten:</p>
+<ul>
+<li>
+<p><strong><code>(parameters)  -&gt;  expression</code></strong></p>
+</li>
+<li>
+<p><strong><code>(parameters)  -&gt;  { statements; }</code></strong></p>
+</li>
+</ul>
+<h2 id="quiz-welches-sind-keine-gültigen-lambda-ausdrücke">Quiz: Welches sind keine gültigen Lambda-Ausdrücke?</h2>
+<ol>
+<li><code>() -&gt; {}</code></li>
+<li><code>() -&gt; &quot;wuppie&quot;</code></li>
+<li><code>() -&gt; { return &quot;fluppie&quot;; }</code></li>
+<li><code>(Integer i) -&gt; return i + 42;</code></li>
+<li><code>(String s) -&gt; { &quot;foo&quot;; }</code></li>
+<li><code>(String s) -&gt; s.length()</code></li>
+<li><code>(Studi s) -&gt; s.getCredits() &gt; 300</code></li>
+<li><code>(List&lt;Studi&gt; sl) -&gt; sl.isEmpty()</code></li>
+<li><code>(int x, int y) -&gt; { System.out.println(&quot;Erg: &quot;); System.out.println(x+y); }</code></li>
+<li><code>() -&gt; new Studi()</code></li>
+<li><code>s -&gt; s.getCps() &gt; 100 &amp;&amp; s.getCps() &lt; 300</code></li>
+<li><code>s -&gt; { return s.getCps() &gt; 100 &amp;&amp; s.getCps() &lt; 300; }</code></li>
+</ol>
+
+<div class="expand">
+    <input type="checkbox" id="R-expand-fefac6e964f4b950057f4207f41c8396" aria-controls="R-expandcontent-fefac6e964f4b950057f4207f41c8396" >
+    <label class="expand-label" for="R-expand-fefac6e964f4b950057f4207f41c8396" >
+        <i class="fa-fw fas fa-chevron-down"></i>
+        <i class="fa-fw fas fa-chevron-right"></i>
+        Show Me
+    </label>
+    <div id="R-expandcontent-fefac6e964f4b950057f4207f41c8396" class="expand-content">
+
+<p>Auflösung:</p>
+<p>(4) und (5): <code>return</code> ist eine Anweisung, d.h. bei (4) fehlen die geschweiften
+Klammern. <code>&quot;foo&quot;</code> ist ein String und als solcher ein Ausdruck, d.h. hier sind
+die geschweiften Klammern zu viel (oder man ergänze den String mit einem <code>return</code>,
+also <code>return &quot;foo&quot;;</code> ...).</p>
+</div>
+</div>
+<h2 id="definition-funktionales-interface-functional-interfaces">Definition &quot;Funktionales Interface&quot; (&quot;<em>functional interfaces</em>&quot;)</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@FunctionalInterface</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Wuppie</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">wuppie</span>(T obj);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fluppie</span>() { <span style="color:#66d9ef">return</span> 42; }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p><code>Wuppie&lt;T&gt;</code> ist ein <span class='alert'><strong>funktionales Interface</strong></span>
+(&quot;<em>functional interface</em>&quot;) (seit Java 8)</p>
+<ul>
+<li>Hat <strong>genau <em>eine</em> abstrakte Methode</strong></li>
+<li>Hat evtl. weitere Default-Methoden</li>
+<li>Hat evtl. weitere abstrakte Methoden, die <code>public</code> Methoden von
+<code>java.lang.Object</code> überschreiben</li>
+</ul>
+<p>Die Annotation <code>@FunctionalInterface</code> selbst ist nur für den Compiler: Falls
+das Interface <em>kein</em> funktionales Interface ist, würde er beim Vorhandensein
+dieser Annotation einen Fehler werfen. Oder anders herum: Allein durch das
+Annotieren mit <code>@FunctionalInterface</code> wird aus einem Interface noch kein
+funktionales Interface! Vergleichbar mit <code>@Override</code> ...</p>
+<p><span class='alert'><strong>Während man für eine anonyme Klasse lediglich ein &quot;normales&quot; Interface
+(oder eine Klasse) benötigt, braucht man für Lambda-Ausdrücke zwingend ein
+passendes funktionales Interface!</strong></span></p>
+<p><em>Anmerkung</em>: Es scheint keine einheitliche deutsche Übersetzung für den Begriff
+<em>functional interface</em> zu geben. Es wird häufig mit &quot;funktionales Interface&quot;,
+manchmal aber auch mit &quot;Funktionsinterface&quot; übersetzt.</p>
+<p>Das in den obigen Beispielen eingesetzte Interface <code>java.util.Comparator&lt;T&gt;</code>
+ist also ein funktionales Interface: Es hat nur <em>eine</em> eigene abstrakte Methode
+<code>int compare(T o1, T o2);</code>.</p>
+<p>Im Package <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html" rel="external" target="_blank">java.util.function</a>
+sind einige wichtige funktionale Interfaces bereits vordefiniert, beispielsweise
+<code>Predicate</code> (Test, ob eine Bedingung erfüllt ist) und <code>Function</code> (verarbeite
+einen Wert und liefere einen passenden Ergebniswert). Diese kann man auch in
+eigenen Projekten nutzen!</p>
+<h2 id="quiz-welches-ist-kein-funktionales-interface">Quiz: Welches ist kein funktionales Interface?</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Wuppie</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">wuppie</span>(<span style="color:#66d9ef">int</span> a);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Fluppie</span> <span style="color:#66d9ef">extends</span> Wuppie {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">wuppie</span>(<span style="color:#66d9ef">double</span> a);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Foo</span> {
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Bar</span> <span style="color:#66d9ef">extends</span> Wuppie {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">bar</span>() { <span style="color:#66d9ef">return</span> 42; }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<div class="expand">
+    <input type="checkbox" id="R-expand-e6f7a55a6088d0b0356e3f675f469526" aria-controls="R-expandcontent-e6f7a55a6088d0b0356e3f675f469526" >
+    <label class="expand-label" for="R-expand-e6f7a55a6088d0b0356e3f675f469526" >
+        <i class="fa-fw fas fa-chevron-down"></i>
+        <i class="fa-fw fas fa-chevron-right"></i>
+        Show Me
+    </label>
+    <div id="R-expandcontent-e6f7a55a6088d0b0356e3f675f469526" class="expand-content">
+
+<p>Auflösung:</p>
+<ul>
+<li><code>Wuppie</code> hat <em>genau eine</em> abstrakte Methode =&gt; funktionales Interface</li>
+<li><code>Fluppie</code> hat zwei abstrakte Methoden =&gt; <strong>kein</strong> funktionales Interface</li>
+<li><code>Foo</code> hat gar keine abstrakte Methode =&gt; <strong>kein</strong> funktionales Interface</li>
+<li><code>Bar</code> hat <em>genau eine</em> abstrakte Methode (und eine Default-Methode) =&gt; funktionales Interface</li>
+</ul>
+</div>
+</div>
+<h2 id="lambdas-und-funktionale-interfaces-typprüfung">Lambdas und funktionale Interfaces: Typprüfung</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">java</span>.<span style="color:#a6e22e">util</span>.<span style="color:#a6e22e">Comparator</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compare</span>(T o1, T o2);    <span style="color:#75715e">// abstrakte Methode</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Verwendung ohne weitere Typinferenz</span>
+</span></span><span style="display:flex;"><span>Comparator<span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span> c1 <span style="color:#f92672">=</span> (Studi o1, Studi o2) <span style="color:#f92672">-&gt;</span> o1.<span style="color:#a6e22e">getCredits</span>() <span style="color:#f92672">-</span> o2.<span style="color:#a6e22e">getCredits</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Verwendung mit Typinferenz</span>
+</span></span><span style="display:flex;"><span>Comparator<span style="color:#f92672">&lt;</span>Studi<span style="color:#f92672">&gt;</span> c2 <span style="color:#f92672">=</span> (o1, o2) <span style="color:#f92672">-&gt;</span> o1.<span style="color:#a6e22e">getCredits</span>() <span style="color:#f92672">-</span> o2.<span style="color:#a6e22e">getCredits</span>();</span></span></code></pre></div><p>Der Compiler prüft in etwa folgende Schritte, wenn er über einen Lambda-Ausdruck stolpert:</p>
+<ol>
+<li>In welchem Kontext habe ich den Lambda-Ausdruck gesehen?</li>
+<li>OK, der Zieltyp ist hier <code>Comparator&lt;Studi&gt;</code>.</li>
+<li>Wie lautet die <strong>eine</strong> abstrakte Methode im <code>Comparator&lt;T&gt;</code>-Interface?</li>
+<li>OK, das ist <code>int compare(T o1, T o2);</code></li>
+<li>Da <code>T</code> hier an <code>Studi</code> gebunden ist, muss der Lambda-Ausdruck
+der Methode <code>int compare(Studi o1, Studi o2);</code> entsprechen:
+2x <code>Studi</code> als Parameter und als Ergebnis ein <code>int</code></li>
+<li>Ergebnis:
+a)  Cool, passt zum Lambda-Ausdruck <code>c1</code>. Fertig.
+b)  D.h. in <code>c2</code> müssen <code>o1</code> und <code>o2</code> vom Typ <code>Studi</code> sein.
+Cool, passt zum Lambda-Ausdruck <code>c2</code>. Fertig.</li>
+</ol>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Anonyme Klassen: &quot;Wegwerf&quot;-Innere Klassen</p>
+<ul>
+<li>Müssen Interface implementieren oder Klasse erweitern</li>
+</ul>
+</li>
+<li>
+<p>Java8: <strong>Lambda-Ausdrücke</strong> statt anonymer Klassen (<strong>funktionales Interface nötig</strong>)</p>
+<ul>
+<li>Zwei mögliche Formen:
+<ul>
+<li>Form 1: <code>(parameters)  -&gt;  expression</code></li>
+<li>Form 2: <code>(parameters)  -&gt;  { statements; }</code></li>
+</ul>
+</li>
+<li>Im jeweiligen Kontext muss ein <strong>funktionales Interface</strong> verwendet werden,
+d.h. ein Interface mit <strong>genau</strong> einer abstrakten Methode</li>
+<li>Der Lambda-Ausdruck muss von der Signatur her dieser einen abstrakten Methode
+entsprechen</li>
+</ul>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106523&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Lambda-Ausdrücke und funktionale Interfaces (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p><strong>Beispiel aus einem Code-Review im <a href="https://github.com/Dungeon-CampusMinden/Dungeon" rel="external" target="_blank">Dungeon-CampusMinden/Dungeon</a></strong></p>
+<p>Erklären Sie folgenden Code:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IFightAI</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fight</span>(Entity entity);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AIComponent</span> <span style="color:#66d9ef">extends</span> Component {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> IFightAI fightAI;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fightAI <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>                entity1 <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>                    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;TIME TO FIGHT!&#34;</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// todo replace with melee skill</span>
+</span></span><span style="display:flex;"><span>                };
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p><strong>Sortieren mit Lambdas und funktionalen Interfaces</strong></p>
+<p>Betrachten Sie die Klasse <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/challenges/lambda/Student.java" rel="external" target="_blank">Student</a>.</p>
+<ol>
+<li>Definieren Sie eine Methode, die das Sortieren einer <code>Student</code>-Liste erlaubt. Übergeben Sie die Liste als Parameter.</li>
+<li>Schaffen Sie es, das Sortierkriterium ebenfalls als Parameter zu übergeben (als Lambda-Ausdruck)?</li>
+<li>Definieren Sie eine weitere Methode, die wieder eine <code>Student</code>-Liste als Parameter bekommt und liefern sie das erste
+<code>Student</code>-Objekt zurück, welches einer als Lambda-Ausdruck übergebenen Bedingung genügt.</li>
+<li>Definieren Sie noch eine Methode, die wieder eine <code>Student</code>-Liste als Parameter bekommt sowie einen Lambda-Ausdruck,
+welcher aus einem <code>Student</code>-Objekt ein Objekt eines anderen Typen <code>T</code> berechnet. Wenden Sie in der Methode den
+Lambda-Ausdruck auf jedes Objekt der Liste an und geben sie die resultierende neue Liste als Ergebnis zurück.</li>
+</ol>
+<p>Verwenden Sie in dieser Aufgabe jeweils Lambda-Ausdrücke. Rufen Sie alle drei/vier Methoden an einem kleinen Beispiel auf.</p>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Ullenboom2021'>[Ullenboom2021] <a href='https://openbook.rheinwerk-verlag.de/javainsel/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java ist auch eine Insel</strong></a><br>Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8362-8745-6</a>.<br><em>Kapitel 12: Lambda-Ausdrücke und funktionale Programmierung</em></li> <li id='id_Urma2014'>[Urma2014] <strong>Java 8 in Action: Lambdas, Streams, and Functional-Style Programming</strong><br>Urma, R.-G. und Fusco, M. und Mycroft, A., Manning Publications, 2014. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-6172-9199-9' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-1-6172-9199-9</a>.<br><em>Kapitel 3: Lambda Expressions, Kapitel 5: Working with streams</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1722610113" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1722610113" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1722610113"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1722610113" defer></script>
+  </body>
+</html>

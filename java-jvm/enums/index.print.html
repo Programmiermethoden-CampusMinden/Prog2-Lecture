@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.131.0">
+    <meta name="generator" content="Relearn 6.1.0">
+    <meta name="description" content="Motivation public class Studi { public static final int IFM = 0; public static final int ELM = 1; public static final int ARC = 2; public Studi(String name, int credits, int studiengang) { // Wert für studiengang muss zwischen 0 und 2 liegen // Erwünscht: Konstanten nutzen } public static void main(String[] args) { Studi rainer = new Studi(&#34;Rainer&#34;, 10, Studi.IFM); Studi holger = new Studi(&#34;Holger&#34;, 3, 4); // Laufzeit-Problem!">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Aufzählungen (Enumerations)">
+    <meta name="twitter:description" content="Motivation public class Studi { public static final int IFM = 0; public static final int ELM = 1; public static final int ARC = 2; public Studi(String name, int credits, int studiengang) { // Wert für studiengang muss zwischen 0 und 2 liegen // Erwünscht: Konstanten nutzen } public static void main(String[] args) { Studi rainer = new Studi(&#34;Rainer&#34;, 10, Studi.IFM); Studi holger = new Studi(&#34;Holger&#34;, 3, 4); // Laufzeit-Problem!">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html">
+    <meta property="og:title" content="Aufzählungen (Enumerations)">
+    <meta property="og:description" content="Motivation public class Studi { public static final int IFM = 0; public static final int ELM = 1; public static final int ARC = 2; public Studi(String name, int credits, int studiengang) { // Wert für studiengang muss zwischen 0 und 2 liegen // Erwünscht: Konstanten nutzen } public static void main(String[] args) { Studi rainer = new Studi(&#34;Rainer&#34;, 10, Studi.IFM); Studi holger = new Studi(&#34;Holger&#34;, 3, 4); // Laufzeit-Problem!">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Aufzählungen (Enumerations)">
+    <meta itemprop="description" content="Motivation public class Studi { public static final int IFM = 0; public static final int ELM = 1; public static final int ARC = 2; public Studi(String name, int credits, int studiengang) { // Wert für studiengang muss zwischen 0 und 2 liegen // Erwünscht: Konstanten nutzen } public static void main(String[] args) { Studi rainer = new Studi(&#34;Rainer&#34;, 10, Studi.IFM); Studi holger = new Studi(&#34;Holger&#34;, 3, 4); // Laufzeit-Problem!">
+    <meta itemprop="wordCount" content="712">
+    <title>Aufzählungen (Enumerations)</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html" rel="canonical" type="text/html" title="Aufzählungen (Enumerations)">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1722610113" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1722610113" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1722610113" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1722610113" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1722610113" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1722610113"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1722610113";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Aufzählungen (Enumerations)
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Aufzählungen (Enumerations)</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Mit Hilfe von <code>enum</code> lassen sich Aufzählungstypen definieren (der Compiler erzeugt intern
+passende Klassen). Dabei wird den Konstanten eine fortlaufende Nummer zugeordnet, auf die
+mit <code>ordinal()</code> zugegriffen werden kann. Mit der Methode <code>values()</code> kann über die Konstanten
+iteriert werden, und mit <code>name()</code> kann eine Stringrepräsentation einer Konstanten erzeugt
+werden. Es sind keine Instanzen von Enum-Klassen erzeugbar, und die Enum-Konstanten sind
+implizit <code>final</code> und <code>static</code>.</p>
+<p>Es lassen sich auch komplexe Enumerations analog zu Klassendefinition definieren, die eigene
+Konstruktoren, Felder und Methoden enthalten.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/qoeT9jVuQZc' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Enumerations</a></li> <li><a href='https://youtu.be/ZCE9AmTluyk' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Enumerations</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/5c9330cb4425a5b33f89b491d007990642765bf0ca7ea9fd6b8b7536f46691b86bba9bde65cdbce308fb467f2d0183391dd0d1247c142e4e28d9b9eaf8c0ff67' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Enumerations</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Vorgänge beim Initialisieren von Enum-Klassen (Hinweis: <code>static</code>)</li> <li>(K3) Erstellung komplexer Enumerationen mit Feldern und Konstruktoren</li> <li>(K3) Nutzung von <code>name()</code>, <code>ordinal()</code> und <code>values()</code> in Enum-Klassen</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="motivation">Motivation</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> IFM <span style="color:#f92672">=</span> 0;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> ELM <span style="color:#f92672">=</span> 1;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> ARC <span style="color:#f92672">=</span> 2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Studi</span>(String name, <span style="color:#66d9ef">int</span> credits, <span style="color:#66d9ef">int</span> studiengang) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Wert für studiengang muss zwischen 0 und 2 liegen</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Erwünscht: Konstanten nutzen</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        Studi rainer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Studi(<span style="color:#e6db74">&#34;Rainer&#34;</span>, 10, Studi.<span style="color:#a6e22e">IFM</span>);
+</span></span><span style="display:flex;"><span>        Studi holger <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Studi(<span style="color:#e6db74">&#34;Holger&#34;</span>, 3, 4);   <span style="color:#75715e">// Laufzeit-Problem!</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p><strong>Probleme</strong>:</p>
+<ul>
+<li>Keine Typsicherheit</li>
+<li>Konstanten gehören zur Klasse <code>Studi</code>, obwohl sie in anderem Kontext
+vermutlich auch interessant sind</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/src/enums/v1/Studi.java" target="_blank"><span class="title">Beispiel enums.v1.Studi</span></a></span></div>
+<h2 id="verbesserung-einfache-aufzählung">Verbesserung: Einfache Aufzählung</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> Fach {
+</span></span><span style="display:flex;"><span>    IFM, ELM, ARC
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Studi</span>(String name, <span style="color:#66d9ef">int</span> credits, Fach studiengang) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Typsicherheit für studiengang :-)</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        Studi rainer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Studi(<span style="color:#e6db74">&#34;Rainer&#34;</span>, 10, Fach.<span style="color:#a6e22e">IFM</span>);
+</span></span><span style="display:flex;"><span>        Studi holger <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Studi(<span style="color:#e6db74">&#34;Holger&#34;</span>, 3, 4);   <span style="color:#75715e">// Syntax-Fehler!</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="einfache-aufzählungen-eigenschaften">Einfache Aufzählungen: Eigenschaften</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> Fach {
+</span></span><span style="display:flex;"><span>    IFM, ELM, ARC
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><ol>
+<li>Enum-Konstanten (<code>IFM</code>, ...) sind implizit <code>static</code> und <code>final</code></li>
+<li>Enumerations (<code>Fach</code>) nicht instantiierbar</li>
+<li>Enumerations stellen einen neuen Typ dar: hier der Typ <code>Fach</code></li>
+<li>Methoden: <code>name()</code>, <code>ordinal()</code>, <code>values()</code>, <code>toString()</code></li>
+</ol>
+<h3 id="wiederholung-static">Wiederholung <em>static</em></h3>
+<p><strong>Attribute</strong>:</p>
+<ul>
+<li><code>static</code> Attribute sind Eigenschaften/Zustände der <strong>Klasse</strong></li>
+<li>Gelten in jedem von der Klasse erzeugten Objekt</li>
+<li>Unterschiedliche Lebensdauer:
+<ul>
+<li>Objektattribute (Instanzvariablen): ab <code>new</code> bis zum Garbage Collector</li>
+<li>Statische Variablen: Laufzeitumgebung (JVM) lädt und initialisiert die Klasse
+(<code>static</code> Attribute existieren, bis die JVM die Klasse entfernt)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Methoden</strong>:</p>
+<ul>
+<li><code>static</code> deklarierte Methoden sind <strong>Klassenmethoden</strong></li>
+<li>Können direkt auf der Klasse aufgerufen werden</li>
+<li>Beispiele: <code>Math.max()</code>, <code>Math.sin()</code>, <code>Integer.parseInt()</code></li>
+<li><strong>Achtung</strong>: In Klassenmethoden nur Klassenattribute nutzbar (keine Instanzattribute!),
+d.h. keine <code>this</code>-Referenz nutzbar</li>
+</ul>
+<h3 id="wiederholung-final-attributemethodenklassen-nicht-änderbar">Wiederholung <em>final</em>: Attribute/Methoden/Klassen nicht änderbar</h3>
+<ul>
+<li>
+<p>Attribute: <code>final</code> Attribute können nur einmal gesetzt werden</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">foo</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 2;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 3;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> k;
+</span></span><span style="display:flex;"><span>    i <span style="color:#f92672">=</span> 3;
+</span></span><span style="display:flex;"><span>    j <span style="color:#f92672">=</span> 4;  <span style="color:#75715e">// Compilerfehler</span>
+</span></span><span style="display:flex;"><span>    k <span style="color:#f92672">=</span> 5;
+</span></span><span style="display:flex;"><span>    k <span style="color:#f92672">=</span> 6;  <span style="color:#75715e">// Compilerfehler</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/src/enums/FinalDemo.java" target="_blank"><span class="title">Beispiel enums.FinalDemo</span></a></span></div>
+</li>
+<li>
+<p>Methoden: <code>final</code> deklarierte Methoden können bei Vererbung nicht überschrieben werden</p>
+</li>
+<li>
+<p>Klassen: von <code>final</code> deklarierten Klassen können keine Unterklassen gebildet werden</p>
+</li>
+</ul>
+<h2 id="einfache-aufzählungen-eigenschaften-cnt">Einfache Aufzählungen: Eigenschaften (cnt.)</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Referenzen auf Enum-Objekte können null sein</span>
+</span></span><span style="display:flex;"><span>Fach f <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>f <span style="color:#f92672">=</span> Fach.<span style="color:#a6e22e">IFM</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Vergleich mit == möglich</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// equals() unnötig, da Vergleich mit Referenz auf statische Variable</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (f <span style="color:#f92672">==</span> Fach.<span style="color:#a6e22e">IFM</span>) {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Richtiges Fach :-)&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// switch/case</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> (f) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> IFM:   <span style="color:#75715e">// Achtung: *NICHT* Fach.IFM</span>
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Richtiges Fach :-)&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">default</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException(<span style="color:#e6db74">&#34;FALSCHES FACH: &#34;</span> <span style="color:#f92672">+</span> f);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Außerdem können wir folgende Eigenschaften nutzen (u.a., s.u.):</p>
+<ul>
+<li>Enumerations haben Methode <code>String toString()</code> für die Konstanten</li>
+<li>Enumerations haben Methode <code>final T[] values()</code> für die Iteration über die Konstanten</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/src/enums/v2/Studi.java" target="_blank"><span class="title">Demo: enums.v2.Studi</span></a></span></div>
+<h2 id="enum-genauer-betrachtet">Enum: Genauer betrachtet</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> Fach {  IFM, ELM, ARC  }</span></span></code></pre></div><p><strong>Compiler sieht (<em>in etwa</em>):</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fach</span> <span style="color:#66d9ef">extends</span> Enum {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Fach IFM <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Fach(<span style="color:#e6db74">&#34;IFM&#34;</span>, 0);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Fach ELM <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Fach(<span style="color:#e6db74">&#34;ELM&#34;</span>, 1);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Fach ARC <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Fach(<span style="color:#e6db74">&#34;ARC&#34;</span>, 2);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Fach</span>( String s, <span style="color:#66d9ef">int</span> i ) { <span style="color:#66d9ef">super</span>( s, i ); }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>=&gt; <span class='alert'><strong>Singleton-Pattern</strong></span> für Konstanten</p>
+<h2 id="enum-klassen-eigenschaften">Enum-Klassen: Eigenschaften</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> Fach {
+</span></span><span style="display:flex;"><span>    IFM,
+</span></span><span style="display:flex;"><span>    ELM(<span style="color:#e6db74">&#34;Elektrotechnik Praxisintegriert&#34;</span>, 1, 30),
+</span></span><span style="display:flex;"><span>    ARC(<span style="color:#e6db74">&#34;Architektur&#34;</span>, 4, 40),
+</span></span><span style="display:flex;"><span>    PHY(<span style="color:#e6db74">&#34;Physik&#34;</span>, 3, 10);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String description;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> number;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> capacity;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    Fach() { <span style="color:#66d9ef">this</span>(<span style="color:#e6db74">&#34;Informatik Bachelor&#34;</span>, 0, 60); }
+</span></span><span style="display:flex;"><span>    Fach(String descr, <span style="color:#66d9ef">int</span> number, <span style="color:#66d9ef">int</span> capacity) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">description</span> <span style="color:#f92672">=</span> descr;  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> number;  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">capacity</span> <span style="color:#f92672">=</span> capacity;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getDescription</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Konstante: &#34;</span> <span style="color:#f92672">+</span> name() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; (Beschreibung: &#34;</span> <span style="color:#f92672">+</span> description
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, Kapazitaet: &#34;</span> <span style="color:#f92672">+</span> capacity <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, Nummer: &#34;</span> <span style="color:#f92672">+</span> number
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, Ordinal: &#34;</span> <span style="color:#f92672">+</span> ordinal() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;)&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h3 id="konstruktoren-und-methoden-für-enum-klassen-definierbar">Konstruktoren und Methoden für Enum-Klassen definierbar</h3>
+<ul>
+<li>Kein eigener Aufruf von <code>super</code> (!)</li>
+<li>Konstruktoren implizit <code>private</code></li>
+</ul>
+<h3 id="compiler-fügt-automatisch-folgende-methoden-hinzu-auswahl">Compiler fügt automatisch folgende Methoden hinzu (Auswahl):</h3>
+<ul>
+<li>Strings:
+<ul>
+<li><code>public final String name()</code> =&gt; Name der Konstanten (<code>final</code>!)</li>
+<li><code>public String toString()</code> =&gt; Ruft <code>name()</code> auf, überschreibbar</li>
+</ul>
+</li>
+<li>Konstanten:
+<ul>
+<li><code>public final T[] values()</code> =&gt; Alle Konstanten der Aufzählung</li>
+<li><code>public final int ordinal()</code> =&gt; Interne Nummer der Konstanten
+(Reihenfolge des Anlegens der Konstanten!)</li>
+<li><code>public static T valueOf(String)</code> =&gt; Zum String passende Konstante
+(via <code>name()</code>)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Hinweis</strong>: Diese Methoden gibt es auch bei den &quot;einfachen&quot; Enumerationen (s.o.).</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-jvm/src/enums/v3/" target="_blank"><span class="title">Demo: enums.v3</span></a></span></div>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Aufzählungen mit Hilfe von <code>enum</code> (Compiler erzeugt intern Klassen)</p>
+</li>
+<li>
+<p>Komplexe Enumerations analog zu Klassendefinition: Konstruktoren, Felder und Methoden
+(keine Instanzen von Enum-Klassen erzeugbar)</p>
+</li>
+<li>
+<p>Enum-Konstanten sind implizit <code>final</code> und <code>static</code></p>
+</li>
+<li>
+<p>Compiler stellt Methoden <code>name()</code>, <code>ordinal()</code> und <code>values()</code> zur Verfügung</p>
+<ul>
+<li>Name der Konstanten</li>
+<li>Interne Nummer der Konstanten (Reihenfolge des Anlegens)</li>
+<li>Array mit allen Konstanten der Enum-Klasse</li>
+</ul>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106515&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Enumerations (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p>Im <a href="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/configuration/KeyboardConfig.java" rel="external" target="_blank">Dungeon</a>
+sollen Key-Codes aus libGDX (Integer-Werte) als Konstanten zugreifbar sein. Zusätzlich soll es es noch einen String geben, der
+beschreibt, wo und wie diese Taste im Spiel eingesetzt wird. Aus historischen Gründen ist dies im Dungeon recht komplex gelöst.</p>
+<p>Definieren Sie eine neue Enum-Klasse, die Konstanten für Tasten aufzählt (beispielsweise <code>ESCAPE</code>, <code>W</code>, <code>A</code> oder <code>LEFT</code>). Jede
+dieser Konstanten soll den der Taste zugeordneten Integerwert speichern können und einen String haben, der als Hilfestring
+verstanden werden könnte (nutzen Sie hier einfach Phantasiewerte). Zeigen Sie in einer kleinen Demo, wie Sie mit diesem Enum
+arbeiten würden: Zugriff auf die Konstanten, Zugriff auf den Zahlenwert und/oder den String, Übergabe als Funktionsparameter.</p>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Java-SE-Tutorial'>[Java-SE-Tutorial] <a href='https://docs.oracle.com/javase/tutorial/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>The Java Tutorials</strong></a><br>Oracle Corporation, 2022.<br><em>Trail: Learning the Java Language :: Classes and Objects :: Enum Types</em></li> <li id='id_Ullenboom2021'>[Ullenboom2021] <a href='https://openbook.rheinwerk-verlag.de/javainsel/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java ist auch eine Insel</strong></a><br>Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8362-8745-6</a>.<br><em>Abschnitt 6.4.3: Aufzählungstypen, Abschnitt 10.7: Die Spezial-Oberklasse Enum</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1722610113" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1722610113" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1722610113"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1722610113" defer></script>
+  </body>
+</html>

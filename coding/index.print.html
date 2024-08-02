@@ -1,0 +1,3409 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.131.0">
+    <meta name="generator" content="Relearn 6.1.0">
+    <meta name="description" content=" Javadoc Logging Code Smells Coding Conventions und Metriken Refactoring ">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Programmiermethoden und Clean Code">
+    <meta name="twitter:description" content=" Javadoc Logging Code Smells Coding Conventions und Metriken Refactoring ">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html">
+    <meta property="og:title" content="Programmiermethoden und Clean Code">
+    <meta property="og:description" content=" Javadoc Logging Code Smells Coding Conventions und Metriken Refactoring ">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Programmiermethoden und Clean Code">
+    <meta itemprop="description" content=" Javadoc Logging Code Smells Coding Conventions und Metriken Refactoring ">
+    <meta itemprop="wordCount" content="9">
+    <title>Programmiermethoden und Clean Code</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html" rel="canonical" type="text/html" title="Programmiermethoden und Clean Code">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1722610113" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1722610113" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1722610113" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1722610113" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1722610113" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1722610113"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='.';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1722610113";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Programmiermethoden und Clean Code
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+
+<h1 id="programmiermethoden-und-clean-code">Programmiermethoden und Clean Code</h1>
+
+
+<ul class="children children-li children-sort-">
+	
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html">Javadoc</a></li>
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html">Logging</a></li>
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html">Code Smells</a></li>
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html">Coding Conventions und Metriken</a></li>
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html">Refactoring</a></li>
+</ul>
+
+            <footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+            </footer>
+          </article>
+
+          <section>
+            <h1 class="a11y-only">Subsections of Programmiermethoden und Clean Code</h1>
+<article class="default">
+<h1>Javadoc</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Mit Javadoc kann aus speziell markierten Block-Kommentaren eine externe Dokumentation im HTML-Format
+erzeugt werden. Die Block-Kommentare, auf die das im JDK enthaltene Programm <code>javadoc</code> reagiert,
+beginnen mit <code>/**</code> (also einem zusätzlichen Stern, der für den Java-Compiler nur das erste Kommentarzeichen
+ist).</p>
+<p>Die erste Zeile eines Javadoc-Kommentars ist eine &quot;Zusammenfassung&quot; und an fast allen Stellen der
+generierten Doku sichtbar. Diese Summary sollte kurz gehalten werden und eine Idee vermitteln, was
+die Klasse oder die Methode oder das Attribut macht.</p>
+<p>Für die Dokumentation von Parametern, Rückgabetypen, Exceptions und veralteten Elementen existieren
+spezielle Annotationen: <code>@param</code>, <code>@return</code>, <code>@throws</code> und <code>@deprecated</code>.</p>
+<p>Als Faustregel gilt: Es werden <strong>alle</strong> <code>public</code> und <code>protected</code> Elemente (Klassen, Methoden, Attribute)
+mit Javadoc kommentiert. Alle nicht-öffentlichen Elemente bekommen normale Java-Kommentare (Zeilen- oder
+Blockkommentare).</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/Qo2TTD593eQ' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Javadoc</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/15984eacd03de989ab2bce322ace5d74da962a911ae45afbb60958714ed6b16c72c962aec4b60acda9419ef15d26c5a5265129245f26beb0f905af9a7176b9fa' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Javadoc</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Ziel der Javadoc-Dokumentation verstehen</li> <li>(K2) Typischen Aufgabe von Javadoc-Kommentaren verstehen</li> <li>(K3) Dokumentation öffentlich sichtbarer Elemente mit Javadoc</li> <li>(K3) Schreiben einer sinnvollen Summary</li> <li>(K3) Einsatz von Annotationen zur Dokumentation von Parametern, Rückgabetypen, Exceptions, veralteten Elementen</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="dokumentation-mit-javadoc">Dokumentation mit Javadoc</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Beschreibung Beschreibung (Summary).
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * &lt;p&gt;Hier kommt dann ein laengerer Text, der die Dinge
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * bei Bedarf etwas ausfuehrlicher erklaert.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wuppie</span>() {}</span></span></code></pre></div><p>Javadoc-Kommentare sind (aus Java-Sicht) normale Block-Kommentare, wobei der Beginn mit
+<code>/**</code> eingeleitet wird. Dieser Beginn ist für das Tool <code>javadoc</code> (Bestandteil des JDK,
+genau wie <code>java</code> und <code>javac</code>) das Signal, dass hier ein Kommentar anfängt, den das
+Tool in eine HTML-Dokumentation übersetzen soll.</p>
+<p>Typischerweise wird am Anfang jeder Kommentarzeile ein <code>*</code> eingefügt; dieser wird von
+Javadoc ignoriert.</p>
+<p>Sie können neben normalem Text und speziellen Annotationen auch HTML-Elemente wie <code>&lt;p&gt;</code>
+und <code>&lt;code&gt;</code> oder <code>&lt;ul&gt;</code> nutzen.</p>
+<p>Mit <code>javadoc *.java</code> können Sie in der Konsole aus den Java-Dateien die Dokumentation
+generieren lassen. Oder Sie geben das in Ihrer IDE in Auftrag ... (die dann diesen
+Aufruf gern für Sie tätigt).</p>
+<h2 id="standard-aufbau">Standard-Aufbau</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Beschreibung Beschreibung (Summary).
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * &lt;p&gt; Hier kommt dann ein laengerer Text, der die Dinge
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * bei Bedarf etwas ausfuehrlicher erklaert.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @param   date  Tag, Wert zw. 1 .. 31
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @return  Anzahl der Sekunden seit 1.1.1970
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @throws  NumberFormatException
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @deprecated As of JDK version 1.1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">setDate</span>(<span style="color:#66d9ef">int</span> date) {
+</span></span><span style="display:flex;"><span>    setField(Calendar.<span style="color:#a6e22e">DATE</span>, date);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><ul>
+<li>Erste Zeile bei Methoden/Attributen geht in die generierte &quot;Summary&quot; in der Übersicht,
+der Rest in die &quot;Details&quot;
+<ul>
+<li>Die &quot;Summary&quot; sollte kein kompletter Satz sein, wird aber wie ein Satz geschrieben
+(Groß beginnen, mit Punkt beenden). Es sollte nicht beginnen mit &quot;Diese Methode
+macht ...&quot; oder &quot;Diese Klasse ist ...&quot;. Ein gutes Beispiel wäre &quot;Berechnet die
+Steuerrückerstattung.&quot;</li>
+<li>Danach kommen die Details, die in der generierten Dokumentation erst durch
+Aufklappen der Elemente sichtbar sind. Erklären Sie, wieso der Code was machen
+soll und welche Designentscheidungen getroffen wurden (und warum).</li>
+</ul>
+</li>
+<li>Leerzeilen gliedern den Text in Absätze. Neue Absätze werden mit einem <code>&lt;p&gt;</code> eingeleitet.
+(Ausnahmen: Wenn der Text mit <code>&lt;ul&gt;</code> o.ä. beginnt oder der Absatz mit den Block-Tags.)</li>
+<li>Die &quot;Block-Tags&quot; <code>@param</code>, <code>@return</code>, <code>@throws</code>, <code>@deprecated</code> werden durch einen
+Absatz von der restlichen Beschreibung getrennt und tauchen in exakt dieser Reihenfolge
+auf. Die Beschreibung dieser Tags ist nicht leer - anderenfalls lässt man das Tag weg.
+Falls die Zeile für die Beschreibung nicht reicht, wird umgebrochen und die Folgezeile
+mit vier Leerzeichen (beginnend mit dem <code>@</code>) eingerückt.
+<ul>
+<li>Mit <code>@param</code> erklären Sie die Bedeutung eines Parameters (von links nach rechts) einer
+Methode. Beispiel: <code>@param   date   Tag, Wert zw. 1 .. 31</code>. Wiederholen Sie dies für
+jeden Parameter.</li>
+<li>Mit <code>@return</code> beschreiben Sie den Rückgabetyp/-wert. Beispiel:
+<code>@return  Anzahl der Sekunden seit 1.1.1970</code>.
+Bei Rückgabe von <code>void</code> wird diese Beschreibung weggelassen (die Beschreibung wäre
+dann ja leer).</li>
+<li>Mit <code>@throws</code> geben Sie an, welche &quot;checked&quot; Exceptions die Methode wirft.</li>
+<li>Mit <code>@deprecated</code> können Sie im Kommentar sagen, dass ein Element veraltet ist und
+möglicherweise mit der nächsten Version o.ä. entfernt wird. (siehe nächste Folie)</li>
+</ul>
+</li>
+</ul>
+<p>=&gt; Dies sind die Basis-Regeln aus dem populären Google-Java-Style <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html#id_googlestyleguide">[googlestyleguide]</a>.</p>
+<h2 id="veraltete-elemente">Veraltete Elemente</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Beschreibung Beschreibung Beschreibung.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @deprecated As of v102, replaced by &lt;code&gt;Foo.fluppie()&lt;/code&gt;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Deprecated</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wuppie</span>() {}</span></span></code></pre></div><ul>
+<li>Annotation zum Markieren als &quot;veraltet&quot; (in der generierten Dokumentation): <code>@deprecated</code></li>
+<li>Für Sichtbarkeit zur Laufzeit bzw. im Tooling/IDE: normale Code-Annotation <code>@Deprecated</code></li>
+</ul>
+<p>Dies ist ein guter Weg, um Elemente einer öffentlichen API als &quot;veraltet&quot; zu
+kennzeichnen. Üblicherweise wird diese Kennzeichnung für einige wenige Releases
+beibehalten und danach das veraltete Element aus der API entfernt.</p>
+<h2 id="autoren-versionen-">Autoren, Versionen, ...</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Beschreibung Beschreibung Beschreibung.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @author  Dagobert Duck
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @version V1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @since   schon immer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span></span></span></code></pre></div><ul>
+<li>Annotationen für Autoren und Version: <code>@author</code>, <code>@version</code>, <code>@since</code></li>
+</ul>
+<p>Diese Annotationen finden Sie vor allem in Kommentaren zu Packages oder Klassen.</p>
+<h2 id="was-muss-kommentiert-werden">Was muss kommentiert werden?</h2>
+<ul>
+<li>
+<p>Alle <code>public</code> Klassen</p>
+</li>
+<li>
+<p>Alle <code>public</code> und <code>protected</code> Elemente der Klassen</p>
+</li>
+<li>
+<p>Ausnahme: <code>@Override</code> (An diesen Methoden <em>kann</em>, aber <em>muss</em> nicht kommentiert werden.)</p>
+</li>
+</ul>
+<p>Alle anderen Elemente bei Bedarf mit <em>normalen</em> Kommentaren versehen.</p>
+<h3 id="beispiel-aus-dem-jdk-arraylist">Beispiel aus dem JDK: ArrayList</h3>
+<p>Schauen Sie sich gern mal Klassen aus der Java-API an, beispielsweise eine <code>java.util.ArrayList</code>:</p>
+<ul>
+<li>Generierte Dokumentation:
+<a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/util/package-summary.html" rel="external" target="_blank">zu &quot;ArrayList&quot; runterscrollen</a>
+bzw. <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html" rel="external" target="_blank">direkt</a></li>
+<li>Quellcode: <a href="https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java" rel="external" target="_blank">ArrayList.java</a></li>
+</ul>
+<h3 id="best-practices-was-beschreibe-ich-eigentlich">Best Practices: Was beschreibe ich eigentlich?</h3>
+<p>Unter <a href="https://github.com/google/styleguide/blob/gh-pages/docguide/best_practices.md#documentation-is-the-story-of-your-code" rel="external" target="_blank">Documentation Best Practices</a>
+finden Sie eine sehr gute Beschreibung, was das Ziel der Dokumentation sein sollte. Versuchen Sie, dieses zu erreichen!</p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Javadoc-Kommentare sind normale Block-Kommentare beginnend mit <code>/**</code></p>
+</li>
+<li>
+<p>Generierung der HTML-Dokumentation mit <code>javadoc *.java</code></p>
+</li>
+<li>
+<p>Erste Zeile ist eine Zusammenfassung (fast immer sichtbar)</p>
+</li>
+<li>
+<p>Längerer Text danach als &quot;Description&quot; einer Methode/Klasse</p>
+</li>
+<li>
+<p>Annotationen für besondere Elemente: <code>@param</code>, <code>@return</code>, <code>@throws</code>, <code>@deprecated</code></p>
+</li>
+<li>
+<p>Faustregel: Alle <code>public</code> und <code>protected</code> Elemente mit Javadoc kommentieren!</p>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106229&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Javadoc (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p>Betrachten Sie die Javadoc einiger Klassen im Dungeon-Projekt:
+<a href="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dojo-dungeon/src/dojo/rooms/LevelRoom.java" rel="external" target="_blank">dojo.rooms.LevelRoom</a>,
+<a href="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dojo-dungeon/src/dojo/rooms/MonsterRoom.java" rel="external" target="_blank">dojo.rooms.MonsterRoom</a>, und
+<a href="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/components/HealthComponent.java" rel="external" target="_blank">contrib.components.HealthComponent</a>.</p>
+<p>Stellen Sie sich vor, Sie müssten diese Klassen in einer Übungsaufgabe nutzen (das könnte tatsächlich passieren!) ...</p>
+<p>Können Sie anhand der Javadoc verstehen, wozu die drei Klassen dienen und wie Sie diese Klassen benutzen sollten?
+Vergleichen Sie die Qualität der Dokumentation.
+Was würden Sie gern in der Dokumentation finden?
+Was würden Sie ändern?</p>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_googlestyleguide'>[googlestyleguide] <a href='https://google.github.io/styleguide/javaguide.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Google Java Style Guide</strong></a><br>Google Open Source, 2022.<br><em>Kap. 7 Javadoc</em></li> <li id='id_Ullenboom2021'>[Ullenboom2021] <a href='https://openbook.rheinwerk-verlag.de/javainsel/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java ist auch eine Insel</strong></a><br>Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8362-8745-6</a>.<br><em>Kap. 23.4: Dokumentationskommentare mit Javadoc</em></li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+<article class="default">
+<h1>Logging</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Im Paket <code>java.util.logging</code> findet sich eine einfache Logging-API.</p>
+<p>Über die Methode <code>getLogger()</code> der Klasse <code>Logger</code> (<em>Factory-Method-Pattern</em>)
+kann ein (neuer) Logger erzeugt werden, dabei wird über den String-Parameter
+eine Logger-Hierarchie aufgebaut analog zu den Java-Package-Strukturen. Der
+oberste Logger (der &quot;Root-Logger&quot;) hat den leeren Namen.</p>
+<p>Jeder Logger kann mit einem Log-Level (Klasse <code>Level</code>) eingestellt werden;
+Log-Meldungen unterhalb des eingestellten Levels werden verworfen.</p>
+<p>Vom Logger nicht verworfene Log-Meldungen werden an den bzw. die Handler des
+Loggers und (per Default) an den Eltern-Logger weiter gereicht. Die Handler
+haben ebenfalls ein einstellbares Log-Level und verwerfen alle Nachrichten
+unterhalb der eingestellten Schwelle. Zur tatsächlichen Ausgabe gibt man einem
+Handler noch einen Formatter mit. Defaultmäßig hat nur der Root-Logger einen
+Handler.</p>
+<p>Der Root-Logger (leerer String als Name) hat als Default-Level (wie auch sein
+Console-Handler) &quot;<code>Info</code>&quot; eingestellt.</p>
+<p>Nachrichten, die durch Weiterleitung nach oben empfangen wurden, werden nicht
+am Log-Level des empfangenden Loggers gemessen, sondern akzeptiert und an die
+Handler des Loggers und (sofern nicht deaktiviert) an den Elternlogger weitergereicht.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/_jYWJzr1rkA' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Logging</a></li> <li><a href='https://youtu.be/fWSc5A_CPL8' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Logging (Überblick)</a></li> <li><a href='https://youtu.be/0UUVQCVYNHo' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Log-Level</a></li> <li><a href='https://youtu.be/dYOYA99EfrY' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Logging: Handler und Formatter</a></li> <li><a href='https://youtu.be/19Bki4IglWQ' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Weiterleitung an den Elternlogger</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/a91451640b7833daed3f6fb212fff9490ef6b8885783cc0297603a418055f1a8c2ff7b51f3cb9fb2c4344132eb95bef5af55201f8958f24d767dbd075120bce2' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Logging</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K3) Nutzung der Java Logging API im Paket <code>java.util.logging</code></li> <li>(K3) Erstellung eigener Handler und Formatter</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="wie-prüfen-sie-die-werte-von-variablenobjekten">Wie prüfen Sie die Werte von Variablen/Objekten?</h2>
+<ol>
+<li>
+<p>Debugging</p>
+<ul>
+<li>Beeinflusst Code nicht</li>
+<li>Kann schnell komplex und umständlich werden</li>
+<li>Sitzung transient - nicht wiederholbar</li>
+</ul>
+</li>
+<li>
+<p>&quot;Poor-man's-debugging&quot; (Ausgaben mit <code>System.out.println</code>)</p>
+<ul>
+<li>Müssen irgendwann entfernt werden</li>
+<li>Ausgabe nur auf einem Kanal (Konsole)</li>
+<li>Keine Filterung nach Problemgrad - keine Unterscheidung
+zwischen Warnungen, einfachen Informationen, ...</li>
+</ul>
+</li>
+<li>
+<p><strong>Logging</strong></p>
+<ul>
+<li>Verschiedene (Java-) Frameworks:
+<code>java.util.logging</code> (JDK), <em>log4j</em> (Apache), <em>SLF4J</em>, <em>Logback</em>, ...</li>
+</ul>
+</li>
+</ol>
+<h2 id="java-logging-api---überblick">Java Logging API - Überblick</h2>
+<p>Paket <code>java.util.logging</code></p>
+<p><a href="#R-image-34c5f14dc6bf7589e2a6b49dbc69fe35" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging/logging.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-34c5f14dc6bf7589e2a6b49dbc69fe35"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging/logging.png?width=80%25&height=auto"></a></p>
+<p>Eine Applikation kann verschiedene Logger instanziieren. Die Logger bauen
+per Namenskonvention hierarchisch aufeinander auf. Jeder Logger kann selbst
+mehrere Handler haben, die eine Log-Nachricht letztlich auf eine bestimmte
+Art und Weise an die Außenwelt weitergeben.</p>
+<p>Log-Meldungen werden einem Level zugeordnet. Jeder Logger und Handler hat
+ein Mindest-Level eingestellt, d.h. Nachrichten mit einem kleineren Level
+werden verworfen.</p>
+<p>Zusätzlich gibt es noch Filter, mit denen man Nachrichten (zusätzlich zum
+Log-Level) nach weiteren Kriterien filtern kann.</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/coding/src/logging/LoggingDemo.java" target="_blank"><span class="title">Konsole: logging.LoggingDemo</span></a></span></div>
+<h2 id="erzeugen-neuer-logger">Erzeugen neuer Logger</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.logging.Logger;
+</span></span><span style="display:flex;"><span>Logger l <span style="color:#f92672">=</span> Logger.<span style="color:#a6e22e">getLogger</span>(MyClass.<span style="color:#a6e22e">class</span>.<span style="color:#a6e22e">getName</span>());</span></span></code></pre></div><ul>
+<li>
+<p><span class='alert'><strong>Factory-Methode</strong></span> der Klasse <code>java.util.logging.Logger</code></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Logger <span style="color:#a6e22e">getLogger</span>(String name);</span></span></code></pre></div><p>=&gt; Methode liefert bereits <strong>vorhandenen Logger</strong> mit diesem Namen (sonst neuen Logger)</p>
+</li>
+<li>
+<p><span class='alert'><strong>Best Practice</strong></span>:
+Nutzung des voll-qualifizierten Klassennamen: <code>MyClass.class.getName()</code></p>
+<ul>
+<li>Leicht zu implementieren</li>
+<li>Leicht zu erklären</li>
+<li>Spiegelt modulares Design</li>
+<li>Ausgaben enthalten automatisch Hinweis auf Herkunft (Lokalität) der Meldung</li>
+<li><strong>Alternativen</strong>: Funktionale Namen wie &quot;XML&quot;, &quot;DB&quot;, &quot;Security&quot;</li>
+</ul>
+</li>
+</ul>
+<h2 id="ausgabe-von-logmeldungen">Ausgabe von Logmeldungen</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">log</span>(Level level, String msg);</span></span></code></pre></div><ul>
+<li>
+<p>Diverse Convenience-Methoden (Auswahl):</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">warning</span>(String msg)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">info</span>(String msg)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">entering</span>(String srcClass, String srcMethod)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">exiting</span>(String srcClass, String srcMethod)</span></span></code></pre></div></li>
+<li>
+<p>Beispiel</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.logging.Logger;
+</span></span><span style="display:flex;"><span>Logger l <span style="color:#f92672">=</span> Logger.<span style="color:#a6e22e">getLogger</span>(MyClass.<span style="color:#a6e22e">class</span>.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>l.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;Hello World :-)&#34;</span>);</span></span></code></pre></div></li>
+</ul>
+<h2 id="wichtigkeit-von-logmeldungen-stufen">Wichtigkeit von Logmeldungen: Stufen</h2>
+<ul>
+<li>
+<p><code>java.util.logger.Level</code> definiert 7 Stufen:</p>
+<ul>
+<li><code>SEVERE</code>, <code>WARNING</code>, <code>INFO</code>, <code>CONFIG</code>, <code>FINE</code>, <code>FINER</code>, <code>FINEST</code>
+(von höchster zu niedrigster Prio)</li>
+<li>Zusätzlich <code>ALL</code> und <code>OFF</code></li>
+</ul>
+</li>
+<li>
+<p>Nutzung der Log-Level:</p>
+<ul>
+<li>Logger hat Log-Level: Meldungen mit kleinerem Level werden verworfen</li>
+<li>Prüfung mit <code>public boolean isLoggable(Level)</code></li>
+<li>Setzen mit <code>public void setLevel(Level)</code></li>
+</ul>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/coding/src/logging/LoggingLevel.java" target="_blank"><span class="title">Konsole: logging.LoggingLevel</span></a></span></div>
+<p>=&gt; Warum wird im Beispiel nach <code>log.setLevel(Level.ALL);</code> trotzdem nur
+ab <code>INFO</code> geloggt? Wer erzeugt eigentlich die Ausgaben?!</p>
+<h2 id="jemand-muss-die-arbeit-machen-">Jemand muss die Arbeit machen ...</h2>
+<ul>
+<li>
+<p>Pro Logger <strong>mehrere</strong> Handler möglich</p>
+<ul>
+<li>Logger übergibt nicht verworfene Nachrichten an Handler</li>
+<li>Handler haben selbst ein Log-Level (analog zum Logger)</li>
+<li>Handler verarbeiten die Nachrichten, wenn Level ausreichend</li>
+</ul>
+</li>
+<li>
+<p>Standard-Handler: <code>StreamHandler</code>, <code>ConsoleHandler</code>, <code>FileHandler</code></p>
+</li>
+<li>
+<p>Handler nutzen zur Formatierung der Ausgabe einen <code>Formatter</code></p>
+</li>
+<li>
+<p>Standard-Formatter: <code>SimpleFormatter</code> und <code>XMLFormatter</code></p>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/coding/src/logging/LoggingHandler.java" target="_blank"><span class="title">Konsole: logging.LoggingHandler</span></a></span></div>
+<p>=&gt; Warum wird im Beispiel nach dem Auskommentieren von
+<code>log.setUseParentHandlers(false);</code> immer noch eine zusätzliche Ausgabe
+angezeigt (ab <code>INFO</code> aufwärts)?!</p>
+<h2 id="ich--bin--dein--vater-">Ich ... bin ... Dein ... Vater ...</h2>
+<ul>
+<li>
+<p>Logger bilden <span class='alert'><strong>Hierarchie</strong></span> über Namen</p>
+<ul>
+<li>Trenner für Namenshierarchie: &quot;<code>.</code>&quot; (analog zu Packages) =&gt; mit jedem &quot;<code>.</code>&quot; wird eine weitere Ebene der Hierarchie aufgemacht ...</li>
+<li>Jeder Logger kennt seinen Eltern-Logger: <code>Logger#getParent()</code></li>
+<li>Basis-Logger: leerer Name (<code>&quot;&quot;</code>)
+<ul>
+<li>Voreingestelltes Level des Basis-Loggers: <code>Level.INFO</code> (!)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Weiterleiten von Nachrichten</p>
+<ul>
+<li>Nicht verworfene Log-Aufrufe werden an Eltern-Logger weitergeleitet (Default)
+<ul>
+<li>Abschalten mit <code>Logger#setUseParentHandlers(false);</code></li>
+</ul>
+</li>
+<li>Diese leiten an ihre Handler sowie an ihren Eltern-Logger weiter (unabhängig von Log-Level!)</li>
+</ul>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/coding/src/logging/LoggingParent.java" target="_blank"><span class="title">Konsole: logging.LoggingParent; Tafel: Skizze Logger-Baum</span></a></span></div>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Java Logging API im Paket <code>java.util.logging</code></p>
+</li>
+<li>
+<p>Neuer Logger über <strong>Factory-Methode</strong> der Klasse <code>Logger</code></p>
+<ul>
+<li>Einstellbares Log-Level (Klasse <code>Level</code>)</li>
+<li>Handler kümmern sich um die Ausgabe, nutzen dazu Formatter</li>
+<li>Mehrere Handler je Logger registrierbar</li>
+<li>Log-Level auch für Handler einstellbar (!)</li>
+<li>Logger (und Handler) &quot;interessieren&quot; sich nur für Meldungen ab
+bestimmter Wichtigkeit</li>
+<li>Logger reichen nicht verworfene Meldungen defaultmäßig an
+Eltern-Logger weiter (rekursiv)</li>
+</ul>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106228&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Logging (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p><strong>Logger-Konfiguration</strong></p>
+<p>Betrachten Sie den folgenden Java-Code:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.logging.*;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Logging</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>        Logger l <span style="color:#f92672">=</span> Logger.<span style="color:#a6e22e">getLogger</span>(<span style="color:#e6db74">&#34;Logging&#34;</span>);
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">setLevel</span>(Level.<span style="color:#a6e22e">FINE</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        ConsoleHandler myHandler <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConsoleHandler();
+</span></span><span style="display:flex;"><span>        myHandler.<span style="color:#a6e22e">setFormatter</span>(<span style="color:#66d9ef">new</span> SimpleFormatter() {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">format</span>(LogRecord record) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;WUPPIE\n&#34;</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">addHandler</span>(myHandler);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;A&#34;</span>);
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">fine</span>(<span style="color:#e6db74">&#34;B&#34;</span>);
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">finer</span>(<span style="color:#e6db74">&#34;C&#34;</span>);
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">finest</span>(<span style="color:#e6db74">&#34;D&#34;</span>);
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">severe</span>(<span style="color:#e6db74">&#34;E&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Welche Ausgaben entstehen durch den obigen Code? Erklären Sie, welche der Logger-Aufrufe zu einer Ausgabe
+führen und wieso und wie diese Ausgaben zustande kommen bzw. es keine Ausgabe bei einem Logger-Aufruf gibt.
+Gehen Sie dabei auf jeden der fünf Aufrufe ein.</p>
+<p><strong>Analyse eines Live-Beispiels aus dem Dungeon</strong></p>
+<p>Analysieren Sie die Konfiguration des Loggers im Dungeon-Projekt:
+<a href="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/core/utils/logging/LoggerConfig.java" rel="external" target="_blank">Dungeon-CampusMinden/Dungeon: core/utils/logging/LoggerConfig.java</a>.</p>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_JDK-Doc'>[JDK-Doc] <a href='https://docs.oracle.com/en/java/javase/17/core/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java Core Libraries Developer Guide</strong></a><br>Oracle Corporation, 2022.</li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+<article class="default">
+<h1>Code Smells</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Code entsteht nicht zum Selbstzweck, er muss von anderen Menschen leicht verstanden und
+gewartet werden können: Entwickler verbringen einen wesentlichen Teil ihrer Zeit mit dem
+<strong>Lesen</strong> von (fremdem) Code. Dabei helfen &quot;Coding Conventions&quot;, die eine gewisse einheitliche
+äußerliche Erscheinung des Codes vorgeben (Namen, Einrückungen, ...). Die Beachtung von
+grundlegenden Programmierprinzipien hilft ebenso, die Lesbarkeit und Verständlichkeit zu
+verbessern.</p>
+<p>Code, der diese Konventionen und Regeln verletzt, zeigt sogenannte &quot;<strong>Code Smells</strong>&quot; oder
+&quot;Bad Smells&quot;. Das sind Probleme im Code, die noch nicht direkt zu einem Fehler führen, die
+aber im Laufe der Zeit die Chance für echte Probleme deutlich erhöht.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/ALDuLxm71tg' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Code Smells</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/9d53c3536ada817eee76c9f6e8f7838bfb2308a79d220b8dab0a3cf339f90c52e28ae25e85a652d6da31c8f38c581463bc1679fa5f9cc376115558f7fee41217' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Code Smells</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K3) Erkennen und Vermeiden von Code Smells</li> <li>(K3) Unterscheiden von leicht lesbarem und schwer lesbarem Code</li> <li>(K3) Programmierprinzipien anwenden, um den Code sauberer zu gestalten</li> <li>(K3) Bessere Kommentare schreiben</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="code-smells-ist-das-code-oder-kann-das-weg">Code Smells: Ist das Code oder kann das weg?</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">checker</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">CheckANDDO</span>(DATA1 inp, <span style="color:#66d9ef">int</span> c, FH.<span style="color:#a6e22e">Studi</span>
+</span></span><span style="display:flex;"><span>    CustD, <span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> in, <span style="color:#66d9ef">int</span> out,<span style="color:#66d9ef">int</span> c1, <span style="color:#66d9ef">int</span> c2, <span style="color:#66d9ef">int</span> c3 <span style="color:#f92672">=</span> 4)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> i; <span style="color:#75715e">// neues i</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span>0;i<span style="color:#f92672">&lt;</span>10;i<span style="color:#f92672">++</span>) <span style="color:#75715e">// fuer alle i</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>        inp.<span style="color:#a6e22e">kurs</span><span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> 10; inp.<span style="color:#a6e22e">kurs</span><span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> CustD.<span style="color:#a6e22e">cred</span><span style="color:#f92672">[</span>i<span style="color:#f92672">]/</span>c;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>      SetDataToPlan(  CustD  );
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> myI <span style="color:#f92672">=</span> in<span style="color:#f92672">*</span>2.<span style="color:#a6e22e">5</span>; <span style="color:#75715e">// myI=in*2.5</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (c1)
+</span></span><span style="display:flex;"><span>        out <span style="color:#f92672">=</span> myI; <span style="color:#75715e">//OK</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(  c3 <span style="color:#f92672">==</span> 4  )
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        myI <span style="color:#f92672">=</span> c2 <span style="color:#f92672">*</span> myI;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (c3 <span style="color:#f92672">!=</span> 4 <span style="color:#f92672">||</span> <span style="color:#66d9ef">true</span> ) { <span style="color:#75715e">// unbedingt beachten!</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//System.out.println(&#34;x:&#34;+(x++));</span>
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;x:&#34;</span><span style="color:#f92672">+</span>(x<span style="color:#f92672">++</span>)); <span style="color:#75715e">// x++</span>
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;out: &#34;</span><span style="color:#f92672">+</span>out);
+</span></span><span style="display:flex;"><span>    } }}   }</span></span></code></pre></div><p>Der Code im obigen Beispiel lässt sich möglicherweise kompilieren. Und
+möglicherweise tut er sogar das, was er tun soll.</p>
+<p>Dennoch: <span class='alert'><strong>Der Code &quot;stinkt&quot;</strong></span> (zeigt <strong>Code Smells</strong>):</p>
+<ul>
+<li>Nichtbeachtung üblicher Konventionen (Coding Rules)</li>
+<li>Schlechte Kommentare</li>
+<li>Auskommentierter Code</li>
+<li>Fehlende Datenkapselung</li>
+<li>Zweifelhafte Namen</li>
+<li>Duplizierter Code</li>
+<li>&quot;Langer&quot; Code: Lange Methoden, Klassen, Parameterlisten, tief
+verschachtelte <code>if/then</code>-Bedingungen, ...</li>
+<li>Feature Neid</li>
+<li><code>switch/case</code> oder <code>if/else</code> statt Polymorphie</li>
+<li>Globale Variablen, lokale Variablen als Attribut</li>
+<li>Magic Numbers</li>
+</ul>
+<p>Diese Liste enthält die häufigsten &quot;Smells&quot; und ließe sich noch beliebig fortsetzen.
+Schauen Sie mal in die unten angegebene Literatur :-)</p>
+<p><strong>Stinkender Code führt zu möglichen (späteren) Problemen.</strong></p>
+<h2 id="was-ist-guter-sauberer-code-clean-code">Was ist guter (&quot;sauberer&quot;) Code (&quot;Clean Code&quot;)?</h2>
+<p>Im Grunde bezeichnet &quot;sauberer Code&quot; (&quot;Clean Code&quot;) die Abwesenheit von Smells. D.h. man
+könnte Code als &quot;sauberen&quot; Code bezeichnen, wenn die folgenden Eigenschaften erfüllt sind
+(keine vollständige Aufzählung!):</p>
+<ul>
+<li>Gut (&quot;angenehm&quot;) lesbar</li>
+<li>Schnell verständlich: Geeignete Abstraktionen</li>
+<li>Konzentriert sich auf <strong>eine</strong> Aufgabe</li>
+<li>So einfach und direkt wie möglich</li>
+<li>Ist gut getestet</li>
+</ul>
+<p>In <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html#id_Martin2009">[Martin2009]</a> lässt der Autor Robert Martin verschiedene Ikonen der SW-Entwicklung
+zu diesem Thema zu Wort kommen - eine sehr lesenswerte Lektüre!</p>
+<p>=&gt; Jemand kümmert sich um den Code; solides Handwerk</p>
+<h2 id="warum-ist-guter-sauberer-code-so-wichtig">Warum ist guter (&quot;sauberer&quot;) Code so wichtig?</h2>
+<blockquote>
+<p>Any fool can write code that a computer can understand.
+Good programmers write code that humans can understand.</p>
+<p> <span class='origin'>Quelle: <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html#id_Fowler2011">[Fowler2011, p. 15]</a></span></p>
+</blockquote>
+<p>Auch wenn das zunächst seltsam klingt, aber Code muss auch von Menschen gelesen und
+verstanden werden können. Klar, der Code muss inhaltlich korrekt sein und die jeweilige
+Aufgabe erfüllen, er muss kompilieren etc. ... aber er muss auch von anderen Personen
+weiter entwickelt werden und dazu gelesen und verstanden werden. Guter Code ist nicht
+einfach nur inhaltlich korrekt, sondern kann auch einfach verstanden werden.</p>
+<p>Code, der nicht einfach lesbar ist oder nur schwer verständlich ist, wird oft in der
+Praxis später nicht gut gepflegt: Andere Entwickler haben (die berechtigte) Angst, etwas
+kaputt zu machen und arbeiten &quot;um den Code herum&quot;. Nur leider wird das Konstrukt dann
+nur noch schwerer verständlich ...</p>
+<h3 id="code-smells">Code Smells</h3>
+<p>Verstöße gegen die Prinzipien von <em>Clean Code</em> nennt man auch <em>Code Smells</em>: Der
+Code &quot;stinkt&quot; gewissermaßen. Dies bedeutet nicht unbedingt, dass der Code nicht
+funktioniert (d.h. er kann dennoch compilieren und die Anforderungen erfüllen).
+Er ist nur nicht sauber formuliert, schwer verständlich, enthält Doppelungen etc.,
+was im Laufe der Zeit die Chance für tatsächliche Probleme deutlich erhöht.</p>
+<p>Und weil es so wichtig ist, hier gleich noch einmal:</p>
+<div class='center'>
+<p><span class='alert'><strong>Stinkender Code führt zu möglichen (späteren) Problemen.</strong></span></p>
+</div>
+<h3 id="broken-windows-phänomen">&quot;Broken Windows&quot; Phänomen</h3>
+<p>Wenn ein Gebäude leer steht, wird es eine gewisse Zeit lang nur relativ langsam
+verfallen: Die Fenster werden nicht mehr geputzt, es sammelt sich Graffiti, Gras
+wächst in der Dachrinne, Putz blättert ab ...</p>
+<p>Irgendwann wird dann eine Scheibe eingeworfen. Wenn dieser Punkt überschritten
+ist, beschleunigt sich der Verfall rasant: Über Nacht werden alle erreichbaren
+Scheiben eingeworfen, Türen werden zerstört, es werden sogar Brände gelegt ...</p>
+<p>Das passiert auch bei Software! Wenn man als Entwickler das Gefühl bekommt,
+die Software ist nicht gepflegt, wird man selbst auch nur relativ schlechte
+Arbeit abliefern. Sei es, weil man nicht versteht, was der Code macht und sich
+nicht an die Überarbeitung der richtigen Stellen traut und stattdessen die
+Änderungen als weiteren &quot;Erker&quot; einfach dran pappt. Seit es, weil man keine Lust
+hat, Zeit in ordentliche Arbeit zu investieren, weil der Code ja eh schon
+schlecht ist ... Das wird mit der Zeit nicht besser ...</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://en.wikipedia.org/wiki/Broken_windows_theory" target="_blank"><span class="title">&quot;Broken Windows&quot; Phänomen</span></a></span></div>
+<h3 id="maßeinheit-für-code-qualität--">Maßeinheit für Code-Qualität ;-)</h3>
+<p>Es gibt eine &quot;praxisnahe&quot; (und nicht ganz ernst gemeinte) Maßeinheit für Code-Qualität:
+Die &quot;WTF/m&quot; (<em>What the Fuck per minute</em>):
+<a href="https://www.osnews.com/story/19266/wtfsm/" rel="external" target="_blank">Thom Holwerda: www.osnews.com/story/19266/WTFs_</a>.</p>
+<p>Wenn beim Code-Review durch Kollegen viele &quot;WTF&quot; kommen, ist der Code offenbar nicht
+in Ordnung ...</p>
+<h2 id="code-smells-nichtbeachtung-von-coding-conventions">Code Smells: Nichtbeachtung von Coding Conventions</h2>
+<ul>
+<li>
+<p>Richtlinien für einheitliches Aussehen
+=&gt; Andere Programmierer sollen Code schnell lesen können</p>
+<ul>
+<li>Namen, Schreibweisen</li>
+<li>Kommentare (Ort, Form, Inhalt)</li>
+<li>Einrückungen und Spaces vs. Tabs</li>
+<li>Zeilenlängen, Leerzeilen</li>
+<li>Klammern</li>
+</ul>
+</li>
+<li>
+<p>Beispiele: <a href="https://www.oracle.com/technetwork/java/codeconventions-150003.pdf" rel="external" target="_blank">Sun Code Conventions</a>,
+<a href="https://google.github.io/styleguide/javaguide.html" rel="external" target="_blank">Google Java Style</a></p>
+</li>
+<li>
+<p><em>Hinweis</em>: Betrifft vor allem die (äußere) Form!</p>
+</li>
+</ul>
+<h2 id="code-smells-schlechte-kommentare-i">Code Smells: Schlechte Kommentare I</h2>
+<ul>
+<li>
+<p>Ratlose Kommentare</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/* k.A. was das bedeutet, aber wenn man es raus nimmt, geht&#39;s nicht mehr */</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/* TODO: was passiert hier, und warum? */</span></span></span></code></pre></div><p>Der Programmierer hat selbst nicht verstanden (und macht sich auch nicht
+die Mühe zu verstehen), was er da tut! Fehler sind vorprogrammiert!</p>
+</li>
+<li>
+<p>Redundante Kommentare: Erklären Sie, was der Code <strong>inhaltlich</strong> tun sollte (und warum)!</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> i; <span style="color:#75715e">// neues i</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span>0;i<span style="color:#f92672">&lt;</span>10;i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">//</span> fuer alle i</span></span></code></pre></div><p>Was würden Sie Ihrem Kollegen erklären (müssen), wenn Sie ihm/ihr den
+Code vorstellen?</p>
+<p>Wiederholen Sie nicht, was der Code tut (das kann ich ja selbst lesen),
+sondern beschreiben Sie, was der Code tun <em>sollte</em> und <em>warum</em>.</p>
+<p>Beschreiben Sie dabei auch das Konzept hinter einem Codebaustein.</p>
+</li>
+</ul>
+<h2 id="code-smells-schlechte-kommentare-ii">Code Smells: Schlechte Kommentare II</h2>
+<ul>
+<li>
+<p>Veraltete Kommentare</p>
+<p>Hinweis auf unsauberes Arbeiten: Oft wird im Zuge der Überarbeitung von
+Code-Stellen vergessen, auch den Kommentar anzupassen! Sollte beim Lesen
+extrem misstrauisch machen.</p>
+</li>
+<li>
+<p>Auskommentierter Code</p>
+<p>Da ist jemand seiner Sache unsicher bzw. hat eine Überarbeitung nicht
+abgeschlossen. Die Chance, dass sich der restliche Code im Laufe der Zeit
+so verändert, dass der auskommentierte Code nicht mehr (richtig) läuft, ist
+groß! Auskommentierter Code ist gefährlich und dank Versionskontrolle
+absolut überflüssig!</p>
+</li>
+<li>
+<p>Kommentare erscheinen zwingend nötig</p>
+<p>Häufig ein Hinweis auf ungeeignete Wahl der Namen (Klassen, Methoden,
+Attribute) und/oder auf ein ungeeignetes Abstraktionsniveau (beispielsweise
+Nichtbeachtung des Prinzips der &quot;<em>Single Responsibility</em>&quot;)!</p>
+<p>Der Code soll im <strong>Normalfall</strong> für sich selbst sprechen: <strong>WAS</strong> wird gemacht.
+Der Kommentar erklärt im Normalfall, <strong>WARUM</strong> der Code das machen soll.</p>
+</li>
+<li>
+<p>Unangemessene Information, z.B. Änderungshistorien</p>
+<p>Hinweise wie &quot;wer hat wann was geändert&quot; gehören in das Versionskontroll-
+oder ins Issue-Tracking-System. Die Änderung ist im Code sowieso nicht mehr
+sichtbar/nachvollziehbar!</p>
+</li>
+</ul>
+<h2 id="code-smells-schlechte-namen-und-fehlende-kapselung">Code Smells: Schlechte Namen und fehlende Kapselung</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span> <span style="color:#66d9ef">extends</span> Person {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String n;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> c;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">prtIf</span>() { ... }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Nach drei Wochen fragen Sie sich, was <code>n</code> oder <code>c</code> oder <code>Studi#prtIf()</code> wohl
+sein könnte! (Ein anderer Programmierer fragt sich das schon beim <strong>ersten</strong>
+Lesen.) Klassen und Methoden sollten sich erwartungsgemäß verhalten.</p>
+<p>Wenn Dinge öffentlich angeboten werden, muss man damit rechnen, dass andere
+darauf zugreifen. D.h. man kann nicht mehr so einfach Dinge wie die interne
+Repräsentation oder die Art der Berechnung austauschen! Öffentliche Dinge
+gehören zur Schnittstelle und damit Teil des &quot;Vertrags&quot; mit den Nutzern!</p>
+<ul>
+<li>
+<p>Programmierprinzip &quot;<strong>Prinzip der minimalen Verwunderung</strong>&quot;</p>
+<ul>
+<li>Klassen und Methoden sollten sich erwartungsgemäß verhalten</li>
+<li>Gute Namen ersparen das Lesen der Dokumentation</li>
+</ul>
+</li>
+<li>
+<p>Programmierprinzip &quot;<strong>Kapselung/Information Hiding</strong>&quot;</p>
+<ul>
+<li>Möglichst schlanke öffentliche Schnittstelle</li>
+<li>=&gt; &quot;Vertrag&quot; mit Nutzern der Klasse!</li>
+</ul>
+</li>
+</ul>
+<h2 id="code-smells-duplizierter-code">Code Smells: Duplizierter Code</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span>() { <span style="color:#66d9ef">return</span> name; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getAddress</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> strasse<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">+</span>plz<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">+</span>stadt;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getStudiAsString</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; (&#34;</span><span style="color:#f92672">+</span>strasse<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;, &#34;</span><span style="color:#f92672">+</span>plz<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">+</span>stadt<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;)&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><ul>
+<li>Programmierprinzip &quot;<strong>DRY</strong>&quot; =&gt; &quot;Don't repeat yourself!&quot;</li>
+</ul>
+<p>Im Beispiel wird das Formatieren der Adresse mehrfach identisch implementiert,
+d.h. duplizierter Code. Auslagern in eigene Methode und aufrufen!</p>
+<p>Kopierter/duplizierter Code ist problematisch:</p>
+<ul>
+<li>Spätere Änderungen müssen an mehreren Stellen vorgenommen werden</li>
+<li>Lesbarkeit/Orientierung im Code wird erschwert (Analogie: Reihenhaussiedlung)</li>
+<li>Verpasste Gelegenheit für sinnvolle Abstraktion!</li>
+</ul>
+<h2 id="code-smells-langer-code">Code Smells: Langer Code</h2>
+<ul>
+<li>
+<p>Lange Klassen</p>
+<ul>
+<li>Faustregel: 5 Bildschirmseiten sind viel</li>
+</ul>
+</li>
+<li>
+<p>Lange Methoden</p>
+<ul>
+<li>Faustregel: 1 Bildschirmseite</li>
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html#id_Martin2009">[Martin2009]</a>: deutlich weniger als 20 Zeilen</li>
+</ul>
+</li>
+<li>
+<p>Lange Parameterlisten</p>
+<ul>
+<li>Faustregel: max. 3 ... 5 Parameter</li>
+<li><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html#id_Martin2009">[Martin2009]</a>: 0 Parameter ideal, ab 3 Parameter
+gute Begründung nötig</li>
+</ul>
+</li>
+<li>
+<p>Tief verschachtelte <code>if/then</code>-Bedingungen</p>
+<ul>
+<li>Faustregel: 2 ... 3 Einrückungsebenen sind viel</li>
+</ul>
+</li>
+<li>
+<p>Programmierprinzip &quot;<strong>Single Responsibility</strong>&quot;</p>
+<p>Jede Klasse ist für genau <span class='alert'>einen Aspekt</span> des Gesamtsystems verantwortlich</p>
+</li>
+</ul>
+<h3 id="lesbarkeit-und-übersichtlichkeit-leiden">Lesbarkeit und Übersichtlichkeit leiden</h3>
+<ul>
+<li>Der Mensch kann sich nur begrenzt viele Dinge im Kurzzeitgedächtnis merken</li>
+<li>Klassen, die länger als 5 Bildschirmseiten sind, erfordern viel Hin- und
+Her-Scrollen, dito für lange Methoden</li>
+<li>Lange Methoden sind schwer verständlich (erledigen viele Dinge?)</li>
+<li>Mehr als 3 Parameter kann sich kaum jemand merken, vor allem beim
+Aufruf von Methoden</li>
+<li>Die Testbarkeit wird bei zu komplexen Methoden/Klassen und vielen Parametern
+sehr erschwert</li>
+<li>Große Dateien verleiten (auch mangels Übersichtlichkeit) dazu, neuen
+Code ebenfalls schluderig zu gliedern</li>
+</ul>
+<h3 id="langer-code-deutet-auch-auf-eine-verletzung-des-prinzips-der-single-responsibility-hin">Langer Code deutet auch auf eine Verletzung des Prinzips der Single Responsibility hin</h3>
+<ul>
+<li>
+<p>Klassen fassen evtl. nicht zusammengehörende Dinge zusammen</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String phoneAreaCode;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String phoneNumber;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printStudentInfo</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;name:    &#34;</span> <span style="color:#f92672">+</span> name);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;contact: &#34;</span> <span style="color:#f92672">+</span> phoneAreaCode <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> phoneNumber);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Warum sollte sich die Klasse <code>Student</code> um die Einzelheiten des Aufbaus einer
+Telefonnummer kümmern? Das Prinzip der &quot;<em>Single Responsibility</em>&quot; wird hier
+verletzt!</p>
+</li>
+<li>
+<p>Methoden erledigen vermutlich mehr als nur eine Aufgabe</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">credits</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (Student s : students) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (s.<span style="color:#a6e22e">hasSemesterFinished</span>()) {
+</span></span><span style="display:flex;"><span>            ECTS c <span style="color:#f92672">=</span> calculateEcts(s);
+</span></span><span style="display:flex;"><span>            s.<span style="color:#a6e22e">setEctsSum</span>(c);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">//</span> Diese Methode erledigt 4 Dinge: Iteration, Abfrage, Berechnung, Setzen ...</span></span></code></pre></div><p>=&gt; Erklären Sie die Methode jemandem. Wenn dabei das Wort &quot;und&quot;
+vorkommt, macht die Methode höchstwahrscheinlich zu viel!</p>
+</li>
+<li>
+<p>Viele Parameter bedeuten oft fehlende Datenabstraktion</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Circle <span style="color:#a6e22e">makeCircle</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> radius);
+</span></span><span style="display:flex;"><span>Circle <span style="color:#a6e22e">makeCircle</span>(Point center, <span style="color:#66d9ef">int</span> radius);  <span style="color:#f92672">//</span> besser<span style="color:#f92672">!</span></span></span></code></pre></div></li>
+</ul>
+<h2 id="code-smells-feature-neid">Code Smells: Feature Neid</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreditsCalculator</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> ECTS <span style="color:#a6e22e">calculateEcts</span>(Student s) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> semester <span style="color:#f92672">=</span> s.<span style="color:#a6e22e">getSemester</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> workload <span style="color:#f92672">=</span> s.<span style="color:#a6e22e">getCurrentWorkload</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> nrModuls <span style="color:#f92672">=</span> s.<span style="color:#a6e22e">getNumberOfModuls</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> total <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">min</span>(30, workload);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> extra <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">max</span>(0, total <span style="color:#f92672">-</span> 30);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (semester <span style="color:#f92672">&lt;</span> 5) {
+</span></span><span style="display:flex;"><span>             extra <span style="color:#f92672">=</span> extra <span style="color:#f92672">*</span> nrModuls;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> ECTS(total <span style="color:#f92672">+</span> extra);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><ul>
+<li>Zugriff auf (viele) Interna der anderen Klasse! =&gt; Hohe Kopplung der Klassen!</li>
+<li>Methode <code>CreditsCalculator#calculateEcts()</code> &quot;möchte&quot; eigentlich in
+<code>Student</code> sein ...</li>
+</ul>
+<h2 id="weiterführende-links">Weiterführende Links</h2>
+<ul>
+<li><a href="https://www.theodinproject.com/lessons/foundations-clean-code" rel="external" target="_blank">&quot;Foundations: Clean Code&quot; (The Odin Project)</a></li>
+<li><a href="https://github.com/google/styleguide/blob/gh-pages/docguide/best_practices.md" rel="external" target="_blank">&quot;Documentation Best Practices&quot; (Google Styleguide)</a></li>
+</ul>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Code entsteht nicht zum Selbstzweck =&gt; Lesbarkeit ist wichtig</p>
+</li>
+<li>
+<p>Code Smells: Code führt zu möglichen (späteren) Problemen</p>
+<ul>
+<li>
+<p>Richtiges Kommentieren und Dokumentieren</p>
+<p>In dieser Sitzung haben wir vor allem auf Kommentare geschaut. Zum Thema Dokumentieren
+siehe die Einheit zu <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html">&ldquo;Javadoc&rdquo;</a>.</p>
+</li>
+<li>
+<p>Einhalten von Coding Conventions</p>
+<ul>
+<li>Regeln zu Schreibweisen und Layout</li>
+<li>Leerzeichen, Einrückung, Klammern</li>
+<li>Zeilenlänge, Umbrüche</li>
+<li>Kommentare</li>
+</ul>
+</li>
+<li>
+<p>Einhalten von Prinzipien des objektorientierten Programmierens</p>
+<ul>
+<li>Jede Klasse ist für genau <strong>einen</strong> Aspekt des Systems verantwortlich.
+(<em>Single Responsibility</em>)</li>
+<li>Keine Code-Duplizierung! (<em>DRY</em> - Don't repeat yourself)</li>
+<li>Klassen und Methoden sollten sich erwartungsgemäß verhalten</li>
+<li>Kapselung: Möglichst wenig öffentlich zugänglich machen</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106230&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Code Smells (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Fowler2011'>[Fowler2011] <strong>Refactoring</strong><br>Fowler, M., Addison-Wesley, 2011. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-0-201-48567-7' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-0-201-48567-7</a>.</li> <li id='id_Inden2013'>[Inden2013] <strong>Der Weg zum Java-Profi</strong><br>Inden, M., dpunkt.verlag, 2013. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8649-1245-0' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8649-1245-0</a>.<br><em>Kapitel 10: Bad Smells</em></li> <li id='id_Martin2009'>[Martin2009] <strong>Clean Code</strong><br>Martin, R., mitp, 2009. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8266-5548-7' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8266-5548-7</a>.</li> <li id='id_Passig2013'>[Passig2013] <strong>Weniger schlecht programmieren</strong><br>Passig, K. und Jander, J., O'Reilly, 2013. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-89721-567-2' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-89721-567-2</a>.</li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+<article class="default">
+<h1>Coding Conventions und Metriken</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Code entsteht nicht zum Selbstzweck, er muss von anderen Menschen leicht verstanden und
+gewartet werden können: Entwickler verbringen einen wesentlichen Teil ihrer Zeit mit dem
+<strong>Lesen</strong> von (fremdem) Code.</p>
+<p>Dabei helfen &quot;Coding Conventions&quot;, die eine gewisse einheitliche äußerliche Erscheinung
+des Codes vorgeben (Namen, Einrückungen, ...). Im Java-Umfeld ist der &quot;Google Java Style&quot;
+bzw. der recht ähnliche &quot;AOSP Java Code Style for Contributors&quot; häufig anzutreffen.
+Coding Conventions beinhalten typischerweise Regeln zu</p>
+<ul>
+<li>Schreibweisen und Layout</li>
+<li>Leerzeichen, Einrückung, Klammern</li>
+<li>Zeilenlänge, Umbrüche</li>
+<li>Kommentare</li>
+</ul>
+<p>Die Beachtung von grundlegenden Programmierprinzipien hilft ebenso, die Lesbarkeit und
+Verständlichkeit zu verbessern.</p>
+<p>Metriken sind Kennzahlen, die aus dem Code berechnet werden, und können zur Überwachung
+der Einhaltung von Coding Conventions und anderen Regeln genutzt werden. Nützliche
+Metriken sind dabei NCSS (<em>Non Commenting Source Statements</em>), McCabe (<em>Cyclomatic Complexity</em>),
+BEC (<em>Boolean Expression Complexity</em>) und DAC (<em>Class Data Abstraction Coupling</em>).</p>
+<p>Für die Formatierung des Codes kann man die IDE nutzen, muss dort dann aber die Regeln
+detailliert manuell einstellen. Das Tool <strong>Spotless</strong> lässt sich dagegen in den Build-Prozess
+einbinden und kann die Konfiguration über ein vordefiniertes Regelset passend zum Google
+Java Style/AOSP automatisiert vornehmen.</p>
+<p>Die Prüfung der Coding Conventions und Metriken kann durch das Tool <strong>Checkstyle</strong> erfolgen.
+Dieses kann beispielsweise als Plugin in der IDE oder direkt in den Build-Prozess eingebunden
+werden und wird mit Hilfe einer XML-Datei konfiguriert.</p>
+<p>Um typische Anti-Pattern zu vermeiden, kann man den Code mit sogenannten <em>Lintern</em> prüfen.
+Ein Beispiel für die Java-Entwicklung ist <strong>SpotBugs</strong>, welches sich in den Build-Prozess
+einbinden lässt und über 400 typische problematische Muster im Code erkennt.</p>
+<p>Für die Praktika in der Veranstaltung Programmiermethoden wird der Google Java Style oder
+AOSP genutzt. Für die passende Checkstyle-Konfiguration wird eine minimale
+<a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/coding/src/checkstyle.xml" rel="external" target="_blank">checkstyle.xml</a>
+bereitgestellt (vgl. Folie &quot;Konfiguration für das PM-Praktikum&quot;).</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/nLAEak6Fwfk' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Coding Conventions</a></li> <li><a href='https://youtu.be/oCMwyDrPkFI' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Formatter und Spotless</a></li> <li><a href='https://youtu.be/NR070ZimbH4' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Checkstyle</a></li> <li><a href='https://youtu.be/0ny6e6CNTF8' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Checkstyle: Konfiguration mit Eclipse-CS</a></li> <li><a href='https://youtu.be/tSczcf_EOwI' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo SpotBugs</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/31a425902a7d01e5fd4b3b082259d9d71bcff55030eb4564c98bb044c554162088d7ab02edbf50aff0503232dfd4c3bed43341ec058e272a0cd6f9a388584d84' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Coding Conventions</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Erklären verschiedener Coding Conventions</li> <li>(K2) Erklären wichtiger Grundregeln des objektorientierten Programmierens</li> <li>(K2) Erklären der Metriken NCSS, McCabe, BEC, DAC</li> <li>(K3) Einhalten der wichtigsten Grundregeln des objektorientierten Programmierens</li> <li>(K3) Einhalten der wichtigsten Coding Conventions (Formatierung, Namen, Metriken)</li> <li>(K3) Nutzung des Tools Spotless (Formatierung des Codes)</li> <li>(K3) Nutzung des Tools Checkstyle (Coding Conventions und Metriken)</li> <li>(K3) Nutzung des Tools SpotBugs (Vermeiden von Anti-Pattern)</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="coding-conventions-richtlinien-für-einheitliches-aussehen-von-code">Coding Conventions: Richtlinien für einheitliches Aussehen von Code</h2>
+<p>=&gt; Ziel: Andere Programmierer sollen Code schnell lesen können</p>
+<ul>
+<li><strong>Namen, Schreibweisen</strong>: UpperCamelCase vs. lowerCamelCase vs. UPPER_SNAKE_CASE</li>
+<li><strong>Kommentare</strong> (Ort, Form, Inhalt): Javadoc an allen <code>public</code> und <code>protected</code> Elementen</li>
+<li><strong>Einrückungen und Spaces vs. Tabs</strong>: 4 Spaces</li>
+<li><strong>Zeilenlängen</strong>: 100 Zeichen</li>
+<li><strong>Leerzeilen</strong>: Leerzeilen für Gliederung</li>
+<li><strong>Klammern</strong>: Auf selber Zeile wie Code</li>
+</ul>
+<p>Beispiele: <a href="https://www.oracle.com/technetwork/java/codeconventions-150003.pdf" rel="external" target="_blank">Sun Code Conventions</a>,
+<a href="https://google.github.io/styleguide/javaguide.html" rel="external" target="_blank">Google Java Style</a>,
+<a href="https://source.android.com/docs/setup/contribute/code-style" rel="external" target="_blank">AOSP Java Code Style for Contributors</a></p>
+<h2 id="beispiel-nach-google-java-styleaosp-formatiert">Beispiel nach Google Java Style/AOSP formatiert</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> wuppie.deeplearning.strategy;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Demonstriert den Einsatz von AOSP/Google Java Style ................. Umbruch nach 100 Zeichen |
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyWuppieStudi</span> <span style="color:#66d9ef">implements</span> Comparable<span style="color:#f92672">&lt;</span>MyWuppieStudi<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> String lastName;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> MyWuppieStudi studi;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">MyWuppieStudi</span>() {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/** Erzeugt ein neues Exemplar der MyWuppieStudi-Spezies (max. 40 Zeilen) */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> MyWuppieStudi <span style="color:#a6e22e">getMyWuppieStudi</span>(String name) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (studi <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            studi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyWuppieStudi();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (lastName <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) lastName <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> studi;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compareTo</span>(MyWuppieStudi o) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> lastName.<span style="color:#a6e22e">compareTo</span>(lastName);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>Dieses Beispiel wurde nach Google Java Style/AOSP formatiert.</p>
+<p>Die Zeilenlänge beträgt max. 100 Zeichen. Pro Methode werden max. 40 Zeilen genutzt. Zwischen Attributen,
+Methoden und Importen wird jeweils eine Leerzeile eingesetzt (zwischen den einzelnen Attributen <em>muss</em>
+aber keine Leerzeile genutzt werden). Zur logischen Gliederung können innerhalb von Methoden weitere
+Leerzeilen eingesetzt werden, aber immer nur eine.</p>
+<p>Klassennamen sind UpperCamelCase, Attribute und Methoden und Parameter lowerCamelCase, Konstanten (im
+Beispiel nicht vorhanden) UPPER_SNAKE_CASE. Klassen sind Substantive, Methoden Verben.</p>
+<p>Alle <code>public</code> und <code>protected</code> Elemente werden mit einem Javadoc-Kommentar versehen. Überschriebene Methoden
+müssen nicht mit Javadoc kommentiert werden, müssen aber mit <code>@Override</code> markiert werden.</p>
+<p>Geschweifte Klammern starten immer auf der selben Codezeile. Wenn bei einem <code>if</code> nur ein Statement vorhanden
+ist und dieses auf die selbe Zeile passt, kann auf die umschließenden geschweiften Klammern ausnahmsweise
+verzichtet werden.</p>
+<p>Es wird mit Leerzeichen eingerückt. <a href="https://google.github.io/styleguide/javaguide.html#s4.2-block-indentation" rel="external" target="_blank">Google Java Style</a>
+arbeitet mit 2 Leerzeichen, während <a href="https://source.android.com/docs/setup/contribute/code-style#use-spaces-for-indentation" rel="external" target="_blank">AOSP</a>
+hier 4 Leerzeichen vorschreibt. Im Beispiel wurde nach AOSP eingerückt.</p>
+<p>Darüber hinaus gibt es vielfältige weitere Regeln für das Aussehen des Codes. Lesen Sie dazu entsprechend
+auf <a href="https://google.github.io/styleguide/javaguide.html" rel="external" target="_blank">Google Java Style</a> und auch auf
+<a href="https://source.android.com/docs/setup/contribute/code-style" rel="external" target="_blank">AOSP</a> nach.</p>
+<h2 id="formatieren-sie-ihren-code-mit-der-ide">Formatieren Sie Ihren Code (mit der IDE)</h2>
+<p>Sie können den Code manuell formatieren, oder aber (sinnvollerweise) über Tools
+formatieren lassen. Hier einige Möglichkeiten:</p>
+<ul>
+<li>
+<p>IDE: Code-Style einstellen und zum Formatieren nutzen</p>
+</li>
+<li>
+<p><a href="https://github.com/google/google-java-format" rel="external" target="_blank">google-java-format</a>:
+<code>java -jar google-java-format.jar --replace *.java</code>
+(auch als IDE-Plugin)</p>
+</li>
+<li>
+<p><a href="https://github.com/diffplug/spotless" rel="external" target="_blank"><strong>Spotless</strong></a> in Gradle:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>plugins <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#e6db74">&#34;java&#34;</span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#e6db74">&#34;com.diffplug.spotless&#34;</span> version <span style="color:#e6db74">&#34;6.5.0&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>spotless <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    java <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// googleJavaFormat()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        googleJavaFormat<span style="color:#f92672">().</span><span style="color:#a6e22e">aosp</span><span style="color:#f92672">()</span>  <span style="color:#75715e">// indent w/ 4 spaces
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div><p>Prüfen mit <code>./gradlew spotlessCheck</code> (Teil von <code>./gradlew check</code>)
+und Formatieren mit <code>./gradlew spotlessApply</code></p>
+</li>
+</ul>
+<h3 id="einstellungen-der-ides">Einstellungen der IDE's</h3>
+<ul>
+<li>Eclipse:
+<ul>
+<li><code>Project &gt; Properties &gt; Java Code Style &gt; Formatter</code>: Coding-Style einstellen/einrichten</li>
+<li>Code markieren, <code>Source &gt; Format</code></li>
+<li>Komplettes Aufräumen: <code>Source &gt; Clean Up</code> (Formatierung, Importe, Annotationen, ...)
+Kann auch so eingestellt werden, dass ein &quot;Clean Up&quot; immer beim Speichern ausgeführt wird!</li>
+</ul>
+</li>
+<li>IntelliJ verfügt über ähnliche Fähigkeiten:
+<ul>
+<li>Einstellen über <code>Preferences &gt; Editor &gt; Code Style &gt; Java</code></li>
+<li>Formatieren mit <code>Code &gt; Reformat Code</code> oder <code>Code &gt; Reformat File</code></li>
+</ul>
+</li>
+</ul>
+<p>Die Details kann/muss man einzeln einstellen. Für die &quot;bekannten&quot; Styles (Google Java Style)
+bringen die IDE's oft aber schon eine Gesamtkonfiguration mit.</p>
+<p><strong>Achtung</strong>: Zumindest in Eclipse gibt es mehrere Stellen, wo ein Code-Style eingestellt werden
+kann (&quot;Clean Up&quot;, &quot;Formatter&quot;, ...). Diese sollten dann jeweils auf den selben Style eingestellt
+werden, sonst gibt es unter Umständen lustige Effekte, da beim Speichern ein anderer Style
+angewendet wird als beim &quot;Clean Up&quot; oder beim &quot;Format Source&quot; ...</p>
+<p>Analog sollte man bei der Verwendung von Checkstyle auch in der IDE im Formatter die entsprechenden
+Checkstyle-Regeln (s.u.) passend einstellen, sonst bekommt man durch Checkstyle Warnungen angezeigt,
+die man durch ein automatisches Formatieren <em>nicht</em> beheben kann.</p>
+<h3 id="google-java-style-und-google-java-format">Google Java Style und google-java-format</h3>
+<p>Wer direkt den <a href="https://google.github.io/styleguide/javaguide.html" rel="external" target="_blank">Google Java Style</a> nutzt,
+kann auch den dazu passenden Formatter von Google einsetzen:
+<a href="https://github.com/google/google-java-format" rel="external" target="_blank">google-java-format</a>.
+Diesen kann man entweder als Plugin für IntelliJ/Eclipse einsetzen oder als Stand-alone-Tool
+(Kommandozeile oder Build-Skripte) aufrufen. Wenn man sich noch einen entsprechenden
+Git-Hook definiert, wird vor jedem Commit der Code entsprechend den Richtlinien formatiert :)</p>
+<h3 id="spotless-und-google-java-format-in-gradle">Spotless und google-java-format in Gradle</h3>
+<p><em>Hinweis</em>: Bei Spotless in Gradle müssen je nach den Versionen von Spotless/google-java-format
+bzw. des JDK noch Optionen in der Datei <code>gradle.properties</code> eingestellt werden (siehe
+<a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/coding/src/formatter/" rel="external" target="_blank">Demo</a> und
+<a href="https://github.com/diffplug/spotless/tree/main/plugin-gradle#google-java-format" rel="external" target="_blank">Spotless &gt; google-java-format (Web)</a>).</p>
+<p><strong>Tipp</strong>: Die Formatierung über die IDE ist angenehm, aber in der Praxis leider oft etwas
+hakelig: Man muss alle Regeln selbst einstellen (und es gibt <em>einige</em> dieser Einstellungen),
+und gerade IntelliJ &quot;greift&quot; manchmal nicht alle Code-Stellen beim Formatieren. Nutzen Sie
+Spotless und bauen Sie die Konfiguration in Ihr Build-Skript ein und konfigurieren Sie über
+den Build-Prozess.</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/coding/src/formatter/" target="_blank"><span class="title">Demo: Konfiguration Formatter (IDE), Spotless/Gradle</span></a></span></div>
+<h2 id="metriken-kennzahlen-für-verschiedene-aspekte-zum-code">Metriken: Kennzahlen für verschiedene Aspekte zum Code</h2>
+<p>Metriken messen verschiedene Aspekte zum Code und liefern eine Zahl zurück. Mit Metriken kann
+man beispielsweise die Einhaltung der Coding Rules (Formate, ...) prüfen, aber auch die Einhaltung
+verschiedener Regeln des objektorientierten Programmierens.</p>
+<h3 id="beispiele-für-wichtige-metriken-jeweils-max-werte-für-pm">Beispiele für wichtige Metriken (jeweils Max-Werte für PM)</h3>
+<p>Die folgenden Metriken und deren Maximal-Werte sind gute Erfahrungswerte aus der Praxis und helfen,
+den Code Smell &quot;Langer Code&quot; (vgl. <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html">&ldquo;Code Smells&rdquo;</a>) zu
+erkennen und damit zu vermeiden. Über die Metriken <em>BEC</em>, <em>McCabe</em> und <em>DAC</em> wird auch die Einhaltung
+elementarer Programmierregeln gemessen.</p>
+<ul>
+<li><strong>NCSS</strong> (<em>Non Commenting Source Statements</em>)
+<ul>
+<li>Zeilen pro Methode: 40; pro Klasse: 250; pro Datei: 300
+<em>Annahme</em>: Eine Anweisung je Zeile ...</li>
+</ul>
+</li>
+<li><strong>Anzahl der Methoden</strong> pro Klasse: 10</li>
+<li><strong>Parameter</strong> pro Methode: 3</li>
+<li><strong>BEC</strong> (<em>Boolean Expression Complexity</em>)
+Anzahl boolescher Ausdrücke in <code>if</code> etc.: 3</li>
+<li><strong>McCabe</strong> (<em>Cyclomatic Complexity</em>)
+<ul>
+<li>Anzahl der möglichen Verzweigungen (Pfade) pro Methode + 1</li>
+<li>1-4 gut, 5-7 noch OK</li>
+</ul>
+</li>
+<li><strong>DAC</strong> (<em>Class Data Abstraction Coupling</em>)
+<ul>
+<li>Anzahl der genutzten (instantiierten) &quot;Fremdklassen&quot;</li>
+<li>Werte kleiner 7 werden i.A. als normal betrachtet</li>
+</ul>
+</li>
+</ul>
+<p>Die obigen Grenzwerte sind typische Standardwerte, die sich in der Praxis allgemein bewährt haben
+(vergleiche u.a. <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html#id_Martin2009">[Martin2009]</a> oder auch in
+<a href="https://source.android.com/docs/setup/contribute/code-style#write-short-methods" rel="external" target="_blank">AOSP: Write short methods</a>
+und <a href="https://source.android.com/docs/setup/contribute/code-style#limit-line-length" rel="external" target="_blank">AOSP: Limit line length</a>).</p>
+<p>Dennoch sind das keine absoluten Werte an sich. Ein Übertreten der Grenzen ist ein
+<strong>Hinweis</strong> darauf, dass <strong>höchstwahrscheinlich</strong> etwas nicht stimmt, muss aber im
+konkreten Fall hinterfragt und diskutiert und begründet werden!</p>
+<h3 id="metriken-im-beispiel-von-oben">Metriken im Beispiel von oben</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> String lastName;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> MyWuppieStudi studi;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> MyWuppieStudi <span style="color:#a6e22e">getMyWuppieStudi</span>(String name) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (studi <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            studi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyWuppieStudi();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (lastName <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) lastName <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> studi;
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></div><ul>
+<li>BEC: 1 (nur ein boolescher Ausdruck im <code>if</code>)</li>
+<li>McCabe: 3 (es gibt zwei mögliche Verzweigungen in der Methode plus die Methode selbst)</li>
+<li>DAC: 1 (eine &quot;Fremdklasse&quot;: <code>String</code>)</li>
+</ul>
+<p><em>Anmerkung</em>: In Checkstyle werden für einige häufig verwendete Standard-Klassen Ausnahmen definiert,
+d.h. <code>String</code> würde im obigen Beispiel <em>nicht</em> bei DAC mitgezählt/angezeigt.</p>
+<p>=&gt; Verweis auf LV Softwareengineering</p>
+<h2 id="tool-support-checkstyle">Tool-Support: Checkstyle</h2>
+<p>Metriken und die Einhaltung von Coding-Conventions werden sinnvollerweise nicht manuell,
+sondern durch diverse Tools erfasst, etwa im Java-Bereich mit Hilfe von
+<a href="https://github.com/checkstyle" rel="external" target="_blank"><strong>Checkstyle</strong></a>.</p>
+<p>Das Tool lässt sich <a href="https://checkstyle.org/cmdline.html" rel="external" target="_blank">Standalone über CLI</a> nutzen
+oder als Plugin für IDE's (<a href="https://checkstyle.org/eclipse-cs" rel="external" target="_blank">Eclipse</a> oder
+<a href="https://github.com/jshiell/checkstyle-idea" rel="external" target="_blank">IntelliJ</a>) einsetzen. Gradle bringt ein
+eigenes <a href="https://docs.gradle.org/current/userguide/checkstyle_plugin.html" rel="external" target="_blank">Plugin</a> mit.</p>
+<ul>
+<li>
+<p>IDE: diverse <a href="https://checkstyle.org/index.html#Related_Tools" rel="external" target="_blank">Plugins</a>:
+<a href="https://checkstyle.org/eclipse-cs" rel="external" target="_blank">Eclipse-CS</a>,
+<a href="https://github.com/jshiell/checkstyle-idea" rel="external" target="_blank">CheckStyle-IDEA</a></p>
+</li>
+<li>
+<p><a href="https://checkstyle.org/cmdline.html" rel="external" target="_blank">CLI</a>:
+<code>java -jar checkstyle-10.2-all.jar -c google_checks.xml *.java</code></p>
+</li>
+<li>
+<p><a href="https://docs.gradle.org/current/userguide/checkstyle_plugin.html" rel="external" target="_blank">Plugin &quot;<strong>checkstyle</strong>&quot;</a>
+in Gradle:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>plugins <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#e6db74">&#34;java&#34;</span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#e6db74">&#34;checkstyle&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>checkstyle <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    configFile <span style="color:#a6e22e">file</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;checkstyle.xml&#39;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    toolVersion <span style="color:#e6db74">&#39;10.2&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div><ul>
+<li>Aufruf: Prüfen mit <code>./gradlew checkstyleMain</code> (Teil von <code>./gradlew check</code>)</li>
+<li>Konfiguration: <code>&lt;projectDir&gt;/config/checkstyle/checkstyle.xml</code> (Default)
+bzw. mit der obigen Konfiguration direkt im Projektordner</li>
+<li>Report: <code>&lt;projectDir&gt;/build/reports/checkstyle/main.html</code></li>
+</ul>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/coding/src/checkstyle/" target="_blank"><span class="title">Demo: IntelliJ, Checkstyle/Gradle</span></a></span></div>
+<h2 id="checkstyle-konfiguration">Checkstyle: Konfiguration</h2>
+<p>Die auszuführenden Checks lassen sich über eine <a href="https://checkstyle.org/config.html" rel="external" target="_blank">XML-Datei</a>
+konfigurieren. In <a href="https://checkstyle.org/eclipse-cs" rel="external" target="_blank">Eclipse-CS</a> kann man die Konfiguration
+auch in einer GUI bearbeiten.</p>
+<p>Das Checkstyle-Projekt stellt eine passende Konfiguration für den
+<a href="https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml" rel="external" target="_blank">Google Java Style</a>
+bereit. Diese ist auch in den entsprechenden Plugins oft bereits enthalten und kann direkt
+ausgewählt oder als Startpunkt für eigene Konfigurationen genutzt werden.</p>
+<p>Der Startpunkt für die Konfigurationsdatei ist immer das Modul &quot;Checker&quot;. Darin können sich
+&quot;FileSetChecks&quot; (Module, die auf einer Menge von Dateien Checks ausführen), &quot;Filters&quot; (Module,
+die Events bei der Prüfung von Regeln filtern) und &quot;AuditListeners&quot; (Module, die akzeptierte
+Events in einen Report überführen) befinden. Der &quot;TreeWalker&quot; ist mit der wichtigste Vertreter
+der FileSetChecks-Module und transformiert die zu prüfenden Java-Sourcen in einen
+<em>Abstract Syntax Tree</em>, also eine Baumstruktur, die dem jeweiligen Code unter der Java-Grammatik
+entspricht. Darauf können dann wiederum die meisten Low-Level-Module arbeiten.</p>
+<p>Eine Reihe von <a href="https://checkstyle.org/checks.html" rel="external" target="_blank">Standard-Checks</a> sind bereits in Checkstyle
+implementiert und benötigen keine weitere externe Abhängigkeiten. Man kann aber zusätzliche Regeln
+aus anderen Projekten beziehen (etwa via Gradle/Maven) oder sich eigene zusätzliche Regeln in Java
+schreiben. Die einzelnen Checks werden in der Regel als &quot;Modul&quot; dem &quot;TreeWalker&quot; hinzugefügt und
+über die jeweiligen Properties näher konfiguriert.</p>
+<p>Sie finden in der <a href="https://checkstyle.org/checks.html" rel="external" target="_blank">Doku</a> zu jedem Check das entsprechende Modul,
+das Eltern-Modul (also wo müssen Sie das Modul im XML-Baum einfügen) und auch die möglichen
+Properties und deren Default-Einstellungen.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Checker&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;LineLength&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;max&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;100&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;TreeWalker&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;AvoidStarImport&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;MethodCount&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;maxPublic&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;10&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;maxTotal&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;40&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/module&gt;</span></span></span></code></pre></div><p>Alternativen/Ergänzungen: beispielsweise <a href="https://github.com/BasLeijdekkers/MetricsReloaded" rel="external" target="_blank">MetricsReloaded</a>.</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://youtu.be/0ny6e6CNTF8" target="_blank"><span class="title">Demo: Konfiguration mit Eclipse-CS, Hinweis auf Formatter</span></a></span></div>
+<h2 id="spotbugs-finde-anti-pattern-und-potentielle-bugs-linter">SpotBugs: Finde Anti-Pattern und potentielle Bugs (Linter)</h2>
+<ul>
+<li>
+<p><a href="https://github.com/spotbugs/spotbugs" rel="external" target="_blank"><strong>SpotBugs</strong></a> sucht nach über 400 potentiellen Bugs im Code</p>
+<ul>
+<li>Anti-Pattern (schlechte Praxis, &quot;dodgy&quot; Code)</li>
+<li>Sicherheitsprobleme</li>
+<li>Korrektheit</li>
+</ul>
+</li>
+<li>
+<p>CLI: <code>java -jar spotbugs.jar options ...</code></p>
+</li>
+<li>
+<p>IDE: <a href="https://github.com/JetBrains/spotbugs-intellij-plugin" rel="external" target="_blank">IntelliJ SpotBugs plugin</a>,
+<a href="https://spotbugs.readthedocs.io/en/latest/eclipse.html" rel="external" target="_blank">SpotBugs Eclipse plugin</a></p>
+</li>
+<li>
+<p>Gradle: <a href="https://github.com/spotbugs/spotbugs-gradle-plugin" rel="external" target="_blank">SpotBugs Gradle Plugin</a></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>plugins <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#e6db74">&#34;java&#34;</span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#e6db74">&#34;com.github.spotbugs&#34;</span> version <span style="color:#e6db74">&#34;5.0.6&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>spotbugs <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    ignoreFailures <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    showStackTraces <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div><p>Prüfen mit <code>./gradlew spotbugsMain</code> (in <code>./gradlew check</code>)</p>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/coding/src/spotbugs/" target="_blank"><span class="title">Demo: SpotBugs/Gradle</span></a></span></div>
+<h2 id="konfiguration-für-das-pm-praktikum-format-metriken-checkstyle-spotbugs">Konfiguration für das PM-Praktikum (Format, Metriken, Checkstyle, SpotBugs)</h2>
+<p>Im PM-Praktikum beachten wir die obigen Coding Conventions und Metriken mit den dort definierten
+Grenzwerten. Diese sind bereits in der bereit gestellten Minimal-Konfiguration für Checkstyle
+(s.u.) konfiguriert.</p>
+<h3 id="formatierung">Formatierung</h3>
+<ul>
+<li>Google Java Style/AOSP: <strong>Spotless</strong></li>
+</ul>
+<p>Zusätzlich wenden wir den <a href="https://google.github.io/styleguide/javaguide.html" rel="external" target="_blank">Google Java Style</a>
+an. Statt der dort vorgeschriebenen Einrückung mit 2 Leerzeichen (und 4+ Leerzeichen bei Zeilenumbruch
+in einem Statement) können Sie auch mit 4 Leerzeichen einrücken (8 Leerzeichen bei Zeilenumbruch)
+(<a href="https://source.android.com/docs/setup/contribute/code-style" rel="external" target="_blank">AOSP</a>). Halten Sie sich in Ihrem
+Team an eine einheitliche Einrückung (Google Java Style <em>oder</em> AOSP).</p>
+<p>Formatieren Sie Ihren Code vor den Commits mit <strong>Spotless</strong> (über Gradle) oder stellen Sie den
+Formatter Ihrer IDE entsprechend ein.</p>
+<h3 id="checkstyle">Checkstyle</h3>
+<ul>
+<li>Minimal-Konfiguration für <strong>Checkstyle</strong> (Coding Conventions, Metriken)</li>
+</ul>
+<p>Nutzen Sie die folgende <strong>Minimal-Konfiguration</strong> für <strong>Checkstyle</strong> für Ihre
+Praktikumsaufgaben. Diese beinhaltet die Prüfung der wichtigsten Formate nach
+Google Java Style/AOSP sowie der obigen Metriken. Halten Sie diese Regeln
+ein.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE module PUBLIC &#34;-//Checkstyle//DTD Checkstyle Configuration 1.3//EN&#34; &#34;https://checkstyle.org/dtds/configuration_1_3.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Checker&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;severity&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;warning&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;TreeWalker&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;JavaNCSS&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;methodMaximum&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;40&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;classMaximum&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;250&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;fileMaximum&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;300&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;BooleanExpressionComplexity&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;CyclomaticComplexity&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;max&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;7&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ClassDataAbstractionCoupling&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;max&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;6&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;MethodCount&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;maxTotal&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;10&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;maxPrivate&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;10&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;maxPackage&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;10&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;maxProtected&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;10&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;maxPublic&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;10&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ParameterNumber&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;max&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;3&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;MethodLength&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;max&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;40&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Indentation&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;basicOffset&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;4&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;lineWrappingIndentation&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;8&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;caseIndent&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;4&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;throwsIndent&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;4&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;arrayInitIndent&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;4&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;TypeName&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;MethodName&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;MemberName&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ParameterName&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ConstantName&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;OneStatementPerLine&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;MultipleVariableDeclarations&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;MissingOverride&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;MissingJavadocMethod&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;AvoidStarImport&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;LineLength&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;max&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;100&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;FileTabCharacter&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;eachLine&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/module&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;module</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;NewlineAtEndOfFile&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/module&gt;</span></span></span></code></pre></div><p>Sie können diese Basis-Einstellungen auch aus dem Programmiermethoden-CampusMinden/Prog2-Lecture-Repo direkt herunterladen:
+<a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/coding/src/checkstyle.xml" rel="external" target="_blank">checkstyle.xml</a>.</p>
+<p>Sie können zusätzlich gern noch die weiteren (und strengeren) Regeln aus der vom Checkstyle-Projekt
+bereitgestellten Konfigurationsdatei für den
+<a href="https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml" rel="external" target="_blank">Google Java Style</a>
+nutzen. <em>Hinweis</em>: Einige der dort konfigurierten Checkstyle-Regeln gehen allerdings über den
+Google Java Style hinaus.</p>
+<h3 id="linter-spotbugs">Linter: SpotBugs</h3>
+<ul>
+<li>Vermeiden von Anti-Pattern mit <strong>SpotBugs</strong></li>
+</ul>
+<p>Setzen Sie zusätzlich <strong>SpotBugs</strong> mit ein. Ihre Lösungen dürfen keine Warnungen oder
+Fehler beinhalten, die SpotBugs melden würde.</p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Code entsteht nicht zum Selbstzweck =&gt; Regeln nötig!</p>
+<ul>
+<li>
+<p>Coding Conventions</p>
+<ul>
+<li>Regeln zu Schreibweisen und Layout</li>
+<li>Leerzeichen, Einrückung, Klammern</li>
+<li>Zeilenlänge, Umbrüche</li>
+<li>Kommentare</li>
+</ul>
+</li>
+<li>
+<p>Formatieren mit <strong>Spotless</strong></p>
+</li>
+<li>
+<p>Prinzipien des objektorientierten Programmierens (vgl. <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html">&ldquo;Code Smells&rdquo;</a>)</p>
+<ul>
+<li>Jede Klasse ist für genau <strong>einen</strong> Aspekt des Systems verantwortlich.
+(<em>Single Responsibility</em>)</li>
+<li>Keine Code-Duplizierung! (<em>DRY</em> - Don't repeat yourself)</li>
+<li>Klassen und Methoden sollten sich erwartungsgemäß verhalten</li>
+<li>Kapselung: Möglichst wenig öffentlich zugänglich machen</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Metriken: Einhaltung von Regeln in Zahlen ausdrücken</p>
+</li>
+<li>
+<p>Prüfung manuell durch Code Reviews oder durch Tools wie <strong>Checkstyle</strong> oder <strong>SpotBugs</strong></p>
+</li>
+<li>
+<p>Definition des <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/coding/src/checkstyle.xml" rel="external" target="_blank">&quot;PM-Styles&quot;</a>
+(siehe Folie &quot;Konfiguration für das PM-Praktikum&quot;)</p>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_googlestyleguide'>[googlestyleguide] <a href='https://google.github.io/styleguide/javaguide.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Google Java Style Guide</strong></a><br>Google Open Source, 2022.</li> <li id='id_Inden2013'>[Inden2013] <strong>Der Weg zum Java-Profi</strong><br>Inden, M., dpunkt.verlag, 2013. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8649-1245-0' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8649-1245-0</a>.<br><em>Kapitel 13: Programmierstil und Coding Conventions</em></li> <li id='id_Martin2009'>[Martin2009] <strong>Clean Code</strong><br>Martin, R., mitp, 2009. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8266-5548-7' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8266-5548-7</a>.</li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+<article class="default">
+<h1>Refactoring</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Refactoring bedeutet Änderung der inneren Struktur des Codes ohne Beeinflussung äußeren Verhaltens.</p>
+<p>Mit Hilfe von Refactoring kann man Code Smells beheben, und Lesbarkeit, Verständlichkeit und Wartbarkeit
+von Software verbessern.</p>
+<p>Es ist wichtig, immer nur einzelne Schritte zu machen und anschließend die Testsuite laufen zu lassen,
+damit nicht versehentlich Fehler oder Verhaltensänderungen beim Refactoring eingebaut werden.</p>
+<p>Prinzipiell kann man Refactoring manuell mit Search&amp;Replace durchführen, aber es bietet sich an, hier
+die IDE-Unterstützung zu nutzen. Es stehen verschiedene Methoden zur Verfügung, die nicht unbedingt
+einheitlich benannt sein müssen oder in jeder IDE vorkommen. Zu den häufig genutzten Methoden zählen
+<em>Rename</em>, <em>Extract</em>, <em>Move</em> und <em>Push Up/Pull Down</em>.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/n0RaQ_Qve0Y' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Refactoring</a></li> <li><a href='https://youtu.be/zZ2RGKRBVz4' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Refactoring: Rename</a></li> <li><a href='https://youtu.be/PR4mEjBl_No' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Refactoring: Encapsulate</a></li> <li><a href='https://youtu.be/4VbxgqZ68ng' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Refactoring: Extract Method</a></li> <li><a href='https://youtu.be/Wr92Oboh05E' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Refactoring: Move Method</a></li> <li><a href='https://youtu.be/t24c88RshL8' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Refactoring: Pull up</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/36389f8fe4befc6370c28cda4475690224942c00c854e6dfc953b60c26acdf62093345ae1ee0698f71dc0a7f02739253d4ba29b7c05b69036cbb09fb1e361549' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Refactoring</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Begriff, Notwendigkeit und Vorgehen des/beim Refactoring</li> <li>(K2) Bedeutung kleiner Schritte beim Refactoring</li> <li>(K2) Bedeutung einer sinnvollen Testsuite beim Refactoring</li> <li>(K2) Refactoring: Nur innere Struktur ändern, nicht äußeres Verhalten!</li> <li>(K3) Anwendung der wichtigsten Refactoring-Methoden: <em>Rename</em>, <em>Extract</em>, <em>Move</em>, <em>Push Up/Pull Down</em></li></ul></div>
+</div>
+
+
+
+
+    <h2 id="was-ist-refactoring">Was ist Refactoring?</h2>
+<blockquote>
+<p>Refactoring ist, wenn einem auffällt, daß der Funktionsname <code>foobar</code>
+ziemlich bescheuert ist, und man die Funktion in <code>sinus</code> umbenennt.</p>
+<p> <span class='origin'>Quelle: <a href="http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html#356" rel="external" target="_blank">&quot;356: Refactoring&quot;</a> by <a href="mailto:andreas@andreas.org" rel="external" target="_blank">Andreas Bogk</a> on Lutz Donnerhacke: &quot;Fachbegriffe der Informatik&quot;</span></p>
+</blockquote>
+<blockquote>
+<p>Refactoring (noun): a change made to the internal structure of software to make
+it easier to understand and cheaper to modify without changing its observable
+behaviour.</p>
+<p> <span class='origin'>Quelle: <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html#id_Fowler2011">[Fowler2011, p. 53]</a></span></p>
+</blockquote>
+<p><strong>Refactoring:</strong> Änderungen an der <span class='alert'><strong>inneren Struktur</strong></span> einer Software</p>
+<ul>
+<li>Beobachtbares (äußeres) Verhalten ändert sich dabei <strong>nicht</strong>
+<ul>
+<li>Keine neuen Features einführen</li>
+<li>Keine Bugs fixen</li>
+<li>Keine öffentliche Schnittstelle ändern (<em>Anmerkung</em>: Bis auf Umbenennungen
+oder Verschiebungen von Elementen innerhalb der Software)</li>
+</ul>
+</li>
+<li>Ziel: Verbesserung von Verständlichkeit und Änderbarkeit</li>
+</ul>
+<h2 id="anzeichen-dass-refactoring-jetzt-eine-gute-idee-wäre">Anzeichen, dass Refactoring jetzt eine gute Idee wäre</h2>
+<ul>
+<li>
+<p>Code &quot;stinkt&quot; (zeigt/enthält <em>Code Smells</em>)</p>
+<p>Code Smells sind strukturelle Probleme, die im Laufe der Zeit zu
+Problemen führen können. Refactoring ändert die innere Struktur
+des Codes und kann entsprechend genutzt werden, um die Smells zu
+beheben.</p>
+</li>
+<li>
+<p>Schwer erklärbarer Code</p>
+<p>Könnten Sie Ihren Code ohne Vorbereitung in der Abgabe erklären?
+In einer Minute? In fünf Minuten? In zehn? Gar nicht?</p>
+<p>In den letzten beiden Fällen sollten Sie definitiv über eine
+Vereinfachung der Strukturen nachdenken.</p>
+</li>
+<li>
+<p>Verständnisprobleme, Erweiterungen</p>
+<p>Sie grübeln in der Abgabe, was Ihr Code machen sollte?</p>
+<p>Sie überlegen, was Ihr Code bedeutet, um herauszufinden, wo Sie
+die neue Funktionalität anbauen können?</p>
+<p>Sie suchen nach Codeteilen, finden diese aber nicht, da die sich
+in anderen (falschen?) Stellen/Klassen befinden?</p>
+<p>Nutzen Sie die (neuen) Erkenntnisse, um den Code leichter
+verständlich zu gestalten.</p>
+</li>
+</ul>
+<div class='center'>
+<blockquote>
+<p>&quot;Three strikes and you refactor.&quot;</p>
+<p> <span class='origin'>Quelle: <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html#id_Fowler2011">[Fowler2011, p. 58]</a>: &quot;The Rule of Three&quot;</span></p>
+</blockquote>
+</div>
+<p>Wenn Sie sich zum dritten Mal über eine suboptimale Lösung ärgern, dann
+werden Sie sich vermutlich noch öfter darüber ärgern. Jetzt ist der
+Zeitpunkt für eine Verbesserung.</p>
+<p>Schauen Sie sich die entsprechenden Kapitel in <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html#id_Passig2013">[Passig2013]</a> und <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html#id_Fowler2011">[Fowler2011]</a>
+an, dort finden Sie noch viele weitere Anhaltspunkte, ob und wann Refactoring
+sinnvoll ist.</p>
+<h2 id="bevor-sie-loslegen-">Bevor Sie loslegen ...</h2>
+<ol>
+<li>
+<p><strong>Unit Tests</strong> schreiben</p>
+<ul>
+<li>Normale und ungültige Eingaben</li>
+<li>Rand- und Spezialfälle</li>
+</ul>
+</li>
+<li>
+<p><strong>Coding Conventions</strong> einhalten</p>
+<ul>
+<li>Sourcecode formatieren (lassen)</li>
+</ul>
+</li>
+<li>
+<p>Haben Sie die <span class='alert'>fragliche Codestelle auch wirklich verstanden</span>?!</p>
+</li>
+</ol>
+<h2 id="vorgehen-beim-refactoring">Vorgehen beim Refactoring</h2>
+<h3 id="überblick-über-die-methoden-des-refactorings">Überblick über die Methoden des Refactorings</h3>
+<p>Die Refactoring-Methoden sind nicht einheitlich definiert, es existiert ein großer
+und uneinheitlicher &quot;Katalog&quot; an möglichen Schritten. Teilweise benennt jede IDE
+die Schritte etwas anders, teilweise werden unterschiedliche Möglichkeiten angeboten.</p>
+<p>Zu den am häufigsten genutzten Methoden zählen</p>
+<ul>
+<li>Rename Method/Class/Field</li>
+<li>Encapsulate Field</li>
+<li>Extract Method/Class</li>
+<li>Move Method</li>
+<li>Pull Up, Push Down (Field, Method)</li>
+</ul>
+<h3 id="best-practice">Best Practice</h3>
+<p>Eine Best Practice (oder nennen Sie es einfach eine wichtige Erfahrung) ist,
+beim Refactoring langsam und gründlich vorzugehen. Sie ändern die Struktur
+der Software und können dabei leicht Fehler oder echte Probleme einbauen.
+Gehen Sie also langsam und sorgsam vor, machen Sie einen Schritt nach dem
+anderen und sichern Sie sich durch eine gute Testsuite ab, die Sie nach jedem
+Schritt erneut ausführen: Das Verhalten der Software soll sich ja nicht
+ändern, d.h. die Tests müssen nach jedem einzelnen Refactoring-Schritt immer
+grün sein (oder Sie haben einen Fehler gemacht).</p>
+<ul>
+<li>
+<p>Kleine Schritte: immer nur <strong>eine</strong> Änderung zu einer Zeit</p>
+</li>
+<li>
+<p>Nach <strong>jedem</strong> Refactoring-Schritt <strong>Testsuite</strong> laufen lassen</p>
+<p>=&gt; Nächster Refactoring-Schritt erst, wenn alle Tests wieder &quot;grün&quot;</p>
+</li>
+<li>
+<p>Versionskontrolle nutzen: <strong>Jeden</strong> Schritt <strong>einzeln</strong> committen</p>
+</li>
+</ul>
+<h2 id="refactoring-methode-rename-methodclassfield">Refactoring-Methode: Rename Method/Class/Field</h2>
+<h3 id="motivation">Motivation</h3>
+<p>Name einer Methode/Klasse/Attributs erklärt nicht ihren Zweck.</p>
+<h3 id="durchführung">Durchführung</h3>
+<p>Name selektieren, &quot;<code>Refactor &gt; Rename</code>&quot;</p>
+<h3 id="anschließend-ggf-prüfen">Anschließend ggf. prüfen</h3>
+<p>Aufrufer? Superklassen?</p>
+<h3 id="beispiel">Beispiel</h3>
+<p><strong>Vorher</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getTeN</span>() {}</span></span></code></pre></div><p><strong>Nachher</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getTelefonNummer</span>() {}</span></span></code></pre></div><h2 id="refactoring-methode-encapsulate-field">Refactoring-Methode: Encapsulate Field</h2>
+<h3 id="motivation-1">Motivation</h3>
+<p>Sichtbarkeit von Attributen reduzieren.</p>
+<h3 id="durchführung-1">Durchführung</h3>
+<p>Attribut selektieren, &quot;<code>Refactor &gt; Encapsulate Field</code>&quot;</p>
+<h3 id="anschließend-ggf-prüfen-1">Anschließend ggf. prüfen</h3>
+<p>Superklassen? Referenzen? (Neue) JUnit-Tests?</p>
+<h3 id="beispiel-1">Beispiel</h3>
+<p><strong>Vorher</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> cps;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printDetails</span>() {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Credits: &#34;</span> <span style="color:#f92672">+</span> cps);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p><strong>Nachher</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> cps;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getCps</span>() { <span style="color:#66d9ef">return</span> cps; }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setCps</span>(<span style="color:#66d9ef">int</span> cps) {  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">cps</span> <span style="color:#f92672">=</span> cps;  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printDetails</span>() {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;credits: &#34;</span> <span style="color:#f92672">+</span> getCps());
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="refactoring-methode-extract-methodclass">Refactoring-Methode: Extract Method/Class</h2>
+<h3 id="motivation-2">Motivation</h3>
+<ul>
+<li>Codefragment stellt eigenständige Methode dar</li>
+<li>&quot;Überschriften-Code&quot;</li>
+<li>Code-Duplizierung</li>
+<li>Code ist zu &quot;groß&quot;</li>
+<li>Klasse oder Methode erfüllt unterschiedliche Aufgaben</li>
+</ul>
+<h3 id="durchführung-2">Durchführung</h3>
+<p>Codefragment selektieren, &quot;<code>Refactor &gt; Extract Method</code>&quot; bzw. &quot;<code>Refactor &gt; Extract Class</code>&quot;</p>
+<h3 id="anschließend-ggf-prüfen-2">Anschließend ggf. prüfen</h3>
+<ul>
+<li>Aufruf der neuen Methode? Nutzung der neuen Klasse?</li>
+<li>Neue JUnit-Tests nötig? Veränderung bestehender Tests nötig?</li>
+<li>Speziell bei Methoden:
+<ul>
+<li>Nutzung lokaler Variablen: Übergabe als Parameter!</li>
+<li>Veränderung lokaler Variablen: Rückgabewert in neuer Methode
+und Zuweisung bei Aufruf; evtl. neue Typen nötig!</li>
+</ul>
+</li>
+</ul>
+<h3 id="beispiel-2">Beispiel</h3>
+<p><strong>Vorher</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printInfos</span>() {
+</span></span><span style="display:flex;"><span>    printHeader();
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Details ausgeben</span>
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;name:    &#34;</span> <span style="color:#f92672">+</span> name);
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;credits: &#34;</span> <span style="color:#f92672">+</span> cps);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p><strong>Nachher</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printInfos</span>() {
+</span></span><span style="display:flex;"><span>    printHeader();
+</span></span><span style="display:flex;"><span>    printDetails();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printDetails</span>() {
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;name:    &#34;</span> <span style="color:#f92672">+</span> name);
+</span></span><span style="display:flex;"><span>    System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;credits: &#34;</span> <span style="color:#f92672">+</span> cps);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="refactoring-methode-move-method">Refactoring-Methode: Move Method</h2>
+<h3 id="motivation-3">Motivation</h3>
+<p>Methode nutzt (oder wird genutzt von) mehr Eigenschaften einer
+fremden Klasse als der eigenen Klasse.</p>
+<h3 id="durchführung-3">Durchführung</h3>
+<p>Methode selektieren, &quot;<code>Refactor &gt; Move</code>&quot;
+(ggf. &quot;Keep original method as delegate to moved method&quot; aktivieren)</p>
+<h3 id="anschließend-ggf-prüfen-3">Anschließend ggf. prüfen</h3>
+<ul>
+<li>Aufruf der neuen Methode (Delegation)?</li>
+<li>Neue JUnit-Tests nötig? Veränderung bestehender Tests nötig?</li>
+<li>Nutzung lokaler Variablen: Übergabe als Parameter!</li>
+<li>Veränderung lokaler Variablen: Rückgabewert in neuer Methode
+und Zuweisung bei Aufruf; evtl. neue Typen nötig!</li>
+</ul>
+<h3 id="beispiel-3">Beispiel</h3>
+<p><strong>Vorher</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Kurs</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> cps;
+</span></span><span style="display:flex;"><span>    String descr;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span> <span style="color:#66d9ef">extends</span> Person {
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> cps;
+</span></span><span style="display:flex;"><span>    Kurs kurs;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printKursInfos</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Kurs:    &#34;</span> <span style="color:#f92672">+</span> kurs.<span style="color:#a6e22e">descr</span>);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Credits: &#34;</span> <span style="color:#f92672">+</span> kurs.<span style="color:#a6e22e">cps</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p><strong>Nachher</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Kurs</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> cps;
+</span></span><span style="display:flex;"><span>    String descr;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printKursInfos</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Kurs:    &#34;</span> <span style="color:#f92672">+</span> descr);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Credits: &#34;</span> <span style="color:#f92672">+</span> cps);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span> <span style="color:#66d9ef">extends</span> Person {
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> cps;
+</span></span><span style="display:flex;"><span>    Kurs kurs;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printKursInfos</span>() { kurs.<span style="color:#a6e22e">printKursInfos</span>(); }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="refactoring-methode-pull-up-push-down-field-method">Refactoring-Methode: Pull Up, Push Down (Field, Method)</h2>
+<h3 id="motivation-4">Motivation</h3>
+<ul>
+<li>Attribut/Methode nur für die Oberklasse relevant: <strong>Pull Up</strong></li>
+<li>Subklassen haben identische Attribute/Methoden: <strong>Pull Up</strong></li>
+<li>Attribut/Methode nur für eine Subklasse relevant: <strong>Push Down</strong></li>
+</ul>
+<h3 id="durchführung-4">Durchführung</h3>
+<p>Name selektieren, &quot;<code>Refactor &gt; Pull Up</code>&quot; oder &quot;<code>Refactor &gt; Push Down</code>&quot;</p>
+<h3 id="anschließend-ggf-prüfen-4">Anschließend ggf. prüfen</h3>
+<p>Referenzen/Aufrufer? JUnit-Tests?</p>
+<h3 id="beispiel-4">Beispiel</h3>
+<p><strong>Vorher</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> { }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span> <span style="color:#66d9ef">extends</span> Person {
+</span></span><span style="display:flex;"><span>    String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printDetails</span>() { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;name:    &#34;</span> <span style="color:#f92672">+</span> name); }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p><strong>Nachher</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> { <span style="color:#66d9ef">protected</span> String name; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span> <span style="color:#66d9ef">extends</span> Person {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printDetails</span>() { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;name:    &#34;</span> <span style="color:#f92672">+</span> name); }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><h2 id="wrap-up">Wrap-Up</h2>
+<p>Behebung von <strong>Bad Smells</strong> durch <strong>Refactoring</strong></p>
+<p>=&gt; Änderung der inneren Struktur ohne Beeinflussung des äußeren Verhaltens</p>
+<ul>
+<li>Verbessert Lesbarkeit, Verständlichkeit, Wartbarkeit</li>
+<li>Immer nur kleine Schritte machen</li>
+<li>Nach jedem Schritt Testsuite laufen lassen</li>
+<li>Katalog von Maßnahmen, beispielsweise <em>Rename</em>, <em>Extract</em>, <em>Move</em>, <em>Push Up/Pull Down</em>, ...</li>
+<li>Unterstützung durch IDEs wie Eclipse, Idea, ...</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106231&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Refactoring (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p>Betrachten Sie das <a href="https://github.com/emilybache/Theatrical-Players-Refactoring-Kata" rel="external" target="_blank">Theatrical Players Refactoring Kata</a>.
+Dort finden Sie im Unterordner <a href="https://github.com/emilybache/Theatrical-Players-Refactoring-Kata/tree/main/java" rel="external" target="_blank">java/</a>
+einige Klassen mit unübersichtlichem und schlecht strukturierten Code.</p>
+<p>Welche <em>Bad Smells</em> können Sie hier identifizieren?</p>
+<p>Beheben Sie die Smells durch die <em>schrittweise Anwendung</em> von den aus der Vorlesung
+bekannten Refactoring-Methoden. Denken Sie auch daran, dass Refactoring immer durch
+eine entsprechende Testsuite abgesichert sein muss - ergänzen Sie ggf. die Testfälle.</p>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Fowler2011'>[Fowler2011] <strong>Refactoring</strong><br>Fowler, M., Addison-Wesley, 2011. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-0-201-48567-7' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-0-201-48567-7</a>.</li> <li id='id_Inden2013'>[Inden2013] <strong>Der Weg zum Java-Profi</strong><br>Inden, M., dpunkt.verlag, 2013. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8649-1245-0' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8649-1245-0</a>.<br><em>Kapitel 11: Refactorings</em></li> <li id='id_Passig2013'>[Passig2013] <strong>Weniger schlecht programmieren</strong><br>Passig, K. und Jander, J., O'Reilly, 2013. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-89721-567-2' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-89721-567-2</a>.</li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1722610113" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1722610113" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1722610113"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1722610113" defer></script>
+  </body>
+</html>

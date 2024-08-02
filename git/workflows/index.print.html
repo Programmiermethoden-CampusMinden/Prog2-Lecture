@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.131.0">
+    <meta name="generator" content="Relearn 6.1.0">
+    <meta name="description" content="Nutzung von Git in Projekten: Verteiltes Git (und Workflows) Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit entsprechenden Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.
+Auf der anderen Seite ermöglicht Git ein sehr einfaches verteiltes Arbeiten. Auch hier ergeben sich verschiedene Workflows, wie man mit anderen Entwicklern an einem Projekt arbeiten will/kann.
+Im Folgenden sollen also die Frage betrachtet werden: Wie gestalte ich die Zusammenarbeit? Antwort: Workflows mit Git .">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests">
+    <meta name="twitter:description" content="Nutzung von Git in Projekten: Verteiltes Git (und Workflows) Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit entsprechenden Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.
+Auf der anderen Seite ermöglicht Git ein sehr einfaches verteiltes Arbeiten. Auch hier ergeben sich verschiedene Workflows, wie man mit anderen Entwicklern an einem Projekt arbeiten will/kann.
+Im Folgenden sollen also die Frage betrachtet werden: Wie gestalte ich die Zusammenarbeit? Antwort: Workflows mit Git .">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">
+    <meta property="og:title" content="Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests">
+    <meta property="og:description" content="Nutzung von Git in Projekten: Verteiltes Git (und Workflows) Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit entsprechenden Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.
+Auf der anderen Seite ermöglicht Git ein sehr einfaches verteiltes Arbeiten. Auch hier ergeben sich verschiedene Workflows, wie man mit anderen Entwicklern an einem Projekt arbeiten will/kann.
+Im Folgenden sollen also die Frage betrachtet werden: Wie gestalte ich die Zusammenarbeit? Antwort: Workflows mit Git .">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests">
+    <meta itemprop="description" content="Nutzung von Git in Projekten: Verteiltes Git (und Workflows) Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit entsprechenden Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.
+Auf der anderen Seite ermöglicht Git ein sehr einfaches verteiltes Arbeiten. Auch hier ergeben sich verschiedene Workflows, wie man mit anderen Entwicklern an einem Projekt arbeiten will/kann.
+Im Folgenden sollen also die Frage betrachtet werden: Wie gestalte ich die Zusammenarbeit? Antwort: Workflows mit Git .">
+    <meta itemprop="wordCount" content="1534">
+    <title>Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html" rel="canonical" type="text/html" title="Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1722610113" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1722610113" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1722610113" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1722610113" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1722610113" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1722610113"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1722610113";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Git erlaubt unterschiedliche Formen der Zusammenarbeit.</p>
+<p>Bei kleinen Teams kann man einen einfachen zentralen Ansatz einsetzen. Dabei gibt es ein zentrales
+Repo auf dem Server, und alle Team-Mitglieder dürfen direkt in dieses Repo pushen. Hier muss man
+sich gut absprechen und ein vernünftiges Branching-Schema ist besonders wichtig.</p>
+<p>In größeren Projekten gibt es oft ein zentrales öffentliches Repo, wo aber nur wenige Personen
+Schreibrechte haben. Hier forkt man sich dieses Repo, erstellt also eine öffentliche Kopie auf dem
+Server. Diese Kopie klont man lokal und arbeitet hier und pusht die Änderungen in den eigenen öffentlich
+sichtbaren Fork. Um die Änderungen ins Projekt-Repo integrieren zu lassen, wird auf dem Server ein
+sogenannter Merge-Request (Gitlab) bzw. Pull-Request (GitHub) erstellt. Dies erlaubt zusätzlich ein
+Review und eine Diskussion direkt am Code. Damit man die Änderungen im Hauptprojekt in den eigenen
+Fork bekommt, trägt man das Hauptprojekt als weiteres Remote in die Workingcopy ein und aktualisiert
+regelmäßig die Hauptbranches, von denen dann auch die eigenen Feature-Branches ausgehen sollten.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/3xqmNGN39wE' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Git Workflows</a></li> <li><a href='https://youtu.be/-8NOia7k0WI' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Anlegen eines Forks, Erstellen eines Pull-Requests (PR)</a></li> <li><a href='https://youtu.be/4LaZc080Ajo' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Arbeiten mit einem PR, Review eines PR</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/b673fe50e18f064b2b5c81108c81dfea940b2eb81790d54b27e8ade26f0afa10d0d05f8a0c0c852e8e9da6c558065f053033d83384810b47a6ca7f5110482153' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Git Workflows</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K2) Git-Workflows für die Zusammenarbeit</li> <li>(K2) Unterschied zwischen einem Pull/Merge und einem Pull/Rebase</li> <li>(K2) Welche Commits werden Bestandteil eines Merge-Requests (und warum)</li> <li>(K3) Einsatz des zentralisierten Workflows</li> <li>(K3) Einsatz des einfachen verteilten Workflows mit unterschiedlichen Repos</li> <li>(K3) Aktualisieren Ihres Clones und Ihres Forks mit Änderungen aus dem blessed Repo</li> <li>(K3) Erstellen von Beiträgen zu einem Projekt über Merge-Requests</li> <li>(K3) Aktualisierung von Merge-Requests</li> <li>(K3) Diskussion über den Code in Merge-Requests</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="nutzung-von-git-in-projekten-verteiltes-git-und-workflows">Nutzung von Git in Projekten: Verteiltes Git (und Workflows)</h2>
+<p><a href="#R-image-3954cceb0c9ae92a2a2e34319bdbcc7e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows/distributed.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3954cceb0c9ae92a2a2e34319bdbcc7e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows/distributed.png?width=80%25&height=auto"></a></p>
+<p>Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit
+entsprechenden Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.</p>
+<p>Auf der anderen Seite ermöglicht Git ein sehr einfaches verteiltes Arbeiten.
+Auch hier ergeben sich verschiedene Workflows, wie man mit anderen Entwicklern
+an einem Projekt arbeiten will/kann.</p>
+<p>Im Folgenden sollen also die Frage betrachtet werden: <strong>Wie gestalte ich die Zusammenarbeit?</strong>
+Antwort: Workflows mit Git ...</p>
+<h2 id="zusammenarbeit-zentraler-workflow-mit-git-analog-zu-svn">Zusammenarbeit: Zentraler Workflow mit Git (analog zu SVN)</h2>
+<p><a href="#R-image-ce6f95f43a3d1b6e1514e5c37f903e12" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows/centralised.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ce6f95f43a3d1b6e1514e5c37f903e12"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows/centralised.png?width=80%25&height=auto"></a></p>
+<p>In kleinen Projektgruppen wie beispielsweise Ihrer Arbeitsgruppe wird häufig
+ein einfacher zentralisierter Workflow bei der Versionsverwaltung genutzt. Im
+Mittelpunkt steht dabei ein zentrales Repository, auf dem alle Teammitglieder
+gleichberechtigt und direkt pushen dürfen.</p>
+<ul>
+<li>
+<p>Vorteile:</p>
+<ul>
+<li>Einfachstes denkbares Modell</li>
+<li>Ein gemeinsames Repo (wie bei SVN)</li>
+<li>Alle haben Schreibzugriff auf ein gemeinsames Repo</li>
+</ul>
+</li>
+<li>
+<p>Nachteile:</p>
+<ul>
+<li>Definition und Umsetzung von Rollen mit bestimmten Rechten (&quot;Manager&quot;,
+&quot;Entwickler&quot;, &quot;Gast-Entwickler&quot;, ...) schwierig bis unmöglich
+(das ist kein Git-Thema, sondern hängt von der Unterstützung durch den
+Anbieter des Servers ab)</li>
+<li>Jeder darf überall pushen: Enge und direkte Abstimmung nötig</li>
+<li>Modell funktioniert meist nur in sehr kleinen Teams (2..3 Personen)</li>
+</ul>
+</li>
+</ul>
+<h2 id="zusammenarbeit-einfacher-verteilter-workflow-mit-git">Zusammenarbeit: Einfacher verteilter Workflow mit Git</h2>
+<p><a href="#R-image-960f6e61bba1a295ef6869cd89ba4350" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows/workflow_remote.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-960f6e61bba1a295ef6869cd89ba4350"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows/workflow_remote.png?width=80%25&height=auto"></a></p>
+<p>In großen und/oder öffentlichen Projekten wird üblicherweise ein Workflow
+eingesetzt, der auf den Möglichkeiten von verteilten Git-Repositories basiert.</p>
+<p>Dabei wird zwischen verschiedenen Rollen (&quot;Integrationsmanager&quot;, &quot;Entwickler&quot;)
+unterschieden.</p>
+<p>Sie finden dieses Vorgehen beispielsweise beim Linux-Kernel und auch häufig bei
+Projekten auf Github.</p>
+<ul>
+<li>
+<p>Es existiert ein geschütztes (&quot;blessed&quot;) Master-Repo</p>
+<ul>
+<li>Stellt die Referenz für das Projekt dar</li>
+<li>Push-Zugriff nur für ausgewählte Personen (&quot;Integrationsmanager&quot;)</li>
+</ul>
+</li>
+<li>
+<p>Entwickler</p>
+<ul>
+<li>Forken das Master-Repo auf dem Server und klonen ihren Fork lokal</li>
+<li>Arbeiten auf lokalem Klon: Unabhängige Entwicklung eines Features</li>
+<li>Pushen ihren Stand in ihren Fork (ihr eigenes öffentliches Repo):
+Veröffentlichung des Beitrags zum Projekt (sobald fertig bzw. diskutierbar)</li>
+<li>Lösen Pull- bzw. Merge-Request gegen das Master-Repo aus: Beitrag
+soll geprüft und ins Projekt aufgenommen werden (Merge ins Master-Repo
+durch den Integrationsmanager)</li>
+</ul>
+</li>
+<li>
+<p>Integrationsmanager</p>
+<ul>
+<li>Prüft die Änderungen im Pull- bzw. Merge-Request und fordert ggf.
+Nacharbeiten an bzw. lehnt Integration ab (technische oder politische
+Gründe)</li>
+<li>Führt Merge der Entwickler-Zweige mit den Hauptzweigen durch Akzeptieren
+der Pull- bzw. Merge-Requests durch: Beitrag der Entwickler ist im
+Projekt angekommen und ist beim nächsten Pull in deren lokalen Repos
+vorhanden</li>
+</ul>
+</li>
+</ul>
+<p>Den hier gezeigten Zusammenhang kann man auf weitere Ebenen verteilen, vgl. den
+im Linux-Kernel gelebten &quot;Dictator and Lieutenants Workflow&quot; (siehe Literatur).</p>
+<p><em>Hinweis</em>: Hier wird nur die Zusammenarbeit im verteilten Team dargestellt. Dazu
+kommt noch das Arbeiten mit verschiedenen Branches!</p>
+<p><em>Anmerkung</em>: In der Workingcopy wird das eigene (öffentliche) Repo oft als <code>origin</code>
+und das geschützte (&quot;blessed&quot;) Master-Repo als <code>upstream</code> referenziert.</p>
+<h3 id="anmerkungen-zum-forken">Anmerkungen zum Forken</h3>
+<p>Sie könnten auch das Original-Repo direkt clonen. Allerdings würden dann die
+<code>push</code> dort aufschlagen, was in der Regel nicht erwünscht ist (und auch nicht
+erlaubt ist).</p>
+<p>Deshalb forkt man das Original-Repo auf dem Server, d.h. auf dem Server wird
+eine Kopie des Original-Repos im eigenen Namespace angelegt. Auf diese Kopie
+hat man dann uneingeschränkten Zugriff.</p>
+<h3 id="anmerkungen-zu-den-namen-für-die-remotes-origin-und-upstream">Anmerkungen zu den Namen für die Remotes: <code>origin</code> und <code>upstream</code></h3>
+<p>Üblicherweise checkt man die <em>Kopie</em> lokal aus (d.h. erzeugt einen Clone).
+In der Workingcopy verweist dann <code>origin</code> auf die Kopie. Um Änderungen am
+Original-Repo zu erhalten, fügt man dieses unter dem Namen <code>upstream</code> als
+weiteres Remote-Repo hinzu. Dies ist eine nützliche <em>Konvention</em>.</p>
+<p>Um Änderungen aus dem Original-Repo in den eigenen Fork (und die Workingcopy)
+zu bringen, führt man dann einfach folgendes aus (im Beispiel für den <code>master</code>):</p>
+<pre><code>$ git checkout master         # Workingcopy auf master
+$ git pull upstream master    # Aktualisiere lokalen master mit master aus Original-Repo
+$ git push origin master      # Pushe lokalen master in den Fork
+</code></pre>
+<h2 id="feature-branches-aktualisieren-mergen-mit-master-vs-rebase-auf-master">Feature-Branches aktualisieren: Mergen mit <em>master</em> vs. Rebase auf <em>master</em></h2>
+<p>Im Netz finden sich häufig Anleitungen, wonach man Änderungen im <code>master</code>
+mit einem Merge in den Feature-Branch holt, also sinngemäß:</p>
+<pre><code>$ git checkout master         # Workingcopy auf master
+$ git pull upstream master    # Aktualisiere lokalen master mit master aus Vorgabe-Repo
+$ git checkout feature        # Workingcopy auf feature
+$ git merge master            # Aktualisiere feature: Merge master in feature
+$ git push origin feature     # Push aktuellen feature ins Team-Repo
+</code></pre>
+<p>Das funktioniert rein technisch betrachtet.</p>
+<p>Allerdings spielt in den meisten Git-Projekten der <code>master</code> üblicherweise eine besondere Rolle
+(vgl. <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">Branching-Strategien</a>) und ist
+üblicherweise stets das <strong>Ziel</strong> eines Merge, aber nie die Quelle! D.h. per Konvention geht der
+Fluß von Änderungen stets <strong>in</strong> den <code>master</code> (und nicht heraus).</p>
+<p>Wenn man sich nicht an diese Konvention hält, hat man später möglicherweise Probleme, die
+Merge-Historie zu verstehen (welche Änderung kam von woher)!</p>
+<p>Um die Änderungen im <code>master</code> in einen Feature-Branch zu bekommen, sollte deshalb ein <strong>Rebase</strong>
+(des Feature-Branches auf den <code>master</code>) vor einem Merge (des <code>master</code> in den Feature-Branch)
+bevorzugt werden.</p>
+<p><span class='alert'><strong>Merk-Regel</strong>: Merge niemals nie den <code>master</code> in Feature-Branches!</span></p>
+<p><strong>Achtung</strong>: Ein Rebase bei veröffentlichten Branches ist problematisch, da Dritte auf diesem
+Branch arbeiten könnten und entsprechend auf die Commit-IDs angewiesen sind. Nach einem Rebase
+stimmen diese Commit-IDs nicht mehr, was normalerweise mindestens zu Verärgerung führt ... Die
+Dritten müssten ihre Arbeit dann auf den neuen Feature-Branch (d.h. den Feature-Branch nach
+dessen Rebase) rebasen ... vgl. auch &quot;The Perils of Rebasing&quot; in Abschnitt &quot;3.6 Rebasing&quot; in
+<a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html#id_Chacon2014">[Chacon2014]</a>.</p>
+<h3 id="mögliches-szenario-im-praktikum">Mögliches Szenario im Praktikum</h3>
+<p>Im Praktikum haben Sie das Vorgabe-Repo. Dieses könnten Sie als <code>upstream</code> in Ihre lokale
+Workingcopy einbinden.</p>
+<p>Mit Ihrem Team leben Sie vermutlich einen zentralen Workflow, d.h. Sie binden Ihr gemeinsames
+Repo als <code>origin</code> in Ihre lokale Workingcopy ein.</p>
+<p>Dann müssen Sie den lokalen <code>master</code> aus <em>beiden</em> Remotes aktualisieren. Zusätzlich
+wollen Sie Ihren aktuellen Themenbranch auf den aktuellen <code>master</code> rebasen.</p>
+<pre><code>$ git checkout master         # Workingcopy auf master
+$ git pull upstream master    # Aktualisiere lokalen master mit master aus Vorgabe-Repo
+$ git pull origin master      # Aktualisiere lokalen master mit master aus Team-Repo
+$ git push origin master      # Pushe lokalen master in das Team-Repo zurück
+$ git rebase master feature   # Rebase feature auf den aktuellen lokalen master
+$ git push -f origin feature  # Push aktuellen feature ins Team-Repo (&quot;-f&quot; wg. geänderter IDs durch rebase)
+</code></pre>
+<p><strong>Anmerkung</strong>: Dabei können in Ihrem <code>master</code> die unschönen &quot;Rauten&quot; entstehen. Wenn
+Sie das vermeiden wollen, tauschen Sie den zweiten und den dritten Schritt und führen
+den Pull gegen den Upstream-<code>master</code> als <code>pull --rebase</code> durch. Dann müssen Sie Ihren
+lokalen <code>master</code> allerdings auch force-pushen in Ihr Team-Repo und die anderen
+Team-Mitglieder sollten darüber informiert werden, dass sich der <code>master</code> auf
+inkompatible Weise geändert hat ...</p>
+<h2 id="kommunikation-merge--bzw-pull-requests">Kommunikation: Merge- bzw. Pull-Requests</h2>
+<p>Mergen kann man auf der Konsole (oder in der IDE) und anschließend die (neuen) Branches
+auf den Server pushen.</p>
+<p>Die verschiedenen Git-Server erlauben ebenfalls ein GUI-gestütztes Mergen von Branches:
+&quot;Merge-Requests&quot; (<em>MR</em>, Gitlab) bzw. &quot;Pull-Requests&quot; (<em>PR</em>, Github). Das hat gegenüber
+dem lokalen Mergen wichtige Vorteile: Andere Entwickler sehen den beabsichtigten Merge
+(frühzeitig) und können direkt den Code kommentieren und die vorgeschlagenen Änderungen
+diskutieren, aber auch allgemeine Kommentare abgeben.</p>
+<p>Falls möglich, sollte man einen MR/PR immer dem Entwickler zuweisen, der sich weiter
+um diesen MR/PR kümmern wird (also zunächst ist man das erstmal selbst). Zusätzlich
+kann man einen Reviewer bestimmen, d.h. wer soll sich den Code ansehen.</p>
+<p>Hier ein Screenshot der Änderungsansicht unseres Gitlab-Servers (SW-Labor):</p>
+<p><a href="#R-image-06c8621d4155a61587fa950218d54027" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows/screenshot_merge-request_code.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-06c8621d4155a61587fa950218d54027"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows/screenshot_merge-request_code.png?width=80%25&height=auto"></a></p>
+<p>Nachfolgend für den selben MR aus der letzten Abbildung noch die reine Diskussionsansicht:</p>
+<p><a href="#R-image-683347b2e05c4d00d63828d429b43509" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows/screenshot_merge-request_discussion.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-683347b2e05c4d00d63828d429b43509"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows/screenshot_merge-request_discussion.png?width=80%25&height=auto"></a></p>
+<h2 id="best-practices-bei-merge-pull-requests">Best Practices bei Merge-/Pull-Requests</h2>
+<ol>
+<li>MR/PR so zeitig wie möglich aufmachen
+<ul>
+<li>Am besten sofort, wenn ein neuer Branch auf den Server gepusht wird!</li>
+<li>Ggf. mit dem Präfix &quot;WIP&quot; im Titel gegen unbeabsichtigtes vorzeitiges Mergen
+sperren ... (bei GitHub als &quot;Draft&quot;-PR öffnen)</li>
+</ul>
+</li>
+<li>Auswahl Start- und Ziel-Branch (und ggf. Ziel-Repo)
+<ul>
+<li>Es gibt verschiedene Stellen, um einen MR/PR zu erstellen. Manchmal kann man nur
+noch den Ziel-Branch einstellen, manchmal beides.</li>
+<li>Bitte auch darauf achten, welches Ziel-Repo eingestellt ist! Bei Forks wird
+hier immer das Original-Repo voreingestellt!</li>
+<li>Den Ziel-Branch kann man ggf. auch nachträglich durch Editieren des MR/PR
+anpassen (Start-Branch und Ziel-Repo leider nicht, also beim Erstellen aufpassen!).</li>
+</ul>
+</li>
+<li>Titel (<em>Summary</em>): Das ist das, was man in der Übersicht sieht!
+<ul>
+<li>Per Default wird die letzte Commit-Message eingesetzt.</li>
+<li>Analog zur Commit-Message: Bitte hier unbedingt einen sinnvollen Titel
+einsetzen: Was macht der MR/PR (kurz)?</li>
+</ul>
+</li>
+<li>Beschreibung: Was passiert, wenn man diesen MR/PR akzeptiert (ausführlicher)?
+<ul>
+<li>Analog zur Commit-Message sollte hier bei Bedarf die Summary ausformuliert
+werden und beschreiben, was der MR/PR ändert.</li>
+</ul>
+</li>
+<li>Assignee: Wer soll sich drum kümmern?
+<ul>
+<li>Ein MR/PR sollte immer jemanden zugewiesen sein, d.h. nicht &quot;unassigned&quot;
+sein. Ansonsten ist nicht klar, wer den Request durchführen/akzeptieren
+soll.</li>
+<li>Außerdem taucht ein nicht zugewiesener MR/PR nicht in der Übersicht &quot;meiner&quot;
+MR/PR auf, d.h. diese MR/PR haben die Tendenz, vergessen zu werden!</li>
+</ul>
+</li>
+<li>Diskussion am (und neben) dem Code
+<ul>
+<li>Nur die vorgeschlagenen Code-Änderungen diskutieren!</li>
+<li>Weitergehende Diskussionen (etwa über Konzepte o.ä.) besser in separaten Issues
+erledigen, da sonst die Anzeige des MR/PR langsam wird (ist beispielsweise ein
+Problem bei Gitlab).</li>
+</ul>
+</li>
+<li>Weitere Commits auf dem zu mergenden Branch gehen automatisch mit in den Request</li>
+<li>Weitere Entwickler kann man mit &quot;<code>@username</code>&quot; in einem Kommentar auf &quot;CC&quot;
+setzen und in die Diskussion einbinden</li>
+</ol>
+<p><em>Anmerkung</em>: Bei Gitlab (d.h. auch bei dem Gitlab-Server im SW-Labor) gibt es
+&quot;<em>Merge-Requests</em>&quot; (MR). Bei Github gibt es &quot;<em>Pull-Requests</em>&quot; (PR) ...</p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Git-Workflows für die Zusammenarbeit:</p>
+<ul>
+<li>einfacher zentraler Ansatz für kleine Arbeitsgruppen vs.</li>
+<li>einfacher verteilter Ansatz mit einem &quot;blessed&quot; Repo (häufig in Open-Source-Projekten zu finden)</li>
+</ul>
+</li>
+<li>
+<p>Aktualisieren Ihres Clones und Ihres Forks mit Änderungen aus dem &quot;blessed&quot; Repo</p>
+</li>
+<li>
+<p>Unterschied zwischen einem Pull/Merge und einem Pull/Rebase</p>
+</li>
+<li>
+<p>Erstellen von Beiträgen zu einem Projekt über Merge-Requests</p>
+<ul>
+<li>Welche Commits werden Bestandteil eines Merge-Requests (und warum)</li>
+<li>Diskussion über den Code in Merge-Requests</li>
+</ul>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106246&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Git Workflows (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_AtlassianGit'>[AtlassianGit] <a href='https://www.atlassian.com/git/tutorials' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Become a git guru.</strong></a><br>Atlassian Pty Ltd, 2022.</li> <li id='id_Chacon2014'>[Chacon2014] <a href='https://git-scm.com/book/en/v2' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Pro Git</strong></a><br>Chacon, S. und Straub, B., Apress, 2014. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-1-4842-0077-3</a>.<br><em>Kapitel 5 (Distributed Git) sowie Abschnitt 4.8 (Gitlab) und Kapitel 6 (GitHub)</em></li> <li id='id_GitCheatSheet'>[GitCheatSheet] <a href='https://training.github.com/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Git Cheat Sheets</strong></a><br>Github Inc., 2022.</li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1722610113" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1722610113" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1722610113"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1722610113" defer></script>
+  </body>
+</html>

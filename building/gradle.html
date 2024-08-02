@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.131.0">
+    <meta name="generator" content="Relearn 6.1.0">
+    <meta name="description" content="Automatisieren von Arbeitsabläufen Works on my machine ...
+Einen häufigen Ausspruch, den man bei der Zusammenarbeit in Teams zu hören bekommt, ist &#34;Also, bei mir läuft der Code.&#34; ...
+Das Problem dabei ist, dass jeder Entwickler eine andere Maschine hat, oft ein anderes Betriebssystem oder eine andere OS-Version. Dazu kommen noch eine andere IDE und/oder andere Einstellungen und so weiter.
+Wie bekommt man es hin, dass Code zuverlässig auch auf anderen Rechnern baut?">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Build-Systeme: Gradle">
+    <meta name="twitter:description" content="Automatisieren von Arbeitsabläufen Works on my machine ...
+Einen häufigen Ausspruch, den man bei der Zusammenarbeit in Teams zu hören bekommt, ist &#34;Also, bei mir läuft der Code.&#34; ...
+Das Problem dabei ist, dass jeder Entwickler eine andere Maschine hat, oft ein anderes Betriebssystem oder eine andere OS-Version. Dazu kommen noch eine andere IDE und/oder andere Einstellungen und so weiter.
+Wie bekommt man es hin, dass Code zuverlässig auch auf anderen Rechnern baut?">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html">
+    <meta property="og:title" content="Build-Systeme: Gradle">
+    <meta property="og:description" content="Automatisieren von Arbeitsabläufen Works on my machine ...
+Einen häufigen Ausspruch, den man bei der Zusammenarbeit in Teams zu hören bekommt, ist &#34;Also, bei mir läuft der Code.&#34; ...
+Das Problem dabei ist, dass jeder Entwickler eine andere Maschine hat, oft ein anderes Betriebssystem oder eine andere OS-Version. Dazu kommen noch eine andere IDE und/oder andere Einstellungen und so weiter.
+Wie bekommt man es hin, dass Code zuverlässig auch auf anderen Rechnern baut?">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Build-Systeme: Gradle">
+    <meta itemprop="description" content="Automatisieren von Arbeitsabläufen Works on my machine ...
+Einen häufigen Ausspruch, den man bei der Zusammenarbeit in Teams zu hören bekommt, ist &#34;Also, bei mir läuft der Code.&#34; ...
+Das Problem dabei ist, dass jeder Entwickler eine andere Maschine hat, oft ein anderes Betriebssystem oder eine andere OS-Version. Dazu kommen noch eine andere IDE und/oder andere Einstellungen und so weiter.
+Wie bekommt man es hin, dass Code zuverlässig auch auf anderen Rechnern baut?">
+    <meta itemprop="wordCount" content="2038">
+    <title>Build-Systeme: Gradle</title>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle/index.print.html" rel="alternate" type="text/html" title="Build-Systeme: Gradle">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1722610113" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1722610113" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1722610113" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1722610113" rel="stylesheet" media="print">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1722610113"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1722610113";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#automatisieren-von-arbeitsabläufen">Automatisieren von Arbeitsabläufen</a></li>
+    <li><a href="#gradle-eine-dsl-in-groovy">Gradle: Eine DSL in Groovy</a></li>
+    <li><a href="#gradle-dsl">Gradle-DSL</a></li>
+    <li><a href="#dateien">Dateien</a></li>
+    <li><a href="#gradle-init">Gradle Init</a></li>
+    <li><a href="#ordner">Ordner</a></li>
+    <li><a href="#ablauf-eines-gradle-builds">Ablauf eines Gradle-Builds</a></li>
+    <li><a href="#plugin-architektur">Plugin-Architektur</a></li>
+    <li><a href="#auflösen-von-abhängigkeiten">Auflösen von Abhängigkeiten</a></li>
+    <li><a href="#beispiel-mit-weiteren-konfigurationen-ua-checkstyle-und-javadoc">Beispiel mit weiteren Konfigurationen (u.a. Checkstyle und Javadoc)</a></li>
+    <li><a href="#gradle-und-ant-und-maven">Gradle und Ant (und Maven)</a></li>
+    <li><a href="#gradle-wrapper">Gradle-Wrapper</a></li>
+    <li><a href="#wrap-up">Wrap-Up</a></li>
+    <li><a href="#link-sammlung-gradle">Link-Sammlung Gradle</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Build-Systeme: Gradle
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Build-Systeme: Gradle</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Um beim Übersetzen und Testen von Software von den spezifischen Gegebenheiten auf einem
+Entwicklerrechner unabhängig zu werden, werden häufig sogenannte Build-Tools eingesetzt.
+Mit diesen konfiguriert man sein Projekt abseits einer IDE und übersetzt, testet und
+baut seine Applikation damit entsprechend unabhängig. In der Java-Welt sind aktuell die
+Build-Tools Ant, Maven und Gradle weit verbreitet.</p>
+<p>In Gradle ist ein Java-Entwicklungsmodell quasi eingebaut. Über die Konfigurationsskripte
+müssen nur noch bestimmte Details wie benötigte externe Bibliotheken oder die Hauptklasse
+und sonstige Projektbesonderheiten konfiguriert werden. Über &quot;Tasks&quot; wie <code>build</code>, <code>test</code>
+oder <code>run</code> können Java-Projekte übersetzt, getestet und ausgeführt werden. Dabei werden die
+externen Abhängigkeiten (Bibliotheken) aufgelöst (soweit konfiguriert) und auch abhängige
+Tasks mit erledigt, etwa muss zum Testen vorher der Source-Code übersetzt werden.</p>
+<p>Gradle bietet eine Fülle an Plugins für bestimmte Aufgaben an, die jeweils mit neuen Tasks
+einher kommen. Beispiele sind das Plugin <code>java</code>, welches weitere Java-spezifische Tasks
+wie <code>classes</code> mitbringt, oder das Plugin <code>checkstyle</code> zum Überprüfen von Coding-Style-Richtlinien.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/aVtDkFpwd_E' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Build-Systeme: Gradle</a></li> <li><a href='https://youtu.be/OhQRGaNO4iA' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Gradle</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/3af48428e1b62bd42410e2a802cf355309212ea621509aa20833c5e1c486ffe9214b027c29e55d775f135f45ab7d3fcd59d735812d64bc04a71de8d59df8a3f5' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Build-Systeme: Gradle</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K3) Schreiben und Verstehen einfacher Gradle-Skripte</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="automatisieren-von-arbeitsabläufen">Automatisieren von Arbeitsabläufen</h2>
+<div class='center'>
+<p>Works on my machine ...</p>
+</div>
+<p>Einen häufigen Ausspruch, den man bei der Zusammenarbeit in Teams zu hören
+bekommt, ist &quot;Also, bei mir läuft der Code.&quot; ...</p>
+<p>Das Problem dabei ist, dass jeder Entwickler eine andere Maschine hat, oft ein
+anderes Betriebssystem oder eine andere OS-Version. Dazu kommen noch eine andere
+IDE und/oder andere Einstellungen und so weiter.</p>
+<p>Wie bekommt man es hin, dass Code zuverlässig auch auf anderen Rechnern baut?
+Ein wichtiger Baustein dafür sind sogenannte &quot;Build-Systeme&quot;, also Tools, die
+unabhängig von der IDE (und den IDE-Einstellungen) für das Übersetzen der
+Software eingesetzt werden und deren Konfiguration dann mit im Repo eingecheckt
+wird. Damit kann die Software dann auf allen Rechnern und insbesondere dann auch
+auf dem Server (Stichwort &quot;Continuous Integration&quot;) unabhängig von der IDE o.ä.
+automatisiert gebaut und getestet werden.</p>
+<ul>
+<li>Build-Tools:
+<ul>
+<li>Apache Ant</li>
+<li>Apache Maven</li>
+<li><strong>Gradle</strong></li>
+</ul>
+</li>
+</ul>
+<p>Das sind die drei am häufigsten anzutreffenden Build-Tools in der Java-Welt.</p>
+<p>Ant ist von den drei genannten Tools das älteste und setzt wie Maven auf XML als
+Beschreibungssprache. In Ant müssen dabei alle Regeln stets explizit formuliert
+werden, die man benutzen möchte.</p>
+<p>In Maven wird dagegen von einem bestimmten Entwicklungsmodell ausgegangen, hier
+müssen nur noch die Abweichungen zu diesem Modell konfiguriert werden.</p>
+<p>In Gradle wird eine DSL basierend auf der Skriptsprache Groovy (läuft auf der
+JVM) eingesetzt, und es gibt hier wie in Maven ein bestimmtes eingebautes
+Entwicklungsmodell. Gradle bringt zusätzlich noch einen Wrapper mit, d.h. es
+wird eine Art Gradle-Starter im Repo konfiguriert, der sich quasi genauso
+verhält wie ein fest installiertes Gradle (s.u.).</p>
+<p><strong>Achtung</strong>: Während Ant und Maven relativ stabil in der API sind, verändert
+sich Gradle teilweise deutlich zwischen den Versionen. Zusätzlich sind bestimmte
+Gradle-Versionen oft noch von bestimmten JDK-Versionen abhängig. In der Praxis
+bedeutet dies, dass man Gradle-Skripte im Laufe der Zeit relativ oft überarbeiten
+muss (einfach nur, damit das Skript wieder läuft - ohne dass man dabei
+irgendwelche neuen Features oder sonstige Vorteile erzielen würde). Ein großer
+Vorteil ist aber der Gradle-Wrapper (s.u.).</p>
+<h2 id="gradle-eine-dsl-in-groovy">Gradle: Eine DSL in Groovy</h2>
+<p>DSL: <em>Domain Specific Language</em></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#75715e">// build.gradle
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>plugins <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#e6db74">&#39;java&#39;</span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#e6db74">&#39;application&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>repositories <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    mavenCentral<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dependencies <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    testImplementation <span style="color:#e6db74">&#39;junit:junit:4.13.2&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>application <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    mainClass <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;fluppie.App&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div><p>Dies ist mit die einfachste Build-Datei für Gradle.</p>
+<p>Über Plugins wird die Unterstützung für Java und das Bauen von Applikationen aktiviert,
+d.h. es stehen darüber entsprechende spezifische Tasks zur Verfügung.</p>
+<p>Abhängigkeiten sollen hier aus dem Maven-Repository <a href="https://mvnrepository.com/repos/central" rel="external" target="_blank">MavenCentral</a>
+geladen werden. Zusätzlich wird hier als Abhängigkeit für den Test (<code>testImplementation</code>)
+die JUnit-Bibliothek in einer Maven-artigen Notation angegeben (vgl.
+<a href="https://mvnrepository.com/" rel="external" target="_blank">mvnrepository.com</a>). (Für nur zur Übersetzung der Applikation
+benötigte Bibliotheken verwendet man stattdessen das Schlüsselwort <code>implementation</code>.)</p>
+<p>Bei der Initialisierung wurde als Package <code>fluppie</code> angegeben. Gradle legt darunter per
+Default die Klasse <code>App</code> mit einer <code>main()</code>-Methode an. Entsprechend kann man über den
+Eintrag <code>application</code> den Einsprungpunkt in die Applikation konfigurieren.</p>
+<h2 id="gradle-dsl">Gradle-DSL</h2>
+<p>Ein Gradle-Skript ist letztlich ein in Groovy geschriebenes Skript.
+<a href="https://groovy-lang.org/" rel="external" target="_blank">Groovy</a> ist eine auf Java basierende und auf
+der JVM ausgeführte Skriptsprache. Seit einigen Versionen kann man die
+Gradle-Build-Skripte auch in der Sprache Kotlin schreiben.</p>
+<h2 id="dateien">Dateien</h2>
+<p>Für das Bauen mit Gradle benötigt man drei Dateien im Projektordner:</p>
+<ul>
+<li>
+<p><code>build.gradle</code>: Die auf der Gradle-DSL beruhende Definition des Builds
+mit den Tasks (und ggf. Abhängigkeiten) eines Projekts.</p>
+<p>Ein Multiprojekt hat pro Projekt eine solche Build-Datei. Dabei können
+die Unterprojekte Eigenschaften der Eltern-Buildskripte &quot;erben&quot; und so
+relativ kurz ausfallen.</p>
+</li>
+<li>
+<p><code>settings.gradle</code>: Eine optionale Datei, in der man beispielsweise den
+Projektnamen oder bei einem Multiprojekt die relevanten Unterprojekte
+festlegt.</p>
+</li>
+<li>
+<p><code>gradle.properties</code>: Eine weitere optionale Datei, in der projektspezifische
+Properties für den Gradle-Build spezifizieren kann.</p>
+</li>
+</ul>
+<h2 id="gradle-init">Gradle Init</h2>
+<p>Um eine neue Gradle-Konfiguration anlegen zu lassen, geht man in einen Ordner
+und führt darin <code>gradle init</code> aus. Gradle fragt der Reihe nach einige Einstellungen
+ab:</p>
+<pre><code>$ gradle init
+
+Select type of project to generate:
+  1: basic
+  2: application
+  3: library
+  4: Gradle plugin
+Enter selection (default: basic) [1..4] 2
+
+Select implementation language:
+  1: C++
+  2: Groovy
+  3: Java
+  4: Kotlin
+  5: Scala
+  6: Swift
+Enter selection (default: Java) [1..6] 3
+
+Split functionality across multiple subprojects?:
+  1: no - only one application project
+  2: yes - application and library projects
+Enter selection (default: no - only one application project) [1..2] 1
+
+Select build script DSL:
+  1: Groovy
+  2: Kotlin
+Enter selection (default: Groovy) [1..2] 1
+
+Select test framework:
+  1: JUnit 4
+  2: TestNG
+  3: Spock
+  4: JUnit Jupiter
+Enter selection (default: JUnit Jupiter) [1..4] 1
+
+Project name (default: tmp): wuppie
+Source package (default: tmp): fluppie
+</code></pre>
+<p>Typischerweise möchte man eine Applikation bauen (Auswahl 2 bei der ersten Frage).
+Als nächstes wird nach der Sprache des Projekts gefragt sowie nach der Sprache für
+das Gradle-Build-Skript (Default ist Groovy) sowie nach dem Testframework, welches
+verwendet werden soll.</p>
+<p>Damit wird die eingangs gezeigte Konfiguration angelegt.</p>
+<h2 id="ordner">Ordner</h2>
+<p>Durch <code>gradle init</code> wird ein neuer Ordner <code>wuppie/</code> mit folgender Ordnerstruktur
+angelegt:</p>
+<pre><code>drwxr-xr-x 4 cagix cagix 4096 Apr  8 11:43 ./
+drwxrwxrwt 1 cagix cagix 4096 Apr  8 11:43 ../
+-rw-r--r-- 1 cagix cagix  154 Apr  8 11:43 .gitattributes
+-rw-r--r-- 1 cagix cagix  103 Apr  8 11:43 .gitignore
+drwxr-xr-x 3 cagix cagix 4096 Apr  8 11:43 app/
+drwxr-xr-x 3 cagix cagix 4096 Apr  8 11:42 gradle/
+-rwxr-xr-x 1 cagix cagix 8070 Apr  8 11:42 gradlew*
+-rw-r--r-- 1 cagix cagix 2763 Apr  8 11:42 gradlew.bat
+-rw-r--r-- 1 cagix cagix  370 Apr  8 11:43 settings.gradle
+</code></pre>
+<p>Es werden Einstellungen für Git erzeugt (<code>.gitattributes</code> und
+<code>.gitignore</code>).</p>
+<p>Im Ordner <code>gradle/</code> wird der Gradle-Wrapper abgelegt (s.u.). Dieser
+Ordner wird normalerweise mit ins Repo eingecheckt. Die Skripte
+<code>gradlew</code> und <code>gradlew.bat</code> sind die Startskripte für den Gradle-Wrapper
+(s.u.) und werden normalerweise ebenfalls ins Repo mit eingecheckt.</p>
+<p>Der Ordner <code>.gradle/</code> (erscheint ggf. nach dem ersten Lauf von Gradle
+auf dem neuen Projekt) ist nur ein Hilfsordner (&quot;Cache&quot;) von Gradle.
+Hier werden heruntergeladene Dateien etc. abgelegt. Dieser Order
+sollte <strong>nicht</strong> ins Repo eingecheckt werden und ist deshalb auch
+per Default im generierten <code>.gitignore</code> enthalten. (Zusätzlich gibt es
+im User-Verzeichnis auch noch einen Ordner <code>.gradle/</code> mit einem globalen
+Cache.)</p>
+<p>In <code>settings.gradle</code> finden sich weitere Einstellungen. Die eigentliche
+Gradle-Konfiguration befindet sich zusammen mit dem eigentlichen Projekt
+im Unterordner <code>app/</code>:</p>
+<pre><code>drwxr-xr-x 4 root root 4096 Apr  8 11:50 ./
+drwxr-xr-x 5 root root 4096 Apr  8 11:49 ../
+drwxr-xr-x 5 root root 4096 Apr  8 11:50 build/
+-rw-r--r-- 1 root root  852 Apr  8 11:43 build.gradle
+drwxr-xr-x 4 root root 4096 Apr  8 11:43 src/
+</code></pre>
+<p>Die Datei <code>build.gradle</code> ist die durch <code>gradle init</code> erzeugte (und
+eingangs gezeigte) Konfigurationsdatei, vergleichbar mit <code>build.xml</code>
+für Ant oder <code>pom.xml</code> für Maven. Im Unterordner <code>build/</code> werden die
+generierten <code>.class</code>-Dateien etc. beim Build-Prozess abgelegt.</p>
+<p>Unter <code>src/</code> findet sich dann eine Maven-typische Ordnerstruktur
+für die Sourcen:</p>
+<pre><code>$ tree src/
+src/
+|-- main
+|   |-- java
+|   |   `-- fluppie
+|   |       `-- App.java
+|   `-- resources
+`-- test
+    |-- java
+    |   `-- fluppie
+    |       `-- AppTest.java
+    `-- resources
+</code></pre>
+<p>Unterhalb von <code>src/</code> ist ein Ordner <code>main/</code> für die Quellen der Applikation (Sourcen
+und Ressourcen). Für jede Sprache gibt es einen eigenen Unterordner, hier entsprechend
+<code>java/</code>. Unterhalb diesem folgt dann die bei der Initialisierung angelegte Package-Struktur
+(hier <code>fluppie</code> mit der Default-Main-Klasse <code>App</code> mit einer <code>main()</code>-Methode). Diese
+Strukturen wiederholen sich für die Tests unterhalb von <code>src/test/</code>.</p>
+<p>Wer die herkömmlichen, deutlich flacheren Strukturen bevorzugt, also unterhalb von <code>src/</code>
+direkt die Java-Package-Strukturen für die Sourcen der Applikation und unterhalb von <code>test/</code>
+entsprechend die Strukturen für die JUnit-Test, der kann dies im Build-Skript einstellen:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>sourceSets <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    main <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        java <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            srcDirs <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;src&#39;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        resources <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            srcDirs <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;res&#39;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    test <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        java <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            srcDirs <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;test&#39;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div><h2 id="ablauf-eines-gradle-builds">Ablauf eines Gradle-Builds</h2>
+<p>Ein Gradle-Build hat zwei Hauptphasen: Konfiguration und Ausführung.</p>
+<p>Während der Konfiguration wird das gesamte Skript durchlaufen (vgl. Ausführung
+der direkten Anweisungen eines Tasks). Dabei wird ein Graph erzeugt: welche
+Tasks hängen von welchen anderen ab etc.</p>
+<p>Anschließend wird der gewünschte Task ausgeführt. Dabei werden zuerst alle
+Tasks ausgeführt, die im Graphen auf dem Weg zu dem gewünschten Task liegen.</p>
+<p>Mit <code>gradle tasks</code> kann man sich die zur Verfügung stehenden Tasks ansehen.
+Diese sind der Übersicht halber noch nach &quot;Themen&quot; sortiert.</p>
+<p>Für eine Java-Applikation sind die typischen Tasks <code>gradle build</code> zum Bauen der
+Applikation (inkl. Ausführen der Tests) sowie <code>gradle run</code> zum Starten der Anwendung.
+Wer nur die Java-Sourcen compilieren will, würde den Task <code>gradle compileJava</code> nutzen.
+Mit <code>gradle check</code> würde man compilieren und die Tests ausführen sowie weitere Checks
+durchführen (<code>gradle test</code> würde nur compilieren und die Tests ausführen), mit <code>gradle jar</code>
+die Anwendung in ein <code>.jar</code>-File packen und mit <code>gradle javadoc</code> die Javadoc-Dokumentation
+erzeugen und mit <code>gradle clean</code> die generierten Hilfsdateien aufräumen (löschen).</p>
+<h2 id="plugin-architektur">Plugin-Architektur</h2>
+<p>Für bestimmte Projekttypen gibt es immer wieder die gleichen Aufgaben. Um hier
+Schreibaufwand zu sparen, existieren verschiedene Plugins für verschiedene
+Projekttypen. In diesen Plugins sind die entsprechenden Tasks bereits mit den
+jeweiligen Abhängigkeiten formuliert. Diese Idee stammt aus Maven, wo dies
+für Java-basierte Projekte umgesetzt ist.</p>
+<p>Beispielsweise erhält man über das Plugin <code>java</code> den Task <code>clean</code> zum Löschen
+aller generierten Build-Artefakte, den Task <code>classes</code>, der die Sourcen zu
+<code>.class</code>-Dateien kompiliert oder den Task <code>test</code>, der die JUnit-Tests
+ausführt ...</p>
+<p>Sie können sich Plugins und weitere Tasks relativ leicht auch selbst definieren.</p>
+<h2 id="auflösen-von-abhängigkeiten">Auflösen von Abhängigkeiten</h2>
+<p>Analog zu Maven kann man Abhängigkeiten (etwa in einer bestimmten Version
+benötigte Bibliotheken) im Gradle-Skript angeben. Diese werden (transparent für
+den User) von einer ebenfalls angegeben Quelle, etwa einem Maven-Repository,
+heruntergeladen und für den Build genutzt. Man muss also nicht mehr die
+benötigten <code>.jar</code>-Dateien der Bibliotheken mit ins Projekt einchecken.
+Analog zu Maven können erzeugte Artefakte automatisch publiziert werden, etwa
+in einem Maven-Repository.</p>
+<p>Für das Projekt benötigte Abhängigkeiten kann man über den Eintrag <code>dependencies</code>
+spezifizieren. Dabei unterscheidet man u.a. zwischen Applikation und Tests:
+<code>implementation</code> und <code>testImplementation</code> für das Compilieren und Ausführen von
+Applikation bzw. Tests. Diese Abhängigkeiten werden durch Gradle über die im
+Abschnitt <code>repositories</code> konfigurierten Repositories aufgelöst und die entsprechenden
+<code>.jar</code>-Files geladen (in den <code>.gradle/</code>-Ordner).</p>
+<p>Typische Repos sind das Maven-Repo selbst (<code>mavenCentral()</code>) oder das Google-Maven-Repo
+(<code>google()</code>).</p>
+<p>Die Einträge in <code>dependencies</code> erfolgen dabei in einer Maven-Notation, die Sie
+auch im Maven-Repo <a href="https://mvnrepository.com/" rel="external" target="_blank">mvnrepository.com</a> finden.</p>
+<h2 id="beispiel-mit-weiteren-konfigurationen-ua-checkstyle-und-javadoc">Beispiel mit weiteren Konfigurationen (u.a. Checkstyle und Javadoc)</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span>plugins <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#e6db74">&#39;java&#39;</span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#e6db74">&#39;application&#39;</span>
+</span></span><span style="display:flex;"><span>    id <span style="color:#e6db74">&#39;checkstyle&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>repositories <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    mavenCentral<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>application <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    mainClass <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hangman.Main&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>java <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    sourceCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span>
+</span></span><span style="display:flex;"><span>    targetCompatibility <span style="color:#f92672">=</span> JavaVersion<span style="color:#f92672">.</span><span style="color:#a6e22e">VERSION_11</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    standardInput <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sourceSets <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    main <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        java <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            srcDirs <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;src&#39;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        resources <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            srcDirs <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;res&#39;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>checkstyle <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    configFile <span style="color:#f92672">=</span> file<span style="color:#f92672">(</span><span style="color:#960050;background-color:#1e0010">“</span>$<span style="color:#f92672">{</span>rootDir<span style="color:#f92672">}/</span>google_checks<span style="color:#f92672">.</span><span style="color:#a6e22e">xml</span><span style="color:#960050;background-color:#1e0010">”</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    toolVersion <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;8.32&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dependencies <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    implementation group: <span style="color:#e6db74">&#39;org.apache.poi&#39;</span><span style="color:#f92672">,</span> name: <span style="color:#e6db74">&#39;poi&#39;</span><span style="color:#f92672">,</span> version: <span style="color:#e6db74">&#39;4.1.2&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>javadoc <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    options<span style="color:#f92672">.</span><span style="color:#a6e22e">showAll</span><span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div><p>Hier sehen Sie übrigens noch eine weitere mögliche Schreibweise für das Notieren
+von Abhängigkeiten: <code>implementation group: 'org.apache.poi', name: 'poi', version: '4.1.2'</code>
+und <code>implementation 'org.apache.poi:poi:4.1.2'</code> sind gleichwertig, wobei die letztere
+Schreibweise sowohl in den generierten Builds-Skripten und in der offiziellen Dokumentation
+bevorzugt wird.</p>
+<h2 id="gradle-und-ant-und-maven">Gradle und Ant (und Maven)</h2>
+<p>Vorhandene Ant-Buildskripte kann man nach Gradle importieren und ausführen
+lassen. Über die DSL kann man auch direkt Ant-Tasks aufrufen. Siehe auch
+<a href="https://docs.gradle.org/current/userguide/ant.html" rel="external" target="_blank">&quot;Using Ant from Gradle&quot;</a>.</p>
+<h2 id="gradle-wrapper">Gradle-Wrapper</h2>
+<pre><code>project
+|-- app/
+|-- build.gradle
+|-- gradlew
+|-- gradlew.bat
+`-- gradle/
+    `-- wrapper/
+        |-- gradle-wrapper.jar
+        `-- gradle-wrapper.properties
+</code></pre>
+<p>Zur Ausführung von Gradle-Skripten benötigt man eine lokale Gradle-Installation.
+Diese sollte für i.d.R. alle User, die das Projekt bauen wollen, identisch sein.
+Leider ist dies oft nicht gegeben bzw. nicht einfach lösbar.</p>
+<p>Zur Vereinfachung gibt es den Gradle-Wrapper <code>gradlew</code> (bzw. <code>gradlew.bat</code> für Windows).
+Dies ist ein kleines Shellskript, welches zusammen mit einigen kleinen <code>.jar</code>-Dateien im
+Unterordner <code>gradle/</code> mit ins Repo eingecheckt wird und welches direkt die Rolle des
+<code>gradle</code>-Befehls einer Gradle-Installation übernehmen kann. Man kann also in Konfigurationskripten,
+beispielsweise für Gitlab CI, alle Aufrufe von <code>gradle</code> durch Aufrufe von <code>gradlew</code> ersetzen.</p>
+<p>Beim ersten Aufruf lädt <code>gradlew</code> dann die spezifizierte Gradle-Version herunter und speichert
+diese in einem lokalen Ordner <code>.gradle/</code>. Ab dann greift <code>gradlew</code> auf diese lokale (nicht
+&quot;installierte&quot;) <code>gradle</code>-Version zurück.</p>
+<p><code>gradle init</code> erzeugt den Wrapper automatisch in der verwendeten Gradle-Version mit.
+Alternativ kann man den Wrapper nachträglich über <code>gradle wrapper --gradle-version 6.5</code>
+in einer bestimmten (gewünschten) Version anlegen lassen.</p>
+<p>Da der Gradle-Wrapper im Repository eingecheckt ist, benutzen alle Entwickler damit
+automatisch die selbe Version, ohne diese auf ihrem System zuvor installieren zu müssen.
+Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle vorzuziehen!</p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Automatisieren von Arbeitsabläufen mit Build-Tools/-Skripten</p>
+</li>
+<li>
+<p>Einstieg in <strong>Gradle</strong> (DSL zur Konfiguration)</p>
+<ul>
+<li>Typisches Java-Entwicklungsmodell eingebaut</li>
+<li>Konfiguration der Abweichungen (Abhängigkeiten, Namen, ...)</li>
+<li>Gradle-Wrapper: Ersetzt eine feste Installation</li>
+</ul>
+</li>
+</ul>
+<h2 id="link-sammlung-gradle">Link-Sammlung Gradle</h2>
+<ul>
+<li><a href="https://docs.gradle.org/current/userguide/getting_started.html" rel="external" target="_blank">&quot;Getting Started&quot;</a></li>
+<li><a href="https://docs.gradle.org/current/samples/sample_building_java_applications.html" rel="external" target="_blank">&quot;Building Java Applications Sample&quot;</a></li>
+<li><a href="https://docs.gradle.org/current/samples/sample_building_java_applications_multi_project.html" rel="external" target="_blank">&quot;Building Java Applications with libraries Sample&quot;</a></li>
+<li><a href="https://docs.gradle.org/current/samples/sample_building_java_libraries.html" rel="external" target="_blank">&quot;Building Java Libraries Sample&quot;</a></li>
+<li><a href="https://docs.gradle.org/current/userguide/building_java_projects.html" rel="external" target="_blank">&quot;Building Java &amp; JVM projects&quot;</a></li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106220&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Gradle (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle note">
+  <div class="box-label"><i class="fas fa-puzzle-piece"></i> Challenges</div>
+  <div class="box-content">
+
+<p>Betrachten Sie das Buildskript <code>gradle.build</code> aus <a href="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/build.gradle" rel="external" target="_blank">Dungeon-CampusMinden/Dungeon</a>.</p>
+<p>Erklären Sie, in welche Abschnitte das Buildskript unterteilt ist und welche Aufgaben diese
+Abschnitte jeweils erfüllen. Gehen Sie dabei im <em>Detail</em> auf das Plugin <code>java</code> und die dort
+bereitgestellten Tasks und deren Abhängigkeiten untereinander ein.</p>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_Gradle'>[Gradle] <a href='https://gradle.org/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Gradle Build Tool</strong></a><br>Gradle Inc., 2022.</li> <li id='id_Inden2013'>[Inden2013] <strong>Der Weg zum Java-Profi</strong><br>Inden, M., dpunkt.verlag, 2013. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8649-1245-0' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8649-1245-0</a>.</li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+
+
+<a id="logo" href='https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234//index.html'>
+    <img style="max-width:35%" alt="icon" src='/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png'>
+</a>
+
+        </div>
+
+        <search><form action="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/search.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['de'];
+        </script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/auto-complete.js?1722610113" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.min.js?1722610113" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.stemmer.support.min.js?1722610113" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.multi.min.js?1722610113" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.de.min.js?1722610113" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/search.js?1722610113" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics.html">Generics</a><ul id="R-subsections-3ec7939463ceb6f931083967c060bb2f" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/classes-methods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/classes-methods.html">Klassen &amp; Methoden</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/bounds-wildcards.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/bounds-wildcards.html">Bounds &amp; Wildcards</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/type-erasure.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/type-erasure.html">Type Erasure</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html">Polymorphie</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html" class="parent "><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html">Building</a><ul id="R-subsections-f4e18db244c71e7d5fbee7579907c4cd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html" class="active"><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html">Gradle</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html">Continuous Integration</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html">Git</a><ul id="R-subsections-b7b75b08ea746eeb407fc7d37ea4cda5" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html">Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html">Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html">Branches</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">Branching-Strategien</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html">Remotes</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">Workflows</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java.html">Modern Java</a><ul id="R-subsections-b7e7192fdbaa6715e2f6bf2cf57a6598" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html">Lambda-Ausdrücke</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/methodreferences.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/methodreferences.html">Methoden-Referenzen</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/stream-api.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/stream-api.html">Stream-API</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/records.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/records.html">Records</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html">Optional</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html">Default-Methoden</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html">Coding</a><ul id="R-subsections-ed36829f63ded441f98bbebba385ea7c" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html">Javadoc</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html">Logging</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html">Code Smells</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html">Coding Conventions</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html">Refactoring</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks.html">Frameworks</a><ul id="R-subsections-8a7f48c592022db704353f5d4f8a5f78" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon.html">How-To Dungeon</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing.html">Testing</a><ul id="R-subsections-95ac3b8a0580d3c0c5ec1b9e2c19e15b" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html">Intro SW-Test</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/junit-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/junit-basics.html">JUnit-Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testcases.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testcases.html">Testfallermittlung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/mockito.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/mockito.html">Mocking</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html">Pattern</a><ul id="R-subsections-88c6ccdca00adeca83d4957e66bb44bd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html">Visitor</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html">Observer</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html">Template-Method</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html">Command</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm.html">Java / JVM</a><ul id="R-subsections-a8baeaa8292f03e30c60ce3f78cb8329" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html">Serialisierung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/regexp.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/regexp.html">RegExp</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html">Enumerations</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/configuration.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/configuration.html">Konfiguration</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html">Threads</a><ul id="R-subsections-69dad497cee2a112d69e7153cccf3928" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html">Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html">Synchronisation</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html">High-Level Concurrency</a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#kursformat"><i class='fas fa-bookmark'></i> Zeiten</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> Fahrplan</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#pr%C3%BCfungsform-note-und-credits"><i class='fas fa-bookmark'></i> Note/Credits</a></li>
+            <li><a class="padding" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a"><i class='fas fa-external-link-alt'></i> FAQ</a></li>
+            <li><a class="padding" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/announcements"><i class='fas fa-external-link-alt'></i> News</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html" lang="de-DE" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                      <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                      <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-select-variant-relearn-bright" value="relearn-bright">Relearn Bright</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter"><p style="text-align: center;">
+<i class='fab fa-fw fa-github'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">GitHub</a>
+<i class='fas fa-fw fa-tags'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/issues">Issues</a>
+<i class='fas fa-fw fa-bullhorn'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">Credits</a>
+<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+
+</p>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1722610113" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1722610113" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1722610113"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1722610113" defer></script>
+  </body>
+</html>

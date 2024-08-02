@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.131.0">
+    <meta name="generator" content="Relearn 6.1.0">
+    <meta name="description" content="Nutzung von Git in Projekten: Verteiltes Git (und Workflows) Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit entsprechenden Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.
+Im Folgenden sollen also die Frage betrachtet werden: Wie setze ich Branches sinnvoll ein?
+Umgang mit Branches: Themen-Branches I---J---K wuppieV1 / D---F wuppie / A---B---C---E master \ G---H test Branchen ist in Git sehr einfach und schnell. Deshalb wird (gerade auch im Vergleich mit SVN) gern und viel gebrancht.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Branching-Strategien mit Git">
+    <meta name="twitter:description" content="Nutzung von Git in Projekten: Verteiltes Git (und Workflows) Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit entsprechenden Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.
+Im Folgenden sollen also die Frage betrachtet werden: Wie setze ich Branches sinnvoll ein?
+Umgang mit Branches: Themen-Branches I---J---K wuppieV1 / D---F wuppie / A---B---C---E master \ G---H test Branchen ist in Git sehr einfach und schnell. Deshalb wird (gerade auch im Vergleich mit SVN) gern und viel gebrancht.">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">
+    <meta property="og:title" content="Branching-Strategien mit Git">
+    <meta property="og:description" content="Nutzung von Git in Projekten: Verteiltes Git (und Workflows) Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit entsprechenden Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.
+Im Folgenden sollen also die Frage betrachtet werden: Wie setze ich Branches sinnvoll ein?
+Umgang mit Branches: Themen-Branches I---J---K wuppieV1 / D---F wuppie / A---B---C---E master \ G---H test Branchen ist in Git sehr einfach und schnell. Deshalb wird (gerade auch im Vergleich mit SVN) gern und viel gebrancht.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Branching-Strategien mit Git">
+    <meta itemprop="description" content="Nutzung von Git in Projekten: Verteiltes Git (und Workflows) Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit entsprechenden Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.
+Im Folgenden sollen also die Frage betrachtet werden: Wie setze ich Branches sinnvoll ein?
+Umgang mit Branches: Themen-Branches I---J---K wuppieV1 / D---F wuppie / A---B---C---E master \ G---H test Branchen ist in Git sehr einfach und schnell. Deshalb wird (gerade auch im Vergleich mit SVN) gern und viel gebrancht.">
+    <meta itemprop="wordCount" content="1264">
+    <title>Branching-Strategien mit Git</title>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies/index.print.html" rel="alternate" type="text/html" title="Branching-Strategien mit Git">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1722610113" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1722610113" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1722610113" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1722610113" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1722610113" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1722610113" rel="stylesheet" media="print">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1722610113"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1722610113";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#nutzung-von-git-in-projekten-verteiltes-git-und-workflows">Nutzung von Git in Projekten: Verteiltes Git (und Workflows)</a></li>
+    <li><a href="#umgang-mit-branches-themen-branches">Umgang mit Branches: Themen-Branches</a></li>
+    <li><a href="#umgang-mit-branches-langlaufende-branches">Umgang mit Branches: Langlaufende Branches</a></li>
+    <li><a href="#komplexe-branching-strategie-git-flow">Komplexe Branching-Strategie: Git-Flow</a></li>
+    <li><a href="#git-flow-hauptzweige-master-und-develop">Git-Flow: Hauptzweige <em>master</em> und <em>develop</em></a></li>
+    <li><a href="#git-flow-weitere-branches-als-themen-branches">Git-Flow: Weitere Branches als Themen-Branches</a></li>
+    <li><a href="#git-flow-merging-detail">Git-Flow: Merging-Detail</a></li>
+    <li><a href="#git-flow-umgang-mit-fehlerbehebung">Git-Flow: Umgang mit Fehlerbehebung</a></li>
+    <li><a href="#vereinfachte-braching-strategie-github-flow">Vereinfachte Braching-Strategie: GitHub Flow</a></li>
+    <li><a href="#diskussion-git-flow-vs-github-flow">Diskussion: Git-Flow vs. GitHub Flow</a></li>
+    <li><a href="#wrap-up">Wrap-Up</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Branching-Strategien mit Git
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Branching-Strategien mit Git</h1>
+
+
+
+    
+
+
+
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-graduation-cap"></i> TL;DR</div>
+  <div class="box-content">
+
+<p>Das Erstellen und Mergen von Branches ist in Git besonders einfach. Dies kann man sich in der Entwicklung zunutze machen
+und die einzelnen Features unabhängig voneinander in eigenen Hilfs-Branches ausarbeiten.</p>
+<p>Es haben sich zwei grundlegende Modelle etabliert: &quot;Git-Flow&quot; und &quot;GitHub Flow&quot;.</p>
+<p>In <strong>Git-Flow</strong> gibt es ein umfangreiches Konzept mit verschiedenen Branches für feste Aufgaben, welches sich besonders
+gut für Entwicklungmodelle mit festen Releases eignet. Es gibt zwei langlaufende Branches: <code>master</code> enthält den stabilen
+veröffentlichten Stand, in <code>develop</code> werden die Ergebnisse der Entwicklung gesammelt. Features werden in kleinen Feature-Branches
+entwickelt, die von <code>develop</code> abzweigen und dort wieder hineinmünden. Für Releases wird von <code>develop</code> ein eigener Release-Branch
+angelegt und nach Finalisierung in den <code>master</code> und in <code>develop</code> gemergt. Fixes werden vom <code>master</code> abgezweigt, und wieder
+in den <code>master</code> und auch nach <code>develop</code> integriert. Dadurch stehen auf dem <code>master</code> immer die stabilen Release-Stände zur
+Verfügung, und im <code>develop</code> sammeln sich die Entwicklungsergebnisse.</p>
+<p>Der <strong>GitHub Flow</strong> basiert auf einem deutlich schlankeren Konzept und passt gut für die kontinuierliche Entwicklung ohne
+echte Releases. Hier hat man auch wieder einen <code>master</code> als langlaufenden Branch, der die stabilen Release-Stände enthält.
+Vom <code>master</code> zweigen direkt die kleinen Feature-Branches ab und werden auch wieder direkt in den <code>master</code> integriert.</p>
+</div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (YouTube)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://youtu.be/v1WHIPdoA0k' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Git Branching-Strategien</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/aad8053a927c859084bf51c4145ed70f49a0e87a1cf246b3d232d266d6d77bd57c140bda4159b09ab8218345523463036bcb92ebef2591cd573ebdf3745f4ede' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Git Branching-Strategien</a></li></ul></div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-lightbulb"></i> Lernziele</div>
+  <div class="box-content">
+
+<ul> <li>(K3) Einsatz von Themenbranches in der Entwicklung</li> <li>(K3) Git-Flow-Modell anwenden</li> <li>(K3) GitHub Flow-Modell anwenden</li></ul></div>
+</div>
+
+
+
+
+    <h2 id="nutzung-von-git-in-projekten-verteiltes-git-und-workflows">Nutzung von Git in Projekten: Verteiltes Git (und Workflows)</h2>
+<p><a href="#R-image-2b7688ca2ac6ca0b029e7868556a2679" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies/distributed.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2b7688ca2ac6ca0b029e7868556a2679"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies/distributed.png?width=80%25&height=auto"></a></p>
+<p>Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit
+entsprechenden Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.</p>
+<p>Im Folgenden sollen also die Frage betrachtet werden: <strong>Wie setze ich Branches sinnvoll ein?</strong></p>
+<h2 id="umgang-mit-branches-themen-branches">Umgang mit Branches: Themen-Branches</h2>
+<pre><code>                I---J---K  wuppieV1
+               /
+          D---F  wuppie
+         /
+A---B---C---E  master
+             \
+              G---H  test
+</code></pre>
+<p>Branchen ist in Git sehr einfach und schnell. Deshalb wird (gerade auch im Vergleich mit
+SVN) gern und viel gebrancht.</p>
+<p>Ein häufiges anzutreffendes Modell ist dabei die Nutzung von
+<strong>Themen-Branches</strong>: Man hat einen Hauptzweig (<code>master</code>). Wann immer eine neue
+Idee oder ein Baustein unabhängig entwickelt werden soll/kann, wird ein
+entsprechender Themen-Branch aufgemacht. Dabei handelt es sich normalerweise
+um <strong>kleine Einheiten</strong>!</p>
+<p>Themenbranches haben in der Regel eine <strong>kurze Lebensdauer</strong>: Wenn die Entwicklung
+abgeschlossen ist, wird die Idee bzw. der Baustein in den Hauptzweig integriert
+und der Themenbranch gelöscht.</p>
+<ul>
+<li>
+<p>Vorteil: Die Entwicklung im Themenbranch ist in sich gekapselt und stört
+nicht die Entwicklung in anderen Branches (und diese stören umgekehrt nicht
+die Entwicklung im Themenbranch).</p>
+</li>
+<li>
+<p>Nachteil:</p>
+<ul>
+<li>Mangelnder Überblick durch viele Branches</li>
+<li>Ursprung der Themenbranches muss überlegt gewählt werden, d.h. alle
+dort benötigten Features müssen zu dem Zeitpunkt im Hauptzweig
+vorhanden sein</li>
+</ul>
+</li>
+</ul>
+<h2 id="umgang-mit-branches-langlaufende-branches">Umgang mit Branches: Langlaufende Branches</h2>
+<pre><code>A---B---D  master
+     \
+      C---E---I  develop
+           \
+            F---G---H  topic
+</code></pre>
+<p>Häufig findet man in (größeren) Projekten Branches, die über die gesamte
+Lebensdauer des Projekts existieren, sogenannte &quot;langlaufende Branches&quot;.</p>
+<p>Normalerweise gibt es einen Branch, in dem stets der stabile Stand des Projekts
+enthalten ist. Dies ist häufig der <code>master</code>. In diesem Branch gibt es nur
+sehr wenige Commits: normalerweise nur Merges aus dem <code>develop</code>-Branch (etwa
+bei Fertigstellung einer Release-Version) und ggf. Fehlerbehebungen.</p>
+<p>Die aktive Entwicklung findet in einem separaten Branch statt: <code>develop</code>. Hier
+nutzt man zusätzlich Themen-Branches für die Entwicklung einzelner Features,
+die nach Fertigstellung in den <code>develop</code> gemergt werden.</p>
+<p>Kleinere Projekte kommen meist mit den zwei langlaufenden Branches in der
+obigen Darstellung aus. Bei größeren Projekten finden sich häufig noch etliche
+weitere langlaufende Branches, beispielsweise &quot;Proposed Updates&quot; etc. beim
+Linux-Kernel.</p>
+<ul>
+<li>Vorteile:
+<ul>
+<li>Mehr Struktur im Projekt durch in ihrer Semantik wohldefinierte
+Branches</li>
+<li>Durch weniger Commits pro Branch lässt sich die Historie leichter
+verfolgen (u.a. auch aus bestimmter Rollen-Perspektive: Entwickler,
+Manager, ...)</li>
+</ul>
+</li>
+<li>Nachteile: Bestimmte &quot;ausgezeichnete&quot; Branches; zusätzliche Regeln zum
+Umgang mit diesen beachten</li>
+</ul>
+<h2 id="komplexe-branching-strategie-git-flow">Komplexe Branching-Strategie: Git-Flow</h2>
+<pre><code>A---B---------------------G---J1  master
+     \                   / \ /
+      \                 /   X  fix
+       \               /     \
+        C-------------F----I--J2  develop
+         \           / \  /
+          \         /   H1  featureB
+           \       /
+            D1----D2  featureA
+             \
+              E1---E2---E3---E4---E5  featureC
+</code></pre>
+<p>Das Git-Flow-Modell von Vincent Driessen
+(<a href="http://nvie.com/posts/a-successful-git-branching-model/" rel="external" target="_blank">nvie.com/posts/a-successful-git-branching-model</a>)
+zeigt einen in der Praxis überaus bewährten Umgang mit Branches. Lesen Sie an
+der angegebenen Stelle nach, besser kann man die Nutzung dieses eleganten
+Modells eigentlich nicht erklären :-)</p>
+<h2 id="git-flow-hauptzweige-master-und-develop">Git-Flow: Hauptzweige <em>master</em> und <em>develop</em></h2>
+<pre><code>A---B-------E---------------J  master
+     \     /               /
+      C---D---F---G---H---I---K  develop
+</code></pre>
+<p>Bei Git-Flow gibt es zwei langlaufende Branches: Den <code>master</code>, der immer den stabilen
+Stand enthält und in den <em>nie</em> ein direkter Commit gemacht wird, sowie den <code>develop</code>,
+wo letztlich (ggf. über Themenbranches) die eigentliche Entwicklung stattfindet.</p>
+<p>Änderungen werden zunächst im <code>develop</code> erstellt und getestet. Wenn die Features
+stabil sind, erfolgt ein Merge von <code>develop</code> in den <code>master</code>. Hier kann noch der
+Umweg über einen <code>release</code>-Branch genommen werden: Als &quot;Feature-Freeze&quot; wird vom
+<code>develop</code> ein <code>release</code>-Branch abgezweigt. Darin wird das Release dann aufpoliert,
+d.h. es erfolgen nur noch kleinere Korrekturen und Änderungen, aber keine echte
+Entwicklungsarbeit mehr. Nach Fertigstellung wird der <code>release</code> dann sowohl in den
+<code>master</code> als auch <code>develop</code> gemergt.</p>
+<h2 id="git-flow-weitere-branches-als-themen-branches">Git-Flow: Weitere Branches als Themen-Branches</h2>
+<pre><code>A---B---------------------I-------------K  master
+     \                   /             /
+      C------------F----H-------------J---L  develop
+       \          / \  /             /
+        \        /   G1  featureB   /
+         \      /                  /
+          D1---D2  featureA       /
+           \                     /
+            E1---E2---E3---E4---E5  featureC
+</code></pre>
+<p>Für die Entwicklung eigenständiger Features bietet es sich auch im
+Git-Flow an, vom <code>develop</code> entsprechende Themenbranches abzuzweigen
+und darin jeweils isoliert die Features zu entwickeln. Wenn diese
+Arbeiten eine gewisse Reife haben, werden die Featurebranches in den
+<code>develop</code> integriert.</p>
+<h2 id="git-flow-merging-detail">Git-Flow: Merging-Detail</h2>
+<pre><code>---C--------E  develop
+    \      /                 git merge --no-ff
+     D1---D2  featureA
+</code></pre>
+<p>vs.</p>
+<pre><code>---C---D1---D2  develop      git merge
+</code></pre>
+<p>Wenn beim Mergen ein &quot;<em>fast forward</em>&quot; möglich ist, würde Git beim Mergen
+eines (Feature-) Branches in den <code>develop</code> (oder allgemein in einen anderen
+Branch) <em>keinen</em> separaten Commit erzeugen (Situation rechts in der Abbildung).</p>
+<p>Damit erscheint der <code>develop</code>-Branch wie eine lineare Folge von Commits. In
+manchen Projekten wird dies bevorzugt, weil die Historie sehr übersichtlich
+aussieht.</p>
+<p>Allerdings verliert man die Information, dass hier ein Feature entwickelt wurde
+und wann es in den <code>develop</code> integriert wurde (linke Seite in obiger Abbildung).
+Häufig wird deshalb ein extra Merge-Commit mit <code>git merge --no-ff &lt;branch&gt;</code>
+(extra Schalter &quot;<code>--no-ff</code>&quot;) erzwungen, obwohl ein &quot;<em>fast forward</em>&quot; möglich wäre.</p>
+<p>Anmerkung: Man kann natürlich auch über Konventionen in den Commit-Kommentaren
+eine gewisse Übersichtlichkeit erzwingen. Beispielsweise könnte man vereinbaren,
+dass alle Commit-Kommentare zu einem Feature &quot;A&quot; mit &quot;<code>feature a:</code>&quot; starten müssen.</p>
+<h2 id="git-flow-umgang-mit-fehlerbehebung">Git-Flow: Umgang mit Fehlerbehebung</h2>
+<pre><code>A---B---D--------F1  master
+     \   \      /
+      \   E1---E2  fix
+       \        \
+        C1-------F2  develop
+</code></pre>
+<p>Wenn im stabilen Branch (also dem <code>master</code>) ein Problem bekannt wird,
+darf man es nicht einfach im <code>master</code> fixen. Stattdessen wird ein extra
+Branch vom <code>master</code> abgezweigt, in dem der Fix entwickelt wird. Nach
+Fertigstellung wird dieser Branch sowohl in den <code>master</code> als auch den
+<code>develop</code> gemergt, damit auch im Entwicklungszweig der Fehler behoben ist.</p>
+<p>Dadurch entspricht jeder Commit im <code>master</code> einem Release.</p>
+<h2 id="vereinfachte-braching-strategie-github-flow">Vereinfachte Braching-Strategie: GitHub Flow</h2>
+<pre><code>A---B---C----D-----------E  master
+     \   \  /           /
+      \   ta1  topicA  /
+       \              /
+        tb1---tb2---tb3  topicB
+</code></pre>
+<p>Github verfolgt eine deutlich vereinfachte Strategie: &quot;GitHub Flow&quot;
+(vgl. <a href="https://githubflow.github.io/" rel="external" target="_blank">&quot;GitHub Flow&quot; (S. Chacon)</a>
+bzw. <a href="https://docs.github.com/en/get-started/quickstart/github-flow" rel="external" target="_blank">&quot;GitHub flow&quot; (GitHub, Inc.)</a>).</p>
+<p>Hier ist der stabile Stand ebenfalls immer im <code>master</code>. Features werden ebenso
+wie im Git-Flow-Modell in eigenen Feature-Branches entwickelt.</p>
+<p>Allerdings zweigen Feature-Branches <em>immer direkt</em> vom <code>master</code> ab und werden nach
+dem Test auch immer dort wieder direkt integriert (es gibt also keine weiteren
+langlaufenden Branches wie <code>develop</code> oder <code>release</code>).</p>
+<p>In der obigen Abbildung ist zu sehen, dass für die Entwicklung eines Features ein
+entsprechender Themenbranch vom <code>master</code> abgezweigt wird. Darin erfolgt dann die
+Entwicklung des Features, d.h. mehrere Commits. Das Mergen des Features in den
+<code>master</code> erfolgt dann aber nicht lokal, sondern mit einem &quot;Pull-Request&quot; auf dem
+Server: Sobald man im Feature-Branch einen &quot;diskussionswürdigen&quot; Stand hat, wird ein
+<strong>Pull-Request</strong> (<em>PR</em>) über die Weboberfläche aufgemacht (streng genommen gehört
+dies in die Kategorie <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">&ldquo;Zusammenarbeit&rdquo; bzw. &ldquo;Workflows&rdquo;</a>;
+außerdem gehört ein PR nicht zu Git selbst, sondern zum Tooling von Github). In
+einem PR können andere Entwickler den Code kommentieren und ergänzen. Jeder weitere
+Commit auf dem Themenbranch wird ebenfalls Bestandteil des Pull-Requests. Parallel
+laufen ggf. automatisierte Tests etc. und durch das Akzeptieren des PR in der
+Weboberfläche erfolgt schließlich der Merge des Feature-Branches in den <code>master</code>.</p>
+<h2 id="diskussion-git-flow-vs-github-flow">Diskussion: Git-Flow vs. GitHub Flow</h2>
+<p>In der Praxis zeigt sich, dass das Git-Flow-Modell besonders gut geeignet ist,
+wenn man tatsächlich so etwas wie &quot;Releases&quot; hat, die zudem nicht zu häufig
+auftreten.</p>
+<p>Das GitHub-Flow-Vorgehen bietet sich an, wenn man entweder keine Releases hat
+oder diese sehr häufig erfolgen (typisch bei agiler Vorgehensweise). Zudem
+vermeidet man so, dass die Feature-Branches zu lange laufen, womit normalerweise
+die Wahrscheinlichkeit von Merge-Konflikten stark steigt.
+<strong>Achtung</strong>: Da die Feature-Branches direkt in den <code>master</code>, also den stabilen
+Produktionscode gemergt werden, ist es hier besonders wichtig, <em>vor</em> dem Merge
+entsprechende Tests durchzuführen und den Merge erst zu machen, wenn alle Tests
+&quot;grün&quot; sind.</p>
+<p>Hier ein paar Einstiegsseiten für die Diskussion, die teilweise sehr erbittert
+(und mit ideologischen Zügen) geführt wird (erinnert an die Diskussionen, welche
+Linux-Distribution die bessere sei):</p>
+<ul>
+<li><a href="https://nvie.com/posts/a-successful-git-branching-model/" rel="external" target="_blank">Git-Flow-Modell von Vincent Driessen</a></li>
+<li><a href="https://guides.github.com/introduction/flow/" rel="external" target="_blank">Kurzer Überblick über das GitHub-Flow-Modell</a></li>
+<li><a href="https://githubflow.github.io/" rel="external" target="_blank">Diskussion des GitHub-Flow-Modells (Github)</a></li>
+<li><a href="https://lucamezzalira.com/2014/03/10/git-flow-vs-github-flow/" rel="external" target="_blank">Luca Mezzalira: &quot;Git-Flow vs Github Flow&quot;</a></li>
+<li><a href="https://scottchacon.com/2011/08/31/github-flow.html" rel="external" target="_blank">Scott Schacon, Autor des Pro-Git-Buchs</a></li>
+<li><a href="https://hackernoon.com/a-branching-and-releasing-strategy-that-fits-github-flow-be1b6c48eca2" rel="external" target="_blank">Noch eine (längere) Betrachtung (Robin Daugherty)</a></li>
+</ul>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>Einsatz von Themenbranches für die Entwicklung</li>
+<li>Unterschiedliche Modelle:
+<ul>
+<li>Git-Flow: umfangreiches Konzept, gut für Entwicklung mit festen Releases</li>
+<li>GitHub Flow: deutlich schlankeres Konzept, passend für kontinuierliche Entwicklung ohne echte Releases</li>
+</ul>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle tip">
+  <div class="box-label"><i class="fas fa-user-check"></i> Quizzes</div>
+  <div class="box-content">
+
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106243&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Git Branching-Strategien (ILIAS)</a></li></ul></div>
+</div>
+
+
+
+    
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+    
+
+    
+<div class="box notices cstyle info">
+  <div class="box-label"><i class="fas fa-book-reader"></i> Quellen</div>
+  <div class="box-content">
+
+<ul> <li id='id_AtlassianGit'>[AtlassianGit] <a href='https://www.atlassian.com/git/tutorials' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Become a git guru.</strong></a><br>Atlassian Pty Ltd, 2022.</li> <li id='id_Chacon2014'>[Chacon2014] <a href='https://git-scm.com/book/en/v2' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Pro Git</strong></a><br>Chacon, S. und Straub, B., Apress, 2014. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-1-4842-0077-3</a>.<br><em>Kapitel 3</em></li> <li id='id_GitCheatSheet'>[GitCheatSheet] <a href='https://training.github.com/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Git Cheat Sheets</strong></a><br>Github Inc., 2022.</li> <li id='id_GitFlow'>[GitFlow] <a href='https://nvie.com/posts/a-successful-git-branching-model/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Git-Flow: A successful Git branching model</strong></a><br>Driessen, V., 2010.</li> <li id='id_GitHubFlow'>[GitHubFlow] <a href='https://githubflow.github.io/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>GitHub Flow</strong></a><br>Chacon, S., 2013.</li> <li id='id_GitHubFlowGH'>[GitHubFlowGH] <a href='https://docs.github.com/en/get-started/quickstart/github-flow' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>GitHub flow</strong></a><br>GitHub Inc., 2022.</li></ul></div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+
+
+<a id="logo" href='https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234//index.html'>
+    <img style="max-width:35%" alt="icon" src='/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png'>
+</a>
+
+        </div>
+
+        <search><form action="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/search.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['de'];
+        </script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/auto-complete.js?1722610113" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.min.js?1722610113" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.stemmer.support.min.js?1722610113" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.multi.min.js?1722610113" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.de.min.js?1722610113" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/search.js?1722610113" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics.html">Generics</a><ul id="R-subsections-3ec7939463ceb6f931083967c060bb2f" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/classes-methods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/classes-methods.html">Klassen &amp; Methoden</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/bounds-wildcards.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/bounds-wildcards.html">Bounds &amp; Wildcards</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/type-erasure.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/type-erasure.html">Type Erasure</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/generics/generics-polymorphism.html">Polymorphie</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html">Building</a><ul id="R-subsections-f4e18db244c71e7d5fbee7579907c4cd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html">Gradle</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html">Continuous Integration</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html" class="parent "><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html">Git</a><ul id="R-subsections-b7b75b08ea746eeb407fc7d37ea4cda5" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html">Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html">Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html">Branches</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html" class="active"><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">Branching-Strategien</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html">Remotes</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">Workflows</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java.html">Modern Java</a><ul id="R-subsections-b7e7192fdbaa6715e2f6bf2cf57a6598" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/lambdas.html">Lambda-Ausdrücke</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/methodreferences.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/methodreferences.html">Methoden-Referenzen</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/stream-api.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/stream-api.html">Stream-API</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/records.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/records.html">Records</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/optional.html">Optional</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/modern-java/defaultmethods.html">Default-Methoden</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding.html">Coding</a><ul id="R-subsections-ed36829f63ded441f98bbebba385ea7c" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/javadoc.html">Javadoc</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/logging.html">Logging</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/smells.html">Code Smells</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/codingrules.html">Coding Conventions</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/coding/refactoring.html">Refactoring</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks.html">Frameworks</a><ul id="R-subsections-8a7f48c592022db704353f5d4f8a5f78" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/frameworks/dungeon.html">How-To Dungeon</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing.html">Testing</a><ul id="R-subsections-95ac3b8a0580d3c0c5ec1b9e2c19e15b" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testing-intro.html">Intro SW-Test</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/junit-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/junit-basics.html">JUnit-Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testcases.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/testcases.html">Testfallermittlung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/mockito.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/testing/mockito.html">Mocking</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html">Pattern</a><ul id="R-subsections-88c6ccdca00adeca83d4957e66bb44bd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html">Visitor</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html">Observer</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html">Template-Method</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html">Command</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm.html">Java / JVM</a><ul id="R-subsections-a8baeaa8292f03e30c60ce3f78cb8329" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/serialisation.html">Serialisierung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/regexp.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/regexp.html">RegExp</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/enums.html">Enumerations</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/configuration.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-jvm/configuration.html">Konfiguration</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads.html">Threads</a><ul id="R-subsections-69dad497cee2a112d69e7153cccf3928" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-intro.html">Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-synchronisation.html">Synchronisation</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/threads/threads-highlevel.html">High-Level Concurrency</a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#kursformat"><i class='fas fa-bookmark'></i> Zeiten</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> Fahrplan</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#pr%C3%BCfungsform-note-und-credits"><i class='fas fa-bookmark'></i> Note/Credits</a></li>
+            <li><a class="padding" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a"><i class='fas fa-external-link-alt'></i> FAQ</a></li>
+            <li><a class="padding" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/announcements"><i class='fas fa-external-link-alt'></i> News</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html" lang="de-DE" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                      <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                      <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-select-variant-relearn-bright" value="relearn-bright">Relearn Bright</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter"><p style="text-align: center;">
+<i class='fab fa-fw fa-github'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">GitHub</a>
+<i class='fas fa-fw fa-tags'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/issues">Issues</a>
+<i class='fas fa-fw fa-bullhorn'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">Credits</a>
+<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+
+</p>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1722610113" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1722610113" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1722610113"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1722610113" defer></script>
+  </body>
+</html>
