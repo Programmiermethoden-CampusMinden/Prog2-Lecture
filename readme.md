@@ -105,14 +105,6 @@ Sie _können_ hierzu den Raum J104 nutzen.
         [Prüfungsvorbereitung]
 *   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
 
-Die nächste Klausur für "Programmieren 2" wird am **Mittwoch, 02. Oktober 2024**
-angeboten. Die Klausur wird als digitale Klausur auf dem Prüfungs-ILIAS der
-HSBI in Präsenz vor Ort in **Minden im Raum B40** durchgeführt. Die Prüfung
-beginnt um **08:00 Uhr und dauert 90 Minuten**. Ein DIN-A4-Zettel ist als
-Hilfsmittel zugelassen. Der geprüfte Stoff bezieht sich auf den zuletzt
-durchgeführten Kurs (Sommer 2024, s.u.). Weitere Informationen siehe
-[Prüfungsvorbereitung].
-
 :::
 ::: {.tab title="Prüfung im zweiten Zeitraum"}
 
@@ -152,6 +144,14 @@ durchgeführten Kurs (Sommer 2024, s.u.). Weitere Informationen siehe
 
 
 ## Fahrplan
+
+`{{% notice style="note" title="News" %}}`{=markdown}
+Die nächste Klausur für "Programmieren 2" (IFM 2.1, PO23) wird am **Mittwoch, 02. Oktober 2024**
+angeboten. Die Klausur wird als digitale Klausur auf dem Prüfungs-ILIAS der HSBI in Präsenz vor Ort
+in **Minden im Raum B40** durchgeführt. Die Prüfung beginnt um **08:00 Uhr und dauert 90 Minuten**.
+Ein DIN-A4-Zettel ist als Hilfsmittel zugelassen. Der geprüfte Stoff bezieht sich auf den zuletzt
+durchgeführten Kurs (Sommer 2024). Weitere Informationen siehe [Prüfungsvorbereitung].
+`{{% /notice %}}`{=markdown}
 
 Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
