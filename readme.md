@@ -89,60 +89,6 @@ Sie _können_ hierzu den Raum J104 nutzen.
 [ILIAS]: https://www.hsbi.de/elearning/goto.php?target=crs_1337540&client_id=FH-Bielefeld
 
 
-## Prüfungsform, Note und Credits
-
-**Parcoursprüfung**, 5 ECTS (PO23)
-
-:::::: {.tabs groupid="exams"}
-::: {.tab title="Prüfung im ersten Zeitraum"}
-
-*   **Stationen**:
-    *   Praktikum: 10x Übungsblätter mit jeweils 1P
-        (Einzelbearbeitung, mindestens 60% bearbeitet,
-        fristgerechte Abgabe der Lösungen im ILIAS,
-        Vorstellung der Lösungen im Praktikum => Punkte)
-    *   Schriftliche Prüfung (digitale Klausur) mit 100P;
-        [Prüfungsvorbereitung]
-*   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
-
-:::
-::: {.tab title="Prüfung im zweiten Zeitraum"}
-
-*   **Stationen**:
-    *   Schriftliche Prüfung (digitale Klausur) mit 100P;
-        [Prüfungsvorbereitung]
-*   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
-
-:::
-::::::
-
-
-## Materialien
-
-### Literatur
-
-1.  ["**Java ist auch eine Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
-    Ullenboom, C., Rheinwerk-Verlag, 2021.
-    ISBN [978-3-8362-8745-6](https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6).
-2.  ["**Pro Git** (Second Edition)"](https://git-scm.com/book/en/v2).
-    Chacon, S. und Straub, B., Apress, 2014.
-    ISBN [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
-3.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
-    Oracle Corporation, 2023.
-4.  ["Learn Java"](https://dev.java/learn/).
-    Oracle Corporation, 2023.
-
-### Tools
-
-*   JDK: Java SE 21 (LTS) ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder
-    [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk),
-    bitte 64-bit Version nutzen)
-*   IDE: [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/) oder
-    [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/) oder
-    [Visual Studio Code](https://code.visualstudio.com/) oder [Vim](https://www.vim.org/) oder ...
-*   [Git](https://git-scm.com/)
-
-
 ## Fahrplan
 
 `{{% notice style="note" title="News" %}}`{=markdown}
@@ -272,6 +218,60 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [B08]: homework/b08.md
 [B09]: homework/b09.md
 [B10]: homework/b10.md
+
+
+## Prüfungsform, Note und Credits
+
+**Parcoursprüfung**, 5 ECTS (PO23)
+
+:::::: {.tabs groupid="exams"}
+::: {.tab title="Prüfung im ersten Zeitraum"}
+
+*   **Stationen**:
+    *   Praktikum: 10x Übungsblätter mit jeweils 1P
+        (Einzelbearbeitung, mindestens 60% bearbeitet,
+        fristgerechte Abgabe der Lösungen im ILIAS,
+        Vorstellung der Lösungen im Praktikum => Punkte)
+    *   Schriftliche Prüfung (digitale Klausur) mit 100P;
+        [Prüfungsvorbereitung]
+*   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
+
+:::
+::: {.tab title="Prüfung im zweiten Zeitraum"}
+
+*   **Stationen**:
+    *   Schriftliche Prüfung (digitale Klausur) mit 100P;
+        [Prüfungsvorbereitung]
+*   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
+
+:::
+::::::
+
+
+## Materialien
+
+### Literatur
+
+1.  ["**Java ist auch eine Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
+    Ullenboom, C., Rheinwerk-Verlag, 2021.
+    ISBN [978-3-8362-8745-6](https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6).
+2.  ["**Pro Git** (Second Edition)"](https://git-scm.com/book/en/v2).
+    Chacon, S. und Straub, B., Apress, 2014.
+    ISBN [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
+3.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
+    Oracle Corporation, 2023.
+4.  ["Learn Java"](https://dev.java/learn/).
+    Oracle Corporation, 2023.
+
+### Tools
+
+*   JDK: Java SE 21 (LTS) ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder
+    [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk),
+    bitte 64-bit Version nutzen)
+*   IDE: [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/) oder
+    [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/) oder
+    [Visual Studio Code](https://code.visualstudio.com/) oder [Vim](https://www.vim.org/) oder ...
+*   [Git](https://git-scm.com/)
 
 
 ## Förderungen und Kooperationen
