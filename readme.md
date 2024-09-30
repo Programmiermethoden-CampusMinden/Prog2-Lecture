@@ -7,7 +7,7 @@ title: "IFM 2.2: Programmiermethoden (Sommer 2023)"
 
 `{{% notice style="note" %}}`{=markdown}
 
-### Abkündigung des Moduls "Programmiermethoden"
+## Abkündigung des Moduls "Programmiermethoden"
 
 Das Modul "Programmiermethoden" wurde im Rahmen der Reakkreditierung im Herbst 2023 durch das
 kleinere Modul ["Programmieren 2"] ersetzt und kann nicht mehr belegt werden (es werden keine
@@ -120,56 +120,6 @@ Durchführung als **Flipped Classroom**:
 Alle Sitzungen online/per Zoom (**Zugangsdaten siehe [ILIAS]**)
 
 [ILIAS]: https://www.hsbi.de/elearning/goto.php?target=crs_1181185&client_id=FH-Bielefeld
-
-
-## Prüfungsform, Note und Credits
-
-**Performanzprüfung**, 7 ECTS
-
-*   **Praktische Teilleistung**:
-    Regelmäßige Bearbeitung der Praktikumsaufgaben,
-    fristgerechte Abgabe der Lösungen (PDF, ZIP, Link) im ILIAS,
-    Erstellung von Peer-Feedback im ILIAS,
-    Vorstellung der Lösungen im Praktikum => Punkte
-
-    Notenspiegel:
-    *   90 Punkte gesamt erreichbar: Zyklus 1 und 2 je 15 Punkte, Zyklus 3 bis 5 je 15+5 Punkte
-    *   4.0: ab 50% (45.0 Punkte), alle 5% nächste Teilnote, 1.0: ab 95% (85.5 Punkte)
-
-*   **Theoretische Teilleistung**:
-    Digitale Klausur ("**Klausur**") in den Prüfungszeiträumen; [Prüfungsvorbereitung](admin/exams.md).
-
-*   **Gesamtnote**:
-    50% Praxis, 50% Theorie
-
-Wiederholer mit bereits begonnener Parcours-Prüfung absolvieren stattdessen eine Parcours-Prüfung.
-Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
-
-
-## Materialien
-
-### Literatur
-
-1.  ["**Java ist auch eine Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
-    Ullenboom, C., Rheinwerk-Verlag, 2021.
-    ISBN [978-3-8362-8745-6](https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6).
-2.  ["**Pro Git** (Second Edition)"](https://git-scm.com/book/en/v2).
-    Chacon, S. und Straub, B., Apress, 2014.
-    ISBN [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
-3.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
-    Oracle Corporation, 2023.
-4.  ["Learn Java"](https://dev.java/learn/).
-    Oracle Corporation, 2023.
-
-### Tools
-
-*   JDK: Java SE 21 (LTS) ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder
-    [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk),
-    bitte 64-bit Version nutzen)
-*   IDE: [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/) oder
-    [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/) oder
-    [Visual Studio Code](https://code.visualstudio.com/) oder [Vim](https://www.vim.org/) oder ...
-*   [Git](https://git-scm.com/)
 
 
 ## Fahrplan
@@ -306,6 +256,56 @@ Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
 
 :::
 ::::::
+
+
+## Prüfungsform, Note und Credits
+
+**Performanzprüfung**, 7 ECTS
+
+*   **Praktische Teilleistung**:
+    Regelmäßige Bearbeitung der Praktikumsaufgaben,
+    fristgerechte Abgabe der Lösungen (PDF, ZIP, Link) im ILIAS,
+    Erstellung von Peer-Feedback im ILIAS,
+    Vorstellung der Lösungen im Praktikum => Punkte
+
+    Notenspiegel:
+    *   90 Punkte gesamt erreichbar: Zyklus 1 und 2 je 15 Punkte, Zyklus 3 bis 5 je 15+5 Punkte
+    *   4.0: ab 50% (45.0 Punkte), alle 5% nächste Teilnote, 1.0: ab 95% (85.5 Punkte)
+
+*   **Theoretische Teilleistung**:
+    Digitale Klausur ("**Klausur**") in den Prüfungszeiträumen; [Prüfungsvorbereitung](admin/exams.md).
+
+*   **Gesamtnote**:
+    50% Praxis, 50% Theorie
+
+Wiederholer mit bereits begonnener Parcours-Prüfung absolvieren stattdessen eine Parcours-Prüfung.
+Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
+
+
+## Materialien
+
+### Literatur
+
+1.  ["**Java ist auch eine Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
+    Ullenboom, C., Rheinwerk-Verlag, 2021.
+    ISBN [978-3-8362-8745-6](https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6).
+2.  ["**Pro Git** (Second Edition)"](https://git-scm.com/book/en/v2).
+    Chacon, S. und Straub, B., Apress, 2014.
+    ISBN [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
+3.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
+    Oracle Corporation, 2023.
+4.  ["Learn Java"](https://dev.java/learn/).
+    Oracle Corporation, 2023.
+
+### Tools
+
+*   JDK: Java SE 21 (LTS) ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder
+    [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk),
+    bitte 64-bit Version nutzen)
+*   IDE: [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/) oder
+    [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/) oder
+    [Visual Studio Code](https://code.visualstudio.com/) oder [Vim](https://www.vim.org/) oder ...
+*   [Git](https://git-scm.com/)
 
 
 ## Förderungen und Kooperationen
