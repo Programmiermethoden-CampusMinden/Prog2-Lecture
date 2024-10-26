@@ -456,7 +456,7 @@ sourceSets {
 
 checkstyle {
     configFile = file(“${rootDir}/google_checks.xml”)
-    toolVersion = '8.32'
+    toolVersion = '10.19.0'
 }
 
 dependencies {
