@@ -36,9 +36,9 @@ Prüfungsverfahren:
         Klausur teil und die Gesamtnote wird sich wie bisher aus den beiden Teilnoten
         zusammensetzen.
 
-### Nächste Klausur: Dienstag, 04. Februar 2025
+### Nächste Klausur: Dienstag, 01. April 2025
 
-Die nächste Klausur für "Programmiermethoden" wird am **Dienstag, 04. Februar 2025** angeboten.
+Die nächste Klausur für "Programmiermethoden" wird am **Dienstag, 01. April 2025** angeboten.
 
 Die Klausur wird als digitale Klausur auf dem Prüfungs-ILIAS der HSBI in Präsenz vor Ort in
 **Minden im Raum B40** durchgeführt. Die Prüfung beginnt um **10:00 Uhr und dauert 90 Minuten**.
