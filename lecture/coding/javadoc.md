@@ -41,8 +41,8 @@ fhmedia:
     name: "VL Javadoc"
 challenges: |
     Betrachten Sie die Javadoc einiger Klassen im Dungeon-Projekt:
-    [dojo.rooms.LevelRoom](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dojo-dungeon/src/dojo/rooms/LevelRoom.java),
-    [dojo.rooms.MonsterRoom](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dojo-dungeon/src/dojo/rooms/MonsterRoom.java), und
+    [dojo.rooms.LevelRoom](https://github.com/Dungeon-CampusMinden/Dungeon/blob/31c0e3aaf25eb412a33751c897df43eb21bf2744/dojo-dungeon/src/dojo/rooms/LevelRoom.java),
+    [dojo.rooms.MonsterRoom](https://github.com/Dungeon-CampusMinden/Dungeon/blob/31c0e3aaf25eb412a33751c897df43eb21bf2744/dojo-dungeon/src/dojo/rooms/MonsterRoom.java), und
     [contrib.components.HealthComponent](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/components/HealthComponent.java).
 
     Stellen Sie sich vor, Sie müssten diese Klassen in einer Übungsaufgabe nutzen (das könnte tatsächlich passieren!) ...
