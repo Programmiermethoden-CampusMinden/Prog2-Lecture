@@ -142,8 +142,6 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 <!-- [Debugging]: lecture/coding/debugging.md -->
 <!-- [TDD]: lecture/coding/tdd.md -->
 
-<!-- [JDBC]: lecture/database/jdbc.md  -->
-
 <!-- [Intro Frameworks]: lecture/frameworks/intro-frameworks.md -->
 <!-- [ECS]: lecture/frameworks/ecs.md -->
 [Intro Dungeon]: lecture/frameworks/dungeon.md
