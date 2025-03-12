@@ -139,8 +139,6 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Code-Smells]: lecture/coding/smells.md
 [Coding-Rules]: lecture/coding/codingrules.md
 [Refactoring]: lecture/coding/refactoring.md
-<!-- [Debugging]: lecture/coding/debugging.md -->
-<!-- [TDD]: lecture/coding/tdd.md -->
 
 <!-- [Intro Frameworks]: lecture/frameworks/intro-frameworks.md -->
 [Intro Dungeon]: lecture/frameworks/dungeon.md
@@ -181,7 +179,6 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Optional]: lecture/modern-java/optional.md
 [Record-Klassen]: lecture/modern-java/records.md
 [Default-Methoden]: lecture/modern-java/defaultmethods.md
-<!-- [Sealed Classes]: lecture/modern-java/sealed.md -->
 
 <!-- [Strategy-Pattern]: lecture/pattern/strategy.md -->
 [Visitor-Pattern]: lecture/pattern/visitor.md
@@ -192,14 +189,11 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 <!-- [Factory-Method-Pattern]: lecture/pattern/factory-method.md -->
 <!-- [Type-Object-Pattern]: lecture/pattern/type-object.md -->
 <!-- [Flyweight-Pattern]: lecture/pattern/flyweight.md -->
-<!-- [Dependency Injection]: lecture/pattern/dependency.md -->
 
 [Einführung Testen]: lecture/testing/testing-intro.md
 [JUnit-Basics]: lecture/testing/junit-basics.md
 [Testfallermittlung]: lecture/testing/testcases.md
 [Mocking]: lecture/testing/mockito.md
-<!-- [BDD]: lecture/testing/bdd.md -->
-<!-- [Test Converage]: lecture/testing/coverage.md -->
 
 [Intro Threads]: lecture/threads/threads-intro.md
 [Synchronisierung]: lecture/threads/threads-synchronisation.md
