@@ -12,10 +12,9 @@ tldr: |
     Sie können das Projekt direkt von GitHub clonen und über den im Projekt integrierten Gradle-Wrapper starten. Dazu
     brauchen Sie Java 21 LTS (in einer 64-bit Version). Sie können das Projekt als Gradle-Projekt in Ihre IDE laden.
 
-    Die Starter-Klassen (z.B. `starter.Starter` im "dungeon"-Subprojekt, `starter.DojoStarter` im "dojo-dungeon"-Subprojekt
-    oder `starter.DevDungeon` im "devDungeon"-Subprojekt) sind die zentralen Einstiegspunkte. Hier finden Sie "unseren"
-    Teil der Game-Loop (der in der eigentlichen Game-Loop von libGDX aufgerufen wird), hier finden Sie die Konfiguration
-    und die `main()`-Methode.
+    Die Starter-Klassen (z.B. `starter.Starter` im "dungeon"-Subprojekt oder `starter.DevDungeon` im "devDungeon"-Subprojekt)
+    sind die zentralen Einstiegspunkte. Hier finden Sie "unseren" Teil der Game-Loop (der in der eigentlichen Game-Loop von
+    libGDX aufgerufen wird), hier finden Sie die Konfiguration und die `main()`-Methode.
 
     Im ECS werden die im Spiel befindlichen Elemente als _Entitäten_ modelliert. Diese Entitäten sind lediglich Container
     für _Components_, die dann ihrerseits die entsprechenden Eigenschaften der Entitäten modellieren. Entitäten haben
@@ -173,23 +172,20 @@ starten, und es erscheint wieder ein minimales Level.
 ## Überblick über die (Sub-) Projekte
 
 Sie finden im Package-Explorer eine Reihe von Unterprojekten (Gradle-Subprojekte). Für PR2
-sind eigentlich nur die Subprojekte
-["dojo-dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dojo-dungeon) und
+ist eigentlich nur das Subprojekt
 ["devDungeon"](https://github.com/Dungeon-CampusMinden/dev-dungeon/tree/master/devDungeon)
 relevant sowie die Dokumentation in den verschiedenen `doc/`-Ordnern (die derzeit leider noch
 eine ziemliche Baustelle ist).
 
 ![](images/screenshot_dungeon_intellij_gradle.png)
 
-Dojo-Dungeon und DevDungeon stellen zwei verschiedene (mehr oder weniger fertige) Spiele dar,
-die von Studierenden erstellt wurden (Dojo-Dungeon: [\@Denniso3](https://github.com/Denniso3),
-[\@tgrothe](https://github.com/tgrothe) und [\@JudiTeller](https://github.com/JudiTeller);
-DevDungeon: [\@Flamtky](https://github.com/Flamtky)). Diese Spiele nutzen wir an einigen
-Stellen im Praktikum.
+DevDungeon stellt ein (mehr oder weniger fertiges) Spiel dar, das von Studierenden erstellt
+wurde ([\@Flamtky](https://github.com/Flamtky)). Dieses Spiel nutzen wir an einigen Stellen
+im Praktikum.
 
-Die Basis für die beiden Spiele stellt das Dungeon-Framework dar, welches in den
-Gradle-Subprojekten ["game"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/game)
-und ["dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dungeon) zu finden
+Die Basis für dieses Spiel stellt das Dungeon-Framework dar, welches in den Gradle-Subprojekten
+["game"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/game) und
+["dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dungeon) zu finden
 ist. Game stellt dabei eine Art minimale Basis zum Programmieren eigener Spiele dar (alle
 Klassen im Package `core`), und Dungeon erweitert diese Basis und fügt einige häufig benötigte
 Elemente und weitere Texturen (Package `contrib`) hinzu. Zusätzlich gibt es hier noch einige
@@ -206,11 +202,11 @@ Crafting-Rezepte (beispielsweise für Boden, Wände und den Hero). Alle Sourcen 
 weniger) mit Javadoc dokumentiert, zusätzlich gibt es jeweils in `<subproject>/doc/` weitere
 Anleitungen und Hinweise.
 
-Für die Aufgaben im Praktikum starten Sie am besten zunächst beim relevanten Code in den
-Sub-Projekten Dojo-Dungeon und DevDungeon. Schauen Sie sich die für die Aufgabe benutzten
-Klassen und deren Javadoc an. In der Regel nutzen diese auch Klassen aus Dungeon und Game,
-deren Aufbau und Javadoc Sie sich ebenfalls anschauen sollten. Zusätzlich gibt es für Game und
-Dungeon noch weitere Dokumentation in den `doc/`-Ordnern.
+Für die Aufgaben im Praktikum starten Sie am besten zunächst beim relevanten Code im Sub-Projekt
+DevDungeon. Schauen Sie sich die für die Aufgabe benutzten Klassen und deren Javadoc an. In der
+Regel nutzen diese auch Klassen aus Dungeon und Game, deren Aufbau und Javadoc Sie sich ebenfalls
+anschauen sollten. Zusätzlich gibt es für Game und Dungeon noch weitere Dokumentation in den
+`doc/`-Ordnern.
 
 
 ## Überblick über die Java-Strukturen
