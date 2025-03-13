@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
-title: "High-Level Concurrency"
-linkTitle: "High-Level Concurrency"
+title: "Threads: High-Level Concurrency"
+linkTitle: "Threads: High-Level Concurrency"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2021"
