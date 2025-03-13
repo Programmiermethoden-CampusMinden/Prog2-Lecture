@@ -1,7 +1,7 @@
 ---
 archetype: "default"
-title: "Umgang mit Frameworks"
-linkTitle: "Frameworks"
+title: "Verschiedenes"
+linkTitle: "Misc"
 ---
 
 
