@@ -212,7 +212,7 @@ public class Studi {
 }
 ```
 
-[Demo: methodreferences.DemoStaticMethodReference]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/methodreferences/DemoStaticMethodReference.java"}
+[Demo: methodreferences.DemoStaticMethodReference]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/methodreferences/DemoStaticMethodReference.java"}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweiten Parameter eine Instanz von
@@ -247,7 +247,7 @@ public class Studi {
 }
 ```
 
-[Demo: methodreferences.DemoInstanceMethodReferenceObject]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/methodreferences/DemoInstanceMethodReferenceObject.java"}
+[Demo: methodreferences.DemoInstanceMethodReferenceObject]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/methodreferences/DemoInstanceMethodReferenceObject.java"}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine Instanz
@@ -281,7 +281,7 @@ public class Studi {
 }
 ```
 
-[Demo: methodreferences.DemoInstanceMethodReferenceType]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/methodreferences/DemoInstanceMethodReferenceType.java"}
+[Demo: methodreferences.DemoInstanceMethodReferenceType]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/methodreferences/DemoInstanceMethodReferenceType.java"}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine Instanz
@@ -325,7 +325,7 @@ Thread t2 = new Thread(() -> System.out.println("t2: wuppie"));
 Thread t3 = new Thread(ThreadStarter::wuppie);
 ```
 
-[Beispiel: methodreferences.ThreadStarter]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/methodreferences/ThreadStarter.java"}
+[Beispiel: methodreferences.ThreadStarter]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/methodreferences/ThreadStarter.java"}
 
 
 ## Ausblick: Datenstrukturen als Streams
@@ -349,7 +349,7 @@ List<Integer> wordLengths = words.stream()
         .collect(toList());
 ```
 
-[Beispiel: methodreferences.CollectionStreams]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/methodreferences/CollectionStreams.java"}
+[Beispiel: methodreferences.CollectionStreams]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/methodreferences/CollectionStreams.java"}
 
 ::: notes
 *   Collections können als Datenstrom betrachtet werden: `stream()`

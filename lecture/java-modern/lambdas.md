@@ -103,7 +103,7 @@ challenges: |
 
     **Sortieren mit Lambdas und funktionalen Interfaces**
 
-    Betrachten Sie die Klasse [Student](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/challenges/lambda/Student.java).
+    Betrachten Sie die Klasse [Student](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/challenges/lambda/Student.java).
 
     1.  Definieren Sie eine Methode, die das Sortieren einer `Student`-Liste erlaubt. Übergeben Sie die Liste als Parameter.
     2.  Schaffen Sie es, das Sortierkriterium ebenfalls als Parameter zu übergeben (als Lambda-Ausdruck)?
@@ -243,7 +243,7 @@ public class Outer {
 }
 ```
 
-[Beispiel mit Iterator als innere Klasse: nested.StudiListNested]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/nested/StudiListNested.java"}
+[Beispiel mit Iterator als innere Klasse: nested.StudiListNested]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/nested/StudiListNested.java"}
 
 ### Statische innere Klassen ("_Static Nested Classes_")
 
@@ -293,7 +293,7 @@ sl.sort(
 *   Nutzung typischerweise bei GUIs: Event-Handler etc.
 :::
 
-[Demo: nested.DemoAnonymousInnerClass]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/nested/DemoAnonymousInnerClass.java"}
+[Demo: nested.DemoAnonymousInnerClass]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/nested/DemoAnonymousInnerClass.java"}
 
 
 ## Vereinfachung mit Lambda-Ausdruck
@@ -323,7 +323,7 @@ werden kann, muss der erwartete Parameter vom Typ her ein "**funktionales Interf
 (s.u.) sein!
 :::
 
-[Demo: nested.DemoLambda]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/nested/DemoLambda.java"}
+[Demo: nested.DemoLambda]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/nested/DemoLambda.java"}
 
 
 ## Syntax für Lambdas

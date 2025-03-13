@@ -173,12 +173,12 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Enumerationen]: lecture/java-jvm/enums.md
 [Konfiguration]: lecture/java-jvm/configuration.md
 
-[Lambda-Ausdrücke]: lecture/modern-java/lambdas.md
-[Methodenreferenzen]: lecture/modern-java/methodreferences.md
-[Stream-API]: lecture/modern-java/stream-api.md
-[Optional]: lecture/modern-java/optional.md
-[Record-Klassen]: lecture/modern-java/records.md
-[Default-Methoden]: lecture/modern-java/defaultmethods.md
+[Lambda-Ausdrücke]: lecture/java-modern/lambdas.md
+[Methodenreferenzen]: lecture/java-modern/methodreferences.md
+[Stream-API]: lecture/java-modern/stream-api.md
+[Optional]: lecture/java-modern/optional.md
+[Record-Klassen]: lecture/java-modern/records.md
+[Default-Methoden]: lecture/java-modern/defaultmethods.md
 
 <!-- [Strategy-Pattern]: lecture/pattern/strategy.md -->
 [Visitor-Pattern]: lecture/pattern/visitor.md

@@ -258,7 +258,7 @@ geändert werden!
 ## Beispiel aus den Challenges
 
 In den Challenges zum Thema Optional gibt es die Klasse `Katze` in den
-[Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/modern-java/src/challenges/optional/Katze.java).
+[Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/challenges/optional/Katze.java).
 
 Die Katze wurde zunächst "klassisch" modelliert: Es gibt drei Eigenschaften `name`,
 `gewicht`und `lieblingsBox`. Ein Konstruktor setzt diese Felder und es gibt drei
