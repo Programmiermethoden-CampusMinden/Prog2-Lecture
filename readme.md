@@ -135,7 +135,7 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 <!-- [Docker]: lecture/building/docker.md -->
 
 [Javadoc]: lecture/coding/javadoc.md
-[Logging]: lecture/coding/logging.md
+[Logging]: lecture/java-classic/logging.md
 [Code-Smells]: lecture/coding/smells.md
 [Coding-Rules]: lecture/coding/codingrules.md
 [Refactoring]: lecture/coding/refactoring.md
