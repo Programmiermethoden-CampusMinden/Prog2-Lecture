@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
-title: "Generics und Polymorphie"
-linkTitle: "Polymorphie"
+title: "Generics: Generics und Polymorphie"
+linkTitle: "Generics: Polymorphie"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2021"

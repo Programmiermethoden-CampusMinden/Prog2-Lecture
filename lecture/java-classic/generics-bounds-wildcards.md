@@ -1,7 +1,7 @@
 ---
 archetype: lecture-cg
-title: "Bounds & Wildcards"
-linkTitle: "Bounds & Wildcards"
+title: "Generics: Bounds & Wildcards"
+linkTitle: "Generics: Bounds & Wildcards"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2021"
