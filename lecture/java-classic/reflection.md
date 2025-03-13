@@ -46,7 +46,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/9ebd01cdab64351e7b52863f4a442d3199d3322eef1ba277ba979ce756d2892a1317ddd6e1fc34e6b4d28b237dec99e56810fe8bb35b9e95db325edbb14d7719"
     name: "VL Reflection"
 challenges: |
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-jvm/src/challenges/reflection)
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-classic/src/challenges/reflection)
     finden Sie eine einfache Implementierung für einen Taschenrechner mit Java-Swing.
     Dieser Taschenrechner kann nur mit `int`-Werten rechnen.
     Der Taschenrechner verfügt über keinerlei vordefinierte mathematische Operationen (Addieren, Subtrahieren etc.).
@@ -298,7 +298,7 @@ der Parameter und deren Typ und Annotationen fragen etc. ... Schauen Sie am best
 einmal selbst in die API hinein.
 :::
 
-[Demo: reflection.ReflectionDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/src/reflection/ReflectionDemo.java"}
+[Demo: reflection.ReflectionDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/reflection/ReflectionDemo.java"}
 
 
 ## Hinweis: Klassen außerhalb des Classpath laden
@@ -312,7 +312,7 @@ Class<?> c1 = Class.forName("org.wuppie.Fluppie", true, ucl);
 Class<?> c2 = ucl.loadClass("org.wuppie.Fluppie");
 ```
 
-[Bemerkung zu Ordnerstruktur und Classpath; Demo: reflection.ClassLoaderDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/src/reflection/ClassLoaderDemo.java"}
+[Bemerkung zu Ordnerstruktur und Classpath; Demo: reflection.ClassLoaderDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/reflection/ClassLoaderDemo.java"}
 
 ::: notes
 Mit `Class.forName("reflection.Studi")` können Sie die Klasse `Studi` im

@@ -164,14 +164,14 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 <!-- [Swing: Tabellen]: lecture/gui/tables.md -->
 <!-- [Java2D]: lecture/gui/java2d.md -->
 
-[Serialisierung]: lecture/java-jvm/serialisation.md
-<!-- [Collections]: lecture/java-jvm/collections.md -->
-[RegExp]: lecture/java-jvm/regexp.md
-<!-- [Annotationen]: lecture/java-jvm/annotations.md -->
-<!-- [Reflection]: lecture/java-jvm/reflection.md -->
-<!-- [Exception-Handling]: lecture/java-jvm/exceptions.md -->
-[Enumerationen]: lecture/java-jvm/enums.md
-[Konfiguration]: lecture/java-jvm/configuration.md
+[Serialisierung]: lecture/java-classic/serialisation.md
+<!-- [Collections]: lecture/java-classic/collections.md -->
+[RegExp]: lecture/java-classic/regexp.md
+<!-- [Annotationen]: lecture/java-classic/annotations.md -->
+<!-- [Reflection]: lecture/java-classic/reflection.md -->
+<!-- [Exception-Handling]: lecture/java-classic/exceptions.md -->
+[Enumerationen]: lecture/java-classic/enums.md
+[Konfiguration]: lecture/java-classic/configuration.md
 
 [Lambda-Ausdrücke]: lecture/java-modern/lambdas.md
 [Methodenreferenzen]: lecture/java-modern/methodreferences.md

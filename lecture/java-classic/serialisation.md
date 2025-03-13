@@ -50,7 +50,7 @@ fhmedia:
 challenges: |
     Implementieren Sie die beiden Klassen entsprechend dem UML-Diagram:
 
-    ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/images/uml_serialisierung.png?raw=true)
+    ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/images/uml_serialisierung.png?raw=true)
 
     Objekte vom Typ `Person` sowie `Address` sollen serialisierbar sein (vgl. Vorlesung).
     Dabei soll das Passwort nicht serialisiert bzw. gespeichert werden, alle anderen
@@ -374,7 +374,7 @@ Weitere Links:
     *   https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html
 :::
 
-[Demo: serial.SerializableStudi]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/src/serial/SerializableStudi.java"}
+[Demo: serial.SerializableStudi]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/serial/SerializableStudi.java"}
 
 
 ## Wrap-Up

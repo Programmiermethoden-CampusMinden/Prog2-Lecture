@@ -57,7 +57,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/99634e4bd3c017932803d555405c3921a761c6f7d788e1beaddbc4053d0013f7f2dce08a8c713c005a7352a57de556406554dca14492eaa1a982ed167e20ea5b"
     name: "VL Exceptions"
 challenges: |
-    Betrachten Sie die [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-jvm/src/challenges/exceptions).
+    Betrachten Sie die [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-classic/src/challenges/exceptions).
 
     **Verbessern Sie das Exception-Handling**
 
@@ -409,7 +409,7 @@ int getFirstLineAsInt(String pathToFile) {
 }
 ```
 
-[Zeigen: exceptions.HowMuchTry]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-jvm/src/exceptions/HowMuchTry.java"}
+[Zeigen: exceptions.HowMuchTry]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/exceptions/HowMuchTry.java"}
 
 
 ::: notes
