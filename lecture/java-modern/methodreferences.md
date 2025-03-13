@@ -297,7 +297,7 @@ aufgerufen.
 ## Ausblick: Threads
 
 ::: notes
-Erinnerung an bzw. Vorgriff auf ["Threads: Intro"](../threads/threads-intro.md):
+Erinnerung an bzw. Vorgriff auf ["Threads: Intro"](../java-classic/threads-intro.md):
 
 ```java
 public interface Runnable {

@@ -171,7 +171,7 @@ public boolean setDate(int date) {
 
 ::: notes
 Die Dokumentation mit Javadoc hatten wir uns bereits in der Einheit
-["Javadoc"](../coding/javadoc.md) angesehen.
+["Javadoc"](../quality/javadoc.md) angesehen.
 
 Hier noch einmal exemplarisch die wichtigsten Elemente, die an
 "`public`" sichtbaren Methoden verwendet werden.

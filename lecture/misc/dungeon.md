@@ -548,7 +548,7 @@ setzt. Damit kann mit der Taste "W" der Held nach oben laufen.
 
 *Anmerkung*: Das `entity.fetch(VelocityComponent.class)` liefert nicht direkt ein
 `VelocityComponent`-Objekt zurück, sondern ein `Optional<VelocityComponent>`. Darüber sprechen
-wir (später) noch in der Lektion ["Optional"](../modern-java/optional.md). Für jetzt soll es
+wir (später) noch in der Lektion ["Optional"](../java-modern/optional.md). Für jetzt soll es
 zunächst genügen, dass Sie das gewünschte "verpackte" Objekt mit der Methode `get()` aus dem
 `Optional` wieder herausbekommen.
 
