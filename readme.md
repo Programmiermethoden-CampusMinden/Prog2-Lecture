@@ -143,7 +143,7 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 <!-- [Intro Frameworks]: lecture/misc/intro-frameworks.md -->
 [Intro Dungeon]: lecture/misc/dungeon.md
 
-[Klassen und Methoden]: lecture/generics/classes-methods.md
+[Klassen und Methoden]: lecture/generics/generics-classes-methods.md
 [Bounds und Wildcards]: lecture/generics/generics-bounds-wildcards.md
 [Type Erasure]: lecture/generics/type-erasure.md
 [Polymorphie]: lecture/generics/generics-polymorphism.md
