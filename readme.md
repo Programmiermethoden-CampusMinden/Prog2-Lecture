@@ -140,8 +140,8 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Coding-Rules]: lecture/coding/codingrules.md
 [Refactoring]: lecture/coding/refactoring.md
 
-<!-- [Intro Frameworks]: lecture/frameworks/intro-frameworks.md -->
-[Intro Dungeon]: lecture/frameworks/dungeon.md
+<!-- [Intro Frameworks]: lecture/misc/intro-frameworks.md -->
+[Intro Dungeon]: lecture/misc/dungeon.md
 
 [Klassen und Methoden]: lecture/generics/classes-methods.md
 [Bounds und Wildcards]: lecture/generics/bounds-wildcards.md
