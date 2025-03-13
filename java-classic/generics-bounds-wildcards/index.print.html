@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 6.4.1">
+    <meta name="description" content="Bounds: Einschränken der generischen Typen public class Cps&lt;E extends Number&gt; { // Obere Schranke: E muss Number oder Subklasse sein // =&gt; Zugriff auf Methoden aus Number moeglich } Cps&lt;Double&gt; a; Cps&lt;Number&gt; b; Cps&lt;String&gt; c; // Fehler!!! Schlüsselwort extends gilt hier auch für Interfaces
+Mehrere Interfaces: nach extends Klasse oder Interface, danach mit &#34;&amp;&#34; getrennt die restlichen Interfaces:
+class Cps&lt;E extends KlasseOderInterface &amp; I1 &amp; I2 &amp; I3&gt; {} Anmerkung: Der Typ-Parameter ist analog auch mit super (nach unten) einschränkbar">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Generics: Bounds & Wildcards">
+    <meta name="twitter:description" content="Bounds: Einschränken der generischen Typen public class Cps&lt;E extends Number&gt; { // Obere Schranke: E muss Number oder Subklasse sein // =&gt; Zugriff auf Methoden aus Number moeglich } Cps&lt;Double&gt; a; Cps&lt;Number&gt; b; Cps&lt;String&gt; c; // Fehler!!! Schlüsselwort extends gilt hier auch für Interfaces
+Mehrere Interfaces: nach extends Klasse oder Interface, danach mit &#34;&amp;&#34; getrennt die restlichen Interfaces:
+class Cps&lt;E extends KlasseOderInterface &amp; I1 &amp; I2 &amp; I3&gt; {} Anmerkung: Der Typ-Parameter ist analog auch mit super (nach unten) einschränkbar">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-bounds-wildcards.html">
+    <meta property="og:title" content="Generics: Bounds & Wildcards">
+    <meta property="og:description" content="Bounds: Einschränken der generischen Typen public class Cps&lt;E extends Number&gt; { // Obere Schranke: E muss Number oder Subklasse sein // =&gt; Zugriff auf Methoden aus Number moeglich } Cps&lt;Double&gt; a; Cps&lt;Number&gt; b; Cps&lt;String&gt; c; // Fehler!!! Schlüsselwort extends gilt hier auch für Interfaces
+Mehrere Interfaces: nach extends Klasse oder Interface, danach mit &#34;&amp;&#34; getrennt die restlichen Interfaces:
+class Cps&lt;E extends KlasseOderInterface &amp; I1 &amp; I2 &amp; I3&gt; {} Anmerkung: Der Typ-Parameter ist analog auch mit super (nach unten) einschränkbar">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Generics: Bounds & Wildcards">
+    <meta itemprop="description" content="Bounds: Einschränken der generischen Typen public class Cps&lt;E extends Number&gt; { // Obere Schranke: E muss Number oder Subklasse sein // =&gt; Zugriff auf Methoden aus Number moeglich } Cps&lt;Double&gt; a; Cps&lt;Number&gt; b; Cps&lt;String&gt; c; // Fehler!!! Schlüsselwort extends gilt hier auch für Interfaces
+Mehrere Interfaces: nach extends Klasse oder Interface, danach mit &#34;&amp;&#34; getrennt die restlichen Interfaces:
+class Cps&lt;E extends KlasseOderInterface &amp; I1 &amp; I2 &amp; I3&gt; {} Anmerkung: Der Typ-Parameter ist analog auch mit super (nach unten) einschränkbar">
+    <meta itemprop="wordCount" content="583">
+    <title>Generics: Bounds &amp; Wildcards</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-bounds-wildcards.html" rel="canonical" type="text/html" title="Generics: Bounds &amp; Wildcards">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1741883076" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1741883076" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1741883076" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1741883076" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1741883076" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1741883076" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1741883076" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1741883076" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1741883076" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1741883076" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1741883076" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1741883076" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1741883076" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1741883076" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1741883076" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1741883076"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1741883076";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-bounds-wildcards.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Generics: Bounds &amp; Wildcards
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Generics: Bounds &amp; Wildcards</h1>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-graduation-cap"></i> TL;DR
+  </div>
+  <div class="box-content">
+<p>Typ-Variablen können weiter eingeschränkt werden, in dem man einen verpflichtenden
+Ober- oder Untertyp angibt mit <code>extends</code> bzw. <code>super</code>. Damit muss der später
+bei der Instantiierung verwendete Typ-Parameter entweder die Oberklasse selbst
+sein oder davon ableiten (bei <code>extends</code>) bzw. der Typ-Parameter muss eine Oberklasse
+der angegebenen Schranke sein (<code>super</code>).</p>
+<p>Durch die Einschränkung mit <code>extends</code> können in der Klasse/Methode auf der Typ-Variablen
+alle Methoden des angegebenen Obertyps verwendet werden.</p>
+<p>Ein Wildcard (<code>?</code>) als Typ-Parameter steht für einen beliebigen Typ, wobei die
+Typ-Variable keinen Namen bekommt und damit innerhalb der Klasse/Methode nicht
+zugreifbar ist.</p>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (YouTube)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://youtu.be/OV2vEn2EkWo' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Generics: Bounds & Wildcards</a></li> <li><a href='https://youtu.be/D2hIicsho7I' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Wildcards</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/08ef62f9367140e7ae75cd4e90fde1e63cc3ec6c9e7e4c11a1994065fd45e781f46bc6b3f1fbe4fbe8952db11812d52efe8cd8900fe88843e5eaefad62bbc7d3' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Generics: Bounds & Wildcards</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-lightbulb"></i> Lernziele
+  </div>
+  <div class="box-content">
+<ul> <li>(K3) Umgang mit Wildcards und Bounds bei generischen Klassen/Methoden</li></ul>
+  </div>
+</div>
+
+
+
+
+    <h2 id="bounds-einschränken-der-generischen-typen">Bounds: Einschränken der generischen Typen</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cps</span><span style="color:#f92672">&lt;</span>E <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Obere Schranke: E muss Number oder Subklasse sein</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// =&gt; Zugriff auf Methoden aus Number moeglich</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>Cps<span style="color:#f92672">&lt;</span>Double<span style="color:#f92672">&gt;</span> a;
+</span></span><span style="display:flex;"><span>Cps<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;</span> b;
+</span></span><span style="display:flex;"><span>Cps<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> c;  <span style="color:#f92672">//</span> Fehler<span style="color:#f92672">!!!</span></span></span></code></pre></div>
+<ul>
+<li>
+<p>Schlüsselwort <code>extends</code> gilt hier auch für Interfaces</p>
+</li>
+<li>
+<p>Mehrere Interfaces: nach <code>extends</code> Klasse oder Interface, danach
+mit &quot;<code>&amp;</code>&quot; getrennt die restlichen Interfaces:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cps</span><span style="color:#f92672">&lt;</span>E <span style="color:#66d9ef">extends</span> KlasseOderInterface <span style="color:#f92672">&amp;</span> I1 <span style="color:#f92672">&amp;</span> I2 <span style="color:#f92672">&amp;</span> I3<span style="color:#f92672">&gt;</span> {}</span></span></code></pre></div>
+</li>
+</ul>
+<p><em>Anmerkung</em>: Der Typ-Parameter ist analog auch mit <code>super</code> (nach unten) einschränkbar</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/bounds/Cps.java" target="_blank"><span class="title">Beispiel bounds.Cps</span></a></span></div>
+<h2 id="wildcards-dieser-typ-ist-mir-nicht-so-wichtig">Wildcards: Dieser Typ ist mir nicht so wichtig</h2>
+<div class='center'>
+<p>Wildcard mit &quot;<code>?</code>&quot; =&gt; steht für unbestimmten Typ</p>
+</div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Wuppie</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">m1</span>(List<span style="color:#f92672">&lt;?&gt;</span> a) { ... }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">m2</span>(List<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> b) { ... }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<ul>
+<li>
+<p><code>m1</code>: <code>List</code> beliebig parametrisierbar
+=&gt; In <code>m1</code> für Objekte in Liste <code>a</code> nur Methoden von <code>Object</code> nutzbar!</p>
+</li>
+<li>
+<p><code>m2</code>: <code>List</code> muss mit <code>Number</code> oder Subklasse parametrisiert werden.
+=&gt; Dadurch für Objekte in Liste <code>b</code> alle Methoden von <code>Number</code> nutzbar ...</p>
+</li>
+</ul>
+<p>Weitere Eigenschaften:</p>
+<ul>
+<li>Durch Wildcard kein Zugriff auf den Typ</li>
+<li>Wildcard kann durch upper bound eingeschränkt werden</li>
+<li>Geht nicht bei Klassen-/Interface-Definitionen</li>
+</ul>
+<p><a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-bounds-wildcards.html#id_Bloch2018">[Bloch2018]</a>: Nur für Parameter und nicht für Rückgabewerte nutzen!</p>
+<h2 id="hands-on-ausgabe-für-generische-listen">Hands-On: Ausgabe für generische Listen</h2>
+<p>Ausgabe für Listen gesucht, die sowohl Elemente der Klasse <code>A</code> als auch
+Elemente der Klasse <code>B</code> enthalten können</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> { <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printInfo</span>() { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;A&#34;</span>); } }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#66d9ef">extends</span> A { <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printInfo</span>() { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;B&#34;</span>); } }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">X</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;</span> x <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>        x.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> A());  x.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> B());
+</span></span><span style="display:flex;"><span>        printInfo(x);    <span style="color:#75715e">// Klassenmethode in X, gesucht</span>
+</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;</span> y <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>B<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>        y.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> B());  y.<span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">new</span> B());
+</span></span><span style="display:flex;"><span>        printInfo(y);    <span style="color:#75715e">// Klassenmethode in X, gesucht</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p><strong>Hinweis</strong>: Dieses Beispiel beinhaltet auch Polymorphie bei/mit generischen Datentypen, bitte vorher
+auch das Video zum vierten Teil &quot;Generics und Polymorphie&quot; anschauen</p>
+<h3 id="erster-versuch-a-und-b-und-main-wie-oben">Erster Versuch (<em>A</em> und <em>B</em> und <em>main()</em> wie oben)</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">X</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printInfo</span>(List<span style="color:#f92672">&lt;</span>A<span style="color:#f92672">&gt;</span> list) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (A a : list) { a.<span style="color:#a6e22e">printInfo</span>(); }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>=&gt; <strong>So gehts nicht!</strong> Eine <code>List&lt;B&gt;</code> ist <strong>keine</strong> <code>List&lt;A&gt;</code>
+(auch wenn ein <code>B</code> ein <code>A</code> ist, vgl. spätere Sitzung zu Generics und
+Vererbung ...)!</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/wildcards/v1/X.java" target="_blank"><span class="title">Beispiel wildcards.v1.X</span></a></span></div>
+<h3 id="zweiter-versuch-mit-wildcards-a-und-b-und-main-wie-oben">Zweiter Versuch mit Wildcards (<em>A</em> und <em>B</em> und <em>main()</em> wie oben)</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">X</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printInfo</span>(List<span style="color:#f92672">&lt;?&gt;</span> list) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (Object a : list) { a.<span style="color:#a6e22e">printInfo</span>(); }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>=&gt; <strong>So gehts auch nicht!</strong> Im Prinzip passt das jetzt
+für <code>List&lt;A&gt;</code> und <code>List&lt;B&gt;</code>. Dummerweise hat man durch das Wildcard
+keinen Zugriff mehr auf den Typ-Parameter und muss für den Typ der
+Laufvariablen in der <code>for</code>-Schleife dann <code>Object</code> nehmen. Aber
+<code>Object</code> kennt unser <code>printInfo</code> nicht ... Außerdem könnte man die
+Methode <code>X#printInfo</code> dank des Wildcards auch mit allen anderen
+Typen aufrufen ...</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/wildcards/v2/X.java" target="_blank"><span class="title">Beispiel wildcards.v2.X</span></a></span></div>
+<h3 id="dritter-versuch-lösung-mit-wildcards-und-bounds-a-und-b-und-main-wie-oben">Dritter Versuch (Lösung) mit Wildcards und Bounds (<em>A</em> und <em>B</em> und <em>main()</em> wie oben)</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">X</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printInfo</span>(List<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> A<span style="color:#f92672">&gt;</span> list) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (A a : list) { a.<span style="color:#a6e22e">printInfo</span>(); }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Das ist die Lösung. Man erlaubt als Argument nur <code>List</code>-Objekte und fordert,
+dass sie mit <code>A</code> oder einer Unterklasse von <code>A</code> parametrisiert sind. D.h.
+in der Schleife kann man sich auf den gemeinsamen Obertyp <code>A</code> abstützen
+und hat dann auch wieder die <code>printInfo</code>-Methode zur Verfügung ...</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-classic/src/wildcards/v3" target="_blank"><span class="title">Konsole wildcards.v3.X</span></a></span></div>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Ein Wildcard (<code>?</code>) als Typ-Parameter steht für einen beliebigen Typ</p>
+<ul>
+<li>Ist in Klasse oder Methode dann aber nicht mehr zugreifbar</li>
+</ul>
+</li>
+<li>
+<p>Mit Bounds kann man Typ-Parameter nach oben oder nach unten einschränken
+(im Sinne einer Vererbungshierarchie)</p>
+<ul>
+<li><code>extends</code>: Der Typ-Parameter muss eine Unterklasse eines bestimmten Typen sein</li>
+<li><code>super</code>: Der Typ-Parameter muss eine Oberklasse eines bestimmten Typen sein</li>
+</ul>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-user-check"></i> Quizzes
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106236&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Generics: Bounds & Wildcards (ILIAS)</a></li></ul>
+  </div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fas fa-puzzle-piece"></i> Challenges
+  </div>
+  <div class="box-content">
+<p><strong>Spieler, Mannschaften und Ligen</strong>
+Modellieren Sie in Java verschiedene Spielertypen sowie generische Mannschaften und Ligen,
+die jeweils bestimmte Spieler (-typen) bzw. Mannschaften aufnehmen können.</p>
+<ol>
+<li>
+<p>Implementieren Sie die Klasse <code>Spieler</code>, die das Interface <code>ISpieler</code> erfüllt.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ISpieler</span> {
+</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">getName</span>();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</li>
+<li>
+<p>Implementieren Sie die beiden Klassen <code>FussballSpieler</code> und <code>BasketballSpieler</code> und
+sorgen Sie dafür, dass beide Klassen vom Compiler als Spieler betrachtet werden
+(geeignete Vererbungshierarchie).</p>
+</li>
+<li>
+<p>Betrachten Sie das nicht-generische Interface <code>IMannschaft</code>. Erstellen Sie daraus ein
+generisches Interface <code>IMannschaft</code> mit einer Typ-Variablen. Stellen Sie durch geeignete
+Beschränkung der Typ-Variablen sicher, dass nur Mannschaften mit von <code>ISpieler</code> abgeleiteten
+Spielern gebildet werden können.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IMannschaft</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">aufnehmen</span>(ISpieler spieler);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">rauswerfen</span>(ISpieler spieler);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</li>
+<li>
+<p>Betrachten Sie das nicht-generische Interface <code>ILiga</code>. Erstellen Sie daraus ein generisches
+Interface <code>ILiga</code> mit einer Typvariablen. Stellen Sie durch geeignete Beschränkung der
+Typvariablen sicher, dass nur Ligen mit von <code>IMannschaft</code> abgeleiteten Mannschaften angelegt
+werden können.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ILiga</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">aufnehmen</span>(IMannschaft mannschaft);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">rauswerfen</span>(IMannschaft mannschaft);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</li>
+<li>
+<p>Leiten Sie von <code>ILiga</code> das <strong>generische</strong> Interface <code>IBundesLiga</code> ab. Stellen Sie durch
+geeignete Formulierung der Typvariablen sicher, dass nur Ligen mit Mannschaften angelegt
+werden können, deren Spieler vom Typ <code>FussballSpieler</code> (oder abgeleitet) sind.</p>
+<p>Realisieren Sie nun noch die Funktionalität von <code>IBundesLiga</code> als <strong>nicht-generisches</strong>
+Interface <code>IBundesLiga2</code>.</p>
+</li>
+</ol>
+  </div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-book-reader"></i> Quellen
+  </div>
+  <div class="box-content">
+<ul> <li id='id_Bloch2018'>[Bloch2018] <strong>Effective Java</strong><br>Bloch, J., Addison-Wesley, 2018. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-0-13-468599-1' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-0-13-468599-1</a>.</li> <li id='id_Java-SE-Tutorial'>[Java-SE-Tutorial] <a href='https://docs.oracle.com/javase/tutorial/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>The Java Tutorials</strong></a><br>Oracle Corporation, 2022.<br><em>Specialized Trails: Generics</em></li> <li id='id_LernJava'>[LernJava] <a href='https://dev.java/learn/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Learn Java</strong></a><br>Oracle Corporation, 2022.<br><em>Kapitel Generics</em></li> <li id='id_Ullenboom2021'>[Ullenboom2021] <a href='https://openbook.rheinwerk-verlag.de/javainsel/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java ist auch eine Insel</strong></a><br>Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8362-8745-6</a>.<br><em>Kapitel 11.3</em></li></ul>
+  </div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1741883076" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1741883076" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1741883076"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1741883076" defer></script>
+  </body>
+</html>

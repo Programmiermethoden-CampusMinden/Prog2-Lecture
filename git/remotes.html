@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 6.4.1">
+    <meta name="description" content="Nutzung von Git in Projekten: Verteiltes Git (und Workflows) Git ermöglicht eine einfaches Zusammenarbeit in verteilten Teams. Nachdem wir die verschiedenen Branching-Strategien betrachtet haben, soll im Folgenden die Frage betrachtet werden: Wie arbeite ich sinnvoll über Git mit anderen Kollegen und Teams zusammen? Welche Modelle haben sich etabliert?
+Clonen kann sich lohnen ... https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture ---C---D---E master =&gt; git clone https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Arbeiten mit Git Remotes (dezentrale Repos)">
+    <meta name="twitter:description" content="Nutzung von Git in Projekten: Verteiltes Git (und Workflows) Git ermöglicht eine einfaches Zusammenarbeit in verteilten Teams. Nachdem wir die verschiedenen Branching-Strategien betrachtet haben, soll im Folgenden die Frage betrachtet werden: Wie arbeite ich sinnvoll über Git mit anderen Kollegen und Teams zusammen? Welche Modelle haben sich etabliert?
+Clonen kann sich lohnen ... https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture ---C---D---E master =&gt; git clone https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html">
+    <meta property="og:title" content="Arbeiten mit Git Remotes (dezentrale Repos)">
+    <meta property="og:description" content="Nutzung von Git in Projekten: Verteiltes Git (und Workflows) Git ermöglicht eine einfaches Zusammenarbeit in verteilten Teams. Nachdem wir die verschiedenen Branching-Strategien betrachtet haben, soll im Folgenden die Frage betrachtet werden: Wie arbeite ich sinnvoll über Git mit anderen Kollegen und Teams zusammen? Welche Modelle haben sich etabliert?
+Clonen kann sich lohnen ... https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture ---C---D---E master =&gt; git clone https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Arbeiten mit Git Remotes (dezentrale Repos)">
+    <meta itemprop="description" content="Nutzung von Git in Projekten: Verteiltes Git (und Workflows) Git ermöglicht eine einfaches Zusammenarbeit in verteilten Teams. Nachdem wir die verschiedenen Branching-Strategien betrachtet haben, soll im Folgenden die Frage betrachtet werden: Wie arbeite ich sinnvoll über Git mit anderen Kollegen und Teams zusammen? Welche Modelle haben sich etabliert?
+Clonen kann sich lohnen ... https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture ---C---D---E master =&gt; git clone https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">
+    <meta itemprop="wordCount" content="1203">
+    <title>Arbeiten mit Git Remotes (dezentrale Repos)</title>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes/index.print.html" rel="alternate" type="text/html" title="Arbeiten mit Git Remotes (dezentrale Repos)">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1741883076" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1741883076" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1741883076" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1741883076" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1741883076" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1741883076" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1741883076" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1741883076" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1741883076" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1741883076" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1741883076" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1741883076" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1741883076" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1741883076" rel="stylesheet" media="print">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1741883076"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1741883076";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#nutzung-von-git-in-projekten-verteiltes-git-und-workflows">Nutzung von Git in Projekten: Verteiltes Git (und Workflows)</a></li>
+    <li><a href="#clonen-kann-sich-lohnen-">Clonen kann sich lohnen ...</a></li>
+    <li><a href="#eigener-und-entfernter-master-entwickeln-sich-weiter-">Eigener und entfernter <em>master</em> entwickeln sich weiter ...</a></li>
+    <li><a href="#änderungen-im-remote-holen-und-branches-zusammenführen">Änderungen im Remote holen und Branches zusammenführen</a>
+      <ul>
+        <li><a href="#änderungen-auf-dem-server-mit-dem-eigenen-repo-abgleichen">Änderungen auf dem Server mit dem eigenen Repo abgleichen</a></li>
+        <li><a href="#master-branch-nach-git-fetch-origin-zusammenführen"><em>master</em>-Branch nach &quot;git fetch origin&quot; zusammenführen</a></li>
+        <li><a href="#auf-dem-server-ist-nur-ein-fast-forward-merge-möglich">Auf dem Server ist nur ein <em>fast forward merge</em> möglich</a></li>
+      </ul>
+    </li>
+    <li><a href="#branches-und-remotes">Branches und Remotes</a></li>
+    <li><a href="#zusammenfassung-arbeiten-mit-remotes">Zusammenfassung: Arbeiten mit Remotes</a>
+      <ul>
+        <li><a href="#anmerkung-push-geht-nur-wenn">Anmerkung: <em>push</em> geht nur, wenn</a></li>
+        <li><a href="#beispiel">Beispiel</a></li>
+      </ul>
+    </li>
+    <li><a href="#vereinfachung-tracking-branches">Vereinfachung: Tracking Branches</a></li>
+    <li><a href="#einrichten-von-tracking-branches">Einrichten von Tracking Branches</a></li>
+    <li><a href="#hinzufügen-eines-weiteren-remote-repository">Hinzufügen eines (weiteren) Remote Repository</a></li>
+    <li><a href="#wrap-up">Wrap-Up</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Arbeiten mit Git Remotes (dezentrale Repos)
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Arbeiten mit Git Remotes (dezentrale Repos)</h1>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-graduation-cap"></i> TL;DR
+  </div>
+  <div class="box-content">
+<p>Eine der Stärken von Git ist das Arbeiten mit verteilten Repositories. Zu jeder Workingcopy gehört
+eine Kopie des Repositories, wodurch jederzeit alle Informationen einsehbar sind und auch offline
+gearbeitet werden kann. Allerdings muss man für die Zusammenarbeit mit anderen Entwicklern die lokalen
+Repos mit den &quot;entfernten&quot; Repos (auf dem Server oder anderen Entwicklungsrechnern) synchronisieren.</p>
+<p>Beim Klonen eines Repositories mit <code>git clone &lt;url&gt;</code> wird das fremde Repo mit dem Namen <code>origin</code>
+im lokalen Repo festgehalten. Dieser Name wird auch als Präfix für die Branches in diesem Repo genutzt,
+d.h. die Branches im Remote-Repo tauchen als <code>origin/&lt;branch&gt;</code> im lokalen Repo auf. Diese Remote-Branches
+kann man nicht direkt bearbeiten, sondern man muss diese Remote-Branches in einem lokalen Branch auschecken
+und dann darin weiterarbeiten. Es können beliebig viele weitere Remotes dem eigenen Repository hinzugefügt
+werden.</p>
+<p>Änderungen aus einem Remote-Repo können mit <code>git fetch &lt;remote&gt;</code> in das lokale Repo geholt werden.
+Dies aktualisiert <strong>nur</strong> die Remote-Branches <code>&lt;remote&gt;/&lt;branch&gt;</code>! Die Änderungen können anschließend
+mit <code>git merge &lt;remote&gt;/&lt;branch&gt;</code> in den aktuell in der Workingcopy ausgecheckten Branch gemergt werden.
+(<em>Anmerkung</em>: Wenn mehrere Personen an einem Branch arbeiten, will man die eigenen Arbeiten in dem Branch
+vermutlich eher auf den aktuellen Stand des Remote <strong>rebasen</strong> statt mergen!) Eigene Änderungen können
+mit <code>git push &lt;remote&gt; &lt;branch&gt;</code> in das Remote-Repo geschoben werden.</p>
+<p>Um den Umgang mit den Remote-Branches und den davon abgeleiteten lokalen Branches zu vereinfachen,
+gibt es das Konzept der &quot;Tracking Branches&quot;. Dabei &quot;folgt&quot; ein lokaler Branch einem Remote-Branch.
+Ein einfaches <code>git pull</code> oder <code>git push</code> holt dann Änderungen aus dem Remote-Branch in den ausgecheckten
+lokalen Branch bzw. schiebt Änderungen im lokalen Branch in den Remote-Branch.</p>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (YouTube)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://youtu.be/_uhEseblDYU' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Git Remotes</a></li> <li><a href='https://youtu.be/moqywsxtEy8' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Fetch, Pull und Push</a></li> <li><a href='https://youtu.be/0RoqM5Wmxfc' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Tracking-Branches</a></li> <li><a href='https://youtu.be/jL4AvSsjjKg' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Verknüpfen weiterer Remotes</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/8aa3f0e96448352e436aead353f54a3de6bbd3737bf33b6bd935b098352690544dc527e59424068ec65b6e0d67f6aff6bd6aa0a602127ce2a02a360658e0151d' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Git Remotes</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-lightbulb"></i> Lernziele
+  </div>
+  <div class="box-content">
+<ul> <li>(K3) Erzeugen eines Clones von fremden Git-Repositories</li> <li>(K3) Holen der Änderungen vom fremden Repo</li> <li>(K3) Aktualisierung der lokalen Branches</li> <li>(K3) Pushen der lokalen Änderungen ins fremde Repo</li> <li>(K3) Anlegen von lokalen Branches vs. Anlegen von entfernten Branches</li> <li>(K3) Anlegen eines Tracking Branches zum Vereinfachen der Arbeit</li></ul>
+  </div>
+</div>
+
+
+
+
+    <h2 id="nutzung-von-git-in-projekten-verteiltes-git-und-workflows">Nutzung von Git in Projekten: Verteiltes Git (und Workflows)</h2>
+<p><a href="#R-image-2cd99f3e9d9d2a1ba29f7728042233e8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes/distributed.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2cd99f3e9d9d2a1ba29f7728042233e8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes/distributed.png?width=80%25&height=auto"></a></p>
+<p>Git ermöglicht eine einfaches Zusammenarbeit in verteilten Teams. Nachdem wir die verschiedenen
+Branching-Strategien betrachtet haben, soll im Folgenden die Frage betrachtet werden: <strong>Wie arbeite
+ich sinnvoll über Git mit anderen Kollegen und Teams zusammen? Welche Modelle haben sich etabliert?</strong></p>
+<h2 id="clonen-kann-sich-lohnen-">Clonen kann sich lohnen ...</h2>
+<pre><code>https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
+
+---C---D---E  master
+</code></pre>
+<p>=&gt; <code>git clone https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture</code></p>
+<pre><code>./Prog2-Lecture/  (lokaler Rechner)
+
+---C---D---E  master
+           ^origin/master
+</code></pre>
+<p>Git-Repository mit der URL <code>&lt;URL-Repo&gt;</code> in lokalen Ordner <code>&lt;directory&gt;</code> auschecken:</p>
+<ul>
+<li><code>git clone &lt;URL-Repo&gt; [&lt;directory&gt;]</code></li>
+<li>Workingcopy ist automatisch über den Namen <code>origin</code> mit dem remote Repo auf
+dem Server verbunden</li>
+<li>Lokaler Branch <code>master</code> ist mit dem remote Branch <code>origin/master</code> verbunden
+(&quot;Tracking Branch&quot;, s.u.), der den Stand des <code>master</code>-Branches auf dem
+Server spiegelt</li>
+</ul>
+<p>Für die URL sind verschiedene Protokolle möglich, beispielsweise:</p>
+<ul>
+<li>&quot;<code>file://</code>&quot; für über das Dateisystem erreichbare Repositories (ohne Server)</li>
+<li>&quot;<code>https://</code>&quot; für Repo auf einem Server: Authentifikation mit Username
+und Passwort (!)</li>
+<li>&quot;<code>git@</code>&quot; für Repo auf einem Server: Authentifikation mit <strong>SSH-Key</strong> (diese
+Variante wird im Praktikum im Zusammenspiel mit dem Gitlab-Server im
+SW-Labor verwendet)</li>
+</ul>
+<h2 id="eigener-und-entfernter-master-entwickeln-sich-weiter-">Eigener und entfernter <em>master</em> entwickeln sich weiter ...</h2>
+<pre><code>https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
+
+---C---D---E---F---G  master
+</code></pre>
+<p></p>
+<pre><code>./Prog2-Lecture/  (lokaler Rechner)
+
+---C---D---E---H  master
+           ^origin/master
+</code></pre>
+<p>Nach dem Auschecken liegen (in diesem Beispiel) drei <code>master</code>-Branches vor:</p>
+<ol>
+<li>Der <code>master</code> auf dem Server,</li>
+<li>der lokale <code>master</code>, und</li>
+<li>die lokale Referenz auf den <code>master</code>-Branch auf dem Server: <code>origin/master</code>.</li>
+</ol>
+<p>Der lokale <code>master</code> ist ein normaler Branch und kann durch Commits verändert
+werden.</p>
+<p>Der <code>master</code> auf dem Server kann sich ebenfalls ändern, beispielsweise weil
+jemand anderes seine lokalen Änderungen mit dem Server abgeglichen hat
+(<code>git push</code>, s.u.).</p>
+<p>Der Branch <code>origin/master</code> lässt sich nicht direkt verändern! Das ist lediglich
+eine lokale Referenz auf den <code>master</code>-Branch auf dem Server und zeigt an,
+welchen Stand man bei der letzten Synchronisierung hatte. D.h. erst mit dem
+nächsten Abgleich wird sich dieser Branch ändern (sofern sich der entsprechende
+Branch auf dem Server verändert hat).</p>
+<p><em>Anmerkung</em>: Dies gilt analog für alle anderen Branches. Allerdings wird
+nur der <code>origin/master</code> beim Clonen automatisch als lokaler Branch ausgecheckt.</p>
+<p>Zur Abbildung:
+Während man lokal arbeitet (Commit <code>H</code> auf dem lokalen <code>master</code>), kann es passieren,
+dass sich auch das remote Repo ändert. Im Beispiel wurden dort die beiden Commits
+<code>F</code> und <code>G</code> angelegt (durch <code>git push</code>, s.u.).</p>
+<p>Wichtig: Da in der Zwischenzeit das lokale Repo nicht mit dem Server abgeglichen
+wurde, zeigt der remote Branch <code>origin/master</code> immer noch auf den Commit
+<code>E</code>!</p>
+<h2 id="änderungen-im-remote-holen-und-branches-zusammenführen">Änderungen im Remote holen und Branches zusammenführen</h2>
+<pre><code>https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
+
+---C---D---E---F---G  master
+</code></pre>
+<p>=&gt; <code>git fetch origin</code></p>
+<pre><code>./Prog2-Lecture/  (lokaler Rechner)
+
+---C---D---E---H  master
+            \
+             F---G  origin/master
+</code></pre>
+<h3 id="änderungen-auf-dem-server-mit-dem-eigenen-repo-abgleichen">Änderungen auf dem Server mit dem eigenen Repo abgleichen</h3>
+<p>Mit <code>git fetch origin</code> alle Änderungen holen</p>
+<ul>
+<li>Alle remote Branches werden aktualisiert und entsprechen den jeweiligen
+Branches auf dem Server: Im Beispiel zeigt jetzt <code>origin/master</code> ebenso
+wie der <code>master</code> auf dem Server auf den Commit <code>G</code>.</li>
+<li>Neue Branches auf dem Server werden ebenfalls &quot;geholt&quot;, d.h. sie liegen
+nach dem Fetch als entsprechende remote Branches vor</li>
+<li>Auf dem Server gelöschte Branches werden nicht automatisch lokal gelöscht;
+dies kann man mit <code>git fetch --prune origin</code> automatisch erreichen</li>
+</ul>
+<p><em>Wichtig</em>: Es werden nur die remote Branches aktualisiert, nicht die lokalen Branches!</p>
+<h3 id="master-branch-nach-git-fetch-origin-zusammenführen"><em>master</em>-Branch nach &quot;git fetch origin&quot; zusammenführen</h3>
+<ol>
+<li>Mit <code>git checkout master</code> Workingcopy auf eigenen <code>master</code> umstellen</li>
+<li>Mit <code>git merge origin/master</code> Änderungen am <code>origin/master</code> in eigenen <code>master</code> mergen</li>
+<li>Mit <code>git push origin master</code> eigene Änderungen ins remote Repo pushen</li>
+</ol>
+<p></p>
+<pre><code>https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
+
+---C---D---E---H---I  master
+            \     /
+             F---G
+</code></pre>
+<p></p>
+<pre><code>./Prog2-Lecture/  (lokaler Rechner)
+
+---C---D---E---H---I  master
+            \     /^origin/master
+             F---G
+</code></pre>
+<p><em>Anmerkung</em>: Schritt (2) kann man auch per <code>git pull origin master</code> erledigen ... Ein <code>pull</code>
+fasst <code>fetch</code> und <code>merge</code> zusammen (s.u.).</p>
+<p><em>Anmerkung</em> Statt dem <code>merge</code> in Schritt (2) kann man auch den lokalen <code>master</code> auf den
+aktualisierten <code>origin/master</code> rebasen und vermeidet damit die &quot;Raute&quot;. Der <code>pull</code> kann
+mit der Option &quot;<code>--rebase</code>&quot; auf &quot;rebase&quot; umgestellt werden (per Default wird bei <code>pull</code>
+ein &quot;merge&quot; ausgeführt).</p>
+<h3 id="auf-dem-server-ist-nur-ein-fast-forward-merge-möglich">Auf dem Server ist nur ein <em>fast forward merge</em> möglich</h3>
+<p>Sie können Ihre Änderungen in Ihrem lokalen <code>master</code> auch direkt in das remote Repo
+pushen, solange auf dem Server ein <strong>fast forward merge</strong> möglich ist.</p>
+<p>Wenn aber (wie in der Abbildung) der lokale und der remote <code>master</code> divergieren,
+müssen Sie den Merge wie beschrieben lokal durchführen (<code>fetch</code>/<code>merge</code> oder <code>pull</code>)
+und das Ergebnis wieder in das remote Repo pushen (dann ist ja wieder ein
+<em>fast forward merge</em> möglich, es sei denn, jemand hat den remote <code>master</code> in der
+Zwischenzeit weiter geschoben - dann muss die Aktualisierung erneut durchgeführt
+werden).</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://youtu.be/moqywsxtEy8" target="_blank"><span class="title">Beispiel für Zusammenführen (merge und push), Anmerkung zu fast forward merge</span></a></span></div>
+<h2 id="branches-und-remotes">Branches und Remotes</h2>
+<ul>
+<li>
+<p>Eigenen (neuen) lokalen Branch ins remote Repo schicken</p>
+<ul>
+<li><code>git push &lt;remote&gt; &lt;branch&gt;</code></li>
+</ul>
+</li>
+<li>
+<p>Neuer Branch im remote Repo</p>
+<ul>
+<li><code>git fetch &lt;remote&gt;</code> holt (auch) alle neuen Branches</li>
+<li>Lokale Änderungen an remote Branches nicht möglich!
+=&gt; <strong>Remote Branch in lokalen Branch mergen</strong> (oder auschecken)</li>
+</ul>
+</li>
+</ul>
+<h2 id="zusammenfassung-arbeiten-mit-remotes">Zusammenfassung: Arbeiten mit Remotes</h2>
+<ol>
+<li>
+<p>Änderungen vom Server holen: <code>git fetch &lt;remote&gt;</code>
+=&gt; Holt alle Änderungen vom Repo <code>&lt;remote&gt;</code> ins eigene Repo
+(<span class='alert'>Workingcopy bleibt unangetastet!</span>)</p>
+</li>
+<li>
+<p>Aktuellen lokalen Branch auffrischen: <code>git merge &lt;remote&gt;/&lt;branch&gt;</code>
+(oder alternativ <code>git pull &lt;remote&gt; &lt;branch&gt;</code>)</p>
+</li>
+<li>
+<p>Eigene Änderungen hochladen: <code>git push &lt;remote&gt; &lt;branch&gt;</code></p>
+</li>
+</ol>
+<h3 id="anmerkung-push-geht-nur-wenn">Anmerkung: <em>push</em> geht nur, wenn</h3>
+<ol>
+<li>Ziel ein &quot;bare&quot;-Repository ist, <strong>und</strong></li>
+<li>keine Konflikte entstehen</li>
+</ol>
+<p>=&gt; im remote Repo <span class='alert'>nur</span> &quot;fast forward&quot;-Merge möglich</p>
+<p>=&gt; bei Konflikten erst <code>fetch</code> und <code>merge</code>, danach <code>push</code></p>
+<p><strong>Anmerkung</strong>: Ein &quot;bare&quot;-Repository enthält keine Workingcopy, sondern nur
+das Repo an sich. Die ist bei Repos, die Sie auf einem Server wie Gitlab oder
+Github anlegen, automatisch der Fall. Sie können aber auch lokal ein solches
+&quot;bare&quot;-Repo anlegen, indem Sie beim Initialisieren den Schalter <code>--bare</code>
+mitgeben: <code>git init --bare</code> ...</p>
+<h3 id="beispiel">Beispiel</h3>
+<pre><code>git fetch origin           # alle Änderungen vom Server holen
+git checkout master        # auf lokalen Master umschalten
+git merge origin/master    # lokalen Master aktualisieren
+
+... # Herumspielen am lokalen Master
+
+git push origin master     # lokalen Master auf Server schicken
+</code></pre>
+<h2 id="vereinfachung-tracking-branches">Vereinfachung: Tracking Branches</h2>
+<ul>
+<li>
+<p><strong>Tracking Branch</strong>: lokaler Branch, der remote Branch &quot;verfolgt&quot;</p>
+<ul>
+<li>Beispiel: lokaler <code>master</code>-Branch folgt <code>origin/master</code> per Default</li>
+</ul>
+</li>
+<li>
+<p><strong>Vereinfachung im Workflow</strong>:</p>
+<ul>
+<li><code>git pull</code> entspricht
+<ol>
+<li><code>git fetch &lt;remote&gt;</code> <strong>plus</strong></li>
+<li><code>git merge &lt;remote&gt;/&lt;branch&gt;</code></li>
+</ol>
+</li>
+<li><code>git push</code> entspricht <code>git push &lt;remote&gt; &lt;branch&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p><span class='alert'>Vorsicht</span>: <code>pull</code> und <code>push</code> beziehen sich nur auf ausgecheckten Tracking Branch</p>
+<h2 id="einrichten-von-tracking-branches">Einrichten von Tracking Branches</h2>
+<ul>
+<li>
+<p><code>git clone</code>: lokaler <code>master</code> trackt automatisch <code>origin/master</code></p>
+</li>
+<li>
+<p>Remote Branch als Tracking Branch einrichten:</p>
+<ol>
+<li>Änderungen aus remote Repo holen: <code>git fetch &lt;remote&gt;</code></li>
+<li>Tracking Branch anlegen: <code>git checkout -t &lt;remote&gt;/&lt;branch&gt;</code>
+(=&gt; Option <code>-t</code> richtet den remote Branch als Tracking Branch ein)</li>
+</ol>
+</li>
+<li>
+<p>Lokalen neuen Branch ins remote Repo schicken und als Tracking Branch einrichten:</p>
+<ol>
+<li>Lokalen Branch erzeugen: <code>git checkout -b &lt;branch&gt;</code></li>
+<li>Lokalen Branch ins Repo schicken: <code>git push -u &lt;remote&gt; &lt;branch&gt;</code>
+(=&gt; Option <code>-u</code> richtet den lokalen Branch als Tracking Branch ein)</li>
+</ol>
+</li>
+</ul>
+<h2 id="hinzufügen-eines-weiteren-remote-repository">Hinzufügen eines (weiteren) Remote Repository</h2>
+<p><a href="#R-image-a05a60fcf63f7a5255ab565cebaf3188" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes/screenshot_branches.png?width=75%25&height=auto" style=" height: auto; width: 75%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a05a60fcf63f7a5255ab565cebaf3188"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes/screenshot_branches.png?width=75%25&height=auto"></a></p>
+<p>Sie können einem Repo beliebig viele Remotes hinzufügen:</p>
+<p><code>git remote add &lt;name&gt; &lt;url&gt;</code></p>
+<p><strong>Beispiel</strong>: <code>git remote add  andi  git@github.com:andi/repo.git</code></p>
+<ul>
+<li>Remote <code>origin</code> wird bei <code>clone</code> automatisch angelegt</li>
+<li>Ansehen der Remotes mit <code>git remote -v</code></li>
+<li><code>fetch</code>, <code>push</code> und <code>pull</code> jeweils über den vergebenen Namen</li>
+</ul>
+<p>Beispiel: <code>git fetch andi</code> oder <code>git push origin master</code></p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Synchronisierung des lokalen Repos mit anderen Repos</p>
+<ul>
+<li>Repo kopieren: <code>git clone &lt;url&gt;</code></li>
+<li>Interner Name fürs fremde Repo: <code>origin</code></li>
+<li>Änderungen vom fremden Repo holen: <code>git fetch &lt;remote&gt;</code></li>
+<li>Änderungen in lokalen Branch einpflegen: <code>git merge &lt;remote&gt;/&lt;branch&gt;</code></li>
+<li>Eigene Änderungen ins fremde Repo schieben: <code>git push &lt;remote&gt; &lt;branch&gt;</code></li>
+</ul>
+</li>
+<li>
+<p>Tracking Branches (Konzept, Anwendung)</p>
+<ul>
+<li>Remote Branches können lokal nicht verändert werden:
+<ul>
+<li>In lokale Branches mergen, oder</li>
+<li>Tracking Branches anlegen =&gt; einfaches <code>pull</code> und <code>push</code> nutzen</li>
+</ul>
+</li>
+<li>Tracking Branches sind lokale Branches, die remote Branches verfolgen (&quot;tracken&quot;)</li>
+</ul>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-user-check"></i> Quizzes
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106245&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Git Remotes (ILIAS)</a></li></ul>
+  </div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fas fa-puzzle-piece"></i> Challenges
+  </div>
+  <div class="box-content">
+<p><strong>Synchronisierung mit Remote-Repos</strong></p>
+<p>Sie haben ein Repo von github.com geklont. Beide Repos, das Original auf dem Server
+als auch Ihre lokale Kopie, haben sich danach unabhängig voneinander weiter
+entwickelt (siehe Skizze).</p>
+<p><a href="#R-image-de72d6fcaf23ece3c4202212ed99a44c" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/remote-branches-2.png?raw=true?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-de72d6fcaf23ece3c4202212ed99a44c"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/remote-branches-2.png?raw=true?width=auto&height=auto"></a></p>
+<p>Wie können Sie Ihre Änderung im lokalen Repo auf den Server pushen? Analysieren Sie die
+Situation und erklären Sie zwei verschiedene Lösungsansätze und geben Sie jeweils die
+entsprechenden Git-Befehle an.</p>
+<p><strong>Interaktive Git-Tutorials</strong>: Schaffen Sie die Rätsel?</p>
+<ul>
+<li><a href="https://learngitbranching.js.org/" rel="external" target="_blank">Learn Git Branching</a></li>
+<li><a href="https://ohmygit.org/" rel="external" target="_blank">Oh My Git!</a></li>
+<li><a href="https://git.bradwoods.io/" rel="external" target="_blank">Git Time</a></li>
+</ul>
+  </div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-book-reader"></i> Quellen
+  </div>
+  <div class="box-content">
+<ul> <li id='id_AtlassianGit'>[AtlassianGit] <a href='https://www.atlassian.com/git/tutorials' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Become a git guru.</strong></a><br>Atlassian Pty Ltd, 2022.</li> <li id='id_Chacon2014'>[Chacon2014] <a href='https://git-scm.com/book/en/v2' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Pro Git</strong></a><br>Chacon, S. und Straub, B., Apress, 2014. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-1-4842-0077-3</a>.<br><em>Kapitel 3</em></li> <li id='id_GitCheatSheet'>[GitCheatSheet] <a href='https://training.github.com/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Git Cheat Sheets</strong></a><br>Github Inc., 2022.</li></ul>
+  </div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+
+
+<a id="logo" href='https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234//index.html'>
+    <img style="max-width:35%" alt="icon" src='/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png'>
+</a>
+
+        </div>
+
+        <search><form action="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/search.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['de'];
+        </script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/auto-complete.js?1741883076" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.min.js?1741883076" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.stemmer.support.min.js?1741883076" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.multi.min.js?1741883076" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.de.min.js?1741883076" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/search.js?1741883076" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic.html">Java / JVM</a><ul id="R-subsections-9d37273ec84dd05c502ff515d59cd93d" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-classes-methods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-classes-methods.html">Generics: Klassen &amp; Methoden</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-bounds-wildcards.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-bounds-wildcards.html">Generics: Bounds &amp; Wildcards</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure.html">Generics: Type Erasure</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-polymorphism.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-polymorphism.html">Generics: Polymorphie</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging.html">Logging</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/serialisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/serialisation.html">Serialisierung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/regexp.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/regexp.html">RegExp</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/enums.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/enums.html">Enumerations</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-intro.html">Threads: Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-synchronisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-synchronisation.html">Threads: Synchronisation</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-highlevel.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-highlevel.html">Threads: High-Level Concurrency</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/configuration.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/configuration.html">Konfiguration</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html">Building</a><ul id="R-subsections-f4e18db244c71e7d5fbee7579907c4cd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html">Gradle</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html">Continuous Integration</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html" class="parent "><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html">Git</a><ul id="R-subsections-b7b75b08ea746eeb407fc7d37ea4cda5" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html">Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html">Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html">Branches</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">Branching-Strategien</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html" class="active"><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html">Remotes</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">Workflows</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern.html">Modern Java</a><ul id="R-subsections-3723b9528838f9939f841b73dfbd900f" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/lambdas.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/lambdas.html">Lambda-Ausdrücke</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/methodreferences.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/methodreferences.html">Methoden-Referenzen</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/stream-api.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/stream-api.html">Stream-API</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records.html">Records</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/optional.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/optional.html">Optional</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/defaultmethods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/defaultmethods.html">Default-Methoden</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality.html">Softwarequalität</a><ul id="R-subsections-827d0119153086d7fcf6d18c82fc3217" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html">Javadoc</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testing-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testing-intro.html">Intro SW-Test</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/junit-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/junit-basics.html">JUnit-Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testcases.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testcases.html">Testfallermittlung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/mockito.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/mockito.html">Mocking</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/smells.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/smells.html">Code Smells</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/codingrules.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/codingrules.html">Coding Conventions</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/refactoring.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/refactoring.html">Refactoring</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc.html">Misc</a><ul id="R-subsections-0a1f7eaf2b0a93eaa6748b7594755ae4" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc/dungeon.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc/dungeon.html">How-To Dungeon</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html">Pattern</a><ul id="R-subsections-88c6ccdca00adeca83d4957e66bb44bd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html">Visitor</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html">Observer</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html">Template-Method</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html">Command</a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#kursformat"><i class='fas fa-bookmark'></i> Zeiten</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> Fahrplan</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#pr%C3%BCfungsform-note-und-credits"><i class='fas fa-bookmark'></i> Note/Credits</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> News</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html" lang="de-DE" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                      <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                      <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-select-variant-relearn-bright" value="relearn-bright">Relearn Bright</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter"><p style="text-align: center;">
+<i class='fab fa-fw fa-github'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">GitHub</a>
+<i class='fas fa-fw fa-tags'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/issues">Issues</a>
+<i class='fas fa-fw fa-bullhorn'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">Credits</a>
+<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+
+</p>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1741883076" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1741883076" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1741883076"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1741883076" defer></script>
+  </body>
+</html>

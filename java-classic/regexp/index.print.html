@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 6.4.1">
+    <meta name="description" content="Suchen in Strings Gesucht ist ein Programm zum Extrahieren von Telefonnummern aus E-Mails.
+=&gt; Wie geht das?
+Leider gibt es unzählig viele Varianten, wie man eine Telefonnummer (samt Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
+030 - 123 456 789, 030-123456789, 030/123456789, &#43;49(30)123456-789, &#43;49 (30) 123 456 - 789, ... Definition Regulärer Ausdruck Ein regulärer Ausdruck ist eine Zeichenkette, die zur Beschreibung von Zeichenketten dient.
+Anwendungen Finden von Bestandteilen in Zeichenketten Aufteilen von Strings in Tokens Validierung von textuellen Eingaben =&gt; &#34;Eine Postleitzahl besteht aus 5 Ziffern&#34; Compilerbau: Erkennen von Schlüsselwörtern und Strukturen und Syntaxfehlern Einfachste reguläre Ausdrücke Zeichenkette Beschreibt x &#34;x&#34; . ein beliebiges Zeichen \t Tabulator \n Newline \r Carriage-return \\ Backslash Beispiel abc =&gt; &#34;abc&#34; A.B =&gt; &#34;AAB&#34; oder &#34;A2B&#34; oder ... a\\bc =&gt; &#34;a\bc&#34; Anmerkung In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein. Deshalb muss der Backslash i.d.R. geschützt (&#34;escaped&#34;) werden. =&gt; Statt &#34;\n&#34; müssen Sie im Java-Code &#34;\\n&#34; schreiben!">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Reguläre Ausdrücke">
+    <meta name="twitter:description" content="Suchen in Strings Gesucht ist ein Programm zum Extrahieren von Telefonnummern aus E-Mails.
+=&gt; Wie geht das?
+Leider gibt es unzählig viele Varianten, wie man eine Telefonnummer (samt Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
+030 - 123 456 789, 030-123456789, 030/123456789, &#43;49(30)123456-789, &#43;49 (30) 123 456 - 789, ... Definition Regulärer Ausdruck Ein regulärer Ausdruck ist eine Zeichenkette, die zur Beschreibung von Zeichenketten dient.
+Anwendungen Finden von Bestandteilen in Zeichenketten Aufteilen von Strings in Tokens Validierung von textuellen Eingaben =&gt; &#34;Eine Postleitzahl besteht aus 5 Ziffern&#34; Compilerbau: Erkennen von Schlüsselwörtern und Strukturen und Syntaxfehlern Einfachste reguläre Ausdrücke Zeichenkette Beschreibt x &#34;x&#34; . ein beliebiges Zeichen \t Tabulator \n Newline \r Carriage-return \\ Backslash Beispiel abc =&gt; &#34;abc&#34; A.B =&gt; &#34;AAB&#34; oder &#34;A2B&#34; oder ... a\\bc =&gt; &#34;a\bc&#34; Anmerkung In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein. Deshalb muss der Backslash i.d.R. geschützt (&#34;escaped&#34;) werden. =&gt; Statt &#34;\n&#34; müssen Sie im Java-Code &#34;\\n&#34; schreiben!">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/regexp.html">
+    <meta property="og:title" content="Reguläre Ausdrücke">
+    <meta property="og:description" content="Suchen in Strings Gesucht ist ein Programm zum Extrahieren von Telefonnummern aus E-Mails.
+=&gt; Wie geht das?
+Leider gibt es unzählig viele Varianten, wie man eine Telefonnummer (samt Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
+030 - 123 456 789, 030-123456789, 030/123456789, &#43;49(30)123456-789, &#43;49 (30) 123 456 - 789, ... Definition Regulärer Ausdruck Ein regulärer Ausdruck ist eine Zeichenkette, die zur Beschreibung von Zeichenketten dient.
+Anwendungen Finden von Bestandteilen in Zeichenketten Aufteilen von Strings in Tokens Validierung von textuellen Eingaben =&gt; &#34;Eine Postleitzahl besteht aus 5 Ziffern&#34; Compilerbau: Erkennen von Schlüsselwörtern und Strukturen und Syntaxfehlern Einfachste reguläre Ausdrücke Zeichenkette Beschreibt x &#34;x&#34; . ein beliebiges Zeichen \t Tabulator \n Newline \r Carriage-return \\ Backslash Beispiel abc =&gt; &#34;abc&#34; A.B =&gt; &#34;AAB&#34; oder &#34;A2B&#34; oder ... a\\bc =&gt; &#34;a\bc&#34; Anmerkung In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein. Deshalb muss der Backslash i.d.R. geschützt (&#34;escaped&#34;) werden. =&gt; Statt &#34;\n&#34; müssen Sie im Java-Code &#34;\\n&#34; schreiben!">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Reguläre Ausdrücke">
+    <meta itemprop="description" content="Suchen in Strings Gesucht ist ein Programm zum Extrahieren von Telefonnummern aus E-Mails.
+=&gt; Wie geht das?
+Leider gibt es unzählig viele Varianten, wie man eine Telefonnummer (samt Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
+030 - 123 456 789, 030-123456789, 030/123456789, &#43;49(30)123456-789, &#43;49 (30) 123 456 - 789, ... Definition Regulärer Ausdruck Ein regulärer Ausdruck ist eine Zeichenkette, die zur Beschreibung von Zeichenketten dient.
+Anwendungen Finden von Bestandteilen in Zeichenketten Aufteilen von Strings in Tokens Validierung von textuellen Eingaben =&gt; &#34;Eine Postleitzahl besteht aus 5 Ziffern&#34; Compilerbau: Erkennen von Schlüsselwörtern und Strukturen und Syntaxfehlern Einfachste reguläre Ausdrücke Zeichenkette Beschreibt x &#34;x&#34; . ein beliebiges Zeichen \t Tabulator \n Newline \r Carriage-return \\ Backslash Beispiel abc =&gt; &#34;abc&#34; A.B =&gt; &#34;AAB&#34; oder &#34;A2B&#34; oder ... a\\bc =&gt; &#34;a\bc&#34; Anmerkung In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein. Deshalb muss der Backslash i.d.R. geschützt (&#34;escaped&#34;) werden. =&gt; Statt &#34;\n&#34; müssen Sie im Java-Code &#34;\\n&#34; schreiben!">
+    <meta itemprop="wordCount" content="1075">
+    <title>Reguläre Ausdrücke</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/regexp.html" rel="canonical" type="text/html" title="Reguläre Ausdrücke">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1741883076" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1741883076" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1741883076" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1741883076" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1741883076" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1741883076" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1741883076" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1741883076" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1741883076" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1741883076" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1741883076" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1741883076" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1741883076" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1741883076" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1741883076" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1741883076"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1741883076";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/regexp.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Reguläre Ausdrücke
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Reguläre Ausdrücke</h1>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-graduation-cap"></i> TL;DR
+  </div>
+  <div class="box-content">
+<p>Mit Hilfe von regulären Ausdrücken kann man den Aufbau von Zeichenketten formal
+beschreiben. Dabei lassen sich direkt die gewünschten Zeichen einsetzen, oder
+man nutzt Zeichenklassen oder vordefinierte Ausdrücke. Teilausdrücke lassen sich
+gruppieren und über <em>Quantifier</em> kann definiert werden, wie oft ein Teilausdruck
+vorkommen soll. Die Quantifier sind per Default <strong>greedy</strong> und versuchen so viel
+wie möglich zu matchen.</p>
+<p>Auf der Java-Seite stellt man reguläre Ausdrücke zunächst als <code>String</code> dar. Dabei
+muss darauf geachtet werden, dass ein Backslash im regulären Ausdruck im Java-String
+geschützt (<em>escaped</em>) werden muss, indem jeweils ein weiterer Backslash voran gestellt
+wird. Mit Hilfe der Klasse <code>java.util.regex.Pattern</code> lässt sich daraus ein Objekt
+mit dem kompilierten regulären Ausdruck erzeugen, was insbesondere bei mehrfacher
+Verwendung günstiger in der Laufzeit ist. Dem Pattern-Objekt kann man dann den
+Suchstring übergeben und bekommt ein Objekt der Klasse <code>java.util.regex.Matcher</code>
+(dort sind regulärer Ausdruck/Pattern und der Suchstring kombiniert). Mit den
+Methoden <code>Matcher#find</code> und <code>Matcher#matches</code> kann dann geprüft werden, ob das Pattern
+auf den Suchstring passt: <code>find</code> sucht dabei nach dem ersten Vorkommen des Patterns
+im Suchstring, <code>match</code> prüft, ob der gesamte String zum Pattern passt.</p>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (YouTube)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://youtu.be/K9R1Bwa73uI' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL RegExp</a></li> <li><a href='https://youtu.be/j_pTZBI6Z3M' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo StringSplit</a></li> <li><a href='https://youtu.be/LYlPL1C_au8' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo MatchFind</a></li> <li><a href='https://youtu.be/xkD9PhCjXyY' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Quantifier</a></li> <li><a href='https://youtu.be/ANLB2MdC_uY' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Groups</a></li> <li><a href='https://youtu.be/SRZyT3EAB94' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Backref</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/35288af40bdf53fe210d0f8c4d25fd38d4c5f4cde5c04ffd49500f815723448b0bc16b305c7b05b0d57d670019d52dd5ff9da5f4a43afc0c85ed870b44f93e00' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL RegExp</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-lightbulb"></i> Lernziele
+  </div>
+  <div class="box-content">
+<ul> <li>(K1) Wichtigste Methoden von <code>java.util.regex.Pattern</code> und <code>java.util.regex.Matcher</code></li> <li>(K2) Unterschied zwischen <code>Matcher#find</code> und <code>Matcher#matches</code></li> <li>(K2) Unterscheidung zwischen greedy und non-greedy Verhalten</li> <li>(K3) Bildung einfacher regulärer Ausdrücke</li> <li>(K3) Nutzung von Zeichenklassen und deren Negation</li> <li>(K3) Nutzung der vordefinierten regulären Ausdrücke</li> <li>(K3) Nutzung von Quantifizierern</li> <li>(K3) Zusammenbauen von komplexen Ausdrücken (u.a. mit Gruppen)</li></ul>
+  </div>
+</div>
+
+
+
+
+    <h2 id="suchen-in-strings">Suchen in Strings</h2>
+<p>Gesucht ist ein Programm zum Extrahieren von Telefonnummern aus E-Mails.</p>
+<p>=&gt; <span class='alert'><strong>Wie geht das?</strong></span></p>
+<p>Leider gibt es unzählig viele Varianten, wie man eine Telefonnummer (samt
+Vorwahl und ggf. Ländervorwahl) aufschreiben kann:</p>
+<pre><code>030 - 123 456 789, 030-123456789, 030/123456789,
++49(30)123456-789, +49 (30) 123 456 - 789, ...
+</code></pre>
+<h2 id="definition-regulärer-ausdruck">Definition Regulärer Ausdruck</h2>
+<blockquote>
+<p>Ein <strong>regulärer Ausdruck</strong> ist eine Zeichenkette, die zur Beschreibung von
+Zeichenketten dient.</p>
+</blockquote>
+<h3 id="anwendungen">Anwendungen</h3>
+<ul>
+<li>Finden von Bestandteilen in Zeichenketten</li>
+<li>Aufteilen von Strings in Tokens</li>
+<li>Validierung von textuellen Eingaben
+=&gt; &quot;Eine Postleitzahl besteht aus 5 Ziffern&quot;</li>
+<li>Compilerbau: Erkennen von Schlüsselwörtern und Strukturen und Syntaxfehlern</li>
+</ul>
+<h2 id="einfachste-reguläre-ausdrücke">Einfachste reguläre Ausdrücke</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Zeichenkette</strong></th>
+          <th style="text-align: left"><strong>Beschreibt</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>x</code></td>
+          <td style="text-align: left">&quot;x&quot;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>.</code></td>
+          <td style="text-align: left">ein beliebiges Zeichen</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\t</code></td>
+          <td style="text-align: left">Tabulator</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\n</code></td>
+          <td style="text-align: left">Newline</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\r</code></td>
+          <td style="text-align: left">Carriage-return</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\\</code></td>
+          <td style="text-align: left">Backslash</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="beispiel">Beispiel</h3>
+<ul>
+<li><code>abc</code> =&gt; &quot;abc&quot;</li>
+<li><code>A.B</code> =&gt; &quot;AAB&quot; oder &quot;A2B&quot; oder ...</li>
+<li><code>a\\bc</code> =&gt; &quot;a\bc&quot;</li>
+</ul>
+<h3 id="anmerkung">Anmerkung</h3>
+<p>In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein.
+Deshalb muss der Backslash i.d.R. geschützt (&quot;escaped&quot;) werden.
+=&gt; Statt &quot;<code>\n</code>&quot; müssen Sie im Java-Code &quot;<code>\\n</code>&quot; schreiben!</p>
+<h2 id="zeichenklassen">Zeichenklassen</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Zeichenkette</strong></th>
+          <th style="text-align: left"><strong>Beschreibt</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>[abc]</code></td>
+          <td style="text-align: left">&quot;a&quot; oder &quot;b&quot; oder &quot;c&quot;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>[^abc]</code></td>
+          <td style="text-align: left">alles außer &quot;a&quot;, &quot;b&quot; oder &quot;c&quot; (Negation)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>[a-zA-Z]</code></td>
+          <td style="text-align: left">alle Zeichen von &quot;a&quot; bis &quot;z&quot; und &quot;A&quot; bis &quot;Z&quot; (Range)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>[a-z&amp;&amp;[def]]</code></td>
+          <td style="text-align: left">&quot;d&quot;,&quot;e&quot; oder &quot;f&quot; (Schnitt)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>[a-z&amp;&amp;[^bc]]</code></td>
+          <td style="text-align: left">&quot;a&quot; bis &quot;z&quot;, außer &quot;b&quot; und &quot;c&quot;: <code>[ad-z]</code> (Subtraktion)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>[a-z&amp;&amp;[^m-p]]</code></td>
+          <td style="text-align: left">&quot;a&quot; bis &quot;z&quot;, außer &quot;m&quot; bis &quot;p&quot;: <code>[a-lq-z]</code> (Subtraktion)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="beispiel-1">Beispiel</h3>
+<ul>
+<li><code>[abc]</code> =&gt; &quot;a&quot; oder &quot;b&quot; oder &quot;c&quot;</li>
+<li><code>[a-c]</code> =&gt; &quot;a&quot; oder &quot;b&quot; oder &quot;c&quot;</li>
+<li><code>[a-c][a-c]</code> =&gt; &quot;aa&quot;, &quot;ab&quot;, &quot;ac&quot;, &quot;ba&quot;, &quot;bb&quot;, &quot;bc&quot;, &quot;ca&quot;, &quot;cb&quot; oder &quot;cc&quot;</li>
+<li><code>A[a-c]</code> =&gt; &quot;Aa&quot;, &quot;Ab&quot; oder &quot;Ac&quot;</li>
+</ul>
+<h2 id="vordefinierte-ausdrücke">Vordefinierte Ausdrücke</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Zeichenkette</strong></th>
+          <th style="text-align: left"><strong>Beschreibt</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>^</code></td>
+          <td style="text-align: left">Zeilenanfang</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>$</code></td>
+          <td style="text-align: left">Zeilenende</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\d</code></td>
+          <td style="text-align: left">eine Ziffer: <code>[0-9]</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\w</code></td>
+          <td style="text-align: left">beliebiges Wortzeichen: <code>[a-zA-Z_0-9]</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\s</code></td>
+          <td style="text-align: left">Whitespace (Leerzeichen, Tabulator, Newline)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\D</code></td>
+          <td style="text-align: left">jedes Zeichen außer Ziffern: <code>[^0-9]</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\W</code></td>
+          <td style="text-align: left">jedes Zeichen außer Wortzeichen: <code>[^\w]</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\S</code></td>
+          <td style="text-align: left">jedes Zeichen außer Whitespaces: <code>[^\s]</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="beispiel-2">Beispiel</h3>
+<ul>
+<li><code>\d\d\d\d\d</code> =&gt; &quot;12345&quot;</li>
+<li><code>\w\wA</code> =&gt; &quot;aaA&quot;, &quot;a0A&quot;, &quot;a_A&quot;, ...</li>
+</ul>
+<h2 id="nutzung-in-java">Nutzung in Java</h2>
+<ul>
+<li>
+<p><code>java.lang.String</code>:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String<span style="color:#f92672">[]</span> <span style="color:#a6e22e">split</span>(String regex)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">matches</span>(String regex)</span></span></code></pre></div>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/StringSplit.java" target="_blank"><span class="title">Demo: regexp.StringSplit</span></a></span></div>
+<ul>
+<li>
+<p><code>java.util.regex.Pattern</code>:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Pattern <span style="color:#a6e22e">compile</span>(String regex)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Matcher <span style="color:#a6e22e">matcher</span>(CharSequence input)</span></span></code></pre></div>
+<ul>
+<li>Schritt 1: Ein Pattern compilieren (erzeugen) mit <code>Pattern#compile</code>
+=&gt; liefert ein Pattern-Objekt für den regulären Ausdruck zurück</li>
+<li>Schritt 2: Dem Pattern-Objekt den zu untersuchenden Zeichenstrom
+übergeben mit <code>Pattern#matcher</code> =&gt; liefert ein Matcher-Objekt
+zurück, darin gebunden: Pattern (regulärer Ausdruck) und die zu
+untersuchende Zeichenkette</li>
+</ul>
+</li>
+<li>
+<p><code>java.util.regex.Matcher</code>:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">find</span>()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">matches</span>()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">groupCount</span>()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">group</span>(<span style="color:#66d9ef">int</span> group)</span></span></code></pre></div>
+<ul>
+<li>
+<p>Schritt 3: Mit dem Matcher-Objekt kann man die Ergebnisse der
+Anwendung des regulären Ausdrucks auf eine Zeichenkette auswerten</p>
+<p>Bedeutung der unterschiedlichen Methoden siehe folgende Folien</p>
+<p><code>Matcher#group</code>: Liefert die Sub-Sequenz des Suchstrings zurück, die
+erfolgreich gematcht wurde (siehe unten &quot;Fangende Gruppierungen&quot;)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Hinweis</strong>:</p>
+<p>In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein.
+Deshalb muss der Backslash i.d.R. extra geschützt (&quot;escaped&quot;) werden.</p>
+<p>=&gt; Statt &quot;<code>\n</code>&quot; (regulärer Ausdruck) müssen Sie im Java-String &quot;<code>\\n</code>&quot; schreiben!</p>
+<p>=&gt; Statt &quot;<code>a\\bc</code>&quot; (regulärer Ausdruck, passt auf die Zeichenkette &quot;a\bc&quot;) müssen
+Sie im Java-String &quot;<code>a\\\\bc</code>&quot; schreiben!</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/MatchFind.java" target="_blank"><span class="title">Demo: regexp.MatchFind</span></a></span></div>
+<h2 id="unterschied-zw-finden-und-matchen">Unterschied zw. Finden und Matchen</h2>
+<ul>
+<li>
+<p><code>Matcher#find</code>:</p>
+<p>Regulärer Ausdruck muss im Suchstring <strong>enthalten</strong> sein.
+=&gt; Suche nach <strong>erstem Vorkommen</strong></p>
+</li>
+<li>
+<p><code>Matcher#matches</code>:</p>
+<p>Regulärer Ausdruck muss auf <strong>kompletten</strong> Suchstring passen.</p>
+</li>
+</ul>
+<h3 id="beispiel-3">Beispiel</h3>
+<ul>
+<li>Regulärer Ausdruck: <code>abc</code>, Suchstring: &quot;blah blah abc blub&quot;
+<ul>
+<li><code>Matcher#find</code>: erfolgreich</li>
+<li><code>Matcher#matches</code>: kein Match - Suchstring entspricht nicht dem Muster</li>
+</ul>
+</li>
+</ul>
+<h2 id="quantifizierung">Quantifizierung</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Zeichenkette</strong></th>
+          <th style="text-align: left"><strong>Beschreibt</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>X?</code></td>
+          <td style="text-align: left">ein oder kein &quot;X&quot;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>X*</code></td>
+          <td style="text-align: left">beliebig viele &quot;X&quot; (inkl. kein &quot;X&quot;)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>X+</code></td>
+          <td style="text-align: left">mindestens ein &quot;X&quot;, ansonsten beliebig viele &quot;X&quot;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>X{n}</code></td>
+          <td style="text-align: left">exakt <span class="math align-center">$n$</span> Vorkommen von &quot;X&quot;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>X{n,}</code></td>
+          <td style="text-align: left">mindestens <span class="math align-center">$n$</span> Vorkommen von &quot;X&quot;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>X{n,m}</code></td>
+          <td style="text-align: left">zwischen <span class="math align-center">$n$</span> und <span class="math align-center">$m$</span> Vorkommen von &quot;X&quot;</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="beispiel-4">Beispiel</h3>
+<ul>
+<li><code>\d{5}</code> =&gt; &quot;12345&quot;</li>
+<li><code>-?\d+\.\d*</code> =&gt; ???</li>
+</ul>
+<h2 id="interessante-effekte">Interessante Effekte</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern p <span style="color:#f92672">=</span> Pattern.<span style="color:#a6e22e">compile</span>(<span style="color:#e6db74">&#34;A.*A&#34;</span>);
+</span></span><span style="display:flex;"><span>Matcher m <span style="color:#f92672">=</span> p.<span style="color:#a6e22e">matcher</span>(<span style="color:#e6db74">&#34;A 12 A 45 A&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (m.<span style="color:#a6e22e">matches</span>())
+</span></span><span style="display:flex;"><span>    String result <span style="color:#f92672">=</span> m.<span style="color:#a6e22e">group</span>(); <span style="color:#f92672">//</span> <span style="color:#f92672">???</span></span></span></code></pre></div>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/Quantifier.java" target="_blank"><span class="title">Demo: regexp.Quantifier</span></a></span></div>
+<p><code>Matcher#group</code> liefert die Inputsequenz, auf die der Matcher angesprochen hat.
+Mit <code>Matcher#start</code> und <code>Matcher#end</code> kann man sich die Indizes des ersten und
+letzten Zeichens des Matches im Eingabezeichenstrom geben lassen. D.h. für einen
+Matcher <code>m</code> und eine Eingabezeichenkette <code>s</code> ist <code>m.group()</code> und
+<code>s.substring(m.start(), m.end())</code> äquivalent.</p>
+<p>Da bei <code>Matcher#matches</code> das Pattern immer auf den gesamten Suchstring passen
+muss, verwundert das Ergebnis für <code>Matcher#group</code> nicht. Bei <code>Matcher#find</code>
+wird im Beispiel allerdings ebenfalls der gesamte Suchstring &quot;gefunden&quot; ...
+Dies liegt am &quot;<em>greedy</em>&quot; Verhalten der Quantifizierer.</p>
+<h2 id="nicht-gierige-quantifizierung-mit-">Nicht gierige Quantifizierung mit &quot;?&quot;</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Zeichenkette</strong></th>
+          <th style="text-align: left"><strong>Beschreibt</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>X*?</code></td>
+          <td style="text-align: left">non-greedy Variante von <code>X*</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>X+?</code></td>
+          <td style="text-align: left">non-greedy Variante von <code>X+</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="beispiel-5">Beispiel</h3>
+<ul>
+<li>Suchstring &quot;A 12 A 45 A&quot;:
+<ul>
+<li>
+<p><code>A.*A</code> findet/passt auf &quot;A 12 A 45 A&quot;</p>
+<p>normale <strong>greedy</strong> Variante</p>
+</li>
+<li>
+<p><code>A.*?A</code></p>
+<ul>
+<li>findet &quot;A 12 A&quot;</li>
+<li>passt auf &quot;A 12 A 45 A&quot; (!)</li>
+</ul>
+<p><strong>non-greedy</strong> Variante der Quantifizierung;
+<code>Matcher#matches</code> muss trotzdem auf den gesamten Suchstring passen!</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="fangende-gruppierungen">(Fangende) Gruppierungen</h2>
+<p><code>Studi{2}</code> passt <span class='alert'>nicht</span> auf &quot;StudiStudi&quot; (!)</p>
+<p>Quantifizierung bezieht sich auf das direkt davor stehende Zeichen. Ggf.
+Gruppierungen durch Klammern verwenden!</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Zeichenkette</strong></th>
+          <th style="text-align: left"><strong>Beschreibt</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>X|Y</code></td>
+          <td style="text-align: left">X oder Y</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>(C)</code></td>
+          <td style="text-align: left">Gruppierung</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="beispiel-6">Beispiel</h3>
+<ul>
+<li><code>(A)(B(C))</code>
+<ul>
+<li>Gruppe 0: <code>ABC</code></li>
+<li>Gruppe 1: <code>A</code></li>
+<li>Gruppe 2: <code>BC</code></li>
+<li>Gruppe 3: <code>C</code></li>
+</ul>
+</li>
+</ul>
+<p>Die Gruppen heißen auch &quot;fangende&quot; Gruppen (engl.: <em>&quot;capturing groups&quot;</em>).</p>
+<p>Damit erreicht man eine Segmentierung des gesamten regulären Ausdrucks, der
+in seiner Wirkung aber nicht durch die Gruppierungen geändert wird. Durch die
+Gruppierungen von Teilen des regulären Ausdrucks erhält man die Möglichkeit,
+auf die entsprechenden Teil-Matches (der Unterausdrücke der einzelnen Gruppen)
+zuzugreifen:</p>
+<ul>
+<li>
+<p><code>Matcher#groupCount</code>: Anzahl der &quot;fangenden&quot; Gruppen im regulären Ausdruck</p>
+</li>
+<li>
+<p><code>Matcher#group(i)</code>: Liefert die Subsequenz der Eingabezeichenkette zurück,
+auf die die jeweilige Gruppe gepasst hat. Dabei wird von links nach rechts
+durchgezählt, beginnend bei 1(!).</p>
+<p>Konvention: Gruppe 0 ist das gesamte Pattern, d.h. <code>m.group(0) == m.group();</code> ...</p>
+</li>
+</ul>
+<p><em>Hinweis</em>: Damit der Zugriff auf die Gruppen klappt, muss auch erst ein Match gemacht
+werden, d.h. das Erzeugen des Matcher-Objekts reicht noch nicht, sondern es muss auch
+noch ein <code>matcher.find()</code> oder <code>matcher.matches()</code> ausgeführt werden. Danach kann man
+bei Vorliegen eines Matches auf die Gruppen zugreifen.</p>
+<p><code>(Studi){2}</code> =&gt; &quot;StudiStudi&quot;</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/Groups.java" target="_blank"><span class="title">Demo: regexp.Groups</span></a></span></div>
+<h2 id="gruppen-und-backreferences">Gruppen und Backreferences</h2>
+<p>Matche zwei Ziffern, gefolgt von den selben zwei Ziffern</p>
+<div class='center'>
+<p><code>(\d\d)\1</code></p>
+</div>
+<ul>
+<li>
+<p>Verweis auf bereits gematchte Gruppen: <code>\num</code></p>
+<p><code>num</code> Nummer der Gruppe (1 ... 9)</p>
+<p>=&gt; Verweist nicht auf regulären Ausdruck, sondern auf jeweiligen Match!</p>
+<p><em>Anmerkung</em>: Laut Literatur/Doku nur 1 ... 9, in Praxis geht auch mehr per Backreference ...</p>
+</li>
+<li>
+<p>Benennung der Gruppe: <code>(?&lt;name&gt;X)</code></p>
+<p><code>X</code> ist regulärer Ausdruck für Gruppe, spitze Klammern wichtig</p>
+<p>=&gt; Backreference: <code>\k&lt;name&gt;</code></p>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/Backref.java" target="_blank"><span class="title">Demo: regexp.Backref</span></a></span></div>
+<h2 id="beispiel-gruppen-und-backreferences">Beispiel Gruppen und Backreferences</h2>
+<p>Regulärer Ausdruck: Namen einer Person matchen, wenn Vor- und Nachname identisch sind.</p>
+<p>Lösung: <code>([A-Z][a-zA-Z]*)\s\1</code></p>
+<h2 id="umlaute-und-reguläre-ausdrücke">Umlaute und reguläre Ausdrücke</h2>
+<ul>
+<li>
+<p>Keine vordefinierte Abkürzung für Umlaute (wie etwa <code>\d</code>)</p>
+</li>
+<li>
+<p>Umlaute nicht in <code>[a-z]</code> enthalten, aber in <code>[a-ü]</code></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#e6db74">&#34;helloüA&#34;</span>.<span style="color:#a6e22e">matches</span>(<span style="color:#e6db74">&#34;.*?[ü]A&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;azäöüß&#34;</span>.<span style="color:#a6e22e">matches</span>(<span style="color:#e6db74">&#34;[a-ä]&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;azäöüß&#34;</span>.<span style="color:#a6e22e">matches</span>(<span style="color:#e6db74">&#34;[a-ö]&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;azäöüß&#34;</span>.<span style="color:#a6e22e">matches</span>(<span style="color:#e6db74">&#34;[a-ü]&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;azäöüß&#34;</span>.<span style="color:#a6e22e">matches</span>(<span style="color:#e6db74">&#34;[a-ß]&#34;</span>);</span></span></code></pre></div>
+</li>
+<li>
+<p>Strings sind Unicode-Zeichenketten</p>
+<p>=&gt; Nutzung der passenden Unicode Escape Sequence <code>\uFFFF</code></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;\u0041 :: A&#34;</span>);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;helloüA&#34;</span>.<span style="color:#a6e22e">matches</span>(<span style="color:#e6db74">&#34;.*?A&#34;</span>));
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;helloüA&#34;</span>.<span style="color:#a6e22e">matches</span>(<span style="color:#e6db74">&#34;.*?\u0041&#34;</span>));
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;helloü\u0041&#34;</span>.<span style="color:#a6e22e">matches</span>(<span style="color:#e6db74">&#34;.*?A&#34;</span>));</span></span></code></pre></div>
+</li>
+<li>
+<p>RegExp vordefinieren und mit Variablen zusammenbauen ala Perl
+nicht möglich =&gt; Umweg String-Repräsentation</p>
+</li>
+</ul>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>RegExp: Zeichenketten, die andere Zeichenketten beschreiben</li>
+<li><code>java.util.regex.Pattern</code> und <code>java.util.regex.Matcher</code></li>
+<li>Unterschied zwischen <code>Matcher#find</code> und <code>Matcher#matches</code>!</li>
+<li>Quantifizierung ist möglich, aber <strong>greedy</strong> (Default)</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-user-check"></i> Quizzes
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106518&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz RegExp (ILIAS)</a></li></ul>
+  </div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fas fa-puzzle-piece"></i> Challenges
+  </div>
+  <div class="box-content">
+<p>Schreiben Sie eine Methode, die mit Hilfe von regulären Ausdrücken überprüft, ob der eingegebene String
+eine nach dem folgenden Schema gebildete EMail-Adresse ist:</p>
+<blockquote>
+<p><code>name@firma.domain</code></p>
+</blockquote>
+<p>Dabei sollen folgende Regeln gelten:</p>
+<ul>
+<li>Die Bestandteile <code>name</code> und <code>firma</code> können aus Buchstaben, Ziffern, Unter- und Bindestrichen bestehen.</li>
+<li>Der Bestandteil <code>name</code> muss mindestens ein Zeichen lang sein.</li>
+<li>Der Bestandteil <code>firma</code> kann entfallen, dann entfällt auch der nachfolgende Punkt (<code>.</code>) und der Teil
+<code>domain</code> folgt direkt auf das <code>@</code>-Zeichen.</li>
+<li>Der Bestandteil <code>domain</code> besteht aus 2 oder 3 Kleinbuchstaben.</li>
+</ul>
+<p>Hinweis: Sie dürfen keinen Oder-Operator verwenden.</p>
+  </div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-book-reader"></i> Quellen
+  </div>
+  <div class="box-content">
+<ul> <li id='id_Java-SE-Tutorial'>[Java-SE-Tutorial] <a href='https://docs.oracle.com/javase/tutorial/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>The Java Tutorials</strong></a><br>Oracle Corporation, 2022.<br><em>Essential Java Classes \> Regular Expressions</em></li></ul>
+  </div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1741883076" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1741883076" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1741883076"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1741883076" defer></script>
+  </body>
+</html>
