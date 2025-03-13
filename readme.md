@@ -134,20 +134,6 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Continuous Integration (CI)]: lecture/building/ci.md
 <!-- [Docker]: lecture/building/docker.md -->
 
-[Javadoc]: lecture/quality/javadoc.md
-[Logging]: lecture/java-classic/logging.md
-[Code-Smells]: lecture/quality/smells.md
-[Coding-Rules]: lecture/quality/codingrules.md
-[Refactoring]: lecture/quality/refactoring.md
-
-<!-- [Intro Frameworks]: lecture/misc/intro-frameworks.md -->
-[Intro Dungeon]: lecture/misc/dungeon.md
-
-[Klassen und Methoden]: lecture/java-classic/generics-classes-methods.md
-[Bounds und Wildcards]: lecture/java-classic/generics-bounds-wildcards.md
-[Type Erasure]: lecture/java-classic/generics-type-erasure.md
-[Polymorphie]: lecture/java-classic/generics-polymorphism.md
-
 [Einführung Versionierung]: lecture/git/git-intro.md
 [Git Basics]: lecture/git/git-basics.md
 [Git-Branches]: lecture/git/branches.md
@@ -164,6 +150,11 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 <!-- [Swing: Tabellen]: lecture/gui/tables.md -->
 <!-- [Java2D]: lecture/gui/java2d.md -->
 
+[Logging]: lecture/java-classic/logging.md
+[Klassen und Methoden]: lecture/java-classic/generics-classes-methods.md
+[Bounds und Wildcards]: lecture/java-classic/generics-bounds-wildcards.md
+[Type Erasure]: lecture/java-classic/generics-type-erasure.md
+[Polymorphie]: lecture/java-classic/generics-polymorphism.md
 [Serialisierung]: lecture/java-classic/serialisation.md
 <!-- [Collections]: lecture/java-classic/collections.md -->
 [RegExp]: lecture/java-classic/regexp.md
@@ -172,6 +163,9 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 <!-- [Exception-Handling]: lecture/java-classic/exceptions.md -->
 [Enumerationen]: lecture/java-classic/enums.md
 [Konfiguration]: lecture/java-classic/configuration.md
+[Intro Threads]: lecture/java-classic/threads-intro.md
+[Synchronisierung]: lecture/java-classic/threads-synchronisation.md
+[Highlevel Threadkonzepte]: lecture/java-classic/threads-highlevel.md
 
 [Lambda-Ausdrücke]: lecture/java-modern/lambdas.md
 [Methodenreferenzen]: lecture/java-modern/methodreferences.md
@@ -179,6 +173,9 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Optional]: lecture/java-modern/optional.md
 [Record-Klassen]: lecture/java-modern/records.md
 [Default-Methoden]: lecture/java-modern/defaultmethods.md
+
+<!-- [Intro Frameworks]: lecture/misc/intro-frameworks.md -->
+[Intro Dungeon]: lecture/misc/dungeon.md
 
 <!-- [Strategy-Pattern]: lecture/pattern/strategy.md -->
 [Visitor-Pattern]: lecture/pattern/visitor.md
@@ -190,14 +187,14 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 <!-- [Type-Object-Pattern]: lecture/pattern/type-object.md -->
 <!-- [Flyweight-Pattern]: lecture/pattern/flyweight.md -->
 
+[Javadoc]: lecture/quality/javadoc.md
+[Code-Smells]: lecture/quality/smells.md
+[Coding-Rules]: lecture/quality/codingrules.md
+[Refactoring]: lecture/quality/refactoring.md
 [Einführung Testen]: lecture/quality/testing-intro.md
 [JUnit-Basics]: lecture/quality/junit-basics.md
 [Testfallermittlung]: lecture/quality/testcases.md
 [Mocking]: lecture/quality/mockito.md
-
-[Intro Threads]: lecture/java-classic/threads-intro.md
-[Synchronisierung]: lecture/java-classic/threads-synchronisation.md
-[Highlevel Threadkonzepte]: lecture/java-classic/threads-highlevel.md
 
 [B01]: homework/b01.md
 [B02]: homework/b02.md
