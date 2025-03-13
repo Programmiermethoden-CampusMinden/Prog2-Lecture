@@ -190,10 +190,10 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 <!-- [Type-Object-Pattern]: lecture/pattern/type-object.md -->
 <!-- [Flyweight-Pattern]: lecture/pattern/flyweight.md -->
 
-[Einführung Testen]: lecture/testing/testing-intro.md
-[JUnit-Basics]: lecture/testing/junit-basics.md
-[Testfallermittlung]: lecture/testing/testcases.md
-[Mocking]: lecture/testing/mockito.md
+[Einführung Testen]: lecture/quality/testing-intro.md
+[JUnit-Basics]: lecture/quality/junit-basics.md
+[Testfallermittlung]: lecture/quality/testcases.md
+[Mocking]: lecture/quality/mockito.md
 
 [Intro Threads]: lecture/threads/threads-intro.md
 [Synchronisierung]: lecture/threads/threads-synchronisation.md

@@ -161,7 +161,7 @@ void fail();
     *   Test wird abgebrochen, wenn Annahme nicht erfüllt
     *   Prüfen von Vorbedingungen: Ist der Test hier ausführbar/anwendbar?
 
-[Beispiel: junit4.TestAssume]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/testing/src/junit4/TestAssume.java"}
+[Beispiel: junit4.TestAssume]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/junit4/TestAssume.java"}
 
 
 ## Setup und Teardown: Testübergreifende Konfiguration
@@ -491,7 +491,7 @@ public class SumTestParameters {
 }
 ```
 
-[Beispiel: junit4.SumTestConstructor, junit4.SumTestParameters]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/testing/src/junit4/"}
+[Beispiel: junit4.SumTestConstructor, junit4.SumTestParameters]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/junit4/"}
 
 
 ::: notes
@@ -534,7 +534,7 @@ public class SumTest {
 }
 ```
 
-[Beispiel: junit5.TestValueSource, junit5.TestMethodSource]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/testing/src/junit5/"}
+[Beispiel: junit5.TestValueSource, junit5.TestMethodSource]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/junit5/"}
 
   [parametrisierte Tests]: https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests
   [`@ParameterizedTest`]: https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html
