@@ -134,11 +134,11 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Continuous Integration (CI)]: lecture/building/ci.md
 <!-- [Docker]: lecture/building/docker.md -->
 
-[Javadoc]: lecture/coding/javadoc.md
+[Javadoc]: lecture/quality/javadoc.md
 [Logging]: lecture/java-classic/logging.md
-[Code-Smells]: lecture/coding/smells.md
-[Coding-Rules]: lecture/coding/codingrules.md
-[Refactoring]: lecture/coding/refactoring.md
+[Code-Smells]: lecture/quality/smells.md
+[Coding-Rules]: lecture/quality/codingrules.md
+[Refactoring]: lecture/quality/refactoring.md
 
 <!-- [Intro Frameworks]: lecture/misc/intro-frameworks.md -->
 [Intro Dungeon]: lecture/misc/dungeon.md
