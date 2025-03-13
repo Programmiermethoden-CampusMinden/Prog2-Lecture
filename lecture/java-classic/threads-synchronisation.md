@@ -66,7 +66,7 @@ fhmedia:
 challenges: |
     **Hamster-Welt**
 
-    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/threads/src/challenges/threads)
+    In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-classic/src/challenges/threads)
     finden Sie eine Modellierung für eine Hamsterwelt.
 
     Es gibt rote und blaue Hamster, die sich unabhängig von einander bewegen können. Es gibt einen Tunnel, den die Hamster betreten
@@ -137,7 +137,7 @@ public class Teaser implements Runnable {
 }
 ```
 
-[Demo: synchronised.Teaser]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/Teaser.java"}
+[Demo: synchronised.Teaser]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/synchronised/Teaser.java"}
 
 
 ## Zugriff auf gemeinsame Ressourcen: Mehrseitige Synchronisierung
@@ -185,7 +185,7 @@ geschützten Bereich einschließen und als Sperr-Objekt das eigene Objekt (`this
     }
 ```
 
-[Demo: synchronised.ObjSync]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/ObjSync.java"}
+[Demo: synchronised.ObjSync]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/synchronised/ObjSync.java"}
 
 
 ## Synchronisierte Methoden
@@ -235,7 +235,7 @@ Die Methode `incrVal()` könnte entsprechend so umgeschrieben werden:
     }
 ```
 
-[Demo: synchronised.MethodSync]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/MethodSync.java"}
+[Demo: synchronised.MethodSync]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/synchronised/MethodSync.java"}
 
 
 ## Probleme bei der (mehrseitigen) Synchronisierung: Deadlocks
@@ -283,7 +283,7 @@ holen, den aber aktuell der erste Thread hält.
 Und schon geht's nicht mehr weiter :-)
 :::
 
-[Demo: synchronised.Deadlock]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/Deadlock.java"}
+[Demo: synchronised.Deadlock]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/synchronised/Deadlock.java"}
 
 
 ## Warten auf andere Threads: Einseitige Synchronisierung
@@ -367,7 +367,7 @@ Und schon geht's nicht mehr weiter :-)
 => Geht nur innerhalb der `synchronized`-Anweisung für das Synchronisations-Objekt!
 :::
 
-[Demo: synchronised.Staffel]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/threads/src/synchronised/Staffel.java"}
+[Demo: synchronised.Staffel]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/synchronised/Staffel.java"}
 
 
 ## Wrap-Up

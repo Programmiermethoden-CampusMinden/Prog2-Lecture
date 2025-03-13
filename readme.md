@@ -195,9 +195,9 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Testfallermittlung]: lecture/quality/testcases.md
 [Mocking]: lecture/quality/mockito.md
 
-[Intro Threads]: lecture/threads/threads-intro.md
-[Synchronisierung]: lecture/threads/threads-synchronisation.md
-[Highlevel Threadkonzepte]: lecture/threads/threads-highlevel.md
+[Intro Threads]: lecture/java-classic/threads-intro.md
+[Synchronisierung]: lecture/java-classic/threads-synchronisation.md
+[Highlevel Threadkonzepte]: lecture/java-classic/threads-highlevel.md
 
 [B01]: homework/b01.md
 [B02]: homework/b02.md
