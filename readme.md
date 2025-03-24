@@ -94,7 +94,7 @@ Durchführung als **Flipped Classroom**.
 ::::::
 
 Online-Sitzungen per Zoom (**Zugangsdaten siehe [ILIAS]**).
-Sie _können_ hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
+Sie *können* hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
 
   [ILIAS]: https://www.hsbi.de/elearning/goto.php?target=crs_1486054&client_id=FH-Bielefeld
 
@@ -126,8 +126,8 @@ Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Ver
 |                    | 20.   | [RegExp]; [Template-Method-Pattern], [Command-Pattern]; [Annotationen]                                 | [B07]        |
 |                    | 27.   | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Docker]      | [B08]        |
 | Juli               | 04.   | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Reflection]                          | [B09]        |
-| _Prüfungsphase I_  | _tbd_ | **Station III**                                                                                        |              |
-| _Prüfungsphase II_ | _tbd_ | **Station IV**                                                                                         |              |
+| *Prüfungsphase I*  | *tbd* | **Station III**                                                                                        |              |
+| *Prüfungsphase II* | *tbd* | **Station IV**                                                                                         |              |
 
 Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1356670&client_id=FH-Bielefeld).
 
@@ -259,26 +259,34 @@ verbessert sich die Gesamtnote um die nächste Teilnote.
 
 ### Literatur
 
-1.  ["**Java ist auch eine Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
-    Ullenboom, C., Rheinwerk-Verlag, 2021.
-    ISBN [978-3-8362-8745-6](https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6).
-2.  ["**Pro Git** (Second Edition)"](https://git-scm.com/book/en/v2).
-    Chacon, S. und Straub, B., Apress, 2014.
-    ISBN [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
-3.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
-    Oracle Corporation, 2024.
-4.  ["Learn Java"](https://dev.java/learn/).
-    Oracle Corporation, 2025.
+1.  ["**Java ist auch eine Insel**"]. Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN
+    [978-3-8362-8745-6].
+2.  ["**Pro Git** (Second Edition)"]. Chacon, S. und Straub, B., Apress, 2014. ISBN
+    [978-1-4842-0077-3].
+3.  ["The Java Tutorials"]. Oracle Corporation, 2024.
+4.  ["Learn Java"]. Oracle Corporation, 2025.
+
+  ["**Java ist auch eine Insel**"]: https://openbook.rheinwerk-verlag.de/javainsel/index.html
+  [978-3-8362-8745-6]: https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6
+  ["**Pro Git** (Second Edition)"]: https://git-scm.com/book/en/v2
+  [978-1-4842-0077-3]: https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3
+  ["The Java Tutorials"]: https://docs.oracle.com/javase/tutorial/
+  ["Learn Java"]: https://dev.java/learn/
 
 ### Tools
 
-*   JDK: Java SE 21 (LTS) ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder
-    [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk),
-    bitte 64-bit Version nutzen)
-*   IDE: [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/) oder
-    [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/) oder
-    [Visual Studio Code](https://code.visualstudio.com/) oder [Vim](https://www.vim.org/) oder ...
-*   [Git](https://git-scm.com/)
+- JDK: **Java SE 21 (LTS)** ([Oracle] oder [Alternativen], bitte 64-bit Version nutzen)
+- IDE: [Eclipse IDE for Java Developers] oder [IntelliJ IDEA (Community Edition)] oder [Visual
+  Studio Code] oder [Vim] oder ...
+- [Git]
+
+  [Oracle]: https://www.oracle.com/java/technologies/downloads/
+  [Alternativen]: https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk
+  [Eclipse IDE for Java Developers]: https://www.eclipse.org/downloads/
+  [IntelliJ IDEA (Community Edition)]: https://www.jetbrains.com/idea/
+  [Visual Studio Code]: https://code.visualstudio.com/
+  [Vim]: https://www.vim.org/
+  [Git]: https://git-scm.com/
 
 
 ## Förderungen und Kooperationen
@@ -287,14 +295,14 @@ verbessert sich die Gesamtnote um die nächste Teilnote.
 
 Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und Wissenschaft
 (MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert:
-["Fellowships für Innovationen in der digitalen Hochschulbildung"] (_Digi Fellowships_).
+["Fellowships für Innovationen in der digitalen Hochschulbildung"] (*Digi Fellowships*).
 
 ["Fellowships für Innovationen in der digitalen Hochschulbildung"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
 
 ### Kooperation mit dem DigikoS-Projekt
 
 Diese Vorlesung wurde vom Projekt ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]
-(_DigikoS_) unterstützt. Ein vom DigikoS-Projekt ausgebildeter Digital Learning Scout hat
+(*DigikoS*) unterstützt. Ein vom DigikoS-Projekt ausgebildeter Digital Learning Scout hat
 insbesondere die Koordination der digitalen Gruppenarbeiten, des Peer-Feedbacks und der
 Postersessions in ILIAS technisch und inhaltlich begleitet. DigikoS wird als Verbundprojekt
 von der Stiftung Innovation in der Hochschullehre gefördert.
@@ -316,4 +324,3 @@ von der Stiftung Innovation in der Hochschullehre gefördert.
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
 :::
-
