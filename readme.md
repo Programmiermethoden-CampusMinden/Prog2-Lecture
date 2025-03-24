@@ -113,7 +113,7 @@ Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Ver
 
 | Monat              | Tag   | Vorlesung                                                                                              | Praktikum    |
 |:-------------------|:------|:-------------------------------------------------------------------------------------------------------|:-------------|
-| April              | 11.   | Orga (**Zoom**), [FAQ], [Prüfungsvorbereitung]                                                         |              |
+| April              | 11.   | Orga (**Zoom**), [FAQ]                                                                                 |              |
 |                    | 18.   | **Feiertag**                                                                                           | **Feiertag** |
 |                    | 25.   | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Gradle]                                 | [B01]        |
 | Mai                | 02.   | [Git-Branches], [Branching-Strategien]; [Methodenreferenzen]; [Logging]                                | [B02]        |
@@ -266,9 +266,9 @@ verbessert sich die Gesamtnote um die nächste Teilnote.
     Chacon, S. und Straub, B., Apress, 2014.
     ISBN [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
 3.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/).
-    Oracle Corporation, 2023.
+    Oracle Corporation, 2024.
 4.  ["Learn Java"](https://dev.java/learn/).
-    Oracle Corporation, 2023.
+    Oracle Corporation, 2025.
 
 ### Tools
 
