@@ -1,56 +1,69 @@
 ---
 archetype: "home"
-title: "IFM 2.1: Programmieren 2 (PO23, Sommer 2024)"
+title: "IFM 2.1: Programmieren 2 (PO23, Sommer 2025)"
 ---
 
+<!--  pandoc -s -f markdown -t markdown+smart-grid_tables-multiline_tables-simple_tables+four_space_rule --columns=94 --reference-links=true  readme.md  -o xxx.md  -->
 
-> ... And, lastly, there's the explosive growth in demand, which has led to many
-> people doing it who aren't any good at it. Code is merely a means to an end.
+
+> ... And, lastly, there's the explosive growth in demand, which has led to many people doing
+> it who aren't any good at it. Code is merely a means to an end.
 > **Programming is an art and code is merely its medium.**
-> Pointing a camera at a subject does not make one a proper photographer. There are
-> a lot of self-described coders out there who couldn't program their way out of a
-> paper bag.
+> Pointing a camera at a subject does not make one a proper photographer. There are a lot of
+> self-described coders out there who couldn't program their way out of a paper bag.
 >
-> \hfill -- John Gruber auf [daringfireball.net](https://daringfireball.net/2020/04/cobol_programming_coding)
+> \hfill -- John Gruber auf [daringfireball.net]
+
+  [daringfireball.net]: https://daringfireball.net/2020/04/cobol_programming_coding
 
 
 ## Kursbeschreibung
 
-Sie haben letztes Semester in **Prog1** die _wichtigsten_ Elemente und Konzepte der
+Sie haben letztes Semester in **Prog1** die *wichtigsten* Elemente und Konzepte der
 Programmiersprache Java kennen gelernt.
 
 In diesem Modul geht es darum, diese Kenntnisse sowohl auf der Java- als auch auf der
-Methoden-Seite so zu erweitern, dass Sie gemeinsam größere Anwendungen erstellen und
-pflegen können. Sie werden fortgeschrittene Konzepte in Java kennenlernen und sich mit
-etablierten Methoden in der Softwareentwicklung wie Versionierung von Code, Einhaltung
-von Coding Conventions, Grundlagen des Softwaretests, Anwendung von Refactoring, Einsatz
-von Build-Tools und Logging auseinander setzen. Wenn uns dabei ein Entwurfsmuster "über
-den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anschauen.
+Methoden-Seite so zu erweitern, dass Sie gemeinsam größere Anwendungen erstellen und pflegen
+können. Sie werden fortgeschrittene Konzepte in Java kennenlernen und sich mit etablierten
+Methoden in der Softwareentwicklung wie Versionierung von Code, Einhaltung von Coding
+Conventions, Grundlagen des Softwaretests, Anwendung von Refactoring, Einsatz von Build-Tools
+und Logging auseinander setzen. Wenn uns dabei ein Entwurfsmuster "über den Weg läuft", werden
+wir die Gelegenheit nutzen und uns dieses genauer anschauen.
 
 
 ## Überblick Modulinhalte
 
-1.  Fortgeschrittene Konzepte in Java
-    *   Funktionale Programmierung: Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas, Stream-API
-    *   Generische Programmierung: Generics
-    *   Parallele Programmierung: Threads
-    *   Reguläre Ausdrücke, ~~Annotationen~~, ~~Reflection~~
-    *   CLI, Konfiguration, fremde APIs nutzen
-    *   ~~Graphische Oberflächen mit Swing~~
-2.  Fortgeschrittenes OO-Design
-    *   Entwurfsmuster: ~~Strategy~~, Template-Method, ~~Factory-Method~~, ~~Singleton~~, Observer, Visitor, Command, ...
-3.  Programmiermethoden
-    *   Versionskontrolle: Git
-    *   Testen, Coding Conventions, Refactoring
-    *   Logging, Build-Tools, CI
+1.  Fortgeschrittene Konzepte in Java ("Classic Java")
+    -   Reguläre Ausdrücke, Annotationen, Reflection
+    -   Generische Programmierung: Generics
+    -   Parallele Programmierung: Threads
+    -   ~~CLI~~, ~~Konfiguration~~, fremde APIs nutzen[^1]
+    -   Graphische Oberflächen mit Swing[^2]
+2.  Fortgeschrittene Konzepte in Java ("FP")
+    -   Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas, Optional,
+        Stream-API
+3.  Versionierung mit Git
+4.  Softwarequalität
+    -   Testen, Coding Conventions & Smells, Refactoring, Javadoc, Logging
+5.  Entwurfsmutster
+    -   ~~Strategy~~, Template-Method, ~~Factory-Method~~, ~~Singleton~~, Observer, Visitor,
+        Command, ...
+6.  Bauen von Software
+    -   Gradle, Docker, Continuous Integration (GitHub Workflows)
 
-(_durchgestrichene Themen nicht im Sommersemester 2024_)
+(_durchgestrichene Themen nicht im Sommersemester 2025_)
+
+[^1]: als Teilaufgabe im Praktikum
+
+[^2]: nur als Wiederholung im Praktikum
 
 
 ## Team
 
-*   [Carsten Gips](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips) (Sprechstunde nach Vereinbarung)
-*   Tutoren (siehe ILIAS-Mitgliederliste)
+-   [Carsten Gips] (Sprechstunde nach Vereinbarung)
+-   Tutoren (siehe ILIAS-Mitgliederliste)
+
+  [Carsten Gips]: https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips
 
 
 ## Kursformat
