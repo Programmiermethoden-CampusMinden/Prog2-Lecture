@@ -75,7 +75,7 @@ wir die Gelegenheit nutzen und uns dieses genauer anschauen.
 
 **Vorlesung (2 SWS)**
 
-Mi, 08:00 - 09:30 Uhr (online)
+Fr, 08:00 - 09:30 Uhr (online)
 
 Durchführung als **Flipped Classroom**.
 
@@ -86,20 +86,18 @@ Durchführung als **Flipped Classroom**.
 
 | Praktikumsgruppe | Zeit                  | Raum   |
 |:-----------------|:----------------------|:-------|
-| Gruppe 1         | Mi, 11:30 - 13:00 Uhr | online |
-| Gruppe 2         | Mi, 09:45 - 11:15 Uhr | D320   |
+| Gruppe 1         | Fr, 09:45 - 11:15 Uhr | online |
+| Gruppe 2         | Fr, 11:30 - 13:00 Uhr | online |
 | Gruppe 3         | Mi, 09:45 - 11:15 Uhr | online |
-| Gruppe 4         | Mi, 11:30 - 13:00 Uhr | D320   |
-
-Praktika Gruppen 2 und 4 in **Präsenz**.
+| Gruppe 4         | Mi, 11:30 - 13:00 Uhr | online |
 
 :::
 ::::::
 
 Online-Sitzungen per Zoom (**Zugangsdaten siehe [ILIAS]**).
-Sie _können_ hierzu den Raum J104 nutzen.
+Sie _können_ hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
 
-[ILIAS]: https://www.hsbi.de/elearning/goto.php?target=crs_1337540&client_id=FH-Bielefeld
+  [ILIAS]: https://www.hsbi.de/elearning/goto.php?target=crs_1486054&client_id=FH-Bielefeld
 
 
 ## Fahrplan
