@@ -87,8 +87,8 @@ Durchführung als **Flipped Classroom**.
 |:-----------------|:----------------------|:-------|
 | Gruppe 1         | Fr, 09:45 - 11:15 Uhr | online |
 | Gruppe 2         | Fr, 11:30 - 13:00 Uhr | online |
-| Gruppe 3         | Mi, 09:45 - 11:15 Uhr | online |
-| Gruppe 4         | Mi, 11:30 - 13:00 Uhr | online |
+| Gruppe 3         | Fr, 09:45 - 11:15 Uhr | online |
+| Gruppe 4         | Fr, 11:30 - 13:00 Uhr | online |
 
 :::
 ::::::
@@ -111,27 +111,28 @@ Sie _können_ hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
 
 Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
-| Monat | Tag   | Vorlesung                                                                                         | Praktikum        |
-|:------|:------|:--------------------------------------------------------------------------------------------------|:-----------------|
-| April | 17.   | Orga (**Zoom**), [FAQ]                                                                            |                  |
-|       | 24.   | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Gradle] | [B01]            |
-| Mai   | 01.   | **Mai-Feiertag**                                                                                  | **Mai-Feiertag** |
-|       | 08.   | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Javadoc]                           | [B02]            |
-|       | 15.   | **Dienstbesprechung**                                                                             | [B03]            |
-|       | 22.   | [Git-Branches], [Branching-Strategien]; [Methodenreferenzen]; [Logging]                           | [B04]            |
-|       | 29.   | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Record-Klassen]; [Intro Dungeon]                   | [B05]            |
-| Juni  | 05.   | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                | [B06]            |
-|       | 12.   | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Serialisierung]         | [B07]            |
-|       | 19.   | [Code-Smells], [Coding-Rules], [Refactoring]; [Continuous Integration (CI)]                       | [B08]            |
-|       | 26.   | [RegExp]; [Template-Method-Pattern], [Command-Pattern]; [Enumerationen]                           | [B09]            |
-| Juli  | 03.   | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Konfiguration]                  | [B09]            |
-|       | 10.   | Rückblick (**Zoom**), [Prüfungsvorbereitung]                                                      |                  |
-|       | _tbd_ | Klausur (Campus Minden, B40)                                                                      |                  |
+| Monat              | Tag   | Vorlesung                                                                                              | Praktikum    |
+|:-------------------|:------|:-------------------------------------------------------------------------------------------------------|:-------------|
+| April              | 11.   | Orga (**Zoom**), [FAQ], [Prüfungsvorbereitung]                                                         |              |
+|                    | 18.   | **Feiertag**                                                                                           | **Feiertag** |
+|                    | 25.   | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Gradle]                                 | [B01]        |
+| Mai                | 02.   | [Git-Branches], [Branching-Strategien]; [Methodenreferenzen]; [Logging]                                | [B02]        |
+|                    | 09.   | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Record-Klassen]                                         | [B03]        |
+|                    | 16.   | **Station I**                                                                                          |              |
+|                    | 23.   | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                     | [B04]        |
+|                    | 30.   | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Continuous Integration (CI)] | [B05]        |
+| Juni               | 06.   | [Code-Smells], [Coding-Rules], [Refactoring]; [Javadoc]                                                | [B06]        |
+|                    | 13.   | **Station II**                                                                                         |              |
+|                    | 20.   | [RegExp]; [Template-Method-Pattern], [Command-Pattern]; [Annotationen]                                 | [B07]        |
+|                    | 27.   | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Docker]      | [B08]        |
+| Juli               | 04.   | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Reflection]                          | [B09]        |
+| _Prüfungsphase I_  | _tbd_ | **Station III**                                                                                        |              |
+| _Prüfungsphase II_ | _tbd_ | **Station IV**                                                                                         |              |
 
 Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1356670&client_id=FH-Bielefeld).
 
 
-[Google Kalender]: https://calendar.google.com/calendar/ical/5121604486803dcdb5cfaa8602b8b09ce76743d8b9216795606617cac807e595%40group.calendar.google.com/public/basic.ics
+[Google Kalender]: https://calendar.google.com/calendar/ical/69ecbae80c817d60571a6ec968890b9b7ef0ffea5ce5dad1ef06c46eef7c530f%40group.calendar.google.com/public/basic.ics
 
 [Prüfungsvorbereitung]: admin/exams.md
 [FAQ]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a
@@ -140,7 +141,7 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 <!-- [ANT]: lecture/building/ant.md -->
 <!-- [Maven]: lecture/building/maven.md -->
 [Continuous Integration (CI)]: lecture/building/ci.md
-<!-- [Docker]: lecture/building/docker.md -->
+[Docker]: lecture/building/docker.md
 
 [Einführung Versionierung]: lecture/git/git-intro.md
 [Git Basics]: lecture/git/git-basics.md
@@ -163,14 +164,14 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Bounds und Wildcards]: lecture/java-classic/generics-bounds-wildcards.md
 [Type Erasure]: lecture/java-classic/generics-type-erasure.md
 [Polymorphie]: lecture/java-classic/generics-polymorphism.md
-[Serialisierung]: lecture/java-classic/serialisation.md
+<!-- [Serialisierung]: lecture/java-classic/serialisation.md -->
 <!-- [Collections]: lecture/java-classic/collections.md -->
 [RegExp]: lecture/java-classic/regexp.md
-<!-- [Annotationen]: lecture/java-classic/annotations.md -->
-<!-- [Reflection]: lecture/java-classic/reflection.md -->
+[Annotationen]: lecture/java-classic/annotations.md
+[Reflection]: lecture/java-classic/reflection.md
 <!-- [Exception-Handling]: lecture/java-classic/exceptions.md -->
-[Enumerationen]: lecture/java-classic/enums.md
-[Konfiguration]: lecture/java-classic/configuration.md
+<!-- [Enumerationen]: lecture/java-classic/enums.md -->
+<!-- [Konfiguration]: lecture/java-classic/configuration.md -->
 [Intro Threads]: lecture/java-classic/threads-intro.md
 [Synchronisierung]: lecture/java-classic/threads-synchronisation.md
 [Highlevel Threadkonzepte]: lecture/java-classic/threads-highlevel.md
@@ -183,7 +184,7 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [Default-Methoden]: lecture/java-modern/defaultmethods.md
 
 <!-- [Intro Frameworks]: lecture/misc/intro-frameworks.md -->
-[Intro Dungeon]: lecture/misc/dungeon.md
+<!-- [Intro Dungeon]: lecture/misc/dungeon.md -->
 
 <!-- [Strategy-Pattern]: lecture/pattern/strategy.md -->
 [Visitor-Pattern]: lecture/pattern/visitor.md
