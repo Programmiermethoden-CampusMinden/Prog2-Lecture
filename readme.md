@@ -116,7 +116,7 @@ Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Ver
 |       | 12.   | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Serialisierung]         | [B07]            |
 |       | 19.   | [Code-Smells], [Coding-Rules], [Refactoring]; [Continuous Integration (CI)]                       | [B08]            |
 |       | 26.   | [RegExp]; [Template-Method-Pattern], [Command-Pattern]; [Enumerationen]                           | [B09]            |
-| Juli  | 03.   | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Konfiguration]                  | [B10]            |
+| Juli  | 03.   | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Konfiguration]                  | [B09]            |
 |       | 10.   | Rückblick (**Zoom**), [Prüfungsvorbereitung]                                                      |                  |
 |       | _tbd_ | Klausur (Campus Minden, B40)                                                                      |                  |
 
@@ -205,7 +205,6 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [B07]: homework/b07.md
 [B08]: homework/b08.md
 [B09]: homework/b09.md
-[B10]: homework/b10.md
 
 
 ## Prüfungsform, Note und Credits
