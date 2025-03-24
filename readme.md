@@ -223,22 +223,33 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 :::::: {.tabs groupid="exams"}
 ::: {.tab title="Prüfung im ersten Zeitraum"}
 
-*   **Stationen**:
-    *   Praktikum: 10x Übungsblätter mit jeweils 1P
-        (Einzelbearbeitung, mindestens 60% bearbeitet,
-        fristgerechte Abgabe der Lösungen im ILIAS,
-        Vorstellung der Lösungen im Praktikum => Punkte)
-    *   Schriftliche Prüfung (digitale Klausur) mit 100P;
-        [Prüfungsvorbereitung]
-*   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
+1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte) (Einzelbearbeitung,
+    fristgerecht bis zur jeweiligen Vorlesung, je Quiz bis zu 3x wiederholbar)
+2.  **Praktikum**: mind. 5 der 9 Übungsblätter bestanden (ohne Note/Punkte) (3er Teams, alle
+    Aufgaben eines Blattes bearbeitet, fristgerechte Abgabe der Lösungen im ILIAS mit
+    ausreichendem *Post Mortem*, Vorstellung der Lösungen im Praktikum durch jedes
+    Teammitglied, aktive Beteiligung an der Diskussion im Praktikum)
+3.  **Station I**: Schriftliche Prüfung (digitale Klausur) 30 Minuten in Minden im B40
+4.  **Station II**: Schriftliche Prüfung (digitale Klausur) 30 Minuten in Minden im B40
+5.  **Station III**: Schriftliche Prüfung (digitale Klausur) 30 Minuten in Minden im B40
+
+Station I und II finden im Vorlesungsslot statt (Aufteilung siehe separate Ankündigung),
+Station III im ersten Prüfungszeitraum (Hinweise zur [Prüfungsvorbereitung] für Station I bis
+III). Die Punkte der beiden besseren Stationen werden summiert für die Berechnung der Note.
+
+**Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95% (jeweils nur wenn Quizzes
+bestanden und Praktikum bestanden)
+
+Bei mind. drei über das Minimum hinaus bestandenen Quizzes und/oder Aufgabenblättern
+verbessert sich die Gesamtnote um die nächste Teilnote.
 
 :::
 ::: {.tab title="Prüfung im zweiten Zeitraum"}
 
-*   **Stationen**:
-    *   Schriftliche Prüfung (digitale Klausur) mit 100P;
-        [Prüfungsvorbereitung]
-*   **Gesamtnote**: 4.0: ab 50P, alle 5P nächste Teilnote, 1.0: ab 95P
+1.  **Station IV**: Schriftliche Prüfung (digitale Klausur) 90 Minuten in Minden im B40;
+    [Prüfungsvorbereitung]
+
+**Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95%
 
 :::
 ::::::
