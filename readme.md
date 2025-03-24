@@ -3,7 +3,7 @@ archetype: "home"
 title: "IFM 2.1: Programmieren 2 (PO23, Sommer 2025)"
 ---
 
-<!--  pandoc -s -f markdown -t markdown+smart-grid_tables-multiline_tables-simple_tables+four_space_rule --columns=94 --reference-links=true  readme.md  -o xxx.md  -->
+<!--  pandoc -s -f markdown -t markdown+smart-grid_tables-multiline_tables-simple_tables --columns=94 --reference-links=true  readme.md  -o xxx.md  -->
 
 
 > ... And, lastly, there's the explosive growth in demand, which has led to many people doing
@@ -34,22 +34,21 @@ wir die Gelegenheit nutzen und uns dieses genauer anschauen.
 ## Überblick Modulinhalte
 
 1.  Fortgeschrittene Konzepte in Java ("Classic Java")
-    -   Reguläre Ausdrücke, Annotationen, Reflection
-    -   Generische Programmierung: Generics
-    -   Parallele Programmierung: Threads
-    -   ~~CLI~~, ~~Konfiguration~~, fremde APIs nutzen[^1]
-    -   Graphische Oberflächen mit Swing[^2]
+    - Reguläre Ausdrücke, Annotationen, Reflection
+    - Generische Programmierung: Generics
+    - Parallele Programmierung: Threads
+    - ~~CLI~~, ~~Konfiguration~~, fremde APIs nutzen[^1]
+    - Graphische Oberflächen mit Swing[^2]
 2.  Fortgeschrittene Konzepte in Java ("FP")
-    -   Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas, Optional,
-        Stream-API
+    - Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas, Optional, Stream-API
 3.  Versionierung mit Git
 4.  Softwarequalität
-    -   Testen, Coding Conventions & Smells, Refactoring, Javadoc, Logging
+    - Testen, Coding Conventions & Smells, Refactoring, Javadoc, Logging
 5.  Entwurfsmutster
-    -   ~~Strategy~~, Template-Method, ~~Factory-Method~~, ~~Singleton~~, Observer, Visitor,
-        Command, ...
+    - ~~Strategy~~, Template-Method, ~~Factory-Method~~, ~~Singleton~~, Observer, Visitor,
+      Command, ...
 6.  Bauen von Software
-    -   Gradle, Docker, Continuous Integration (GitHub Workflows)
+    - Gradle, Docker, Continuous Integration (GitHub Workflows)
 
 (_durchgestrichene Themen nicht im Sommersemester 2025_)
 
@@ -60,8 +59,8 @@ wir die Gelegenheit nutzen und uns dieses genauer anschauen.
 
 ## Team
 
--   [Carsten Gips] (Sprechstunde nach Vereinbarung)
--   Tutoren (siehe ILIAS-Mitgliederliste)
+- [Carsten Gips] (Sprechstunde nach Vereinbarung)
+- Tutoren (siehe ILIAS-Mitgliederliste)
 
   [Carsten Gips]: https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips
 
@@ -111,8 +110,6 @@ Sie _können_ hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
 -->
 
 Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
-
-[**Bitte geben Sie uns Feedback: Nehmen Sie bitte an der [anonymen Umfrage zu "Programmieren 2"](https://www.hsbi.de/elearning/goto.php?target=svy_1394428&client_id=FH-Bielefeld) teil.**]{.alert}
 
 | Monat | Tag   | Vorlesung                                                                                         | Praktikum        |
 |:------|:------|:--------------------------------------------------------------------------------------------------|:-----------------|
@@ -284,7 +281,7 @@ Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur un
 
 ### Kooperation mit dem DigikoS-Projekt
 
-Diese Vorlesung wird zudem vom Projekt ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]
+Diese Vorlesung wurde vom Projekt ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]
 (_DigikoS_) unterstützt. Ein vom DigikoS-Projekt ausgebildeter Digital Learning Scout hat
 insbesondere die Koordination der digitalen Gruppenarbeiten, des Peer-Feedbacks und der
 Postersessions in ILIAS technisch und inhaltlich begleitet. DigikoS wird als Verbundprojekt
@@ -300,9 +297,11 @@ von der Stiftung Innovation in der Hochschullehre gefördert.
 
 <!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
 ::: slides
+
 ## LICENSE
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
+
 :::
 
