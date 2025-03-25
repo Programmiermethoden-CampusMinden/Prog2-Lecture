@@ -71,29 +71,12 @@ wir die Gelegenheit nutzen und uns dieses genauer anschauen.
 
 ![](admin/images/fahrplan.png){width="80%"}
 
-:::::: {.tabs groupid="vl-pr"}
-::: {.tab title="Vorlesung"}
-
-**Vorlesung (2 SWS)**
-
-Fr, 08:00 - 09:30 Uhr (online)
-
-Durchführung als **Flipped Classroom**.
-
-:::
-::: {.tab title="Praktikum"}
-
-**Praktikum (2 SWS)**
-
-| Praktikumsgruppe | Zeit                  | Raum   |
-|:-----------------|:----------------------|:-------|
-| Gruppe 1         | Fr, 09:45 - 11:15 Uhr | online |
-| Gruppe 2         | Fr, 11:30 - 13:00 Uhr | online |
-| Gruppe 3         | Fr, 09:45 - 11:15 Uhr | online |
-| Gruppe 4         | Fr, 11:30 - 13:00 Uhr | online |
-
-:::
-::::::
+| Vorlesung (2 SWS)              | Praktikum (2 SWS)                           |
+|:-------------------------------|:--------------------------------------------|
+| Fr, 08:00 - 09:30 Uhr (online) | G1: Fr, 09:45 - 11:15 Uhr (online, Carsten) |
+| (Carsten: *Flipped Classroom*) | G2: Fr, 11:30 - 13:00 Uhr (online, Carsten) |
+|                                | G3: Fr, 09:45 - 11:15 Uhr (online, BC)      |
+|                                | G4: Fr, 11:30 - 13:00 Uhr (online, BC)      |
 
 Online-Sitzungen per Zoom (**Zugangsdaten siehe [ILIAS]**).
 Sie *können* hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
