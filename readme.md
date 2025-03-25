@@ -214,27 +214,30 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
     Aufgaben eines Blattes bearbeitet, fristgerechte Abgabe der Lösungen im ILIAS mit
     ausreichendem *Post Mortem*, Vorstellung der Lösungen im Praktikum durch jedes
     Teammitglied, aktive Beteiligung an der Diskussion im Praktikum)
-3.  **Station I**: Schriftliche Prüfung (digitale Klausur) 30 Minuten in Minden im B40
-4.  **Station II**: Schriftliche Prüfung (digitale Klausur) 30 Minuten in Minden im B40
-5.  **Station III**: Schriftliche Prüfung (digitale Klausur) 30 Minuten in Minden im B40
+3.  **Station I**: ILIAS-Test (30 Minuten in Minden im B40)
+4.  **Station II**: ILIAS-Test (30 Minuten in Minden im B40)
+5.  **Station III**: ILIAS-Test (30 Minuten in Minden im B40)
 
 Station I und II finden im Vorlesungsslot statt (Aufteilung siehe separate Ankündigung),
-Station III im ersten Prüfungszeitraum (Hinweise zur [Prüfungsvorbereitung] für Station I bis
-III). Die Punkte der beiden besseren Stationen werden summiert für die Berechnung der Note.
+Station III im ersten Prüfungszeitraum (Termin wird noch vom Prüfungsamt bekanntgegeben).
+Die Punkte der beiden besseren Stationen werden summiert für die Berechnung der Note.
 
 **Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95% (jeweils nur wenn Quizzes
 bestanden und Praktikum bestanden)
 
 Bei mind. drei über das Minimum hinaus bestandenen Quizzes und/oder Aufgabenblättern
-verbessert sich die Gesamtnote um die nächste Teilnote.
+verbessert sich die Gesamtnote um eine Teilnote.
+
+(Hinweise zur [Prüfungsvorbereitung] für Station I bis III)
 
 :::
 ::: {.tab title="Prüfung im zweiten Zeitraum"}
 
-1.  **Station IV**: Schriftliche Prüfung (digitale Klausur) 90 Minuten in Minden im B40;
-    [Prüfungsvorbereitung]
+1.  **Station IV**: Schriftliche Prüfung (digitale Klausur) 90 Minuten in Minden im B40
 
 **Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95%
+
+(Hinweise zur [Prüfungsvorbereitung] für Station IV)
 
 :::
 ::::::
