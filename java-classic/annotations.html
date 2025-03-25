@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 6.4.1">
+    <meta name="description" content="Was passiert hier? public class A { public String getInfo() { return &#34;Klasse A&#34;; } } public class B extends A { public String getInfo(String s) { return s &#43; &#34;Klasse B&#34;; } public static void main(String[] args) { B s = new B(); System.out.println(s.getInfo(&#34;Info: &#34;)); } } Beispiel: annotations.B Hilft @Override?
+Tja, da sollte wohl die Methode B#getInfo die geerbte Methode A#getInfo überschreiben. Dummerweise wird hier die Methode aber nur überladen (mit entsprechenden Folgen beim Aufruf)!
+Ein leider relativ häufiges Versehen, welches u.U. schwer zu finden ist. Annotationen (hier @Override) können dagegen helfen - der Compiler &#34;weiß&#34; dann, dass wir überschreiben wollen und meckert, wenn wir das nicht tun.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Annotationen">
+    <meta name="twitter:description" content="Was passiert hier? public class A { public String getInfo() { return &#34;Klasse A&#34;; } } public class B extends A { public String getInfo(String s) { return s &#43; &#34;Klasse B&#34;; } public static void main(String[] args) { B s = new B(); System.out.println(s.getInfo(&#34;Info: &#34;)); } } Beispiel: annotations.B Hilft @Override?
+Tja, da sollte wohl die Methode B#getInfo die geerbte Methode A#getInfo überschreiben. Dummerweise wird hier die Methode aber nur überladen (mit entsprechenden Folgen beim Aufruf)!
+Ein leider relativ häufiges Versehen, welches u.U. schwer zu finden ist. Annotationen (hier @Override) können dagegen helfen - der Compiler &#34;weiß&#34; dann, dass wir überschreiben wollen und meckert, wenn wir das nicht tun.">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations.html">
+    <meta property="og:title" content="Annotationen">
+    <meta property="og:description" content="Was passiert hier? public class A { public String getInfo() { return &#34;Klasse A&#34;; } } public class B extends A { public String getInfo(String s) { return s &#43; &#34;Klasse B&#34;; } public static void main(String[] args) { B s = new B(); System.out.println(s.getInfo(&#34;Info: &#34;)); } } Beispiel: annotations.B Hilft @Override?
+Tja, da sollte wohl die Methode B#getInfo die geerbte Methode A#getInfo überschreiben. Dummerweise wird hier die Methode aber nur überladen (mit entsprechenden Folgen beim Aufruf)!
+Ein leider relativ häufiges Versehen, welches u.U. schwer zu finden ist. Annotationen (hier @Override) können dagegen helfen - der Compiler &#34;weiß&#34; dann, dass wir überschreiben wollen und meckert, wenn wir das nicht tun.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Annotationen">
+    <meta itemprop="description" content="Was passiert hier? public class A { public String getInfo() { return &#34;Klasse A&#34;; } } public class B extends A { public String getInfo(String s) { return s &#43; &#34;Klasse B&#34;; } public static void main(String[] args) { B s = new B(); System.out.println(s.getInfo(&#34;Info: &#34;)); } } Beispiel: annotations.B Hilft @Override?
+Tja, da sollte wohl die Methode B#getInfo die geerbte Methode A#getInfo überschreiben. Dummerweise wird hier die Methode aber nur überladen (mit entsprechenden Folgen beim Aufruf)!
+Ein leider relativ häufiges Versehen, welches u.U. schwer zu finden ist. Annotationen (hier @Override) können dagegen helfen - der Compiler &#34;weiß&#34; dann, dass wir überschreiben wollen und meckert, wenn wir das nicht tun.">
+    <meta itemprop="wordCount" content="1704">
+    <title>Annotationen</title>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations/index.print.html" rel="alternate" type="text/html" title="Annotationen">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1742890647" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1742890647" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1742890647" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1742890647" rel="stylesheet" media="print">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1742890647"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1742890647";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#was-passiert-hier">Was passiert hier?</a></li>
+    <li><a href="#annotationen-metadaten-für-dritte">Annotationen: Metadaten für Dritte</a>
+      <ul>
+        <li><a href="#override">@Override</a></li>
+        <li><a href="#deprecated">@Deprecated</a></li>
+        <li><a href="#weitere-annotationen-aus-javalang">Weitere Annotationen aus <em>java.lang</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#dokumentation-mit-javadoc">Dokumentation mit Javadoc</a></li>
+    <li><a href="#notnull-mit-intellij">@NotNull mit IntelliJ</a>
+      <ul>
+        <li><a href="#intellij-inferiert-mit-notnull-mögliche-null-werte">IntelliJ inferiert mit @NotNull mögliche <em>null</em>-Werte</a></li>
+        <li><a href="#intellij-baut-bei-notnull-passende-assertions-ein">IntelliJ baut bei @NotNull passende Assertions ein</a></li>
+      </ul>
+    </li>
+    <li><a href="#eigene-annotationen-erstellen">Eigene Annotationen erstellen</a>
+      <ul>
+        <li><a href="#definition-einer-annotation">Definition einer Annotation</a></li>
+        <li><a href="#parameter-für-annotation">Parameter für Annotation</a></li>
+        <li><a href="#javadoc">Javadoc</a></li>
+        <li><a href="#wann-ist-eine-annotation-sichtbar-beschränkung-der-sichtbarkeit">Wann ist eine Annotation sichtbar (Beschränkung der Sichtbarkeit)</a></li>
+        <li><a href="#wo-darf-eine-annotation-verwendet-werden">Wo darf eine Annotation verwendet werden</a></li>
+      </ul>
+    </li>
+    <li><a href="#annotationen-bei-compilieren-bearbeiten-java-annotation-prozessoren">Annotationen bei Compilieren bearbeiten: Java Annotation-Prozessoren</a></li>
+    <li><a href="#wrap-up">Wrap-Up</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Annotationen
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Annotationen</h1>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-graduation-cap"></i> TL;DR
+  </div>
+  <div class="box-content">
+<p>Annotationen sind Metadaten zum Programm: Sie haben keinen (direkten) Einfluss auf die
+Ausführung des annotierten Codes, sondern enthalten Zusatzinformationen über ein Programm,
+die selbst nicht Teil des Programms sind. Verschiedene Tools werten Annotationen aus,
+beispielsweise der Compiler, Javadoc, JUnit, ...</p>
+<p>Annotationen können auf Deklarationen (Klassen, Felder, Methoden) angewendet werden und
+werden meist auf eine eigene Zeile geschrieben (Konvention).</p>
+<p>Annotationen können relativ einfach selbst erstellt werden: Die Definition ist fast wie
+bei einem Interface. Zusätzlich kann man noch über Meta-Annotationen die Sichtbarkeit,
+Verwendbarkeit und Dokumentation einschränken. Annotationen können zur Übersetzungszeit
+mit einem Annotation-Processor verarbeitet werden oder zur Laufzeit über Reflection
+ausgewertet werden.</p>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (YouTube)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://youtu.be/7u4_I4W_1JY' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Annotationen</a></li> <li><a href='https://youtu.be/wt-Dq_Nv5UU' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Annotationen: `@Override`, `@Deprecated`</a></li> <li><a href='https://youtu.be/ayWWf_ALObs' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo `@NotNull`</a></li> <li><a href='https://youtu.be/8vTMgYCstLE' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Annotationen selbst gebastelt</a></li> <li><a href='https://youtu.be/ypHMxunNZpg' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Annotation-Prozessor</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/d438c8d0b87fc2934e71e539aaf32ce01126fc2145f08284235c4c4b2058b0ab9ccba925dbbcfaf90466c70aff29f79acae1f66edeb18bd794d08628545d4e07' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Annotationen</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-lightbulb"></i> Lernziele
+  </div>
+  <div class="box-content">
+<ul> <li>(K2) Begriff der Annotation erklären können am Beispiel</li> <li>(K3) Anwendung von <code>@Override</code> sowie der Javadoc-Annotationen</li> <li>(K3) Erstellen eigener Annotationen sowie Einstellen der Sichtbarkeit und Verwendbarkeit</li> <li>(K3) Erstellen eigener einfacher Annotation-Processors</li></ul>
+  </div>
+</div>
+
+
+
+
+    <h2 id="was-passiert-hier">Was passiert hier?</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getInfo</span>() { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Klasse A&#34;</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#66d9ef">extends</span> A {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getInfo</span>(String s) { <span style="color:#66d9ef">return</span> s <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Klasse B&#34;</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        B s <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> B();
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(s.<span style="color:#a6e22e">getInfo</span>(<span style="color:#e6db74">&#34;Info: &#34;</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/annotations/B.java" target="_blank"><span class="title">Beispiel: annotations.B</span></a></span></div>
+<p><span class='alert'><strong>Hilft <code>@Override</code>?</strong></span></p>
+<p>Tja, da sollte wohl die Methode <code>B#getInfo</code> die geerbte Methode <code>A#getInfo</code>
+<strong>überschreiben</strong>. Dummerweise wird hier die Methode aber nur <strong>überladen</strong>
+(mit entsprechenden Folgen beim Aufruf)!</p>
+<p>Ein leider relativ häufiges Versehen, welches u.U. schwer zu finden ist.
+Annotationen (hier <code>@Override</code>) können dagegen helfen - der Compiler &quot;weiß&quot;
+dann, dass wir überschreiben wollen und meckert, wenn wir das nicht tun.</p>
+<p>IDEs wie Eclipse können diese Annotation bereits beim Erstellen einer Klasse
+generieren: <code>Preferences &gt; Java &gt; Code Style &gt; Add @Override annotation ...</code>.</p>
+<h2 id="annotationen-metadaten-für-dritte">Annotationen: Metadaten für Dritte</h2>
+<ul>
+<li>
+<p><strong>Zusatzinformationen</strong> für Tools, Bibliotheken, ...</p>
+</li>
+<li>
+<p>Kein direkter Einfluss auf die Ausführung des annotierten Codes</p>
+</li>
+<li>
+<p>Beispiele:</p>
+<ul>
+<li>Compiler (JDK): <code>@Override</code>, <code>@Deprecated</code>, ...</li>
+<li>Javadoc: <code>@author</code>, <code>@version</code>, <code>@see</code>, <code>@param</code>, <code>@return</code>, ...</li>
+<li>JUnit: <code>@Test</code>, <code>@Before</code>, <code>@BeforeClass</code>, <code>@After</code>, <code>@AfterClass</code></li>
+<li><a href="https://www.jetbrains.com/help/idea/annotating-source-code.html#jetbrains-annotations" rel="external" target="_blank">IntelliJ</a>: <code>@NotNull</code>, <code>@Nullable</code></li>
+<li><a href="https://github.com/typetools/checker-framework" rel="external" target="_blank">Checker Framework</a>: <code>@NonNull</code>, <code>@Nullable</code>, ...</li>
+<li><a href="https://github.com/projectlombok/lombok" rel="external" target="_blank">Project Lombok</a>: <code>@Getter</code>, <code>@Setter</code>, <code>@NonNull</code>, ...</li>
+<li>Webservices: <code>@WebService</code>, <code>@WebMethod</code></li>
+<li>...</li>
+</ul>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/annotations/B.java" target="_blank"><span class="title">Demo: annotations.B: @Override, @Deprecated</span></a></span></div>
+<p>Jetzt schauen wir uns erst einmal die Auswirkungen von <code>@Override</code> und <code>@Deprecated</code>
+auf den Compiler (via Eclipse) an.
+Anschließend lernen Sie die Dokumentation mittels Javadoc-Annotationen kennen.</p>
+<p>Das Thema JUnit ist in einer anderen VL dran. Webservices ereilen Sie dann in
+späteren Semestern :-)</p>
+<h3 id="override">@Override</h3>
+<p>Die mit <code>@Override</code> annotierte Methode überschreibt eine Methode aus der Oberklasse oder implementiert eine
+Methode einer Schnittstelle. Dies wird durch den Compiler geprüft und ggf. mit einer Fehlermeldung quittiert.</p>
+<p><code>@Override</code> ist eine im JDK im Paket <code>java.lang</code> enthaltene Annotation.</p>
+<h3 id="deprecated">@Deprecated</h3>
+<p>Das mit <code>@Deprecated</code> markierte Element ist veraltet (&quot;<em>deprecated</em>&quot;) und sollte nicht mehr benutzt werden.
+Typischerweise werden so markierte Elemente in zukünftigen Releases aus der API entfernt ...</p>
+<p>Die Annotation <code>@Deprecated</code> wird direkt im Code verwendet und entspricht der Annotation <code>@deprecated</code>
+im Javadoc. Allerdings kann letzteres nur von Javadoc ausgewertet werden.</p>
+<p><code>@Deprecated</code> ist eine im JDK im Paket <code>java.lang</code> enthaltene Annotation.</p>
+<h3 id="weitere-annotationen-aus-javalang">Weitere Annotationen aus <em>java.lang</em></h3>
+<p>Im Paket <code>java.lang</code> finden sich weitere Annotationen. Mit Hilfe von <code>@SuppressWarnings</code> lassen sich bestimmte
+Compilerwarnungen unterdrücken (<span class='alert'><strong>so etwas sollte man NIE tun!</strong></span>), und mit <code>@FunctionalInterface</code>
+lassen sich Schnittstellen auszeichnen, die genau eine (abstrakte) Methode besitzen (Verweis auf spätere Vorlesung).</p>
+<p>Weitere Annotationen aus dem JDK finden sich in den Paketen <code>java.lang.annotation</code> und <code>javax.annotation</code>.</p>
+<h2 id="dokumentation-mit-javadoc">Dokumentation mit Javadoc</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Beschreibung Beschreibung Beschreibung
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @param date Tag, Wert zw. 1 .. 31
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @return true, falls Datum gesetzt wurde; false sonst
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @see java.util.Calendar
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @deprecated As of JDK version 1.1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">setDate</span>(<span style="color:#66d9ef">int</span> date) {
+</span></span><span style="display:flex;"><span>    setField(Calendar.<span style="color:#a6e22e">DATE</span>, date);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Die Dokumentation mit Javadoc hatten wir uns bereits in der Einheit
+<a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html">&ldquo;Javadoc&rdquo;</a> angesehen.</p>
+<p>Hier noch einmal exemplarisch die wichtigsten Elemente, die an
+&quot;<code>public</code>&quot; sichtbaren Methoden verwendet werden.</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/annotations/B.java" target="_blank"><span class="title">Beispiel: annotations.B (Javadoc)</span></a></span></div>
+<h2 id="notnull-mit-intellij">@NotNull mit IntelliJ</h2>
+<p><a href="https://www.jetbrains.com/help/idea/annotating-source-code.html" rel="external" target="_blank">IntelliJ</a> bietet im Paket
+<code>org.jetbrains.annotations</code> u.a. die Annotation <code>@NotNull</code> an.</p>
+<p>Damit lassen sich Rückgabewerte von Methoden sowie Variablen (Attribute, lokale Variablen, Parameter) markieren:
+Diese dürfen nicht <code>null</code> werden.</p>
+<p>IntelliJ prüft beim Compilieren, dass diese Elemente nicht <code>null</code> werden und warnt gegebenenfalls (zur Compilezeit).
+Zusätzlich baut IntelliJ entsprechende Assertions in den Code ein, die zur Laufzeit einen <code>null</code>-Wert abfangen
+und dann das Programm abbrechen.</p>
+<p>Dadurch können entsprechende Dokumentationen im Javadoc und/oder manuelle Überprüfungen im Code entfallen.
+Außerdem hat man durch die Annotation gewissermaßen einen sichtbaren Vertrag (<em>Contract</em>) mit den Nutzern
+der Methode. Bei einem Aufruf mit <code>null</code> würde dieser Contract verletzt und eine entsprechende Exception
+geworfen (automatisch) statt einfach das Programm und die JVM &quot;abzuschießen&quot;.</p>
+<p>Nachteil: Die entsprechende Bibliothek muss bei allen Entwicklern vorhanden und in das Projekt eingebunden
+sein.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/* o should not be null */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bar</span>(Object o) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (o <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>        i <span style="color:#f92672">=</span> o.<span style="color:#a6e22e">hashCode</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/* o must not be null */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">foo</span>(<span style="color:#a6e22e">@NotNull</span> Object o) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// assert(o != null);  //  Wirkung (von IntelliJ eingefügt)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> o.<span style="color:#a6e22e">hashCode</span>();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/annotations/WuppieAnnotation.java" target="_blank"><span class="title">Demo: annotations.WuppieAnnotation: @NotNull</span></a></span></div>
+<h3 id="intellij-inferiert-mit-notnull-mögliche-null-werte">IntelliJ inferiert mit @NotNull mögliche <em>null</em>-Werte</h3>
+<p><a href="#R-image-573224ae11fff82f485e77979019a71b" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations/screenshot_infer-notnull.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-573224ae11fff82f485e77979019a71b"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations/screenshot_infer-notnull.png?width=80%25&height=auto"></a></p>
+<h3 id="intellij-baut-bei-notnull-passende-assertions-ein">IntelliJ baut bei @NotNull passende Assertions ein</h3>
+<p><a href="#R-image-a5176ae0ff17857e778761984fe160e9" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations/screenshot_nullpointerexception-notnull.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a5176ae0ff17857e778761984fe160e9"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations/screenshot_nullpointerexception-notnull.png?width=80%25&height=auto"></a></p>
+<h2 id="eigene-annotationen-erstellen">Eigene Annotationen erstellen</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@interface</span> MyFirstAnnotation {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@interface</span> MyThirdAnnotation {
+</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">author</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">vl</span>() <span style="color:#66d9ef">default</span> 1;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@MyFirstAnnotation</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@MyThirdAnnotation</span>(author <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Carsten Gips&#34;</span>, vl <span style="color:#f92672">=</span> 3)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">C</span> {}</span></span></code></pre></div>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/annotations/C.java" target="_blank"><span class="title">Demo: annotations.C</span></a></span></div>
+<h3 id="definition-einer-annotation">Definition einer Annotation</h3>
+<p>Definition einer Annotation wie Interface, aber mit &quot;<code>@</code>&quot;-Zeichen vor dem <code>interface</code>-Schlüsselwort</p>
+<h3 id="parameter-für-annotation">Parameter für Annotation</h3>
+<p>Parameter für Annotation werden über entsprechende Methoden-Deklaration realisiert</p>
+<ul>
+<li>
+<p>&quot;Rückgabetyp&quot; der deklarierten &quot;Methode&quot; ist der erlaubte Typ der später
+verwendeten Parameter</p>
+</li>
+<li>
+<p>Name der &quot;Methoden&quot; wird bei der Belegung der Parameter verwendet,
+beispielsweise <code>author = ...</code></p>
+</li>
+<li>
+<p>Vereinfachung: &quot;Methodenname&quot; <code>value</code> erlaubt das Weglassen des
+Schlüsselworts bei der Verwendung:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">@interface</span> MySecondAnnotation {
+</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">value</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@MySecondAnnotation</span>(<span style="color:#e6db74">&#34;wuppie&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">D</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@MySecondAnnotation</span>(value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;wuppie&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">E</span> {}</span></span></code></pre></div>
+</li>
+<li>
+<p>Defaultwerte mit dem nachgestellten Schlüsselwort <code>default</code> sowie dem
+Defaultwert selbst</p>
+</li>
+</ul>
+<h3 id="javadoc">Javadoc</h3>
+<p>Soll die Annotation in der Javadoc-Doku dargestellt werden, muss sie mit
+der Meta-Annotation <code>@Documented</code> ausgezeichnet werden (aus
+<code>java.lang.annotation.Documented</code>)</p>
+<p><em>Hinweis</em>: Die Annotation wird lediglich in die Doku aufgenommen, d.h. es
+erfolgt keine weitere Verarbeitung oder Hervorhebung o.ä.</p>
+<h3 id="wann-ist-eine-annotation-sichtbar-beschränkung-der-sichtbarkeit">Wann ist eine Annotation sichtbar (Beschränkung der Sichtbarkeit)</h3>
+<p>Annotationen werden vom Compiler und/oder anderen Tools ausgewertet. Man
+kann entsprechend die Sichtbarkeit einer Annotation beschränken: Sie kann
+ausschließlich im Source-Code verfügbar sein, sie kann in der generierten
+Class-Datei eingebettet sein oder sie kann sogar zur Laufzeit (mittels
+<em>Reflection</em>, vgl. spätere Vorlesung) ausgelesen werden.</p>
+<p>Beschränkung der Sichtbarkeit: Meta-Annotation <code>@Retention</code> aus
+<code>java.lang.annotation.Retention</code></p>
+<ul>
+<li><code>RetentionPolicy.SOURCE</code>: Nur Bestandteil der Source-Dateien, wird nicht
+in kompilierten Code eingebettet</li>
+<li><code>RetentionPolicy.CLASS</code>: Wird vom Compiler in die Class-Datei eingebettet,
+steht aber zur Laufzeit <em>nicht</em> zur Verfügung (Standardwert, wenn nichts
+angegeben)</li>
+<li><code>RetentionPolicy.RUNTIME</code>: Wird vom Compiler in die Class-Datei
+eingebettet und steht zur Laufzeit zur Verfügung und kann via
+<em>Reflection</em><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> ausgelesen
+werden</li>
+</ul>
+<p>Ohne explizite Angabe gilt für die selbst definierte Annotation die
+Einstellung <code>RetentionPolicy.CLASS</code>.</p>
+<h3 id="wo-darf-eine-annotation-verwendet-werden">Wo darf eine Annotation verwendet werden</h3>
+<h4 id="anwendungsmöglichkeiten-von-annotationen-im-code">Anwendungsmöglichkeiten von Annotationen im Code</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@ClassAnnotation</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Wuppie</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@InstanceFieldAnnotation</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String foo;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@ConstructorAnnotation</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Wuppie</span>() {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@MethodAnnotation1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@MethodAnnotation2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@MethodAnnotation3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fluppie</span>(<span style="color:#a6e22e">@ParameterAnnotation</span> <span style="color:#66d9ef">final</span> Object arg1) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">@VariableAnnotation</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">final</span> String bar <span style="color:#f92672">=</span> (<span style="color:#a6e22e">@TypeAnnotation</span> String) arg1;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h4 id="einschränkung-des-einsatzes-eines-annotation">Einschränkung des Einsatzes eines Annotation</h4>
+<p>Für jede Annotation kann eingeschränkt werden, wo (an welchen Java-Elementen)
+sie verwendet werden darf.</p>
+<p>Beschränkung der Verwendung: Meta-Annotation <code>@Target</code> aus
+<code>java.lang.annotation.Target</code></p>
+<ul>
+<li><code>ElementType.TYPE</code>: alle Typdeklarationen: Klassen, Interfaces, Enumerations, ...</li>
+<li><code>ElementType.CONSTRUCTOR</code>: nur Konstruktoren</li>
+<li><code>ElementType.METHOD</code>: nur Methoden</li>
+<li><code>ElementType.FIELD</code>: nur statische Variablen und Objektvariablen</li>
+<li><code>ElementType.PARAMETER</code>: nur Parametervariablen</li>
+<li><code>ElementType.PACKAGE</code>: nur an Package-Deklarationen</li>
+</ul>
+<p>Ohne explizite Angabe ist die selbst definierte Annotation für alle
+Elemente verwendbar.</p>
+<h2 id="annotationen-bei-compilieren-bearbeiten-java-annotation-prozessoren">Annotationen bei Compilieren bearbeiten: Java Annotation-Prozessoren</h2>
+<p>Der dem <code>javac</code>-Compiler vorgelegte Source-Code wird eingelesen und in einen
+entsprechenden Syntax-Tree (<em>AST</em>) transformiert (dazu mehr im Master im Modul
+&quot;Compilerbau&quot; :)</p>
+<p>Anschließend können sogenannte &quot;Annotation Processors&quot; über den AST laufen und
+ihre Analysen machen und/oder den AST modifizieren. (Danach kommen die üblichen
+weiteren Analysen und die Code-Generierung.)</p>
+<p>(Vgl. <a href="https://openjdk.java.net/groups/compiler/doc/compilation-overview/index.html" rel="external" target="_blank">OpenJDK: Compilation Overview</a>.)</p>
+<p>An dieser Stelle kann man sich einklinken und einen eigenen Annotation-Prozessor
+ausführen lassen. Zur Abgrenzung: Diese Auswertung der Annotationen findet zur
+<strong>Compile-Zeit</strong> statt! In einer späteren Vorlesung werden wir noch über die
+Auswertung zur <strong>Laufzeit</strong> sprechen: <em>Reflection</em>.</p>
+<p>Im Prinzip muss man lediglich das Interface <code>javax.annotation.processing.Processor</code>
+implementieren oder die abstrakte Klasse <code>javax.annotation.processing.AbstractProcessor</code>
+erweitern. Für die Registrierung im <code>javac</code> muss im Projekt (oder Jar-File) die
+Datei <code>META-INF/services/javax.annotation.processing.Processor</code> angelegt werden,
+die den vollständigen Namen des Annotation-Prozessors enthält. Dieser Annotation-Prozessor
+wird dann vom <code>javac</code> aufgerufen und läuft in einer eigenen JVM. Er kann die
+Annotationen, für die er registriert ist, auslesen und verarbeiten und neue Java-Dateien
+schreiben, die wiederum eingelesen und compiliert werden.</p>
+<p>Im nachfolgenden Beispiel beschränke ich mich auf das Definieren und Registrieren
+eines einfachen Annotation-Prozessors, der lediglich die Annotationen liest.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@SupportedAnnotationTypes</span>(<span style="color:#e6db74">&#34;annotations.MySecondAnnotation&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@SupportedSourceVersion</span>(SourceVersion.<span style="color:#a6e22e">RELEASE_17</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span> <span style="color:#66d9ef">extends</span> AbstractProcessor {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">process</span>(Set<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> TypeElement<span style="color:#f92672">&gt;</span> as, RoundEnvironment re) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (TypeElement annot : as) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (Element el : re.<span style="color:#a6e22e">getElementsAnnotatedWith</span>(annot)) {
+</span></span><span style="display:flex;"><span>                processingEnv.<span style="color:#a6e22e">getMessager</span>().<span style="color:#a6e22e">printMessage</span>(Diagnostic.<span style="color:#a6e22e">Kind</span>.<span style="color:#a6e22e">NOTE</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;found @MySecondAnnotation at &#34;</span> <span style="color:#f92672">+</span> el);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-classic/src/META-INF/" target="_blank"><span class="title">Demo: annotations.C und annotations.Foo, META-INF</span></a></span></div>
+<ol>
+<li>Der Annotation-Processor sollte von <code>AbstractProcessor</code> ableiten</li>
+<li>Über <code>@SupportedAnnotationTypes</code> teilt man mit, für welche Annotationen sich der Prozessor interessiert
+(d.h. für welche er aufgerufen wird); &quot;<code>*</code>&quot; oder eine Liste mit String ist auch möglich</li>
+<li>Mit <code>@SupportedSourceVersion</code> wird die (höchste) unterstützte Java-Version angegeben
+(neuere Versionen führen zu einer Warnung)</li>
+<li>Die Methode <code>process</code> erledigt die Arbeit:
+<ul>
+<li>Der erste Parameter enthält alle gefundenen Annotationen, für die der Processor registriert ist</li>
+<li>Der zweite Parameter enthält die damit annotierten Elemente</li>
+<li>Iteration: Die äußere Schleife läuft über alle gefundenen Annotationen, die innere über die
+mit der jeweiligen Annotation versehenen Elemente</li>
+<li>Jetzt könnte man mit den Elementen etwas sinnvolles anfangen, beispielsweise alle Attribute
+sammeln, die mit <code>@Getter</code> markiert sind und für diese neuen Code generieren</li>
+<li>Im Beispiel wird lediglich der eigene Logger (<code>processingEnv.getMessager()</code>) aufgerufen,
+um beim Compiliervorgang eine Konsolenmeldung zu erzeugen ...</li>
+</ul>
+</li>
+<li>Der Annotation-Processor darf keine Exception werfen, da sonst der Compiliervorgang abgebrochen
+würde. Zudem wäre der Stack-Trace der des Annotation-Processors und nicht der des compilierten
+Programms ... Stattdessen wird ein Boolean zurückgeliefert, um anzudeuten, ob die Verarbeitung
+geklappt hat.</li>
+</ol>
+<p>Für ein umfangreicheres Beispiel mit Code-Erzeugung vergleiche beispielsweise die Artikelserie unter
+<a href="https://cloudogu.com/en/blog/Java-Annotation-Processors_1-Intro" rel="external" target="_blank">cloudogu.com/en/blog/Java-Annotation-Processors_1-Intro</a>.
+Siehe auch <a href="https://openjdk.java.net/groups/compiler/doc/compilation-overview/index.html" rel="external" target="_blank">OpenJDK: Compilation Overview</a>.</p>
+<p>Im Projekt muss jetzt noch der Ordner <code>META-INF/services/</code> angelegt werden mit der Datei
+<code>javax.annotation.processing.Processor</code>. Deren Inhalt ist für das obige Beispiel die Zeile
+<code>annotations.Foo</code>. Damit ist der Annotation-Processor <code>annotations.Foo</code> für das Übersetzen im eigenen
+Projekt registriert.</p>
+<p>Zum Compilieren des Annotation-Processors selbst ruft man beispielsweise folgenden Befehl auf:</p>
+<pre><code>javac -cp . -proc:none annotations/Foo.java
+</code></pre>
+<p>Die Option <code>-proc:none</code> sorgt für das Beispiel dafür, dass beim Compilieren des Annotation-Processors
+dieser nicht bereits aufgerufen wird (was sonst wg. der Registrierung über
+<code>META-INF/services/javax.annotation.processing.Processor</code> passieren würde).</p>
+<p>Zum Compilieren der Klasse <code>C</code> kann man wie sonst auch den Befehl nutzen:</p>
+<pre><code>javac -cp . annotations/C.java
+</code></pre>
+<p>Dabei läuft dann der Annotation-Processor <code>annotations.Foo</code> und erzeugt beim Verarbeiten von <code>annotations.C</code>
+die folgende Ausgabe:</p>
+<pre><code>Note: found @MySecondAnnotation at main(java.lang.String[])
+</code></pre>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Annotationen: Metadaten zum Programm</p>
+<ul>
+<li><strong>Zusatzinformationen</strong> über ein Programm, aber nicht selbst Teil des Programms</li>
+<li><strong>Kein (direkter) Einfluss</strong> auf die <strong>Ausführung</strong> des annotierten Codes</li>
+</ul>
+</li>
+<li>
+<p>Typische Anwendungen: Compiler-Hinweise, Javadoc, Tests</p>
+<ul>
+<li>Compiler: Erkennen von logischen Fehlern, Unterdrücken von
+Warnungen =&gt; <code>java.lang</code>: <code>@Override</code>,
+<code>@Deprecated</code>, <code>@SuppressWarnings</code></li>
+<li>Javadoc: Erkennen von Schlüsselwörtern (<code>@author</code>, <code>@return</code>, <code>@param</code>, ...)</li>
+<li>JUnit: Erkennen von Tests-Methoden (<code>@Test</code>)</li>
+<li>...</li>
+</ul>
+</li>
+<li>
+<p>Annotationen können auf Deklarationen (Klassen, Felder, Methoden) angewendet werden</p>
+</li>
+<li>
+<p>Annotationen können relativ einfach selbst erstellt werden</p>
+<ul>
+<li>Definition fast wie ein Interface</li>
+<li>Einstellung der Sichtbarkeit und Verwendbarkeit und Dokumentation
+über Meta-Annotationen</li>
+</ul>
+</li>
+<li>
+<p>Verarbeitung von Annotationen zur Compilier-Zeit mit Annotation-Processor</p>
+</li>
+<li>
+<p>Verarbeitung von Annotationen zur Laufzeit mit Reflection (siehe spätere VL)</p>
+</li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Reflection ist Thema einer späteren Vorlesung&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-user-check"></i> Quizzes
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106512&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Annotationen (ILIAS)</a></li></ul>
+  </div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fas fa-puzzle-piece"></i> Challenges
+  </div>
+  <div class="box-content">
+<p>Schreiben Sie drei eigene Annotationen:</p>
+<ul>
+<li><code>@MeineKlasse</code> darf nur an Klassendefinitionen stehen und speichert den Namen des Autoren ab.</li>
+<li><code>@MeineMethode</code> darf nur an Methoden stehen.</li>
+<li><code>@TODO</code> darf an Methoden und Klassen stehen, ist aber nur in den Source-Dateien sichtbar.</li>
+</ul>
+<p>Implementieren Sie einen Annotation-Prozessor, welcher Ihren Quellcode nach der <code>@MeineKlasse</code>-Annotation
+durchsucht und dann den Namen der Klasse und den Namen des Autors ausgibt.</p>
+<p>Zeigen Sie die Funktionen anhand einer Demo.</p>
+  </div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-book-reader"></i> Quellen
+  </div>
+  <div class="box-content">
+<ul> <li id='id_Java-SE-Tutorial'>[Java-SE-Tutorial] <a href='https://docs.oracle.com/javase/tutorial/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>The Java Tutorials</strong></a><br>Oracle Corporation, 2024.<br><em>Getting to Know the Language \> Annotations</em></li> <li id='id_LernJava'>[LernJava] <a href='https://dev.java/learn/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Learn Java</strong></a><br>Oracle Corporation, 2025.</li> <li id='id_Ullenboom2021'>[Ullenboom2021] <a href='https://openbook.rheinwerk-verlag.de/javainsel/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java ist auch eine Insel</strong></a><br>Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8362-8745-6</a>.<br><em>Kap. 10.8: Annotationen in der Java SE, 23.4: Dokumentationskommentare mit Javadoc</em></li></ul>
+  </div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+
+
+<a id="logo" href='https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234//index.html'>
+    <img style="max-width:35%" alt="icon" src='/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png'>
+</a>
+
+        </div>
+
+        <search><form action="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/search.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['de'];
+        </script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/auto-complete.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.min.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.stemmer.support.min.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.multi.min.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.de.min.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/search.js?1742890647" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html">Git</a><ul id="R-subsections-b7b75b08ea746eeb407fc7d37ea4cda5" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html">Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html">Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html">Branches</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">Branching-Strategien</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html">Remotes</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">Workflows</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern.html">Modern Java</a><ul id="R-subsections-3723b9528838f9939f841b73dfbd900f" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/lambdas.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/lambdas.html">Lambda-Ausdrücke</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/methodreferences.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/methodreferences.html">Methoden-Referenzen</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/stream-api.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/stream-api.html">Stream-API</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records.html">Records</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/optional.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/optional.html">Optional</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/defaultmethods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/defaultmethods.html">Default-Methoden</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html">Building</a><ul id="R-subsections-f4e18db244c71e7d5fbee7579907c4cd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html">Gradle</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html">Continuous Integration</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/docker.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/docker.html">Docker</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic.html" class="parent "><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic.html">Java / JVM</a><ul id="R-subsections-9d37273ec84dd05c502ff515d59cd93d" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging.html">Logging</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/regexp.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/regexp.html">RegExp</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations.html" class="active"><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations.html">Annotationen</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-classes-methods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-classes-methods.html">Generics: Klassen &amp; Methoden</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-bounds-wildcards.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-bounds-wildcards.html">Generics: Bounds &amp; Wildcards</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure.html">Generics: Type Erasure</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-polymorphism.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-polymorphism.html">Generics: Polymorphie</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-intro.html">Threads: Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-synchronisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-synchronisation.html">Threads: Synchronisation</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-highlevel.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-highlevel.html">Threads: High-Level Concurrency</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/reflection.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/reflection.html">Reflection</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality.html">Softwarequalität</a><ul id="R-subsections-827d0119153086d7fcf6d18c82fc3217" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testing-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testing-intro.html">Intro SW-Test</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/junit-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/junit-basics.html">JUnit-Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testcases.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testcases.html">Testfallermittlung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/mockito.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/mockito.html">Mocking</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/smells.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/smells.html">Code Smells</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/codingrules.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/codingrules.html">Coding Conventions</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/refactoring.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/refactoring.html">Refactoring</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html">Javadoc</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html">Pattern</a><ul id="R-subsections-88c6ccdca00adeca83d4957e66bb44bd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html">Visitor</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html">Observer</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html">Template-Method</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html">Command</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc.html">Misc</a><ul id="R-subsections-0a1f7eaf2b0a93eaa6748b7594755ae4" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc/dungeon.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc/dungeon.html">How-To Dungeon</a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#kursformat"><i class='fas fa-bookmark'></i> Zeiten</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> Fahrplan</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#pr%C3%BCfungsform-note-und-credits"><i class='fas fa-bookmark'></i> Note/Credits</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> News</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations.html" lang="de-DE" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                      <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                      <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-select-variant-relearn-bright" value="relearn-bright">Relearn Bright</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter"><p style="text-align: center;">
+<i class='fab fa-fw fa-github'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">GitHub</a>
+<i class='fas fa-fw fa-tags'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/issues">Issues</a>
+<i class='fas fa-fw fa-bullhorn'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">Credits</a>
+<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+
+</p>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1742890647" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1742890647" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1742890647"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1742890647" defer></script>
+  </body>
+</html>

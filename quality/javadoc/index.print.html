@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 6.4.1">
+    <meta name="description" content="Dokumentation mit Javadoc /** * Beschreibung Beschreibung (Summary). * * &lt;p&gt;Hier kommt dann ein laengerer Text, der die Dinge * bei Bedarf etwas ausfuehrlicher erklaert. */ public void wuppie() {} Javadoc-Kommentare sind (aus Java-Sicht) normale Block-Kommentare, wobei der Beginn mit /** eingeleitet wird. Dieser Beginn ist für das Tool javadoc (Bestandteil des JDK, genau wie java und javac) das Signal, dass hier ein Kommentar anfängt, den das Tool in eine HTML-Dokumentation übersetzen soll.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Javadoc">
+    <meta name="twitter:description" content="Dokumentation mit Javadoc /** * Beschreibung Beschreibung (Summary). * * &lt;p&gt;Hier kommt dann ein laengerer Text, der die Dinge * bei Bedarf etwas ausfuehrlicher erklaert. */ public void wuppie() {} Javadoc-Kommentare sind (aus Java-Sicht) normale Block-Kommentare, wobei der Beginn mit /** eingeleitet wird. Dieser Beginn ist für das Tool javadoc (Bestandteil des JDK, genau wie java und javac) das Signal, dass hier ein Kommentar anfängt, den das Tool in eine HTML-Dokumentation übersetzen soll.">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html">
+    <meta property="og:title" content="Javadoc">
+    <meta property="og:description" content="Dokumentation mit Javadoc /** * Beschreibung Beschreibung (Summary). * * &lt;p&gt;Hier kommt dann ein laengerer Text, der die Dinge * bei Bedarf etwas ausfuehrlicher erklaert. */ public void wuppie() {} Javadoc-Kommentare sind (aus Java-Sicht) normale Block-Kommentare, wobei der Beginn mit /** eingeleitet wird. Dieser Beginn ist für das Tool javadoc (Bestandteil des JDK, genau wie java und javac) das Signal, dass hier ein Kommentar anfängt, den das Tool in eine HTML-Dokumentation übersetzen soll.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Javadoc">
+    <meta itemprop="description" content="Dokumentation mit Javadoc /** * Beschreibung Beschreibung (Summary). * * &lt;p&gt;Hier kommt dann ein laengerer Text, der die Dinge * bei Bedarf etwas ausfuehrlicher erklaert. */ public void wuppie() {} Javadoc-Kommentare sind (aus Java-Sicht) normale Block-Kommentare, wobei der Beginn mit /** eingeleitet wird. Dieser Beginn ist für das Tool javadoc (Bestandteil des JDK, genau wie java und javac) das Signal, dass hier ein Kommentar anfängt, den das Tool in eine HTML-Dokumentation übersetzen soll.">
+    <meta itemprop="wordCount" content="719">
+    <title>Javadoc</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html" rel="canonical" type="text/html" title="Javadoc">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1742890647" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1742890647" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1742890647" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1742890647" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1742890647" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1742890647"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1742890647";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Javadoc
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Javadoc</h1>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-graduation-cap"></i> TL;DR
+  </div>
+  <div class="box-content">
+<p>Mit Javadoc kann aus speziell markierten Block-Kommentaren eine externe Dokumentation im HTML-Format
+erzeugt werden. Die Block-Kommentare, auf die das im JDK enthaltene Programm <code>javadoc</code> reagiert,
+beginnen mit <code>/**</code> (also einem zusätzlichen Stern, der für den Java-Compiler nur das erste Kommentarzeichen
+ist).</p>
+<p>Die erste Zeile eines Javadoc-Kommentars ist eine &quot;Zusammenfassung&quot; und an fast allen Stellen der
+generierten Doku sichtbar. Diese Summary sollte kurz gehalten werden und eine Idee vermitteln, was
+die Klasse oder die Methode oder das Attribut macht.</p>
+<p>Für die Dokumentation von Parametern, Rückgabetypen, Exceptions und veralteten Elementen existieren
+spezielle Annotationen: <code>@param</code>, <code>@return</code>, <code>@throws</code> und <code>@deprecated</code>.</p>
+<p>Als Faustregel gilt: Es werden <strong>alle</strong> <code>public</code> und <code>protected</code> Elemente (Klassen, Methoden, Attribute)
+mit Javadoc kommentiert. Alle nicht-öffentlichen Elemente bekommen normale Java-Kommentare (Zeilen- oder
+Blockkommentare).</p>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (YouTube)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://youtu.be/Qo2TTD593eQ' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Javadoc</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/15984eacd03de989ab2bce322ace5d74da962a911ae45afbb60958714ed6b16c72c962aec4b60acda9419ef15d26c5a5265129245f26beb0f905af9a7176b9fa' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Javadoc</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-lightbulb"></i> Lernziele
+  </div>
+  <div class="box-content">
+<ul> <li>(K2) Ziel der Javadoc-Dokumentation verstehen</li> <li>(K2) Typischen Aufgabe von Javadoc-Kommentaren verstehen</li> <li>(K3) Dokumentation öffentlich sichtbarer Elemente mit Javadoc</li> <li>(K3) Schreiben einer sinnvollen Summary</li> <li>(K3) Einsatz von Annotationen zur Dokumentation von Parametern, Rückgabetypen, Exceptions, veralteten Elementen</li></ul>
+  </div>
+</div>
+
+
+
+
+    <h2 id="dokumentation-mit-javadoc">Dokumentation mit Javadoc</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Beschreibung Beschreibung (Summary).
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * &lt;p&gt;Hier kommt dann ein laengerer Text, der die Dinge
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * bei Bedarf etwas ausfuehrlicher erklaert.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wuppie</span>() {}</span></span></code></pre></div>
+<p>Javadoc-Kommentare sind (aus Java-Sicht) normale Block-Kommentare, wobei der Beginn mit
+<code>/**</code> eingeleitet wird. Dieser Beginn ist für das Tool <code>javadoc</code> (Bestandteil des JDK,
+genau wie <code>java</code> und <code>javac</code>) das Signal, dass hier ein Kommentar anfängt, den das
+Tool in eine HTML-Dokumentation übersetzen soll.</p>
+<p>Typischerweise wird am Anfang jeder Kommentarzeile ein <code>*</code> eingefügt; dieser wird von
+Javadoc ignoriert.</p>
+<p>Sie können neben normalem Text und speziellen Annotationen auch HTML-Elemente wie <code>&lt;p&gt;</code>
+und <code>&lt;code&gt;</code> oder <code>&lt;ul&gt;</code> nutzen.</p>
+<p>Mit <code>javadoc *.java</code> können Sie in der Konsole aus den Java-Dateien die Dokumentation
+generieren lassen. Oder Sie geben das in Ihrer IDE in Auftrag ... (die dann diesen
+Aufruf gern für Sie tätigt).</p>
+<h2 id="standard-aufbau">Standard-Aufbau</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Beschreibung Beschreibung (Summary).
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * &lt;p&gt; Hier kommt dann ein laengerer Text, der die Dinge
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * bei Bedarf etwas ausfuehrlicher erklaert.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @param   date  Tag, Wert zw. 1 .. 31
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @return  Anzahl der Sekunden seit 1.1.1970
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @throws  NumberFormatException
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @deprecated As of JDK version 1.1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">setDate</span>(<span style="color:#66d9ef">int</span> date) {
+</span></span><span style="display:flex;"><span>    setField(Calendar.<span style="color:#a6e22e">DATE</span>, date);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<ul>
+<li>Erste Zeile bei Methoden/Attributen geht in die generierte &quot;Summary&quot; in der Übersicht,
+der Rest in die &quot;Details&quot;
+<ul>
+<li>Die &quot;Summary&quot; sollte kein kompletter Satz sein, wird aber wie ein Satz geschrieben
+(Groß beginnen, mit Punkt beenden). Es sollte nicht beginnen mit &quot;Diese Methode
+macht ...&quot; oder &quot;Diese Klasse ist ...&quot;. Ein gutes Beispiel wäre &quot;Berechnet die
+Steuerrückerstattung.&quot;</li>
+<li>Danach kommen die Details, die in der generierten Dokumentation erst durch
+Aufklappen der Elemente sichtbar sind. Erklären Sie, wieso der Code was machen
+soll und welche Designentscheidungen getroffen wurden (und warum).</li>
+</ul>
+</li>
+<li>Leerzeilen gliedern den Text in Absätze. Neue Absätze werden mit einem <code>&lt;p&gt;</code> eingeleitet.
+(Ausnahmen: Wenn der Text mit <code>&lt;ul&gt;</code> o.ä. beginnt oder der Absatz mit den Block-Tags.)</li>
+<li>Die &quot;Block-Tags&quot; <code>@param</code>, <code>@return</code>, <code>@throws</code>, <code>@deprecated</code> werden durch einen
+Absatz von der restlichen Beschreibung getrennt und tauchen in exakt dieser Reihenfolge
+auf. Die Beschreibung dieser Tags ist nicht leer - anderenfalls lässt man das Tag weg.
+Falls die Zeile für die Beschreibung nicht reicht, wird umgebrochen und die Folgezeile
+mit vier Leerzeichen (beginnend mit dem <code>@</code>) eingerückt.
+<ul>
+<li>Mit <code>@param</code> erklären Sie die Bedeutung eines Parameters (von links nach rechts) einer
+Methode. Beispiel: <code>@param   date   Tag, Wert zw. 1 .. 31</code>. Wiederholen Sie dies für
+jeden Parameter.</li>
+<li>Mit <code>@return</code> beschreiben Sie den Rückgabetyp/-wert. Beispiel:
+<code>@return  Anzahl der Sekunden seit 1.1.1970</code>.
+Bei Rückgabe von <code>void</code> wird diese Beschreibung weggelassen (die Beschreibung wäre
+dann ja leer).</li>
+<li>Mit <code>@throws</code> geben Sie an, welche &quot;checked&quot; Exceptions die Methode wirft.</li>
+<li>Mit <code>@deprecated</code> können Sie im Kommentar sagen, dass ein Element veraltet ist und
+möglicherweise mit der nächsten Version o.ä. entfernt wird. (siehe nächste Folie)</li>
+</ul>
+</li>
+</ul>
+<p>=&gt; Dies sind die Basis-Regeln aus dem populären Google-Java-Style <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html#id_googlestyleguide">[googlestyleguide]</a>.</p>
+<h2 id="veraltete-elemente">Veraltete Elemente</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Beschreibung Beschreibung Beschreibung.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @deprecated As of v102, replaced by &lt;code&gt;Foo.fluppie()&lt;/code&gt;.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Deprecated</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wuppie</span>() {}</span></span></code></pre></div>
+<ul>
+<li>Annotation zum Markieren als &quot;veraltet&quot; (in der generierten Dokumentation): <code>@deprecated</code></li>
+<li>Für Sichtbarkeit zur Laufzeit bzw. im Tooling/IDE: normale Code-Annotation <code>@Deprecated</code></li>
+</ul>
+<p>Dies ist ein guter Weg, um Elemente einer öffentlichen API als &quot;veraltet&quot; zu
+kennzeichnen. Üblicherweise wird diese Kennzeichnung für einige wenige Releases
+beibehalten und danach das veraltete Element aus der API entfernt.</p>
+<h2 id="autoren-versionen-">Autoren, Versionen, ...</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * Beschreibung Beschreibung Beschreibung.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @author  Dagobert Duck
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @version V1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * @since   schon immer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span></span></span></code></pre></div>
+<ul>
+<li>Annotationen für Autoren und Version: <code>@author</code>, <code>@version</code>, <code>@since</code></li>
+</ul>
+<p>Diese Annotationen finden Sie vor allem in Kommentaren zu Packages oder Klassen.</p>
+<h2 id="was-muss-kommentiert-werden">Was muss kommentiert werden?</h2>
+<ul>
+<li>
+<p>Alle <code>public</code> Klassen</p>
+</li>
+<li>
+<p>Alle <code>public</code> und <code>protected</code> Elemente der Klassen</p>
+</li>
+<li>
+<p>Ausnahme: <code>@Override</code> (An diesen Methoden <em>kann</em>, aber <em>muss</em> nicht kommentiert werden.)</p>
+</li>
+</ul>
+<p>Alle anderen Elemente bei Bedarf mit <em>normalen</em> Kommentaren versehen.</p>
+<h3 id="beispiel-aus-dem-jdk-arraylist">Beispiel aus dem JDK: ArrayList</h3>
+<p>Schauen Sie sich gern mal Klassen aus der Java-API an, beispielsweise eine <code>java.util.ArrayList</code>:</p>
+<ul>
+<li>Generierte Dokumentation:
+<a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/util/package-summary.html" rel="external" target="_blank">zu &quot;ArrayList&quot; runterscrollen</a>
+bzw. <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html" rel="external" target="_blank">direkt</a></li>
+<li>Quellcode: <a href="https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java" rel="external" target="_blank">ArrayList.java</a></li>
+</ul>
+<h3 id="best-practices-was-beschreibe-ich-eigentlich">Best Practices: Was beschreibe ich eigentlich?</h3>
+<p>Unter <a href="https://github.com/google/styleguide/blob/gh-pages/docguide/best_practices.md#documentation-is-the-story-of-your-code" rel="external" target="_blank">Documentation Best Practices</a>
+finden Sie eine sehr gute Beschreibung, was das Ziel der Dokumentation sein sollte. Versuchen Sie, dieses zu erreichen!</p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Javadoc-Kommentare sind normale Block-Kommentare beginnend mit <code>/**</code></p>
+</li>
+<li>
+<p>Generierung der HTML-Dokumentation mit <code>javadoc *.java</code></p>
+</li>
+<li>
+<p>Erste Zeile ist eine Zusammenfassung (fast immer sichtbar)</p>
+</li>
+<li>
+<p>Längerer Text danach als &quot;Description&quot; einer Methode/Klasse</p>
+</li>
+<li>
+<p>Annotationen für besondere Elemente: <code>@param</code>, <code>@return</code>, <code>@throws</code>, <code>@deprecated</code></p>
+</li>
+<li>
+<p>Faustregel: Alle <code>public</code> und <code>protected</code> Elemente mit Javadoc kommentieren!</p>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-user-check"></i> Quizzes
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106229&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Javadoc (ILIAS)</a></li></ul>
+  </div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fas fa-puzzle-piece"></i> Challenges
+  </div>
+  <div class="box-content">
+<p>Betrachten Sie die Javadoc einiger Klassen im Dungeon-Projekt:
+<a href="https://github.com/Dungeon-CampusMinden/Dungeon/blob/31c0e3aaf25eb412a33751c897df43eb21bf2744/dojo-dungeon/src/dojo/rooms/LevelRoom.java" rel="external" target="_blank">dojo.rooms.LevelRoom</a>,
+<a href="https://github.com/Dungeon-CampusMinden/Dungeon/blob/31c0e3aaf25eb412a33751c897df43eb21bf2744/dojo-dungeon/src/dojo/rooms/MonsterRoom.java" rel="external" target="_blank">dojo.rooms.MonsterRoom</a>, und
+<a href="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/components/HealthComponent.java" rel="external" target="_blank">contrib.components.HealthComponent</a>.</p>
+<p>Stellen Sie sich vor, Sie müssten diese Klassen in einer Übungsaufgabe nutzen (das könnte tatsächlich passieren!) ...</p>
+<p>Können Sie anhand der Javadoc verstehen, wozu die drei Klassen dienen und wie Sie diese Klassen benutzen sollten?
+Vergleichen Sie die Qualität der Dokumentation.
+Was würden Sie gern in der Dokumentation finden?
+Was würden Sie ändern?</p>
+  </div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-book-reader"></i> Quellen
+  </div>
+  <div class="box-content">
+<ul> <li id='id_googlestyleguide'>[googlestyleguide] <a href='https://google.github.io/styleguide/javaguide.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Google Java Style Guide</strong></a><br>Google Open Source, 2022.<br><em>Kap. 7 Javadoc</em></li> <li id='id_Ullenboom2021'>[Ullenboom2021] <a href='https://openbook.rheinwerk-verlag.de/javainsel/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java ist auch eine Insel</strong></a><br>Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8362-8745-6</a>.<br><em>Kap. 23.4: Dokumentationskommentare mit Javadoc</em></li></ul>
+  </div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1742890647" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1742890647" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1742890647"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1742890647" defer></script>
+  </body>
+</html>

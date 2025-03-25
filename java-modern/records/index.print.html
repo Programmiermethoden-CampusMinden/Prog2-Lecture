@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 6.4.1">
+    <meta name="description" content="Motivation; Klasse Studi public class Studi { private final String name; private final int credits; public Studi(String name, int credits) { this.name = name; this.credits = credits; } public String getName() { return name; } public int getCredits() { return credits; } } Klasse Studi als Record public record StudiR(String name, int credits) {} Immutable Klasse mit Feldern String name und int credits =&gt; &#34;(String name, int credits)&#34; werden &#34;Komponenten&#34; des Records genannt
+Standardkonstruktor setzt diese Felder (&#34;Kanonischer Konstruktor&#34;)">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Record-Klassen">
+    <meta name="twitter:description" content="Motivation; Klasse Studi public class Studi { private final String name; private final int credits; public Studi(String name, int credits) { this.name = name; this.credits = credits; } public String getName() { return name; } public int getCredits() { return credits; } } Klasse Studi als Record public record StudiR(String name, int credits) {} Immutable Klasse mit Feldern String name und int credits =&gt; &#34;(String name, int credits)&#34; werden &#34;Komponenten&#34; des Records genannt
+Standardkonstruktor setzt diese Felder (&#34;Kanonischer Konstruktor&#34;)">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records.html">
+    <meta property="og:title" content="Record-Klassen">
+    <meta property="og:description" content="Motivation; Klasse Studi public class Studi { private final String name; private final int credits; public Studi(String name, int credits) { this.name = name; this.credits = credits; } public String getName() { return name; } public int getCredits() { return credits; } } Klasse Studi als Record public record StudiR(String name, int credits) {} Immutable Klasse mit Feldern String name und int credits =&gt; &#34;(String name, int credits)&#34; werden &#34;Komponenten&#34; des Records genannt
+Standardkonstruktor setzt diese Felder (&#34;Kanonischer Konstruktor&#34;)">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Record-Klassen">
+    <meta itemprop="description" content="Motivation; Klasse Studi public class Studi { private final String name; private final int credits; public Studi(String name, int credits) { this.name = name; this.credits = credits; } public String getName() { return name; } public int getCredits() { return credits; } } Klasse Studi als Record public record StudiR(String name, int credits) {} Immutable Klasse mit Feldern String name und int credits =&gt; &#34;(String name, int credits)&#34; werden &#34;Komponenten&#34; des Records genannt
+Standardkonstruktor setzt diese Felder (&#34;Kanonischer Konstruktor&#34;)">
+    <meta itemprop="wordCount" content="592">
+    <title>Record-Klassen</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records.html" rel="canonical" type="text/html" title="Record-Klassen">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1742890647" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1742890647" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1742890647" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1742890647" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1742890647" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1742890647"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1742890647";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Record-Klassen
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Record-Klassen</h1>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-graduation-cap"></i> TL;DR
+  </div>
+  <div class="box-content">
+<p>Häufig schreibt man relativ viel <em>Boiler Plate Code</em>, um einfach ein paar Daten plus den
+Konstruktor und die Zugriffsmethoden zu kapseln. Und selbst wenn die IDE dies zum Teil
+abnehmen kann - lesen muss man diesen Overhead trotzdem noch.</p>
+<p>Für den Fall von Klassen mit <code>final</code> Attributen wurden in Java14 die <strong>Record-Klassen</strong>
+eingeführt. Statt dem Schlüsselwort <code>class</code> wird das neue Schlüsselwort <code>record</code> verwendet.
+Nach dem Klassennamen kommen in runden Klammern die &quot;Komponenten&quot; - eine Auflistung der
+Parameter für den Standardkonstruktor (Typ, Name). Daraus wird automatisch ein &quot;kanonischer
+Konstruktor&quot; mit exakt diesen Parametern generiert. Es werden zusätzlich <code>private final</code>
+Attribute generiert für jede Komponente, und diese werden durch den kanonischen Konstruktor
+gesetzt. Außerdem wird für jedes Attribut automatisch ein Getter mit dem Namen des Attributs
+generiert (also ohne den Präfix &quot;get&quot;).</p>
+<p>Beispiel:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">StudiR</span>(String name, <span style="color:#66d9ef">int</span> credits) {}</span></span></code></pre></div>
+<p>Der Konstruktor und die Getter können überschrieben werden, es können auch eigene Methoden
+definiert werden (eigene Konstruktoren <em>müssen</em> den kanonischen Konstruktor aufrufen). Es
+gibt außer den über die Komponenten definierten Attribute keine weiteren Attribute. Da eine
+Record-Klasse intern von <code>java.lang.Record</code> ableitet, kann eine Record-Klasse nicht von
+weiteren Klassen ableiten (erben). Man kann aber beliebig viele Interfaces implementieren.
+Record-Klassen sind implizit final, d.h. man nicht von Record-Klassen erben.</p>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (YouTube)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://youtu.be/5RMhdCsZL6Y' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Record-Klassen</a></li> <li><a href='https://youtu.be/jWBAXWH0MUc' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Record-Klassen</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/461caa1e97e1655109ce66647c169cf01b35d4b268bfaa64a6289c505f247a5ebfde054a98b08a1b5235195ff21b1fffa4d12e3968c7a68a0f001b0dabe6b695' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Record-Klassen</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-lightbulb"></i> Lernziele
+  </div>
+  <div class="box-content">
+<ul> <li>(K2) Record-Klassen sind final</li> <li>(K2) Record-Klassen haben einen kanonischen Konstruktor</li> <li>(K2) Die Attribute von Record-Klassen sind final und werden automatisch angelegt und über den Konstruktor gesetzt</li> <li>(K2) Die Getter in Record-Klassen haben die Namen und Typen der Komponenten, also keinen Präfix 'get'</li> <li>(K2) Der kanonische Konstruktor kann ergänzt werden</li> <li>(K2) Es können weitere Methoden definiert werden</li> <li>(K2) Record-Klassen können nicht von anderen Klassen erben, können aber Interfaces implementieren</li> <li>(K3) Einsatz von Record-Klassen</li></ul>
+  </div>
+</div>
+
+
+
+
+    <h2 id="motivation-klasse-studi">Motivation; Klasse Studi</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> credits;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Studi</span>(String name, <span style="color:#66d9ef">int</span> credits) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">credits</span> <span style="color:#f92672">=</span> credits;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getCredits</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> credits;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h2 id="klasse-studi-als-record">Klasse Studi als Record</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">StudiR</span>(String name, <span style="color:#66d9ef">int</span> credits) {}</span></span></code></pre></div>
+<ul>
+<li>
+<p>Immutable Klasse mit Feldern <code>String name</code> und <code>int credits</code>
+=&gt; &quot;<code>(String name, int credits)</code>&quot; werden &quot;Komponenten&quot; des Records genannt</p>
+</li>
+<li>
+<p>Standardkonstruktor setzt diese Felder (&quot;Kanonischer Konstruktor&quot;)</p>
+</li>
+<li>
+<p>Getter für beide Felder:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">name</span>() { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>; }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">credits</span>() { <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">credits</span>; }</span></span></code></pre></div>
+</li>
+</ul>
+<p>Record-Klassen wurden in Java14 eingeführt und werden immer wieder in
+neuen Releases erweitert/ergänzt.</p>
+<p>Der kanonische Konstruktor hat das Aussehen wie die Record-Deklaration, im
+Beispiel also <code>public StudiR(String name, int credits)</code>. Dabei werden die
+Komponenten über eine Kopie der Werte initialisiert.</p>
+<p>Für die Komponenten werden automatisch private Attribute mit dem selben
+Namen angelegt.</p>
+<p>Für die Komponenten werden automatisch Getter angelegt. Achtung: Die Namen
+entsprechen denen der Komponenten, es fehlt also der übliche &quot;get&quot;-Präfix!</p>
+<h2 id="eigenschaften-und-einschränkungen-von-record-klassen">Eigenschaften und Einschränkungen von Record-Klassen</h2>
+<ul>
+<li>
+<p>Records erweitern implizit die Klasse <code>java.lang.Record</code>:
+Keine andere Klassen mehr erweiterbar! (Interfaces kein Problem)</p>
+</li>
+<li>
+<p>Record-Klassen sind implizit final</p>
+</li>
+<li>
+<p>Keine weiteren (Instanz-) Attribute definierbar (nur die Komponenten)</p>
+</li>
+<li>
+<p>Keine Setter definierbar für die Komponenten: Attribute sind final</p>
+</li>
+<li>
+<p>Statische Attribute mit Initialisierung erlaubt</p>
+</li>
+</ul>
+<h2 id="records-prüfungen-im-konstruktor">Records: Prüfungen im Konstruktor</h2>
+<p>Der Konstruktor ist erweiterbar:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">StudiS</span>(String name, <span style="color:#66d9ef">int</span> credits) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">StudiS</span>(String name, <span style="color:#66d9ef">int</span> credits) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (name <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) { <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException(<span style="color:#e6db74">&#34;Name cannot be null!&#34;</span>); }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (credits <span style="color:#f92672">&lt;</span> 0) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">credits</span> <span style="color:#f92672">=</span> 0; }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">credits</span> <span style="color:#f92672">=</span> credits; }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>In dieser Form muss man die Attribute selbst setzen.</p>
+<p>Alternativ kann man die &quot;kompakte&quot; Form nutzen:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">StudiT</span>(String name, <span style="color:#66d9ef">int</span> credits) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> StudiT {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (name <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) { <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalArgumentException(<span style="color:#e6db74">&#34;Name cannot be null!&#34;</span>); }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (credits <span style="color:#f92672">&lt;</span> 0) { credits <span style="color:#f92672">=</span> 0; }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>In der kompakten Form kann man nur die Werte der Parameter des Konstruktors ändern.
+Das Setzen der Attribute ergänzt der Compiler nach dem eigenen Code.</p>
+<p>Es sind weitere Konstruktoren definierbar, diese <em>müssen</em> den kanonischen Konstruktor
+aufrufen:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">StudiT</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>(<span style="color:#e6db74">&#34;&#34;</span>, 42);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h2 id="getter-und-methoden">Getter und Methoden</h2>
+<p>Getter werden vom Compiler automatisch generiert. Dabei entsprechen die Methoden-Namen
+den Namen der Attribute:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">StudiR</span>(String name, <span style="color:#66d9ef">int</span> credits) {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>    StudiR r <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StudiR(<span style="color:#e6db74">&#34;Sabine&#34;</span>, 75);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> r.<span style="color:#a6e22e">credits</span>();
+</span></span><span style="display:flex;"><span>    String y <span style="color:#f92672">=</span> r.<span style="color:#a6e22e">name</span>();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Getter überschreibbar und man kann weitere Methoden definieren:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">record</span> <span style="color:#a6e22e">StudiT</span>(String name, <span style="color:#66d9ef">int</span> credits) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">credits</span>() { <span style="color:#66d9ef">return</span> credits <span style="color:#f92672">+</span> 42; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">wuppie</span>() { System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;WUPPIE&#34;</span>); }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Die Komponenten/Attribute sind aber <code>final</code> und können nicht über Methoden
+geändert werden!</p>
+<h2 id="beispiel-aus-den-challenges">Beispiel aus den Challenges</h2>
+<p>In den Challenges zum Thema Optional gibt es die Klasse <code>Katze</code> in den
+<a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/challenges/optional/Katze.java" rel="external" target="_blank">Vorgaben</a>.</p>
+<p>Die Katze wurde zunächst &quot;klassisch&quot; modelliert: Es gibt drei Eigenschaften <code>name</code>,
+<code>gewicht</code>und <code>lieblingsBox</code>. Ein Konstruktor setzt diese Felder und es gibt drei
+Getter für die einzelnen Eigenschaften. Das braucht 18 Zeilen Code (ohne Kommentare
+Leerzeilen). Zudem erzeugt der Boilerplate-Code relativ viel &quot;visual noise&quot;, so dass
+der eigentliche Kern der Klasse schwerer zu erkennen ist.</p>
+<p>In einem Refactoring wurde diese Klasse durch eine äquivalente Record-Klasse ersetzt,
+die nur noch 2 Zeilen Code (je nach Code-Style auch nur 1 Zeile) benötigt. Gleichzeitig
+wurde die Les- und Wartbarkeit deutlich verbessert.</p>
+<p><a href="#R-image-12df26d3099289fdd4534eba9b0682a5" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records/screenshot_katze.png?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-12df26d3099289fdd4534eba9b0682a5"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records/screenshot_katze.png?width=auto&height=auto"></a></p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>Records sind immutable Klassen:
+<ul>
+<li><code>final</code> Attribute (entsprechend den Komponenten)</li>
+<li>Kanonischer Konstruktor</li>
+<li>Automatische Getter (Namen wie Komponenten)</li>
+</ul>
+</li>
+<li>Konstruktoren und Methoden können ergänzt/überschrieben werden</li>
+<li>Keine Vererbung von Klassen möglich (kein <code>extends</code>)</li>
+</ul>
+<p>Schöne Doku: <a href="https://dev.java/learn/using-record-to-model-immutable-data/" rel="external" target="_blank">&quot;Using Record to Model Immutable Data&quot;</a>.</p>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-user-check"></i> Quizzes
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106527&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Record-Klassen (ILIAS)</a></li></ul>
+  </div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fas fa-puzzle-piece"></i> Challenges
+  </div>
+  <div class="box-content">
+<p>Betrachen Sie den folgenden Code:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    String <span style="color:#a6e22e">getName</span>();
+</span></span><span style="display:flex;"><span>    Date <span style="color:#a6e22e">getBirthday</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> <span style="color:#66d9ef">implements</span> Person {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> SimpleDateFormat DATE_FORMAT <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleDateFormat(<span style="color:#e6db74">&#34;dd.MM.yyyy&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> Date birthday;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Student</span>(String name, String birthday) <span style="color:#66d9ef">throws</span> ParseException {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">birthday</span> <span style="color:#f92672">=</span> DATE_FORMAT.<span style="color:#a6e22e">parse</span>(birthday);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span>() { <span style="color:#66d9ef">return</span> name; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Date <span style="color:#a6e22e">getBirthday</span>() { <span style="color:#66d9ef">return</span> birthday; }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Schreiben Sie die Klasse <code>Student</code> in eine Record-Klasse um. Was müssen Sie zusätzlich noch tun,
+damit die aktuelle API erhalten bleibt?</p>
+  </div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-book-reader"></i> Quellen
+  </div>
+  <div class="box-content">
+<ul> <li id='id_LernJava'>[LernJava] <a href='https://dev.java/learn/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Learn Java</strong></a><br>Oracle Corporation, 2025.<br><em>Tutorials \> Using Record to Model Immutable Data</em></li></ul>
+  </div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1742890647" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1742890647" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1742890647"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1742890647" defer></script>
+  </body>
+</html>

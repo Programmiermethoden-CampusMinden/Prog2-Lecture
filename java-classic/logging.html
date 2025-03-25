@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 6.4.1">
+    <meta name="description" content="Wie prüfen Sie die Werte von Variablen/Objekten? Debugging
+Beeinflusst Code nicht Kann schnell komplex und umständlich werden Sitzung transient - nicht wiederholbar &#34;Poor-man&#39;s-debugging&#34; (Ausgaben mit System.out.println)
+Müssen irgendwann entfernt werden Ausgabe nur auf einem Kanal (Konsole) Keine Filterung nach Problemgrad - keine Unterscheidung zwischen Warnungen, einfachen Informationen, ... Logging
+Verschiedene (Java-) Frameworks: java.util.logging (JDK), log4j (Apache), SLF4J, Logback, ... Java Logging API - Überblick Paket java.util.logging">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Logging">
+    <meta name="twitter:description" content="Wie prüfen Sie die Werte von Variablen/Objekten? Debugging
+Beeinflusst Code nicht Kann schnell komplex und umständlich werden Sitzung transient - nicht wiederholbar &#34;Poor-man&#39;s-debugging&#34; (Ausgaben mit System.out.println)
+Müssen irgendwann entfernt werden Ausgabe nur auf einem Kanal (Konsole) Keine Filterung nach Problemgrad - keine Unterscheidung zwischen Warnungen, einfachen Informationen, ... Logging
+Verschiedene (Java-) Frameworks: java.util.logging (JDK), log4j (Apache), SLF4J, Logback, ... Java Logging API - Überblick Paket java.util.logging">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging.html">
+    <meta property="og:title" content="Logging">
+    <meta property="og:description" content="Wie prüfen Sie die Werte von Variablen/Objekten? Debugging
+Beeinflusst Code nicht Kann schnell komplex und umständlich werden Sitzung transient - nicht wiederholbar &#34;Poor-man&#39;s-debugging&#34; (Ausgaben mit System.out.println)
+Müssen irgendwann entfernt werden Ausgabe nur auf einem Kanal (Konsole) Keine Filterung nach Problemgrad - keine Unterscheidung zwischen Warnungen, einfachen Informationen, ... Logging
+Verschiedene (Java-) Frameworks: java.util.logging (JDK), log4j (Apache), SLF4J, Logback, ... Java Logging API - Überblick Paket java.util.logging">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Logging">
+    <meta itemprop="description" content="Wie prüfen Sie die Werte von Variablen/Objekten? Debugging
+Beeinflusst Code nicht Kann schnell komplex und umständlich werden Sitzung transient - nicht wiederholbar &#34;Poor-man&#39;s-debugging&#34; (Ausgaben mit System.out.println)
+Müssen irgendwann entfernt werden Ausgabe nur auf einem Kanal (Konsole) Keine Filterung nach Problemgrad - keine Unterscheidung zwischen Warnungen, einfachen Informationen, ... Logging
+Verschiedene (Java-) Frameworks: java.util.logging (JDK), log4j (Apache), SLF4J, Logback, ... Java Logging API - Überblick Paket java.util.logging">
+    <meta itemprop="wordCount" content="519">
+    <title>Logging</title>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging/index.print.html" rel="alternate" type="text/html" title="Logging">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1742890647" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1742890647" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1742890647" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1742890647" rel="stylesheet" media="print">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1742890647"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1742890647";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#wie-prüfen-sie-die-werte-von-variablenobjekten">Wie prüfen Sie die Werte von Variablen/Objekten?</a></li>
+    <li><a href="#java-logging-api---überblick">Java Logging API - Überblick</a></li>
+    <li><a href="#erzeugen-neuer-logger">Erzeugen neuer Logger</a></li>
+    <li><a href="#ausgabe-von-logmeldungen">Ausgabe von Logmeldungen</a></li>
+    <li><a href="#wichtigkeit-von-logmeldungen-stufen">Wichtigkeit von Logmeldungen: Stufen</a></li>
+    <li><a href="#jemand-muss-die-arbeit-machen-">Jemand muss die Arbeit machen ...</a></li>
+    <li><a href="#ich--bin--dein--vater-">Ich ... bin ... Dein ... Vater ...</a></li>
+    <li><a href="#wrap-up">Wrap-Up</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Logging
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Logging</h1>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-graduation-cap"></i> TL;DR
+  </div>
+  <div class="box-content">
+<p>Im Paket <code>java.util.logging</code> findet sich eine einfache Logging-API.</p>
+<p>Über die Methode <code>getLogger()</code> der Klasse <code>Logger</code> (<em>Factory-Method-Pattern</em>)
+kann ein (neuer) Logger erzeugt werden, dabei wird über den String-Parameter
+eine Logger-Hierarchie aufgebaut analog zu den Java-Package-Strukturen. Der
+oberste Logger (der &quot;Root-Logger&quot;) hat den leeren Namen.</p>
+<p>Jeder Logger kann mit einem Log-Level (Klasse <code>Level</code>) eingestellt werden;
+Log-Meldungen unterhalb des eingestellten Levels werden verworfen.</p>
+<p>Vom Logger nicht verworfene Log-Meldungen werden an den bzw. die Handler des
+Loggers und (per Default) an den Eltern-Logger weiter gereicht. Die Handler
+haben ebenfalls ein einstellbares Log-Level und verwerfen alle Nachrichten
+unterhalb der eingestellten Schwelle. Zur tatsächlichen Ausgabe gibt man einem
+Handler noch einen Formatter mit. Defaultmäßig hat nur der Root-Logger einen
+Handler.</p>
+<p>Der Root-Logger (leerer String als Name) hat als Default-Level (wie auch sein
+Console-Handler) &quot;<code>Info</code>&quot; eingestellt.</p>
+<p>Nachrichten, die durch Weiterleitung nach oben empfangen wurden, werden nicht
+am Log-Level des empfangenden Loggers gemessen, sondern akzeptiert und an die
+Handler des Loggers und (sofern nicht deaktiviert) an den Elternlogger weitergereicht.</p>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (YouTube)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://youtu.be/_jYWJzr1rkA' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Logging</a></li> <li><a href='https://youtu.be/fWSc5A_CPL8' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Logging (Überblick)</a></li> <li><a href='https://youtu.be/0UUVQCVYNHo' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Log-Level</a></li> <li><a href='https://youtu.be/dYOYA99EfrY' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Logging: Handler und Formatter</a></li> <li><a href='https://youtu.be/19Bki4IglWQ' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Weiterleitung an den Elternlogger</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/a91451640b7833daed3f6fb212fff9490ef6b8885783cc0297603a418055f1a8c2ff7b51f3cb9fb2c4344132eb95bef5af55201f8958f24d767dbd075120bce2' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Logging</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-lightbulb"></i> Lernziele
+  </div>
+  <div class="box-content">
+<ul> <li>(K3) Nutzung der Java Logging API im Paket <code>java.util.logging</code></li> <li>(K3) Erstellung eigener Handler und Formatter</li></ul>
+  </div>
+</div>
+
+
+
+
+    <h2 id="wie-prüfen-sie-die-werte-von-variablenobjekten">Wie prüfen Sie die Werte von Variablen/Objekten?</h2>
+<ol>
+<li>
+<p>Debugging</p>
+<ul>
+<li>Beeinflusst Code nicht</li>
+<li>Kann schnell komplex und umständlich werden</li>
+<li>Sitzung transient - nicht wiederholbar</li>
+</ul>
+</li>
+<li>
+<p>&quot;Poor-man's-debugging&quot; (Ausgaben mit <code>System.out.println</code>)</p>
+<ul>
+<li>Müssen irgendwann entfernt werden</li>
+<li>Ausgabe nur auf einem Kanal (Konsole)</li>
+<li>Keine Filterung nach Problemgrad - keine Unterscheidung
+zwischen Warnungen, einfachen Informationen, ...</li>
+</ul>
+</li>
+<li>
+<p><strong>Logging</strong></p>
+<ul>
+<li>Verschiedene (Java-) Frameworks:
+<code>java.util.logging</code> (JDK), <em>log4j</em> (Apache), <em>SLF4J</em>, <em>Logback</em>, ...</li>
+</ul>
+</li>
+</ol>
+<h2 id="java-logging-api---überblick">Java Logging API - Überblick</h2>
+<p>Paket <code>java.util.logging</code></p>
+<p><a href="#R-image-84c41ef971f6a89c86123bb43d2e7a38" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging/logging.png?width=80%25&height=auto" style=" height: auto; width: 80%;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-84c41ef971f6a89c86123bb43d2e7a38"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging/logging.png?width=80%25&height=auto"></a></p>
+<p>Eine Applikation kann verschiedene Logger instanziieren. Die Logger bauen
+per Namenskonvention hierarchisch aufeinander auf. Jeder Logger kann selbst
+mehrere Handler haben, die eine Log-Nachricht letztlich auf eine bestimmte
+Art und Weise an die Außenwelt weitergeben.</p>
+<p>Log-Meldungen werden einem Level zugeordnet. Jeder Logger und Handler hat
+ein Mindest-Level eingestellt, d.h. Nachrichten mit einem kleineren Level
+werden verworfen.</p>
+<p>Zusätzlich gibt es noch Filter, mit denen man Nachrichten (zusätzlich zum
+Log-Level) nach weiteren Kriterien filtern kann.</p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/logging/LoggingDemo.java" target="_blank"><span class="title">Konsole: logging.LoggingDemo</span></a></span></div>
+<h2 id="erzeugen-neuer-logger">Erzeugen neuer Logger</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.logging.Logger;
+</span></span><span style="display:flex;"><span>Logger l <span style="color:#f92672">=</span> Logger.<span style="color:#a6e22e">getLogger</span>(MyClass.<span style="color:#a6e22e">class</span>.<span style="color:#a6e22e">getName</span>());</span></span></code></pre></div>
+<ul>
+<li>
+<p><span class='alert'><strong>Factory-Methode</strong></span> der Klasse <code>java.util.logging.Logger</code></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Logger <span style="color:#a6e22e">getLogger</span>(String name);</span></span></code></pre></div>
+<p>=&gt; Methode liefert bereits <strong>vorhandenen Logger</strong> mit diesem Namen (sonst neuen Logger)</p>
+</li>
+<li>
+<p><span class='alert'><strong>Best Practice</strong></span>:
+Nutzung des voll-qualifizierten Klassennamen: <code>MyClass.class.getName()</code></p>
+<ul>
+<li>Leicht zu implementieren</li>
+<li>Leicht zu erklären</li>
+<li>Spiegelt modulares Design</li>
+<li>Ausgaben enthalten automatisch Hinweis auf Herkunft (Lokalität) der Meldung</li>
+<li><strong>Alternativen</strong>: Funktionale Namen wie &quot;XML&quot;, &quot;DB&quot;, &quot;Security&quot;</li>
+</ul>
+</li>
+</ul>
+<h2 id="ausgabe-von-logmeldungen">Ausgabe von Logmeldungen</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">log</span>(Level level, String msg);</span></span></code></pre></div>
+<ul>
+<li>
+<p>Diverse Convenience-Methoden (Auswahl):</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">warning</span>(String msg)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">info</span>(String msg)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">entering</span>(String srcClass, String srcMethod)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">exiting</span>(String srcClass, String srcMethod)</span></span></code></pre></div>
+</li>
+<li>
+<p>Beispiel</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.logging.Logger;
+</span></span><span style="display:flex;"><span>Logger l <span style="color:#f92672">=</span> Logger.<span style="color:#a6e22e">getLogger</span>(MyClass.<span style="color:#a6e22e">class</span>.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>l.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;Hello World :-)&#34;</span>);</span></span></code></pre></div>
+</li>
+</ul>
+<h2 id="wichtigkeit-von-logmeldungen-stufen">Wichtigkeit von Logmeldungen: Stufen</h2>
+<ul>
+<li>
+<p><code>java.util.logger.Level</code> definiert 7 Stufen:</p>
+<ul>
+<li><code>SEVERE</code>, <code>WARNING</code>, <code>INFO</code>, <code>CONFIG</code>, <code>FINE</code>, <code>FINER</code>, <code>FINEST</code>
+(von höchster zu niedrigster Prio)</li>
+<li>Zusätzlich <code>ALL</code> und <code>OFF</code></li>
+</ul>
+</li>
+<li>
+<p>Nutzung der Log-Level:</p>
+<ul>
+<li>Logger hat Log-Level: Meldungen mit kleinerem Level werden verworfen</li>
+<li>Prüfung mit <code>public boolean isLoggable(Level)</code></li>
+<li>Setzen mit <code>public void setLevel(Level)</code></li>
+</ul>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/logging/LoggingLevel.java" target="_blank"><span class="title">Konsole: logging.LoggingLevel</span></a></span></div>
+<p>=&gt; Warum wird im Beispiel nach <code>log.setLevel(Level.ALL);</code> trotzdem nur
+ab <code>INFO</code> geloggt? Wer erzeugt eigentlich die Ausgaben?!</p>
+<h2 id="jemand-muss-die-arbeit-machen-">Jemand muss die Arbeit machen ...</h2>
+<ul>
+<li>
+<p>Pro Logger <strong>mehrere</strong> Handler möglich</p>
+<ul>
+<li>Logger übergibt nicht verworfene Nachrichten an Handler</li>
+<li>Handler haben selbst ein Log-Level (analog zum Logger)</li>
+<li>Handler verarbeiten die Nachrichten, wenn Level ausreichend</li>
+</ul>
+</li>
+<li>
+<p>Standard-Handler: <code>StreamHandler</code>, <code>ConsoleHandler</code>, <code>FileHandler</code></p>
+</li>
+<li>
+<p>Handler nutzen zur Formatierung der Ausgabe einen <code>Formatter</code></p>
+</li>
+<li>
+<p>Standard-Formatter: <code>SimpleFormatter</code> und <code>XMLFormatter</code></p>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/logging/LoggingHandler.java" target="_blank"><span class="title">Konsole: logging.LoggingHandler</span></a></span></div>
+<p>=&gt; Warum wird im Beispiel nach dem Auskommentieren von
+<code>log.setUseParentHandlers(false);</code> immer noch eine zusätzliche Ausgabe
+angezeigt (ab <code>INFO</code> aufwärts)?!</p>
+<h2 id="ich--bin--dein--vater-">Ich ... bin ... Dein ... Vater ...</h2>
+<ul>
+<li>
+<p>Logger bilden <span class='alert'><strong>Hierarchie</strong></span> über Namen</p>
+<ul>
+<li>Trenner für Namenshierarchie: &quot;<code>.</code>&quot; (analog zu Packages) =&gt; mit jedem &quot;<code>.</code>&quot; wird eine weitere Ebene der Hierarchie aufgemacht ...</li>
+<li>Jeder Logger kennt seinen Eltern-Logger: <code>Logger#getParent()</code></li>
+<li>Basis-Logger: leerer Name (<code>&quot;&quot;</code>)
+<ul>
+<li>Voreingestelltes Level des Basis-Loggers: <code>Level.INFO</code> (!)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Weiterleiten von Nachrichten</p>
+<ul>
+<li>Nicht verworfene Log-Aufrufe werden an Eltern-Logger weitergeleitet (Default)
+<ul>
+<li>Abschalten mit <code>Logger#setUseParentHandlers(false);</code></li>
+</ul>
+</li>
+<li>Diese leiten an ihre Handler sowie an ihren Eltern-Logger weiter (unabhängig von Log-Level!)</li>
+</ul>
+</li>
+</ul>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/logging/LoggingParent.java" target="_blank"><span class="title">Konsole: logging.LoggingParent; Tafel: Skizze Logger-Baum</span></a></span></div>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>
+<p>Java Logging API im Paket <code>java.util.logging</code></p>
+</li>
+<li>
+<p>Neuer Logger über <strong>Factory-Methode</strong> der Klasse <code>Logger</code></p>
+<ul>
+<li>Einstellbares Log-Level (Klasse <code>Level</code>)</li>
+<li>Handler kümmern sich um die Ausgabe, nutzen dazu Formatter</li>
+<li>Mehrere Handler je Logger registrierbar</li>
+<li>Log-Level auch für Handler einstellbar (!)</li>
+<li>Logger (und Handler) &quot;interessieren&quot; sich nur für Meldungen ab
+bestimmter Wichtigkeit</li>
+<li>Logger reichen nicht verworfene Meldungen defaultmäßig an
+Eltern-Logger weiter (rekursiv)</li>
+</ul>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-user-check"></i> Quizzes
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106228&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Logging (ILIAS)</a></li></ul>
+  </div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fas fa-puzzle-piece"></i> Challenges
+  </div>
+  <div class="box-content">
+<p><strong>Logger-Konfiguration</strong></p>
+<p>Betrachten Sie den folgenden Java-Code:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.logging.*;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Logging</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String... args) {
+</span></span><span style="display:flex;"><span>        Logger l <span style="color:#f92672">=</span> Logger.<span style="color:#a6e22e">getLogger</span>(<span style="color:#e6db74">&#34;Logging&#34;</span>);
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">setLevel</span>(Level.<span style="color:#a6e22e">FINE</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        ConsoleHandler myHandler <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConsoleHandler();
+</span></span><span style="display:flex;"><span>        myHandler.<span style="color:#a6e22e">setFormatter</span>(<span style="color:#66d9ef">new</span> SimpleFormatter() {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">format</span>(LogRecord record) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;WUPPIE\n&#34;</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">addHandler</span>(myHandler);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;A&#34;</span>);
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">fine</span>(<span style="color:#e6db74">&#34;B&#34;</span>);
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">finer</span>(<span style="color:#e6db74">&#34;C&#34;</span>);
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">finest</span>(<span style="color:#e6db74">&#34;D&#34;</span>);
+</span></span><span style="display:flex;"><span>        l.<span style="color:#a6e22e">severe</span>(<span style="color:#e6db74">&#34;E&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Welche Ausgaben entstehen durch den obigen Code? Erklären Sie, welche der Logger-Aufrufe zu einer Ausgabe
+führen und wieso und wie diese Ausgaben zustande kommen bzw. es keine Ausgabe bei einem Logger-Aufruf gibt.
+Gehen Sie dabei auf jeden der fünf Aufrufe ein.</p>
+<p><strong>Analyse eines Live-Beispiels aus dem Dungeon</strong></p>
+<p>Analysieren Sie die Konfiguration des Loggers im Dungeon-Projekt:
+<a href="https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/core/utils/logging/LoggerConfig.java" rel="external" target="_blank">Dungeon-CampusMinden/Dungeon: core/utils/logging/LoggerConfig.java</a>.</p>
+  </div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-book-reader"></i> Quellen
+  </div>
+  <div class="box-content">
+<ul> <li id='id_JDK-Doc'>[JDK-Doc] <a href='https://docs.oracle.com/en/java/javase/17/core/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java Core Libraries Developer Guide</strong></a><br>Oracle Corporation, 2022.</li></ul>
+  </div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+
+
+<a id="logo" href='https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234//index.html'>
+    <img style="max-width:35%" alt="icon" src='/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png'>
+</a>
+
+        </div>
+
+        <search><form action="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/search.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['de'];
+        </script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/auto-complete.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.min.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.stemmer.support.min.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.multi.min.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.de.min.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/search.js?1742890647" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html">Git</a><ul id="R-subsections-b7b75b08ea746eeb407fc7d37ea4cda5" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html">Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html">Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html">Branches</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">Branching-Strategien</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html">Remotes</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">Workflows</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern.html">Modern Java</a><ul id="R-subsections-3723b9528838f9939f841b73dfbd900f" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/lambdas.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/lambdas.html">Lambda-Ausdrücke</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/methodreferences.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/methodreferences.html">Methoden-Referenzen</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/stream-api.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/stream-api.html">Stream-API</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records.html">Records</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/optional.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/optional.html">Optional</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/defaultmethods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/defaultmethods.html">Default-Methoden</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html">Building</a><ul id="R-subsections-f4e18db244c71e7d5fbee7579907c4cd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html">Gradle</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html">Continuous Integration</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/docker.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/docker.html">Docker</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic.html" class="parent "><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic.html">Java / JVM</a><ul id="R-subsections-9d37273ec84dd05c502ff515d59cd93d" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging.html" class="active"><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging.html">Logging</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/regexp.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/regexp.html">RegExp</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations.html">Annotationen</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-classes-methods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-classes-methods.html">Generics: Klassen &amp; Methoden</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-bounds-wildcards.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-bounds-wildcards.html">Generics: Bounds &amp; Wildcards</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure.html">Generics: Type Erasure</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-polymorphism.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-polymorphism.html">Generics: Polymorphie</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-intro.html">Threads: Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-synchronisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-synchronisation.html">Threads: Synchronisation</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-highlevel.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-highlevel.html">Threads: High-Level Concurrency</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/reflection.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/reflection.html">Reflection</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality.html">Softwarequalität</a><ul id="R-subsections-827d0119153086d7fcf6d18c82fc3217" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testing-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testing-intro.html">Intro SW-Test</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/junit-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/junit-basics.html">JUnit-Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testcases.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testcases.html">Testfallermittlung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/mockito.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/mockito.html">Mocking</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/smells.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/smells.html">Code Smells</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/codingrules.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/codingrules.html">Coding Conventions</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/refactoring.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/refactoring.html">Refactoring</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html">Javadoc</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html">Pattern</a><ul id="R-subsections-88c6ccdca00adeca83d4957e66bb44bd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html">Visitor</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html">Observer</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html">Template-Method</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html">Command</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc.html">Misc</a><ul id="R-subsections-0a1f7eaf2b0a93eaa6748b7594755ae4" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc/dungeon.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc/dungeon.html">How-To Dungeon</a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#kursformat"><i class='fas fa-bookmark'></i> Zeiten</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> Fahrplan</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#pr%C3%BCfungsform-note-und-credits"><i class='fas fa-bookmark'></i> Note/Credits</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> News</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging.html" lang="de-DE" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                      <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                      <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-select-variant-relearn-bright" value="relearn-bright">Relearn Bright</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter"><p style="text-align: center;">
+<i class='fab fa-fw fa-github'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">GitHub</a>
+<i class='fas fa-fw fa-tags'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/issues">Issues</a>
+<i class='fas fa-fw fa-bullhorn'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">Credits</a>
+<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+
+</p>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1742890647" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1742890647" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1742890647"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1742890647" defer></script>
+  </body>
+</html>

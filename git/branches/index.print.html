@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 6.4.1">
+    <meta name="description" content="Neues Feature entwickeln/ausprobieren A---B---C master Bisher nur lineare Entwicklung: Commits bauen aufeinander auf (lineare Folge von Commits) master ist der (Default-) Hauptentwicklungszweig Pointer auf letzten Commit Default-Name: &#34;master&#34; (muss aber nicht so sein bzw. kann geändert werden) Anmerkung: Git und auch Github haben den Namen für den Default-Branch von master auf maingeändert. Der Name an sich ist aber für Git bedeutungslos und kann mittels git config --global init.defaultBranch &lt;name&gt; geändert werden. In Github hat der Default-Branch eine gewisse Bedeutung, beispielsweise ist der Default-Branch das automatische Ziel beim Anlegen von Pull-Requests. In Github kann man den Default-Namen global in den User-Einstellungen (Abschnitt &#34;Repositories&#34;) und für jedes einzelne Repository in den Repo-Einstellungen (Abschnitt &#34;Branches&#34;) ändern.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Git Branches: Features unabhängig entwickeln und mit Git verwalten">
+    <meta name="twitter:description" content="Neues Feature entwickeln/ausprobieren A---B---C master Bisher nur lineare Entwicklung: Commits bauen aufeinander auf (lineare Folge von Commits) master ist der (Default-) Hauptentwicklungszweig Pointer auf letzten Commit Default-Name: &#34;master&#34; (muss aber nicht so sein bzw. kann geändert werden) Anmerkung: Git und auch Github haben den Namen für den Default-Branch von master auf maingeändert. Der Name an sich ist aber für Git bedeutungslos und kann mittels git config --global init.defaultBranch &lt;name&gt; geändert werden. In Github hat der Default-Branch eine gewisse Bedeutung, beispielsweise ist der Default-Branch das automatische Ziel beim Anlegen von Pull-Requests. In Github kann man den Default-Namen global in den User-Einstellungen (Abschnitt &#34;Repositories&#34;) und für jedes einzelne Repository in den Repo-Einstellungen (Abschnitt &#34;Branches&#34;) ändern.">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html">
+    <meta property="og:title" content="Git Branches: Features unabhängig entwickeln und mit Git verwalten">
+    <meta property="og:description" content="Neues Feature entwickeln/ausprobieren A---B---C master Bisher nur lineare Entwicklung: Commits bauen aufeinander auf (lineare Folge von Commits) master ist der (Default-) Hauptentwicklungszweig Pointer auf letzten Commit Default-Name: &#34;master&#34; (muss aber nicht so sein bzw. kann geändert werden) Anmerkung: Git und auch Github haben den Namen für den Default-Branch von master auf maingeändert. Der Name an sich ist aber für Git bedeutungslos und kann mittels git config --global init.defaultBranch &lt;name&gt; geändert werden. In Github hat der Default-Branch eine gewisse Bedeutung, beispielsweise ist der Default-Branch das automatische Ziel beim Anlegen von Pull-Requests. In Github kann man den Default-Namen global in den User-Einstellungen (Abschnitt &#34;Repositories&#34;) und für jedes einzelne Repository in den Repo-Einstellungen (Abschnitt &#34;Branches&#34;) ändern.">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Git Branches: Features unabhängig entwickeln und mit Git verwalten">
+    <meta itemprop="description" content="Neues Feature entwickeln/ausprobieren A---B---C master Bisher nur lineare Entwicklung: Commits bauen aufeinander auf (lineare Folge von Commits) master ist der (Default-) Hauptentwicklungszweig Pointer auf letzten Commit Default-Name: &#34;master&#34; (muss aber nicht so sein bzw. kann geändert werden) Anmerkung: Git und auch Github haben den Namen für den Default-Branch von master auf maingeändert. Der Name an sich ist aber für Git bedeutungslos und kann mittels git config --global init.defaultBranch &lt;name&gt; geändert werden. In Github hat der Default-Branch eine gewisse Bedeutung, beispielsweise ist der Default-Branch das automatische Ziel beim Anlegen von Pull-Requests. In Github kann man den Default-Namen global in den User-Einstellungen (Abschnitt &#34;Repositories&#34;) und für jedes einzelne Repository in den Repo-Einstellungen (Abschnitt &#34;Branches&#34;) ändern.">
+    <meta itemprop="wordCount" content="1459">
+    <title>Git Branches: Features unabhängig entwickeln und mit Git verwalten</title>
+    <link href="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html" rel="canonical" type="text/html" title="Git Branches: Features unabhängig entwickeln und mit Git verwalten">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1742890647" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1742890647" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1742890647" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1742890647" rel="stylesheet" media="print">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/format-print.css?1742890647" rel="stylesheet">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1742890647"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1742890647";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support print disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Git Branches: Features unabhängig entwickeln und mit Git verwalten
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Git Branches: Features unabhängig entwickeln und mit Git verwalten</h1>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-graduation-cap"></i> TL;DR
+  </div>
+  <div class="box-content">
+<p>Die Commits in Git bauen aufeinander auf und bilden dabei eine verkettete &quot;Liste&quot;. Diese &quot;Liste&quot; nennt man
+auch <em>Branch</em> (Entwicklungszweig). Beim Initialisieren eines Repositories wird automatisch ein Default-Branch
+angelegt, auf dem die Commits dann eingefügt werden.</p>
+<p>Weitere Branches kann man mit <code>git branch</code> anlegen, und die Workingcopy kann mit <code>git switch</code> oder <code>git checkout</code>
+auf einen anderen Branch umgeschaltet werden. Auf diese Weise kann man an mehreren Features parallel arbeiten,
+ohne dass die Arbeiten sich gegenseitig stören.</p>
+<p>Zum Mergen (Vereinigen) von Branches gibt es <code>git merge</code>. Dabei werden die Änderungen im angegebenen Branch in
+den aktuell in der Workingcopy ausgecheckten Branch integriert und hier ggf. ein neuer Merge-Commit erzeugt. Falls
+es in beiden Branches inkompatible Änderungen an der selben Stelle gab, entsteht beim Mergen ein Merge-Konflikt.
+Dabei zeigt Git in den betroffenen Dateien jeweils an, welche Änderung aus welchem Branch stammt und man muss
+diesen Konflikt durch Editieren der Stellen manuell beheben.</p>
+<p>Mit <code>git rebase</code> kann die Wurzel eines Branches an eine andere Stelle verschoben werden. Dies wird später bei
+Workflows eine Rolle spielen.</p>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (YouTube)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://youtu.be/WXPJOsgeR10' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Git Branches</a></li> <li><a href='https://youtu.be/B8sesK1GyiE' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Anlegen und Mergen von Branches</a></li> <li><a href='https://youtu.be/iEr9i8auF7c' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo Auflösen von Merge-Konflikten</a></li> <li><a href='https://youtu.be/U4gd0FBBqZQ' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Demo HEAD</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/858546c533e356ef9cdbf1341719281a76d4f9b4405b654dfa6e96c0043ebb87a098da0d8bdca88088d1deb52433f117ab880c24495ce6dafa64ba02cfaabcf2' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Git Branches</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+        
+        
+        
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-lightbulb"></i> Lernziele
+  </div>
+  <div class="box-content">
+<ul> <li>(K3) Erzeugen von Branches</li> <li>(K3) Mergen von Branches, Auflösen möglicher Konflikte</li> <li>(K3) Rebasen von Branches</li></ul>
+  </div>
+</div>
+
+
+
+
+    <h2 id="neues-feature-entwickelnausprobieren">Neues Feature entwickeln/ausprobieren</h2>
+<pre><code>A---B---C  master
+</code></pre>
+<ul>
+<li>Bisher nur lineare Entwicklung: Commits bauen aufeinander auf (lineare Folge von Commits)</li>
+<li><code>master</code> ist der (Default-) Hauptentwicklungszweig
+<ul>
+<li>Pointer auf letzten Commit</li>
+<li>Default-Name: &quot;<code>master</code>&quot; (muss aber nicht so sein bzw. kann geändert werden)</li>
+</ul>
+</li>
+</ul>
+<p><em>Anmerkung</em>: Git und auch Github haben den Namen für den Default-Branch von <code>master</code>
+auf <code>main</code>geändert. Der Name an sich ist aber für Git bedeutungslos und kann mittels
+<code>git config --global init.defaultBranch &lt;name&gt;</code> geändert werden. In Github hat der
+Default-Branch eine gewisse Bedeutung, beispielsweise ist der Default-Branch das
+automatische Ziel beim Anlegen von Pull-Requests. In Github kann man den Default-Namen
+global in den User-Einstellungen (Abschnitt &quot;Repositories&quot;) und für jedes einzelne
+Repository in den Repo-Einstellungen (Abschnitt &quot;Branches&quot;) ändern.</p>
+<p>Entwicklung des neuen Features soll stabilen <code>master</code>-Branch nicht beeinflussen
+=&gt; Eigenen Entwicklungszweig für die Entwicklung des Features anlegen:</p>
+<ol>
+<li>Neuen Branch erstellen: <code>git branch wuppie</code></li>
+<li>Neuen Branch auschecken: <code>git checkout wuppie</code> oder <code>git switch wuppie</code></li>
+</ol>
+<p>Alternativ: <code>git checkout -b wuppie</code> oder <code>git switch -c wuppie</code> (neuer Branch und auschecken in einem Schritt)</p>
+<pre><code>A---B---C  master, wuppie
+</code></pre>
+<p>Startpunkt: prinzipiell beliebig (jeder Commit in der Historie möglich).</p>
+<p>Die gezeigten Beispiel zweigen den neuen Branch direkt vom aktuell ausgecheckten
+Commit/Branch ab. Also aufpassen, was gerade in der Workingcopy los ist!</p>
+<p>Alternativ nutzen Sie die Langform: <code>git branch wuppie master</code> (mit <code>master</code> als
+Startpunkt; hier kann jeder beliebige Branch, Tag oder Commit genutzt werden).</p>
+<p>Nach Anlegen des neuen Branches zeigen beide Pointer auf den selben Commit.</p>
+<p><em>Anmerkung</em>: In neueren Git-Versionen wurde der Befehl &quot;<code>switch</code>&quot; eingeführt,
+mit dem Sie in der Workingcopy auf einen anderen Branch wechseln können. Der
+bisherige Befehl &quot;<code>checkout</code>&quot; funktioniert aber weiterhin.</p>
+<h2 id="arbeiten-im-entwicklungszweig-">Arbeiten im Entwicklungszweig ...</h2>
+<pre><code>          D  wuppie
+         /
+A---B---C  master
+</code></pre>
+<ul>
+<li>Entwicklung des neuen Features erfolgt im eigenen Branch: beeinflusst den
+stabilen <code>master</code>-Branch nicht</li>
+<li>Wenn in der Workingcopy der Feature-Branch ausgecheckt ist, gehen die
+Commits in den Feature-Branch; der <code>master</code> bleibt auf dem alten Stand</li>
+<li>Wenn der <code>master</code> ausgecheckt wäre, würden die Änderungen in den <code>master</code>
+gehen, d.h. der <code>master</code> würde sich ab Commit <code>C</code> parallel zu <code>wuppie</code>
+entwickeln</li>
+</ul>
+<h2 id="problem-fehler-im-ausgelieferten-produkt">Problem: Fehler im ausgelieferten Produkt</h2>
+<pre><code>          D  wuppie
+         /
+A---B---C  master
+</code></pre>
+<p>Fix für <code>master</code> nötig:</p>
+<ol>
+<li><code>git checkout master</code></li>
+<li><code>git checkout -b fix</code></li>
+<li>Änderungen in <code>fix</code> vornehmen ...</li>
+</ol>
+<p>Das führt zu dieser Situation:</p>
+<pre><code>          D  wuppie
+         /
+A---B---C  master
+         \
+          E  fix
+</code></pre>
+<p><code>git checkout &lt;branchname&gt;</code> holt den aktuellen Stand des jeweiligen
+Branches in die Workingcopy. (Das geht in neueren Git-Versionen auch
+mit <code>git switch &lt;branchname&gt;</code>.)</p>
+<p>Man kann weitere Branches anlegen, d.h. hier im Beispiel ein neuer
+Feature-Branch <code>fix</code>, der auf dem <code>master</code> basiert. Analog könnte man
+auch Branches auf der Basis von <code>wuppie</code> anlegen ...</p>
+<h2 id="fix-ist-stabil-integration-in-master">Fix ist stabil: Integration in <em>master</em></h2>
+<pre><code>          D  wuppie
+         /
+A---B---C  master
+         \
+          E  fix
+</code></pre>
+<ol>
+<li><code>git checkout master</code></li>
+<li><code>git merge fix</code> =&gt; <span class='alert'><strong>fast forward</strong></span> von <code>master</code></li>
+<li><code>git branch -d fix</code></li>
+</ol>
+<p>Der letzte Schritt entfernt den Branch <code>fix</code>.</p>
+<pre><code>          D  wuppie
+         /
+A---B---C---E  master
+</code></pre>
+<ul>
+<li>
+<p>Allgemein: <code>git merge &lt;branchname&gt;</code> führt die Änderungen im angegebenen Branch
+<code>&lt;branchname&gt;</code> in den aktuell in der Workingcopy ausgecheckten Branch ein. Daraus
+resultiert für den aktuell ausgecheckten Branch ein neuer Commit, der Branch
+<code>&lt;branchname&gt;</code> bleibt dagegen auf seinem bisherigen Stand.</p>
+<p>Beispiel:</p>
+<ul>
+<li>Die Workingcopy ist auf <code>A</code></li>
+<li><code>git merge B</code> führt <code>A</code> und <code>B</code> zusammen: <code>B</code> wird <strong>in</strong> <code>A</code> gemergt</li>
+<li>Wichtig: Der Merge-Commit (sofern nötig) findet hierbei in <code>A</code> statt!</li>
+</ul>
+<p>In der Abbildung ist <code>A</code> der <code>master</code> und <code>B</code> der <code>fix</code>.</p>
+</li>
+<li>
+<p>Nach dem Merge existieren beide Branches weiter (sofern sie nicht explizit
+gelöscht werden)</p>
+</li>
+<li>
+<p>Hier im Beispiel findet ein sogenannter &quot;Fast forward&quot; statt.</p>
+<p>&quot;Fast forward&quot; ist ein günstiger Spezialfall beim Merge: Beide Branches
+liegen in einer direkten Kette, d.h. der Zielbranch kann einfach
+&quot;weitergeschaltet&quot; werden. Ein Merge-Commit ist in diesem Fall nicht
+notwendig und wird auch nicht angelegt.</p>
+</li>
+</ul>
+<h2 id="feature-weiter-entwickeln-">Feature weiter entwickeln ...</h2>
+<pre><code>          D---F  wuppie
+         /
+A---B---C---E  master
+</code></pre>
+<ol>
+<li><code>git switch wuppie</code></li>
+<li>Weitere Änderungen im Branch <code>wuppie</code> ...</li>
+</ol>
+<p><code>git switch &lt;branchname&gt;</code> holt den aktuellen Stand des jeweiligen Branches in
+die Workingcopy. Man kann also jederzeit in der Workingcopy die Branches wechseln
+und entsprechend weiterarbeiten.</p>
+<p><em>Hinweis</em>: Während der neue <code>git switch</code>-Befehl nur Branches umschalten kann,
+funktioniert <code>git checkout</code> sowohl mit Branchnamen und Dateinamen - damit kann
+man also auch eine andere Version einer Datei in der Workingcopy &quot;auschecken&quot;.
+Falls gleiche Branch- und Dateinamen existieren, muss man für das Auschecken
+einer Datei noch &quot;<code>--</code>&quot; nutzen: <code>git checkout -- &lt;dateiname&gt;</code>.</p>
+<h2 id="feature-ist-stabil-integration-in-master">Feature ist stabil: Integration in <em>master</em></h2>
+<pre><code>          D---F  wuppie                            D---F  wuppie
+         /                     =&gt;                 /     \
+A---B---C---E  master                    A---B---C---E---G  master
+</code></pre>
+<ol>
+<li><code>git checkout master</code></li>
+<li><code>git merge wuppie</code> =&gt; Kein <em>fast forward</em> möglich: Git sucht nach gemeinsamen Vorgänger</li>
+</ol>
+<p>Hier im Beispiel ist der Standardfall beim Mergen dargestellt: Die beiden
+Branches liegen nicht in einer direkten Kette von Commits, d.h. hier wurde
+parallel weitergearbeitet.</p>
+<p>Git sucht in diesem Fall nach dem gemeinsamen Vorgänger beider Branches und
+führt die jeweiligen Änderungen (Differenzen) seit diesem Vorgänger in einem
+Merge-Commit zusammen.</p>
+<p>Im <code>master</code> entsteht ein neuer Commit, da kein <em>fast forward</em> beim
+Zusammenführen der Branches möglich!</p>
+<p><em>Anmerkung</em>: <code>git checkout wuppie; git merge master</code> würde den <code>master</code> in den
+<code>wuppie</code> mergen, d.h. der Merge-Commit wäre dann in <code>wuppie</code>.</p>
+<p>Beachten Sie dabei die &quot;Merge-Richtung&quot;:</p>
+<ul>
+<li>Die Workingcopy ist auf <code>A</code></li>
+<li><code>git merge B</code> führt <code>A</code> und <code>B</code> zusammen: <code>B</code> wird <strong>in</strong> <code>A</code> gemergt</li>
+<li>Wichtig: Der Merge-Commit (sofern nötig) findet hierbei in <code>A</code> statt!</li>
+</ul>
+<p>In der Abbildung ist <code>A</code> der <code>master</code> und <code>B</code> der <code>wuppie</code>.</p>
+<p><strong>Achtung</strong>: Richtung beachten! <code>git checkout A; git merge B</code> führt beide Branches zusammen,
+genauer: führt die Änderungen von <code>B</code> in <code>A</code> ein, d.h. der entsprechende Merge-Commit ist in <code>A</code>!</p>
+<h2 id="konflikte-beim-mergen">Konflikte beim Mergen</h2>
+<p>(Parallele) Änderungen an selber Stelle =&gt; Merge-Konflikte</p>
+<pre><code>$ git merge wuppie
+Auto-merging hero.java
+CONFLICT (content): Merge conflict in hero.java
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre>
+<p>Git fügt Konflikt-Marker in die Datei ein:</p>
+<pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:hero.java
+public void getActiveAnimation() {
+    return null;
+=======
+public Animation getActiveAnimation() {
+    return this.idleAnimation;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; wuppie:hero.java
+</code></pre>
+<ul>
+<li>Der Teil mit <code>HEAD</code> ist aus dem aktuellen Branch in der Workingcopy</li>
+<li>Der Teil aus dem zu mergenden Branch ist unter <code>wuppie</code> notiert</li>
+<li>Das <code>=======</code> trennt beide Bereiche</li>
+</ul>
+<h2 id="merge-konflikte-auflösen">Merge-Konflikte auflösen</h2>
+<p>Manuelles Editieren nötig (Auflösung des Konflikts):</p>
+<ol>
+<li>Entfernen der Marker</li>
+<li>Hinzufügen der Datei zum Index</li>
+<li>Analog für restliche Dateien mit Konflikt</li>
+<li>Commit zum Abschließen des Merge-Vorgangs</li>
+</ol>
+<p>Alternativ: Nutzung graphischer Oberflächen mittels <code>git mergetool</code></p>
+<div style="text-align: right;"><span class="btn cstyle interactive default"><a href="https://youtu.be/B8sesK1GyiE" target="_blank"><span class="title">Konsole: Branchen und Mergen</span></a></span></div>
+<h2 id="rebasen-verschieben-von-branches">Rebasen: Verschieben von Branches</h2>
+<pre><code>          D---F  wuppie                            D---F  wuppie
+         /                     =&gt;                 /     \
+A---B---C---E  master                    A---B---C---E---G  master
+</code></pre>
+<p>Bisher haben wir Branches durch Mergen zusammengeführt. Dabei entsteht in der Regel ein extra
+Merge-Commit (im Beispiel <code>G</code>), außer es handelt sich um ein <em>fast forward</em>. Außerdem erkennt
+man in der Historie sehr gut, dass hier in einem separaten Branch gearbeitet wurde, der irgendwann
+in den <code>master</code> gemergt wurde.</p>
+<p>Leider wird dieses Vorgehen in großen Projekten recht schnell sehr unübersichtlich. Außerdem
+werden Merges in der Regeln nur von besonders berechtigten Personen (Manager) durchgeführt, die im
+Falle von Merge-Konflikten diese dann selbst auflösen müssten (ohne aber die fachliche Befähigung
+zu haben). Hier greift man dann häufig zur Alternative <em>Rebase</em>. Dabei wird der Ursprung eines
+Branches auf einen bestimmten Commit verschoben. Im Anschluss ist dann ein Merge mit <em>fast forward</em>,
+also ohne die typischen rautenförmigen Ketten in der Historie und ohne extra Merge-Commit möglich.
+Dies kann aber auch als Nachteil gesehen werden, da man in der Historie den früheren Branch nicht
+mehr erkennt! Ein weiterer schwerwiegender Nachteil ist, dass alle Commits im verschobenen Branch
+umgeschrieben werden und damit neue Commit-IDs bekommen. Das verursacht bei der Zusammenarbeit in
+Projekten massive Probleme! Als Vorteil gilt, dass man mögliche Merge-Konflikte bereits beim Rebasen
+auflösen muss, d.h. hier muss derjenige, der den Merge &quot;beantragt&quot;, durch einen vorherigen Rebase den
+konfliktfreien Merge sicherstellen. Mehr dazu in <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">&ldquo;Branching-Strategien&rdquo;</a>
+und <a href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">&ldquo;Workflows&rdquo;</a>.</p>
+<div class='columns'>
+<div class='column'>
+<pre><code>git rebase master wuppie
+</code></pre>
+<p>führt zu</p>
+</div>
+<div class='column'>
+<pre><code>              D'---F'  wuppie
+             /
+A---B---C---E  master
+</code></pre>
+</div>
+</div>
+<p>Nach dem Rebase von <code>wuppie</code> auf <code>master</code> sieht es so aus, als ob der Branch <code>wuppie</code>
+eben erst vom <code>master</code> abgezweigt wurde. Damit ist dann ein <em>fast forward</em> Merge von <code>wuppie</code>
+in den <code>master</code> möglich, d.h. es gibt keine Raute und auch keinen extra Merge-Commit (hier nicht
+gezeigt).</p>
+<p>Man beachte aber die Änderung der Commit-IDs von <code>wuppie</code>: Aus <code>D</code> wird <code>D'</code>! (Datum, Ersteller
+und Message bleiben aber erhalten.)</p>
+<h2 id="dont-lose-your-head">Don't lose your HEAD</h2>
+<ul>
+<li>
+<p>Branches sind wie Zeiger auf letzten Stand (Commit) eines Zweiges</p>
+</li>
+<li>
+<p><code>HEAD</code>: Spezieller Pointer</p>
+<ul>
+<li>Zeigt auf den aktuellen Branch der Workingcopy</li>
+</ul>
+</li>
+<li>
+<p>Früheren Commit auschecken (ohne Branch): &quot;headless state&quot;</p>
+<ul>
+<li>
+<p>Workingcopy ist auf früherem Commit</p>
+</li>
+<li>
+<p>Kein Branch =&gt; Änderungen gehen verloren!</p>
+<p>Eventuelle Änderungen würden ganz normal als Commits auf
+dem <code>HEAD</code>-Branch aufgezeichnet. Sobald man aber einen
+anderen Branch auscheckt, wird der <code>HEAD</code> auf diesen anderen
+Branch gesetzt, so dass die eben gemachten Commits &quot;in der
+Luft hängen&quot;. Sofern man die SHA's kennt, kommt man noch auf
+die Commits zurück. Allerdings laufen von Zeit zu Zeit interne
+Aufräum-Aktionen, so dass die Chance gut steht, dass die
+&quot;kopflosen&quot; Commits irgendwann tatsächlich verschwinden.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>Anlegen von Branches mit <code>git branch</code></li>
+<li>Umschalten der Workingcopy auf anderen Branch: <code>git checkout</code> oder <code>git switch</code></li>
+<li>Mergen von Branches und Auflösen von Konflikten: <code>git merge</code></li>
+<li>Verschieben von Branches mit <code>git rebase</code></li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+        
+        
+        
+            
+        
+    
+        
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-user-check"></i> Quizzes
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106242&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Git Branches (ILIAS)</a></li> <li><a href='https://learngitbranching.js.org/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Tutorial: Welcome to Learn Git Branching</a></li> <li><a href='https://marklodato.github.io/visual-git-guide/index-en.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Tutorial: A Visual Git Reference</a></li></ul>
+  </div>
+</div>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle note">
+  <div class="box-label">
+    <i class="fas fa-puzzle-piece"></i> Challenges
+  </div>
+  <div class="box-content">
+<p><strong>Branches und Merges</strong></p>
+<ol>
+<li>
+<p>Legen Sie in Ihrem Projekt einen Branch an. Ändern Sie einige Dateien
+und committen Sie die Änderungen. Checken Sie den Master-Branch aus und
+mergen Sie die Änderungen. Was beobachten Sie?</p>
+</li>
+<li>
+<p>Legen Sie einen weiteren Branch an. Ändern Sie einige Dateien und
+committen Sie die Änderungen. Checken Sie den Master-Branch aus und
+ändern Sie dort ebenfalls:</p>
+<ul>
+<li>Ändern Sie eine Datei an einer Stelle, die nicht bereits im Branch
+modifiziert wurde.</li>
+<li>Ändern Sie eine Datei an einer Stelle, die bereits im Branch
+manipuliert wurde.</li>
+</ul>
+<p>Committen Sie die Änderungen.</p>
+<p>Mergen Sie den Branch jetzt in den Master-Branch. Was beobachten Sie? Wie
+lösen Sie Konflikte auf?</p>
+</li>
+</ol>
+<p><strong>Mergen am Beispiel</strong></p>
+<p>Sie verwalten Ihr Projekt mit Git. Es existieren zwei Branches: <code>master</code> (zeigt
+auf Commit <span class="math align-center">$C$</span>) und <code>feature</code> (zeigt auf Version <span class="math align-center">$F$</span>). In Ihrer Workingcopy
+haben Sie den Branch <code>feature</code> ausgecheckt:</p>
+<p><a href="#R-image-16feb4754966e220587c8a9b8e6e6542" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/before.png?raw=true?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-16feb4754966e220587c8a9b8e6e6542"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/before.png?raw=true?width=auto&height=auto"></a></p>
+<p>(1) Mit welcher Befehlsfolge können Sie den Branch <code>feature</code> in den Branch <code>master</code>
+mergen, so dass nach dem Merge die im folgenden Bild dargestellte Situation
+entsteht?</p>
+<p><a href="#R-image-d1f9f7e3514c54c0719972602e9e0ca0" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/after.png?raw=true?width=auto&height=auto" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d1f9f7e3514c54c0719972602e9e0ca0"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/after.png?raw=true?width=auto&height=auto"></a></p>
+<p>(Der Merge läuft ohne Konflikte ab. Es ist irrelevant, welcher Branch am Ende
+in der Workingcopy ausgecheckt ist.)</p>
+<p>(2) Wie können Sie erreichen, dass es keinen Merge-Commit gibt, sondern dass die Änderungen
+in <span class="math align-center">$D$</span> und <span class="math align-center">$F$</span> im <code>master</code> als eine lineare Folge von Commits erscheinen?</p>
+<p><strong>Interaktive Git-Tutorials</strong>: Schaffen Sie die Rätsel?</p>
+<ul>
+<li><a href="https://learngitbranching.js.org/" rel="external" target="_blank">Learn Git Branching</a></li>
+<li><a href="https://ohmygit.org/" rel="external" target="_blank">Oh My Git!</a></li>
+<li><a href="https://git.bradwoods.io/" rel="external" target="_blank">Git Time</a></li>
+</ul>
+  </div>
+</div>
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-book-reader"></i> Quellen
+  </div>
+  <div class="box-content">
+<ul> <li id='id_AtlassianGit'>[AtlassianGit] <a href='https://www.atlassian.com/git/tutorials' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Become a git guru.</strong></a><br>Atlassian Pty Ltd, 2022.</li> <li id='id_Chacon2014'>[Chacon2014] <a href='https://git-scm.com/book/en/v2' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Pro Git</strong></a><br>Chacon, S. und Straub, B., Apress, 2014. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-1-4842-0077-3</a>.<br><em>Kapitel 3</em></li> <li id='id_GitCheatSheet'>[GitCheatSheet] <a href='https://training.github.com/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Git Cheat Sheets</strong></a><br>Github Inc., 2022.</li></ul>
+  </div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+
+        </div>
+      </main>
+    </div>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1742890647" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1742890647" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1742890647"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1742890647" defer></script>
+  </body>
+</html>

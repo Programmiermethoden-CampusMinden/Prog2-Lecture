@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="de-DE" dir="ltr" itemscope itemtype="http://schema.org/Article">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 6.4.1">
+    <meta name="description" content="Typ-Löschung (Type-Erasure) Der Compiler ersetzt nach Prüfung der Typen und ihrer Verwendung alle Typ-Parameter durch
+deren obere (Typ-)Schranke und passende explizite Cast-Operationen (im Byte-Code). Die obere Typ-Schranke ist in der Regel der Typ der ersten Bounds-Klausel oder Object, wenn keine Einschränkungen formuliert sind.
+Bei parametrisierten Typen wie List&lt;T&gt; wird der Typ-Parameter entfernt, es entsteht ein sogenannter Raw-Typ (List, quasi implizit mit Object parametrisiert).
+=&gt; Ergebnis: Nur eine (untypisierte) Klasse! Zur Laufzeit gibt es keine Generics mehr!">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Generics: Type Erasure">
+    <meta name="twitter:description" content="Typ-Löschung (Type-Erasure) Der Compiler ersetzt nach Prüfung der Typen und ihrer Verwendung alle Typ-Parameter durch
+deren obere (Typ-)Schranke und passende explizite Cast-Operationen (im Byte-Code). Die obere Typ-Schranke ist in der Regel der Typ der ersten Bounds-Klausel oder Object, wenn keine Einschränkungen formuliert sind.
+Bei parametrisierten Typen wie List&lt;T&gt; wird der Typ-Parameter entfernt, es entsteht ein sogenannter Raw-Typ (List, quasi implizit mit Object parametrisiert).
+=&gt; Ergebnis: Nur eine (untypisierte) Klasse! Zur Laufzeit gibt es keine Generics mehr!">
+    <meta property="og:url" content="https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure.html">
+    <meta property="og:title" content="Generics: Type Erasure">
+    <meta property="og:description" content="Typ-Löschung (Type-Erasure) Der Compiler ersetzt nach Prüfung der Typen und ihrer Verwendung alle Typ-Parameter durch
+deren obere (Typ-)Schranke und passende explizite Cast-Operationen (im Byte-Code). Die obere Typ-Schranke ist in der Regel der Typ der ersten Bounds-Klausel oder Object, wenn keine Einschränkungen formuliert sind.
+Bei parametrisierten Typen wie List&lt;T&gt; wird der Typ-Parameter entfernt, es entsteht ein sogenannter Raw-Typ (List, quasi implizit mit Object parametrisiert).
+=&gt; Ergebnis: Nur eine (untypisierte) Klasse! Zur Laufzeit gibt es keine Generics mehr!">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Generics: Type Erasure">
+    <meta itemprop="description" content="Typ-Löschung (Type-Erasure) Der Compiler ersetzt nach Prüfung der Typen und ihrer Verwendung alle Typ-Parameter durch
+deren obere (Typ-)Schranke und passende explizite Cast-Operationen (im Byte-Code). Die obere Typ-Schranke ist in der Regel der Typ der ersten Bounds-Klausel oder Object, wenn keine Einschränkungen formuliert sind.
+Bei parametrisierten Typen wie List&lt;T&gt; wird der Typ-Parameter entfernt, es entsteht ein sogenannter Raw-Typ (List, quasi implizit mit Object parametrisiert).
+=&gt; Ergebnis: Nur eine (untypisierte) Klasse! Zur Laufzeit gibt es keine Generics mehr!">
+    <meta itemprop="wordCount" content="724">
+    <title>Generics: Type Erasure</title>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure/index.print.html" rel="alternate" type="text/html" title="Generics: Type Erasure">
+
+    
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png?1742890647" rel="icon" type="image/png">
+
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fontawesome-all.min.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/nucleus.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/auto-complete.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/perfect-scrollbar.min.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1742890647" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/fonts.css?1742890647" rel="stylesheet"></noscript>
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/theme-auto.css?1742890647" rel="stylesheet" id="R-variant-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/chroma-auto.css?1742890647" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/variant.css?1742890647" rel="stylesheet">
+    <link href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/css/print.css?1742890647" rel="stylesheet" media="print">
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/variant.js?1742890647"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/www.hsbi.de\/elearning\/data\/FH-Bielefeld\/lm_data\/lm_1661234';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.index_js_url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.search.js?1742890647";
+      // variant stuff
+      window.variants && variants.init( [ 'auto', 'zen-light', 'zen-dark', 'relearn-bright', 'relearn-light', 'relearn-dark' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script><style type="text/css">
+
+ 
+.center {
+    align-content: center;
+    text-align: center;
+    margin: auto;
+}
+.alert {
+    color: #ff3333;
+}
+.bsp {
+    padding: 0.05cm;
+    border-width: 0.05cm;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #ddd;
+    border-radius: 25px;
+    float: right;
+}
+.cbox {
+    padding: 0.2cm;
+    border-width: 0.1cm;
+    border-style: solid;
+    border-color: #4070a0;
+    background-color: #f2f2f2;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    overflow: auto;
+}
+.blueArrow {
+    color: #4070a0;
+    font-family: "Courier New", "Courier", monospace;
+    font-weight: bold;
+}
+.origin {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+.showme {
+    background-color: #ededed;
+    font-size: 0.8em;
+}
+
+
+ 
+.tldr {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.recap {
+    
+    
+   margin: 4px 0px 26px 0px;
+}
+.bib {
+    background: #dbe4ed;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.outcomes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.quizzes {
+    background: #d9e9d5;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.challenges {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+.assignments {
+    background: #ebe4d6;
+    padding: 12px;
+    margin: 4px 0px 26px 0px;
+}
+h1.tldr, h1.recap, h1.bib, h1.outcomes, h1.quizzes, h1.challenges, h1.assignments {
+    padding: 0px;
+}
+
+
+ 
+.noJsAlert {
+    padding: 20px;
+    background-color: #f44336;  
+    color: white;
+    margin-bottom: 15px;
+}
+
+
+ 
+.embed-video-player {
+    position: relative;
+    padding-bottom: 56%;
+    height: 0;
+    overflow: hidden;
+}
+.youtube-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:0;
+}
+
+
+ 
+#header-wrapper {
+    padding:0.6rem;
+}
+
+
+ 
+#shortcuts {
+    padding-top: 2.0rem;
+}
+
+
+ 
+#chapter p {
+    text-align: left;
+}
+
+
+ 
+figcaption h4 {
+    margin-top:-2.5rem;
+}
+.border1 {
+    border:1px solid black;
+}
+
+ 
+td ul, td ol {
+    margin: 0 0 1rem 0.5rem;
+    padding: 0 0 0 0.5rem;
+}
+
+ 
+h1 { font-size:2.8rem !important;}
+h2 { font-size:2.2rem; margin:1.2rem 0}
+h3 { font-size:1.9rem; text-align:left !important; font-weight:400 !important;}
+h4 { font-size:1.6rem}
+h5 { font-size:1.3rem}
+h6 { font-size:1rem}
+
+h2 {
+    width:100% !important;
+    border-bottom:1px solid #5e5e5e !important;
+    padding-bottom: 2px;
+}
+.tldr h2, .recap h2, .bib h2, .outcomes h2, .quizzes h2, .challenges h2, .assignments h2 {
+    margin:0.5rem 0
+}
+
+.btn-crossreference, .btn-crossreference:hover {
+    cursor: initial;
+}
+
+</style>
+
+  </head>
+  <body class="mobile-support html disableInlineCopyToClipboard" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#typ-löschung-type-erasure">Typ-Löschung (<em>Type-Erasure</em>)</a></li>
+    <li><a href="#type-erasure-bei-nutzung-von-bounds">Type-Erasure bei Nutzung von Bounds</a></li>
+    <li><a href="#raw-types-ich-mag-meine-generics-well-done--">Raw-Types: Ich mag meine Generics &quot;well done&quot; :-)</a>
+      <ul>
+        <li><a href="#anmerkung">Anmerkung</a></li>
+      </ul>
+    </li>
+    <li><a href="#folgen-der-typ-löschung-new">Folgen der Typ-Löschung: <em>new</em></a></li>
+    <li><a href="#folgen-der-typ-löschung-static">Folgen der Typ-Löschung: <em>static</em></a></li>
+    <li><a href="#folgen-der-typ-löschung-instanceof">Folgen der Typ-Löschung: <em>instanceof</em></a></li>
+    <li><a href="#folgen-der-typ-löschung-class">Folgen der Typ-Löschung: <em>.class</em></a></li>
+    <li><a href="#wrap-up">Wrap-Up</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="topbar-breadcrumbs highlightable">
+            Generics: Type Erasure
+          </span>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure/index.print.html" title="Print whole chapter (CTRL&#43;ALT&#43;p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable " tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+<h1>Generics: Type Erasure</h1>
+
+
+
+    
+
+
+
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-graduation-cap"></i> TL;DR
+  </div>
+  <div class="box-content">
+<p>
+Generics existieren eigentlich nur auf Quellcode-Ebene. Nach der Typ-Prüfung etc.
+entfernt der Compiler alle generischen Typ-Parameter und alle <code>&lt;...&gt;</code> (=&gt;
+&quot;Type-Erasure&quot;), d.h. im Byte-Code stehen nur noch Raw-Typen bzw. die oberen
+Typ-Schranken der Typ-Parameter, in der Regel <code>Object</code>. Zusätzlich baut der Compiler
+die nötigen Casts ein. Als Anwender merkt man davon nichts, muss das &quot;Type-Erasure&quot;
+wegen der Auswirkungen aber auf dem Radar haben!
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (YouTube)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://youtu.be/vo0WKkPBMAM' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Generics: Type Erasure</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-podcast"></i> Videos (HSBI-Medienportal)
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/medienportal/m/5fad3671a098d262206f0b0eb995b2d692a6e9914a336b1c28fc99753b0c874a637d310dcdc639afdd200d831b4e3ee5924ea8073b4a32751aebe4fa91c32bef' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>VL Generics: Type Erasure</a></li></ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+    
+        
+        
+        
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-lightbulb"></i> Lernziele
+  </div>
+  <div class="box-content">
+<ul> <li>(K2) Typ-Löschung und Auswirkungen</li></ul>
+  </div>
+</div>
+
+
+
+
+    <h2 id="typ-löschung-type-erasure">Typ-Löschung (<em>Type-Erasure</em>)</h2>
+<p>Der Compiler ersetzt nach Prüfung der Typen und ihrer Verwendung alle Typ-Parameter
+durch</p>
+<ol>
+<li>deren obere (Typ-)Schranke und</li>
+<li>passende explizite Cast-Operationen (im Byte-Code).</li>
+</ol>
+<p>Die obere Typ-Schranke ist in der Regel der Typ der ersten Bounds-Klausel
+oder <code>Object</code>, wenn keine Einschränkungen formuliert sind.</p>
+<p>Bei parametrisierten Typen wie <code>List&lt;T&gt;</code> wird der Typ-Parameter entfernt,
+es entsteht ein sogenannter <em>Raw</em>-Typ (<code>List</code>, quasi implizit mit <code>Object</code>
+parametrisiert).</p>
+<p>=&gt; Ergebnis: Nur <strong>eine</strong> (untypisierte) Klasse! Zur Laufzeit gibt es
+keine Generics mehr!</p>
+<p><strong>Hinweis</strong>: In C++ ist man den anderen möglichen Weg gegangen und erzeugt
+für jede Instantiierung die passende Klasse. Siehe Modul &quot;Systemprogrammierung&quot; :)</p>
+<p><strong>Beispiel</strong>: Aus dem folgenden harmlosen Code-Fragment:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    T <span style="color:#a6e22e">myst</span>(T m, T n) { <span style="color:#66d9ef">return</span> n; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        Studi<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Studi<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> a.<span style="color:#a6e22e">myst</span>(1, 3);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>wird nach der Typ-Löschung durch Compiler (das steht dann quasi im Byte-Code):</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Studi</span> {
+</span></span><span style="display:flex;"><span>    Object <span style="color:#a6e22e">myst</span>(Object m, Object n) { <span style="color:#66d9ef">return</span> n; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        Studi a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Studi();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> (Integer) a.<span style="color:#a6e22e">myst</span>(1, 3);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Die obere Schranke meist <code>Object</code> =&gt; <code>new T()</code> verboten/sinnfrei (s.u.)!</p>
+<h2 id="type-erasure-bei-nutzung-von-bounds">Type-Erasure bei Nutzung von Bounds</h2>
+<div class='columns'>
+<div class='column'>
+<p>vor der Typ-Löschung durch Compiler:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cps</span><span style="color:#f92672">&lt;</span>T <span style="color:#66d9ef">extends</span> Number<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    T <span style="color:#a6e22e">myst</span>(T m, T n) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> n;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        Cps<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Cps<span style="color:#f92672">&lt;&gt;</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> a.<span style="color:#a6e22e">myst</span>(1, 3);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</div>
+<div class='column'>
+<p>nach der Typ-Löschung durch Compiler:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cps</span> {
+</span></span><span style="display:flex;"><span>    Number <span style="color:#a6e22e">myst</span>(Number m, Number n) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> n;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        Cps a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Cps();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> (Integer) a.<span style="color:#a6e22e">myst</span>(1, 3);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</div>
+</div>
+<h2 id="raw-types-ich-mag-meine-generics-well-done--">Raw-Types: Ich mag meine Generics &quot;well done&quot; :-)</h2>
+<p>Raw-Types: Instanziierung ohne Typ-Parameter =&gt; <code>Object</code></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Stack s <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack(); <span style="color:#f92672">//</span> Stack von Object<span style="color:#f92672">-</span>Objekten</span></span></code></pre></div>
+<ul>
+<li>Wegen Abwärtskompatibilität zu früheren Java-Versionen noch erlaubt.</li>
+<li>Nutzung wird nicht empfohlen! (Warum?)</li>
+</ul>
+<h3 id="anmerkung">Anmerkung</h3>
+<p>Raw-Types darf man zwar selbst im Quellcode verwenden (so wie im Beispiel
+hier), <strong>sollte</strong> die Verwendung aber vermeiden wegen der Typ-Unsicherheit:
+Der Compiler sieht im Beispiel nur noch einen Stack für <code>Object</code>, d.h. dort
+dürfen Objekte aller Typen abgelegt werden - es kann keine Typprüfung
+durch den Compiler stattfinden. Auf einem <code>Stack&lt;String&gt;</code> kann der Compiler
+prüfen, ob dort wirklich nur <code>String</code>-Objekte abgelegt werden und ggf.
+entsprechend Fehler melden.</p>
+<p>Etwas anderes ist es, dass der Compiler im Zuge von Type-Erasure selbst
+Raw-Types in den Byte-Code schreibt. Da hat er vorher bereits die
+Typsicherheit geprüft und er baut auch die passenden Casts ein.</p>
+<p>Das Thema ist eigentlich nur noch aus Kompatibilität zu Java5 oder früher
+da, weil es dort noch keine Generics gab (wurden erst mit Java6 eingeführt).</p>
+<h2 id="folgen-der-typ-löschung-new">Folgen der Typ-Löschung: <em>new</em></h2>
+<div class='center'>
+<p><code>new</code> mit parametrisierten Klassen ist nicht erlaubt!</p>
+</div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fach</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> T <span style="color:#a6e22e">foo</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> T();  <span style="color:#75715e">// nicht erlaubt!!!</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Grund: Zur Laufzeit keine Klasseninformationen über <code>T</code> mehr</p>
+<p>Im Code steht <code>return (CAST) new Object();</code>. Das neue Object
+kann man anlegen, aber ein Cast nach irgendeinem anderen Typ
+ist sinnfrei: Jede Klasse ist ein Untertyp von <code>Object</code>, aber
+eben nicht andersherum. Außerdem fehlt dem Objekt vom Typ
+<code>Object</code> auch sämtliche Information und Verhalten, die der
+Cast-Typ eigentlich mitbringt ...</p>
+<h2 id="folgen-der-typ-löschung-static">Folgen der Typ-Löschung: <em>static</em></h2>
+<div class='center'>
+<p><code>static</code> mit generischen Typen ist nicht erlaubt!</p>
+</div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fach</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> T t;                    <span style="color:#75715e">// nicht erlaubt!!!</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> Fach<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> c;              <span style="color:#75715e">// nicht erlaubt!!!</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">foo</span>(T t) { ... };  <span style="color:#75715e">// nicht erlaubt!!!</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Fach<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>  a;
+</span></span><span style="display:flex;"><span>Fach<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> b;</span></span></code></pre></div>
+<p>Grund: Compiler generiert nur <span class='alert'>eine</span> Klasse! Beide Objekte würden
+sich die statischen Attribute teilen (Typ zur Laufzeit unklar!).</p>
+<p><em>Hinweis</em>: Generische (statische) Methoden sind erlaubt.</p>
+<h2 id="folgen-der-typ-löschung-instanceof">Folgen der Typ-Löschung: <em>instanceof</em></h2>
+<div class='center'>
+<p><code>instanceof</code> mit parametrisierten Klassen ist nicht erlaubt!</p>
+</div>
+<div class='columns'>
+<div class='column'>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fach</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printType</span>(Fach<span style="color:#f92672">&lt;?&gt;</span> p) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (p <span style="color:#66d9ef">instanceof</span> Fach<span style="color:#f92672">&lt;</span>Number<span style="color:#f92672">&gt;</span>)
+</span></span><span style="display:flex;"><span>            ...
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (p <span style="color:#66d9ef">instanceof</span> Fach<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>)
+</span></span><span style="display:flex;"><span>            ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</div>
+<div class='column'>
+<p>Grund: Unsinniger Code nach Typ-Löschung:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fach</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printType</span>(Fach p) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (p <span style="color:#66d9ef">instanceof</span> Fach)
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (p <span style="color:#66d9ef">instanceof</span> Fach)
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</div>
+</div>
+<h2 id="folgen-der-typ-löschung-class">Folgen der Typ-Löschung: <em>.class</em></h2>
+<div class='center'>
+<p><code>.class</code> mit parametrisierten Klassen ist nicht erlaubt!</p>
+</div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">boolean</span> x;
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>  a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> b <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> (List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span>.<span style="color:#a6e22e">class</span> <span style="color:#f92672">==</span> List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span>.<span style="color:#a6e22e">class</span>);  <span style="color:#75715e">// Compiler-Fehler</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> (a.<span style="color:#a6e22e">getClass</span>() <span style="color:#f92672">==</span> b.<span style="color:#a6e22e">getClass</span>());               <span style="color:#f92672">//</span> <span style="color:#66d9ef">true</span></span></span></code></pre></div>
+<p>Grund: Es gibt nur <code>List.class</code> (und kein <code>List&lt;String&gt;.class</code> bzw. <code>List&lt;Integer&gt;.class</code>)!</p>
+<h2 id="wrap-up">Wrap-Up</h2>
+<ul>
+<li>Generics existieren eigentlich nur auf Quellcode-Ebene</li>
+<li>&quot;Type-Erasure&quot;:
+<ul>
+<li>Compiler entfernt nach Typ-Prüfungen etc.
+generische Typ-Parameter etc. =&gt; im Byte-Code nur noch Raw-Typen
+bzw. die oberen Typ-Schranken der Typ-Parameter, in der Regel <code>Object</code></li>
+<li>Compiler baut passende Casts in Byte-Code ein</li>
+<li>Transparent für User; Auswirkungen beachten!</li>
+</ul>
+</li>
+</ul>
+
+
+    
+
+
+
+    
+    
+        
+        
+        
+            
+        
+    
+    
+
+    <div class="box notices cstyle tip">
+  <div class="box-label">
+    <i class="fas fa-user-check"></i> Quizzes
+  </div>
+  <div class="box-content">
+<ul> <li><a href='https://www.hsbi.de/elearning/goto.php?target=tst_1106237&client_id=FH-Bielefeld' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>Quiz Generics: Type Erasure (ILIAS)</a></li></ul>
+  </div>
+</div>
+
+
+
+    
+
+
+
+    
+
+
+
+
+    
+
+
+
+
+    
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                
+            
+            
+                
+            
+            
+        
+    
+        
+        
+
+        
+            
+            
+            
+            
+            
+
+            
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+        
+    
+    
+
+    <div class="box notices cstyle info">
+  <div class="box-label">
+    <i class="fas fa-book-reader"></i> Quellen
+  </div>
+  <div class="box-content">
+<ul> <li id='id_Bloch2018'>[Bloch2018] <strong>Effective Java</strong><br>Bloch, J., Addison-Wesley, 2018. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-0-13-468599-1' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-0-13-468599-1</a>.</li> <li id='id_Java-SE-Tutorial'>[Java-SE-Tutorial] <a href='https://docs.oracle.com/javase/tutorial/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>The Java Tutorials</strong></a><br>Oracle Corporation, 2024.<br><em>Specialized Trails: Generics</em></li> <li id='id_LernJava'>[LernJava] <a href='https://dev.java/learn/' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Learn Java</strong></a><br>Oracle Corporation, 2025.<br><em>Kapitel Generics</em></li> <li id='id_Ullenboom2021'>[Ullenboom2021] <a href='https://openbook.rheinwerk-verlag.de/javainsel/index.html' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'><strong>Java ist auch eine Insel</strong></a><br>Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN <a href='https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6' class='icon reading' target='_blank' rel='nofollow noopener noreferrer'>978-3-8362-8745-6</a>.<br><em>Kapitel 11.2 und 11.6</em></li></ul>
+  </div>
+</div>
+
+
+
+
+
+
+<footer class="footline"><div style="color: darkgray; font-size: small;">
+<p style="margin-left: 4rem; margin-right: 4rem; margin-top: 6rem;">
+<!-- https://creativecommons.org/choose/ -->
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+Unless otherwise noted, <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">this work</a> by <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/cagix" property="cc:attributionName" rel="cc:attributionURL">Carsten Gips</a> and <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors">contributors</a> is licensed under <a rel="license" href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md">CC BY-SA 4.0</a>.
+See the <a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">credits</a> for a detailed list of contributing projects.
+
+</p>
+</div>
+
+</footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+
+
+<a id="logo" href='https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1661234//index.html'>
+    <img style="max-width:35%" alt="icon" src='/elearning/data/FH-Bielefeld/lm_data/lm_1661234/images/logo.png'>
+</a>
+
+        </div>
+
+        <search><form action="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/search.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['de'];
+        </script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/auto-complete.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.min.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.stemmer.support.min.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.multi.min.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/lunr/lunr.de.min.js?1742890647" defer></script>
+        <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/search.js?1742890647" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation">
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git.html">Git</a><ul id="R-subsections-b7b75b08ea746eeb407fc7d37ea4cda5" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-intro.html">Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/git-basics.html">Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branches.html">Branches</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/branching-strategies.html">Branching-Strategien</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/remotes.html">Remotes</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/git/workflows.html">Workflows</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern.html">Modern Java</a><ul id="R-subsections-3723b9528838f9939f841b73dfbd900f" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/lambdas.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/lambdas.html">Lambda-Ausdrücke</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/methodreferences.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/methodreferences.html">Methoden-Referenzen</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/stream-api.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/stream-api.html">Stream-API</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/records.html">Records</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/optional.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/optional.html">Optional</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/defaultmethods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-modern/defaultmethods.html">Default-Methoden</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building.html">Building</a><ul id="R-subsections-f4e18db244c71e7d5fbee7579907c4cd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/gradle.html">Gradle</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/ci.html">Continuous Integration</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/docker.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/building/docker.html">Docker</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic.html" class="parent "><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic.html">Java / JVM</a><ul id="R-subsections-9d37273ec84dd05c502ff515d59cd93d" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/logging.html">Logging</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/regexp.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/regexp.html">RegExp</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/annotations.html">Annotationen</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-classes-methods.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-classes-methods.html">Generics: Klassen &amp; Methoden</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-bounds-wildcards.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-bounds-wildcards.html">Generics: Bounds &amp; Wildcards</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure.html" class="active"><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure.html">Generics: Type Erasure</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-polymorphism.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-polymorphism.html">Generics: Polymorphie</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-intro.html">Threads: Intro</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-synchronisation.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-synchronisation.html">Threads: Synchronisation</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-highlevel.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/threads-highlevel.html">Threads: High-Level Concurrency</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/reflection.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/reflection.html">Reflection</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality.html">Softwarequalität</a><ul id="R-subsections-827d0119153086d7fcf6d18c82fc3217" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testing-intro.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testing-intro.html">Intro SW-Test</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/junit-basics.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/junit-basics.html">JUnit-Basics</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testcases.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/testcases.html">Testfallermittlung</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/mockito.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/mockito.html">Mocking</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/smells.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/smells.html">Code Smells</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/codingrules.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/codingrules.html">Coding Conventions</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/refactoring.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/refactoring.html">Refactoring</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/quality/javadoc.html">Javadoc</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern.html">Pattern</a><ul id="R-subsections-88c6ccdca00adeca83d4957e66bb44bd" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/visitor.html">Visitor</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/observer.html">Observer</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/template-method.html">Template-Method</a></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/pattern/command.html">Command</a></li></ul></li>
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc.html">Misc</a><ul id="R-subsections-0a1f7eaf2b0a93eaa6748b7594755ae4" class="morespace collapsible-menu">
+          <li data-nav-id="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc/dungeon.html" class=""><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/misc/dungeon.html">How-To Dungeon</a></li></ul></li>
+          </ul>
+        </div>
+        <div id="R-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space">
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#kursformat"><i class='fas fa-bookmark'></i> Zeiten</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> Fahrplan</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#pr%C3%BCfungsform-note-und-credits"><i class='fas fa-bookmark'></i> Note/Credits</a></li>
+            <li><a class="padding" href="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/index.html#fahrplan"><i class='fas fa-bookmark'></i> News</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showVariantSwitch showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showVariantSwitch">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/java-classic/generics-type-erasure.html" lang="de-DE" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch showVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                      <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                      <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                      <option id="R-select-variant-relearn-bright" value="relearn-bright">Relearn Bright</option>
+                      <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                      <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter"><p style="text-align: center;">
+<i class='fab fa-fw fa-github'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture">GitHub</a>
+<i class='fas fa-fw fa-tags'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/issues">Issues</a>
+<i class='fas fa-fw fa-bullhorn'></i><a href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md">Credits</a>
+<br />
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;margin:0;display:inline;" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+
+</p>
+
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/clipboard.min.js?1742890647" defer></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/perfect-scrollbar.min.js?1742890647" defer></script>
+    <script>
+      function useMathJax( config ){
+        window.MathJax = Object.assign( window.MathJax || {}, {
+          tex: {
+            inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+            displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+          },
+          options: {
+            enableMenu: false 
+          }
+        }, config );
+      }
+      useMathJax( JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/mathjax/tex-mml-chtml.js?1742890647"></script>
+    <script src="/elearning/data/FH-Bielefeld/lm_data/lm_1661234/js/theme.js?1742890647" defer></script>
+  </body>
+</html>
