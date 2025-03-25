@@ -60,9 +60,11 @@ wir die Gelegenheit nutzen und uns dieses genauer anschauen.
 ## Team
 
 - [Carsten Gips] (Sprechstunde nach Vereinbarung)
+- [BC George] (Sprechstunde nach Vereinbarung)
 - Tutoren (siehe ILIAS-Mitgliederliste)
 
   [Carsten Gips]: https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips
+  [BC George]: https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/birgit-christina-george
 
 
 ## Kursformat
