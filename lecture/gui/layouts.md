@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Swing: Layout-Manager"
 linkTitle: "Swing: Layout-Manager"
 author: "Carsten Gips (HSBI)"

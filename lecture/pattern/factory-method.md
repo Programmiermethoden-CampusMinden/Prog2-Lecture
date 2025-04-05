@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Factory-Method-Pattern"
 linkTitle: "Factory-Method"
 author: "Carsten Gips (HSBI)"

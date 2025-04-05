@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Generics: Bounds & Wildcards"
 linkTitle: "Generics: Bounds & Wildcards"
 author: "Carsten Gips (HSBI)"

@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Strategy-Pattern"
 linkTitle: "Strategy"
 author: "Carsten Gips (HSBI)"

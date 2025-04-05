@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Build-Systeme: Apache Maven"
 linkTitle: "Maven"
 author: "Carsten Gips (HSBI)"

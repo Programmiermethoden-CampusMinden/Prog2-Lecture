@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Aufzählungen (Enumerations)"
 linkTitle: "Enumerations"
 author: "Carsten Gips (HSBI)"

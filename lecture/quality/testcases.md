@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Testfallermittlung: Wie viel und was muss man testen?"
 linkTitle: "Testfallermittlung"
 author: "Carsten Gips (HSBI)"

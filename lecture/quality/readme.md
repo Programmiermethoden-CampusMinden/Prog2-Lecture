@@ -1,5 +1,4 @@
 ---
-archetype: "default"
 title: "Softwarequalität und Testen mit JUnit und Mockito"
 linkTitle: "Softwarequalität"
 ---

@@ -1,5 +1,4 @@
 ---
-archetype: "home"
 title: "IFM 2.1: Programmieren 2 (PO23, Sommer 2025)"
 ---
 

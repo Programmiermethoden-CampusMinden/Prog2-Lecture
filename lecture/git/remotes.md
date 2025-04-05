@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Arbeiten mit Git Remotes (dezentrale Repos)"
 linkTitle: "Remotes"
 author: "Carsten Gips (HSBI)"

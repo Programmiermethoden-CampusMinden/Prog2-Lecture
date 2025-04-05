@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Flyweight-Pattern"
 linkTitle: "Flyweight"
 author: "Carsten Gips (HSBI)"

@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Refactoring"
 linkTitle: "Refactoring"
 author: "Carsten Gips (HSBI)"

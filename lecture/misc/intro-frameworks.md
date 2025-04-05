@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Frameworks: Einstieg"
 linkTitle: "Intro"
 author: "André Matutat (HSBI)"

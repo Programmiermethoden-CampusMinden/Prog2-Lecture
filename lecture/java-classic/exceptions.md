@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Exception-Handling"
 linkTitle: "Exceptions"
 author: "André Matutat & Carsten Gips (HSBI)"

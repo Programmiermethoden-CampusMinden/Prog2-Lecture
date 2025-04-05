@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Threads: Einführung in die nebenläufige Programmierung mit Threads"
 linkTitle: "Threads: Intro"
 author: "Carsten Gips (HSBI)"

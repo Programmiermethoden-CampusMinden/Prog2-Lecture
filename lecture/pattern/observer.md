@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Observer-Pattern"
 linkTitle: "Observer"
 author: "Carsten Gips (HSBI)"

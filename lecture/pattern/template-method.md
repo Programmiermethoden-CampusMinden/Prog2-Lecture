@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Template-Method-Pattern"
 linkTitle: "Template-Method"
 author: "Carsten Gips (HSBI)"

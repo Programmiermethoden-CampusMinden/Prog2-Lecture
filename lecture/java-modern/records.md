@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Record-Klassen"
 linkTitle: "Records"
 author: "Carsten Gips (HSBI)"

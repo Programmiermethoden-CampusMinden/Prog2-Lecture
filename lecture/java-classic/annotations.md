@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Annotationen"
 linkTitle: "Annotationen"
 author: "Carsten Gips (HSBI)"

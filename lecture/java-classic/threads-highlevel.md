@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Threads: High-Level Concurrency"
 linkTitle: "Threads: High-Level Concurrency"
 author: "Carsten Gips (HSBI)"

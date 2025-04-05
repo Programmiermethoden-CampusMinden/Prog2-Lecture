@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Frameworks: How-To Dungeon"
 linkTitle: "How-To Dungeon"
 author: "Carsten Gips (HSBI)"

@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Fehlersuche mit Git Bisect"
 linkTitle: "Bisect"
 author: "Carsten Gips (HSBI)"

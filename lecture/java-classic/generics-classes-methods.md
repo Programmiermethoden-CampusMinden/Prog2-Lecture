@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Generics: Generische Klassen & Methoden"
 linkTitle: "Generics: Klassen & Methoden"
 author: "Carsten Gips (HSBI)"

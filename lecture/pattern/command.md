@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Command-Pattern"
 linkTitle: "Command"
 author: "Carsten Gips (HSBI)"

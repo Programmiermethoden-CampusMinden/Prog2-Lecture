@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Einführung Softwaretest"
 linkTitle: "Intro SW-Test"
 author: "Carsten Gips (HSBI)"

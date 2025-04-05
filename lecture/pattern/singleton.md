@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Singleton-Pattern"
 linkTitle: "Singleton"
 author: "Carsten Gips (HSBI)"

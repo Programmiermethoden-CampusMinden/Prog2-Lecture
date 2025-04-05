@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Optional"
 linkTitle: "Optional"
 author: "Carsten Gips (HSBI)"

@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Stream-API"
 linkTitle: "Stream-API"
 author: "Carsten Gips (HSBI)"
