@@ -85,14 +85,6 @@ Sie *können* hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
 
 ## Fahrplan
 
-<!--
-`{{% notice style="note" title="News" %}}`{=markdown}
-  `{{% expand title="17.02.25" %}}`{=markdown}
-  Here be dragons ...
-  `{{% /expand %}}`{=markdown}
-`{{% /notice %}}`{=markdown}
--->
-
 Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
 | Monat              | Tag   | Vorlesung                                                                                              | Praktikum    |
