@@ -329,7 +329,7 @@ für jeden Studiengang einen (inneren) Stream mit den Studis eines Studiengangs
 verarbeiten müssten.
 :::
 
-```{.java size="scriptsize"}
+```java
 private static long getCountSG(Studiengang sg) {
     return sg.studis().stream().map(Studi::credits).filter(c -> c > 100).count();
 }
@@ -359,7 +359,7 @@ Stream in zwei Schritten:
     Ergebnis ist dann wie gewünscht ein `Stream<Studi>` (Stream mit `Studi`-Objekten).
 :::
 
-```{.java size="scriptsize"}
+```java
 private static long getCountFB3(Fachbereich fb) {
     return fb.studiengaenge().stream()
             .flatMap(sg -> sg.studis().stream())

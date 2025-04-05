@@ -48,7 +48,7 @@ challenges: |
 ### Variante I: Einsatz eines Enums für die Felder
 :::
 
-```{.java size="footnotesize"}
+```java
 public enum Tile { WATER, FLOOR, WALL, ... }
 
 public class Level {
@@ -91,7 +91,7 @@ müssen _alle_ `switch/case`-Blöcke entsprechend angepasst werden.
 ### Variante II: Einsatz einer Klasse/Klassenhierarchie für die Felder
 :::
 
-```{.java size="footnotesize"}
+```java
 public abstract class Tile {
     protected boolean isAccessible;
     protected Texture texture;
@@ -136,7 +136,7 @@ bei der Übertragung der Daten/Objekt an die GPU, ...).
 ### Lösungsvorschlag I
 :::
 
-```{.java size="footnotesize"}
+```java
 public final class Tile {
     private final boolean isAccessible;
     private final Texture texture;
@@ -178,7 +178,7 @@ wie etwa, ob ein Feld bereits durch den Helden untersucht/betreten wurde o.ä. .
 ### Lösungsvorschlag II
 :::
 
-```{.java size="scriptsize"}
+```java
 public final class TileModel {
     private final boolean isAccessible;
     private final Texture texture;

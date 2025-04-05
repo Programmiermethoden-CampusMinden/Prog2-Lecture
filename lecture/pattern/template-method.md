@@ -64,7 +64,7 @@ eingelesenen Programmcode) wird ein Strom von Token, mit dem die nächste Stufe 
 Compiler dann weiter arbeiten kann.
 :::
 
-```{.java size="footnotesize"}
+```java
 public class Lexer {
     private final List<Token> allToken;  // alle verfügbaren Token-Klassen
 
@@ -110,7 +110,7 @@ alle erkannten Token formatiert ausgeben und erhält eine Art Syntax-Highlightin
 den eingelesenen Programmcode.
 :::
 
-```{.java size="footnotesize"}
+```java
 public abstract class Token {
     protected String content;
 
@@ -150,7 +150,7 @@ von DRY aus ...
 
 ## Don't call us, we'll call you
 
-```{.java size="footnotesize"}
+```java
 public abstract class Token {
     protected String content;
 

@@ -113,7 +113,7 @@ challenges: |
 
 ## Motivation: Verteilter Zugriff auf gemeinsame Ressourcen
 
-```{.java size="footnotesize"}
+```java
 public class Teaser implements Runnable {
     private int val = 0;
 

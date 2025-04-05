@@ -68,7 +68,7 @@ challenges: |
 
 ## Motivation: Monster und spezialisierte Monster
 
-```{.java size="footnotesize"}
+```java
 public abstract class Monster {
     protected int attackDamage;
     protected int movementSpeed;
@@ -117,7 +117,7 @@ Konstruktor aufrufen.
 
 ## Vereinfachen der Vererbungshierarchie (mit Enums als Type-Object)
 
-```{.java size="footnotesize"}
+```java
 public enum Species { RAT, GNOLL, ... }
 
 public final class Monster {
@@ -162,7 +162,7 @@ muss man bei Erweiterungen des Enums auch _alle_ `switch/case`-Blöcke anpassen.
 
 ## Monster mit Strategie
 
-```{.java size="scriptsize"}
+```java
 public final class Species {
     private final int attackDamage;
     private final int movementSpeed;
@@ -208,7 +208,7 @@ Code, vermutlich `main()` oder beispielsweise durch Einlesen einer Konfig-Datei)
 
 ## Fabrikmethode für die Type-Objects
 
-```{.java size="footnotesize"}
+```java
 public final class Species {
     ...
 
@@ -237,7 +237,7 @@ einbauen, über die dann die Monster erzeugt werden.
 
 ## Vererbung unter den Type-Objects
 
-```{.java size="footnotesize"}
+```java
 public final class Species {
     ...
 

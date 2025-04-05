@@ -109,7 +109,7 @@ Vorteil ist aber der Gradle-Wrapper (s.u.).
 
 \bigskip
 
-```{.groovy size="footnotesize"}
+```groovy
 // build.gradle
 plugins {
     id 'java'

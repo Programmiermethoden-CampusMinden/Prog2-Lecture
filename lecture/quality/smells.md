@@ -35,7 +35,7 @@ fhmedia:
 
 ## Code Smells: Ist das Code oder kann das weg?
 
-```{.java size="footnotesize"}
+```java
 class checker {
     static public void CheckANDDO(DATA1 inp, int c, FH.Studi
     CustD, int x, int y, int in, int out,int c1, int c2, int c3 = 4)

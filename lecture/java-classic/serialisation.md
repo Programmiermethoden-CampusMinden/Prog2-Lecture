@@ -279,7 +279,7 @@ fortsetzen kann?
 
 ## Einfaches Beispiel
 
-```{.java size="footnotesize"}
+```java
 public class Studi implements Serializable {
     private final int credits = 42;
     private String name = "Hilde";

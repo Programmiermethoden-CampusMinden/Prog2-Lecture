@@ -93,7 +93,7 @@ auch die Abhängigkeiten berücksichtigt, d.h. das Ziel `test` erfordert ein `co
 
 ## Project Object Model: *pom.xml*
 
-```{.xml size="scriptsize"}
+```xml
 <project>
     <!-- aktuelle Version für Maven 2.x-->
     <modelVersion>4.0.0</modelVersion>
@@ -144,7 +144,7 @@ für die Dependencies findet man ebenfalls auf [MavenCentral](https://mvnreposit
 
 ## Project Object Model: Plugins
 
-```{.xml size="scriptsize"}
+```xml
 <project>
     ...
 

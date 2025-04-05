@@ -390,7 +390,7 @@ Im nachfolgenden Beispiel beschränke ich mich auf das Definieren und Registrier
 eines einfachen Annotation-Prozessors, der lediglich die Annotationen liest.
 :::
 
-```{.java size="footnotesize"}
+```java
 @SupportedAnnotationTypes("annotations.MySecondAnnotation")
 @SupportedSourceVersion(SourceVersion.RELEASE_17)
 public class Foo extends AbstractProcessor {
