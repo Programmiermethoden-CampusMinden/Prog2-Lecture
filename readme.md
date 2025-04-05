@@ -1,5 +1,6 @@
 ---
 title: "IFM 2.1: Programmieren 2 (PO23, Sommer 2025)"
+has_license: true
 ---
 
 <!--  pandoc -s -f markdown -t markdown+smart-grid_tables-multiline_tables-simple_tables --columns=94 --reference-links=true  readme.md  -o xxx.md  -->
@@ -287,3 +288,12 @@ Postersessions in ILIAS technisch und inhaltlich begleitet. DigikoS wird als Ver
 von der Stiftung Innovation in der Hochschullehre gefördert.
 
 ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]: https://www.digikos.de
+
+
+---
+
+## LICENSE
+
+[![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
+
+Unless otherwise noted, [this work](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture) by [Carsten Gips](https://github.com/cagix) and [contributors](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors) is licensed under [CC BY-SA 4.0](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md). See the [credits](CREDITS.md) for a detailed list of contributing projects.
