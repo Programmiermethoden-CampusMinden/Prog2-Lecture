@@ -2,7 +2,7 @@
 title: "Lambda-Ausdrücke und funktionale Interfaces"
 author: "Carsten Gips (HSBI)"
 readings:
-  - "@Java-SE-tutorial"
+  - "@Java-SE-Tutorial"
   - "@Urma2014 [Kap. 3]"
   - "@Ullenboom2021 [Kap. 12]"
 tldr: |

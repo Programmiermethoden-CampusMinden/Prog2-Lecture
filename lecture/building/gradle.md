@@ -3,7 +3,7 @@ title: "Build-Systeme: Gradle"
 author: "Carsten Gips (HSBI)"
 readings:
   - "@Gradle"
-  - "@Ullenboom2016"
+  - "@Ullenboom2021"
   - "@Inden2013"
 tldr: |
   Um beim Übersetzen und Testen von Software von den spezifischen Gegebenheiten auf einem

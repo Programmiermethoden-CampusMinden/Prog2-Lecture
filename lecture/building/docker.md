@@ -2,7 +2,7 @@
 title: "Einführung in Docker"
 author: "Carsten Gips (HSBI)"
 readings:
-  - "@Ullenboom2016"
+  - "@Ullenboom2021"
   - "@Inden2013"
 tldr: |
     Container sind im Gegensatz zu herkömmlichen VMs eine schlanke Virtualisierungslösung.

@@ -2,7 +2,7 @@
 title: "Interfaces: Default-Methoden"
 author: "Carsten Gips (HSBI)"
 readings:
-  - "@Java-SE-tutorial"
+  - "@Java-SE-Tutorial"
   - "@Urma2014 [Kap. 9]"
 tldr: |
   Seit Java8 können Methoden in Interfaces auch fertig implementiert sein: Sogenannte

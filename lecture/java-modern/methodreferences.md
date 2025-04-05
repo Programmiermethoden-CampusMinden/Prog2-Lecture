@@ -2,7 +2,7 @@
 title: "Methoden-Referenzen"
 author: "Carsten Gips (HSBI)"
 readings:
-  - "@Java-SE-tutorial"
+  - "@Java-SE-Tutorial"
   - "@Urma2014 [Kap. 3]"
 tldr: |
   Seit Java8 können **Referenzen auf Methoden** statt anonymer Klassen eingesetzt werden
