@@ -452,24 +452,3 @@ Behebung von **Bad Smells** durch **Refactoring**
 *   Nach jedem Schritt Testsuite laufen lassen
 *   Katalog von Maßnahmen, beispielsweise _Rename_, _Extract_, _Move_, _Push Up/Pull Down_, ...
 *   Unterstützung durch IDEs wie Eclipse, Idea, ...
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   Citation "_Refactoring ist, wenn ..._": ["356: Refactoring"](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html#356) by [Andreas Bogk](mailto:andreas@andreas.org) on Lutz Donnerhacke: "Fachbegriffe der Informatik"
-*   Citation "_Refactoring (noun): a change ..._": [@Fowler2011, p. 53]
-*   Citation "_The Rule of Three_": [@Fowler2011, p. 58]
-:::

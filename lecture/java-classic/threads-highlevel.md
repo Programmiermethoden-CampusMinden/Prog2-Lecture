@@ -326,17 +326,3 @@ Multi-Threading auf höherem Level: Thread-Pools und Fork/Join-Framework
 *   Fork/Join-Framework zum rekursiven Zerteilen von Aufgaben und zur
     parallelen Bearbeitung der Teilaufgaben
 *   `SwingWorker` für die parallele Bearbeitung von Aufgaben in Swing
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

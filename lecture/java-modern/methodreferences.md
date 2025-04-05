@@ -381,17 +381,3 @@ Seit Java8: **Methoden-Referenzen** statt anonymer Klassen (**funktionales Inter
 
 *   Im jeweiligen Kontext muss ein passendes funktionales Interface verwendet werden
     [(d.h. ein Interface mit **genau** einer abstrakten Methode)]{.notes}
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

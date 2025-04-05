@@ -474,17 +474,3 @@ bei den intermediären als auch den terminalen Operationen. Schauen Sie in die D
 Schöne Doku: ["The Stream API"](https://dev.java/learn/api/streams/), und auch
 ["Package java.util.stream"](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/package-summary.html).
 :::
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

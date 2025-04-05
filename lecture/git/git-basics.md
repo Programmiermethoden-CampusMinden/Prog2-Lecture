@@ -545,22 +545,3 @@ Schauen Sie sich beispielsweise einmal [gitmoji.dev](https://github.com/carloscu
 *   Änderungen auf einem File mit `diff` bzw. `blame` ansehen
 *   Projektstand markieren mit `tag`
 *   Ignorieren von Dateien/Ordnern: Datei `.gitignore`
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   Citation ["_A Note About Git Commit Messages_"](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) by [Tim Pope](https://tpo.pe/) on tbaggery.com
-:::

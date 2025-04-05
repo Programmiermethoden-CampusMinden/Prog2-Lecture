@@ -496,17 +496,3 @@ Note: found @MySecondAnnotation at main(java.lang.String[])
         über Meta-Annotationen
 *   Verarbeitung von Annotationen zur Compilier-Zeit mit Annotation-Processor
 *   Verarbeitung von Annotationen zur Laufzeit mit Reflection (siehe spätere VL)
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

@@ -178,17 +178,3 @@ Siehe auch ["Concurrency in Swing"](https://docs.oracle.com/javase/tutorial/uisw
     *   Nach Schließen des Fensters läuft die Applikation weiter (Default)
     *   Swing-Events werden durch den _Event Dispatch Thread_ (EDT) verarbeitet \newline
         => Aufpassen mit Multithreading!
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

@@ -595,17 +595,3 @@ Fehler beinhalten, die SpotBugs melden würde.
 *   Prüfung manuell durch Code Reviews oder durch Tools wie **Checkstyle** oder **SpotBugs**
 *   Definition des ["PM-Styles"](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/checkstyle.xml)
     [(siehe Folie "Konfiguration für das PM-Praktikum")]{.notes}
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

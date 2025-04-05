@@ -418,17 +418,3 @@ Beispiel: `git fetch andi` oder `git push origin master`
         *   In lokale Branches mergen, oder
         *   Tracking Branches anlegen => einfaches `pull` und `push` nutzen
     *   Tracking Branches sind lokale Branches, die remote Branches verfolgen ("tracken")
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::
