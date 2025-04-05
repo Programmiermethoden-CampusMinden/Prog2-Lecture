@@ -2,10 +2,9 @@
 title: "Arbeiten mit Git Remotes (dezentrale Repos)"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Chacon2014"
-    comment: "Kapitel 3"
-  - key: "AtlassianGit"
-  - key: "GitCheatSheet"
+  - "@Chacon2014 [Kap. 3]"
+  - "@AtlassianGit"
+  - "@GitCheatSheet"
 tldr: |
   Eine der Stärken von Git ist das Arbeiten mit verteilten Repositories. Zu jeder Workingcopy gehört
   eine Kopie des Repositories, wodurch jederzeit alle Informationen einsehbar sind und auch offline

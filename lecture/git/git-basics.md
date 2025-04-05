@@ -2,10 +2,9 @@
 title: "Basics der Versionsverwaltung mit Git (lokale Repos)"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Chacon2014"
-    comment: "Kapitel 2"
-  - key: "AtlassianGit"
-  - key: "GitCheatSheet"
+  - "@Chacon2014 [Kap. 2]"
+  - "@AtlassianGit"
+  - "@GitCheatSheet"
 tldr: |
   Änderungen an Dateien (in der Workingcopy) werden mit `git add` zum "Staging" (Index) hinzugefügt.
   Dies ist eine Art Sammelbereich für Änderungen, die mit dem nächsten Commit in das Repository

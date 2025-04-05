@@ -2,8 +2,7 @@
 title: "Logging"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "JDK-Doc"
-    notes: "Kapitel 8: Java Logging Overview"
+  - "@JDK-Doc [Kap. 8]"
 tldr: |
   Im Paket `java.util.logging` findet sich eine einfache Logging-API.
 

@@ -2,8 +2,8 @@
 title: "Template-Method-Pattern"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Eilebrecht2013"
-  - key: "Gamma2011"
+  - "@Eilebrecht2013"
+  - "@Gamma2011"
 tldr: |
   Das Template-Method-Pattern ist ein Entwurfsmuster, bei dem ein gewisses Verhalten
   in einer Methode implementiert wird, die wie eine Schablone agiert, der sogenannten

@@ -2,10 +2,8 @@
 title: "Swing: Nützliche Widgets"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-Tutorial"
-    comment: "Creating Graphical User Interfaces > Creating a GUI With Swing"
-  - key: "Ullenboom2021"
-    comment: "Kap. 18: Einführung in grafische Oberflächen"
+  - "@Java-SE-Tutorial"
+  - "@Ullenboom2021 [Kap. 18]"
 tldr: |
   Neben den Standardkomponenenten `JFrame` für ein Fenster, `JPanel` für ein Panel (auch zum
   Gruppieren anderer Komponenten), `JButton` (Button) und `JTextArea` (Texteingabe) gibt es

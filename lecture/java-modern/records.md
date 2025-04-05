@@ -2,8 +2,7 @@
 title: "Record-Klassen"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "LernJava"
-    comment: "Tutorials > Using Record to Model Immutable Data"
+  - "@LernJava"
 tldr: |
     Häufig schreibt man relativ viel _Boiler Plate Code_, um einfach ein paar Daten plus den
     Konstruktor und die Zugriffsmethoden zu kapseln. Und selbst wenn die IDE dies zum Teil

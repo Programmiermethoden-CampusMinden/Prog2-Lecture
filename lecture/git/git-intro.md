@@ -2,10 +2,9 @@
 title: "Intro: Versionskontrolle in der Softwareentwicklung"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Chacon2014"
-    comment: "Kapitel 1 und 2"
-  - key: "AtlassianGit"
-  - key: "GitCheatSheet"
+  - "@Chacon2014 [Kap. 1 und 2]"
+  - "@AtlassianGit"
+  - "@GitCheatSheet"
 tldr: |
   In der Softwareentwicklung wird häufig ein Versionsmanagementsystem (VCS) eingesetzt, welches die Verwaltung
   von Versionsständen und Änderungen ermöglicht. Ein Repository sammelt dabei die verschiedenen Änderungen

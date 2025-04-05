@@ -2,10 +2,9 @@
 title: "Code Smells"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Martin2009"
-  - key: "Passig2013"
-  - key: "Inden2013"
-    comment: "Kapitel 10: Bad Smells"
+  - "@Martin2009"
+  - "@Passig2013"
+  - "@Inden2013 [Kap. 10]"
 tldr: |
   Code entsteht nicht zum Selbstzweck, er muss von anderen Menschen leicht verstanden und
   gewartet werden können: Entwickler verbringen einen wesentlichen Teil ihrer Zeit mit dem

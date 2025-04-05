@@ -2,9 +2,8 @@
 title: "Observer-Pattern"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Nystrom2014"
-    comment: "Kap. 4: Observer"
-  - key: "Gamma2011"
+  - "@Nystrom2014 [Kap. 4]"
+  - "@Gamma2011"
 tldr: |
   Eine Reihe von Objekten möchte über eine Änderung in einem anderen ("zentralen") Objekt informiert werden.
   Dazu könnte das "zentrale" Objekt eine Zugriffsmethode anbieten, die die anderen Objekte regelmäßig

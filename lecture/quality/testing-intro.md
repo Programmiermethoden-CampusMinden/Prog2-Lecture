@@ -2,12 +2,12 @@
 title: "Einführung Softwaretest"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "vogellaJUnit"
-  - key: "junit4"
-  - key: "Kleuker2019"
-  - key: "Osherove2014"
-  - key: "Spillner2012"
-  - key: "fernunihagenJunit"
+  - "@vogellaJUnit"
+  - "@junit4"
+  - "@Kleuker2019"
+  - "@Osherove2014"
+  - "@Spillner2012"
+  - "@fernunihagenJunit"
 tldr: |
   Fehler schleichen sich durch Zeitdruck und hohe Komplexität schnell in ein Softwareprodukt ein. Die
   Folgen können von "ärgerlich" über "teuer" bis hin zu (potentiell) "tödlich" reichen. Richtiges

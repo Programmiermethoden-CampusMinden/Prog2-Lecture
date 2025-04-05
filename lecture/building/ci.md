@@ -2,8 +2,8 @@
 title: "Continuous Integration (CI)"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "GitlabCI"
-  - key: "GitHubCI"
+  - "@GitlabCI"
+  - "@GitHubCI"
 tldr: |
   In größeren Projekten mit mehreren Teams werden die Beteiligten i.d.R. nur noch "ihre"
   Codestellen compilieren und testen. Dennoch ist es wichtig, das gesamte Projekt regelmäßig

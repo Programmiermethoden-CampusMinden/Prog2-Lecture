@@ -2,11 +2,9 @@
 title: "Annotationen"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Ullenboom2021"
-    comment: "Kap. 10.8: Annotationen in der Java SE, 23.4: Dokumentationskommentare mit Javadoc"
-  - key: "Java-SE-Tutorial"
-    comment: "Getting to Know the Language > Annotations"
-  - key: "LernJava"
+  - "@Ullenboom2021 [Kap. 10.8 und 23.4]"
+  - "@Java-SE-Tutorial"
+  - "@LernJava"
 tldr: |
   Annotationen sind Metadaten zum Programm: Sie haben keinen (direkten) Einfluss auf die
   Ausführung des annotierten Codes, sondern enthalten Zusatzinformationen über ein Programm,

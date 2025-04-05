@@ -2,8 +2,8 @@
 title: "Visitor-Pattern"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Eilebrecht2013"
-  - key: "Gamma2011"
+  - "@Eilebrecht2013"
+  - "@Gamma2011"
 tldr: |
     Häufig bietet es sich bei Datenstrukturen an, die Traversierung nicht direkt in den Klassen
     der Datenstrukturen zu implementieren, sondern in Hilfsklassen zu verlagern. Dies gilt vor

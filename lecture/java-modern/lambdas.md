@@ -2,12 +2,9 @@
 title: "Lambda-Ausdrücke und funktionale Interfaces"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-tutorial"
-    comment: "Learning the Java Language: Classes and Objects: Abschnitt Nested Classes, Abschnitt Anonymous Classes und Abschnitt Lambda Expressions"
-  - key: "Urma2014"
-    comment: "Kapitel 3: Lambda Expressions, Kapitel 5: Working with streams"
-  - key: "Ullenboom2021"
-    comment: "Kapitel 12: Lambda-Ausdrücke und funktionale Programmierung"
+  - "@Java-SE-tutorial"
+  - "@Urma2014 [Kap. 3]"
+  - "@Ullenboom2021 [Kap. 12]"
 tldr: |
   Mit einer anonymen inneren Klasse erstellt man gewissermaßen ein Objekt einer "Wegwerf"-Klasse:
   Man leitet _on-the-fly_ von einem Interface ab oder erweitert eine Klasse und implementiert die

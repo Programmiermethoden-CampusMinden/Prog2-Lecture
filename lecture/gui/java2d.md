@@ -2,12 +2,8 @@
 title: "Einführung in Graphics und Java 2D"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-Tutorial"
-    comment: "Creating Graphical User Interfaces > Creating a GUI With Swing"
-  - key: "Java-SE-Tutorial"
-    comment: "Specialized Trails and Lessons > 2D Graphics"
-  - key: "Ullenboom2021"
-    comment: "Kap. 18: Einführung in grafische Oberflächen"
+  - "@Java-SE-Tutorial"
+  - "@Ullenboom2021 [Kap. 18]"
 tldr: |
   Swing-Komponenten zeichnen mit `paintComponent()` auf einem `Graphics`-Objekt. Die Methode
   wird von Swing selbst aufgerufen; man kann sie durch den Aufruf von `repaint()` auf einer

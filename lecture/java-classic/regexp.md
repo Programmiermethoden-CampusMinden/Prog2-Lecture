@@ -2,8 +2,7 @@
 title: "Reguläre Ausdrücke"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-Tutorial"
-    comment: "Essential Java Classes > Regular Expressions"
+  - "@Java-SE-Tutorial"
 tldr: |
     Mit Hilfe von regulären Ausdrücken kann man den Aufbau von Zeichenketten formal
     beschreiben. Dabei lassen sich direkt die gewünschten Zeichen einsetzen, oder

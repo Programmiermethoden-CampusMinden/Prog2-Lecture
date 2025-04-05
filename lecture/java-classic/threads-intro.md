@@ -2,11 +2,9 @@
 title: "Threads: Einführung in die nebenläufige Programmierung mit Threads"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Ullenboom2021"
-    comment: "Kap. 16: Einführung in die nebenläufige Programmierung"
-  - key: "Java-SE-Tutorial"
-    comment: "Trail: Essential Java Classes, Lesson: Concurrency"
-  - key: "Boles2008"
+  - "@Ullenboom2021 [Kap. 16]"
+  - "@Java-SE-Tutorial"
+  - "@Boles2008"
 tldr: |
     Threads sind weitere Kontrollflussfäden, die von der Java-VM (oder (selten) vom OS)
     verwaltet werden. Damit ist sind sie leichtgewichtiger als der Start neuer Prozesse

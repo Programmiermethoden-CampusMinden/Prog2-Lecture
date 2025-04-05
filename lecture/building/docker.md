@@ -2,8 +2,8 @@
 title: "Einführung in Docker"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Ullenboom2016"
-  - key: "Inden2013"
+  - "@Ullenboom2016"
+  - "@Inden2013"
 tldr: |
     Container sind im Gegensatz zu herkömmlichen VMs eine schlanke Virtualisierungslösung.
     Dabei laufen die Prozesse direkt im Kernel des Host-Betriebssystems, aber abgeschottet

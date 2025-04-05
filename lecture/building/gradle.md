@@ -2,9 +2,9 @@
 title: "Build-Systeme: Gradle"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Gradle"
-  - key: "Ullenboom2016"
-  - key: "Inden2013"
+  - "@Gradle"
+  - "@Ullenboom2016"
+  - "@Inden2013"
 tldr: |
   Um beim Übersetzen und Testen von Software von den spezifischen Gegebenheiten auf einem
   Entwicklerrechner unabhängig zu werden, werden häufig sogenannte Build-Tools eingesetzt.

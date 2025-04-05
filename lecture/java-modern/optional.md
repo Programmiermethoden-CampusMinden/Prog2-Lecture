@@ -2,10 +2,8 @@
 title: "Optional"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "LernJava"
-    comment: "Tutorials > The Stream API > Using Optionals"
-  - key: "Ullenboom2021"
-    comment: "Kap. 12.6: Optional ist keine Nullnummer"
+  - "@LernJava"
+  - "@Ullenboom2021 [Kap. 12.6]"
 tldr: |
     Häufig hat man in Methoden den Fall, dass es keinen Wert gibt, und man liefert dann
     `null` als "kein Wert vorhanden" zurück. Dies führt dazu, dass die Aufrufer eine

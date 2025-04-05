@@ -2,10 +2,8 @@
 title: "Javadoc"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Ullenboom2021"
-    comment: "Kap. 23.4: Dokumentationskommentare mit Javadoc"
-  - key: "googlestyleguide"
-    comment: "Kap. 7 Javadoc"
+  - "@Ullenboom2021 [Kap. 23.4]"
+  - "@googlestyleguide [Kap. 7]"
 tldr: |
   Mit Javadoc kann aus speziell markierten Block-Kommentaren eine externe Dokumentation im HTML-Format
   erzeugt werden. Die Block-Kommentare, auf die das im JDK enthaltene Programm `javadoc` reagiert,
