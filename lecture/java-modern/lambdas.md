@@ -398,7 +398,7 @@ public interface Wuppie<T> {
 
 \bigskip
 
-`Wuppie<T>` ist ein [**funktionales Interface**]{.alert}
+`Wuppie<T>` ist ein **funktionales Interface**
 ("_functional interface_") [(seit Java 8)]{.notes}
 
 *   Hat **genau _eine_ abstrakte Methode**
@@ -413,9 +413,9 @@ dieser Annotation einen Fehler werfen. Oder anders herum: Allein durch das
 Annotieren mit `@FunctionalInterface` wird aus einem Interface noch kein
 funktionales Interface! Vergleichbar mit `@Override` ...
 
-[**Während man für eine anonyme Klasse lediglich ein "normales" Interface
- (oder eine Klasse) benötigt, braucht man für Lambda-Ausdrücke zwingend ein
- passendes funktionales Interface!**]{.alert}
+**Während man für eine anonyme Klasse lediglich ein "normales" Interface
+(oder eine Klasse) benötigt, braucht man für Lambda-Ausdrücke zwingend ein
+passendes funktionales Interface!**
 
 _Anmerkung_: Es scheint keine einheitliche deutsche Übersetzung für den Begriff
 _functional interface_ zu geben. Es wird häufig mit "funktionales Interface",

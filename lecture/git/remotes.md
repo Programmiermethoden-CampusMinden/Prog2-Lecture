@@ -296,7 +296,7 @@ werden).
 
 1.  Änderungen vom Server holen: `git fetch <remote>` \newline
     => Holt alle Änderungen vom Repo `<remote>` ins eigene Repo
-    ([Workingcopy bleibt unangetastet!]{.alert})
+    (Workingcopy bleibt unangetastet!)
 
 \smallskip
 
@@ -314,7 +314,7 @@ werden).
 1. Ziel ein "bare"-Repository ist, **und**
 2. keine Konflikte entstehen
 
-=> im remote Repo [nur]{.alert} "fast forward"-Merge möglich
+=> im remote Repo **nur** "fast forward"-Merge möglich
 
 => bei Konflikten erst `fetch` und `merge`, danach `push`
 
@@ -352,7 +352,7 @@ mitgeben: `git init --bare` ...
 
 \bigskip
 
-[Vorsicht]{.alert}: `pull` und `push` beziehen sich nur auf ausgecheckten Tracking Branch
+Vorsicht: `pull` und `push` beziehen sich nur auf ausgecheckten Tracking Branch
 
 
 ## Einrichten von Tracking Branches

@@ -256,7 +256,7 @@ Version nicht mehr weiterentwickelt wird.
 
 \bigskip
 
-*   **Best Practice**: \newline\ [Spiegeln der Paket-Hierarchie]{.alert}
+*   **Best Practice**: \newline\ Spiegeln der Paket-Hierarchie
     *   Toplevel-Ordner `test` (statt `src`)
     *   Package-Strukturen spiegeln
     *   Testklassen mit Suffix "`Test`"
@@ -360,7 +360,7 @@ einer statischen Methode nutzen: `Assert.fail()`.
 Alternative statischer Import: `import static org.junit.Assert.fail;`
 => *Statische Member* der importierten Klasse (oder Interface)
 werden über ihre *unqualifizierten Namen* zugreifbar.
-[Achtung:]{.alert} Namenskollisionen möglich!
+**Achtung**: Namenskollisionen möglich!
 
 ```java
 // nur bestimmtes Member importieren

@@ -78,7 +78,7 @@ challenges: |
 Gesucht ist ein Programm zum Extrahieren von Telefonnummern aus E-Mails.
 
 \bigskip
-=> [**Wie geht das?**]{.alert}
+=> **Wie geht das?**
 \bigskip
 \bigskip
 
@@ -347,7 +347,7 @@ Dies liegt am "*greedy*" Verhalten der Quantifizierer.
 
 ## (Fangende) Gruppierungen
 
-`Studi{2}` passt [nicht]{.alert} auf "StudiStudi" (!)
+`Studi{2}` passt nicht auf "StudiStudi" (!)
 
 ::: notes
 Quantifizierung bezieht sich auf das direkt davor stehende Zeichen. Ggf.

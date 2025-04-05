@@ -114,10 +114,10 @@ bekommt und viele weitere.
 ::: notes
 *   Vielzahl möglicher Events
 *   Jeweils passendes Event-Objekt u. Event-Listener-Interface
-*   Oft nur wenige Methoden, u.U. aber [viele Methoden]{.alert}
+*   Oft nur wenige Methoden, u.U. aber viele Methoden
 :::
 
-=> Bei Nutzung eines Event-Listeners müssen immer [**alle**]{.alert}
+=> Bei Nutzung eines Event-Listeners müssen immer **alle**
 Methoden implementiert werden [(auch nicht benötigte)!]{.notes}
 
 \bigskip

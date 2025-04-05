@@ -64,7 +64,7 @@ for(i=0;i<10;i++) // fuer alle i
 Der Code im obigen Beispiel lässt sich möglicherweise kompilieren. Und
 möglicherweise tut er sogar das, was er tun soll.
 
-Dennoch: [**Der Code "stinkt"**]{.alert} (zeigt **Code Smells**):
+Dennoch: **Der Code "stinkt"** (zeigt **Code Smells**):
 
 *   Nichtbeachtung üblicher Konventionen (Coding Rules)
 *   Schlechte Kommentare
@@ -145,7 +145,7 @@ was im Laufe der Zeit die Chance für tatsächliche Probleme deutlich erhöht.
 [Und weil es so wichtig ist, hier gleich noch einmal:]{.notes}
 
 ::: center
-[**Stinkender Code führt zu möglichen (späteren) Problemen.**]{.alert}
+**Stinkender Code führt zu möglichen (späteren) Problemen.**
 :::
 
 ::::::::: notes
@@ -371,7 +371,7 @@ Kopierter/duplizierter Code ist problematisch:
 *   Programmierprinzip "**Single Responsibility**"
 
     ::: notes
-    Jede Klasse ist für genau [einen Aspekt]{.alert} des Gesamtsystems verantwortlich
+    Jede Klasse ist für genau **einen Aspekt** des Gesamtsystems verantwortlich
     :::
 
 \bigskip

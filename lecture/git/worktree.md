@@ -79,7 +79,7 @@ fhmedia:
 
 ### Git Worktree kann helfen!
 
-[**=> Mehrere Branches gleichzeitig auschecken (als neue Ordner im Dateisystem)**]{.alert}
+**=> Mehrere Branches gleichzeitig auschecken (als neue Ordner im Dateisystem)**
 
 
 ## How to use Git Worktree
@@ -117,7 +117,7 @@ letzten Komponente von `<path>` entspricht ...
 \bigskip
 \vfill
 
-[**Warnung: Nicht in selben Ordner oder in Unterordner auschecken!**]{.alert}
+**Warnung: Nicht in selben Ordner oder in Unterordner auschecken!**
 
 ::: notes
 Die neuen Worktrees sollten immer **außerhalb** der Workingcopy liegen! Sie können

@@ -81,7 +81,7 @@ public class B extends A {
 \bigskip
 \bigskip
 
-[**Hilft `@Override`?**]{.alert}
+**Hilft `@Override`?**
 
 ::: notes
 Tja, da sollte wohl die Methode `B#getInfo` die geerbte Methode `A#getInfo`
@@ -144,7 +144,7 @@ im Javadoc. Allerdings kann letzteres nur von Javadoc ausgewertet werden.
 ### Weitere Annotationen aus _java.lang_
 
 Im Paket `java.lang` finden sich weitere Annotationen. Mit Hilfe von `@SuppressWarnings` lassen sich bestimmte
-Compilerwarnungen unterdrücken ([**so etwas sollte man NIE tun!**]{.alert}), und mit `@FunctionalInterface`
+Compilerwarnungen unterdrücken (**so etwas sollte man NIE tun!**), und mit `@FunctionalInterface`
 lassen sich Schnittstellen auszeichnen, die genau eine (abstrakte) Methode besitzen (Verweis auf spätere Vorlesung).
 
 Weitere Annotationen aus dem JDK finden sich in den Paketen `java.lang.annotation` und `javax.annotation`.

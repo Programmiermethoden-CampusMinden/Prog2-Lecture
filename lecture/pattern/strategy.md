@@ -105,7 +105,7 @@ leise fiept ...
 
 \bigskip
 
-Entwurfsmuster: [**Strategy Pattern**]{.alert}
+Entwurfsmuster: **Strategy Pattern**
 
 
 ::: notes

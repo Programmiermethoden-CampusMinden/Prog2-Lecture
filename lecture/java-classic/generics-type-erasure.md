@@ -219,7 +219,7 @@ Fach<Integer> b;
 ```
 
 \bigskip
-Grund: Compiler generiert nur [eine]{.alert} Klasse! Beide Objekte würden
+Grund: Compiler generiert nur eine Klasse! Beide Objekte würden
 sich die statischen Attribute teilen \newline (Typ zur Laufzeit unklar!).
 
 \smallskip

@@ -123,7 +123,7 @@ public void ausgabe(...) {
 4.  Reflection nutzen (vgl. spätere VL)
 
     ::: notes
-    [**Nachteile**]{.alert}:
+    **Nachteile**:
 
     *   Umgang mit Strings statt Klassen!
     *   Keine Compiler-/IDE-Unterstützung!

@@ -105,7 +105,7 @@ challenges: |
 ::: notes
 1.  `git add .` (oder `git add <file>`)
 
-    => Stellt [alle]{.alert} Dateien (bzw. die Datei `<file>`)
+    => Stellt alle Dateien (bzw. die Datei `<file>`)
     im aktuellen Verzeichnis unter Versionskontrolle
 
 2.  `git commit`
@@ -173,7 +173,7 @@ dabei außen vor!
     Damit können vergessene Änderungen an der Datei `<file>`
     zusätzlich im letzten Commit aufgezeichnet werden.
 
-    [In beiden Fällen ändert sich die Commit-ID!]{.alert}
+    **In beiden Fällen ändert sich die Commit-ID!**
     :::
 
 [[Konsole]{.ex}]{.slides}
@@ -323,7 +323,7 @@ immer noch zur Verfügung und bietet über `git restore` hinaus weitere Anwendun
 
 \Large
 ::: center
-[**Jeder Commit stellt einen Rücksetzpunkt dar!**]{.alert}
+**Jeder Commit stellt einen Rücksetzpunkt dar!**
 :::
 \normalsize
 
@@ -416,7 +416,7 @@ Erklären Sie das **"WARUM"** der Änderung! (Das "WER", "WAS", "WANN" wird bere
 automatisch von Git aufgezeichnet ...)
 
 ::: center
-[**Lesen (und beachten) Sie unbedingt auch ["How to Write a Git Commit Message"](https://cbea.ms/git-commit/)!**]{.alert}
+**Lesen (und beachten) Sie unbedingt auch ["How to Write a Git Commit Message"](https://cbea.ms/git-commit/)!**
 :::
 ::::::
 

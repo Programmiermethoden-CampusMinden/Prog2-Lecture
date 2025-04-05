@@ -96,7 +96,7 @@ Objekt vom Typ `Graphics` stellt graphischen Kontext dar
 \bigskip
 
 ::: center
-=> [**Methode überschreiben und auf der GUI malen**]{.alert}
+=> **Methode überschreiben und auf der GUI malen**
 :::
 
 ::: notes
