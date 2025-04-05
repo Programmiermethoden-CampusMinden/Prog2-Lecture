@@ -375,7 +375,7 @@ Varianten:
 12. `s -> { return s.getCps() > 100 && s.getCps() < 300; }`
 
 :::::: notes
-::: showme
+::: details
 Auflösung:
 (4) und (5): `return` ist eine Anweisung, d.h. bei (4) fehlen die geschweiften
 Klammern. `"foo"` ist ein String und als solcher ein Ausdruck, d.h. hier sind
@@ -453,7 +453,7 @@ public interface Bar extends Wuppie {
 ```
 
 :::::: notes
-::: showme
+::: details
 Auflösung:
 
 *   `Wuppie` hat _genau eine_ abstrakte Methode => funktionales Interface
