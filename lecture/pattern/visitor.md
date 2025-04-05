@@ -1,6 +1,5 @@
 ---
 title: "Visitor-Pattern"
-linkTitle: "Visitor"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Eilebrecht2013"

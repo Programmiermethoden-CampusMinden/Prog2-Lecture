@@ -1,6 +1,5 @@
 ---
 title: "Command-Pattern"
-linkTitle: "Command"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Gamma2011"

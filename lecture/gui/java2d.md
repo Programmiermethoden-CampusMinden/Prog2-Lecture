@@ -1,6 +1,5 @@
 ---
 title: "Einführung in Graphics und Java 2D"
-linkTitle: "Java2D"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Java-SE-Tutorial"

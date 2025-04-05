@@ -1,6 +1,5 @@
 ---
 title: "Build-Systeme: Apache Ant"
-linkTitle: "Ant"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Inden2013"

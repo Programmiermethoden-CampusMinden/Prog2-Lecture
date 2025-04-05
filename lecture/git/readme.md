@@ -1,6 +1,5 @@
 ---
 title: "Versionierung mit Git"
-linkTitle: "Git"
 ---
 
 

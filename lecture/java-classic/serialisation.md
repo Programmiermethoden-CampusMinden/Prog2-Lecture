@@ -1,6 +1,5 @@
 ---
 title: "Serialisierung von Objekten und Zuständen"
-linkTitle: "Serialisierung"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Java-SE-Tutorial"

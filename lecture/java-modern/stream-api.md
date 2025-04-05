@@ -1,6 +1,5 @@
 ---
 title: "Stream-API"
-linkTitle: "Stream-API"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "LernJava"

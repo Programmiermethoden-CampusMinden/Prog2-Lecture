@@ -1,6 +1,5 @@
 ---
 title: "Reguläre Ausdrücke"
-linkTitle: "RegExp"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Java-SE-Tutorial"

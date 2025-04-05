@@ -1,6 +1,5 @@
 ---
 title: "Type-Object-Pattern"
-linkTitle: "Type-Object"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Nystrom2014"

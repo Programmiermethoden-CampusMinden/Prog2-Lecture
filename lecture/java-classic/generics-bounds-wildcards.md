@@ -1,6 +1,5 @@
 ---
 title: "Generics: Bounds & Wildcards"
-linkTitle: "Generics: Bounds & Wildcards"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2021"

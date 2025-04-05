@@ -1,6 +1,5 @@
 ---
 title: "Code Smells"
-linkTitle: "Code Smells"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Martin2009"

@@ -1,6 +1,5 @@
 ---
 title: "Swing: Tabellen"
-linkTitle: "Swing: Tabellen"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Java-SE-Tutorial"

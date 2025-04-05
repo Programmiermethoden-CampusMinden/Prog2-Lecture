@@ -1,6 +1,5 @@
 ---
 title: "Refactoring"
-linkTitle: "Refactoring"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Fowler2011"

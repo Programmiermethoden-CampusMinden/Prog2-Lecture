@@ -1,6 +1,5 @@
 ---
 title: "Swing Events"
-linkTitle: "Swing: Events"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Java-SE-Tutorial"

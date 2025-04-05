@@ -1,6 +1,5 @@
 ---
 title: "Logging"
-linkTitle: "Logging"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "JDK-Doc"

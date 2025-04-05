@@ -1,6 +1,5 @@
 ---
 title: "Testen mit JUnit (JUnit-Basics)"
-linkTitle: "JUnit-Basics"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "vogellaJUnit"

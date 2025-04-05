@@ -1,6 +1,5 @@
 ---
 title: "Aufzählungen (Enumerations)"
-linkTitle: "Enumerations"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Java-SE-Tutorial"

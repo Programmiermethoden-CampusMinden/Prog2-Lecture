@@ -1,6 +1,5 @@
 ---
 title: "Flyweight-Pattern"
-linkTitle: "Flyweight"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Nystrom2014"

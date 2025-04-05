@@ -1,6 +1,5 @@
 ---
 title: "Verschiedenes"
-linkTitle: "Misc"
 ---
 
 

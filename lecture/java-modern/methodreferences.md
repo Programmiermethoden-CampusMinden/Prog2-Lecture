@@ -1,6 +1,5 @@
 ---
 title: "Methoden-Referenzen"
-linkTitle: "Methoden-Referenzen"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Java-SE-tutorial"

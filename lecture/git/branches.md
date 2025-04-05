@@ -1,6 +1,5 @@
 ---
 title: "Git Branches: Features unabhängig entwickeln und mit Git verwalten"
-linkTitle: "Branches"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Chacon2014"

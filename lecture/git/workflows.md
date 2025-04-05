@@ -1,6 +1,5 @@
 ---
 title: "Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests"
-linkTitle: "Workflows"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Chacon2014"

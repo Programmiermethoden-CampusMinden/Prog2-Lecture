@@ -1,6 +1,5 @@
 ---
 title: "Git Worktree"
-linkTitle: "Worktree"
 author: "Carsten Gips (HSBI)"
 tldr: |
   Git Worktree erlaubt es, Branches in separaten Ordnern auszuchecken. Diese Ordner sind

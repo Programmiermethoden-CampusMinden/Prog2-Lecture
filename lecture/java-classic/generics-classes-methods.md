@@ -1,6 +1,5 @@
 ---
 title: "Generics: Generische Klassen & Methoden"
-linkTitle: "Generics: Klassen & Methoden"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2021"

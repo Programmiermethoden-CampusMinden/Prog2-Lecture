@@ -1,6 +1,5 @@
 ---
 title: "Entwurfsmuster"
-linkTitle: "Pattern"
 ---
 
 

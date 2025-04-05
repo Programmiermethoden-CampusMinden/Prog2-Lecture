@@ -1,6 +1,5 @@
 ---
 title: "Frameworks: Einstieg"
-linkTitle: "Intro"
 author: "André Matutat (HSBI)"
 tldr: |
   Frameworks sind ein Softwaregerüst, um wiederkehrende Softwarestrukturen schnell

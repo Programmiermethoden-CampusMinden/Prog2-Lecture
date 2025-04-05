@@ -1,6 +1,5 @@
 ---
 title: "Threads: High-Level Concurrency"
-linkTitle: "Threads: High-Level Concurrency"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2021"

@@ -1,6 +1,5 @@
 ---
 title: "Annotationen"
-linkTitle: "Annotationen"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2021"

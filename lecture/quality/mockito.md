@@ -1,6 +1,5 @@
 ---
 title: "Mocking mit Mockito"
-linkTitle: "Mocking"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Mockito"
