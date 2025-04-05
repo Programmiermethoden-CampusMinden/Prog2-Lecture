@@ -190,7 +190,7 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
     public boolean matches(String regex)
     ```
 
-[Demo: regexp.StringSplit]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/StringSplit.java"}
+[Demo: regexp.StringSplit]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/StringSplit.java"}
 
 \pause
 
@@ -243,7 +243,7 @@ Deshalb muss der Backslash i.d.R. extra geschützt ("escaped") werden.
 Sie im Java-String "`a\\\\bc`" schreiben!
 :::
 
-[Demo: regexp.MatchFind]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/MatchFind.java"}
+[Demo: regexp.MatchFind]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/MatchFind.java"}
 
 
 ## Unterschied zw. Finden und Matchen
@@ -299,7 +299,7 @@ if (m.matches())
     String result = m.group(); // ???
 ```
 
-[Demo: regexp.Quantifier]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/Quantifier.java"}
+[Demo: regexp.Quantifier]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/Quantifier.java"}
 
 ::: notes
 `Matcher#group` liefert die Inputsequenz, auf die der Matcher angesprochen hat.
@@ -408,7 +408,7 @@ bei Vorliegen eines Matches auf die Gruppen zugreifen.
 
 `(Studi){2}` => "StudiStudi"
 
-[Demo: regexp.Groups]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/Groups.java"}
+[Demo: regexp.Groups]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/Groups.java"}
 
 
 ## Gruppen und Backreferences
@@ -442,7 +442,7 @@ Matche zwei Ziffern, gefolgt von den selben zwei Ziffern
 
     => Backreference: `\k<name>`
 
-[Demo: regexp.Backref]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/Backref.java"}
+[Demo: regexp.Backref]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/Backref.java"}
 
 
 ## Beispiel Gruppen und Backreferences

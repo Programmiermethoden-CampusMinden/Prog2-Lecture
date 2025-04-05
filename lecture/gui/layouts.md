@@ -128,7 +128,7 @@ Mit den Methoden `setHgap()` und `setVgap()` kann der Abstand zwischen den Kompo
 werden (horizontal und vertikal, Abstände in Pixel).
 :::
 
-[Demo: layout.Border]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/Border.java"}
+[Demo: layout.Border]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/Border.java"}
 
 
 ## _FlowLayout_
@@ -156,7 +156,7 @@ Per Default werden die Komponenten zentriert angeordnet. Über den Konstruktor o
 werden, ebenso wie ein vertikales und horizontales Padding zwischen den Komponenten.
 :::
 
-[Demo: layout.Flow]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/Flow.java"}
+[Demo: layout.Flow]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/Flow.java"}
 
 
 ## _GridLayout_
@@ -186,7 +186,7 @@ Auch in diesem Layout kann das Padding über die Methoden `setHgap()` bzw. `setV
 werden.
 :::
 
-[Demo: layout.Grid]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/Grid.java"}
+[Demo: layout.Grid]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/Grid.java"}
 
 
 ## Komplexer Layout-Manager: _GridBagLayout_
@@ -238,7 +238,7 @@ des Containers in der jeweiligen Richtung wird der neue Platz unter den Slots ge
 aufgeteilt.
 :::
 
-[Demo: layout.GridBag]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/GridBag.java"}
+[Demo: layout.GridBag]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/GridBag.java"}
 
 
 ## Wrap-Up

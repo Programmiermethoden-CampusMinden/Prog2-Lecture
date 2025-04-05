@@ -372,7 +372,7 @@ Weitere Links:
     *   https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html
 :::
 
-[Demo: serial.SerializableStudi]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/serial/SerializableStudi.java"}
+[Demo: serial.SerializableStudi]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/serial/SerializableStudi.java"}
 
 
 ## Wrap-Up

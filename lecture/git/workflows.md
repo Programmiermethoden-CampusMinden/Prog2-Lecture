@@ -173,7 +173,7 @@ zu bringen, führt man dann einfach folgendes aus (im Beispiel für den `master`
     $ git push origin master      # Pushe lokalen master in den Fork
 :::::::::
 
-[[Beispiel: Forken mit Gitlab, Namen für Remotes]{.bsp}]{.slides}
+[[Beispiel: Forken mit Gitlab, Namen für Remotes]{.ex}]{.slides}
 
 
 ## Feature-Branches aktualisieren: Mergen mit _master_ vs. Rebase auf _master_
@@ -240,7 +240,7 @@ Team-Mitglieder sollten darüber informiert werden, dass sich der `master` auf
 inkompatible Weise geändert hat ...
 :::::::::
 
-[[Besser einen Pull/Rebase für den Feature-Branch machen!]{.bsp}]{.slides}
+[[Besser einen Pull/Rebase für den Feature-Branch machen!]{.ex}]{.slides}
 
 
 ## Kommunikation: Merge- bzw. Pull-Requests
@@ -265,7 +265,7 @@ Hier ein Screenshot der Änderungsansicht unseres Gitlab-Servers (SW-Labor):
 
 ![](images/screenshot_merge-request_code.png){width="80%"}
 
-[[Diskussion Merge vs. MR, Live-Demo Gitlab]{.bsp}]{.slides}
+[[Diskussion Merge vs. MR, Live-Demo Gitlab]{.ex}]{.slides}
 
 
 ::: notes

@@ -111,7 +111,7 @@ Cps<String> c;  // Fehler!!!
 ::: notes
 _Anmerkung_: Der Typ-Parameter ist analog auch mit `super` (nach unten) einschränkbar
 
-[Beispiel bounds.Cps]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/bounds/Cps.java"}
+[Beispiel bounds.Cps]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/bounds/Cps.java"}
 :::
 
 
@@ -194,7 +194,7 @@ public class X {
 (auch wenn ein `B` ein `A` ist, vgl. spätere Sitzung zu Generics und
 Vererbung ...)!
 
-[Beispiel wildcards.v1.X]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/wildcards/v1/X.java"}
+[Beispiel wildcards.v1.X]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/wildcards/v1/X.java"}
 
 ### Zweiter Versuch mit Wildcards (_A_ und _B_ und _main()_ wie oben)
 
@@ -214,7 +214,7 @@ Laufvariablen in der `for`-Schleife dann `Object` nehmen. Aber
 Methode `X#printInfo` dank des Wildcards auch mit allen anderen
 Typen aufrufen ...
 
-[Beispiel wildcards.v2.X]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/wildcards/v2/X.java"}
+[Beispiel wildcards.v2.X]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/wildcards/v2/X.java"}
 
 ### Dritter Versuch (Lösung) mit Wildcards und Bounds (_A_ und _B_ und _main()_ wie oben)
 
@@ -232,7 +232,7 @@ in der Schleife kann man sich auf den gemeinsamen Obertyp `A` abstützen
 und hat dann auch wieder die `printInfo`-Methode zur Verfügung ...
 :::::::::
 
-[Konsole wildcards.v3.X]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-classic/src/wildcards/v3"}
+[Konsole wildcards.v3.X]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-classic/src/wildcards/v3"}
 
 
 ## Wrap-Up

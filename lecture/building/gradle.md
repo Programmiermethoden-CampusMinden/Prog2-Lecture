@@ -519,7 +519,7 @@ automatisch die selbe Version, ohne diese auf ihrem System zuvor installieren zu
 Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle vorzuziehen!
 :::::::::
 
-[[Live-Demo Gradle/Gradlew]{.bsp}]{.slides}
+[[Live-Demo Gradle/Gradlew]{.ex}]{.slides}
 
 
 ## Wrap-Up

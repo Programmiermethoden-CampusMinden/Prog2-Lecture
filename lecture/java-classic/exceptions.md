@@ -153,7 +153,7 @@ if (x.isPresent()) {
 
 ![](images/exception.png){web_width="80%"}
 
-[[Hinweis: checked vs. unchecked]{.bsp}]{.slides}
+[[Hinweis: checked vs. unchecked]{.ex}]{.slides}
 
 
 ::::::::: notes
@@ -262,7 +262,7 @@ checked Exception entweder in `div()` gefangen und bearbeitet werden oder aber p
 damit umgehen (fangen oder selbst auch deklarieren). **Dies wird vom Compiler geprüft!**
 :::
 
-[[Hinweis: throws und checked vs. unchecked]{.bsp}]{.slides}
+[[Hinweis: throws und checked vs. unchecked]{.ex}]{.slides}
 
 
 ## _Try_-_Catch_
@@ -319,7 +319,7 @@ und entsprechend an den Aufrufer weiter gereicht. Da es sich obendrein um eine c
 Exception handelt, müsste man diese per `throws IOException` an der Methode deklarieren.
 :::
 
-[[Hinweis: catch und Vererbungshierarchie]{.bsp}]{.slides}
+[[Hinweis: catch und Vererbungshierarchie]{.ex}]{.slides}
 
 
 ## _Finally_
@@ -407,7 +407,7 @@ int getFirstLineAsInt(String pathToFile) {
 }
 ```
 
-[Zeigen: exceptions.HowMuchTry]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/exceptions/HowMuchTry.java"}
+[Zeigen: exceptions.HowMuchTry]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/exceptions/HowMuchTry.java"}
 
 
 ::: notes

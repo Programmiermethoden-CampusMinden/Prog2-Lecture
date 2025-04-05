@@ -113,7 +113,7 @@ Nachteile:
     `finally`-Block!
 :::
 
-[Demo: lock.*]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-classic/src/lock/"}
+[Demo: lock.*]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-classic/src/lock/"}
 
 
 ## Thread-Management: Executor-Interface und Thread-Pools
@@ -181,7 +181,7 @@ pool.execute(x);    // x.start()
 pool.shutdown();    // Feierabend :)
 ```
 
-[Demo: executor.ExecutorDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/executor/ExecutorDemo.java"}
+[Demo: executor.ExecutorDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/executor/ExecutorDemo.java"}
 
 
 ::::::::: notes
@@ -241,7 +241,7 @@ public class RecursiveTask extends ForkJoinTask<V> {
 }
 ```
 
-[Demo: forkjoin.ForkJoin]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/forkjoin/ForkJoin.java"}
+[Demo: forkjoin.ForkJoin]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/forkjoin/ForkJoin.java"}
 
 
 ## Swing und Threads
@@ -283,7 +283,7 @@ public class RecursiveTask extends ForkJoinTask<V> {
     *   `V` Typ für Zwischenergebnisse
 :::
 
-[Demo: misc.SwingWorkerDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/misc/SwingWorkerDemo.java"}
+[Demo: misc.SwingWorkerDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/misc/SwingWorkerDemo.java"}
 
 
 ## Letzte Worte :-)

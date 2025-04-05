@@ -168,7 +168,7 @@ hat, Zeit in ordentliche Arbeit zu investieren, weil der Code ja eh schon
 schlecht ist ... Das wird mit der Zeit nicht besser ...
 :::::::::
 
-["Broken Windows" Phänomen]{.bsp href="https://en.wikipedia.org/wiki/Broken_windows_theory"}
+["Broken Windows" Phänomen]{.ex href="https://en.wikipedia.org/wiki/Broken_windows_theory"}
 
 ::::::::: notes
 ### Maßeinheit für Code-Qualität ;-)
@@ -201,7 +201,7 @@ in Ordnung ...
 
 *   _Hinweis_: Betrifft vor allem die (äußere) Form!
 
-[[Hinweis: Genauere Betrachtung in "Coding Rules"]{.bsp}]{.slides}
+[[Hinweis: Genauere Betrachtung in "Coding Rules"]{.ex}]{.slides}
 
 
 ## Code Smells: Schlechte Kommentare I

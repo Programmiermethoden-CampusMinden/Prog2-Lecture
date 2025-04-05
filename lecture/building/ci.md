@@ -154,7 +154,7 @@ challenges: |
 *   [Travis CI](https://www.travis-ci.com/)
 :::::::::
 
-[[Live-Demo Gitlab/GitHub]{.bsp}]{.slides}
+[[Live-Demo Gitlab/GitHub]{.ex}]{.slides}
 
 
 ::::::::: notes

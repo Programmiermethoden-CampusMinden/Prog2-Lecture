@@ -236,7 +236,7 @@ je einmal im Speicher repräsentiert.
 
 ![](images/flyweight.png){width="60%"}
 
-[[Hinweis zum Beispiel: -Interface, -Factory, +Composite]{.bsp}]{.slides}
+[[Hinweis zum Beispiel: -Interface, -Factory, +Composite]{.ex}]{.slides}
 
 ::: notes
 Im klassischen Flyweight-Pattern der "Gang of Four" [@Gamma2011] wird ein gemeinsames Interface

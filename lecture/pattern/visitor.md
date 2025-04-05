@@ -294,7 +294,7 @@ Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche St
 mit denen wir diesen Parsetree traversieren ... Und wir müssen für _jede_ Erweiterung
 immer _alle_ Expression-Klassen anpassen!
 
-[Beispiel: direct.DemoExpr]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/direct/DemoExpr.java"}
+[Beispiel: direct.DemoExpr]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/direct/DemoExpr.java"}
 :::
 
 \vfill
@@ -306,7 +306,7 @@ immer _alle_ Expression-Klassen anpassen!
 
 ![](images/visitor.png){web_width="80%"}
 
-[[Hinweis: Implementierungsdetail Traversierung]{.bsp}]{.slides}
+[[Hinweis: Implementierungsdetail Traversierung]{.ex}]{.slides}
 
 ::: notes
 Das Entwurfsmuster "Besucher" (_Visitor Pattern_) lagert die Aktion beim Besuchen eines
@@ -427,9 +427,9 @@ von Datenstrukturen ist diese Variante oft von Vorteil, da man hier unterschiedl
 Traversierungsarten haben möchte (Breitensuche vs. Tiefensuche, Pre-Order vs. Inorder vs.
 Post-Order, ...) und diese elegant in den Visitor verlagern kann.
 
-[Beispiel Traversierung intern (in den Knotenklassen): visitor.visit.intrav.DemoExpr]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/intrav/DemoExpr.java"}
+[Beispiel Traversierung intern (in den Knotenklassen): visitor.visit.intrav.DemoExpr]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/intrav/DemoExpr.java"}
 
-[Beispiel Traversierung extern (im Visitor): visitor.visit.extrav.DemoExpr]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/extrav/DemoExpr.java"}
+[Beispiel Traversierung extern (im Visitor): visitor.visit.extrav.DemoExpr]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/extrav/DemoExpr.java"}
 
 ### (Double-) Dispatch
 
@@ -475,7 +475,7 @@ implementieren.
 
 ![](images/parsetree_visitor_uml.png)
 
-[Demo: visitor.visit.extrav.DemoExpr]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/extrav/DemoExpr.java"}
+[Demo: visitor.visit.extrav.DemoExpr]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/extrav/DemoExpr.java"}
 
 
 ## Wrap-Up

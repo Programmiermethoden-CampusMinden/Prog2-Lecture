@@ -162,7 +162,7 @@ mit dem Sie in der Workingcopy auf einen anderen Branch wechseln können. Der
 bisherige Befehl "`checkout`" funktioniert aber weiterhin.
 :::
 
-[[Konsole]{.bsp}]{.slides}
+[[Konsole]{.ex}]{.slides}
 
 
 ## Arbeiten im Entwicklungszweig ...
@@ -386,7 +386,7 @@ Manuelles Editieren nötig (Auflösung des Konflikts):
 Alternativ: Nutzung graphischer Oberflächen mittels `git mergetool`
 :::
 
-[Konsole: Branchen und Mergen]{.bsp href="https://youtu.be/B8sesK1GyiE"}
+[Konsole: Branchen und Mergen]{.ex href="https://youtu.be/B8sesK1GyiE"}
 
 
 ## Rebasen: Verschieben von Branches
@@ -475,7 +475,7 @@ und Message bleiben aber erhalten.)
         "kopflosen" Commits irgendwann tatsächlich verschwinden.
         :::
 
-[[Konsole: Commit auschecken]{.bsp}]{.slides}
+[[Konsole: Commit auschecken]{.ex}]{.slides}
 
 
 ## Wrap-Up

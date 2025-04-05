@@ -257,7 +257,7 @@ Beispiel: Zu testende Methode mit Eingabewert _x_, der zw. 10 und 100 liegen sol
 
 *   Unterscheidung gültige und ungültige ÄK
 
-[[Beispiel: Eingabeparameter x zw. 10 und 100]{.bsp}]{.slides}
+[[Beispiel: Eingabeparameter x zw. 10 und 100]{.ex}]{.slides}
 
 
 ::::::::: notes
@@ -404,7 +404,7 @@ werden (mit zufälligen Werten) aus gültigen ÄK aufgefüllt, um mögliche Gren
 nicht zu überlagern.**
 :::
 
-[[Beispiel: Eingabeparameter x zw. 10 und 100]{.bsp}]{.slides}
+[[Beispiel: Eingabeparameter x zw. 10 und 100]{.ex}]{.slides}
 
 
 ## GW: Beispiel: Eingabewert _x_ soll zw. 10 und 100 liegen

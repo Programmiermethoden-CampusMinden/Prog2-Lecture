@@ -87,7 +87,7 @@ man kann prinzipiell auch in der Kurzform das "=" nutzen, also "-x=10", oder in 
 mit einem Leerzeichen trennen, also "--breite 10".
 :::
 
-[Demo IDE und CLI]{.bsp href="https://youtu.be/a3XUfDbD9uo"}
+[Demo IDE und CLI]{.ex href="https://youtu.be/a3XUfDbD9uo"}
 
 ::: notes
 Hinweis IntelliJ: "`Edit Configurations`" => Kommandozeilenparameter unter "`Build and run`" im entsprechenden Feld eintragen
@@ -241,7 +241,7 @@ Die Funktionsweise der einzelnen Klassen wird in der Demo kurz angerissen. Schau
 zusätzlich in die Dokumentation.
 :::
 
-[Demo: Einbinden von Libs, cli.Args]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/cli/Args.java"}
+[Demo: Einbinden von Libs, cli.Args]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/cli/Args.java"}
 
 
 ## Laden und Speichern von Konfigurationsdaten
@@ -303,7 +303,7 @@ gewicht=12
     ```
     :::
 
-[Demo: cli.Props, Hinweis auf "Apache Commons Configuration"]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/cli/Props.java"}
+[Demo: cli.Props, Hinweis auf "Apache Commons Configuration"]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/cli/Props.java"}
 
 ::: notes
 `java.util.Properties` sind eine einfache und im JDK bereits eingebaute Möglichkeit,
