@@ -197,8 +197,7 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 
 **Parcoursprüfung**, 5 ECTS (PO23)
 
-:::::: {.tabs groupid="exams"}
-::: {.tab title="Prüfung im ersten Zeitraum"}
+### Prüfung im ersten Zeitraum"
 
 1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte) (Einzelbearbeitung,
     fristgerecht bis zur jeweiligen Vorlesung, je Quiz bis zu 3x wiederholbar)
@@ -222,17 +221,13 @@ verbessert sich die Gesamtnote um eine Teilnote.
 
 (Hinweise zur [Prüfungsvorbereitung] für Station I bis III)
 
-:::
-::: {.tab title="Prüfung im zweiten Zeitraum"}
+### Prüfung im zweiten Zeitraum"
 
 1.  **Station IV**: Schriftliche Prüfung (digitale Klausur) 90 Minuten in Minden im B40
 
 **Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95%
 
 (Hinweise zur [Prüfungsvorbereitung] für Station IV)
-
-:::
-::::::
 
 
 ## Materialien
