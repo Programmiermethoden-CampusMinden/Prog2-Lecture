@@ -22,7 +22,7 @@ jobs:
         with:
           mktarget: gfm
           pandoc_data: .pandoc
-          metadata: cb.yaml
+          metadata: pm.yaml
           publish_dir: _gfm
 
   # try building lecture notes (pdf)
@@ -34,5 +34,5 @@ jobs:
         with:
           mktarget: pdf
           pandoc_data: .pandoc
-          metadata: cb.yaml
+          metadata: pm.yaml
           publish_dir: _pdf
