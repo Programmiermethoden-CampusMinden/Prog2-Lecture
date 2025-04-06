@@ -17,6 +17,15 @@ has_license: true
   [daringfireball.net]: https://daringfireball.net/2020/04/cobol_programming_coding
 
 
+---
+
+**Read Online**:
+
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Programmiermethoden-CampusMinden/Prog2-Lecture/gfm.yaml?branch=master&style=flat&label=GitHub%20Preview)](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_gfm/readme.md)
+
+---
+
+
 ## Kursbeschreibung
 
 Sie haben letztes Semester in **Prog1** die *wichtigsten* Elemente und Konzepte der
