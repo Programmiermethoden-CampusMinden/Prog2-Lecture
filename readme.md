@@ -21,7 +21,8 @@ has_license: true
 
 **Read Online**:
 
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Programmiermethoden-CampusMinden/Prog2-Lecture/gfm.yaml?branch=master&style=flat&label=GitHub%20Preview)](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_gfm/readme.md)
+[![GFM: Workflow Status](https://img.shields.io/github/actions/workflow/status/Programmiermethoden-CampusMinden/Prog2-Lecture/gfm.yaml?branch=master&style=flat&label=GitHub%20Preview)](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_gfm/readme.md)
+[![PDF: Workflow Status](https://img.shields.io/github/actions/workflow/status/Programmiermethoden-CampusMinden/Prog2-Lecture/pdf.yaml?branch=master&style=flat&label=PDF)](https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/readme.pdf)
 
 ---
 
