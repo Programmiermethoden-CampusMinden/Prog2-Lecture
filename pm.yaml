@@ -18,6 +18,6 @@ indexMD: readme
 
 # license footer
 license_footer: |
-    ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
+    ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png){width="10%"}
 
     Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
