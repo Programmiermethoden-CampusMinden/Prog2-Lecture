@@ -45,6 +45,9 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/a86bc2fc9d692f6ca307cfabd09c7860c06b8fd53b60e281586c8b51414b7139d061328b2160a988045952f92fc13a921b6148c0dd2f790ea7324634c491006e"
     name: "VL Default-Methoden"
+attachments:
+  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_java-modern_defaultmethods.pdf"
+    name: "PDF-Version"
 challenges: |
     Erklären Sie die Code-Schnipsel in der
     [Vorgabe](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-modern/src/challenges/defaults)

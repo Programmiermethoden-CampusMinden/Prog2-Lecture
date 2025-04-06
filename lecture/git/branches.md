@@ -45,6 +45,9 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/858546c533e356ef9cdbf1341719281a76d4f9b4405b654dfa6e96c0043ebb87a098da0d8bdca88088d1deb52433f117ab880c24495ce6dafa64ba02cfaabcf2"
     name: "VL Git Branches"
+attachments:
+  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_git_branches.pdf"
+    name: "PDF-Version"
 challenges: |
     **Branches und Merges**
 

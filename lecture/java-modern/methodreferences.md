@@ -38,6 +38,9 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/662003c5cb2cdef08b5d35cefd49b05f561fa26471cf3da22c4ff4310596909d0e21300133fc2fac353dfc4a391c8bb9af0dd47293efabfa8c3464429534d719"
     name: "VL Methoden-Referenzen"
+attachments:
+  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_java-modern_methodreferences.pdf"
+    name: "PDF-Version"
 challenges: |
     Betrachten Sie den folgenden Java-Code:
 

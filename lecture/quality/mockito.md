@@ -41,6 +41,9 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/9531e04dd11458ea45915269aca452ba6b9978ef7b1b3a777a424d673573f75724a3fbedd0a2bec5e4d14de4025ea92ae4a966f95ee312e9f6ecca4fde4c98ef"
     name: "VL Mocking"
+attachments:
+  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_quality_mockito.pdf"
+    name: "PDF-Version"
 challenges: |
     Betrachten Sie die drei Klassen `Utility.java`, `Evil.java`
     und `UtilityTest.java`:

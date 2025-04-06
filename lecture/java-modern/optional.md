@@ -48,6 +48,9 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/b62e544bff3a9a25982052bd761b9971f7e67caca90e3ed66c2b794b95d35c2c479f8d72189159345ac018e34ec55866c5558a256ce63b5e9c43a30fc8787d1b"
     name: "VL Optional"
+attachments:
+  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_java-modern_optional.pdf"
+    name: "PDF-Version"
 challenges: |
     **String-Handling**
 

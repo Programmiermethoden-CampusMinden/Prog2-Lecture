@@ -47,6 +47,9 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/a91451640b7833daed3f6fb212fff9490ef6b8885783cc0297603a418055f1a8c2ff7b51f3cb9fb2c4344132eb95bef5af55201f8958f24d767dbd075120bce2"
     name: "VL Logging"
+attachments:
+  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_java-classic_logging.pdf"
+    name: "PDF-Version"
 challenges: |
     **Logger-Konfiguration**
 

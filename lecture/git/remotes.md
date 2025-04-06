@@ -51,6 +51,9 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/8aa3f0e96448352e436aead353f54a3de6bbd3737bf33b6bd935b098352690544dc527e59424068ec65b6e0d67f6aff6bd6aa0a602127ce2a02a360658e0151d"
     name: "VL Git Remotes"
+attachments:
+  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_git_remotes.pdf"
+    name: "PDF-Version"
 challenges: |
     **Synchronisierung mit Remote-Repos**
 
