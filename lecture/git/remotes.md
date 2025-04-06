@@ -58,7 +58,7 @@ challenges: |
     als auch Ihre lokale Kopie, haben sich danach unabhängig voneinander weiter
     entwickelt (siehe Skizze).
 
-    ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/remote-branches-2.png?raw=true)
+    ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/remote-branches-2.png?raw=true){width="60%"}
 
     Wie können Sie Ihre Änderung im lokalen Repo auf den Server pushen? Analysieren Sie die
     Situation und erklären Sie zwei verschiedene Lösungsansätze und geben Sie jeweils die
