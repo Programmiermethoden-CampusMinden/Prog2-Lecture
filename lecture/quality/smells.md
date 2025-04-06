@@ -139,7 +139,7 @@ was im Laufe der Zeit die Chance für tatsächliche Probleme deutlich erhöht.
 
 \pause
 \bigskip
-\vfill
+\bigskip
 
 [Und weil es so wichtig ist, hier gleich noch einmal:]{.notes}
 
