@@ -73,13 +73,13 @@ challenges: |
     auf Commit $C$) und `feature` (zeigt auf Version $F$). In Ihrer Workingcopy
     haben Sie den Branch `feature` ausgecheckt:
 
-    ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/before.png?raw=true)
+    ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/before.png?raw=true){width="40%"}
 
     (1) Mit welcher Befehlsfolge können Sie den Branch `feature` in den Branch `master`
     mergen, so dass nach dem Merge die im folgenden Bild dargestellte Situation
     entsteht?
 
-    ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/after.png?raw=true)
+    ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/after.png?raw=true){width="40%"}
 
     (Der Merge läuft ohne Konflikte ab. Es ist irrelevant, welcher Branch am Ende
     in der Workingcopy ausgecheckt ist.)
