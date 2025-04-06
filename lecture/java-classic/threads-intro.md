@@ -267,8 +267,6 @@ werden in der Sitzung ["Threads: Synchronisation"](threads-intro.
 besprochen.
 :::
 
-\vspace{24mm}
-
 [Demo: intro.Join]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/intro/Join.java"}
 
 
