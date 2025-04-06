@@ -247,8 +247,6 @@ Es sollte in der Praxis eigentlich nur wenige Fälle geben, wo ein Aufruf von
 Stattdessen sollte stets `Optional.ofNullable()` verwendet werden.
 :::
 
-\vfill
-
 **`null` kann nicht nicht in `Optional<T>` verpackt werden!**
 [(Das wäre dann eben `Optional.empty()`.)]{.notes}
 
