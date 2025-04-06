@@ -238,6 +238,7 @@ keine weitere Buchhaltung ...
 *   `Invoker` hat `Command`-Objekte und ruft darauf `execute()` auf
 *   `Client` kennt alle und baut alles zusammen
 
-\vfill
+\bigskip
+\bigskip
 
 **Objektorientierte Antwort auf Callback-Funktionen**
