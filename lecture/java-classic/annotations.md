@@ -208,7 +208,8 @@ public void bar(Object o) {
 }
 ```
 
-\vfill
+\bigskip
+\bigskip
 \pause
 
 ```java
