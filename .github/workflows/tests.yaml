@@ -12,12 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
   # try building lecture notes (gfm)
   test_gfm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: cagix/pandoc-lecture-zen@master
         with:
           mktarget: gfm
@@ -30,6 +34,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: cagix/pandoc-lecture-zen@master
         with:
           mktarget: pdf
