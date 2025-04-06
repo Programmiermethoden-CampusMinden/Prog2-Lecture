@@ -162,7 +162,7 @@ expr : e1=expr '*' e2=expr      # MUL
 Beim Parsen von "5*4+3" würde dabei der folgende Parsetree entstehen:
 :::
 
-![](images/parsetree.png){width="60%" web_width="20%"}
+![](images/parsetree.png){width="50%" web_width="20%"}
 
 ::::::
 :::::::::
