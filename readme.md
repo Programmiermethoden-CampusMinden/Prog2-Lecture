@@ -22,7 +22,8 @@ has_license: true
 **Read Online**:
 
 [![GFM: Workflow Status](https://img.shields.io/github/actions/workflow/status/Programmiermethoden-CampusMinden/Prog2-Lecture/gfm.yaml?branch=master&style=flat&label=GitHub%20Preview)](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_gfm/readme.md)
-[![PDF: Workflow Status](https://img.shields.io/github/actions/workflow/status/Programmiermethoden-CampusMinden/Prog2-Lecture/pdf.yaml?branch=master&style=flat&label=PDF-Version")](https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/readme.pdf)
+[![Docsify: Workflow Status](https://img.shields.io/github/actions/workflow/status/Programmiermethoden-CampusMinden/Prog2-Lecture/docsify.yaml?branch=master&style=flat&label=Docsify%20Preview)](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/refs/heads/_docsify&homepage=readme.md&sidebar=true&browser-tab-title=PR2&font-size=14px&searchbox=true&externalLinkTarget=_blank&mergeNavbar=true&zoom-images=true&dark-mode=auto#/)
+[![PDF: Workflow Status](https://img.shields.io/github/actions/workflow/status/Programmiermethoden-CampusMinden/Prog2-Lecture/pdf.yaml?branch=master&style=flat&label=PDF-Version)](https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/readme.pdf)
 
 ---
 
