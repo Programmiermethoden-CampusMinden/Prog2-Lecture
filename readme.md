@@ -121,7 +121,7 @@ Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Ver
 | *Prüfungsphase I*  | *tbd* | **Station III**                                                                                        |              |
 | *Prüfungsphase II* | *tbd* | **Station IV**                                                                                         |              |
 
-Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1356670&client_id=FH-Bielefeld).
+Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1514856&client_id=FH-Bielefeld).
 
 
 [Google Kalender]: https://calendar.google.com/calendar/ical/69ecbae80c817d60571a6ec968890b9b7ef0ffea5ce5dad1ef06c46eef7c530f%40group.calendar.google.com/public/basic.ics
