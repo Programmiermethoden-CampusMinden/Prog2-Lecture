@@ -103,26 +103,26 @@ Sie *können* hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
 
 Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
-| Monat              | Tag   | Vorlesung                                                                                              | Praktikum    |
-|:-------------------|:------|:-------------------------------------------------------------------------------------------------------|:-------------|
-| April              | 11.   | Orga (**Zoom**), [FAQ]                                                                                 |              |
-|                    | 18.   | **Feiertag**                                                                                           | **Feiertag** |
-|                    | 25.   | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Gradle]                                 | [B01]        |
-| Mai                | 02.   | [Git-Branches], [Branching-Strategien]; [Methodenreferenzen]; [Logging]                                | [B02]        |
-|                    | 09.   | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Record-Klassen]                                         | [B03]        |
-|                    | 16.   | **Station I**                                                                                          |              |
-|                    | 23.   | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                     | [B04]        |
-|                    | 30.   | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Continuous Integration (CI)] | [B05]        |
-| Juni               | 06.   | [Code-Smells], [Coding-Rules], [Refactoring]; [Javadoc]                                                | [B06]        |
-|                    | 13.   | **Station II**                                                                                         |              |
-|                    | 20.   | [RegExp]; [Template-Method-Pattern], [Command-Pattern]; [Annotationen]                                 | [B07]        |
-|                    | 27.   | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Docker]      | [B08]        |
-| Juli               | 04.   | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Reflection]                          | [B09]        |
-| *Prüfungsphase I*  | *tbd* | **Station III**                                                                                        |              |
-| *Prüfungsphase II* | *tbd* | **Station IV**                                                                                         |              |
+| Monat              | Tag   | Vorlesung                                                                                              | VL-Quizzes   | Praktikum    |
+|:-------------------|:------|:-------------------------------------------------------------------------------------------------------|:-------------|:-------------|
+| April              | 11.   | Orga (**Zoom**), [FAQ]                                                                                 |              |              |
+|                    | 18.   | **Feiertag**                                                                                           | **Feiertag** | **Feiertag** |
+|                    | 25.   | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Gradle]                                 | [Q01]        | [B01]        |
+| Mai                | 02.   | [Git-Branches], [Branching-Strategien]; [Methodenreferenzen]; [Logging]                                | [Q02]        | [B02]        |
+|                    | 09.   | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Record-Klassen]                                         | [Q03]        | [B03]        |
+|                    | 16.   | **Station I**                                                                                          |              |              |
+|                    | 23.   | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                     | [Q04]        | [B04]        |
+|                    | 30.   | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Continuous Integration (CI)] | [Q05]        | [B05]        |
+| Juni               | 06.   | [Code-Smells], [Coding-Rules], [Refactoring]; [Javadoc]                                                | [Q06]        | [B06]        |
+|                    | 13.   | **Station II**                                                                                         |              |              |
+|                    | 20.   | [RegExp]; [Template-Method-Pattern], [Command-Pattern]; [Annotationen]                                 | [Q07]        | [B07]        |
+|                    | 27.   | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Docker]      | [Q08]        | [B08]        |
+| Juli               | 04.   | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Reflection]                          | [Q09]        | [B09]        |
+| *Prüfungsphase I*  | *tbd* | **Station III**                                                                                        |              |              |
+| *Prüfungsphase II* | *tbd* | **Station IV**                                                                                         |              |              |
 
 Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1514856&client_id=FH-Bielefeld).
-
+Bearbeitung der Quizzes jeweils **Sa, 00 Uhr bis Fr, 08 Uhr** [im ILIAS](https://www.hsbi.de/elearning/goto.php?target=fold_1514843&client_id=FH-Bielefeld).
 
 [Google Kalender]: https://calendar.google.com/calendar/ical/69ecbae80c817d60571a6ec968890b9b7ef0ffea5ce5dad1ef06c46eef7c530f%40group.calendar.google.com/public/basic.ics
 
@@ -206,6 +206,16 @@ Abgabe der Übungsblätter jeweils **bis 08:00 Uhr** [im ILIAS](https://www.hsbi
 [B07]: homework/b07.md
 [B08]: homework/b08.md
 [B09]: homework/b09.md
+
+[Q01]: https://www.hsbi.de/elearning/goto.php?target=tst_1527333&client_id=FH-Bielefeld
+[Q02]: https://www.hsbi.de/elearning/goto.php?target=tst_1527338&client_id=FH-Bielefeld
+[Q03]: https://www.hsbi.de/elearning/goto.php?target=tst_1527339&client_id=FH-Bielefeld
+[Q04]: https://www.hsbi.de/elearning/goto.php?target=tst_1527340&client_id=FH-Bielefeld
+[Q05]: https://www.hsbi.de/elearning/goto.php?target=tst_1527341&client_id=FH-Bielefeld
+[Q06]: https://www.hsbi.de/elearning/goto.php?target=tst_1527342&client_id=FH-Bielefeld
+[Q07]: https://www.hsbi.de/elearning/goto.php?target=tst_1527343&client_id=FH-Bielefeld
+[Q08]: https://www.hsbi.de/elearning/goto.php?target=tst_1527344&client_id=FH-Bielefeld
+[Q09]: https://www.hsbi.de/elearning/goto.php?target=tst_1527345&client_id=FH-Bielefeld
 
 
 ## Prüfungsform, Note und Credits
