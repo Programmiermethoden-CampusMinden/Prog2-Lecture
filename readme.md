@@ -22,7 +22,7 @@ has_license: true
 **Read Online**:
 
 [![GitHub Preview](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/actions/workflows/gfm.yaml/badge.svg)](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_gfm/readme.md)
-[![Docsify Preview](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/actions/workflows/docsify.yaml/badge.svg)](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_docsify/readme.md)
+[![Docsify Preview](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/actions/workflows/docsify.yaml/badge.svg)](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/refs/heads/_docsify&homepage=readme.md&sidebar=true&browser-tab-title=PR2&font-size=14px&searchbox=true&externalLinkTarget=_blank&mergeNavbar=true&zoom-images=true&dark-mode=auto#/)
 [![PDF-Version](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/actions/workflows/pdf.yaml/badge.svg)](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/readme.pdf)
 
 ---
