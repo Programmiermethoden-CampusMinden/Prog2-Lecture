@@ -1,4 +1,4 @@
-name: Convert Markdown sources to DOCSIFY
+name: Docsify Preview
 
 on:
   # push on master branch

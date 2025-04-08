@@ -1,4 +1,4 @@
-name: Convert Markdown sources to GFM
+name: GitHub Preview
 
 on:
   # push on master branch
