@@ -45,7 +45,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/74a8f8c2e1a07d9fb70c8984e522d884141b2260c27dadfd7a23884bee8c0573136475ce66f28562097ca34a63fcf9c6d1c45ff695485d79465a4131878180ca"
     name: "VL Continuous Integration"
 attachments:
-  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_building_ci.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_building_ci.pdf"
     name: "PDF-Version"
 challenges: |
     Betrachten Sie erneut das Projekt [Theatrical Players Refactoring Kata](https://github.com/emilybache/Theatrical-Players-Refactoring-Kata).

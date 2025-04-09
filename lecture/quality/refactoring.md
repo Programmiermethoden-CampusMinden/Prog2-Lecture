@@ -43,7 +43,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/36389f8fe4befc6370c28cda4475690224942c00c854e6dfc953b60c26acdf62093345ae1ee0698f71dc0a7f02739253d4ba29b7c05b69036cbb09fb1e361549"
     name: "VL Refactoring"
 attachments:
-  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_quality_refactoring.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_quality_refactoring.pdf"
     name: "PDF-Version"
 challenges: |
     Betrachten Sie das [Theatrical Players Refactoring Kata](https://github.com/emilybache/Theatrical-Players-Refactoring-Kata).

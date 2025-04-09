@@ -42,7 +42,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/e10dd378f9b18ba4a42ffbb2c13bfb83685b60fd39a221dba8658b8edcb0df032c2dcf9a1dcd44cf59aa6b483a00a19195cb5a8d117a6fbda52cfcfcf9efe5da"
     name: "VL JUnit Basics"
 attachments:
-  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_quality_junit-basics.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_quality_junit-basics.pdf"
     name: "PDF-Version"
 challenges: |
     **Setup und Teardown**

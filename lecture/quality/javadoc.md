@@ -36,7 +36,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/15984eacd03de989ab2bce322ace5d74da962a911ae45afbb60958714ed6b16c72c962aec4b60acda9419ef15d26c5a5265129245f26beb0f905af9a7176b9fa"
     name: "VL Javadoc"
 attachments:
-  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_quality_javadoc.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_quality_javadoc.pdf"
     name: "PDF-Version"
 challenges: |
     Betrachten Sie die Javadoc einiger Klassen im Dungeon-Projekt:

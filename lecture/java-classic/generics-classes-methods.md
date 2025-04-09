@@ -30,7 +30,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/5497f0d31a9d0ac4d46e781040b1fd9f20ca7e0103cccc1abe0089c7c36a9251de0126f11fe376341a7b077dcdd43e8683f2c165b895da1a70da6c17d5c4576f"
     name: "VL Generische Klassen & Methoden"
 attachments:
-  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_java-classic_generics-classes-methods.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_java-classic_generics-classes-methods.pdf"
     name: "PDF-Version"
 ---
 

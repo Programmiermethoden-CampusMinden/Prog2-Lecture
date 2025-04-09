@@ -43,7 +43,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/d438c8d0b87fc2934e71e539aaf32ce01126fc2145f08284235c4c4b2058b0ab9ccba925dbbcfaf90466c70aff29f79acae1f66edeb18bd794d08628545d4e07"
     name: "VL Annotationen"
 attachments:
-  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_java-classic_annotations.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_java-classic_annotations.pdf"
     name: "PDF-Version"
 challenges: |
     Schreiben Sie drei eigene Annotationen:

@@ -42,7 +42,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/9ebd01cdab64351e7b52863f4a442d3199d3322eef1ba277ba979ce756d2892a1317ddd6e1fc34e6b4d28b237dec99e56810fe8bb35b9e95db325edbb14d7719"
     name: "VL Reflection"
 attachments:
-  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_java-classic_reflection.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_java-classic_reflection.pdf"
     name: "PDF-Version"
 challenges: |
     In den [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-classic/src/challenges/reflection)

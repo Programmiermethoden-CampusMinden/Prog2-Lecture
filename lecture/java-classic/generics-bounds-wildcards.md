@@ -33,7 +33,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/08ef62f9367140e7ae75cd4e90fde1e63cc3ec6c9e7e4c11a1994065fd45e781f46bc6b3f1fbe4fbe8952db11812d52efe8cd8900fe88843e5eaefad62bbc7d3"
     name: "VL Generics: Bounds & Wildcards"
 attachments:
-  - link: "https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/_pdf/lecture_java-classic_generics-bounds-wildcards.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_java-classic_generics-bounds-wildcards.pdf"
     name: "PDF-Version"
 challenges: |
     **Spieler, Mannschaften und Ligen**
