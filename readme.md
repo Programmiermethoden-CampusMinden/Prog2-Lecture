@@ -223,7 +223,7 @@ Bearbeitung der Quizzes jeweils **Sa, 00 Uhr bis Fr, 08 Uhr** [im ILIAS](https:/
 
 **Parcoursprüfung**, 5 ECTS (PO23)
 
-### Prüfung im ersten Zeitraum"
+### Prüfung im ersten Zeitraum
 
 1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte) (Einzelbearbeitung,
     fristgerecht bis zur jeweiligen Vorlesung, je Quiz bis zu 3x wiederholbar)
@@ -247,7 +247,7 @@ verbessert sich die Gesamtnote um eine Teilnote.
 
 (Hinweise zur [Prüfungsvorbereitung] für Station I bis III)
 
-### Prüfung im zweiten Zeitraum"
+### Prüfung im zweiten Zeitraum
 
 1.  **Station IV**: Schriftliche Prüfung (digitale Klausur) 90 Minuten in Minden im B40
 
