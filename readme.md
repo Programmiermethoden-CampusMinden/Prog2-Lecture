@@ -225,12 +225,14 @@ Bearbeitung der Quizzes jeweils **Sa, 00:00 Uhr (Vorwoche) bis Fr, 08:00 Uhr** [
 
 ### Prüfung im ersten Zeitraum
 
-1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte) (Einzelbearbeitung,
-    fristgerecht bis zur jeweiligen Vorlesung, je Quiz bis zu 3x wiederholbar)
-2.  **Praktikum**: mind. 5 der 9 Übungsblätter bestanden (ohne Note/Punkte) (3er Teams, alle
-    Aufgaben eines Blattes bearbeitet, fristgerechte Abgabe der Lösungen im ILIAS mit
-    ausreichendem *Post Mortem*, Vorstellung der Lösungen im Praktikum durch jedes
-    Teammitglied, aktive Beteiligung an der Diskussion im Praktikum)
+1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte)
+    (Einzelbearbeitung, fristgerecht bis zur jeweiligen Vorlesung, je Quiz bis zu 3x
+    wiederholbar)
+2.  **Praktikum**: mind. 5 der 9 Übungsblätter bestanden (ohne Note/Punkte)
+    (bis zu 3er Teams, alle Aufgaben eines Blattes bearbeitet, fristgerechte Abgabe
+    der Lösungen im ILIAS mit ausreichendem *Post Mortem*, Vorstellung der Lösungen
+    im Praktikum durch jedes Teammitglied, aktive Beteiligung an der Diskussion im
+    Praktikum)
 3.  **Station I**: ILIAS-Test (30 Minuten in Minden im B40)
 4.  **Station II**: ILIAS-Test (30 Minuten in Minden im B40)
 5.  **Station III**: ILIAS-Test (30 Minuten in Minden im B40)
