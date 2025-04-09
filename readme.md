@@ -17,6 +17,8 @@ has_license: true
   [daringfireball.net]: https://daringfireball.net/2020/04/cobol_programming_coding
 
 
+---
+
 ::: tip
 **Read Online**:
 
@@ -24,6 +26,8 @@ has_license: true
 *   [Docsify Preview](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/refs/heads/_docsify&homepage=readme.md&sidebar=true&browser-tab-title=PR2&font-size=14px&searchbox=true&externalLinkTarget=_blank&mergeNavbar=true&zoom-images=true&dark-mode=auto#/)
 *   [PDF-Version](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/readme.pdf)
 :::
+
+---
 
 
 ## Kursbeschreibung
