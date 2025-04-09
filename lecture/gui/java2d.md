@@ -30,9 +30,9 @@ outcomes:
   - k3: "Auf Graphics-Objekt zeichnen mit geometrischen Primitiven: Nutzung von draw(), fill(), drawString()"
   - k3: "Einstellung von Farbe und Font"
   - k3: "Erzeugen von Bewegung ohne Nutzung von Threads"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106249&client_id=FH-Bielefeld"
-    name: "Quiz Java2D (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106249&client_id=FH-Bielefeld"
+#    name: "Quiz Java2D (ILIAS)"
 youtube:
   - link: "https://youtu.be/LDE_Kbc9w7k"
     name: "VL Java2D"

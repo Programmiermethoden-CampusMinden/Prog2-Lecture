@@ -26,9 +26,9 @@ tldr: |
     in einen parallel ausgeführten Thread auszulagern.
 outcomes:
   - k3: "Umgang mit High-Level-Abstraktionen: Lock-Objekten und Conditions, Executor-Interface und Thread-Pools, Fork/Join-Framework, SwingWorker"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106531&client_id=FH-Bielefeld"
-    name: "Quiz High-Level Concurrency (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106531&client_id=FH-Bielefeld"
+#    name: "Quiz High-Level Concurrency (ILIAS)"
 youtube:
   - link: "https://youtu.be/bb_kuuhXC6A"
     name: "VL High-Level Concurrency"

@@ -36,9 +36,9 @@ outcomes:
   - k3: "Pushen der lokalen Änderungen ins fremde Repo"
   - k3: "Anlegen von lokalen Branches vs. Anlegen von entfernten Branches"
   - k3: "Anlegen eines Tracking Branches zum Vereinfachen der Arbeit"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106245&client_id=FH-Bielefeld"
-    name: "Quiz Git Remotes (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106245&client_id=FH-Bielefeld"
+#    name: "Quiz Git Remotes (ILIAS)"
 youtube:
   - link: "`https://youtu.be/_uhEseblDYU`{=markdown}"
     name: "VL Git Remotes"

@@ -24,9 +24,9 @@ tldr: |
 outcomes:
   - k2: "Aufbau des Command-Patterns"
   - k3: "Anwendung des Command-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106532&client_id=FH-Bielefeld"
-    name: "Quiz Command-Pattern (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106532&client_id=FH-Bielefeld"
+#    name: "Quiz Command-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/F7RJ7YCVMS4"
     name: "VL Command-Pattern"

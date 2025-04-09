@@ -26,9 +26,9 @@ outcomes:
   - k3: "Steuern von Tests (ignorieren, zeitliche Begrenzung)"
   - k3: "Prüfung von Exceptions"
   - k3: "Aufbau von Testsuiten mit JUnit"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
-    name: "Quiz JUnit-Basics (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
+#    name: "Quiz JUnit-Basics (ILIAS)"
 youtube:
   - link: "https://youtu.be/2SC40rO0ZOE"
     name: "VL JUnit Basics"

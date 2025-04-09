@@ -31,9 +31,9 @@ tldr: |
 outcomes:
   - k2: "Ursachen von Softwarefehlern"
   - k3: "Aufbauen von Tests mit JUnit 4 und 5 unter Nutzung der Annotation `@Test`"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
-    name: "Quiz JUnit-Basics - nur erster Teil (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
+#    name: "Quiz JUnit-Basics - nur erster Teil (ILIAS)"
 youtube:
   - link: "https://youtu.be/WGd83crqu4I"
     name: "VL Einführung Softwaretest"

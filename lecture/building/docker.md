@@ -45,9 +45,9 @@ outcomes:
   - k3: "Eigene Container definieren und bauen"
   - k3: "Einsatz von Containern in GitLab CI/CD und GitHub Actions"
   - k3: "Einsatz von VSCode und Containern"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106227&client_id=FH-Bielefeld"
-    name: "Quiz Docker (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106227&client_id=FH-Bielefeld"
+#    name: "Quiz Docker (ILIAS)"
 youtube:
   - link: "https://youtu.be/yERVMfUAano"
     name: "VL Einführung in Docker"

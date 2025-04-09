@@ -41,9 +41,9 @@ outcomes:
   - k3: "Verkettung von intermediären Operationen"
   - k3: "Durchführung der Berechnung und Abschluss des Streams mit einer terminalen Operation"
   - k3: "Einsatz von `flatMap()`"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106528&client_id=FH-Bielefeld"
-    name: "Quiz Stream-API (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106528&client_id=FH-Bielefeld"
+#    name: "Quiz Stream-API (ILIAS)"
 youtube:
   - link: "https://youtu.be/zZMyk0u5hJk"
     name: "VL Stream-API"

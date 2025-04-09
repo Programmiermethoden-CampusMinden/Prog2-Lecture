@@ -27,9 +27,9 @@ tldr: |
   häufig den minimal nötigen Code, da ja immer nur die Tests erfüllt werden sollen.
 outcomes:
   - k3: "Einsatz von TDD bei der Softwareentwicklung"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106232&client_id=FH-Bielefeld"
-    name: "Quiz TDD (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106232&client_id=FH-Bielefeld"
+#    name: "Quiz TDD (ILIAS)"
 youtube:
   - link: "https://youtu.be/oqiESd5N1lY"
     name: "VL TDD"

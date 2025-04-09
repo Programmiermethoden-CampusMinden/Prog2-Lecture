@@ -42,9 +42,9 @@ outcomes:
   - k2: "Unterschied zwischen checked und unchecked Exceptions"
   - k3: "Umgang mit Exceptions"
   - k3: "Eigene Exceptions schreiben"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106516&client_id=FH-Bielefeld"
-    name: "Quiz Exceptions (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106516&client_id=FH-Bielefeld"
+#    name: "Quiz Exceptions (ILIAS)"
 youtube:
   - link: "https://youtu.be/k6EhexEvJDY"
     name: "VL Exceptions"

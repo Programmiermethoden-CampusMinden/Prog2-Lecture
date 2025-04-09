@@ -25,9 +25,9 @@ tldr: |
   bedeutet "Fehler").
 outcomes:
   - k3: "Fehlersuche mit Git Bisect"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106247&client_id=FH-Bielefeld"
-    name: "Quiz Git Bisect (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106247&client_id=FH-Bielefeld"
+#    name: "Quiz Git Bisect (ILIAS)"
 youtube:
   - link: "https://youtu.be/9XWwefIokPg"
     name: "VL Git Bisect"

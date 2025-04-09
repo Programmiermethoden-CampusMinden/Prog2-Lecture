@@ -26,9 +26,9 @@ tldr: |
   weiter gereicht (delegiert) wurde.
 outcomes:
   - k3: "Strategie-Entwurfsmuster praktisch anwenden"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106537&client_id=FH-Bielefeld"
-    name: "Quiz Strategy-Pattern (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106537&client_id=FH-Bielefeld"
+#    name: "Quiz Strategy-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/WI2riW7yOSE"
     name: "VL Strategy-Pattern"

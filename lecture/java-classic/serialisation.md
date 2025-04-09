@@ -33,9 +33,9 @@ outcomes:
   - k2: "Erklären Sie den Prozess der Serialisierung und De-Serialisierung. Worauf müssen Sie achten?"
   - k3: "Serialisierung von Objekten und Programmzuständen"
   - k3: "Serialisierung eigener Klassen und Typen"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106519&client_id=FH-Bielefeld"
-    name: "Quiz Serialisierung (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106519&client_id=FH-Bielefeld"
+#    name: "Quiz Serialisierung (ILIAS)"
 youtube:
   - link: "https://youtu.be/wnwCMtKpXAQ"
     name: "VL Serialisierung"

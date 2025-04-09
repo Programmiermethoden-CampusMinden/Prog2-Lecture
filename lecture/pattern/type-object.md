@@ -26,9 +26,9 @@ outcomes:
   - k2: "Verschieben des Typ-definierenden Teils der Eigenschaften in ein Type-Object"
   - k2: "Erklären der Ähnlichkeit zum Flyweight-Pattern"
   - k3: "Praktischer Einsatz des Type-Object-Patterns"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106539&client_id=FH-Bielefeld"
-    name: "Quiz Type-Object-Pattern (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106539&client_id=FH-Bielefeld"
+#    name: "Quiz Type-Object-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/No-xduTVlt0"
     name: "VL Type-Object-Pattern"

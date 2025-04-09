@@ -24,9 +24,9 @@ outcomes:
   - k3: "Nutzung von Maven-Properties"
   - k3: "Einbinden externer Bibliotheken als Dependencies"
   - k3: "Ausführen von Maven-Goals aus IDE heraus und Einbindung als Builder"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106215&client_id=FH-Bielefeld"
-    name: "Quiz Apache Maven (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106215&client_id=FH-Bielefeld"
+#    name: "Quiz Apache Maven (ILIAS)"
 youtube:
   - link: "`https://youtu.be/YAW-_Wi4LDY`{=markdown}"
     name: "VL Apache Maven"

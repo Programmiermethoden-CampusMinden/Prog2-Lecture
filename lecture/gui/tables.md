@@ -14,9 +14,9 @@ outcomes:
   - k2: "Trennung von Anzeige und Daten: View und Model (MVC-Pattern)"
   - k3: "Anzeige von Tabellen mit JTable"
   - k3: "Einsatz eines eigenen Datenmodells"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
-    name: "Quiz Swing (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
+#    name: "Quiz Swing (ILIAS)"
 youtube:
   - link: "`https://youtu.be/_iq_Grvhk90`{=markdown}"
     name: "VL Swing: Tabellen"

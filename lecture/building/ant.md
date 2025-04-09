@@ -32,9 +32,9 @@ outcomes:
   - k3: "Nutzung von Ant-Filesets (Dateisystemoperationen, Classpath)"
   - k3: "Nutzung von Ant-Properties"
   - k3: "Ausführen von Ant-Targets aus der IDE heraus"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106214&client_id=FH-Bielefeld"
-    name: "Quiz Apache Ant (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106214&client_id=FH-Bielefeld"
+#    name: "Quiz Apache Ant (ILIAS)"
 youtube:
   - link: "https://youtu.be/LRA1PeQ2pR0"
     name: "VL Apache Ant"

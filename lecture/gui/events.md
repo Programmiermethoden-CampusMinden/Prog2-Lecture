@@ -21,9 +21,9 @@ outcomes:
   - k2: "Unterschied zwischen den Listenern und den entsprechenden Adaptern"
   - k3: "Anwendung des Observer-Pattern, beispielsweise als Listener in Swing, aber auch in eigenen Programmen"
   - k3: "Nutzung von ActionListener, MouseListener, KeyListener, FocusListener"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
-    name: "Quiz Swing (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
+#    name: "Quiz Swing (ILIAS)"
 youtube:
   - link: "`https://youtu.be/Un-FS88__VU`{=markdown}"
     name: "VL Swing Events"

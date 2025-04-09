@@ -19,9 +19,9 @@ tldr: |
 outcomes:
   - k2: "Aufbau des Observer-Patterns (Beobachter-Entwurfsmusters)"
   - k3: "Anwendung des Observer-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106535&client_id=FH-Bielefeld"
-    name: "Quiz Observer-Pattern (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106535&client_id=FH-Bielefeld"
+#    name: "Quiz Observer-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/833lHcoxeog"
     name: "VL Observer-Pattern"

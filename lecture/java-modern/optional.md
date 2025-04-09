@@ -35,9 +35,9 @@ outcomes:
   - k3: "Einsatz von `Optional` in Rückgabewerten"
   - k3: "Erzeugen von Optionals mit `Optional.ofNullable()`"
   - k3: "Zugriff auf Optionals entweder direkt oder per Stream-API"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106526&client_id=FH-Bielefeld"
-    name: "Quiz Optional (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106526&client_id=FH-Bielefeld"
+#    name: "Quiz Optional (ILIAS)"
 youtube:
   - link: "https://youtu.be/JDG_hUSBfSA"
     name: "VL Optional"

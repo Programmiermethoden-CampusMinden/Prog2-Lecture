@@ -25,9 +25,9 @@ tldr: |
   Swing-GUI als neuer Thread ("Runnable") dem EDT übergeben werden.
 outcomes:
   - k2: "Unterschied und Zusammenhang zwischen Swing und AWT"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
-    name: "Quiz Swing (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
+#    name: "Quiz Swing (ILIAS)"
 youtube:
   - link: "https://youtu.be/ynwu6LuSLgQ"
     name: "VL Swing 101"

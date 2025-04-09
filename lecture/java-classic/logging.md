@@ -30,9 +30,9 @@ tldr: |
 outcomes:
   - k3: "Nutzung der Java Logging API im Paket `java.util.logging`"
   - k3: "Erstellung eigener Handler und Formatter"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106228&client_id=FH-Bielefeld"
-    name: "Quiz Logging (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106228&client_id=FH-Bielefeld"
+#    name: "Quiz Logging (ILIAS)"
 youtube:
   - link: "`https://youtu.be/_jYWJzr1rkA`{=markdown}"
     name: "VL Logging"

@@ -29,9 +29,9 @@ outcomes:
   - k3: "Einsatz von Themenbranches in der Entwicklung"
   - k3: "Git-Flow-Modell anwenden"
   - k3: "GitHub Flow-Modell anwenden"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106243&client_id=FH-Bielefeld"
-    name: "Quiz Git Branching-Strategien (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106243&client_id=FH-Bielefeld"
+#    name: "Quiz Git Branching-Strategien (ILIAS)"
 youtube:
   - link: "https://youtu.be/v1WHIPdoA0k"
     name: "VL Git Branching-Strategien"

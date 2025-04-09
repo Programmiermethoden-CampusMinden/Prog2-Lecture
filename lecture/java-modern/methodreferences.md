@@ -23,9 +23,9 @@ tldr: |
 outcomes:
   - k2: "Funktionales Interfaces (Definition)"
   - k3: "Einsatz von Methoden-Referenzen"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106524&client_id=FH-Bielefeld"
-    name: "Quiz Methoden-Referenzen (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106524&client_id=FH-Bielefeld"
+#    name: "Quiz Methoden-Referenzen (ILIAS)"
 youtube:
   - link: "https://youtu.be/z0mfvvrsRzc"
     name: "VL Methoden-Referenzen"

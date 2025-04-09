@@ -21,9 +21,9 @@ outcomes:
   - k3: "Unterscheiden von leicht lesbarem und schwer lesbarem Code"
   - k3: "Programmierprinzipien anwenden, um den Code sauberer zu gestalten"
   - k3: "Bessere Kommentare schreiben"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106230&client_id=FH-Bielefeld"
-    name: "Quiz Code Smells (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106230&client_id=FH-Bielefeld"
+#    name: "Quiz Code Smells (ILIAS)"
 youtube:
   - link: "https://youtu.be/ALDuLxm71tg"
     name: "VL Code Smells"

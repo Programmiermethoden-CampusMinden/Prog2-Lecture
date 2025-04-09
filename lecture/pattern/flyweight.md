@@ -19,9 +19,9 @@ outcomes:
   - k2: "Verschieben des Intrinsic States in gemeinsam genutzte Objekte"
   - k2: "Erklären der Ähnlichkeit zum Type-Object-Pattern"
   - k3: "Praktischer Einsatz des Flyweight-Patterns"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106534&client_id=FH-Bielefeld"
-    name: "Quiz Flyweight-Pattern (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106534&client_id=FH-Bielefeld"
+#    name: "Quiz Flyweight-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/Oo8TO8z5wQI"
     name: "VL Flyweight-Pattern"

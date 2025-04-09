@@ -30,9 +30,9 @@ outcomes:
   - k3: "Erstellen von Beiträgen zu einem Projekt über Merge-Requests"
   - k3: "Aktualisierung von Merge-Requests"
   - k3: "Diskussion über den Code in Merge-Requests"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106246&client_id=FH-Bielefeld"
-    name: "Quiz Git Workflows (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106246&client_id=FH-Bielefeld"
+#    name: "Quiz Git Workflows (ILIAS)"
 youtube:
   - link: "https://youtu.be/3xqmNGN39wE"
     name: "VL Git Workflows"

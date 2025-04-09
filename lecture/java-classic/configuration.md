@@ -21,9 +21,9 @@ outcomes:
   - k3: "Auswertung von Kommandozeilenparametern in einem Programm"
   - k3: "Apache Commons CLI zur Verarbeitung von Kommandozeilenparametern"
   - k3: "Laden von Konfigurationsdaten mit `java.util.Properties`"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106514&client_id=FH-Bielefeld"
-    name: "Quiz Konfiguration (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106514&client_id=FH-Bielefeld"
+#    name: "Quiz Konfiguration (ILIAS)"
 youtube:
   - link: "https://youtu.be/ImkyRx4UL9M"
     name: "VL Konfiguration"

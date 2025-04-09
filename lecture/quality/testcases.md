@@ -34,9 +34,9 @@ outcomes:
   - k2: "Merkmale schlecht testbaren Codes erklären"
   - k2: "Merkmale guter Unit-Tests erklären"
   - k3: "Erstellen von Testfällen mittels Äquivalenzklassenbildung und Grenzwertanalyse"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106546&client_id=FH-Bielefeld"
-    name: "Quiz Testfallermittlung (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106546&client_id=FH-Bielefeld"
+#    name: "Quiz Testfallermittlung (ILIAS)"
 youtube:
   - link: "https://youtu.be/AR1WWt4AFqI"
     name: "VL Testfallermittlung"

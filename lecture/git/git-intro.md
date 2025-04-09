@@ -28,9 +28,9 @@ outcomes:
   - k2: "Github ist nicht Git"
   - k2: "Erstellung von lokalen Git-Repositories"
   - k3: "Umgang mit entsprechenden Git-Befehlen auf der Konsole"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106239&client_id=FH-Bielefeld"
-    name: "Quiz Git Intro (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106239&client_id=FH-Bielefeld"
+#    name: "Quiz Git Intro (ILIAS)"
 youtube:
   - link: "https://youtu.be/Ac3-pZhVf_c"
     name: "VL Git Intro"

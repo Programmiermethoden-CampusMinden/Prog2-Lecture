@@ -31,9 +31,9 @@ outcomes:
   - k3: "Nutzung der vordefinierten regulären Ausdrücke"
   - k3: "Nutzung von Quantifizierern"
   - k3: "Zusammenbauen von komplexen Ausdrücken (u.a. mit Gruppen)"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106518&client_id=FH-Bielefeld"
-    name: "Quiz RegExp (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106518&client_id=FH-Bielefeld"
+#    name: "Quiz RegExp (ILIAS)"
 youtube:
   - link: "https://youtu.be/K9R1Bwa73uI"
     name: "VL RegExp"

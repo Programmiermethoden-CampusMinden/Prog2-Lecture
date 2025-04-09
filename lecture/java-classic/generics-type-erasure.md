@@ -15,9 +15,9 @@ tldr: |
   wegen der Auswirkungen aber auf dem Radar haben!
 outcomes:
   - k2: "Typ-Löschung und Auswirkungen"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106237&client_id=FH-Bielefeld"
-    name: "Quiz Generics: Type Erasure (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106237&client_id=FH-Bielefeld"
+#    name: "Quiz Generics: Type Erasure (ILIAS)"
 youtube:
   - link: "https://youtu.be/vo0WKkPBMAM"
     name: "VL Generics: Type Erasure"

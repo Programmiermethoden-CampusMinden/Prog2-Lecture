@@ -43,9 +43,9 @@ outcomes:
   - k2: "Lebenszyklus von Threads"
   - k3: "Erzeugen und Starten von Threads"
   - k3: "Kommunikation mit Objekten"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106529&client_id=FH-Bielefeld"
-    name: "Quiz Threads Intro (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106529&client_id=FH-Bielefeld"
+#    name: "Quiz Threads Intro (ILIAS)"
 youtube:
   - link: "https://youtu.be/ClfXbNPRl_8"
     name: "VL Threads Intro"

@@ -22,9 +22,9 @@ tldr: |
   zu den in der jeweiligen ableitenden Klasse implementierten Varianten.
 outcomes:
   - k3: "Template-Method-Entwurfsmuster praktisch anwenden"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106538&client_id=FH-Bielefeld"
-    name: "Quiz Template-Method-Pattern (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106538&client_id=FH-Bielefeld"
+#    name: "Quiz Template-Method-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/EE-n2T6AO-g"
     name: "VL Template-Method-Pattern"

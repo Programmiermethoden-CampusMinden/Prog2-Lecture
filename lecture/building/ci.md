@@ -31,9 +31,9 @@ tldr: |
   in dieser Lehrveranstaltung.
 outcomes:
   - k2: "Arbeitsweise von/mit CI"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106219&client_id=FH-Bielefeld"
-    name: "Quiz Continuous Integration (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106219&client_id=FH-Bielefeld"
+#    name: "Quiz Continuous Integration (ILIAS)"
 youtube:
   - link: "https://youtu.be/NCWxo-PN4gs"
     name: "VL Continuous Integration"

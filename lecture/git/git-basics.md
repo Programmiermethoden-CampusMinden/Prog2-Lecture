@@ -28,9 +28,9 @@ outcomes:
   - k3: "Umgang mit Änderungen: Hinzufügen zum Staging und Commit"
   - k3: "Herausfinden von Unterschieden, Ansehen der Historie"
   - k3: "Ignorieren von Dateien und Ordnern"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106241&client_id=FH-Bielefeld"
-    name: "Quiz Git Basics (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106241&client_id=FH-Bielefeld"
+#    name: "Quiz Git Basics (ILIAS)"
 youtube:
   - link: "https://youtu.be/GxJI8nmZVE8"
     name: "VL Git Basics"

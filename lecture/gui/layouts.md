@@ -17,9 +17,9 @@ tldr: |
       des Containers verhalten sollen.
 outcomes:
   - k3: "Anwenden der verschiedenen Layout-Manager: BorderLayout, FlowLayout, GridLayout, GridBagLayout"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
-    name: "Quiz Swing (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
+#    name: "Quiz Swing (ILIAS)"
 youtube:
   - link: "https://youtu.be/An7tQMW1A3E"
     name: "VL Swing: Layout-Manager"

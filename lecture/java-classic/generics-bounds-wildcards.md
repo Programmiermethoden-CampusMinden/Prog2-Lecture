@@ -21,9 +21,9 @@ tldr: |
   zugreifbar ist.
 outcomes:
   - k3: "Umgang mit Wildcards und Bounds bei generischen Klassen/Methoden"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106236&client_id=FH-Bielefeld"
-    name: "Quiz Generics: Bounds & Wildcards (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106236&client_id=FH-Bielefeld"
+#    name: "Quiz Generics: Bounds & Wildcards (ILIAS)"
 youtube:
   - link: "https://youtu.be/OV2vEn2EkWo"
     name: "VL Generics: Bounds & Wildcards"

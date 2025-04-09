@@ -26,13 +26,13 @@ outcomes:
   - k3: "Erzeugen von Branches"
   - k3: "Mergen von Branches, Auflösen möglicher Konflikte"
   - k3: "Rebasen von Branches"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106242&client_id=FH-Bielefeld"
-    name: "Quiz Git Branches (ILIAS)"
-  - link: "https://learngitbranching.js.org/"
-    name: "Tutorial: Welcome to Learn Git Branching"
-  - link: "https://marklodato.github.io/visual-git-guide/index-en.html"
-    name: "Tutorial: A Visual Git Reference"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106242&client_id=FH-Bielefeld"
+#    name: "Quiz Git Branches (ILIAS)"
+#  - link: "https://learngitbranching.js.org/"
+#    name: "Tutorial: Welcome to Learn Git Branching"
+#  - link: "https://marklodato.github.io/visual-git-guide/index-en.html"
+#    name: "Tutorial: A Visual Git Reference"
 youtube:
   - link: "https://youtu.be/WXPJOsgeR10"
     name: "VL Git Branches"
@@ -104,6 +104,7 @@ challenges: |
     *   [Learn Git Branching](https://learngitbranching.js.org/)
     *   [Oh My Git!](https://ohmygit.org/)
     *   [Git Time](https://git.bradwoods.io/)
+    *   [Tutorial: A Visual Git Reference](https://marklodato.github.io/visual-git-guide/index-en.html)
 ---
 
 

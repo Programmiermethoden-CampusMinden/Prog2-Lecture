@@ -23,9 +23,9 @@ outcomes:
   - k2: "Bedeutung einer sinnvollen Testsuite beim Refactoring"
   - k2: "Refactoring: Nur innere Struktur ändern, nicht äußeres Verhalten!"
   - k3: "Anwendung der wichtigsten Refactoring-Methoden: _Rename_, _Extract_, _Move_, _Push Up/Pull Down_"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106231&client_id=FH-Bielefeld"
-    name: "Quiz Refactoring (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106231&client_id=FH-Bielefeld"
+#    name: "Quiz Refactoring (ILIAS)"
 youtube:
   - link: "https://youtu.be/n0RaQ_Qve0Y"
     name: "VL Refactoring"

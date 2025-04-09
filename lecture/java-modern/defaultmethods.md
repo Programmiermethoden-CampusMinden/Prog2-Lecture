@@ -30,9 +30,9 @@ outcomes:
   - k2: "Problem der Mehrfachvererbung"
   - k3: "Erstellen von Interfaces mit Default-Methoden"
   - k3: "Regeln zum Auflösen der Mehrfachvererbung"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106522&client_id=FH-Bielefeld"
-    name: "Quiz Default-Methoden (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106522&client_id=FH-Bielefeld"
+#    name: "Quiz Default-Methoden (ILIAS)"
 youtube:
   - link: "https://youtu.be/qQ8BPkL9X5o"
     name: "VL Default-Methoden"

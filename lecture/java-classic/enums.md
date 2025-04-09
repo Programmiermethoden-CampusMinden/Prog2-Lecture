@@ -18,9 +18,9 @@ outcomes:
   - k2: "Vorgänge beim Initialisieren von Enum-Klassen (Hinweis: `static`)"
   - k3: "Erstellung komplexer Enumerationen mit Feldern und Konstruktoren"
   - k3: "Nutzung von `name()`, `ordinal()` und `values()` in Enum-Klassen"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106515&client_id=FH-Bielefeld"
-    name: "Quiz Enumerations (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106515&client_id=FH-Bielefeld"
+#    name: "Quiz Enumerations (ILIAS)"
 youtube:
   - link: "https://youtu.be/qoeT9jVuQZc"
     name: "VL Enumerations"

@@ -24,9 +24,9 @@ tldr: |
   wie `classes` mitbringt, oder das Plugin `checkstyle` zum Überprüfen von Coding-Style-Richtlinien.
 outcomes:
   - k3: "Schreiben und Verstehen einfacher Gradle-Skripte"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106220&client_id=FH-Bielefeld"
-    name: "Quiz Gradle (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106220&client_id=FH-Bielefeld"
+#    name: "Quiz Gradle (ILIAS)"
 youtube:
   - link: "https://youtu.be/aVtDkFpwd_E"
     name: "VL Build-Systeme: Gradle"

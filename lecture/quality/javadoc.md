@@ -26,9 +26,9 @@ outcomes:
   - k3: "Dokumentation öffentlich sichtbarer Elemente mit Javadoc"
   - k3: "Schreiben einer sinnvollen Summary"
   - k3: "Einsatz von Annotationen zur Dokumentation von Parametern, Rückgabetypen, Exceptions, veralteten Elementen"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106229&client_id=FH-Bielefeld"
-    name: "Quiz Javadoc (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106229&client_id=FH-Bielefeld"
+#    name: "Quiz Javadoc (ILIAS)"
 youtube:
   - link: "https://youtu.be/Qo2TTD593eQ"
     name: "VL Javadoc"

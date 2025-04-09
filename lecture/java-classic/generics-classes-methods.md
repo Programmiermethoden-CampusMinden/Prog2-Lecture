@@ -18,9 +18,9 @@ outcomes:
   - k1: "Begriffe generischer Typ, parametrisierter Typ, formaler Typ-Parameter, Typ-Parameter"
   - k3: "Erstellen und Nutzen von generischen Klassen und Interfaces"
   - k3: "Erstellen und Nutzen von generischen Methoden"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106235&client_id=FH-Bielefeld"
-    name: "Quiz Generics: Classes & Methods (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106235&client_id=FH-Bielefeld"
+#    name: "Quiz Generics: Classes & Methods (ILIAS)"
 youtube:
   - link: "https://youtu.be/k6MFPW-shh8"
     name: "VL Generische Klassen & Methoden"

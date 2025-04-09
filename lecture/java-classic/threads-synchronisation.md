@@ -43,9 +43,9 @@ outcomes:
   - k2: "Notwendigkeit zur Synchronisation"
   - k2: "Unterscheidung einseitige und mehrseitige Synchronisation"
   - k3: "Synchronisation mit `synchronized`, `wait`,  `notify` und `notifyAll`"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106530&client_id=FH-Bielefeld"
-    name: "Quiz Threads Synchronisation (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106530&client_id=FH-Bielefeld"
+#    name: "Quiz Threads Synchronisation (ILIAS)"
 youtube:
   - link: "https://youtu.be/FtVaobn4NqA"
     name: "VL Threads Synchronisation"

@@ -19,9 +19,9 @@ tldr: |
   dann die Referenz darauf zurückliefern.
 outcomes:
   - k3: "Entwurfsmuster Factory-Methode anwenden"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106533&client_id=FH-Bielefeld"
-    name: "Quiz Factory-Method-Pattern (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106533&client_id=FH-Bielefeld"
+#    name: "Quiz Factory-Method-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/mJWe-2BS2W0"
     name: "VL Factory-Method-Pattern"

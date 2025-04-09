@@ -43,9 +43,9 @@ tldr: |
 outcomes:
   - k2: "Aufbau des Visitor-Patterns (Besucher-Entwurfsmusters)"
   - k3: "Anwendung des Visitor-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106543&client_id=FH-Bielefeld"
-    name: "Quiz Visitor-Pattern (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106543&client_id=FH-Bielefeld"
+#    name: "Quiz Visitor-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/zW_2oQmjp8M"
     name: "VL Visitor-Pattern"

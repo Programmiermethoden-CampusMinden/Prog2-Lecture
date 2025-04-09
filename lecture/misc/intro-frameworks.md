@@ -10,9 +10,9 @@ tldr: |
   Code eingearbeitet werden muss.
 outcomes:
   - k2: "Unterschied zwischen Frameworks und Libraries verstehen"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106234&client_id=FH-Bielefeld"
-    name: "Quiz Frameworks (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106234&client_id=FH-Bielefeld"
+#    name: "Quiz Frameworks (ILIAS)"
 youtube:
   - link: "https://youtu.be/AV4YuF2Axgk"
     name: "VL Frameworks"

@@ -22,9 +22,9 @@ outcomes:
   - k3: "Erzeugen eines Spies in Mockito"
   - k3: "Prüfen von Interaktion mit _verify()_"
   - k3: "Einsatz von _ArgumentMatcher_"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106547&client_id=FH-Bielefeld"
-    name: "Quiz Mocking (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106547&client_id=FH-Bielefeld"
+#    name: "Quiz Mocking (ILIAS)"
 youtube:
   - link: "https://youtu.be/8deFZKtjXSk"
     name: "VL Mocking"

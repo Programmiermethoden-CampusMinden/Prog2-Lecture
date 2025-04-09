@@ -37,9 +37,9 @@ outcomes:
   - k3: "Einsatz innerer und anonymer Klassen"
   - k3: "Erstellen eigener funktionaler Interfaces"
   - k3: "Einsatz von Lambda-Ausdrücken"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106523&client_id=FH-Bielefeld"
-    name: "Quiz Lambda-Ausdrücke und funktionale Interfaces (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106523&client_id=FH-Bielefeld"
+#    name: "Quiz Lambda-Ausdrücke und funktionale Interfaces (ILIAS)"
 youtube:
   - link: "https://youtu.be/Wd8KG7xtp4c"
     name: "VL Lambda-Ausdrücke und funktionale Interfaces"

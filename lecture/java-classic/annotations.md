@@ -25,9 +25,9 @@ outcomes:
   - k3: "Anwendung von `@Override` sowie der Javadoc-Annotationen"
   - k3: "Erstellen eigener Annotationen sowie Einstellen der Sichtbarkeit und Verwendbarkeit"
   - k3: "Erstellen eigener einfacher Annotation-Processors"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106512&client_id=FH-Bielefeld"
-    name: "Quiz Annotationen (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106512&client_id=FH-Bielefeld"
+#    name: "Quiz Annotationen (ILIAS)"
 youtube:
   - link: "https://youtu.be/7u4_I4W_1JY"
     name: "VL Annotationen"

@@ -17,9 +17,9 @@ tldr: |
 outcomes:
   - k3: "Vererbungsbeziehungen mit generischen Klassen"
   - k3: "Umgang mit Arrays und generischen Typen"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106238&client_id=FH-Bielefeld"
-    name: "Quiz Generics und Polymorphie (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106238&client_id=FH-Bielefeld"
+#    name: "Quiz Generics und Polymorphie (ILIAS)"
 youtube:
   - link: "https://youtu.be/RiTA43wTixQ"
     name: "VL Generics und Polymorphie"

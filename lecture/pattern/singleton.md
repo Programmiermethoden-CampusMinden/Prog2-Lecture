@@ -17,9 +17,9 @@ tldr: |
 outcomes:
   - k2: "Was ist ein _Singleton_? Was ist der Unterschied zw. einem _Lazy_ und einem _Eager_ Singleton?"
   - k3: "Anwendung des Singleton-Patterns"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106536&client_id=FH-Bielefeld"
-    name: "Quiz Singleton-Pattern (ILIAS)"
+#quizzes:
+#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106536&client_id=FH-Bielefeld"
+#    name: "Quiz Singleton-Pattern (ILIAS)"
 youtube:
   - link: "https://youtu.be/ZT3rl1t85aY"
     name: "VL Singleton-Pattern"
