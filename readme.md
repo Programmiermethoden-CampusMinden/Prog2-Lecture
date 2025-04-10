@@ -221,6 +221,11 @@ Bearbeitung der Quizzes jeweils **Sa, 00:00 Uhr (Vorwoche) bis Fr, 08:00 Uhr** [
 
 **Parcoursprüfung**, 5 ECTS (PO23)
 
+Da Sie das Programmierhandwerk erlernen und üben und vertiefen sollen, dürfen Sie im
+Rahmen dieser Lehrveranstaltung noch keine KI-gestützten Assistenten benutzen. Lösungen,
+die dennoch ganz oder teilweise unter Zuhilfenahme von KI-Unterstützung erstellt wurden,
+werden wie nicht abgegeben behandelt.
+
 ### Prüfung im ersten Zeitraum
 
 1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte)
