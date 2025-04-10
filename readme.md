@@ -221,10 +221,10 @@ Bearbeitung der Quizzes jeweils **Sa, 00:00 Uhr (Vorwoche) bis Fr, 08:00 Uhr** [
 
 **Parcoursprüfung**, 5 ECTS (PO23)
 
-Da Sie das Programmierhandwerk erlernen und üben und vertiefen sollen, dürfen Sie im
-Rahmen dieser Lehrveranstaltung noch keine KI-gestützten Assistenten benutzen. Lösungen,
-die dennoch ganz oder teilweise unter Zuhilfenahme von KI-Unterstützung erstellt wurden,
-werden wie nicht abgegeben behandelt.
+Da Sie das Programmierhandwerk erlernen und üben und vertiefen sollen, dürfen Sie im Rahmen
+dieser Lehrveranstaltung noch keine KI-gestützten Assistenten benutzen. Lösungen, die dennoch
+ganz oder teilweise unter Zuhilfenahme von KI-Unterstützung erstellt wurden, werden wie nicht
+abgegeben behandelt.
 
 ### Prüfung im ersten Zeitraum
 
@@ -232,13 +232,21 @@ werden wie nicht abgegeben behandelt.
     (Einzelbearbeitung, fristgerecht bis zur jeweiligen Vorlesung, je Quiz bis zu 3x
     wiederholbar)
 2.  **Praktikum**: mind. 5 der 9 Übungsblätter bestanden (ohne Note/Punkte)
-    (bis zu 3er Teams, alle Aufgaben eines Blattes bearbeitet, fristgerechte Abgabe
-    der Lösungen im ILIAS mit ausreichendem *Post Mortem*, Vorstellung der Lösungen
-    im Praktikum durch jedes Teammitglied, aktive Beteiligung an der Diskussion im
-    Praktikum)
+    (bis zu 3er Teams, alle Aufgaben eines Blattes bearbeitet, individuelle(!) fristgerechte
+    Abgabe der Lösungen im ILIAS als aussagekräftiges *Post Mortem*[^postmortem], Vorstellung
+    der Lösungen im Praktikum durch jedes Teammitglied, aktive Beteiligung an der Diskussion
+    im Praktikum)
 3.  **Station I**: ILIAS-Test (30 Minuten in Minden im B40)
 4.  **Station II**: ILIAS-Test (30 Minuten in Minden im B40)
 5.  **Station III**: ILIAS-Test (30 Minuten in Minden im B40)
+
+[^postmortem]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe individuell(!) die
+    Bearbeitung des jeweiligen Aufgabenblattes zurückblickend mit ca. 200 bis 400 Wörtern. Gehen
+    Sie dabei aussagekräftig und nachvollziehbar auf folgende Punkte ein: (a) Zusammenfassung:
+    Was wurde gemacht? (b) Implementierungsdetails: Kurze Beschreibung besonders interessanter
+    Aspekte der Umsetzung. (c) Was war der schwierigste Teil bei der Bearbeitung? Wie haben Sie
+    dieses Problem gelöst? (d) Was haben Sie gelernt oder (besser) verstanden? (e) Team: Mit wem
+    haben Sie zusammengearbeitet? (f) Link zum Repo mit der Lösung (erst ab Blatt 04).
 
 Station I und II finden im Vorlesungsslot statt (Aufteilung siehe separate Ankündigung),
 Station III im ersten Prüfungszeitraum (Termin wird noch vom Prüfungsamt bekanntgegeben).
