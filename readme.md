@@ -1,5 +1,5 @@
 ---
-title: "IFM 2.1: Programmieren 2 (PO23, Sommer 2025)"
+title: "IFM 2.1: Programmieren 2 (Sommer 2025)"
 has_license: true
 ---
 
