@@ -57,7 +57,7 @@ wir die Gelegenheit nutzen und uns dieses genauer anschauen.
 3.  Versionierung mit Git
 4.  Softwarequalität
     - Testen, Coding Conventions & Smells, Refactoring, Javadoc, Logging
-5.  Entwurfsmutster
+5.  Entwurfsmuster
     - ~~Strategy~~, Template-Method, ~~Factory-Method~~, ~~Singleton~~, Observer, Visitor,
       Command, ...
 6.  Bauen von Software
