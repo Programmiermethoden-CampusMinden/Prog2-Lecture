@@ -102,7 +102,7 @@ challenges: |
 
 \bigskip
 
-![](images/workflow.png){width="80%"}
+![](images/workflow.png){width="80%" web_width="60%"}
 
 ::: notes
 1.  `git add .` (oder `git add <file>`)
@@ -127,7 +127,7 @@ challenges: |
 
 \bigskip
 
-![](images/lifecycle.png){width="70%"}
+![](images/lifecycle.png){width="70%" web_width="50%"}
 
 \bigskip
 
@@ -362,7 +362,7 @@ keinen _atomic commit_ mehr vor sich.
 Schauen Sie sich einmal einen Screenshot eines `git log --oneline 61e48f0..e2c8076`
 im [Dungeon-CampusMinden/Dungeon](https://github.com/Dungeon-CampusMinden/Dungeon) an:
 
-![](images/screenshot_git_log.png)
+![](images/screenshot_git_log.png){web_width="60%"}
 
 Nun stellen Sie sich vor, Sie sind auf der Suche nach Informationen, suchen einen
 bestimmten Commit oder wollen eine bestimmte Änderung finden ...
@@ -382,7 +382,7 @@ Leider sagt sich das so leicht - in der Praxis macht man es dann
 doch schnell wieder unsauber. Dennoch, auch im Dungeon-Repo gibt
 es einen positiven Trend (`git log --oneline 8039d6c..7f49e89`):
 
-![](images/screenshot_git_log_recent.png)
+![](images/screenshot_git_log_recent.png){web_width="80%"}
 
 Typische Regeln und Konventionen tauchen überall auf, beispielsweise
 in @Chacon2014 oder bei Tim Pope (siehe nächstes Beispiel) oder bei
