@@ -32,7 +32,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/a368cbd0990f4f58e5ee776bb4d6a1443c0a7cd443177eaa35ba35558e5c01307f689be5c9c239c6ffb41c74d2726397f2ba6be086df30737eec1df17ac4827a"
     name: "VL Template-Method-Pattern"
 attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_pattern_template-method.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/pattern/template-method.pdf"
     name: "PDF-Version"
 challenges: |
     Schreiben Sie eine abstrakte Klasse Drucker. Implementieren Sie die Funktion

@@ -27,7 +27,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/a0d6f4ada3f85cd9f78dfde923f045f5fd43819a4930c5ef989ff6acb150c2f53208a061cf87f3c3f03823f6d645e10b1388009bfd9cfe474cfb4bdc93302fc2"
     name: "VL Generics und Polymorphie"
 attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_java-classic_generics-polymorphism.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/java-classic/generics-polymorphism.pdf"
     name: "PDF-Version"
 ---
 

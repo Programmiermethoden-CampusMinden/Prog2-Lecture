@@ -34,7 +34,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/a0484bfdc0f388075a01b88f20bde97709aae4d4fe34d517e0889407b2d7b095b9b781856870f21d638e4ed4bf35b534717f5bac227ecc17ea4b6e0a195248b9"
     name: "VL Command-Pattern"
 attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_pattern_command.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/pattern/command.pdf"
     name: "PDF-Version"
 challenges: |
     Schreiben Sie für den `Dwarf` in den

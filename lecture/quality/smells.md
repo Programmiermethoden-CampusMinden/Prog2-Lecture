@@ -31,7 +31,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/9d53c3536ada817eee76c9f6e8f7838bfb2308a79d220b8dab0a3cf339f90c52e28ae25e85a652d6da31c8f38c581463bc1679fa5f9cc376115558f7fee41217"
     name: "VL Code Smells"
 attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_quality_smells.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/quality/smells.pdf"
     name: "PDF-Version"
 ---
 

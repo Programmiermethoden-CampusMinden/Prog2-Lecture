@@ -61,7 +61,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/08f819d3002d7658801ff15fdb14cbdba82defee0ae97d929f5c4a03eeb0e3e9b751e90f5e0fe0ac3d55a551a53065c04f505f23a6c9f41d69d504474ea28c04"
     name: "VL Threads Synchronisation"
 attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_java-classic_threads-synchronisation.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/java-classic/threads-synchronisation.pdf"
     name: "PDF-Version"
 challenges: |
     **Hamster-Welt**

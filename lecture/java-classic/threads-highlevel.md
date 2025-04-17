@@ -44,7 +44,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/1d46e6b75b7e2ebe8d15edbda2340505285d886160a3b03f489024b1075f0b5176c68d9993a145fdcdb5e65c17f6be80a7ef1f0c64a72c410536e69965275a59"
     name: "VL High-Level Concurrency"
 attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_java-classic_threads-highlevel.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/java-classic/threads-highlevel.pdf"
     name: "PDF-Version"
 ---
 

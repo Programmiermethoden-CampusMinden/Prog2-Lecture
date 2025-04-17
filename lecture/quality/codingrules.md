@@ -68,7 +68,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/31a425902a7d01e5fd4b3b082259d9d71bcff55030eb4564c98bb044c554162088d7ab02edbf50aff0503232dfd4c3bed43341ec058e272a0cd6f9a388584d84"
     name: "VL Coding Conventions"
 attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture_quality_codingrules.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/quality/codingrules.pdf"
     name: "PDF-Version"
 ---
 
