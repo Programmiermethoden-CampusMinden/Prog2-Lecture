@@ -23,7 +23,7 @@ tldr: |
   einher kommen. Beispiele sind das Plugin `java`, welches weitere Java-spezifische Tasks
   wie `classes` mitbringt, oder das Plugin `checkstyle` zum Überprüfen von Coding-Style-Richtlinien.
 outcomes:
-  - k3: "Schreiben und Verstehen einfacher Gradle-Skripte"
+  - k3: "Ich kann einfache Gradle-Skripte schreiben und verstehen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106220&client_id=FH-Bielefeld"
 #    name: "Quiz Gradle (ILIAS)"
