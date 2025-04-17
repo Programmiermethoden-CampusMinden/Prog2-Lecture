@@ -6,8 +6,6 @@ on:
     branches: [master]
   # triggered manually
   workflow_dispatch:
-  # triggered by pull requests
-  pull_request:
 
 jobs:
   docsify:
