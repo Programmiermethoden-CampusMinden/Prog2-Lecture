@@ -376,8 +376,9 @@ Varianten:
 
 :::::: notes
 ::: details
-Auflösung:
-(4) und (5): `return` ist eine Anweisung, d.h. bei (4) fehlen die geschweiften
+Auflösung: (4) und (5)
+
+`return` ist eine Anweisung, d.h. bei (4) fehlen die geschweiften
 Klammern. `"foo"` ist ein String und als solcher ein Ausdruck, d.h. hier sind
 die geschweiften Klammern zu viel (oder man ergänze den String mit einem `return`,
 also `return "foo";` ...).
