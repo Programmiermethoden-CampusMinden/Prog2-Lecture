@@ -33,10 +33,10 @@ tldr: |
   Der Lambda-Ausdruck muss von der Signatur her genau der einen abstrakten Methode im unterliegenden
   funktionalen Interface entsprechen.
 outcomes:
-  - k2: "Funktionales Interfaces (Definition)"
-  - k3: "Einsatz innerer und anonymer Klassen"
-  - k3: "Erstellen eigener funktionaler Interfaces"
-  - k3: "Einsatz von Lambda-Ausdrücken"
+  - k2: "Ich kenne die Definition 'Funktionales Interface'"
+  - k3: "Ich kann innere und anonyme Klassen praktisch einsetzen"
+  - k3: "Ich kann eigene funktionale Interfaces erstellen"
+  - k3: "Ich kann Lambda-Ausdrücke formulieren und einsetzen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106523&client_id=FH-Bielefeld"
 #    name: "Quiz Lambda-Ausdrücke und funktionale Interfaces (ILIAS)"
