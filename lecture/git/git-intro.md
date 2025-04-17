@@ -23,11 +23,11 @@ tldr: |
   [GitHub](https://github.com) ist nicht Git, sondern ein kommerzieller Anbieter, der das Hosten von
   Git-Repositories und weitere Features anbietet.
 outcomes:
-  - k1: "Varianten der Versionierung"
-  - k1: "Begriffe Workingcopy und Repository"
-  - k2: "Github ist nicht Git"
-  - k2: "Erstellung von lokalen Git-Repositories"
-  - k3: "Umgang mit entsprechenden Git-Befehlen auf der Konsole"
+  - k1: "Ich kenne verschiedene Varianten der Versionierung"
+  - k1: "Ich kann die Begriffe 'Workingcopy' und 'Repository' definieren"
+  - k2: "Ich kann zwischen 'Github' und 'Git' unterscheiden"
+  - k2: "Ich kann auf meinem Rechner lokale Git-Repositories anlegen"
+  - k3: "Ich kann mit den Git-Befehlen zum Anlegen von lokalen Repos auf der Konsole umgehen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106239&client_id=FH-Bielefeld"
 #    name: "Quiz Git Intro (ILIAS)"
