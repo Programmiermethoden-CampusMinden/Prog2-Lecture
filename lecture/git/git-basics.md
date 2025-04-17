@@ -24,10 +24,10 @@ tldr: |
   "Java-Code nach Style formatiert"). Falls der Kommentar länger sein soll, folgt eine Leerzeile auf
   die erste Zeile (Zusammenfassung) und danach ein Block mit der längeren Erklärung.
 outcomes:
-  - k3: "Umgang mit Dateien: Hinzufügen zum und Löschen aus Repo"
-  - k3: "Umgang mit Änderungen: Hinzufügen zum Staging und Commit"
-  - k3: "Herausfinden von Unterschieden, Ansehen der Historie"
-  - k3: "Ignorieren von Dateien und Ordnern"
+  - k3: "Ich kann Dateien zur Versionskontrolle hinzufügen bzw. aus der Versionierung löschen"
+  - k3: "Ich kann Änderungen (geänderte Dateien) zum Staging hinzufügen und committen"
+  - k3: "Ich kann Unterschiede zwischen Commits herausfinden und mir die Historie des Repos anschauen"
+  - k3: "Ich kann gezielt Dateien und Ordner von der Versionierung ausnehmen (ignorieren)"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106241&client_id=FH-Bielefeld"
 #    name: "Quiz Git Basics (ILIAS)"
