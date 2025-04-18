@@ -26,9 +26,9 @@ tldr: |
   echte Releases. Hier hat man auch wieder einen `master` als langlaufenden Branch, der die stabilen Release-Stände enthält.
   Vom `master` zweigen direkt die kleinen Feature-Branches ab und werden auch wieder direkt in den `master` integriert.
 outcomes:
-  - k3: "Einsatz von Themenbranches in der Entwicklung"
-  - k3: "Git-Flow-Modell anwenden"
-  - k3: "GitHub Flow-Modell anwenden"
+  - k3: "Ich kann mit Themenbranches in der Entwicklung arbeiten"
+  - k3: "Ich kann das 'Git-Flow'-Modell anwenden"
+  - k3: "Ich kann das 'GitHub Flow'-Modell anwenden"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106243&client_id=FH-Bielefeld"
 #    name: "Quiz Git Branching-Strategien (ILIAS)"
