@@ -21,8 +21,8 @@ tldr: |
   Syntax her dieser einen abstrakten Methode entsprechen (bei der dritten Form wird die
   Methode auf dem ersten Parameter aufgerufen).
 outcomes:
-  - k2: "Funktionales Interfaces (Definition)"
-  - k3: "Einsatz von Methoden-Referenzen"
+  - k2: "Ich verstehe die Definition von 'Funktionalen Interfaces' und kann sie erklären"
+  - k3: "Ich kann Methoden-Referenzen lesen und selbst formulieren"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106524&client_id=FH-Bielefeld"
 #    name: "Quiz Methoden-Referenzen (ILIAS)"
