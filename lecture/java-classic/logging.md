@@ -148,7 +148,7 @@ Paket `java.util.logging`
 
 \bigskip
 
-![](images/logging.png){width="80%"}
+![](images/logging.png){width="80%" web_width="65%"}
 
 ::: notes
 Eine Applikation kann verschiedene Logger instanziieren. Die Logger bauen
