@@ -46,7 +46,7 @@ attachments:
 
 ## Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
 
-![](images/distributed.png){width="80%"}
+![](images/distributed.png){width="80%" web_width="60%"}
 
 
 ::: notes
