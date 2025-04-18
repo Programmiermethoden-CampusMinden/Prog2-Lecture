@@ -23,9 +23,9 @@ tldr: |
   Mit `git rebase` kann die Wurzel eines Branches an eine andere Stelle verschoben werden. Dies wird später bei
   Workflows eine Rolle spielen.
 outcomes:
-  - k3: "Erzeugen von Branches"
-  - k3: "Mergen von Branches, Auflösen möglicher Konflikte"
-  - k3: "Rebasen von Branches"
+  - k3: "Ich kann neue Branches anlegen"
+  - k3: "Ich kann Branches mergen und mögliche Konflikte auflösen"
+  - k3: "Ich kann Branches rebasen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106242&client_id=FH-Bielefeld"
 #    name: "Quiz Git Branches (ILIAS)"
