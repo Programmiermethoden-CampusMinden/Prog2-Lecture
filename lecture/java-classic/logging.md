@@ -28,8 +28,8 @@ tldr: |
   am Log-Level des empfangenden Loggers gemessen, sondern akzeptiert und an die
   Handler des Loggers und (sofern nicht deaktiviert) an den Elternlogger weitergereicht.
 outcomes:
-  - k3: "Nutzung der Java Logging API im Paket `java.util.logging`"
-  - k3: "Erstellung eigener Handler und Formatter"
+  - k3: "Ich kann die Java Logging API im Paket `java.util.logging` aktiv einsetzen"
+  - k3: "Ich kann eigene Handler und Formatter schreiben"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106228&client_id=FH-Bielefeld"
 #    name: "Quiz Logging (ILIAS)"
