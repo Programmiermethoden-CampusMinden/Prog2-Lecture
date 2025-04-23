@@ -14,7 +14,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-  # TODO
+      - uses: cagix/pandoc-lecture-zen@master
+        with:
+          mktarget: beamer
+          pandoc_data: .pandoc
+          metadata: pm.yaml
+          publish_dir: _beamer
 
   # try building lecture notes (gfm)
   test_gfm:
