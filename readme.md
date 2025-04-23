@@ -231,16 +231,17 @@ abgegeben behandelt.
 ### Prüfung im ersten Zeitraum
 
 1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte)
-    (Einzelbearbeitung, fristgerecht bis zur jeweiligen Vorlesung, je Quiz bis zu 3x
-    wiederholbar)
-2.  **Praktikum**: mind. 5 der 9 Übungsblätter bestanden (ohne Note/Punkte)
-    (bis zu 3er Teams, alle Aufgaben eines Blattes bearbeitet, individuelle(!) fristgerechte
-    Abgabe der Lösungen im ILIAS als aussagekräftiges *Post Mortem*[^postmortem], Vorstellung
-    der Lösungen im Praktikum durch jedes Teammitglied, aktive Beteiligung an der Diskussion
-    im Praktikum)
-3.  **Station I**: ILIAS-Test (30 Minuten in Minden im B40)
-4.  **Station II**: ILIAS-Test (30 Minuten in Minden im B40)
-5.  **Station III**: ILIAS-Test (30 Minuten in Minden im B40)
+    (Einzelbearbeitung, fristgerecht bis zur jeweiligen Vorlesung, je Quiz
+    bis zu 3x wiederholbar)
+3.  **Praktikum**: mind. 5 der 9 Übungsblätter bestanden (ohne Note/Punkte)
+    (bis zu 3er Teams, alle Aufgaben eines Blattes bearbeitet, individuelle(!)
+    fristgerechte Abgabe der Lösungen im ILIAS als aussagekräftiges
+    [*Post Mortem*](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981)[^postmortem],
+    Vorstellung der Lösungen im Praktikum durch jedes Teammitglied, aktive
+    Beteiligung an der Diskussion im Praktikum)
+4.  **Station I**: ILIAS-Test (30 Minuten in Minden im B40)
+5.  **Station II**: ILIAS-Test (30 Minuten in Minden im B40)
+6.  **Station III**: ILIAS-Test (30 Minuten in Minden im B40)
 
 [^postmortem]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe individuell(!) die
     Bearbeitung des jeweiligen Aufgabenblattes zurückblickend mit ca. 200 bis 400 Wörtern. Gehen
@@ -249,6 +250,7 @@ abgegeben behandelt.
     Aspekte der Umsetzung. (c) Was war der schwierigste Teil bei der Bearbeitung? Wie haben Sie
     dieses Problem gelöst? (d) Was haben Sie gelernt oder (besser) verstanden? (e) Team: Mit wem
     haben Sie zusammengearbeitet? (f) Link zum Repo mit der Lösung (erst ab Blatt 04).
+    Siehe auch https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
 
 Station I und II finden im Vorlesungsslot statt (Aufteilung siehe separate Ankündigung),
 Station III im ersten Prüfungszeitraum (Termin wird noch vom Prüfungsamt bekanntgegeben).
