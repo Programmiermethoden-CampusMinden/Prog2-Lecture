@@ -75,7 +75,7 @@ challenges: |
 ---
 
 
-## Suchen in Strings
+# Suchen in Strings
 
 Gesucht ist ein Programm zum Extrahieren von Telefonnummern aus E-Mails.
 
@@ -95,13 +95,13 @@ Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
     +49(30)123456-789, +49 (30) 123 456 - 789, ...
 
 
-## Definition Regulärer Ausdruck
+# Definition Regulärer Ausdruck
 
 > Ein **regulärer Ausdruck** ist eine Zeichenkette, die zur Beschreibung von
 > Zeichenketten dient.
 
 ::: notes
-### Anwendungen
+## Anwendungen
 
 *   Finden von Bestandteilen in Zeichenketten
 *   Aufteilen von Strings in Tokens
@@ -111,7 +111,7 @@ Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
 :::
 
 
-## Einfachste reguläre Ausdrücke
+# Einfachste reguläre Ausdrücke
 
 | **Zeichenkette** | **Beschreibt**         |
 |:-----------------|:-----------------------|
@@ -123,7 +123,7 @@ Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
 | `\\`             | Backslash              |
 
 ::: notes
-### Beispiel
+## Beispiel
 :::
 
 *   `abc` => "abc"
@@ -131,7 +131,7 @@ Vorwahl und ggf. Ländervorwahl) aufschreiben kann:
 *   `a\\bc` => "a\\bc"
 
 ::: notes
-### Anmerkung
+## Anmerkung
 
 In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein.
 Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
@@ -139,7 +139,7 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 :::
 
 
-## Zeichenklassen
+# Zeichenklassen
 
 | **Zeichenkette** | **Beschreibt**                                           |
 |:-----------------|:---------------------------------------------------------|
@@ -151,7 +151,7 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 | `[a-z&&[^m-p]]`  | "a" bis "z", außer "m" bis "p": `[a-lq-z]` (Subtraktion) |
 
 ::: notes
-### Beispiel
+## Beispiel
 :::
 
 *   `[abc]` => "a" oder "b" oder "c"
@@ -160,7 +160,7 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 *   `A[a-c]` => "Aa", "Ab" oder "Ac"
 
 
-## Vordefinierte Ausdrücke
+# Vordefinierte Ausdrücke
 
 | **Zeichenkette** | **Beschreibt**                               |
 |:-----------------|:---------------------------------------------|
@@ -174,14 +174,14 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 | `\S`             | jedes Zeichen außer Whitespaces: `[^\s]`     |
 
 ::: notes
-### Beispiel
+## Beispiel
 :::
 
 *   `\d\d\d\d\d` => "12345"
 *   `\w\wA` => "aaA", "a0A", "a_A", ...
 
 
-## Nutzung in Java
+# Nutzung in Java
 
 \bigskip
 
@@ -248,7 +248,7 @@ Sie im Java-String "`a\\\\bc`" schreiben!
 [Demo: regexp.MatchFind]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/MatchFind.java"}
 
 
-## Unterschied zw. Finden und Matchen
+# Unterschied zw. Finden und Matchen
 
 *   `Matcher#find`:
 
@@ -264,7 +264,7 @@ Sie im Java-String "`a\\\\bc`" schreiben!
 \bigskip
 
 ::: notes
-### Beispiel
+## Beispiel
 :::
 
 *   Regulärer Ausdruck: `abc`, Suchstring: "blah blah abc blub"
@@ -272,7 +272,7 @@ Sie im Java-String "`a\\\\bc`" schreiben!
     *   `Matcher#matches`: kein Match - Suchstring entspricht nicht dem Muster
 
 
-## Quantifizierung
+# Quantifizierung
 
 | **Zeichenkette** | **Beschreibt**                                   |
 |:-----------------|:-------------------------------------------------|
@@ -284,14 +284,14 @@ Sie im Java-String "`a\\\\bc`" schreiben!
 | `X{n,m}`         | zwischen $n$ und $m$ Vorkommen von "X"           |
 
 ::: notes
-### Beispiel
+## Beispiel
 :::
 
 *   `\d{5}` => "12345"
 *   `-?\d+\.\d*` => ???
 
 
-## Interessante Effekte
+# Interessante Effekte
 
 ```java
 Pattern p = Pattern.compile("A.*A");
@@ -317,7 +317,7 @@ Dies liegt am "*greedy*" Verhalten der Quantifizierer.
 :::
 
 
-## Nicht gierige Quantifizierung mit "?"
+# Nicht gierige Quantifizierung mit "?"
 
 \bigskip
 
@@ -327,7 +327,7 @@ Dies liegt am "*greedy*" Verhalten der Quantifizierer.
 | `X+?`            | non-greedy Variante von `X+` |
 
 ::: notes
-### Beispiel
+## Beispiel
 :::
 
 *   Suchstring "A 12 A 45 A":
@@ -347,7 +347,7 @@ Dies liegt am "*greedy*" Verhalten der Quantifizierer.
         :::
 
 
-## (Fangende) Gruppierungen
+# (Fangende) Gruppierungen
 
 `Studi{2}` passt nicht auf "StudiStudi" (!)
 
@@ -374,7 +374,7 @@ Gruppierungen durch Klammern verwenden!
 :::
 
 ::: notes
-### Beispiel
+## Beispiel
 :::
 
 *   `(A)(B(C))`
@@ -413,7 +413,7 @@ bei Vorliegen eines Matches auf die Gruppen zugreifen.
 [Demo: regexp.Groups]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/Groups.java"}
 
 
-## Gruppen und Backreferences
+# Gruppen und Backreferences
 
 Matche zwei Ziffern, gefolgt von den selben zwei Ziffern
 
@@ -447,7 +447,7 @@ Matche zwei Ziffern, gefolgt von den selben zwei Ziffern
 [Demo: regexp.Backref]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/Backref.java"}
 
 
-## Beispiel Gruppen und Backreferences
+# Beispiel Gruppen und Backreferences
 
 Regulärer Ausdruck: Namen einer Person matchen, wenn Vor- und Nachname identisch sind.
 
@@ -458,7 +458,7 @@ Lösung: `([A-Z][a-zA-Z]*)\s\1`
 
 
 ::: notes
-## Umlaute und reguläre Ausdrücke
+# Umlaute und reguläre Ausdrücke
 
 *   Keine vordefinierte Abkürzung für Umlaute (wie etwa `\d`)
 
@@ -488,7 +488,7 @@ Lösung: `([A-Z][a-zA-Z]*)\s\1`
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   RegExp: Zeichenketten, die andere Zeichenketten beschreiben
 *   `java.util.regex.Pattern` und `java.util.regex.Matcher`

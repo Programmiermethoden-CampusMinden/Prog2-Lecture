@@ -24,12 +24,12 @@ fhmedia:
 ---
 
 
-## Checkliste für die Entwicklung eines simplen Videospiels
+# Checkliste für die Entwicklung eines simplen Videospiels
 
 ![](images/checklisteMotivation.png){width="60%"}
 
 
-## Checkliste für die Entwicklung eines simplen Videospiels mit Framework
+# Checkliste für die Entwicklung eines simplen Videospiels mit Framework
 
 ![](images/checklisteMotivationFarbig.png){width="60%"}
 
@@ -47,7 +47,7 @@ werden, die Anfragen annimmt, bearbeitet und die Antworten wieder zurückliefert
 :::
 
 
-## Was sind Frameworks?
+# Was sind Frameworks?
 
 ::: notes
 Frameworks liefern die Rahmenstruktur und Architektur, um Programme für die
@@ -62,7 +62,7 @@ zu implementieren, sind dabei aber selbst keine eigenen Programme (vgl. PM-Dunge
 :::
 
 ::: notes
-## Unterschied zu Libraries
+# Unterschied zu Libraries
 
 *   Libraries stellen Funktionen bereit, die frei in der eigenen Implementierung
     genutzt werden können.
@@ -84,7 +84,7 @@ zu implementieren, sind dabei aber selbst keine eigenen Programme (vgl. PM-Dunge
 ![](images/frameworksVSlib.png){width="80%"}
 
 
-## Verbreitete Frameworks
+# Verbreitete Frameworks
 
 | Framework | Anwendungszweck                                  |
 |-----------|--------------------------------------------------|
@@ -95,9 +95,9 @@ zu implementieren, sind dabei aber selbst keine eigenen Programme (vgl. PM-Dunge
 | libGDX    | Game Development  :)                             |
 
 
-## Mögliche Vor- und Nachteile von Frameworks
+# Mögliche Vor- und Nachteile von Frameworks
 
-### (+) Vorteile
+## (+) Vorteile
 
 *   Ermöglichen eine schnelle Implementierung umfangreicher Softwarekonstrukte
 *   Verstecken komplexe Zusammenhänge vor den Entwicklern
@@ -106,7 +106,7 @@ zu implementieren, sind dabei aber selbst keine eigenen Programme (vgl. PM-Dunge
 
 \bigskip
 
-### (-) Nachteile
+## (-) Nachteile
 
 *   Oftmals sehr umfangreich und schwer zu erlernen
 *   Fokus oft nicht mehr nur auf einem Anwendungsbereich (z.B. Spring)
@@ -117,14 +117,14 @@ zu implementieren, sind dabei aber selbst keine eigenen Programme (vgl. PM-Dunge
 
 
 ::: notes
-## Frameworks finden
+# Frameworks finden
 
-### Wann sollte man Frameworks verwenden?
+## Wann sollte man Frameworks verwenden?
 
 Wenn man bereits etablierte Anwendungen (wie Webservices) mit eigener
 Funktionalität anbieten möchte.
 
-### Wie/Wo findet man passende Frameworks?
+## Wie/Wo findet man passende Frameworks?
 
 *   Internetrecherche
 *   Foren
@@ -132,7 +132,7 @@ Funktionalität anbieten möchte.
 :::
 
 
-## Wie starte ich mit einem Framework?
+# Wie starte ich mit einem Framework?
 
 ::: notes
 Beispielproblem: Es soll eine interne Webanwendung bereitgestellt werden, die
@@ -161,7 +161,7 @@ ist ein einfaches und schlankes Framework zu bevorzugen.
 [Demo: Web-Anwendung für Zufallszahlen]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/misc/src/javalin/"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Frameworks stellen einen Rahmen und eine Architektur für wiederkehrende
     Softwarestrukturen bereit

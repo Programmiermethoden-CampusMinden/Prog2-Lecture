@@ -62,7 +62,7 @@ attachments:
 ---
 
 
-## 42
+# 42
 
 ![](images/screenshot_swingworker.png){width="80%"}
 
@@ -74,15 +74,15 @@ Wert 42 ausprobieren (ist zeitlich ganz gut)
 
 
 ::: notes
-## Einführung in nebenläufige Programmierung
+# Einführung in nebenläufige Programmierung
 :::
 
 ::: notes
-### Traditionelle Programmierung
+## Traditionelle Programmierung
 ::::
 
 ::: slides
-## Traditionelle Programmierung
+# Traditionelle Programmierung
 :::
 
 ::: notes
@@ -110,11 +110,11 @@ public class Traditional {
 
 
 ::: notes
-### Nebenläufige Programmierung
+## Nebenläufige Programmierung
 ::::
 
 ::: slides
-## Nebenläufige Programmierung
+# Nebenläufige Programmierung
 :::
 
 ::: notes
@@ -151,7 +151,7 @@ public class Threaded extends Thread {
 [Demo: intro.Threaded]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/intro/Threaded.java"}
 
 
-## Erzeugen von Threads
+# Erzeugen von Threads
 
 *   Ableiten von `Thread` oder Implementierung von `Runnable`
 
@@ -163,12 +163,12 @@ public class Threaded extends Thread {
 [Demo: creation.*]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/creation/"}
 
 ::: notes
-### Ableiten von _Thread_
+## Ableiten von _Thread_
 
 *    `start()` startet den Thread und sorgt für Ausführung von `run()`
 *    `start()` nur einmal aufrufen
 
-### Implementierung von _Runnable_
+## Implementierung von _Runnable_
 
 *   Ebenfalls `run()` implementieren
 *   Neues `Thread`-Objekt erzeugen, Konstruktor das eigene Runnable übergeben
@@ -179,7 +179,7 @@ Vorteil von `Runnable`: Ist ein Interface, d.h. man kann noch von einer anderen 
 :::
 
 
-## Zustandsmodell von Threads (vereinfacht)
+# Zustandsmodell von Threads (vereinfacht)
 
 ::: notes
 Threads haben einen Lebenszyklus: Nach dem Erzeugen der Objekte mit `new` wird
@@ -216,14 +216,14 @@ ausführliche Darstellung.
 
 \bigskip
 
-### Threads können wie normale Objekte kommunizieren
+## Threads können wie normale Objekte kommunizieren
 
 *   Zugriff auf (`public`) Attribute [(oder eben über Methoden)]{.notes}
 *   Aufruf von Methoden
 
 \bigskip
 
-### Threads können noch mehr
+## Threads können noch mehr
 
 *   Eine Zeitlang schlafen: `Thread.sleep(<duration_ms>)`
 
@@ -273,7 +273,7 @@ besprochen.
 [Demo: intro.Join]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/intro/Join.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 Threads sind weitere Kontrollflussfäden, von Java-VM (oder (selten) von OS) verwaltet
 

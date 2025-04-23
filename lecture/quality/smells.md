@@ -36,7 +36,7 @@ attachments:
 ---
 
 
-## Code Smells: Ist das Code oder kann das weg?
+# Code Smells: Ist das Code oder kann das weg?
 
 ```java
 class checker {
@@ -88,7 +88,7 @@ Schauen Sie mal in die unten angegebene Literatur :-)
 :::
 
 
-## Was ist guter ("sauberer") Code ("Clean Code")?
+# Was ist guter ("sauberer") Code ("Clean Code")?
 
 ::: notes
 Im Grunde bezeichnet "sauberer Code" ("Clean Code") die Abwesenheit von Smells. D.h. man
@@ -112,7 +112,7 @@ zu diesem Thema zu Wort kommen - eine sehr lesenswerte Lektüre!
 => Jemand kümmert sich um den Code; solides Handwerk
 
 
-## Warum ist guter ("sauberer") Code so wichtig?
+# Warum ist guter ("sauberer") Code so wichtig?
 
 > Any fool can write code that a computer can understand.
 > Good programmers write code that humans can understand.
@@ -131,7 +131,7 @@ Praxis später nicht gut gepflegt: Andere Entwickler haben (die berechtigte) Ang
 kaputt zu machen und arbeiten "um den Code herum". Nur leider wird das Konstrukt dann
 nur noch schwerer verständlich ...
 
-### Code Smells
+## Code Smells
 
 Verstöße gegen die Prinzipien von _Clean Code_ nennt man auch _Code Smells_: Der
 Code "stinkt" gewissermaßen. Dies bedeutet nicht unbedingt, dass der Code nicht
@@ -151,7 +151,7 @@ was im Laufe der Zeit die Chance für tatsächliche Probleme deutlich erhöht.
 :::
 
 ::::::::: notes
-### "Broken Windows" Phänomen
+## "Broken Windows" Phänomen
 
 Wenn ein Gebäude leer steht, wird es eine gewisse Zeit lang nur relativ langsam
 verfallen: Die Fenster werden nicht mehr geputzt, es sammelt sich Graffiti, Gras
@@ -173,7 +173,7 @@ schlecht ist ... Das wird mit der Zeit nicht besser ...
 ["Broken Windows" Phänomen]{.ex href="https://en.wikipedia.org/wiki/Broken_windows_theory"}
 
 ::::::::: notes
-### Maßeinheit für Code-Qualität ;-)
+## Maßeinheit für Code-Qualität ;-)
 
 Es gibt eine "praxisnahe" (und nicht ganz ernst gemeinte) Maßeinheit für Code-Qualität:
 Die "WTF/m" (_What the Fuck per minute_):
@@ -184,7 +184,7 @@ in Ordnung ...
 :::::::::
 
 
-## Code Smells: Nichtbeachtung von Coding Conventions
+# Code Smells: Nichtbeachtung von Coding Conventions
 
 *   Richtlinien für einheitliches Aussehen
     => Andere Programmierer sollen Code schnell lesen können
@@ -206,7 +206,7 @@ in Ordnung ...
 [[Hinweis: Genauere Betrachtung in "Coding Rules"]{.ex}]{.slides}
 
 
-## Code Smells: Schlechte Kommentare I
+# Code Smells: Schlechte Kommentare I
 
 *   Ratlose Kommentare
 
@@ -241,7 +241,7 @@ in Ordnung ...
     :::
 
 
-## Code Smells: Schlechte Kommentare II
+# Code Smells: Schlechte Kommentare II
 
 *   Veraltete Kommentare
 
@@ -281,7 +281,7 @@ in Ordnung ...
     :::
 
 
-## Code Smells: Schlechte Namen und fehlende Kapselung
+# Code Smells: Schlechte Namen und fehlende Kapselung
 
 ```java
 public class Studi extends Person {
@@ -320,7 +320,7 @@ gehören zur Schnittstelle und damit Teil des "Vertrags" mit den Nutzern!
     :::
 
 
-## Code Smells: Duplizierter Code
+# Code Smells: Duplizierter Code
 
 ```java
 public class Studi {
@@ -351,7 +351,7 @@ Kopierter/duplizierter Code ist problematisch:
 :::
 
 
-## Code Smells: Langer Code
+# Code Smells: Langer Code
 
 *   Lange Klassen
     *   Faustregel: 5 Bildschirmseiten sind viel
@@ -379,7 +379,7 @@ Kopierter/duplizierter Code ist problematisch:
 \bigskip
 
 ::::::::: notes
-### Lesbarkeit und Übersichtlichkeit leiden
+## Lesbarkeit und Übersichtlichkeit leiden
 
 *   Der Mensch kann sich nur begrenzt viele Dinge im Kurzzeitgedächtnis merken
 *   Klassen, die länger als 5 Bildschirmseiten sind, erfordern viel Hin- und
@@ -392,7 +392,7 @@ Kopierter/duplizierter Code ist problematisch:
 *   Große Dateien verleiten (auch mangels Übersichtlichkeit) dazu, neuen
     Code ebenfalls schluderig zu gliedern
 
-### Langer Code deutet auch auf eine Verletzung des Prinzips der Single Responsibility hin
+## Langer Code deutet auch auf eine Verletzung des Prinzips der Single Responsibility hin
 
 *   Klassen fassen evtl. nicht zusammengehörende Dinge zusammen
 
@@ -440,7 +440,7 @@ Kopierter/duplizierter Code ist problematisch:
 :::::::::
 
 
-## Code Smells: Feature Neid
+# Code Smells: Feature Neid
 
 ```java
 public class CreditsCalculator {
@@ -466,14 +466,14 @@ public class CreditsCalculator {
 
 
 ::: notes
-## Weiterführende Links
+# Weiterführende Links
 
 *   ["Foundations: Clean Code" (The Odin Project)](https://www.theodinproject.com/lessons/foundations-clean-code)
 *   ["Documentation Best Practices" (Google Styleguide)](https://github.com/google/styleguide/blob/gh-pages/docguide/best_practices.md)
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Code entsteht nicht zum Selbstzweck => Lesbarkeit ist wichtig
 

@@ -49,7 +49,7 @@ attachments:
 ---
 
 
-## Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
+# Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
 
 ![](images/distributed.png){width="80%"}
 
@@ -68,7 +68,7 @@ Antwort: Workflows mit Git ...
 :::
 
 
-## Zusammenarbeit: Zentraler Workflow mit Git (analog zu SVN)
+# Zusammenarbeit: Zentraler Workflow mit Git (analog zu SVN)
 
 ![](images/centralised.png){width="80%"}
 
@@ -95,7 +95,7 @@ gleichberechtigt und direkt pushen dürfen.
 :::
 
 
-## Zusammenarbeit: Einfacher verteilter Workflow mit Git
+# Zusammenarbeit: Einfacher verteilter Workflow mit Git
 
 ![](images/workflow_remote.png){width="80%"}
 
@@ -148,7 +148,7 @@ und das geschützte ("blessed") Master-Repo als `upstream` referenziert.
 
 
 ::::::::: notes
-### Anmerkungen zum Forken
+## Anmerkungen zum Forken
 
 Sie könnten auch das Original-Repo direkt clonen. Allerdings würden dann die
 `push` dort aufschlagen, was in der Regel nicht erwünscht ist (und auch nicht
@@ -159,7 +159,7 @@ eine Kopie des Original-Repos im eigenen Namespace angelegt. Auf diese Kopie
 hat man dann uneingeschränkten Zugriff.
 
 
-### Anmerkungen zu den Namen für die Remotes: `origin` und `upstream`
+## Anmerkungen zu den Namen für die Remotes: `origin` und `upstream`
 
 Üblicherweise checkt man die *Kopie* lokal aus (d.h. erzeugt einen Clone).
 In der Workingcopy verweist dann `origin` auf die Kopie. Um Änderungen am
@@ -178,7 +178,7 @@ zu bringen, führt man dann einfach folgendes aus (im Beispiel für den `master`
 [[Beispiel: Forken mit Gitlab, Namen für Remotes]{.ex}]{.slides}
 
 
-## Feature-Branches aktualisieren: Mergen mit _master_ vs. Rebase auf _master_
+# Feature-Branches aktualisieren: Mergen mit _master_ vs. Rebase auf _master_
 
 ::: notes
 Im Netz finden sich häufig Anleitungen, wonach man Änderungen im `master`
@@ -216,7 +216,7 @@ dessen Rebase) rebasen ... vgl. auch "The Perils of Rebasing" in Abschnitt "3.6 
 [@Chacon2014].
 
 
-### Mögliches Szenario im Praktikum
+## Mögliches Szenario im Praktikum
 
 Im Praktikum haben Sie das Vorgabe-Repo. Dieses könnten Sie als `upstream` in Ihre lokale
 Workingcopy einbinden.
@@ -245,7 +245,7 @@ inkompatible Weise geändert hat ...
 [[Besser einen Pull/Rebase für den Feature-Branch machen!]{.ex}]{.slides}
 
 
-## Kommunikation: Merge- bzw. Pull-Requests
+# Kommunikation: Merge- bzw. Pull-Requests
 
 ::: notes
 Mergen kann man auf der Konsole (oder in der IDE) und anschließend die (neuen) Branches
@@ -278,7 +278,7 @@ Nachfolgend für den selben MR aus der letzten Abbildung noch die reine Diskussi
 
 
 ::::::::: notes
-## Best Practices bei Merge-/Pull-Requests
+# Best Practices bei Merge-/Pull-Requests
 
 1.  MR/PR so zeitig wie möglich aufmachen
     *   Am besten sofort, wenn ein neuer Branch auf den Server gepusht wird!
@@ -318,7 +318,7 @@ Nachfolgend für den selben MR aus der letzten Abbildung noch die reine Diskussi
 :::::::::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Git-Workflows für die Zusammenarbeit:
     *   einfacher zentraler Ansatz für kleine Arbeitsgruppen vs.

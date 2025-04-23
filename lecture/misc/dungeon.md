@@ -61,7 +61,7 @@ attachments:
 Dieses Dokument ist nicht für die Nutzung als Foliensatz vorbereitet.
 -->
 
-## How-To Dungeon
+# How-To Dungeon
 
 In diesem Semester werden Sie im Praktikum schrittweise Erweiterungen in verschiedenen
 "fertigen" Rogue-like Computerspielen programmieren und dabei (hoffentlich) die Methoden aus
@@ -75,7 +75,7 @@ Wir werden uns in diesem How-To einen Überblick verschaffen und einen ersten Ei
 versuchen: Wir programmieren einen einfachen Helden.
 
 
-## Projekt PM-Dungeon
+# Projekt PM-Dungeon
 
 Das Projekt PM-Dungeon entstand in verschiedenen Forschungsprojekten und wurde (und wird)
 aktiv von Studierenden und wissenschaftlichen Mitarbeitern am Campus Minden entwickelt.
@@ -94,7 +94,7 @@ von Klassen und Methoden, sinnvolles Javadoc, Dokumentation jenseits des Javadoc
 Commit-Messages und PR-Summaries.
 
 
-## Installation des Frameworks
+# Installation des Frameworks
 
 Sie finden das Projekt auf GitHub:
 [github.com/Dungeon-CampusMinden/Dungeon](https://github.com/Dungeon-CampusMinden/Dungeon).
@@ -116,7 +116,7 @@ Sonderzeichen (Umlaute o.ä.) vorkommen! Dies kann zu seltsamen Fehler führen. 
 darauf achten, dass Sie als JDK ein **Java SE 21 (LTS)** verwenden.
 
 
-## Java: Java SE 21 (LTS)
+# Java: Java SE 21 (LTS)
 
 Wir benutzen im Dungeon-Projekt die aktuelle LTS-Version des JDK, d.h. **Java SE 21 (LTS)**.
 Sie können sich das JDK bei [Oracle](https://www.oracle.com/java/technologies/downloads/)
@@ -138,7 +138,7 @@ ungefähr diese Ausgabe erzeugen (ignorieren Sie die Minor-Version, wichtig ist 
     Java HotSpot(TM) 64-Bit Server VM (build 21.0.3+7-LTS-152, mixed mode, sharing)
 
 
-## Erster Test
+# Erster Test
 
 Für einen ersten Test gehen Sie in der Konsole in den vorhin erzeugten neuen Ordner
 `pm-dungeon/` und führen Sie dort den Befehl
@@ -157,7 +157,7 @@ Dies dauert je nach Internetanbindung etwas - beim nächsten Start geht es dann 
 schneller, weil ja bereits alles da ist.
 
 
-## Import in der IDE
+# Import in der IDE
 
 Importieren Sie das Projekt als Gradle-basiertes Projekt, dann übernimmt die IDE die
 Konfiguration für Sie.
@@ -170,7 +170,7 @@ Konfiguration für Sie.
 starten, und es erscheint wieder ein minimales Level.
 
 
-## Überblick über die (Sub-) Projekte
+# Überblick über die (Sub-) Projekte
 
 Sie finden im Package-Explorer eine Reihe von Unterprojekten (Gradle-Subprojekte). Für PR2
 ist eigentlich nur das Subprojekt
@@ -210,7 +210,7 @@ anschauen sollten. Zusätzlich gibt es für Game und Dungeon noch weitere Dokume
 `doc/`-Ordnern.
 
 
-## Überblick über die Java-Strukturen
+# Überblick über die Java-Strukturen
 
 ![](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/img/gameloop.png?raw=true)
 
@@ -248,7 +248,7 @@ Dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/q
 eine gute Anleitung, die auf die Strukturen tiefer eingeht.
 
 
-## Mein Held
+# Mein Held
 
 Um einen besseren Blick in das System zu bekommen, erstellen wir schrittweise einen eigenen
 einfachen Helden.
@@ -281,7 +281,7 @@ tasks.register('run', JavaExec) {
 ```
 
 
-## Einschub: ECS oder Entities, Components und Systems
+# Einschub: ECS oder Entities, Components und Systems
 
 Der Held ist ein Element im Spiel. Diese Struktur muss geeignet modelliert werden.
 
@@ -293,7 +293,7 @@ Vorbildern" wie beispielsweise
 Neben verschiedenen Hilfsstrukturen gibt es dabei nur **Entitäten**, **Komponenten** und
 **Systeme**. Hier werden sämtliche Informationen und Verhalten modelliert.
 
-### Entity
+## Entity
 
 Die Idee dahinter ist: Alle Elemente im Spiel werden als *Entität* realisiert, d.h. der Held
 und die Monster und die Items, die man so finden kann, sind alles Entitäten. Sogar Feuerbälle
@@ -308,7 +308,7 @@ registriert werden. Man kann die Entitäten über die API abrufen (`Game#allEnti
 
 Unsere Basisklasse für Entitäten ist aktuell `core.Entity`.
 
-### Component
+## Component
 
 Components bündeln bestimmte Werte einer Entität für bestimmte Zwecke, d.h. statt der
 Attribute in einer Klasse (Entität) nutzen wir hier eine weitere Kapselung.
@@ -329,7 +329,7 @@ Components speichern vor allem Werte und haben nur in Ausnahmefällen eigenes Ve
 
 Das Basisinterface für Components ist derzeit `core.Component`.
 
-### System
+## System
 
 Mit Entitäten und passenden Components, über die wir die Eigenschaften ausdrücken, können wir
 bereits Spielelemente im Dungeon repräsentieren.
@@ -353,9 +353,9 @@ Basisklasse ist derzeit `core.System` - falls Sie einmal eigene Systeme implemen
 Doku](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/create_own_content.md))
 
 
-## Nun aber Helden!
+# Nun aber Helden!
 
-### Ein Held ist eine Entität
+## Ein Held ist eine Entität
 
 Also legen wir nun endlich einen neuen Helden als Instanz von `core.Entity` an und
 registrieren diese Entität im Spiel:
@@ -386,7 +386,7 @@ Prinzipiell haben Sie damit alles, um das Spiel starten zu können. In der Praxi
 aber keinen Helden: Der hat nämlich weder eine Position noch eine Textur, kann also gar nicht
 angezeigt werden.
 
-### Wo bin ich grad?
+## Wo bin ich grad?
 
 Der Held braucht eine Position. Dazu gibt es `core.components.PositionComponent`. Fügen wir
 diese einfach dem Helden hinzu:
@@ -426,7 +426,7 @@ ist).
 
 Wenn Sie jetzt das Spiel starten, sehen Sie - immer noch nichts (außer den Wänden). Hmmm.
 
-### Animateure
+## Animateure
 
 Um den Held zeichnen zu können, brauchen wir eine Animation - also eine `DrawComponent`.
 
@@ -482,7 +482,7 @@ gleich noch eine `PlayerComponent`.
 
 Jetzt wackelt der Held auf der Stelle herum ...
 
-### Bewege mich
+## Bewege mich
 
 Für die Bewegung ist das `VelocitySystem` zuständig. Dieses fragt in allen Entitäten die
 `VelocityComponent` sowie die `PositionComponent` ab, berechnet die nächste neue Position und
@@ -569,9 +569,9 @@ Nun sollten Sie Ihren Helden (nach oben) bewegen können. (Tipp: Probieren Sie "
 diejenigen Entitäten, die alle benötigten Components aufweisen.
 
 
-## Walking mit System
+# Walking mit System
 
-### Neue Monster
+## Neue Monster
 
 Wie kann ich ein Monster beim Laden des Levels erzeugen?
 
@@ -633,7 +633,7 @@ und dann "ewig" laufen, insbesondere bei Reaktion auf Tastatureingaben. Deshalb 
 Entitäten kurz bewegt und bremsen dann wieder ab. Das Aufrechterhalten der Bewegung erfolgt
 normalerweise über Systeme ...
 
-### Systems für das selbstständige Laufen
+## Systems für das selbstständige Laufen
 
 Wir brauchen ein System, welches die aktuelle Geschwindigkeit einer Entität in jedem Frame
 wieder auf den alten Wert setzt. Dazu leiten wir von `core.System` ab. (Achtung: Es gibt auch
@@ -683,7 +683,7 @@ Nun läuft das neue Monster los (bis es gegen eine Wand läuft).
 
 Aber der Held bewegt sich nun ebenfalls dauerhaft :(
 
-### Components für das selbstständige Laufen
+## Components für das selbstständige Laufen
 
 Das Problem ist, dass unser neues `WalkerSystem` **alle** Entitäten automatisch bewegt. (Ein
 weiteres Problem ist, dass das `WalkerSystem` davon ausgeht, dass es immer eine
@@ -766,7 +766,7 @@ Tatsächlich gibt es im Sub-Projekt "dungeon" (Package `contrib`) bereits eine V
 Components und passenden Systems, die solche typischen Aufgaben bereits realisieren.
 
 
-## Kämpfe wie ein NPC
+# Kämpfe wie ein NPC
 
 Wir haben beim Hero über das `PlayerComponent` eine Reaktion auf Tastatureingaben
 implementiert. Hier könnte man einer Taste auch den Start einer neuen Entität zuordnen, die
@@ -847,7 +847,7 @@ All diese (und viele weitere) Components und Systems gibt es bereits im Package 
 Sub-Projekt ["dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dungeon).
 
 
-## Wrap-Up
+# Wrap-Up
 
 ::: notes
 Damit endet der kurze Ausflug in den Dungeon.

@@ -161,7 +161,7 @@ challenges: |
 ---
 
 
-## Problem: Sortieren einer Studi-Liste
+# Problem: Sortieren einer Studi-Liste
 
 ```java
 List<Studi> sl = new ArrayList<>();
@@ -204,7 +204,7 @@ Punkt brauchen wir mehr Anlauf ...
 
 
 ::::::::: notes
-## Erinnerung: Verschachtelte Klassen ("_Nested Classes_")
+# Erinnerung: Verschachtelte Klassen ("_Nested Classes_")
 
 Man kann Klassen innerhalb von Klassen definieren: Verschachtelte Klassen.
 
@@ -218,7 +218,7 @@ Man kann Klassen innerhalb von Klassen definieren: Verschachtelte Klassen.
 
 Sichtbarkeit: Wird u.U. von äußerer Klasse "überstimmt"
 
-### Innere Klassen ("_Inner Classes_")
+## Innere Klassen ("_Inner Classes_")
 
 *   Objekt der äußeren Klasse muss existieren
 *   Innere Klasse ist normales Member der äußeren Klasse
@@ -243,7 +243,7 @@ public class Outer {
 
 [Beispiel mit Iterator als innere Klasse: nested.StudiListNested]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/nested/StudiListNested.java"}
 
-### Statische innere Klassen ("_Static Nested Classes_")
+## Statische innere Klassen ("_Static Nested Classes_")
 
 *   Keine implizite Referenz auf Objekt
 *   Nur Zugriff auf Klassenmethoden und -attribute
@@ -263,7 +263,7 @@ Outer.StaticNested nested = new Outer.StaticNested();
 :::::::::
 
 
-## Lösung: Comparator als anonyme innere Klasse
+# Lösung: Comparator als anonyme innere Klasse
 
 ```java
 List<Studi> sl = new ArrayList<>();
@@ -294,7 +294,7 @@ sl.sort(
 [Demo: nested.DemoAnonymousInnerClass]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/nested/DemoAnonymousInnerClass.java"}
 
 
-## Vereinfachung mit Lambda-Ausdruck
+# Vereinfachung mit Lambda-Ausdruck
 
 ```java
 List<Studi> sl = new ArrayList<>();
@@ -324,7 +324,7 @@ werden kann, muss der erwartete Parameter vom Typ her ein "**funktionales Interf
 [Demo: nested.DemoLambda]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/nested/DemoLambda.java"}
 
 
-## Syntax für Lambdas
+# Syntax für Lambdas
 
 ```java
 (Studi o1, Studi o2)  ->  o1.getCredits() - o2.getCredits()
@@ -359,7 +359,7 @@ Varianten:
 *   **`(parameters)  ->  { statements; }`**
 
 
-## Quiz: Welches sind keine gültigen Lambda-Ausdrücke?
+# Quiz: Welches sind keine gültigen Lambda-Ausdrücke?
 
 1.  `() -> {}`
 2.  `() -> "wuppie"`
@@ -386,7 +386,7 @@ also `return "foo";` ...).
 ::::::
 
 
-## Definition "Funktionales Interface" ("_functional interfaces_")
+# Definition "Funktionales Interface" ("_functional interfaces_")
 
 ```java
 @FunctionalInterface
@@ -434,7 +434,7 @@ eigenen Projekten nutzen!
 :::
 
 
-## Quiz: Welches ist kein funktionales Interface?
+# Quiz: Welches ist kein funktionales Interface?
 
 ```java
 public interface Wuppie {
@@ -465,7 +465,7 @@ Auflösung:
 ::::::
 
 
-## Lambdas und funktionale Interfaces: Typprüfung
+# Lambdas und funktionale Interfaces: Typprüfung
 
 ```java
 interface java.util.Comparator<T> {
@@ -500,7 +500,7 @@ Der Compiler prüft in etwa folgende Schritte, wenn er über einen Lambda-Ausdru
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Anonyme Klassen: "Wegwerf"-Innere Klassen
     *   Müssen Interface implementieren oder Klasse erweitern

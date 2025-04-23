@@ -69,7 +69,7 @@ attachments:
 
 
 
-## Motivation CI/CD: WFM (_Works For Me_)
+# Motivation CI/CD: WFM (_Works For Me_)
 
 ![](images/ci.png){width="80%" web_width="60%"}
 
@@ -99,7 +99,7 @@ In diesen Fällen kann eine Virtualisierung helfen.
 :::
 
 
-## Virtualisierung: Container vs. VM
+# Virtualisierung: Container vs. VM
 
 ![](images/virtualisierung.png){width="80%" web_width="60%"}
 
@@ -143,7 +143,7 @@ normalerweise keine VMs/Container basierend auf ARM-Architektur ausgeführt werd
 :::
 
 
-## Getting started
+# Getting started
 
 *   DockerHub: fertige Images => [hub.docker.com/search](https://hub.docker.com/search?q=&type=image)
 
@@ -153,7 +153,7 @@ normalerweise keine VMs/Container basierend auf ARM-Architektur ausgeführt werd
 *   Image starten: `docker run <IMAGE>`
 
 ::: notes
-### Begriffe
+## Begriffe
 
 *   **Docker-File**: Beschreibungsdatei, wie Docker ein Image erzeugen soll.
 *   **Image**: Enthält die Dinge, die lt. dem Docker-File in das Image gepackt werden sollen.
@@ -161,7 +161,7 @@ normalerweise keine VMs/Container basierend auf ARM-Architektur ausgeführt werd
 *   **Container**: Ein laufendes Images (genauer: eine laufende Instanz eines Images). Kann
     dann auch zusätzliche Daten enthalten.
 
-### Beispiele
+## Beispiele
 :::
 
 ::: slides
@@ -229,7 +229,7 @@ dann mit `java Hello` die Klasse ausgeführt werden.
 [Demo: Container in der Konsole]{.ex href="https://youtu.be/LE_QcHqUg9Y"}
 
 
-## Images selbst definieren
+# Images selbst definieren
 
 ```docker
 FROM debian:stable-slim
@@ -295,7 +295,7 @@ und erstellt ein neues, welches dann die aktualisierte Software enthält.
 [Beispiel: debian-latex.df]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/docker/debian-latex.df"}
 
 
-## CI-Pipeline (GitLab)
+# CI-Pipeline (GitLab)
 
 ```yaml
 default:
@@ -324,7 +324,7 @@ Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechne
 [Demo: GitLab CI/CD und Docker]{.ex href="https://youtu.be/3Tj3lhcoKro"}
 
 
-## CI-Pipeline (GitHub)
+# CI-Pipeline (GitHub)
 
 ```yaml
 name: demo
@@ -360,7 +360,7 @@ Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechner: `docker run openjd
 [Demo: GitHub Actions und Docker]{.ex href="https://youtu.be/jrxoax2fPRI"}
 
 
-## VSCode und das Plugin "Remote - Containers"
+# VSCode und das Plugin "Remote - Containers"
 
 ![](images/vscode-remote.png){width="80%"}
 
@@ -407,7 +407,7 @@ von GitHub auf.
 
 
 ::::::::: notes
-## Link-Sammlung
+# Link-Sammlung
 
 *   [Wikipedia: Docker](https://en.wikipedia.org/wiki/Docker_(software))
 *   [Wikipedia: Virtuelle Maschinen](https://en.wikipedia.org/wiki/Virtual_machine)
@@ -422,7 +422,7 @@ von GitHub auf.
 :::::::::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Schlanke Virtualisierung mit Containern (kein eigenes OS)
 *   _Kein_ Sandbox-Effekt

@@ -78,7 +78,7 @@ challenges: |
 ---
 
 
-## Motivation: Ticket-App
+# Motivation: Ticket-App
 
 *   Nutzer geben Fahrtziel an (und nicht die Ticketart!)
 
@@ -94,12 +94,12 @@ challenges: |
 => **Factory-Method-Pattern**: Objekte sollen nicht direkt durch den Nutzer erzeugt werden
 
 
-## Factory-Method-Pattern
+# Factory-Method-Pattern
 
 ![](images/factorymethod.png){width="80%"}
 
 
-## Hands-On: Ticket-App
+# Hands-On: Ticket-App
 
 Implementieren Sie eine Ticket-App, die verschiedene Tickets mit
 Hilfe des Factory-Method Entwurfsmusters generiert.
@@ -107,7 +107,7 @@ Hilfe des Factory-Method Entwurfsmusters generiert.
 [UML; Konsole: factory.FactoryBeispiel]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/factory/FactoryBeispiel.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Konkrete Objekte sollen nicht direkt über Konstruktor erzeugt werden
 *   (Statische) Hilfsmethode, die aus Parameter das "richtige" Objekte erzeugt

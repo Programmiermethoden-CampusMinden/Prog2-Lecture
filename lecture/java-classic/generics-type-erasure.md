@@ -30,7 +30,7 @@ attachments:
 ---
 
 
-## Typ-Löschung (_Type-Erasure_)
+# Typ-Löschung (_Type-Erasure_)
 
 ::: notes
 Der Compiler ersetzt nach Prüfung der Typen und ihrer Verwendung alle Typ-Parameter
@@ -93,7 +93,7 @@ Die obere Schranke meist `Object` => `new T()` verboten/sinnfrei (s.u.)!
 :::
 
 
-## Type-Erasure bei Nutzung von Bounds
+# Type-Erasure bei Nutzung von Bounds
 
 :::::: columns
 ::: column
@@ -135,7 +135,7 @@ class Cps {
 ::::::
 
 
-## Raw-Types: Ich mag meine Generics "well done" :-)
+# Raw-Types: Ich mag meine Generics "well done" :-)
 
 Raw-Types: Instanziierung ohne Typ-Parameter => `Object`
 
@@ -149,7 +149,7 @@ Stack s = new Stack(); // Stack von Object-Objekten
 *   Nutzung wird nicht empfohlen! (Warum?)
 
 ::: notes
-### Anmerkung
+## Anmerkung
 
 Raw-Types darf man zwar selbst im Quellcode verwenden (so wie im Beispiel
 hier), **sollte** die Verwendung aber vermeiden wegen der Typ-Unsicherheit:
@@ -168,7 +168,7 @@ da, weil es dort noch keine Generics gab (wurden erst mit Java6 eingeführt).
 :::
 
 
-## Folgen der Typ-Löschung: _new_
+# Folgen der Typ-Löschung: _new_
 
 ::: center
 `new` mit parametrisierten Klassen ist nicht erlaubt!
@@ -198,7 +198,7 @@ Cast-Typ eigentlich mitbringt ...
 :::
 
 
-## Folgen der Typ-Löschung: _static_
+# Folgen der Typ-Löschung: _static_
 
 ::: center
 `static` mit generischen Typen ist nicht erlaubt!
@@ -227,7 +227,7 @@ sich die statischen Attribute teilen \newline (Typ zur Laufzeit unklar!).
 *Hinweis*: Generische (statische) Methoden sind erlaubt.
 
 
-## Folgen der Typ-Löschung: _instanceof_
+# Folgen der Typ-Löschung: _instanceof_
 
 ::: center
 `instanceof` mit parametrisierten Klassen ist nicht erlaubt!
@@ -270,7 +270,7 @@ void printType(Fach p) {
 ::::::
 
 
-## Folgen der Typ-Löschung: _.class_
+# Folgen der Typ-Löschung: _.class_
 
 ::: center
 `.class` mit parametrisierten Klassen ist nicht erlaubt!
@@ -292,7 +292,7 @@ x = (a.getClass() == b.getClass());               // true
 Grund: Es gibt nur `List.class` (und kein `List<String>.class` bzw. `List<Integer>.class`)!
 
 
-## Wrap-Up
+# Wrap-Up
 
 -   Generics existieren eigentlich nur auf Quellcode-Ebene
 -   "Type-Erasure":

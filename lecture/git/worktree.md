@@ -25,9 +25,9 @@ fhmedia:
 ---
 
 
-## Git Worktree - Mehrere Branches parallel auschecken
+# Git Worktree - Mehrere Branches parallel auschecken
 
-### Szenario
+## Szenario
 
 *   Sie arbeiten an einem Projekt
 *   Großes Repo mit vielen Versionen und Branches
@@ -36,7 +36,7 @@ fhmedia:
 
 \bigskip
 
-### Lösungsansätze
+## Lösungsansätze
 
 *   `git stash` nutzen und Branch wechseln
 *   Repo erneut in anderem Ordner auschecken
@@ -44,7 +44,7 @@ fhmedia:
 \bigskip
 
 ::: notes
-### Probleme
+## Probleme
 
 1.  `git stash` und `git switch`
 
@@ -77,17 +77,17 @@ fhmedia:
 
 \bigskip
 
-### Git Worktree kann helfen!
+## Git Worktree kann helfen!
 
 **=> Mehrere Branches gleichzeitig auschecken (als neue Ordner im Dateisystem)**
 
 
-## How to use Git Worktree
+# How to use Git Worktree
 
 ![](images/linkedworktrees.png){width="80%"}
 
 
-## Worktree anlegen
+# Worktree anlegen
 
 ::: center
 `git worktree add <path> <branch>`
@@ -129,7 +129,7 @@ werden (unstabiles Verhalten)!
 :::
 
 
-## Worktree wechseln
+# Worktree wechseln
 
 *   Worktrees anzeigen: `git worktree list`
 *   Worktree wechseln: Ordner wechseln (IDE: neues Projekt)
@@ -153,7 +153,7 @@ zu vermeiden.
 :::
 
 
-## Worktree löschen
+# Worktree löschen
 
 ::: center
 `git worktree remove <worktree>`
@@ -167,7 +167,7 @@ Dabei bleibt der Ordner erhalten - Sie können ihn selbst löschen oder später 
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 Git Worktree: Auschecken von Branches in separate Ordner
 

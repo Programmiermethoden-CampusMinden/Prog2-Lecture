@@ -41,10 +41,10 @@ fhmedia:
 ---
 
 
-## Design für Testbarkeit
+# Design für Testbarkeit
 
 ::: notes
-### Schlechtes Beispiel
+## Schlechtes Beispiel
 :::
 
 ```java
@@ -61,7 +61,7 @@ public void ausgabe(...) {
 \smallskip
 
 ::: notes
-### Etwas verbessertes Beispiel
+## Etwas verbessertes Beispiel
 :::
 
 ```java
@@ -76,7 +76,7 @@ public void ausgabe(...) {
 }
 ```
 
-## Anzeichen für schlecht testbares Design
+# Anzeichen für schlecht testbares Design
 
 *   Keine Rückgabewerte
 *   Direkte Ausgaben
@@ -87,7 +87,7 @@ public void ausgabe(...) {
 *   Seiteneffekte, z.B. Berechnung und direkte Veränderung von Zuständen **anderer** Objekte
 
 
-## Private Methoden sind nicht (direkt) testbar
+# Private Methoden sind nicht (direkt) testbar
 
 1.  Gar nicht testen????
 
@@ -131,7 +131,7 @@ public void ausgabe(...) {
     :::
 
 
-## Was ist ein guter Test?
+# Was ist ein guter Test?
 
 *   Läuft schnell. Läuft schnell. Läuft schnell!!!
 
@@ -172,12 +172,12 @@ public void ausgabe(...) {
     :::
 
 
-## TDD oder der "Red-Green-Refactor"-Zyklus
+# TDD oder der "Red-Green-Refactor"-Zyklus
 
 ![](images/tdd.png){width="60%" web_width="40%"}
 
 ::: notes
-### Test-Driven Development (_TDD_)
+## Test-Driven Development (_TDD_)
 
 1.  Schreibe Test => schlägt fehl: "Red"
     *   Überlegen Sie, wie das Stück Software, welches Sie erstellen wollen,
@@ -211,7 +211,7 @@ _Anmerkung_: Jeder Zyklus sollte sehr kurz sein!
 [Demo: Validierung von Passwörtern]{.ex href="https://youtu.be/4NAcu8I8fJk"}
 
 ::: notes
-### Vorteile bei konsequenter Anwendung von TDD
+## Vorteile bei konsequenter Anwendung von TDD
 
 *   Kein ungetesteter Code mehr:
     Es entstehen automatisch viele Unit-Tests und gibt keinen Grund, keine Tests zu schreiben
@@ -225,7 +225,7 @@ _Anmerkung_: Jeder Zyklus sollte sehr kurz sein!
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Testbarkeit muss mitgedacht werden: SW-Design
 *   Private Methoden auch testen ("Sicherheitsnetz")

@@ -46,7 +46,7 @@ fhmedia:
 ---
 
 
-## Radiobuttons: _JRadioButton_
+# Radiobuttons: _JRadioButton_
 
 \bigskip
 
@@ -81,7 +81,7 @@ fhmedia:
 [Demo: widgets.RadioButtonDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/widgets/RadioButtonDemo.java"}
 
 
-## Dateien oder Verzeichnisse auswählen: _JFileChooser_
+# Dateien oder Verzeichnisse auswählen: _JFileChooser_
 
 ![](images/screenshot-filechooser.png){width="40%"}
 
@@ -112,7 +112,7 @@ if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
 [Demo: widgets.FileChooserDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/widgets/FileChooserDemo.java"}
 
 
-## TabbedPane und Scroll-Bars
+# TabbedPane und Scroll-Bars
 
 \bigskip
 
@@ -152,7 +152,7 @@ if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
 [Demo: widgets.TabbedPaneDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/widgets/TabbedPaneDemo.java"}
 
 
-## Dialoge mit _JOptionPane_
+# Dialoge mit _JOptionPane_
 
 ![](images/screenshot-dialog.png){width="40%"}
 
@@ -180,7 +180,7 @@ Fokus, wenn der Dialog geschlossen wurde.
 [Demo: widgets.DialogDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/widgets/DialogDemo.java"}
 
 
-## Menüs mit _JMenuBar_, _JMenu_ und _JMenuItem_
+# Menüs mit _JMenuBar_, _JMenu_ und _JMenuItem_
 
 ```java
 JMenuBar menuBar = new JMenuBar();
@@ -210,7 +210,7 @@ sind vom Typ `JMenuItem` und verhalten sich wie Buttons.
 [Demo: widgets.MenuDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/widgets/MenuDemo.java"}
 
 
-## Kontextmenü mit _JPopupMenu_
+# Kontextmenü mit _JPopupMenu_
 
 *   Menü kann über anderen Komponenten angezeigt werden
 
@@ -227,13 +227,13 @@ sind vom Typ `JMenuItem` und verhalten sich wie Buttons.
     ```
 
 ::: notes
-### Details zu _JMenuItem_
+## Details zu _JMenuItem_
 
 *   Erweitert `AbstractButton`
 *   Reagiert auf `ActionEvent`
     => `ActionListener` implementieren für Reaktion auf Menüauswahl
 
-### Details zum Kontextmenü
+## Details zum Kontextmenü
 
 **Triggern der Anzeige eines `JPopupMenu`**
 
@@ -258,7 +258,7 @@ myFrame.addMouseListener(new MouseAdapter() {
 [Demo: widgets.PopupDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/widgets/PopupDemo.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 Nützliche Swing-Komponenten:
 

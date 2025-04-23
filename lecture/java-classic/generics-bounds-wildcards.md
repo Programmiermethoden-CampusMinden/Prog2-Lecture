@@ -85,7 +85,7 @@ challenges: |
 ---
 
 
-## Bounds: Einschränken der generischen Typen
+# Bounds: Einschränken der generischen Typen
 
 ```java
 public class Cps<E extends Number> {
@@ -115,7 +115,7 @@ _Anmerkung_: Der Typ-Parameter ist analog auch mit `super` (nach unten) einschr�
 :::
 
 
-## Wildcards: Dieser Typ ist mir nicht so wichtig
+# Wildcards: Dieser Typ ist mir nicht so wichtig
 
 \bigskip
 
@@ -153,7 +153,7 @@ Weitere Eigenschaften:
 @Bloch2018: Nur für Parameter und nicht für Rückgabewerte nutzen!
 
 
-## Hands-On: Ausgabe für generische Listen
+# Hands-On: Ausgabe für generische Listen
 
 Ausgabe für Listen gesucht, die sowohl Elemente der Klasse `A` als auch
 Elemente der Klasse `B` enthalten [können]{.notes}
@@ -180,7 +180,7 @@ public class X {
  auch das Video zum vierten Teil "Generics und Polymorphie" anschauen]{.notes}
 
 ::::::::: notes
-### Erster Versuch (_A_ und _B_ und _main()_ wie oben)
+## Erster Versuch (_A_ und _B_ und _main()_ wie oben)
 
 ```java
 public class X {
@@ -196,7 +196,7 @@ Vererbung ...)!
 
 [Beispiel wildcards.v1.X]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/wildcards/v1/X.java"}
 
-### Zweiter Versuch mit Wildcards (_A_ und _B_ und _main()_ wie oben)
+## Zweiter Versuch mit Wildcards (_A_ und _B_ und _main()_ wie oben)
 
 ```java
 public class X {
@@ -216,7 +216,7 @@ Typen aufrufen ...
 
 [Beispiel wildcards.v2.X]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/wildcards/v2/X.java"}
 
-### Dritter Versuch (Lösung) mit Wildcards und Bounds (_A_ und _B_ und _main()_ wie oben)
+## Dritter Versuch (Lösung) mit Wildcards und Bounds (_A_ und _B_ und _main()_ wie oben)
 
 ```java
 public class X {
@@ -235,7 +235,7 @@ und hat dann auch wieder die `printInfo`-Methode zur Verfügung ...
 [Konsole wildcards.v3.X]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-classic/src/wildcards/v3"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Ein Wildcard (`?`) als Typ-Parameter steht für einen beliebigen Typ
     -   Ist in Klasse oder Methode dann aber nicht mehr zugreifbar

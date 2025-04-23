@@ -41,7 +41,7 @@ fhmedia:
 ---
 
 
-## Wie kann man Programme konfigurieren?
+# Wie kann man Programme konfigurieren?
 
 1.  Parameter beim Start mitgeben: Kommandozeilenparameter (CLI)
 
@@ -50,7 +50,7 @@ fhmedia:
 2.  Konfigurationsdatei einlesen und auswerten
 
 
-## Varianten von Kommandozeilenparameter
+# Varianten von Kommandozeilenparameter
 
 *   Fixe Reihenfolge
 
@@ -95,7 +95,7 @@ Hinweis IntelliJ: "`Edit Configurations`" => Kommandozeilenparameter unter "`Bui
 :::
 
 
-## Auswertung Kommandozeilenparameter
+# Auswertung Kommandozeilenparameter
 
 *   Kommandozeilenparameter [werden]{.notes}  als String-Array  [an `main()`-Methode übergeben:]{.notes}
 
@@ -113,7 +113,7 @@ Hinweis IntelliJ: "`Edit Configurations`" => Kommandozeilenparameter unter "`Bui
 _Anmerkung_: Nur Parameter! Nicht Programmname als erster Eintrag wie in C ...
 
 
-## Beispiel Auswertung Kommandozeilenparameter
+# Beispiel Auswertung Kommandozeilenparameter
 
 ```java
 public static void main(String[] args) {
@@ -132,7 +132,7 @@ public static void main(String[] args) {
 ```
 
 ::: notes
-### Kritik an manueller Auswertung Kommandozeilenparameter
+## Kritik an manueller Auswertung Kommandozeilenparameter
 
 *   Umständlich und unübersichtlich
 *   Große `if-else`-Gebilde in `main()`
@@ -144,7 +144,7 @@ public static void main(String[] args) {
 :::
 
 
-## Apache Commons: CLI
+# Apache Commons: CLI
 
 **Rad nicht neu erfinden!**
 
@@ -164,10 +164,10 @@ Annäherung an fremde API:
 *   Einbinden ins Projekt
 
 
-## Exkurs: Einbinden fremder Bibliotheken/APIs
+# Exkurs: Einbinden fremder Bibliotheken/APIs
 
 ::: notes
-### Eclipse
+## Eclipse
 
 *   Lib von [commons.apache.org](https://commons.apache.org/proper/commons-cli/download_cli.cgi)
     herunterladen und auspacken
@@ -176,7 +176,7 @@ Annäherung an fremde API:
 *   Projektexplorer, Kontextmenü auf `.jar`-File: "`Add as Library`"
 *   Alternativ Menü-Leiste: "`Project > Properties > Java Build Path > Libraries > Add JARs`"
 
-### IntelliJ
+## IntelliJ
 
 *   Variante 1:
     *   Lib von [commons.apache.org](https://commons.apache.org/proper/commons-cli/download_cli.cgi)
@@ -189,13 +189,13 @@ Annäherung an fremde API:
     *   Projekteigenschaften, Eintrag "Libraries", "+", "New Project Library", "From Maven" und
         "commons-cli:commons-cli:1.5.0" als Suchstring eingeben und die Suche abschließen
 
-### Gradle oder Ant oder Maven
+## Gradle oder Ant oder Maven
 
 *   Lib auf [Maven Central](https://search.maven.org/) suchen: "commons-cli:commons-cli" als Suchstring eingeben
 *   Passenden Dependency-Eintrag in das Build-Skript kopieren
 :::
 
-### Kommandozeilenaufruf
+## Kommandozeilenaufruf
 
 *   Class-Path bei Aufruf setzen:
     *   Unix: `java -cp .:<jarfile>:<jarfile> <mainclass>`
@@ -222,7 +222,7 @@ Dies funktioniert auch bei rekursiven Abhängigkeiten ...
 :::
 
 
-## Überblick Umgang mit Apache Commons CLI
+# Überblick Umgang mit Apache Commons CLI
 
 **Paket**: `org.apache.commons.cli`
 
@@ -243,7 +243,7 @@ zusätzlich in die Dokumentation.
 [Demo: Einbinden von Libs, cli.Args]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/cli/Args.java"}
 
 
-## Laden und Speichern von Konfigurationsdaten
+# Laden und Speichern von Konfigurationsdaten
 
 ```
 #ola - ein Kommentar
@@ -267,7 +267,7 @@ gewicht=12
     :::
 
 
-## Laden und Speichern von Konfigurationsdaten (cnt.)
+# Laden und Speichern von Konfigurationsdaten (cnt.)
 
 \bigskip
 
@@ -312,7 +312,7 @@ aber externe Bibliotheken, beispielsweise "Apache Commons Configuration"
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Kommandozeilenparameter als `String[]` in `main()`-Methode
 *   Manuelle Auswertung komplex => _Apache Commons CLI_

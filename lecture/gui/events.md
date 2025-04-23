@@ -37,7 +37,7 @@ fhmedia:
 ---
 
 
-## Reaktion auf Events: Anwendung Observer-Pattern
+# Reaktion auf Events: Anwendung Observer-Pattern
 
 ::: notes
 *   Swing-GUI läuft in Dauerschleife
@@ -65,7 +65,7 @@ component.addMouseListener(MouseListener);
 ```
 
 
-## Arten von Events
+# Arten von Events
 
 ![](images/EventListener.png){width="80%"}
 
@@ -76,7 +76,7 @@ bekommt und viele weitere.
 :::
 
 
-## Details zu Listenern
+# Details zu Listenern
 
 *   Ein Listener kann bei mehreren Observables registriert sein:
 
@@ -98,7 +98,7 @@ bekommt und viele weitere.
 [Demo: events.ListenerDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/events/ListenerDemo.java"}
 
 
-## Wie komme ich an die Daten eines Events?
+# Wie komme ich an die Daten eines Events?
 
 ![](images/EventObject.png){width="80%"}
 
@@ -107,7 +107,7 @@ bekommt und viele weitere.
 [Demo: events.MouseListenerDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/events/MouseListenerDemo.java"}
 
 
-## Listener vs. Adapter
+# Listener vs. Adapter
 
 ::: notes
 *   Vielzahl möglicher Events
@@ -133,7 +133,7 @@ Abhilfe: **Adapter**-Klassen:
 [Demo: events.MouseAdapterDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/events/MouseAdapterDemo.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 Observer-Pattern in Swing-Komponenten:
 

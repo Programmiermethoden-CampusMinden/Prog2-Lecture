@@ -50,14 +50,14 @@ fhmedia:
 ---
 
 
-## GUIs mit Java
+# GUIs mit Java
 
 ![](images/java2d.png){width="40%"}
 
 [Demo: java2d.simplegame.J2DTeaser]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/java2d/simplegame/J2DTeaser.java"}
 
 
-## Einführung in die Java 2D API
+# Einführung in die Java 2D API
 
 ::: notes
 *   Bisher: Anordnung von Widgets als GUI
@@ -104,7 +104,7 @@ Objekt vom Typ `Graphics` stellt graphischen Kontext dar
 :::
 
 
-## Java2D Koordinatensystem
+# Java2D Koordinatensystem
 
 ![](images/java2d-koordinaten.png){width="60%"}
 
@@ -114,7 +114,7 @@ Objekt vom Typ `Graphics` stellt graphischen Kontext dar
 *   Einheiten in Pixel(!)
 
 
-## Einfache Objekte zeichnen
+# Einfache Objekte zeichnen
 
 Methoden von `java.awt.Graphics` (Auswahl):
 
@@ -140,7 +140,7 @@ Vorher Strichfarbe setzen: `Graphics.setColor(Color color)`:
 [Demo: java2d.SimpleDrawings]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/java2d/SimpleDrawings.java"}
 
 
-## Fonts und Strings
+# Fonts und Strings
 
 Fonts über Font-Klasse einstellen: `Graphics.setFont(Font font);`
 
@@ -161,7 +161,7 @@ Vorher Font und Farbe setzen!
 [Demo: java2d.SimpleFonts]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/java2d/SimpleFonts.java"}
 
 
-## Einfache Polygone definieren
+# Einfache Polygone definieren
 
 Polygone zeichnen: `Graphics.drawPolygon(Polygon p)`:
 
@@ -200,7 +200,7 @@ Vorher Farbe setzen!
 [Demo: java2d.SimplePoly]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/java2d/SimplePoly.java"}
 
 
-## Ausblick I: Umgang mit Bildern
+# Ausblick I: Umgang mit Bildern
 
 ```java
 BufferedImage img = ImageIO.read(new File("DukeWave.gif"));
@@ -209,7 +209,7 @@ boolean Graphics.drawImage(Image img, int x, int y, ImageObserver observer);
 ```
 
 
-## Ausblick II: _Graphics2D_ kann noch mehr ...
+# Ausblick II: _Graphics2D_ kann noch mehr ...
 
 ```java
 Graphics g;
@@ -229,7 +229,7 @@ Graphics2D g2 = (Graphics2D) g;
 *   ...
 
 
-## Spiele mit Bewegung
+# Spiele mit Bewegung
 
 Beobachtung: `paintComponent()` schreibt `Graphics`-Objekt komplett neu!
 
@@ -269,7 +269,7 @@ Idee: Je Zeitschritt:
 [[Hinweis: Zentrale Struktur vs. Observer-Pattern]{.ex}]{.slides}
 
 
-## Erinnerung: Observer Pattern
+# Erinnerung: Observer Pattern
 
 ![](images/observer.png){width="80%"}
 
@@ -287,7 +287,7 @@ Idee: Je Zeitschritt:
 :::
 
 
-## Spielobjekte als Observer (Listener)
+# Spielobjekte als Observer (Listener)
 
 ::: notes
 Objekte können sich auf `Graphics` darstellen:
@@ -317,7 +317,7 @@ Weitere evtl. nützliche Methoden:
 *   Methode zum Umdrehen der Bewegungsrichtung
 
 
-## Oberfläche zusammenbauen
+# Oberfläche zusammenbauen
 
 1.  Spielfeld von `JPanel` ableiten: Observable
 2.  Observer registrieren: Liste mit Spiel-Objekten anlegen
@@ -361,7 +361,7 @@ Weitere evtl. nützliche Methoden:
 [Demo: java2d.simplegame.J2DTeaser]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/java2d/simplegame/J2DTeaser.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Java2D: Swing-Komponenten zeichnen mit `paintComponent()` auf `Graphics`
 *   `Graphics`: Methoden zum Zeichnen von Linien, Rechtecken, Ovalen, Text ...
