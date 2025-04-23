@@ -2,7 +2,7 @@
 title: "Prüfungsvorbereitung"
 author: "Carsten Gips (HSBI)"
 tldr: |
-    ### Durchführung: Präsenz oder Open-Book (je nach Corona-Lage)
+    **Durchführung: Präsenz oder Open-Book (je nach Corona-Lage)**
 
     Die Klausur wird dieses Semester elektronisch stattfinden. Dazu werden wir den Prüfungs-ILIAS der
     HSBI nutzen.
@@ -22,13 +22,13 @@ tldr: |
     Die Entscheidung über die konkrete Durchführung wird spätestens zwei Wochen vor der Prüfung getroffen
     und Ihnen per EMail über das LSF mitgeteilt.
 
-    ### Ablauf der Klausur
+    **Ablauf der Klausur**
 
     Die Prüfung (das ILIAS-Objekt) selbst schalte ich erst zum Start der Prüfung online. Bei der Durchführung
     als Open-Book-Ausarbeitung wird parallel zur Prüfung eine Zoom-Sitzung laufen, in der Sie Fragen stellen
     können.
 
-    ### Hilfsmittel und Themen
+    **Hilfsmittel und Themen**
 
     Bei der Durchführung in Präsenz am Campus Minden ist ein Spickzettel (DIN A4, beidseitig beschrieben)
     als Hilfsmittel zugelassen.
@@ -56,9 +56,9 @@ attachments:
 ---
 
 
-## Elektronische Klausur: Termin, Materialien
+# Elektronische Klausur: Termin, Materialien
 
-### Termin
+## Termin
 
 Die schriftliche Prüfung erfolgt durch eine Klausur, die als digitale Prüfung auf einem
 Prüfungs-ILIAS durchgeführt wird.
@@ -75,7 +75,7 @@ Dauer jeweils 90 Minuten.
 *   Die konkrete Durchführungsform [(in Präsenz am Campus Minden oder im Home-Office)]{.notes}
     wird Ihnen [spätestens]{.notes} zwei Wochen vor der Prüfung über das LSF bekanntgegeben
 
-### Zugelassene Hilfsmittel
+## Zugelassene Hilfsmittel
 
 ::: {.details title="Präsenz (in Minden)"}
 
@@ -102,12 +102,12 @@ Sie alle Unterlagen benutzen.
 
 :::
 
-### Einsicht
+## Einsicht
 
 *   Prüfungseinsicht: Zeitnah; Bekanntgabe per Mail
 
 
-## Technische Vorbereitungen
+# Technische Vorbereitungen
 
 ::: {.details title="Präsenz (in Minden)"}
 
@@ -175,7 +175,7 @@ für Sie vorbereitet sein.
 :::
 
 
-## Bearbeitung des E-Assessment
+# Bearbeitung des E-Assessment
 
 1.  Lesen Sie sich die Hinweise auf der Startseite durch
 
@@ -207,7 +207,7 @@ für Sie vorbereitet sein.
         Täuschungsversuch gewertet werden, vgl. RPO §22a (4))]{.notes}
 
 
-## Fragetypen-Demo
+# Fragetypen-Demo
 
 In Ihrem ILIAS-Kurs finden Sie eine
 [**Fragetypen-Demo**](https://www.hsbi.de/elearning/goto.php?target=tst_1352273&client_id=FH-Bielefeld)
@@ -216,7 +216,7 @@ Sie sich die Kommentare bei den einzelnen Aufgaben an. Sie können die Demo bei 
 wiederholen.
 
 
-## Hinweise zu den Inhalten
+# Hinweise zu den Inhalten
 
 *   Klausurrelevant: Vorlesung und Praktikum
 *   Für Verständnis u.U. hilfreich: Studium der vertiefenden Literaturangaben
@@ -234,9 +234,9 @@ wiederholen.
 :::
 
 
-## Beispiele für mögliche Fragen
+# Beispiele für mögliche Fragen
 
-### Vererbung und Polymorphie
+## Vererbung und Polymorphie
 
 Betrachten Sie den folgenden Java-Code:
 
@@ -261,7 +261,7 @@ Geben Sie alle Ausgaben, die das obige Programm produziert, an.
 Begründen Sie Ihre Antwort kurz und stichhaltig (für *jede* Ausgabe!).
 Was geschieht, bzw. wieso kommt es zu der jeweiligen Ausgabe?
 
-### Multithreading und Synchronisierung
+## Multithreading und Synchronisierung
 
 ```java
 public class StaffelKaputt extends Thread {
@@ -289,12 +289,12 @@ Welche Ausgabe erwarten Sie (angenommen, das Programm wäre fehlerfrei; eine
 mögliche Variante reicht)? Welche Ausgabe erhalten Sie stattdessen? Korrigieren
 Sie den Fehler.
 
-### Reguläre Ausdrücke
+## Reguläre Ausdrücke
 
 Auf welche Strings passt (im Sinne von "match") der folgende reguläre
 Ausdruck: `\s*([a-zA-Z0-9_.\-]+)\s*=\s*(-?\d+\.?\d*)\s;?\s*`
 
-### Versionieren mit Git
+## Versionieren mit Git
 
 *   Erklären Sie, wie man mit Git die Unterschiede zwischen zwei
     bestimmten Versionsständen einer Datei herausfindet.
@@ -316,7 +316,7 @@ Ausdruck: `\s*([a-zA-Z0-9_.\-]+)\s*=\s*(-?\d+\.?\d*)\s;?\s*`
 
 *   Was würde `git diff` jeweils nach Schritt 2 anzeigen?
 
-### Kommandozeilenparameter
+## Kommandozeilenparameter
 
 Schreiben Sie ein Programm, welches auf zwei Kommandozeilenparameter reagieren
 kann. Die erkannten Parameter sollen auf der Konsole ausgegeben werden. Nutzen
@@ -330,7 +330,7 @@ Sie Apache Commons CLI (API siehe Anhang).
 *   Die Parameter können in unterschiedlicher Reihenfolge auftreten.
 *   Es kann auch nur ein Parameter angegeben werden.
 
-### Build mit Ant
+## Build mit Ant
 
 *   Was ist der Unterschied zwischen Ant-Targets und Ant-Tasks?
 *   Wie kann man Ant-Properties von außen (beim Aufruf) setzen?
@@ -342,7 +342,7 @@ Sie Apache Commons CLI (API siehe Anhang).
 *   Schreiben Sie Ant-Targets, mit denen Sie JUnit-Testfälle ausführen und
     auswerten können.
 
-### Generics
+## Generics
 
 Was kommt hier raus? Und warum?
 
@@ -363,7 +363,7 @@ public class X {
 }
 ```
 
-### Logging
+## Logging
 
 Erklären Sie den Code. Was passiert?
 
@@ -391,7 +391,7 @@ public class MoreLogging {
 }
 ```
 
-### Methodenreferenzen
+## Methodenreferenzen
 
 *   Was bedeutet der folgende Code?
 

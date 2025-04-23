@@ -108,7 +108,7 @@ challenges: |
 ---
 
 
-## Neues Feature entwickeln/ausprobieren
+# Neues Feature entwickeln/ausprobieren
 
     A---B---C  master
 
@@ -168,7 +168,7 @@ bisherige Befehl "`checkout`" funktioniert aber weiterhin.
 [[Konsole]{.ex}]{.slides}
 
 
-## Arbeiten im Entwicklungszweig ...
+# Arbeiten im Entwicklungszweig ...
 
               D  wuppie
              /
@@ -185,7 +185,7 @@ bisherige Befehl "`checkout`" funktioniert aber weiterhin.
 :::
 
 
-## Problem: Fehler im ausgelieferten Produkt
+# Problem: Fehler im ausgelieferten Produkt
 
               D  wuppie
              /
@@ -225,7 +225,7 @@ auch Branches auf der Basis von `wuppie` anlegen ...
 :::
 
 
-## Fix ist stabil: Integration in _master_
+# Fix ist stabil: Integration in _master_
 
               D  wuppie
              /
@@ -276,7 +276,7 @@ Der letzte Schritt entfernt den Branch `fix`.
 :::
 
 
-## Feature weiter entwickeln ...
+# Feature weiter entwickeln ...
 
               D---F  wuppie
              /
@@ -300,7 +300,7 @@ einer Datei noch "`--`" nutzen: `git checkout -- <dateiname>`.
 :::
 
 
-## Feature ist stabil: Integration in _master_
+# Feature ist stabil: Integration in _master_
 
               D---F  wuppie                            D---F  wuppie
              /                     =>                 /     \
@@ -340,7 +340,7 @@ genauer: führt die Änderungen von `B` in `A` ein, d.h. der entsprechende Merge
 :::
 
 
-## Konflikte beim Mergen
+# Konflikte beim Mergen
 
 ::: notes
 (Parallele) Änderungen an selber Stelle => Merge-Konflikte
@@ -375,7 +375,7 @@ Git fügt Konflikt-Marker in die Datei ein:
 
 
 ::: notes
-## Merge-Konflikte auflösen
+# Merge-Konflikte auflösen
 
 Manuelles Editieren nötig (Auflösung des Konflikts):
 
@@ -392,7 +392,7 @@ Alternativ: Nutzung graphischer Oberflächen mittels `git mergetool`
 [Konsole: Branchen und Mergen]{.ex href="https://youtu.be/B8sesK1GyiE"}
 
 
-## Rebasen: Verschieben von Branches
+# Rebasen: Verschieben von Branches
 
               D---F  wuppie                            D---F  wuppie
              /                     =>                 /     \
@@ -454,7 +454,7 @@ und Message bleiben aber erhalten.)
 :::
 
 
-## Don't lose your HEAD
+# Don't lose your HEAD
 
 *   Branches sind wie Zeiger auf letzten Stand (Commit) eines Zweiges
 
@@ -481,7 +481,7 @@ und Message bleiben aber erhalten.)
 [[Konsole: Commit auschecken]{.ex}]{.slides}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Anlegen von Branches mit `git branch`
 *   Umschalten der Workingcopy auf anderen Branch: `git checkout` oder `git switch`

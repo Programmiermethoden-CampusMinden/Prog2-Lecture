@@ -32,7 +32,7 @@ has_license: true
 ---
 
 
-## Kursbeschreibung
+# Kursbeschreibung
 
 Sie haben letztes Semester in **Prog1** die *wichtigsten* Elemente und Konzepte der
 Programmiersprache Java kennen gelernt.
@@ -46,7 +46,7 @@ und Logging auseinander setzen. Wenn uns dabei ein Entwurfsmuster "über den Weg
 wir die Gelegenheit nutzen und uns dieses genauer anschauen.
 
 
-## Überblick Modulinhalte
+# Überblick Modulinhalte
 
 1.  Fortgeschrittene Konzepte in Java ("Classic Java")
     - Reguläre Ausdrücke, Annotationen, Reflection
@@ -72,7 +72,7 @@ wir die Gelegenheit nutzen und uns dieses genauer anschauen.
 [^2]: nur als Wiederholung im Praktikum
 
 
-## Team
+# Team
 
 - [Carsten Gips] (Sprechstunde nach Vereinbarung)
 - [BC George] (Sprechstunde nach Vereinbarung)
@@ -82,7 +82,7 @@ wir die Gelegenheit nutzen und uns dieses genauer anschauen.
   [BC George]: https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/birgit-christina-george
 
 
-## Kursformat
+# Kursformat
 
 ![](admin/images/fahrplan.png){width="80%"}
 
@@ -99,7 +99,7 @@ Sie *können* hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
   [ILIAS]: https://www.hsbi.de/elearning/goto.php?target=crs_1486054&client_id=FH-Bielefeld
 
 
-## Fahrplan
+# Fahrplan
 
 Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
@@ -219,7 +219,7 @@ Bearbeitung der Quizzes jeweils **Sa, 00:00 Uhr (Vorwoche) bis Fr, 08:00 Uhr** [
 [Q09]: https://www.hsbi.de/elearning/goto.php?target=tst_1527345&client_id=FH-Bielefeld
 
 
-## Prüfungsform, Note und Credits
+# Prüfungsform, Note und Credits
 
 **Parcoursprüfung**, 5 ECTS (PO23)
 
@@ -228,7 +228,7 @@ dieser Lehrveranstaltung noch keine KI-gestützten Assistenten benutzen. Lösung
 ganz oder teilweise unter Zuhilfenahme von KI-Unterstützung erstellt wurden, werden wie nicht
 abgegeben behandelt.
 
-### Prüfung im ersten Zeitraum
+## Prüfung im ersten Zeitraum
 
 1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte)
     (Einzelbearbeitung, fristgerecht bis zur jeweiligen Vorlesung, je Quiz
@@ -264,7 +264,7 @@ verbessert sich die Gesamtnote um eine Teilnote.
 
 (Hinweise zur [Prüfungsvorbereitung] für Station I bis III)
 
-### Prüfung im zweiten Zeitraum
+## Prüfung im zweiten Zeitraum
 
 1.  **Station IV**: Schriftliche Prüfung (digitale Klausur) 90 Minuten in Minden im B40
 
@@ -273,9 +273,9 @@ verbessert sich die Gesamtnote um eine Teilnote.
 (Hinweise zur [Prüfungsvorbereitung] für Station IV)
 
 
-## Materialien
+# Materialien
 
-### Literatur
+## Literatur
 
 1.  ["**Java ist auch eine Insel**"]. Ullenboom, C., Rheinwerk-Verlag, 2021. ISBN
     [978-3-8362-8745-6].
@@ -291,7 +291,7 @@ verbessert sich die Gesamtnote um eine Teilnote.
   ["The Java Tutorials"]: https://docs.oracle.com/javase/tutorial/
   ["Learn Java"]: https://dev.java/learn/
 
-### Tools
+## Tools
 
 - JDK: **Java SE 21 (LTS)** ([Oracle] oder [Alternativen], bitte 64-bit Version nutzen)
 - IDE: [Eclipse IDE for Java Developers] oder [IntelliJ IDEA (Community Edition)] oder [Visual
@@ -307,9 +307,9 @@ verbessert sich die Gesamtnote um eine Teilnote.
   [Git]: https://git-scm.com/
 
 
-## Förderungen und Kooperationen
+# Förderungen und Kooperationen
 
-### Förderung durch DH.NRW (Digi Fellowships)
+## Förderung durch DH.NRW (Digi Fellowships)
 
 Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und Wissenschaft
 (MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert:
@@ -317,7 +317,7 @@ Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur un
 
 ["Fellowships für Innovationen in der digitalen Hochschulbildung"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
 
-### Kooperation mit dem DigikoS-Projekt
+## Kooperation mit dem DigikoS-Projekt
 
 Diese Vorlesung wurde vom Projekt ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]
 (*DigikoS*) unterstützt. Ein vom DigikoS-Projekt ausgebildeter Digital Learning Scout hat
@@ -330,7 +330,7 @@ von der Stiftung Innovation in der Hochschullehre gefördert.
 
 ---
 
-## LICENSE
+# LICENSE
 
 [`<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">`{=markdown}](https://creativecommons.org/licenses/by-sa/4.0/)
 

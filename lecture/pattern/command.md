@@ -57,7 +57,7 @@ challenges: |
 ---
 
 
-## Motivation
+# Motivation
 
 ::: notes
 Irgendwo im Dungeon wird es ein Objekt einer Klasse ähnlich wie `InputHandler`
@@ -89,7 +89,7 @@ zugeordnet und erlauben keinerlei Konfiguration.
 [[Problem: Starre Zuordnung]{.ex}]{.slides}
 
 
-## Auflösen der starren Zuordnung über Zwischenobjekte
+# Auflösen der starren Zuordnung über Zwischenobjekte
 
 ```java
 public interface Command { void execute(); }
@@ -132,7 +132,7 @@ Beispiel oben wurde dafür der `hero` genutzt.
 :::
 
 
-## Command: Objektorientierte Antwort auf Callback-Funktionen
+# Command: Objektorientierte Antwort auf Callback-Funktionen
 
 ![](images/command.png){web_width="80%"}
 
@@ -167,7 +167,7 @@ In unserem Beispiel lassen sich die einzelnen Teile so sortieren:
 :::
 
 
-## Undo
+# Undo
 
 ::: notes
 Wir könnten das `Command`-Interface um ein paar Methoden erweitern:
@@ -230,7 +230,7 @@ keine weitere Buchhaltung ...
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 **Command-Pattern**: Kapsele Befehle in ein Objekt
 

@@ -112,7 +112,7 @@ challenges: |
 ---
 
 
-## Software-Fehler und ihre Folgen
+# Software-Fehler und ihre Folgen
 
 ![](images/swfehler.png){width="80%"}
 
@@ -120,7 +120,7 @@ challenges: |
 
 
 ::: notes
-## (Einige) Ursachen für Fehler
+# (Einige) Ursachen für Fehler
 
 *   Zeit- und Kostendruck
 *   Mangelhafte Anforderungsanalyse
@@ -132,7 +132,7 @@ challenges: |
 :::
 
 
-## Irgendjemand muss mit Deinen Bugs leben!
+# Irgendjemand muss mit Deinen Bugs leben!
 
 ::: notes
 Leider gibt es im Allgemeinen keinen Weg zu zeigen, dass eine Software korrekt ist.
@@ -167,7 +167,7 @@ das Testen automatisieren. Und hier kommt JUnit ins Spiel :)
 :::
 
 
-## Was wann testen? Wichtigste Teststufen
+# Was wann testen? Wichtigste Teststufen
 
 *   **Modultest**
     *   Testen einer Klasse und ihrer Methoden
@@ -190,7 +190,7 @@ das Testen automatisieren. Und hier kommt JUnit ins Spiel :)
 => Verweis auf Wahlfach "Softwarequalität"
 
 
-## JUnit: Test-Framework für Java
+# JUnit: Test-Framework für Java
 
 ::: notes
 **JUnit** --- Open Source Java Test-Framework zur Erstellung und
@@ -248,7 +248,7 @@ Version nicht mehr weiterentwickelt wird.
 :::
 
 
-## Anlegen und Organisation der Tests mit JUnit
+# Anlegen und Organisation der Tests mit JUnit
 
 :::::: columns
 ::: {.column width="50%"}
@@ -287,7 +287,7 @@ hintereinander (da sie im selben Paket sind und mit dem selben Namen anfangen)
 => besserer Überblick!
 
 
-## Anmerkung: Die (richtige) JUnit-Bibliothek muss im Classpath liegen!
+# Anmerkung: Die (richtige) JUnit-Bibliothek muss im Classpath liegen!
 
 Eclipse bringt für JUnit 4 und JUnit 5 die nötigen Jar-Dateien mit und fragt beim
 erstmaligen Anlegen einer neuen Testklasse, ob die für die ausgewählte Version
@@ -302,7 +302,7 @@ herunter und bindet sie in das Projekt ein.
 :::
 
 
-## JUnit 4+5: Definition von Tests
+# JUnit 4+5: Definition von Tests
 
 Annotation `@Test` vor Testmethode schreiben
 
@@ -329,7 +329,7 @@ aufweisen => vgl. Abschnitt "Dependency Injection for Constructors and Methods" 
 :::
 
 
-## JUnit 4: Ergebnis prüfen
+# JUnit 4: Ergebnis prüfen
 
 Klasse **`org.junit.Assert`** enthält diverse **statische** Methoden zum Prüfen:
 
@@ -354,7 +354,7 @@ Für JUnit 5 finden sich die Assert-Methoden im Package `org.junit.jupiter.api.A
 :::
 
 
-## Anmerkung zum statischen Import
+# Anmerkung zum statischen Import
 
 ::: notes
 Bei normalem Import der Klasse `Assert` muss man jeweils den voll qualifizierten Namen
@@ -390,7 +390,7 @@ import static packageName.className.*;
     ```
 
 
-## Mögliche Testausgänge bei JUnit
+# Mögliche Testausgänge bei JUnit
 
 :::::: columns
 ::: {.column width="55%"}
@@ -422,14 +422,14 @@ import static packageName.className.*;
 
 
 ::: notes
-## Anmerkungen zu Assert
+# Anmerkungen zu Assert
 
 *   Pro Testmethode möglichst nur **ein** Assert verwenden!
 *   Anderenfalls: Schlägt ein Assert fehl, wird der Rest nicht mehr überprüft ...
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Testen ist genauso wichtig wie Coden
 *   Richtiges Testen spart Geld, Zeit, ...

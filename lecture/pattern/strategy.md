@@ -60,7 +60,7 @@ challenges: |
 ---
 
 
-## Wie kann man das Verhalten einer Klasse dynamisch ändern?
+# Wie kann man das Verhalten einer Klasse dynamisch ändern?
 
 ![](images/hunde.png){width="60%"}
 
@@ -77,7 +77,7 @@ auch konkrete Bulldoggen geben mag, die nur leise fiepen ...
 :::
 
 
-## Lösung: Delegation der Aufgabe an geeignetes Objekt
+# Lösung: Delegation der Aufgabe an geeignetes Objekt
 
 ![](images/hunde_strat.png){width="80%"}
 
@@ -109,7 +109,7 @@ Entwurfsmuster: **Strategy Pattern**
 
 
 ::: notes
-## Exkurs UML: Assoziation vs. Aggregation vs. Komposition
+# Exkurs UML: Assoziation vs. Aggregation vs. Komposition
 
 Eine **Assoziation** beschreibt eine Beziehung zwischen zwei (oder mehr)
 UML-Elementen (etwa Klassen oder Interfaces).
@@ -135,7 +135,7 @@ und [Klassendiagramm](https://de.wikipedia.org/wiki/Klassendiagramm).
 
 
 ::: notes
-## Zweites Beispiel: Sortieren einer Liste von Studis
+# Zweites Beispiel: Sortieren einer Liste von Studis
 
 Sortieren einer Liste von Studis: `Collections.sort` kann eine Liste
 nach einem Default-Kriterium sortieren oder aber über einen extra
@@ -169,7 +169,7 @@ unsicher sind!
 :::
 
 
-## Hands-On: Strategie-Muster
+# Hands-On: Strategie-Muster
 
 Implementieren Sie das Strategie-Muster für eine Übersetzungsfunktion:
 
@@ -190,7 +190,7 @@ Implementieren Sie das Strategie-Muster für eine Übersetzungsfunktion:
 
 
 ::: notes
-## Auflösung
+# Auflösung
 
 ![](images/translator.png){width="80%"}
 :::
@@ -198,7 +198,7 @@ Implementieren Sie das Strategie-Muster für eine Übersetzungsfunktion:
 [Konsole strategy.TranslatorExample]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/strategy/TranslatorExample.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 Strategy-Pattern: Verhaltensänderung durch Delegation an passendes Objekt
 

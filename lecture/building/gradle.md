@@ -47,7 +47,7 @@ challenges: |
 ---
 
 
-## Automatisieren von Arbeitsabläufen
+# Automatisieren von Arbeitsabläufen
 
 ::: center
 Works on my machine ...
@@ -106,7 +106,7 @@ Vorteil ist aber der Gradle-Wrapper (s.u.).
 :::
 
 
-## Gradle: Eine DSL in Groovy
+# Gradle: Eine DSL in Groovy
 
 [DSL: _Domain Specific Language_]{.notes}
 
@@ -151,7 +151,7 @@ Eintrag `application` den Einsprungpunkt in die Applikation konfigurieren.
 
 
 :::::::::  notes
-## Gradle-DSL
+# Gradle-DSL
 
 <!-- Für die Demos:
 docker pull gradle
@@ -165,7 +165,7 @@ der JVM ausgeführte Skriptsprache. Seit einigen Versionen kann man die
 Gradle-Build-Skripte auch in der Sprache Kotlin schreiben.
 
 
-## Dateien
+# Dateien
 
 Für das Bauen mit Gradle benötigt man drei Dateien im Projektordner:
 
@@ -184,7 +184,7 @@ Für das Bauen mit Gradle benötigt man drei Dateien im Projektordner:
     Properties für den Gradle-Build spezifizieren kann.
 
 
-## Gradle Init
+# Gradle Init
 
 Um eine neue Gradle-Konfiguration anlegen zu lassen, geht man in einen Ordner
 und führt darin `gradle init` aus. Gradle fragt der Reihe nach einige Einstellungen
@@ -238,7 +238,7 @@ verwendet werden soll.
 Damit wird die eingangs gezeigte Konfiguration angelegt.
 
 
-## Ordner
+# Ordner
 
 Durch `gradle init` wird ein neuer Ordner `wuppie/` mit folgender Ordnerstruktur
 angelegt:
@@ -336,7 +336,7 @@ sourceSets {
 
 
 :::::::::  slides
-## Wichtige Gradle-Tasks
+# Wichtige Gradle-Tasks
 
 *   Initialisieren des Projekts: `gradle init`
 
@@ -354,7 +354,7 @@ sourceSets {
 
 
 :::::::::  notes
-## Ablauf eines Gradle-Builds
+# Ablauf eines Gradle-Builds
 
 Ein Gradle-Build hat zwei Hauptphasen: Konfiguration und Ausführung.
 
@@ -377,7 +377,7 @@ die Anwendung in ein `.jar`-File packen und mit `gradle javadoc` die Javadoc-Dok
 erzeugen und mit `gradle clean` die generierten Hilfsdateien aufräumen (löschen).
 
 
-## Plugin-Architektur
+# Plugin-Architektur
 
 Für bestimmte Projekttypen gibt es immer wieder die gleichen Aufgaben. Um hier
 Schreibaufwand zu sparen, existieren verschiedene Plugins für verschiedene
@@ -393,7 +393,7 @@ ausführt ...
 Sie können sich Plugins und weitere Tasks relativ leicht auch selbst definieren.
 
 
-## Auflösen von Abhängigkeiten
+# Auflösen von Abhängigkeiten
 
 Analog zu Maven kann man Abhängigkeiten (etwa in einer bestimmten Version
 benötigte Bibliotheken) im Gradle-Skript angeben. Diese werden (transparent für
@@ -417,7 +417,7 @@ Die Einträge in `dependencies` erfolgen dabei in einer Maven-Notation, die Sie
 auch im Maven-Repo [mvnrepository.com](https://mvnrepository.com/) finden.
 
 
-## Beispiel mit weiteren Konfigurationen (u.a. Checkstyle und Javadoc)
+# Beispiel mit weiteren Konfigurationen (u.a. Checkstyle und Javadoc)
 
 ```groovy
 plugins {
@@ -476,7 +476,7 @@ Schreibweise sowohl in den generierten Builds-Skripten und in der offiziellen Do
 bevorzugt wird.
 
 
-## Gradle und Ant (und Maven)
+# Gradle und Ant (und Maven)
 
 Vorhandene Ant-Buildskripte kann man nach Gradle importieren und ausführen
 lassen. Über die DSL kann man auch direkt Ant-Tasks aufrufen. Siehe auch
@@ -484,7 +484,7 @@ lassen. Über die DSL kann man auch direkt Ant-Tasks aufrufen. Siehe auch
 :::::::::
 
 
-## Gradle-Wrapper
+# Gradle-Wrapper
 
 ```
 project
@@ -525,7 +525,7 @@ Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle vorzuziehen
 [[Live-Demo Gradle/Gradlew]{.ex}]{.slides}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Automatisieren von Arbeitsabläufen mit Build-Tools/-Skripten
 
@@ -538,7 +538,7 @@ Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle vorzuziehen
 
 
 ::::::::: notes
-## Link-Sammlung Gradle
+# Link-Sammlung Gradle
 
 *   ["Getting Started"](https://docs.gradle.org/current/userguide/getting_started.html)
 *   ["Building Java Applications Sample"](https://docs.gradle.org/current/samples/sample_building_java_applications.html)

@@ -90,7 +90,7 @@ challenges: |
 ---
 
 
-## Verteilung der Prüfungsergebnisse
+# Verteilung der Prüfungsergebnisse
 
 ![](images/lsf.png){width="80%"}
 
@@ -117,7 +117,7 @@ for (Person p : persons) {
 :::
 
 
-## Elegantere Lösung: Observer-Entwurfsmuster
+# Elegantere Lösung: Observer-Entwurfsmuster
 
 ![](images/observerexample.png){width="80%"}
 
@@ -132,7 +132,7 @@ die traditionell `update()` genannt wird.
 [Demo: observer]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/pattern/src/observer/"}
 
 
-## Observer-Pattern verallgemeinert
+# Observer-Pattern verallgemeinert
 
 ![](images/observer.png){width="80%"}
 
@@ -165,7 +165,7 @@ sondern implementieren Ihre eigenen Interfaces, wenn Sie das Observer-Pattern ei
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 Observer-Pattern: Benachrichtige registrierte Objekte über Statusänderungen
 

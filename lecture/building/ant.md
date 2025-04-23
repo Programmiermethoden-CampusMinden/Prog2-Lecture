@@ -50,7 +50,7 @@ fhmedia:
 ---
 
 
-## Automatisieren von Arbeitsabläufen
+# Automatisieren von Arbeitsabläufen
 
 ::: center
 Works on my machine ...
@@ -80,7 +80,7 @@ Works on my machine ...
 :::
 
 
-## Aufbau von Ant-Skripten: Projekte und Targets
+# Aufbau von Ant-Skripten: Projekte und Targets
 
 ```xml
 <project name="Vorlesung" default="clean" basedir=".">
@@ -100,7 +100,7 @@ Works on my machine ...
 :::
 
 
-## Aufgaben erledigen: Tasks
+# Aufgaben erledigen: Tasks
 
 ::: notes
 *   **Tasks**: Aufgaben bzw. Befehle ("Methodenaufruf"), in Targets auszuführen
@@ -127,7 +127,7 @@ Works on my machine ...
 [Konsole/IDE: ant -f hello.xml]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/hello.xml"}
 
 
-## Properties: Name-Wert-Paare
+# Properties: Name-Wert-Paare
 
 ```xml
 <property name="app"       value="MyProject" />
@@ -157,7 +157,7 @@ Works on my machine ...
 :::
 
 
-## Tasks zum Umgang mit Dateien und Ordnern
+# Tasks zum Umgang mit Dateien und Ordnern
 
 ```xml
 <target name="demo">
@@ -184,7 +184,7 @@ Works on my machine ...
 :::
 
 
-## Nutzung von Filesets in Tasks
+# Nutzung von Filesets in Tasks
 
 ```xml
 <copy todir="archive">
@@ -211,7 +211,7 @@ gruppieren.
 :::
 
 
-## Pfade und externe Bibliotheken
+# Pfade und externe Bibliotheken
 
 *   Als Element direkt im Task:
 
@@ -288,9 +288,9 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 
 
 ::::::::: notes
-## Beispiele
+# Beispiele
 
-### Beispiel-Task: Kompilieren
+## Beispiel-Task: Kompilieren
 
 ```xml
 <path id="project.classpath">
@@ -304,7 +304,7 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 </target>
 ```
 
-### Beispiel-Task: Packen
+## Beispiel-Task: Packen
 
 ```xml
 <target name="dist" depends="compile" description="generate the distribution" >
@@ -317,7 +317,7 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 </target>
 ```
 
-### Beispiel-Task: Testen
+## Beispiel-Task: Testen
 
 *   Tests einer Testklasse ausführen:
 
@@ -381,7 +381,7 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 
 => `junit.jar` und `ant-junit.jar` (JUnit4.x) im Pfad!
 
-### Programme ausführen
+## Programme ausführen
 
 ```xml
 <target name="run">
@@ -396,7 +396,7 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 :::::::::
 
 
-## Ausblick: Laden von Abhängigkeiten mit Apache Ivy
+# Ausblick: Laden von Abhängigkeiten mit Apache Ivy
 
 ::: notes
 [Apache Ivy](https://ant.apache.org/ivy/): Dependency Manager für Ant
@@ -468,7 +468,7 @@ Ivy-Cache unter ~/.ivy2/cache/
 [Demo: ivydemo.xml]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/ivydemo.xml"}
 
 
-## Ausblick: Weitere Build-Systeme
+# Ausblick: Weitere Build-Systeme
 
 *   [Maven](https://maven.apache.org/)
     *   War als Nachfolger von Ant gedacht
@@ -489,7 +489,7 @@ Ivy-Cache unter ~/.ivy2/cache/
     *   Analog zu Ant: Aktionen und Ziele müssen explizit definiert werden
 
 
-## Wrap-Up
+# Wrap-Up
 
 Apache Ant: [ant.apache.org](https://ant.apache.org/)
 

@@ -170,10 +170,10 @@ challenges: |
 ---
 
 
-## Motivation: Entwicklung einer Studi-/Prüfungsverwaltung
+# Motivation: Entwicklung einer Studi-/Prüfungsverwaltung
 
 ::: notes
-### Szenario
+## Szenario
 
 Zwei Teams entwickeln eine neue Studi-/Prüfungsverwaltung für die Hochschule. Ein Team modelliert dabei
 die Studierenden, ein anderes Team modelliert die Prüfungsverwaltung LSF.
@@ -220,7 +220,7 @@ Wie kann Team A seinen Code testen?
 :::
 
 ::::::::: notes
-### Motivation Mocking und Mockito
+## Motivation Mocking und Mockito
 
 [Mockito](https://github.com/mockito/mockito) ist ein Mocking-Framework für JUnit. Es
 simuliert das Verhalten eines realen Objektes oder einer realen Methode.
@@ -250,7 +250,7 @@ externen Abhängigkeiten zu lösen, indem es sogenannte Mocks, Stubs oder Spies
 anbietet, mit denen sich das Verhalten der realen Objekte simulieren/überwachen
 und testen lässt.
 
-### Aber was genau ist denn jetzt eigentlich Mocking?
+## Aber was genau ist denn jetzt eigentlich Mocking?
 
 Ein Mock-Objekt ("etwas vortäuschen") ist im Software-Test ein Objekt, das als Platzhalter
 (Attrappe) für das echte Objekt verwendet wird.
@@ -277,7 +277,7 @@ Dabei ist es von Vorteil die drei Grundbegriffe "Mock", "Stub" oder "Spy", auf d
 in der Vorlesung noch häufiger treffen werden, voneinander abgrenzen und
 unterscheiden zu können.
 
-### Dabei bezeichnet ein
+## Dabei bezeichnet ein
 
 *   **Stub**: Ein Stub ist ein Objekt, dessen Methoden nur mit einer minimalen Logik
     für den Test implementiert wurden. Häufig werden dabei einfach feste (konstante)
@@ -288,7 +288,7 @@ unterscheiden zu können.
 *   **Spy**: Ein Spy ist ein Objekt, welches Aufrufe und übergebene Werte protokolliert und
     abfragbar macht. Es ist also eine Art Wrapper um einen Stub oder einen Mock.
 
-### Mockito Setup
+## Mockito Setup
 
 *   Gradle: `build.gradle`
 
@@ -317,7 +317,7 @@ unterscheiden zu können.
 :::::::::
 
 
-## Manuell Stubs implementieren
+# Manuell Stubs implementieren
 
 ::: notes
 Team A könnte manuell das LSF rudimentär implementieren (nur für die Tests, einfach mit
@@ -356,7 +356,7 @@ Wenn man im Test andere Antworten braucht, müsste man einen weiteren Stub anleg
 [Demo hsbi.StudiStubTest]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/mockito/src/test/java/hsbi/StudiStubTest.java"}
 
 
-## Mockito: Mocking von ganzen Klassen
+# Mockito: Mocking von ganzen Klassen
 
 ::: notes
 **Lösung**: Mocking der Klasse `LSF` mit Mockito für den Test von `Studi`: `mock()`.
@@ -407,7 +407,7 @@ Mit Hilfe der Argument-Matcher `anyString()` wird jedes String-Argument akzeptie
 [Demo hsbi.StudiMockTest]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/mockito/src/test/java/hsbi/StudiMockTest.java"}
 
 
-## Mockito: Spy = Wrapper um ein Objekt
+# Mockito: Spy = Wrapper um ein Objekt
 
 ::: notes
 Team B hat das `LSF` nun implementiert und Team A kann es endlich für die Tests benutzen. Aber
@@ -460,7 +460,7 @@ Auch hier können Argument-Matcher wie `anyString()` eingesetzt werden.
 [Demo hsbi.StudiSpyTest]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/mockito/src/test/java/hsbi/StudiSpyTest.java"}
 
 
-## Wurde eine Methode aufgerufen?
+# Wurde eine Methode aufgerufen?
 
 ```java
 public class VerifyTest {
@@ -521,7 +521,7 @@ Reihenfolge bringen und so überprüfen.
 [Demo hsbi.VerifyTest]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/mockito/src/test/java/hsbi/VerifyTest.java"}
 
 
-## Fangen von Argumenten
+# Fangen von Argumenten
 
 ```java
 public class MatcherTest {
@@ -569,7 +569,7 @@ von [Mockito](https://javadoc.io/doc/org.mockito/mockito-core/) an.
 [Demo hsbi.MatcherTest]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/mockito/src/test/java/hsbi/MatcherTest.java"}
 
 
-## Ausblick: PowerMock
+# Ausblick: PowerMock
 
 Mockito sehr mächtig, aber unterstützt (u.a.) keine
 
@@ -586,7 +586,7 @@ Mockito sehr mächtig, aber unterstützt (u.a.) keine
 
 
 ::::::::: notes
-## Ausführlicheres Beispiel: WuppiWarenlager
+# Ausführlicheres Beispiel: WuppiWarenlager
 
 **Credits**: Der Dank für die Erstellung des nachfolgenden Beispiels und Textes geht an
 [\@jedi101](https://github.com/jedi101).
@@ -612,7 +612,7 @@ händisch in den Stub des Warenlagers einpflegen.
 
 Das will eigentlich niemand...
 
-### Einsatz von Mockito
+## Einsatz von Mockito
 
 Aber es gibt da einen Ausweg. Wenn es komplexer wird, verwenden wir Mocks.
 
@@ -651,7 +651,7 @@ bestellteWuppis = wuppiStore.bestelleAlleWuppis(lager);
 assertEquals(2,bestellteWuppis.size());
 ```
 
-### Mockito Spies
+## Mockito Spies
 
 Manchmal möchten wir allerdings nicht immer gleich ein ganzes Objekt mocken,
 aber dennoch Einfluss auf die aufgerufenen Methoden eines Objekts haben, um
@@ -692,7 +692,7 @@ Die normalen Testmöglichkeiten von JUnit runden unseren Test zudem ab.
 assertEquals(1,wuppiWarenlager.lager.size());
 ```
 
-## Mockito und Annotationen
+# Mockito und Annotationen
 
 In Mockito können Sie wie oben gezeigt mit `mock()` und `spy()` neue
 Mocks bzw. Spies erzeugen und mit `verify()` die Interaktion überprüfen
@@ -759,7 +759,7 @@ ein kleiner Überblick über die wichtigsten in Mockito verwendeten Annotation:
     `@BeforeEach`).
 
 
-### Prüfen der Interaktion mit  _verify()_
+## Prüfen der Interaktion mit  _verify()_
 
 Mit Hilfe der umfangreichen `verify()`-Methoden, die uns Mockito mitliefert, können
 wir unseren Code unter anderem auf unerwünschte Seiteneffekte testen. So ist es mit
@@ -814,7 +814,7 @@ public void testVerify_InteraktionenMitHilfeDesArgumentCaptor() {
 :::::::::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Gründliches Testen ist ebenso viel Aufwand wie Coden!
 

@@ -39,7 +39,7 @@ fhmedia:
 ---
 
 
-## Wiederholung GUI in Java
+# Wiederholung GUI in Java
 
 *   **AWT**: `abstract window toolkit`
     *   Älteres Framework ("Legacy")
@@ -69,7 +69,7 @@ Präfix "J": `java.awt.Button` (AWT) => `javax.swing.JButton` (Swing)
 :::
 
 
-## Graphische Komponenten einer GUI
+# Graphische Komponenten einer GUI
 
 *   Top-Level Komponenten
     *   Darstellung direkt auf Benutzeroberfläche des Betriebssystems
@@ -92,7 +92,7 @@ Klasse `javax.swing.JComponent` ab!
 => Nutzung "falscher" Methoden führt zu Laufzeitfehlern.
 
 
-## Ein einfaches Fenster
+# Ein einfaches Fenster
 
 ```java
 public class FirstWindow {
@@ -108,7 +108,7 @@ public class FirstWindow {
 ```
 
 ::: notes
-### Elemente
+## Elemente
 
 Es wird ein neuer Frame angelegt als Top-Level-Komponente. Der Fenstertitel wird auf "Hello World :)"
 gesetzt.
@@ -120,7 +120,7 @@ Mit der Swing-Methode `pack()` werden alle Komponenten berechnet und die Fenster
 alle Komponenten Platz haben. Bis dahin ist das Fenster aber unsichtbar und wird erst über den Aufruf
 von `setVisible(true)` auch dargestellt.
 
-### Swing und Multithreading: Event Dispatch Thread
+## Swing und Multithreading: Event Dispatch Thread
 
 Leider ist die Welt nicht ganz so einfach. In Swing werden Events wie das Drücken eines Buttons
 durch den _Event Dispatch Thread_ (EDT) abgearbeitet. (Zum Thema Events in Swing siehe Einheit
@@ -162,7 +162,7 @@ Siehe auch ["Concurrency in Swing"](https://docs.oracle.com/javase/tutorial/uisw
 [Demo: basics.SecondWindow]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/basics/SecondWindow.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Swing baut auf AWT auf und nutzt dieses
 *   JavaFX ist moderner, aber kein Swing-Ersatz geworden

@@ -129,7 +129,7 @@ challenges: |
 ---
 
 
-## JUnit: Ergebnis prüfen
+# JUnit: Ergebnis prüfen
 
 Klasse **`org.junit.Assert`** enthält diverse **statische** Methoden zum Prüfen:
 
@@ -150,7 +150,7 @@ void fail();
 ```
 
 
-## To "assert" or to "assume"?
+# To "assert" or to "assume"?
 
 *   Mit `assert*` werden Testergebnisse geprüft
     *   Test wird ausgeführt
@@ -165,7 +165,7 @@ void fail();
 [Beispiel: junit4.TestAssume]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/junit4/TestAssume.java"}
 
 
-## Setup und Teardown: Testübergreifende Konfiguration
+# Setup und Teardown: Testübergreifende Konfiguration
 
 ```java
 private Studi x;
@@ -208,7 +208,7 @@ In JUnit 5 wurden die Namen dieser Annotationen leicht geändert:
 
 
 ::: notes
-## Beispiel für den Einsatz von `@Before`
+# Beispiel für den Einsatz von `@Before`
 
 Annahme: **alle/viele** Testmethoden brauchen **neues** Objekt `x` vom Typ `Studi`
 
@@ -236,7 +236,7 @@ public void testGetName() {
 
 
 ::: notes
-## Ignorieren von Tests
+# Ignorieren von Tests
 
 *   Hinzufügen der Annotation `@Ignore`
 *   Alternativ mit Kommentar: `@Ignore("Erst im nächsten Release")`
@@ -269,7 +269,7 @@ mit dem Grund für das Ignorieren des Tests hinterlegen.
 :::
 
 
-## Vermeidung von Endlosschleifen: Timeout
+# Vermeidung von Endlosschleifen: Timeout
 
 ::: notes
 *   Testfälle werden nacheinander ausgeführt
@@ -316,7 +316,7 @@ void testTestDauerlaeufer() {
 :::
 
 
-## Test von Exceptions: Expected
+# Test von Exceptions: Expected
 
 ::: notes
 Traditionelles Testen von Exceptions mit `try` und `catch`:
@@ -370,7 +370,7 @@ public void testExceptAnnot() {
 :::
 
 
-## Parametrisierte Tests
+# Parametrisierte Tests
 
 ::: notes
 Manchmal möchte man den selben Testfall mehrfach mit anderen Werten (Parametern)
@@ -410,7 +410,7 @@ sind (Code-Duplizierung).
 
 
 ::: notes
-### Parametrisierte Tests mit JUnit 4
+## Parametrisierte Tests mit JUnit 4
 
 JUnit 4 bietet für dieses Problem sogenannte "parametrisierte Tests" an. Dafür
 muss eine Testklasse in JUnit 4 folgende Bedingungen erfüllen:
@@ -438,10 +438,11 @@ Letztlich wird damit das Kreuzprodukt aus Testmethoden und Testdaten durchgefüh
 :::
 
 ::: slides
-## Parametrisierte Tests: Konstruktor (JUnit 4)
+# Parametrisierte Tests: Konstruktor (JUnit 4)
 :::
+
 ::: notes
-#### (A) Parametrisierte Tests: Konstruktor (JUnit 4)
+### (A) Parametrisierte Tests: Konstruktor (JUnit 4)
 :::
 
 ```java
@@ -466,10 +467,11 @@ public class SumTestConstructor {
 ```
 
 ::: slides
-## Parametrisierte Tests: Parameter (JUnit 4)
+# Parametrisierte Tests: Parameter (JUnit 4)
 :::
+
 ::: notes
-#### (B) Parametrisierte Tests: Parameter (JUnit 4)
+### (B) Parametrisierte Tests: Parameter (JUnit 4)
 :::
 
 ```java
@@ -496,7 +498,7 @@ public class SumTestParameters {
 
 
 ::: notes
-### Parametrisierte Tests mit JUnit 5
+## Parametrisierte Tests mit JUnit 5
 
 In JUnit 5 werden [parametrisierte Tests] mit der Annotation [`@ParameterizedTest`]
 gekennzeichnet (statt mit `@Test`).
@@ -547,7 +549,7 @@ public class SumTest {
 :::
 
 
-## Testsuiten: Tests gemeinsam ausführen (JUnit 4)
+# Testsuiten: Tests gemeinsam ausführen (JUnit 4)
 
 ::: notes
 Eclipse: `New > Other > Java > JUnit > JUnit Test Suite`
@@ -571,7 +573,7 @@ public class MyTestSuite {
 ```
 
 ::: notes
-## Testsuiten mit JUnit 5
+# Testsuiten mit JUnit 5
 
 In JUnit 5 gibt es zwei Möglichkeiten, Testsuiten zu erstellen:
 
@@ -600,7 +602,7 @@ auf der "JUnit 5"-Plattform ausgeführt, sondern mit der JUnit 4-Infrastuktur!
 
 
 ::: notes
-## Best Practices
+# Best Practices
 
 1.  Ein Testfall behandelt exakt eine Idee/ein Szenario. Das bedeutet auch, dass man in der
     Regel nur ein bis wenige `assert*` pro Testmethode benutzt.
@@ -664,7 +666,7 @@ Diese Erfahrungen werden ausführlich in [@SWEGoogle, pp. 231-256] diskutiert.
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 JUnit als Framework für (Unit-) Tests; hier JUnit 4 (mit Ausblick auf JUnit 5)
 

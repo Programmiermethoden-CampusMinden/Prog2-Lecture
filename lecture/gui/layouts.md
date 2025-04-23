@@ -78,7 +78,7 @@ challenges: |
 ---
 
 
-## Überblick
+# Überblick
 
 Anordnung der Komponenten [in einem Container ist]{.notes} abhängig vom **Layout**
 
@@ -93,7 +93,7 @@ Verschiedene beliebte Layout-Manager:
 *   ...
 
 
-## _BorderLayout_
+# _BorderLayout_
 
 ![](images/screenshot-borderlayout.png){width="40%"}
 
@@ -129,7 +129,7 @@ werden (horizontal und vertikal, Abstände in Pixel).
 [Demo: layout.Border]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/Border.java"}
 
 
-## _FlowLayout_
+# _FlowLayout_
 
 ![](images/screenshot-flowlayout.png){width="60%"}
 
@@ -157,7 +157,7 @@ werden, ebenso wie ein vertikales und horizontales Padding zwischen den Komponen
 [Demo: layout.Flow]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/Flow.java"}
 
 
-## _GridLayout_
+# _GridLayout_
 
 ![](images/screenshot-gridlayout.png){width="40%"}
 
@@ -187,7 +187,7 @@ werden.
 [Demo: layout.Grid]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/Grid.java"}
 
 
-## Komplexer Layout-Manager: _GridBagLayout_
+# Komplexer Layout-Manager: _GridBagLayout_
 
 *   Layout-Manager ähnlich zu `GridLayout`
 *   Zusätzlich `GridBagConstraints`: Verhalten bei Größenveränderungen
@@ -239,7 +239,7 @@ aufgeteilt.
 [Demo: layout.GridBag]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/layout/GridBag.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Anordnung von Komponenten lässt sich mit Layout-Manager steuern
 

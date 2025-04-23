@@ -29,7 +29,7 @@ fhmedia:
 ---
 
 
-## Motivation
+# Motivation
 
 ```java
 public enum Fach { IFM, ELM, ARC }
@@ -55,7 +55,7 @@ Beispiel für das Singleton-Pattern ...
 :::
 
 
-## Umsetzung: "Eager" Singleton Pattern
+# Umsetzung: "Eager" Singleton Pattern
 
 ::: notes
 Damit man von "außen" keine Instanzen einer Klasse anlegen kann, versteckt man den Konstruktor,
@@ -84,7 +84,7 @@ public class SingletonEager {
 [Beispiel: singleton.SingletonEager]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/singleton/SingletonEager.java"}
 
 
-## Umsetzung: "Lazy" Singleton Pattern
+# Umsetzung: "Lazy" Singleton Pattern
 
 ::: notes
 Beim "Lazy Singleton Pattern" wird das Objekt erst erzeugt, wenn die Instanz tatsächlich benötigt
@@ -113,7 +113,7 @@ public class SingletonLazy {
 [Beispiel: singleton.SingletonLazy]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/singleton/SingletonLazy.java"}
 
 
-## Vorsicht!
+# Vorsicht!
 
 ::: center
 Sie schaffen damit eine globale Variable!
@@ -129,7 +129,7 @@ Nutzen Sie das Pattern **sparsam**.
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 Singleton-Pattern: Klasse, von der nur genau ein Objekt instantiiert werden kann
 

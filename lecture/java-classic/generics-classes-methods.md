@@ -35,7 +35,7 @@ attachments:
 ---
 
 
-## Generische Strukturen
+# Generische Strukturen
 
 ```java
 Vector speicher = new Vector();
@@ -84,7 +84,7 @@ Vorteile beim Einsatz von Generics:
 :::
 
 
-## Generische Klassen/Interfaces definieren
+# Generische Klassen/Interfaces definieren
 
 *   **Definition**: "`<Typ>`" hinter Klassennamen
 
@@ -115,7 +115,7 @@ Vorteile beim Einsatz von Generics:
 
 
 ::::::::: notes
-## Generische Klassen instantiieren
+# Generische Klassen instantiieren
 
 *   Typ-Parameter in spitzen Klammern hinter Klasse bzw. Interface
 
@@ -126,7 +126,7 @@ Vorteile beim Einsatz von Generics:
 :::::::::
 
 
-## Beispiel I: Einfache generische Klassen
+# Beispiel I: Einfache generische Klassen
 
 \bigskip
 
@@ -152,7 +152,7 @@ b.foo("huhu");  // Fehlermeldung vom Compiler
 ::::::::: notes
 [Beispiel: classes.GenericClasses]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/classes/GenericClasses.java"}
 
-### Typ-Inferenz
+## Typ-Inferenz
 
 Typ-Parameter kann bei `new()` auf der rechten Seite oft weggelassen werden
 => **Typ-Inferenz**
@@ -165,7 +165,7 @@ Tutor<String> x = new Tutor<>();  // <>: "Diamantoperator"
 :::::::::
 
 
-## Beispiel II: Vererbung mit Typparametern
+# Beispiel II: Vererbung mit Typparametern
 
 ```java
 interface Fach<T1, T2> {
@@ -194,7 +194,7 @@ nicht "in der Luft hängen" (siehe auch nächste Folie)!
 :::
 
 
-## Beispiel III: Überschreiben/Überladen von Methoden
+# Beispiel III: Überschreiben/Überladen von Methoden
 
 ```java
 class Mensch { ... }
@@ -212,7 +212,7 @@ class Tutor extends Studi<Mensch> {
 ```
 
 
-## Vorsicht: So geht es nicht!
+# Vorsicht: So geht es nicht!
 
 ```java
 class Foo<T> extends T { ... }
@@ -227,7 +227,7 @@ class Fluppie<T> extends Wuppie<S> { ... }
 :::
 
 
-## Generische Methoden definieren
+# Generische Methoden definieren
 
 *   "`<Typ>`" vor Rückgabetyp
 
@@ -252,21 +252,21 @@ class Fluppie<T> extends Wuppie<S> { ... }
     ```
 
 
-## Aufruf generischer Methoden
+# Aufruf generischer Methoden
 
 ::::::::: notes
-### Aufruf
+## Aufruf
 
 *   Aufruf mit Typ-Parameter vor Methodennamen, oder
 *   Inferenz durch Compiler
 
-### Finden der richtigen Methode durch den Compiler
+## Finden der richtigen Methode durch den Compiler
 
 1.  Zuerst Suche nach exakt passender Methode,
 2.  danach passend mit Konvertierungen
     => Compiler sucht gemeinsame Oberklasse in Typhierarchie
 
-### Beispiel
+## Beispiel
 :::::::::
 
 ```java
@@ -334,7 +334,7 @@ public class GenericMethods {
 :::::::::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Begriffe:
     *   Generischer Typ: `Stack<T>`
