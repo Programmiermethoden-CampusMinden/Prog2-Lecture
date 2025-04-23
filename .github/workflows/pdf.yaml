@@ -1,4 +1,4 @@
-name: PDF-Version
+name: PDF Handout
 
 on:
   # push on master branch
