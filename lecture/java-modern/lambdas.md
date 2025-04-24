@@ -99,6 +99,82 @@ challenges: |
     -->
 
 
+    **Spielen mit Lambdas**
+
+    Sie finden in einem Spiel folgenden Code:
+
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            DoorTile door = new DoorTile();
+            Entity lever1 = new Entity(), lever2 = new Entity(), lever3 = new Entity();
+
+            // ganz viel Code
+
+            if (!door.isOpen() && (lever1.isOn() && (lever2.isOn() || lever3.isOn()))) door.open();
+
+            // ganz viel Code
+        }
+    }
+
+    class DoorTile {
+        public boolean isOpen() { return false; }
+        public void open() { }
+    }
+    class Entity {
+        public boolean isOn() { return false; }
+    }
+    ```
+
+    Dabei stört, dass die Verknüpfung der konkreten Objekte und Zustände zum Öffnen der konkreten
+    Tür fest (und zudem mitten) im Programm hinterlegt ist.
+
+    Schreiben Sie diesen Code um: Definieren Sie eine statische Hilfsmethode, die ein Door-Tile
+    und drei Entitäten als Argument entgegen nimmt und dafür einen Lambda-Ausdruck zurückliefert,
+    mit dem (a) die gezeigte Bedingung überprüft werden kann, und mit dem (falls die Bedingung
+    erfüllt ist) (b) die Aktion (`door.open()`) ausgeführt werden kann. Statt der gezeigten fest
+    codierten `if`-Abfrage soll dieser Lambda-Ausdruck ausgewertet werden: `doorhandle.test().accept();`.
+
+    Damit haben Sie sich eine "Factory-Method" geschrieben (Entwurfsmuster), mit der diese Bedingung
+    dynamisch erzeugt werden kann (auch für andere Objekte).
+
+    Hinweis: Der Lambda-Ausdruck wird "zweistufig" sein müssen ...
+
+    <!--
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            DoorTile door = new DoorTile();
+            Entity lever1 = new Entity(), lever2 = new Entity(), lever3 = new Entity();
+            DoorCondition doorhandle = doorHandleFactory(door, lever1, lever2, lever3);
+
+            // ganz viel Code
+
+            if (!door.isOpen() && (lever1.isOn() && (lever2.isOn() || lever3.isOn()))) door.open();
+            doorhandle.test().accept();
+
+            // ganz viel Code
+        }
+
+        static DoorCondition doorHandleFactory(DoorTile door, Entity lever1, Entity lever2, Entity lever3) {
+            return () -> (!door.isOpen() && (lever1.isOn() && (lever2.isOn() || lever3.isOn()))) ? () -> door.open() : () -> {};
+        }
+    }
+
+    class DoorTile {
+        public boolean isOpen() { return false; }
+        public void open() { }
+    }
+    class Entity {
+        public boolean isOn() { return false; }
+    }
+
+    interface DoorCondition { DoorHandle test(); }
+    interface DoorHandle { void accept(); }
+    ```
+    -->
+
+
     **Sortieren mit Lambdas und funktionalen Interfaces**
 
     Betrachten Sie die Klasse [Student](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/challenges/lambda/Student.java).
