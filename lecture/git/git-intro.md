@@ -77,7 +77,7 @@ attachments:
 :::::: columns
 ::: {.column width="48%"}
 
-![](images/local.png){width="80%" web_width="40%"}
+![](images/local.png){width="60%" web_width="40%"}
 
 :::
 ::: {.column width="50%"}
