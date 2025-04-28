@@ -43,7 +43,7 @@ tldr: |
 youtube:
     - link: "https://youtu.be/warjJ9ZXvEM"
       name: "Hinweise zur Prüfung: Fragetypen-Demo"
-    - link: "`https://youtu.be/_cVhJX-D6zM`{=markdown}"
+    - link: "https://youtu.be/_cVhJX-D6zM"
       name: "Hinweise zur Prüfung: Technische Vorbereitung"
 fhmedia:
     - link: "https://www.hsbi.de/medienportal/m/4f7c425ae13cec9dc1b3bed28c1cadd666e4ba87c4afd9fe131913187fe110d2296ef62b36696efc3f19e151c7f18fe1bd4b83aad9f86eb9a5f384d38f2a7fbf"
