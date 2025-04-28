@@ -31,16 +31,14 @@ tldr: |
     Wir können hier nur die absoluten Grundlagen betrachten. Die Stream-API ist sehr groß und
     mächtig und lohnt die weitere selbstständige Auseinandersetzung :-)
 outcomes:
-  - k2: "Streams speichern keine Daten"
-  - k2: "Streams verarbeiten die Daten lazy"
-  - k2: "`map()` ändert den Typ (und Inhalt) von Objekten im Stream, aber nicht die Anzahl"
-  - k2: "`filter()` ändert die Anzahl der Objekte im Stream, aber nicht deren Typ (und Inhalt)"
-  - k2: "Streams machen ausführlich Gebrauch von den funktionalen Interfaces in `java.util.function`"
-  - k2: "Streams sollten nicht in Attributen gehalten oder als Argument von Methoden herumgereicht werden"
-  - k3: "Anlegen eines Streams"
-  - k3: "Verkettung von intermediären Operationen"
-  - k3: "Durchführung der Berechnung und Abschluss des Streams mit einer terminalen Operation"
-  - k3: "Einsatz von `flatMap()`"
+  - k2: "Ich verstehe, dass Streams die Daten nicht sofort verarbeiten ('lazy' Verarbeitung)"
+  - k2: "Ich verstehe, dass ich mit `map()` den Typ (und Inhalt) von Objekten im Stream, aber nicht die Anzahl verändere"
+  - k2: "Ich verstehe, dass ich mit `filter()` die Anzahl der Objekte im Stream, aber nicht deren Typ (und Inhalt) verändere"
+  - k2: "Ich verstehe, warum Streams nicht in Attributen gehalten oder als Parameter herumgereicht werden sollten"
+  - k3: "Ich kann einen Stream erzeugen"
+  - k3: "Ich kann verschiedene intermediäre Operationen verketten"
+  - k3: "Ich kann mit einer terminalen Operation einen Stream abschließen und damit die Berechnung durchführen"
+  - k3: "Ich kann `flatMap()` einsetzen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106528&client_id=FH-Bielefeld"
 #    name: "Quiz Stream-API (ILIAS)"
