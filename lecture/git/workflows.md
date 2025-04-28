@@ -21,15 +21,15 @@ tldr: |
   Fork bekommt, trägt man das Hauptprojekt als weiteres Remote in die Workingcopy ein und aktualisiert
   regelmäßig die Hauptbranches, von denen dann auch die eigenen Feature-Branches ausgehen sollten.
 outcomes:
-  - k2: "Git-Workflows für die Zusammenarbeit"
-  - k2: "Unterschied zwischen einem Pull/Merge und einem Pull/Rebase"
-  - k2: "Welche Commits werden Bestandteil eines Merge-Requests (und warum)"
-  - k3: "Einsatz des zentralisierten Workflows"
-  - k3: "Einsatz des einfachen verteilten Workflows mit unterschiedlichen Repos"
-  - k3: "Aktualisieren Ihres Clones und Ihres Forks mit Änderungen aus dem blessed Repo"
-  - k3: "Erstellen von Beiträgen zu einem Projekt über Merge-Requests"
-  - k3: "Aktualisierung von Merge-Requests"
-  - k3: "Diskussion über den Code in Merge-Requests"
+  - k2: "Ich kenne verschiedene Git-Workflows für die Zusammenarbeit und kann den Ablauf erklären"
+  - k2: "Ich kann den Unterschied zwischen einem Pull/Merge und einem Pull/Rebase erklären"
+  - k2: "Ich verstehe, welche Commits zu einem Bestandteil eines Merge-/Pull-Requests werden (und warum)"
+  - k3: "Ich kann den zentralisierten Workflow einsetzen"
+  - k3: "Ich kann den einfachen verteilten Workflow mit unterschiedlichen Repos einsetzen"
+  - k3: "Ich kann meinen Clone und meinen Fork bei/mit Änderungen im/aus dem 'blessed Repo' aktualisieren"
+  - k3: "Ich kann meine Beiträge zu einem Projekt als Merge-/Pull-Requests einreichen"
+  - k3: "Ich kann meine Merge-/Pull-Requests aktualisieren"
+  - k3: "Ich kann in Merge-/Pull-Requests Anmerkungen am Code hinterlegen und an den Feedback-Diskussionen teilnehmen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106246&client_id=FH-Bielefeld"
 #    name: "Quiz Git Workflows (ILIAS)"
