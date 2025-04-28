@@ -108,6 +108,55 @@ challenges: |
     }
     ```
     -->
+
+
+    Betrachten Sie den folgenden Java-Code:
+
+    ```java
+    public class Main {
+        public static String getParameterNamesJson(String[] parameterNames) {
+            if (parameterNames.length == 0) {
+                return "[]";
+            }
+
+            StringBuilder sb = new StringBuilder();
+            sb.append("[");
+            for (int i = 0; i < parameterNames.length; i++) {
+                if (i > 0) {
+                    sb.append(", ");
+                }
+                sb.append("\"").append(escapeJson(parameterNames[i])).append("\"");
+            }
+            sb.append("]");
+            return sb.toString();
+        }
+
+        private static String escapeJson(String parameterName) {
+            // does something or another ...
+        }
+    }
+    ```
+
+    Schreiben Sie die Methode `getParameterNamesJson` unter Beibehaltung der Funktionalität
+    so um, dass statt der `for`-Schleife und der `if`-Abfrage Streams und Stream-Operationen
+    eingesetzt werden. Nutzen Sie passende Lambda-Ausdrücke und nach Möglichkeit auch
+    Methodenreferenzen.
+
+    <!--
+    ```java
+    private static String getParameterNamesJson2(String[] parameterNames) {
+        return Arrays.stream(parameterNames)
+                .map(Main::escapeJsonEscaped)
+                .collect(Collectors.joining(", ", "[", "]"));
+    }
+
+    private static String escapeJsonEscaped(String parameterName) {
+        return "\"" + escapeJson(parameterName) + "\"";
+    }
+    ```
+
+    vgl. https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Collectors.html
+    -->
 ---
 
 
