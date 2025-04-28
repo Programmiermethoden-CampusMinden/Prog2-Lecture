@@ -93,7 +93,7 @@ challenges: |
 
 # Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
 
-![](images/distributed.png){width="80%"}
+![](images/distributed.png){width="80%" web_width="65%"}
 
 
 ::: notes
@@ -380,7 +380,7 @@ Vorsicht: `pull` und `push` beziehen sich nur auf ausgecheckten Tracking Branch
 
 # Hinzufügen eines (weiteren) Remote Repository
 
-![](images/screenshot_branches.png){width="75%"}
+![](images/screenshot_branches.png){width="75%" web_width="65%"}
 
 \vspace{2mm}
 
