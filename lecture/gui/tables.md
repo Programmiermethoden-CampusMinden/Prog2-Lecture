@@ -18,7 +18,7 @@ outcomes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
 #    name: "Quiz Swing (ILIAS)"
 youtube:
-  - link: "`https://youtu.be/_iq_Grvhk90`{=markdown}"
+  - link: "https://youtu.be/_iq_Grvhk90"
     name: "VL Swing: Tabellen"
   - link: "https://youtu.be/27o_A5SDbm0"
     name: "Demo Swing: einfache Tabellen"
