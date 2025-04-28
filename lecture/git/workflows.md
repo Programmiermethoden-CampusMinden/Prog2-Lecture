@@ -277,6 +277,14 @@ Nachfolgend für den selben MR aus der letzten Abbildung noch die reine Diskussi
 :::
 
 
+::: notes
+Zusätzliche kurze Video-Anleitungen von GitHub:
+
+-   [How to create a pull request](https://www.youtube.com/watch?v=nCKdihvneS0)
+-   [How to merge a pull request](https://www.youtube.com/watch?v=FDXSgyDGmho)
+:::
+
+
 ::::::::: notes
 # Best Practices bei Merge-/Pull-Requests
 
