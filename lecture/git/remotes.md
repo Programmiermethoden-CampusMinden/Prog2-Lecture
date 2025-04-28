@@ -30,12 +30,13 @@ tldr: |
   Ein einfaches `git pull` oder `git push` holt dann Änderungen aus dem Remote-Branch in den ausgecheckten
   lokalen Branch bzw. schiebt Änderungen im lokalen Branch in den Remote-Branch.
 outcomes:
-  - k3: "Erzeugen eines Clones von fremden Git-Repositories"
-  - k3: "Holen der Änderungen vom fremden Repo"
-  - k3: "Aktualisierung der lokalen Branches"
-  - k3: "Pushen der lokalen Änderungen ins fremde Repo"
-  - k3: "Anlegen von lokalen Branches vs. Anlegen von entfernten Branches"
-  - k3: "Anlegen eines Tracking Branches zum Vereinfachen der Arbeit"
+  - k3: "Ich kann Clones von fremden Git-Repositories erzeugen"
+  - k3: "Ich kann Änderungen vom fremden Repo holen"
+  - k3: "Ich kann meine lokale Branches aktualisieren"
+  - k3: "Ich kann lokale Änderungen ins fremde Repo pushen"
+  - k2: "Ich kann den Unterschied zwischen lokalen Branches und entfernten Branches erklären"
+  - k3: "Ich kann sowohl lokale Branches als auch entfernte Branches anlegen und damit arbeiten"
+  - k3: "Ich kann Tracking Branches zum Vereinfachen der Arbeit anlegen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106245&client_id=FH-Bielefeld"
 #    name: "Quiz Git Remotes (ILIAS)"
