@@ -42,7 +42,7 @@ youtube:
     name: "VL How-To Dungeon: Teil 1 (Überblick)"
   - link: "https://youtu.be/uPNt7OWpMBs"
     name: "VL How-To Dungeon: Teil 2 (Hero)"
-  - link: "`https://youtu.be/_YVYoFgvU04`{=markdown}"
+  - link: "https://youtu.be/_YVYoFgvU04"
     name: "VL How-To Dungeon: Teil 3 (Monster und Feuerbälle)"
 tibav:
   - link: "https://av.tib.eu/media/67783"
