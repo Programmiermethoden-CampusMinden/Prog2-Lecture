@@ -51,7 +51,7 @@ attachments:
 
 # Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
 
-![](images/distributed.png){width="80%"}
+![](images/distributed.png){width="80%" web_width="65%"}
 
 
 ::: notes
@@ -70,7 +70,7 @@ Antwort: Workflows mit Git ...
 
 # Zusammenarbeit: Zentraler Workflow mit Git (analog zu SVN)
 
-![](images/centralised.png){width="80%"}
+![](images/centralised.png){width="80%" web_width="55%}
 
 ::: notes
 In kleinen Projektgruppen wie beispielsweise Ihrer Arbeitsgruppe wird häufig
@@ -97,7 +97,7 @@ gleichberechtigt und direkt pushen dürfen.
 
 # Zusammenarbeit: Einfacher verteilter Workflow mit Git
 
-![](images/workflow_remote.png){width="80%"}
+![](images/workflow_remote.png){width="80%" web_width="65%}
 
 
 ::: notes
