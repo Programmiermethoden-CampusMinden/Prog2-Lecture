@@ -28,7 +28,7 @@ outcomes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106215&client_id=FH-Bielefeld"
 #    name: "Quiz Apache Maven (ILIAS)"
 youtube:
-  - link: "`https://youtu.be/YAW-_Wi4LDY`{=markdown}"
+  - link: "https://youtu.be/YAW-_Wi4LDY"
     name: "VL Apache Maven"
   - link: "https://youtu.be/8z0UqtzISCA"
     name: "Demo Maven-Projekt"
