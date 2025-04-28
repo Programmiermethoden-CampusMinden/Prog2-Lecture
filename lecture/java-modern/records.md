@@ -29,14 +29,14 @@ tldr: |
     weiteren Klassen ableiten (erben). Man kann aber beliebig viele Interfaces implementieren.
     Record-Klassen sind implizit final, d.h. man nicht von Record-Klassen erben.
 outcomes:
-  - k2: "Record-Klassen sind final"
-  - k2: "Record-Klassen haben einen kanonischen Konstruktor"
-  - k2: "Die Attribute von Record-Klassen sind final und werden automatisch angelegt und über den Konstruktor gesetzt"
-  - k2: "Die Getter in Record-Klassen haben die Namen und Typen der Komponenten, also keinen Präfix 'get'"
-  - k2: "Der kanonische Konstruktor kann ergänzt werden"
-  - k2: "Es können weitere Methoden definiert werden"
-  - k2: "Record-Klassen können nicht von anderen Klassen erben, können aber Interfaces implementieren"
-  - k3: "Einsatz von Record-Klassen"
+  - k2: "Ich verstehe, dass Record-Klassen implizit `final` sind"
+  - k2: "Ich weiss, dass Record-Klassen einen kanonischen Konstruktor haben"
+  - k2: "Ich verstehe, dass die Attribute in Record-Klassen implizit `final` sind und automatisch angelegt und über den Konstruktor gesetzt werden"
+  - k2: "Ich weiss, dass die Getter in Record-Klassen so benannt sind wie die Namen der Komponenten, also keinen Präfix 'get' haben"
+  - k2: "Ich weiss, dass der kanonische Konstruktor ergänzt werden kann"
+  - k2: "Ich weiss, dass weitere Methoden definiert werden können"
+  - k2: "Ich verstehe, dass Record-Klassen nicht von anderen Klassen erben können, aber Interfaces implementieren können"
+  - k3: "Ich kann Record-Klassen praktisch einsetzen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106527&client_id=FH-Bielefeld"
 #    name: "Quiz Record-Klassen (ILIAS)"
