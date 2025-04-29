@@ -4,6 +4,7 @@ has_license: true
 ---
 
 
+:::::::::::: notes
 
 ::: warning
 
@@ -49,8 +50,6 @@ Studierendenservice bekanntgegeben. (vgl. LSF)
 :::
 
 * * * * *
-
-:::::::::::: notes
 
 ---
 

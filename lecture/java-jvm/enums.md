@@ -204,7 +204,7 @@ public class Fach extends Enum {
 
 # Enum-Klassen: Eigenschaften
 
-``` {.java size="footnotesize"}
+``` java
 public enum Fach {
     IFM,
     ELM("Elektrotechnik Praxisintegriert", 1, 30),
