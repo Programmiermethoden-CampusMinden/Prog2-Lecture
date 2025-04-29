@@ -1,7 +1,5 @@
 ---
 title: "Praktikumsaufgaben Gruppe Basics"
-
-hidden: true
 ---
 
 

@@ -2,8 +2,6 @@
 title: "Shop"
 author: "André Matutat (HSBI)"
 points: "10 Punkte"
-
-hidden: true
 ---
 
 ## Ziel

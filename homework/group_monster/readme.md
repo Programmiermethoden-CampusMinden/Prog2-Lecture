@@ -1,7 +1,5 @@
 ---
 title: "Praktikumsaufgaben Gruppe Monster"
-
-hidden: true
 ---
 
 

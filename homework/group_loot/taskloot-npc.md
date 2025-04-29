@@ -2,8 +2,6 @@
 title: "Freundlicher NPC-Geist"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"
-
-hidden: true
 ---
 
 ## Ziel

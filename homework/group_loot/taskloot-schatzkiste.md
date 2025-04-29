@@ -2,8 +2,6 @@
 title: "Monster-Schatzkisten"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"
-
-hidden: true
 ---
 
 ## Ziel
