@@ -94,17 +94,11 @@ den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anscha
 
 ## Kursformat
 
-:::::: {.tabs groupid="vl-pr"}
-::: {.tab title="Vorlesung"}
-
-**Vorlesung (2 SWS)**
+### Vorlesung (2 SWS)
 
 Fr, 16:30 - 18:00 Uhr (online/J104)
 
-:::
-::: {.tab title="Praktikum"}
-
-**Praktikum (2+1 SWS)**
+### Praktikum (2+1 SWS)
 
 | Praktikumsgruppe | Zeit                  | Raum        |
 |:-----------------|:----------------------|:------------|
@@ -112,9 +106,6 @@ Fr, 16:30 - 18:00 Uhr (online/J104)
 | Gruppe 2         | Fr, 13:30 - 15:00 Uhr | online/J104 |
 | Gruppe 3         | Fr, 15:00 - 16:30 Uhr | online/J104 |
 | Gruppe 4         | Fr, 10:45 - 12:15 Uhr | online/J104 |
-
-:::
-::::::
 
 Durchführung als **Flipped Classroom**:
 Alle Sitzungen online/per Zoom (**Zugangsdaten siehe [ILIAS]**)
@@ -124,8 +115,7 @@ Alle Sitzungen online/per Zoom (**Zugangsdaten siehe [ILIAS]**)
 
 ## Fahrplan
 
-:::::: {.tabs groupid="vl-pr"}
-::: {.tab title="Vorlesung"}
+### Vorlesung
 
 | Woche | Datum Vorlesung                           | Themen                                                                                                                       | Bemerkungen                                                                                      |
 |:-----:|:------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|
@@ -225,8 +215,8 @@ Alle Sitzungen online/per Zoom (**Zugangsdaten siehe [ILIAS]**)
 [Synchronisierung]: lecture/threads/threads-synchronisation.md
 [Highlevel Threadkonzepte]: lecture/threads/threads-highlevel.md
 
-:::
-::: {.tab title="Praktikum"}
+
+### Praktikum
 
 | Woche | Blatt  | Abgabe ILIAS und Peer-Feedback (ILIAS)                        | Vorstellung Praktikum |
 |:-----:|:-------|:--------------------------------------------------------------|:----------------------|
@@ -254,8 +244,6 @@ Alle Sitzungen online/per Zoom (**Zugangsdaten siehe [ILIAS]**)
 [B05b]: homework/b05b.md
 [B06]:  homework/b06.md
 
-:::
-::::::
 
 
 ## Prüfungsform, Note und Credits

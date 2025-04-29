@@ -74,8 +74,7 @@ Dauer jeweils 90 Minuten.
 
 ### Zugelassene Hilfsmittel
 
-:::::: {.tabs groupid="modus"}
-::: {.tab title="Präsenz (in Minden)"}
+::: {.details title="Präsenz (in Minden)"}
 
 **Zugelassene Materialien**: [**DIN-A4-Spickzettel (beidseitig)**]{.alert}
 
@@ -87,7 +86,7 @@ Ich möchte Sie hier noch einmal ermuntern, diesen Zettel tatsächlich manuell z
 Lerneffekt bewirkt!
 
 :::
-::: {.tab title="Open-Book-Ausarbeitung (Homeoffice)"}
+::: {.details title="Open-Book-Ausarbeitung (Homeoffice)"}
 
 Falls die Prüfung als Open-Book-Ausarbeitung im Home-Office durchgeführt werden sollte, dürfen
 Sie alle Unterlagen benutzen.
@@ -98,7 +97,6 @@ Sie alle Unterlagen benutzen.
     mit Dritten ist in keinem Fall zugelassen und wird als Täuschungsversuch gewertet.
 
 :::
-::::::
 
 ### Einsicht
 
@@ -107,8 +105,7 @@ Sie alle Unterlagen benutzen.
 
 ## Technische Vorbereitungen
 
-:::::: {.tabs groupid="modus"}
-::: {.tab title="Präsenz (in Minden)"}
+::: {.details title="Präsenz (in Minden)"}
 
 Diese Bemerkungen betreffen die Durchführung als Präsenzprüfung in den Räumen am Campus Minden.
 
@@ -126,7 +123,7 @@ Diese Bemerkungen betreffen die Durchführung als Präsenzprüfung in den Räume
     bereit.
 
 :::
-::: {.tab title="Open-Book-Ausarbeitung (Homeoffice)"}
+::: {.details title="Open-Book-Ausarbeitung (Homeoffice)"}
 
 Diese Bemerkungen betreffen die Durchführung aus dem Home-Office mit Ihrer Hardware. Bei der
 Durchführung in Präsenz in den Räumen am Campus Minden werden die technischen Details von uns
@@ -171,7 +168,6 @@ für Sie vorbereitet sein.
     Dazu benötigen Sie ihre HSBI-Zugangsdaten, mit denen Sie sich auch im "normalen" ILIAS anmelden.
 
 :::
-::::::
 
 
 ## Bearbeitung des E-Assessment
