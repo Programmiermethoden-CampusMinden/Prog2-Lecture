@@ -44,7 +44,7 @@ fhmedia:
 ---
 
 
-## Typische Probleme bei SW-Entwicklung
+# Typische Probleme bei SW-Entwicklung
 
 *   Was hat wer wann (und wo) geändert? Und warum?
 *   Ich brauche den Stand von gestern/letzter Woche/...
@@ -54,7 +54,7 @@ fhmedia:
 *   Wir arbeiten am Release v42, aber Kunde braucht schnell einen Fix für v40
 
 
-## Folgen SW-Entwicklung ohne Versionsverwaltung
+# Folgen SW-Entwicklung ohne Versionsverwaltung
 
 ![](images/screenshot_zusammenarbeit_ohne_vcs.png){width=80%}
 
@@ -69,7 +69,7 @@ fhmedia:
 :::
 
 
-## Prinzip Versionsverwaltung
+# Prinzip Versionsverwaltung
 
 :::::: columns
 ::: {.column width="48%"}
@@ -93,7 +93,7 @@ fhmedia:
 ::::::
 
 
-## Varianten: Zentrale Versionsverwaltung (Beispiel SVN)
+# Varianten: Zentrale Versionsverwaltung (Beispiel SVN)
 
 ![](images/centralised.png){width="80%"}
 
@@ -107,7 +107,7 @@ eine Verbindung zum Server.
 :::
 
 
-## Varianten: Verteilte Versionsverwaltung (Beispiel Git)
+# Varianten: Verteilte Versionsverwaltung (Beispiel Git)
 
 ![](images/distributed.png){width="80%"}
 
@@ -132,7 +132,7 @@ oder [Gitea](https://gitea.io/en-us/), wobei einige auch selbst gehostet werden 
 :::
 
 
-## Versionsverwaltung mit Git: Typische Arbeitsschritte
+# Versionsverwaltung mit Git: Typische Arbeitsschritte
 
 1.  Repository anlegen (oder clonen)
 
@@ -154,7 +154,7 @@ oder [Gitea](https://gitea.io/en-us/), wobei einige auch selbst gehostet werden 
 9.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
 
 
-## (Globale) Konfiguration
+# (Globale) Konfiguration
 
 **Minimum**:
 
@@ -198,7 +198,7 @@ oder per Befehl `git config --global -l`.
 [[Konsole]{.ex}]{.slides}
 
 
-## Neues Repo anlegen
+# Neues Repo anlegen
 
 *   `git init`
 
@@ -213,7 +213,7 @@ oder per Befehl `git config --global -l`.
 [[Konsole]{.ex}]{.slides}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Git: Versionsmanagement mit dezentralen Repositories
 *   Anlegen eines lokalen Repos mit `git init`

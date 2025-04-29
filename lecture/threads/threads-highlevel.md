@@ -46,7 +46,7 @@ fhmedia:
 ---
 
 
-## Explizite Lock-Objekte
+# Explizite Lock-Objekte
 
 ::: notes
 Sie kennen bereits die Synchronisierung mit dem Schlüsselwort `synchronized`.
@@ -113,10 +113,10 @@ Nachteile:
 [Demo: lock.*]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/threads/src/lock/"}
 
 
-## Thread-Management: Executor-Interface und Thread-Pools
+# Thread-Management: Executor-Interface und Thread-Pools
 
 ::::::::: notes
-### Wiederverwendung von Threads
+## Wiederverwendung von Threads
 
 *   Normale Threads sind immer Einmal-Threads: Man kann sie nur **einmal** in
     ihrem Leben starten (auch wenn das Objekt anschließend noch auf
@@ -130,7 +130,7 @@ Nachteile:
 *   Idee: Threads wiederverwenden und Thread-Management auslagern
     => **Executor-Interface** und **Thread-Pool**
 
-### Executor-Interface
+## Executor-Interface
 
 ```java
 public interface Executor {
@@ -143,7 +143,7 @@ public interface Executor {
     wiederverwenden):
     `e.execute(r);` => entspricht in der Wirkung `(new Thread(r)).start();`
 
-### Thread-Pool hält Menge von "Worker-Threads"
+## Thread-Pool hält Menge von "Worker-Threads"
 
 *   Statische Methoden von `java.util.concurrent.Executors` erzeugen
     Thread-Pools mit verschiedenen Eigenschaften:
@@ -182,7 +182,7 @@ pool.shutdown();    // Feierabend :)
 
 
 ::::::::: notes
-### Hintergrund (vereinfacht)
+## Hintergrund (vereinfacht)
 
 Der Thread-Pool reserviert sich "nackten" Speicher, der der Größe von $n$
 Threads entspricht, und "prägt" die Objektstruktur durch einen Cast direkt auf
@@ -191,7 +191,7 @@ wohlbekannt und schnell (vgl. Thema Speicherverwaltung in der LV
 "Systemprogrammierung"). In Java wird dies durch eine wohldefinierte
 Schnittstelle vor dem Nutzer verborgen.
 
-### Ausblick
+## Ausblick
 
 Hier haben wir nur die absoluten Grundlagen angerissen. Wir können auch
 `Callables` anstatt von `Runnables` übergeben, auf Ergebnisse aus der Zukunft
@@ -203,7 +203,7 @@ Oracle-Dokumentation oder auch [@Ullenboom2021] (insbesondere den Abschnitt 16.4
 :::::::::
 
 
-## Fork/Join-Framework: Teile und Herrsche
+# Fork/Join-Framework: Teile und Herrsche
 
 ::: notes
 Spezieller Thread-Pool zur rekursiven Bearbeitung parallelisierbarer Tasks
@@ -241,10 +241,10 @@ public class RecursiveTask extends ForkJoinTask<V> {
 [Demo: forkjoin.ForkJoin]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/forkjoin/ForkJoin.java"}
 
 
-## Swing und Threads
+# Swing und Threads
 
 ::: notes
-### Lange Berechnungen in Listenern blockieren Swing-GUI
+## Lange Berechnungen in Listenern blockieren Swing-GUI
 
 *   Problem: Events werden durch **einen** *Event Dispatch Thread* (EDT)
     **sequentiell** bearbeitet
@@ -252,7 +252,7 @@ public class RecursiveTask extends ForkJoinTask<V> {
 *   **Achtung**: Swing ist **nicht Thread-safe**! Komponenten nicht
     durch verschiedene Threads manipulieren!
 
-### Lösung
+## Lösung
 
 => `javax.swing.SwingWorker` ist eine spezielle Thread-Klasse, eng mit Swing/Event-Modell verzahnt.
 :::
@@ -268,7 +268,7 @@ public class RecursiveTask extends ForkJoinTask<V> {
     *   `SwingWorker#get`: Return-Wert von `doInBackground` abfragen
 
 ::: notes
-### Anmerkungen
+## Anmerkungen
 
 *   `SwingWorker#done` ist optional: *kann* überschrieben werden
     *   Beispielweise, wenn nach Beendigung der langwierigen Berechnung
@@ -283,7 +283,7 @@ public class RecursiveTask extends ForkJoinTask<V> {
 [Demo: misc.SwingWorkerDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/misc/SwingWorkerDemo.java"}
 
 
-## Letzte Worte :-)
+# Letzte Worte :-)
 
 *   Viele weitere Konzepte
     *   Semaphoren, Monitore, ...
@@ -311,7 +311,7 @@ public class RecursiveTask extends ForkJoinTask<V> {
 *   Thread-safe bedeutet **Overhead** (Synchronisierung)!
 
 
-## Wrap-Up
+# Wrap-Up
 
 Multi-Threading auf höherem Level: Thread-Pools und Fork/Join-Framework
 

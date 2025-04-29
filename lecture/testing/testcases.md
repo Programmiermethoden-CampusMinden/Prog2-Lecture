@@ -88,7 +88,7 @@ challenges: |
 ---
 
 
-## Hands-On (10 Minuten): Wieviel und was muss man testen?
+# Hands-On (10 Minuten): Wieviel und was muss man testen?
 
 ```java
 public class Studi {
@@ -107,7 +107,7 @@ public class Studi {
 ```
 
 ::::::::: notes
-### _JEDE_ Methode mindestens testen mit/auf:
+## _JEDE_ Methode mindestens testen mit/auf:
 
 *   Positive Tests: Gutfall (Normalfall) => "gültige ÄK/GW"
 *   Negativ-Tests (Fehlbedienung, ungültige Werte) => "ungültige ÄK/GW"
@@ -119,7 +119,7 @@ public class Studi {
 => Wichtige Pfade im Code abgedeckt (White-Box)?
 
 
-### Praxis
+## Praxis
 
 *   Je kritischer eine Klasse/Methode/Artefakt ist, um so intensiver testen!
 *   Suche nach Kompromissen: Testkosten vs. Kosten von Folgefehlern;
@@ -130,7 +130,7 @@ Grenzwertanalyse (siehe nächste Folien). Mehr dann später im Wahlfach "Softwar
 :::::::::
 
 
-## Äquivalenzklassenbildung
+# Äquivalenzklassenbildung
 
 ::: notes
 Beispiel: Zu testende Methode mit Eingabewert _x_, der zw. 10 und 100 liegen soll
@@ -152,7 +152,7 @@ Beispiel: Zu testende Methode mit Eingabewert _x_, der zw. 10 und 100 liegen sol
 
 
 ::::::::: notes
-### Bemerkungen
+## Bemerkungen
 
 Hintergrund: Da die Werte einer ÄK zu gleichartigem Verhalten führen, ist es
 egal, _welchen_ Wert man aus einer ÄK für den Test nimmt.
@@ -170,7 +170,7 @@ auch die Ausgabeseite zu berücksichtigen (ist aber u.U. nur schwierig zu
 realisieren).
 
 
-### Faustregeln bei der Bildung von ÄK
+## Faustregeln bei der Bildung von ÄK
 
 *   Falls eine Beschränkung einen Wertebereich spezifiziert:
     Aufteilung in eine gültige und zwei ungültige ÄK
@@ -219,7 +219,7 @@ der laufenden Nummer $n$.
 :::::::::
 
 
-## ÄK: Erstellung der Testfälle
+# ÄK: Erstellung der Testfälle
 
 *   Jede ÄK durch _mindestens_ **einen TF** abdecken
 
@@ -247,9 +247,9 @@ miteinander in einem TF kombiniert werden! Bei gleichzeitiger Behandlung verschi
 :::
 
 
-## ÄK: Beispiel: Eingabewert _x_ soll zw. 10 und 100 liegen
+# ÄK: Beispiel: Eingabewert _x_ soll zw. 10 und 100 liegen
 
-### Äquivalenzklassen
+## Äquivalenzklassen
 
 | Eingabe | gültige ÄK        | ungültige ÄK    |
 |:--------|:------------------|:----------------|
@@ -259,7 +259,7 @@ miteinander in einem TF kombiniert werden! Bei gleichzeitiger Behandlung verschi
 \bigskip
 \pause
 
-### Tests
+## Tests
 
 | Testnummer          | 1    | 2         | 3         |
 |:--------------------|:-----|:----------|:----------|
@@ -268,7 +268,7 @@ miteinander in einem TF kombiniert werden! Bei gleichzeitiger Behandlung verschi
 | Erwartetes Ergebnis | OK   | Exception | Exception |
 
 
-## Grenzwertanalyse
+# Grenzwertanalyse
 
 ![](images/grenzwerte.png){width="60%" web_width="40%"}
 
@@ -298,9 +298,9 @@ nicht zu überlagern.**
 [[Beispiel: Eingabeparameter x zw. 10 und 100]{.ex}]{.slides}
 
 
-## GW: Beispiel: Eingabewert _x_ soll zw. 10 und 100 liegen
+# GW: Beispiel: Eingabewert _x_ soll zw. 10 und 100 liegen
 
-### Äquivalenzklassen
+## Äquivalenzklassen
 
 | Eingabe | gültige ÄK        | ungültige ÄK    |
 |:--------|:------------------|:----------------|
@@ -308,13 +308,13 @@ nicht zu überlagern.**
 |         |                   | uÄK3: $100 < x$ |
 
 
-### Grenzwertanalyse
+## Grenzwertanalyse
 
 [Zusätzliche Testdaten:]{.notes} 9 (uÄK2o) und 10 (gÄK1u) sowie 100 (gÄK1o) und 101 (uÄK3u)
 
 \pause
 
-### Tests
+## Tests
 
 | Testnummer          | 4     | 5     | 6         | 7         |
 |:--------------------|:------|:------|:----------|:----------|
@@ -337,7 +337,7 @@ GW-Analyse erhalten:
 
 
 ::: notes
-## Anmerkung: Analyse abhängiger Parameter
+# Anmerkung: Analyse abhängiger Parameter
 
 Wenn das Ergebnis von der Kombination der Eingabewerte abhängt, dann
 sollte man dies bei der Äquivalenzklassenbildung berücksichtigen: Die
@@ -359,7 +359,7 @@ Vergleiche @Kleuker2019, Abschnitt "4.4 Äquivalenzklassen und Objektorientierun
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
   *   Gründliches Testen ist ebenso viel Aufwand wie Coden
   *   Äquivalenzklassenbildung und Grenzwertanalyse

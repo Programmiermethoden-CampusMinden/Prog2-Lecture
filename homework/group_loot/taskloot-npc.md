@@ -4,12 +4,12 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgabe implementieren Sie einen freundlichen Geist als
 [NPC (*non player character*)](https://en.wikipedia.org/wiki/Non-player_character)[^1].
 
-## Freundlicher NPC: Geist
+# Freundlicher NPC: Geist
 
 Überlegen Sie sich, welche Komponenten ein NPC braucht.
 

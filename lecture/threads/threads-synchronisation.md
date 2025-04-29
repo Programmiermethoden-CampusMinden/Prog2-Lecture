@@ -84,7 +84,7 @@ challenges: |
 ---
 
 
-## Motivation: Verteilter Zugriff auf gemeinsame Ressourcen
+# Motivation: Verteilter Zugriff auf gemeinsame Ressourcen
 
 ```java
 public class Teaser implements Runnable {
@@ -110,7 +110,7 @@ public class Teaser implements Runnable {
 [Demo: synchronised.Teaser]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java"}
 
 
-## Zugriff auf gemeinsame Ressourcen: Mehrseitige Synchronisierung
+# Zugriff auf gemeinsame Ressourcen: Mehrseitige Synchronisierung
 
 ```java
 synchronized (<Object reference>) {
@@ -158,7 +158,7 @@ geschützten Bereich einschließen und als Sperr-Objekt das eigene Objekt (`this
 [Demo: synchronised.ObjSync]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/ObjSync.java"}
 
 
-## Synchronisierte Methoden
+# Synchronisierte Methoden
 
 :::::: columns
 :::{.column width="40%"}
@@ -208,7 +208,7 @@ Die Methode `incrVal()` könnte entsprechend so umgeschrieben werden:
 [Demo: synchronised.MethodSync]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/MethodSync.java"}
 
 
-## Probleme bei der (mehrseitigen) Synchronisierung: Deadlocks
+# Probleme bei der (mehrseitigen) Synchronisierung: Deadlocks
 
 ```java
 public class Deadlock {
@@ -256,16 +256,16 @@ Und schon geht's nicht mehr weiter :-)
 [Demo: synchronised.Deadlock]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Deadlock.java"}
 
 
-## Warten auf andere Threads: Einseitige Synchronisierung
+# Warten auf andere Threads: Einseitige Synchronisierung
 
-### Problem
+## Problem
 
 *   Thread T1 wartet auf Arbeitsergebnis von T2
 *   T2 ist noch nicht fertig
 
 \bigskip
 
-### Mögliche Lösungen
+## Mögliche Lösungen
 
 1.  Aktives Warten (Polling): Permanente Abfrage
     *   Kostet unnötig Rechenzeit
@@ -277,7 +277,7 @@ Und schon geht's nicht mehr weiter :-)
     *   Das ist DIE Lösung für das Problem :)
 
 
-## Einseitige Synchronisierung mit _wait_ und _notify_
+# Einseitige Synchronisierung mit _wait_ und _notify_
 
 *   **wait**: Warten auf Erfüllung einer Bedingung (Thread blockiert):
 
@@ -299,7 +299,7 @@ Und schon geht's nicht mehr weiter :-)
     => Bedingung nach Rückkehr von `wait` erneut prüfen!
 
 ::: notes
-### Eigenschaften von _wait_
+## Eigenschaften von _wait_
 
 *   Thread ruft auf Synchronisations-Objekt die Methode `wait` auf
 *   Prozessor wird entzogen, Thread blockiert
@@ -310,7 +310,7 @@ Und schon geht's nicht mehr weiter :-)
 :::
 
 
-## Einseitige Synchronisierung mit _wait_ und _notify_ (cnt.)
+# Einseitige Synchronisierung mit _wait_ und _notify_ (cnt.)
 
 *   **notify**: Aufwecken von wartenden (blockierten) Threads:
 
@@ -324,7 +324,7 @@ Und schon geht's nicht mehr weiter :-)
     ```
 
 ::: notes
-### Eigenschaften von _notify_ bzw. _notifyAll_
+## Eigenschaften von _notify_ bzw. _notifyAll_
 
 *   Thread ruft auf einem Synchronisations-Objekt die Methode `notify`
     oder `notifyAll` auf
@@ -340,7 +340,7 @@ Und schon geht's nicht mehr weiter :-)
 [Demo: synchronised.Staffel]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Staffel.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 Synchronisierungsbedarf bei verteiltem Zugriff auf gemeinsame Ressourcen:
 

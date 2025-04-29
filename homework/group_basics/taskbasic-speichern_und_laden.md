@@ -4,12 +4,12 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgaben sollen Sie ein Konzept zum Speichern und Laden des Spielzustandes
 implementieren.
 
-## Speichern und Laden
+# Speichern und Laden
 
 Nutzen Sie
 [Serializable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/Serializable.html),

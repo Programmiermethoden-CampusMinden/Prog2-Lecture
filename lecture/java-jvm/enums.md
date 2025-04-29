@@ -32,7 +32,7 @@ fhmedia:
 ---
 
 
-## Motivation
+# Motivation
 
 ```java
 public class Studi {
@@ -64,7 +64,7 @@ public class Studi {
 [[Beispiel enums.v1.Studi]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v1/Studi.java"}]{.notes}
 
 
-## Verbesserung: Einfache Aufzählung
+# Verbesserung: Einfache Aufzählung
 
 ```java
 public enum Fach {
@@ -85,7 +85,7 @@ public class Studi {
 ```
 
 
-## Einfache Aufzählungen: Eigenschaften
+# Einfache Aufzählungen: Eigenschaften
 
 ```java
 public enum Fach {
@@ -104,7 +104,7 @@ public enum Fach {
 
 
 ::::::::: notes
-### Wiederholung _static_
+## Wiederholung _static_
 
 **Attribute**:
 
@@ -123,7 +123,7 @@ public enum Fach {
 *   **Achtung**: In Klassenmethoden nur Klassenattribute nutzbar (keine Instanzattribute!),
     d.h. keine `this`-Referenz nutzbar
 
-### Wiederholung _final_: Attribute/Methoden/Klassen nicht änderbar
+## Wiederholung _final_: Attribute/Methoden/Klassen nicht änderbar
 
 *   Attribute: `final` Attribute können nur einmal gesetzt werden
 
@@ -146,7 +146,7 @@ public enum Fach {
 :::::::::
 
 
-## Einfache Aufzählungen: Eigenschaften (cnt.)
+# Einfache Aufzählungen: Eigenschaften (cnt.)
 
 ```java
 // Referenzen auf Enum-Objekte können null sein
@@ -179,7 +179,7 @@ Außerdem können wir folgende Eigenschaften nutzen (u.a., s.u.):
 [Demo: enums.v2.Studi]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/enums/v2/Studi.java"}
 
 
-## Enum: Genauer betrachtet
+# Enum: Genauer betrachtet
 
 ```java
 public enum Fach {  IFM, ELM, ARC  }
@@ -202,7 +202,7 @@ public class Fach extends Enum {
 => **Singleton-Pattern** für Konstanten
 
 
-## Enum-Klassen: Eigenschaften
+# Enum-Klassen: Eigenschaften
 
 ``` {.java size="footnotesize"}
 public enum Fach {
@@ -228,12 +228,12 @@ public enum Fach {
 ```
 
 ::: notes
-### Konstruktoren und Methoden für Enum-Klassen definierbar
+## Konstruktoren und Methoden für Enum-Klassen definierbar
 
 *   Kein eigener Aufruf von `super` (!)
 *   Konstruktoren implizit `private`
 
-### Compiler fügt automatisch folgende Methoden hinzu (Auswahl):
+## Compiler fügt automatisch folgende Methoden hinzu (Auswahl):
 
 *   Strings:
     *   `public final String name()` => Name der Konstanten (`final`!)
@@ -251,7 +251,7 @@ public enum Fach {
 [Demo: enums.v3]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/java-jvm/src/enums/v3/"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Aufzählungen mit Hilfe von `enum` [(Compiler erzeugt intern Klassen)]{.notes}
 

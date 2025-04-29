@@ -60,7 +60,7 @@ challenges: |
 ---
 
 
-## Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
+# Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
 
 ![](images/distributed.png){width="80%"}
 
@@ -72,7 +72,7 @@ ich sinnvoll über Git mit anderen Kollegen und Teams zusammen? Welche Modelle h
 :::
 
 
-## Clonen kann sich lohnen ...
+# Clonen kann sich lohnen ...
 
     https://github.com/Programmiermethoden-CampusMinden/PM-Lecture
 
@@ -114,7 +114,7 @@ Für die URL sind verschiedene Protokolle möglich, beispielsweise:
 [[Hinweis auf Protokolle, Beispiel]{.ex}]{.slides}
 
 
-## Eigener und entfernter _master_ entwickeln sich weiter ...
+# Eigener und entfernter _master_ entwickeln sich weiter ...
 
     https://github.com/Programmiermethoden-CampusMinden/PM-Lecture
 
@@ -164,7 +164,7 @@ wurde, zeigt der remote Branch `origin/master` immer noch auf den Commit
 :::
 
 
-## Änderungen im Remote holen und Branches zusammenführen
+# Änderungen im Remote holen und Branches zusammenführen
 
     https://github.com/Programmiermethoden-CampusMinden/PM-Lecture
 
@@ -184,7 +184,7 @@ wurde, zeigt der remote Branch `origin/master` immer noch auf den Commit
 
 
 ::::::::: notes
-### Änderungen auf dem Server mit dem eigenen Repo abgleichen
+## Änderungen auf dem Server mit dem eigenen Repo abgleichen
 
 Mit `git fetch origin` alle Änderungen holen
 
@@ -199,7 +199,7 @@ Mit `git fetch origin` alle Änderungen holen
 *Wichtig*: Es werden nur die remote Branches aktualisiert, nicht die lokalen Branches!
 
 
-### _master_-Branch nach "git fetch origin" zusammenführen
+## _master_-Branch nach "git fetch origin" zusammenführen
 
 1.  Mit `git checkout master` Workingcopy auf eigenen `master` umstellen
 2.  Mit `git merge origin/master` Änderungen am `origin/master` in eigenen `master` mergen
@@ -232,7 +232,7 @@ mit der Option "`--rebase`" auf "rebase" umgestellt werden (per Default wird bei
 ein "merge" ausgeführt).
 
 
-### Auf dem Server ist nur ein _fast forward merge_ möglich
+## Auf dem Server ist nur ein _fast forward merge_ möglich
 
 Sie können Ihre Änderungen in Ihrem lokalen `master` auch direkt in das remote Repo
 pushen, solange auf dem Server ein **fast forward merge** möglich ist.
@@ -248,7 +248,7 @@ werden).
 [Beispiel für Zusammenführen (merge und push), Anmerkung zu fast forward merge]{.ex href="https://youtu.be/moqywsxtEy8"}
 
 
-## Branches und Remotes
+# Branches und Remotes
 
 *   Eigenen (neuen) lokalen Branch ins remote Repo schicken
     *   `git push <remote> <branch>`
@@ -263,7 +263,7 @@ werden).
 [[Beispiel]{.ex}]{.slides}
 
 
-## Zusammenfassung: Arbeiten mit Remotes
+# Zusammenfassung: Arbeiten mit Remotes
 
 1.  Änderungen vom Server holen: `git fetch <remote>` \newline
     => Holt alle Änderungen vom Repo `<remote>` ins eigene Repo
@@ -280,7 +280,7 @@ werden).
 
 
 ::::::::: notes
-### Anmerkung: _push_ geht nur, wenn
+## Anmerkung: _push_ geht nur, wenn
 
 1. Ziel ein "bare"-Repository ist, **und**
 2. keine Konflikte entstehen
@@ -296,7 +296,7 @@ Github anlegen, automatisch der Fall. Sie können aber auch lokal ein solches
 mitgeben: `git init --bare` ...
 
 
-### Beispiel
+## Beispiel
 
     git fetch origin           # alle Änderungen vom Server holen
     git checkout master        # auf lokalen Master umschalten
@@ -308,7 +308,7 @@ mitgeben: `git init --bare` ...
 :::::::::
 
 
-## Vereinfachung: Tracking Branches
+# Vereinfachung: Tracking Branches
 
 *   **Tracking Branch**: lokaler Branch, der remote Branch "verfolgt"
     *   Beispiel: lokaler `master`-Branch folgt `origin/master` per Default
@@ -326,7 +326,7 @@ mitgeben: `git init --bare` ...
 Vorsicht: `pull` und `push` beziehen sich nur auf ausgecheckten Tracking Branch
 
 
-## Einrichten von Tracking Branches
+# Einrichten von Tracking Branches
 
 *   `git clone`: lokaler `master` trackt automatisch `origin/master`
 
@@ -347,7 +347,7 @@ Vorsicht: `pull` und `push` beziehen sich nur auf ausgecheckten Tracking Branch
 [[Beispiel]{.ex}]{.slides}
 
 
-## Hinzufügen eines (weiteren) Remote Repository
+# Hinzufügen eines (weiteren) Remote Repository
 
 ![](images/screenshot_branches.png){width="75%"}
 
@@ -373,7 +373,7 @@ Beispiel: `git fetch andi` oder `git push origin master`
 [[Beispiel]{.ex}]{.slides}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Synchronisierung des lokalen Repos mit anderen Repos
     *   Repo kopieren: `git clone <url>`

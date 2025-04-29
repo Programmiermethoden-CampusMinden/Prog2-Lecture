@@ -4,12 +4,12 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgaben sollen Sie Fallen implementieren, die das Voranschreiten im Dungeon
 schwieriger machen.
 
-## Fallen
+# Fallen
 
 Implementieren Sie Fallen, die Sie im Dungeon verteilen.
 

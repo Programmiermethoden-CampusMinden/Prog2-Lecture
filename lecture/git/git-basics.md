@@ -80,7 +80,7 @@ challenges: |
 ---
 
 
-## Versionsverwaltung mit Git: Typische Arbeitsschritte
+# Versionsverwaltung mit Git: Typische Arbeitsschritte
 
 1.  Repository anlegen (oder clonen)
 
@@ -102,7 +102,7 @@ challenges: |
 9.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
 
 
-## Dateien unter Versionskontrolle stellen
+# Dateien unter Versionskontrolle stellen
 
 \bigskip
 
@@ -127,7 +127,7 @@ challenges: |
 [[Konsole]{.ex}]{.slides}
 
 
-## Änderungen einpflegen
+# Änderungen einpflegen
 
 \bigskip
 
@@ -163,7 +163,7 @@ dabei außen vor!
 [[Konsole]{.ex}]{.slides}
 
 
-## Letzten Commit ergänzen
+# Letzten Commit ergänzen
 
 *   `git commit --amend -m "Eigentlich wollte ich das so sagen"`
 
@@ -186,7 +186,7 @@ dabei außen vor!
 
 
 ::: notes
-## Weitere Datei-Operationen: hinzufügen, umbenennen, löschen
+# Weitere Datei-Operationen: hinzufügen, umbenennen, löschen
 
 *   Neue (unversionierte) Dateien und Änderungen an versionierten Dateien zum Staging hinzufügen: `git add <file>`
 *   Löschen von Dateien (Repo+Workingcopy): `git rm <file>`
@@ -220,7 +220,7 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 :::
 
 
-## Commits betrachten
+# Commits betrachten
 
 *   Liste aller Commits: `git log`
     *   `git log -<n>` oder `git log --since="3 days ago"`
@@ -236,7 +236,7 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 [[Konsole]{.ex}]{.slides}
 
 
-## Änderungen und Logs betrachten
+# Änderungen und Logs betrachten
 
 *   `git diff [<file>]`
 
@@ -265,7 +265,7 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 [[Konsole]{.ex}]{.slides}
 
 
-## Dateien ignorieren: _.gitignore_
+# Dateien ignorieren: _.gitignore_
 
 ::: notes
 *   Nicht alle Dateien gehören ins Repo:
@@ -293,7 +293,7 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 [man 5 gitignore]{.ex href="https://linux.die.net/man/5/gitignore"}
 
 
-## Zeitmaschine
+# Zeitmaschine
 
 *   Änderungen in Workingcopy rückgängig machen
     *   Änderungen nicht in Stage: `git checkout <file>` oder `git restore <file>`
@@ -325,7 +325,7 @@ immer noch zur Verfügung und bietet über `git restore` hinaus weitere Anwendun
 [[Konsole]{.ex}]{.slides}
 
 
-## Wann und wie committen?
+# Wann und wie committen?
 
 \Large
 ::: center
@@ -360,7 +360,7 @@ keinen _atomic commit_ mehr vor sich.
 :::
 
 
-## Schreiben von Commit-Messages: WARUM?!
+# Schreiben von Commit-Messages: WARUM?!
 
 :::::: notes
 Schauen Sie sich einmal einen Screenshot eines `git log --oneline 61e48f0..e2c8076`
@@ -429,7 +429,7 @@ automatisch von Git aufgezeichnet ...)
 [[Analogie E-Mail an zukünftigen Entwickler]{.ex}]{.slides}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Änderungen einpflegen zweistufig (`add`, `commit`)
 *   Status der Workingcopy mit `status` ansehen

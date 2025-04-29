@@ -65,7 +65,7 @@ challenges: |
 ---
 
 
-## Was ist Refactoring?
+# Was ist Refactoring?
 
 > Refactoring ist, wenn einem auffällt, daß der Funktionsname `foobar`
 > ziemlich bescheuert ist, und man die Funktion in `sinus` umbenennt.
@@ -94,7 +94,7 @@ challenges: |
 :::
 
 
-## Anzeichen, dass Refactoring jetzt eine gute Idee wäre
+# Anzeichen, dass Refactoring jetzt eine gute Idee wäre
 
 *   Code "stinkt" (zeigt/enthält _Code Smells_)
 
@@ -152,7 +152,7 @@ sinnvoll ist.
 :::
 
 
-## Bevor Sie loslegen ...
+# Bevor Sie loslegen ...
 
 1.  **Unit Tests** schreiben
     *   Normale und ungültige Eingaben
@@ -169,10 +169,10 @@ sinnvoll ist.
 3.  Haben Sie die fragliche Codestelle auch wirklich verstanden?!
 
 
-## Vorgehen beim Refactoring
+# Vorgehen beim Refactoring
 
 ::: notes
-### Überblick über die Methoden des Refactorings
+## Überblick über die Methoden des Refactorings
 
 Die Refactoring-Methoden sind nicht einheitlich definiert, es existiert ein großer
 und uneinheitlicher "Katalog" an möglichen Schritten. Teilweise benennt jede IDE
@@ -186,7 +186,7 @@ Zu den am häufigsten genutzten Methoden zählen
 *   Move Method
 *   Pull Up, Push Down (Field, Method)
 
-### Best Practice
+## Best Practice
 
 Eine Best Practice (oder nennen Sie es einfach eine wichtige Erfahrung) ist,
 beim Refactoring langsam und gründlich vorzugehen. Sie ändern die Struktur
@@ -207,22 +207,22 @@ grün sein (oder Sie haben einen Fehler gemacht).
 *   Versionskontrolle nutzen: **Jeden** Schritt **einzeln** committen
 
 
-## Refactoring-Methode: Rename Method/Class/Field
+# Refactoring-Methode: Rename Method/Class/Field
 
 ::: notes
-### Motivation
+## Motivation
 
 Name einer Methode/Klasse/Attributs erklärt nicht ihren Zweck.
 
-### Durchführung
+## Durchführung
 
 Name selektieren, "`Refactor > Rename`"
 
-### Anschließend ggf. prüfen
+## Anschließend ggf. prüfen
 
 Aufrufer? Superklassen?
 
-### Beispiel
+## Beispiel
 :::
 
 **Vorher**
@@ -239,22 +239,22 @@ public String getTelefonNummer() {}
 
 
 
-## Refactoring-Methode: Encapsulate Field
+# Refactoring-Methode: Encapsulate Field
 
 ::: notes
-### Motivation
+## Motivation
 
 Sichtbarkeit von Attributen reduzieren.
 
-### Durchführung
+## Durchführung
 
 Attribut selektieren, "`Refactor > Encapsulate Field`"
 
-### Anschließend ggf. prüfen
+## Anschließend ggf. prüfen
 
 Superklassen? Referenzen? (Neue) JUnit-Tests?
 
-### Beispiel
+## Beispiel
 :::
 
 **Vorher**
@@ -281,10 +281,10 @@ public void printDetails() {
 ```
 
 
-## Refactoring-Methode: Extract Method/Class
+# Refactoring-Methode: Extract Method/Class
 
 ::: notes
-### Motivation
+## Motivation
 
 *   Codefragment stellt eigenständige Methode dar
 *   "Überschriften-Code"
@@ -292,11 +292,11 @@ public void printDetails() {
 *   Code ist zu "groß"
 *   Klasse oder Methode erfüllt unterschiedliche Aufgaben
 
-### Durchführung
+## Durchführung
 
 Codefragment selektieren, "`Refactor > Extract Method`" bzw. "`Refactor > Extract Class`"
 
-### Anschließend ggf. prüfen
+## Anschließend ggf. prüfen
 
 *   Aufruf der neuen Methode? Nutzung der neuen Klasse?
 *   Neue JUnit-Tests nötig? Veränderung bestehender Tests nötig?
@@ -305,7 +305,7 @@ Codefragment selektieren, "`Refactor > Extract Method`" bzw. "`Refactor > Extrac
     *   Veränderung lokaler Variablen: Rückgabewert in neuer Methode
         und Zuweisung bei Aufruf; evtl. neue Typen nötig!
 
-### Beispiel
+## Beispiel
 :::
 
 **Vorher**
@@ -333,20 +333,20 @@ private void printDetails() {
 ```
 
 
-## Refactoring-Methode: Move Method
+# Refactoring-Methode: Move Method
 
 ::: notes
-### Motivation
+## Motivation
 
 Methode nutzt (oder wird genutzt von) mehr Eigenschaften einer
 fremden Klasse als der eigenen Klasse.
 
-### Durchführung
+## Durchführung
 
 Methode selektieren, "`Refactor > Move`"
 (ggf. "Keep original method as delegate to moved method" aktivieren)
 
-### Anschließend ggf. prüfen
+## Anschließend ggf. prüfen
 
 *   Aufruf der neuen Methode (Delegation)?
 *   Neue JUnit-Tests nötig? Veränderung bestehender Tests nötig?
@@ -354,7 +354,7 @@ Methode selektieren, "`Refactor > Move`"
 *   Veränderung lokaler Variablen: Rückgabewert in neuer Methode
     und Zuweisung bei Aufruf; evtl. neue Typen nötig!
 
-### Beispiel
+## Beispiel
 :::
 
 **Vorher**
@@ -378,7 +378,7 @@ public class Studi extends Person {
 ```
 
 ::: slides
-## Refactoring-Methode: Move Method (cnt.)
+# Refactoring-Methode: Move Method (cnt.)
 :::
 
 **Nachher**
@@ -404,24 +404,24 @@ public class Studi extends Person {
 ```
 
 
-## Refactoring-Methode: Pull Up, Push Down (Field, Method)
+# Refactoring-Methode: Pull Up, Push Down (Field, Method)
 
 ::: notes
-### Motivation
+## Motivation
 
 *   Attribut/Methode nur für die Oberklasse relevant: **Pull Up**
 *   Subklassen haben identische Attribute/Methoden: **Pull Up**
 *   Attribut/Methode nur für eine Subklasse relevant: **Push Down**
 
-### Durchführung
+## Durchführung
 
 Name selektieren, "`Refactor > Pull Up`" oder "`Refactor > Push Down`"
 
-### Anschließend ggf. prüfen
+## Anschließend ggf. prüfen
 
 Referenzen/Aufrufer? JUnit-Tests?
 
-### Beispiel
+## Beispiel
 :::
 
 **Vorher**
@@ -446,7 +446,7 @@ public class Studi extends Person {
 ```
 
 
-## Wrap-Up
+# Wrap-Up
 
 Behebung von **Bad Smells** durch **Refactoring**
 

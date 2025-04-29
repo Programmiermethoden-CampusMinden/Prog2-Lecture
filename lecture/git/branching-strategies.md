@@ -41,7 +41,7 @@ fhmedia:
 ---
 
 
-## Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
+# Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
 
 ![](images/distributed.png){width="80%"}
 
@@ -54,7 +54,7 @@ Im Folgenden sollen also die Frage betrachtet werden: **Wie setze ich Branches s
 :::
 
 
-## Umgang mit Branches: Themen-Branches
+# Umgang mit Branches: Themen-Branches
 
                     I---J---K  wuppieV1
                    /
@@ -91,7 +91,7 @@ und der Themenbranch gelöscht.
 :::
 
 
-## Umgang mit Branches: Langlaufende Branches
+# Umgang mit Branches: Langlaufende Branches
 
     A---B---D  master
          \
@@ -130,7 +130,7 @@ Linux-Kernel.
 :::
 
 
-## Komplexe Branching-Strategie: Git-Flow
+# Komplexe Branching-Strategie: Git-Flow
 
     A---B---------------------G---J1  master
          \                   / \ /
@@ -154,7 +154,7 @@ Modells eigentlich nicht erklären :-)
 :::
 
 
-## Git-Flow: Hauptzweige _master_ und _develop_
+# Git-Flow: Hauptzweige _master_ und _develop_
 
     A---B-------E---------------J  master
          \     /               /
@@ -176,7 +176,7 @@ Entwicklungsarbeit mehr. Nach Fertigstellung wird der `release` dann sowohl in d
 :::
 
 
-## Git-Flow: Weitere Branches als Themen-Branches
+# Git-Flow: Weitere Branches als Themen-Branches
 
     A---B---------------------I-------------K  master
          \                   /             /
@@ -199,7 +199,7 @@ Arbeiten eine gewisse Reife haben, werden die Featurebranches in den
 
 
 ::::::::: notes
-## Git-Flow: Merging-Detail
+# Git-Flow: Merging-Detail
 
     ---C--------E  develop
         \      /                 git merge --no-ff
@@ -229,7 +229,7 @@ dass alle Commit-Kommentare zu einem Feature "A" mit "`feature a: `" starten mü
 :::::::::
 
 
-## Git-Flow: Umgang mit Fehlerbehebung
+# Git-Flow: Umgang mit Fehlerbehebung
 
     A---B---D--------F1  master
          \   \      /
@@ -249,7 +249,7 @@ Dadurch entspricht jeder Commit im `master` einem Release.
 :::
 
 
-## Vereinfachte Braching-Strategie: GitHub Flow
+# Vereinfachte Braching-Strategie: GitHub Flow
 
     A---B---C----D-----------E  master
          \   \  /           /
@@ -287,7 +287,7 @@ Weboberfläche erfolgt schließlich der Merge des Feature-Branches in den `maste
 
 
 ::: notes
-## Diskussion: Git-Flow vs. GitHub Flow
+# Diskussion: Git-Flow vs. GitHub Flow
 
 In der Praxis zeigt sich, dass das Git-Flow-Modell besonders gut geeignet ist,
 wenn man tatsächlich so etwas wie "Releases" hat, die zudem nicht zu häufig
@@ -316,7 +316,7 @@ Linux-Distribution die bessere sei):
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Einsatz von Themenbranches für die Entwicklung
 *   Unterschiedliche Modelle:

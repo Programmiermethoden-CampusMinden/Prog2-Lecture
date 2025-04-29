@@ -48,23 +48,23 @@ fhmedia:
 
 
 ::::::::: notes
-## Motivation: Zusammenarbeit in Teams
+# Motivation: Zusammenarbeit in Teams
 
-### Szenario
+## Szenario
 
 *   Projekt besteht aus diversen Teilprojekten
 *   Verschiedene Entwicklungs-Teams arbeiten (getrennt) an verschiedenen Projekten
 *   Tester entwickeln Testsuiten für die Teilprojekte
 *   Tester entwickeln Testsuiten für das Gesamtprojekt
 
-### Manuelle Ausführung der Testsuiten reicht nicht
+## Manuelle Ausführung der Testsuiten reicht nicht
 
 *   Belastet den Entwicklungsprozess
 *   Keine (einheitliche) Veröffentlichung der Ergebnisse
 *   Keine (einheitliche) Eskalation bei Fehlern
 *   Keine regelmäßige Integration in Gesamtprojekt
 
-### Continuous Integration
+## Continuous Integration
 
 *   Regelmäßige, automatische Ausführung: Build und Tests
 *   Reporting
@@ -72,12 +72,12 @@ fhmedia:
 :::::::::
 
 
-## Continuous Integration (CI)
+# Continuous Integration (CI)
 
 ![](images/ci.png){width="80%" web_width="60%"}
 
 ::::::::: notes
-### Vorgehen
+## Vorgehen
 
 *   Entwickler und Tester committen ihre Änderungen regelmäßig (Git, SVN, ...)
 *   CI-Server arbeitet Build-Skripte ab, getriggert durch Events: Push-Events, Zeit/Datum, ...
@@ -88,14 +88,14 @@ fhmedia:
     *   Typische weitere Builds: "Nightly Build", Release-Build, ...
     *   Ergebnisse jeweils auf der Weboberfläche einsehbar (und per E-Mail)
 
-### Einige Vorteile
+## Einige Vorteile
 
 *   Tests werden regelmäßig durchgeführt (auch wenn sie lange dauern oder die
     Maschine stark belasten)
 *   Es wird regelmäßig ein Gesamt-Build durchgeführt
 *   Alle Teilnehmer sind über aktuellen Projekt(-zu-)stand informiert
 
-### Beispiele für verbreitete CI-Umgebungen
+## Beispiele für verbreitete CI-Umgebungen
 
 *   [Jenkins](https://www.jenkins.io/)
 *   [GitLab CI/CD](https://docs.gitlab.com/ee/ci/)
@@ -108,13 +108,13 @@ fhmedia:
 
 
 ::::::::: notes
-## GitLab CI/CD
+# GitLab CI/CD
 
 Siehe auch ["Get started with Gitlab CI/CD"](http://git03-ifm-min.ad.hsbi.de/help/ci/quick_start/index.md).
 (Für den Zugriff wird VPN benötigt!)
 
 
-### Übersicht über Pipelines
+## Übersicht über Pipelines
 
 ![](images/screenshot-gitlabci-pipelines.png){width="70%" web_width="60%"}
 
@@ -129,14 +129,14 @@ Siehe auch ["Get started with Gitlab CI/CD"](http://git03-ifm-min.ad.hsbi.de/hel
 Wenn man mit der Maus auf den Status oder die Stages geht, erfährt man mehr bzw.
 kann auf eine Seite mit mehr Informationen kommen.
 
-### Detailansicht einer Pipeline
+## Detailansicht einer Pipeline
 
 ![](images/screenshot-gitlabci-triggeredpipeline.png){width="70%" web_width="60%"}
 
 Wenn man in eine Pipeline in der Übersicht klickt, werden die einzelnen
 Stages dieser Pipeline genauer dargestellt.
 
-### Detailansicht eines Jobs
+## Detailansicht eines Jobs
 
 ![](images/screenshot-gitlabci-job.png){width="70%" web_width="60%"}
 
@@ -144,7 +144,7 @@ Wenn man in einen Job einer Stage klickt, bekommt man quasi die Konsolenausgabe
 dieses Jobs. Hier kann man ggf. Fehler beim Ausführen der einzelnen Skripte
 oder die Ergebnisse beispielsweise der JUnit-Läufe anschauen.
 
-### GitLab CI/CD: Konfiguration mit YAML-Datei
+## GitLab CI/CD: Konfiguration mit YAML-Datei
 
 Datei `.gitlab-ci.yml` im Projekt-Ordner:
 
@@ -172,7 +172,7 @@ job3:
     stage: my.compile
 ```
 
-#### Stages
+### Stages
 
 Unter `stages` werden die einzelnen Stages einer Pipeline definiert. Diese werden
 in der hier spezifizierten Reihenfolge durchgeführt, d.h. zuerst würde `my.compile`
@@ -188,7 +188,7 @@ Wenn keine eigenen `stages` definiert werden, kann man
 auf die Default-Stages `build`, `test` und `deploy` zurückgreifen. **Achtung**: Sobald
 man eigene Stages definiert, stehen diese Default-Stages *nicht* mehr zur Verfügung!
 
-#### Jobs
+### Jobs
 
 `job1`, `job2` und `job3` definieren jeweils einen Job.
 
@@ -214,7 +214,7 @@ Durch die Kombination von Jobs mit der Zuordnung zu Stages und Events lassen
 sich unterschiedliche Pipelines für verschiedene Zwecke definieren.
 
 
-### Hinweise zur Konfiguration von GitLab CI/CD
+## Hinweise zur Konfiguration von GitLab CI/CD
 
 Im Browser in den Repo-Einstellungen arbeiten:
 
@@ -247,13 +247,13 @@ _Optional_:
 
 
 ::::::::: notes
-## GitHub Actions
+# GitHub Actions
 
 Siehe ["GitHub Actions: Automate your workflow from idea to production"](https://github.com/features/actions)
 und auch ["GitHub: CI/CD explained"](https://resources.github.com/ci-cd/).
 
 
-### Übersicht über Workflows
+## Übersicht über Workflows
 
 ![](images/screenshot-githubci-workflows.png){width="70%" web_width="60%"}
 
@@ -265,7 +265,7 @@ Event filtern.
 In der Abbildung ist ein Workflow mit dem Namen "GitHub CI" zu sehen, der
 aktuell noch läuft.
 
-### Detailansicht eines Workflows
+## Detailansicht eines Workflows
 
 ![](images/screenshot-githubci-triggeredworkflow.png){width="70%" web_width="60%"}
 
@@ -274,7 +274,7 @@ Jobs dieses Workflows genauer dargestellt. "job3" ist erfolgreich gelaufen, "job
 läuft gerade, und "job2" hängt von "job1" ab, d.h. kann erst nach dem erfolgreichen
 Lauf von "job2" starten.
 
-### Detailansicht eines Jobs
+## Detailansicht eines Jobs
 
 ![](images/screenshot-githubci-job.png){width="70%" web_width="60%"}
 
@@ -282,7 +282,7 @@ Wenn man in einen Job anklickt, bekommt man quasi die Konsolenausgabe
 dieses Jobs. Hier kann man ggf. Fehler beim Ausführen der einzelnen Skripte
 oder die Ergebnisse beispielsweise der JUnit-Läufe anschauen.
 
-### GitHub Actions: Konfiguration mit YAML-Datei
+## GitHub Actions: Konfiguration mit YAML-Datei
 
 Workflows werden als YAML-Dateien im Ordner `.github/workflows/` angelegt.
 
@@ -329,7 +329,7 @@ jobs:
       - run: echo "Job 3"
 ```
 
-#### Workflowname und Trigger-Events
+### Workflowname und Trigger-Events
 
 Der Name des Workflows wird mit dem Eintrag `name` spezifiziert und sollte sich im
 Dateinamen widerspiegeln, also im Beispiel `.github/workflows/github_ci.yml`.
@@ -338,7 +338,7 @@ Im Eintrag `on` können die Events definiert werden, die den Workflow triggern. 
 Beispiel ist ein Push-Event auf dem `master`-Branch definiert sowie mit `workflow_dispatch:`
 das manuelle Triggern (auf einem beliebigen Branch) freigeschaltet.
 
-#### Jobs
+### Jobs
 
 Die Jobs werden unter dem Eintrag `jobs` definiert: `job1`, `job2` und `job3` definieren
 jeweils einen Job.
@@ -378,7 +378,7 @@ Man kann auch einen Docker-Container benutzen. Dabei muss man beachten, dass die
 aus einer Registry (etwa von Docker-Hub oder aus der GitHub-Registry) "gezogen" wird, weil das
 Bauen des Docker-Containers aus einem Docker-File in der Action u.U. relativ lange dauert.
 
-### Hinweise zur Konfiguration von GitHub Actions
+## Hinweise zur Konfiguration von GitHub Actions
 
 Im Browser in den Repo-Einstellungen arbeiten:
 
@@ -398,7 +398,7 @@ Im Browser in den Repo-Einstellungen arbeiten:
 :::::::::
 
 
-## Wrap-Up
+# Wrap-Up
 
 Überblick über Continuous Integration:
 

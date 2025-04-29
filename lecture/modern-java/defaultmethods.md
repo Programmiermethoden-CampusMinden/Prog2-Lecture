@@ -52,7 +52,7 @@ challenges: |
 ---
 
 
-## Problem: Etablierte API (Interfaces) erweitern
+# Problem: Etablierte API (Interfaces) erweitern
 
 ```java
 interface Klausur {
@@ -74,7 +74,7 @@ damit unmöglich machen.
 :::
 
 
-## Default-Methoden: Interfaces mit Implementierung
+# Default-Methoden: Interfaces mit Implementierung
 
 ::: notes
 Seit Java8 können Interfaces auch Methoden implementieren.
@@ -109,7 +109,7 @@ Verhalten (implementierten Methoden) auch Zustand über die Attribute gespeicher
 
 
 ::: notes
-## Problem: Mehrfachvererbung
+# Problem: Mehrfachvererbung
 
 Drei Regeln zum Auflösen bei Konflikten:
 
@@ -128,7 +128,7 @@ Auf den folgenden Folien wird dies anhand kleiner Beispiele verdeutlicht.
 [[Hinweis: Mehrfachvererbung]{.ex}]{.slides}
 
 
-## Auflösung Mehrfachvererbung: 1. Klassen gewinnen
+# Auflösung Mehrfachvererbung: 1. Klassen gewinnen
 
 ```java
 interface A {
@@ -159,7 +159,7 @@ einer Oberklasse haben Vorrang von allen Default-Methoden.
 :::
 
 
-## Auflösung Mehrfachvererbung: 2. Sub-Interfaces gewinnen
+# Auflösung Mehrfachvererbung: 2. Sub-Interfaces gewinnen
 
 ```java
 interface A {
@@ -191,7 +191,7 @@ spezialisiert ist.
 :::
 
 
-## Auflösung Mehrfachvererbung: 3. Methode explizit auswählen
+# Auflösung Mehrfachvererbung: 3. Methode explizit auswählen
 
 ```java
 interface A {
@@ -229,7 +229,7 @@ muss man manuell durch die explizite Angabe der gewünschten Methode auflösen.
 :::
 
 
-## Quiz: Was kommt hier raus?
+# Quiz: Was kommt hier raus?
 
 ```java
 interface A {
@@ -262,7 +262,7 @@ gewinnen immer (Regel 1).
 
 
 ::: notes
-## Statische Methoden in Interfaces
+# Statische Methoden in Interfaces
 
 ```java
 public interface Collection<E> extends Iterable<E> {
@@ -303,7 +303,7 @@ public class CollectionsX {
 :::
 
 
-## Interfaces vs. Abstrakte Klassen
+# Interfaces vs. Abstrakte Klassen
 
 *   **Abstrakte Klassen**: Schnittstelle und Verhalten und Zustand
 
@@ -323,7 +323,7 @@ public class CollectionsX {
         **viele** Interfaces implementieren
 
 
-## Wrap-Up
+# Wrap-Up
 
 Seit Java8: Interfaces mit Implementierung: **Default-Methoden**
 

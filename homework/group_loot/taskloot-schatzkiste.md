@@ -4,18 +4,18 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgabe implementieren Sie eine Monster-Schatzkiste, die der Spieler im Level
 finden und plündern kann. Vor dem Plündern muss die Kiste aber erst besiegt werden!
 
-## Voraussetzung
+# Voraussetzung
 
 Um diese Aufgabe lösen zu können, müssen Sie vorher
 ["Monster"](../group_monster/tasknpc-monster.md) und
 ["Item"](taskloot-item.md) gelöst haben.
 
-## Monster-Schatzkiste
+# Monster-Schatzkiste
 
 In den Vorgaben finden Sie die Implementierung einer
 [Schatzkiste](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/entities/MiscFactory.java).

@@ -4,11 +4,11 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgabe implementieren Sie den Spieler-Tod.
 
-## Game-Over
+# Game-Over
 
 Wenn der Held stirbt, soll "Game Over" auf dem UI angezeigt werden. Der Spieler soll dann
 gefragt werden, ob er das Spiel beenden oder neustarten möchte. Wenn der Spieler das Spiel

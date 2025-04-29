@@ -7,7 +7,7 @@ has_license: true
 
 `{{% notice style="note" %}}`{=markdown}
 
-## Abkündigung des Moduls "Programmiermethoden"
+# Abkündigung des Moduls "Programmiermethoden"
 
 Das Modul "Programmiermethoden" wurde im Rahmen der Reakkreditierung im Herbst 2023 durch das
 kleinere Modul ["Programmieren 2"] ersetzt und kann nicht mehr belegt werden (es werden keine
@@ -19,7 +19,7 @@ zugehörige Lernmodul finden Sie im [offenen ILIAS-Bereich] der HSBI.
 Bis zum Auslaufen der zugehörigen Prüfungsordnungen [PO10] und [PO18] finden auch weiterhin
 Prüfungen für Wiederholende statt.
 
-### Regelung für noch offene Prüfungen
+## Regelung für noch offene Prüfungen
 
 Wer in "Programmiermethoden" noch eine Prüfung benötigt, kann diese in den Prüfungszeiträumen
 des Sommersemesters (und ggf. des Wintersemesters, falls angeboten) als Klausur nachholen.
@@ -36,7 +36,7 @@ Prüfungsverfahren:
         Klausur teil und die Gesamtnote wird sich wie bisher aus den beiden Teilnoten
         zusammensetzen.
 
-### Nächste Klausur: Dienstag, 01. April 2025
+## Nächste Klausur: Dienstag, 01. April 2025
 
 Die nächste Klausur für "Programmiermethoden" wird am **Dienstag, 01. April 2025** angeboten.
 
@@ -69,7 +69,7 @@ durchgeführten Kurs (Sommer 2023, s.u.). Weitere Informationen siehe [Prüfungs
 ---
 
 
-## Kursbeschreibung
+# Kursbeschreibung
 
 Sie haben letztes Semester in **OOP** die _wichtigsten_ Elemente und Konzepte der
 Programmiersprache Java kennen gelernt.
@@ -83,7 +83,7 @@ von Build-Tools und Logging auseinander setzen. Wenn uns dabei ein Entwurfsmuste
 den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anschauen.
 
 
-## Überblick Modulinhalte
+# Überblick Modulinhalte
 
 1.  Fortgeschrittene Konzepte in Java
     *   Funktionale Programmierung: Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas, Stream-API
@@ -99,19 +99,19 @@ den Weg läuft", werden wir die Gelegenheit nutzen und uns dieses genauer anscha
     *   Logging, Build-Tools, CI
 
 
-## Team
+# Team
 
 *   [Carsten Gips](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips)
 *   Tutoren (siehe ILIAS-Mitgliederliste)
 
 
-## Kursformat
+# Kursformat
 
-### Vorlesung (2 SWS)
+## Vorlesung (2 SWS)
 
 Fr, 16:30 - 18:00 Uhr (online/J104)
 
-### Praktikum (2+1 SWS)
+## Praktikum (2+1 SWS)
 
 | Praktikumsgruppe | Zeit                  | Raum        |
 |:-----------------|:----------------------|:------------|
@@ -126,9 +126,9 @@ Alle Sitzungen online/per Zoom (**Zugangsdaten siehe [ILIAS]**)
 [ILIAS]: https://www.hsbi.de/elearning/goto.php?target=crs_1181185&client_id=FH-Bielefeld
 
 
-## Fahrplan
+# Fahrplan
 
-### Vorlesung
+## Vorlesung
 
 | Woche | Datum Vorlesung                           | Themen                                                                                                                       | Bemerkungen                                                                                      |
 |:-----:|:------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|
@@ -229,7 +229,7 @@ Alle Sitzungen online/per Zoom (**Zugangsdaten siehe [ILIAS]**)
 [Highlevel Threadkonzepte]: lecture/threads/threads-highlevel.md
 
 
-### Praktikum
+## Praktikum
 
 | Woche | Blatt  | Abgabe ILIAS und Peer-Feedback (ILIAS)                        | Vorstellung Praktikum |
 |:-----:|:-------|:--------------------------------------------------------------|:----------------------|
@@ -259,7 +259,7 @@ Alle Sitzungen online/per Zoom (**Zugangsdaten siehe [ILIAS]**)
 
 
 
-## Prüfungsform, Note und Credits
+# Prüfungsform, Note und Credits
 
 **Performanzprüfung**, 7 ECTS
 
@@ -283,9 +283,9 @@ Wiederholer mit bereits begonnener Parcours-Prüfung absolvieren stattdessen ein
 Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
 
 
-## Materialien
+# Materialien
 
-### Literatur
+## Literatur
 
 1.  ["**Java ist auch eine Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html).
     Ullenboom, C., Rheinwerk-Verlag, 2021.
@@ -298,7 +298,7 @@ Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
 4.  ["Learn Java"](https://dev.java/learn/).
     Oracle Corporation, 2023.
 
-### Tools
+## Tools
 
 *   JDK: Java SE 21 (LTS) ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder
     [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk),
@@ -309,9 +309,9 @@ Bitte melden Sie sich vor Beginn der Praktika per E-Mail beim Dozenten.
 *   [Git](https://git-scm.com/)
 
 
-## Förderungen und Kooperationen
+# Förderungen und Kooperationen
 
-### Förderung durch DH.NRW (Digi Fellowships)
+## Förderung durch DH.NRW (Digi Fellowships)
 
 Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und Wissenschaft
 (MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW) gefördert:
@@ -319,7 +319,7 @@ Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur un
 
 ["Fellowships für Innovationen in der digitalen Hochschulbildung"]: https://www.dh.nrw/kooperationen/Digi-Fellows-2
 
-### Kooperation mit dem DigikoS-Projekt
+## Kooperation mit dem DigikoS-Projekt
 
 Diese Vorlesung wird zudem vom Projekt ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]
 (_DigikoS_) unterstützt. Ein vom DigikoS-Projekt ausgebildeter Digital Learning Scout hat

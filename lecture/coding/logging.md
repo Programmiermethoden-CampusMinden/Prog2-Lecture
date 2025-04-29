@@ -79,7 +79,7 @@ challenges: |
 ---
 
 
-## Wie prüfen Sie die Werte von Variablen/Objekten?
+# Wie prüfen Sie die Werte von Variablen/Objekten?
 
 1.  Debugging
     *   Beeinflusst Code nicht
@@ -101,7 +101,7 @@ challenges: |
         `java.util.logging` (JDK), *log4j* (Apache), *SLF4J*, *Logback*, ...
 
 
-## Java Logging API - Überblick
+# Java Logging API - Überblick
 
 Paket `java.util.logging`
 
@@ -126,7 +126,7 @@ Log-Level) nach weiteren Kriterien filtern kann.
 [Konsole: logging.LoggingDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingDemo.java"}
 
 
-## Erzeugen neuer Logger
+# Erzeugen neuer Logger
 
 ```java
 import java.util.logging.Logger;
@@ -150,7 +150,7 @@ Logger l = Logger.getLogger(MyClass.class.getName());
     *   **Alternativen**: Funktionale Namen wie "XML", "DB", "Security"
 
 
-## Ausgabe von Logmeldungen
+# Ausgabe von Logmeldungen
 
 ```java
 public void log(Level level, String msg);
@@ -179,7 +179,7 @@ public void log(Level level, String msg);
     ```
 
 
-## Wichtigkeit von Logmeldungen: Stufen
+# Wichtigkeit von Logmeldungen: Stufen
 
 *   `java.util.logger.Level` definiert 7 Stufen:
     *   `SEVERE`, `WARNING`, `INFO`, `CONFIG`, `FINE`, `FINER`, `FINEST` \newline
@@ -201,7 +201,7 @@ ab `INFO` geloggt? Wer erzeugt eigentlich die Ausgaben?!
 :::
 
 
-## Jemand muss die Arbeit machen ...
+# Jemand muss die Arbeit machen ...
 
 \bigskip
 
@@ -234,7 +234,7 @@ angezeigt (ab `INFO` aufwärts)?!
 :::
 
 
-## Ich ... bin ... Dein ... Vater ...
+# Ich ... bin ... Dein ... Vater ...
 
 *   Logger bilden **Hierarchie** über Namen
     *   Trenner für Namenshierarchie: "`.`" (analog zu Packages)  [=> mit jedem "`.`" wird eine weitere Ebene der Hierarchie aufgemacht ...]{.notes}
@@ -252,7 +252,7 @@ angezeigt (ab `INFO` aufwärts)?!
 [Konsole: logging.LoggingParent; Tafel: Skizze Logger-Baum]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/coding/src/logging/LoggingParent.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Java Logging API im Paket `java.util.logging`
 

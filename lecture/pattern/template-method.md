@@ -49,7 +49,7 @@ challenges: |
 ---
 
 
-## Motivation: Syntax-Highlighting im Tokenizer
+# Motivation: Syntax-Highlighting im Tokenizer
 
 ::: notes
 In einem Compiler ist meist der erste Arbeitsschritt, den Eingabestrom in einzelne
@@ -96,7 +96,7 @@ der Liste `allToken` auf den aktuellen Anfang des Eingabestroms passt.
 :::
 
 
-## Token-Klassen mit formatiertem Inhalt
+# Token-Klassen mit formatiertem Inhalt
 
 ::: notes
 Um den eigenen Tokenizer besser testen zu können, wurde beschlossen, dass jedes Token
@@ -143,7 +143,7 @@ von DRY aus ...
 :::
 
 
-## Don't call us, we'll call you
+# Don't call us, we'll call you
 
 ```java
 public abstract class Token {
@@ -195,12 +195,12 @@ Dies ist ein Beispiel für das **[Template-Method-Pattern](https://en.wikipedia.
 :::
 
 
-## Template-Method-Pattern
+# Template-Method-Pattern
 
 ![](images/template-method.png){width="80%" web_width="50%"}
 
 ::: notes
-### Aufbau Template-Method-Pattern
+## Aufbau Template-Method-Pattern
 
 In der Basisklasse implementiert man eine Template-Methode (in der Skizze `templateMethod`),
 die sich auf anderen in der Basisklasse deklarierten (Hilfs-) Methoden "abstützt" (diese also
@@ -213,7 +213,7 @@ Verhalten so neu formulieren (in der Skizze `method3`).
 
 Damit werden Teile des Verhaltens an die ableitenden Klassen ausgelagert.
 
-### Verwandtschaft zum Strategy-Pattern
+## Verwandtschaft zum Strategy-Pattern
 
 Das Template-Method-Pattern hat eine starke Verwandtschaft zum Strategy-Pattern.
 
@@ -230,7 +230,7 @@ im Template-Method-Pattern gewissermaßen nur Teile des Verhaltens an die ableit
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 Template-Method-Pattern: Verhaltensänderung durch Vererbungsbeziehungen
 

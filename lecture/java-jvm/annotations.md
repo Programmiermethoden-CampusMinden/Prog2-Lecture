@@ -56,7 +56,7 @@ challenges: |
 ---
 
 
-## Was passiert hier?
+# Was passiert hier?
 
 ```java
 public class A {
@@ -95,7 +95,7 @@ generieren: `Preferences > Java > Code Style > Add @Override annotation ...`.
 :::
 
 
-## Annotationen: Metadaten für Dritte
+# Annotationen: Metadaten für Dritte
 
 *   **Zusatzinformationen** für Tools, Bibliotheken, ...
 *   Kein direkter Einfluss auf die Ausführung des annotierten Codes
@@ -122,14 +122,14 @@ Anschließend lernen Sie die Dokumentation mittels Javadoc-Annotationen kennen.
 Das Thema JUnit ist in einer anderen VL dran. Webservices ereilen Sie dann in
 späteren Semestern :-)
 
-### \@Override
+## \@Override
 
 Die mit `@Override` annotierte Methode überschreibt eine Methode aus der Oberklasse oder implementiert eine
 Methode einer Schnittstelle. Dies wird durch den Compiler geprüft und ggf. mit einer Fehlermeldung quittiert.
 
 `@Override` ist eine im JDK im Paket `java.lang` enthaltene Annotation.
 
-### \@Deprecated
+## \@Deprecated
 
 Das mit `@Deprecated` markierte Element ist veraltet ("*deprecated*") und sollte nicht mehr benutzt werden.
 Typischerweise werden so markierte Elemente in zukünftigen Releases aus der API entfernt ...
@@ -139,7 +139,7 @@ im Javadoc. Allerdings kann letzteres nur von Javadoc ausgewertet werden.
 
 `@Deprecated` ist eine im JDK im Paket `java.lang` enthaltene Annotation.
 
-### Weitere Annotationen aus _java.lang_
+## Weitere Annotationen aus _java.lang_
 
 Im Paket `java.lang` finden sich weitere Annotationen. Mit Hilfe von `@SuppressWarnings` lassen sich bestimmte
 Compilerwarnungen unterdrücken (**so etwas sollte man NIE tun!**), und mit `@FunctionalInterface`
@@ -149,7 +149,7 @@ Weitere Annotationen aus dem JDK finden sich in den Paketen `java.lang.annotatio
 :::::::::
 
 
-## Dokumentation mit Javadoc
+# Dokumentation mit Javadoc
 
 ```java
 /**
@@ -176,7 +176,7 @@ Hier noch einmal exemplarisch die wichtigsten Elemente, die an
 [[Beispiel: annotations.B (Javadoc)]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java"}]{.notes}
 
 
-## \@NotNull mit IntelliJ
+# \@NotNull mit IntelliJ
 
 ::: notes
 [IntelliJ](https://www.jetbrains.com/help/idea/annotating-source-code.html) bietet im Paket
@@ -222,17 +222,17 @@ public void foo(@NotNull Object o) {
 [Demo: annotations.WuppieAnnotation: \@NotNull]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/WuppieAnnotation.java"}
 
 ::: notes
-### IntelliJ inferiert mit \@NotNull mögliche _null_-Werte
+## IntelliJ inferiert mit \@NotNull mögliche _null_-Werte
 
 ![](images/screenshot_infer-notnull.png){width="80%"}
 
-### IntelliJ baut bei \@NotNull passende Assertions ein
+## IntelliJ baut bei \@NotNull passende Assertions ein
 
 ![](images/screenshot_nullpointerexception-notnull.png){width="80%"}
 :::
 
 
-## Eigene Annotationen erstellen
+# Eigene Annotationen erstellen
 
 ```java
 public @interface MyFirstAnnotation {}
@@ -251,11 +251,11 @@ public class C {}
 [Demo: annotations.C]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java"}
 
 ::::::::: notes
-### Definition einer Annotation
+## Definition einer Annotation
 
 Definition einer Annotation wie Interface, aber mit "`@`"-Zeichen vor dem `interface`-Schlüsselwort
 
-### Parameter für Annotation
+## Parameter für Annotation
 
 Parameter für Annotation werden über entsprechende Methoden-Deklaration realisiert
 
@@ -283,7 +283,7 @@ Parameter für Annotation werden über entsprechende Methoden-Deklaration realis
 *   Defaultwerte mit dem nachgestellten Schlüsselwort `default` sowie dem
     Defaultwert selbst
 
-### Javadoc
+## Javadoc
 
 Soll die Annotation in der Javadoc-Doku dargestellt werden, muss sie mit
 der Meta-Annotation `@Documented` ausgezeichnet werden (aus
@@ -292,7 +292,7 @@ der Meta-Annotation `@Documented` ausgezeichnet werden (aus
 *Hinweis*: Die Annotation wird lediglich in die Doku aufgenommen, d.h. es
 erfolgt keine weitere Verarbeitung oder Hervorhebung o.ä.
 
-### Wann ist eine Annotation sichtbar (Beschränkung der Sichtbarkeit)
+## Wann ist eine Annotation sichtbar (Beschränkung der Sichtbarkeit)
 
 Annotationen werden vom Compiler und/oder anderen Tools ausgewertet. Man
 kann entsprechend die Sichtbarkeit einer Annotation beschränken: Sie kann
@@ -316,9 +316,9 @@ Beschränkung der Sichtbarkeit: Meta-Annotation `@Retention` aus
 Ohne explizite Angabe gilt für die selbst definierte Annotation die
 Einstellung `RetentionPolicy.CLASS`.
 
-### Wo darf eine Annotation verwendet werden
+## Wo darf eine Annotation verwendet werden
 
-#### Anwendungsmöglichkeiten von Annotationen im Code
+## Anwendungsmöglichkeiten von Annotationen im Code
 
 ```java
 @ClassAnnotation
@@ -339,7 +339,7 @@ public class Wuppie {
 }
 ```
 
-#### Einschränkung des Einsatzes eines Annotation
+## Einschränkung des Einsatzes eines Annotation
 
 Für jede Annotation kann eingeschränkt werden, wo (an welchen Java-Elementen)
 sie verwendet werden darf.
@@ -359,7 +359,7 @@ Elemente verwendbar.
 :::::::::
 
 
-## Annotationen [bei Compilieren]{ .notes} bearbeiten: Java Annotation-Prozessoren
+# Annotationen [bei Compilieren]{ .notes} bearbeiten: Java Annotation-Prozessoren
 
 ::: notes
 Der dem `javac`-Compiler vorgelegte Source-Code wird eingelesen und in einen
@@ -463,7 +463,7 @@ Note: found @MySecondAnnotation at main(java.lang.String[])
 :::::::::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Annotationen: Metadaten zum Programm
 

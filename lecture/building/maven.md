@@ -38,7 +38,7 @@ fhmedia:
 ---
 
 
-## Build-Tool Maven: Alternative zu Ant oder Gradle
+# Build-Tool Maven: Alternative zu Ant oder Gradle
 
 ```maven
 mvn archetype:generate -DgroupId=de.hsbi.pm -DartifactId=my-project
@@ -79,7 +79,7 @@ genutzt. Von hier würde Maven auch als Abhängigkeit konfigurierte Bibliotheken
 :::
 
 
-## Lebenszyklus (eingebaut in Maven)
+# Lebenszyklus (eingebaut in Maven)
 
 ![](images/screenshot_maven-lifecycle.png){width="80%"}
 
@@ -91,7 +91,7 @@ auch die Abhängigkeiten berücksichtigt, d.h. das Ziel `test` erfordert ein `co
 :::
 
 
-## Project Object Model: *pom.xml*
+# Project Object Model: *pom.xml*
 
 ```xml
 <project>
@@ -142,7 +142,7 @@ für die Dependencies findet man ebenfalls auf [MavenCentral](https://mvnreposit
 [[Demo für MavenCentral (Suche, Einträge)]{.ex}]{.slides}
 
 
-## Project Object Model: Plugins
+# Project Object Model: Plugins
 
 ```xml
 <project>
@@ -186,7 +186,7 @@ ein erster Einstieg ist die [Plugin-API](https://maven.apache.org/ref/3.8.1/mave
 
 
 ::: notes
-## Und wie lasse ich jetzt eine Anwendung mal laufen?
+# Und wie lasse ich jetzt eine Anwendung mal laufen?
 
 *   `mvn clean`: Lösche alle generierten Artefakte, beispielsweise `.class`-Dateien.
 *   `mvn compile` => `mvn compiler:compile`: Übersetze die Sourcen und schiebe die
@@ -208,7 +208,7 @@ ein erster Einstieg ist die [Plugin-API](https://maven.apache.org/ref/3.8.1/mave
 [Demo: pom.xml]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/building/src/maven/pom.xml"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 Apache Maven: [maven.apache.org](https://maven.apache.org), [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/index.html)
 

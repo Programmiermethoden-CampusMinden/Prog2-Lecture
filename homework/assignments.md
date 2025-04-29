@@ -11,7 +11,7 @@ Anregungen für **Spielideen** können Sie beispielsweise in den folgenden Video
 -   [Shattered Pixel Dungeon Duelist Update!](https://youtu.be/LgSjUWjQg0s)
 
 
-## Gruppe "Basics"
+# Gruppe "Basics"
 
 | Aufgabe                                                              | Punkte | Abhängig von                                                                                                                                                 |
 |:---------------------------------------------------------------------|:-------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -23,7 +23,7 @@ Anregungen für **Spielideen** können Sie beispielsweise in den folgenden Video
 | [Freie Aufgabe](group_basics/taskbasic-freie_aufgabe.md)             | 10     |                                                                                                                                                              |
 
 
-## Gruppe "Monster"
+# Gruppe "Monster"
 
 | Aufgabe                                                   | Punkte | Abhängig von                                                                                         |
 |:----------------------------------------------------------|:-------|:-----------------------------------------------------------------------------------------------------|
@@ -36,7 +36,7 @@ Anregungen für **Spielideen** können Sie beispielsweise in den folgenden Video
 | [Freie Aufgabe)](group_monster/tasknpc-freie_aufgabe.md)  | 10     |                                                                                                      |
 
 
-## Gruppe "Loot"
+# Gruppe "Loot"
 
 | Aufgabe                                                    | Punkte | Abhängig von                                                                                         |
 |:-----------------------------------------------------------|:-------|:-----------------------------------------------------------------------------------------------------|
@@ -51,7 +51,7 @@ Anregungen für **Spielideen** können Sie beispielsweise in den folgenden Video
 | [Freie Aufgabe](group_loot/taskloot-freie_aufgabe.md)      | 10     |                                                                                                      |
 
 
-## Gruppe "Bounty"
+# Gruppe "Bounty"
 
 | Aufgabe                                                                                                                       | Punkte |
 |:------------------------------------------------------------------------------------------------------------------------------|:-------|

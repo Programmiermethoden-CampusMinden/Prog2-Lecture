@@ -39,10 +39,10 @@ fhmedia:
 ---
 
 
-## Git Bisect: Wer hats wann kaputt gespielt?
+# Git Bisect: Wer hats wann kaputt gespielt?
 
 ::::::::: notes
-### Szenario
+## Szenario
 
 *   Sie haben eine Software ausgeliefert, die offenbar gut funktioniert.
 *   Sie erweitern die Software und testen intern mit JUnit.
@@ -57,7 +57,7 @@ fhmedia:
 
 => Hier schlägt die Stunde von Git Bisect :-)
 
-### Arbeitsweise
+## Arbeitsweise
 :::::::::
 
 
@@ -83,7 +83,7 @@ fhmedia:
 
 
 ::::::::: notes
-### Anmerkungen
+## Anmerkungen
 
 *   Geht auch mit `new`/`old` (statt `good`/`bad`)
 *   Suche kann auch automatisiert werden: `git bisect run <my_script> <arguments>`
@@ -96,13 +96,13 @@ fhmedia:
     dann kann man einen in der Nähe liegenden Commit als Ersatz
     auswählen lassen: `git bisect skip`
 
-### Tutorial
+## Tutorial
 
 Ein schönes Tutorial finden Sie auf
 ["A beginner's guide to GIT BISECT - The process of elimination"](https://www.metaltoad.com/blog/beginners-guide-git-bisect-process-elimination).
 :::::::::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Git Bisect: Finde Commit, der einen Fehler einführt (Halbierungs-Suche)

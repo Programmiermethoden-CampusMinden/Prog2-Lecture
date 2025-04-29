@@ -38,7 +38,7 @@ fhmedia:
 ---
 
 
-## Dokumentation mit Javadoc
+# Dokumentation mit Javadoc
 
 ```java
 /**
@@ -68,7 +68,7 @@ Aufruf gern für Sie tätigt).
 :::
 
 
-## Standard-Aufbau
+# Standard-Aufbau
 
 ```java
 /**
@@ -119,7 +119,7 @@ public int setDate(int date) {
 :::
 
 
-## Veraltete Elemente
+# Veraltete Elemente
 
 ```java
 /**
@@ -141,7 +141,7 @@ beibehalten und danach das veraltete Element aus der API entfernt.
 :::
 
 
-## Autoren, Versionen, ...
+# Autoren, Versionen, ...
 
 ```java
 /**
@@ -160,7 +160,7 @@ Diese Annotationen finden Sie vor allem in Kommentaren zu Packages oder Klassen.
 :::
 
 
-## Was muss kommentiert werden?
+# Was muss kommentiert werden?
 
 *   Alle `public` Klassen
 *   Alle `public` und `protected` Elemente der Klassen
@@ -175,7 +175,7 @@ Diese Annotationen finden Sie vor allem in Kommentaren zu Packages oder Klassen.
 Alle anderen Elemente bei Bedarf mit _normalen_ Kommentaren versehen.
 
 ::: notes
-### Beispiel aus dem JDK: ArrayList
+## Beispiel aus dem JDK: ArrayList
 
 Schauen Sie sich gern mal Klassen aus der Java-API an, beispielsweise eine `java.util.ArrayList`:
 *   Generierte Dokumentation:
@@ -183,14 +183,14 @@ Schauen Sie sich gern mal Klassen aus der Java-API an, beispielsweise eine `java
     bzw. [direkt](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
 *   Quellcode: [ArrayList.java](https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java)
 
-### Best Practices: Was beschreibe ich eigentlich?
+## Best Practices: Was beschreibe ich eigentlich?
 
 Unter [Documentation Best Practices](https://github.com/google/styleguide/blob/gh-pages/docguide/best_practices.md#documentation-is-the-story-of-your-code)
 finden Sie eine sehr gute Beschreibung, was das Ziel der Dokumentation sein sollte. Versuchen Sie, dieses zu erreichen!
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Javadoc-Kommentare sind normale Block-Kommentare beginnend mit `/**`
 *   Generierung der HTML-Dokumentation mit `javadoc *.java`

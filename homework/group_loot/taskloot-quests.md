@@ -4,12 +4,12 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgabe implementieren Sie verschiedene Quests, also Aufgaben, die der Spieler
 lösen kann, um Belohnungen zu erhalten.
 
-## Quests
+# Quests
 
 Implementieren Sie verschiedene Aufgaben (_Quests_), die der Held erfüllen kann. Dies könnte
 beispielsweise das Sammeln einer bestimmten Zahl von Gegenständen oder das Besiegen einer

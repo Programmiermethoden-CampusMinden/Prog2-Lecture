@@ -100,7 +100,7 @@ challenges: |
 ---
 
 
-## Motivation
+# Motivation
 
 ```java
 public class LSF {
@@ -132,7 +132,7 @@ public static void main(String... args) {
 ```
 
 ::: notes
-### Problem: `null` wird an (zu) vielen Stellen genutzt
+## Problem: `null` wird an (zu) vielen Stellen genutzt
 
 *   Es gibt keinen Wert ("not found")
 *   Felder wurden (noch) nicht initialisiert
@@ -141,14 +141,14 @@ public static void main(String... args) {
 => Parameter und Rückgabewerte müssen stets auf `null` geprüft werden
 (oder Annotationen wie `@NotNull` eingesetzt werden ...)
 
-### Lösung
+## Lösung
 
 *   `Optional<T>` für Rückgabewerte, die "kein Wert vorhanden" mit einschließen
     (statt `null` bei Abwesenheit von Werten)
 *   `@NotNull`/`@Nullable` für Parameter einsetzen (oder separate Prüfung)
 *   Exceptions werfen in Fällen, wo ein Problem aufgetreten ist
 
-### Anmerkungen
+## Anmerkungen
 
 *   Verwendung von `null` auf Attribut-Ebene (Klassen-interne Verwendung) ist okay!
 *   `Optional<T>` ist **kein** Ersatz für `null`-Checks!
@@ -156,7 +156,7 @@ public static void main(String... args) {
     Das häufig zu beobachtende "Irgendwas Unerwartetes ist passiert, hier ist `null`"
     ist ein **Anti-Pattern**!
 
-### Beispiel aus der Praxis im PM-Dungeon
+## Beispiel aus der Praxis im PM-Dungeon
 
 Schauen Sie sich einmal das Review zu den `ecs.components.ai.AITools` in
 https://github.com/Dungeon-CampusMinden/Dungeon/pull/128#pullrequestreview-1254025874
@@ -238,7 +238,7 @@ die nachfolgende Diskussion ergeben:
 :::
 
 
-## Erzeugen von _Optional_-Objekten
+# Erzeugen von _Optional_-Objekten
 
 Konstruktor ist `private` ...
 
@@ -265,7 +265,7 @@ Stattdessen sollte stets `Optional.ofNullable()` verwendet werden.
 [(Das wäre dann eben `Optional.empty()`.)]{.notes}
 
 
-## LSF liefert jetzt _Optional_ zurück
+# LSF liefert jetzt _Optional_ zurück
 
 ```java
 public class LSF {
@@ -298,7 +298,7 @@ kann.
 :::
 
 
-## Zugriff auf _Optional_-Objekte
+# Zugriff auf _Optional_-Objekte
 
 ::: notes
 In der funktionalen Programmierung gibt es schon lange das Konzept von `Optional`,
@@ -353,7 +353,7 @@ Aufruf möglicherweise in ein `try/catch` verpackt werden. Dito für `orElseThro
 :::
 
 
-## Einsatz mit Stream-API
+# Einsatz mit Stream-API
 
 ```java
 public class LSF {
@@ -401,7 +401,7 @@ ohne extra `null`-Prüfung - allerdings will man noch ein Exception-Handling ein
 
 
 ::: notes
-## Weitere _Optionals_
+# Weitere _Optionals_
 
 Für die drei primitiven Datentypen `int`, `long` und `double` gibt es passende
 Wrapper-Klassen von `Optional<T>`: `OptionalInt`, `OptionalLong` und `OptionalDouble`.
@@ -412,7 +412,7 @@ Werte - diese können nicht `null` sein.
 :::
 
 
-## Regeln für _Optional_
+# Regeln für _Optional_
 
 1.  Nutze `Optional` nur als Rückgabe für "kein Wert vorhanden"
 
@@ -484,7 +484,7 @@ Werte - diese können nicht `null` sein.
 
 
 ::: notes
-## Interessante Links
+# Interessante Links
 
 *   ["Using Optionals"](https://dev.java/learn/api/streams/optionals/)
 *   ["What You Might Not Know About Optional"](https://medium.com/javarevisited/what-you-might-not-know-about-optional-7238e3c05f63)
@@ -494,7 +494,7 @@ Werte - diese können nicht `null` sein.
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 `Optional` als Rückgabe für "kein Wert vorhanden"
 

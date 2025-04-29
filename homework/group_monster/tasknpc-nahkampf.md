@@ -4,17 +4,17 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgabe implementieren Sie ein einfaches Nahkampfkonzept, damit der Held gegen die
 Monster kämpfen kann.
 
-## Voraussetzung
+# Voraussetzung
 
 Um diese Aufgabe lösen zu können, müssen Sie vorher
 ["Monster"](tasknpc-monster.md) implementiert haben.
 
-## Nahkampf
+# Nahkampf
 
 In den Vorgaben ist ein Konzept für den
 [Fernkampf mit Skills](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dungeon/src/contrib/utils/components/skill)

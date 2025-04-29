@@ -66,7 +66,7 @@ challenges: |
 ---
 
 
-## Motivation: Monster und spezialisierte Monster
+# Motivation: Monster und spezialisierte Monster
 
 ```java
 public abstract class Monster {
@@ -115,7 +115,7 @@ Konstruktor aufrufen.
 :::
 
 
-## Vereinfachen der Vererbungshierarchie (mit Enums als Type-Object)
+# Vereinfachen der Vererbungshierarchie (mit Enums als Type-Object)
 
 ```java
 public enum Species { RAT, GNOLL, ... }
@@ -160,7 +160,7 @@ muss man bei Erweiterungen des Enums auch _alle_ `switch/case`-Blöcke anpassen.
 :::
 
 
-## Monster mit Strategie
+# Monster mit Strategie
 
 ```java
 public final class Species {
@@ -206,7 +206,7 @@ Code, vermutlich `main()` oder beispielsweise durch Einlesen einer Konfig-Datei)
 :::
 
 
-## Fabrikmethode für die Type-Objects
+# Fabrikmethode für die Type-Objects
 
 ```java
 public final class Species {
@@ -235,7 +235,7 @@ einbauen, über die dann die Monster erzeugt werden.
 :::
 
 
-## Vererbung unter den Type-Objects
+# Vererbung unter den Type-Objects
 
 ```java
 public final class Species {
@@ -273,7 +273,7 @@ aus dem Eltern-Type-Object übernommen (sofern dieses übergeben wird).
 :::
 
 
-## Erzeugen der Type-Objects dynamisch über eine Konfiguration
+# Erzeugen der Type-Objects dynamisch über eine Konfiguration
 
 ```json
 {
@@ -303,14 +303,14 @@ erzeugt.
 
 
 ::: notes
-## Vor- und Nachteile des Type-Object-Pattern
+# Vor- und Nachteile des Type-Object-Pattern
 
-### Vorteil
+## Vorteil
 
 Es gibt nur noch wenige Klassen auf Code-Ebene (im Beispiel: 2), und man kann über die
 Konfiguration beliebig viele Monster-Typen erzeugen.
 
-### Nachteil
+## Nachteil
 
 Es werden zunächst nur Daten "überschrieben", d.h. man kann nur für die einzelnen Typen
 spezifische Werte mitgeben/definieren.
@@ -320,7 +320,7 @@ Bei Vererbung kann man in den Unterklassen nahezu beliebig das Verhalten durch e
 dem man beispielsweise eine Reihe von vordefinierten Verhaltensarten implementiert, die
 dann anhand von Werten ausgewählt und anhand anderer Werte weiter parametrisiert werden.
 
-### Verwandtschaft zum Flyweight-Pattern
+## Verwandtschaft zum Flyweight-Pattern
 
 Das [Type-Object-Pattern](https://gameprogrammingpatterns.com/type-object.html) ist keines
 der ["klassischen" Design-Pattern](https://en.wikipedia.org/wiki/Design_Patterns) der "Gang
@@ -338,7 +338,7 @@ gemeinsame Hilfsobjekte eingebunden werden. Die Zielrichtung unterscheidet sich 
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 Type-Object-Pattern: Implementierung eines eigenen Objekt-Modells
 

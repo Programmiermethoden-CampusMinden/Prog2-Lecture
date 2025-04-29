@@ -77,7 +77,7 @@ challenges: |
 ---
 
 
-## Beispiel: Sortierung einer Liste
+# Beispiel: Sortierung einer Liste
 
 ```java
 List<Studi> sl = new ArrayList<Studi>();
@@ -98,7 +98,7 @@ Collections.sort(sl, Studi::cmpCpsClass);
 ```
 
 ::: notes
-### Anmerkung
+## Anmerkung
 
 Für das obige Beispiel wird davon ausgegangen, dass in der Klasse `Studi` eine
 statische Methode `cmpCpsClass()` existiert:
@@ -125,7 +125,7 @@ auch direkt per _Methoden-Referenz_ abkürzen!
 
 
 ::: notes
-## Überblick: Arten von Methoden-Referenzen
+# Überblick: Arten von Methoden-Referenzen
 
 1.  Referenz auf eine statische Methode
     *   Form: `ClassName::staticMethodName`
@@ -154,7 +154,7 @@ Interface mit entsprechend vielen Parametern definiert werden ...
 [[Hinweis: Klassen- vs. Instanz-Methoden]{.ex}]{.slides}
 
 
-## Methoden-Referenz 1: Referenz auf statische Methode
+# Methoden-Referenz 1: Referenz auf statische Methode
 
 ```java
 public class Studi {
@@ -188,7 +188,7 @@ aufgerufen.
 :::
 
 
-## Methoden-Referenz 2: Referenz auf Instanz-Methode (Objekt)
+# Methoden-Referenz 2: Referenz auf Instanz-Methode (Objekt)
 
 ```java
 public class Studi {
@@ -223,7 +223,7 @@ aufgerufen.
 :::
 
 
-## Methoden-Referenz 3: Referenz auf Instanz-Methode (Typ)
+# Methoden-Referenz 3: Referenz auf Instanz-Methode (Typ)
 
 ```java
 public class Studi {
@@ -256,7 +256,7 @@ aufgerufen.
 :::
 
 
-## Ausblick: Threads
+# Ausblick: Threads
 
 ::: notes
 Erinnerung an bzw. Vorgriff auf ["Threads: Intro"](../threads/threads-intro.md):
@@ -290,7 +290,7 @@ Thread t3 = new Thread(ThreadStarter::wuppie);
 [Beispiel: methodreferences.ThreadStarter]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/ThreadStarter.java"}
 
 
-## Ausblick: Datenstrukturen als Streams
+# Ausblick: Datenstrukturen als Streams
 
 ::: notes
 Erinnerung an bzw. Vorgriff auf ["Stream-API"](stream-api.md):
@@ -327,7 +327,7 @@ List<Integer> wordLengths = words.stream()
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 Seit Java8: **Methoden-Referenzen** statt anonymer Klassen (**funktionales Interface nötig**)
 

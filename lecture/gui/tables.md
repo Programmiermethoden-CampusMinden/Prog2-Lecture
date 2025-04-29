@@ -32,7 +32,7 @@ fhmedia:
 ---
 
 
-## Einfache Tabelle mit festen Daten
+# Einfache Tabelle mit festen Daten
 
 *   Einfache Tabelle erzeugen:
 
@@ -71,7 +71,7 @@ contentPane.add(table, BorderLayout.CENTER);
 [Demo: tables.SimpleTable]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/tables/SimpleTable.java"}
 
 
-## Selektierbare und sortierbare Tabelle
+# Selektierbare und sortierbare Tabelle
 
 *   Tabelle sortierbar machen:
 
@@ -104,7 +104,7 @@ contentPane.add(table, BorderLayout.CENTER);
 [Demo: tables.SelectTable]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/tables/SelectTable.java"}
 
 
-## Einschub: MVC-Pattern
+# Einschub: MVC-Pattern
 
 ![](images/mvc.png){width="60%"}
 
@@ -128,7 +128,7 @@ Dieses Pattern findet sich mittlerweile in diversen (leichten) Variationen.
 :::
 
 
-## Daten in separatem Modell
+# Daten in separatem Modell
 
 *   Modell muss von `AbstractTableModel` ableiten
 *   Methoden zur Interaktion mit Tabelle implementieren!
@@ -149,7 +149,7 @@ Dieses Pattern findet sich mittlerweile in diversen (leichten) Variationen.
 => Kapselung der Daten! Müssen nicht als Array o.ä. vorliegen!
 
 
-## Modelleigenschaften
+# Modelleigenschaften
 
 *   Korrekte Spalten-Typen und damit bessere Anzeige:
 
@@ -174,7 +174,7 @@ Dieses Pattern findet sich mittlerweile in diversen (leichten) Variationen.
 
 
 ::: notes
-## Eigene Listener beim Modell registrieren
+# Eigene Listener beim Modell registrieren
 
 ```java
 TableModel m = table.getModel();
@@ -199,7 +199,7 @@ Zusätzlich kann man beim Modell eigene Listener registrieren, die auf Events du
 [Demo: tables.ModelTable]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/tables/ModelTable.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Fortgeschrittene Swing-Komponenten
     *   Komplexe Daten mit `JTable` anzeigen

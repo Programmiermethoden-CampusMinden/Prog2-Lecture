@@ -67,7 +67,7 @@ challenges: |
 ---
 
 
-## Motivation
+# Motivation
 
 ::: notes
 Es wurden Studis, Studiengänge und Fachbereiche modelliert (aus Gründen der Übersichtlichkeit
@@ -101,7 +101,7 @@ realisiert ist. (Inhaltlich ist es vermutlich nicht sooo sinnvoll.)
 :::
 
 
-## Innere Schleife mit Streams umgeschrieben
+# Innere Schleife mit Streams umgeschrieben
 
 ```java
 private static long getCountSG(Studiengang sg) {
@@ -121,7 +121,7 @@ private static long getCountFB2(Fachbereich fb) {
 ```
 
 ::::::::: notes
-### Erklärung des Beispiels
+## Erklärung des Beispiels
 
 Im Beispiel wurde die innere Schleife in einen Stream ausgelagert.
 
@@ -134,7 +134,7 @@ alle Elemente aus dem Strom entfernt, die der Bedingung nicht
 entsprechen. Am Ende wird mit `count()` gezählt, wie viele Elemente
 im Strom enthalten sind.
 
-### Was ist ein Stream?
+## Was ist ein Stream?
 
 Ein "Stream" ist ein Strom (Folge) von Daten oder Objekten. In Java wird
 die Collections-API für die Speicherung von Daten (Objekten) verwendet.
@@ -175,7 +175,7 @@ Operationen dürfen auf keinen Fall die Datenquelle des Streams modifizieren!
 :::::::::
 
 
-## Erzeugen von Streams
+# Erzeugen von Streams
 
 ```java
 List<String> l1 = List.of("Hello", "World", "foo", "bar", "wuppie");
@@ -216,7 +216,7 @@ erwarten sind (Overhead!).
 :::
 
 
-## Intermediäre Operationen auf Streams
+# Intermediäre Operationen auf Streams
 
 ```java
 private static void dummy(Studiengang sg) {
@@ -276,7 +276,7 @@ Operationen und schließt den Stream ab.
 :::
 
 
-## Was tun, wenn eine Methode Streams zurückliefert
+# Was tun, wenn eine Methode Streams zurückliefert
 
 ::: notes
 Wir konnten vorhin nur die innere Schleife in eine Stream-basierte Verarbeitung
@@ -344,7 +344,7 @@ private static long getCountFB(Fachbereich fb) {
 :::
 
 
-## Streams abschließen: Terminale Operationen
+# Streams abschließen: Terminale Operationen
 
 ```java
 Stream<String> s = Stream.of("Hello", "World", "foo", "bar", "wuppie");
@@ -391,7 +391,7 @@ bei den intermediären als auch den terminalen Operationen. Schauen Sie in die D
 :::
 
 
-## Spielregeln
+# Spielregeln
 
 *   Operationen dürfen nicht die Stream-Quelle modifizieren
 
@@ -405,7 +405,7 @@ bei den intermediären als auch den terminalen Operationen. Schauen Sie in die D
     [(dies verhindert u.U. die parallele Verarbeitung)]{.notes}
 
 
-## Wrap-Up
+# Wrap-Up
 
 `Stream<T>`: Folge von Objekten vom Typ `T`, Verarbeitung "lazy"
 [(Gegenstück zu `Collection<T>`: Dort werden Daten **gespeichert**, hier werden Daten **verarbeitet**)]{.notes}

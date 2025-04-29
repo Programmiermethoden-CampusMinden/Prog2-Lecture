@@ -29,7 +29,7 @@ fhmedia:
 ---
 
 
-## Generische Polymorphie
+# Generische Polymorphie
 
 ::: cbox
 `B<E> extends A<E>`
@@ -66,7 +66,7 @@ sein.
 :::
 
 
-## Polymorphie bei Generics bezieht sich nur auf Typ!
+# Polymorphie bei Generics bezieht sich nur auf Typ!
 
 \bigskip
 
@@ -97,7 +97,7 @@ s.push(new Double(2.0)); // waere dann auch erlaubt ...
 :::
 
 
-## Abgrenzung: Polymorphie bei Arrays
+# Abgrenzung: Polymorphie bei Arrays
 
 ::: cbox
 Wenn "`B extends A`" dann "`B[] extends A[]`"
@@ -135,7 +135,7 @@ Compiler-Prüfung. Da würde das von Arrays bekannte Verhalten Probleme machen .
 :::
 
 
-## Arrays vs. parametrisierte Klassen
+# Arrays vs. parametrisierte Klassen
 
 => Keine Arrays mit parametrisierten Klassen!
 
@@ -154,7 +154,7 @@ Laufzeit Typinformationen, die aber durch die Typ-Löschung entfernt werden.
 :::
 
 
-## Diskussion Vererbung vs. Generics
+# Diskussion Vererbung vs. Generics
 
 **Vererbung:**
 
@@ -171,7 +171,7 @@ Laufzeit Typinformationen, die aber durch die Typ-Löschung entfernt werden.
 *   Beispiel: Datenstrukturen, Algorithmen generisch realisieren
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Generics: Vererbung und Überladen möglich, aber: \newline
     **Aus "`U extends O`" folgt **nicht** "`A<U> extends A<O>`"**

@@ -100,7 +100,7 @@ challenges: |
 ---
 
 
-## Motivation: Parsen von "5*4+3"
+# Motivation: Parsen von "5*4+3"
 
 ::::::::: {.columns}
 :::::: {.column width="50%"}
@@ -131,7 +131,7 @@ Beim Parsen von "5*4+3" würde dabei der folgende Parsetree entstehen:
 :::::::::
 
 
-## Strukturen für den Parsetree
+# Strukturen für den Parsetree
 
 ![](images/parsetree_classes_uml.png){width="70%"}
 
@@ -182,7 +182,7 @@ public class DemoExpr {
 :::
 
 
-## Ergänzung I: Ausrechnen des Ausdrucks
+# Ergänzung I: Ausrechnen des Ausdrucks
 
 ::: notes
 Es wäre nun schön, wenn man mit dem Parsetree etwas anfangen könnte. Vielleicht
@@ -243,7 +243,7 @@ public class DemoExpr {
 :::
 
 
-## Ergänzung II: Pretty-Print des Ausdrucks
+# Ergänzung II: Pretty-Print des Ausdrucks
 
 ::: notes
 Nachdem das Ausrechnen so gut geklappt hat, will der Chef nun noch flink eine Funktion,
@@ -265,7 +265,7 @@ immer _alle_ Expression-Klassen anpassen!
 **Das geht besser.**
 
 
-## Visitor-Pattern (Besucher-Entwurfsmuster)
+# Visitor-Pattern (Besucher-Entwurfsmuster)
 
 ![](images/visitor.png){web_width="80%"}
 
@@ -377,7 +377,7 @@ public class DemoExpr {
 }
 ```
 
-### Implementierungsdetail
+## Implementierungsdetail
 
 In den beiden Klasse `AddExpr` und `MulExpr` müssen auch die beiden Kindknoten besucht
 werden, d.h. hier muss der Baum weiter traversiert werden.
@@ -394,12 +394,12 @@ Post-Order, ...) und diese elegant in den Visitor verlagern kann.
 
 [Beispiel Traversierung extern (im Visitor): visitor.visit.extrav.DemoExpr]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/extrav/DemoExpr.java"}
 
-### (Double-) Dispatch
+## (Double-) Dispatch
 
 Zur Laufzeit wird in `accept()` der Typ des Visitors aufgelöst und dann in `visit()` der
 Typ der zu besuchenden Klasse. Dies nennt man auch "Double-Dispatch".
 
-### Hinweis I
+## Hinweis I
 
 Man könnte versucht sein, die `accept()`-Methode aus den Knotenklassen in die gemeinsame
 Basisklasse zu verlagern: Statt
@@ -425,7 +425,7 @@ public abstract class Expr {
 Dies wäre tatsächlich schön, weil man so Code-Duplizierung vermeiden könnte. Aber es
 funktioniert in Java leider nicht. (Warum?)
 
-### Hinweis II
+## Hinweis II
 
 Während die `accept()`-Methode nicht in die Basisklasse der besuchten Typen (im Bild oben
 die Klasse `Elem` bzw. im Beispiel oben die Klasse `Expr`) verlagert werden kann, kann man
@@ -434,14 +434,14 @@ implementieren.
 :::
 
 
-## Ausrechnen des Ausdrucks mit einem Visitor
+# Ausrechnen des Ausdrucks mit einem Visitor
 
 ![](images/parsetree_visitor_uml.png)
 
 [Demo: visitor.visit.extrav.DemoExpr]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/extrav/DemoExpr.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 **Visitor-Pattern**: Auslagern der Traversierung in eigene Klassenstruktur
 

@@ -4,7 +4,7 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In Rollenspielen gibt die Charakterklasse an, welche Werte (Anzahl der Lebenspunkte,
 Kampfschaden, [Mana-Punkte](https://de.wikipedia.org/wiki/Mana_(Spiele)) etc.) die
@@ -13,14 +13,14 @@ Typische Charakterklassen sind Krieger, Zauberer oder Schurke.
 
 In dieser Aufgabe sollen Sie verschiedene Charakterklassen implementieren.
 
-## Voraussetzungen
+# Voraussetzungen
 
 Um diese Aufgabe zu lösen, sollten Sie am besten bereits ein Kampfsystem
 (["Nahkampf"](../group_monster/tasknpc-nahkampf.md) oder
 ["Fernkampf"](../group_monster/tasknpc-fernkampf.md) und
 ["Fähigkeiten"](taskbasic-skills.md)) umgesetzt haben.
 
-## Charakterklassen
+# Charakterklassen
 
 Überlegen Sie sich zuerst, welche Charakterklassen Sie implementieren wollen. Sie sollen
 mindestens drei unterschiedliche Charakterklassen anbieten.

@@ -56,7 +56,7 @@ challenges: |
     Ihre Operation-Klassen dürfen Sie nicht vorher bekannt machen. Diese müssen in einem vom aktuellen Projekt separierten Ordner/Projekt liegen.
 ---
 
-## Ausgaben und Einblicke zur Laufzeit
+# Ausgaben und Einblicke zur Laufzeit
 
 ```java
 public class FactoryBeispielTest {
@@ -86,7 +86,7 @@ schauen Sie doch bitte einfach kurz im Handout zu Annotationen nach :-)
 :::
 
 
-## Wer bin ich? ... Informationen über ein Programm (zur Laufzeit)
+# Wer bin ich? ... Informationen über ein Programm (zur Laufzeit)
 
 ::: cbox
 `java.lang.Class`: Metadaten über Klassen
@@ -125,7 +125,7 @@ Dies umfasst u.a.:
 :::
 
 
-## Vorgehen
+# Vorgehen
 
 1.  Gewünschte Klasse über ein `Class`-Objekt laden
 
@@ -152,7 +152,7 @@ Damit werden die Programme dynamischer.
 :::
 
 
-## Schritt 1: _Class_-Objekt erzeugen und Klasse laden
+# Schritt 1: _Class_-Objekt erzeugen und Klasse laden
 
 ```java
 // Variante 1 (package.MyClass dynamisch zur Laufzeit laden)
@@ -185,7 +185,7 @@ Laufzeit.
 :::
 
 
-## Schritt 2: In die Klasse reinschauen
+# Schritt 2: In die Klasse reinschauen
 
 ```java
 // Studi-Klasse dynamisch (nach-) laden
@@ -227,7 +227,7 @@ Analog können Sie weitere Eigenschaften einer Klasse abfragen, beispielsweise A
 :::
 
 
-## Schritt 3: Instanz der geladenen Klasse erzeugen
+# Schritt 3: Instanz der geladenen Klasse erzeugen
 
 ```java
 // Class-Objekt erzeugen
@@ -248,18 +248,18 @@ Studi s = (Studi) ctor.newInstance("Beate", 42);
 ```
 
 ::: notes
-### Parameterlose, öffentliche Konstruktoren:
+## Parameterlose, öffentliche Konstruktoren:
 
 *   `Class<?>.newInstance()` (seit Java9 _deprecated_!)
 *   `Class<?>.getConstructor()` => `Constructor<?>.newInstance()`
 
-### Sonstige Konstruktoren:
+## Sonstige Konstruktoren:
 
 Passenden Konstruktor explizit holen: `Class<?>.getDeclaredConstructor(Class<?>[])`,
 Parametersatz zusammenbasteln (hier nicht dargestellt)
 und aufrufen `Constructor<?>.newInstance(...)`
 
-### Unterschied _new_ und _Constructor.newInstance()_:
+## Unterschied _new_ und _Constructor.newInstance()_:
 
 `new` ist nicht identisch zu `Constructor.newInstance()`: `new`
 kann Dinge wie Typ-Prüfung  oder Auto-Boxing mit erledigen, während
@@ -270,7 +270,7 @@ Vgl. [docs.oracle.com/javase/tutorial/reflect/member/ctorTrouble.html](https://d
 :::
 
 
-## Schritt 4: Methoden aufrufen ...
+# Schritt 4: Methoden aufrufen ...
 
 ```java
 // Studi-Klasse dynamisch (nach-) laden
@@ -297,7 +297,7 @@ einmal selbst in die API hinein.
 [Demo: reflection.ReflectionDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/reflection/ReflectionDemo.java"}
 
 
-## Hinweis: Klassen außerhalb des Classpath laden
+# Hinweis: Klassen außerhalb des Classpath laden
 
 ```java
 File folder = new File("irgendwo");
@@ -324,7 +324,7 @@ dessen Methode `loadClass()`.
 :::
 
 
-## Licht und Schatten
+# Licht und Schatten
 
 **Nützlich**:
 
@@ -347,7 +347,7 @@ dessen Methode `loadClass()`.
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Inspektion von Programmen zur Laufzeit: **Reflection**
     *   `java.lang.Class`: Metadaten über Klassen

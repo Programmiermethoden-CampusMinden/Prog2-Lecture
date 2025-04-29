@@ -4,12 +4,12 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgabe implementieren Sie verschiedene Gegenstände, die der Spieler verwenden
 kann.
 
-## Items
+# Items
 
 In den Vorgaben sind bereits
 [Items](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/item/Item.java) und
@@ -25,7 +25,7 @@ die die einzelnen Gegenstände erfüllen.
 
 Jeder Gegenstand soll graphisch dargestellt werden.
 
-## Taschen
+# Taschen
 
 Implementieren Sie Taschen, die das Inventar des Spielers erweitern.
 

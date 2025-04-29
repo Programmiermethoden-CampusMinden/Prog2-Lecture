@@ -64,7 +64,7 @@ challenges: |
 ---
 
 
-## Motivation: Persistierung von Objekten und Spielzuständen
+# Motivation: Persistierung von Objekten und Spielzuständen
 
 ```java
 public class Studi {
@@ -89,7 +89,7 @@ fortsetzen kann?
 :::
 
 
-## Serialisierung von Objekten
+# Serialisierung von Objekten
 
 *   Klassen müssen Marker-Interface `Serializable` implementieren
 
@@ -135,7 +135,7 @@ fortsetzen kann?
     :::
 
 
-## Einfaches Beispiel
+# Einfaches Beispiel
 
 ```java
 public class Studi implements Serializable {
@@ -161,7 +161,7 @@ public class Studi implements Serializable {
 ```
 
 
-## Bedingungen für Objekt-Serialisierung
+# Bedingungen für Objekt-Serialisierung
 
 *   Klassen implementieren Marker-Interface `Serializable`
 *   Alle Attribute müssen ebenfalls serialisierbar sein (oder Deklaration "`transient`")
@@ -171,14 +171,14 @@ public class Studi implements Serializable {
 *   Serialisierbarkeit vererbt sich
 
 
-## Ausnahmen
+# Ausnahmen
 
 *   Als `static` deklarierte Attribute werden nicht serialisiert
 *   Als `transient` deklarierte Attribute werden nicht serialisiert
 *   Nicht serialisierbare Attribut-Typen führen zu `NotSerializableException`
 
 
-## Version-UID
+# Version-UID
 
 ```java
 static final long serialVersionUID = 42L;
@@ -206,7 +206,7 @@ man aber auch selbst darauf achten, diese zu verändern, wenn sich wesentliche s
 
 
 ::: notes
-## Bemerkungen
+# Bemerkungen
 
 Es existieren diverse weitere Fallstricke und Probleme, siehe [@Bloch2018] Kapitel 11 "Serialization".
 
@@ -232,7 +232,7 @@ Weitere Links:
 [Demo: serial.SerializableStudi]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/serial/SerializableStudi.java"}
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Markerinterface `Serializable` schaltet Serialisierbarkeit frei
 

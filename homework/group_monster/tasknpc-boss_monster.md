@@ -4,16 +4,16 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgabe implementieren Sie ein einzigartiges Boss-Monster.
 
-## Voraussetzung
+# Voraussetzung
 
 Um diese Aufgabe lösen zu können, sollten Sie vorher
 ["Monster"](tasknpc-monster.md) implementieren.
 
-## Boss-Monster
+# Boss-Monster
 
 Zu jedem guten Spiel gehört ein guter Boss-Gegner. Boss-Monster sind oft deutlich stärker
 als die sonstigen Monster im Spiel. Was sie jedoch besonders macht, ist das einzigartige

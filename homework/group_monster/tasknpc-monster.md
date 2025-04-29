@@ -4,12 +4,12 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgabe implementieren Sie simple Gegner, welche sich selbstständig im Dungeon
 umherbewegen.
 
-## Monster
+# Monster
 
 Implementieren Sie analog zum Helden verschiedene Monster (mindestens drei) für das Dungeon.
 Die Monster sollen auch jeweils eigene Animationen haben.

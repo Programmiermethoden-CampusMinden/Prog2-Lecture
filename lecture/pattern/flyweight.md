@@ -42,10 +42,10 @@ challenges: |
 ---
 
 
-## Motivation: Modellierung eines Levels
+# Motivation: Modellierung eines Levels
 
 ::: notes
-### Variante I: Einsatz eines Enums für die Felder
+## Variante I: Einsatz eines Enums für die Felder
 :::
 
 ```java
@@ -84,11 +84,11 @@ müssen _alle_ `switch/case`-Blöcke entsprechend angepasst werden.
 
 
 ::: slides
-## Motivation: Modellierung eines Levels (cnt.)
+# Motivation: Modellierung eines Levels (cnt.)
 :::
 
 ::: notes
-### Variante II: Einsatz einer Klasse/Klassenhierarchie für die Felder
+## Variante II: Einsatz einer Klasse/Klassenhierarchie für die Felder
 :::
 
 ```java
@@ -124,7 +124,7 @@ geladen und entsprechend mehrfach im Speicher gehalten (großer Speicherbedarf).
 :::
 
 
-## Flyweight: Nutze gemeinsame Eigenschaften gemeinsam
+# Flyweight: Nutze gemeinsame Eigenschaften gemeinsam
 
 ::: notes
 Idee: Eigenschaften, die nicht an einem konkreten Objekt hängen, werden in gemeinsam genutzte
@@ -133,7 +133,7 @@ Objekte ausgelagert (Shared Objects/Memory).
 Ziel: Erhöhung der Speichereffizienz (geringerer Bedarf an Hauptspeicher, geringere Bandbreite
 bei der Übertragung der Daten/Objekt an die GPU, ...).
 
-### Lösungsvorschlag I
+## Lösungsvorschlag I
 :::
 
 ```java
@@ -171,11 +171,11 @@ wie etwa, ob ein Feld bereits durch den Helden untersucht/betreten wurde o.ä. .
 
 
 ::: slides
-## Flyweight: Nutze gemeinsame Eigenschaften gemeinsam (cnt.)
+# Flyweight: Nutze gemeinsame Eigenschaften gemeinsam (cnt.)
 :::
 
 ::: notes
-### Lösungsvorschlag II
+## Lösungsvorschlag II
 :::
 
 ```java
@@ -220,7 +220,7 @@ je einmal im Speicher repräsentiert.
 :::
 
 
-## Flyweight-Pattern: Begriffe
+# Flyweight-Pattern: Begriffe
 
 *   **Intrinsic** State: invariant, Kontext-unabhängig, gemeinsam nutzbar \newline
     => auslagern in gemeinsame Objekte
@@ -231,7 +231,7 @@ je einmal im Speicher repräsentiert.
     => individuell modellieren
 
 
-## Flyweight-Pattern: Klassische Modellierung
+# Flyweight-Pattern: Klassische Modellierung
 
 ![](images/flyweight.png){width="60%"}
 
@@ -254,7 +254,7 @@ Zusätzlich gibt es Klassen, die extrinsischen Zustand modellieren und deshalb n
 Nutzern geteilt werden können und deren Objekte bei jeder Anfrage neu erstellt werden. Aber
 auch diese werden von der Factory erzeugt/verwaltet.
 
-### Kombination mit dem Composite-Pattern
+## Kombination mit dem Composite-Pattern
 
 In der Praxis kann man das Pattern so direkt meist nicht einsetzen, sondern verbindet es mit
 dem Composite-Pattern:
@@ -266,7 +266,7 @@ oder eine zusammengesetzte Komponente, die ihrerseits andere Komponenten speiche
 Beispiel war das die Klasse `Tile`, die ein Objekt vom Typ `TileModel` referenziert - allerdings
 fehlt im obigen Beispiel das gemeinsame Interface ...).
 
-### Level-Beispiel mit Flyweight (vollständig) und Composite
+## Level-Beispiel mit Flyweight (vollständig) und Composite
 
 Im obigen Beispiel wurde zum Flyweight-Pattern noch das Composite-Pattern hinzugenommen, aber
 es wurde aus Gründen der Übersichtlichkeit auf ein gemeinsames Interface und auf die Factory
@@ -336,7 +336,7 @@ public class Level {
 
 
 ::: notes
-## Verwandtschaft zum Type-Object-Pattern
+# Verwandtschaft zum Type-Object-Pattern
 
 Das [Flyweight-Pattern](https://gameprogrammingpatterns.com/flyweight.html) ist sehr ähnlich zum
 [Type-Object-Pattern](type-object.md). In beiden Pattern teilen
@@ -351,7 +351,7 @@ werden. Die Zielrichtung unterscheidet sich aber deutlich:
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 Flyweight-Pattern: Steigerung der (Speicher-) Effizienz durch gemeinsame Nutzung von Objekten
 

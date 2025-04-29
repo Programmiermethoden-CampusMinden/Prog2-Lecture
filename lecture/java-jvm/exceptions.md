@@ -102,7 +102,7 @@ challenges: |
 ---
 
 
-## Fehlerfälle in Java
+# Fehlerfälle in Java
 
 ```java
 int div(int a, int b) {
@@ -118,7 +118,7 @@ div(3, 0);
 :::
 
 
-## Lösung?
+# Lösung?
 
 ```java
 Optional<Integer> div(int a, int b) {
@@ -146,7 +146,7 @@ if (x.isPresent()) {
 :::
 
 
-## Vererbungsstruktur _Throwable_
+# Vererbungsstruktur _Throwable_
 
 ![](images/exception.png){web_width="80%"}
 
@@ -154,7 +154,7 @@ if (x.isPresent()) {
 
 
 ::::::::: notes
-### _Exception_ vs. _Error_
+## _Exception_ vs. _Error_
 
 *   `Error`:
     *  Wird für Systemfehler verwendet (Betriebssystem, JVM, ...)
@@ -168,7 +168,7 @@ if (x.isPresent()) {
     *   Können "checked" oder "unchecked" sein
     *   Von Exceptions kann man sich erholen
 
-### Unchecked vs. Checked Exceptions
+## Unchecked vs. Checked Exceptions
 
 *   "Checked" Exceptions:
     *   Für erwartbare Fehlerfälle, deren Ursprung nicht im Programm selbst liegt
@@ -206,7 +206,7 @@ Beispiele unchecked Exception:
 :::::::::
 
 
-## _Throws_
+# _Throws_
 
 ```java
 int div(int a, int b) throws ArithmeticException {
@@ -262,7 +262,7 @@ damit umgehen (fangen oder selbst auch deklarieren). **Dies wird vom Compiler ge
 [[Hinweis: throws und checked vs. unchecked]{.ex}]{.slides}
 
 
-## _Try_-_Catch_
+# _Try_-_Catch_
 
 ```java
 int a = getUserInput();
@@ -288,7 +288,7 @@ geeignet zu melden!
 :::
 
 
-## _Try_und mehrstufiges _Catch_
+# _Try_und mehrstufiges _Catch_
 
 ```java
 try {
@@ -319,7 +319,7 @@ Exception handelt, müsste man diese per `throws IOException` an der Methode dek
 [[Hinweis: catch und Vererbungshierarchie]{.ex}]{.slides}
 
 
-## _Finally_
+# _Finally_
 
 ```java
 Scanner myScanner = new Scanner(System.in);
@@ -341,7 +341,7 @@ oder Input-Streams.
 :::
 
 
-## _Try_-with-Resources
+# _Try_-with-Resources
 
 ```java
 try (Scanner myScanner = new Scanner(System.in)) {
@@ -357,7 +357,7 @@ werden. Diese Ressourcen müssen `java.io.Closeable` implementieren.
 :::
 
 
-## Eigene Exceptions
+# Eigene Exceptions
 
 ```java
 // Checked Exception
@@ -392,7 +392,7 @@ wie die Exceptions aus dem JDK.
 :::
 
 
-## Stilfrage: Wie viel Code im _Try_?
+# Stilfrage: Wie viel Code im _Try_?
 
 ```java
 int getFirstLineAsInt(String pathToFile) {
@@ -410,7 +410,7 @@ int getFirstLineAsInt(String pathToFile) {
 ::: notes
 Hier lassen sich verschiedene "Ausbaustufen" unterscheiden.
 
-### Handling an den Aufrufer übergeben
+## Handling an den Aufrufer übergeben
 
 ```java
 int getFirstLineAsIntV1(String pathToFile) throws FileNotFoundException, IOException {
@@ -431,7 +431,7 @@ deklarieren.
 _Anmerkung_: Da `FileNotFoundException` eine Spezialisierung von `IOException` ist,
 reicht es aus, lediglich die `IOException` zu deklarieren.
 
-### Jede Exception einzeln fangen und bearbeiten
+## Jede Exception einzeln fangen und bearbeiten
 
 ```java
 int getFirstLineAsIntV2(String pathToFile) {
@@ -477,7 +477,7 @@ Wenn Sie solchen Code schreiben oder sehen, ist das ein Anzeichen, dass auf dies
 nicht sinnvoll mit dem Fehler umgegangen werden kann und dass man ihn besser an den
 Aufrufer weiter reichen sollte (siehe nächste Folie).
 
-### Funktionaler Teil in gemeinsames _Try_ und mehrstufiges _Catch_
+## Funktionaler Teil in gemeinsames _Try_ und mehrstufiges _Catch_
 
 ```java
 int getFirstLineAsIntV3(String pathToFile) {
@@ -509,7 +509,7 @@ Fehler.
 :::
 
 
-## Stilfrage: Wo fange ich die Exception?
+# Stilfrage: Wo fange ich die Exception?
 
 ```java
 private static void methode1(int x) throws IOException {
@@ -544,16 +544,16 @@ kann ich sinnvoll auf den Fehler reagieren?
 :::
 
 
-## Stilfrage: Wann checked, wann unchecked
+# Stilfrage: Wann checked, wann unchecked
 
-### "Checked" Exceptions
+## "Checked" Exceptions
 
 *   Für erwartbare Fehlerfälle, deren Ursprung nicht im Programm selbst liegt
 *   Aufrufer kann sich von der Exception erholen
 
 \bigskip
 
-### "Unchecked" Exceptions
+## "Unchecked" Exceptions
 
 *   Logische Programmierfehler ("Versagen" des Programmcodes)
 *   Aufrufer kann sich von der Exception vermutlich nicht erholen
@@ -563,7 +563,7 @@ Vergleiche ["Unchecked Exceptions — The Controversy"](https://dev.java/learn/e
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   `Error` und `Exception`: System vs. Programm
 *   Checked und unchecked Exceptions: `Exception` vs. `RuntimeException`

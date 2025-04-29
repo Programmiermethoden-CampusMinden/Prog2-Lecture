@@ -49,7 +49,7 @@ fhmedia:
 Dieses Dokument ist nicht für die Nutzung als Foliensatz vorbereitet.
 -->
 
-## How-To Dungeon
+# How-To Dungeon
 
 In diesem Semester werden Sie im Praktikum schrittweise ein eigenes
 Rogue-like Computerspiel programmieren und dabei (hoffentlich) die
@@ -68,7 +68,7 @@ Wir werden uns in diesem How-To einen Überblick verschaffen und einen
 ersten Einstieg versuchen: Wir programmieren einen einfachen Helden.
 
 
-## Projekt PM-Dungeon
+# Projekt PM-Dungeon
 
 Das Projekt PM-Dungeon entstand in verschiedenen Forschungsprojekten und
 wurde (und wird) aktiv von Studierenden und wissenschaftlichen
@@ -92,7 +92,7 @@ Methoden, sinnvolles Javadoc, Dokumentation jenseits des Javadoc, aber
 auch Commit-Messages und PR-Summaries.
 
 
-## Installation des Frameworks
+# Installation des Frameworks
 
 Sie finden das Projekt auf GitHub:
 https://github.com/Dungeon-CampusMinden/Dungeon.
@@ -111,7 +111,7 @@ Dabei entsteht der Ordner `pm-dungeon/` mit dem Dungeon-Projekt als
 Inhalt.
 
 
-## Java: Java SE 17 (LTS)
+# Java: Java SE 17 (LTS)
 
 Wir benutzen im Dungeon-Projekt die aktuelle LTS-Version des JDK, d.h.
 **Java SE 17 (LTS)**. Sie können sich das JDK bei
@@ -134,7 +134,7 @@ wichtig ist Major-Version: 17 bzw. "LTS"):
     Java HotSpot(TM) 64-Bit Server VM (build 17.0.6+9-LTS-190, mixed mode, sharing)
 
 
-## Erster Test
+# Erster Test
 
 Für einen ersten Test gehen Sie in der Konsole in den vorhin erzeugten
 neuen Ordner `pm-dungeon/` und führen Sie dort den Befehl
@@ -155,7 +155,7 @@ Dies dauert je nach Internetanbindung etwas - beim nächsten Start geht
 es dann aber deutlich schneller, weil ja bereits alles da ist.
 
 
-## Import in der IDE
+# Import in der IDE
 
 Importieren Sie das Projekt als Gradle-basiertes Projekt, dann übernimmt
 die IDE die Konfiguration für Sie.
@@ -168,7 +168,7 @@ die IDE die Konfiguration für Sie.
 und es erscheint wieder ein minimales Level mit einem wartenden Helden.
 
 
-## Überblick über die Strukturen
+# Überblick über die Strukturen
 
 Sie sehen im Package-Explorer eine Reihe von Unterprojekten. Für PM ist
 eigentlich nur "`game/`" relevant und "`doc/`" für die Dokumentation
@@ -217,7 +217,7 @@ Controller ist sicherlich der `SystemController`, der im Moment das ECS
 im Dungeon integriert (zu ECS später mehr).
 
 
-## Mein Held
+# Mein Held
 
 Um einen besseren Blick in das System zu bekommen, erstellen wir einen
 eigenen einfachen Helden.
@@ -227,7 +227,7 @@ Initialisierung des Default-Helden ab (einfach die Zeile
 `hero = new Hero();` auskommentieren).
 
 
-## Einschub: ECS oder Entities, Components und Systems
+# Einschub: ECS oder Entities, Components und Systems
 
 Der Held ist ein Element im Spiel. Dieses muss geeignet modelliert
 werden.
@@ -237,7 +237,7 @@ Unser Dungeon implementiert dabei eine Variante eines
 und folgt damit "großen Vorbildern" wie beispielsweise
 [Unity](https://learn.unity.com/tutorial/entity-component-system).
 
-### Entity
+## Entity
 
 Die Idee dahinter ist: Alle Elemente im Spiel werden als _Entität_
 realisiert, d.h. der Held und die Monster und die Items, die man so
@@ -249,7 +249,7 @@ für _Components_. Das Spiel kennt alle derzeit vorhandenen Entitäten.
 
 Unsere Basisklasse für Entitäten ist im Moment `ecs.entities.Entity`.
 
-### Component
+## Component
 
 Components bündeln bestimmte Werte einer Entität für bestimmte Zwecke,
 d.h. statt der Attribute in einer Klasse (Entität) nutzen wir hier eine
@@ -273,7 +273,7 @@ haben nur in Ausnahmefällen eigenes Verhalten.
 Die Basisklasse für Components ist derzeit `ecs.components.Component`.
 
 
-### System
+## System
 
 Mit Entitäten und passenden Components, über die wir die Eigenschaften
 ausdrücken, können wir bereits Spielelemente im Dungeon repräsentieren.
@@ -294,9 +294,9 @@ ist derzeit `ecs.systems.ECS_System` - falls Sie einmal eigene Systeme
 implementieren wollen.
 
 
-## Nun aber Helden!
+# Nun aber Helden!
 
-### Ein Held ist eine Entität
+## Ein Held ist eine Entität
 
 Also legen wir eine neue Heldenklasse als Unterklasse von
 `ecs.entities.Entity` an:
@@ -321,7 +321,7 @@ sein, trotzdem eine eigene Klasse zu spendieren, weil man hier Dinge
 für die Initialisierung kapseln kann - die würden sonst "frei" im
 `starter.Game#setup()` o.ä. "herumfliegen".
 
-### Wo bin ich grad?
+## Wo bin ich grad?
 
 Der Held braucht eine Position. Dazu gibt es
 `ecs.components.PositionComponent`, und wir legen im Konstruktor einfach
@@ -359,7 +359,7 @@ diese Position möglicherweise nicht spielbar ist).
 Wenn Sie jetzt das Spiel starten, sehen Sie - immer noch nichts (außer
 den Wänden). Hmmm.
 
-### Animateure
+## Animateure
 
 Um den Held zeichnen zu können, brauchen wir eine Animation - also eine
 `AnimationComponent`.
@@ -383,7 +383,7 @@ Wir brauchen dabei nur die Pfade unterhalb von `game/assets/` angeben
 
 Jetzt wackelt der Held auf der Stelle herum :)
 
-### Bewege mich
+## Bewege mich
 
 Für die Bewegung ist das `VelocitySystem` zuständig. Dieses fragt in
 allen Entitäten die `VelocityComponent` ab und setzt bei tatsächlicher
@@ -431,7 +431,7 @@ https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/doc/ecs/systems/read
 dokumentiert.
 
 
-## Wrap-Up
+# Wrap-Up
 
 ::: notes
 Damit endet der kurze Ausflug in den Dungeon.

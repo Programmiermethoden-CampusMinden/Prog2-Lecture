@@ -4,12 +4,12 @@ author: "André Matutat (HSBI)"
 points: "10 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgabe sollen Sie den Levelaufstieg[^1] und verschiedene Fähigkeiten
 implementieren, die dann vom Spieler verwendet werden können.
 
-## Fähigkeiten
+# Fähigkeiten
 
 In den Vorgaben ist bereits ein
 [Projectile-System](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/systems/ProjectileSystem.java)
@@ -30,7 +30,7 @@ Eine der Fähigkeiten soll eine Form von Ressourcenkosten haben. Sie verbraucht 
 Lebenspunkte, Ausdauerpunkte, [Mana-Punkte](https://de.wikipedia.org/wiki/Mana_(Spiele))
 oder ähnliches.
 
-## Levelaufstieg
+# Levelaufstieg
 
 In den Vorgaben gibt es bereits ein
 [XP-System](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/ecs/systems/XPSystem.java)

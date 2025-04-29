@@ -34,7 +34,7 @@ fhmedia:
 ---
 
 
-## Motivation: Snippet aus einer Klasse im PM-Dungeon
+# Motivation: Snippet aus einer Klasse im PM-Dungeon
 
 ```java
 private List<Entity> entities = new ArrayList<>();
@@ -58,7 +58,7 @@ Objekt nur _einmal_ enthalten.
 :::
 
 
-## Collection-API in Java
+# Collection-API in Java
 
 ![](images/collection.png){width="72%"}
 
@@ -103,7 +103,7 @@ Siehe auch [Interface Collection](https://docs.oracle.com/en/java/javase/17/docs
 :::
 
 
-## Listen: _ArrayList_
+# Listen: _ArrayList_
 
 ```java
 private List<Entity> entities = new ArrayList<>();
@@ -139,7 +139,7 @@ Die Methoden einer `ArrayList<T>` sind nicht `synchronized`.
 :::
 
 
-## Listen: _LinkedList_
+# Listen: _LinkedList_
 
 ![](images/linkedlist.png){width="80%"}
 
@@ -169,7 +169,7 @@ Die Methoden einer `LinkedList<T>` sind nicht `synchronized`.
 :::
 
 
-## _Vector_ und _Stack_
+# _Vector_ und _Stack_
 
 *   `Vector<T>`:
     *   Ein `Vector<T>` ähnelt einer `ArrayList<T>`
@@ -185,7 +185,7 @@ Die Methoden einer `LinkedList<T>` sind nicht `synchronized`.
     *   Tatsächlich aber: `class Stack<E> extends Vector<E>`
 
 
-## Iterierbarkeit: _Iterable_ und _Iterator_
+# Iterierbarkeit: _Iterable_ und _Iterator_
 
 ```java
 private List <Entity> entities = new ArrayList<>();
@@ -227,7 +227,7 @@ genutzt werden kann, muss sie aber auch noch `Iterable<T>` implementieren.
 :::
 
 
-## Hilfsklasse _Collections_
+# Hilfsklasse _Collections_
 
 ![](images/collections.png){width="70%" web_width="50%"}
 
@@ -245,7 +245,7 @@ vermutlich die statischen Methoden in der Klasse `Collections` eher direkt als D
 :::
 
 
-## _Map_
+# _Map_
 
 ![](images/map.png){width="55%" web_width="50%"}
 
@@ -278,7 +278,7 @@ Siehe auch [Interface Map](https://docs.oracle.com/en/java/javase/17/docs/api/ja
 :::
 
 
-## _HashMap_
+# _HashMap_
 
 ![](images/hashmap.png){width="72%" web_width="60%"}
 
@@ -313,7 +313,7 @@ eine doppelt verkettete Liste verwendet.
 :::
 
 
-## _Hashtable_
+# _Hashtable_
 
 *   Nicht zu verwechseln mit der Datenstruktur: Hash-Tabellen (!)
 *   `Hashtable<K,V>` ist vergleichbar mit einer `HashMap<K,V>`
@@ -322,9 +322,9 @@ eine doppelt verkettete Liste verwendet.
 
 
 ::::::::: notes
-## Spielregeln für _equals()_, _hashCode()_ und _compareTo()_
+# Spielregeln für _equals()_, _hashCode()_ und _compareTo()_
 
-### _equals()_
+## _equals()_
 
 `boolean equals(Object o)` ist eine Methode Klasse `Object` und wird genutzt, um Objekte auf Gleichheit zu
 prüfen. Die Default-Implementierung von `equals()` in `Object` vergleicht die beiden Objekte mit `==`, gibt
@@ -341,7 +341,7 @@ Dabei sind Spielregeln zu beachten (für nicht-`null` Objekte `x`, `y` und `z`):
 4.  Konsistenz: Mehrfache Aufrufe von `equals()` mit den selben Werten müssen immer das selbe Ergebnis liefern
 5.  `x.equals(null) == false`
 
-### _hashCode()_
+## _hashCode()_
 
 Die Methode `int hashCode()` gibt den Hash-Wert eines Objektes zurück. Der Hash-Wert eins Objektes wird genutzt,
 um dieses in einen Hash-basierten Container abzulegen bzw. zu finden.
@@ -349,7 +349,7 @@ um dieses in einen Hash-basierten Container abzulegen bzw. zu finden.
 Der Rückgabewert der Methode `hashCode()` für ein Objekt bleibt über die Laufzeit einer Anwendung immer identisch,
 solange sich die zur Prüfung der Gleichheit genutzten Attribute nicht ändern.
 
-### _compareTo()_
+## _compareTo()_
 
 Die Methode `int compareTo()` (Interface `Comparable<T>`) vergleicht Objekte und definiert damit eine Ordnung
 auf den Objekten. Während `equals()` für die Prüfung auf Gleichheit eingesetzt wird, wird `compareTo()` für die
@@ -364,11 +364,11 @@ Spielregeln:
 4.  Transitivität: Wenn `x.compareTo(y) > 0` und `y.compareTo(z) > 0`, dann auch `x.compareTo(z) > 0`
 5.  Wenn `x.compareTo(y) == 0`, dann auch `signum(x.compareTo(z)) == signum(y.compareTo(z))`
 
-### Der _equals()_-_hashCode()_-_compareTo()_-Vertrag
+## Der _equals()_-_hashCode()_-_compareTo()_-Vertrag
 :::::::::
 
 ::: slides
-## Der _equals()_-_hashCode()_-_compareTo()_-Vertrag
+# Der _equals()_-_hashCode()_-_compareTo()_-Vertrag
 :::
 
 **Wird `equals()` überschrieben, sollte auch `hashCode()` (passend) überschrieben werden.**
@@ -394,7 +394,7 @@ Spielregeln:
 
 
 ::: notes
-## Überblick
+# Überblick
 
 ![](images/collections_table.png){width="80%"}
 
@@ -403,7 +403,7 @@ Komplexitätswerte beziehen sich auf den Regelfall. Sonderfälle wie das Vergrö
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Interface `Collection<T>`: Schnittstelle für Datenstrukturen/Sammlungen
     [zur Verwaltung einer Menge von Objekten]{.notes}

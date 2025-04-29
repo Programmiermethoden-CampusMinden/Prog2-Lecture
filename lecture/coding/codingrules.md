@@ -70,7 +70,7 @@ fhmedia:
 ---
 
 
-## Coding Conventions: Richtlinien für einheitliches Aussehen von Code
+# Coding Conventions: Richtlinien für einheitliches Aussehen von Code
 
 => Ziel: Andere Programmierer sollen Code schnell lesen können
 
@@ -91,7 +91,7 @@ Beispiele: [Sun Code Conventions](https://www.oracle.com/technetwork/java/codeco
 [AOSP Java Code Style for Contributors](https://source.android.com/docs/setup/contribute/code-style)
 
 
-## Beispiel nach Google Java Style/AOSP formatiert
+# Beispiel nach Google Java Style/AOSP formatiert
 
 ```java
 package wuppie.deeplearning.strategy;
@@ -150,7 +150,7 @@ auf [Google Java Style](https://google.github.io/styleguide/javaguide.html) und 
 :::
 
 
-## Formatieren Sie Ihren Code (mit der IDE)
+# Formatieren Sie Ihren Code (mit der IDE)
 
 ::: notes
 Sie können den Code manuell formatieren, oder aber (sinnvollerweise) über Tools
@@ -184,7 +184,7 @@ formatieren lassen. Hier einige Möglichkeiten:
 
 
 ::::::::: notes
-### Einstellungen der IDE's
+## Einstellungen der IDE's
 
 *   Eclipse:
     *   `Project > Properties > Java Code Style > Formatter`: Coding-Style einstellen/einrichten
@@ -207,7 +207,7 @@ Analog sollte man bei der Verwendung von Checkstyle auch in der IDE im Formatter
 Checkstyle-Regeln (s.u.) passend einstellen, sonst bekommt man durch Checkstyle Warnungen angezeigt,
 die man durch ein automatisches Formatieren _nicht_ beheben kann.
 
-### Google Java Style und google-java-format
+## Google Java Style und google-java-format
 
 Wer direkt den [Google Java Style](https://google.github.io/styleguide/javaguide.html) nutzt,
 kann auch den dazu passenden Formatter von Google einsetzen:
@@ -216,7 +216,7 @@ Diesen kann man entweder als Plugin für IntelliJ/Eclipse einsetzen oder als Sta
 (Kommandozeile oder Build-Skripte) aufrufen. Wenn man sich noch einen entsprechenden
 Git-Hook definiert, wird vor jedem Commit der Code entsprechend den Richtlinien formatiert :)
 
-### Spotless und google-java-format in Gradle
+## Spotless und google-java-format in Gradle
 
 _Hinweis_: Bei Spotless in Gradle müssen je nach den Versionen von Spotless/google-java-format
 bzw. des JDK noch Optionen in der Datei `gradle.properties` eingestellt werden (siehe
@@ -238,14 +238,14 @@ docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 [Demo: Konfiguration Formatter (IDE), Spotless/Gradle]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/coding/src/formatter/"}
 
 
-## Metriken: Kennzahlen für verschiedene Aspekte zum Code
+# Metriken: Kennzahlen für verschiedene Aspekte zum Code
 
 ::::::::: notes
 Metriken messen verschiedene Aspekte zum Code und liefern eine Zahl zurück. Mit Metriken kann
 man beispielsweise die Einhaltung der Coding Rules (Formate, ...) prüfen, aber auch die Einhaltung
 verschiedener Regeln des objektorientierten Programmierens.
 
-### Beispiele für wichtige Metriken (jeweils Max-Werte für PM)
+## Beispiele für wichtige Metriken (jeweils Max-Werte für PM)
 
 Die folgenden Metriken und deren Maximal-Werte sind gute Erfahrungswerte aus der Praxis und helfen,
 den Code Smell "Langer Code"  (vgl. ["Code Smells"](smells.md)) zu
@@ -277,7 +277,7 @@ Dennoch sind das keine absoluten Werte an sich. Ein Übertreten der Grenzen ist 
 **Hinweis** darauf, dass **höchstwahrscheinlich** etwas nicht stimmt, muss aber im
 konkreten Fall hinterfragt und diskutiert und begründet werden!
 
-### Metriken im Beispiel von oben
+## Metriken im Beispiel von oben
 
 ```java
     private static String lastName;
@@ -308,7 +308,7 @@ d.h. `String` würde im obigen Beispiel _nicht_ bei DAC mitgezählt/angezeigt.
 => Verweis auf LV Softwareengineering
 
 
-## Tool-Support: Checkstyle
+# Tool-Support: Checkstyle
 
 ::::::::: notes
 Metriken und die Einhaltung von Coding-Conventions werden sinnvollerweise nicht manuell,
@@ -356,7 +356,7 @@ docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 [Demo: IntelliJ, Checkstyle/Gradle]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/checkstyle/"}
 
 
-## Checkstyle: Konfiguration
+# Checkstyle: Konfiguration
 
 ::::::::: notes
 Die auszuführenden Checks lassen sich über eine [XML-Datei](https://checkstyle.org/config.html)
@@ -410,7 +410,7 @@ Alternativen/Ergänzungen: beispielsweise [MetricsReloaded](https://github.com/B
 [Demo: Konfiguration mit Eclipse-CS, Hinweis auf Formatter]{.ex href="https://youtu.be/0ny6e6CNTF8"}
 
 
-## SpotBugs: Finde Anti-Pattern und potentielle Bugs (Linter)
+# SpotBugs: Finde Anti-Pattern und potentielle Bugs (Linter)
 
 *   [**SpotBugs**](https://github.com/spotbugs/spotbugs) sucht nach über 400 potentiellen Bugs im Code
     *   Anti-Pattern (schlechte Praxis, "dodgy" Code)
@@ -445,7 +445,7 @@ docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 [Demo: SpotBugs/Gradle]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/spotbugs/"}
 
 
-## Konfiguration für das PM-Praktikum (Format, Metriken, Checkstyle, SpotBugs)
+# Konfiguration für das PM-Praktikum (Format, Metriken, Checkstyle, SpotBugs)
 
 ::: notes
 Im PM-Praktikum beachten wir die obigen Coding Conventions und Metriken mit den dort definierten
@@ -453,7 +453,7 @@ Grenzwerten. Diese sind bereits in der bereit gestellten Minimal-Konfiguration f
 (s.u.) konfiguriert.
 :::
 
-### Formatierung
+## Formatierung
 
 *   Google Java Style/AOSP: **Spotless**
 
@@ -470,7 +470,7 @@ Formatter Ihrer IDE entsprechend ein.
 
 \bigskip
 
-### Checkstyle
+## Checkstyle
 
 *   Minimal-Konfiguration für **Checkstyle** (Coding Conventions, Metriken)
 
@@ -554,7 +554,7 @@ Google Java Style hinaus.
 
 \bigskip
 
-### Linter: SpotBugs
+## Linter: SpotBugs
 
 *   Vermeiden von Anti-Pattern mit **SpotBugs**
 
@@ -564,7 +564,7 @@ Fehler beinhalten, die SpotBugs melden würde.
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Code entsteht nicht zum Selbstzweck => Regeln nötig!
     *   Coding Conventions

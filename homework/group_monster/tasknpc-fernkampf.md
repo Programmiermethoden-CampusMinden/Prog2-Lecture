@@ -4,17 +4,17 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgabe implementieren Sie Projektile für den Fernkampf, damit der Held gegen die
 Monster auf Distanz kämpfen kann.
 
-## Voraussetzung
+# Voraussetzung
 
 Um diese Aufgabe lösen zu können, müssen Sie vorher
 ["Monster"](tasknpc-monster.md) implementiert haben.
 
-## Fernkampf
+# Fernkampf
 
 In den Vorgaben ist ein Konzept für den
 [Fernkampf mit Skills](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/game/src/ecs/components/skill)

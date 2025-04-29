@@ -4,7 +4,7 @@ author: "André Matutat (HSBI)"
 points: "10 Punkte"
 ---
 
-## Freie Aufgabe
+# Freie Aufgabe
 
 In dieser Aufgabe implementieren Sie ein großes oder mehrere kleinere Features für Ihren
 Dungeon. Sie dürfen sich diese(s) Feature(s) selbst aussuchen und konzipieren. Beachten Sie

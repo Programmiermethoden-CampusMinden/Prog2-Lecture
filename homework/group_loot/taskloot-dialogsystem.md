@@ -4,11 +4,11 @@ author: "André Matutat (HSBI)"
 points: "5 Punkte"
 ---
 
-## Ziel
+# Ziel
 
 In dieser Aufgabe implementieren Sie ein dynamisches Dialogsystem.
 
-## Dialogsystem
+# Dialogsystem
 
 Nutzen Sie reguläre Ausdrücke (_RegExp_), um ein Dialogsystem zu implementieren.
 

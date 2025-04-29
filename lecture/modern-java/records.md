@@ -51,7 +51,7 @@ fhmedia:
 ---
 
 
-## Motivation; Klasse Studi
+# Motivation; Klasse Studi
 
 ```java
 public class Studi {
@@ -74,7 +74,7 @@ public class Studi {
 ```
 
 
-## Klasse Studi als Record
+# Klasse Studi als Record
 
 ```java
 public record StudiR(String name, int credits) {}
@@ -109,7 +109,7 @@ entsprechen denen der Komponenten, es fehlt also der übliche "get"-Präfix!
 :::
 
 
-## Eigenschaften und Einschränkungen von Record-Klassen
+# Eigenschaften und Einschränkungen von Record-Klassen
 
 *   Records erweitern implizit die Klasse `java.lang.Record`: \newline
     Keine andere Klassen mehr erweiterbar! (Interfaces kein Problem)
@@ -123,7 +123,7 @@ entsprechen denen der Komponenten, es fehlt also der übliche "get"-Präfix!
 *   Statische Attribute mit Initialisierung erlaubt
 
 
-## Records: Prüfungen im Konstruktor
+# Records: Prüfungen im Konstruktor
 
 ::: notes
 Der Konstruktor ist erweiterbar:
@@ -174,7 +174,7 @@ public StudiT() {
 :::
 
 
-## Getter und Methoden
+# Getter und Methoden
 
 ::: notes
 Getter werden vom Compiler automatisch generiert. Dabei entsprechen die Methoden-Namen
@@ -210,7 +210,7 @@ geändert werden!
 
 
 ::: notes
-## Beispiel aus den Challenges
+# Beispiel aus den Challenges
 
 In den Challenges zum Thema Optional gibt es die Klasse `Katze` in den
 [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/challenges/optional/Katze.java).
@@ -229,7 +229,7 @@ wurde die Les- und Wartbarkeit deutlich verbessert.
 :::
 
 
-## Wrap-Up
+# Wrap-Up
 
 *   Records sind immutable Klassen:
     *   `final` Attribute (entsprechend den Komponenten)
