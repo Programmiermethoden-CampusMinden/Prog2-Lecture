@@ -1,6 +1,5 @@
 ---
 title: "Test Coverage"
-linkTitle: "Test Coverage"
 author: "Carsten Gips (HSBI)"
 
 sketch: true

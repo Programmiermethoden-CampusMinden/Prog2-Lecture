@@ -1,6 +1,5 @@
 ---
 title: "Template-Method-Pattern"
-linkTitle: "Template-Method"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Eilebrecht2013"

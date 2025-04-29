@@ -1,6 +1,5 @@
 ---
 title: "Intro: Versionskontrolle in der Softwareentwicklung"
-linkTitle: "Intro"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Chacon2014"

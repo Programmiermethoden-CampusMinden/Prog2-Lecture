@@ -1,6 +1,5 @@
 ---
 title: "Generics und Polymorphie"
-linkTitle: "Polymorphie"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2021"

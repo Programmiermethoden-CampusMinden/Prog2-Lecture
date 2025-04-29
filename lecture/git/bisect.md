@@ -1,6 +1,5 @@
 ---
 title: "Fehlersuche mit Git Bisect"
-linkTitle: "Bisect"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Chacon2014"

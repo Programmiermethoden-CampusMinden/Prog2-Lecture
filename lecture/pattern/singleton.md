@@ -1,6 +1,5 @@
 ---
 title: "Singleton-Pattern"
-linkTitle: "Singleton"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Nystrom2014"

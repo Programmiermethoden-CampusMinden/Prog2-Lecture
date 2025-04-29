@@ -1,6 +1,5 @@
 ---
 title: "Build-Systeme: Gradle"
-linkTitle: "Gradle"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Gradle"

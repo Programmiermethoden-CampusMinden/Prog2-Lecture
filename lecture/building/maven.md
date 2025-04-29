@@ -1,6 +1,5 @@
 ---
 title: "Build-Systeme: Apache Maven"
-linkTitle: "Maven"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2016"

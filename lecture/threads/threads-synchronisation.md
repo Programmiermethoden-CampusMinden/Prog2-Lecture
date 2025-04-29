@@ -1,6 +1,5 @@
 ---
 title: "Synchronisation: Verteilter Zugriff auf gemeinsame Ressourcen"
-linkTitle: "Synchronisation"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Java-SE-Tutorial"

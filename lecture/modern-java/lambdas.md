@@ -1,6 +1,5 @@
 ---
 title: "Lambda-Ausdrücke und funktionale Interfaces"
-linkTitle: "Lambda-Ausdrücke"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Java-SE-tutorial"

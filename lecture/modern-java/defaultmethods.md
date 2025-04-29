@@ -1,6 +1,5 @@
 ---
 title: "Interfaces: Default-Methoden"
-linkTitle: "Default-Methoden"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Java-SE-tutorial"

@@ -1,6 +1,5 @@
 ---
 title: "Optional"
-linkTitle: "Optional"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "LernJava"

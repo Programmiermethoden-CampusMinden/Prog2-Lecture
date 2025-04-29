@@ -1,6 +1,5 @@
 ---
 title: "Basics der Versionsverwaltung mit Git (lokale Repos)"
-linkTitle: "Basics"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Chacon2014"

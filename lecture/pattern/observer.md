@@ -1,6 +1,5 @@
 ---
 title: "Observer-Pattern"
-linkTitle: "Observer"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Nystrom2014"

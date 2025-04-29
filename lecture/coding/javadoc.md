@@ -1,6 +1,5 @@
 ---
 title: "Javadoc"
-linkTitle: "Javadoc"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2021"

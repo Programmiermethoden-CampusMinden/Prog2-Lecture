@@ -1,6 +1,5 @@
 ---
 title: "Testbarkeit und Testdriven Development (TDD)"
-linkTitle: "Testbarkeit und TDD"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Beck2014"

@@ -1,6 +1,5 @@
 ---
 title: "Einführung in die nebenläufige Programmierung mit Threads"
-linkTitle: "Intro"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2021"

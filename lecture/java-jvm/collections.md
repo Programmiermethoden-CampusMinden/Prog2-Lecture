@@ -1,6 +1,5 @@
 ---
 title: "Java Collections Framework"
-linkTitle: "Collections"
 author: "André Matutat & Carsten Gips (HSBI)"
 readings:
   - key: "LernJava"

@@ -1,6 +1,5 @@
 ---
 title: "Record-Klassen"
-linkTitle: "Records"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "LernJava"

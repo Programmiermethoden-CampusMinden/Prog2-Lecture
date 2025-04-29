@@ -1,6 +1,5 @@
 ---
 title: "Konfiguration eines Programms"
-linkTitle: "Konfiguration"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Java-SE-Tutorial"

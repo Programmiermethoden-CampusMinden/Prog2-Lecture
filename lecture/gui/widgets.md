@@ -1,6 +1,5 @@
 ---
 title: "Swing: Nützliche Widgets"
-linkTitle: "Swing: Widgets"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Java-SE-Tutorial"

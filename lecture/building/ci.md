@@ -1,6 +1,5 @@
 ---
 title: "Continuous Integration (CI)"
-linkTitle: "Continuous Integration"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "GitlabCI"

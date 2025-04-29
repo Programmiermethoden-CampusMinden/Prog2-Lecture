@@ -1,6 +1,5 @@
 ---
 title: "Umgang mit Frameworks"
-linkTitle: "Frameworks"
 ---
 
 

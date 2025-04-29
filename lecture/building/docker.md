@@ -1,6 +1,5 @@
 ---
 title: "Einführung in Docker"
-linkTitle: "Docker"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2016"

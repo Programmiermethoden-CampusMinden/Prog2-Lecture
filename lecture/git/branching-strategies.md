@@ -1,6 +1,5 @@
 ---
 title: "Branching-Strategien mit Git"
-linkTitle: "Branching-Strategien"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Chacon2014"

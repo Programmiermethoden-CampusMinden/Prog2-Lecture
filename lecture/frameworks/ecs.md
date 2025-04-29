@@ -1,6 +1,5 @@
 ---
 title: "Frameworks: ECS"
-linkTitle: "ECS"
 author: "Carsten Gips (HSBI)"
 
 sketch: true

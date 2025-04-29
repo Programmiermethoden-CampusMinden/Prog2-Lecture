@@ -1,6 +1,5 @@
 ---
 title: "Zugriffe auf Datenbanken: JDBC"
-linkTitle: "Database"
 
 hidden: true
 _build:

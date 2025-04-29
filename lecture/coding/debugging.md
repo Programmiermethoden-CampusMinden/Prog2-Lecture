@@ -1,6 +1,5 @@
 ---
 title: "Debugging"
-linkTitle: "Debugging"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Martin2009"

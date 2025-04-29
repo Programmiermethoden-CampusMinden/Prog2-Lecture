@@ -1,6 +1,5 @@
 ---
 title: "Factory-Method-Pattern"
-linkTitle: "Factory-Method"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Eilebrecht2013"

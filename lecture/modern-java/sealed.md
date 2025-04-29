@@ -1,6 +1,5 @@
 ---
 title: "Sealed Classes und Pattern Matching"
-linkTitle: "Sealed Classes"
 author: "Carsten Gips (HSBI)"
 
 sketch: true

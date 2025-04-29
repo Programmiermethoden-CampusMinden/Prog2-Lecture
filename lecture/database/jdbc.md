@@ -1,6 +1,5 @@
 ---
 title: "Java und Datenbanken: JDBC"
-linkTitle: "JDBC"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2016"

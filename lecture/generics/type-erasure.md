@@ -1,6 +1,5 @@
 ---
 title: "Type Erasure"
-linkTitle: "Type Erasure"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2021"

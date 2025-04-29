@@ -1,6 +1,5 @@
 ---
 title: "Bounds & Wildcards"
-linkTitle: "Bounds & Wildcards"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Ullenboom2021"

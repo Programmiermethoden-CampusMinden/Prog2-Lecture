@@ -1,6 +1,5 @@
 ---
 title: "Strategy-Pattern"
-linkTitle: "Strategy"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Eilebrecht2013"

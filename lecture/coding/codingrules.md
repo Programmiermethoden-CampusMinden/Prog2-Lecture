@@ -1,6 +1,5 @@
 ---
 title: "Coding Conventions und Metriken"
-linkTitle: "Coding Conventions"
 author: "Carsten Gips (HSBI)"
 readings:
   - key: "Martin2009"
