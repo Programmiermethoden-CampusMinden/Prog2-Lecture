@@ -102,7 +102,7 @@ challenges: |
 
 ## Motivation
 
-```{.java size="scriptsize"}
+```java
 public class LSF {
     private Set<Studi> sl;
 

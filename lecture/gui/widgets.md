@@ -70,7 +70,7 @@ fhmedia:
 
     \smallskip
 
-    ```{.java size=footnotesize}
+    ```java
     JRadioButton b1 = new JRadioButton("Button 1", true);
     JRadioButton b2 = new JRadioButton("Button 2", false);
 
@@ -87,7 +87,7 @@ fhmedia:
 
 \bigskip
 
-```{.java size=footnotesize}
+```java
 JFileChooser fc = new JFileChooser("Startverzeichnis");
 fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
@@ -122,7 +122,7 @@ if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
 
         \smallskip
 
-        ```{.java size=footnotesize}
+        ```java
         public void addTab(String title, Icon icon, Component component, String tip)
         ```
 
@@ -135,7 +135,7 @@ if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
 
         \smallskip
 
-        ```{.java size=footnotesize}
+        ```java
         JPanel panel = new JPanel();
         JTextArea text = new JTextArea(5, 10);
 
@@ -216,13 +216,13 @@ sind vom Typ `JMenuItem` und verhalten sich wie Buttons.
 
 *   Einträge vom Typ `JMenuItem` hinzufügen (beispielsweise `JRadioButtonMenuItem`)
 
-    ```{.java size=footnotesize}
+    ```java
     public JMenuItem add(JMenuItem menuItem)
     ```
 
 *   Menü über der aufrufenden Komponente "`invoker`" anzeigen
 
-    ```{.java size=footnotesize}
+    ```java
     public void show(Component invoker, int x, int y)
     ```
 

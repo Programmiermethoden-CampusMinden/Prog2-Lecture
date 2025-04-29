@@ -228,7 +228,7 @@ dann mit `java Hello` die Klasse ausgeführt werden.
 
 ## Images selbst definieren
 
-```{.docker size="footnotesize"}
+```docker
 FROM debian:stable-slim
 
 ARG USERNAME=pandoc

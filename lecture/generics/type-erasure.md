@@ -97,7 +97,7 @@ Die obere Schranke meist `Object` => `new T()` verboten/sinnfrei (s.u.)!
 
 [vor der Typ-Löschung durch Compiler:]{.notes}
 
-```{.java size="footnotesize"}
+```java
 class Cps<T extends Number> {
     T myst(T m, T n) {
         return n;
@@ -115,7 +115,7 @@ class Cps<T extends Number> {
 
 [nach der Typ-Löschung durch Compiler:]{.notes}
 
-```{.java size="footnotesize"}
+```java
 class Cps {
     Number myst(Number m, Number n) {
         return n;

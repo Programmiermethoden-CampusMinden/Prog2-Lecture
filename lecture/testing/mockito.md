@@ -135,7 +135,7 @@ die Studierenden, ein anderes Team modelliert die Prüfungsverwaltung LSF.
 
 *   Team A:
 
-    ```{.java size="scriptsize"}
+    ```java
     public class Studi {
         String name;  LSF lsf;
 
@@ -150,7 +150,7 @@ die Studierenden, ein anderes Team modelliert die Prüfungsverwaltung LSF.
 
 *   Team B:
 
-    ```{.java size="scriptsize"}
+    ```java
     public class LSF {
         public boolean anmelden(String name, String modul) { throw new UnsupportedOperationException(); }
         public int ergebnis(String name, String modul) { throw new UnsupportedOperationException(); }
@@ -278,7 +278,7 @@ Team A könnte manuell das LSF rudimentär implementieren (nur für die Tests, e
 festen Rückgabewerten): **Stubs**
 :::
 
-```{.java size="footnotesize"}
+```java
 public class StudiStubTest {
     Studi studi;  LSF lsf;
 
@@ -316,7 +316,7 @@ Wenn man im Test andere Antworten braucht, müsste man einen weiteren Stub anleg
 **Lösung**: Mocking der Klasse `LSF` mit Mockito für den Test von `Studi`: `mock()`.
 :::
 
-```{.java size="scriptsize"}
+```java
 public class StudiMockTest {
     Studi studi;  LSF lsf;
 
@@ -371,7 +371,7 @@ testen (`einsicht()`)?
 **Lösung**: Mockito-Spy als partieller Mock einer Klasse (Wrapper um ein Objekt): `spy()`.
 :::
 
-```{.java size="scriptsize"}
+```java
 public class StudiSpyTest {
     Studi studi;  LSF lsf;
 
@@ -416,7 +416,7 @@ Auch hier können Argument-Matcher wie `anyString()` eingesetzt werden.
 
 ## Wurde eine Methode aufgerufen?
 
-```{.java size="scriptsize"}
+```java
 public class VerifyTest {
     @Test
     public void testAnmelden() {
@@ -477,7 +477,7 @@ Reihenfolge bringen und so überprüfen.
 
 ## Fangen von Argumenten
 
-```{.java size="scriptsize"}
+```java
 public class MatcherTest {
     @Test
     public void testAnmelden() {

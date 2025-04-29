@@ -93,7 +93,7 @@ Beispiele: [Sun Code Conventions](https://www.oracle.com/technetwork/java/codeco
 
 ## Beispiel nach Google Java Style/AOSP formatiert
 
-```{.java size="scriptsize"}
+```java
 package wuppie.deeplearning.strategy;
 
 /**
@@ -165,7 +165,7 @@ formatieren lassen. Hier einige Möglichkeiten:
 
 *   [**Spotless**](https://github.com/diffplug/spotless) in Gradle:
 
-    ```{.groovy size="scriptsize"}
+    ```groovy
     plugins {
         id "java"
         id "com.diffplug.spotless" version "6.5.0"
@@ -331,7 +331,7 @@ eigenes [Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.htm
 *   [Plugin "**checkstyle**"](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
     in Gradle:
 
-    ```{.groovy size="scriptsize"}
+    ```groovy
     plugins {
         id "java"
         id "checkstyle"
@@ -387,7 +387,7 @@ das Eltern-Modul (also wo müssen Sie das Modul im XML-Baum einfügen) und auch 
 Properties und deren Default-Einstellungen.
 :::::::::
 
-```{.xml size="scriptsize"}
+```xml
 <module name="Checker">
     <module name="LineLength">
         <property name="max" value="100"/>
@@ -424,7 +424,7 @@ Alternativen/Ergänzungen: beispielsweise [MetricsReloaded](https://github.com/B
     [SpotBugs Eclipse plugin](https://spotbugs.readthedocs.io/en/latest/eclipse.html)
 *   Gradle: [SpotBugs Gradle Plugin](https://github.com/spotbugs/spotbugs-gradle-plugin)
 
-    ```{.groovy size="scriptsize"}
+    ```groovy
     plugins {
         id "java"
         id "com.github.spotbugs" version "5.0.6"

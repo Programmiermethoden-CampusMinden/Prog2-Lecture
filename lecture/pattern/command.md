@@ -84,7 +84,7 @@ zugeordnet und erlauben keinerlei Konfiguration.
 
 ## Auflösen der starren Zuordnung über Zwischenobjekte
 
-```{.java size="footnotesize"}
+```java
 public interface Command { void execute(); }
 
 public class Jump implements Command {
@@ -177,7 +177,7 @@ Jetzt kann jedes Command-Objekt eine neue Instanz erzeugen mit der
 Entity, die dann dieses Kommando empfangen soll:
 :::
 
-```{.java size="scriptsize"}
+```java
 public class Move implements Command {
     private Entity e;
     private int x, y, oldX, oldY;
