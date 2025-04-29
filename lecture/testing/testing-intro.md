@@ -49,7 +49,7 @@ fhmedia:
 
 ![](images/swfehler.png){width="80%"}
 
-[[Ursachen für Fehler?]{.bsp}]{.slides}
+[[Ursachen für Fehler?]{.ex}]{.slides}
 
 
 ::: notes
@@ -351,7 +351,7 @@ import static packageName.className.*;
 :::
 ::::::
 
-[[Anmerkung zu Asserts pro Testmethode]{.bsp}]{.slides}
+[[Anmerkung zu Asserts pro Testmethode]{.ex}]{.slides}
 
 
 ::: notes

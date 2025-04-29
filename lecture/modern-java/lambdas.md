@@ -238,7 +238,7 @@ public class Outer {
 }
 ```
 
-[Beispiel mit Iterator als innere Klasse: nested.StudiListNested]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListNested.java"}
+[Beispiel mit Iterator als innere Klasse: nested.StudiListNested]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/nested/StudiListNested.java"}
 
 ### Statische innere Klassen ("_Static Nested Classes_")
 
@@ -288,7 +288,7 @@ sl.sort(
 *   Nutzung typischerweise bei GUIs: Event-Handler etc.
 :::
 
-[Demo: nested.DemoAnonymousInnerClass]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoAnonymousInnerClass.java"}
+[Demo: nested.DemoAnonymousInnerClass]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoAnonymousInnerClass.java"}
 
 
 ## Vereinfachung mit Lambda-Ausdruck
@@ -310,7 +310,7 @@ sl.sort(
 sl.sort( (Studi o1, Studi o2) -> o1.getCredits() - o2.getCredits() );
 ```
 
-[[Hinweis auf funktionales Interface]{.bsp}]{.slides}
+[[Hinweis auf funktionales Interface]{.ex}]{.slides}
 
 ::: notes
 **Anmerkung**: Damit für den Parameter alternativ auch ein Lambda-Ausdruck verwendet
@@ -318,7 +318,7 @@ werden kann, muss der erwartete Parameter vom Typ her ein "**funktionales Interf
 (s.u.) sein!
 :::
 
-[Demo: nested.DemoLambda]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoLambda.java"}
+[Demo: nested.DemoLambda]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/nested/DemoLambda.java"}
 
 
 ## Syntax für Lambdas

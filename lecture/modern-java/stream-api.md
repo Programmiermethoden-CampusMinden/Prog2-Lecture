@@ -389,7 +389,7 @@ laufen lassen und eine `Collection` erzeugen lassen:
 Die ist nur die sprichwörtliche "Spitze des Eisbergs"! Es gibt viele weitere Möglichkeiten, sowohl
 bei den intermediären als auch den terminalen Operationen. Schauen Sie in die Dokumentation!
 
-[Demo: streams.Demo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/streams/Demo.java"}
+[Demo: streams.Demo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/streams/Demo.java"}
 :::
 
 

@@ -112,7 +112,7 @@ Für die URL sind verschiedene Protokolle möglich, beispielsweise:
     SW-Labor verwendet)
 :::
 
-[[Hinweis auf Protokolle, Beispiel]{.bsp}]{.slides}
+[[Hinweis auf Protokolle, Beispiel]{.ex}]{.slides}
 
 
 ## Eigener und entfernter _master_ entwickeln sich weiter ...
@@ -246,7 +246,7 @@ Zwischenzeit weiter geschoben - dann muss die Aktualisierung erneut durchgeführ
 werden).
 :::::::::
 
-[Beispiel für Zusammenführen (merge und push), Anmerkung zu fast forward merge]{.bsp href="https://youtu.be/moqywsxtEy8"}
+[Beispiel für Zusammenführen (merge und push), Anmerkung zu fast forward merge]{.ex href="https://youtu.be/moqywsxtEy8"}
 
 
 ## Branches und Remotes
@@ -261,7 +261,7 @@ werden).
     *   Lokale Änderungen an remote Branches nicht möglich! \newline
         => **Remote Branch in lokalen Branch mergen** (oder auschecken)
 
-[[Beispiel]{.bsp}]{.slides}
+[[Beispiel]{.ex}]{.slides}
 
 
 ## Zusammenfassung: Arbeiten mit Remotes
@@ -345,7 +345,7 @@ mitgeben: `git init --bare` ...
     2.  [Lokalen Branch ins Repo schicken:]{.notes} `git push -u <remote> <branch>`
         [(=> Option `-u` richtet den lokalen Branch als Tracking Branch ein)]{.notes}
 
-[[Beispiel]{.bsp}]{.slides}
+[[Beispiel]{.ex}]{.slides}
 
 
 ## Hinzufügen eines (weiteren) Remote Repository
@@ -371,7 +371,7 @@ Sie können einem Repo beliebig viele Remotes hinzufügen:
 Beispiel: `git fetch andi` oder `git push origin master`
 :::
 
-[[Beispiel]{.bsp}]{.slides}
+[[Beispiel]{.ex}]{.slides}
 
 
 ## Wrap-Up

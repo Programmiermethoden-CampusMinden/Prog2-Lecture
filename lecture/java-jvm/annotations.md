@@ -75,7 +75,7 @@ public class B extends A {
 }
 ```
 
-[[Beispiel: annotations.B]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java"}]{.notes}
+[[Beispiel: annotations.B]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java"}]{.notes}
 
 \pause
 \bigskip
@@ -114,7 +114,7 @@ generieren: `Preferences > Java > Code Style > Add @Override annotation ...`.
     *   Webservices: `@WebService`, `@WebMethod`
     *   ...
 
-[Demo: annotations.B: \@Override, \@Deprecated]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java"}
+[Demo: annotations.B: \@Override, \@Deprecated]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java"}
 
 ::::::::: notes
 Jetzt schauen wir uns erst einmal die Auswirkungen von `@Override` und `@Deprecated`
@@ -175,7 +175,7 @@ Hier noch einmal exemplarisch die wichtigsten Elemente, die an
 "`public`" sichtbaren Methoden verwendet werden.
 :::
 
-[[Beispiel: annotations.B (Javadoc)]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java"}]{.notes}
+[[Beispiel: annotations.B (Javadoc)]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java"}]{.notes}
 
 
 ## \@NotNull mit IntelliJ
@@ -221,7 +221,7 @@ public void foo(@NotNull Object o) {
 }
 ```
 
-[Demo: annotations.WuppieAnnotation: \@NotNull]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/WuppieAnnotation.java"}
+[Demo: annotations.WuppieAnnotation: \@NotNull]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/WuppieAnnotation.java"}
 
 ::: notes
 ### IntelliJ inferiert mit \@NotNull mögliche _null_-Werte
@@ -250,7 +250,7 @@ public @interface MyThirdAnnotation {
 public class C {}
 ```
 
-[Demo: annotations.C]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java"}
+[Demo: annotations.C]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/C.java"}
 
 ::::::::: notes
 ### Definition einer Annotation
@@ -409,7 +409,7 @@ public class Foo extends AbstractProcessor {
 }
 ```
 
-[Demo: annotations.C und annotations.Foo, META-INF]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/java-jvm/src/META-INF/"}
+[Demo: annotations.C und annotations.Foo, META-INF]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/java-jvm/src/META-INF/"}
 
 ::::::::: notes
 1.  Der Annotation-Processor sollte von `AbstractProcessor` ableiten

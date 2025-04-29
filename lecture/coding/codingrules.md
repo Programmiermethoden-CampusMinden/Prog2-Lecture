@@ -236,7 +236,7 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
-[Demo: Konfiguration Formatter (IDE), Spotless/Gradle]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/coding/src/formatter/"}
+[Demo: Konfiguration Formatter (IDE), Spotless/Gradle]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/coding/src/formatter/"}
 
 
 ## Metriken: Kennzahlen für verschiedene Aspekte zum Code
@@ -302,7 +302,7 @@ _Anmerkung_: In Checkstyle werden für einige häufig verwendete Standard-Klasse
 d.h. `String` würde im obigen Beispiel _nicht_ bei DAC mitgezählt/angezeigt.
 :::::::::
 
-[[Beispiel: Metriken an MyWuppieStudi#getMyWuppieStudi]{.bsp}]{.slides}
+[[Beispiel: Metriken an MyWuppieStudi#getMyWuppieStudi]{.ex}]{.slides}
 
 \bigskip
 
@@ -354,7 +354,7 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
-[Demo: IntelliJ, Checkstyle/Gradle]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/checkstyle/"}
+[Demo: IntelliJ, Checkstyle/Gradle]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/checkstyle/"}
 
 
 ## Checkstyle: Konfiguration
@@ -408,7 +408,7 @@ Properties und deren Default-Einstellungen.
 Alternativen/Ergänzungen: beispielsweise [MetricsReloaded](https://github.com/BasLeijdekkers/MetricsReloaded).
 :::
 
-[Demo: Konfiguration mit Eclipse-CS, Hinweis auf Formatter]{.bsp href="https://youtu.be/0ny6e6CNTF8"}
+[Demo: Konfiguration mit Eclipse-CS, Hinweis auf Formatter]{.ex href="https://youtu.be/0ny6e6CNTF8"}
 
 
 ## SpotBugs: Finde Anti-Pattern und potentielle Bugs (Linter)
@@ -443,7 +443,7 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
-[Demo: SpotBugs/Gradle]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/spotbugs/"}
+[Demo: SpotBugs/Gradle]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/coding/src/spotbugs/"}
 
 
 ## Konfiguration für das PM-Praktikum (Format, Metriken, Checkstyle, SpotBugs)

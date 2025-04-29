@@ -80,7 +80,7 @@ Das funktioniert, ist aber recht unflexibel. Die Aktionen sind den Buttons fest
 zugeordnet und erlauben keinerlei Konfiguration.
 :::
 
-[[Problem: Starre Zuordnung]{.bsp}]{.slides}
+[[Problem: Starre Zuordnung]{.ex}]{.slides}
 
 
 ## Auflösen der starren Zuordnung über Zwischenobjekte

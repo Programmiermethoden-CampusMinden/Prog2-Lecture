@@ -120,7 +120,7 @@ String[] y = x;  // String[] ist KEIN Object[]!!!
 *   Arrays besitzen Typinformationen über gespeicherte Elemente
 *   Prüfung auf Typ-Kompatibilität zur **Laufzeit** (nicht Kompilierzeit!)
 
-[Hinweis auf Java-Geschichte [(Java-Insel: "Type Erasure")]{.notes}]{.bsp href="https://openbook.rheinwerk-verlag.de/javainsel/11_002.html#u11.2.2"}
+[Hinweis auf Java-Geschichte [(Java-Insel: "Type Erasure")]{.notes}]{.ex href="https://openbook.rheinwerk-verlag.de/javainsel/11_002.html#u11.2.2"}
 
 ::: notes
 Arrays gab es sehr früh, Generics erst relativ spät (ab Java6) => bei
@@ -134,7 +134,7 @@ Compiler-Prüfung. Da würde das von Arrays bekannte Verhalten Probleme machen .
 **Kovarianz**: Arrays sind _kovariant_, d.h. ein Array vom Typ `String[]` ist wegen
 `String extends Object` ein Untertyp von `Object[]`.
 
-[Beispiel arrays.X]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/generics/src/arrays/X.java"}
+[Beispiel arrays.X]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/generics/src/arrays/X.java"}
 :::
 
 

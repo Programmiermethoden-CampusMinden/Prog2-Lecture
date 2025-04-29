@@ -58,7 +58,7 @@ fhmedia:
 
 ![](images/java2d.png){width="40%"}
 
-[Demo: java2d.simplegame.J2DTeaser]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/java2d/simplegame/J2DTeaser.java"}
+[Demo: java2d.simplegame.J2DTeaser]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/java2d/simplegame/J2DTeaser.java"}
 
 
 ## Einführung in die Java 2D API
@@ -141,7 +141,7 @@ Vorher Strichfarbe setzen: `Graphics.setColor(Color color)`:
     public Color(int r, int g, int b)  // Rot/Grün/Blau, Werte zw. 0 und 255
     ```
 
-[Demo: java2d.SimpleDrawings]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/java2d/SimpleDrawings.java"}
+[Demo: java2d.SimpleDrawings]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/java2d/SimpleDrawings.java"}
 
 
 ## Fonts und Strings
@@ -162,7 +162,7 @@ public void drawString(String str, int x, int y);
 
 Vorher Font und Farbe setzen!
 
-[Demo: java2d.SimpleFonts]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/java2d/SimpleFonts.java"}
+[Demo: java2d.SimpleFonts]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/java2d/SimpleFonts.java"}
 
 
 ## Einfache Polygone definieren
@@ -201,7 +201,7 @@ Statt `drawPolygon()` ....
 
 Vorher Farbe setzen!
 
-[Demo: java2d.SimplePoly]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/java2d/SimplePoly.java"}
+[Demo: java2d.SimplePoly]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/java2d/SimplePoly.java"}
 
 
 ## Ausblick I: Umgang mit Bildern
@@ -270,14 +270,14 @@ Idee: Je Zeitschritt:
     => Observer-Pattern nutzen
 :::
 
-[[Hinweis: Zentrale Struktur vs. Observer-Pattern]{.bsp}]{.slides}
+[[Hinweis: Zentrale Struktur vs. Observer-Pattern]{.ex}]{.slides}
 
 
 ## Erinnerung: Observer Pattern
 
 ![](images/observer.png){width="80%"}
 
-[[Hinweis auf Push- vs. Pull-Modell]{.bsp}]{.slides}
+[[Hinweis auf Push- vs. Pull-Modell]{.ex}]{.slides}
 
 ::: notes
 *   Anzahl der Observer muss nicht bekannt sein - zur Laufzeit erweiterbar!
@@ -362,7 +362,7 @@ Weitere evtl. nützliche Methoden:
     und damit ein Neuzeichnen aller  Objekte ausgelöst
 :::
 
-[Demo: java2d.simplegame.J2DTeaser]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/java2d/simplegame/J2DTeaser.java"}
+[Demo: java2d.simplegame.J2DTeaser]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/java2d/simplegame/J2DTeaser.java"}
 
 
 ## Wrap-Up

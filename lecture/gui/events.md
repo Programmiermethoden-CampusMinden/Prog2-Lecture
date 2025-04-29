@@ -97,7 +97,7 @@ bekommt und viele weitere.
 
 *   Sequentielles Abarbeiten der Events bzw. Benachrichtigung der Observer
 
-[Demo: events.ListenerDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/events/ListenerDemo.java"}
+[Demo: events.ListenerDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/events/ListenerDemo.java"}
 
 
 ## Wie komme ich an die Daten eines Events?
@@ -106,7 +106,7 @@ bekommt und viele weitere.
 
 **Event-Objekte**: Quelle des Events plus aufgetretene Daten
 
-[Demo: events.MouseListenerDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/events/MouseListenerDemo.java"}
+[Demo: events.MouseListenerDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/events/MouseListenerDemo.java"}
 
 
 ## Listener vs. Adapter
@@ -132,7 +132,7 @@ Abhilfe: **Adapter**-Klassen:
 
 => Nur benötigte Listener-Methoden überschreiben.
 
-[Demo: events.MouseAdapterDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/events/MouseAdapterDemo.java"}
+[Demo: events.MouseAdapterDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/events/MouseAdapterDemo.java"}
 
 
 ## Wrap-Up

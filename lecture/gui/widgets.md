@@ -80,7 +80,7 @@ fhmedia:
     radioGroup.add(b1);    radioGroup.add(b2);
     ```
 
-[Demo: widgets.RadioButtonDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/widgets/RadioButtonDemo.java"}
+[Demo: widgets.RadioButtonDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/widgets/RadioButtonDemo.java"}
 
 
 ## Dateien oder Verzeichnisse auswählen: _JFileChooser_
@@ -111,7 +111,7 @@ if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
     *   `String getDescription()`
 :::
 
-[Demo: widgets.FileChooserDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/widgets/FileChooserDemo.java"}
+[Demo: widgets.FileChooserDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/widgets/FileChooserDemo.java"}
 
 
 ## TabbedPane und Scroll-Bars
@@ -151,7 +151,7 @@ if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
 *   Wirkung der Scrollpane zeigen (letzter Tab)
 -->
 
-[Demo: widgets.TabbedPaneDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/widgets/TabbedPaneDemo.java"}
+[Demo: widgets.TabbedPaneDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/widgets/TabbedPaneDemo.java"}
 
 
 ## Dialoge mit _JOptionPane_
@@ -179,7 +179,7 @@ der Elternkomponente. Diese wird als Referenz übergeben und bekommt erst wieder
 Fokus, wenn der Dialog geschlossen wurde.
 :::
 
-[Demo: widgets.DialogDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/widgets/DialogDemo.java"}
+[Demo: widgets.DialogDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/widgets/DialogDemo.java"}
 
 
 ## Menüs mit _JMenuBar_, _JMenu_ und _JMenuItem_
@@ -209,7 +209,7 @@ Wenn man mit der Maus ein Menü ausklappt, wird eine Liste der Menüeinträge an
 sind vom Typ `JMenuItem` und verhalten sich wie Buttons.
 :::
 
-[Demo: widgets.MenuDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/widgets/MenuDemo.java"}
+[Demo: widgets.MenuDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/widgets/MenuDemo.java"}
 
 
 ## Kontextmenü mit _JPopupMenu_
@@ -257,7 +257,7 @@ myFrame.addMouseListener(new MouseAdapter() {
 ```
 :::
 
-[Demo: widgets.PopupDemo]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/widgets/PopupDemo.java"}
+[Demo: widgets.PopupDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/gui/src/widgets/PopupDemo.java"}
 
 
 ## Wrap-Up

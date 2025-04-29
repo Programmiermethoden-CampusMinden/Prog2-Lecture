@@ -196,7 +196,7 @@ Anschauen kann man sich die Einstellungen in der Textdatei `~/.gitconfig`
 oder per Befehl `git config --global -l`.
 :::
 
-[[Konsole]{.bsp}]{.slides}
+[[Konsole]{.ex}]{.slides}
 
 
 ## Neues Repo anlegen
@@ -211,7 +211,7 @@ oder per Befehl `git config --global -l`.
 
     => Erzeugt (verlinkte) Kopie [des Repos unter `<url>`]{.notes}
 
-[[Konsole]{.bsp}]{.slides}
+[[Konsole]{.ex}]{.slides}
 
 
 ## Wrap-Up

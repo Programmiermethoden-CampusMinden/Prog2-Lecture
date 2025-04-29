@@ -158,7 +158,7 @@ ist ein einfaches und schlankes Framework zu bevorzugen.
 
 **Frameworks müssen ge-/erlernt werden.**
 
-[Demo: Web-Anwendung für Zufallszahlen]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/frameworks/src/javalin/"}
+[Demo: Web-Anwendung für Zufallszahlen]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/frameworks/src/javalin/"}
 
 
 ## Wrap-Up

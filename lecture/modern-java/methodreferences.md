@@ -153,7 +153,7 @@ Konstruktoren mit mehr als 2 Parametern muss ein eigenes passendes funktionales
 Interface mit entsprechend vielen Parametern definiert werden ...
 :::
 
-[[Hinweis: Klassen- vs. Instanz-Methoden]{.bsp}]{.slides}
+[[Hinweis: Klassen- vs. Instanz-Methoden]{.ex}]{.slides}
 
 
 ## Methoden-Referenz 1: Referenz auf statische Methode
@@ -176,7 +176,7 @@ public class Studi {
 }
 ```
 
-[Demo: methodreferences.DemoStaticMethodReference]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoStaticMethodReference.java"}
+[Demo: methodreferences.DemoStaticMethodReference]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoStaticMethodReference.java"}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweiten Parameter eine Instanz von
@@ -211,7 +211,7 @@ public class Studi {
 }
 ```
 
-[Demo: methodreferences.DemoInstanceMethodReferenceObject]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceObject.java"}
+[Demo: methodreferences.DemoInstanceMethodReferenceObject]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceObject.java"}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine Instanz
@@ -245,7 +245,7 @@ public class Studi {
 }
 ```
 
-[Demo: methodreferences.DemoInstanceMethodReferenceType]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceType.java"}
+[Demo: methodreferences.DemoInstanceMethodReferenceType]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/DemoInstanceMethodReferenceType.java"}
 
 ::: notes
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine Instanz
@@ -289,7 +289,7 @@ Thread t2 = new Thread(() -> System.out.println("t2: wuppie"));
 Thread t3 = new Thread(ThreadStarter::wuppie);
 ```
 
-[Beispiel: methodreferences.ThreadStarter]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/ThreadStarter.java"}
+[Beispiel: methodreferences.ThreadStarter]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/ThreadStarter.java"}
 
 
 ## Ausblick: Datenstrukturen als Streams
@@ -313,7 +313,7 @@ List<Integer> wordLengths = words.stream()
         .collect(toList());
 ```
 
-[Beispiel: methodreferences.CollectionStreams]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/CollectionStreams.java"}
+[Beispiel: methodreferences.CollectionStreams]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/methodreferences/CollectionStreams.java"}
 
 ::: notes
 *   Collections können als Datenstrom betrachtet werden: `stream()`

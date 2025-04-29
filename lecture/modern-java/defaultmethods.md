@@ -127,7 +127,7 @@ Drei Regeln zum Auflösen bei Konflikten:
 Auf den folgenden Folien wird dies anhand kleiner Beispiele verdeutlicht.
 :::
 
-[[Hinweis: Mehrfachvererbung]{.bsp}]{.slides}
+[[Hinweis: Mehrfachvererbung]{.ex}]{.slides}
 
 
 ## Auflösung Mehrfachvererbung: 1. Klassen gewinnen
@@ -150,7 +150,7 @@ public class DefaultTest1 {
 }
 ```
 
-[Demo: defaultmethods.rule1.DefaultTest1]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule1/DefaultTest1.java"}
+[Demo: defaultmethods.rule1.DefaultTest1]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule1/DefaultTest1.java"}
 
 ::: notes
 Die Klasse `E` erbt sowohl von Klasse `C` als auch vom Interface `A` die Methode `hello()`
@@ -181,7 +181,7 @@ public class DefaultTest2 {
 }
 ```
 
-[Demo: defaultmethods.rule2.DefaultTest2]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule2/DefaultTest2.java"}
+[Demo: defaultmethods.rule2.DefaultTest2]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule2/DefaultTest2.java"}
 
 ::: notes
 Die Klasse `D` erbt sowohl vom Interface `A` als auch vom Interface `B` die Methode `hello()`
@@ -215,7 +215,7 @@ public class DefaultTest3 {
 }
 ```
 
-[Demo: defaultmethods.rule3.DefaultTest3]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule3/DefaultTest3.java"}
+[Demo: defaultmethods.rule3.DefaultTest3]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/rule3/DefaultTest3.java"}
 
 ::: notes
 Die Klasse `D` erbt sowohl vom Interface `A` als auch vom Interface `B` die Methode `hello()`
@@ -259,7 +259,7 @@ Die Klasse `D` erbt sowohl von Klasse `C` als auch von den Interfaces `A` und `B
 `hello()` (Mehrfachvererbung). In diesem Fall "gewinnt" die Implementierung aus Klasse `C`: Klassen
 gewinnen immer (Regel 1).
 
-[Beispiel: defaultmethods.quiz.DefaultTest]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/quiz/DefaultTest.java"}
+[Beispiel: defaultmethods.quiz.DefaultTest]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/modern-java/src/defaultmethods/quiz/DefaultTest.java"}
 :::
 
 

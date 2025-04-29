@@ -108,7 +108,7 @@ public class Teaser implements Runnable {
 }
 ```
 
-[Demo: synchronised.Teaser]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java"}
+[Demo: synchronised.Teaser]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Teaser.java"}
 
 
 ## Zugriff auf gemeinsame Ressourcen: Mehrseitige Synchronisierung
@@ -156,7 +156,7 @@ geschützten Bereich einschließen und als Sperr-Objekt das eigene Objekt (`this
     }
 ```
 
-[Demo: synchronised.ObjSync]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/ObjSync.java"}
+[Demo: synchronised.ObjSync]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/ObjSync.java"}
 
 
 ## Synchronisierte Methoden
@@ -206,7 +206,7 @@ Die Methode `incrVal()` könnte entsprechend so umgeschrieben werden:
     }
 ```
 
-[Demo: synchronised.MethodSync]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/MethodSync.java"}
+[Demo: synchronised.MethodSync]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/MethodSync.java"}
 
 
 ## Probleme bei der (mehrseitigen) Synchronisierung: Deadlocks
@@ -254,7 +254,7 @@ holen, den aber aktuell der erste Thread hält.
 Und schon geht's nicht mehr weiter :-)
 :::
 
-[Demo: synchronised.Deadlock]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Deadlock.java"}
+[Demo: synchronised.Deadlock]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Deadlock.java"}
 
 
 ## Warten auf andere Threads: Einseitige Synchronisierung
@@ -338,7 +338,7 @@ Und schon geht's nicht mehr weiter :-)
 => Geht nur innerhalb der `synchronized`-Anweisung für das Synchronisations-Objekt!
 :::
 
-[Demo: synchronised.Staffel]{.bsp href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Staffel.java"}
+[Demo: synchronised.Staffel]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/threads/src/synchronised/Staffel.java"}
 
 
 ## Wrap-Up
