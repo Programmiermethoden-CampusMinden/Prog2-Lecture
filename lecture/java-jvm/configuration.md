@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Konfiguration eines Programms"
 linkTitle: "Konfiguration"
 author: "Carsten Gips (HSBI)"

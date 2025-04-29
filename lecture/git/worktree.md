@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Git Worktree"
 linkTitle: "Worktree"
 author: "Carsten Gips (HSBI)"

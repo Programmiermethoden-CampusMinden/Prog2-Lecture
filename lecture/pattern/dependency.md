@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Dependency Injection"
 linkTitle: "Dependency Injection"
 author: "Carsten Gips (HSBI)"

@@ -1,5 +1,4 @@
 ---
-archetype: assignment
 title: "Monster"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"

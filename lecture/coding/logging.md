@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Logging"
 linkTitle: "Logging"
 author: "Carsten Gips (HSBI)"

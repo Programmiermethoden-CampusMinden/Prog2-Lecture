@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Git Branches: Features unabhängig entwickeln und mit Git verwalten"
 linkTitle: "Branches"
 author: "Carsten Gips (HSBI)"

@@ -1,5 +1,4 @@
 ---
-archetype: "default"
 title: "Umgang mit Frameworks"
 linkTitle: "Frameworks"
 ---

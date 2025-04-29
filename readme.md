@@ -1,5 +1,4 @@
 ---
-archetype: "home"
 title: "IFM 2.2: Programmiermethoden (Sommer 2023)"
 ---
 

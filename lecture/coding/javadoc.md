@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Javadoc"
 linkTitle: "Javadoc"
 author: "Carsten Gips (HSBI)"

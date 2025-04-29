@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Java und Datenbanken: JDBC"
 linkTitle: "JDBC"
 author: "Carsten Gips (HSBI)"

@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Methoden-Referenzen"
 linkTitle: "Methoden-Referenzen"
 author: "Carsten Gips (HSBI)"

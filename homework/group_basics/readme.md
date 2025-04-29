@@ -1,5 +1,4 @@
 ---
-archetype: "default"
 title: "Praktikumsaufgaben Gruppe Basics"
 
 hidden: true

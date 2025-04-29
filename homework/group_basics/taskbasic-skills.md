@@ -1,5 +1,4 @@
 ---
-archetype: assignment
 title: "Fähigkeiten"
 author: "André Matutat (HSBI)"
 points: "10 Punkte"

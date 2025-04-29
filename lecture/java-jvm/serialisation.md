@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Serialisierung von Objekten und Zuständen"
 linkTitle: "Serialisierung"
 author: "Carsten Gips (HSBI)"

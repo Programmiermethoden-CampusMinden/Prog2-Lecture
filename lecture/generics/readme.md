@@ -1,5 +1,4 @@
 ---
-archetype: "default"
 title: "Generics: Umgang mit parametrisierten Typen"
 linkTitle: "Generics"
 ---

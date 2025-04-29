@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "High-Level Concurrency"
 linkTitle: "High-Level Concurrency"
 author: "Carsten Gips (HSBI)"

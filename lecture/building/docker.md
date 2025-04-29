@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Einführung in Docker"
 linkTitle: "Docker"
 author: "Carsten Gips (HSBI)"

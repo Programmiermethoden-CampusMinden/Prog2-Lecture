@@ -1,5 +1,4 @@
 ---
-archetype: "default"
 title: "Zugriffe auf Datenbanken: JDBC"
 linkTitle: "Database"
 

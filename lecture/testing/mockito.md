@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Mocking mit Mockito"
 linkTitle: "Mocking"
 author: "Carsten Gips (HSBI)"

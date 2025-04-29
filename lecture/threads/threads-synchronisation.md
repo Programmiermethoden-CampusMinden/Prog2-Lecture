@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Synchronisation: Verteilter Zugriff auf gemeinsame Ressourcen"
 linkTitle: "Synchronisation"
 author: "Carsten Gips (HSBI)"

@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Visitor-Pattern"
 linkTitle: "Visitor"
 author: "Carsten Gips (HSBI)"

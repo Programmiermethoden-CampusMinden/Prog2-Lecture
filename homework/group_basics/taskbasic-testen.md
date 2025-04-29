@@ -1,5 +1,4 @@
 ---
-archetype: assignment
 title: "JUnit (Gruppe Basics)"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"

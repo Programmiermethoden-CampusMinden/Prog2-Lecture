@@ -1,5 +1,4 @@
 ---
-archetype: "default"
 title: "Praktikumsaufgaben Gruppe Loot"
 
 hidden: true

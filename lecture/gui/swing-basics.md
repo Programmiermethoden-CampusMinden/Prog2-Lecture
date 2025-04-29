@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Swing 101: Basics"
 linkTitle: "Swing: Basics"
 author: "Carsten Gips (HSBI)"

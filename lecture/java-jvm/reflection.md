@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Reflection"
 linkTitle: "Reflection"
 author: "Carsten Gips (HSBI)"

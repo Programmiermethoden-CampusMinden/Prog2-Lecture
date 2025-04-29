@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Type Erasure"
 linkTitle: "Type Erasure"
 author: "Carsten Gips (HSBI)"

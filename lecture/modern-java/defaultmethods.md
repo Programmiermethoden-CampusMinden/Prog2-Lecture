@@ -1,5 +1,4 @@
 ---
-archetype: lecture-cg
 title: "Interfaces: Default-Methoden"
 linkTitle: "Default-Methoden"
 author: "Carsten Gips (HSBI)"
