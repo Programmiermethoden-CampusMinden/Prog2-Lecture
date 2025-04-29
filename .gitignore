@@ -37,7 +37,9 @@ local.yaml
 .pandoc
 make.deps
 _gfm
+_docsify
 _pdf
+_beamer
 
 
 # JAVA, Scala #
