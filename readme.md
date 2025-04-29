@@ -58,7 +58,6 @@ Studierendenservice bekanntgegeben. (vgl. LSF)
 
 *   [GitHub Preview](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/_gfm/readme.md)
 *   [Docsify Preview](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/PM-Lecture/refs/heads/_docsify&homepage=readme.md&sidebar=true&browser-tab-title=PM&font-size=14px&searchbox=true&externalLinkTarget=_blank&mergeNavbar=true&zoom-images=true&dark-mode=auto#/)
-*   [PDF-Version](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/_pdf/readme.pdf)
 :::
 
 ---
