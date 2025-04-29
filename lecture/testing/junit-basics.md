@@ -552,17 +552,3 @@ JUnit als Framework für (Unit-) Tests; hier JUnit 4 (mit Ausblick auf JUnit 5)
 *   Steuern von Tests mit `@Ignore` oder `@Test(timout=XXX)`
 *   Exceptions einfordern mit `@Test(expected=package.Exception.class)`
 *   Tests zusammenfassen zu Testsuiten
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

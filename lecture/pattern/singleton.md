@@ -140,17 +140,3 @@ Singleton-Pattern: Klasse, von der nur genau ein Objekt instantiiert werden kann
 2.  Methode zum Zugriff auf die eine Instanz
 3.  Anlegen der Instanz beispielsweise beim Laden der Klasse ("Eager") oder
     beim Aufruf der Zugriffsmethode ("Lazy")
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

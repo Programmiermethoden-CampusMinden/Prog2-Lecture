@@ -412,17 +412,3 @@ Komplexitätswerte beziehen sich auf den Regelfall. Sonderfälle wie das Vergrö
 *   `Iterable<T>` liefert einen `Iterator<T>` zur Iteration über eine `Collection<T>`
 *   Interface `Map<K,V>`: Speichern von Key/Value-Paaren
 *   `equals()`-`hashCode()`-`compareTo()`-Vertrag beachten
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

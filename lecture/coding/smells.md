@@ -504,22 +504,3 @@ public class CreditsCalculator {
         *   Klassen und Methoden sollten sich erwartungsgemäß verhalten
         *   Kapselung: Möglichst wenig öffentlich zugänglich machen
         :::
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   Citation "_Any fool can write code ..._": [@Fowler2011, p. 15]
-:::

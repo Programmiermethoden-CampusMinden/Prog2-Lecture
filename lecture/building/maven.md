@@ -222,22 +222,3 @@ Apache Maven: [maven.apache.org](https://maven.apache.org), [Maven Getting Start
     *   Properties agieren wie Variablen, etwa für Versionsnummern
     *   Abhängigkeiten zu externen Bibliotheken werden als Dependencies
         formuliert: [Abschnitt von Maven-Central kopieren]{.notes}
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-
-\bigskip
-
-### Exceptions
-*   Website [mvnrepository.com](https://mvnrepository.com/)
-:::

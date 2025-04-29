@@ -318,17 +318,3 @@ aber externe Bibliotheken, beispielsweise "Apache Commons Configuration"
 *   Kommandozeilenparameter als `String[]` in `main()`-Methode
 *   Manuelle Auswertung komplex => _Apache Commons CLI_
 *   Schlüssel-Wert-Paare mit `java.util.Properties`  [aus/in Dateien laden/speichern]{.notes}
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

@@ -517,17 +517,3 @@ Lösung: `([A-Z][a-zA-Z]*)\s\1`
 *   `java.util.regex.Pattern` und `java.util.regex.Matcher`
 *   Unterschied zwischen `Matcher#find` und `Matcher#matches`!
 *   Quantifizierung ist möglich, aber **greedy** (Default)
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

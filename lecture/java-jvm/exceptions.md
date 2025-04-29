@@ -586,16 +586,3 @@ Vergleiche ["Unchecked Exceptions — The Controversy"](https://dev.java/learn/e
 
 *   Eigene Exceptions durch Ableiten von anderen Exceptions
     [(werden je nach Vererbungshierarchie automatisch checked oder unchecked)]{.notes}
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

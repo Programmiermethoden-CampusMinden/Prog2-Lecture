@@ -455,18 +455,3 @@ und Message bleiben aber erhalten.)
 *   Umschalten der Workingcopy auf anderen Branch: `git checkout` oder `git switch`
 *   Mergen von Branches und Auflösen von Konflikten: `git merge`
 *   Verschieben von Branches mit `git rebase`
-
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::

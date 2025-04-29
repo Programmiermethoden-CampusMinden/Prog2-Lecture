@@ -511,17 +511,3 @@ Der Compiler prüft in etwa folgende Schritte, wenn er über einen Lambda-Ausdru
         d.h. ein Interface mit **genau** einer abstrakten Methode
     *   Der Lambda-Ausdruck muss von der Signatur her dieser einen abstrakten Methode
         entsprechen
-
-
-
-
-
-
-
-<!-- DO NOT REMOVE - THIS IS A LAST SLIDE TO INDICATE THE LICENSE AND POSSIBLE EXCEPTIONS (IMAGES, ...). -->
-::: slides
-## LICENSE
-![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
-
-Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
-:::
