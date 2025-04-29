@@ -54,6 +54,19 @@ durchgeführten Kurs (Sommer 2023, s.u.). Weitere Informationen siehe [Prüfungs
 
 * * * * *
 
+:::::::::::: notes
+
+---
+
+::: tip
+**Read Online**:
+
+*   [GitHub Preview](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/_gfm/readme.md)
+*   [Docsify Preview](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/PM-Lecture/refs/heads/_docsify&homepage=readme.md&sidebar=true&browser-tab-title=PM&font-size=14px&searchbox=true&externalLinkTarget=_blank&mergeNavbar=true&zoom-images=true&dark-mode=auto#/)
+*   [PDF-Version](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/_pdf/readme.pdf)
+:::
+
+---
 
 
 ## Kursbeschreibung
@@ -317,10 +330,15 @@ von der Stiftung Innovation in der Hochschullehre gefördert.
 ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]: https://www.digikos.de
 
 
- ---
+---
 
- ## LICENSE
+# LICENSE
 
- [![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
+[`<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">`{=markdown}](https://creativecommons.org/licenses/by-sa/4.0/)
 
- Unless otherwise noted, [this work](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture) by [Carsten Gips](https://github.com/cagix) and [contributors](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/graphs/contributors) is licensed under [CC BY-SA 4.0](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/LICENSE.md). See the [credits](CREDITS.md) for a detailed list of contributing projects.
+Unless otherwise noted, [this work](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture) by
+[Carsten Gips](https://github.com/cagix) and [contributors](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/graphs/contributors)
+is licensed under [CC BY-SA 4.0](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/LICENSE.md).
+See the [credits](CREDITS.md) for a detailed list of contributing projects.
+
+::::::::::::
