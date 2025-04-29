@@ -134,7 +134,7 @@ import java.util.logging.Logger;
 Logger l = Logger.getLogger(MyClass.class.getName());
 ```
 
-*   [**Factory-Methode**]{.alert} der Klasse `java.util.logging.Logger`
+*   **Factory-Methode** der Klasse `java.util.logging.Logger`
 
     ```java
     public static Logger getLogger(String name);
@@ -142,7 +142,7 @@ Logger l = Logger.getLogger(MyClass.class.getName());
 
     => Methode liefert bereits **vorhandenen Logger** mit diesem Namen [(sonst neuen Logger)]{.notes}
 
-*   [**Best Practice**]{.alert}: \newline
+*   **Best Practice**: \newline
     Nutzung des voll-qualifizierten Klassennamen: `MyClass.class.getName()`
     *   Leicht zu implementieren
     *   Leicht zu erklären
@@ -237,7 +237,7 @@ angezeigt (ab `INFO` aufwärts)?!
 
 ## Ich ... bin ... Dein ... Vater ...
 
-*   Logger bilden [**Hierarchie**]{.alert} über Namen
+*   Logger bilden **Hierarchie** über Namen
     *   Trenner für Namenshierarchie: "`.`" (analog zu Packages)  [=> mit jedem "`.`" wird eine weitere Ebene der Hierarchie aufgemacht ...]{.notes}
     *   Jeder Logger kennt seinen Eltern-Logger: `Logger#getParent()`
     *   Basis-Logger: leerer Name (`""`)

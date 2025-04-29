@@ -87,7 +87,7 @@ Präfix "J": `java.awt.Button` (AWT) => `javax.swing.JButton` (Swing)
 
 \bigskip
 
-[Achtung:]{.alert}
+Achtung:
 Unterteilung nicht im API ausgedrückt: Alle Swing-Bausteine leiten von
 Klasse `javax.swing.JComponent` ab!
 

@@ -74,7 +74,7 @@ sein.
 \bigskip
 
 ::: cbox
-"`B extends A`" [**bedeutet nicht**]{.alert} "`C<B> extends C<A>`"
+"`B extends A`" **bedeutet nicht** "`C<B> extends C<A>`"
 :::
 
 \bigskip
@@ -177,7 +177,7 @@ Laufzeit Typinformationen, die aber durch die Typ-Löschung entfernt werden.
 ## Wrap-Up
 
 *   Generics: Vererbung und Überladen möglich, aber: \newline
-    **Aus "`U extends O`" folgt [**nicht**]{.alert} "`A<U> extends A<O>`"**
+    **Aus "`U extends O`" folgt **nicht** "`A<U> extends A<O>`"**
 
 \smallskip
 

@@ -204,7 +204,7 @@ Um die Änderungen im `master` in einen Feature-Branch zu bekommen, sollte desha
 (des Feature-Branches auf den `master`) vor einem Merge (des `master` in den Feature-Branch)
 bevorzugt werden.
 
-[**Merk-Regel**: Merge niemals nie den `master` in Feature-Branches!]{.alert}
+**Merk-Regel**: Merge niemals nie den `master` in Feature-Branches!
 
 **Achtung**: Ein Rebase bei veröffentlichten Branches ist problematisch, da Dritte auf diesem
 Branch arbeiten könnten und entsprechend auf die Commit-IDs angewiesen sind. Nach einem Rebase

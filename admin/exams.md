@@ -76,7 +76,7 @@ Dauer jeweils 90 Minuten.
 
 ::: {.details title="Präsenz (in Minden)"}
 
-**Zugelassene Materialien**: [**DIN-A4-Spickzettel (beidseitig)**]{.alert}
+**Zugelassene Materialien**: **DIN-A4-Spickzettel (beidseitig)**
 
 Sie dürfen **einen** Spickzettel im **DIN-A4**-Format benutzen, der beidseitig beschrieben
 sein kann.
@@ -176,7 +176,7 @@ für Sie vorbereitet sein.
 
 2.  Bearbeiten Sie die Aufgaben in **einem einzigen** Browser-Tab
 
-    [**Öffnen Sie die Aufgaben _NICHT_ in parallelen Tabs!**]{.alert}
+    **Öffnen Sie die Aufgaben _NICHT_ in parallelen Tabs!**
     Es kann sonst zu Fehlfunktionen von ILIAS kommen.
 
     Bewegen Sie sich nicht per Browser-Navigation ("vor", "zurück" im Browser)
@@ -225,7 +225,7 @@ wiederholen.
         möglich ist und (wie) gefragt werden könnte :)
 
 ::: center
-[**Können vor Kennen :-)**]{.alert}
+**Können vor Kennen :-)**
 :::
 
 

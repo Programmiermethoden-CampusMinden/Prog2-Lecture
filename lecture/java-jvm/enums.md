@@ -201,7 +201,7 @@ public class Fach extends Enum {
 }
 ```
 
-=> [**Singleton-Pattern**]{.alert} für Konstanten
+=> **Singleton-Pattern** für Konstanten
 
 
 ## Enum-Klassen: Eigenschaften

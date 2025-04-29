@@ -147,7 +147,7 @@ public static void main(String[] args) {
 
 ## Apache Commons: CLI
 
-[**Rad nicht neu erfinden!**]{.alert}
+**Rad nicht neu erfinden!**
 
 *   Apache Commons bietet die CLI-Bibliothek zum Umgang mit
     Kommandozeilenparametern an:

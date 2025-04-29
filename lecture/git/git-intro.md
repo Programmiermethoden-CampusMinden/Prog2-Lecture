@@ -82,12 +82,12 @@ fhmedia:
 
 \vspace{10mm}
 
-*   [**Repository:**]{.alert}
+*   **Repository:**
     **Datenbank** mit verschiedenen Versionsständen, Kommentaren, Tags etc.
 
 \bigskip
 
-*   [**Workingcopy:**]{.alert}
+*   **Workingcopy:**
     **Arbeitskopie** eines bestimmten Versionsstandes
 
 :::

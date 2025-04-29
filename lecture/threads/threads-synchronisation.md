@@ -121,7 +121,7 @@ synchronized (<Object reference>) {
 
 \bigskip
 
-=> [**"Mehrseitige Synchronisierung"**]{.alert}
+=> **"Mehrseitige Synchronisierung"**
 
 ::: notes
 Fallunterscheidung: Thread T1 führt `synchronized`-Anweisung aus:
@@ -280,7 +280,7 @@ Und schon geht's nicht mehr weiter :-)
 
 ## Einseitige Synchronisierung mit _wait_ und _notify_
 
-*   [**wait**]{.alert}: Warten auf Erfüllung einer Bedingung (Thread blockiert):
+*   **wait**: Warten auf Erfüllung einer Bedingung (Thread blockiert):
 
     \bigskip
 
@@ -313,7 +313,7 @@ Und schon geht's nicht mehr weiter :-)
 
 ## Einseitige Synchronisierung mit _wait_ und _notify_ (cnt.)
 
-*   [**notify**]{.alert}: Aufwecken von wartenden (blockierten) Threads:
+*   **notify**: Aufwecken von wartenden (blockierten) Threads:
 
     \bigskip
 

@@ -204,7 +204,7 @@ auch Branches auf der Basis von `wuppie` anlegen ...
 \bigskip
 
 1.  `git checkout master`
-2.  `git merge fix` => [**fast forward**]{.alert} von `master`
+2.  `git merge fix` => **fast forward** von `master`
 3.  `git branch -d fix`
 
 ::: notes

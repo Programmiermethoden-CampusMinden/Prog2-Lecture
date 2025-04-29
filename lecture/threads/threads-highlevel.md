@@ -249,10 +249,10 @@ public class RecursiveTask extends ForkJoinTask<V> {
 ::: notes
 ### Lange Berechnungen in Listenern blockieren Swing-GUI
 
-*   Problem: Events werden durch [**einen**]{.alert} *Event Dispatch Thread* (EDT)
-    [**sequentiell**]{.alert} bearbeitet
+*   Problem: Events werden durch **einen** *Event Dispatch Thread* (EDT)
+    **sequentiell** bearbeitet
 *   Lösung: Berechnungen in neuen Thread auslagern
-*   [**Achtung**]{.alert}: Swing ist **nicht Thread-safe**! Komponenten nicht
+*   **Achtung**: Swing ist **nicht Thread-safe**! Komponenten nicht
     durch verschiedene Threads manipulieren!
 
 ### Lösung
@@ -296,7 +296,7 @@ public class RecursiveTask extends ForkJoinTask<V> {
 
 \bigskip
 
-*   [**Achtung**]{.alert}: Viele Klassen sind nicht Thread-safe!
+*   **Achtung**: Viele Klassen sind nicht Thread-safe!
 
     ::: notes
     Es gibt aber meist ein "Gegenstück", welches Thread-safe ist.

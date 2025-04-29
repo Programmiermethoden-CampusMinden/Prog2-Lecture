@@ -84,7 +84,7 @@ challenges: |
 > \hfill\ [Quelle: [@Fowler2011, p. 53]]{.origin}
 
 ::: notes
-**Refactoring:** Änderungen an der [**inneren Struktur**]{.alert} einer Software
+**Refactoring:** Änderungen an der **inneren Struktur** einer Software
 
 *   Beobachtbares (äußeres) Verhalten ändert sich dabei **nicht**
     *   Keine neuen Features einführen
@@ -167,7 +167,7 @@ sinnvoll ist.
 \bigskip
 \smallskip
 
-3.  Haben Sie die [fragliche Codestelle auch wirklich verstanden]{.alert}?!
+3.  Haben Sie die fragliche Codestelle auch wirklich verstanden?!
 
 
 ## Vorgehen beim Refactoring

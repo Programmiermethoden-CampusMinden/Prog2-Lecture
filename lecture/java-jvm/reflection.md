@@ -336,7 +336,7 @@ dessen Methode `loadClass()`.
 
 \bigskip
 
-[**Nachteile**]{.alert}:
+**Nachteile**:
 
 *   Verlust von Kapselung, Compiler-Unterstützung und Refactoring
 *   Performance: Dynamisches Laden von Klassen etc.
