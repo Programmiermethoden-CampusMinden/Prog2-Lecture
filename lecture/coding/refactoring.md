@@ -70,7 +70,7 @@ challenges: |
 > Refactoring ist, wenn einem auffällt, daß der Funktionsname `foobar`
 > ziemlich bescheuert ist, und man die Funktion in `sinus` umbenennt.
 >
-> \hfill\ [Quelle: ["356: Refactoring"](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html#356) by [Andreas Bogk](mailto:andreas@andreas.org) on Lutz Donnerhacke: "Fachbegriffe der Informatik"]{.origin}
+> \hfill\ [["356: Refactoring"](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html#356) by [Andreas Bogk](mailto:andreas@andreas.org) on Lutz Donnerhacke: "Fachbegriffe der Informatik"]{.origin}
 
 \pause
 \bigskip
@@ -80,7 +80,7 @@ challenges: |
 > it easier to understand and cheaper to modify without changing its observable
 > behaviour.
 >
-> \hfill\ [Quelle: [@Fowler2011, p. 53]]{.origin}
+> \hfill\ [[@Fowler2011, p. 53]]{.origin}
 
 ::: notes
 **Refactoring:** Änderungen an der **inneren Struktur** einer Software
@@ -138,7 +138,7 @@ challenges: |
 ::: cbox
 > "Three strikes and you refactor."
 >
-> \hfill\ [Quelle: [@Fowler2011, p. 58]: "The Rule of Three"]{.origin}
+> \hfill\ [[@Fowler2011, p. 58]: "The Rule of Three"]{.origin}
 :::
 
 ::: notes
