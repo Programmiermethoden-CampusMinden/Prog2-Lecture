@@ -1,5 +1,6 @@
 ---
 title: "IFM 2.2: Programmiermethoden (Sommer 2023)"
+has_license: true
 ---
 
 
@@ -44,7 +45,7 @@ Die Klausur wird als digitale Klausur auf dem Prüfungs-ILIAS der HSBI in Präse
 Ein DIN-A4-Zettel ist als Hilfsmittel zugelassen. Der geprüfte Stoff bezieht sich auf den zuletzt
 durchgeführten Kurs (Sommer 2023, s.u.). Weitere Informationen siehe [Prüfungsvorbereitung](admin/exams.md).
 
-  ["Programmieren 2"]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
+  ["Programmieren 2"]: https://github.com/Programmiermethoden-CampusMinden/PM-Lecture
   [offenen ILIAS-Bereich]: https://www.hsbi.de/elearning/goto.php?target=crs_1181185&client_id=FH-Bielefeld
   [PO10]: https://www.hsbi.de/multimedia/Hochschulverwaltung/Dezernat+II/StudServ/Prüfungsangelegenheiten/Studiengangs_Downloads/Informatik+_+IFM/Prüfungsordnung+und+Modulhandbuch+Bachelor+Informatik+Version+10+%28Fassung+09_2023%29-p-174010.pdf
   [PO18]: https://www.hsbi.de/multimedia/Hochschulverwaltung/Dezernat+II/StudServ/Prüfungsangelegenheiten/Studiengangs_Downloads/Informatik+_+IFM/Studiengangsprüfungsordnung+und+Modulhandbuch+Bachelor+Informatik+Version+18+%28Fassung+09_2023%29-p-169988.pdf
@@ -326,3 +327,12 @@ Postersessions in ILIAS technisch und inhaltlich begleitet. DigikoS wird als Ver
 von der Stiftung Innovation in der Hochschullehre gefördert.
 
 ["Digitalbaukasten für kompetenzorientiertes Selbststudium"]: https://www.digikos.de
+
+
+ ---
+
+ ## LICENSE
+
+ [![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
+
+ Unless otherwise noted, [this work](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture) by [Carsten Gips](https://github.com/cagix) and [contributors](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/graphs/contributors) is licensed under [CC BY-SA 4.0](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/LICENSE.md). See the [credits](CREDITS.md) for a detailed list of contributing projects.
