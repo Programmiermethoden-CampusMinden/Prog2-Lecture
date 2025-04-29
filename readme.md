@@ -5,7 +5,7 @@ has_license: true
 
 
 
-`{{% notice style="note" %}}`{=markdown}
+::: warning
 
 # Abkündigung des Moduls "Programmiermethoden"
 
@@ -36,21 +36,17 @@ Prüfungsverfahren:
         Klausur teil und die Gesamtnote wird sich wie bisher aus den beiden Teilnoten
         zusammensetzen.
 
-## Nächste Klausur: Dienstag, 01. April 2025
+## Nächste Klausur
 
-Die nächste Klausur für "Programmiermethoden" wird am **Dienstag, 01. April 2025** angeboten.
-
-Die Klausur wird als digitale Klausur auf dem Prüfungs-ILIAS der HSBI in Präsenz vor Ort in
-**Minden im Raum B40** durchgeführt. Die Prüfung beginnt um **10:00 Uhr und dauert 90 Minuten**.
-Ein DIN-A4-Zettel ist als Hilfsmittel zugelassen. Der geprüfte Stoff bezieht sich auf den zuletzt
-durchgeführten Kurs (Sommer 2023, s.u.). Weitere Informationen siehe [Prüfungsvorbereitung](admin/exams.md).
+Der Termin für die nächste Klausur für "Programmiermethoden" wird über den Prüfplan vom
+Studierendenservice bekanntgegeben. (vgl. LSF)
 
   ["Programmieren 2"]: https://github.com/Programmiermethoden-CampusMinden/PM-Lecture
   [offenen ILIAS-Bereich]: https://www.hsbi.de/elearning/goto.php?target=crs_1181185&client_id=FH-Bielefeld
   [PO10]: https://www.hsbi.de/multimedia/Hochschulverwaltung/Dezernat+II/StudServ/Prüfungsangelegenheiten/Studiengangs_Downloads/Informatik+_+IFM/Prüfungsordnung+und+Modulhandbuch+Bachelor+Informatik+Version+10+%28Fassung+09_2023%29-p-174010.pdf
   [PO18]: https://www.hsbi.de/multimedia/Hochschulverwaltung/Dezernat+II/StudServ/Prüfungsangelegenheiten/Studiengangs_Downloads/Informatik+_+IFM/Studiengangsprüfungsordnung+und+Modulhandbuch+Bachelor+Informatik+Version+18+%28Fassung+09_2023%29-p-169988.pdf
 
-`{{% /notice %}}`{=markdown}
+:::
 
 * * * * *
 
