@@ -88,7 +88,7 @@ schauen Sie doch bitte einfach kurz im Handout zu Annotationen nach :-)
 
 # Wer bin ich? ... Informationen über ein Programm (zur Laufzeit)
 
-::: cbox
+::: center
 `java.lang.Class`: Metadaten über Klassen
 :::
 
@@ -342,7 +342,7 @@ dessen Methode `loadClass()`.
 
 \bigskip
 
-::: cbox
+::: center
 [Reflection ist ein nützliches Werkzeug. Aber:]{.notes} **Gibt es eine Lösung ohne Reflection, wähle diese!**
 :::
 

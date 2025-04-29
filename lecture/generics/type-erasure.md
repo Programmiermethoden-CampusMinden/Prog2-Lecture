@@ -167,7 +167,7 @@ da, weil es dort noch keine Generics gab (wurden erst mit Java6 eingeführt).
 
 # Folgen der Typ-Löschung: _new_
 
-::: cbox
+::: center
 `new` mit parametrisierten Klassen ist nicht erlaubt!
 :::
 
@@ -197,7 +197,7 @@ Cast-Typ eigentlich mitbringt ...
 
 # Folgen der Typ-Löschung: _static_
 
-::: cbox
+::: center
 `static` mit generischen Typen ist nicht erlaubt!
 :::
 
@@ -226,7 +226,7 @@ sich die statischen Attribute teilen \newline (Typ zur Laufzeit unklar!).
 
 # Folgen der Typ-Löschung: _instanceof_
 
-::: cbox
+::: center
 `instanceof` mit parametrisierten Klassen ist nicht erlaubt!
 :::
 
@@ -269,7 +269,7 @@ void printType(Fach p) {
 
 # Folgen der Typ-Löschung: _.class_
 
-::: cbox
+::: center
 `.class` mit parametrisierten Klassen ist nicht erlaubt!
 :::
 

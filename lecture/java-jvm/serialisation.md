@@ -77,7 +77,7 @@ public class Studi {
 
 \bigskip
 
-::: cbox
+::: center
 Wie kann ich Objekte speichern und wieder laden?
 :::
 

@@ -135,11 +135,9 @@ challenges: |
 \bigskip
 \vfill
 
-::: cbox
 > "Three strikes and you refactor."
 >
 > \hfill\ [[@Fowler2011, p. 58]: "The Rule of Three"]{.origin}
-:::
 
 ::: notes
 Wenn Sie sich zum dritten Mal über eine suboptimale Lösung ärgern, dann
