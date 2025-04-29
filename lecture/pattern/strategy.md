@@ -2,9 +2,9 @@
 title: "Strategy-Pattern"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Eilebrecht2013"
-  - key: "Gamma2011"
-  - key: "Kleuker2018"
+  - "@Eilebrecht2013"
+  - "@Gamma2011"
+  - "@Kleuker2018"
 tldr: |
   Das Verhalten von Klassen kann über Vererbungshierarchien weitergegeben und durch
   Überschreiben in den erbenden Klassen verändert werden. Dies führt häufig schnell

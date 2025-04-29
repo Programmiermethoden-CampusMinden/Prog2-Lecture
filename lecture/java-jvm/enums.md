@@ -2,10 +2,8 @@
 title: "Aufzählungen (Enumerations)"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-Tutorial"
-    comment: "Trail: Learning the Java Language :: Classes and Objects :: Enum Types"
-  - key: "Ullenboom2021"
-    comment: "Abschnitt 6.4.3: Aufzählungstypen, Abschnitt 10.7: Die Spezial-Oberklasse Enum"
+  - "@Java-SE-Tutorial"
+  - "@Ullenboom2021 [Kap. 6.4.3 und 10.7]"
 tldr: |
     Mit Hilfe von `enum` lassen sich Aufzählungstypen definieren (der Compiler erzeugt intern
     passende Klassen). Dabei wird den Konstanten eine fortlaufende Nummer zugeordnet, auf die

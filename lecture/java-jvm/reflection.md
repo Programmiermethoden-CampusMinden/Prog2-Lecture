@@ -2,10 +2,8 @@
 title: "Reflection"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-Tutorial"
-    comment: "Specialized Trails and Lessons > The Reflection API"
-  - key: "Inden2013"
-    comment: "Reflection: Kapitel 8"
+  - "@Java-SE-Tutorial"
+  - "@Inden2013 [Kap. 8]"
 tldr: |
   Mit Hilfe der Reflection-API kann man Programme zur **Laufzeit** inspizieren
   und Eigenschaften von Elementen wie Klassen oder Methoden abfragen, aber auch

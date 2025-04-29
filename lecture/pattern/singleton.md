@@ -2,8 +2,7 @@
 title: "Singleton-Pattern"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Nystrom2014"
-    comment: "Kap. 6: Singleton"
+  - "@Nystrom2014 [Kap. 6]"
 tldr: |
     Wenn von einer Klasse nur genau ein Objekt angelegt werden kann, nennt man dies auch das
     "Singleton-Pattern".

@@ -2,8 +2,8 @@
 title: "Build-Systeme: Apache Maven"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Ullenboom2016"
-  - key: "Inden2013"
+  - "@Ullenboom2021"
+  - "@Inden2013"
 tldr: |
     Zum Automatisieren von Arbeitsabläufen (Kompilieren, Testen, ...) stehen in der Java-Welt
     verschiedene Tools zur Verfügung: Apache Ant, Apache Maven und Gradle sind sicher die am

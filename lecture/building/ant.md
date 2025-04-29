@@ -2,8 +2,7 @@
 title: "Build-Systeme: Apache Ant"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Inden2013"
-    comment: "Abschnitt 2.5.2: Ant"
+  - "@Inden2013 [Abschnitt 2.5.2]"
 tldr: |
     Zum Automatisieren von Arbeitsabläufen (Kompilieren, Testen, ...) stehen in der Java-Welt
     verschiedene Tools zur Verfügung: Apache Ant, Apache Maven und Gradle sind sicher die am

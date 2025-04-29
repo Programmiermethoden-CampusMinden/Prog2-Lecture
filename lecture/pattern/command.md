@@ -2,9 +2,8 @@
 title: "Command-Pattern"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Gamma2011"
-  - key: "Nystrom2014"
-    comment: "Kap. 2: Command"
+  - "@Gamma2011"
+  - "@Nystrom2014 [Kap. 2]"
 tldr: |
     Das **Command-Pattern** ist die objektorientierte Antwort auf Callback-Funktionen: Man
     kapselt Befehle in einem Objekt.

@@ -2,10 +2,9 @@
 title: "Coding Conventions und Metriken"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Martin2009"
-  - key: "Inden2013"
-    comment: "Kapitel 13: Programmierstil und Coding Conventions"
-  - key: "googlestyleguide"
+  - "@Martin2009"
+  - "@Inden2013 [Kap. 13]"
+  - "@googlestyleguide"
 tldr: |
   Code entsteht nicht zum Selbstzweck, er muss von anderen Menschen leicht verstanden und
   gewartet werden können: Entwickler verbringen einen wesentlichen Teil ihrer Zeit mit dem

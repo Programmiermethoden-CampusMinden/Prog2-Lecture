@@ -2,7 +2,7 @@
 title: "Mocking mit Mockito"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Mockito"
+  - "@Mockito"
 tldr: |
   Häufig hat man es in Softwaretests mit dem Problem zu tun, dass die zu testenden Klassen von
   anderen, noch nicht implementierten Klassen oder von zufälligen oder langsamen Operationen

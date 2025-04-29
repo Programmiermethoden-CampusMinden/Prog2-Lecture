@@ -2,13 +2,10 @@
 title: "Type Erasure"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Ullenboom2021"
-    comment: "Kapitel 11.2 und 11.6"
-  - key: "LernJava"
-    comment: "Kapitel Generics"
-  - key: "Java-SE-Tutorial"
-    comment: "Specialized Trails: Generics"
-  - key: "Bloch2018"
+  - "@Ullenboom2021 [Kap. 11.2 und 11.6]"
+  - "@LernJava"
+  - "@Java-SE-Tutorial"
+  - "@Bloch2018"
 tldr: |
   Generics existieren eigentlich nur auf Quellcode-Ebene. Nach der Typ-Prüfung etc.
   entfernt der Compiler alle generischen Typ-Parameter und alle `<...>` (=>

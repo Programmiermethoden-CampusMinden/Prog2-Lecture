@@ -2,10 +2,9 @@
 title: "Git Branches: Features unabhängig entwickeln und mit Git verwalten"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Chacon2014"
-    comment: "Kapitel 3"
-  - key: "AtlassianGit"
-  - key: "GitCheatSheet"
+  - "@Chacon2014 [Kap. 3]"
+  - "@AtlassianGit"
+  - "@GitCheatSheet"
 tldr: |
   Die Commits in Git bauen aufeinander auf und bilden dabei eine verkettete "Liste". Diese "Liste" nennt man
   auch *Branch* (Entwicklungszweig). Beim Initialisieren eines Repositories wird automatisch ein Default-Branch

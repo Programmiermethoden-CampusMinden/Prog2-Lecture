@@ -2,9 +2,8 @@
 title: "Refactoring"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Fowler2011"
-  - key: "Inden2013"
-    comment: "Kapitel 11: Refactorings"
+  - "@Fowler2011"
+  - "@Inden2013 [Kap. 11]"
 tldr: |
   Refactoring bedeutet Änderung der inneren Struktur des Codes ohne Beeinflussung äußeren Verhaltens.
 

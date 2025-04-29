@@ -2,9 +2,8 @@
 title: "Synchronisation: Verteilter Zugriff auf gemeinsame Ressourcen"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-Tutorial"
-    comment: "Trail: Essential Java Classes, Lesson: Concurrency"
-  - key: "Boles2008"
+  - "@Java-SE-Tutorial"
+  - "@Boles2008"
 tldr: |
     Bei verteiltem Zugriff auf gemeinsame Ressourcen besteht Synchronisierungsbedarf,
     insbesondere sollten nicht mehrere Threads gleichzeitig geteilte Daten modifizieren.

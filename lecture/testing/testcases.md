@@ -2,12 +2,12 @@
 title: "Testfallermittlung: Wie viel und was muss man testen?"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "vogellaJUnit"
-  - key: "junit4"
-  - key: "Kleuker2019"
-  - key: "Osherove2014"
-  - key: "Spillner2012"
-  - key: "fernunihagenJunit"
+  - "@vogellaJUnit"
+  - "@junit4"
+  - "@Kleuker2019"
+  - "@Osherove2014"
+  - "@Spillner2012"
+  - "@fernunihagenJunit"
 tldr: |
   Mit Hilfe der Äquivalenzklassenbildung kann man Testfälle bestimmen. Dabei wird der Eingabebereich
   für jeden Parameter einer Methode in Bereiche mit gleichem Verhalten der Methode eingeteilt (die

@@ -2,10 +2,8 @@
 title: "Swing Events"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-Tutorial"
-    comment: "Creating Graphical User Interfaces > Creating a GUI With Swing"
-  - key: "Ullenboom2021"
-    comment: "Kap. 18: Einführung in grafische Oberflächen"
+  - "@Java-SE-Tutorial"
+  - "@Ullenboom2021 [Kap. 18]"
 tldr: |
   In Swing-Komponenten werden Events ausgelöst, wenn der User mit den Komponenten interagiert.
 

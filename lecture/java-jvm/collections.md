@@ -2,8 +2,7 @@
 title: "Java Collections Framework"
 author: "André Matutat & Carsten Gips (HSBI)"
 readings:
-  - key: "LernJava"
-    comment: "Tutorials > Mastering the API > The Collections Framework"
+  - "@LernJava"
 tldr: |
     Die Collection-API bietet verschiedene Sammlungen an, mit denen man Objekte speichern kann: Listen, Queues, Mengen, ...
     Für diese Typen gibt es jeweils verschiedene Implementierungen mit einem spezifischen Verhalten. Zusätzlich gibt es noch

@@ -2,10 +2,8 @@
 title: "Stream-API"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "LernJava"
-    comment: "Tutorials > The Stream API"
-  - key: "Ullenboom2021"
-    comment: "Kap. 17.3 - 17.6: Java Stream-API"
+  - "@LernJava"
+  - "@Ullenboom2021 [Kap. 17.3-17.6]"
 tldr: |
     Mit der Collection-API existiert in Java die Möglichkeit, Daten auf verschiedenste Weisen zu
     speichern (`Collection<T>`). Mit der Stream-API gibt es die Möglichkeit, diese Daten in einer

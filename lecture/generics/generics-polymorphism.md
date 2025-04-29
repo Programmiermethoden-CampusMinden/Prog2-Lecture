@@ -2,13 +2,10 @@
 title: "Generics und Polymorphie"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Ullenboom2021"
-    comment: "Kapitel 11.5"
-  - key: "LernJava"
-    comment: "Kapitel Generics"
-  - key: "Java-SE-Tutorial"
-    comment: "Specialized Trails: Generics"
-  - key: "Bloch2018"
+  - "@Ullenboom2021 [Kap. 11.5]"
+  - "@LernJava"
+  - "@Java-SE-Tutorial"
+  - "@Bloch2018"
 tldr: |
   Auch mit generischen Klassen stehen die Mechanismen Vererbung und Überladen zur Verfügung. Dabei muss
   aber beachtet werden, dass generische Klassen sich **"invariant"** verhalten: Der Typ selbst folgt der

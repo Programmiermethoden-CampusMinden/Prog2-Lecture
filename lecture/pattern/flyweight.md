@@ -2,8 +2,7 @@
 title: "Flyweight-Pattern"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Nystrom2014"
-    comment: "Kap. 3: Flyweight"
+  - "@Nystrom2014 [Kap. 3]"
 tldr: |
   Das Flyweight-Pattern dient der Steigerung der (Speicher-) Effizienz, indem gemeinsame
   Daten durch gemeinsam genutzte Objekte repräsentiert werden.

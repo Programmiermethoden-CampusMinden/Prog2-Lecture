@@ -2,8 +2,7 @@
 title: "Serialisierung von Objekten und Zuständen"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-Tutorial"
-    comment: "Essential Java Classes > Basic I/O > Object Streams"
+  - "@Java-SE-Tutorial"
 tldr: |
   Objekte lassen sich mit der Methode `void writeObject(Object)` in `ObjectOutputStream`
   einfach in einen Datenstrom schreiben. Dies kann beispielsweise eine Datei o.ä. sein.

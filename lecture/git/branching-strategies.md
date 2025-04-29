@@ -2,13 +2,12 @@
 title: "Branching-Strategien mit Git"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Chacon2014"
-    comment: "Kapitel 3"
-  - key: "GitFlow"
-  - key: "GitHubFlow"
-  - key: "GitHubFlowGH"
-  - key: "AtlassianGit"
-  - key: "GitCheatSheet"
+  - "@Chacon2014 [Kap. 3]"
+  - "@GitFlow"
+  - "@GitHubFlow"
+  - "@GitHubFlowGH"
+  - "@AtlassianGit"
+  - "@GitCheatSheet"
 tldr: |
   Das Erstellen und Mergen von Branches ist in Git besonders einfach. Dies kann man sich in der Entwicklung zunutze machen
   und die einzelnen Features unabhängig voneinander in eigenen Hilfs-Branches ausarbeiten.

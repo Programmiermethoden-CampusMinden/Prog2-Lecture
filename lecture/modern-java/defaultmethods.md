@@ -2,10 +2,8 @@
 title: "Interfaces: Default-Methoden"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-tutorial"
-    comment: "Learning the Java Language: Interfaces and Inheritance: Abschnitt Default Methods"
-  - key: "Urma2014"
-    comment: "Kapitel 9: Default Methods"
+  - "@Java-SE-Tutorial"
+  - "@Urma2014 [Kap. 9]"
 tldr: |
   Seit Java8 können Methoden in Interfaces auch fertig implementiert sein: Sogenannte
   **Default-Methoden**.

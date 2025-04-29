@@ -2,8 +2,7 @@
 title: "Konfiguration eines Programms"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-Tutorial"
-    comment: "Essential Java Classes > The Platform Environment > Configuration Utilities"
+  - "@Java-SE-Tutorial"
 tldr: |
     Zu Konfiguration von Programmen kann man beim Aufruf Kommandozeilenparameter mitgeben. Diese
     sind in der über den Parameter`String[] args` in der `main(String[] args)`-Methode zugreifbar.

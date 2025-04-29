@@ -2,10 +2,9 @@
 title: "Fehlersuche mit Git Bisect"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Chacon2014"
-    comment: "Abschnitt 7.10 (Git Tools)"
-  - key: "AtlassianGit"
-  - key: "GitCheatSheet"
+  - "@Chacon2014 [Kap. 7.10]"
+  - "@AtlassianGit"
+  - "@GitCheatSheet"
 tldr: |
   Mit Git Bisect kann man durch Halbierungssuche den Commit finden, der einen
   bestimmten Fehler eingeführt hat.

@@ -2,12 +2,9 @@
 title: "Exception-Handling"
 author: "André Matutat & Carsten Gips (HSBI)"
 readings:
-  - key: "LernJava"
-    comment: "Tutorials > Exceptions"
-  - key: "Ullenboom2021"
-    comment: "Kap. 8: Ausnahmen müssen sein"
-  - key: "Java-SE-Tutorial"
-    comment: "Trail: Essential Java Classes, Lesson: Exceptions"
+  - "@LernJava"
+  - "@Ullenboom2021 [Kap. 8]"
+  - "@Java-SE-Tutorial"
 tldr: |
     Man unterscheidet in Java zwischen **Exceptions** und **Errors**. Ein Error ist ein
     Fehler im System (OS, JVM), von dem man sich nicht wieder erholen kann. Eine Exception

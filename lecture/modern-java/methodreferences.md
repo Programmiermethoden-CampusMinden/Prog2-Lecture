@@ -2,10 +2,8 @@
 title: "Methoden-Referenzen"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-tutorial"
-    comment: "Learning the Java Language: Classes and Objects: Abschnitt Method References und Abschnitt Lambda Expressions"
-  - key: "Urma2014"
-    comment: "Kapitel 3: Lambda Expressions, Kapitel 5: Working with streams"
+  - "@Java-SE-Tutorial"
+  - "@Urma2014 [Kap. 3]"
 tldr: |
   Seit Java8 können **Referenzen auf Methoden** statt anonymer Klassen eingesetzt werden
   (**funktionales Interface nötig**).

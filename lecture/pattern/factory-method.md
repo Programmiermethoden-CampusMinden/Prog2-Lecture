@@ -2,9 +2,9 @@
 title: "Factory-Method-Pattern"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Eilebrecht2013"
-  - key: "Gamma2011"
-  - key: "Kleuker2018"
+  - "@Eilebrecht2013"
+  - "@Gamma2011"
+  - "@Kleuker2018"
 tldr: |
   Oft ist es wünschenswert, dass Nutzer nicht direkt Objekte von bestimmten Klassen anlegen (können).
   Hier kann eine "Fabrik-Methode" (**Factory-Method**) helfen, der man die gewünschten Parameter

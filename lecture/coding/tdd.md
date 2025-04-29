@@ -2,9 +2,9 @@
 title: "Testbarkeit und Testdriven Development (TDD)"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Beck2014"
-  - key: "Martin2009"
-  - key: "Fowler2011"
+  - "@Beck2014"
+  - "@Martin2009"
+  - "@Fowler2011"
 tldr: |
   Um Code mit JUnit automatisiert testen zu können, muss beim Software-Entwurf die Testbarkeit
   mitgedacht werden. Besonders einfach lassen sich Methoden testen, die das Ergebnis ihrer

@@ -2,10 +2,8 @@
 title: "Swing: Tabellen"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-Tutorial"
-    comment: "Creating Graphical User Interfaces > Creating a GUI With Swing"
-  - key: "Ullenboom2021"
-    comment: "Kap. 18: Einführung in grafische Oberflächen"
+  - "@Java-SE-Tutorial"
+  - "@Ullenboom2021 [Kap. 18]"
 tldr: |
   In Swing kann man komplexe Daten mit `JTable` in einer tabellenartigen Struktur darstellen.
 

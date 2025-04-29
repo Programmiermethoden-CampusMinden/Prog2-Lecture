@@ -2,10 +2,9 @@
 title: "Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Chacon2014"
-    comment: "Kapitel 5 (Distributed Git) sowie Abschnitt 4.8 (Gitlab) und Kapitel 6 (GitHub)"
-  - key: "AtlassianGit"
-  - key: "GitCheatSheet"
+  - "@Chacon2014 [Kap. 5, 4.8, 6]"
+  - "@AtlassianGit"
+  - "@GitCheatSheet"
 tldr: |
   Git erlaubt unterschiedliche Formen der Zusammenarbeit.
 

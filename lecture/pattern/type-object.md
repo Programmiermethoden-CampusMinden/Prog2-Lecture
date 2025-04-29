@@ -2,8 +2,7 @@
 title: "Type-Object-Pattern"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Nystrom2014"
-    comment: "Kap. 13: Type Object"
+  - "@Nystrom2014 [Kap. 13]"
 tldr: |
   Das Type-Object-Pattern dient dazu, die Anzahl der Klassen auf Code-Ebene zu reduzieren und
   durch eine Konfiguration zu ersetzen und damit eine höhere Flexibilität zu erreichen.

@@ -2,10 +2,8 @@
 title: "Swing 101: Basics"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Java-SE-Tutorial"
-    comment: "Creating Graphical User Interfaces > Creating a GUI With Swing"
-  - key: "Ullenboom2021"
-    comment: "Kap. 18: Einführung in grafische Oberflächen"
+  - "@Java-SE-Tutorial"
+  - "@Ullenboom2021 [Kap. 18]"
 tldr: |
   Swing baut auf AWT auf und ersetzt dieses. Der designierte Nachfolger JavaFX wurde nie wirklich
   als Ersatz angenommen und ist mittlerweile sogar wieder aus dem JDK bzw. der Java SE herausgenommen

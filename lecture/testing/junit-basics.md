@@ -2,12 +2,12 @@
 title: "Testen mit JUnit (JUnit-Basics)"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "vogellaJUnit"
-  - key: "junit4"
-  - key: "Kleuker2019"
-  - key: "Osherove2014"
-  - key: "Spillner2012"
-  - key: "fernunihagenJunit"
+  - "@vogellaJUnit"
+  - "@junit4"
+  - "@Kleuker2019"
+  - "@Osherove2014"
+  - "@Spillner2012"
+  - "@fernunihagenJunit"
 tldr: |
   In JUnit 4 und 5 werden Testmethoden mit Hilfe der Annotation `@Test` ausgezeichnet. Über die
   verschiedenen `assert*()`-Methoden kann das Testergebnis mit dem erwarteten Ergebnis verglichen

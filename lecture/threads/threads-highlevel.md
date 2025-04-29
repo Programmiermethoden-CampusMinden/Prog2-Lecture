@@ -2,12 +2,9 @@
 title: "High-Level Concurrency"
 author: "Carsten Gips (HSBI)"
 readings:
-  - key: "Ullenboom2021"
-    comment: "Kap. 16: Einführung in die nebenläufige Programmierung"
-  - key: "Java-SE-Tutorial"
-    comment: "Trail: Essential Java Classes, Lesson: Concurrency"
-  - key: "Urma2014"
-    comment: "Abschnitt 7.2: The fork/join framework"
+  - "@Ullenboom2021 [Kap. 16]"
+  - "@Java-SE-Tutorial"
+  - "@Urma2014 [Kap. 7.2]"
 tldr: |
     Das Erzeugen von Threads über die Klasse `Thread` oder das Interface `Runnable` und
     das Hantieren mit `synchronized` und `wait()`/`notify()` zählt zu den grundlegenden
