@@ -29,8 +29,8 @@ tldr: |
   einer Testmethode nur einen Testfall zu implementieren und i.d.R. auch nur ein (oder wenige) Aufrufe
   von `assert*()` pro Testmethode zu haben.
 outcomes:
-  - k2: "Ursachen von Softwarefehlern"
-  - k3: "Aufbauen von Tests mit JUnit 4 und 5 unter Nutzung der Annotation `@Test`"
+  - k2: "Ich kenne verschiedene Ursachen von Softwarefehlern"
+  - k3: "Ich kann Tests mit JUnit 4 und 5 unter Nutzung der Annotation `@Test` erstellen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
 #    name: "Quiz JUnit-Basics - nur erster Teil (ILIAS)"
