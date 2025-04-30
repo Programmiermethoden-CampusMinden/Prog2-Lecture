@@ -28,13 +28,11 @@ tldr: |
     im Fall, dass etwas Unerwartetes passiert ist. Liefern Sie **niemals** `null` zurück, wenn
     der Rückgabetyp der Methode ein `Optional` ist!
 outcomes:
-  - k2: "Optionals sind kein Ersatz für `null`-Prüfung!"
-  - k2: "Optionals sollen nicht für Attribute oder Parameter genutzt werden"
-  - k2: "Es darf kein `null` zurückgeliefert werden, wenn der Rückgabetyp ein Optional ist"
-  - k2: "Optionals und `null` sind kein Ersatz für Exception-Handling"
-  - k3: "Einsatz von `Optional` in Rückgabewerten"
-  - k3: "Erzeugen von Optionals mit `Optional.ofNullable()`"
-  - k3: "Zugriff auf Optionals entweder direkt oder per Stream-API"
+  - k2: "Ich kann erklären, warum Optionals vor allem für Rückgabewerte gedacht sind"
+  - k2: "Ich kann erklären, warum kein `null` zurückgeliefert werden darf, wenn der Rückgabetyp ein `Optional<T>` ist"
+  - k3: "Ich kann (ggf. leere) Optionals mit `Optional.ofNullable()` erzeugen"
+  - k3: "Ich kann auf Optionals klassisch über die direkten Hilfsmethoden der Klasse zugreifen"
+  - k3: "Ich kann auf Optionals elegant per Stream-API zugreifen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106526&client_id=FH-Bielefeld"
 #    name: "Quiz Optional (ILIAS)"
