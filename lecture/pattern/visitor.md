@@ -41,8 +41,8 @@ tldr: |
     der Datenstrukur überladen sind, findet nun zur Laufzeit die Auflösung der korrekten Überladung
     statt (zweiter Dispatch).
 outcomes:
-  - k2: "Aufbau des Visitor-Patterns (Besucher-Entwurfsmusters)"
-  - k3: "Anwendung des Visitor-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
+  - k2: "Ich verstehe den Aufbau des Visitor-Patterns und kann den Double-Dispatch erklären"
+  - k3: "Ich kann das Visitor-Pattern auf konkrete Beispiele anwenden"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106543&client_id=FH-Bielefeld"
 #    name: "Quiz Visitor-Pattern (ILIAS)"
