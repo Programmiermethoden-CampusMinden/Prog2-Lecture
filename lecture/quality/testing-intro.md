@@ -114,7 +114,7 @@ challenges: |
 
 # Software-Fehler und ihre Folgen
 
-![](images/swfehler.png){width="80%"}
+![](images/swfehler.png){width="80%" web_width="70%"}
 
 [[Ursachen für Fehler?]{.ex}]{.slides}
 
