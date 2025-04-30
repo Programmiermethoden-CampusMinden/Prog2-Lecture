@@ -256,6 +256,7 @@ Version nicht mehr weiterentwickelt wird.
 \vspace{10mm}
 
 *   Anlegen neuer Tests: Klasse auswählen, Kontextmenü `New > JUnit Test Case`
+    [(IJ: Kontextmenü `Generate > Test`)]{.notes}
 
 \bigskip
 
