@@ -153,7 +153,7 @@ Schauen Sie sich einmal das Review zu den `ecs.components.ai.AITools` in
 https://github.com/Dungeon-CampusMinden/Dungeon/pull/128#pullrequestreview-1254025874
 an.
 
-![](images/screenshot_review1.png)
+![](images/screenshot_review1.png){width="80%"}
 
 Die Methode `AITools#calculateNewPath` soll in der Umgebung einer als Parameter
 übergebenen Entität nach einem Feld (`Tile`) suchen, welches für die Entität
@@ -223,9 +223,9 @@ Form glücklicherweise nicht mehr zu finden.)
 Entsprechend hat sich in diesem [Review](https://github.com/Dungeon-CampusMinden/Dungeon/pull/128#pullrequestreview-1254025874)
 die nachfolgende Diskussion ergeben:
 
-![](images/screenshot_review2.png)
+![](images/screenshot_review2.png){width="80%"}
 
-![](images/screenshot_review3.png)
+![](images/screenshot_review3.png){width="80%"}
 :::
 
 
