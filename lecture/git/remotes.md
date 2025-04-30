@@ -40,7 +40,7 @@ quizzes:
   - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106245&client_id=FH-Bielefeld"
     name: "Quiz Git Remotes (ILIAS)"
 youtube:
-  - link: "`https://youtu.be/_uhEseblDYU`{=markdown}"
+  - link: "https://youtu.be/_uhEseblDYU"
     name: "VL Git Remotes"
   - link: "https://youtu.be/moqywsxtEy8"
     name: "Demo Fetch, Pull und Push"

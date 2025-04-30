@@ -25,7 +25,7 @@ quizzes:
   - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld"
     name: "Quiz Swing (ILIAS)"
 youtube:
-  - link: "`https://youtu.be/Un-FS88__VU`{=markdown}"
+  - link: "https://youtu.be/Un-FS88__VU"
     name: "VL Swing Events"
   - link: "https://youtu.be/hjchoDaqcWY"
     name: "Demo Swing Events und Listener"

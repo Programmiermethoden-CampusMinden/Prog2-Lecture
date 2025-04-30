@@ -34,7 +34,7 @@ quizzes:
   - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106228&client_id=FH-Bielefeld"
     name: "Quiz Logging (ILIAS)"
 youtube:
-  - link: "`https://youtu.be/_jYWJzr1rkA`{=markdown}"
+  - link: "https://youtu.be/_jYWJzr1rkA"
     name: "VL Logging"
   - link: "https://youtu.be/fWSc5A_CPL8"
     name: "Demo Logging (Überblick)"
