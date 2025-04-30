@@ -23,9 +23,13 @@ tldr: |
   automatisch prüfen: `@Test(expected=package.Exception.class)`. In JUnit 4 besteht die Möglichkeit,
   Testklassen zu Testsuiten zusammenzufassen und gemeinsam laufen zu lassen.
 outcomes:
-  - k3: "Steuern von Tests (ignorieren, zeitliche Begrenzung)"
-  - k3: "Prüfung von Exceptions"
-  - k3: "Aufbau von Testsuiten mit JUnit"
+  - k3: "Ich kann Testergebnisse prüfen"
+  - k2: "Ich kenne den Unterschied zwischen `assert` und `assume`"
+  - k3: "Ich kann vor/nach jedem Test bestimmten Code ausführen"
+  - k2: "Ich habe verstanden, warum `@Before` und `@After` sparsam einzusetzen sind"
+  - k3: "Ich kann die Ausführung von Tests steuern, beispielsweise Tests ignorieren oder mit zeitlicher Begrenzung ausführen"
+  - k3: "Ich kann das Auftreten von Exceptions prüfen"
+  - k3: "Ich kann Tests zu Testsuiten zusammenfassen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
 #    name: "Quiz JUnit-Basics (ILIAS)"
