@@ -110,7 +110,7 @@ Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Ver
 |                    | 25.   | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Gradle]                                 | [Q01]        | [B01]        |
 | Mai                | 02.   | [Git-Branches], [Branching-Strategien]; [Methodenreferenzen]; [Logging]                                | [Q02]        | [B02]        |
 |                    | 09.   | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Record-Klassen]                                         | [Q03]        | [B03]        |
-|                    | 16.   | **Station I** 09-11 Uhr, B40 (Aufteilung siehe Ankündigung)                                            |              |              |
+|                    | 16.   | **Station I** 09-11 Uhr, B40 (Aufteilung siehe [Ankündigung])                                          |              |              |
 |                    | 23.   | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                     | [Q04]        | [B04]        |
 |                    | 30.   | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Continuous Integration (CI)] | [Q05]        | [B05]        |
 | Juni               | 06.   | [Code-Smells], [Coding-Rules], [Refactoring]; [Javadoc]                                                | [Q06]        | [B06]        |
@@ -129,6 +129,7 @@ Bearbeitung der Quizzes jeweils **Sa, 00:00 Uhr (Vorwoche) bis Fr, 08:00 Uhr** [
 
 [Prüfungsvorbereitung]: admin/exams.md
 [FAQ]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a
+[Ankündigung]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/997
 
 [Gradle]: lecture/building/gradle.md
 <!-- [ANT]: lecture/building/ant.md -->
