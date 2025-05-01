@@ -253,7 +253,7 @@ abgegeben behandelt.
     haben Sie zusammengearbeitet? (f) Link zum Repo mit der Lösung (erst ab Blatt 04).
     Siehe auch https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
 
-Station I und II finden im Vorlesungsslot statt ([Aufteilung siehe separate Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/997),
+Station I und II finden im Vorlesungsslot statt ([Aufteilung siehe separate Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/997)),
 Station III im ersten Prüfungszeitraum (Termin wird noch vom Prüfungsamt bekanntgegeben).
 Die Punkte der beiden besseren Stationen werden summiert für die Berechnung der Note.
 
