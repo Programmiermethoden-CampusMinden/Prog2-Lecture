@@ -188,6 +188,50 @@ void fail();
 [Beispiel: junit4.TestAssume]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/junit4/TestAssume.java"}
 
 
+::: notes
+# Java: "assert"-Keyword
+
+Neben den wohlbekannten `assert*`-Methoden aus JUnit gibt es auch direkt von
+Java ein etwas verstecktes `assert`-Keyword, mit dem man Annahmen über Zustände
+und Werte explizit ausdrücken kann:
+
+```java
+public void foo() {
+    String bar = wuppie();
+    assert bar != null : "result of wuppie() must not be null";
+}
+```
+
+Das `assert` besteht aus einer zu prüfenden Bedingung und einem String. Wenn die
+Bedingung erfüllt ist, läuft der Code einfach normal weiter. Anderenfalls wird ein
+`AssertionError` geworfen mit dem angegebenen String als Message.
+
+Allerdings sind diese JVM-Assertions per Default **deaktiviert**. Man muss sie beim
+Aufruf manuell über die Option `-enableassertions` bzw. `-ea` (Kurzschreibweise)
+aktivieren (`java -ea main`)! Dies gilt auch beim Start über die IDE oder Gradle ...
+
+:::::: warning
+Wichtig: Die Assertions sind per Default deaktiviert und müssen erst manuell aktiviert
+werden. Außerdem wird bei Verletzung der Bedingung eine *unchecked exception* (ein Error)
+geworfen, der auf einen nicht korrigierbaren Programmzustand hindeutet.
+
+1.  Nutzen Sie das Java-`assert` deshalb nicht als Ersatz für das normale Prüfen von
+    Parametern von `public` Methoden (also Methoden der Schnittstelle, die Ihre Kunden
+    aufrufen).
+
+2.  Während der Entwicklungszeit kann das Java-`assert` aber ganz nützlich sein, weil Sie so
+    interne Annahmen sichtbar und prüfbar machen (vorausgesetzt, Sie haben `-ea` aktiviert).
+
+    Analog könnte ein Java-`assert` an Stellen eingebaut werden, die eigentlich nicht erreichbar
+    sein sollten (etwa nach einer Dauerschleife oder in einem nicht erreichbaren `default`-Zweig
+    in einem `switch`).
+
+3.  Bitte das Java-`assert` **nie** in einer JUnit-Testmethode statt der "richtigen"
+    JUnit-`assert*` verwenden!
+::::::
+:::
+
+
 # Setup und Teardown: Testübergreifende Konfiguration
 
 ```java
