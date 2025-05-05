@@ -90,6 +90,25 @@ challenges: |
     -->
 
 
+    **Testmethoden**
+
+    Betrachten Sie den folgenden Code. Was fällt Ihnen auf?
+
+    ```java
+    public class Studi {
+        public int getCredits();
+        public void addToCredits(int credits);
+
+        @Test
+        public void testStudi() {
+            Studi s = new Studi();
+            s.addToCredits(2);
+            assertEquals(2, s.getCredits());
+        }
+    }
+    ```
+
+
     **Parametrisierte Tests**
 
     Betrachten Sie die folgende einfache Klasse `MyMath`:
@@ -371,6 +390,127 @@ public void testExceptAnnot() {
 ```
 
 (Beispiel von oben mit Hilfe von JUnit 5 formuliert)
+:::
+
+
+::: notes
+# "Given - When - Then"-Mantra
+
+Aus dem [Behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)
+stammt die Strukturierung nach den Punkten "given - when - then" (oft auch als
+*"given - when - then"-Mantra* bezeichnet).
+
+Betrachten Sie noch einmal die Schnittstelle der Studi-Klasse:
+
+```java
+public class Studi {
+    public String getName();
+    public void setName(String name);
+    public int getCredits();
+    public void addToCredits(int credits);
+}
+```
+
+Dafür wurde ein Test geschrieben:
+
+```java
+class StudiTest {
+    @Test
+    public void testStudi() {
+        Studi s = new Studi();
+        int cps = 2;
+        s.addToCredits(cps);
+        assertEquals(cps, s.getCredits());
+    }
+}
+```
+
+Dieser Code ist in seiner Absicht nicht sofort verständlich. Es fällt
+auf, dass
+
+1.  am Anfang eine Art Setup des Tests vorgenommen wird und das Testobjekt
+    initialisiert wird ("**given**").
+2.  Dann wird die zu untersuchende Aktion ausgeführt ("**when**"), gefolgt von
+3.  einem Vergleich des tatsächlichen mit dem erwarteten Ergebnis ("**then**").
+
+Diese gedachte Struktur kann (und sollte!) man mit entsprechenden Kommentaren
+auch sichtbar machen:
+
+```java
+class StudiTest {
+    @Test
+    public void testStudi() {
+        // given
+        Studi s = new Studi();
+        int cps = 2;
+
+        // when
+        s.addToCredits(cps);
+
+        // then
+        assertEquals(cps, s.getCredits());
+    }
+}
+```
+
+In Testframeworks wie [Spock](https://spockframework.org/) oder
+[Cucumber](https://cucumber.io/) ist dies sogar bereits in die Sprache (eine
+DSL zum Testen) eingebaut!
+
+Weiterhin könnte (und sollte) man die implizit getroffenen Annahmen über das SUT
+für alle sichtbar machen:
+
+```java
+class StudiTest {
+    @Test
+    public void testStudi() {
+        // given
+        Studi s = new Studi();
+        int cps = 2;
+        assumeTrue(s.getCredits() == 0, "initial credits should be 0");
+
+        // when
+        s.addToCredits(cps);
+
+        // then
+        assertEquals(cps, s.getCredits());
+    }
+}
+```
+
+Der Test würde ohnehin fehlschlagen, wenn ein neues `Studi`-Objekt mit einem anderen
+Wert für die Credits initialisiert würde. Aber so zeigt das `assume` direkt unsere
+(bisher) implizite Annahme sichtbar an, und bei einer Verletzung dieser Annahme würde
+der Testfall mit einer entsprechenden Mitteilung nicht ausgeführt.
+
+Oft wird noch das "given - when - then"-Mantra auch auf die Methodennamen der Testmethoden
+übertragen:^[Naja, ein kläglicher Versuch. Namen sind eines der schwierigen Probleme in
+der Informatik.]
+
+```java
+class StudiTest {
+    @Test
+    public void GivenNewStudi_WhenAddingCredits_ThenCreditsCountChangesAccordingly() {
+        // given
+        Studi s = new Studi();
+        int cps = 2;
+        assumeTrue(s.getCredits() == 0, "initial credits should be 0");
+
+        // when
+        s.addToCredits(cps);
+
+        // then
+        assertEquals(cps, s.getCredits());
+    }
+}
+```
+
+Eine schöne Erklärung finden Sie im Blog
+[The subtle Art of Java Test Method Naming](https://jonasg.io/posts/subtle-art-of-java-test-method-naming/).
+
+... Und nun könnte man sich fragen, warum man das Erhöhen von Credits nur für ein *neues*
+`Studi`-Objekt testet und nicht auch für andere Zustände des `Studi`-Objekts? ...
+=> Parametrisierte Tests!
 :::
 
 
