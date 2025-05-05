@@ -662,7 +662,13 @@ auf der "JUnit 5"-Plattform ausgeführt, sondern mit der JUnit 4-Infrastuktur!
 
 5.  Wie immer sollten auch die Namen der Testmethoden klar über ihren Zweck Auskunft geben.
 
-    (Der Präfix "test" wird seit JUnit 4.x nicht mehr benötigt, aber dennoch ist es in vielen
+    (Da Tests oft auch als "ausführbare Dokumentation" betrachtet werden, ist eine sinnvolle Benamung
+    besonders wichtig. Oft werden hier deshalb Ausnahmen von den üblichen Java-Konventionen erlaubt.
+    Man findet häufig das aus dem [Behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)
+    bekannte "given - when - then"-Mantra. Siehe auch
+    [The subtle Art of Java Test Method Naming](https://jonasg.io/posts/subtle-art-of-java-test-method-naming/).
+
+    Der Präfix "test" wird seit JUnit 4.x nicht mehr benötigt, aber dennoch ist es in vielen
     Projekten Praxis, diesen Präfix beizubehalten - damit kann man in der Package-Ansicht in
     der IDE leichter zwischen den "normalen" und den Testmethoden unterscheiden.)
 
