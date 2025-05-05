@@ -375,11 +375,11 @@ public class EvalVisitor implements ExprVisitor {
 
     public void visit(NumExpr e) { erg.push(e.getValue()); }
     public void visit(MulExpr e) {
-        e.getE1().accept(this);  e.getE1().accept(this);
+        e.getE1().accept(this);  e.getE2().accept(this);
         erg.push(erg.pop() * erg.pop());
     }
     public void visit(AddExpr e) {
-        e.getE1().accept(this);  e.getE1().accept(this);
+        e.getE1().accept(this);  e.getE2().accept(this);
         erg.push(erg.pop() + erg.pop());
     }
     public int getResult() { return erg.peek(); }
@@ -390,11 +390,11 @@ public class PrintVisitor implements ExprVisitor {
 
     public void visit(NumExpr e) { erg.push("NumExpr(" + e.getValue() + ")"); }
     public void visit(MulExpr e) {
-        e.getE1().accept(this);  e.getE1().accept(this);
+        e.getE1().accept(this);  e.getE2().accept(this);
         erg.push("MulExpr(" + erg.pop() + ", " + erg.pop() + ")");
     }
     public void visit(AddExpr e) {
-        e.getE1().accept(this);  e.getE1().accept(this);
+        e.getE1().accept(this);  e.getE2().accept(this);
         erg.push("AddExpr(" + erg.pop() + ", " + erg.pop() + ")");
     }
     public String getResult() { return erg.peek(); }
