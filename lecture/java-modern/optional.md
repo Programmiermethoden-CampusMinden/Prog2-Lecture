@@ -146,6 +146,19 @@ challenges: |
                 ac.get().resetCurrentAmmunition();
             }
         }
+
+        // "classic" (original code, cf. https://github.com/Dungeon-CampusMinden/Dungeon/pull/1828)
+        if (Game.hero().isPresent()) {
+                    AmmunitionComponent ac =
+                        Game.hero()
+                            .get()
+                            .fetch(AmmunitionComponent.class)
+                            .orElseThrow(
+                                () ->
+                                    MissingComponentException.build(
+                                        Game.hero().get(), AmmunitionComponent.class));
+                    ac.setCurrentAmmunition(0);
+                }
         ```
         -->
 
