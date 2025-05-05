@@ -17,7 +17,8 @@ tldr: |
     Man kann Optionals prüfen mit `isEmpty()` und `ifPresent()` und dann direkt mit
     `ifPresent()`, `orElse()` und `orElseThrow()` auf den verpackten Wert zugreifen.
     Besser ist aber der Zugriff über die Stream-API von `Optional`: `map()`, `filter`,
-    `flatMap()`, ...
+    `flatMap()`, ... Dabei gibt es keine terminalen Operationen - es handelt sich ja auch
+    nicht um einen Stream, nur die Optik erinnert daran.
 
 
     `Optional` ist vor allem für Rückgabewerte gedacht, die den Fall "kein Wert vorhanden"
@@ -50,6 +51,105 @@ attachments:
   - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/java-modern/optional.pdf"
     name: "PDF-Version"
 challenges: |
+    **Optional und Stream-API**
+
+    1.  Erklären Sie den folgenden Code-Schnipsel aus dem [Dungeon](https://github.com/Dungeon-CampusMinden/Dungeon/pull/1831):
+
+        ```java
+        Skill fireball =
+            new Skill(
+                new FireballSkill(
+                    () ->
+                        hero.fetch(CollideComponent.class)
+                            .map(cc -> cc.center(hero).add(viewDirection.toPoint()))
+                            .orElseThrow(
+                                () -> MissingComponentException.build(hero, CollideComponent.class)),
+                    FIREBALL_RANGE,
+                    FIREBALL_SPEED,
+                    FIREBALL_DMG),
+                1);
+        ```
+
+        Hinweis: `Entity#fetch`: `<T extends Component> Optional<T> fetch(final Class<T> klass)`.
+
+        <!--
+        `fetch` liefert ein `Optional` zurück. `map` packt das aus und wendet die Funktion an und verpackt das
+        Ergebnis erneut in ein `Optional` - wenn das ursprüngliche Optional leer war oder das Ergebnis des
+        Funktionsaufrufs `null` ist, dann bleibt/ergibt sich ein leeres Optional. Das `orElseThrow` packt das
+        `Optional` aus und liefert das verpackte Objekt zurück oder wirft eine Exception, wenn nichts verpackt
+        war.
+        -->
+
+    2.  Was würde sich ändern, wenn statt `map` ein `flatMap` verwendet würde? Wie ist das bei richtigen
+    Streams?
+
+        <!--
+        `Optional#map`: `<U> Optional<U> map(Function<? super T, ? extends U> mapper)`. Wendet eine Funktion
+        mit `T -> U` und verpackt das Funktionsergebnis in ein `Optional`, Ergebnis `Optional<U>`.
+
+        `Optional#flatMap`: `<U> Optional<U> flatMap(Function<? super T, ? extends Optional<? extends U>> mapper)`.
+        Wendet eine Funktion mit `T -> Optional<U>` an, welches das Ergebnis der Operation ist.
+
+        `flatMap` würde das Funktionsergebnis nicht selbst noch einmal in ein `Optional` verpacken - das muss
+        die Funktion diesmal selbst tun.
+
+        Bei Streams würde `flatMap` die durch die Funktionsaufrufe pro Element erhaltenen Streams auspacken und
+        diese Elemente in den Ergebnis-Stream packen.
+        -->
+
+    3.  Was passiert im folgenden Beispiel? Warum funktioniert das auch ohne terminale Stream-Operation?
+
+        ```java
+        Game.hero()
+            .flatMap(e -> e.fetch(AmmunitionComponent.class))
+            .map(AmmunitionComponent::resetCurrentAmmunition);
+        ```
+
+        Hinweis: `Game.hero()`: `static Optional<Entity> hero()`.
+
+        <!--
+        Wir haben hier keine Streams, sondern ein `Optional`. Da gibt es keine terminale Stream-Operation, das
+        `flatMap` und `map` sind wie verschachtelte Abfragen auf `null` mit folgender Operation.
+        -->
+
+    4.  Können Sie die beiden obigen Beispiele in "klassischer" Schreibweise umformulieren?
+
+        <!--
+        ```java
+        // "modern"
+        () ->
+            hero.fetch(CollideComponent.class)
+                .map(cc -> cc.center(hero).add(viewDirection.toPoint()))
+                .orElseThrow(
+                    () -> MissingComponentException.build(hero, CollideComponent.class))
+
+        // "classic"
+        Optional<CollideComponent> cc = hero.fetch(CollideComponent.class);
+        if (cc.isPresent()) {
+            cc.get().center(hero).add(viewDirection.toPoint());
+        } else {
+            throw MissingComponentException.build(hero, CollideComponent.class);
+        }
+        ```
+
+        ```java
+        // "modern"
+        Game.hero()
+            .flatMap(e -> e.fetch(AmmunitionComponent.class))
+            .map(AmmunitionComponent::resetCurrentAmmunition);
+
+        // "classic"
+        Optional<Entity> hero = Game.hero();
+        if (hero.isPresent()) {
+            Optional<AmmunitionComponent> ac = hero.get().fetch(AmmunitionComponent.class);
+            if (ac.isPresent()) {
+                ac.get().resetCurrentAmmunition();
+            }
+        }
+        ```
+        -->
+
+
     **String-Handling**
 
     Können Sie den folgenden Code so umschreiben, dass Sie statt der `if`-Abfragen und der einzelnen direkten Methodenaufrufe
