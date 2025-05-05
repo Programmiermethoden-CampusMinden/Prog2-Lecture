@@ -608,8 +608,8 @@ auf der "JUnit 5"-Plattform ausgeführt, sondern mit der JUnit 4-Infrastuktur!
 ::: notes
 # Best Practices
 
-1.  Ein Testfall behandelt exakt eine Idee/ein Szenario. Das bedeutet auch, dass man in der
-    Regel nur ein bis wenige `assert*` pro Testmethode benutzt.
+1.  Eine Testmethode behandelt exakt eine Idee/ein Szenario (einen Testfall). Das bedeutet
+    auch, dass man in der Regel nur ein bis wenige `assert*` pro Testmethode benutzt.
 
     (Wenn man verschiedene Ideen in eine Testmethode kombiniert, wird der Testfall
     unübersichtlicher und auch auch schwerer zu warten.
