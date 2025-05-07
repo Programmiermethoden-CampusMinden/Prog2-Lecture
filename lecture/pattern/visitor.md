@@ -459,6 +459,24 @@ konkreten Visitor ausgewählt und aufgerufen werden kann.
 
 ## Hinweis I
 
+Man könnte nun versucht sein, eine dieser zwei Stufen zu überspringen - man könnte ja die
+`visit`-Methode des `EvalVisitors` direkt aufrufen und dabei die Wurzel des Baums (das Objekt
+`e`) übergeben.
+
+```java
+// Beispiel von oben (Ausschnitt)
+Expr e = new AddExpr(new MulExpr(new NumExpr(5), new NumExpr(4)), new NumExpr(3));
+EvalVisitor v = new EvalVisitor();
+e.accept(v);
+
+// Direkter Aufruf - Autsch?!
+v.visit(e);
+```
+
+Fragen Sie sich selbst: Kann das funktionieren? Was ist die Begründung?
+
+## Hinweis II
+
 Man könnte versucht sein, die `accept()`-Methode aus den Knotenklassen in die gemeinsame
 Basisklasse zu verlagern: Statt
 
@@ -483,11 +501,11 @@ public abstract class Expr {
 Dies wäre tatsächlich schön, weil man so Code-Duplizierung vermeiden könnte. Aber es
 funktioniert in Java leider nicht. (Warum?)
 
-## Hinweis II
+## Hinweis III
 
 Während die `accept()`-Methode nicht in die Basisklasse der besuchten Typen (im Bild oben
 die Klasse `Elem` bzw. im Beispiel oben die Klasse `Expr`) verlagert werden kann, kann man
-aber die `visit()`-Methoden im Interface `Visitor` durchaus als Default-Methoden im Interface
+die `visit()`-Methoden im Interface `Visitor` durchaus als Default-Methoden im Interface
 implementieren.
 :::
 
