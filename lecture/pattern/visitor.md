@@ -40,6 +40,11 @@ tldr: |
     des Visitors aufgerufen (erster Dispatch). Da im Visitor die `visit()`-Methoden für jeden Typ
     der Datenstrukur überladen sind, findet nun zur Laufzeit die Auflösung der korrekten Überladung
     statt (zweiter Dispatch).
+
+    Das Pattern wird traditionell gern für die Traversierung von Datenstrukturen eingesetzt.
+    Es hilft aber auch, wenn man einer gewissen Anzahl von Klassen je eine neue Hilfsmethode
+    hinzufügen möchte - normalerweise müsste man jetzt jede Klasse einzeln ergänzen. Mit dem
+    Visitor-Pattern muss lediglich ein neuer Visitor mit den Hilfsmethoden implementiert werden.
 outcomes:
   - k2: "Ich verstehe den Aufbau des Visitor-Patterns und kann den Double-Dispatch erklären"
   - k3: "Ich kann das Visitor-Pattern auf konkrete Beispiele anwenden"
@@ -515,6 +520,34 @@ implementieren.
 ![](images/parsetree_visitor_uml.png)
 
 [Demo: visitor.visit.extrav.DemoExpr]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/extrav/DemoExpr.java"}
+
+
+::: notes
+# Diskussion
+
+In der typischen OO-Denkweise geht man davon aus, dass man eher neue Klassen über Vererbung
+hinzufügt als dass man in einer bestehenden Vererbungshierarchie in jeder der beteiligten
+Klassen neue Methoden einbaut. Man leitet einfach von der gewünschten Klasse ab und definiert
+mittels Überschreiben von Methoden o.ä. das geänderte Verhalten und erbt den Rest - es wird
+also nur eine neue Klasse hinzugefügt samt den überschriebenen Teilen.
+
+Wenn man allerdings in einer solchen Hierarchie in allen Klassen eine neue Methode einbauen
+muss, die dann auch noch in den einzelnen Klassen individuell implementiert werden muss, dann
+kommt das Visitor-Pattern zur Hilfe und erspart Arbeit. Es muss nämlich in der Klassenhierarchie
+nur einmal die Schnittstelle für den Visitor einbaut werden (pro Klasse eine `accept`-Methode).
+Danach kann man von außen sehr einfach neue Methoden (also neue Visitoren) erstellen und nutzen,
+ohne die Klassenhierarchie noch einmal ändern zu müssen.
+
+Siehe auch [When should I use the Visitor Design Pattern?](https://stackoverflow.com/a/478672).
+
+Ein anderer Blick ist auf die Rolle der jeweiligen Klassen: Es gibt Objekte für/in Datenstrukturen,
+und es gibt Algorithmen, die auf diesen Objekten bzw. Datenstrukturen arbeiten. Im Sinne des
+sauberen OO-Designs würde man diese Strukturen trennen: "Trenne Algorithmen von den Objekten,
+auf denen die Algorithmen arbeiten."
+
+Vergleiche auch die Darstellung des Visitor-Patterns in
+[Visitor (Refactoring Guru)](https://refactoring.guru/design-patterns/visitor).
+:::
 
 
 # Wrap-Up
