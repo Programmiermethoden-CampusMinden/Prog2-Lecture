@@ -436,8 +436,26 @@ Post-Order, ...) und diese elegant in den Visitor verlagern kann.
 
 ## (Double-) Dispatch
 
-Zur Laufzeit wird in `accept()` der Typ des Visitors aufgelöst und dann in `visit()` der
-Typ der zu besuchenden Klasse. Dies nennt man auch "Double-Dispatch".
+::: tip
+Zur Laufzeit wird in `accept()` mit dem Aufruf von `visit()` der konkrete Typ des Visitors
+aufgelöst und dann für `visit(this)` durch den Typ der besuchten Klasse (`this`) die korrekte
+Überladung ausgewählt. Dies nennt man auch "**Double-Dispatch**".
+:::
+
+In den `accept()`-Methoden der besuchten Klassen ist nur der gemeinsame Obertyp der Visitoren
+bekannt. Dies ist wichtig, weil man sonst ja für jeden neuen Visitor neue passende
+`accept()`-Methoden in allen zu besuchenden Klassen implementieren müsste!
+
+Zur Laufzeit wird hier ein konkreter Visitor (also ein Objekt von einem Untertyp der
+Visitoren-Oberklasse) als Parameter übergeben.
+
+Beim Aufruf von `visit(this)` in der `accept()`-Methode des besuchten Objekts wird durch die
+Laufzeitumgebung der tatsächliche konkrete Typ des Visitors bestimmt und die in der
+Typhierarchie in Bezug auf den Typ des Visitors "tiefste" Implementierung der `visit`-Methode
+(also die Implementierung in der Visitorklasse selbst oder, falls dort nicht vorhanden, in der
+jeweils nächsthöheren Elternklasse). Über das Argument `this` wird die tatsächliche konkrete
+Klasse des besuchten Objekts ermittelt, so dass die passende Überladung der `visit`-Methode im
+konkreten Visitor ausgewählt und aufgerufen werden kann.
 
 ## Hinweis I
 
