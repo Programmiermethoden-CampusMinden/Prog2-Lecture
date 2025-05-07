@@ -48,7 +48,7 @@ fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/a91451640b7833daed3f6fb212fff9490ef6b8885783cc0297603a418055f1a8c2ff7b51f3cb9fb2c4344132eb95bef5af55201f8958f24d767dbd075120bce2"
     name: "VL Logging"
 attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/java-classic/logging.pdf"
+  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/quality/logging.pdf"
     name: "PDF-Version"
 challenges: |
     **Logger-Konfiguration**
@@ -164,7 +164,7 @@ Zusätzlich gibt es noch Filter, mit denen man Nachrichten (zusätzlich zum
 Log-Level) nach weiteren Kriterien filtern kann.
 :::
 
-[Konsole: logging.LoggingDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/logging/LoggingDemo.java"}
+[Konsole: logging.LoggingDemo]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/logging/LoggingDemo.java"}
 
 
 # Erzeugen neuer Logger
@@ -234,7 +234,7 @@ public void log(Level level, String msg);
     *   Prüfung mit `public boolean isLoggable(Level)`
     *   Setzen mit `public void setLevel(Level)`
 
-[Konsole: logging.LoggingLevel]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/logging/LoggingLevel.java"}
+[Konsole: logging.LoggingLevel]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/logging/LoggingLevel.java"}
 
 ::: notes
 => Warum wird im Beispiel nach `log.setLevel(Level.ALL);` trotzdem nur
@@ -266,7 +266,7 @@ ab `INFO` geloggt? Wer erzeugt eigentlich die Ausgaben?!
 *   Handler nutzen zur Formatierung der Ausgabe einen `Formatter`
 *   Standard-Formatter: `SimpleFormatter` und `XMLFormatter`
 
-[Konsole: logging.LoggingHandler]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/logging/LoggingHandler.java"}
+[Konsole: logging.LoggingHandler]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/logging/LoggingHandler.java"}
 
 ::: notes
 => Warum wird im Beispiel nach dem Auskommentieren von
@@ -290,7 +290,7 @@ angezeigt (ab `INFO` aufwärts)?!
         *   Abschalten mit `Logger#setUseParentHandlers(false);`
     *   Diese leiten  [an ihre Handler sowie]{.notes}  an ihren Eltern-Logger weiter (unabhängig von Log-Level!)
 
-[Konsole: logging.LoggingParent; Tafel: Skizze Logger-Baum]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/logging/LoggingParent.java"}
+[Konsole: logging.LoggingParent; Tafel: Skizze Logger-Baum]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/logging/LoggingParent.java"}
 
 
 # Wrap-Up

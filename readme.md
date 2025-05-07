@@ -153,7 +153,7 @@ Bearbeitung der Quizzes jeweils **Sa, 00:00 Uhr (Vorwoche) bis Fr, 08:00 Uhr** [
 <!-- [Swing: Tabellen]: lecture/gui/tables.md -->
 <!-- [Java2D]: lecture/gui/java2d.md -->
 
-[Logging]: lecture/java-classic/logging.md
+[Logging]: lecture/quality/logging.md
 [Klassen und Methoden]: lecture/java-classic/generics-classes-methods.md
 [Bounds und Wildcards]: lecture/java-classic/generics-bounds-wildcards.md
 [Type Erasure]: lecture/java-classic/generics-type-erasure.md
