@@ -402,11 +402,13 @@ Stream in zwei Schritten:
 1.  Mappe über alle Elemente des Eingabe-Streams mit der Funktion. Im Beispiel würde
     also aus einem `Stream<Studiengang>` jeweils ein `Stream<Stream<Studi>>`, also
     alle `Studiengang`-Objekte werden durch je ein `Stream<Studi>`-Objekt ersetzt.
-    Wir haben jetzt also einen Stream von `Stream<Studi>`-Objekten.
+    Wir haben jetzt also einen Stream von `Stream<Studi>`-Objekten, also einen
+    `Stream<Stream<Studi>>`.
 
-2.  "Klopfe den Stream wieder flach", d.h. nimm die einzelnen `Studi`-Objekte aus
-    den `Stream<Studi>`-Objekten und setze diese stattdessen in den Stream. Das
-    Ergebnis ist dann wie gewünscht ein `Stream<Studi>` (Stream mit `Studi`-Objekten).
+2.  "Klopfe den verschachtelten Stream wieder flach", d.h. nimm die einzelnen
+    `Studi`-Objekte aus den `Stream<Studi>`-Objekten und setze diese stattdessen
+    in den Stream. Das Ergebnis ist dann wie gewünscht ein `Stream<Studi>` (Stream
+    mit `Studi`-Objekten).
 :::
 
 ```java
@@ -434,6 +436,13 @@ private static long getCountFB(Fachbereich fb) {
     return count;
 }
 ```
+
+Während `map` also eine Funktion $f: T \mapsto R$ auf alle Elemente des Streams
+anwendet und so aus einem `stream<T>` einen `stream<R>` erzeugt, wendet `flatMap`
+eine Funktion $f: T \mapsto \mathop{\text{stream}}\text{<}R\text{>}$ auf alle
+Elemente des Streams an und packt die Ergebnis-Streams `stream<R>` wieder aus,
+weshalb man im Ergebnis wie bei `map` aus einem `stream<T>` einen `stream<R>`
+erhält.
 :::
 
 
