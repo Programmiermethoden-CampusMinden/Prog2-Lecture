@@ -194,26 +194,26 @@ mit einem Merge in den Feature-Branch holt, also sinngemäß:
 ::::::::: notes
 Das funktioniert rein technisch betrachtet.
 
-Allerdings spielt in den meisten Git-Projekten der `master` üblicherweise eine besondere Rolle
-(vgl. [Branching-Strategien](branching-strategies.md)) und ist
-üblicherweise stets das **Ziel** eines Merge, aber nie die Quelle! D.h. per Konvention geht der
-Fluß von Änderungen stets **in** den `master` (und nicht heraus).
+Allerdings spielt in den meisten Git-Projekten der `master` (bzw. `main`) üblicherweise eine
+besondere Rolle (vgl. [Branching-Strategien](branching-strategies.md)) und ist üblicherweise
+stets das **Ziel** eines Merge, aber nie die *Quelle*! D.h. per Konvention geht der Fluß von
+Änderungen stets **in** den `master` (und nicht heraus).
 
 Wenn man sich nicht an diese Konvention hält, hat man später möglicherweise Probleme, die
 Merge-Historie zu verstehen (welche Änderung kam von woher)!
 
 Um die Änderungen im `master` in einen Feature-Branch zu bekommen, sollte deshalb ein **Rebase**
-(des Feature-Branches auf den `master`) vor einem Merge (des `master` in den Feature-Branch)
-bevorzugt werden.
+des Feature-Branches auf den aktuellen `master` bevorzugt werden.
 
 **Merk-Regel**: Merge niemals nie den `master` in Feature-Branches!
 
-**Achtung**: Ein Rebase bei veröffentlichten Branches ist problematisch, da Dritte auf diesem
-Branch arbeiten könnten und entsprechend auf die Commit-IDs angewiesen sind. Nach einem Rebase
-stimmen diese Commit-IDs nicht mehr, was normalerweise mindestens zu Verärgerung führt ... Die
-Dritten müssten ihre Arbeit dann auf den neuen Feature-Branch (d.h. den Feature-Branch nach
-dessen Rebase) rebasen ... vgl. auch "The Perils of Rebasing" in Abschnitt "3.6 Rebasing" in
-[@Chacon2014].
+**Achtung**: Ein Rebase bei veröffentlichten Branches ist problematisch, sobald Dritte auf
+diesem Branch arbeiten oder den Branch als Basis für ihre eigenen Arbeiten nutzen und dadurch
+entsprechend auf die Commit-IDs angewiesen sind. Nach einem Rebase stimmen diese Commit-IDs
+nicht mehr, was normalerweise mindestens zu Verärgerung führt ...
+Die Dritten müssten ihre Arbeit dann auf den neuen Feature-Branch (d.h. den Feature-Branch
+nach dessen Rebase) rebasen ... vgl. auch "The Perils of Rebasing" in Abschnitt "3.6 Rebasing"
+in [@Chacon2014].
 
 
 ## Mögliches Szenario im Praktikum
