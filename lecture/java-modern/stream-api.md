@@ -455,11 +455,14 @@ List<String> s4 = s.collect(Collectors.toCollection(LinkedList::new));
 
 ::: notes
 Streams müssen mit **_einer_ terminalen Operation** abgeschlossen werden, damit die Verarbeitung
-tatsächlich angestoßen wird (_lazy evaluation_).
+tatsächlich angestoßen wird (_lazy evaluation_).^[Anmerkung: Das obige Beispiel dient als Überblick
+gebräuchlicher terminaler Operationen, es ist nicht als lauffähiges Programm gedacht! Auf einem
+Stream kann immer nur **eine** terminale Operation ausgeführt werden - d.h. nach der Ausführung
+von `s.count()` wäre der Stream `s` verarbeitet und es können keine weiteren Operationen auf diesem
+Stream durchgeführt werden. Dito für die anderen gezeigten terminalen Operationen.]
 
 Es gibt viele verschiedene terminale Operationen. Wir haben bereits `count()` und `forEach()`
-gesehen. In der Sitzung zu ["Optionals"](optional.md)
-werden wir noch `findFirst()` näher kennenlernen.
+gesehen. In der Sitzung zu ["Optionals"](optional.md) werden wir noch `findFirst()` näher kennenlernen.
 
 Daneben gibt es beispielsweise noch `allMatch()`, `anyMatch()` und `noneMatch()`, die jeweils
 ein Prädikat testen und einen Boolean zurückliefern (matchen alle, mind. eines oder keines der
