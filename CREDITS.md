@@ -1,3 +1,8 @@
+---
+no_beamer: true
+---
+
+
 # Credits
 
 This is a list of external projects used to build the lecture slides and the lecture
