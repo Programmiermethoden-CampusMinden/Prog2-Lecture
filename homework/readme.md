@@ -1,6 +1,7 @@
 ---
 title: "Praktikum"
 no_pdf: true
+no_beamer: true
 ---
 
 

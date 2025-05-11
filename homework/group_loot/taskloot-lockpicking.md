@@ -2,6 +2,7 @@
 title: "Lockpicking"
 author: "André Matutat (HSBI)"
 points: "10 Punkte"
+no_beamer: true
 ---
 
 # Ziel

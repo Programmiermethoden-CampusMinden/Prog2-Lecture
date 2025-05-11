@@ -2,6 +2,7 @@
 title: "Nahkampf"
 author: "André Matutat (HSBI)"
 points: "5 Punkte"
+no_beamer: true
 ---
 
 # Ziel

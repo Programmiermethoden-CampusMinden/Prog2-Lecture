@@ -1,6 +1,7 @@
 ---
 title: "IFM 2.2: Programmiermethoden (Sommer 2023)"
 has_license: true
+no_beamer: true
 ---
 
 
