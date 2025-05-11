@@ -18,8 +18,6 @@ no_beamer: true
   [daringfireball.net]: https://daringfireball.net/2020/04/cobol_programming_coding
 
 
-:::::::::::: notes
-
 ---
 
 ::: tip
@@ -340,5 +338,3 @@ Unless otherwise noted, [this work](https://github.com/Programmiermethoden-Campu
 [Carsten Gips](https://github.com/cagix) and [contributors](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors)
 is licensed under [CC BY-SA 4.0](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/LICENSE.md).
 See the [credits](CREDITS.md) for a detailed list of contributing projects.
-
-::::::::::::
