@@ -1,5 +1,6 @@
 ---
 title: "Praktikum"
+no_pdf: true
 ---
 
 
