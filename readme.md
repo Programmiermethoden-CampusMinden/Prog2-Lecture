@@ -1,6 +1,7 @@
 ---
 title: "IFM 2.1: Programmieren 2 (Sommer 2025)"
 has_license: true
+no_beamer: true
 ---
 
 <!--  pandoc -s -f markdown -t markdown+smart-grid_tables-multiline_tables-simple_tables --columns=94 --reference-links=true  readme.md  -o xxx.md  -->
