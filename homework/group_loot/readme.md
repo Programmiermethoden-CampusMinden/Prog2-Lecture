@@ -1,5 +1,6 @@
 ---
 title: "Praktikumsaufgaben Gruppe Loot"
+no_pdf: true
 ---
 
 Hier finden Sie die Praktikumsaufgaben aus der Gruppe "Loot". Sie implementieren hier
