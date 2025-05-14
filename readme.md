@@ -102,23 +102,23 @@ Sie *können* hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
 
 Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
-| Monat              | Tag   | Vorlesung                                                                                              | VL-Quiz      | Praktikum    |
-|:-------------------|:------|:-------------------------------------------------------------------------------------------------------|:-------------|:-------------|
-| April              | 11.   | Orga (**Zoom**), [FAQ]                                                                                 |              |              |
-|                    | 18.   | **Feiertag**                                                                                           | **Feiertag** | **Feiertag** |
-|                    | 25.   | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Gradle]                                 | [Q01]        | [B01]        |
-| Mai                | 02.   | [Git-Branches], [Branching-Strategien]; [Methodenreferenzen]; [Logging]                                | [Q02]        | [B02]        |
-|                    | 09.   | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Record-Klassen]                                         | [Q03]        | [B03]        |
-|                    | 16.   | **Station I** 09-11 Uhr, B40 (Aufteilung siehe [Ankündigung])                                          |              |              |
-|                    | 23.   | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                     | [Q04]        | [B04]        |
-|                    | 30.   | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Continuous Integration (CI)] | [Q05]        | [B05]        |
-| Juni               | 06.   | [Code-Smells], [Coding-Rules], [Refactoring]; [Javadoc]                                                | [Q06]        | [B06]        |
-|                    | 13.   | **Station II** 09-11 Uhr, B40 (Aufteilung siehe Ankündigung)                                           |              |              |
-|                    | 20.   | [RegExp]; [Template-Method-Pattern], [Command-Pattern]; [Annotationen]                                 | [Q07]        | [B07]        |
-|                    | 27.   | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Docker]      | [Q08]        | [B08]        |
-| Juli               | 04.   | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Reflection]                          | [Q09]        | [B09]        |
-| *Prüfungsphase I*  | *tbd* | **Station III**                                                                                        |              |              |
-| *Prüfungsphase II* | *tbd* | **Station IV**                                                                                         |              |              |
+| Monat              | Tag       | Vorlesung                                                                                              | VL-Quiz      | Praktikum    |
+|:-------------------|:----------|:-------------------------------------------------------------------------------------------------------|:-------------|:-------------|
+| April              | 11.       | Orga (**Zoom**), [FAQ]                                                                                 |              |              |
+|                    | 18.       | **Feiertag**                                                                                           | **Feiertag** | **Feiertag** |
+|                    | 25.       | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Gradle]                                 | [Q01]        | [B01]        |
+| Mai                | 02.       | [Git-Branches], [Branching-Strategien]; [Methodenreferenzen]; [Logging]                                | [Q02]        | [B02]        |
+|                    | 09.       | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Record-Klassen]                                         | [Q03]        | [B03]        |
+|                    | 16.       | **Station I** 09-11 Uhr, B40 (Aufteilung siehe [Ankündigung])                                          |              |              |
+|                    | 23.       | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                     | [Q04]        | [B04]        |
+|                    | 30.       | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Continuous Integration (CI)] | [Q05]        | [B05]        |
+| Juni               | 06.       | [Code-Smells], [Coding-Rules], [Refactoring]; [Javadoc]                                                | [Q06]        | [B06]        |
+|                    | 13.       | **Station II** 09-11 Uhr, B40 (Aufteilung siehe Ankündigung)                                           |              |              |
+|                    | 20.       | [RegExp]; [Template-Method-Pattern], [Command-Pattern]; [Annotationen]                                 | [Q07]        | [B07]        |
+|                    | 27.       | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Docker]      | [Q08]        | [B08]        |
+| Juli               | 04.       | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Reflection]                          | [Q09]        | [B09]        |
+| *Prüfungsphase I*  | 09.07.    | **Station III**, B40 (Aufteilung siehe Ankündigung)                                                    |              |              |
+| *Prüfungsphase II* | 24.09.(?) | **Station IV**, B40 (Aufteilung siehe Ankündigung)                                                     |              |              |
 
 Abgabe der Übungsblätter jeweils **bis Fr, 08:00 Uhr** [im ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1514856&client_id=FH-Bielefeld), Vorstellung der
 Lösung im zugehörigen Praktikum.
@@ -253,7 +253,7 @@ abgegeben behandelt.
     Siehe auch https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
 
 Station I und II finden im Vorlesungsslot statt ([Aufteilung siehe separate Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/997)),
-Station III im ersten Prüfungszeitraum (Termin wird noch vom Prüfungsamt bekanntgegeben).
+Station III im ersten Prüfungszeitraum (Termin lt. Bekanntgabe vom Prüfungsamt: 09.07.).
 Die Punkte der beiden besseren Stationen werden summiert für die Berechnung der Note.
 
 **Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95% (jeweils nur wenn Quizzes
@@ -267,6 +267,7 @@ verbessert sich die Gesamtnote um eine Teilnote.
 ## Prüfung im zweiten Zeitraum
 
 1.  **Station IV**: Schriftliche Prüfung (digitale Klausur) 90 Minuten in Minden im B40
+    (Termin lt. Bekanntgabe vom Prüfungsamt: voraussichtlich 24.09.)
 
 **Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95%
 
