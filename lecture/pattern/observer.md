@@ -17,8 +17,8 @@ tldr: |
   Das "zentrale" Objekt, welches abgefragt wird, nennt man "_Observable_" oder "_Subject_". Die Objekte, die
   die Information abfragen möchten, nennt man "_Observer_".
 outcomes:
-  - k2: "Aufbau des Observer-Patterns (Beobachter-Entwurfsmusters)"
-  - k3: "Anwendung des Observer-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
+  - k2: "Ich kenne den Aufbau des Observer-Patterns und kann dies an einem Beispiel erklären"
+  - k3: "Ich kann das Observer-Pattern auf konkrete Beispiele (etwa den PM-Dungeon) anwenden"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106535&client_id=FH-Bielefeld"
 #    name: "Quiz Observer-Pattern (ILIAS)"
