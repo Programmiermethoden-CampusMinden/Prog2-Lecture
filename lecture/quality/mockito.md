@@ -17,11 +17,11 @@ tldr: |
   erlaubt. Man kann hier zusätzlich auch die Interaktion mit dem gemockten Objekt überprüfen und
   testen, ob eine bestimmte Methode mit bestimmten Argumenten aufgerufen wurde und wie oft.
 outcomes:
-  - k2: "Begriffe: Mocking, Mock, Stub, Spy"
-  - k3: "Erzeugen eines Mocks in Mockito"
-  - k3: "Erzeugen eines Spies in Mockito"
-  - k3: "Prüfen von Interaktion mit _verify()_"
-  - k3: "Einsatz von _ArgumentMatcher_"
+  - k2: "Ich kann die Begriffe: Mocking, Mock, Stub, Spy unterscheiden und erklären"
+  - k3: "Ich kann Mocks in Mockito anlegen und nutzen"
+  - k3: "Ich kann Spies in Mockito anlegen und nutzen"
+  - k3: "Ich kann die Interaktion mit Mocks/Spies über _verify()_ prüfen"
+  - k3: "Ich kann den _ArgumentMatcher_ praktisch einsetzen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106547&client_id=FH-Bielefeld"
 #    name: "Quiz Mocking (ILIAS)"
