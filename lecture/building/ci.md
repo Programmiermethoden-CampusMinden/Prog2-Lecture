@@ -169,7 +169,7 @@ Siehe auch ["Get started with Gitlab CI/CD"](http://git03-ifm-min.ad.hsbi.de/hel
 
 ## Übersicht über Pipelines
 
-![](images/screenshot-gitlabci-pipelines.png){width="70%" web_width="60%"}
+![](images/screenshot-gitlabci-pipelines.png){width="70%"}
 
 *   In Spalte "Status" sieht man das Ergebnis der einzelnen Pipelines:
     "pending" (die Pipeline läuft gerade), "cancelled" (Pipeline wurde manuell
@@ -184,14 +184,14 @@ kann auf eine Seite mit mehr Informationen kommen.
 
 ## Detailansicht einer Pipeline
 
-![](images/screenshot-gitlabci-triggeredpipeline.png){width="70%" web_width="60%"}
+![](images/screenshot-gitlabci-triggeredpipeline.png){width="70%"}
 
 Wenn man in eine Pipeline in der Übersicht klickt, werden die einzelnen
 Stages dieser Pipeline genauer dargestellt.
 
 ## Detailansicht eines Jobs
 
-![](images/screenshot-gitlabci-job.png){width="70%" web_width="60%"}
+![](images/screenshot-gitlabci-job.png){width="70%"}
 
 Wenn man in einen Job einer Stage klickt, bekommt man quasi die Konsolenausgabe
 dieses Jobs. Hier kann man ggf. Fehler beim Ausführen der einzelnen Skripte
@@ -308,7 +308,7 @@ und auch ["GitHub: CI/CD explained"](https://resources.github.com/ci-cd/).
 
 ## Übersicht über Workflows
 
-![](images/screenshot-githubci-workflows.png){width="70%" web_width="60%"}
+![](images/screenshot-githubci-workflows.png){width="70%"}
 
 Hier sieht man das Ergebnis der letzten Workflows. Dazu sieht man den
 Commit und den Branch, auf dem der Workflow gelaufen ist sowie wann er
@@ -320,7 +320,7 @@ aktuell noch läuft.
 
 ## Detailansicht eines Workflows
 
-![](images/screenshot-githubci-triggeredworkflow.png){width="70%" web_width="60%"}
+![](images/screenshot-githubci-triggeredworkflow.png){width="70%"}
 
 Wenn man in einen Workflow in der Übersicht anklickt, werden die einzelnen
 Jobs dieses Workflows genauer dargestellt. "job3" ist erfolgreich gelaufen, "job1"
@@ -329,7 +329,7 @@ Lauf von "job2" starten.
 
 ## Detailansicht eines Jobs
 
-![](images/screenshot-githubci-job.png){width="70%" web_width="60%"}
+![](images/screenshot-githubci-job.png){width="70%"}
 
 Wenn man in einen Job anklickt, bekommt man quasi die Konsolenausgabe
 dieses Jobs. Hier kann man ggf. Fehler beim Ausführen der einzelnen Skripte
@@ -438,16 +438,16 @@ Im Browser in den Repo-Einstellungen arbeiten:
 1.  Unter `Settings > Actions > General > Actions permissions` die Actions aktivieren
     (Auswahl, welche Actions erlaubt sind)
 
-    ![](images/screenshot_github_settings_actions.png){width="70%" web_width="60%"}
+    ![](images/screenshot_github_settings_actions.png){width="70%"}
 
 2.  Unter `Settings > Actions > General > Workflow permissions` ggf. bestimmen, ob die
     Actions das Repo nur lesen dürfen oder auch zusätzlich schreiben dürfen
 
-    ![](images/screenshot_github_settings_permissions.png){width="70%" web_width="60%"}
+    ![](images/screenshot_github_settings_permissions.png){width="70%"}
 
 3.  Unter `Actions > <WORKFLOW>` den Workflow ggf. deaktivieren:
 
-    ![](images/screenshot_github_actions.png){width="70%" web_width="60%"}
+    ![](images/screenshot_github_actions.png){width="70%"}
 :::::::::
 
 
