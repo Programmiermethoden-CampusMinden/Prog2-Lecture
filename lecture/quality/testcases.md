@@ -248,7 +248,7 @@ Grenzwertanalyse (siehe nächste Folien). Mehr dann später im Wahlfach "Softwar
 Beispiel: Zu testende Methode mit Eingabewert _x_, der zw. 10 und 100 liegen soll
 :::
 
-![](images/aequivalenzklassen.png){width="60%" web_width="40%"}
+![](images/aequivalenzklassen.png){width="60%" web_width="30%"}
 
 \bigskip
 
@@ -382,7 +382,7 @@ miteinander in einem TF kombiniert werden! Bei gleichzeitiger Behandlung verschi
 
 # Grenzwertanalyse
 
-![](images/grenzwerte.png){width="60%" web_width="40%"}
+![](images/grenzwerte.png){width="60%" web_width="30%"}
 
 \bigskip
 
