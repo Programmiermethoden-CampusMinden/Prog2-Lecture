@@ -30,7 +30,7 @@ tldr: |
   (Continuous Delivery) auf, also als "CI/CD". Der "CD"-Teil ist nicht Gegenstand der Betrachtung
   in dieser Lehrveranstaltung.
 outcomes:
-  - k2: "Arbeitsweise von/mit CI"
+  - k2: "Ich kann Arbeitsweise von/mit CI (GitHub, GitLab) erklären"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106219&client_id=FH-Bielefeld"
 #    name: "Quiz Continuous Integration (ILIAS)"
