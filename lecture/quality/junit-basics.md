@@ -499,7 +499,8 @@ class StudiTest {
 
 In Testframeworks wie [Spock](https://spockframework.org/) oder
 [Cucumber](https://cucumber.io/) ist dies sogar bereits in die Sprache (eine
-DSL zum Testen) eingebaut!
+DSL zum Testen) eingebaut! Einen schönen Blog zum Thema finden Sie hier:
+[Spock testing framework versus JUnit](https://blog.codepipes.com/testing/spock-vs-junit.html).
 
 Weiterhin könnte (und sollte) man die implizit getroffenen Annahmen über das SUT
 für alle sichtbar machen:
@@ -850,7 +851,8 @@ auf der "JUnit 5"-Plattform ausgeführt, sondern mit der JUnit 4-Infrastuktur!
     besonders wichtig. Oft werden hier deshalb Ausnahmen von den üblichen Java-Konventionen erlaubt.
     Man findet häufig das aus dem [Behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)
     bekannte "given - when - then"-Mantra. Siehe auch
-    [The subtle Art of Java Test Method Naming](https://jonasg.io/posts/subtle-art-of-java-test-method-naming/).
+    [The subtle Art of Java Test Method Naming](https://jonasg.io/posts/subtle-art-of-java-test-method-naming/)
+    und auch [Spock testing framework versus JUnit](https://blog.codepipes.com/testing/spock-vs-junit.html).
 
     Der Präfix "test" für Testmethoden wird seit JUnit 4.x nicht mehr benötigt, aber dennoch
     ist es in vielen Projekten Praxis, diesen Präfix beizubehalten - damit kann man in der
@@ -858,6 +860,9 @@ auf der "JUnit 5"-Plattform ausgeführt, sondern mit der JUnit 4-Infrastuktur!
     Das ist analog zum Suffix "Test" für die Klassennamen der Testklassen ...)
 
 Diese Erfahrungen werden ausführlich in [@SWEGoogle, pp. 231-256] diskutiert.
+
+Eine lesenswerte Diskussion von "Anti-Pattern" beim Testen finden Sie im Blog
+[Software Testing Anti-patterns](https://blog.codepipes.com/testing/software-testing-antipatterns.html).
 :::
 
 
