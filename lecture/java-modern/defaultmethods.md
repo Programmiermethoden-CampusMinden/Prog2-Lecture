@@ -26,10 +26,11 @@ tldr: |
   Aktuell ist der Unterschied zu abstrakten Klassen: Interfaces können **keinen Zustand**
   haben, d.h. keine Attribute/Felder.
 outcomes:
-  - k2: "Interfaces mit Default-Methoden, Unterschied zu abstrakten Klassen"
-  - k2: "Problem der Mehrfachvererbung"
-  - k3: "Erstellen von Interfaces mit Default-Methoden"
-  - k3: "Regeln zum Auflösen der Mehrfachvererbung"
+  - k2: "Ich weiss, dass in Interfaces Default-Methoden erstellt werden können"
+  - k2: "Ich kann den Unterschied zwischen Interfaces mit Default-Methoden und abstrakten Klassen erklären"
+  - k2: "Ich verstehe das Problem der Mehrfachvererbung bei Interfaces mit Default-Methoden"
+  - k3: "Ich kann Interfaces mit Default-Methoden erstellen und einsetzen"
+  - k3: "Ich habe die Regeln zum Auflösen der Mehrfachvererbung verstanden und kann sie in der Praxis nutzen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106522&client_id=FH-Bielefeld"
 #    name: "Quiz Default-Methoden (ILIAS)"
