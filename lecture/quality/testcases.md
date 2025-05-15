@@ -31,9 +31,9 @@ tldr: |
   Wenn ein Testfall sich aus den gültigen ÄK/GW speist, spricht man auch von einem "Positiv-Test"; wenn
   ungültige ÄK/GW genutzt werden, spricht man auch von einem "Negativ-Test".
 outcomes:
-  - k2: "Merkmale schlecht testbaren Codes erklären"
-  - k2: "Merkmale guter Unit-Tests erklären"
-  - k3: "Erstellen von Testfällen mittels Äquivalenzklassenbildung und Grenzwertanalyse"
+  - k2: "Ich kann Merkmale schlecht testbaren Codes erklären"
+  - k2: "Ich kann Merkmale guter Unit-Tests erklären"
+  - k3: "Ich kann Testfällen mittels Äquivalenzklassenbildung und Grenzwertanalyse erstellen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106546&client_id=FH-Bielefeld"
 #    name: "Quiz Testfallermittlung (ILIAS)"
