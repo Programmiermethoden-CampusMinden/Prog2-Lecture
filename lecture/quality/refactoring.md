@@ -55,6 +55,93 @@ challenges: |
     Beheben Sie die Smells durch die _schrittweise Anwendung_ von den aus der Vorlesung
     bekannten Refactoring-Methoden. Denken Sie auch daran, dass Refactoring immer durch
     eine entsprechende Testsuite abgesichert sein muss - ergänzen Sie ggf. die Testfälle.
+
+
+    **Real-Life Refactoring**
+
+    Betrachten Sie das folgende Code-Beispiel, welches aus dem [Dungeon-Projekt](https://github.com/Dungeon-CampusMinden/Dungeon)
+    stammt:
+
+    ```java
+    public void shootFireBall() {
+        AmmunitionComponent heroAC =
+            hero.fetch(AmmunitionComponent.class)
+                .orElseThrow(() -> MissingComponentException.build(hero, AmmunitionComponent.class));
+        if (!heroAC.checkAmmunition()) return;
+        utils.Direction viewDirection =
+            convertPosCompDirectionToUtilsDirection(EntityUtils.getViewDirection(hero));
+        Skill fireball =
+            new Skill(
+                new FireballSkill(
+                    () -> {
+                    CollideComponent collider =
+                        hero.fetch(CollideComponent.class)
+                            .orElseThrow(
+                                () -> MissingComponentException.build(hero, CollideComponent.class));
+                    Point start = collider.center(hero);
+                    return start.add(new Point(viewDirection.x(), viewDirection.y()));
+                    }),
+                1);
+        fireball.execute(hero);
+        heroAC.spendAmmo();
+        waitDelta();
+    }
+    ```
+
+    1.  Analysieren Sie den Code und versuchen Sie zu verstehen, was hier passiert. Welche Typen müssen
+        die unterschiedlichen Operationen haben (Parametertypen, Rückgabetypen)?
+    2.  Welche Funktionseinheiten können Sie identifizieren? Entwickeln Sie Ideen, wie dieser Code zu
+        mittels Refactoring lesbarer und verständlicher gemacht werden kann. Nutzen Sie dabei möglichst
+        geschickt u.a. die Java-Stream-API und Optionals und überlegen Sie, welche der Exceptions wirklich
+        relevant sind ...
+    3.  Kopieren Sie den Code in einen Editor (mit Syntaxunterstützung - die IDE geht auch, wird aber
+        wegen der fehlenden Klassen und Variablen keine wirkliche Hilfe sein). Führen Sie das Refactoring
+        "zu Fuß" durch. Vergleichen Sie Ihr Ergebnis und den ursprünglichen Code.
+
+    (*Sie brauchen im Dungeon-Projekt nicht zu suchen, diese Code-Stelle ist längst bereinigt ...*)
+
+    <!--
+    ```java
+    public static void shootFireball() {
+        Entity hero = Game.hero().orElseThrow(MissingHeroException::new);
+
+        hero.fetch(AmmunitionComponent.class)
+            .filter(AmmunitionComponent::checkAmmunition)
+            .ifPresent(ac -> aimAndShoot(ac, hero));
+    }
+
+    private static void aimAndShoot(AmmunitionComponent ac, Entity hero) {
+        newFireballSkill(hero).execute(hero);
+        ac.spendAmmo();
+        waitDelta();
+    }
+
+    private static Skill newFireballSkill(Entity hero) {
+        return new Skill(
+            new FireballSkill(
+                () ->
+                    hero.fetch(CollideComponent.class)
+                        .map(cc -> cc.center(hero))
+                        .map(p -> p.add(Direction.asPoint(EntityUtils.getViewDirection(hero))))
+                        .orElseThrow(
+                            () -> MissingComponentException.build(hero, CollideComponent.class))
+                ),
+            1);
+    }
+    ```
+
+    mit
+
+    ```java
+    public static Point asPoint(PositionComponent.Direction viewDirection) {
+        return fromPositionCompDirection(viewDirection).toPoint();
+    }
+
+     public static Point add(Point viewDirection) {
+        return add(viewDirection.x(), viewDirection.y());
+    }
+    ```
+    -->
 ---
 
 
