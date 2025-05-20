@@ -4,6 +4,7 @@ author: "Carsten Gips (HSBI)"
 readings:
   - "@Ullenboom2021 [Kap. 23.4]"
   - "@googlestyleguide [Kap. 7]"
+  - "@oraclejavadocguide"
 tldr: |
   Mit Javadoc kann aus speziell markierten Block-Kommentaren eine externe Dokumentation im HTML-Format
   erzeugt werden. Die Block-Kommentare, auf die das im JDK enthaltene Programm `javadoc` reagiert,
@@ -202,6 +203,10 @@ Schauen Sie sich gern mal Klassen aus der Java-API an, beispielsweise eine `java
 
 Unter [Documentation Best Practices](https://github.com/google/styleguide/blob/gh-pages/docguide/best_practices.md#documentation-is-the-story-of-your-code)
 finden Sie eine sehr gute Beschreibung, was das Ziel der Dokumentation sein sollte. Versuchen Sie, dieses zu erreichen!
+
+Etwas technisch, aber ebenfalls sehr lesenswert ist der Style-Guide für Java-Software
+[How to Write Doc Comments for the Javadoc Tool](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html)
+von @oraclejavadocguide.
 :::
 
 
