@@ -22,11 +22,12 @@ tldr: |
   mit Javadoc kommentiert. Alle nicht-öffentlichen Elemente bekommen normale Java-Kommentare (Zeilen- oder
   Blockkommentare).
 outcomes:
-  - k2: "Ziel der Javadoc-Dokumentation verstehen"
-  - k2: "Typischen Aufgabe von Javadoc-Kommentaren verstehen"
-  - k3: "Dokumentation öffentlich sichtbarer Elemente mit Javadoc"
-  - k3: "Schreiben einer sinnvollen Summary"
-  - k3: "Einsatz von Annotationen zur Dokumentation von Parametern, Rückgabetypen, Exceptions, veralteten Elementen"
+  - k2: "Ich verstehe den Sinn von Javadoc-Kommentaren"
+  - k2: "Ich kenne den typischen Aufbau von Javadoc-Kommentaren"
+  - k3: "Ich kann sämtliche öffentlich sichtbaren Elemente mit Javadoc dokumentieren"
+  - k3: "Ich kann eine sinnvolle Summary schreiben"
+  - k3: "Ich kann verschiedene Annotationen zur Dokumentation von Parametern, Rückgabetypen, Exceptions, veralteten Elementen einsetzen"
+  - k3: "Ich kann die Dokumentation generieren"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106229&client_id=FH-Bielefeld"
 #    name: "Quiz Javadoc (ILIAS)"
