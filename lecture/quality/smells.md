@@ -222,7 +222,7 @@ in Ordnung ...
 
 \bigskip
 
-*   Redundante Kommentare: Erklären Sie, was der Code **inhaltlich** tun sollte (und warum)!
+*   Redundante Kommentare:
 
     ```java
     public int i; // neues i
@@ -235,9 +235,10 @@ in Ordnung ...
     Code vorstellen?
 
     Wiederholen Sie nicht, was der Code tut (das kann ich ja selbst lesen),
-    sondern beschreiben Sie, was der Code tun _sollte_ und _warum_.
+    sondern **beschreiben Sie, was der Code tun _sollte_ und _warum_**.
 
-    Beschreiben Sie dabei auch das Konzept hinter einem Codebaustein.
+    Beschreiben Sie dabei auch das Konzept hinter einem Codebaustein und gerne
+    auch die typische Anwendung der Methode oder Klasse.
     :::
 
 
@@ -269,7 +270,8 @@ in Ordnung ...
     Nichtbeachtung des Prinzips der "_Single Responsibility_")!
 
     Der Code soll im **Normalfall** für sich selbst sprechen: **WAS** wird gemacht.
-    Der Kommentar erklärt im Normalfall, **WARUM** der Code das machen soll.
+    Der Kommentar erklärt im Normalfall, **WARUM** der Code das machen soll und die
+    Konzepte und Design-Entscheidungen dahinter.
     :::
 
 *   Unangemessene Information, z.B. Änderungshistorien
