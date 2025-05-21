@@ -45,14 +45,11 @@ tldr: |
   [checkstyle.xml](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/checkstyle.xml)
   bereitgestellt (vgl. Folie "Konfiguration für das PM-Praktikum").
 outcomes:
-  - k2: "Erklären verschiedener Coding Conventions"
-  - k2: "Erklären wichtiger Grundregeln des objektorientierten Programmierens"
-  - k2: "Erklären der Metriken NCSS, McCabe, BEC, DAC"
-  - k3: "Einhalten der wichtigsten Grundregeln des objektorientierten Programmierens"
-  - k3: "Einhalten der wichtigsten Coding Conventions (Formatierung, Namen, Metriken)"
-  - k3: "Nutzung des Tools Spotless (Formatierung des Codes)"
-  - k3: "Nutzung des Tools Checkstyle (Coding Conventions und Metriken)"
-  - k3: "Nutzung des Tools SpotBugs (Vermeiden von Anti-Pattern)"
+  - k2: "Ich kann verschiedene Coding Conventions erklären"
+  - k2: "Ich kann die Metriken NCSS, McCabe, BEC, DAC erklären"
+  - k3: "Ich kann das Tool Spotless zur Formatierung des Codes nutzen"
+  - k3: "Ich kann das Tool Checkstyle zum Überprüfen von Coding Conventions und Metriken nutzen"
+  - k2: "Ich kenne das Tool SpotBugs zum Vermeiden von Anti-Pattern"
 youtube:
   - link: "https://youtu.be/nLAEak6Fwfk"
     name: "VL Coding Conventions"
