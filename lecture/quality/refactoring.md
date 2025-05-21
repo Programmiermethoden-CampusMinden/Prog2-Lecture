@@ -18,11 +18,11 @@ tldr: |
   einheitlich benannt sein müssen oder in jeder IDE vorkommen. Zu den häufig genutzten Methoden zählen
   _Rename_, _Extract_, _Move_ und _Push Up/Pull Down_.
 outcomes:
-  - k2: "Begriff, Notwendigkeit und Vorgehen des/beim Refactoring"
-  - k2: "Bedeutung kleiner Schritte beim Refactoring"
-  - k2: "Bedeutung einer sinnvollen Testsuite beim Refactoring"
-  - k2: "Refactoring: Nur innere Struktur ändern, nicht äußeres Verhalten!"
-  - k3: "Anwendung der wichtigsten Refactoring-Methoden: _Rename_, _Extract_, _Move_, _Push Up/Pull Down_"
+  - k2: "Ich kann den Begriff sowie die Notwendigkeit und das Vorgehen des/beim Refactoring erklären"
+  - k2: "Ich kann die Bedeutung kleiner Schritte beim Refactoring erklären"
+  - k2: "Ich kann die Bedeutung einer sinnvollen Testsuite beim Refactoring erklären"
+  - k2: "Ich habe verstanden, dass 'Refactoring' bedeutet: Nur die innere Struktur ändern, nicht das von außen sichtbare Verhalten!"
+  - k3: "Ich kann die wichtigsten Refactoring-Methoden anwenden: _Rename_, _Extract_, _Move_, _Push Up/Pull Down_"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106231&client_id=FH-Bielefeld"
 #    name: "Quiz Refactoring (ILIAS)"
