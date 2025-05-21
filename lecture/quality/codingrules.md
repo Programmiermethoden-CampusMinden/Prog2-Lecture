@@ -342,7 +342,7 @@ eigenes [Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.htm
 
     checkstyle {
         configFile file('checkstyle.xml')
-        toolVersion '10.19.0'
+        toolVersion '10.23.0'
     }
     ```
 
