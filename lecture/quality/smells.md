@@ -17,10 +17,11 @@ tldr: |
   "Bad Smells". Das sind Probleme im Code, die noch nicht direkt zu einem Fehler führen, die
   aber im Laufe der Zeit die Chance für echte Probleme deutlich erhöht.
 outcomes:
-  - k3: "Erkennen und Vermeiden von Code Smells"
-  - k3: "Unterscheiden von leicht lesbarem und schwer lesbarem Code"
-  - k3: "Programmierprinzipien anwenden, um den Code sauberer zu gestalten"
-  - k3: "Bessere Kommentare schreiben"
+  - k2: "Ich kann typische Programmierprinzipien wie 'Information Hiding', 'DRY', 'Single Responsibility' erklären"
+  - k3: "Ich kann typische Code Smells erkennen und vermeiden"
+  - k3: "Ich kann leicht lesbaren von schwer lesbarem Code unterscheiden"
+  - k3: "Ich kann Programmierprinzipien anwenden, um den Code sauberer zu gestalten"
+  - k3: "Ich kann sinnvolle Kommentare schreiben"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106230&client_id=FH-Bielefeld"
 #    name: "Quiz Code Smells (ILIAS)"
