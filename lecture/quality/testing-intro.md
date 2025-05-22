@@ -46,7 +46,7 @@ attachments:
   - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/quality/testing-intro.pdf"
     name: "PDF-Version"
 challenges: |
-    **Einfache JUnit-Tests**
+    **Einfache JUnit-Tests I**
 
     Betrachten Sie die folgende einfache (und nicht besonders sinnvolle)
     Klasse `MyList<T>`:
