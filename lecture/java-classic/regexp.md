@@ -165,7 +165,10 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 | `[a-z&&[def]]`   | "d", "e" oder "f" (Schnitt)                          |
 
 Zeichenklassen werden über eine Zeichenkette formuliert, die in `[` und `]`
-eingeschlossen wird.
+eingeschlossen wird. Dabei werden alle Zeichen aufgezählt, die in dieser
+Zeichenklasse enthalten sein sollen. Die Zeichenklasse verhält sich von
+außen betrachtet wie ein beliebiges Zeichen aus der Menge der aufgezählten
+Zeichen.
 
 Beispiel: `[abc]` meint ein "a" oder "b" oder "c" ...
 
