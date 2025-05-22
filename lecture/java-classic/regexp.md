@@ -57,7 +57,9 @@ challenges: |
     Schreiben Sie eine Methode, die mit Hilfe von regulären Ausdrücken überprüft, ob der eingegebene String
     eine nach dem folgenden Schema gebildete EMail-Adresse ist:
 
-    >   `name@firma.domain`
+    ::: center
+    `name@firma.domain`
+    :::
 
     Dabei sollen folgende Regeln gelten:
 
