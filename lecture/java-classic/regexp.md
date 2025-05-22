@@ -143,14 +143,51 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 
 # Zeichenklassen
 
+::: slides
+
 | **Zeichenkette** | **Beschreibt**                                           |
 |:-----------------|:---------------------------------------------------------|
 | `[abc]`          | "a" oder "b" oder "c"                                    |
 | `[^abc]`         | alles außer "a", "b" oder "c" (Negation)                 |
 | `[a-zA-Z]`       | alle Zeichen von "a" bis "z" und "A" bis "Z" (Range)     |
-| `[a-z&&[def]]`   | "d","e" oder "f" (Schnitt)                               |
+| `[a-z&&[def]]`   | "d", "e" oder "f" (Schnitt)                              |
 | `[a-z&&[^bc]]`   | "a" bis "z", außer "b" und "c": `[ad-z]` (Subtraktion)   |
 | `[a-z&&[^m-p]]`  | "a" bis "z", außer "m" bis "p": `[a-lq-z]` (Subtraktion) |
+
+:::
+
+::: notes
+
+| **Zeichenkette** | **Beschreibt**                                       |
+|:-----------------|:-----------------------------------------------------|
+| `[abc]`          | "a" oder "b" oder "c"                                |
+| `[a-zA-Z]`       | alle Zeichen von "a" bis "z" und "A" bis "Z" (Range) |
+| `[a-z&&[def]]`   | "d", "e" oder "f" (Schnitt)                          |
+
+Zeichenklassen werden über eine Zeichenkette formuliert, die in `[` und `]`
+eingeschlossen wird.
+
+Beispiel: `[abc]` meint ein "a" oder "b" oder "c" ...
+
+Wenn dem ersten Zeichen der so geformten Zeichenklasse ein `^` vorangestellt
+wird, sind alle Zeichen _außer_ den in der Zeichenklasse bezeichneten Zeichen
+gemeint (Negation). In der Tabelle oben (erste Zeile) könnte man dem `abc` noch
+ein `^` voranstellen und hätte dann *alle* Zeichen *außer* "a", "b" und "c".
+
+Für den Schnitt kann als zweite Zeichenklasse eine Negation verwendet werden,
+damit würde eine Subtraktion erreicht werden: Alle Zeichen in der vorderen
+Zeichenklasse abzüglich der Zeichen in der zweiten Zeichenklasse. In der
+Tabelle oben (dritte Zeile) würde man dem `def` noch ein `^` voranstellen und
+hätte dann die Zeichen "a" bis "z" *ohne* "d", "e" und "f".
+
+In den [Folien zu dieser Lektion](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_beamer/lecture/java-classic/regexp.pdf)
+findet sich ein Beispiel für die Nutzung der Negation.
+
+*Anmerkung*: Das Minus-Zeichen hat in der Zeichenklasse eine besondere Bedeutung
+(es bildet einen Range). Deshalb muss es escaped werden, wenn es sich selbst
+darstellen soll.
+
+:::
 
 ::: notes
 ## Beispiel
