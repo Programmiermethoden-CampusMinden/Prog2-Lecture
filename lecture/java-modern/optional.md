@@ -61,16 +61,23 @@ challenges: |
                 new FireballSkill(
                     () ->
                         hero.fetch(CollideComponent.class)
-                            .map(cc -> cc.center(hero).add(viewDirection.toPoint()))
+                            .map(cc -> cc
+                                        .center(hero)
+                                        .add(viewDirection.toPoint()))
                             .orElseThrow(
-                                () -> MissingComponentException.build(hero, CollideComponent.class)),
+                                () -> MissingComponentException.build(
+                                        hero,
+                                        CollideComponent.class)),
                     FIREBALL_RANGE,
                     FIREBALL_SPEED,
                     FIREBALL_DMG),
                 1);
         ```
 
-        Hinweis: `Entity#fetch`: `<T extends Component> Optional<T> fetch(final Class<T> klass)`.
+        Hinweise:
+        -   `Entity#fetch`: `<T extends Component> Optional<T> fetch(final Class<T> klass)`
+        -   `CollideComponent#center`: `Point center(final Entity entity)`
+        -   `Point#add`: `Point add(final Point other)`
 
         <!--
         `fetch` liefert ein `Optional` zurück. `map` packt das aus und wendet die Funktion an und verpackt das
