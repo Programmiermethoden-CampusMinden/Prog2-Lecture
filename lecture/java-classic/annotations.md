@@ -228,11 +228,11 @@ public void foo(@NotNull Object o) {
 ::: notes
 ## IntelliJ inferiert mit \@NotNull mögliche _null_-Werte
 
-![](images/screenshot_infer-notnull.png){width="80%"}
+![](images/screenshot_infer-notnull.png)
 
 ## IntelliJ baut bei \@NotNull passende Assertions ein
 
-![](images/screenshot_nullpointerexception-notnull.png){width="80%"}
+![](images/screenshot_nullpointerexception-notnull.png)
 :::
 
 
