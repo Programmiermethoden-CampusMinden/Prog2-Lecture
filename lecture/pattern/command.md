@@ -22,8 +22,8 @@ tldr: |
 
     4.  Zusätzlich gibt es einen `Client`, der die anderen Akteure kennt und alles zusammen baut.
 outcomes:
-  - k2: "Aufbau des Command-Patterns"
-  - k3: "Anwendung des Command-Patterns auf konkrete Beispiele, etwa den PM-Dungeon"
+  - k2: "Ich kann den Aufbau des Command-Patterns erklären"
+  - k3: "Ich kann das Command-Pattern auf konkrete Beispiele, etwa den PM-Dungeon, anwenden"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106532&client_id=FH-Bielefeld"
 #    name: "Quiz Command-Pattern (ILIAS)"
