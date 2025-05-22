@@ -23,14 +23,14 @@ tldr: |
     auf den Suchstring passt: `find` sucht dabei nach dem ersten Vorkommen des Patterns
     im Suchstring, `match` prüft, ob der gesamte String zum Pattern passt.
 outcomes:
-  - k1: "Wichtigste Methoden von `java.util.regex.Pattern` und `java.util.regex.Matcher`"
-  - k2: "Unterschied zwischen `Matcher#find` und `Matcher#matches`"
-  - k2: "Unterscheidung zwischen greedy und non-greedy Verhalten"
-  - k3: "Bildung einfacher regulärer Ausdrücke"
-  - k3: "Nutzung von Zeichenklassen und deren Negation"
-  - k3: "Nutzung der vordefinierten regulären Ausdrücke"
-  - k3: "Nutzung von Quantifizierern"
-  - k3: "Zusammenbauen von komplexen Ausdrücken (u.a. mit Gruppen)"
+  - k1: "Ich kenne die wichtigsten Methoden von `java.util.regex.Pattern` und `java.util.regex.Matcher`"
+  - k2: "Ich kann den Unterschied zwischen `Matcher#find` und `Matcher#matches` erklären"
+  - k2: "Ich kann zwischen greedy und non-greedy Verhalten bei regulären Ausdrücken unterscheiden"
+  - k3: "Ich kann einfache reguläre Ausdrücke bilden"
+  - k3: "Ich kann Zeichenklassen und deren Negation einsetzen"
+  - k3: "Ich kann die vordefinierten regulären Ausdrücke einsetzen"
+  - k3: "Ich kann Quantifizierer gezielt einsetzen"
+  - k3: "Ich kann komplexe Ausdrücke (u.a. mit Gruppen) konstruieren"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106518&client_id=FH-Bielefeld"
 #    name: "Quiz RegExp (ILIAS)"
