@@ -79,7 +79,9 @@ public class Lexer {
                 Token token = t.match(string);
                 if (token != null) {
                     result.add(token);
-                    string = string.substring(token.getContent().length(), string.length());
+                    string = string.substring(
+                                token.getContent().length(),
+                                string.length());
                 }
             }
         }
