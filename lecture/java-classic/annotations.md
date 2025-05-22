@@ -21,10 +21,10 @@ tldr: |
   mit einem Annotation-Processor verarbeitet werden oder zur Laufzeit über Reflection
   ausgewertet werden.
 outcomes:
-  - k2: "Begriff der Annotation erklären können am Beispiel"
-  - k3: "Anwendung von `@Override` sowie der Javadoc-Annotationen"
-  - k3: "Erstellen eigener Annotationen sowie Einstellen der Sichtbarkeit und Verwendbarkeit"
-  - k3: "Erstellen eigener einfacher Annotation-Processors"
+  - k2: "Ich kann den Begriff der 'Annotation' erklären an einem Beispiel"
+  - k3: "Ich kann `@Override` und auch die Javadoc-Annotationen praktisch anwenden"
+  - k3: "Ich kann eigene Annotationen erstellen und dabei die Sichtbarkeit und Verwendbarkeit einstellen"
+  - k3: "Ich kann einen eigenen einfachen Annotation-Processors erstellen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106512&client_id=FH-Bielefeld"
 #    name: "Quiz Annotationen (ILIAS)"
