@@ -109,6 +109,14 @@ challenges: |
     }
     ```
     -->
+
+
+    **Einfache JUnit-Tests II**
+
+    Betrachten Sie die Methode `String concat(String str)` der Klasse `String` aus dem JDK.
+
+    Implementieren Sie drei verschiedenartige Unit-Testfälle (inklusive der Eingabe- und
+    Rückgabewerte) für diese Methode mit Hilfe von JUnit (Version 4.x oder 5.x).
 ---
 
 
