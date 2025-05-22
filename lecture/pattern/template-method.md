@@ -21,7 +21,7 @@ tldr: |
   Methoden aufgerufen. D.h. die Aufrufe der Hilfsmethoden in der Template-Methode führen
   zu den in der jeweiligen ableitenden Klasse implementierten Varianten.
 outcomes:
-  - k3: "Template-Method-Entwurfsmuster praktisch anwenden"
+  - k3: "Ich kann das Template-Method-Entwurfsmuster praktisch anwenden"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106538&client_id=FH-Bielefeld"
 #    name: "Quiz Template-Method-Pattern (ILIAS)"
