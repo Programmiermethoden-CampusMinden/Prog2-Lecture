@@ -182,10 +182,19 @@ void fail();
 \bigskip
 
 *   Mit `assume*` werden Annahmen über den Zustand geprüft
-    *   Test wird abgebrochen, wenn Annahme nicht erfüllt
+    *   Test wird abgebrochen, wenn Annahme nicht erfüllt (Ergebnis: "Ignored")
     *   Prüfen von Vorbedingungen: Ist der Test hier ausführbar/anwendbar?
 
 [Beispiel: junit4.TestAssume]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/junit4/TestAssume.java"}
+
+::: notes
+Im JUnit-Kontext nutzen wir `assume*` für das **Überprüfen von *Annahmen*** (im Sinne
+von **Vorbedingungen**): Wenn ein `assume*` fehlschlägt, wird der Testfall abgebrochen
+bzw. als "ignoriert" gewertet.
+
+Dagegen setzen wir `assert*` für das **Überprüfen der *Testergebnisse*** ein, d.h. ein
+fehlschlagendes `assert*` lässt den Testfall "rot" werden.
+:::
 
 
 ::: notes
@@ -219,15 +228,19 @@ geworfen, der auf einen nicht korrigierbaren Programmzustand hindeutet.
     Parametern von `public` Methoden (also Methoden der Schnittstelle, die Ihre Kunden
     aufrufen).
 
-2.  Während der Entwicklungszeit kann das Java-`assert` aber ganz nützlich sein, weil Sie so
-    interne Annahmen sichtbar und prüfbar machen (vorausgesetzt, Sie haben `-ea` aktiviert).
+2.  Während der Entwicklungszeit kann das Java-`assert` aber ganz nützlich sein, weil
+    Sie so interne Annahmen sichtbar und prüfbar machen (vorausgesetzt, Sie haben `-ea`
+    aktiviert).
 
-    Analog könnte ein Java-`assert` an Stellen eingebaut werden, die eigentlich nicht erreichbar
-    sein sollten (etwa nach einer Dauerschleife oder in einem nicht erreichbaren `default`-Zweig
-    in einem `switch`).
+    Analog könnte ein Java-`assert` an Stellen eingebaut werden, die eigentlich nicht
+    erreichbar sein sollten (etwa nach einer Dauerschleife oder in einem nicht erreichbaren
+    `default`-Zweig in einem `switch`).
 
 3.  Bitte das Java-`assert` **nie** in einer JUnit-Testmethode statt der "richtigen"
     JUnit-`assert*` verwenden!
+
+4.  Das Java-`assert` ist in einer JUnit-Testmethode **kein** Ersatz für die
+    JUnit-`assume*`-Methoden!
 ::::::
 :::
 
