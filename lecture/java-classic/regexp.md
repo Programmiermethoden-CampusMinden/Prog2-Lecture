@@ -169,7 +169,7 @@ ein `^` voranstellen und hätte dann *alle* Zeichen *außer* "a", "b" und "c".
 Für den Schnitt kann als zweite Zeichenklasse eine Negation verwendet werden,
 damit würde eine Subtraktion erreicht werden: Alle Zeichen in der vorderen
 Zeichenklasse abzüglich der Zeichen in der zweiten Zeichenklasse. In der
-Tabelle oben (dritte Zeile) würde man dem `def` noch ein `^` voranstellen und
+Tabelle oben (vierte Zeile) würde man dem `def` noch ein `^` voranstellen und
 hätte dann die Zeichen "a" bis "z" *ohne* "d", "e" und "f".
 
 *Anmerkung*: Das Minus-Zeichen hat in der Zeichenklasse eine besondere Bedeutung
