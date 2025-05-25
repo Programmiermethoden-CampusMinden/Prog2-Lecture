@@ -143,8 +143,6 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 
 # Zeichenklassen
 
-::: slides
-
 | **Zeichenkette** | **Beschreibt**                                           |
 |:-----------------|:---------------------------------------------------------|
 | `[abc]`          | "a" oder "b" oder "c"                                    |
@@ -154,16 +152,7 @@ Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden.
 | `[a-z&&[^bc]]`   | "a" bis "z", außer "b" und "c": `[ad-z]` (Subtraktion)   |
 | `[a-z&&[^m-p]]`  | "a" bis "z", außer "m" bis "p": `[a-lq-z]` (Subtraktion) |
 
-:::
-
 ::: notes
-
-| **Zeichenkette** | **Beschreibt**                                       |
-|:-----------------|:-----------------------------------------------------|
-| `[abc]`          | "a" oder "b" oder "c"                                |
-| `[a-zA-Z]`       | alle Zeichen von "a" bis "z" und "A" bis "Z" (Range) |
-| `[a-z&&[def]]`   | "d", "e" oder "f" (Schnitt)                          |
-
 Zeichenklassen werden über eine Zeichenkette formuliert, die in `[` und `]`
 eingeschlossen wird. Dabei werden alle Zeichen aufgezählt, die in dieser
 Zeichenklasse enthalten sein sollen. Die Zeichenklasse verhält sich von
@@ -183,13 +172,9 @@ Zeichenklasse abzüglich der Zeichen in der zweiten Zeichenklasse. In der
 Tabelle oben (dritte Zeile) würde man dem `def` noch ein `^` voranstellen und
 hätte dann die Zeichen "a" bis "z" *ohne* "d", "e" und "f".
 
-In den [Folien zu dieser Lektion](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_beamer/lecture/java-classic/regexp.pdf)
-findet sich ein Beispiel für die Nutzung der Negation.
-
 *Anmerkung*: Das Minus-Zeichen hat in der Zeichenklasse eine besondere Bedeutung
 (es bildet einen Range). Deshalb muss es escaped werden, wenn es sich selbst
 darstellen soll.
-
 :::
 
 ::: notes
