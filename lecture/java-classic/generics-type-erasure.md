@@ -14,7 +14,7 @@ tldr: |
   die nötigen Casts ein. Als Anwender merkt man davon nichts, muss das "Type-Erasure"
   wegen der Auswirkungen aber auf dem Radar haben!
 outcomes:
-  - k2: "Typ-Löschung und Auswirkungen"
+  - k2: "Ich verstehe 'Typ-Löschung' bei Generics und kann die Auswirkungen erklären"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106237&client_id=FH-Bielefeld"
 #    name: "Quiz Generics: Type Erasure (ILIAS)"
