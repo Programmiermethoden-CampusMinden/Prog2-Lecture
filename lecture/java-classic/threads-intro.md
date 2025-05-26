@@ -64,7 +64,7 @@ attachments:
 
 # 42
 
-![](images/screenshot_swingworker.png){width="80%"}
+![](images/screenshot_swingworker.png){width="80%" web_width="50%"}
 
 <!-- XXX
 Wert 42 ausprobieren (ist zeitlich ganz gut)
@@ -155,7 +155,7 @@ public class Threaded extends Thread {
 
 *   Ableiten von `Thread` oder Implementierung von `Runnable`
 
-    ![](images/ThreadRunnable.png){width="80%"}
+    ![](images/ThreadRunnable.png){width="80%" web_width="60%"}
 
 *   Methode `run()` implementieren, aber nicht aufrufen
 *   Methode `start()` aufrufen, aber (i.d.R.) nicht implementieren
