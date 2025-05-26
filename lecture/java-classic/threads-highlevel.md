@@ -25,7 +25,7 @@ tldr: |
     Die in Swing integrierte Klasse `SwingWorker` ermöglicht es, in Swing Berechnungen
     in einen parallel ausgeführten Thread auszulagern.
 outcomes:
-  - k3: "Umgang mit High-Level-Abstraktionen: Lock-Objekten und Conditions, Executor-Interface und Thread-Pools, Fork/Join-Framework, SwingWorker"
+  - k3: "Ich kann High-Level-Abstraktionen einsetzen: Lock-Objekten und Conditions, Executor-Interface und Thread-Pools, Fork/Join-Framework, SwingWorker"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106531&client_id=FH-Bielefeld"
 #    name: "Quiz High-Level Concurrency (ILIAS)"
