@@ -34,7 +34,7 @@ tldr: |
     In dieser kurzen Einheit kann ich Ihnen nur einen ersten Einstieg in das Thema geben.
     Wir haben uns beispielsweise nicht Docker Compose oder Kubernetes angeschaut, und auch
     die Themen Netzwerk (zwischen Containern oder zwischen Containern und anderen Rechnern)
-    und Volumnes habe ich außen vor gelassen. Dennoch kommt man in der Praxis bereits mit
+    und Volumes habe ich außen vor gelassen. Dennoch kommt man in der Praxis bereits mit
     den hier vermittelten Basiskenntnissen erstaunlich weit ...
 outcomes:
   - k2: "Ich kann zwischen Containern und VMs unterscheiden"
