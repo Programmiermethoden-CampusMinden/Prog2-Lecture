@@ -24,10 +24,10 @@ tldr: |
   der Compiler normalerweise zur Compile-Zeit vornimmt. Auch das Refactoring wird
   dadurch eher schwierig.
 outcomes:
-  - k2: "Probleme beim Einsatz von Reflection"
-  - k2: "Bedeutung der verschiedenen Exceptions beim Aufruf von Methoden per Reflection"
-  - k3: "Inspection von Klassen zur Laufzeit mit Reflection"
-  - k3: "Einbindung von zur Compilezeit unbekannten Klassen, Aufruf von Konstruktoren und Methoden (mit und ohne Parameter/Rückgabewerte)"
+  - k2: "Ich kenne typische Probleme beim Einsatz von Reflection"
+  - k2: "Ich kann die Bedeutung der verschiedenen Exceptions beim Aufruf von Methoden per Reflection erklären"
+  - k3: "Ich kann zur Laufzeit mit Reflection Information zu Klassen und Methoden erlangen"
+  - k3: "Ich kann zur Compilezeit unbekannte Klassen einbinden und deren Konstruktoren und Methoden (mit und ohne Parameter/Rückgabewerte) aufrufen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106517&client_id=FH-Bielefeld"
 #    name: "Quiz Reflection (ILIAS)"
