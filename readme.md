@@ -233,15 +233,15 @@ abgegeben behandelt.
 1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte)
     (Einzelbearbeitung, fristgerecht bis zur jeweiligen Vorlesung, je Quiz
     bis zu 3x wiederholbar)
-3.  **Praktikum**: mind. 5 der 9 Übungsblätter bestanden (ohne Note/Punkte)
+2.  **Praktikum**: mind. 5 der 9 Übungsblätter bestanden (ohne Note/Punkte)
     (bis zu 3er Teams, alle Aufgaben eines Blattes bearbeitet, individuelle(!)
     fristgerechte Abgabe der Lösungen im ILIAS als aussagekräftiges
     [*Post Mortem*](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981)[^postmortem],
     Vorstellung der Lösungen im Praktikum durch jedes Teammitglied, aktive
     Beteiligung an der Diskussion im Praktikum)
-4.  **Station I**: ILIAS-Test (30 Minuten in Minden im B40)
-5.  **Station II**: ILIAS-Test (30 Minuten in Minden im B40)
-6.  **Station III**: ILIAS-Test (30 Minuten in Minden im B40)
+3.  **Station I**: ILIAS-Test (30 Minuten in Minden im B40)
+4.  **Station II**: ILIAS-Test (30 Minuten in Minden im B40)
+5.  **Station III**: ILIAS-Test (30 Minuten in Minden im B40)
 
 [^postmortem]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe individuell(!) die
     Bearbeitung des jeweiligen Aufgabenblattes zurückblickend mit 200 bis 400 Wörtern. Gehen
