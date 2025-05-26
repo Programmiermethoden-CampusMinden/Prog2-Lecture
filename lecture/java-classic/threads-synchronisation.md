@@ -40,9 +40,9 @@ tldr: |
     dieser Lehrveranstaltung deutlich übersteigen. Diese werden teilweise in den
     Veranstaltungen "Betriebssysteme" und/oder "Verteilte Systeme" besprochen.
 outcomes:
-  - k2: "Notwendigkeit zur Synchronisation"
-  - k2: "Unterscheidung einseitige und mehrseitige Synchronisation"
-  - k3: "Synchronisation mit `synchronized`, `wait`,  `notify` und `notifyAll`"
+  - k2: "Ich kann die Notwendigkeit zur Synchronisation erklären"
+  - k2: "Ich kann den Unterschied zwischen einseitiger und mehrseitiger Synchronisation erklären"
+  - k3: "Ich kann die Synchronisation mit `synchronized`, `wait`,  `notify` und `notifyAll` praktisch einsetzen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106530&client_id=FH-Bielefeld"
 #    name: "Quiz Threads Synchronisation (ILIAS)"
