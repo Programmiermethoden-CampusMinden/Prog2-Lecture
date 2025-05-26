@@ -515,6 +515,22 @@ bei den intermediären als auch den terminalen Operationen. Schauen Sie in die D
 `Stream<T>`: Folge von Objekten vom Typ `T`, Verarbeitung "lazy"
 [(Gegenstück zu `Collection<T>`: Dort werden Daten **gespeichert**, hier werden Daten **verarbeitet**)]{.notes}
 
+:::::: notes
+::: tip
+**Fließband-Metapher**
+
+Einen Stream kann man sich vielleicht wie ein Fließband in einer Fabrik vorstellen: Die Daten
+werden auf dem Fließband in eine Richtung transportiert und durchlaufen verschiedene Stationen,
+wo auf den Daten gearbeitet wird. In manchen Stationen werden Objekte vom Fließband geschubst
+(Daten herausgefiltert), in manchen Stationen werden die Objekte bearbeitet (Daten verändert),
+in manchen Stationen werden aus mehreren Teilen neue Objekte gebaut ...
+
+Es ist nur eine Metapher! Sie endet spätestens damit, dass die Streams *lazy* sind und dass
+sämtliche Operationen erst dann ausgeführt werden, wenn eine terminale Operation den Stream
+abschließt.
+:::
+::::::
+
 \bigskip
 
 *   Neuen Stream anlegen: `Collection#stream()` oder `Stream.of()` ...
