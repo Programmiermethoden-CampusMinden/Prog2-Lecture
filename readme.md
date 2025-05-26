@@ -244,12 +244,12 @@ abgegeben behandelt.
 6.  **Station III**: ILIAS-Test (30 Minuten in Minden im B40)
 
 [^postmortem]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe individuell(!) die
-    Bearbeitung des jeweiligen Aufgabenblattes zurückblickend mit ca. 200 bis 400 Wörtern. Gehen
+    Bearbeitung des jeweiligen Aufgabenblattes zurückblickend mit 200 bis 400 Wörtern. Gehen
     Sie dabei aussagekräftig und nachvollziehbar auf folgende Punkte ein: (a) Zusammenfassung:
     Was wurde gemacht? (b) Implementierungsdetails: Kurze Beschreibung besonders interessanter
     Aspekte der Umsetzung. (c) Was war der schwierigste Teil bei der Bearbeitung? Wie haben Sie
     dieses Problem gelöst? (d) Was haben Sie gelernt oder (besser) verstanden? (e) Team: Mit wem
-    haben Sie zusammengearbeitet? (f) Link zum Repo mit der Lösung (erst ab Blatt 04).
+    haben Sie zusammengearbeitet? (f) Links zu Ihren Pull-Requests mit der Lösung (erst ab Blatt 04).
     Siehe auch https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
 
 Station I und II finden im Vorlesungsslot statt ([Aufteilung siehe separate Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/997)),
