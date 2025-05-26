@@ -39,10 +39,9 @@ tldr: |
     haben und diese entsprechend zugreifen/aufrufen. Das klappt auch, wenn der Thread
     noch nicht gestartet wurde oder bereits abgearbeitet wurde.
 outcomes:
-  - k2: "Grundsätzlicher Unterschied zw. Threads und Prozessen"
-  - k2: "Lebenszyklus von Threads"
-  - k3: "Erzeugen und Starten von Threads"
-  - k3: "Kommunikation mit Objekten"
+  - k2: "Ich kenne den grundsätzlichen Unterschied zw. Threads und Prozessen"
+  - k2: "Ich kenne den Lebenszyklus von Threads"
+  - k3: "Ich kann Threads erzeugen und starten"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106529&client_id=FH-Bielefeld"
 #    name: "Quiz Threads Intro (ILIAS)"
