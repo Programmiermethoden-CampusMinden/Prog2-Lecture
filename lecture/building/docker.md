@@ -37,14 +37,14 @@ tldr: |
     und Volumnes habe ich außen vor gelassen. Dennoch kommt man in der Praxis bereits mit
     den hier vermittelten Basiskenntnissen erstaunlich weit ...
 outcomes:
-  - k2: "Unterschied zwischen Containern und VMs"
-  - k2: "Einsatzgebiete für Container"
-  - k2: "Container laufen als abgeschottete Prozesse auf dem Host - kein Sandbox-Effekt"
-  - k3: "Container von DockerHub ziehen"
-  - k3: "Container starten"
-  - k3: "Eigene Container definieren und bauen"
-  - k3: "Einsatz von Containern in GitLab CI/CD und GitHub Actions"
-  - k3: "Einsatz von VSCode und Containern"
+  - k2: "Ich kann zwischen Containern und VMs unterscheiden"
+  - k1: "Ich kenne typische Einsatzgebiete für Container"
+  - k2: "Ich verstehe, dass Container als abgeschottete Prozesse auf dem Host laufen - kein Sandbox-Effekt"
+  - k3: "Ich kann Container von DockerHub ziehen"
+  - k3: "Ich kann Container starten"
+  - k3: "Ich kann eigene Container definieren und bauen"
+  - k3: "Ich kann Container in GitLab CI/CD und/oder GitHub Actions einsetzen"
+  - k3: "Ich kann VSCode mit Containern einsetzen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106227&client_id=FH-Bielefeld"
 #    name: "Quiz Docker (ILIAS)"
