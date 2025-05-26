@@ -15,9 +15,9 @@ tldr: |
   Syntaktisch definiert man die Typ-Variablen in spitzen Klammern hinter dem Klassennamen bzw.
   vor dem Rückgabetyp einer Methode: `public class Stack<E> { }` und `public <T> T foo(T m) { }`.
 outcomes:
-  - k1: "Begriffe generischer Typ, parametrisierter Typ, formaler Typ-Parameter, Typ-Parameter"
-  - k3: "Erstellen und Nutzen von generischen Klassen und Interfaces"
-  - k3: "Erstellen und Nutzen von generischen Methoden"
+  - k1: "Ich kenne die Begriffe 'generischer Typ', 'parametrisierter Typ', 'formaler Typ-Parameter', 'Typ-Parameter'"
+  - k3: "Ich kann generische Klassen und Interfaces definieren und praktisch einsetzen"
+  - k3: "Ich kann generische Methoden definieren und praktisch einsetzen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106235&client_id=FH-Bielefeld"
 #    name: "Quiz Generics: Classes & Methods (ILIAS)"
