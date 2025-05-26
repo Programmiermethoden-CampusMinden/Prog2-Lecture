@@ -15,8 +15,8 @@ tldr: |
   Bei Arrays ist es genau anders herum: Wenn `U extends O` dann gilt auch `U[] extends O[]` ... (Dies
   nennt man "_kovariantes_" Verhalten.)
 outcomes:
-  - k3: "Vererbungsbeziehungen mit generischen Klassen"
-  - k3: "Umgang mit Arrays und generischen Typen"
+  - k3: "Ich kann Vererbungsbeziehungen mit generischen Klassen bilden"
+  - k3: "Ich kann mit Arrays und generischen Typen umgehen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106238&client_id=FH-Bielefeld"
 #    name: "Quiz Generics und Polymorphie (ILIAS)"
