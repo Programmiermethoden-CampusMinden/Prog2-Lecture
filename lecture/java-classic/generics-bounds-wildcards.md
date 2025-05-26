@@ -20,7 +20,7 @@ tldr: |
   Typ-Variable keinen Namen bekommt und damit innerhalb der Klasse/Methode nicht
   zugreifbar ist.
 outcomes:
-  - k3: "Umgang mit Wildcards und Bounds bei generischen Klassen/Methoden"
+  - k3: "Ich kann Wildcards und Bounds bei generischen Klassen/Methoden einsetzen"
 #quizzes:
 #  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106236&client_id=FH-Bielefeld"
 #    name: "Quiz Generics: Bounds & Wildcards (ILIAS)"
