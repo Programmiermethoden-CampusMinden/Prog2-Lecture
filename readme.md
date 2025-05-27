@@ -10,6 +10,8 @@ attachments:
 <!--  pandoc -s -f markdown -t markdown+smart-grid_tables-multiline_tables-simple_tables --columns=94 --reference-links=true  readme.md  -o xxx.md  -->
 
 
+---
+
 > ... And, lastly, there's the explosive growth in demand, which has led to many people doing
 > it who aren't any good at it. Code is merely a means to an end.
 > **Programming is an art and code is merely its medium.**
@@ -21,8 +23,6 @@ attachments:
   [daringfireball.net]: https://daringfireball.net/2020/04/cobol_programming_coding
 
 
----
-
 ::: tip
 **Vorschau**
 
@@ -31,8 +31,6 @@ Sie können die Vorlesungsunterlagen in zwei Varianten anschauen:
 *   [Markdown in GitHub](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_gfm/readme.md)
 *   [Docsify (experimentell)](https://docsify-this.net/?basePath=https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/Prog2-Lecture/refs/heads/_docsify&homepage=readme.md&sidebar=true&browser-tab-title=PR2&font-size=14px&searchbox=true&externalLinkTarget=_blank&mergeNavbar=true&zoom-images=true&dark-mode=auto#/)
 :::
-
----
 
 
 # Kursbeschreibung
