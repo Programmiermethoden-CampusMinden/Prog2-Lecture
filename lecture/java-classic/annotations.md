@@ -238,6 +238,16 @@ public void foo(@NotNull Object o) {
 
 # Eigene Annotationen erstellen
 
+::: notes
+In Java kann man sich selbst Annotationen definieren mit dem Schlüsselwort `@interface`.
+
+Annotationen können Parameter bekommen und im Javadoc dokumentiert sein. Es gibt die
+Möglichkeit zu definieren, wo im Code die eigenen Annotationen verwendet werden dürfen
+(Auszeichnung mit der Annotation `@Target`). Ebenso kann über die Annotation `@Retention`
+festgelegt werden, wann im Verarbeitungsprozess der Java-Sourcen bzw. des -Bytecodes die
+eigenen Annotationen sichtbar sein sollen.
+:::
+
 ```java
 public @interface MyFirstAnnotation {}
 
@@ -287,7 +297,7 @@ Parameter für Annotation werden über entsprechende Methoden-Deklaration realis
 *   Defaultwerte mit dem nachgestellten Schlüsselwort `default` sowie dem
     Defaultwert selbst
 
-## Javadoc
+## Dokumentation der Annotation mit/im Javadoc
 
 Soll die Annotation in der Javadoc-Doku dargestellt werden, muss sie mit
 der Meta-Annotation `@Documented` ausgezeichnet werden (aus
@@ -296,7 +306,7 @@ der Meta-Annotation `@Documented` ausgezeichnet werden (aus
 *Hinweis*: Die Annotation wird lediglich in die Doku aufgenommen, d.h. es
 erfolgt keine weitere Verarbeitung oder Hervorhebung o.ä.
 
-## Wann ist eine Annotation sichtbar (Beschränkung der Sichtbarkeit)
+## Wann ist eine Annotation sichtbar (Beschränkung der Sichtbarkeit mit `@Retention`)
 
 Annotationen werden vom Compiler und/oder anderen Tools ausgewertet. Man
 kann entsprechend die Sichtbarkeit einer Annotation beschränken: Sie kann
@@ -343,7 +353,7 @@ public class Wuppie {
 }
 ```
 
-### Einschränkung des Einsatzes eines Annotation
+### Einschränkung des Einsatzes eines Annotation mit `@Target`
 
 Für jede Annotation kann eingeschränkt werden, wo (an welchen Java-Elementen)
 sie verwendet werden darf.
