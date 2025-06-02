@@ -115,7 +115,7 @@ Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Ver
 |                    | 23.       | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                     | [Q04]        | [B04]        |
 |                    | 30.       | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Continuous Integration (CI)] | [Q05]        | [B05]        |
 | Juni               | 06.       | [Code-Smells], [Coding-Rules], [Refactoring]; [Javadoc]                                                | [Q06]        | [B06]        |
-|                    | 13.       | **Station II** 09-11 Uhr, B40 (Aufteilung siehe Ankündigung)                                           |              |              |
+|                    | 13.       | **Station II** 09:00-10:30 Uhr, B40 (Aufteilung siehe Ankündigung)                                     |              |              |
 |                    | 20.       | [RegExp]; [Template-Method-Pattern], [Command-Pattern]; [Annotationen]                                 | [Q07]        | [B07]        |
 |                    | 27.       | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Docker]      | [Q08]        | [B08]        |
 | Juli               | 04.       | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Reflection]                          | [Q09]        | [B09]        |
@@ -254,7 +254,7 @@ abgegeben behandelt.
     haben Sie zusammengearbeitet? (f) Links zu Ihren Pull-Requests mit der Lösung (erst ab Blatt 04).
     Siehe auch https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
 
-Station I und II finden im Vorlesungsslot statt ([Aufteilung siehe separate Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/997)),
+Station I und II finden im Vorlesungsslot statt ([Aufteilung siehe separate Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1025)),
 Station III im ersten Prüfungszeitraum (Termin lt. Bekanntgabe vom Prüfungsamt: 09.07.).
 Die Punkte der beiden besseren Stationen werden summiert für die Berechnung der Note.
 
