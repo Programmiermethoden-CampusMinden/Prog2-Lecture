@@ -111,11 +111,11 @@ Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Ver
 |                    | 25.       | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Gradle]                                 | [Q01]        | [B01]        |
 | Mai                | 02.       | [Git-Branches], [Branching-Strategien]; [Methodenreferenzen]; [Logging]                                | [Q02]        | [B02]        |
 |                    | 09.       | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Record-Klassen]                                         | [Q03]        | [B03]        |
-|                    | 16.       | **Station I** 09-11 Uhr, B40 (Aufteilung siehe [Ankündigung])                                          |              |              |
+|                    | 16.       | **Station I** 09-11 Uhr, B40 (Aufteilung siehe [Ankündigung #997])                                     |              |              |
 |                    | 23.       | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                     | [Q04]        | [B04]        |
 |                    | 30.       | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Continuous Integration (CI)] | [Q05]        | [B05]        |
 | Juni               | 06.       | [Code-Smells], [Coding-Rules], [Refactoring]; [Javadoc]                                                | [Q06]        | [B06]        |
-|                    | 13.       | **Station II** 09:00-10:30 Uhr, B40 (Aufteilung siehe Ankündigung)                                     |              |              |
+|                    | 13.       | **Station II** 09:00-10:30 Uhr, B40 (Aufteilung siehe [Ankündigung #1025])                             |              |              |
 |                    | 20.       | [RegExp]; [Template-Method-Pattern], [Command-Pattern]; [Annotationen]                                 | [Q07]        | [B07]        |
 |                    | 27.       | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Docker]      | [Q08]        | [B08]        |
 | Juli               | 04.       | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Reflection]                          | [Q09]        | [B09]        |
@@ -130,7 +130,8 @@ Bearbeitung der Quizzes jeweils **Sa, 00:00 Uhr (Vorwoche) bis Fr, 08:00 Uhr** [
 
 [Prüfungsvorbereitung]: admin/exams.md
 [FAQ]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a
-[Ankündigung]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/997
+[Ankündigung #997]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/997
+[Ankündigung #1025]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1025
 
 [Gradle]: lecture/building/gradle.md
 <!-- [ANT]: lecture/building/ant.md -->
