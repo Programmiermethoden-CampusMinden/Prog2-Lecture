@@ -235,7 +235,7 @@ abgegeben behandelt.
 
 1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte)
     (Einzelbearbeitung, fristgerecht bis zur jeweiligen Vorlesung, je Quiz
-    bis zu 3x wiederholbar)
+    bis zu 3x wiederholbar, 60% pro Quiz zum Bestehen nötig)
 2.  **Praktikum**: mind. 5 der 9 Übungsblätter bestanden (ohne Note/Punkte)
     (bis zu 3er Teams, alle Aufgaben eines Blattes bearbeitet, individuelle(!)
     fristgerechte Abgabe der Lösungen im ILIAS als aussagekräftiges
