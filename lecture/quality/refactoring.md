@@ -122,7 +122,7 @@ challenges: |
                 () ->
                     hero.fetch(CollideComponent.class)
                         .map(cc -> cc.center(hero))
-                        .map(p -> p.add(Direction.asPoint(EntityUtils.getViewDirection(hero))))
+                        .map(p -> p.shift(EntityUtils.getViewDirection(hero)))
                         .orElseThrow(
                             () -> MissingComponentException.build(hero, CollideComponent.class))
                 ),
@@ -133,12 +133,17 @@ challenges: |
     mit
 
     ```java
+    // utils.Direction
     public static Point asPoint(PositionComponent.Direction viewDirection) {
         return fromPositionCompDirection(viewDirection).toPoint();
     }
 
-     public static Point add(Point viewDirection) {
-        return add(viewDirection.x(), viewDirection.y());
+    // core.utils.Point
+    public static Point add(Point viewDirection) {
+        return add(viewDirection);
+    }
+    public Point shift(PositionComponent.Direction viewDirection) {
+        return add(utils.Direction.asPoint(viewDirection));
     }
     ```
     -->
