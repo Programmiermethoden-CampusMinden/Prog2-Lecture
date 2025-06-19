@@ -406,7 +406,7 @@ eines einfachen Annotation-Prozessors, der lediglich die Annotationen liest.
 
 ```java
 @SupportedAnnotationTypes("annotations.MySecondAnnotation")
-@SupportedSourceVersion(SourceVersion.RELEASE_17)
+@SupportedSourceVersion(SourceVersion.RELEASE_21)
 public class Foo extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> as, RoundEnvironment re) {

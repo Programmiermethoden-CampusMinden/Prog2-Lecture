@@ -11,7 +11,7 @@ import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic;
 
 @SupportedAnnotationTypes("annotations.MySecondAnnotation")
-@SupportedSourceVersion(SourceVersion.RELEASE_17)
+@SupportedSourceVersion(SourceVersion.RELEASE_21)
 public class Foo extends AbstractProcessor {
 
     @Override
