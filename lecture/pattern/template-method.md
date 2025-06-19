@@ -215,7 +215,7 @@ Dies ist ein Beispiel für das **[Template-Method-Pattern](https://en.wikipedia.
 In der Basisklasse implementiert man eine Template-Methode (in der Skizze `templateMethod`),
 die sich auf anderen in der Basisklasse deklarierten (Hilfs-) Methoden "abstützt" (diese also
 aufruft; in der Skizze `method1`, `method2`, `method3`). Diese Hilfsmethoden können als
-`abstract` markiert werden und müssen dann von den ableitenden Klassen implementiert werden
+`abstract` markiert werden und _müssen_ dann von den ableitenden Klassen implementiert werden
 (in der Skizze `method1` und `method2`). Man kann aber auch einige/alle dieser aufgerufenen
 Hilfsmethoden in der Basisklasse implementieren (beispielsweise mit einem leeren Body - sogenannte
 "Hook"-Methoden) und die ableitenden Klassen _können_ dann diese Methoden überschreiben und das
