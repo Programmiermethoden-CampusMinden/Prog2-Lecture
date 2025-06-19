@@ -377,7 +377,7 @@ Elemente verwendbar.
 
 ::: notes
 Der dem `javac`-Compiler vorgelegte Source-Code wird eingelesen und in einen
-entsprechenden Syntax-Tree (_AST_) transformiert (dazu mehr im Master im Modul
+entsprechenden Syntax-Tree (_AST_) transformiert (dazu mehr im Modul
 "Compilerbau" :)
 
 Anschließend können sogenannte "Annotation Processors" über den AST laufen und
