@@ -257,7 +257,14 @@ abgegeben behandelt.
 
 Station I und II finden im Vorlesungsslot statt ([Aufteilung siehe separate Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1025)),
 Station III im ersten Prüfungszeitraum (Termin lt. Bekanntgabe vom Prüfungsamt: 09.07.).
-Die Punkte der beiden besseren Stationen werden summiert für die Berechnung der Note.
+Die Punkte der beiden besseren Stationen werden summiert bzw. es wird der Mittelwert der beiden
+besten prozentualen Ergebnisse ermittelt zur die Berechnung der Note.[^note]
+
+[^note]: Wenn die Maximalzahl der Punkte für Station I, II und III identisch ist, wird einfach
+    die Summe der Punkte der beiden besseren Stationen berechnet und für die Bildung der Gesamtnote
+    genutzt. Wenn die Maximalzahl der Punkte für Station I, II und III voneinander abweicht, dann
+    wird jeweils das erreichte prozentuale Ergebnis berechnet und die Gesamtnote über den Mittelwert
+    der beiden besseren Ergebnisse berechnet.
 
 **Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95% (jeweils nur wenn Quizzes
 bestanden und Praktikum bestanden)
