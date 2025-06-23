@@ -158,6 +158,8 @@ Deshalb forkt man das Original-Repo auf dem Server, d.h. auf dem Server wird
 eine Kopie des Original-Repos im eigenen Namespace angelegt. Auf diese Kopie
 hat man dann uneingeschränkten Zugriff.
 
+Zusätzliche kurze Video-Anleitungen von GitHub: [Working with forks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks)
+
 
 ## Anmerkungen zu den Namen für die Remotes: `origin` und `upstream`
 
