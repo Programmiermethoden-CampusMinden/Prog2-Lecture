@@ -258,7 +258,7 @@ abgegeben behandelt.
 
 Station I und II finden im Vorlesungsslot statt ([Aufteilung siehe separate Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1025)),
 Station III im ersten Prüfungszeitraum (Termin lt. Bekanntgabe vom Prüfungsamt: Mi, 09.07.,
-([Aufteilung siehe separate Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1032))).
+[Aufteilung siehe separate Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1032)).
 Die Punkte der beiden besseren Stationen werden summiert bzw. es wird der Mittelwert der beiden
 besten prozentualen Ergebnisse ermittelt zur die Berechnung der Note.[^note]
 
