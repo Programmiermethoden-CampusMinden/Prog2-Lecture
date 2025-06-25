@@ -111,7 +111,7 @@ Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Ver
 |                    | 25.       | [Einführung Versionierung], [Git Basics]; [Lambda-Ausdrücke]; [Gradle]                                 | [Q01]        | [B01]        |
 | Mai                | 02.       | [Git-Branches], [Branching-Strategien]; [Methodenreferenzen]; [Logging]                                | [Q02]        | [B02]        |
 |                    | 09.       | [Git-Remotes], [Git-Workflows]; [Stream-API]; [Record-Klassen]                                         | [Q03]        | [B03]        |
-|                    | 16.       | **Station I** 09-11 Uhr, B40 (Aufteilung siehe [Ankündigung #997])                                     |              |              |
+|                    | 16.       | **Station I** 09:00-11:00 Uhr, B40 (Aufteilung siehe [Ankündigung #997])                               |              |              |
 |                    | 23.       | [Einführung Testen], [JUnit-Basics]; [Optional]; [Visitor-Pattern]                                     | [Q04]        | [B04]        |
 |                    | 30.       | [Testfallermittlung], [Mocking]; [Default-Methoden]; [Observer-Pattern]; [Continuous Integration (CI)] | [Q05]        | [B05]        |
 | Juni               | 06.       | [Code-Smells], [Coding-Rules], [Refactoring]; [Javadoc]                                                | [Q06]        | [B06]        |
@@ -119,7 +119,7 @@ Hier finden Sie einen abonnierbaren [Google Kalender] mit allen Terminen der Ver
 |                    | 20.       | [RegExp]; [Template-Method-Pattern], [Command-Pattern]; [Annotationen]                                 | [Q07]        | [B07]        |
 |                    | 27.       | Generics: [Klassen und Methoden], [Bounds und Wildcards], [Type Erasure], [Polymorphie]; [Docker]      | [Q08]        | [B08]        |
 | Juli               | 04.       | [Intro Threads], [Synchronisierung], [Highlevel Threadkonzepte]; [Reflection]                          | [Q09]        | [B09]        |
-| *Prüfungsphase I*  | 09.07.    | **Station III**, B40 (Aufteilung siehe Ankündigung)                                                    |              |              |
+| *Prüfungsphase I*  | 09.07.    | **Station III** 09:00-10:30 Uhr, B40 (Aufteilung siehe [Ankündigung #1032])                            |              |              |
 | *Prüfungsphase II* | 24.09.(?) | **Station IV**, B40 (Aufteilung siehe Ankündigung)                                                     |              |              |
 
 Abgabe der Übungsblätter jeweils **bis Fr, 08:00 Uhr** [im ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1514856&client_id=FH-Bielefeld), Vorstellung der
@@ -132,6 +132,7 @@ Bearbeitung der Quizzes jeweils **Sa, 00:00 Uhr (Vorwoche) bis Fr, 08:00 Uhr** [
 [FAQ]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a
 [Ankündigung #997]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/997
 [Ankündigung #1025]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1025
+[Ankündigung #1032]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1032
 
 [Gradle]: lecture/building/gradle.md
 <!-- [ANT]: lecture/building/ant.md -->
@@ -256,7 +257,8 @@ abgegeben behandelt.
     Siehe auch https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
 
 Station I und II finden im Vorlesungsslot statt ([Aufteilung siehe separate Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1025)),
-Station III im ersten Prüfungszeitraum (Termin lt. Bekanntgabe vom Prüfungsamt: 09.07.).
+Station III im ersten Prüfungszeitraum (Termin lt. Bekanntgabe vom Prüfungsamt: Mi, 09.07.,
+([Aufteilung siehe separate Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1032))).
 Die Punkte der beiden besseren Stationen werden summiert bzw. es wird der Mittelwert der beiden
 besten prozentualen Ergebnisse ermittelt zur die Berechnung der Note.[^note]
 
