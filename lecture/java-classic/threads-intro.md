@@ -265,7 +265,7 @@ _Hinweis:_ Ein Thread wird beendet, wenn
     Einen richtigen Ersatz gibt es aber auch nicht.).
 
 _Hinweis:_ Die Methoden `wait()`, `notify()`/`notifyAll()` und die "`synchronized`-Sperre"
-werden in der Sitzung ["Threads: Synchronisation"](threads-intro.
+werden in der Sitzung ["Threads: Synchronisation"](threads-synchronisation.md)
 besprochen.
 :::
 
