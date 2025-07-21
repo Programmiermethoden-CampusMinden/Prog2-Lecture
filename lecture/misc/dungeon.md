@@ -212,7 +212,7 @@ anschauen sollten. Zusätzlich gibt es für Game und Dungeon noch weitere Dokume
 
 # Überblick über die Java-Strukturen
 
-![](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/img/gameloop.png?raw=true)
+![](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/doc/img/gameloop.png?raw=true)
 
 Jedes Spiel besteht aus einer Game-Loop, die je nach Konfiguration 30 Mal oder 60 Mal pro
 Sekunde ausgeführt wird. Diese Game-Loop wird mit Hilfe der `Game#run()`-Methode gestartet und
@@ -223,7 +223,7 @@ sogenannte Systeme berechnet. Diese werden einmal pro Frame aufgerufen und besti
 Zustand (Position, Animation, Stats, ...) der Spielelemente, die dann beim nächsten Rendern im
 Spiel angezeigt werden.
 
-![](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/img/ecs.png?raw=true)
+![](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/doc/img/ecs.png?raw=true)
 
 Die Klasse `core.Game` ist der zentrale Einstiegspunkt. Hier werden alle wichtigen Dinge
 konfiguriert, und es gibt die `Game#run()`-Methode, die das Spiel startet. Zusätzlich gibt es
