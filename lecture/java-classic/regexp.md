@@ -50,9 +50,6 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/35288af40bdf53fe210d0f8c4d25fd38d4c5f4cde5c04ffd49500f815723448b0bc16b305c7b05b0d57d670019d52dd5ff9da5f4a43afc0c85ed870b44f93e00"
     name: "VL RegExp"
-attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/java-classic/regexp.pdf"
-    name: "PDF-Version"
 challenges: |
     Schreiben Sie eine Methode, die mit Hilfe von regulären Ausdrücken überprüft, ob der eingegebene String
     eine nach dem folgenden Schema gebildete EMail-Adresse ist:

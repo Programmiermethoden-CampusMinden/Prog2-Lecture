@@ -62,9 +62,6 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/54268841fd04fa032e9ef425acd88a576a94f572e8179fba131126a0f854adaf8118b42ebcf90451649fd07913a4d873ee5459a1f5a58250ded9749352edcb78"
     name: "VL Einführung in Docker"
-attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/building/docker.pdf"
-    name: "PDF-Version"
 ---
 
 

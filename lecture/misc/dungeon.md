@@ -51,9 +51,6 @@ tibav:
     name: "VL How-To Dungeon: Teil 2 (Hero)"
   - link: "https://av.tib.eu/media/67784"
     name: "VL How-To Dungeon: Teil 3 (Monster und Feuerbälle)"
-attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/misc/dungeon.pdf"
-    name: "PDF-Version"
 ---
 
 

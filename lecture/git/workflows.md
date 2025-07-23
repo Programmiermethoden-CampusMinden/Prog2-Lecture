@@ -43,9 +43,6 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/b673fe50e18f064b2b5c81108c81dfea940b2eb81790d54b27e8ade26f0afa10d0d05f8a0c0c852e8e9da6c558065f053033d83384810b47a6ca7f5110482153"
     name: "VL Git Workflows"
-attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/git/workflows.pdf"
-    name: "PDF-Version"
 ---
 
 

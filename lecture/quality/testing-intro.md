@@ -42,9 +42,6 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/87e2aa545269a6d4c0502a18a3e800c82bc767de66612f488f17e0ff60c3a66097884212745aff556c2b76eee7a0fd8a8225d912c3a39c274020fd5b8055bb10"
     name: "VL Einführung Softwaretest"
-attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/quality/testing-intro.pdf"
-    name: "PDF-Version"
 challenges: |
     **Einfache JUnit-Tests I**
 

@@ -24,9 +24,6 @@ youtube:
 fhmedia:
   - link: "https://www.hsbi.de/medienportal/m/5fad3671a098d262206f0b0eb995b2d692a6e9914a336b1c28fc99753b0c874a637d310dcdc639afdd200d831b4e3ee5924ea8073b4a32751aebe4fa91c32bef"
     name: "VL Generics: Type Erasure"
-attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/lecture/java-classic/generics-type-erasure.pdf"
-    name: "PDF-Version"
 ---
 
 

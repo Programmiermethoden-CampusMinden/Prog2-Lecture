@@ -50,9 +50,6 @@ fhmedia:
       name: "Hinweise zur Prüfung: Fragetypen-Demo"
     - link: "https://www.hsbi.de/medienportal/m/66febead31c0b01deec2ffb47adf8abfa247b51a76a539b6681423d9206f819e4df8c93ee7affd4be3f7144e035dfbaf997af8cd9314d4dbc65244bf11cd9de8"
       name: "Hinweise zur Prüfung: Technische Vorbereitung"
-attachments:
-  - link: "https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/_pdf/admin/exams.pdf"
-    name: "PDF-Version"
 no_beamer: true
 ---
 
