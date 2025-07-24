@@ -49,8 +49,6 @@ Studierendenservice bekanntgegeben. (vgl. LSF und [Ankündigungen])
 
 :::
 
-* * * * *
-
 
 # Kursbeschreibung
 
