@@ -4,7 +4,7 @@ has_license: true
 no_beamer: true
 ---
 
-<!--  pandoc -s -f markdown -t markdown+smart-grid_tables-multiline_tables-simple_tables --columns=94 --reference-links=true  readme.md  -o xxx.md  -->
+<!--  pandoc -s -f markdown -t markdown+smart-grid_tables-multiline_tables-simple_tables --columns=94  readme.md  -o xxx.md  -->
 
 
 > ... And, lastly, there's the explosive growth in demand, which has led to many people doing
