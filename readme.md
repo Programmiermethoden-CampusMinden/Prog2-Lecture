@@ -330,7 +330,7 @@ von der Stiftung Innovation in der Hochschullehre gefördert.
 
 # LICENSE
 
-[`<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">`{=markdown}](https://creativecommons.org/licenses/by-sa/4.0/)
+![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
 Unless otherwise noted, [this work](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture) by
 [Carsten Gips](https://github.com/cagix) and [contributors](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/graphs/contributors)
