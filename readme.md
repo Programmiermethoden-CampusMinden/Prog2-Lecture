@@ -41,11 +41,11 @@ Prüfungsverfahren:
 Der Termin für die nächste Klausur für "Programmiermethoden" wird über den Prüfplan vom
 Studierendenservice bekanntgegeben. (vgl. LSF und [Ankündigungen])
 
-  ["Programmieren 2"]: https://github.com/Programmiermethoden-CampusMinden/PM-Lecture
-  [offenen ILIAS-Bereich]: https://www.hsbi.de/elearning/goto.php?target=crs_1181185&client_id=FH-Bielefeld
+  ["Programmieren 2"]: https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
+  [offenen ILIAS-Bereich]: https://www.hsbi.de/elearning/goto.php?target=crs_1089782&client_id=FH-Bielefeld
   [PO10]: https://www.hsbi.de/multimedia/Hochschulverwaltung/Dezernat+II/StudServ/Prüfungsangelegenheiten/Studiengangs_Downloads/Informatik+_+IFM/Prüfungsordnung+und+Modulhandbuch+Bachelor+Informatik+Version+10+%28Fassung+09_2023%29-p-174010.pdf
   [PO18]: https://www.hsbi.de/multimedia/Hochschulverwaltung/Dezernat+II/StudServ/Prüfungsangelegenheiten/Studiengangs_Downloads/Informatik+_+IFM/Studiengangsprüfungsordnung+und+Modulhandbuch+Bachelor+Informatik+Version+18+%28Fassung+09_2023%29-p-169988.pdf
-  [Ankündigungen]: https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/discussions/categories/announcements
+  [Ankündigungen]: https://github.com/Programmiermethoden-CampusMinden/PM-Lecture-S23/discussions/categories/announcements
 
 :::
 
