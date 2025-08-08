@@ -1,5 +1,6 @@
 ---
-title: "Umgang mit Frameworks"
-no_pdf: true
 no_beamer: true
+no_pdf: true
+title: Umgang mit Frameworks
 ---
+

@@ -1,5 +1,6 @@
 ---
-title: "Multi-Threading: Parallelisierung von Programmen"
-no_pdf: true
 no_beamer: true
+no_pdf: true
+title: "Multi-Threading: Parallelisierung von Programmen"
 ---
+

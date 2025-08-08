@@ -1,16 +1,14 @@
 ---
-title: "JUnit (Gruppe Loot)"
-author: "André Matutat (HSBI)"
-points: "5 Punkte"
+author: André Matutat (HSBI)
 no_beamer: true
+points: 5 Punkte
+title: JUnit (Gruppe Loot)
 ---
 
 # Ziel
 
-In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe
-["Quests"](taskloot-quests.md) oder
-["Dialogsystem"](taskloot-dialogsystem.md)
-implementierten Klassen und Methoden erstellen.
+In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe ["Quests"](taskloot-quests.md) oder
+["Dialogsystem"](taskloot-dialogsystem.md) implementierten Klassen und Methoden erstellen.
 
 # JUnit
 

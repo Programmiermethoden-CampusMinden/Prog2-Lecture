@@ -1,40 +1,25 @@
 ---
-title: "Generische Klassen & Methoden"
-author: "Carsten Gips (HSBI)"
-readings:
-  - "@Ullenboom2021 [Kap. 11.1]"
-  - "@LernJava"
-  - "@Java-SE-Tutorial"
-  - "@Bloch2018"
-tldr: |
-  Generische Klassen und Methoden sind ein wichtiger Baustein in der Programmierung mit Java.
-  Dabei werden Typ-Variablen eingeführt, die dann bei der Instantiierung der generischen
-  Klassen oder beim Aufruf von generischen Methoden mit existierenden Typen konkretisiert
-  werden ("Typ-Parameter").
-
-  Syntaktisch definiert man die Typ-Variablen in spitzen Klammern hinter dem Klassennamen bzw.
-  vor dem Rückgabetyp einer Methode: `public class Stack<E> { }` und `public <T> T foo(T m) { }`.
-outcomes:
-  - k1: "Begriffe generischer Typ, parametrisierter Typ, formaler Typ-Parameter, Typ-Parameter"
-  - k3: "Erstellen und Nutzen von generischen Klassen und Interfaces"
-  - k3: "Erstellen und Nutzen von generischen Methoden"
-quizzes:
-  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106235&client_id=FH-Bielefeld"
-    name: "Quiz Generics: Classes & Methods (ILIAS)"
-youtube:
-  - link: "https://youtu.be/k6MFPW-shh8"
-    name: "VL Generische Klassen & Methoden"
-  - link: "https://youtu.be/ekXBXge6VvE"
-    name: "Demo Generische Methoden"
-fhmedia:
-  - link: "https://www.hsbi.de/medienportal/m/5497f0d31a9d0ac4d46e781040b1fd9f20ca7e0103cccc1abe0089c7c36a9251de0126f11fe376341a7b077dcdd43e8683f2c165b895da1a70da6c17d5c4576f"
-    name: "VL Generische Klassen & Methoden"
+author: Carsten Gips (HSBI)
+title: Generische Klassen & Methoden
 ---
 
+::: tldr
+Generische Klassen und Methoden sind ein wichtiger Baustein in der Programmierung mit Java. Dabei werden Typ-Variablen
+eingeführt, die dann bei der Instantiierung der generischen Klassen oder beim Aufruf von generischen Methoden mit
+existierenden Typen konkretisiert werden ("Typ-Parameter").
+
+Syntaktisch definiert man die Typ-Variablen in spitzen Klammern hinter dem Klassennamen bzw. vor dem Rückgabetyp einer
+Methode: `public class Stack<E> { }` und `public <T> T foo(T m) { }`.
+:::
+
+::: youtube
+-   [VL Generische Klassen & Methoden](https://youtu.be/k6MFPW-shh8)
+-   [Demo Generische Methoden](https://youtu.be/ekXBXge6VvE)
+:::
 
 # Generische Strukturen
 
-```java
+``` java
 Vector speicher = new Vector();
 speicher.add(1); speicher.add(2); speicher.add(3);
 speicher.add("huhu");
@@ -46,22 +31,19 @@ for (Object i : speicher) { summe += (Integer)i; }
 ::: notes
 Problem: Nutzung des "*raw*" Typs `Vector` ist nicht typsicher!
 
-*   Mögliche Fehler fallen erst zur Laufzeit und u.U. erst sehr spät auf: Offenbar werden im obigen
-    Beispiel `int`-Werte erwartet, d.h. das Hinzufügen von `"huhu"` ist vermutlich ein Versehen (wird
-    vom Compiler aber nicht bemerkt)
-*   Die Iteration über `speicher` kann nur allgemein als `Object` erfolgen, d.h. in der Schleife muss
-    auf den vermuteten/gewünschten Typ gecastet werden: Hier würde dann der String `"huhu"` Probleme
-    zur Laufzeit machen
+-   Mögliche Fehler fallen erst zur Laufzeit und u.U. erst sehr spät auf: Offenbar werden im obigen Beispiel `int`-Werte
+    erwartet, d.h. das Hinzufügen von `"huhu"` ist vermutlich ein Versehen (wird vom Compiler aber nicht bemerkt)
+-   Die Iteration über `speicher` kann nur allgemein als `Object` erfolgen, d.h. in der Schleife muss auf den
+    vermuteten/gewünschten Typ gecastet werden: Hier würde dann der String `"huhu"` Probleme zur Laufzeit machen
 :::
 
 \pause
-
 \bigskip
 \smallskip
 \hrule
 \bigskip
 
-```java
+``` java
 Vector<Integer> speicher = new Vector<Integer>();
 speicher.add(1); speicher.add(2); speicher.add(3);
 speicher.add("huhu");
@@ -73,19 +55,18 @@ for (Integer i : speicher) { summe += i; }
 ::: notes
 Vorteile beim Einsatz von Generics:
 
-*   Datenstrukturen/Algorithmen nur einmal implementieren, aber für unterschiedliche Typen nutzen
-*   Keine Vererbungshierarchie nötig
-*   Nutzung ist typsicher, Casting unnötig
-*   Geht nur für Referenztypen
-*   Beispiel: Collections-API
+-   Datenstrukturen/Algorithmen nur einmal implementieren, aber für unterschiedliche Typen nutzen
+-   Keine Vererbungshierarchie nötig
+-   Nutzung ist typsicher, Casting unnötig
+-   Geht nur für Referenztypen
+-   Beispiel: Collections-API
 :::
-
 
 # Generische Klassen/Interfaces definieren
 
-*   **Definition**: "`<Typ>`" hinter Klassennamen
+-   **Definition**: "`<Typ>`" hinter Klassennamen
 
-    ```java
+    ``` java
     public class Stack<E> {
         public E push(E item) {
             addElement(item);
@@ -94,40 +75,38 @@ Vorteile beim Einsatz von Generics:
     }
     ```
 
-    *   `Stack<E>` => Generische (parametrisierte) Klasse (auch: "*generischer Typ*")
-    *   `E` => Formaler Typ-Parameter (auch: "*Typ-Variable*")
+    -   `Stack<E>` =\> Generische (parametrisierte) Klasse (auch: "*generischer Typ*")
+    -   `E` =\> Formaler Typ-Parameter (auch: "*Typ-Variable*")
 
 \pause
 \bigskip
 \smallskip
 
-*   **Einsatz**:
+-   **Einsatz**:
 
-    ```java
+    ``` java
     Stack<Integer> stack = new Stack<Integer>();
     ```
 
-    *   `Integer` => Typ-Parameter
-    *   `Stack<Integer>` => Parametrisierter Typ
+    -   `Integer` =\> Typ-Parameter
+    -   `Stack<Integer>` =\> Parametrisierter Typ
 
-
-::::::::: notes
+::: notes
 # Generische Klassen instantiieren
 
-*   Typ-Parameter in spitzen Klammern hinter Klasse bzw. Interface
+-   Typ-Parameter in spitzen Klammern hinter Klasse bzw. Interface
 
-    ```java
+    ``` java
     ArrayList<Integer> il = new ArrayList<Integer>();
     ArrayList<Double>  dl = new ArrayList<Double>();
     ```
-:::::::::
-
+:::
 
 # Beispiel I: Einfache generische Klassen
 
 \bigskip
 
-```java
+``` java
 class Tutor<T> {
     // T kann in Tutor *fast* wie Klassenname verwendet werden
     private T x;
@@ -137,7 +116,7 @@ class Tutor<T> {
 
 \smallskip
 
-```java
+``` java
 Tutor<String>  a = new Tutor<String>();
 Tutor<Integer> b = new Tutor<>();  // ab Java7: "Diamond Operator"
 
@@ -146,25 +125,24 @@ b.foo(1);
 b.foo("huhu");  // Fehlermeldung vom Compiler
 ```
 
-::::::::: notes
-[Beispiel: classes.GenericClasses]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/generics/src/classes/GenericClasses.java"}
+::: notes
+[Beispiel: classes.GenericClasses]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/generics/src/classes/GenericClasses.java"}
 
 ## Typ-Inferenz
 
-Typ-Parameter kann bei `new()` auf der rechten Seite oft weggelassen werden
-=> **Typ-Inferenz**
+Typ-Parameter kann bei `new()` auf der rechten Seite oft weggelassen werden =\> **Typ-Inferenz**
 
-```java
+``` java
 Tutor<String> x = new Tutor<>();  // <>: "Diamantoperator"
 ```
 
 (gilt seit Java 1.7)
-:::::::::
-
+:::
 
 # Beispiel II: Vererbung mit Typparametern
 
-```java
+``` java
 interface Fach<T1, T2> {
     public void machWas(T1 a, T2 b);
 }
@@ -183,17 +161,15 @@ class Properties extends Hashtable<Object,Object> { ... }
 ::: notes
 Auch Interfaces und abstrakte Klassen können parametrisierbar sein.
 
-Bei der Vererbung sind alle Varianten bzgl. der Typ-Variablen denkbar.
-Zu beachten ist dabei vor allem, dass die Typ-Variablen der Oberklasse (gilt
-analog für Interfaces) entweder durch Typ-Variablen der Unterklasse oder durch
-konkrete Typen spezifiziert sind. Die Typ-Variablen der Oberklasse dürfen
-nicht "in der Luft hängen" (siehe auch nächste Folie)!
+Bei der Vererbung sind alle Varianten bzgl. der Typ-Variablen denkbar. Zu beachten ist dabei vor allem, dass die
+Typ-Variablen der Oberklasse (gilt analog für Interfaces) entweder durch Typ-Variablen der Unterklasse oder durch
+konkrete Typen spezifiziert sind. Die Typ-Variablen der Oberklasse dürfen nicht "in der Luft hängen" (siehe auch nächste
+Folie)!
 :::
-
 
 # Beispiel III: Überschreiben/Überladen von Methoden
 
-```java
+``` java
 class Mensch { ... }
 
 class Studi<T extends Mensch> {
@@ -208,27 +184,25 @@ class Tutor extends Studi<Mensch> {
 }
 ```
 
-
 # Vorsicht: So geht es nicht!
 
-```java
+``` java
 class Foo<T> extends T { ... }
 
 class Fluppie<T> extends Wuppie<S> { ... }
 ```
 
 ::: notes
-*   Generische Klasse `Foo<T>` kann nicht selbst vom Typ-Parameter `T` ableiten (warum?)
-*   Bei Ableiten von generischer Klasse `Wuppie<S>` muss deren Typ-Parameter `S` bestimmt sein:
-    etwa durch den Typ-Parameter der ableitenden Klasse, beispielsweise `Fluppie<S>` (statt `Fluppie<T>`)
+-   Generische Klasse `Foo<T>` kann nicht selbst vom Typ-Parameter `T` ableiten (warum?)
+-   Bei Ableiten von generischer Klasse `Wuppie<S>` muss deren Typ-Parameter `S` bestimmt sein: etwa durch den
+    Typ-Parameter der ableitenden Klasse, beispielsweise `Fluppie<S>` (statt `Fluppie<T>`)
 :::
-
 
 # Generische Methoden definieren
 
-*   "`<Typ>`" vor Rückgabetyp
+-   "`<Typ>`" vor Rückgabetyp
 
-    ```java
+    ``` java
     public class Mensch {
         public <T> T myst(T m, T n) {
             return Math.random() > 0.5 ? m : n;
@@ -239,34 +213,32 @@ class Fluppie<T> extends Wuppie<S> { ... }
 \pause
 \bigskip
 
-*   "Mischen possible":
+-   "Mischen possible":
 
-    ```java
+    ``` java
     public class Mensch<E> {
         public <T> T myst(T m, T n) { ... }
         public String myst(String m, String n) { ... }
     }
     ```
 
-
 # Aufruf generischer Methoden
 
-::::::::: notes
+::: notes
 ## Aufruf
 
-*   Aufruf mit Typ-Parameter vor Methodennamen, oder
-*   Inferenz durch Compiler
+-   Aufruf mit Typ-Parameter vor Methodennamen, oder
+-   Inferenz durch Compiler
 
 ## Finden der richtigen Methode durch den Compiler
 
 1.  Zuerst Suche nach exakt passender Methode,
-2.  danach passend mit Konvertierungen
-    => Compiler sucht gemeinsame Oberklasse in Typhierarchie
+2.  danach passend mit Konvertierungen =\> Compiler sucht gemeinsame Oberklasse in Typhierarchie
 
 ## Beispiel
-:::::::::
+:::
 
-```java
+``` java
 class Mensch {
     <T> T myst(T m, T n) { ... }
 }
@@ -281,12 +253,13 @@ m.myst("Essen", "lecker");   // String, String  => T: String
 m.myst(1.0, 1);              // Double, Integer => T: Number
 ```
 
-[Beispiel methods.GenericMethods]{.ex href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/generics/src/methods/GenericMethods.java"}
+[Beispiel methods.GenericMethods]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/generics/src/methods/GenericMethods.java"}
 
-::::::::: notes
+::: notes
 Reihenfolge der Suche nach passender Methode gilt auch für nicht-generisch überladene Methoden
 
-```java
+``` java
 class Mensch {
     public <T> T myst(T m, T n) {
         System.out.println("X#myst: T");
@@ -328,24 +301,41 @@ public class GenericMethods {
     }
 }
 ```
-:::::::::
-
+:::
 
 # Wrap-Up
 
-*   Begriffe:
-    *   Generischer Typ: `Stack<T>`
-    *   Formaler Typ-Parameter: `T`
-    *   Parametrisierter Typ:`Stack<Long>`
-    *   Typ-Parameter: `Long`
-    *   Raw Type: `Stack`
+-   Begriffe:
+    -   Generischer Typ: `Stack<T>`
+    -   Formaler Typ-Parameter: `T`
+    -   Parametrisierter Typ:`Stack<Long>`
+    -   Typ-Parameter: `Long`
+    -   Raw Type: `Stack`
 
 \smallskip
 
-*   Generische Klassen: `public class Stack<E> { }`
-    *   "`<Typ>`" hinter Klassennamen
+-   Generische Klassen: `public class Stack<E> { }`
+    -   "`<Typ>`" hinter Klassennamen
 
 \smallskip
 
-*   Generische Methoden: `public <T> T foo(T m) { }`
-    *   "`<Typ>`" vor Rückgabewert
+-   Generische Methoden: `public <T> T foo(T m) { }`
+    -   "`<Typ>`" vor Rückgabewert
+
+::: readings
+-   @Ullenboom2021 [Kap. 11.1]
+-   @LernJava
+-   @Java-SE-Tutorial
+-   @Bloch2018
+:::
+
+::: outcomes
+-   k1: Begriffe generischer Typ, parametrisierter Typ, formaler Typ-Parameter, Typ-Parameter
+-   k3: Erstellen und Nutzen von generischen Klassen und Interfaces
+-   k3: Erstellen und Nutzen von generischen Methoden
+:::
+
+::: quizzes
+-   [Quiz Generics: Classes & Methods
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106235&client_id=FH-Bielefeld)
+:::

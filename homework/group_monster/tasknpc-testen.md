@@ -1,16 +1,14 @@
 ---
-title: "JUnit (Gruppe Monster)"
-author: "André Matutat (HSBI)"
-points: "5 Punkte"
+author: André Matutat (HSBI)
 no_beamer: true
+points: 5 Punkte
+title: JUnit (Gruppe Monster)
 ---
 
 # Ziel
 
-In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe
-["Monster"](tasknpc-monster.md) oder
-["Fernkampf"](tasknpc-fernkampf.md)
-implementierten Klassen und Methoden erstellen.
+In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe ["Monster"](tasknpc-monster.md) oder
+["Fernkampf"](tasknpc-fernkampf.md) implementierten Klassen und Methoden erstellen.
 
 # JUnit
 

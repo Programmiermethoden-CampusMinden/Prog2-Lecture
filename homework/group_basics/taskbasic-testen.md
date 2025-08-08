@@ -1,15 +1,14 @@
 ---
-title: "JUnit (Gruppe Basics)"
-author: "André Matutat (HSBI)"
-points: "5 Punkte"
+author: André Matutat (HSBI)
 no_beamer: true
+points: 5 Punkte
+title: JUnit (Gruppe Basics)
 ---
 
 # Ziel
 
-In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe
-["Fallen"](taskbasic-fallen.md) implementierten
-Klassen und Methoden erstellen.
+In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe ["Fallen"](taskbasic-fallen.md)
+implementierten Klassen und Methoden erstellen.
 
 # JUnit
 

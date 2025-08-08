@@ -1,19 +1,18 @@
 ---
-title: "Monster"
-author: "André Matutat (HSBI)"
-points: "5 Punkte"
+author: André Matutat (HSBI)
 no_beamer: true
+points: 5 Punkte
+title: Monster
 ---
 
 # Ziel
 
-In dieser Aufgabe implementieren Sie simple Gegner, welche sich selbstständig im Dungeon
-umherbewegen.
+In dieser Aufgabe implementieren Sie simple Gegner, welche sich selbstständig im Dungeon umherbewegen.
 
 # Monster
 
-Implementieren Sie analog zum Helden verschiedene Monster (mindestens drei) für das Dungeon.
-Die Monster sollen auch jeweils eigene Animationen haben.
+Implementieren Sie analog zum Helden verschiedene Monster (mindestens drei) für das Dungeon. Die Monster sollen auch
+jeweils eigene Animationen haben.
 
 Überlegen Sie sich, welche Components die Monster haben sollen.
 
@@ -26,5 +25,5 @@ Lassen Sie die Monster sich zufällig im Dungeon bewegen. Sie können dafür die
 nutzen. Implementieren Sie jedoch mindestens eine weitere
 [IIdleAI](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/entities/AIFactory.java)-Strategie.
 
-Verteilen Sie eine zufällige Anzahl von Monstern bei jedem Levelstart. Verteilen Sie mehr
-und stärkere Monster, je tiefer der Spieler im Dungeon vorangeschritten ist.
+Verteilen Sie eine zufällige Anzahl von Monstern bei jedem Levelstart. Verteilen Sie mehr und stärkere Monster, je
+tiefer der Spieler im Dungeon vorangeschritten ist.

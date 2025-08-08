@@ -1,5 +1,6 @@
 ---
-title: "Programmiermethoden und Clean Code"
-no_pdf: true
 no_beamer: true
+no_pdf: true
+title: Programmiermethoden und Clean Code
 ---
+
