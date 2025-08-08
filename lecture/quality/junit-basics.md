@@ -1,153 +1,28 @@
 ---
-title: "Testen mit JUnit (JUnit-Basics)"
-author: "Carsten Gips (HSBI)"
-readings:
-  - "@vogellaJUnit"
-  - "@junit4"
-  - "@Kleuker2019"
-  - "@Osherove2014"
-  - "@Spillner2012"
-  - "@fernunihagenJunit"
-tldr: |
-  In JUnit 4 und 5 werden Testmethoden mit Hilfe der Annotation `@Test` ausgezeichnet. Über die
-  verschiedenen `assert*()`-Methoden kann das Testergebnis mit dem erwarteten Ergebnis verglichen
-  werden und entsprechend ist der Test "grün" oder "rot". Mit den verschiedenen `assume*()`-Methoden
-  kann dagegen geprüft werden, ob eventuelle Vorbedingungen für das Ausführen eines Testfalls
-  erfüllt sind - anderenfalls wird der Testfall dann übersprungen.
-
-  Mit Hilfe von `@Before` und `@After` können Methoden gekennzeichnet werden, die jeweils vor jeder
-  Testmethode und nach jeder Testmethode aufgerufen werden. Damit kann man seine Testumgebung auf-
-  und auch wieder abbauen (JUnit 4).
-
-  Erwartete Exceptions lassen sich in JUnit 4 mit einem Parameter `expected` in der Annotation `@Test`
-  automatisch prüfen: `@Test(expected=package.Exception.class)`. In JUnit 4 besteht die Möglichkeit,
-  Testklassen zu Testsuiten zusammenzufassen und gemeinsam laufen zu lassen.
-outcomes:
-  - k3: "Ich kann Testergebnisse prüfen"
-  - k2: "Ich kenne den Unterschied zwischen `assert` und `assume`"
-  - k3: "Ich kann vor/nach jedem Test bestimmten Code ausführen"
-  - k2: "Ich habe verstanden, warum `@Before` und `@After` sparsam einzusetzen sind"
-  - k3: "Ich kann die Ausführung von Tests steuern, beispielsweise Tests ignorieren oder mit zeitlicher Begrenzung ausführen"
-  - k3: "Ich kann das Auftreten von Exceptions prüfen"
-  - k3: "Ich kann Tests zu Testsuiten zusammenfassen"
-#quizzes:
-#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld"
-#    name: "Quiz JUnit-Basics (ILIAS)"
-youtube:
-  - link: "https://youtu.be/2SC40rO0ZOE"
-    name: "VL JUnit Basics"
-  - link: "https://youtu.be/j3FK9iTHuDk"
-    name: "Demo assume() vs. assert()"
-  - link: "https://youtu.be/KsFydUSBDTc"
-    name: "Demo Parametrisierte Tests mit JUnit4"
-  - link: "https://youtu.be/0H-OCICktS0"
-    name: "Demo Parametrisierte Tests mit JUnit5"
-fhmedia:
-  - link: "https://www.hsbi.de/medienportal/m/e10dd378f9b18ba4a42ffbb2c13bfb83685b60fd39a221dba8658b8edcb0df032c2dcf9a1dcd44cf59aa6b483a00a19195cb5a8d117a6fbda52cfcfcf9efe5da"
-    name: "VL JUnit Basics"
-challenges: |
-    **Setup und Teardown**
-
-    Sie haben in den Challenges in "Intro SW-Test" erste JUnit-Tests für
-    die Klasse `MyList<T>` implementiert.
-
-    Wie müssten Sie Ihre JUnit-Tests anpassen, wenn Sie im obigen Szenario
-    Setup- und Teardown-Methoden einsetzen würden?
-
-    <!--
-    ```java
-    import org.junit.jupiter.api.*;
-
-    public class MyListTest {
-        private MyList<String> sut;
-
-        @BeforeEach
-        void setUp() {
-            sut = new MyList<>();
-            sut.add("foo");
-        }
-
-        @AfterEach
-        void tearDown() {
-            sut = null;
-        }
-
-        @Test
-        void addWithBefore() {
-            Assumptions.assumeTrue(sut.size() == 1);
-
-            boolean erg = sut.add("wuppie");
-
-            Assertions.assertTrue(erg);
-            Assertions.assertEquals(2, sut.size());
-
-        }
-    }
-    ```
-    -->
-
-
-    **Testmethoden**
-
-    Betrachten Sie den folgenden Code. Was fällt Ihnen auf?
-
-    ```java
-    public class Studi {
-        public int getCredits();
-        public void addToCredits(int credits);
-
-        @Test
-        public void testStudi() {
-            Studi s = new Studi();
-            s.addToCredits(2);
-            assertEquals(2, s.getCredits());
-        }
-    }
-    ```
-
-
-    **Parametrisierte Tests**
-
-    Betrachten Sie die folgende einfache Klasse `MyMath`:
-
-    ```java
-    public class MyMath {
-        public static String add(String s, int c) {
-            return s.repeat(c);
-        }
-    }
-    ```
-
-    Beim Testen der Methode `MyMath#add` fällt auf, dass man hier immer
-    wieder den selben Testfall mit lediglich anderen Werten ausführt - ein
-    Fall für parametrisierte Tests.
-
-    Schreiben Sie mit Hilfe von JUnit (4.x oder 5.x) einige parametrisierte
-    Unit-Tests für die Methode `MyMath#add`.
-
-    <!--
-    ```java
-    import org.junit.jupiter.api.Assertions;
-    import org.junit.jupiter.params.ParameterizedTest;
-    import org.junit.jupiter.params.provider.CsvSource;
-
-    class MyMathTest {
-        @ParameterizedTest
-        @CsvSource(textBlock = """
-                # s,  c,   s.repeat(c)
-                '',   0,   ''
-                foo,  0,   ''
-                foo,  1,   foo
-                foo,  2,   foofoo
-                """)
-        void add(String s, int c, String expected) {
-            Assertions.assertEquals(expected, MyMath.add(s, c));
-        }
-    }
-    ```
-    -->
+author: Carsten Gips (HSBI)
+title: Testen mit JUnit (JUnit-Basics)
 ---
 
+::: tldr
+In JUnit 4 und 5 werden Testmethoden mit Hilfe der Annotation `@Test` ausgezeichnet. Über die verschiedenen
+`assert*()`-Methoden kann das Testergebnis mit dem erwarteten Ergebnis verglichen werden und entsprechend ist der Test
+"grün" oder "rot". Mit den verschiedenen `assume*()`-Methoden kann dagegen geprüft werden, ob eventuelle Vorbedingungen
+für das Ausführen eines Testfalls erfüllt sind - anderenfalls wird der Testfall dann übersprungen.
+
+Mit Hilfe von `@Before` und `@After` können Methoden gekennzeichnet werden, die jeweils vor jeder Testmethode und nach
+jeder Testmethode aufgerufen werden. Damit kann man seine Testumgebung auf- und auch wieder abbauen (JUnit 4).
+
+Erwartete Exceptions lassen sich in JUnit 4 mit einem Parameter `expected` in der Annotation `@Test` automatisch prüfen:
+`@Test(expected=package.Exception.class)`. In JUnit 4 besteht die Möglichkeit, Testklassen zu Testsuiten
+zusammenzufassen und gemeinsam laufen zu lassen.
+:::
+
+::: youtube
+-   [VL JUnit Basics](https://youtu.be/2SC40rO0ZOE)
+-   [Demo assume() vs. assert()](https://youtu.be/j3FK9iTHuDk)
+-   [Demo Parametrisierte Tests mit JUnit4](https://youtu.be/KsFydUSBDTc)
+-   [Demo Parametrisierte Tests mit JUnit5](https://youtu.be/0H-OCICktS0)
+:::
 
 # JUnit: Ergebnis prüfen
 
@@ -155,7 +30,7 @@ Klasse **`org.junit.Assert`** enthält diverse **statische** Methoden zum Prüfe
 
 \bigskip
 
-```java
+``` java
 // Argument muss true bzw. false sein
 void assertTrue(boolean);
 void assertFalse(boolean);
@@ -169,82 +44,72 @@ void fail();
 ...
 ```
 
-
 # To "assert" or to "assume"?
 
-*   Mit `assert*` werden Testergebnisse geprüft
-    *   Test wird ausgeführt
-    *   Ergebnis: OK, Failure, Error
+-   Mit `assert*` werden Testergebnisse geprüft
+    -   Test wird ausgeführt
+    -   Ergebnis: OK, Failure, Error
 
 \bigskip
 
-*   Mit `assume*` werden Annahmen über den Zustand geprüft
-    *   Test wird abgebrochen, wenn Annahme nicht erfüllt (Ergebnis: "Ignored")
-    *   Prüfen von Vorbedingungen: Ist der Test hier ausführbar/anwendbar?
+-   Mit `assume*` werden Annahmen über den Zustand geprüft
+    -   Test wird abgebrochen, wenn Annahme nicht erfüllt (Ergebnis: "Ignored")
+    -   Prüfen von Vorbedingungen: Ist der Test hier ausführbar/anwendbar?
 
-[Beispiel: junit4.TestAssume]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/junit4/TestAssume.java"}
+[Beispiel: junit4.TestAssume]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/junit4/TestAssume.java"}
 
 ::: notes
-Im JUnit-Kontext nutzen wir `assume*` für das **Überprüfen von *Annahmen*** (im Sinne
-von **Vorbedingungen**): Wenn ein `assume*` fehlschlägt, wird der Testfall abgebrochen
-bzw. als "ignoriert" gewertet.
+Im JUnit-Kontext nutzen wir `assume*` für das **Überprüfen von *Annahmen*** (im Sinne von **Vorbedingungen**): Wenn ein
+`assume*` fehlschlägt, wird der Testfall abgebrochen bzw. als "ignoriert" gewertet.
 
-Dagegen setzen wir `assert*` für das **Überprüfen der *Testergebnisse*** ein, d.h. ein
-fehlschlagendes `assert*` lässt den Testfall "rot" werden.
+Dagegen setzen wir `assert*` für das **Überprüfen der *Testergebnisse*** ein, d.h. ein fehlschlagendes `assert*` lässt
+den Testfall "rot" werden.
 :::
 
-
-::: notes
+:::: notes
 # Java: "assert"-Keyword
 
-Neben den wohlbekannten `assert*`-Methoden aus JUnit gibt es auch direkt von
-Java ein etwas verstecktes `assert`-Keyword, mit dem man Annahmen über Zustände
-und Werte explizit ausdrücken kann:
+Neben den wohlbekannten `assert*`-Methoden aus JUnit gibt es auch direkt von Java ein etwas verstecktes
+`assert`-Keyword, mit dem man Annahmen über Zustände und Werte explizit ausdrücken kann:
 
-```java
+``` java
 public void foo() {
     String bar = wuppie();
     assert bar != null : "result of wuppie() must not be null";
 }
 ```
 
-Das `assert` besteht aus einer zu prüfenden Bedingung und einem String. Wenn die
-Bedingung erfüllt ist, läuft der Code einfach normal weiter. Anderenfalls wird ein
-`AssertionError` geworfen mit dem angegebenen String als Message.
+Das `assert` besteht aus einer zu prüfenden Bedingung und einem String. Wenn die Bedingung erfüllt ist, läuft der Code
+einfach normal weiter. Anderenfalls wird ein `AssertionError` geworfen mit dem angegebenen String als Message.
 
-Allerdings sind diese JVM-Assertions per Default **deaktiviert**. Man muss sie beim
-Aufruf manuell über die Option `-enableassertions` bzw. `-ea` (Kurzschreibweise)
-aktivieren (`java -ea main`)! Dies gilt auch beim Start über die IDE oder Gradle ...
+Allerdings sind diese JVM-Assertions per Default **deaktiviert**. Man muss sie beim Aufruf manuell über die Option
+`-enableassertions` bzw. `-ea` (Kurzschreibweise) aktivieren (`java -ea main`)! Dies gilt auch beim Start über die IDE
+oder Gradle ...
 
-:::::: warning
-Wichtig: Die Assertions sind per Default deaktiviert und müssen erst manuell aktiviert
-werden. Außerdem wird bei Verletzung der Bedingung eine *unchecked exception* (ein Error)
-geworfen, der auf einen nicht korrigierbaren Programmzustand hindeutet.
+::: warning
+Wichtig: Die Assertions sind per Default deaktiviert und müssen erst manuell aktiviert werden. Außerdem wird bei
+Verletzung der Bedingung eine *unchecked exception* (ein Error) geworfen, der auf einen nicht korrigierbaren
+Programmzustand hindeutet.
 
-1.  Nutzen Sie das Java-`assert` deshalb nicht als Ersatz für das normale Prüfen von
-    Parametern von `public` Methoden (also Methoden der Schnittstelle, die Ihre Kunden
-    aufrufen).
+1.  Nutzen Sie das Java-`assert` deshalb nicht als Ersatz für das normale Prüfen von Parametern von `public` Methoden
+    (also Methoden der Schnittstelle, die Ihre Kunden aufrufen).
 
-2.  Während der Entwicklungszeit kann das Java-`assert` aber ganz nützlich sein, weil
-    Sie so interne Annahmen sichtbar und prüfbar machen (vorausgesetzt, Sie haben `-ea`
-    aktiviert).
+2.  Während der Entwicklungszeit kann das Java-`assert` aber ganz nützlich sein, weil Sie so interne Annahmen sichtbar
+    und prüfbar machen (vorausgesetzt, Sie haben `-ea` aktiviert).
 
-    Analog könnte ein Java-`assert` an Stellen eingebaut werden, die eigentlich nicht
-    erreichbar sein sollten (etwa nach einer Dauerschleife oder in einem nicht erreichbaren
-    `default`-Zweig in einem `switch`).
+    Analog könnte ein Java-`assert` an Stellen eingebaut werden, die eigentlich nicht erreichbar sein sollten (etwa nach
+    einer Dauerschleife oder in einem nicht erreichbaren `default`-Zweig in einem `switch`).
 
-3.  Bitte das Java-`assert` **nie** in einer JUnit-Testmethode statt der "richtigen"
-    JUnit-`assert*` verwenden!
+3.  Bitte das Java-`assert` **nie** in einer JUnit-Testmethode statt der "richtigen" JUnit-`assert*` verwenden!
 
-4.  Das Java-`assert` ist in einer JUnit-Testmethode **kein** Ersatz für die
-    JUnit-`assume*`-Methoden!
-::::::
+4.  Das Java-`assert` ist in einer JUnit-Testmethode **kein** Ersatz für die JUnit-`assume*`-Methoden!
 :::
-
+::::
 
 # Setup und Teardown: Testübergreifende Konfiguration
 
-```java
+``` java
 private Studi x;
 
 @Before
@@ -271,7 +136,6 @@ public void testToString() {
 **`@AfterClass`**
 :   wird **einmalig** nach allen Tests aufgerufen (`static`!)
 
-
 ::: notes
 In JUnit 5 wurden die Namen dieser Annotationen leicht geändert:
 
@@ -283,13 +147,12 @@ In JUnit 5 wurden die Namen dieser Annotationen leicht geändert:
 | `@AfterClass`  | `@AfterAll`   |
 :::
 
-
 ::: notes
 # Beispiel für den Einsatz von `@Before`
 
 Annahme: **alle/viele** Testmethoden brauchen **neues** Objekt `x` vom Typ `Studi`
 
-```java
+``` java
 private Studi x;
 
 @Before
@@ -311,19 +174,17 @@ public void testGetName() {
 ```
 :::
 
-
-::: notes
+:::::: notes
 # Ignorieren von Tests
 
-*   Hinzufügen der Annotation `@Ignore`
-*   Alternativ mit Kommentar: `@Ignore("Erst im nächsten Release")`
+-   Hinzufügen der Annotation `@Ignore`
+-   Alternativ mit Kommentar: `@Ignore("Erst im nächsten Release")`
 
 \bigskip
 
-:::::: columns
+::::: columns
 ::: {.column width="52%"}
-
-```java
+``` java
 @Ignore("Warum ignoriert")
 @Test
 public void testBsp() {
@@ -331,56 +192,49 @@ public void testBsp() {
     assertTrue(x.isTrue());
 }
 ```
-
 :::
+
 ::: {.column width="48%"}
-
-![](images/junitIgnore.png){width=80% web_width=40%}
-
+![](images/junitIgnore.png){width="80%" web_width="40%"}
 :::
+:::::
+
+In JUnit 5 wird statt der Annotation `@Ignore` die Annotation `@Disabled` mit der selben Bedeutung verwendet. Auch hier
+lässt sich als Parameter ein String mit dem Grund für das Ignorieren des Tests hinterlegen.
 ::::::
-
-In JUnit 5 wird statt der Annotation `@Ignore` die Annotation `@Disabled` mit
-der selben Bedeutung verwendet. Auch hier lässt sich als Parameter ein String
-mit dem Grund für das Ignorieren des Tests hinterlegen.
-:::
-
 
 # Vermeidung von Endlosschleifen: Timeout
 
 ::: notes
-*   Testfälle werden nacheinander ausgeführt
-*   Test mit Endlosschleife würde restliche Tests blockieren
-*   Erweitern der `@Test`-Annotation mit Parameter "`timeout`": \newline
-    => `@Test(timeout=2000)` (Zeitangabe in Millisekunden)
+-   Testfälle werden nacheinander ausgeführt
+-   Test mit Endlosschleife würde restliche Tests blockieren
+-   Erweitern der `@Test`-Annotation mit Parameter "`timeout`": `\newline`{=tex} =\> `@Test(timeout=2000)` (Zeitangabe
+    in Millisekunden)
 :::
 
-:::::: columns
+::::: columns
 ::: {.column width="52%"}
-
 \vspace{6mm}
 
-```java
+``` java
 @Test(timeout = 2000)
 void testTestDauerlaeufer() {
     while (true) { ; }
 }
 ```
-
 :::
+
 ::: {.column width="44%"}
-
-![](images/junitIgnore.png){width=80% web_width=40%}
-
+![](images/junitIgnore.png){width="80%" web_width="40%"}
 :::
-::::::
+:::::
 
 ::: notes
-In JUnit 5 hat die Annotation `@Test` keinen `timeout`-Parameter mehr.
-Als Alternative bietet sich der Einsatz von `org.junit.jupiter.api.Assertions.assertTimeout`
-an. Dabei benötigt man allerdings *Lambda-Ausdrücke* (Verweis auf spätere VL):
+In JUnit 5 hat die Annotation `@Test` keinen `timeout`-Parameter mehr. Als Alternative bietet sich der Einsatz von
+`org.junit.jupiter.api.Assertions.assertTimeout` an. Dabei benötigt man allerdings *Lambda-Ausdrücke* (Verweis auf
+spätere VL):
 
-```java
+``` java
 @Test
 void testTestDauerlaeufer() {
     assertTimeout(ofMillis(2000), () -> {
@@ -392,14 +246,13 @@ void testTestDauerlaeufer() {
 (Beispiel von oben mit Hilfe von JUnit 5 formuliert)
 :::
 
-
 # Test von Exceptions: Expected
 
 ::: notes
 Traditionelles Testen von Exceptions mit `try` und `catch`:
 :::
 
-```java
+``` java
 @Test
 public void testExceptTradit() {
     try {
@@ -417,12 +270,11 @@ public void testExceptTradit() {
 \bigskip
 
 ::: notes
-Der `expected`-Parameter für die `@Test`-Annotation in JUnit 4 macht
-dies deutlich einfacher: `@Test(expected = MyException.class)`
-=> Test scheitert, wenn diese Exception **nicht** geworfen wird
+Der `expected`-Parameter für die `@Test`-Annotation in JUnit 4 macht dies deutlich einfacher:
+`@Test(expected = MyException.class)` =\> Test scheitert, wenn diese Exception **nicht** geworfen wird
 :::
 
-```java
+``` java
 @Test(expected = java.lang.ArithmeticException.class)
 public void testExceptAnnot() {
     int i = 0 / 0;
@@ -430,11 +282,11 @@ public void testExceptAnnot() {
 ```
 
 ::: notes
-In JUnit 5 hat die Annotation `@Test` keinen `expected`-Parameter mehr.
-Als Alternative bietet sich der Einsatz von `org.junit.jupiter.api.Assertions.assertThrows`
-an. Dabei benötigt man allerdings *Lambda-Ausdrücke* (Verweis auf spätere VL):
+In JUnit 5 hat die Annotation `@Test` keinen `expected`-Parameter mehr. Als Alternative bietet sich der Einsatz von
+`org.junit.jupiter.api.Assertions.assertThrows` an. Dabei benötigt man allerdings *Lambda-Ausdrücke* (Verweis auf
+spätere VL):
 
-```java
+``` java
 @Test
 public void testExceptAnnot() {
     assertThrows(java.lang.ArithmeticException.class, () -> {
@@ -446,17 +298,15 @@ public void testExceptAnnot() {
 (Beispiel von oben mit Hilfe von JUnit 5 formuliert)
 :::
 
-
 ::: notes
 # "Given - When - Then"-Mantra
 
-Aus dem [Behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)
-stammt die Strukturierung nach den Punkten "given - when - then" (oft auch als
-*"given - when - then"-Mantra* bezeichnet).
+Aus dem [Behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development) stammt die
+Strukturierung nach den Punkten "given - when - then" (oft auch als *"given - when - then"-Mantra* bezeichnet).
 
 Betrachten Sie noch einmal die Schnittstelle der Studi-Klasse:
 
-```java
+``` java
 public class Studi {
     public String getName();
     public void setName(String name);
@@ -467,7 +317,7 @@ public class Studi {
 
 Dafür wurde ein Test geschrieben:
 
-```java
+``` java
 class StudiTest {
     @Test
     public void testStudi() {
@@ -479,18 +329,15 @@ class StudiTest {
 }
 ```
 
-Dieser Code ist in seiner Absicht nicht sofort verständlich. Es fällt
-auf, dass
+Dieser Code ist in seiner Absicht nicht sofort verständlich. Es fällt auf, dass
 
-1.  am Anfang eine Art Setup des Tests vorgenommen wird und das Testobjekt
-    initialisiert wird ("**given**").
+1.  am Anfang eine Art Setup des Tests vorgenommen wird und das Testobjekt initialisiert wird ("**given**").
 2.  Dann wird die zu untersuchende Aktion ausgeführt ("**when**"), gefolgt von
 3.  einem Vergleich des tatsächlichen mit dem erwarteten Ergebnis ("**then**").
 
-Diese gedachte Struktur kann (und sollte!) man mit entsprechenden Kommentaren
-auch sichtbar machen:
+Diese gedachte Struktur kann (und sollte!) man mit entsprechenden Kommentaren auch sichtbar machen:
 
-```java
+``` java
 class StudiTest {
     @Test
     public void testStudi() {
@@ -507,15 +354,13 @@ class StudiTest {
 }
 ```
 
-In Testframeworks wie [Spock](https://spockframework.org/) oder
-[Cucumber](https://cucumber.io/) ist dies sogar bereits in die Sprache (eine
-DSL zum Testen) eingebaut! Einen schönen Blog zum Thema finden Sie hier:
-[Spock testing framework versus JUnit](https://blog.codepipes.com/testing/spock-vs-junit.html).
+In Testframeworks wie [Spock](https://spockframework.org/) oder [Cucumber](https://cucumber.io/) ist dies sogar bereits
+in die Sprache (eine DSL zum Testen) eingebaut! Einen schönen Blog zum Thema finden Sie hier: [Spock testing framework
+versus JUnit](https://blog.codepipes.com/testing/spock-vs-junit.html).
 
-Weiterhin könnte (und sollte) man die implizit getroffenen Annahmen über das SUT
-für alle sichtbar machen:
+Weiterhin könnte (und sollte) man die implizit getroffenen Annahmen über das SUT für alle sichtbar machen:
 
-```java
+``` java
 class StudiTest {
     @Test
     public void testStudi() {
@@ -533,16 +378,13 @@ class StudiTest {
 }
 ```
 
-Der Test würde ohnehin fehlschlagen, wenn ein neues `Studi`-Objekt mit einem anderen
-Wert für die Credits initialisiert würde. Aber so zeigt das `assume` direkt unsere
-(bisher) implizite Annahme sichtbar an, und bei einer Verletzung dieser Annahme würde
-der Testfall mit einer entsprechenden Mitteilung nicht ausgeführt.
+Der Test würde ohnehin fehlschlagen, wenn ein neues `Studi`-Objekt mit einem anderen Wert für die Credits initialisiert
+würde. Aber so zeigt das `assume` direkt unsere (bisher) implizite Annahme sichtbar an, und bei einer Verletzung dieser
+Annahme würde der Testfall mit einer entsprechenden Mitteilung nicht ausgeführt.
 
-Oft wird noch das "given - when - then"-Mantra auch auf die Methodennamen der Testmethoden
-übertragen:^[Naja, ein kläglicher Versuch. Namen sind eines der schwierigen Probleme in
-der Informatik.]
+Oft wird noch das "given - when - then"-Mantra auch auf die Methodennamen der Testmethoden übertragen:[^1]
 
-```java
+``` java
 class StudiTest {
     @Test
     public void GivenNewStudi_WhenAddingCredits_ThenCreditsCountChangesAccordingly() {
@@ -560,23 +402,20 @@ class StudiTest {
 }
 ```
 
-Eine schöne Erklärung finden Sie im Blog
-[The subtle Art of Java Test Method Naming](https://jonasg.io/posts/subtle-art-of-java-test-method-naming/).
+Eine schöne Erklärung finden Sie im Blog [The subtle Art of Java Test Method
+Naming](https://jonasg.io/posts/subtle-art-of-java-test-method-naming/).
 
-... Und nun könnte man sich fragen, warum man das Erhöhen von Credits nur für ein *neues*
-`Studi`-Objekt testet und nicht auch für andere Zustände des `Studi`-Objekts? ...
-=> Parametrisierte Tests!
+... Und nun könnte man sich fragen, warum man das Erhöhen von Credits nur für ein *neues* `Studi`-Objekt testet und
+nicht auch für andere Zustände des `Studi`-Objekts? ... =\> Parametrisierte Tests!
 :::
-
 
 # Parametrisierte Tests
 
 ::: notes
-Manchmal möchte man den selben Testfall mehrfach mit anderen Werten (Parametern)
-durchführen.
+Manchmal möchte man den selben Testfall mehrfach mit anderen Werten (Parametern) durchführen.
 :::
 
-```java
+``` java
 class Sum {
     public static int sum(int i, int j) {
         return i + j;
@@ -594,44 +433,34 @@ class SumTest {
 ```
 
 ::: notes
-Prinzipiell könnte man dafür entweder in einem Testfall eine Schleife schreiben,
-die über die verschiedenen Parameter iteriert. In der Schleife würde dann
-jeweils der Aufruf der zu testenden Methode und das gewünschte Assert passieren.
-Alternativ könnte man den Testfall entsprechend oft duplizieren mit jeweils den
-gewünschten Werten.
+Prinzipiell könnte man dafür entweder in einem Testfall eine Schleife schreiben, die über die verschiedenen Parameter
+iteriert. In der Schleife würde dann jeweils der Aufruf der zu testenden Methode und das gewünschte Assert passieren.
+Alternativ könnte man den Testfall entsprechend oft duplizieren mit jeweils den gewünschten Werten.
 
-Beide Vorgehensweisen haben Probleme: Im ersten Fall würde die Schleife bei
-einem Fehler oder unerwarteten Ergebnis abbrechen, ohne dass die restlichen
-Tests (Werte) noch durchgeführt würden. Im zweiten Fall bekommt man eine
-unnötig große Anzahl an Testmethoden, die bis auf die jeweiligen Werte identisch
-sind (Code-Duplizierung).
+Beide Vorgehensweisen haben Probleme: Im ersten Fall würde die Schleife bei einem Fehler oder unerwarteten Ergebnis
+abbrechen, ohne dass die restlichen Tests (Werte) noch durchgeführt würden. Im zweiten Fall bekommt man eine unnötig
+große Anzahl an Testmethoden, die bis auf die jeweiligen Werte identisch sind (Code-Duplizierung).
 :::
-
 
 ::: notes
 ## Parametrisierte Tests mit JUnit 4
 
-JUnit 4 bietet für dieses Problem sogenannte "parametrisierte Tests" an. Dafür
-muss eine Testklasse in JUnit 4 folgende Bedingungen erfüllen:
+JUnit 4 bietet für dieses Problem sogenannte "parametrisierte Tests" an. Dafür muss eine Testklasse in JUnit 4 folgende
+Bedingungen erfüllen:
 
-1.  Die Testklasse wird mit der Annotation `@RunWith(Parameterized.class)`
-    ausgezeichnet.
-2.  Es muss eine öffentliche statische Methode geben mit der Annotation
-    `@Parameters`. Diese Methode liefert eine Collection zurück, wobei jedes
-    Element dieser Collection ein Array mit den Parametern für einen
-    Durchlauf der Testmethoden ist.
+1.  Die Testklasse wird mit der Annotation `@RunWith(Parameterized.class)` ausgezeichnet.
+2.  Es muss eine öffentliche statische Methode geben mit der Annotation `@Parameters`. Diese Methode liefert eine
+    Collection zurück, wobei jedes Element dieser Collection ein Array mit den Parametern für einen Durchlauf der
+    Testmethoden ist.
 3.  Die Parameter müssen gesetzt werden. Dafür gibt es zwei Varianten:
-    *   (A) Für jeden Parameter gibt es ein öffentliches Attribut. Diese Attribute
-        müssen mit der Annotation `@Parameter` markiert sein und können in den
-        Testmethoden normal genutzt werden. JUnit sorgt dafür, dass für jeden
-        Eintrag in der Collection aus der statischen `@Parameters`-Methode
-        diese Felder gesetzt werden und die Testmethoden aufgerufen werden.
-    *   (B) Alternativ gibt es einen Konstruktor, der diese Werte setzt. Die Anzahl
-        der Parameter im Konstruktor muss dabei exakt der Anzahl (und
-        Reihenfolge) der Werte in jedem Array in der von der statischen
-        `@Parameters`-Methode gelieferten Collection entsprechen. Der
-        Konstruktor wird für jeden Parametersatz einmal aufgerufen und die
-        Testmethoden einmal durchgeführt.
+    -   (A) Für jeden Parameter gibt es ein öffentliches Attribut. Diese Attribute müssen mit der Annotation
+            `@Parameter` markiert sein und können in den Testmethoden normal genutzt werden. JUnit sorgt dafür, dass für
+            jeden Eintrag in der Collection aus der statischen `@Parameters`-Methode diese Felder gesetzt werden und die
+            Testmethoden aufgerufen werden.
+    -   (B) Alternativ gibt es einen Konstruktor, der diese Werte setzt. Die Anzahl der Parameter im Konstruktor muss
+            dabei exakt der Anzahl (und Reihenfolge) der Werte in jedem Array in der von der statischen
+            `@Parameters`-Methode gelieferten Collection entsprechen. Der Konstruktor wird für jeden Parametersatz
+            einmal aufgerufen und die Testmethoden einmal durchgeführt.
 
 Letztlich wird damit das Kreuzprodukt aus Testmethoden und Testdaten durchgeführt.
 :::
@@ -644,7 +473,7 @@ Letztlich wird damit das Kreuzprodukt aus Testmethoden und Testdaten durchgefüh
 ### (A) Parametrisierte Tests: Konstruktor (JUnit 4)
 :::
 
-```java
+``` java
 @RunWith(Parameterized.class)
 public class SumTestConstructor {
     private final int s1;
@@ -673,7 +502,7 @@ public class SumTestConstructor {
 ### (B) Parametrisierte Tests: Parameter (JUnit 4)
 :::
 
-```java
+``` java
 @RunWith(Parameterized.class)
 public class SumTestParameters {
 
@@ -693,18 +522,21 @@ public class SumTestParameters {
 }
 ```
 
-[Beispiel: junit4.SumTestConstructor, junit4.SumTestParameters]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/junit4/"}
-
+[Beispiel: junit4.SumTestConstructor, junit4.SumTestParameters]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/junit4/"}
 
 ::: notes
 ## Parametrisierte Tests mit JUnit 5
 
-In JUnit 5 werden [parametrisierte Tests] mit der Annotation [`@ParameterizedTest`]
+In JUnit 5 werden [parametrisierte
+Tests](https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests) mit der Annotation
+[`@ParameterizedTest`](https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html)
 gekennzeichnet (statt mit `@Test`).
 
-Mit Hilfe von [`@ValueSource`] kann man ein einfaches Array von Werten (Strings oder primitive
-Datentypen) angeben, mit denen der Test ausgeführt wird. Dazu bekommt die Testmethode einen
-entsprechenden passenden Parameter:
+Mit Hilfe von
+[`@ValueSource`](https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/ValueSource.html)
+kann man ein einfaches Array von Werten (Strings oder primitive Datentypen) angeben, mit denen der Test ausgeführt wird.
+Dazu bekommt die Testmethode einen entsprechenden passenden Parameter:
 
 ``` java
 @ParameterizedTest
@@ -714,11 +546,15 @@ void testWuppie(String candidate) {
 }
 ```
 
-Alternativ lassen sich als Parameterquelle u.a. Aufzählungen ([`@EnumSource`]) oder Methoden
-([`@MethodSource`]) oder auch Komma-separierte Daten ([`@CsvSource`]) angeben.
+Alternativ lassen sich als Parameterquelle u.a. Aufzählungen
+([`@EnumSource`](https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/EnumSource.html))
+oder Methoden
+([`@MethodSource`](https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/MethodSource.html))
+oder auch Komma-separierte Daten
+([`@CsvSource`](https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/CsvSource.html))
+angeben.
 
-Das obige Beispiel aus JUnit 4.x könnte mit Hilfe von `@CsvSource` so in JUnit 5.x umgesetzt
-werden:
+Das obige Beispiel aus JUnit 4.x könnte mit Hilfe von `@CsvSource` so in JUnit 5.x umgesetzt werden:
 
 ``` java
 public class SumTest {
@@ -736,17 +572,9 @@ public class SumTest {
 }
 ```
 
-[Beispiel: junit5.TestValueSource, junit5.TestMethodSource]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/junit5/"}
-
-  [parametrisierte Tests]: https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests
-  [`@ParameterizedTest`]: https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/ParameterizedTest.html
-  [`@ValueSource`]: https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/ValueSource.html
-  [`@EnumSource`]: https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/EnumSource.html
-  [`@MethodSource`]: https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/MethodSource.html
-  [`@CsvSource`]: https://junit.org/junit5/docs/current/api/org.junit.jupiter.params/org/junit/jupiter/params/provider/CsvSource.html
-
+[Beispiel: junit5.TestValueSource, junit5.TestMethodSource]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/junit5/"}
 :::
-
 
 # Testsuiten: Tests gemeinsam ausführen (JUnit 4)
 
@@ -754,7 +582,7 @@ public class SumTest {
 Eclipse: `New > Other > Java > JUnit > JUnit Test Suite`
 :::
 
-```java
+``` java
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -776,10 +604,10 @@ public class MyTestSuite {
 
 In JUnit 5 gibt es zwei Möglichkeiten, Testsuiten zu erstellen:
 
-*   `@SelectPackages`: Angabe der Packages, die für die Testsuite zusammengefasst werden sollen
-*   `@SelectClasses`: Angabe der Klassen, die für die Testsuite zusammengefasst werden sollen
+-   `@SelectPackages`: Angabe der Packages, die für die Testsuite zusammengefasst werden sollen
+-   `@SelectClasses`: Angabe der Klassen, die für die Testsuite zusammengefasst werden sollen
 
-```java
+``` java
 @RunWith(JUnitPlatform.class)
 @SelectClasses({StudiTest5.class, WuppieTest5.class})
 public class MyTestSuite5 {
@@ -787,103 +615,211 @@ public class MyTestSuite5 {
 }
 ```
 
-Zusätzlich kann man beispielsweise mit `@IncludeTags` oder `@ExcludeTags` Testmethoden mit bestimmten Tags
-einbinden oder ausschließen. Beispiel: Schließe alle Tests mit Tag "develop" aus: `@ExcludeTags("develop")`.
-Dabei wird an den Testmethoden zusätzlich das Tag `@Tag` verwendet, etwas `@Tag("develop")`.
+Zusätzlich kann man beispielsweise mit `@IncludeTags` oder `@ExcludeTags` Testmethoden mit bestimmten Tags einbinden
+oder ausschließen. Beispiel: Schließe alle Tests mit Tag "develop" aus: `@ExcludeTags("develop")`. Dabei wird an den
+Testmethoden zusätzlich das Tag `@Tag` verwendet, etwas `@Tag("develop")`.
 
-**Achtung**: Laut der offiziellen Dokumentation
-[(Abschnitt "4.4.4. Test Suite")](https://junit.org/junit5/docs/current/user-guide/#running-tests-junit-platform-runner-test-suite)
-gilt zumindest bei der Selection über `@SelectPackages` der Zwang zu einer Namenskonvention:
-Es werden dabei nur Klassen gefunden, deren Name mit `Test` beginnt oder endet!
-Weiterhin werden Testsuites mit der Annotation `@RunWith(JUnitPlatform.class)` **nicht**
-auf der "JUnit 5"-Plattform ausgeführt, sondern mit der JUnit 4-Infrastuktur!
+**Achtung**: Laut der offiziellen Dokumentation [(Abschnitt "4.4.4. Test
+Suite")](https://junit.org/junit5/docs/current/user-guide/#running-tests-junit-platform-runner-test-suite) gilt
+zumindest bei der Selection über `@SelectPackages` der Zwang zu einer Namenskonvention: Es werden dabei nur Klassen
+gefunden, deren Name mit `Test` beginnt oder endet! Weiterhin werden Testsuites mit der Annotation
+`@RunWith(JUnitPlatform.class)` **nicht** auf der "JUnit 5"-Plattform ausgeführt, sondern mit der JUnit 4-Infrastuktur!
 :::
-
 
 ::: notes
 # Best Practices
 
-1.  Eine Testmethode behandelt exakt eine Idee/ein Szenario (einen Testfall). Das bedeutet
-    auch, dass man in der Regel nur ein bis wenige `assert*` pro Testmethode benutzt.
+1.  Eine Testmethode behandelt exakt eine Idee/ein Szenario (einen Testfall). Das bedeutet auch, dass man in der Regel
+    nur ein bis wenige `assert*` pro Testmethode benutzt.
 
-    (Wenn man verschiedene Ideen in eine Testmethode kombiniert, wird der Testfall
-    unübersichtlicher und auch auch schwerer zu warten.
+    (Wenn man verschiedene Ideen in eine Testmethode kombiniert, wird der Testfall unübersichtlicher und auch auch
+    schwerer zu warten.
 
-    Außerdem können so leichter versteckte Fehler auftreten: Das erste oder zweite oder dritte
-    `assert*` schlägt fehl - und alle dahinter kommenden `assert*` werden nicht mehr
-    ausgewertet!)
+    Außerdem können so leichter versteckte Fehler auftreten: Das erste oder zweite oder dritte `assert*` schlägt fehl -
+    und alle dahinter kommenden `assert*` werden nicht mehr ausgewertet!)
 
-2.  Wenn die selbe Testidee mehrfach wiederholt wird, sollte man diese Tests zu einem
-    parametrisierten Test zusammenfassen.
+2.  Wenn die selbe Testidee mehrfach wiederholt wird, sollte man diese Tests zu einem parametrisierten Test
+    zusammenfassen.
 
-    (Das erhöht die Lesbarkeit drastisch - und man läuft auch nicht in das Problem der
-    Benennung der Testmethoden.)
+    (Das erhöht die Lesbarkeit drastisch - und man läuft auch nicht in das Problem der Benennung der Testmethoden.)
 
-3.  Es wird nur das Verhalten der öffentlichen Schnittstelle getestet, nicht die inneren
-    Strukturen einer Klasse oder Methode.
+3.  Es wird nur das Verhalten der öffentlichen Schnittstelle getestet, nicht die inneren Strukturen einer Klasse oder
+    Methode.
 
-    (Es ist verlockend, auch private Methoden zu testen und in den Tests auch die
-    Datenstrukturen o.ä. im Blick zu behalten und zu testen. Das führt aber zu sehr
-    "zerbrechlichen" (*brittle*) Tests: Sobald sich etwas an der inneren Struktur ändert, ohne
-    dass sich das von außen beobachtbare Verhalten ändert und also die Klasse/Methode immer
-    noch ordnungsgemäß funktioniert, gehen all diese "internen" Tests kaputt. Nicht ohne
-    Grund wird in der objektorientierten Programmierung mit Kapselung (Klassen, Methoden, ...)
-    gearbeitet.)
+    (Es ist verlockend, auch private Methoden zu testen und in den Tests auch die Datenstrukturen o.ä. im Blick zu
+    behalten und zu testen. Das führt aber zu sehr "zerbrechlichen" (*brittle*) Tests: Sobald sich etwas an der inneren
+    Struktur ändert, ohne dass sich das von außen beobachtbare Verhalten ändert und also die Klasse/Methode immer noch
+    ordnungsgemäß funktioniert, gehen all diese "internen" Tests kaputt. Nicht ohne Grund wird in der objektorientierten
+    Programmierung mit Kapselung (Klassen, Methoden, ...) gearbeitet.)
 
 4.  Von Setup- und Teardown-Methoden sollte eher sparsam Gebrauch gemacht werden.
 
-    (Normalerweise folgen wir in der objektorientierten Programmierung dem DRY-Prinzip ([Don't
-    repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)). Entsprechend
-    liegt es nahe, häufig benötigte Elemente in einer Setup-Methode zentral zu initialisieren
-    und ggf. in einer Teardown-Methode wieder freizugeben.
+    (Normalerweise folgen wir in der objektorientierten Programmierung dem DRY-Prinzip ([Don't repeat
+    yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)). Entsprechend liegt es nahe, häufig benötigte
+    Elemente in einer Setup-Methode zentral zu initialisieren und ggf. in einer Teardown-Methode wieder freizugeben.
 
-    Das führt aber speziell bei Unit-Tests dazu, dass die einzelnen Testmethoden schwerer
-    lesbar werden: Sie hängen von einer gemeinsamen, zentralen Konfiguration ab, die man
-    üblicherweise nicht gleichzeitig mit dem Code der Testmethode sehen kann (begrenzter Platz
-    auf der Bildschirmseite).
+    Das führt aber speziell bei Unit-Tests dazu, dass die einzelnen Testmethoden schwerer lesbar werden: Sie hängen von
+    einer gemeinsamen, zentralen Konfiguration ab, die man üblicherweise nicht gleichzeitig mit dem Code der Testmethode
+    sehen kann (begrenzter Platz auf der Bildschirmseite).
 
-    Wenn nun in einem oder vielleicht mehreren Testfällen der Wunsch nach einer leicht anderen
-    Konfiguration auftaucht, muss man die gemeinsame Konfiguration entsprechend anpassen bzw.
-    erweitern. Dabei muss man dann aber *alle* anderen Testmethoden mit bedenken, die ja
-    ebenfalls von dieser Konfiguration abhängen! Das führt in der Praxis dann häufig dazu,
-    dass die gemeinsame Konfiguration sehr schnell sehr groß und verschachtelt und
-    entsprechend unübersichtlich wird.
+    Wenn nun in einem oder vielleicht mehreren Testfällen der Wunsch nach einer leicht anderen Konfiguration auftaucht,
+    muss man die gemeinsame Konfiguration entsprechend anpassen bzw. erweitern. Dabei muss man dann aber *alle* anderen
+    Testmethoden mit bedenken, die ja ebenfalls von dieser Konfiguration abhängen! Das führt in der Praxis dann häufig
+    dazu, dass die gemeinsame Konfiguration sehr schnell sehr groß und verschachtelt und entsprechend unübersichtlich
+    wird.
 
-    Jede Änderung an dieser Konfiguration kann leicht einen oder mehrere Testfälle kaputt
-    machen (man hat ja i.d.R. nie alle Testfälle gleichzeitig im Blick), weshalb man hier
-    unbedingt mit passenden `assume*` arbeiten muss - aber dann kann man eigentlich auch
-    stattdessen die Konfiguration direkt passend für den jeweiligen Testfall in der jeweiligen
+    Jede Änderung an dieser Konfiguration kann leicht einen oder mehrere Testfälle kaputt machen (man hat ja i.d.R. nie
+    alle Testfälle gleichzeitig im Blick), weshalb man hier unbedingt mit passenden `assume*` arbeiten muss - aber dann
+    kann man eigentlich auch stattdessen die Konfiguration direkt passend für den jeweiligen Testfall in der jeweiligen
     Testmethode erledigen!)
 
 5.  Wie immer sollten auch die Namen der Testmethoden klar über ihren Zweck Auskunft geben.
 
-    (Da Tests oft auch als "ausführbare Dokumentation" betrachtet werden, ist eine sinnvolle Benamung
-    besonders wichtig. Oft werden hier deshalb Ausnahmen von den üblichen Java-Konventionen erlaubt.
-    Man findet häufig das aus dem [Behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development)
-    bekannte "given - when - then"-Mantra. Siehe auch
-    [The subtle Art of Java Test Method Naming](https://jonasg.io/posts/subtle-art-of-java-test-method-naming/)
-    und auch [Spock testing framework versus JUnit](https://blog.codepipes.com/testing/spock-vs-junit.html).
+    (Da Tests oft auch als "ausführbare Dokumentation" betrachtet werden, ist eine sinnvolle Benamung besonders wichtig.
+    Oft werden hier deshalb Ausnahmen von den üblichen Java-Konventionen erlaubt. Man findet häufig das aus dem
+    [Behavior-driven development](https://en.wikipedia.org/wiki/Behavior-driven_development) bekannte "given - when -
+    then"-Mantra. Siehe auch [The subtle Art of Java Test Method
+    Naming](https://jonasg.io/posts/subtle-art-of-java-test-method-naming/) und auch [Spock testing framework versus
+    JUnit](https://blog.codepipes.com/testing/spock-vs-junit.html).
 
-    Der Präfix "test" für Testmethoden wird seit JUnit 4.x nicht mehr benötigt, aber dennoch
-    ist es in vielen Projekten Praxis, diesen Präfix beizubehalten - damit kann man in der
-    Package-Ansicht in der IDE leichter zwischen den "normalen" und den Testmethoden unterscheiden.
-    Das ist analog zum Suffix "Test" für die Klassennamen der Testklassen ...)
+    Der Präfix "test" für Testmethoden wird seit JUnit 4.x nicht mehr benötigt, aber dennoch ist es in vielen Projekten
+    Praxis, diesen Präfix beizubehalten - damit kann man in der Package-Ansicht in der IDE leichter zwischen den
+    "normalen" und den Testmethoden unterscheiden. Das ist analog zum Suffix "Test" für die Klassennamen der Testklassen
+    ...)
 
 Diese Erfahrungen werden ausführlich in [@SWEGoogle, pp. 231-256] diskutiert.
 
-Eine lesenswerte Diskussion von "Anti-Pattern" beim Testen finden Sie im Blog
-[Software Testing Anti-patterns](https://blog.codepipes.com/testing/software-testing-antipatterns.html).
+Eine lesenswerte Diskussion von "Anti-Pattern" beim Testen finden Sie im Blog [Software Testing
+Anti-patterns](https://blog.codepipes.com/testing/software-testing-antipatterns.html).
 :::
-
 
 # Wrap-Up
 
 JUnit als Framework für (Unit-) Tests; hier JUnit 4 (mit Ausblick auf JUnit 5)
 
-*   Testmethoden mit Annotation `@Test`
-*   `assert` (Testergebnis) vs. `assume` (Testvorbedingung)
-*   Aufbau der Testumgebung `@Before`
-*   Abbau der Testumgebung `@After`
-*   Steuern von Tests mit `@Ignore` oder `@Test(timout=XXX)`
-*   Exceptions einfordern mit `@Test(expected=package.Exception.class)`
-*   Tests zusammenfassen zu Testsuiten
+-   Testmethoden mit Annotation `@Test`
+-   `assert` (Testergebnis) vs. `assume` (Testvorbedingung)
+-   Aufbau der Testumgebung `@Before`
+-   Abbau der Testumgebung `@After`
+-   Steuern von Tests mit `@Ignore` oder `@Test(timout=XXX)`
+-   Exceptions einfordern mit `@Test(expected=package.Exception.class)`
+-   Tests zusammenfassen zu Testsuiten
+
+::: readings
+-   @vogellaJUnit
+-   @junit4
+-   @Kleuker2019
+-   @Osherove2014
+-   @Spillner2012
+-   @fernunihagenJunit
+:::
+
+::: outcomes
+-   k3: Ich kann Testergebnisse prüfen
+-   k2: Ich kenne den Unterschied zwischen assert und assume
+-   k3: Ich kann vor/nach jedem Test bestimmten Code ausführen
+-   k2: Ich habe verstanden, warum @Before und @After sparsam einzusetzen sind
+-   k3: Ich kann die Ausführung von Tests steuern, beispielsweise Tests ignorieren oder mit zeitlicher Begrenzung
+    ausführen
+-   k3: Ich kann das Auftreten von Exceptions prüfen
+-   k3: Ich kann Tests zu Testsuiten zusammenfassen
+:::
+
+::: challenges
+**Setup und Teardown**
+
+Sie haben in den Challenges in "Intro SW-Test" erste JUnit-Tests für die Klasse `MyList<T>` implementiert.
+
+Wie müssten Sie Ihre JUnit-Tests anpassen, wenn Sie im obigen Szenario Setup- und Teardown-Methoden einsetzen würden?
+
+<!--
+```java
+import org.junit.jupiter.api.*;
+
+public class MyListTest {
+    private MyList<String> sut;
+
+    @BeforeEach
+    void setUp() {
+        sut = new MyList<>();
+        sut.add("foo");
+    }
+
+    @AfterEach
+    void tearDown() {
+        sut = null;
+    }
+
+    @Test
+    void addWithBefore() {
+        Assumptions.assumeTrue(sut.size() == 1);
+
+        boolean erg = sut.add("wuppie");
+
+        Assertions.assertTrue(erg);
+        Assertions.assertEquals(2, sut.size());
+
+    }
+}
+```
+-->
+
+**Testmethoden**
+
+Betrachten Sie den folgenden Code. Was fällt Ihnen auf?
+
+``` java
+public class Studi {
+    public int getCredits();
+    public void addToCredits(int credits);
+
+    @Test
+    public void testStudi() {
+        Studi s = new Studi();
+        s.addToCredits(2);
+        assertEquals(2, s.getCredits());
+    }
+}
+```
+
+**Parametrisierte Tests**
+
+Betrachten Sie die folgende einfache Klasse `MyMath`:
+
+``` java
+public class MyMath {
+    public static String add(String s, int c) {
+        return s.repeat(c);
+    }
+}
+```
+
+Beim Testen der Methode `MyMath#add` fällt auf, dass man hier immer wieder den selben Testfall mit lediglich anderen
+Werten ausführt - ein Fall für parametrisierte Tests.
+
+Schreiben Sie mit Hilfe von JUnit (4.x oder 5.x) einige parametrisierte Unit-Tests für die Methode `MyMath#add`.
+
+<!--
+```java
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+class MyMathTest {
+    @ParameterizedTest
+    @CsvSource(textBlock = """
+            # s,  c,   s.repeat(c)
+            '',   0,   ''
+            foo,  0,   ''
+            foo,  1,   foo
+            foo,  2,   foofoo
+            """)
+    void add(String s, int c, String expected) {
+        Assertions.assertEquals(expected, MyMath.add(s, c));
+    }
+}
+```
+-->
+:::
+
+[^1]: Naja, ein kläglicher Versuch. Namen sind eines der schwierigen Probleme in der Informatik.
