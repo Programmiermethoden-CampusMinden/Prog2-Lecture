@@ -338,7 +338,7 @@ import static packageName.className.*;
 
 ::: outcomes
 -   k2: Ich kenne verschiedene Ursachen von Softwarefehlern
--   k3: Ich kann Tests mit JUnit 4 und 5 unter Nutzung der Annotation @Test erstellen
+-   k3: Ich kann Tests mit JUnit 4 und 5 unter Nutzung der Annotation `@Test` erstellen
 :::
 
 ::: challenges

@@ -446,7 +446,7 @@ folgende Ausgabe:
 
 ::: outcomes
 -   k2: Ich kann den Begriff der 'Annotation' erklären an einem Beispiel
--   k3: Ich kann @Override und auch die Javadoc-Annotationen praktisch anwenden
+-   k3: Ich kann `@Override` und auch die Javadoc-Annotationen praktisch anwenden
 -   k3: Ich kann eigene Annotationen erstellen und dabei die Sichtbarkeit und Verwendbarkeit einstellen
 -   k3: Ich kann einen eigenen einfachen Annotation-Processors erstellen
 :::

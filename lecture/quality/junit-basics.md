@@ -716,9 +716,9 @@ JUnit als Framework für (Unit-) Tests; hier JUnit 4 (mit Ausblick auf JUnit 5)
 
 ::: outcomes
 -   k3: Ich kann Testergebnisse prüfen
--   k2: Ich kenne den Unterschied zwischen assert und assume
+-   k2: Ich kenne den Unterschied zwischen `assert` und `assume`
 -   k3: Ich kann vor/nach jedem Test bestimmten Code ausführen
--   k2: Ich habe verstanden, warum @Before und @After sparsam einzusetzen sind
+-   k2: Ich habe verstanden, warum `@Before` und `@After` sparsam einzusetzen sind
 -   k3: Ich kann die Ausführung von Tests steuern, beispielsweise Tests ignorieren oder mit zeitlicher Begrenzung
     ausführen
 -   k3: Ich kann das Auftreten von Exceptions prüfen
