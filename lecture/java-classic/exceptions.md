@@ -227,7 +227,7 @@ eingegangen werden und versucht werden, den Fehler zu beheben oder dem Aufrufer
 geeignet zu melden!
 :::
 
-# \_Try_und mehrstufiges *Catch*
+# *Try* und mehrstufiges *Catch*
 
 ``` java
 try {
