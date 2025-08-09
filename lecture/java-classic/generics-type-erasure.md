@@ -196,7 +196,7 @@ Fach<Integer> b;
 \bigskip
 
 Grund: Compiler generiert nur eine Klasse! Beide Objekte würden sich die statischen
-Attribute teilen `\newline`{=tex}(Typ zur Laufzeit unklar!).
+Attribute teilen `\newline`{=tex} (Typ zur Laufzeit unklar!).
 
 \smallskip
 
