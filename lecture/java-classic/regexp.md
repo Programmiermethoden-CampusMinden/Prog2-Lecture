@@ -40,7 +40,10 @@ Gesucht ist ein Programm zum Extrahieren von Telefonnummern aus E-Mails.
 
 \bigskip
 
-=\> **Wie geht das?** `\bigskip`{=tex} `\bigskip`{=tex}
+=\> **Wie geht das?**
+
+\bigskip
+\bigskip
 
 \pause
 
