@@ -162,7 +162,7 @@ href="https://en.wikipedia.org/wiki/Broken_windows_theory"}
 
 Es gibt eine "praxisnahe" (und nicht ganz ernst gemeinte) Maßeinheit für
 Code-Qualität: Die "WTF/m" (*What the Fuck per minute*): [Thom Holwerda:
-www.osnews.com/story/19266/WTFs\_](https://www.osnews.com/story/19266/wtfsm/).
+www.osnews.com/story/19266/WTFs](https://www.osnews.com/story/19266/wtfsm/).
 
 Wenn beim Code-Review durch Kollegen viele "WTF" kommen, ist der Code offenbar nicht
 in Ordnung ...
