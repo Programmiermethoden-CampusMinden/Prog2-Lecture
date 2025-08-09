@@ -352,7 +352,7 @@ Ohne explizite Angabe ist die selbst definierte Annotation für alle Elemente
 verwendbar.
 :::
 
-# Annotationen [bei Compilieren]{.notes} bearbeiten: Java Annotation-Prozessoren
+# Annotationen [beim Compilieren]{.notes} bearbeiten: Java Annotation-Prozessoren
 
 ::: notes
 Der dem `javac`-Compiler vorgelegte Source-Code wird eingelesen und in einen
