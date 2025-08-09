@@ -136,7 +136,7 @@ Implementieren Sie das Strategie-Muster für eine Übersetzungsfunktion:
 -   Eine Klasse liefert eine Nachricht (`String`) mit `getMessage()` zurück.
 -   Diese Nachricht ist in der Klasse in Englisch implementiert.
 -   Ein passendes Übersetzerobjekt soll die Nachricht beim Aufruf der Methode
-    `getMessage()` `\newline`{=tex}in die Ziel-Sprache übersetzen.
+    `getMessage()` `\newline`{=tex} in die Ziel-Sprache übersetzen.
 
 \bigskip
 \bigskip
