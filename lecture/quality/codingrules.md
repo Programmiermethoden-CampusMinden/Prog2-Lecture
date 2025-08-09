@@ -24,8 +24,8 @@ und Verständlichkeit zu verbessern.
 Metriken sind Kennzahlen, die aus dem Code berechnet werden, und können zur
 Überwachung der Einhaltung von Coding Conventions und anderen Regeln genutzt werden.
 Nützliche Metriken sind dabei NCSS (*Non Commenting Source Statements*), McCabe
-(*Cyclomatic Complexity*), BEC (*Boolean Expression Complexity*) und DAC (*Class Data
-Abstraction Coupling*).
+(*Cyclomatic Complexity*), BEC (*Boolean Expression Complexity*) und DAC (*Class
+Data Abstraction Coupling*).
 
 Für die Formatierung des Codes kann man die IDE nutzen, muss dort dann aber die
 Regeln detailliert manuell einstellen. Das Tool **Spotless** lässt sich dagegen in
@@ -182,20 +182,20 @@ formatieren lassen. Hier einige Möglichkeiten:
         einstellen/einrichten
     -   Code markieren, `Source > Format`
     -   Komplettes Aufräumen: `Source > Clean Up` (Formatierung, Importe,
-        Annotationen, ...) Kann auch so eingestellt werden, dass ein "Clean Up" immer
-        beim Speichern ausgeführt wird!
+        Annotationen, ...) Kann auch so eingestellt werden, dass ein "Clean Up"
+        immer beim Speichern ausgeführt wird!
 -   IntelliJ verfügt über ähnliche Fähigkeiten:
     -   Einstellen über `Preferences > Editor > Code Style > Java`
     -   Formatieren mit `Code > Reformat Code` oder `Code > Reformat File`
 
-Die Details kann/muss man einzeln einstellen. Für die "bekannten" Styles (Google Java
-Style) bringen die IDE's oft aber schon eine Gesamtkonfiguration mit.
+Die Details kann/muss man einzeln einstellen. Für die "bekannten" Styles (Google
+Java Style) bringen die IDE's oft aber schon eine Gesamtkonfiguration mit.
 
 **Achtung**: Zumindest in Eclipse gibt es mehrere Stellen, wo ein Code-Style
 eingestellt werden kann ("Clean Up", "Formatter", ...). Diese sollten dann jeweils
 auf den selben Style eingestellt werden, sonst gibt es unter Umständen lustige
-Effekte, da beim Speichern ein anderer Style angewendet wird als beim "Clean Up" oder
-beim "Format Source" ...
+Effekte, da beim Speichern ein anderer Style angewendet wird als beim "Clean Up"
+oder beim "Format Source" ...
 
 Analog sollte man bei der Verwendung von Checkstyle auch in der IDE im Formatter die
 entsprechenden Checkstyle-Regeln (s.u.) passend einstellen, sonst bekommt man durch
@@ -317,8 +317,8 @@ Metriken und die Einhaltung von Coding-Conventions werden sinnvollerweise nicht
 manuell, sondern durch diverse Tools erfasst, etwa im Java-Bereich mit Hilfe von
 [**Checkstyle**](https://github.com/checkstyle).
 
-Das Tool lässt sich [Standalone über CLI](https://checkstyle.org/cmdline.html) nutzen
-oder als Plugin für IDE's ([Eclipse](https://checkstyle.org/eclipse-cs) oder
+Das Tool lässt sich [Standalone über CLI](https://checkstyle.org/cmdline.html)
+nutzen oder als Plugin für IDE's ([Eclipse](https://checkstyle.org/eclipse-cs) oder
 [IntelliJ](https://github.com/jshiell/checkstyle-idea)) einsetzen. Gradle bringt ein
 eigenes [Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
 mit.
@@ -379,16 +379,16 @@ können sich "FileSetChecks" (Module, die auf einer Menge von Dateien Checks
 ausführen), "Filters" (Module, die Events bei der Prüfung von Regeln filtern) und
 "AuditListeners" (Module, die akzeptierte Events in einen Report überführen)
 befinden. Der "TreeWalker" ist mit der wichtigste Vertreter der FileSetChecks-Module
-und transformiert die zu prüfenden Java-Sourcen in einen *Abstract Syntax Tree*, also
-eine Baumstruktur, die dem jeweiligen Code unter der Java-Grammatik entspricht.
+und transformiert die zu prüfenden Java-Sourcen in einen *Abstract Syntax Tree*,
+also eine Baumstruktur, die dem jeweiligen Code unter der Java-Grammatik entspricht.
 Darauf können dann wiederum die meisten Low-Level-Module arbeiten.
 
 Eine Reihe von [Standard-Checks](https://checkstyle.org/checks.html) sind bereits in
-Checkstyle implementiert und benötigen keine weitere externe Abhängigkeiten. Man kann
-aber zusätzliche Regeln aus anderen Projekten beziehen (etwa via Gradle/Maven) oder
-sich eigene zusätzliche Regeln in Java schreiben. Die einzelnen Checks werden in der
-Regel als "Modul" dem "TreeWalker" hinzugefügt und über die jeweiligen Properties
-näher konfiguriert.
+Checkstyle implementiert und benötigen keine weitere externe Abhängigkeiten. Man
+kann aber zusätzliche Regeln aus anderen Projekten beziehen (etwa via Gradle/Maven)
+oder sich eigene zusätzliche Regeln in Java schreiben. Die einzelnen Checks werden
+in der Regel als "Modul" dem "TreeWalker" hinzugefügt und über die jeweiligen
+Properties näher konfiguriert.
 
 Sie finden in der [Doku](https://checkstyle.org/checks.html) zu jedem Check das
 entsprechende Modul, das Eltern-Modul (also wo müssen Sie das Modul im XML-Baum
@@ -432,8 +432,8 @@ href="https://youtu.be/0ny6e6CNTF8"}
 -   CLI: `java -jar spotbugs.jar options ...`
 
 -   IDE: [IntelliJ SpotBugs
-    plugin](https://github.com/JetBrains/spotbugs-intellij-plugin), [SpotBugs Eclipse
-    plugin](https://spotbugs.readthedocs.io/en/latest/eclipse.html)
+    plugin](https://github.com/JetBrains/spotbugs-intellij-plugin), [SpotBugs
+    Eclipse plugin](https://spotbugs.readthedocs.io/en/latest/eclipse.html)
 
 -   Gradle: [SpotBugs Gradle
     Plugin](https://github.com/spotbugs/spotbugs-gradle-plugin)
@@ -476,9 +476,9 @@ Zusätzlich wenden wir den [Google Java
 Style](https://google.github.io/styleguide/javaguide.html) an. Statt der dort
 vorgeschriebenen Einrückung mit 2 Leerzeichen (und 4+ Leerzeichen bei Zeilenumbruch
 in einem Statement) können Sie auch mit 4 Leerzeichen einrücken (8 Leerzeichen bei
-Zeilenumbruch) ([AOSP](https://source.android.com/docs/setup/contribute/code-style)).
-Halten Sie sich in Ihrem Team an eine einheitliche Einrückung (Google Java Style
-*oder* AOSP).
+Zeilenumbruch)
+([AOSP](https://source.android.com/docs/setup/contribute/code-style)). Halten Sie
+sich in Ihrem Team an eine einheitliche Einrückung (Google Java Style *oder* AOSP).
 
 Formatieren Sie Ihren Code vor den Commits mit **Spotless** (über Gradle) oder
 stellen Sie den Formatter Ihrer IDE entsprechend ein.
@@ -575,8 +575,8 @@ nutzen. *Hinweis*: Einige der dort konfigurierten Checkstyle-Regeln gehen allerd
 -   Vermeiden von Anti-Pattern mit **SpotBugs**
 
 ::: notes
-Setzen Sie zusätzlich **SpotBugs** mit ein. Ihre Lösungen dürfen keine Warnungen oder
-Fehler beinhalten, die SpotBugs melden würde.
+Setzen Sie zusätzlich **SpotBugs** mit ein. Ihre Lösungen dürfen keine Warnungen
+oder Fehler beinhalten, die SpotBugs melden würde.
 :::
 
 # Wrap-Up

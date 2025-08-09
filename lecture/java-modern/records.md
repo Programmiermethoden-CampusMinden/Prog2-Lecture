@@ -5,18 +5,18 @@ title: Record-Klassen
 
 ::: tldr
 Häufig schreibt man relativ viel *Boiler Plate Code*, um einfach ein paar Daten plus
-den Konstruktor und die Zugriffsmethoden zu kapseln. Und selbst wenn die IDE dies zum
-Teil abnehmen kann - lesen muss man diesen Overhead trotzdem noch.
+den Konstruktor und die Zugriffsmethoden zu kapseln. Und selbst wenn die IDE dies
+zum Teil abnehmen kann - lesen muss man diesen Overhead trotzdem noch.
 
 Für den Fall von Klassen mit `final` Attributen wurden in Java14 die
 **Record-Klassen** eingeführt. Statt dem Schlüsselwort `class` wird das neue
-Schlüsselwort `record` verwendet. Nach dem Klassennamen kommen in runden Klammern die
-"Komponenten" - eine Auflistung der Parameter für den Standardkonstruktor (Typ,
+Schlüsselwort `record` verwendet. Nach dem Klassennamen kommen in runden Klammern
+die "Komponenten" - eine Auflistung der Parameter für den Standardkonstruktor (Typ,
 Name). Daraus wird automatisch ein "kanonischer Konstruktor" mit exakt diesen
 Parametern generiert. Es werden zusätzlich `private final` Attribute generiert für
-jede Komponente, und diese werden durch den kanonischen Konstruktor gesetzt. Außerdem
-wird für jedes Attribut automatisch ein Getter mit dem Namen des Attributs generiert
-(also ohne den Präfix "get").
+jede Komponente, und diese werden durch den kanonischen Konstruktor gesetzt.
+Außerdem wird für jedes Attribut automatisch ein Getter mit dem Namen des Attributs
+generiert (also ohne den Präfix "get").
 
 Beispiel:
 
@@ -69,8 +69,8 @@ public record StudiR(String name, int credits) {}
 \bigskip
 \pause
 
--   Immutable Klasse mit Feldern `String name` und `int credits` `\newline`{=tex} =\>
-    "`(String name, int credits)`" werden "Komponenten" des Records genannt
+-   Immutable Klasse mit Feldern `String name` und `int credits` `\newline`{=tex}
+    =\> "`(String name, int credits)`" werden "Komponenten" des Records genannt
 
 -   Standardkonstruktor setzt diese Felder ("Kanonischer Konstruktor")
 
@@ -147,8 +147,8 @@ public record StudiT(String name, int credits) {
 In der kompakten Form kann man nur die Werte der Parameter des Konstruktors ändern.
 Das Setzen der Attribute ergänzt der Compiler nach dem eigenen Code.
 
-Es sind weitere Konstruktoren definierbar, diese *müssen* den kanonischen Konstruktor
-aufrufen:
+Es sind weitere Konstruktoren definierbar, diese *müssen* den kanonischen
+Konstruktor aufrufen:
 
 ``` java
 public StudiT() {
@@ -203,8 +203,8 @@ Getter für die einzelnen Eigenschaften. Das braucht 18 Zeilen Code (ohne Kommen
 Leerzeilen). Zudem erzeugt der Boilerplate-Code relativ viel "visual noise", so dass
 der eigentliche Kern der Klasse schwerer zu erkennen ist.
 
-In einem Refactoring wurde diese Klasse durch eine äquivalente Record-Klasse ersetzt,
-die nur noch 2 Zeilen Code (je nach Code-Style auch nur 1 Zeile) benötigt.
+In einem Refactoring wurde diese Klasse durch eine äquivalente Record-Klasse
+ersetzt, die nur noch 2 Zeilen Code (je nach Code-Style auch nur 1 Zeile) benötigt.
 Gleichzeitig wurde die Les- und Wartbarkeit deutlich verbessert.
 
 ![](images/screenshot_katze.png)

@@ -11,11 +11,11 @@ voneinander in eigenen Hilfs-Branches ausarbeiten.
 Es haben sich zwei grundlegende Modelle etabliert: "Git-Flow" und "GitHub Flow".
 
 In **Git-Flow** gibt es ein umfangreiches Konzept mit verschiedenen Branches für
-feste Aufgaben, welches sich besonders gut für Entwicklungmodelle mit festen Releases
-eignet. Es gibt zwei langlaufende Branches: `master` enthält den stabilen
-veröffentlichten Stand, in `develop` werden die Ergebnisse der Entwicklung gesammelt.
-Features werden in kleinen Feature-Branches entwickelt, die von `develop` abzweigen
-und dort wieder hineinmünden. Für Releases wird von `develop` ein eigener
+feste Aufgaben, welches sich besonders gut für Entwicklungmodelle mit festen
+Releases eignet. Es gibt zwei langlaufende Branches: `master` enthält den stabilen
+veröffentlichten Stand, in `develop` werden die Ergebnisse der Entwicklung
+gesammelt. Features werden in kleinen Feature-Branches entwickelt, die von `develop`
+abzweigen und dort wieder hineinmünden. Für Releases wird von `develop` ein eigener
 Release-Branch angelegt und nach Finalisierung in den `master` und in `develop`
 gemergt. Fixes werden vom `master` abgezweigt, und wieder in den `master` und auch
 nach `develop` integriert. Dadurch stehen auf dem `master` immer die stabilen
@@ -25,8 +25,8 @@ Entwicklungsergebnisse.
 Der **GitHub Flow** basiert auf einem deutlich schlankeren Konzept und passt gut für
 die kontinuierliche Entwicklung ohne echte Releases. Hier hat man auch wieder einen
 `master` als langlaufenden Branch, der die stabilen Release-Stände enthält. Vom
-`master` zweigen direkt die kleinen Feature-Branches ab und werden auch wieder direkt
-in den `master` integriert.
+`master` zweigen direkt die kleinen Feature-Branches ab und werden auch wieder
+direkt in den `master` integriert.
 :::
 
 ::: youtube
@@ -38,8 +38,8 @@ in den `master` integriert.
 ![](images/distributed.png){width="80%" web_width="60%"}
 
 ::: notes
-Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit entsprechenden
-Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.
+Git ermöglicht ein einfaches und schnelles Branchen. Dies kann man mit
+entsprechenden Branching-Strategien sinnvoll für die SW-Entwicklung einsetzen.
 
 Im Folgenden sollen also die Frage betrachtet werden: **Wie setze ich Branches
 sinnvoll ein?**
@@ -59,8 +59,8 @@ sinnvoll ein?**
 Branchen ist in Git sehr einfach und schnell. Deshalb wird (gerade auch im Vergleich
 mit SVN) gern und viel gebrancht.
 
-Ein häufiges anzutreffendes Modell ist dabei die Nutzung von **Themen-Branches**: Man
-hat einen Hauptzweig (`master`). Wann immer eine neue Idee oder ein Baustein
+Ein häufiges anzutreffendes Modell ist dabei die Nutzung von **Themen-Branches**:
+Man hat einen Hauptzweig (`master`). Wann immer eine neue Idee oder ein Baustein
 unabhängig entwickelt werden soll/kann, wird ein entsprechender Themen-Branch
 aufgemacht. Dabei handelt es sich normalerweise um **kleine Einheiten**!
 
@@ -92,9 +92,9 @@ Häufig findet man in (größeren) Projekten Branches, die über die gesamte Leb
 des Projekts existieren, sogenannte "langlaufende Branches".
 
 Normalerweise gibt es einen Branch, in dem stets der stabile Stand des Projekts
-enthalten ist. Dies ist häufig der `master`. In diesem Branch gibt es nur sehr wenige
-Commits: normalerweise nur Merges aus dem `develop`-Branch (etwa bei Fertigstellung
-einer Release-Version) und ggf. Fehlerbehebungen.
+enthalten ist. Dies ist häufig der `master`. In diesem Branch gibt es nur sehr
+wenige Commits: normalerweise nur Merges aus dem `develop`-Branch (etwa bei
+Fertigstellung einer Release-Version) und ggf. Fehlerbehebungen.
 
 Die aktive Entwicklung findet in einem separaten Branch statt: `develop`. Hier nutzt
 man zusätzlich Themen-Branches für die Entwicklung einzelner Features, die nach
@@ -108,8 +108,8 @@ langlaufende Branches, beispielsweise "Proposed Updates" etc. beim Linux-Kernel.
     -   Mehr Struktur im Projekt durch in ihrer Semantik wohldefinierte Branches
     -   Durch weniger Commits pro Branch lässt sich die Historie leichter verfolgen
         (u.a. auch aus bestimmter Rollen-Perspektive: Entwickler, Manager, ...)
--   Nachteile: Bestimmte "ausgezeichnete" Branches; zusätzliche Regeln zum Umgang mit
-    diesen beachten
+-   Nachteile: Bestimmte "ausgezeichnete" Branches; zusätzliche Regeln zum Umgang
+    mit diesen beachten
 :::
 
 # Komplexe Branching-Strategie: Git-Flow
@@ -141,9 +141,10 @@ eigentlich nicht erklären :-)
           C---D---F---G---H---I---K  develop
 
 ::: notes
-Bei Git-Flow gibt es zwei langlaufende Branches: Den `master`, der immer den stabilen
-Stand enthält und in den *nie* ein direkter Commit gemacht wird, sowie den `develop`,
-wo letztlich (ggf. über Themenbranches) die eigentliche Entwicklung stattfindet.
+Bei Git-Flow gibt es zwei langlaufende Branches: Den `master`, der immer den
+stabilen Stand enthält und in den *nie* ein direkter Commit gemacht wird, sowie den
+`develop`, wo letztlich (ggf. über Themenbranches) die eigentliche Entwicklung
+stattfindet.
 
 Änderungen werden zunächst im `develop` erstellt und getestet. Wenn die Features
 stabil sind, erfolgt ein Merge von `develop` in den `master`. Hier kann noch der
@@ -197,8 +198,8 @@ wird deshalb ein extra Merge-Commit mit `git merge --no-ff <branch>` (extra Scha
 "`--no-ff`") erzwungen, obwohl ein "*fast forward*" möglich wäre.
 
 Anmerkung: Man kann natürlich auch über Konventionen in den Commit-Kommentaren eine
-gewisse Übersichtlichkeit erzwingen. Beispielsweise könnte man vereinbaren, dass alle
-Commit-Kommentare zu einem Feature "A" mit "`feature a:`" starten müssen.
+gewisse Übersichtlichkeit erzwingen. Beispielsweise könnte man vereinbaren, dass
+alle Commit-Kommentare zu einem Feature "A" mit "`feature a:`" starten müssen.
 :::
 
 # Git-Flow: Umgang mit Fehlerbehebung
@@ -232,8 +233,8 @@ Github verfolgt eine deutlich vereinfachte Strategie: "GitHub Flow" (vgl. ["GitH
 Flow" (S. Chacon)](https://githubflow.github.io/) bzw. ["GitHub flow" (GitHub,
 Inc.)](https://docs.github.com/en/get-started/quickstart/github-flow)).
 
-Hier ist der stabile Stand ebenfalls immer im `master`. Features werden ebenso wie im
-Git-Flow-Modell in eigenen Feature-Branches entwickelt.
+Hier ist der stabile Stand ebenfalls immer im `master`. Features werden ebenso wie
+im Git-Flow-Modell in eigenen Feature-Branches entwickelt.
 
 Allerdings zweigen Feature-Branches *immer direkt* vom `master` ab und werden nach
 dem Test auch immer dort wieder direkt integriert (es gibt also keine weiteren
@@ -247,9 +248,9 @@ Server: Sobald man im Feature-Branch einen "diskussionswürdigen" Stand hat, wir
 **Pull-Request** (*PR*) über die Weboberfläche aufgemacht (streng genommen gehört
 dies in die Kategorie ["Zusammenarbeit" bzw. "Workflows"](workflows.md); außerdem
 gehört ein PR nicht zu Git selbst, sondern zum Tooling von Github). In einem PR
-können andere Entwickler den Code kommentieren und ergänzen. Jeder weitere Commit auf
-dem Themenbranch wird ebenfalls Bestandteil des Pull-Requests. Parallel laufen ggf.
-automatisierte Tests etc. und durch das Akzeptieren des PR in der Weboberfläche
+können andere Entwickler den Code kommentieren und ergänzen. Jeder weitere Commit
+auf dem Themenbranch wird ebenfalls Bestandteil des Pull-Requests. Parallel laufen
+ggf. automatisierte Tests etc. und durch das Akzeptieren des PR in der Weboberfläche
 erfolgt schließlich der Merge des Feature-Branches in den `master`.
 :::
 

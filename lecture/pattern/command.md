@@ -10,9 +10,9 @@ Man kapselt Befehle in einem Objekt.
 1.  Die `Command`-Objekte haben eine Methode `execute()` und führen dabei Aktion auf
     einem bzw. "ihrem" Receiver aus.
 
-2.  `Receiver` sind Objekte, auf denen Aktionen ausgeführt werden, im Dungeon könnten
-    dies etwa Hero, Monster, ... sein. Receiver müssen keine der anderen Akteure in
-    diesem Pattern kennen.
+2.  `Receiver` sind Objekte, auf denen Aktionen ausgeführt werden, im Dungeon
+    könnten dies etwa Hero, Monster, ... sein. Receiver müssen keine der anderen
+    Akteure in diesem Pattern kennen.
 
 3.  Damit die `Command`-Objekte aufgerufen werden, gibt es einen `Invoker`, der
     `Command`-Objekte hat und zu gegebener Zeit auf diesen die Methode `execute()`
@@ -116,15 +116,15 @@ ausführen.
 Ein Receiver ist eine Klasse, die Aktionen durchführen kann. Sie kennt die anderen
 Akteure nicht.
 
-Der Invoker (manchmal auch "Caller" genannt) ist eine Klasse, die Commands aggregiert
-und die die Commandos "ausführt", indem hier die `execute()`-Methode aufgerufen wird.
-Diese Klasse kennt nur das `Command`-Interface und keine spezifischen Kommandos (also
-keine der Sub-Klassen). Es kann zusätzlich eine gewisse Buchführung übernehmen, etwa
-um eine Undo-Funktionalität zu realisieren.
+Der Invoker (manchmal auch "Caller" genannt) ist eine Klasse, die Commands
+aggregiert und die die Commandos "ausführt", indem hier die `execute()`-Methode
+aufgerufen wird. Diese Klasse kennt nur das `Command`-Interface und keine
+spezifischen Kommandos (also keine der Sub-Klassen). Es kann zusätzlich eine gewisse
+Buchführung übernehmen, etwa um eine Undo-Funktionalität zu realisieren.
 
 Der Client ist ein Programmteil, der ein Command-Objekt aufbaut und dabei einen
-passenden Receiver übergibt und der das Command-Objekt dann zum Aufruf an den Invoker
-weiterreicht.
+passenden Receiver übergibt und der das Command-Objekt dann zum Aufruf an den
+Invoker weiterreicht.
 
 In unserem Beispiel lassen sich die einzelnen Teile so sortieren:
 
@@ -186,8 +186,8 @@ public class InputHandler {
 Über den Konstruktor von `InputHandler` (im Beispiel nicht gezeigt) würde man wie
 vorher die `Command`-Objekte für die Buttons setzen. Es würde aber in jedem Aufruf
 von `handleInput()` abgefragt, was gerade die selektierte Entität ist und für diese
-eine neue Instanz des zur Tastatureingabe passenden `Command`-Objekts erzeugt. Dieses
-wird nun in einem Stack gespeichert und danach ausgeführt.
+eine neue Instanz des zur Tastatureingabe passenden `Command`-Objekts erzeugt.
+Dieses wird nun in einem Stack gespeichert und danach ausgeführt.
 
 Wenn der Button "U" gedrückt wird, wird das letzte `Command`-Objekt aus dem Stack
 genommen (Achtung: Im echten Leben müsste man erst einmal schauen, ob hier noch was

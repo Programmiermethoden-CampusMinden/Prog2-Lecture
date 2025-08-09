@@ -8,8 +8,8 @@ Seit Java8 können Methoden in Interfaces auch fertig implementiert sein: Sogena
 **Default-Methoden**.
 
 Dazu werden die Methoden mit dem neuen Schlüsselwort `default` gekennzeichnet. Die
-Implementierung wird an die das Interface implementierenden Klassen (oder Interfaces)
-vererbt und kann bei Bedarf überschrieben werden.
+Implementierung wird an die das Interface implementierenden Klassen (oder
+Interfaces) vererbt und kann bei Bedarf überschrieben werden.
 
 Da eine Klasse von einer anderen Klasse erben darf, aber mehrere Interfaces
 implementieren kann, könnte es zu einer Mehrfachvererbung einer Methode kommen: Eine
@@ -51,8 +51,9 @@ interface Klausur {
 
 ::: notes
 Wenn ein Interface nachträglich erweitert wird, müssen alle Kunden (also alle
-Klassen, die das Interface implementieren) auf die neuen Signaturen angepasst werden.
-Dies kann viel Aufwand verursachen und API-Änderungen damit unmöglich machen.
+Klassen, die das Interface implementieren) auf die neuen Signaturen angepasst
+werden. Dies kann viel Aufwand verursachen und API-Änderungen damit unmöglich
+machen.
 :::
 
 # Default-Methoden: Interfaces mit Implementierung
@@ -94,10 +95,10 @@ werden.
 
 Drei Regeln zum Auflösen bei Konflikten:
 
-1.  **Klassen gewinnen**: Methoden aus Klasse oder Superklasse haben höhere Priorität
-    als Default-Methoden
-2.  **Sub-Interfaces gewinnen**: Methode aus am meisten spezialisiertem Interface mit
-    Default-Methode wird gewählt Beispiel: Wenn `B extends A` dann ist `B`
+1.  **Klassen gewinnen**: Methoden aus Klasse oder Superklasse haben höhere
+    Priorität als Default-Methoden
+2.  **Sub-Interfaces gewinnen**: Methode aus am meisten spezialisiertem Interface
+    mit Default-Methode wird gewählt Beispiel: Wenn `B extends A` dann ist `B`
     spezialisierter als `A`
 3.  Sonst: Klasse muss **Methode explizit auswählen**: Methode überschreiben und
     gewünschte (geerbte) Variante aufrufen: `X.super.m(...)` (`X` ist das gewünschte
@@ -199,8 +200,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 
 ::: notes
 Die Klasse `D` erbt sowohl vom Interface `A` als auch vom Interface `B` die Methode
-`hello()` (Mehrfachvererbung). In diesem Fall *muss* zur Auflösung die Methode in `D`
-neu implementiert werden und die gewünschte geerbte Methode explizit aufgerufen
+`hello()` (Mehrfachvererbung). In diesem Fall *muss* zur Auflösung die Methode in
+`D` neu implementiert werden und die gewünschte geerbte Methode explizit aufgerufen
 werden. (Wenn dies unterlassen wird, führt das selbst bei Nicht-Nutzung der Methode
 `hello()` zu einem Compiler-Fehler!)
 
@@ -236,9 +237,9 @@ public class DefaultTest {
 ```
 
 ::: notes
-Die Klasse `D` erbt sowohl von Klasse `C` als auch von den Interfaces `A` und `B` die
-Methode `hello()` (Mehrfachvererbung). In diesem Fall "gewinnt" die Implementierung
-aus Klasse `C`: Klassen gewinnen immer (Regel 1).
+Die Klasse `D` erbt sowohl von Klasse `C` als auch von den Interfaces `A` und `B`
+die Methode `hello()` (Mehrfachvererbung). In diesem Fall "gewinnt" die
+Implementierung aus Klasse `C`: Klassen gewinnen immer (Regel 1).
 
 [Beispiel: defaultmethods.quiz.DefaultTest]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/defaultmethods/quiz/DefaultTest.java"}
@@ -261,8 +262,8 @@ public class Collections {
 
 Typisches Pattern in Java: Interface plus Utility-Klasse (Companion-Klasse) mit
 statischen Hilfsmethoden zum einfacheren Umgang mit Instanzen des Interfaces (mit
-Objekten, deren Klasse das Interface implementiert). Beispiel: `Collections` ist eine
-Hilfs-Klasse zum Umgang mit `Collection`-Objekten.
+Objekten, deren Klasse das Interface implementiert). Beispiel: `Collections` ist
+eine Hilfs-Klasse zum Umgang mit `Collection`-Objekten.
 
 Seit Java8 können in Interfaces neben Default-Methoden auch statische Methoden
 implementiert werden.

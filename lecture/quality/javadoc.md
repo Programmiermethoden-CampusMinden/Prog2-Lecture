@@ -4,14 +4,15 @@ title: Javadoc
 ---
 
 ::: tldr
-Mit Javadoc kann aus speziell markierten Block-Kommentaren eine externe Dokumentation
-im HTML-Format erzeugt werden. Die Block-Kommentare, auf die das im JDK enthaltene
-Programm `javadoc` reagiert, beginnen mit `/**` (also einem zusätzlichen Stern, der
-für den Java-Compiler nur das erste Kommentarzeichen ist).
+Mit Javadoc kann aus speziell markierten Block-Kommentaren eine externe
+Dokumentation im HTML-Format erzeugt werden. Die Block-Kommentare, auf die das im
+JDK enthaltene Programm `javadoc` reagiert, beginnen mit `/**` (also einem
+zusätzlichen Stern, der für den Java-Compiler nur das erste Kommentarzeichen ist).
 
-Die erste Zeile eines Javadoc-Kommentars ist eine "Zusammenfassung" und an fast allen
-Stellen der generierten Doku sichtbar. Diese Summary sollte kurz gehalten werden und
-eine Idee vermitteln, was die Klasse oder die Methode oder das Attribut macht.
+Die erste Zeile eines Javadoc-Kommentars ist eine "Zusammenfassung" und an fast
+allen Stellen der generierten Doku sichtbar. Diese Summary sollte kurz gehalten
+werden und eine Idee vermitteln, was die Klasse oder die Methode oder das Attribut
+macht.
 
 Für die Dokumentation von Parametern, Rückgabetypen, Exceptions und veralteten
 Elementen existieren spezielle Annotationen: `@param`, `@return`, `@throws` und
@@ -40,19 +41,19 @@ public void wuppie() {}
 
 ::: notes
 Javadoc-Kommentare sind (aus Java-Sicht) normale Block-Kommentare, wobei der Beginn
-mit `/**` eingeleitet wird. Dieser Beginn ist für das Tool `javadoc` (Bestandteil des
-JDK, genau wie `java` und `javac`) das Signal, dass hier ein Kommentar anfängt, den
-das Tool in eine HTML-Dokumentation übersetzen soll.
+mit `/**` eingeleitet wird. Dieser Beginn ist für das Tool `javadoc` (Bestandteil
+des JDK, genau wie `java` und `javac`) das Signal, dass hier ein Kommentar anfängt,
+den das Tool in eine HTML-Dokumentation übersetzen soll.
 
-Typischerweise wird am Anfang jeder Kommentarzeile ein `*` eingefügt; dieser wird von
-Javadoc ignoriert.
+Typischerweise wird am Anfang jeder Kommentarzeile ein `*` eingefügt; dieser wird
+von Javadoc ignoriert.
 
 Sie können neben normalem Text und speziellen Annotationen auch HTML-Elemente wie
 `<p>` und `<code>` oder `<ul>` nutzen.
 
-Mit `javadoc *.java` können Sie in der Konsole aus den Java-Dateien die Dokumentation
-generieren lassen. Oder Sie geben das in Ihrer IDE in Auftrag ... (die dann diesen
-Aufruf gern für Sie tätigt).
+Mit `javadoc *.java` können Sie in der Konsole aus den Java-Dateien die
+Dokumentation generieren lassen. Oder Sie geben das in Ihrer IDE in Auftrag ... (die
+dann diesen Aufruf gern für Sie tätigt).
 :::
 
 # Standard-Aufbau
@@ -87,12 +88,12 @@ public int setDate(int date) {
 -   Leerzeilen gliedern den Text in Absätze. Neue Absätze werden mit einem `<p>`
     eingeleitet. (Ausnahmen: Wenn der Text mit `<ul>` o.ä. beginnt oder der Absatz
     mit den Block-Tags.)
--   Die "Block-Tags" `@param`, `@return`, `@throws`, `@deprecated` werden durch einen
-    Absatz von der restlichen Beschreibung getrennt und tauchen in exakt dieser
-    Reihenfolge auf. Die Beschreibung dieser Tags ist nicht leer - anderenfalls lässt
-    man das Tag weg. Falls die Zeile für die Beschreibung nicht reicht, wird
-    umgebrochen und die Folgezeile mit vier Leerzeichen (beginnend mit dem `@`)
-    eingerückt.
+-   Die "Block-Tags" `@param`, `@return`, `@throws`, `@deprecated` werden durch
+    einen Absatz von der restlichen Beschreibung getrennt und tauchen in exakt
+    dieser Reihenfolge auf. Die Beschreibung dieser Tags ist nicht leer -
+    anderenfalls lässt man das Tag weg. Falls die Zeile für die Beschreibung nicht
+    reicht, wird umgebrochen und die Folgezeile mit vier Leerzeichen (beginnend mit
+    dem `@`) eingerückt.
     -   Mit `@param` erklären Sie die Bedeutung eines Parameters (von links nach
         rechts) einer Methode. Beispiel: `@param   date   Tag, Wert zw. 1 .. 31`.
         Wiederholen Sie dies für jeden Parameter.
@@ -172,7 +173,8 @@ Schauen Sie sich gern mal Klassen aus der Java-API an, beispielsweise eine
 
 -   Generierte Dokumentation: [zu "ArrayList"
     runterscrollen](https://docs.oracle.com/javase/8/docs/api/index.html?java/util/package-summary.html)
-    bzw. [direkt](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
+    bzw.
+    [direkt](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
 -   Quellcode:
     [ArrayList.java](https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/ArrayList.java)
 
@@ -183,10 +185,12 @@ Practices](https://github.com/google/styleguide/blob/gh-pages/docguide/best_prac
 finden Sie eine sehr gute Beschreibung, was das Ziel der Dokumentation sein sollte.
 Versuchen Sie, dieses zu erreichen!
 
-Etwas technisch, aber ebenfalls sehr lesenswert ist der Style-Guide für Java-Software
-[How to Write Doc Comments for the Javadoc
-Tool](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html) von
-@oraclejavadocguide.
+Etwas technisch, aber ebenfalls sehr lesenswert ist der Style-Guide für
+Java-Software [How to Write Doc Comments for the Javadoc
+Tool](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html)
+von
+
+1.  
 :::
 
 # Wrap-Up
@@ -205,7 +209,7 @@ Tool](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html
 ::: readings
 -   @Ullenboom2021 [Kap. 23.4]
 -   @googlestyleguide [Kap. 7]
--   @oraclejavadocguide
+-   1
 :::
 
 ::: outcomes

@@ -4,8 +4,8 @@ title: "Frameworks: How-To Dungeon"
 ---
 
 ::: tldr
-Der PM-Dungeon ist ein Framework zum Entwickeln von Rogue-like Dungeon-Crawlern, also
-einfachen 2D-Spielen in Java. Das Framework bietet die wichtigsten benötigten
+Der PM-Dungeon ist ein Framework zum Entwickeln von Rogue-like Dungeon-Crawlern,
+also einfachen 2D-Spielen in Java. Das Framework bietet die wichtigsten benötigten
 Grundstrukturen für ein Computer-Spiel: Es hat eine Game-Loop, kann Level generieren
 und darstellen und hat eine Entity-Component-System-Struktur (ECS), über die die
 Spielinhalte erstellt werden können. Im Hintergrund arbeitet die
@@ -22,14 +22,14 @@ libGDX aufgerufen wird), hier finden Sie die Konfiguration und die `main()`-Meth
 
 Im ECS werden die im Spiel befindlichen Elemente als *Entitäten* modelliert. Diese
 Entitäten sind lediglich Container für *Components*, die dann ihrerseits die
-entsprechenden Eigenschaften der Entitäten modellieren. Entitäten haben normalerweise
-über die Components hinaus keine weiteren Eigenschaften (Attribute, Methoden). Das
-Game kennt alle zum aktuellen Zeitpunkt "lebenden" Entitäten.
+entsprechenden Eigenschaften der Entitäten modellieren. Entitäten haben
+normalerweise über die Components hinaus keine weiteren Eigenschaften (Attribute,
+Methoden). Das Game kennt alle zum aktuellen Zeitpunkt "lebenden" Entitäten.
 
-Components gruppieren Eigenschaften, beispielsweise für Positionen oder Lebenspunkte.
-Components haben normalerweise keine Methoden (halten also nur Werte/Attribute). Jede
-Component-Instanz ist immer einer konkreten Entität zugeordnet und kann ohne diese
-nicht existieren.
+Components gruppieren Eigenschaften, beispielsweise für Positionen oder
+Lebenspunkte. Components haben normalerweise keine Methoden (halten also nur
+Werte/Attribute). Jede Component-Instanz ist immer einer konkreten Entität
+zugeordnet und kann ohne diese nicht existieren.
 
 *Systeme* implementieren das Verhalten im ECS. Das Game kennt alle aktiven Systeme
 und ruft in jedem Durchlauf der Game-Loop die `execute()`-Methode der Systeme auf.
@@ -62,12 +62,12 @@ verschiedenen "fertigen" Rogue-like Computerspielen programmieren und dabei
 (hoffentlich) die Methoden aus der Vorlesung einsetzen können.
 
 Das Projekt "PM-Dungeon" stellt wichtige Bausteine für das Spiel bereit,
-beispielsweise eine Game-Loop und eine API für das Generieren und Benutzen von Leveln
-und vieles andere mehr. Im Hintergrund werkelt das etablierte
+beispielsweise eine Game-Loop und eine API für das Generieren und Benutzen von
+Leveln und vieles andere mehr. Im Hintergrund werkelt das etablierte
 Open-Source-Spieleframework [libGDX](https://libgdx.com).
 
-Wir werden uns in diesem How-To einen Überblick verschaffen und einen ersten Einstieg
-versuchen: Wir programmieren einen einfachen Helden.
+Wir werden uns in diesem How-To einen Überblick verschaffen und einen ersten
+Einstieg versuchen: Wir programmieren einen einfachen Helden.
 
 # Projekt PM-Dungeon
 
@@ -85,9 +85,9 @@ Quest o.ä. im Dungeon eingebettet) und die Studierenden können durch das Spiel
 Aufgaben lösen.
 
 Sie werden merken, dass trotz klarer Richtlinien und Ideen die Entwicklung in der
-Praxis doch nicht so einfach ist und dass viele Dinge immer wieder geübt und erinnert
-werden müssen: Namen von Klassen und Methoden, sinnvolles Javadoc, Dokumentation
-jenseits des Javadoc, aber auch Commit-Messages und PR-Summaries.
+Praxis doch nicht so einfach ist und dass viele Dinge immer wieder geübt und
+erinnert werden müssen: Namen von Klassen und Methoden, sinnvolles Javadoc,
+Dokumentation jenseits des Javadoc, aber auch Commit-Messages und PR-Summaries.
 
 # Installation des Frameworks
 
@@ -181,9 +181,9 @@ Gradle-Subprojekten
 ["dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/dungeon) zu
 finden ist. Game stellt dabei eine Art minimale Basis zum Programmieren eigener
 Spiele dar (alle Klassen im Package `core`), und Dungeon erweitert diese Basis und
-fügt einige häufig benötigte Elemente und weitere Texturen (Package `contrib`) hinzu.
-Zusätzlich gibt es hier noch einige Klassen für die DSL, was für PR2 aber nicht
-relevant ist.
+fügt einige häufig benötigte Elemente und weitere Texturen (Package `contrib`)
+hinzu. Zusätzlich gibt es hier noch einige Klassen für die DSL, was für PR2 aber
+nicht relevant ist.
 
 Das Subprojekt
 ["blockly"](https://github.com/Dungeon-CampusMinden/Dungeon/tree/master/blockly) ist
@@ -193,8 +193,8 @@ spielt für PR2 ebenfalls keine Rolle.
 Die Strukturen in allen Sub-Projekten ist ähnlich: Sie finden unter
 `<subproject>/src/` die Java-Packages und in `<subproject>/assets/` vordefinierte
 Texturen und Soundfiles sowie Crafting-Rezepte (beispielsweise für Boden, Wände und
-den Hero). Alle Sourcen sind (mehr oder weniger) mit Javadoc dokumentiert, zusätzlich
-gibt es jeweils in `<subproject>/doc/` weitere Anleitungen und Hinweise.
+den Hero). Alle Sourcen sind (mehr oder weniger) mit Javadoc dokumentiert,
+zusätzlich gibt es jeweils in `<subproject>/doc/` weitere Anleitungen und Hinweise.
 
 Für die Aufgaben im Praktikum starten Sie am besten zunächst beim relevanten Code im
 Sub-Projekt DevDungeon. Schauen Sie sich die für die Aufgabe benutzten Klassen und
@@ -206,15 +206,15 @@ und Dungeon noch weitere Dokumentation in den `doc/`-Ordnern.
 
 ![](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/doc/img/gameloop.png?raw=true)
 
-Jedes Spiel besteht aus einer Game-Loop, die je nach Konfiguration 30 Mal oder 60 Mal
-pro Sekunde ausgeführt wird. Diese Game-Loop wird mit Hilfe der `Game#run()`-Methode
-gestartet und die Kontrolle geht dabei vollständig an libGDX über. Im Wesentlichen
-werden pro Durchlauf ("Frame") die Aktionen berechnet und das Spielfeld neu
-gezeichnet. Alle Aktionen im Spiel, etwa das Bewegen von Spielelementen oder das
-Berechnen von Angriffen o.ä., werden über sogenannte Systeme berechnet. Diese werden
-einmal pro Frame aufgerufen und bestimmen den neuen Zustand (Position, Animation,
-Stats, ...) der Spielelemente, die dann beim nächsten Rendern im Spiel angezeigt
-werden.
+Jedes Spiel besteht aus einer Game-Loop, die je nach Konfiguration 30 Mal oder 60
+Mal pro Sekunde ausgeführt wird. Diese Game-Loop wird mit Hilfe der
+`Game#run()`-Methode gestartet und die Kontrolle geht dabei vollständig an libGDX
+über. Im Wesentlichen werden pro Durchlauf ("Frame") die Aktionen berechnet und das
+Spielfeld neu gezeichnet. Alle Aktionen im Spiel, etwa das Bewegen von
+Spielelementen oder das Berechnen von Angriffen o.ä., werden über sogenannte Systeme
+berechnet. Diese werden einmal pro Frame aufgerufen und bestimmen den neuen Zustand
+(Position, Animation, Stats, ...) der Spielelemente, die dann beim nächsten Rendern
+im Spiel angezeigt werden.
 
 ![](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/doc/img/ecs.png?raw=true)
 
@@ -234,9 +234,9 @@ Zusätzlich gibt es weitere Methoden, die für Sie relevant sind:
 Es gibt noch eine ganze Reihe von Packages, beispielsweise `core.Component` mit
 verschiedenen wichtigen Components oder `core.level` mit Klassen zum Generieren
 zufälliger neuer Level und zum Laden und zum Zugriff (wo bin ich und warum?) oder
-`core.systems` mit den Systemen, die bestimmte Dinge im Spiel managen. Die Gliederung
-in Entitäten (*entities*), Komponenten (*components*) und Systeme (*systems*) nennt
-sich auch "ECS-Architektur" (zu ECS später mehr).
+`core.systems` mit den Systemen, die bestimmte Dinge im Spiel managen. Die
+Gliederung in Entitäten (*entities*), Komponenten (*components*) und Systeme
+(*systems*) nennt sich auch "ECS-Architektur" (zu ECS später mehr).
 
 Sie finden im ["Quickstart: How to
 Dungeon"](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/doc/quickstart.md)
@@ -289,9 +289,10 @@ und **Systeme**. Hier werden sämtliche Informationen und Verhalten modelliert.
 ## Entity
 
 Die Idee dahinter ist: Alle Elemente im Spiel werden als *Entität* realisiert, d.h.
-der Held und die Monster und die Items, die man so finden kann, sind alles Entitäten.
-Sogar Feuerbälle sind letztlich Entitäten. (Im Prinzip könnten sogar die Boden- und
-Wandkacheln Entitäten sein - sind es aus Effizienzgründen aktuell aber nicht.)
+der Held und die Monster und die Items, die man so finden kann, sind alles
+Entitäten. Sogar Feuerbälle sind letztlich Entitäten. (Im Prinzip könnten sogar die
+Boden- und Wandkacheln Entitäten sein - sind es aus Effizienzgründen aktuell aber
+nicht.)
 
 Eine Entität an sich kann erst einmal nichts und dient nur als Container für
 *Components*.
@@ -304,8 +305,8 @@ Unsere Basisklasse für Entitäten ist aktuell `core.Entity`.
 
 ## Component
 
-Components bündeln bestimmte Werte einer Entität für bestimmte Zwecke, d.h. statt der
-Attribute in einer Klasse (Entität) nutzen wir hier eine weitere Kapselung.
+Components bündeln bestimmte Werte einer Entität für bestimmte Zwecke, d.h. statt
+der Attribute in einer Klasse (Entität) nutzen wir hier eine weitere Kapselung.
 
 Beispielsweise könnte man die Lebenspunkte u.ä. in einer `HealthComponent` verpacken
 und dann in einer Entität speichern. Oder man könnte in einer `VelocityComponent`
@@ -330,11 +331,11 @@ Mit Entitäten und passenden Components, über die wir die Eigenschaften ausdrü
 können wir bereits Spielelemente im Dungeon repräsentieren.
 
 Für die Bewegung und Interaktion sorgen nun passende Systeme. Das Spiel kennt alle
-Systeme (diese werden einmal beim Start im Spiel per `Game#add` registriert) und ruft
-in der Game-Loop pro Frame deren `execute()`-Methode auf. In der Regel iterieren die
-Systeme beim Ausführen der `execute()`-Methode über die Entitäten des Spiels (via
-`Game#allEntities`), suchen sich Entitäten mit bestimmten Components heraus und
-bearbeiten den Zustand dieser Components.
+Systeme (diese werden einmal beim Start im Spiel per `Game#add` registriert) und
+ruft in der Game-Loop pro Frame deren `execute()`-Methode auf. In der Regel
+iterieren die Systeme beim Ausführen der `execute()`-Methode über die Entitäten des
+Spiels (via `Game#allEntities`), suchen sich Entitäten mit bestimmten Components
+heraus und bearbeiten den Zustand dieser Components.
 
 Dabei könnte beispielsweise ein `HealthSystem` sich alle Entitäten filtern, deren
 `HealthComponent` unterhalb einer kritischen Schwelle liegen und diese rot anmalen
@@ -410,14 +411,15 @@ Wenn man keine Position mitgibt, wird einfach eine zufällige Position im Level
 genutzt. Alternativ kann man eine eigene Position mitgeben.
 
 Im Dungeon existieren aktuell zwei Koordinatensysteme: `core.level.utils.Coordinate`
-(Integer-basiert) und `core.utils.Point` (Float-basiert). Die Level werden als Matrix
-von `Tile` (Boden, Wand, Loch, ...) gespeichert. Die Position dieser `Tile` wird als
-`Coordinate` gespeichert, was dem Index des Tiles in der Matrix entspricht. Entitäten
-können aktuell aber auch zwischen zwei Tiles oder schräg-links-oben auf einem Tile
-stehen, dafür gibt es die Positionen als `Point`. Entsprechend könnte man den neuen
-Helden bei `(0,0)` in das Level setzen: `new PositionComponent(new Point(0, 0))` bzw.
-kurz `new PositionComponent(0f, 0f)` (wobei diese Position möglicherweise nicht
-spielbar ist, da hier eine Wand oder sogar nichts ist).
+(Integer-basiert) und `core.utils.Point` (Float-basiert). Die Level werden als
+Matrix von `Tile` (Boden, Wand, Loch, ...) gespeichert. Die Position dieser `Tile`
+wird als `Coordinate` gespeichert, was dem Index des Tiles in der Matrix entspricht.
+Entitäten können aktuell aber auch zwischen zwei Tiles oder schräg-links-oben auf
+einem Tile stehen, dafür gibt es die Positionen als `Point`. Entsprechend könnte man
+den neuen Helden bei `(0,0)` in das Level setzen:
+`new PositionComponent(new Point(0, 0))` bzw. kurz `new PositionComponent(0f, 0f)`
+(wobei diese Position möglicherweise nicht spielbar ist, da hier eine Wand oder
+sogar nichts ist).
 
 Wenn Sie jetzt das Spiel starten, sehen Sie - immer noch nichts (außer den Wänden).
 Hmmm.
@@ -459,14 +461,14 @@ public class Main {
 
 In den Asset-Ordnern der Sub-Projekte Game und Dungeon gibt es bereits vordefinierte
 Texturen. Im Beispiel wird (nur) im Sub-Projekt "game" gesucht (weil unsere
-`Main`-Klasse dort liegt), und zwar in `<game>/assets/character/knight/`. Dort finden
-sich Unterordner für verschiedene Zustände des Ritters, und darin jeweils einige
-Texturen (einfache kleine .png-Dateien), die als Animation in einem bestimmten
-Zustand nacheinander abgespielt werden. Über den angegebenen (Teil-) Pfad werden in
-`DrawComponent` automatisch die entsprechenden Animationen erzeugt und geladen. Die
-Asset-Ordner sind in der Gradle-Konfiguration definiert. (Wenn Sie Ihre `Main`-Klasse
-in Dungeon ansiedeln, stehen Ihnen automatisch die Texturen aus Dungeon plus aus Game
-zur Verfügung.)
+`Main`-Klasse dort liegt), und zwar in `<game>/assets/character/knight/`. Dort
+finden sich Unterordner für verschiedene Zustände des Ritters, und darin jeweils
+einige Texturen (einfache kleine .png-Dateien), die als Animation in einem
+bestimmten Zustand nacheinander abgespielt werden. Über den angegebenen (Teil-) Pfad
+werden in `DrawComponent` automatisch die entsprechenden Animationen erzeugt und
+geladen. Die Asset-Ordner sind in der Gradle-Konfiguration definiert. (Wenn Sie Ihre
+`Main`-Klasse in Dungeon ansiedeln, stehen Ihnen automatisch die Texturen aus
+Dungeon plus aus Game zur Verfügung.)
 
 Da es passieren kann, dass der übergebene Pfad nicht gefunden wird, muss hier mit
 Exception-Handling gearbeitet werden. Wir geben hier erstmal eine Fehlermeldung aus
@@ -543,22 +545,23 @@ Berechnung der nächsten Position genutzt wird (wobei die Maximalgeschwindigkeit
 Obergrenze verwendet wird).
 
 Im Beispiel wird in der `PlayerComponent` des Helden der Taste "W" ein
-Lambda-Ausdruck zugeordnet, der die `VelocityComponent` der Entität (also des Helden)
-holt, die maximale Geschwindigkeit in y-Richtung ausliest und diese als aktuelle
-Geschwindigkeit in y-Richtung setzt. Damit kann mit der Taste "W" der Held nach oben
-laufen.
+Lambda-Ausdruck zugeordnet, der die `VelocityComponent` der Entität (also des
+Helden) holt, die maximale Geschwindigkeit in y-Richtung ausliest und diese als
+aktuelle Geschwindigkeit in y-Richtung setzt. Damit kann mit der Taste "W" der Held
+nach oben laufen.
 
 *Anmerkung*: Das `entity.fetch(VelocityComponent.class)` liefert nicht direkt ein
-`VelocityComponent`-Objekt zurück, sondern ein `Optional<VelocityComponent>`. Darüber
-sprechen wir (später) noch in der Lektion ["Optional"](../java-modern/optional.md).
-Für jetzt soll es zunächst genügen, dass Sie das gewünschte "verpackte" Objekt mit
-der Methode `get()` aus dem `Optional` wieder herausbekommen.
+`VelocityComponent`-Objekt zurück, sondern ein `Optional<VelocityComponent>`.
+Darüber sprechen wir (später) noch in der Lektion
+["Optional"](../java-modern/optional.md). Für jetzt soll es zunächst genügen, dass
+Sie das gewünschte "verpackte" Objekt mit der Methode `get()` aus dem `Optional`
+wieder herausbekommen.
 
 *Anmerkung*: Das gezeigte Schema ist insofern typisch, als dass verschiedene Systeme
 aus der Maximalgeschwindigkeit und weiteren Parametern die aktuelle Geschwindigkeit
 berechnen und in der `VelocityComponent` einer Entität setzen. Das `VelocitySystem`
-nutzt dann die aktuelle Geschwindigkeit für die tatsächliche Bewegung. Sie sollten in
-der Praxis also die Methoden `VelocityComponent#currentXVelocity` bzw.
+nutzt dann die aktuelle Geschwindigkeit für die tatsächliche Bewegung. Sie sollten
+in der Praxis also die Methoden `VelocityComponent#currentXVelocity` bzw.
 `VelocityComponent#currentYVelocity` eher nicht selbst aufrufen, sondern dies den
 Systemen überlassen. Wenn Sie einen Geschwindigkeitsboost haben wollen, würde es bei
 der obigen Konfiguration ausreichen, `VelocityComponent#xVelocity` und/oder
@@ -567,8 +570,8 @@ der obigen Konfiguration ausreichen, `VelocityComponent#xVelocity` und/oder
 
 Nun sollten Sie Ihren Helden (nach oben) bewegen können. (Tipp: Probieren Sie "W".)
 
-*Hinweis*: Üblicherweise bearbeiten die Systeme bei der Iteration über alle Entitäten
-nur diejenigen Entitäten, die alle benötigten Components aufweisen.
+*Hinweis*: Üblicherweise bearbeiten die Systeme bei der Iteration über alle
+Entitäten nur diejenigen Entitäten, die alle benötigten Components aufweisen.
 
 # Walking mit System
 
@@ -627,13 +630,13 @@ Aber warum bewegt die neue Figur sich nicht? Wir haben doch eine `VelocityCompon
 hinzugefügt und eine aktuelle Geschwindigkeit gesetzt?!
 
 Wenn man in `VelocitySystem#execute` (bzw. die dort aufgerufene Methode
-`VelocitySystem#updatePosition`) schaut, wird klar, dass die aktuelle Geschwindigkeit
-zwar neu berechnet und gesetzt wird, aber dass ein "Reibungsfaktor" (abhängig vom
-Feld, auf dem die Figur steht) eingerechnet wird und somit die aktuelle
-Geschwindigkeit schnell auf Null geht. Der Hintergrund ist einfach: Normalerweise
-soll eine Entität nicht einmal angeschubst werden und dann "ewig" laufen,
-insbesondere bei Reaktion auf Tastatureingaben. Deshalb werden die Entitäten kurz
-bewegt und bremsen dann wieder ab. Das Aufrechterhalten der Bewegung erfolgt
+`VelocitySystem#updatePosition`) schaut, wird klar, dass die aktuelle
+Geschwindigkeit zwar neu berechnet und gesetzt wird, aber dass ein "Reibungsfaktor"
+(abhängig vom Feld, auf dem die Figur steht) eingerechnet wird und somit die
+aktuelle Geschwindigkeit schnell auf Null geht. Der Hintergrund ist einfach:
+Normalerweise soll eine Entität nicht einmal angeschubst werden und dann "ewig"
+laufen, insbesondere bei Reaktion auf Tastatureingaben. Deshalb werden die Entitäten
+kurz bewegt und bremsen dann wieder ab. Das Aufrechterhalten der Bewegung erfolgt
 normalerweise über Systeme ...
 
 ## Systems für das selbstständige Laufen
@@ -680,8 +683,8 @@ public class Main {
 
 Wir leiten also von `core.System` ab und implementieren die `execute`-Methode. Wir
 holen uns dabei von jeder Entität die `VelocityComponent` und setzen die aktuelle
-Geschwindigkeit neu auf die maximale Geschwindigkeit. Zusätzlich registrieren wir das
-neue System im Spiel, damit es in jedem Frame einmal aufgerufen wird.
+Geschwindigkeit neu auf die maximale Geschwindigkeit. Zusätzlich registrieren wir
+das neue System im Spiel, damit es in jedem Frame einmal aufgerufen wird.
 
 Nun läuft das neue Monster los (bis es gegen eine Wand läuft).
 
@@ -764,10 +767,10 @@ Entität eine `WalkerComponent` hat.
 Nun läuft nur das neue Monster automatisch, der Held bleibt stehen und reagiert erst
 auf Tastendrücke. Prima!
 
-Auf diese Weise können Sie beispielsweise den Monstern einen Gesundheitszustand geben
-und diese bei zu schlechter Gesundheit "sterben" lassen (aus dem Spiel entfernen).
-Sie könnten aber auch komplexere Dinge wie die Kollision zwischen zwei Entitäten
-realisieren.
+Auf diese Weise können Sie beispielsweise den Monstern einen Gesundheitszustand
+geben und diese bei zu schlechter Gesundheit "sterben" lassen (aus dem Spiel
+entfernen). Sie könnten aber auch komplexere Dinge wie die Kollision zwischen zwei
+Entitäten realisieren.
 
 Tatsächlich gibt es im Sub-Projekt "dungeon" (Package `contrib`) bereits eine
 Vielzahl an Components und passenden Systems, die solche typischen Aufgaben bereits
@@ -777,7 +780,8 @@ realisieren.
 
 Wir haben beim Hero über das `PlayerComponent` eine Reaktion auf Tastatureingaben
 implementiert. Hier könnte man einer Taste auch den Start einer neuen Entität
-zuordnen, die sich dann automatisch bewegt. Man könnte also Feuerbälle schleudern ...
+zuordnen, die sich dann automatisch bewegt. Man könnte also Feuerbälle schleudern
+...
 
 ``` java
 public class Main {
@@ -840,17 +844,17 @@ die im Sub-Projekt "game" vorhandene Textur für die Heros genommen - im Sub-Pro
 "dungeon" gibt es dagegen auch Feuerbälle u.ä., aber dann müsste die Klasse auch in
 dieses Sub-Projekt umgezogen werden.
 
-Unser Feuerball kann leider nichts, außer sich automatisch zu bewegen. Man könnte nun
-noch ein `CollisionSystem` entwickeln, welches Entitäten immer paarweise auf ihre
-Positionen vergleicht und eine Kollision feststellt, wenn sich die Entitäten zu nah
-kommen und diese Information in einer `CollisionComponent` speichern (wer mit wem und
-wann). Dann könnte man noch ein `HealthSystem` bauen, welches eine `HealthComponent`
-aktualisiert. Zusätzlich könnte man ein `FightSystem` schreiben, welches bei einer
-Kollision der getroffenen Entität (zufälligen?) Schaden zufügt, also die Werte in
-ihrer `HealthComponent` reduziert. (Alternativ könnte das `CollisionSystem` bei
-Kollision einen in der `CollisionComponent` gespeicherten Lambda-Ausdruck ausführen.)
-... Die einzelnen Klassen interagieren also nicht direkt miteinander, sondern immer
-über den Umweg der Systems und Components.
+Unser Feuerball kann leider nichts, außer sich automatisch zu bewegen. Man könnte
+nun noch ein `CollisionSystem` entwickeln, welches Entitäten immer paarweise auf
+ihre Positionen vergleicht und eine Kollision feststellt, wenn sich die Entitäten zu
+nah kommen und diese Information in einer `CollisionComponent` speichern (wer mit
+wem und wann). Dann könnte man noch ein `HealthSystem` bauen, welches eine
+`HealthComponent` aktualisiert. Zusätzlich könnte man ein `FightSystem` schreiben,
+welches bei einer Kollision der getroffenen Entität (zufälligen?) Schaden zufügt,
+also die Werte in ihrer `HealthComponent` reduziert. (Alternativ könnte das
+`CollisionSystem` bei Kollision einen in der `CollisionComponent` gespeicherten
+Lambda-Ausdruck ausführen.) ... Die einzelnen Klassen interagieren also nicht direkt
+miteinander, sondern immer über den Umweg der Systems und Components.
 
 All diese (und viele weitere) Components und Systems gibt es bereits im Package
 `contrib` im Sub-Projekt
@@ -883,9 +887,9 @@ hinein:
 
 ::: notes
 Die Javadoc-Kommentare sollten Ihnen erste Ideen zur Funktionsweise geben (auch wenn
-für das angestrebte Ideal noch einiges an Arbeit notwendig ist). Schauen Sie gern die
-Dokumentation unter `game/doc/` und `dungeon/doc/` an, die im Laufe des Semesters
-schrittweise weiter wachsen wird.
+für das angestrebte Ideal noch einiges an Arbeit notwendig ist). Schauen Sie gern
+die Dokumentation unter `game/doc/` und `dungeon/doc/` an, die im Laufe des
+Semesters schrittweise weiter wachsen wird.
 :::
 
 \bigskip

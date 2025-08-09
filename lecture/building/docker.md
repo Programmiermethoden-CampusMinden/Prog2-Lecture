@@ -23,9 +23,9 @@ Host-Betriebssystem ausgeführt wird.
 Es gibt auf DockerHub fertige Images, die man sich ziehen und starten kann. Ein
 solches gestartetes Image nennt sich dann Container und enthält beispielsweise
 Dateien, die in den Container gemountet oder kopiert werden. Man kann auch eigene
-Images bauen, indem man eine entsprechende Konfiguration (Dockerfile) schreibt. Jeder
-Befehl bei der Erstellung eines Images erzeugt einen neuen Layer, die sich dadurch
-mehrere Images teilen können.
+Images bauen, indem man eine entsprechende Konfiguration (Dockerfile) schreibt.
+Jeder Befehl bei der Erstellung eines Images erzeugt einen neuen Layer, die sich
+dadurch mehrere Images teilen können.
 
 In der Konfiguration einer Gitlab-CI-Pipeline kann man mit `image` ein Docker-Image
 angeben, welches dann in der Pipeline genutzt wird.
@@ -33,11 +33,11 @@ angeben, welches dann in der Pipeline genutzt wird.
 VSCode kann über das Remote-Plugin sich (u.a.) mit Containern verbinden und dann im
 Container arbeiten (editieren, compilieren, debuggen, testen, ...).
 
-In dieser kurzen Einheit kann ich Ihnen nur einen ersten Einstieg in das Thema geben.
-Wir haben uns beispielsweise nicht Docker Compose oder Kubernetes angeschaut, und
-auch die Themen Netzwerk (zwischen Containern oder zwischen Containern und anderen
-Rechnern) und Volumes habe ich außen vor gelassen. Dennoch kommt man in der Praxis
-bereits mit den hier vermittelten Basiskenntnissen erstaunlich weit ...
+In dieser kurzen Einheit kann ich Ihnen nur einen ersten Einstieg in das Thema
+geben. Wir haben uns beispielsweise nicht Docker Compose oder Kubernetes angeschaut,
+und auch die Themen Netzwerk (zwischen Containern oder zwischen Containern und
+anderen Rechnern) und Volumes habe ich außen vor gelassen. Dennoch kommt man in der
+Praxis bereits mit den hier vermittelten Basiskenntnissen erstaunlich weit ...
 :::
 
 ::: youtube
@@ -63,9 +63,9 @@ Virtualisierung bereitgestellt.
 Selbst wenn man keine CI-Pipelines einsetzt, hat man in Projekten mit mehreren
 beteiligten Personen häufig das Problem "*WFM*" ("works for me"). Jeder Entwickler
 hat sich auf ihrem Rechner eine Entwicklungsumgebung aufgesetzt und nutzt in der
-Regel seine bevorzugte IDE oder sogar unterschiedliche JDK-Versionen ... Dadurch kann
-es schnell passieren, dass Probleme oder Fehler auftreten, die sich nicht von allen
-Beteiligten immer nachvollziehen lassen. Hier wäre eine einheitliche
+Regel seine bevorzugte IDE oder sogar unterschiedliche JDK-Versionen ... Dadurch
+kann es schnell passieren, dass Probleme oder Fehler auftreten, die sich nicht von
+allen Beteiligten immer nachvollziehen lassen. Hier wäre eine einheitliche
 Entwicklungsumgebung sinnvoll, die in einer "schlanken" Virtualisierung
 bereitgestellt wird.
 
@@ -86,13 +86,13 @@ In diesen Fällen kann eine Virtualisierung helfen.
 ::: notes
 Wenn man über Virtualisierung auf dem Desktop spricht, kann man grob zwei Varianten
 unterscheiden. In beiden Fällen ist die Basis die Hardware (Laptop, Desktop-Rechner)
-und das darauf laufende (Host-) Betriebssystem (Linux, FreeBSD, macOS, Windows, ...).
-Darauf läuft dann wiederum die Virtualisierung.
+und das darauf laufende (Host-) Betriebssystem (Linux, FreeBSD, macOS, Windows,
+...). Darauf läuft dann wiederum die Virtualisierung.
 
 Im rechten Bild wird eine herkömmliche Virtualisierung mit virtuellen Maschinen
 (*VM*) dargestellt. Dabei wird in der VM ein komplettes Betriebssystem (das
-"Gast-Betriebssystem") installiert und darin läuft dann die gewünschte Anwendung. Die
-Virtualisierung (VirtualBox, VMware, ...) läuft dabei als Anwendung auf dem
+"Gast-Betriebssystem") installiert und darin läuft dann die gewünschte Anwendung.
+Die Virtualisierung (VirtualBox, VMware, ...) läuft dabei als Anwendung auf dem
 Host-Betriebssystem und stellt dem Gast-Betriebssystem in der VM einen Rechner mit
 CPU, RAM, ... zur Verfügung und übersetzt die Systemaufrufe in der VM in die
 entsprechenden Aufrufe im Host-Betriebssystem. Dies benötigt in der Regel
@@ -112,8 +112,8 @@ Gast-Betriebssystem ist nicht notwendig. Durch den geschickten Einsatz von
 `namespaces` und `cgroups` und anderen in Linux und FreeBSD verfügbaren Techniken
 werden die Prozesse abgeschottet, d.h. der im Container laufende Prozess "sieht" die
 anderen Prozesse des Hosts nicht. Die Erstellung und Steuerung der Container
-übernimmt hier beispielsweise Docker. Die Container sind dabei auch wieder Dateien im
-Host-Filesystem. Dadurch benötigen Container wesentlich weniger Platz als
+übernimmt hier beispielsweise Docker. Die Container sind dabei auch wieder Dateien
+im Host-Filesystem. Dadurch benötigen Container wesentlich weniger Platz als
 herkömmliche VMs, der Start einer Anwendung geht deutlich schneller und die
 Hardwareressourcen (CPU, RAM, ...) werden effizient genutzt. Nachteilig ist, dass
 hier in der Regel ein Linux-Host benötigt wird (für Windows wird mittlerweile der
@@ -124,8 +124,8 @@ Benutzerinterface zur Verfügung. Da die Prozesse direkt im Host-Betriebssystem
 laufen, stellen Container keine Sicherheitsschicht ("Sandboxen") dar!
 
 In allen Fällen muss die Hardwarearchitektur beachtet werden: Auf einer
-Intel-Maschine können normalerweise keine VMs/Container basierend auf ARM-Architektur
-ausgeführt werden und umgekehrt.
+Intel-Maschine können normalerweise keine VMs/Container basierend auf
+ARM-Architektur ausgeführt werden und umgekehrt.
 :::
 
 # Getting started
@@ -142,8 +142,8 @@ ausgeführt werden und umgekehrt.
 ## Begriffe
 
 -   **Docker-File**: Beschreibungsdatei, wie Docker ein Image erzeugen soll.
--   **Image**: Enthält die Dinge, die lt. dem Docker-File in das Image gepackt werden
-    sollen. Kann gestartet werden und erzeugt damit einen Container.
+-   **Image**: Enthält die Dinge, die lt. dem Docker-File in das Image gepackt
+    werden sollen. Kann gestartet werden und erzeugt damit einen Container.
 -   **Container**: Ein laufendes Images (genauer: eine laufende Instanz eines
     Images). Kann dann auch zusätzliche Daten enthalten.
 
@@ -168,13 +168,13 @@ Mit `docker run debian:stable-slim` startet man das Image, es wird ein Container
 erzeugt. Dieser enthält den aktuellen Datenstand, d.h. wenn man im Image eine Datei
 anlegt, wäre diese dann im Container enthalten.
 
-Mit der Option `--rm` wird der Container nach Beendigung automatisch wieder gelöscht.
-Da jeder Aufruf von `docker run <IMAGE>` einen neuen Container erzeugt, würden sich
-sonst recht schnell viele Container auf dem Dateisystem des Hosts ansammeln, die man
-dann manuell aufräumen müsste. Man kann aber einen beendeten Container auch erneut
-laufen lassen ... (vgl. Dokumentation von `docker`). Mit der Option `--rm` sind aber
-auch im Container angelegte Daten wieder weg! Mit der Option `-it` wird der Container
-interaktiv gestartet und man landet in einer Shell.
+Mit der Option `--rm` wird der Container nach Beendigung automatisch wieder
+gelöscht. Da jeder Aufruf von `docker run <IMAGE>` einen neuen Container erzeugt,
+würden sich sonst recht schnell viele Container auf dem Dateisystem des Hosts
+ansammeln, die man dann manuell aufräumen müsste. Man kann aber einen beendeten
+Container auch erneut laufen lassen ... (vgl. Dokumentation von `docker`). Mit der
+Option `--rm` sind aber auch im Container angelegte Daten wieder weg! Mit der Option
+`-it` wird der Container interaktiv gestartet und man landet in einer Shell.
 
 Bei der Definition eines Images kann ein "*Entry Point*" definiert werden, d.h. ein
 Programm, welches automatisch beim Start des Container ausgeführt wird. Häufig
@@ -193,9 +193,9 @@ Auch für Java gibt es vordefinierte Images mit einem JDK. Das Tag "`latest`" ze
 dabei auf die letzte stabile Version des `openjdk`-Images. Üblicherweise wird
 "`latest`" von den Entwicklern immer wieder weiter geschoben, d.h. auch bei anderen
 Images gibt es ein "`latest`"-Tag. Gleichzeitig ist es die Default-Einstellung für
-die Docker-Befehle, d.h. es kann auch weggelassen werden: `docker run openjdk:latest`
-und `docker run openjdk` sind gleichwertig. Alternativ kann man hier auch hier wieder
-eine konkrete Version angeben.
+die Docker-Befehle, d.h. es kann auch weggelassen werden:
+`docker run openjdk:latest` und `docker run openjdk` sind gleichwertig. Alternativ
+kann man hier auch hier wieder eine konkrete Version angeben.
 
 Über die Option `-v` wird ein Ordner auf dem Host (hier durch `"$PWD"` dynamisch
 ermittelt) in den Container eingebunden ("gemountet"), hier auf den Ordner `/data`.
@@ -203,11 +203,11 @@ Dort sind dann die Dateien sichtbar, die im Ordner `"$PWD"` enthalten sind. Übe
 Option `-w` kann ein Arbeitsverzeichnis definiert werden.
 
 Mit `javac Hello.java` wird `javac` im Container aufgerufen auf der Datei
-`/data/Hello.java` im Container, d.h. die Datei `Hello.java`, die im aktuellen Ordner
-des Hosts liegt (und in den Container gemountet wurde). Das Ergebnis (`Hello.class`)
-wird ebenfalls in den Ordner `/data/` im Container geschrieben und erscheint dann im
-Arbeitsverzeichnis auf dem Host ... Analog kann dann mit `java Hello` die Klasse
-ausgeführt werden.
+`/data/Hello.java` im Container, d.h. die Datei `Hello.java`, die im aktuellen
+Ordner des Hosts liegt (und in den Container gemountet wurde). Das Ergebnis
+(`Hello.class`) wird ebenfalls in den Ordner `/data/` im Container geschrieben und
+erscheint dann im Arbeitsverzeichnis auf dem Host ... Analog kann dann mit
+`java Hello` die Klasse ausgeführt werden.
 :::
 
 [Demo: Container in der Konsole]{.ex href="https://youtu.be/LE_QcHqUg9Y"}
@@ -249,15 +249,15 @@ Layer hinzufügt. In diesen Layer werden alle Dateien eingefügt, die bei der
 Ausführung des Befehls erzeugt oder angelegt werden. Hier im Beispiel wird das
 Debian-Tool `apt-get` gestartet und weitere Debian-Pakete installiert.
 
-Da jeder `RUN`-Befehl einen neuen Layer anlegt, werden die restlichen Konfigurationen
-ebenfalls in diesem Lauf durchgeführt. Insbesondere wird ein nicht-Root-User
-angelegt, der von der UID und GID dem Default-User in Linux entspricht. Die
-gemounteten Dateien haben die selben Rechte wie auf dem Host, und durch die
-Übereinstimmung von UID/GID sind die Dateien problemlos zugreifbar und man muss nicht
-mit dem Root-User arbeiten (dies wird aus offensichtlichen Gründen als Anti-Pattern
-angesehen). Bevor der `RUN`-Lauf abgeschlossen wird, werden alle temporären und
-später nicht benötigten Dateien von `apt-get` entfernt, damit diese nicht Bestandteil
-des Layers werden.
+Da jeder `RUN`-Befehl einen neuen Layer anlegt, werden die restlichen
+Konfigurationen ebenfalls in diesem Lauf durchgeführt. Insbesondere wird ein
+nicht-Root-User angelegt, der von der UID und GID dem Default-User in Linux
+entspricht. Die gemounteten Dateien haben die selben Rechte wie auf dem Host, und
+durch die Übereinstimmung von UID/GID sind die Dateien problemlos zugreifbar und man
+muss nicht mit dem Root-User arbeiten (dies wird aus offensichtlichen Gründen als
+Anti-Pattern angesehen). Bevor der `RUN`-Lauf abgeschlossen wird, werden alle
+temporären und später nicht benötigten Dateien von `apt-get` entfernt, damit diese
+nicht Bestandteil des Layers werden.
 
 Mit `WORKDIR` und `USER` wird das Arbeitsverzeichnis gesetzt und auf den angegebenen
 User umgeschaltet. Damit muss der User nicht mehr beim Aufruf von außen gesetzt
@@ -272,8 +272,9 @@ sind bestimmte Softwareversionen Teil des Images geworden. Man kann prinzipiell 
 einem Container die Software aktualisieren, aber dies geht in dem Moment wieder
 verloren, wo der Container beendet und gelöscht wird. Außerdem widerspricht dies dem
 Gedanken, dass mehrere Personen mit dem selben Image/Container arbeiten und damit
-auch die selben Versionsstände haben. In der Praxis löscht man deshalb das alte Image
-einfach und erstellt ein neues, welches dann die aktualisierte Software enthält.
+auch die selben Versionsstände haben. In der Praxis löscht man deshalb das alte
+Image einfach und erstellt ein neues, welches dann die aktualisierte Software
+enthält.
 :::
 
 [Beispiel: debian-latex.df]{.ex
@@ -336,9 +337,9 @@ In den GitHub-Actions kann man Docker-Container für die Ausführung der Pipelin
 nutzen.
 
 Mit `docker://openjdk:17` wird das Docker-Image `openjdk:17` vom DockerHub geladen
-und auf dem Ubuntu-Runner als Container ausgeführt. Die Aktionen im `steps`-Teil, wie
-beispielsweise `javac Hello.java` werden vom Runner an die Standard-Eingabe der Shell
-des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen
+und auf dem Ubuntu-Runner als Container ausgeführt. Die Aktionen im `steps`-Teil,
+wie beispielsweise `javac Hello.java` werden vom Runner an die Standard-Eingabe der
+Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen
 Rechner: `docker run openjdk:17 javac Hello.java`.
 :::
 
@@ -355,15 +356,15 @@ Rechner: `docker run openjdk:17 javac Hello.java`.
 4.  VSCode (Container): Plugin "Java Extension Pack" installieren
 5.  VSCode (Container): Dateien editieren, kompilieren, debuggen, ...
 
-Mit Visual Studio Code (VSC) kann man über SSH oder in einem Container arbeiten. Dazu
-installiert man sich VSC lokal auf dem Host und installiert dort das Plugin "Remote -
-Containers". VSC kann darüber vordefinierte Docker-Images herunterladen und darin
-arbeiten oder man kann alternativ einen Container selbst starten und diesen mit VSC
-verbinden ("attachen").
+Mit Visual Studio Code (VSC) kann man über SSH oder in einem Container arbeiten.
+Dazu installiert man sich VSC lokal auf dem Host und installiert dort das Plugin
+"Remote - Containers". VSC kann darüber vordefinierte Docker-Images herunterladen
+und darin arbeiten oder man kann alternativ einen Container selbst starten und
+diesen mit VSC verbinden ("attachen").
 
-Beim Verbinden öffnet VSC ein neues Fenster, welches mit dem Container verbunden ist.
-Nun kann man in diesem neuen Fenster ganz normal arbeiten, allerdings werden alle
-Dinge in dem Container erledigt. Man öffnet also Dateien in diesem Container,
+Beim Verbinden öffnet VSC ein neues Fenster, welches mit dem Container verbunden
+ist. Nun kann man in diesem neuen Fenster ganz normal arbeiten, allerdings werden
+alle Dinge in dem Container erledigt. Man öffnet also Dateien in diesem Container,
 editiert sie im Container, übersetzt und testet im Container und nutzt dabei die im
 Container installierten Tools. Sogar die entsprechenden VSC-Plugins kann man im
 Container installieren.
@@ -381,9 +382,9 @@ Noch einen Schritt weiter geht das Projekt
 [code-server](https://github.com/coder/code-server): Dieses stellt u.a. ein
 Docker-Image [codercom/code-server](https://hub.docker.com/r/codercom/code-server)
 bereit, welches einen Webserver startet und über diesen kann man ein im Container
-laufendes (angepasstes) VSC erreichen. Man braucht also nur noch Docker und das Image
-und kann dann über den Webbrowser programmieren. Der Projektordner wird dabei in den
-Container gemountet, so dass die Dateien entsprechend zur Verfügung stehen:
+laufendes (angepasstes) VSC erreichen. Man braucht also nur noch Docker und das
+Image und kann dann über den Webbrowser programmieren. Der Projektordner wird dabei
+in den Container gemountet, so dass die Dateien entsprechend zur Verfügung stehen:
 
 ``` sh
 docker run -it --name code-server -p 127.0.0.1:8080:8080 -v "$HOME/.config:/home/coder/.config" -v "$PWD:/home/coder/project" codercom/code-server:latest
@@ -434,8 +435,8 @@ Codespaces](https://github.com/features/codespaces) von GitHub auf.
 ::: outcomes
 -   k2: Ich kann zwischen Containern und VMs unterscheiden
 -   k1: Ich kenne typische Einsatzgebiete für Container
--   k2: Ich verstehe, dass Container als abgeschottete Prozesse auf dem Host laufen -
-    kein Sandbox-Effekt
+-   k2: Ich verstehe, dass Container als abgeschottete Prozesse auf dem Host
+    laufen - kein Sandbox-Effekt
 -   k3: Ich kann Container von DockerHub ziehen
 -   k3: Ich kann Container starten
 -   k3: Ich kann eigene Container definieren und bauen

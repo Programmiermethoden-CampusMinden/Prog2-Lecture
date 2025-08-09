@@ -10,17 +10,17 @@ Softwareprodukt ein. Die Folgen können von "ärgerlich" über "teuer" bis hin z
 der Softwareentwicklung!
 
 JUnit ist ein Java-Framework, mit dem Unit-Tests (aber auch andere Teststufen)
-implementiert werden können. In JUnit 4 und 5 zeichnet man eine Testmethode mit Hilfe
-der Annotation `@Test` an der entsprechenden Methode aus. Dadurch kann man Produktiv-
-und Test-Code prinzipiell mischen; Best Practice ist aber das Anlegen eines weiteren
-Ordners `test/` und das Spiegeln der Package-Strukturen. Für die zu testende Klasse
-wird eine korrespondierende Testklasse mit dem Suffix "Test" (Konvention) angelegt
-und dort die Testmethoden implementiert. Der IDE muss der neue `test/`-Ordner noch
-als Ordner für Sourcen bzw. Tests bekannt gemacht werden. In den Testmethoden baut
-man den Test auf, führt schließlich den Testschritt durch (beispielsweise konkreter
-Aufruf der zu testenden Methode) und prüft anschließend mit einem `assert*()`, ob das
-erzielte Ergebnis dem erwarteten Ergebnis entspricht. Ist alles OK, ist der Test
-"grün", sonst "rot".
+implementiert werden können. In JUnit 4 und 5 zeichnet man eine Testmethode mit
+Hilfe der Annotation `@Test` an der entsprechenden Methode aus. Dadurch kann man
+Produktiv- und Test-Code prinzipiell mischen; Best Practice ist aber das Anlegen
+eines weiteren Ordners `test/` und das Spiegeln der Package-Strukturen. Für die zu
+testende Klasse wird eine korrespondierende Testklasse mit dem Suffix "Test"
+(Konvention) angelegt und dort die Testmethoden implementiert. Der IDE muss der neue
+`test/`-Ordner noch als Ordner für Sourcen bzw. Tests bekannt gemacht werden. In den
+Testmethoden baut man den Test auf, führt schließlich den Testschritt durch
+(beispielsweise konkreter Aufruf der zu testenden Methode) und prüft anschließend
+mit einem `assert*()`, ob das erzielte Ergebnis dem erwarteten Ergebnis entspricht.
+Ist alles OK, ist der Test "grün", sonst "rot".
 
 Da ein fehlschlagendes `assert*()` den Test abbricht, werden eventuell danach
 folgende Prüfungen **nicht** mehr durchgeführt und damit ggf. weitere Fehler
@@ -61,13 +61,13 @@ Bedingungen ausprobieren, um zu schauen, wie sie sich verhält, und um die dabei
 Tage tretenden Bugs zu fixen.
 
 Mal abgesehen von der verbesserten *User-Experience* führt weniger fehlerbehaftete
-Software auch dazu, dass man seltener mitten in der Nacht geweckt wird, weil irgendwo
-wieder ein Server gecrasht ist ... Weniger fehlerbehaftete Software ist auch leichter
-zu ändern und zu pflegen! In realen Projekten macht Maintenance den größten Teil an
-der Softwareentwicklung aus ... Während Ihre Praktikumsprojekte vermutlich nach der
-Abgabe nie wieder angeschaut werden, können echte Projekte viele Jahre bis Jahrzehnte
-leben! D.h. irgendwer muss sich dann mit Ihren Bugs herumärgern - vermutlich sogar
-Sie selbst ;)
+Software auch dazu, dass man seltener mitten in der Nacht geweckt wird, weil
+irgendwo wieder ein Server gecrasht ist ... Weniger fehlerbehaftete Software ist
+auch leichter zu ändern und zu pflegen! In realen Projekten macht Maintenance den
+größten Teil an der Softwareentwicklung aus ... Während Ihre Praktikumsprojekte
+vermutlich nach der Abgabe nie wieder angeschaut werden, können echte Projekte viele
+Jahre bis Jahrzehnte leben! D.h. irgendwer muss sich dann mit Ihren Bugs
+herumärgern - vermutlich sogar Sie selbst ;)
 :::
 
 > Always code as if the guy who ends up maintaining your code will be a violent
@@ -137,8 +137,8 @@ wiederholbarer Tests
 
     ::: notes
     Damit können prinzipiell auch direkt im Source-Code Methoden als
-    JUnit-Testmethoden ausgezeichnet werden ... (das empfiehlt sich in der Regel aber
-    nicht)
+    JUnit-Testmethoden ausgezeichnet werden ... (das empfiehlt sich in der Regel
+    aber nicht)
     :::
 
 \bigskip
@@ -161,15 +161,15 @@ wiederholbarer Tests
     :::
 
 ::: notes
-*Anmerkung*: Wie der Name schon sagt, ist das Framework für Modultests ("Unit-Tests")
-gedacht. Man kann damit aber auch auf anderen Teststufen arbeiten!
+*Anmerkung*: Wie der Name schon sagt, ist das Framework für Modultests
+("Unit-Tests") gedacht. Man kann damit aber auch auf anderen Teststufen arbeiten!
 
 *Anmerkung*: Im Folgenden besprechen wir JUnit am Beispiel **JUnit 4**, da diese
 Version des Frameworks besonders stark verbreitet ist und JUnit 5 (trotz offiziellem
 Release) immer noch stellenweise unfertig wirkt. Auf Unterschiede zu JUnit 5 wird an
 geeigneter Stelle hingewiesen (abgesehen von Import-Statements). Mit JUnit 3 sollte
-nicht mehr aktiv gearbeitet werden, d.h. insbesondere keine neuen Tests mehr erstellt
-werden, da diese Version nicht mehr weiterentwickelt wird.
+nicht mehr aktiv gearbeitet werden, d.h. insbesondere keine neuen Tests mehr
+erstellt werden, da diese Version nicht mehr weiterentwickelt wird.
 :::
 
 # Anlegen und Organisation der Tests mit JUnit
@@ -201,8 +201,8 @@ Vorteile dieses Vorgehens:
     d.h. Zugriff auf Package-sichtbare Methoden etc. ist gewährleistet
 -   Durch die Spiegelung der Packages in einem separaten Testordner erhält man eine
     gute getrennte Übersicht über jeweils die Tests und die Sourcen
--   Die Wiederverwendung des Klassennamens mit dem Anhang "Test" erlaubt die schnelle
-    Erkennung, welche Tests hier vorliegen
+-   Die Wiederverwendung des Klassennamens mit dem Anhang "Test" erlaubt die
+    schnelle Erkennung, welche Tests hier vorliegen
 
 In der Paketansicht liegen dann die Source- und die Testklassen immer direkt
 hintereinander (da sie im selben Paket sind und mit dem selben Namen anfangen) =\>
@@ -215,8 +215,8 @@ erstmaligen Anlegen einer neuen Testklasse, ob die für die ausgewählte Version
 **passenden JUnit-Jars zum Build-Path hinzugefügt** werden sollen.
 
 IntelliJ bringt ebenfalls eine JUnit 4 Bibliothek mit, die zum Projekt als
-Abhängigkeit hinzugefügt werden muss. Für JUnit 5 bietet IntelliJ an, die Jar-Dateien
-herunterzuladen und in einem passenden Ordner abzulegen.
+Abhängigkeit hinzugefügt werden muss. Für JUnit 5 bietet IntelliJ an, die
+Jar-Dateien herunterzuladen und in einem passenden Ordner abzulegen.
 
 Alternativ lädt man die Bibliotheken entsprechend der Anleitung unter
 [junit.org](https://junit.org/) herunter und bindet sie in das Projekt ein.
@@ -246,8 +246,8 @@ importiert werden.
 
 Während in JUnit 4 die Testmethoden mit der Sichtbarkeit `public` versehen sein
 müssen und keine Parameter haben (dürfen), spielt die Sichtbarkeit in JUnit 5 keine
-Rolle (und die Testmethoden dürfen Parameter aufweisen =\> vgl. Abschnitt "Dependency
-Injection for Constructors and Methods" in der JUnit-Doku).
+Rolle (und die Testmethoden dürfen Parameter aufweisen =\> vgl. Abschnitt
+"Dependency Injection for Constructors and Methods" in der JUnit-Doku).
 :::
 
 # JUnit 4: Ergebnis prüfen

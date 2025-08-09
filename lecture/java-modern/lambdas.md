@@ -6,8 +6,9 @@ title: Lambda-Ausdrücke und funktionale Interfaces
 ::: tldr
 Mit einer anonymen inneren Klasse erstellt man gewissermaßen ein Objekt einer
 "Wegwerf"-Klasse: Man leitet *on-the-fly* von einem Interface ab oder erweitert eine
-Klasse und implementiert die benötigten Methoden und erzeugt von dieser Klasse sofort
-eine Instanz (Objekt). Diese neue Klasse ist im restlichen Code nicht sichtbar.
+Klasse und implementiert die benötigten Methoden und erzeugt von dieser Klasse
+sofort eine Instanz (Objekt). Diese neue Klasse ist im restlichen Code nicht
+sichtbar.
 
 Anonyme innere Klassen sind beispielsweise in Swing recht nützlich, wenn man einer
 Komponente einen Listener mitgeben will: Hier erzeugt man eine anonyme innere Klasse
@@ -16,8 +17,8 @@ Methoden und übergibt das mit dieser Klasse erzeugte Objekt als neuen Listener 
 Swing-Komponente.
 
 Mit Java 8 können unter gewissen Bedingungen diese anonymen inneren Klassen zu
-Lambda-Ausdrücken (und Methoden-Referenzen) vereinfacht werden. Dazu muss die anonyme
-innere Klasse ein sogenanntes **funktionales Interface** implementieren.
+Lambda-Ausdrücken (und Methoden-Referenzen) vereinfacht werden. Dazu muss die
+anonyme innere Klasse ein sogenanntes **funktionales Interface** implementieren.
 
 Funktionale Interfaces sind Interfaces mit *genau einer abstrakten Methode*. Es
 können beliebig viele Default-Methoden im Interface enthalten sein, und es können
@@ -170,7 +171,8 @@ implementiert
 -   Müssen Interface implementieren oder andere Klasse erweitern
     -   Achtung Schreibweise: ohne `implements` oder `extends`!
 -   Konstruktor kann auch Parameter aufweisen
--   Zugriff auf alle Attribute der äußeren Klasse plus alle `final` lokalen Variablen
+-   Zugriff auf alle Attribute der äußeren Klasse plus alle `final` lokalen
+    Variablen
 -   Nutzung typischerweise bei GUIs: Event-Handler etc.
 :::
 
@@ -261,8 +263,9 @@ Varianten:
 Auflösung: (4) und (5)
 
 `return` ist eine Anweisung, d.h. bei (4) fehlen die geschweiften Klammern. `"foo"`
-ist ein String und als solcher ein Ausdruck, d.h. hier sind die geschweiften Klammern
-zu viel (oder man ergänze den String mit einem `return`, also `return "foo";` ...).
+ist ein String und als solcher ein Ausdruck, d.h. hier sind die geschweiften
+Klammern zu viel (oder man ergänze den String mit einem `return`, also
+`return "foo";` ...).
 :::
 ::::
 
@@ -279,8 +282,8 @@ public interface Wuppie<T> {
 
 \bigskip
 
-`Wuppie<T>` ist ein **funktionales Interface** ("*functional interface*") [(seit Java
-8)]{.notes}
+`Wuppie<T>` ist ein **funktionales Interface** ("*functional interface*") [(seit
+Java 8)]{.notes}
 
 -   Hat **genau *eine* abstrakte Methode**
 -   Hat evtl. weitere Default-Methoden
@@ -302,8 +305,8 @@ funktionales Interface!**
 *functional interface* zu geben. Es wird häufig mit "funktionales Interface",
 manchmal aber auch mit "Funktionsinterface" übersetzt.
 
-Das in den obigen Beispielen eingesetzte Interface `java.util.Comparator<T>` ist also
-ein funktionales Interface: Es hat nur *eine* eigene abstrakte Methode
+Das in den obigen Beispielen eingesetzte Interface `java.util.Comparator<T>` ist
+also ein funktionales Interface: Es hat nur *eine* eigene abstrakte Methode
 `int compare(T o1, T o2);`.
 
 Im Package
@@ -394,8 +397,8 @@ stolpert:
         -   Form 2: `(parameters)  ->  { statements; }`
     -   Im jeweiligen Kontext muss ein **funktionales Interface** verwendet werden,
         d.h. ein Interface mit **genau** einer abstrakten Methode
-    -   Der Lambda-Ausdruck muss von der Signatur her dieser einen abstrakten Methode
-        entsprechen
+    -   Der Lambda-Ausdruck muss von der Signatur her dieser einen abstrakten
+        Methode entsprechen
 
 ::: readings
 -   @Java-SE-Tutorial

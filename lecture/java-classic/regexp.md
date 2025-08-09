@@ -16,12 +16,13 @@ muss darauf geachtet werden, dass ein Backslash im regulären Ausdruck im Java-S
 geschützt (*escaped*) werden muss, indem jeweils ein weiterer Backslash voran
 gestellt wird. Mit Hilfe der Klasse `java.util.regex.Pattern` lässt sich daraus ein
 Objekt mit dem kompilierten regulären Ausdruck erzeugen, was insbesondere bei
-mehrfacher Verwendung günstiger in der Laufzeit ist. Dem Pattern-Objekt kann man dann
-den Suchstring übergeben und bekommt ein Objekt der Klasse `java.util.regex.Matcher`
-(dort sind regulärer Ausdruck/Pattern und der Suchstring kombiniert). Mit den
-Methoden `Matcher#find` und `Matcher#matches` kann dann geprüft werden, ob das
-Pattern auf den Suchstring passt: `find` sucht dabei nach dem ersten Vorkommen des
-Patterns im Suchstring, `match` prüft, ob der gesamte String zum Pattern passt.
+mehrfacher Verwendung günstiger in der Laufzeit ist. Dem Pattern-Objekt kann man
+dann den Suchstring übergeben und bekommt ein Objekt der Klasse
+`java.util.regex.Matcher` (dort sind regulärer Ausdruck/Pattern und der Suchstring
+kombiniert). Mit den Methoden `Matcher#find` und `Matcher#matches` kann dann geprüft
+werden, ob das Pattern auf den Suchstring passt: `find` sucht dabei nach dem ersten
+Vorkommen des Patterns im Suchstring, `match` prüft, ob der gesamte String zum
+Pattern passt.
 :::
 
 ::: youtube
@@ -44,8 +45,8 @@ Gesucht ist ein Programm zum Extrahieren von Telefonnummern aus E-Mails.
 \pause
 
 ::: notes
-Leider gibt es unzählig viele Varianten, wie man eine Telefonnummer (samt Vorwahl und
-ggf. Ländervorwahl) aufschreiben kann:
+Leider gibt es unzählig viele Varianten, wie man eine Telefonnummer (samt Vorwahl
+und ggf. Ländervorwahl) aufschreiben kann:
 :::
 
     030 - 123 456 789, 030-123456789, 030/123456789,
@@ -61,7 +62,8 @@ ggf. Ländervorwahl) aufschreiben kann:
 
 -   Finden von Bestandteilen in Zeichenketten
 -   Aufteilen von Strings in Tokens
--   Validierung von textuellen Eingaben =\> "Eine Postleitzahl besteht aus 5 Ziffern"
+-   Validierung von textuellen Eingaben =\> "Eine Postleitzahl besteht aus 5
+    Ziffern"
 -   Compilerbau: Erkennen von Schlüsselwörtern und Strukturen und Syntaxfehlern
 :::
 
@@ -359,10 +361,10 @@ Gruppierungen durch Klammern verwenden!
 ::: notes
 Die Gruppen heißen auch "fangende" Gruppen (engl.: *"capturing groups"*).
 
-Damit erreicht man eine Segmentierung des gesamten regulären Ausdrucks, der in seiner
-Wirkung aber nicht durch die Gruppierungen geändert wird. Durch die Gruppierungen von
-Teilen des regulären Ausdrucks erhält man die Möglichkeit, auf die entsprechenden
-Teil-Matches (der Unterausdrücke der einzelnen Gruppen) zuzugreifen:
+Damit erreicht man eine Segmentierung des gesamten regulären Ausdrucks, der in
+seiner Wirkung aber nicht durch die Gruppierungen geändert wird. Durch die
+Gruppierungen von Teilen des regulären Ausdrucks erhält man die Möglichkeit, auf die
+entsprechenden Teil-Matches (der Unterausdrücke der einzelnen Gruppen) zuzugreifen:
 
 -   `Matcher#groupCount`: Anzahl der "fangenden" Gruppen im regulären Ausdruck
 
@@ -370,12 +372,13 @@ Teil-Matches (der Unterausdrücke der einzelnen Gruppen) zuzugreifen:
     die die jeweilige Gruppe gepasst hat. Dabei wird von links nach rechts
     durchgezählt, beginnend bei 1(!).
 
-    Konvention: Gruppe 0 ist das gesamte Pattern, d.h. `m.group(0) == m.group();` ...
+    Konvention: Gruppe 0 ist das gesamte Pattern, d.h. `m.group(0) == m.group();`
+    ...
 
-*Hinweis*: Damit der Zugriff auf die Gruppen klappt, muss auch erst ein Match gemacht
-werden, d.h. das Erzeugen des Matcher-Objekts reicht noch nicht, sondern es muss auch
-noch ein `matcher.find()` oder `matcher.matches()` ausgeführt werden. Danach kann man
-bei Vorliegen eines Matches auf die Gruppen zugreifen.
+*Hinweis*: Damit der Zugriff auf die Gruppen klappt, muss auch erst ein Match
+gemacht werden, d.h. das Erzeugen des Matcher-Objekts reicht noch nicht, sondern es
+muss auch noch ein `matcher.find()` oder `matcher.matches()` ausgeführt werden.
+Danach kann man bei Vorliegen eines Matches auf die Gruppen zugreifen.
 :::
 
 \pause
@@ -498,8 +501,8 @@ Dabei sollen folgende Regeln gelten:
 -   Die Bestandteile `name` und `firma` können aus Buchstaben, Ziffern, Unter- und
     Bindestrichen bestehen.
 -   Der Bestandteil `name` muss mindestens ein Zeichen lang sein.
--   Der Bestandteil `firma` kann entfallen, dann entfällt auch der nachfolgende Punkt
-    (`.`) und der Teil `domain` folgt direkt auf das `@`-Zeichen.
+-   Der Bestandteil `firma` kann entfallen, dann entfällt auch der nachfolgende
+    Punkt (`.`) und der Teil `domain` folgt direkt auf das `@`-Zeichen.
 -   Der Bestandteil `domain` besteht aus 2 oder 3 Kleinbuchstaben.
 
 Hinweis: Sie dürfen keinen Oder-Operator verwenden.

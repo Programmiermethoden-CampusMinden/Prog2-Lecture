@@ -47,8 +47,8 @@ for(i=0;i<10;i++) // fuer alle i
 ```
 
 ::: notes
-Der Code im obigen Beispiel lässt sich möglicherweise kompilieren. Und möglicherweise
-tut er sogar das, was er tun soll.
+Der Code im obigen Beispiel lässt sich möglicherweise kompilieren. Und
+möglicherweise tut er sogar das, was er tun soll.
 
 Dennoch: **Der Code "stinkt"** (zeigt **Code Smells**):
 
@@ -86,8 +86,8 @@ erfüllt sind (keine vollständige Aufzählung!):
 -   Ist gut getestet
 
 ::: notes
-In [@Martin2009] lässt der Autor Robert Martin verschiedene Ikonen der SW-Entwicklung
-zu diesem Thema zu Wort kommen - eine sehr lesenswerte Lektüre!
+In [@Martin2009] lässt der Autor Robert Martin verschiedene Ikonen der
+SW-Entwicklung zu diesem Thema zu Wort kommen - eine sehr lesenswerte Lektüre!
 :::
 
 \bigskip
@@ -97,8 +97,8 @@ zu diesem Thema zu Wort kommen - eine sehr lesenswerte Lektüre!
 
 # Warum ist guter ("sauberer") Code so wichtig?
 
-> Any fool can write code that a computer can understand. Good programmers write code
-> that humans can understand.
+> Any fool can write code that a computer can understand. Good programmers write
+> code that humans can understand.
 >
 > `\hfill`{=tex} [[@Fowler2011, p. 15]]{.origin}
 
@@ -117,8 +117,8 @@ Konstrukt dann nur noch schwerer verständlich ...
 
 ## Code Smells
 
-Verstöße gegen die Prinzipien von *Clean Code* nennt man auch *Code Smells*: Der Code
-"stinkt" gewissermaßen. Dies bedeutet nicht unbedingt, dass der Code nicht
+Verstöße gegen die Prinzipien von *Clean Code* nennt man auch *Code Smells*: Der
+Code "stinkt" gewissermaßen. Dies bedeutet nicht unbedingt, dass der Code nicht
 funktioniert (d.h. er kann dennoch compilieren und die Anforderungen erfüllen). Er
 ist nur nicht sauber formuliert, schwer verständlich, enthält Doppelungen etc., was
 im Laufe der Zeit die Chance für tatsächliche Probleme deutlich erhöht.
@@ -148,10 +148,10 @@ eingeworfen, Türen werden zerstört, es werden sogar Brände gelegt ...
 Das passiert auch bei Software! Wenn man als Entwickler das Gefühl bekommt, die
 Software ist nicht gepflegt, wird man selbst auch nur relativ schlechte Arbeit
 abliefern. Sei es, weil man nicht versteht, was der Code macht und sich nicht an die
-Überarbeitung der richtigen Stellen traut und stattdessen die Änderungen als weiteren
-"Erker" einfach dran pappt. Seit es, weil man keine Lust hat, Zeit in ordentliche
-Arbeit zu investieren, weil der Code ja eh schon schlecht ist ... Das wird mit der
-Zeit nicht besser ...
+Überarbeitung der richtigen Stellen traut und stattdessen die Änderungen als
+weiteren "Erker" einfach dran pappt. Seit es, weil man keine Lust hat, Zeit in
+ordentliche Arbeit zu investieren, weil der Code ja eh schon schlecht ist ... Das
+wird mit der Zeit nicht besser ...
 :::
 
 ["Broken Windows" Phänomen]{.ex
@@ -200,8 +200,8 @@ in Ordnung ...
     ```
 
     ::: notes
-    Der Programmierer hat selbst nicht verstanden (und macht sich auch nicht die Mühe
-    zu verstehen), was er da tut! Fehler sind vorprogrammiert!
+    Der Programmierer hat selbst nicht verstanden (und macht sich auch nicht die
+    Mühe zu verstehen), was er da tut! Fehler sind vorprogrammiert!
     :::
 
 \bigskip
@@ -365,8 +365,8 @@ Kopierter/duplizierter Code ist problematisch:
 -   Lange Methoden sind schwer verständlich (erledigen viele Dinge?)
 -   Mehr als 3 Parameter kann sich kaum jemand merken, vor allem beim Aufruf von
     Methoden
--   Die Testbarkeit wird bei zu komplexen Methoden/Klassen und vielen Parametern sehr
-    erschwert
+-   Die Testbarkeit wird bei zu komplexen Methoden/Klassen und vielen Parametern
+    sehr erschwert
 -   Große Dateien verleiten (auch mangels Übersichtlichkeit) dazu, neuen Code
     ebenfalls schluderig zu gliedern
 
@@ -437,8 +437,8 @@ public class CreditsCalculator {
 
 ::: notes
 -   Zugriff auf (viele) Interna der anderen Klasse! =\> Hohe Kopplung der Klassen!
--   Methode `CreditsCalculator#calculateEcts()` "möchte" eigentlich in `Student` sein
-    ...
+-   Methode `CreditsCalculator#calculateEcts()` "möchte" eigentlich in `Student`
+    sein ...
 :::
 
 ::: notes

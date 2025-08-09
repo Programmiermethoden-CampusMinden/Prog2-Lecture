@@ -6,17 +6,17 @@ title: "Build-Systeme: Gradle"
 ::: tldr
 Um beim Übersetzen und Testen von Software von den spezifischen Gegebenheiten auf
 einem Entwicklerrechner unabhängig zu werden, werden häufig sogenannte Build-Tools
-eingesetzt. Mit diesen konfiguriert man sein Projekt abseits einer IDE und übersetzt,
-testet und baut seine Applikation damit entsprechend unabhängig. In der Java-Welt
-sind aktuell die Build-Tools Ant, Maven und Gradle weit verbreitet.
+eingesetzt. Mit diesen konfiguriert man sein Projekt abseits einer IDE und
+übersetzt, testet und baut seine Applikation damit entsprechend unabhängig. In der
+Java-Welt sind aktuell die Build-Tools Ant, Maven und Gradle weit verbreitet.
 
 In Gradle ist ein Java-Entwicklungsmodell quasi eingebaut. Über die
 Konfigurationsskripte müssen nur noch bestimmte Details wie benötigte externe
 Bibliotheken oder die Hauptklasse und sonstige Projektbesonderheiten konfiguriert
 werden. Über "Tasks" wie `build`, `test` oder `run` können Java-Projekte übersetzt,
 getestet und ausgeführt werden. Dabei werden die externen Abhängigkeiten
-(Bibliotheken) aufgelöst (soweit konfiguriert) und auch abhängige Tasks mit erledigt,
-etwa muss zum Testen vorher der Source-Code übersetzt werden.
+(Bibliotheken) aufgelöst (soweit konfiguriert) und auch abhängige Tasks mit
+erledigt, etwa muss zum Testen vorher der Source-Code übersetzt werden.
 
 Gradle bietet eine Fülle an Plugins für bestimmte Aufgaben an, die jeweils mit neuen
 Tasks einher kommen. Beispiele sind das Plugin `java`, welches weitere
@@ -47,9 +47,9 @@ Wie bekommt man es hin, dass Code zuverlässig auch auf anderen Rechnern baut? E
 wichtiger Baustein dafür sind sogenannte "Build-Systeme", also Tools, die unabhängig
 von der IDE (und den IDE-Einstellungen) für das Übersetzen der Software eingesetzt
 werden und deren Konfiguration dann mit im Repo eingecheckt wird. Damit kann die
-Software dann auf allen Rechnern und insbesondere dann auch auf dem Server (Stichwort
-"Continuous Integration") unabhängig von der IDE o.ä. automatisiert gebaut und
-getestet werden.
+Software dann auf allen Rechnern und insbesondere dann auch auf dem Server
+(Stichwort "Continuous Integration") unabhängig von der IDE o.ä. automatisiert
+gebaut und getestet werden.
 :::
 
 \bigskip
@@ -231,8 +231,8 @@ Es werden Einstellungen für Git erzeugt (`.gitattributes` und `.gitignore`).
 
 Im Ordner `gradle/` wird der Gradle-Wrapper abgelegt (s.u.). Dieser Ordner wird
 normalerweise mit ins Repo eingecheckt. Die Skripte `gradlew` und `gradlew.bat` sind
-die Startskripte für den Gradle-Wrapper (s.u.) und werden normalerweise ebenfalls ins
-Repo mit eingecheckt.
+die Startskripte für den Gradle-Wrapper (s.u.) und werden normalerweise ebenfalls
+ins Repo mit eingecheckt.
 
 Der Ordner `.gradle/` (erscheint ggf. nach dem ersten Lauf von Gradle auf dem neuen
 Projekt) ist nur ein Hilfsordner ("Cache") von Gradle. Hier werden heruntergeladene
@@ -250,9 +250,9 @@ Unterordner `app/`:
     -rw-r--r-- 1 root root  852 Apr  8 11:43 build.gradle
     drwxr-xr-x 4 root root 4096 Apr  8 11:43 src/
 
-Die Datei `build.gradle` ist die durch `gradle init` erzeugte (und eingangs gezeigte)
-Konfigurationsdatei, vergleichbar mit `build.xml` für Ant oder `pom.xml` für Maven.
-Im Unterordner `build/` werden die generierten `.class`-Dateien etc. beim
+Die Datei `build.gradle` ist die durch `gradle init` erzeugte (und eingangs
+gezeigte) Konfigurationsdatei, vergleichbar mit `build.xml` für Ant oder `pom.xml`
+für Maven. Im Unterordner `build/` werden die generierten `.class`-Dateien etc. beim
 Build-Prozess abgelegt.
 
 Unter `src/` findet sich dann eine Maven-typische Ordnerstruktur für die Sourcen:
@@ -333,12 +333,12 @@ Mit `gradle tasks` kann man sich die zur Verfügung stehenden Tasks ansehen. Die
 sind der Übersicht halber noch nach "Themen" sortiert.
 
 Für eine Java-Applikation sind die typischen Tasks `gradle build` zum Bauen der
-Applikation (inkl. Ausführen der Tests) sowie `gradle run` zum Starten der Anwendung.
-Wer nur die Java-Sourcen compilieren will, würde den Task `gradle compileJava`
-nutzen. Mit `gradle check` würde man compilieren und die Tests ausführen sowie
-weitere Checks durchführen (`gradle test` würde nur compilieren und die Tests
-ausführen), mit `gradle jar` die Anwendung in ein `.jar`-File packen und mit
-`gradle javadoc` die Javadoc-Dokumentation erzeugen und mit `gradle clean` die
+Applikation (inkl. Ausführen der Tests) sowie `gradle run` zum Starten der
+Anwendung. Wer nur die Java-Sourcen compilieren will, würde den Task
+`gradle compileJava` nutzen. Mit `gradle check` würde man compilieren und die Tests
+ausführen sowie weitere Checks durchführen (`gradle test` würde nur compilieren und
+die Tests ausführen), mit `gradle jar` die Anwendung in ein `.jar`-File packen und
+mit `gradle javadoc` die Javadoc-Dokumentation erzeugen und mit `gradle clean` die
 generierten Hilfsdateien aufräumen (löschen).
 
 # Plugin-Architektur
@@ -368,8 +368,8 @@ Für das Projekt benötigte Abhängigkeiten kann man über den Eintrag `dependen
 spezifizieren. Dabei unterscheidet man u.a. zwischen Applikation und Tests:
 `implementation` und `testImplementation` für das Compilieren und Ausführen von
 Applikation bzw. Tests. Diese Abhängigkeiten werden durch Gradle über die im
-Abschnitt `repositories` konfigurierten Repositories aufgelöst und die entsprechenden
-`.jar`-Files geladen (in den `.gradle/`-Ordner).
+Abschnitt `repositories` konfigurierten Repositories aufgelöst und die
+entsprechenden `.jar`-Files geladen (in den `.gradle/`-Ordner).
 
 Typische Repos sind das Maven-Repo selbst (`mavenCentral()`) oder das
 Google-Maven-Repo (`google()`).
@@ -524,7 +524,8 @@ vorzuziehen!
 Betrachten Sie das Buildskript `gradle.build` aus
 [Dungeon-CampusMinden/Dungeon](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/build.gradle).
 
-Erklären Sie, in welche Abschnitte das Buildskript unterteilt ist und welche Aufgaben
-diese Abschnitte jeweils erfüllen. Gehen Sie dabei im *Detail* auf das Plugin `java`
-und die dort bereitgestellten Tasks und deren Abhängigkeiten untereinander ein.
+Erklären Sie, in welche Abschnitte das Buildskript unterteilt ist und welche
+Aufgaben diese Abschnitte jeweils erfüllen. Gehen Sie dabei im *Detail* auf das
+Plugin `java` und die dort bereitgestellten Tasks und deren Abhängigkeiten
+untereinander ein.
 :::

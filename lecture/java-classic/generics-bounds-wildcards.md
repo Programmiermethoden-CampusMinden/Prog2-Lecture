@@ -48,7 +48,8 @@ Cps<String> c;  // Fehler!!!
     ```
 
 ::: notes
-*Anmerkung*: Der Typ-Parameter ist analog auch mit `super` (nach unten) einschränkbar
+*Anmerkung*: Der Typ-Parameter ist analog auch mit `super` (nach unten)
+einschränkbar
 
 [Beispiel bounds.Cps]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/bounds/Cps.java"}
@@ -129,8 +130,8 @@ public class X {
 }
 ```
 
-=\> **So gehts nicht!** Eine `List<B>` ist **keine** `List<A>` (auch wenn ein `B` ein
-`A` ist, vgl. spätere Sitzung zu Generics und Vererbung ...)!
+=\> **So gehts nicht!** Eine `List<B>` ist **keine** `List<A>` (auch wenn ein `B`
+ein `A` ist, vgl. spätere Sitzung zu Generics und Vererbung ...)!
 
 [Beispiel wildcards.v1.X]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/wildcards/v1/X.java"}
@@ -164,9 +165,9 @@ public class X {
 }
 ```
 
-Das ist die Lösung. Man erlaubt als Argument nur `List`-Objekte und fordert, dass sie
-mit `A` oder einer Unterklasse von `A` parametrisiert sind. D.h. in der Schleife kann
-man sich auf den gemeinsamen Obertyp `A` abstützen und hat dann auch wieder die
+Das ist die Lösung. Man erlaubt als Argument nur `List`-Objekte und fordert, dass
+sie mit `A` oder einer Unterklasse von `A` parametrisiert sind. D.h. in der Schleife
+kann man sich auf den gemeinsamen Obertyp `A` abstützen und hat dann auch wieder die
 `printInfo`-Methode zur Verfügung ...
 :::
 
@@ -198,9 +199,9 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/mas
 :::
 
 ::: challenges
-**Spieler, Mannschaften und Ligen** Modellieren Sie in Java verschiedene Spielertypen
-sowie generische Mannschaften und Ligen, die jeweils bestimmte Spieler (-typen) bzw.
-Mannschaften aufnehmen können.
+**Spieler, Mannschaften und Ligen** Modellieren Sie in Java verschiedene
+Spielertypen sowie generische Mannschaften und Ligen, die jeweils bestimmte Spieler
+(-typen) bzw. Mannschaften aufnehmen können.
 
 1.  Implementieren Sie die Klasse `Spieler`, die das Interface `ISpieler` erfüllt.
 
@@ -214,10 +215,10 @@ Mannschaften aufnehmen können.
     und sorgen Sie dafür, dass beide Klassen vom Compiler als Spieler betrachtet
     werden (geeignete Vererbungshierarchie).
 
-3.  Betrachten Sie das nicht-generische Interface `IMannschaft`. Erstellen Sie daraus
-    ein generisches Interface `IMannschaft` mit einer Typ-Variablen. Stellen Sie
-    durch geeignete Beschränkung der Typ-Variablen sicher, dass nur Mannschaften mit
-    von `ISpieler` abgeleiteten Spielern gebildet werden können.
+3.  Betrachten Sie das nicht-generische Interface `IMannschaft`. Erstellen Sie
+    daraus ein generisches Interface `IMannschaft` mit einer Typ-Variablen. Stellen
+    Sie durch geeignete Beschränkung der Typ-Variablen sicher, dass nur Mannschaften
+    mit von `ISpieler` abgeleiteten Spielern gebildet werden können.
 
     ``` java
     public interface IMannschaft {
@@ -227,9 +228,9 @@ Mannschaften aufnehmen können.
     ```
 
 4.  Betrachten Sie das nicht-generische Interface `ILiga`. Erstellen Sie daraus ein
-    generisches Interface `ILiga` mit einer Typvariablen. Stellen Sie durch geeignete
-    Beschränkung der Typvariablen sicher, dass nur Ligen mit von `IMannschaft`
-    abgeleiteten Mannschaften angelegt werden können.
+    generisches Interface `ILiga` mit einer Typvariablen. Stellen Sie durch
+    geeignete Beschränkung der Typvariablen sicher, dass nur Ligen mit von
+    `IMannschaft` abgeleiteten Mannschaften angelegt werden können.
 
     ``` java
     public interface ILiga {
@@ -238,8 +239,8 @@ Mannschaften aufnehmen können.
     }
     ```
 
-5.  Leiten Sie von `ILiga` das **generische** Interface `IBundesLiga` ab. Stellen Sie
-    durch geeignete Formulierung der Typvariablen sicher, dass nur Ligen mit
+5.  Leiten Sie von `ILiga` das **generische** Interface `IBundesLiga` ab. Stellen
+    Sie durch geeignete Formulierung der Typvariablen sicher, dass nur Ligen mit
     Mannschaften angelegt werden können, deren Spieler vom Typ `FussballSpieler`
     (oder abgeleitet) sind.
 

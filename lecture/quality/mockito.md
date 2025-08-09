@@ -16,8 +16,8 @@ Rückgabewerte zurückgeben kann.
 
 Mockito ist eine Java-Bibliothek, die zusammen mit JUnit das Mocking von Klassen in
 Java erlaubt. Man kann hier zusätzlich auch die Interaktion mit dem gemockten Objekt
-überprüfen und testen, ob eine bestimmte Methode mit bestimmten Argumenten aufgerufen
-wurde und wie oft.
+überprüfen und testen, ob eine bestimmte Methode mit bestimmten Argumenten
+aufgerufen wurde und wie oft.
 :::
 
 ::: youtube
@@ -83,8 +83,8 @@ Wie kann Team A seinen Code testen?
 ::: notes
 ## Motivation Mocking und Mockito
 
-[Mockito](https://github.com/mockito/mockito) ist ein Mocking-Framework für JUnit. Es
-simuliert das Verhalten eines realen Objektes oder einer realen Methode.
+[Mockito](https://github.com/mockito/mockito) ist ein Mocking-Framework für JUnit.
+Es simuliert das Verhalten eines realen Objektes oder einer realen Methode.
 
 Wofür brauchen wir denn jetzt so ein Mocking-Framework überhaupt?
 
@@ -98,16 +98,17 @@ stören uns aber bisher so ein paar Dinge:
 -   Manchmal existiert der zu testende Teil einer Applikation auch noch gar nicht,
     sondern es gibt nur die Interfaces.
 -   Oder es gibt unschöne Seiteneffekte beim Arbeiten mit den realen Objekten. Zum
-    Beispiel könnte es sein, das immer eine E-Mail versendet wird, wenn wir mit einem
-    Objekt interagieren.
+    Beispiel könnte es sein, das immer eine E-Mail versendet wird, wenn wir mit
+    einem Objekt interagieren.
 
 In solchen Situationen wollen wir eine Möglichkeit haben, das Verhalten eines realen
-Objektes bzw. der Methoden zu simulieren, ohne dabei die originalen Methoden aufrufen
-zu müssen. (Manchmal möchte man das dennoch, aber dazu später mehr...)
+Objektes bzw. der Methoden zu simulieren, ohne dabei die originalen Methoden
+aufrufen zu müssen. (Manchmal möchte man das dennoch, aber dazu später mehr...)
 
-Und genau hier kommt Mockito ins Spiel. Mockito hilft uns dabei, uns von den externen
-Abhängigkeiten zu lösen, indem es sogenannte Mocks, Stubs oder Spies anbietet, mit
-denen sich das Verhalten der realen Objekte simulieren/überwachen und testen lässt.
+Und genau hier kommt Mockito ins Spiel. Mockito hilft uns dabei, uns von den
+externen Abhängigkeiten zu lösen, indem es sogenannte Mocks, Stubs oder Spies
+anbietet, mit denen sich das Verhalten der realen Objekte simulieren/überwachen und
+testen lässt.
 
 ## Aber was genau ist denn jetzt eigentlich Mocking?
 
@@ -117,13 +118,13 @@ Platzhalter (Attrappe) für das echte Objekt verwendet wird.
 Mocks sind in JUnit-Tests immer dann nützlich, wenn man externe Abhängigkeiten hat,
 auf die der eigene Code zugreift. Das können zum Beispiel externe APIs sein oder
 Datenbanken etc. ... Mocks helfen einem beim Testen nun dabei, sich von diesen
-externen Abhängigkeiten zu lösen und seine Softwarefunktionalität dennoch schnell und
-effizient testen zu können ohne evtl. auftretende Verbindungsfehler oder andere
+externen Abhängigkeiten zu lösen und seine Softwarefunktionalität dennoch schnell
+und effizient testen zu können ohne evtl. auftretende Verbindungsfehler oder andere
 mögliche Seiteneffekte der externen Abhängigkeiten auszulösen.
 
 Dabei simulieren Mocks die Funktionalität der externen APIs oder Datenbankzugriffe.
-Auf diese Weise ist es möglich Softwaretests zu schreiben, die scheinbar die gleichen
-Methoden aufrufen, die sie auch im regulären Softwarebetrieb nutzen würden,
+Auf diese Weise ist es möglich Softwaretests zu schreiben, die scheinbar die
+gleichen Methoden aufrufen, die sie auch im regulären Softwarebetrieb nutzen würden,
 allerdings werden diese wie oben erwähnt allerdings für die Tests nur simuliert.
 
 Mocking ist also eine Technik, die in Softwaretests verwendet wird, in denen die
@@ -314,16 +315,17 @@ können aber auch mit einem (partiellen) Mock überlagert werden. Der Spy zeichn
 der Mock die Interaktion mit dem Objekt auf.
 
 Mit Hilfe von `doReturn().when()` kann man definieren, was genau beim Aufruf einer
-bestimmten Methode auf dem Spy passieren soll, d.h. welcher Rückgabewert entsprechend
-zurückgegeben werden soll. Hier kann man analog zum Mock für bestimmte Argumentwerte
-andere Rückgabewerte definieren.
+bestimmten Methode auf dem Spy passieren soll, d.h. welcher Rückgabewert
+entsprechend zurückgegeben werden soll. Hier kann man analog zum Mock für bestimmte
+Argumentwerte andere Rückgabewerte definieren.
 `doReturn(40).when(lsf).ergebnis("Harald", "PM-Dungeon")` gibt also für den Aufruf
-von `ergebnis` mit den Argumenten `"Harald"` und `"PM-Dungeon"` auf dem Spy `lsf` den
-Wert 40 zurück.
+von `ergebnis` mit den Argumenten `"Harald"` und `"PM-Dungeon"` auf dem Spy `lsf`
+den Wert 40 zurück.
 
-Wenn man die Methoden nicht mit einem partiellen Mock überschreibt, dann wird einfach
-die originale Methode aufgerufen (Beispiel: In `studi.anmelden("PM-Dungeon")` wird
-`lsf.anmelden("Harald", "PM-Dungeon")` aufgerufen.).
+Wenn man die Methoden nicht mit einem partiellen Mock überschreibt, dann wird
+einfach die originale Methode aufgerufen (Beispiel: In
+`studi.anmelden("PM-Dungeon")` wird `lsf.anmelden("Harald", "PM-Dungeon")`
+aufgerufen.).
 
 Auch hier können Argument-Matcher wie `anyString()` eingesetzt werden.
 :::
@@ -359,13 +361,15 @@ public class VerifyTest {
 
 ::: notes
 Mit der Methode `verify()` kann auf einem Mock oder Spy überprüft werden, ob und wie
-oft und in welcher Reihenfolge Methoden aufgerufen wurden und mit welchen Argumenten.
-Auch hier lassen sich wieder Argument-Matcher wie `anyString()` einsetzen.
+oft und in welcher Reihenfolge Methoden aufgerufen wurden und mit welchen
+Argumenten. Auch hier lassen sich wieder Argument-Matcher wie `anyString()`
+einsetzen.
 
 Ein einfaches `verify(mock)` prüft dabei, ob die entsprechende Methode exakt einmal
-vorher aufgerufen wurde. Dies ist äquivalent zu `verify(mock, times(1))`. Analog kann
-man mit den Parametern `atLeast()` oder `atMost` bestimmte Unter- oder Obergrenzen
-für die Aufrufe angeben und mit `never()` prüfen, ob es gar keinen Aufruf vorher gab.
+vorher aufgerufen wurde. Dies ist äquivalent zu `verify(mock, times(1))`. Analog
+kann man mit den Parametern `atLeast()` oder `atMost` bestimmte Unter- oder
+Obergrenzen für die Aufrufe angeben und mit `never()` prüfen, ob es gar keinen
+Aufruf vorher gab.
 
 `verifyNoMoreInteractions(lsf)` ist interessant: Es ist genau dann `true`, wenn es
 außer den vorher abgefragten Interaktionen keinerlei sonstigen Interaktionen mit dem
@@ -433,8 +437,8 @@ Sie für die restlichen Parameter der Methode dies ebenfalls tun. Sie können ke
 konkreten Argumente mit `ArgumentMatcher` mischen.
 
 Sie finden viele weitere vordefinierte Matcher in der Klasse `ArgumentMatchers`. Mit
-der Klasse `ArgumentCaptor<T>` finden Sie eine alternative Möglichkeit, auf Argumente
-in gemockten Methoden zu reagieren. Schauen Sie sich dazu die Javadoc von
+der Klasse `ArgumentCaptor<T>` finden Sie eine alternative Möglichkeit, auf
+Argumente in gemockten Methoden zu reagieren. Schauen Sie sich dazu die Javadoc von
 [Mockito](https://javadoc.io/doc/org.mockito/mockito-core/) an.
 :::
 
@@ -466,11 +470,11 @@ an [\@jedi101](https://github.com/jedi101).
 [Demo: WuppiWarenlager (wuppie.stub)]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/mockito/src/test/java/wuppie/stub/"}
 
-Bei dem gezeigten Beispiel unseres `WuppiStores` sieht man, dass dieser normalerweise
-von einem fertigen Warenlager die Wuppis beziehen möchte. Da dieses Lager aber noch
-nicht existiert, haben wir uns kurzerhand einfach einen Stub von unserem
-`IWuppiWarenlager`-Interface erstellt, in dem wir zu Testzwecken händisch ein Paar
-Wuppis ins Lager geräumt haben.
+Bei dem gezeigten Beispiel unseres `WuppiStores` sieht man, dass dieser
+normalerweise von einem fertigen Warenlager die Wuppis beziehen möchte. Da dieses
+Lager aber noch nicht existiert, haben wir uns kurzerhand einfach einen Stub von
+unserem `IWuppiWarenlager`-Interface erstellt, in dem wir zu Testzwecken händisch
+ein Paar Wuppis ins Lager geräumt haben.
 
 Das funktioniert in diesem Mini-Testbeispiel ganz gut aber, wenn unsere Stores erst
 einmal so richtig Fahrt aufnehmen und wir irgendwann weltweit Wuppis verkaufen, wird
@@ -528,10 +532,10 @@ assertEquals(2,bestellteWuppis.size());
 
 Manchmal möchten wir allerdings nicht immer gleich ein ganzes Objekt mocken, aber
 dennoch Einfluss auf die aufgerufenen Methoden eines Objekts haben, um diese testen
-zu können. Vielleicht gibt es dabei ja sogar eine Möglichkeit unsere JUnit-Tests, mit
-denen wir normalerweise nur Rückgabewerte von Methoden testen können, zusätzlich auch
-das Verhalten also die Interaktionen mit einem Objekt beobachtbar zu machen. Somit
-wären diese Interaktionen auch testbar.
+zu können. Vielleicht gibt es dabei ja sogar eine Möglichkeit unsere JUnit-Tests,
+mit denen wir normalerweise nur Rückgabewerte von Methoden testen können, zusätzlich
+auch das Verhalten also die Interaktionen mit einem Objekt beobachtbar zu machen.
+Somit wären diese Interaktionen auch testbar.
 
 Und genau dafür bietet Mockito eine Funktion: der sogenannte "Spy".
 
@@ -569,14 +573,14 @@ assertEquals(1,wuppiWarenlager.lager.size());
 
 # Mockito und Annotationen
 
-In Mockito können Sie wie oben gezeigt mit `mock()` und `spy()` neue Mocks bzw. Spies
-erzeugen und mit `verify()` die Interaktion überprüfen und mit `ArgumentMatcher<T>`
-bzw. den vordefinierten `ArgumentMatchers` auf Argumente zuzugreifen bzw. darauf zu
-reagieren.
+In Mockito können Sie wie oben gezeigt mit `mock()` und `spy()` neue Mocks bzw.
+Spies erzeugen und mit `verify()` die Interaktion überprüfen und mit
+`ArgumentMatcher<T>` bzw. den vordefinierten `ArgumentMatchers` auf Argumente
+zuzugreifen bzw. darauf zu reagieren.
 
-Zusätzlich/alternativ gibt es in Mockito zahlreiche Annotationen, die **ersatzweise**
-statt der genannten Methoden genutzt werden können. Hier ein kleiner Überblick über
-die wichtigsten in Mockito verwendeten Annotation:
+Zusätzlich/alternativ gibt es in Mockito zahlreiche Annotationen, die
+**ersatzweise** statt der genannten Methoden genutzt werden können. Hier ein kleiner
+Überblick über die wichtigsten in Mockito verwendeten Annotation:
 
 -   `@Mock` wird zum Markieren des zu mockenden Objekts verwendet.
 
@@ -585,16 +589,16 @@ die wichtigsten in Mockito verwendeten Annotation:
     WuppiWarenlager lager;
     ```
 
--   `@RunWith(MockitoJUnitRunner.class)` ist der entsprechende JUnit-Runner, wenn Sie
-    Mocks mit `@Mock` anlegen.
+-   `@RunWith(MockitoJUnitRunner.class)` ist der entsprechende JUnit-Runner, wenn
+    Sie Mocks mit `@Mock` anlegen.
 
     ``` java
     @RunWith(MockitoJUnitRunner.class)
     public class ToDoBusinessMock {...}
     ```
 
--   `@Spy` erlaubt das Erstellen von partiell gemockten Objekten. Dabei wird eine Art
-    Wrapper um das zu mockende Objekt gewickelt, der dafür sorgt, dass alle
+-   `@Spy` erlaubt das Erstellen von partiell gemockten Objekten. Dabei wird eine
+    Art Wrapper um das zu mockende Objekt gewickelt, der dafür sorgt, dass alle
     Methodenaufrufe des Objekts an den Spy delegiert werden. Diese können über den
     Spion dann abgefangen/verändert oder ausgewertet werden.
 
@@ -779,7 +783,8 @@ Testen Sie die Methoden `nonEvilAdd`, `evilAdd` und `veryEvilAdd` der Klasse
 Vervollständigen Sie dazu die Klasse `UtilityTest.java` und nutzen Sie Mocking mit
 [Mockito](https://github.com/mockito/mockito), um die Tests zum Laufen zu bringen.
 Die Tests dürfen Sie entsprechend verändern, aber die Aufrufe aus der Vorgabe müssen
-erhalten bleiben. Die Klassen `Evil.java` und `Utility.java` dürfen Sie nicht ändern.
+erhalten bleiben. Die Klassen `Evil.java` und `Utility.java` dürfen Sie nicht
+ändern.
 
 *Hinweis:* Die Klasse `Evil.java` und die Methode `evilMethod()` aus `Utility.java`
 lösen eine ungewollte bzw. "zufällige" Exception aus, auf deren Auftreten jedoch

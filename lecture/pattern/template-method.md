@@ -4,8 +4,8 @@ title: Template-Method-Pattern
 ---
 
 ::: tldr
-Das Template-Method-Pattern ist ein Entwurfsmuster, bei dem ein gewisses Verhalten in
-einer Methode implementiert wird, die wie eine Schablone agiert, der sogenannten
+Das Template-Method-Pattern ist ein Entwurfsmuster, bei dem ein gewisses Verhalten
+in einer Methode implementiert wird, die wie eine Schablone agiert, der sogenannten
 "Template-Methode". Darin werden dann u.a. Hilfsmethoden aufgerufen, die in der
 Basisklasse entweder als `abstract` markiert sind oder mit einem leeren Body
 implementiert sind ("Hook-Methoden"). Über diese Template-Methode legt also die
@@ -63,24 +63,25 @@ public class Lexer {
 ::: notes
 Dazu prüft man jedes Token, ob es auf den aktuellen Anfang des Eingabestroms passt.
 Wenn ein Token passt, erzeugt man eine Instanz dieser Token-Klasse und speichert
-darin den gematchten Eingabeteil, den man dann vom Eingabestrom entfernt. Danach geht
-man in die Schleife und prüft wieder alle Token ... bis irgendwann der Eingabestrom
-leer ist und man den gesamten eingelesenen Programmcode in eine dazu passende Folge
-von Token umgewandelt hat.
+darin den gematchten Eingabeteil, den man dann vom Eingabestrom entfernt. Danach
+geht man in die Schleife und prüft wieder alle Token ... bis irgendwann der
+Eingabestrom leer ist und man den gesamten eingelesenen Programmcode in eine dazu
+passende Folge von Token umgewandelt hat.
 
-*Anmerkung*: Abgesehen von fehlenden Javadoc etc. hat das obige Code-Beispiel mehrere
-Probleme: Man würde im realen Leben nicht mit `String`, sondern mit einem
-Zeichenstrom arbeiten. Außerdem fehlt noch eine Fehlerbehandlung, wenn nämlich keines
-der Token in der Liste `allToken` auf den aktuellen Anfang des Eingabestroms passt.
+*Anmerkung*: Abgesehen von fehlenden Javadoc etc. hat das obige Code-Beispiel
+mehrere Probleme: Man würde im realen Leben nicht mit `String`, sondern mit einem
+Zeichenstrom arbeiten. Außerdem fehlt noch eine Fehlerbehandlung, wenn nämlich
+keines der Token in der Liste `allToken` auf den aktuellen Anfang des Eingabestroms
+passt.
 :::
 
 # Token-Klassen mit formatiertem Inhalt
 
 ::: notes
-Um den eigenen Tokenizer besser testen zu können, wurde beschlossen, dass jedes Token
-seinen Inhalt als formatiertes HTML-Schnipsel zurückliefern soll. Damit kann man dann
-alle erkannten Token formatiert ausgeben und erhält eine Art Syntax-Highlighting für
-den eingelesenen Programmcode.
+Um den eigenen Tokenizer besser testen zu können, wurde beschlossen, dass jedes
+Token seinen Inhalt als formatiertes HTML-Schnipsel zurückliefern soll. Damit kann
+man dann alle erkannten Token formatiert ausgeben und erhält eine Art
+Syntax-Highlighting für den eingelesenen Programmcode.
 :::
 
 ``` java
@@ -109,15 +110,15 @@ LOG.info(t.getHtml());
 
 ::: notes
 In der ersten Umsetzung erhält die Basisklasse `Token` eine weitere abstrakte
-Methode, die jede Token-Klasse implementieren muss und in der die Token-Klassen einen
-String mit dem Token-Inhalt und einer Formatierung für HTML zurückgeben.
+Methode, die jede Token-Klasse implementieren muss und in der die Token-Klassen
+einen String mit dem Token-Inhalt und einer Formatierung für HTML zurückgeben.
 
 Dabei fällt auf, dass der Aufbau immer gleich ist: Es werden ein oder mehrere Tags
 zum Start der Format-Sequenz mit dem Token-Inhalt verbunden, gefolgt mit einem zum
 verwendeten startenden HTML-Format-Tag passenden End-Tag.
 
-Auch wenn die Inhalte unterschiedlich sind, sieht das stark nach einer Verletzung von
-[DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) aus ...
+Auch wenn die Inhalte unterschiedlich sind, sieht das stark nach einer Verletzung
+von [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) aus ...
 :::
 
 # Don't call us, we'll call you
@@ -162,8 +163,8 @@ wird zur Laufzeit geprüft, welchen Typ `t` tatsächlich hat (im Beispiel `KeyWo
 Methodenaufrufe werden dann mit den am tiefsten in der vorliegenden
 Vererbungshierarchie implementierten Methoden durchgeführt: Hier wird also die von
 `Token` geerbte Methode `getHtml()` in `KeyWord` aufgerufen, die ihrerseits die
-Methoden `htmlStart()` und `htmlEnd()` aufruft. Diese sind in `KeyWord` implementiert
-und liefern nun die passenden Ergebnisse.
+Methoden `htmlStart()` und `htmlEnd()` aufruft. Diese sind in `KeyWord`
+implementiert und liefern nun die passenden Ergebnisse.
 
 Die Methode `getHtml()` wird auch als "*Template-Methode*" bezeichnet. Die beiden
 darin aufgerufenen Methoden `htmlStart()` und `htmlEnd()` in `Token` werden auch als
@@ -196,19 +197,19 @@ Damit werden Teile des Verhaltens an die ableitenden Klassen ausgelagert.
 
 Das Template-Method-Pattern hat eine starke Verwandtschaft zum Strategy-Pattern.
 
-Im Strategy-Pattern haben wir Verhalten komplett an andere Objekte *delegiert*, indem
-wir in einer Methode einfach die passende Methode auf dem übergebenen
+Im Strategy-Pattern haben wir Verhalten komplett an andere Objekte *delegiert*,
+indem wir in einer Methode einfach die passende Methode auf dem übergebenen
 Strategie-Objekt aufgerufen haben.
 
 Im Template-Method-Pattern nutzen wir statt Delegation die Mechanismen Vererbung und
 dynamische Polymorphie und definieren in der Basis-Klasse abstrakte oder
 Hook-Methoden, die wir bereits in der Template-Methode der Basis-Klasse aufrufen.
 Damit ist das grobe Verhalten in der Basis-Klasse festgelegt, wird aber in den
-ableitenden Klassen durch das dortige Definieren oder Überschreiben der Hilfsmethoden
-verfeinert. Zur Laufzeit werden dann durch die dynamische Polymorphie die tatsächlich
-implementierten Hilfsmethoden in den ableitenden Klassen aufgerufen. Damit lagert man
-im Template-Method-Pattern gewissermaßen nur Teile des Verhaltens an die ableitenden
-Klassen aus.
+ableitenden Klassen durch das dortige Definieren oder Überschreiben der
+Hilfsmethoden verfeinert. Zur Laufzeit werden dann durch die dynamische Polymorphie
+die tatsächlich implementierten Hilfsmethoden in den ableitenden Klassen aufgerufen.
+Damit lagert man im Template-Method-Pattern gewissermaßen nur Teile des Verhaltens
+an die ableitenden Klassen aus.
 :::
 
 # Wrap-Up

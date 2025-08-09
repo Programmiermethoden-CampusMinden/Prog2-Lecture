@@ -58,9 +58,9 @@ Tja, da sollte wohl die Methode `B#getInfo` die geerbte Methode `A#getInfo`
 **überschreiben**. Dummerweise wird hier die Methode aber nur **überladen** (mit
 entsprechenden Folgen beim Aufruf)!
 
-Ein leider relativ häufiges Versehen, welches u.U. schwer zu finden ist. Annotationen
-(hier `@Override`) können dagegen helfen - der Compiler "weiß" dann, dass wir
-überschreiben wollen und meckert, wenn wir das nicht tun.
+Ein leider relativ häufiges Versehen, welches u.U. schwer zu finden ist.
+Annotationen (hier `@Override`) können dagegen helfen - der Compiler "weiß" dann,
+dass wir überschreiben wollen und meckert, wenn wir das nicht tun.
 
 IDEs wie Eclipse können diese Annotation bereits beim Erstellen einer Klasse
 generieren: `Preferences > Java > Code Style > Add @Override annotation ...`.
@@ -108,8 +108,8 @@ geprüft und ggf. mit einer Fehlermeldung quittiert.
 ## \@Deprecated
 
 Das mit `@Deprecated` markierte Element ist veraltet ("*deprecated*") und sollte
-nicht mehr benutzt werden. Typischerweise werden so markierte Elemente in zukünftigen
-Releases aus der API entfernt ...
+nicht mehr benutzt werden. Typischerweise werden so markierte Elemente in
+zukünftigen Releases aus der API entfernt ...
 
 Die Annotation `@Deprecated` wird direkt im Code verwendet und entspricht der
 Annotation `@deprecated` im Javadoc. Allerdings kann letzteres nur von Javadoc
@@ -159,8 +159,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 # \@NotNull mit IntelliJ
 
 ::: notes
-[IntelliJ](https://www.jetbrains.com/help/idea/annotating-source-code.html) bietet im
-Paket `org.jetbrains.annotations` u.a. die Annotation `@NotNull` an.
+[IntelliJ](https://www.jetbrains.com/help/idea/annotating-source-code.html) bietet
+im Paket `org.jetbrains.annotations` u.a. die Annotation `@NotNull` an.
 
 Damit lassen sich Rückgabewerte von Methoden sowie Variablen (Attribute, lokale
 Variablen, Parameter) markieren: Diese dürfen nicht `null` werden.
@@ -258,8 +258,8 @@ Parameter für Annotation werden über entsprechende Methoden-Deklaration realis
 -   "Rückgabetyp" der deklarierten "Methode" ist der erlaubte Typ der später
     verwendeten Parameter
 
--   Name der "Methoden" wird bei der Belegung der Parameter verwendet, beispielsweise
-    `author = ...`
+-   Name der "Methoden" wird bei der Belegung der Parameter verwendet,
+    beispielsweise `author = ...`
 
 -   Vereinfachung: "Methodenname" `value` erlaubt das Weglassen des Schlüsselworts
     bei der Verwendung:
@@ -276,8 +276,8 @@ Parameter für Annotation werden über entsprechende Methoden-Deklaration realis
     public class E {}
     ```
 
--   Defaultwerte mit dem nachgestellten Schlüsselwort `default` sowie dem Defaultwert
-    selbst
+-   Defaultwerte mit dem nachgestellten Schlüsselwort `default` sowie dem
+    Defaultwert selbst
 
 ## Dokumentation der Annotation mit/im Javadoc
 
@@ -340,7 +340,8 @@ verwendet werden darf.
 Beschränkung der Verwendung: Meta-Annotation `@Target` aus
 `java.lang.annotation.Target`
 
--   `ElementType.TYPE`: alle Typdeklarationen: Klassen, Interfaces, Enumerations, ...
+-   `ElementType.TYPE`: alle Typdeklarationen: Klassen, Interfaces, Enumerations,
+    ...
 -   `ElementType.CONSTRUCTOR`: nur Konstruktoren
 -   `ElementType.METHOD`: nur Methoden
 -   `ElementType.FIELD`: nur statische Variablen und Objektvariablen
@@ -355,7 +356,8 @@ verwendbar.
 
 ::: notes
 Der dem `javac`-Compiler vorgelegte Source-Code wird eingelesen und in einen
-entsprechenden Syntax-Tree (*AST*) transformiert (dazu mehr im Modul "Compilerbau" :)
+entsprechenden Syntax-Tree (*AST*) transformiert (dazu mehr im Modul "Compilerbau"
+:)
 
 Anschließend können sogenannte "Annotation Processors" über den AST laufen und ihre
 Analysen machen und/oder den AST modifizieren. (Danach kommen die üblichen weiteren
@@ -508,8 +510,8 @@ Verarbeiten von `annotations.C` die folgende Ausgabe:
 ::: challenges
 Schreiben Sie drei eigene Annotationen:
 
--   `@MeineKlasse` darf nur an Klassendefinitionen stehen und speichert den Namen des
-    Autoren ab.
+-   `@MeineKlasse` darf nur an Klassendefinitionen stehen und speichert den Namen
+    des Autoren ab.
 -   `@MeineMethode` darf nur an Methoden stehen.
 -   `@TODO` darf an Methoden und Klassen stehen, ist aber nur in den Source-Dateien
     sichtbar.

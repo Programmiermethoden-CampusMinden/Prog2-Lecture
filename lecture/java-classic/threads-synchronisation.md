@@ -12,13 +12,13 @@ Zeitscheibe verlieren kann und dann später mit veralteten Daten weiter macht.
 Um den Zugriff auf gemeinsame Ressourcen oder den Eintritt in kritische Bereiche zu
 schützen und zu synchronisieren, kann man diese Zugriffe oder Bereiche in einen
 `synchronized`-Block legen. Dazu benötigt man noch ein beliebiges (gemeinsam
-sichtbares) Objekt, welches als Wächter- oder Sperr-Objekt fungiert. Beim Eintritt in
-den geschützten Block muss ein Thread einen Lock auf dem Sperr-Objekt erlangen. Hat
-bereits ein anderer Thread den Lock, wird der neue Thread so lange blockiert, bis der
-Lock wieder "frei" ist. Beim Eintritt in den Bereich wird dann durch den Thread auf
-dem Sperr-Objekt der Lock gesetzt und beim Austritt automatisch wieder aufgehoben.
-Dies nennt man auch **mehrseitige Synchronisierung** (mehrere Threads "stimmen" sich
-quasi untereinander über den Zugriff auf eine Ressource ab).
+sichtbares) Objekt, welches als Wächter- oder Sperr-Objekt fungiert. Beim Eintritt
+in den geschützten Block muss ein Thread einen Lock auf dem Sperr-Objekt erlangen.
+Hat bereits ein anderer Thread den Lock, wird der neue Thread so lange blockiert,
+bis der Lock wieder "frei" ist. Beim Eintritt in den Bereich wird dann durch den
+Thread auf dem Sperr-Objekt der Lock gesetzt und beim Austritt automatisch wieder
+aufgehoben. Dies nennt man auch **mehrseitige Synchronisierung** (mehrere Threads
+"stimmen" sich quasi untereinander über den Zugriff auf eine Ressource ab).
 
 Um auf den Eintritt eines Ereignisses oder die Erfüllung einer Bedingung zu warten,
 kann man `wait` und `notify` nutzen. In einem `synchronized`-Block prüft man, ob die
@@ -30,10 +30,10 @@ dem Sperr-Objekt eingereiht und blockiert. Zusätzlich wird der Lock auf dem
 Sperr-Objekt freigegeben. Zum "Aufwecken" nutzt man an geeigneter Stelle auf dem
 **selben Sperr-Objekt** die Methode `notify()` oder `notifyALl()` (erstere weckt
 einen in der Liste des Sperr-Objekts wartenden Thread, die letztere alle). Nach dem
-Aufwachen macht der Thread nach seinem `wait()` weiter. Es ist also wichtig, dass die
-Bedingung, wegen der ursprünglich das `wait()` aufgerufen wurde, erneut abgefragt
-wird und ggf. erneut in das `wait()` gegangen wird. Dies nennt man **einseitige
-Synchronisierung**.
+Aufwachen macht der Thread nach seinem `wait()` weiter. Es ist also wichtig, dass
+die Bedingung, wegen der ursprünglich das `wait()` aufgerufen wurde, erneut
+abgefragt wird und ggf. erneut in das `wait()` gegangen wird. Dies nennt man
+**einseitige Synchronisierung**.
 
 Es gibt darüber hinaus viele weitere Mechanismen und Probleme, die aber den Rahmen
 dieser Lehrveranstaltung deutlich übersteigen. Diese werden teilweise in den
@@ -207,8 +207,8 @@ Ressource, die ein anderer Thread B haben möchte und Thread B belegt eine Resso
 die A gerne bekommen würde. Da es dann nicht weitergeht, nennt man diese Situation
 auch "Deadlock" ("Verklemmung").
 
-Im Beispiel ruft der erste Thread für das Objekt `a` die `foo()`-Methode auf und holt
-sich damit den Lock auf `a`. Um die Methode beenden zu können, muss noch die
+Im Beispiel ruft der erste Thread für das Objekt `a` die `foo()`-Methode auf und
+holt sich damit den Lock auf `a`. Um die Methode beenden zu können, muss noch die
 `getName()`-Methode vom Objekt `b` durch diesen ersten Thread aufgerufen werden.
 Dafür muss der erste Thread den Lock auf `b` bekommen.
 
@@ -351,8 +351,8 @@ herumlaufen lässt.
 **Teil I: Stau im Tunnel**
 
 Die Hamster sind sehr neugierig und wollen gern durch den Tunnel gehen, um die Höhle
-auf der anderen Seite zu erkunden. Leider mussten sie feststellen, dass immer nur ein
-Hamster zu einem Zeitpunkt im Tunnel sein darf, sonst wird die Luft zu knapp.
+auf der anderen Seite zu erkunden. Leider mussten sie feststellen, dass immer nur
+ein Hamster zu einem Zeitpunkt im Tunnel sein darf, sonst wird die Luft zu knapp.
 
 Ergänzen Sie die Vorgaben, so dass sich immer nur ein paralleler Hamster (egal
 welcher Farbe) im Tunnel aufhalten kann. Wenn ein Hamster in den Tunnel will, aber
@@ -368,8 +368,8 @@ Hamster: `synchronized (tunnel()) { moveThroughTunnel(); }`
 **Teil II: Schlaue Hamster**
 
 Die Hamster sind schlau und haben bemerkt, dass die Einschränkung aus der letzten
-Aufgabe zu stark war. Sie überleben auch, wenn sich beliebig viele blaue Hamster oder
-nur genau ein roter Hamster im Tunnel aufhalten.
+Aufgabe zu stark war. Sie überleben auch, wenn sich beliebig viele blaue Hamster
+oder nur genau ein roter Hamster im Tunnel aufhalten.
 
 Erweitern Sie die Implementierung aus der letzten Aufgabe, so dass folgende
 Bedingungen eingehalten werden:

@@ -28,11 +28,12 @@ durch
 Die obere Typ-Schranke ist in der Regel der Typ der ersten Bounds-Klausel oder
 `Object`, wenn keine Einschränkungen formuliert sind.
 
-Bei parametrisierten Typen wie `List<T>` wird der Typ-Parameter entfernt, es entsteht
-ein sogenannter *Raw*-Typ (`List`, quasi implizit mit `Object` parametrisiert).
+Bei parametrisierten Typen wie `List<T>` wird der Typ-Parameter entfernt, es
+entsteht ein sogenannter *Raw*-Typ (`List`, quasi implizit mit `Object`
+parametrisiert).
 
-=\> Ergebnis: Nur **eine** (untypisierte) Klasse! Zur Laufzeit gibt es keine Generics
-mehr!
+=\> Ergebnis: Nur **eine** (untypisierte) Klasse! Zur Laufzeit gibt es keine
+Generics mehr!
 
 **Hinweis**: In C++ ist man den anderen möglichen Weg gegangen und erzeugt für jede
 Instantiierung die passende Klasse. Siehe Modul "Systemprogrammierung" :)
@@ -133,15 +134,15 @@ Raw-Types darf man zwar selbst im Quellcode verwenden (so wie im Beispiel hier),
 **sollte** die Verwendung aber vermeiden wegen der Typ-Unsicherheit: Der Compiler
 sieht im Beispiel nur noch einen Stack für `Object`, d.h. dort dürfen Objekte aller
 Typen abgelegt werden - es kann keine Typprüfung durch den Compiler stattfinden. Auf
-einem `Stack<String>` kann der Compiler prüfen, ob dort wirklich nur `String`-Objekte
-abgelegt werden und ggf. entsprechend Fehler melden.
+einem `Stack<String>` kann der Compiler prüfen, ob dort wirklich nur
+`String`-Objekte abgelegt werden und ggf. entsprechend Fehler melden.
 
 Etwas anderes ist es, dass der Compiler im Zuge von Type-Erasure selbst Raw-Types in
 den Byte-Code schreibt. Da hat er vorher bereits die Typsicherheit geprüft und er
 baut auch die passenden Casts ein.
 
-Das Thema ist eigentlich nur noch aus Kompatibilität zu Java5 oder früher da, weil es
-dort noch keine Generics gab (wurden erst mit Java6 eingeführt).
+Das Thema ist eigentlich nur noch aus Kompatibilität zu Java5 oder früher da, weil
+es dort noch keine Generics gab (wurden erst mit Java6 eingeführt).
 :::
 
 # Folgen der Typ-Löschung: *new*

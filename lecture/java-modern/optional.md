@@ -17,17 +17,17 @@ Methode `Optional.ofNullable()` das Argument in ein Optional verpacken (Argument
 Man kann Optionals prüfen mit `isEmpty()` und `ifPresent()` und dann direkt mit
 `ifPresent()`, `orElse()` und `orElseThrow()` auf den verpackten Wert zugreifen.
 Besser ist aber der Zugriff über die Stream-API von `Optional`: `map()`, `filter`,
-`flatMap()`, ... Dabei gibt es keine terminalen Operationen - es handelt sich ja auch
-nicht um einen Stream, nur die Optik erinnert daran.
+`flatMap()`, ... Dabei gibt es keine terminalen Operationen - es handelt sich ja
+auch nicht um einen Stream, nur die Optik erinnert daran.
 
 `Optional` ist vor allem für Rückgabewerte gedacht, die den Fall "kein Wert
 vorhanden" einschließen sollen. Attribute, Parameter und Sammlungen sollten nicht
-`Optional`-Referenzen speichern, sondern "richtige" (unverpackte) Werte (und eben zur
-Not `null`). `Optional` ist kein Ersatz für `null`-Prüfung von Methoden-Parametern
-(nutzen Sie hier beispielsweise passende Annotationen). `Optional` ist auch kein
-Ersatz für vernünftiges Exception-Handling im Fall, dass etwas Unerwartetes passiert
-ist. Liefern Sie **niemals** `null` zurück, wenn der Rückgabetyp der Methode ein
-`Optional` ist!
+`Optional`-Referenzen speichern, sondern "richtige" (unverpackte) Werte (und eben
+zur Not `null`). `Optional` ist kein Ersatz für `null`-Prüfung von
+Methoden-Parametern (nutzen Sie hier beispielsweise passende Annotationen).
+`Optional` ist auch kein Ersatz für vernünftiges Exception-Handling im Fall, dass
+etwas Unerwartetes passiert ist. Liefern Sie **niemals** `null` zurück, wenn der
+Rückgabetyp der Methode ein `Optional` ist!
 :::
 
 ::: youtube
@@ -114,29 +114,29 @@ zurückgeliefert. (*Anmerkung*: Interessanterweise wird in der Methode nicht mit
 
 Dann wird in der `PositionComponent` die Position der Entität im aktuellen Level
 abgerufen. In einer Schleife werden alle Felder im gegebenen Radius in eine Liste
-gespeichert. (*Anmerkung*: Da dies über die `float`-Werte passiert und nicht über die
-Feld-Indizes wird ein `Tile` u.U. recht oft in der Liste abgelegt. Können Sie sich
-hier einfache Verbesserungen überlegen?)
+gespeichert. (*Anmerkung*: Da dies über die `float`-Werte passiert und nicht über
+die Feld-Indizes wird ein `Tile` u.U. recht oft in der Liste abgelegt. Können Sie
+sich hier einfache Verbesserungen überlegen?)
 
 Da `level.getTileAt()` offenbar als Antwort auch `null` zurückliefern kann, werden
-nun zunächst per `tiles.removeIf(Objects::isNull);` all diese `null`-Werte wieder aus
-der Liste entfernt. Danach erfolgt die Prüfung, ob die verbleibenden Felder betretbar
-sind und nicht-betretbare Felder werden entfernt.
+nun zunächst per `tiles.removeIf(Objects::isNull);` all diese `null`-Werte wieder
+aus der Liste entfernt. Danach erfolgt die Prüfung, ob die verbleibenden Felder
+betretbar sind und nicht-betretbare Felder werden entfernt.
 
 Aus den verbleibenden (betretbaren) Feldern in der Liste wird nun eines zufällig
-ausgewählt und per `level.findPath()` ein Pfad von der Position der Entität zu diesem
-Feld berechnet und zurückgeliefert. (*Anmerkung*: Hier wird ein zufälliges Tile in
-der Liste der umgebenden Felder gewählt, von diesem die Koordinaten bestimmt, und
-dann noch einmal aus dem Level das dazugehörige Feld geholt - dabei hatte man die
-Referenz auf das Feld bereits in der Liste. Können Sie sich hier eine einfache
-Verbesserung überlegen?)
+ausgewählt und per `level.findPath()` ein Pfad von der Position der Entität zu
+diesem Feld berechnet und zurückgeliefert. (*Anmerkung*: Hier wird ein zufälliges
+Tile in der Liste der umgebenden Felder gewählt, von diesem die Koordinaten
+bestimmt, und dann noch einmal aus dem Level das dazugehörige Feld geholt - dabei
+hatte man die Referenz auf das Feld bereits in der Liste. Können Sie sich hier eine
+einfache Verbesserung überlegen?)
 
 Zusammengefasst:
 
--   Die als Parameter `entity` übergebene Referenz darf offenbar *nicht* `null` sein.
-    Die ersten beiden Statements in der Methode rufen auf dieser Referenz Methoden
-    auf, was bei einer `null`-Referenz zu einer `NullPointer`-Exception führen würde.
-    Hier wäre `null` ein Fehlerzustand.
+-   Die als Parameter `entity` übergebene Referenz darf offenbar *nicht* `null`
+    sein. Die ersten beiden Statements in der Methode rufen auf dieser Referenz
+    Methoden auf, was bei einer `null`-Referenz zu einer `NullPointer`-Exception
+    führen würde. Hier wäre `null` ein Fehlerzustand.
 -   `entity.getComponent()` kann offenbar `null` zurückliefern, wenn die gesuchte
     Component nicht vorhanden ist. Hier wird `null` als "kein Wert vorhanden"
     genutzt, was dann nachfolgende `null`-Checks notwendig macht.
@@ -152,19 +152,19 @@ Zusammengefasst:
     "kein Wert vorhanden" ist oder eigentlich ein Fehlerzustand? Man könnte
     beispielsweise in diesem Fall ein anderes Feld probieren?
 
-Der Aufrufer bekommt also eine `NullPointer`-Exception, wenn der übergebene Parameter
-`entity` nicht vorhanden ist oder den Wert `null`, wenn in der Methode etwas schief
-lief oder schlicht kein Pfad berechnet werden konnte oder tatsächlich einen Pfad.
-Damit wird der Aufrufer gezwungen, den Rückgabewert vor der Verwendung zu
-untersuchen.
+Der Aufrufer bekommt also eine `NullPointer`-Exception, wenn der übergebene
+Parameter `entity` nicht vorhanden ist oder den Wert `null`, wenn in der Methode
+etwas schief lief oder schlicht kein Pfad berechnet werden konnte oder tatsächlich
+einen Pfad. Damit wird der Aufrufer gezwungen, den Rückgabewert vor der Verwendung
+zu untersuchen.
 
 **Allein in dieser einen kurzen Methode macht `null` so viele extra Prüfungen
 notwendig und den Code dadurch schwerer lesbar und fehleranfälliger! `null` wird als
-(unvollständige) Initialisierung und als Rückgabewert und für den Fehlerfall genutzt,
-zusätzlich ist die Semantik von `null` nicht immer klar.** (*Anmerkung*: Der Gebrauch
-von `null` hat nicht wirklich etwas mit "der Natur eines ECS" zu tun. Die Methode
-wurde mittlerweile komplett überarbeitet und ist in der hier gezeigten Form
-glücklicherweise nicht mehr zu finden.)
+(unvollständige) Initialisierung und als Rückgabewert und für den Fehlerfall
+genutzt, zusätzlich ist die Semantik von `null` nicht immer klar.** (*Anmerkung*:
+Der Gebrauch von `null` hat nicht wirklich etwas mit "der Natur eines ECS" zu tun.
+Die Methode wurde mittlerweile komplett überarbeitet und ist in der hier gezeigten
+Form glücklicherweise nicht mehr zu finden.)
 
 Entsprechend hat sich in diesem
 [Review](https://github.com/Dungeon-CampusMinden/Dungeon/pull/128#pullrequestreview-1254025874)
@@ -234,15 +234,15 @@ Fall "kein Wert vorhanden". In diesem Fall wird statt `null` nun ein
 # Zugriff auf *Optional*-Objekte
 
 ::: notes
-In der funktionalen Programmierung gibt es schon lange das Konzept von `Optional`, in
-Haskell ist dies beispielsweise die Monade `Maybe`. Allerdings ist die Einbettung in
-die Sprache von vornherein mit berücksichtigt worden, insbesondere kann man hier sehr
-gut mit *Pattern Matching* in der Funktionsdefinition auf den verpackten Inhalt
+In der funktionalen Programmierung gibt es schon lange das Konzept von `Optional`,
+in Haskell ist dies beispielsweise die Monade `Maybe`. Allerdings ist die Einbettung
+in die Sprache von vornherein mit berücksichtigt worden, insbesondere kann man hier
+sehr gut mit *Pattern Matching* in der Funktionsdefinition auf den verpackten Inhalt
 reagieren.
 
-In Java gibt es die Methode `Optional#isEmpty()`, die einen Boolean zurückliefert und
-prüft, ob es sich um ein leeres `Optional` handelt oder ob hier ein Wert "verpackt"
-ist.
+In Java gibt es die Methode `Optional#isEmpty()`, die einen Boolean zurückliefert
+und prüft, ob es sich um ein leeres `Optional` handelt oder ob hier ein Wert
+"verpackt" ist.
 
 Für den direkten Zugriff auf die Werte gibt es die Methoden `Optional#orElseThrow()`
 und `Optional#orElse()`. Damit kann man auf den verpackten Wert zugreifen, oder es
@@ -329,9 +329,9 @@ von `getBestStudi()` gab, dann ist der Rückgabewert von `Optional#map()` ein
 `Optional.empty()`. Wenn der Name, also der Rückgabewert von `Studi::name`, `null`
 war, dann wird ebenfalls ein `Optional.empty()` zurückgeliefert. Dadurch wirft
 `orElseThrow()` dann eine `NoSuchElementException`. Man kann also direkt mit dem
-String `name` weiterarbeiten ohne extra `null`-Prüfung - allerdings will man noch ein
-Exception-Handling einbauen (dies fehlt im obigen Beispiel aus Gründen der Übersicht)
-...
+String `name` weiterarbeiten ohne extra `null`-Prüfung - allerdings will man noch
+ein Exception-Handling einbauen (dies fehlt im obigen Beispiel aus Gründen der
+Übersicht) ...
 :::
 
 ::: notes
@@ -351,8 +351,8 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
 1.  Nutze `Optional` nur als Rückgabe für "kein Wert vorhanden"
 
     ::: notes
-    `Optional` ist nicht als Ersatz für eine `null`-Prüfung o.ä. gedacht, sondern als
-    Repräsentation, um auch ein "kein Wert vorhanden" zurückliefern zu können.
+    `Optional` ist nicht als Ersatz für eine `null`-Prüfung o.ä. gedacht, sondern
+    als Repräsentation, um auch ein "kein Wert vorhanden" zurückliefern zu können.
     :::
 
 \bigskip
@@ -370,11 +370,11 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
 
     ::: notes
     Diese Methode verhält sich "freundlich" und erzeugt automatisch ein
-    `Optional.empty()`, wenn das Argument `null` ist. Es gibt also keinen Grund, dies
-    mit einer Fallunterscheidung selbst erledigen zu wollen.
+    `Optional.empty()`, wenn das Argument `null` ist. Es gibt also keinen Grund,
+    dies mit einer Fallunterscheidung selbst erledigen zu wollen.
 
-    Bevorzugen Sie `Optional.ofNullable()` vor einer manuellen Fallunterscheidung und
-    dem entsprechenden Einsatz von `Optional.of()` und `Optional.empty()`.
+    Bevorzugen Sie `Optional.ofNullable()` vor einer manuellen Fallunterscheidung
+    und dem entsprechenden Einsatz von `Optional.of()` und `Optional.empty()`.
     :::
 
 4.  Erzeuge keine `Optional` als Ersatz für die Prüfung auf `null`
@@ -390,8 +390,8 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
     ::: notes
     Nutzen Sie `Optional` vor allem für Rückgabewerte.
 
-    Attribute sollten immer direkt einen Wert haben oder `null`, analog Parameter von
-    Methoden o.ä. ... Hier hilft `Optional` nicht, Sie müssten ja trotzdem eine
+    Attribute sollten immer direkt einen Wert haben oder `null`, analog Parameter
+    von Methoden o.ä. ... Hier hilft `Optional` nicht, Sie müssten ja trotzdem eine
     `null`-Prüfung machen, nur eben dann über den `Optional`, wodurch dies komplexer
     und schlechter lesbar wird.
 

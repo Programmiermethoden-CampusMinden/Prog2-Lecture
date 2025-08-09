@@ -19,9 +19,9 @@ Dabei gibt es drei mögliche Formen:
     `(o1, args) -> o1.instanceMethodName(args)`)
 
 Im jeweiligen Kontext muss ein passendes funktionales Interface verwendet werden,
-d.h. ein Interface mit **genau** einer abstrakten Methode. Die Methoden-Referenz muss
-von der Syntax her dieser einen abstrakten Methode entsprechen (bei der dritten Form
-wird die Methode auf dem ersten Parameter aufgerufen).
+d.h. ein Interface mit **genau** einer abstrakten Methode. Die Methoden-Referenz
+muss von der Syntax her dieser einen abstrakten Methode entsprechen (bei der dritten
+Form wird die Methode auf dem ersten Parameter aufgerufen).
 :::
 
 ::: youtube
@@ -97,10 +97,10 @@ auch direkt per *Methoden-Referenz* abkürzen!
     -   Wirkung: Aufruf mit `(arg0, rest) -> arg0.instanceMethodName(rest)`
         `\newline`{=tex} (`arg0` ist vom Typ `ClassName`)
 
-*Anmerkung*: Analog zur Referenz auf eine statische Methode gibt es noch die Form der
-Referenz auf einen Konstruktor: `ClassName::new`. Für Referenzen auf Konstruktoren
-mit mehr als 2 Parametern muss ein eigenes passendes funktionales Interface mit
-entsprechend vielen Parametern definiert werden ...
+*Anmerkung*: Analog zur Referenz auf eine statische Methode gibt es noch die Form
+der Referenz auf einen Konstruktor: `ClassName::new`. Für Referenzen auf
+Konstruktoren mit mehr als 2 Parametern muss ein eigenes passendes funktionales
+Interface mit entsprechend vielen Parametern definiert werden ...
 :::
 
 [[Hinweis: Klassen- vs. Instanz-Methoden]{.ex}]{.slides}
@@ -201,16 +201,17 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 `Collections.sort()` erwartet in diesem Szenario als zweites Argument wieder eine
 Instanz von `Comparator<Studi>` mit einer Methode `int compare(Studi o1, Studi o2)`.
 
-Die übergebene Referenz auf die **Instanz-Methode `cmpCpsInstance` des Typs `Studi`**
-hat die Signatur `int cmpCpsInstance(Studi studi)` und wird von `Collections.sort()`
-so genutzt: Statt `compare(o1, o2)` wird nun für jeden Vergleich
-**`o1.cmpCpsInstance(o2)`** aufgerufen.
+Die übergebene Referenz auf die **Instanz-Methode `cmpCpsInstance` des Typs
+`Studi`** hat die Signatur `int cmpCpsInstance(Studi studi)` und wird von
+`Collections.sort()` so genutzt: Statt `compare(o1, o2)` wird nun für jeden
+Vergleich **`o1.cmpCpsInstance(o2)`** aufgerufen.
 :::
 
 # Ausblick: Threads
 
 ::: notes
-Erinnerung an bzw. Vorgriff auf ["Threads: Intro"](../java-classic/threads-intro.md):
+Erinnerung an bzw. Vorgriff auf ["Threads:
+Intro"](../java-classic/threads-intro.md):
 
 ``` java
 public interface Runnable {
@@ -287,7 +288,8 @@ nötig**)
 
 -   Drei mögliche Formen:
     -   Form 1: Referenz auf statische Methode: `ClassName::staticMethodName`
-        `\newline`{=tex} (verwendet wie `(args) -> ClassName.staticMethodName(args)`)
+        `\newline`{=tex} (verwendet wie
+        `(args) -> ClassName.staticMethodName(args)`)
     -   Form 2: Referenz auf Instanz-Methode eines Objekts:
         `objectref::instanceMethodName` `\newline`{=tex} (verwendet wie
         `(args) -> objectref.instanceMethodName(args)`)
@@ -333,9 +335,9 @@ public class Cat {
 2.  Statt einer anonymen Klasse kann man auch Lambda-Ausdrücke einsetzen. Geben Sie
     eine konkrete Form an.
 3.  Statt einer anonymen Klasse kann man auch Methodenreferenzen einsetzen. Dafür
-    gibt es mehrere Formen. Geben Sie für zwei Formen der Methodenreferenz sowohl den
-    Aufruf als auch die Implementierung der entsprechenden Methoden in der Klasse
-    `Cat` an.
+    gibt es mehrere Formen. Geben Sie für zwei Formen der Methodenreferenz sowohl
+    den Aufruf als auch die Implementierung der entsprechenden Methoden in der
+    Klasse `Cat` an.
 
 <!--
 ```java

@@ -14,10 +14,10 @@ Weitere Branches kann man mit `git branch` anlegen, und die Workingcopy kann mit
 diese Weise kann man an mehreren Features parallel arbeiten, ohne dass die Arbeiten
 sich gegenseitig stören.
 
-Zum Mergen (Vereinigen) von Branches gibt es `git merge`. Dabei werden die Änderungen
-im angegebenen Branch in den aktuell in der Workingcopy ausgecheckten Branch
-integriert und hier ggf. ein neuer Merge-Commit erzeugt. Falls es in beiden Branches
-inkompatible Änderungen an der selben Stelle gab, entsteht beim Mergen ein
+Zum Mergen (Vereinigen) von Branches gibt es `git merge`. Dabei werden die
+Änderungen im angegebenen Branch in den aktuell in der Workingcopy ausgecheckten
+Branch integriert und hier ggf. ein neuer Merge-Commit erzeugt. Falls es in beiden
+Branches inkompatible Änderungen an der selben Stelle gab, entsteht beim Mergen ein
 Merge-Konflikt. Dabei zeigt Git in den betroffenen Dateien jeweils an, welche
 Änderung aus welchem Branch stammt und man muss diesen Konflikt durch Editieren der
 Stellen manuell beheben.
@@ -62,7 +62,8 @@ Eigenen Entwicklungszweig für die Entwicklung des Features anlegen:
 :::
 
 1.  [Neuen Branch erstellen:]{.notes} `git branch wuppie`
-2.  [Neuen Branch auschecken:]{.notes} `git checkout wuppie` oder `git switch wuppie`
+2.  [Neuen Branch auschecken:]{.notes} `git checkout wuppie` oder
+    `git switch wuppie`
 
 \bigskip
 
@@ -85,9 +86,9 @@ Startpunkt; hier kann jeder beliebige Branch, Tag oder Commit genutzt werden).
 
 Nach Anlegen des neuen Branches zeigen beide Pointer auf den selben Commit.
 
-*Anmerkung*: In neueren Git-Versionen wurde der Befehl "`switch`" eingeführt, mit dem
-Sie in der Workingcopy auf einen anderen Branch wechseln können. Der bisherige Befehl
-"`checkout`" funktioniert aber weiterhin.
+*Anmerkung*: In neueren Git-Versionen wurde der Befehl "`switch`" eingeführt, mit
+dem Sie in der Workingcopy auf einen anderen Branch wechseln können. Der bisherige
+Befehl "`checkout`" funktioniert aber weiterhin.
 :::
 
 [[Konsole]{.ex}]{.slides}
@@ -172,9 +173,9 @@ Der letzte Schritt entfernt den Branch `fix`.
 
 ::: notes
 -   Allgemein: `git merge <branchname>` führt die Änderungen im angegebenen Branch
-    `<branchname>` in den aktuell in der Workingcopy ausgecheckten Branch ein. Daraus
-    resultiert für den aktuell ausgecheckten Branch ein neuer Commit, der Branch
-    `<branchname>` bleibt dagegen auf seinem bisherigen Stand.
+    `<branchname>` in den aktuell in der Workingcopy ausgecheckten Branch ein.
+    Daraus resultiert für den aktuell ausgecheckten Branch ein neuer Commit, der
+    Branch `<branchname>` bleibt dagegen auf seinem bisherigen Stand.
 
     Beispiel:
 
@@ -189,9 +190,10 @@ Der letzte Schritt entfernt den Branch `fix`.
 
 -   Hier im Beispiel findet ein sogenannter "Fast forward" statt.
 
-    "Fast forward" ist ein günstiger Spezialfall beim Merge: Beide Branches liegen in
-    einer direkten Kette, d.h. der Zielbranch kann einfach "weitergeschaltet" werden.
-    Ein Merge-Commit ist in diesem Fall nicht notwendig und wird auch nicht angelegt.
+    "Fast forward" ist ein günstiger Spezialfall beim Merge: Beide Branches liegen
+    in einer direkten Kette, d.h. der Zielbranch kann einfach "weitergeschaltet"
+    werden. Ein Merge-Commit ist in diesem Fall nicht notwendig und wird auch nicht
+    angelegt.
 :::
 
 # Feature weiter entwickeln ...
@@ -235,12 +237,12 @@ Hier im Beispiel ist der Standardfall beim Mergen dargestellt: Die beiden Branch
 liegen nicht in einer direkten Kette von Commits, d.h. hier wurde parallel
 weitergearbeitet.
 
-Git sucht in diesem Fall nach dem gemeinsamen Vorgänger beider Branches und führt die
-jeweiligen Änderungen (Differenzen) seit diesem Vorgänger in einem Merge-Commit
+Git sucht in diesem Fall nach dem gemeinsamen Vorgänger beider Branches und führt
+die jeweiligen Änderungen (Differenzen) seit diesem Vorgänger in einem Merge-Commit
 zusammen.
 
-Im `master` entsteht ein neuer Commit, da kein *fast forward* beim Zusammenführen der
-Branches möglich!
+Im `master` entsteht ein neuer Commit, da kein *fast forward* beim Zusammenführen
+der Branches möglich!
 
 *Anmerkung*: `git checkout wuppie; git merge master` würde den `master` in den
 `wuppie` mergen, d.h. der Merge-Commit wäre dann in `wuppie`.
@@ -317,23 +319,23 @@ Alternativ: Nutzung graphischer Oberflächen mittels `git mergetool`
 ::: notes
 Bisher haben wir Branches durch Mergen zusammengeführt. Dabei entsteht in der Regel
 ein extra Merge-Commit (im Beispiel `G`), außer es handelt sich um ein *fast
-forward*. Außerdem erkennt man in der Historie sehr gut, dass hier in einem separaten
-Branch gearbeitet wurde, der irgendwann in den `master` gemergt wurde.
+forward*. Außerdem erkennt man in der Historie sehr gut, dass hier in einem
+separaten Branch gearbeitet wurde, der irgendwann in den `master` gemergt wurde.
 
 Leider wird dieses Vorgehen in großen Projekten recht schnell sehr unübersichtlich.
 Außerdem werden Merges in der Regeln nur von besonders berechtigten Personen
 (Manager) durchgeführt, die im Falle von Merge-Konflikten diese dann selbst auflösen
 müssten (ohne aber die fachliche Befähigung zu haben). Hier greift man dann häufig
-zur Alternative *Rebase*. Dabei wird der Ursprung eines Branches auf einen bestimmten
-Commit verschoben. Im Anschluss ist dann ein Merge mit *fast forward*, also ohne die
-typischen rautenförmigen Ketten in der Historie und ohne extra Merge-Commit möglich.
-Dies kann aber auch als Nachteil gesehen werden, da man in der Historie den früheren
-Branch nicht mehr erkennt! Ein weiterer schwerwiegender Nachteil ist, dass alle
-Commits im verschobenen Branch umgeschrieben werden und damit neue Commit-IDs
-bekommen. Das verursacht bei der Zusammenarbeit in Projekten massive Probleme! Als
-Vorteil gilt, dass man mögliche Merge-Konflikte bereits beim Rebasen auflösen muss,
-d.h. hier muss derjenige, der den Merge "beantragt", durch einen vorherigen Rebase
-den konfliktfreien Merge sicherstellen. Mehr dazu in
+zur Alternative *Rebase*. Dabei wird der Ursprung eines Branches auf einen
+bestimmten Commit verschoben. Im Anschluss ist dann ein Merge mit *fast forward*,
+also ohne die typischen rautenförmigen Ketten in der Historie und ohne extra
+Merge-Commit möglich. Dies kann aber auch als Nachteil gesehen werden, da man in der
+Historie den früheren Branch nicht mehr erkennt! Ein weiterer schwerwiegender
+Nachteil ist, dass alle Commits im verschobenen Branch umgeschrieben werden und
+damit neue Commit-IDs bekommen. Das verursacht bei der Zusammenarbeit in Projekten
+massive Probleme! Als Vorteil gilt, dass man mögliche Merge-Konflikte bereits beim
+Rebasen auflösen muss, d.h. hier muss derjenige, der den Merge "beantragt", durch
+einen vorherigen Rebase den konfliktfreien Merge sicherstellen. Mehr dazu in
 ["Branching-Strategien"](branching-strategies.md) und ["Workflows"](workflows.md).
 :::
 
@@ -361,13 +363,13 @@ führt zu
 ::::::
 
 ::: notes
-Nach dem Rebase von `wuppie` auf `master` sieht es so aus, als ob der Branch `wuppie`
-eben erst vom `master` abgezweigt wurde. Damit ist dann ein *fast forward* Merge von
-`wuppie` in den `master` möglich, d.h. es gibt keine Raute und auch keinen extra
-Merge-Commit (hier nicht gezeigt).
+Nach dem Rebase von `wuppie` auf `master` sieht es so aus, als ob der Branch
+`wuppie` eben erst vom `master` abgezweigt wurde. Damit ist dann ein *fast forward*
+Merge von `wuppie` in den `master` möglich, d.h. es gibt keine Raute und auch keinen
+extra Merge-Commit (hier nicht gezeigt).
 
-Man beachte aber die Änderung der Commit-IDs von `wuppie`: Aus `D` wird `D'`! (Datum,
-Ersteller und Message bleiben aber erhalten.)
+Man beachte aber die Änderung der Commit-IDs von `wuppie`: Aus `D` wird `D'`!
+(Datum, Ersteller und Message bleiben aber erhalten.)
 :::
 
 # Don't lose your HEAD
@@ -439,8 +441,8 @@ Ersteller und Message bleiben aber erhalten.)
 **Mergen am Beispiel**
 
 Sie verwalten Ihr Projekt mit Git. Es existieren zwei Branches: `master` (zeigt auf
-Commit $C$) und `feature` (zeigt auf Version $F$). In Ihrer Workingcopy haben Sie den
-Branch `feature` ausgecheckt:
+Commit $C$) und `feature` (zeigt auf Version $F$). In Ihrer Workingcopy haben Sie
+den Branch `feature` ausgecheckt:
 
 ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/before.png?raw=true){width="35%"}
 

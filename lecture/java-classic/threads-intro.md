@@ -13,25 +13,25 @@ Beim Start eines Java-Programms wird die `main()`-Methode automatisch in einem
 ausgeführt.
 
 Um einen neuen Thread zu erzeugen, leitet man von `Thread` ab oder implementiert das
-Interface `Runnable`. Von diesen eigenen Klassen kann man wie üblich ein neues Objekt
-anlegen. Die Methode `run()` enthält dabei den im Thread auszuführenden Code. Um
-einen Thread als neuen parallelen Kontrollfluss zu starten, muss man die geerbte
-Methode `start()` auf dem Objekt aufrufen. Im Fall der Implementierung von `Runnable`
-muss man das Objekt zuvor noch in den Konstruktor von `Thread` stecken und so ein
-neues `Thread`-Objekt erzeugen, auf dem man dann `start()` aufrufen kann.
+Interface `Runnable`. Von diesen eigenen Klassen kann man wie üblich ein neues
+Objekt anlegen. Die Methode `run()` enthält dabei den im Thread auszuführenden Code.
+Um einen Thread als neuen parallelen Kontrollfluss zu starten, muss man die geerbte
+Methode `start()` auf dem Objekt aufrufen. Im Fall der Implementierung von
+`Runnable` muss man das Objekt zuvor noch in den Konstruktor von `Thread` stecken
+und so ein neues `Thread`-Objekt erzeugen, auf dem man dann `start()` aufrufen kann.
 
 Threads haben einen Lebenszyklus: Nach dem Erzeugen der Objekte mit `new` wird der
 Thread noch nicht ausgeführt. Durch den Aufruf der Methode `start()` gelangt der
-Thread in einen Zustand "ausführungsbereit". Sobald er vom Scheduler eine Zeitscheibe
-zugeteilt bekommt, wechselt er in den Zustand "rechnend". Von hier kann er nach
-Ablauf der Zeitscheibe durch den Scheduler wieder nach "ausführungsbereit" zurück
-überführt werden. Dieses Wechselspiel passiert automatisch und i.d.R. schnell, so
-dass selbst auf Maschinen mit nur einem Prozessor/Kern der Eindruck einer parallelen
-Verarbeitung entsteht. Nach Abarbeitung der `run()`-Methode wird der Thread beendet
-und kann nicht wieder neu gestartet werden. Bei Zugriff auf gesperrte Ressourcen oder
-durch `sleep()` oder `join()` kann ein Thread blockiert werden. Aus diesem Zustand
-gelangt er durch Interrupts oder nach Ablauf der Schlafzeit oder durch `notify`
-wieder zurück nach "ausführungsbereit".
+Thread in einen Zustand "ausführungsbereit". Sobald er vom Scheduler eine
+Zeitscheibe zugeteilt bekommt, wechselt er in den Zustand "rechnend". Von hier kann
+er nach Ablauf der Zeitscheibe durch den Scheduler wieder nach "ausführungsbereit"
+zurück überführt werden. Dieses Wechselspiel passiert automatisch und i.d.R.
+schnell, so dass selbst auf Maschinen mit nur einem Prozessor/Kern der Eindruck
+einer parallelen Verarbeitung entsteht. Nach Abarbeitung der `run()`-Methode wird
+der Thread beendet und kann nicht wieder neu gestartet werden. Bei Zugriff auf
+gesperrte Ressourcen oder durch `sleep()` oder `join()` kann ein Thread blockiert
+werden. Aus diesem Zustand gelangt er durch Interrupts oder nach Ablauf der
+Schlafzeit oder durch `notify` wieder zurück nach "ausführungsbereit".
 
 Die Thread-Objekte sind normale Java-Objekte. Man kann hier Attribute und Methoden
 haben und diese entsprechend zugreifen/aufrufen. Das klappt auch, wenn der Thread
@@ -174,13 +174,13 @@ aufrufen.
 
 Durch den Aufruf der Methode `start()` gelangt der Thread in einen Zustand
 "ausführungsbereit", er läuft also aus Nutzersicht. Allerdings hat er noch keine
-Ressourcen zugeteilt (CPU, ...), so dass er tatsächlich noch nicht rechnet. Sobald er
-vom Scheduler eine Zeitscheibe zugeteilt bekommt, wechselt er in den Zustand
-"rechnend" und führt den Inhalt der `run()`-Methode aus. Von hier kann er nach Ablauf
-der Zeitscheibe durch den Scheduler wieder nach "ausführungsbereit" zurück überführt
-werden. Dieses Wechselspiel passiert automatisch und i.d.R. schnell, so dass selbst
-auf Maschinen mit nur einem Prozessor/Kern der Eindruck einer parallelen Verarbeitung
-entsteht.
+Ressourcen zugeteilt (CPU, ...), so dass er tatsächlich noch nicht rechnet. Sobald
+er vom Scheduler eine Zeitscheibe zugeteilt bekommt, wechselt er in den Zustand
+"rechnend" und führt den Inhalt der `run()`-Methode aus. Von hier kann er nach
+Ablauf der Zeitscheibe durch den Scheduler wieder nach "ausführungsbereit" zurück
+überführt werden. Dieses Wechselspiel passiert automatisch und i.d.R. schnell, so
+dass selbst auf Maschinen mit nur einem Prozessor/Kern der Eindruck einer parallelen
+Verarbeitung entsteht.
 
 Nach der Abarbeitung der `run()`-Methode oder bei einer nicht gefangenen Exception
 wird der Thread beendet und kann nicht wieder neu gestartet werden. Auch wenn der
@@ -192,8 +192,8 @@ oder `join()` kann ein Thread blockiert werden. Hier führt der Thread nichts au
 bekommt durch den Scheduler aber auch keine neue Zeitscheibe zugewiesen. Aus diesem
 Zustand gelangt der Thread wieder heraus, etwa durch Interrupts (Aufruf der Methode
 `interrupt()` auf dem Thread-Objekt) oder nach Ablauf der Schlafzeit (in `sleep()`)
-oder durch ein `notify`, und wird wieder zurück nach "ausführungsbereit" versetzt und
-wartet auf die Zuteilung einer Zeitscheibe durch den Scheduler.
+oder durch ein `notify`, und wird wieder zurück nach "ausführungsbereit" versetzt
+und wartet auf die Zuteilung einer Zeitscheibe durch den Scheduler.
 
 Sie finden in [@Boles2008, Kapitel 5.2 "Thread-Zustände"] eine schöne ausführliche
 Darstellung.
@@ -229,8 +229,8 @@ Darstellung.
         `otherThreadObj` lösen eine `InterruptedException` aus, wenn sie durch die
         Methode `interrupt()` unterbrochen werden. Das heißt, `interrupt()` beendet
         diese Methoden mit der Ausnahme.
-    -   Empfangender Thread verlässt ggf. den Zustand "blockiert" und wechselt in den
-        Zustand "ausführungsbereit"
+    -   Empfangender Thread verlässt ggf. den Zustand "blockiert" und wechselt in
+        den Zustand "ausführungsbereit"
     :::
 
 -   Warten auf das Ende anderer Threads: `otherThreadObj.join()`
@@ -261,7 +261,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 
 # Wrap-Up
 
-Threads sind weitere Kontrollflussfäden, von Java-VM (oder (selten) von OS) verwaltet
+Threads sind weitere Kontrollflussfäden, von Java-VM (oder (selten) von OS)
+verwaltet
 
 \bigskip
 

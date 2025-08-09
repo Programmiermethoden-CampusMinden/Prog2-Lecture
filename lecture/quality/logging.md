@@ -8,8 +8,8 @@ Im Paket `java.util.logging` findet sich eine einfache Logging-API.
 
 Über die Methode `getLogger()` der Klasse `Logger` (*Factory-Method-Pattern*) kann
 ein (neuer) Logger erzeugt werden, dabei wird über den String-Parameter eine
-Logger-Hierarchie aufgebaut analog zu den Java-Package-Strukturen. Der oberste Logger
-(der "Root-Logger") hat den leeren Namen.
+Logger-Hierarchie aufgebaut analog zu den Java-Package-Strukturen. Der oberste
+Logger (der "Root-Logger") hat den leeren Namen.
 
 Jeder Logger kann mit einem Log-Level (Klasse `Level`) eingestellt werden;
 Log-Meldungen unterhalb des eingestellten Levels werden verworfen.
@@ -95,11 +95,11 @@ Logger l = Logger.getLogger(MyClass.class.getName());
     public static Logger getLogger(String name);
     ```
 
-    =\> Methode liefert bereits **vorhandenen Logger** mit diesem Namen [(sonst neuen
-    Logger)]{.notes}
+    =\> Methode liefert bereits **vorhandenen Logger** mit diesem Namen [(sonst
+    neuen Logger)]{.notes}
 
--   **Best Practice**: `\newline`{=tex} Nutzung des voll-qualifizierten Klassennamen:
-    `MyClass.class.getName()`
+-   **Best Practice**: `\newline`{=tex} Nutzung des voll-qualifizierten
+    Klassennamen: `MyClass.class.getName()`
 
     -   Leicht zu implementieren
     -   Leicht zu erklären
@@ -193,8 +193,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 # Ich ... bin ... Dein ... Vater ...
 
 -   Logger bilden **Hierarchie** über Namen
-    -   Trenner für Namenshierarchie: "`.`" (analog zu Packages) [=\> mit jedem "`.`"
-        wird eine weitere Ebene der Hierarchie aufgemacht ...]{.notes}
+    -   Trenner für Namenshierarchie: "`.`" (analog zu Packages) [=\> mit jedem
+        "`.`" wird eine weitere Ebene der Hierarchie aufgemacht ...]{.notes}
     -   Jeder Logger kennt seinen Eltern-Logger: `Logger#getParent()`
     -   Basis-Logger: leerer Name (`""`)
         -   Voreingestelltes Level des Basis-Loggers: `Level.INFO` (!)

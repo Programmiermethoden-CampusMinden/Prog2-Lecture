@@ -17,11 +17,11 @@ Statt Threads immer wieder neu anzulegen (das Anlegen von Objekten bedeutet eine
 gewissen Aufwand zur Laufzeit), kann man Threads über sogenannte Thread-Pools
 wiederverwenden und über das Executor-Interface benutzen.
 
-Schließlich bietet sich das Fork/Join-Framework zum rekursiven Zerteilen von Aufgaben
-und zur parallelen Bearbeitung der Teilaufgaben an.
+Schließlich bietet sich das Fork/Join-Framework zum rekursiven Zerteilen von
+Aufgaben und zur parallelen Bearbeitung der Teilaufgaben an.
 
-Die in Swing integrierte Klasse `SwingWorker` ermöglicht es, in Swing Berechnungen in
-einen parallel ausgeführten Thread auszulagern.
+Die in Swing integrierte Klasse `SwingWorker` ermöglicht es, in Swing Berechnungen
+in einen parallel ausgeführten Thread auszulagern.
 :::
 
 ::: youtube
@@ -128,8 +128,8 @@ public interface Executor {
 
 ## Thread-Pool hält Menge von "Worker-Threads"
 
--   Statische Methoden von `java.util.concurrent.Executors` erzeugen Thread-Pools mit
-    verschiedenen Eigenschaften:
+-   Statische Methoden von `java.util.concurrent.Executors` erzeugen Thread-Pools
+    mit verschiedenen Eigenschaften:
 
     -   `Executors#newFixedThreadPool` erzeugt ExecutorService mit spezifizierter
         Anzahl von Worker-Threads
@@ -146,8 +146,8 @@ public interface Executor {
     erzeugt ggf. neuen Worker-Thread bzw. hängt Runnable in Warteschlange, je nach
     erzeugtem Pool)
 
--   Methoden zum Beenden eines Thread-Pools (Freigabe): `shutdown()`, `isShutdown()`,
-    ...
+-   Methoden zum Beenden eines Thread-Pools (Freigabe): `shutdown()`,
+    `isShutdown()`, ...
 :::
 
 ``` java
@@ -171,14 +171,14 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 Der Thread-Pool reserviert sich "nackten" Speicher, der der Größe von $n$ Threads
 entspricht, und "prägt" die Objektstruktur durch einen Cast direkt auf (ohne
 wirkliche neue Objekte zu erzeugen). Dieses Vorgehen ist in der C-Welt wohlbekannt
-und schnell (vgl. Thema Speicherverwaltung in der LV "Systemprogrammierung"). In Java
-wird dies durch eine wohldefinierte Schnittstelle vor dem Nutzer verborgen.
+und schnell (vgl. Thema Speicherverwaltung in der LV "Systemprogrammierung"). In
+Java wird dies durch eine wohldefinierte Schnittstelle vor dem Nutzer verborgen.
 
 ## Ausblick
 
 Hier haben wir nur die absoluten Grundlagen angerissen. Wir können auch `Callables`
-anstatt von `Runnables` übergeben, auf Ergebnisse aus der Zukunft warten (`Futures`),
-Dinge zeitgesteuert (immer wieder) starten, ...
+anstatt von `Runnables` übergeben, auf Ergebnisse aus der Zukunft warten
+(`Futures`), Dinge zeitgesteuert (immer wieder) starten, ...
 
 Schauen Sie sich bei Interesse die weiterführende Literatur an, beispielsweise die
 Oracle-Dokumentation oder auch [@Ullenboom2021] (insbesondere den Abschnitt 16.4
@@ -243,9 +243,10 @@ Swing/Event-Modell verzahnt.
 :::
 
 -   Implementieren:
-    -   `SwingWorker#doInBackground`: Für die langwierige Berechnung (muss man selbst
-        implementieren)
-    -   `SwingWorker#done`: Wird vom EDT aufgerufen, wenn `doInBackground` fertig ist
+    -   `SwingWorker#doInBackground`: Für die langwierige Berechnung (muss man
+        selbst implementieren)
+    -   `SwingWorker#done`: Wird vom EDT aufgerufen, wenn `doInBackground` fertig
+        ist
 
 \bigskip
 

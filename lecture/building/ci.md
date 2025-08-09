@@ -6,12 +6,12 @@ title: Continuous Integration (CI)
 ::: tldr
 In größeren Projekten mit mehreren Teams werden die Beteiligten i.d.R. nur noch
 "ihre" Codestellen compilieren und testen. Dennoch ist es wichtig, das gesamte
-Projekt regelmäßig zu "bauen" und auch umfangreichere Testsuiten regelmäßig laufen zu
-lassen. Außerdem ist es wichtig, das in einer definierten Umgebung zu tun und nicht
-auf einem oder mehreren Entwicklerrechnern, die i.d.R. (leicht) unterschiedlich
-konfiguriert sind, um zuverlässige und nachvollziehbare Ergebnisse zu bekommen.
-Weiterhin möchte man auf bestimmte Ereignisse reagieren, wie etwa neue Commits im
-Git-Server, oder bei Pull-Requests möchte man vor dem Merge automatisiert
+Projekt regelmäßig zu "bauen" und auch umfangreichere Testsuiten regelmäßig laufen
+zu lassen. Außerdem ist es wichtig, das in einer definierten Umgebung zu tun und
+nicht auf einem oder mehreren Entwicklerrechnern, die i.d.R. (leicht)
+unterschiedlich konfiguriert sind, um zuverlässige und nachvollziehbare Ergebnisse
+zu bekommen. Weiterhin möchte man auf bestimmte Ereignisse reagieren, wie etwa neue
+Commits im Git-Server, oder bei Pull-Requests möchte man vor dem Merge automatisiert
 sicherstellen, dass damit die vorhandenen Tests alle "grün" sind und auch die
 Formatierung etc. stimmt.
 
@@ -109,23 +109,23 @@ Zugriff wird VPN benötigt!)
 
 ![](images/screenshot-gitlabci-pipelines.png){width="70%"}
 
--   In Spalte "Status" sieht man das Ergebnis der einzelnen Pipelines: "pending" (die
-    Pipeline läuft gerade), "cancelled" (Pipeline wurde manuell abgebrochen),
+-   In Spalte "Status" sieht man das Ergebnis der einzelnen Pipelines: "pending"
+    (die Pipeline läuft gerade), "cancelled" (Pipeline wurde manuell abgebrochen),
     "passed" (alle Jobs der Pipeline sind sauber durchgelaufen), "failed" (ein Job
     ist fehlgeschlagen, Pipeline wurde deshalb abgebrochen)
 -   In Spalte "Pipeline" sind die Pipelines eindeutig benannt aufgeführt, inkl.
     Trigger (Commit und Branch)
 -   In Spalte "Stages" sieht man den Zustand der einzelnen Stages
 
-Wenn man mit der Maus auf den Status oder die Stages geht, erfährt man mehr bzw. kann
-auf eine Seite mit mehr Informationen kommen.
+Wenn man mit der Maus auf den Status oder die Stages geht, erfährt man mehr bzw.
+kann auf eine Seite mit mehr Informationen kommen.
 
 ## Detailansicht einer Pipeline
 
 ![](images/screenshot-gitlabci-triggeredpipeline.png){width="70%"}
 
-Wenn man in eine Pipeline in der Übersicht klickt, werden die einzelnen Stages dieser
-Pipeline genauer dargestellt.
+Wenn man in eine Pipeline in der Übersicht klickt, werden die einzelnen Stages
+dieser Pipeline genauer dargestellt.
 
 ## Detailansicht eines Jobs
 
@@ -219,9 +219,9 @@ Im Browser in den Repo-Einstellungen arbeiten:
 6.  Im `.gitlab-ci.yml` die relevanten Branches einstellen (s.o.)
 7.  Pushen, und unter `CI/CD > Pipelines` das Builden beobachten
     -   in Status reinklicken und schauen, ob und wo es hakt
-8.  `README.md` anlegen in Projektwurzel (neben `.gitlab-ci.yml`), Markdown-Schnipsel
-    aus `Settings > CI/CD > General pipelines > Pipeline status` auswählen und
-    einfügen ....
+8.  `README.md` anlegen in Projektwurzel (neben `.gitlab-ci.yml`),
+    Markdown-Schnipsel aus `Settings > CI/CD > General pipelines > Pipeline status`
+    auswählen und einfügen ....
 
 *Optional*:
 
@@ -334,13 +334,13 @@ definieren jeweils einen Job.
     (`uses: actions/setup-java@v3`) und der im Repo enthaltene Gradle-Wrapper auf
     Unversehrtheit geprüft (`uses: gradle/wrapper-validation-action@v1`).
 
-    Die Actions sind vordefinierte Actions und im Github unter `github.com/` + Action
-    zu finden, d.h. [`actions/checkout`](https://github.com/actions/checkout) oder
-    [`actions/setup-java`](https://github.com/actions/setup-java). Actions können von
-    jedermann definiert und bereitgestellt werden, in diesem Fall handelt es sich um
-    von GitHub selbst im Namespace "actions" bereit gestellte direkt nutzbare
-    Actions. Man kann Actions auch selbst im Ordner `.github/actions/` für das Repo
-    definieren (Beispiel:
+    Die Actions sind vordefinierte Actions und im Github unter `github.com/` +
+    Action zu finden, d.h. [`actions/checkout`](https://github.com/actions/checkout)
+    oder [`actions/setup-java`](https://github.com/actions/setup-java). Actions
+    können von jedermann definiert und bereitgestellt werden, in diesem Fall handelt
+    es sich um von GitHub selbst im Namespace "actions" bereit gestellte direkt
+    nutzbare Actions. Man kann Actions auch selbst im Ordner `.github/actions/` für
+    das Repo definieren (Beispiel:
     [plfa.github.io](https://github.com/plfa/plfa.github.io/blob/dev/.github/actions/setup-haskell/action.yml)).
 
     Mit `run` werden Befehle in der Shell auf dem genutzten Runner (hier Ubuntu)
@@ -368,8 +368,8 @@ Action u.U. relativ lange dauert.
 
 Im Browser in den Repo-Einstellungen arbeiten:
 
-1.  Unter `Settings > Actions > General > Actions permissions` die Actions aktivieren
-    (Auswahl, welche Actions erlaubt sind)
+1.  Unter `Settings > Actions > General > Actions permissions` die Actions
+    aktivieren (Auswahl, welche Actions erlaubt sind)
 
     ![](images/screenshot_github_settings_actions.png){width="70%"}
 

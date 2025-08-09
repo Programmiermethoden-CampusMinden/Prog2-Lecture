@@ -50,8 +50,8 @@ Vector<String> vs = new Stack<String>();
 =\> Polymorphie bei Generics bezieht sich auf **Typ** (nicht Typ-Parameter)
 
 ::: notes
-**Invarianz**: Generics sind *invariant*, d.h. ein `HashSet<String>` ist ein Untertyp
-von `Set<String>`. Bei der Vererbung muss der Typ-Parameter identisch sein.
+**Invarianz**: Generics sind *invariant*, d.h. ein `HashSet<String>` ist ein
+Untertyp von `Set<String>`. Bei der Vererbung muss der Typ-Parameter identisch sein.
 :::
 
 # Polymorphie bei Generics bezieht sich nur auf Typ!

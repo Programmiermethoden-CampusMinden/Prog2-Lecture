@@ -11,17 +11,17 @@ Zusammenarbeit mit anderen Entwicklern die lokalen Repos mit den "entfernten" Re
 (auf dem Server oder anderen Entwicklungsrechnern) synchronisieren.
 
 Beim Klonen eines Repositories mit `git clone <url>` wird das fremde Repo mit dem
-Namen `origin` im lokalen Repo festgehalten. Dieser Name wird auch als Präfix für die
-Branches in diesem Repo genutzt, d.h. die Branches im Remote-Repo tauchen als
+Namen `origin` im lokalen Repo festgehalten. Dieser Name wird auch als Präfix für
+die Branches in diesem Repo genutzt, d.h. die Branches im Remote-Repo tauchen als
 `origin/<branch>` im lokalen Repo auf. Diese Remote-Branches kann man nicht direkt
-bearbeiten, sondern man muss diese Remote-Branches in einem lokalen Branch auschecken
-und dann darin weiterarbeiten. Es können beliebig viele weitere Remotes dem eigenen
-Repository hinzugefügt werden.
+bearbeiten, sondern man muss diese Remote-Branches in einem lokalen Branch
+auschecken und dann darin weiterarbeiten. Es können beliebig viele weitere Remotes
+dem eigenen Repository hinzugefügt werden.
 
 Änderungen aus einem Remote-Repo können mit `git fetch <remote>` in das lokale Repo
-geholt werden. Dies aktualisiert **nur** die Remote-Branches `<remote>/<branch>`! Die
-Änderungen können anschließend mit `git merge <remote>/<branch>` in den aktuell in
-der Workingcopy ausgecheckten Branch gemergt werden. (*Anmerkung*: Wenn mehrere
+geholt werden. Dies aktualisiert **nur** die Remote-Branches `<remote>/<branch>`!
+Die Änderungen können anschließend mit `git merge <remote>/<branch>` in den aktuell
+in der Workingcopy ausgecheckten Branch gemergt werden. (*Anmerkung*: Wenn mehrere
 Personen an einem Branch arbeiten, will man die eigenen Arbeiten in dem Branch
 vermutlich eher auf den aktuellen Stand des Remote **rebasen** statt mergen!) Eigene
 Änderungen können mit `git push <remote> <branch>` in das Remote-Repo geschoben
@@ -48,8 +48,8 @@ Branch einem Remote-Branch. Ein einfaches `git pull` oder `git push` holt dann
 ::: notes
 Git ermöglicht eine einfaches Zusammenarbeit in verteilten Teams. Nachdem wir die
 verschiedenen Branching-Strategien betrachtet haben, soll im Folgenden die Frage
-betrachtet werden: **Wie arbeite ich sinnvoll über Git mit anderen Kollegen und Teams
-zusammen? Welche Modelle haben sich etabliert?**
+betrachtet werden: **Wie arbeite ich sinnvoll über Git mit anderen Kollegen und
+Teams zusammen? Welche Modelle haben sich etabliert?**
 :::
 
 # Clonen kann sich lohnen ...
@@ -127,9 +127,9 @@ verändert hat).
 *Anmerkung*: Dies gilt analog für alle anderen Branches. Allerdings wird nur der
 `origin/master` beim Clonen automatisch als lokaler Branch ausgecheckt.
 
-Zur Abbildung: Während man lokal arbeitet (Commit `H` auf dem lokalen `master`), kann
-es passieren, dass sich auch das remote Repo ändert. Im Beispiel wurden dort die
-beiden Commits `F` und `G` angelegt (durch `git push`, s.u.).
+Zur Abbildung: Während man lokal arbeitet (Commit `H` auf dem lokalen `master`),
+kann es passieren, dass sich auch das remote Repo ändert. Im Beispiel wurden dort
+die beiden Commits `F` und `G` angelegt (durch `git push`, s.u.).
 
 Wichtig: Da in der Zwischenzeit das lokale Repo nicht mit dem Server abgeglichen
 wurde, zeigt der remote Branch `origin/master` immer noch auf den Commit `E`!
@@ -192,8 +192,8 @@ Branches!
                 \     /^origin/master
                  F---G
 
-*Anmerkung*: Schritt (2) kann man auch per `git pull origin master` erledigen ... Ein
-`pull` fasst `fetch` und `merge` zusammen (s.u.).
+*Anmerkung*: Schritt (2) kann man auch per `git pull origin master` erledigen ...
+Ein `pull` fasst `fetch` und `merge` zusammen (s.u.).
 
 *Anmerkung* Statt dem `merge` in Schritt (2) kann man auch den lokalen `master` auf
 den aktualisierten `origin/master` rebasen und vermeidet damit die "Raute". Der
@@ -233,7 +233,8 @@ href="https://youtu.be/moqywsxtEy8"}
 # Zusammenfassung: Arbeiten mit Remotes
 
 1.  Änderungen vom Server holen: `git fetch <remote>` `\newline`{=tex} =\> Holt alle
-    Änderungen vom Repo `<remote>` ins eigene Repo (Workingcopy bleibt unangetastet!)
+    Änderungen vom Repo `<remote>` ins eigene Repo (Workingcopy bleibt
+    unangetastet!)
 
 \smallskip
 
@@ -364,8 +365,8 @@ Beispiel: `git fetch andi` oder `git push origin master`
 -   k3: Ich kann lokale Änderungen ins fremde Repo pushen
 -   k2: Ich kann den Unterschied zwischen lokalen Branches und entfernten Branches
     erklären
--   k3: Ich kann sowohl lokale Branches als auch entfernte Branches anlegen und damit
-    arbeiten
+-   k3: Ich kann sowohl lokale Branches als auch entfernte Branches anlegen und
+    damit arbeiten
 -   k3: Ich kann Tracking Branches zum Vereinfachen der Arbeit anlegen
 :::
 
@@ -379,8 +380,8 @@ entwickelt (siehe Skizze).
 ![](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/git/images/remote-branches-2.png?raw=true){width="60%"}
 
 Wie können Sie Ihre Änderung im lokalen Repo auf den Server pushen? Analysieren Sie
-die Situation und erklären Sie zwei verschiedene Lösungsansätze und geben Sie jeweils
-die entsprechenden Git-Befehle an.
+die Situation und erklären Sie zwei verschiedene Lösungsansätze und geben Sie
+jeweils die entsprechenden Git-Befehle an.
 
 <!--
 Ein einfaches `git push (origin master)` wird nicht gehen, da beide Master-Branches sich

@@ -14,8 +14,8 @@ Die Laufzeitumgebung erzeugt zu jedem Typ ein Objekt der Klasse `java.lang.Class
 abgerufen werden, beispielsweise welche Konstruktoren, Methoden und Attribute es
 gibt.
 
-Man kann über auch Klassen zur Laufzeit nachladen, die zur Compile-Zeit nicht bekannt
-waren. Dies bietet sich beispielsweise für User-definierte Plugins an.
+Man kann über auch Klassen zur Laufzeit nachladen, die zur Compile-Zeit nicht
+bekannt waren. Dies bietet sich beispielsweise für User-definierte Plugins an.
 
 Reflection ist ein mächtiges Werkzeug. Durch das Arbeiten mit Strings und die
 Interaktion/Inspektion zur *Laufzeit* verliert man aber viele Prüfungen, die der
@@ -53,8 +53,8 @@ Reflection wird allgemein genutzt, um zur Laufzeit von Programmen Informationen 
 Klassen/Methoden/... zu bestimmen. Man könnte damit auch das Verhalten der laufenden
 Programme ändern oder Typen instantiieren und/oder Methoden aufrufen ...
 
-Wenn Sie nicht (mehr) wissen, wie man eigene Annotationen definiert, schauen Sie doch
-bitte einfach kurz im Handout zu Annotationen nach :-)
+Wenn Sie nicht (mehr) wissen, wie man eigene Annotationen definiert, schauen Sie
+doch bitte einfach kurz im Handout zu Annotationen nach :-)
 :::
 
 # Wer bin ich? ... Informationen über ein Programm (zur Laufzeit)
@@ -118,8 +118,8 @@ Aufrufen von Methoden) ist das Laden von Klassen, die zur Compile-Zeit nicht mit
 eigentlichen Programm verbunden sind. Auf diesem Weg kann beispielsweise ein
 Bildbearbeitungsprogramm zur Laufzeit dynamisch Filter aus einem externen Ordner
 laden und nutzen, oder der Lexer kann die Tokendefinitionen zur Laufzeit einlesen
-(d.h. er könnte mit unterschiedlichen Tokensätzen arbeiten, die zur Compile-Zeit noch
-gar nicht definiert sind). Damit werden die Programme dynamischer.
+(d.h. er könnte mit unterschiedlichen Tokensätzen arbeiten, die zur Compile-Zeit
+noch gar nicht definiert sind). Damit werden die Programme dynamischer.
 :::
 
 # Schritt 1: *Class*-Objekt erzeugen und Klasse laden
@@ -180,8 +180,8 @@ Method[] allMethods = c.getDeclaredMethods();  // all methods (excl. inherited)
     `Class<?>.getDeclaredMethod(...)`
 
 *Anmerkung*: Mit `Class<?>.getDeclaredMethods()` erhalten Sie alle Methoden, die
-direkt in der Klasse deklariert werden (ohne geerbte Methoden!), unabhängig von deren
-Sichtbarkeit. Mit `Class<?>.getMethods()` erhalten Sie dagegen alle `public`
+direkt in der Klasse deklariert werden (ohne geerbte Methoden!), unabhängig von
+deren Sichtbarkeit. Mit `Class<?>.getMethods()` erhalten Sie dagegen alle `public`
 Methoden, die in der Klasse selbst oder ihren Superklassen bzw. den implementierten
 Interfaces deklariert sind.
 
@@ -337,8 +337,8 @@ Reflection, wähle diese!**
     per Reflection erklären
 -   k3: Ich kann zur Laufzeit mit Reflection Information zu Klassen und Methoden
     erlangen
--   k3: Ich kann zur Compilezeit unbekannte Klassen einbinden und deren Konstruktoren
-    und Methoden (mit und ohne Parameter/Rückgabewerte) aufrufen
+-   k3: Ich kann zur Compilezeit unbekannte Klassen einbinden und deren
+    Konstruktoren und Methoden (mit und ohne Parameter/Rückgabewerte) aufrufen
 :::
 
 ::: challenges
@@ -346,11 +346,12 @@ In den
 [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/java-classic/src/challenges/reflection)
 finden Sie eine einfache Implementierung für einen Taschenrechner mit Java-Swing.
 Dieser Taschenrechner kann nur mit `int`-Werten rechnen. Der Taschenrechner verfügt
-über keinerlei vordefinierte mathematische Operationen (Addieren, Subtrahieren etc.).
+über keinerlei vordefinierte mathematische Operationen (Addieren, Subtrahieren
+etc.).
 
-Erstellen Sie eigene mathematische Operationen, die `IOperation` implementieren. Jede
-Ihrer Klassen soll mit einer Annotation vermerkt werden, in welcher der Name der
-jeweiligen Operation gespeichert wird.
+Erstellen Sie eigene mathematische Operationen, die `IOperation` implementieren.
+Jede Ihrer Klassen soll mit einer Annotation vermerkt werden, in welcher der Name
+der jeweiligen Operation gespeichert wird.
 
 Der Taschenrechner lädt seine Operationen dynamisch über die statische Methode
 `OperationLoader.loadOperations` ein. In den Vorgaben ist diese Methode noch nicht

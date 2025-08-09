@@ -4,10 +4,10 @@ title: "Generics: Generische Klassen & Methoden"
 ---
 
 ::: tldr
-Generische Klassen und Methoden sind ein wichtiger Baustein in der Programmierung mit
-Java. Dabei werden Typ-Variablen eingeführt, die dann bei der Instantiierung der
-generischen Klassen oder beim Aufruf von generischen Methoden mit existierenden Typen
-konkretisiert werden ("Typ-Parameter").
+Generische Klassen und Methoden sind ein wichtiger Baustein in der Programmierung
+mit Java. Dabei werden Typ-Variablen eingeführt, die dann bei der Instantiierung der
+generischen Klassen oder beim Aufruf von generischen Methoden mit existierenden
+Typen konkretisiert werden ("Typ-Parameter").
 
 Syntaktisch definiert man die Typ-Variablen in spitzen Klammern hinter dem
 Klassennamen bzw. vor dem Rückgabetyp einer Methode: `public class Stack<E> { }` und
@@ -171,8 +171,8 @@ Auch Interfaces und abstrakte Klassen können parametrisierbar sein.
 Bei der Vererbung sind alle Varianten bzgl. der Typ-Variablen denkbar. Zu beachten
 ist dabei vor allem, dass die Typ-Variablen der Oberklasse (gilt analog für
 Interfaces) entweder durch Typ-Variablen der Unterklasse oder durch konkrete Typen
-spezifiziert sind. Die Typ-Variablen der Oberklasse dürfen nicht "in der Luft hängen"
-(siehe auch nächste Folie)!
+spezifiziert sind. Die Typ-Variablen der Oberklasse dürfen nicht "in der Luft
+hängen" (siehe auch nächste Folie)!
 :::
 
 # Beispiel III: Überschreiben/Überladen von Methoden
@@ -268,8 +268,8 @@ m.myst(1.0, 1);              // Double, Integer => T: Number
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/methods/GenericMethods.java"}
 
 ::: notes
-Reihenfolge der Suche nach passender Methode gilt auch für nicht-generisch überladene
-Methoden
+Reihenfolge der Suche nach passender Methode gilt auch für nicht-generisch
+überladene Methoden
 
 ``` java
 class Mensch {
@@ -344,6 +344,7 @@ public class GenericMethods {
 ::: outcomes
 -   k1: Ich kenne die Begriffe 'generischer Typ', 'parametrisierter Typ', 'formaler
     Typ-Parameter', 'Typ-Parameter'
--   k3: Ich kann generische Klassen und Interfaces definieren und praktisch einsetzen
+-   k3: Ich kann generische Klassen und Interfaces definieren und praktisch
+    einsetzen
 -   k3: Ich kann generische Methoden definieren und praktisch einsetzen
 :::

@@ -18,10 +18,10 @@ title: "IFM 2.1: Programmieren 2 (Sommer 2025)"
 Sie haben letztes Semester in **Prog1** die *wichtigsten* Elemente und Konzepte der
 Programmiersprache Java kennen gelernt.
 
-In diesem Modul geht es darum, diese Kenntnisse sowohl auf der Java- als auch auf der
-Methoden-Seite so zu erweitern, dass Sie gemeinsam größere Anwendungen erstellen und
-pflegen können. Sie werden fortgeschrittene Konzepte in Java kennenlernen und sich
-mit etablierten Methoden in der Softwareentwicklung wie Versionierung von Code,
+In diesem Modul geht es darum, diese Kenntnisse sowohl auf der Java- als auch auf
+der Methoden-Seite so zu erweitern, dass Sie gemeinsam größere Anwendungen erstellen
+und pflegen können. Sie werden fortgeschrittene Konzepte in Java kennenlernen und
+sich mit etablierten Methoden in der Softwareentwicklung wie Versionierung von Code,
 Einhaltung von Coding Conventions, Grundlagen des Softwaretests, Anwendung von
 Refactoring, Einsatz von Build-Tools und Logging auseinander setzen. Wenn uns dabei
 ein Entwurfsmuster "über den Weg läuft", werden wir die Gelegenheit nutzen und uns
@@ -36,8 +36,8 @@ dieses genauer anschauen.
     -   ~~CLI~~, ~~Konfiguration~~, fremde APIs nutzen[^1]
     -   Graphische Oberflächen mit Swing[^2]
 2.  Fortgeschrittene Konzepte in Java ("FP")
-    -   Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas, Optional,
-        Stream-API
+    -   Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas,
+        Optional, Stream-API
 3.  Versionierung mit Git
 4.  Softwarequalität
     -   Testen, Coding Conventions & Smells, Refactoring, Javadoc, Logging
@@ -175,9 +175,9 @@ verbessert sich die Gesamtnote um eine Teilnote.
     [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk),
     bitte 64-bit Version nutzen)
 -   IDE: [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/) oder
-    [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/) oder [Visual
-    Studio Code](https://code.visualstudio.com/) oder [Vim](https://www.vim.org/)
-    oder ...
+    [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/) oder
+    [Visual Studio Code](https://code.visualstudio.com/) oder
+    [Vim](https://www.vim.org/) oder ...
 -   [Git](https://git-scm.com/)
 
 # Förderungen und Kooperationen
@@ -195,11 +195,11 @@ Fellowships*).
 Diese Vorlesung wurde vom Projekt ["Digitalbaukasten für kompetenzorientiertes
 Selbststudium"](https://www.digikos.de) (*DigikoS*) unterstützt. Ein vom
 DigikoS-Projekt ausgebildeter Digital Learning Scout hat insbesondere die
-Koordination der digitalen Gruppenarbeiten, des Peer-Feedbacks und der Postersessions
-in ILIAS technisch und inhaltlich begleitet. DigikoS wird als Verbundprojekt von der
-Stiftung Innovation in der Hochschullehre gefördert.
+Koordination der digitalen Gruppenarbeiten, des Peer-Feedbacks und der
+Postersessions in ILIAS technisch und inhaltlich begleitet. DigikoS wird als
+Verbundprojekt von der Stiftung Innovation in der Hochschullehre gefördert.
 
--------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 
 # LICENSE
 
@@ -230,7 +230,7 @@ See the [credits](CREDITS.md) for a detailed list of contributing projects.
 
 [^4]: Wenn die Maximalzahl der Punkte für Station I, II und III identisch ist, wird
     einfach die Summe der Punkte der beiden besseren Stationen berechnet und für die
-    Bildung der Gesamtnote genutzt. Wenn die Maximalzahl der Punkte für Station I, II
-    und III voneinander abweicht, dann wird jeweils das erreichte prozentuale
+    Bildung der Gesamtnote genutzt. Wenn die Maximalzahl der Punkte für Station I,
+    II und III voneinander abweicht, dann wird jeweils das erreichte prozentuale
     Ergebnis berechnet und die Gesamtnote über den Mittelwert der beiden besseren
     Ergebnisse berechnet.

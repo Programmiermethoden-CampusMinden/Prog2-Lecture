@@ -15,10 +15,10 @@ laufen zu lassen, damit nicht versehentlich Fehler oder Verhaltensänderungen be
 Refactoring eingebaut werden.
 
 Prinzipiell kann man Refactoring manuell mit Search&Replace durchführen, aber es
-bietet sich an, hier die IDE-Unterstützung zu nutzen. Es stehen verschiedene Methoden
-zur Verfügung, die nicht unbedingt einheitlich benannt sein müssen oder in jeder IDE
-vorkommen. Zu den häufig genutzten Methoden zählen *Rename*, *Extract*, *Move* und
-*Push Up/Pull Down*.
+bietet sich an, hier die IDE-Unterstützung zu nutzen. Es stehen verschiedene
+Methoden zur Verfügung, die nicht unbedingt einheitlich benannt sein müssen oder in
+jeder IDE vorkommen. Zu den häufig genutzten Methoden zählen *Rename*, *Extract*,
+*Move* und *Push Up/Pull Down*.
 :::
 
 ::: youtube
@@ -66,9 +66,9 @@ vorkommen. Zu den häufig genutzten Methoden zählen *Rename*, *Extract*, *Move*
 -   Code "stinkt" (zeigt/enthält *Code Smells*)
 
     ::: notes
-    Code Smells sind strukturelle Probleme, die im Laufe der Zeit zu Problemen führen
-    können. Refactoring ändert die innere Struktur des Codes und kann entsprechend
-    genutzt werden, um die Smells zu beheben.
+    Code Smells sind strukturelle Probleme, die im Laufe der Zeit zu Problemen
+    führen können. Refactoring ändert die innere Struktur des Codes und kann
+    entsprechend genutzt werden, um die Smells zu beheben.
     :::
 
 \bigskip
@@ -76,8 +76,8 @@ vorkommen. Zu den häufig genutzten Methoden zählen *Rename*, *Extract*, *Move*
 -   Schwer erklärbarer Code
 
     ::: notes
-    Könnten Sie Ihren Code ohne Vorbereitung in der Abgabe erklären? In einer Minute?
-    In fünf Minuten? In zehn? Gar nicht?
+    Könnten Sie Ihren Code ohne Vorbereitung in der Abgabe erklären? In einer
+    Minute? In fünf Minuten? In zehn? Gar nicht?
 
     In den letzten beiden Fällen sollten Sie definitiv über eine Vereinfachung der
     Strukturen nachdenken.
@@ -155,10 +155,10 @@ Zu den am häufigsten genutzten Methoden zählen
 Eine Best Practice (oder nennen Sie es einfach eine wichtige Erfahrung) ist, beim
 Refactoring langsam und gründlich vorzugehen. Sie ändern die Struktur der Software
 und können dabei leicht Fehler oder echte Probleme einbauen. Gehen Sie also langsam
-und sorgsam vor, machen Sie einen Schritt nach dem anderen und sichern Sie sich durch
-eine gute Testsuite ab, die Sie nach jedem Schritt erneut ausführen: Das Verhalten
-der Software soll sich ja nicht ändern, d.h. die Tests müssen nach jedem einzelnen
-Refactoring-Schritt immer grün sein (oder Sie haben einen Fehler gemacht).
+und sorgsam vor, machen Sie einen Schritt nach dem anderen und sichern Sie sich
+durch eine gute Testsuite ab, die Sie nach jedem Schritt erneut ausführen: Das
+Verhalten der Software soll sich ja nicht ändern, d.h. die Tests müssen nach jedem
+einzelnen Refactoring-Schritt immer grün sein (oder Sie haben einen Fehler gemacht).
 :::
 
 -   Kleine Schritte: immer nur **eine** Änderung zu einer Zeit
@@ -297,8 +297,8 @@ private void printDetails() {
 ::: notes
 ## Motivation
 
-Methode nutzt (oder wird genutzt von) mehr Eigenschaften einer fremden Klasse als der
-eigenen Klasse.
+Methode nutzt (oder wird genutzt von) mehr Eigenschaften einer fremden Klasse als
+der eigenen Klasse.
 
 ## Durchführung
 
@@ -438,8 +438,8 @@ Behebung von **Bad Smells** durch **Refactoring**
 
 ::: challenges
 Betrachten Sie das [Theatrical Players Refactoring
-Kata](https://github.com/emilybache/Theatrical-Players-Refactoring-Kata). Dort finden
-Sie im Unterordner
+Kata](https://github.com/emilybache/Theatrical-Players-Refactoring-Kata). Dort
+finden Sie im Unterordner
 [java/](https://github.com/emilybache/Theatrical-Players-Refactoring-Kata/tree/main/java)
 einige Klassen mit unübersichtlichem und schlecht strukturierten Code.
 
@@ -447,7 +447,8 @@ Welche *Bad Smells* können Sie hier identifizieren?
 
 Beheben Sie die Smells durch die *schrittweise Anwendung* von den aus der Vorlesung
 bekannten Refactoring-Methoden. Denken Sie auch daran, dass Refactoring immer durch
-eine entsprechende Testsuite abgesichert sein muss - ergänzen Sie ggf. die Testfälle.
+eine entsprechende Testsuite abgesichert sein muss - ergänzen Sie ggf. die
+Testfälle.
 
 **Real-Life Refactoring**
 
@@ -485,8 +486,8 @@ public void shootFireBall() {
     Rückgabetypen)?
 2.  Welche Funktionseinheiten können Sie identifizieren? Entwickeln Sie Ideen, wie
     dieser Code zu mittels Refactoring lesbarer und verständlicher gemacht werden
-    kann. Nutzen Sie dabei möglichst geschickt u.a. die Java-Stream-API und Optionals
-    und überlegen Sie, welche der Exceptions wirklich relevant sind ...
+    kann. Nutzen Sie dabei möglichst geschickt u.a. die Java-Stream-API und
+    Optionals und überlegen Sie, welche der Exceptions wirklich relevant sind ...
 3.  Kopieren Sie den Code in einen Editor (mit Syntaxunterstützung - die IDE geht
     auch, wird aber wegen der fehlenden Klassen und Variablen keine wirkliche Hilfe
     sein). Führen Sie das Refactoring "zu Fuß" durch. Vergleichen Sie Ihr Ergebnis

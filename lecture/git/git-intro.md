@@ -4,16 +4,17 @@ title: "Intro: Versionskontrolle in der Softwareentwicklung"
 ---
 
 ::: tldr
-In der Softwareentwicklung wird häufig ein Versionsmanagementsystem (VCS) eingesetzt,
-welches die Verwaltung von Versionsständen und Änderungen ermöglicht. Ein Repository
-sammelt dabei die verschiedenen Änderungen (quasi wie eine Datenbank der
-Software-Versionsstände). Die Software *Git* ist verbreiteter Vertreter und arbeitet
-mit dezentralen Repositories.
+In der Softwareentwicklung wird häufig ein Versionsmanagementsystem (VCS)
+eingesetzt, welches die Verwaltung von Versionsständen und Änderungen ermöglicht.
+Ein Repository sammelt dabei die verschiedenen Änderungen (quasi wie eine Datenbank
+der Software-Versionsstände). Die Software *Git* ist verbreiteter Vertreter und
+arbeitet mit dezentralen Repositories.
 
 Ein neues lokales Repository kann man mit `git init` anlegen. Der Befehl legt den
-Unterordner `.git/` im aktuellen Ordner an, darin befindet sich das lokale Repository
-und weitere von Git benötigte Dateien (FINGER WEG!). Die Dateien und anderen
-Unterordner im aktuellen Ordner können nun der Versionskontrolle hinzugefügt werden.
+Unterordner `.git/` im aktuellen Ordner an, darin befindet sich das lokale
+Repository und weitere von Git benötigte Dateien (FINGER WEG!). Die Dateien und
+anderen Unterordner im aktuellen Ordner können nun der Versionskontrolle hinzugefügt
+werden.
 
 Den lokal vorliegenden (Versions-) Stand der Dateien im aktuellen Ordner nennt man
 auch "Workingcopy".
@@ -92,8 +93,8 @@ entsprechend immer eine Verbindung zum Server.
 ::: notes
 In diesem Szenario hat jeder Developer nicht nur die Workingcopy, sondern auch noch
 eine Kopie des Repositories. Zusätzlich kann es einen oder mehrere Server geben, auf
-denen dann nur das Repository vorgehalten wird, d.h. dort gibt es normalerweise keine
-Workingcopy. Damit kann unabhängig voneinander gearbeitet werden.
+denen dann nur das Repository vorgehalten wird, d.h. dort gibt es normalerweise
+keine Workingcopy. Damit kann unabhängig voneinander gearbeitet werden.
 
 Allerdings besteht nun die Herausforderung, die geänderten Repositories miteinander
 abzugleichen. Das kann zwischen dem lokalen Rechner und dem Server passieren, aber
@@ -101,11 +102,11 @@ auch zwischen zwei "normalen" Rechnern (also zwischen den Developern).
 
 **Hinweis**: *GitHub ain't no Git!* Git ist eine Technologie zur Versionsverwaltung.
 Es gibt verschiedene Implementierungen und Plugins für IDEs und Editoren.
-[GitHub](https://github.com) ist dagegen *ein* Dienstleister, wo man Git-Repositories
-ablegen kann und auf diese mit Git (von der Konsole oder aus der IDE) zugreifen kann.
-Darüber hinaus bietet der Service aber zusätzliche Features an, beispielsweise ein
-Issue-Management oder sogenannte *Pull-Requests*. Dies hat aber zunächst mit Git
-nichts zu tun. Weitere populäre Anbieter sind beispielsweise
+[GitHub](https://github.com) ist dagegen *ein* Dienstleister, wo man
+Git-Repositories ablegen kann und auf diese mit Git (von der Konsole oder aus der
+IDE) zugreifen kann. Darüber hinaus bietet der Service aber zusätzliche Features an,
+beispielsweise ein Issue-Management oder sogenannte *Pull-Requests*. Dies hat aber
+zunächst mit Git nichts zu tun. Weitere populäre Anbieter sind beispielsweise
 [Bitbucket](https://bitbucket.org/) oder [Gitlab](https://gitlab.com) oder
 [Gitea](https://gitea.io/en-us/), wobei einige auch selbst gehostet werden können.
 :::
@@ -161,9 +162,9 @@ Anlegen der Commits speichert (== benötigt!).
 
 ::: notes
 Zusätzlich kann man weitere Einstellungen vornehmen, etwa auf bunte Ausgabe
-umschalten: `git config --global color.ui auto` oder Abkürzungen (Aliase) für Befehle
-definieren: `git config --global alias.ll 'log --all --oneline --graph --decorate'`
-...
+umschalten: `git config --global color.ui auto` oder Abkürzungen (Aliase) für
+Befehle definieren:
+`git config --global alias.ll 'log --all --oneline --graph --decorate'` ...
 
 Git (und auch GitHub) hat kürzlich den Namen des Default-Branches von `master` auf
 `main` geändert. Dies kann man in Git ebenfalls selbst einstellen:
