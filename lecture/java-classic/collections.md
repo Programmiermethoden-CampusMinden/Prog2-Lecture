@@ -423,13 +423,13 @@ ist dem O-Kalkül aber egal).
 :::
 
 ::: outcomes
--   k2: Was ist der Unterschied zwischen Collection\<T\> und List\<T\>?
--   k2: Was ist der Unterschied zwischen einer List\<T\>, einer Queue\<T\> und einer
-    Set\<T\>?
--   k2: Nennen Sie charakteristische Merkmale von ArrayList\<T\>, LinkedList\<T\>
-    und Vector\<T\>.
--   k2: Was ist der Unterschied zwischen einer Queue\<T\> und einem Stack\<T\>?
--   k2: Was ist eine Map\<K,V\>? Welche Vertreter kennen Sie?
+-   k2: Was ist der Unterschied zwischen `Collection<T>` und `List<T>`?
+-   k2: Was ist der Unterschied zwischen einer `List<T>`, einer `Queue<T>` und einer
+    `Set<T>`?
+-   k2: Nennen Sie charakteristische Merkmale von `ArrayList<T>`, `LinkedList<T>`
+    und `Vector<T>`.
+-   k2: Was ist der Unterschied zwischen einer `Queue<T>` und einem `Stack<T>`?
+-   k2: Was ist eine `Map<K,V>`? Welche Vertreter kennen Sie?
 -   k3: Erklären Sie die 'Spielregeln' für die eigene Implementierung von equals().
 -   k3: Erklären Sie die 'Spielregeln' für die eigene Implementierung von
     hashCode().
