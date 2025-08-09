@@ -4,10 +4,12 @@ title: "Generics: Type Erasure"
 ---
 
 ::: tldr
-Generics existieren eigentlich nur auf Quellcode-Ebene. Nach der Typ-Prüfung etc. entfernt der Compiler alle generischen
-Typ-Parameter und alle `<...>` (=\> "Type-Erasure"), d.h. im Byte-Code stehen nur noch Raw-Typen bzw. die oberen
-Typ-Schranken der Typ-Parameter, in der Regel `Object`. Zusätzlich baut der Compiler die nötigen Casts ein. Als Anwender
-merkt man davon nichts, muss das "Type-Erasure" wegen der Auswirkungen aber auf dem Radar haben!
+Generics existieren eigentlich nur auf Quellcode-Ebene. Nach der Typ-Prüfung etc.
+entfernt der Compiler alle generischen Typ-Parameter und alle `<...>` (=\>
+"Type-Erasure"), d.h. im Byte-Code stehen nur noch Raw-Typen bzw. die oberen
+Typ-Schranken der Typ-Parameter, in der Regel `Object`. Zusätzlich baut der Compiler
+die nötigen Casts ein. Als Anwender merkt man davon nichts, muss das "Type-Erasure"
+wegen der Auswirkungen aber auf dem Radar haben!
 :::
 
 ::: youtube
@@ -17,21 +19,23 @@ merkt man davon nichts, muss das "Type-Erasure" wegen der Auswirkungen aber auf 
 # Typ-Löschung (*Type-Erasure*)
 
 ::: notes
-Der Compiler ersetzt nach Prüfung der Typen und ihrer Verwendung alle Typ-Parameter durch
+Der Compiler ersetzt nach Prüfung der Typen und ihrer Verwendung alle Typ-Parameter
+durch
 
 1.  deren obere (Typ-)Schranke und
 2.  passende explizite Cast-Operationen (im Byte-Code).
 
-Die obere Typ-Schranke ist in der Regel der Typ der ersten Bounds-Klausel oder `Object`, wenn keine Einschränkungen
-formuliert sind.
+Die obere Typ-Schranke ist in der Regel der Typ der ersten Bounds-Klausel oder
+`Object`, wenn keine Einschränkungen formuliert sind.
 
-Bei parametrisierten Typen wie `List<T>` wird der Typ-Parameter entfernt, es entsteht ein sogenannter *Raw*-Typ (`List`,
-quasi implizit mit `Object` parametrisiert).
+Bei parametrisierten Typen wie `List<T>` wird der Typ-Parameter entfernt, es entsteht
+ein sogenannter *Raw*-Typ (`List`, quasi implizit mit `Object` parametrisiert).
 
-=\> Ergebnis: Nur **eine** (untypisierte) Klasse! Zur Laufzeit gibt es keine Generics mehr!
+=\> Ergebnis: Nur **eine** (untypisierte) Klasse! Zur Laufzeit gibt es keine Generics
+mehr!
 
-**Hinweis**: In C++ ist man den anderen möglichen Weg gegangen und erzeugt für jede Instantiierung die passende Klasse.
-Siehe Modul "Systemprogrammierung" :)
+**Hinweis**: In C++ ist man den anderen möglichen Weg gegangen und erzeugt für jede
+Instantiierung die passende Klasse. Siehe Modul "Systemprogrammierung" :)
 
 **Beispiel**: Aus dem folgenden harmlosen Code-Fragment:
 :::
@@ -125,16 +129,19 @@ Stack s = new Stack(); // Stack von Object-Objekten
 ::: notes
 ## Anmerkung
 
-Raw-Types darf man zwar selbst im Quellcode verwenden (so wie im Beispiel hier), **sollte** die Verwendung aber
-vermeiden wegen der Typ-Unsicherheit: Der Compiler sieht im Beispiel nur noch einen Stack für `Object`, d.h. dort dürfen
-Objekte aller Typen abgelegt werden - es kann keine Typprüfung durch den Compiler stattfinden. Auf einem `Stack<String>`
-kann der Compiler prüfen, ob dort wirklich nur `String`-Objekte abgelegt werden und ggf. entsprechend Fehler melden.
+Raw-Types darf man zwar selbst im Quellcode verwenden (so wie im Beispiel hier),
+**sollte** die Verwendung aber vermeiden wegen der Typ-Unsicherheit: Der Compiler
+sieht im Beispiel nur noch einen Stack für `Object`, d.h. dort dürfen Objekte aller
+Typen abgelegt werden - es kann keine Typprüfung durch den Compiler stattfinden. Auf
+einem `Stack<String>` kann der Compiler prüfen, ob dort wirklich nur `String`-Objekte
+abgelegt werden und ggf. entsprechend Fehler melden.
 
-Etwas anderes ist es, dass der Compiler im Zuge von Type-Erasure selbst Raw-Types in den Byte-Code schreibt. Da hat er
-vorher bereits die Typsicherheit geprüft und er baut auch die passenden Casts ein.
+Etwas anderes ist es, dass der Compiler im Zuge von Type-Erasure selbst Raw-Types in
+den Byte-Code schreibt. Da hat er vorher bereits die Typsicherheit geprüft und er
+baut auch die passenden Casts ein.
 
-Das Thema ist eigentlich nur noch aus Kompatibilität zu Java5 oder früher da, weil es dort noch keine Generics gab
-(wurden erst mit Java6 eingeführt).
+Das Thema ist eigentlich nur noch aus Kompatibilität zu Java5 oder früher da, weil es
+dort noch keine Generics gab (wurden erst mit Java6 eingeführt).
 :::
 
 # Folgen der Typ-Löschung: *new*
@@ -159,9 +166,10 @@ class Fach<T> {
 Grund: Zur Laufzeit keine Klasseninformationen über `T` mehr
 
 ::: notes
-Im Code steht `return (CAST) new Object();`. Das neue Object kann man anlegen, aber ein Cast nach irgendeinem anderen
-Typ ist sinnfrei: Jede Klasse ist ein Untertyp von `Object`, aber eben nicht andersherum. Außerdem fehlt dem Objekt vom
-Typ `Object` auch sämtliche Information und Verhalten, die der Cast-Typ eigentlich mitbringt ...
+Im Code steht `return (CAST) new Object();`. Das neue Object kann man anlegen, aber
+ein Cast nach irgendeinem anderen Typ ist sinnfrei: Jede Klasse ist ein Untertyp von
+`Object`, aber eben nicht andersherum. Außerdem fehlt dem Objekt vom Typ `Object`
+auch sämtliche Information und Verhalten, die der Cast-Typ eigentlich mitbringt ...
 :::
 
 # Folgen der Typ-Löschung: *static*
@@ -186,8 +194,8 @@ Fach<Integer> b;
 
 \bigskip
 
-Grund: Compiler generiert nur eine Klasse! Beide Objekte würden sich die statischen Attribute teilen
-`\newline`{=tex}(Typ zur Laufzeit unklar!).
+Grund: Compiler generiert nur eine Klasse! Beide Objekte würden sich die statischen
+Attribute teilen `\newline`{=tex}(Typ zur Laufzeit unklar!).
 
 \smallskip
 
@@ -252,14 +260,16 @@ x = (a.getClass() == b.getClass());               // true
 
 \bigskip
 
-Grund: Es gibt nur `List.class` (und kein `List<String>.class` bzw. `List<Integer>.class`)!
+Grund: Es gibt nur `List.class` (und kein `List<String>.class` bzw.
+`List<Integer>.class`)!
 
 # Wrap-Up
 
 -   Generics existieren eigentlich nur auf Quellcode-Ebene
 -   "Type-Erasure":
-    -   Compiler entfernt [nach Typ-Prüfungen etc.]{.notes} generische Typ-Parameter [etc.]{.notes} =\> im Byte-Code nur
-        noch Raw-Typen [bzw. die oberen Typ-Schranken der Typ-Parameter, in der Regel `Object`]{.notes}
+    -   Compiler entfernt [nach Typ-Prüfungen etc.]{.notes} generische Typ-Parameter
+        [etc.]{.notes} =\> im Byte-Code nur noch Raw-Typen [bzw. die oberen
+        Typ-Schranken der Typ-Parameter, in der Regel `Object`]{.notes}
     -   Compiler baut passende Casts in Byte-Code ein
     -   Transparent für User; Auswirkungen beachten!
 

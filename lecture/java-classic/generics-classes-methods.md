@@ -4,12 +4,14 @@ title: "Generics: Generische Klassen & Methoden"
 ---
 
 ::: tldr
-Generische Klassen und Methoden sind ein wichtiger Baustein in der Programmierung mit Java. Dabei werden Typ-Variablen
-eingeführt, die dann bei der Instantiierung der generischen Klassen oder beim Aufruf von generischen Methoden mit
-existierenden Typen konkretisiert werden ("Typ-Parameter").
+Generische Klassen und Methoden sind ein wichtiger Baustein in der Programmierung mit
+Java. Dabei werden Typ-Variablen eingeführt, die dann bei der Instantiierung der
+generischen Klassen oder beim Aufruf von generischen Methoden mit existierenden Typen
+konkretisiert werden ("Typ-Parameter").
 
-Syntaktisch definiert man die Typ-Variablen in spitzen Klammern hinter dem Klassennamen bzw. vor dem Rückgabetyp einer
-Methode: `public class Stack<E> { }` und `public <T> T foo(T m) { }`.
+Syntaktisch definiert man die Typ-Variablen in spitzen Klammern hinter dem
+Klassennamen bzw. vor dem Rückgabetyp einer Methode: `public class Stack<E> { }` und
+`public <T> T foo(T m) { }`.
 :::
 
 ::: youtube
@@ -31,10 +33,12 @@ for (Object i : speicher) { summe += (Integer)i; }
 ::: notes
 Problem: Nutzung des "*raw*" Typs `Vector` ist nicht typsicher!
 
--   Mögliche Fehler fallen erst zur Laufzeit und u.U. erst sehr spät auf: Offenbar werden im obigen Beispiel `int`-Werte
-    erwartet, d.h. das Hinzufügen von `"huhu"` ist vermutlich ein Versehen (wird vom Compiler aber nicht bemerkt)
--   Die Iteration über `speicher` kann nur allgemein als `Object` erfolgen, d.h. in der Schleife muss auf den
-    vermuteten/gewünschten Typ gecastet werden: Hier würde dann der String `"huhu"` Probleme zur Laufzeit machen
+-   Mögliche Fehler fallen erst zur Laufzeit und u.U. erst sehr spät auf: Offenbar
+    werden im obigen Beispiel `int`-Werte erwartet, d.h. das Hinzufügen von `"huhu"`
+    ist vermutlich ein Versehen (wird vom Compiler aber nicht bemerkt)
+-   Die Iteration über `speicher` kann nur allgemein als `Object` erfolgen, d.h. in
+    der Schleife muss auf den vermuteten/gewünschten Typ gecastet werden: Hier würde
+    dann der String `"huhu"` Probleme zur Laufzeit machen
 :::
 
 \pause
@@ -55,7 +59,8 @@ for (Integer i : speicher) { summe += i; }
 ::: notes
 Vorteile beim Einsatz von Generics:
 
--   Datenstrukturen/Algorithmen nur einmal implementieren, aber für unterschiedliche Typen nutzen
+-   Datenstrukturen/Algorithmen nur einmal implementieren, aber für unterschiedliche
+    Typen nutzen
 -   Keine Vererbungshierarchie nötig
 -   Nutzung ist typsicher, Casting unnötig
 -   Geht nur für Referenztypen
@@ -75,7 +80,8 @@ Vorteile beim Einsatz von Generics:
     }
     ```
 
-    -   `Stack<E>` =\> Generische (parametrisierte) Klasse (auch: "*generischer Typ*")
+    -   `Stack<E>` =\> Generische (parametrisierte) Klasse (auch: "*generischer
+        Typ*")
     -   `E` =\> Formaler Typ-Parameter (auch: "*Typ-Variable*")
 
 \pause
@@ -131,7 +137,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 
 ## Typ-Inferenz
 
-Typ-Parameter kann bei `new()` auf der rechten Seite oft weggelassen werden =\> **Typ-Inferenz**
+Typ-Parameter kann bei `new()` auf der rechten Seite oft weggelassen werden =\>
+**Typ-Inferenz**
 
 ``` java
 Tutor<String> x = new Tutor<>();  // <>: "Diamantoperator"
@@ -161,10 +168,11 @@ class Properties extends Hashtable<Object,Object> { ... }
 ::: notes
 Auch Interfaces und abstrakte Klassen können parametrisierbar sein.
 
-Bei der Vererbung sind alle Varianten bzgl. der Typ-Variablen denkbar. Zu beachten ist dabei vor allem, dass die
-Typ-Variablen der Oberklasse (gilt analog für Interfaces) entweder durch Typ-Variablen der Unterklasse oder durch
-konkrete Typen spezifiziert sind. Die Typ-Variablen der Oberklasse dürfen nicht "in der Luft hängen" (siehe auch nächste
-Folie)!
+Bei der Vererbung sind alle Varianten bzgl. der Typ-Variablen denkbar. Zu beachten
+ist dabei vor allem, dass die Typ-Variablen der Oberklasse (gilt analog für
+Interfaces) entweder durch Typ-Variablen der Unterklasse oder durch konkrete Typen
+spezifiziert sind. Die Typ-Variablen der Oberklasse dürfen nicht "in der Luft hängen"
+(siehe auch nächste Folie)!
 :::
 
 # Beispiel III: Überschreiben/Überladen von Methoden
@@ -193,9 +201,11 @@ class Fluppie<T> extends Wuppie<S> { ... }
 ```
 
 ::: notes
--   Generische Klasse `Foo<T>` kann nicht selbst vom Typ-Parameter `T` ableiten (warum?)
--   Bei Ableiten von generischer Klasse `Wuppie<S>` muss deren Typ-Parameter `S` bestimmt sein: etwa durch den
-    Typ-Parameter der ableitenden Klasse, beispielsweise `Fluppie<S>` (statt `Fluppie<T>`)
+-   Generische Klasse `Foo<T>` kann nicht selbst vom Typ-Parameter `T` ableiten
+    (warum?)
+-   Bei Ableiten von generischer Klasse `Wuppie<S>` muss deren Typ-Parameter `S`
+    bestimmt sein: etwa durch den Typ-Parameter der ableitenden Klasse,
+    beispielsweise `Fluppie<S>` (statt `Fluppie<T>`)
 :::
 
 # Generische Methoden definieren
@@ -233,7 +243,8 @@ class Fluppie<T> extends Wuppie<S> { ... }
 ## Finden der richtigen Methode durch den Compiler
 
 1.  Zuerst Suche nach exakt passender Methode,
-2.  danach passend mit Konvertierungen =\> Compiler sucht gemeinsame Oberklasse in Typhierarchie
+2.  danach passend mit Konvertierungen =\> Compiler sucht gemeinsame Oberklasse in
+    Typhierarchie
 
 ## Beispiel
 :::
@@ -257,7 +268,8 @@ m.myst(1.0, 1);              // Double, Integer => T: Number
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/methods/GenericMethods.java"}
 
 ::: notes
-Reihenfolge der Suche nach passender Methode gilt auch für nicht-generisch überladene Methoden
+Reihenfolge der Suche nach passender Methode gilt auch für nicht-generisch überladene
+Methoden
 
 ``` java
 class Mensch {
@@ -330,7 +342,8 @@ public class GenericMethods {
 :::
 
 ::: outcomes
--   k1: Ich kenne die Begriffe 'generischer Typ', 'parametrisierter Typ', 'formaler Typ-Parameter', 'Typ-Parameter'
+-   k1: Ich kenne die Begriffe 'generischer Typ', 'parametrisierter Typ', 'formaler
+    Typ-Parameter', 'Typ-Parameter'
 -   k3: Ich kann generische Klassen und Interfaces definieren und praktisch einsetzen
 -   k3: Ich kann generische Methoden definieren und praktisch einsetzen
 :::

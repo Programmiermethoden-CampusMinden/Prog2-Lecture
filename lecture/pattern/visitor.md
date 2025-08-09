@@ -4,46 +4,58 @@ title: Visitor-Pattern
 ---
 
 ::: tldr
-Häufig bietet es sich bei Datenstrukturen an, die Traversierung nicht direkt in den Klassen der Datenstrukturen zu
-implementieren, sondern in Hilfsklassen zu verlagern. Dies gilt vor allem dann, wenn die Datenstruktur aus mehreren
-Klassen besteht (etwa ein Baum mit verschiedenen Knotentypen) und/oder wenn man nicht nur eine Traversierungsart
-ermöglichen will oder/und wenn man immer wieder neue Arten der Traversierung ergänzen will. Das würde nämlich bedeuten,
-dass man für jede weitere Form der Traversierung in *allen* Klassen eine entsprechende neue Methode implementieren
-müsste.
+Häufig bietet es sich bei Datenstrukturen an, die Traversierung nicht direkt in den
+Klassen der Datenstrukturen zu implementieren, sondern in Hilfsklassen zu verlagern.
+Dies gilt vor allem dann, wenn die Datenstruktur aus mehreren Klassen besteht (etwa
+ein Baum mit verschiedenen Knotentypen) und/oder wenn man nicht nur eine
+Traversierungsart ermöglichen will oder/und wenn man immer wieder neue Arten der
+Traversierung ergänzen will. Das würde nämlich bedeuten, dass man für jede weitere
+Form der Traversierung in *allen* Klassen eine entsprechende neue Methode
+implementieren müsste.
 
 Das Visitor-Pattern lagert die Traversierung in eigene Klassenstruktur aus.
 
-Die Klassen der Datenstruktur bekommen nur noch eine `accept()`-Methode, in der ein Visitor übergeben wird und rufen auf
-diesem Visitor einfach dessen `visit()`-Methode auf (mit einer Referenz auf sich selbst als Argument).
+Die Klassen der Datenstruktur bekommen nur noch eine `accept()`-Methode, in der ein
+Visitor übergeben wird und rufen auf diesem Visitor einfach dessen `visit()`-Methode
+auf (mit einer Referenz auf sich selbst als Argument).
 
-Der Visitor hat für jede Klasse der Datenstruktur eine Überladung der `visit()`-Methode. In diesen kann er je nach
-Klasse die gewünschte Verarbeitung vornehmen. Üblicherweise gibt es ein Interface oder eine abstrakte Klasse für die
+Der Visitor hat für jede Klasse der Datenstruktur eine Überladung der
+`visit()`-Methode. In diesen kann er je nach Klasse die gewünschte Verarbeitung
+vornehmen. Üblicherweise gibt es ein Interface oder eine abstrakte Klasse für die
 Visitoren, von denen dann konkrete Visitoren ableiten.
 
-Bei Elementen mit "Kindern" muss man sich entscheiden, wie die Traversierung implementiert werden soll. Man könnte in
-der `accept()`-Methode den Visitor an die Kinder weiter reichen (also auf den Kindern `accept()` mit dem Visitor
-aufrufen), bevor man die `visit()`-Methode des Visitors mit sich selbst als Referenz aufruft. Damit ist die Form der
-Traversierung in den Klassen der Datenstruktur fest verankert und über den Visitor findet "nur" noch eine
-unterschiedliche Form der Verarbeitung statt. Alternativ überlässt man es dem Visitor, die Traversierung durchzuführen:
-Hier muss in den `visit()`-Methoden für die einzelnen Elemente entsprechend auf mögliche Kinder reagiert werden.
+Bei Elementen mit "Kindern" muss man sich entscheiden, wie die Traversierung
+implementiert werden soll. Man könnte in der `accept()`-Methode den Visitor an die
+Kinder weiter reichen (also auf den Kindern `accept()` mit dem Visitor aufrufen),
+bevor man die `visit()`-Methode des Visitors mit sich selbst als Referenz aufruft.
+Damit ist die Form der Traversierung in den Klassen der Datenstruktur fest verankert
+und über den Visitor findet "nur" noch eine unterschiedliche Form der Verarbeitung
+statt. Alternativ überlässt man es dem Visitor, die Traversierung durchzuführen: Hier
+muss in den `visit()`-Methoden für die einzelnen Elemente entsprechend auf mögliche
+Kinder reagiert werden.
 
-In diesem Pattern findet ein sogenannter "Double-Dispatch" statt: Zur Laufzeit wird ein konkreter Visitor instantiiert
-und über `accept()` an ein Element der Datenstruktur übergeben. Dort ist zur Compile-Zeit aber nur der Obertyp der
-Visitoren bekannt, d.h. zur Laufzeit wird hier der konkrete Typ bestimmt und entsprechend die richtige `visit()`-Methode
-auf der "echten" Klasse des Visitors aufgerufen (erster Dispatch). Da im Visitor die `visit()`-Methoden für jeden Typ
-der Datenstrukur überladen sind, findet nun zur Laufzeit die Auflösung der korrekten Überladung statt (zweiter
-Dispatch).
+In diesem Pattern findet ein sogenannter "Double-Dispatch" statt: Zur Laufzeit wird
+ein konkreter Visitor instantiiert und über `accept()` an ein Element der
+Datenstruktur übergeben. Dort ist zur Compile-Zeit aber nur der Obertyp der Visitoren
+bekannt, d.h. zur Laufzeit wird hier der konkrete Typ bestimmt und entsprechend die
+richtige `visit()`-Methode auf der "echten" Klasse des Visitors aufgerufen (erster
+Dispatch). Da im Visitor die `visit()`-Methoden für jeden Typ der Datenstrukur
+überladen sind, findet nun zur Laufzeit die Auflösung der korrekten Überladung statt
+(zweiter Dispatch).
 
-Das Pattern wird traditionell gern für die Traversierung von Datenstrukturen eingesetzt. Es hilft aber auch, wenn man
-einer gewissen Anzahl von Klassen je eine neue Hilfsmethode hinzufügen möchte - normalerweise müsste man jetzt jede
-Klasse einzeln ergänzen. Mit dem Visitor-Pattern muss lediglich ein neuer Visitor mit den Hilfsmethoden implementiert
-werden.
+Das Pattern wird traditionell gern für die Traversierung von Datenstrukturen
+eingesetzt. Es hilft aber auch, wenn man einer gewissen Anzahl von Klassen je eine
+neue Hilfsmethode hinzufügen möchte - normalerweise müsste man jetzt jede Klasse
+einzeln ergänzen. Mit dem Visitor-Pattern muss lediglich ein neuer Visitor mit den
+Hilfsmethoden implementiert werden.
 :::
 
 ::: youtube
 -   [VL Visitor-Pattern](https://youtu.be/zW_2oQmjp8M)
--   [Demo Visitor-Pattern (Part I: Traversierung ohne Visitor)](https://youtu.be/9dvcufpyQdw)
--   [Demo Visitor-Pattern (Part II: Traversierung mit Visitor)](https://youtu.be/4rBRkXKhuN4)
+-   [Demo Visitor-Pattern (Part I: Traversierung ohne
+    Visitor)](https://youtu.be/9dvcufpyQdw)
+-   [Demo Visitor-Pattern (Part II: Traversierung mit
+    Visitor)](https://youtu.be/4rBRkXKhuN4)
 :::
 
 # Motivation: Parsen von "5\*4+3"
@@ -51,8 +63,9 @@ werden.
 ::::::: columns
 :::: {.column width="50%"}
 ::: notes
-Zum Parsen von Ausdrücken (*Expressions*) könnte man diese einfache Grammatik einsetzen. Ein Ausdruck ist dabei entweder
-ein einfacher Integer oder eine Addition oder Multiplikation zweier Ausdrücke.
+Zum Parsen von Ausdrücken (*Expressions*) könnte man diese einfache Grammatik
+einsetzen. Ein Ausdruck ist dabei entweder ein einfacher Integer oder eine Addition
+oder Multiplikation zweier Ausdrücke.
 :::
 
 ``` yacc
@@ -77,11 +90,13 @@ Beim Parsen von "5\*4+3" würde dabei der folgende Parsetree entstehen:
 ![](images/parsetree_classes_uml.png){width="70%"}
 
 ::: notes
-Der Parsetree für diese einfache Grammatik ist ein Binärbaum. Die Regeln werden auf Knoten im Baum zurückgeführt. Es
-gibt Knoten mit zwei Kindknoten, und es gibt Knoten ohne Kindknoten ("Blätter").
+Der Parsetree für diese einfache Grammatik ist ein Binärbaum. Die Regeln werden auf
+Knoten im Baum zurückgeführt. Es gibt Knoten mit zwei Kindknoten, und es gibt Knoten
+ohne Kindknoten ("Blätter").
 
-Entsprechend kann man sich einfache Klassen definieren, die die verschiedenen Knoten in diesem Parsetree repräsentieren.
-Als Obertyp könnte es ein (noch leeres) Interface `Expr` geben.
+Entsprechend kann man sich einfache Klassen definieren, die die verschiedenen Knoten
+in diesem Parsetree repräsentieren. Als Obertyp könnte es ein (noch leeres) Interface
+`Expr` geben.
 
 ``` java
 public interface Expr {}
@@ -123,15 +138,17 @@ public class DemoExpr {
 # Ergänzung I: Ausrechnen des Ausdrucks
 
 ::: notes
-Es wäre nun schön, wenn man mit dem Parsetree etwas anfangen könnte. Vielleicht möchte man den Ausdruck ausrechnen?
+Es wäre nun schön, wenn man mit dem Parsetree etwas anfangen könnte. Vielleicht
+möchte man den Ausdruck ausrechnen?
 :::
 
 ![](images/parsetree_eval_uml.png){width="70%"}
 
 ::: notes
-Zum Ausrechnen des Ausdrucks könnte man dem Interface eine `eval()`-Methode spendieren. Jeder Knoten kann für sich
-entscheiden, wie die entsprechende Operation ausgewertet werden soll: Bei einer `NumExpr` ist dies einfach der
-gespeicherte Wert, bei Addition oder Multiplikation entsprechend die Addition oder Multiplikation der
+Zum Ausrechnen des Ausdrucks könnte man dem Interface eine `eval()`-Methode
+spendieren. Jeder Knoten kann für sich entscheiden, wie die entsprechende Operation
+ausgewertet werden soll: Bei einer `NumExpr` ist dies einfach der gespeicherte Wert,
+bei Addition oder Multiplikation entsprechend die Addition oder Multiplikation der
 Auswertungsergebnisse der beiden Kindknoten.
 
 ``` java
@@ -181,15 +198,16 @@ public class DemoExpr {
 # Ergänzung II: Pretty-Print des Ausdrucks
 
 ::: notes
-Nachdem das Ausrechnen so gut geklappt hat, will der Chef nun noch flink eine Funktion, mit der man den Ausdruck hübsch
-ausgeben kann:
+Nachdem das Ausrechnen so gut geklappt hat, will der Chef nun noch flink eine
+Funktion, mit der man den Ausdruck hübsch ausgeben kann:
 :::
 
 ![](images/parsetree_eval_print_uml.png){width="70%"}
 
 ::: notes
-Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche Strukturen, mit denen wir diesen Parsetree
-traversieren ... Und wir müssen für *jede* Erweiterung immer *alle* Expression-Klassen anpassen!
+Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche
+Strukturen, mit denen wir diesen Parsetree traversieren ... Und wir müssen für *jede*
+Erweiterung immer *alle* Expression-Klassen anpassen!
 
 [Beispiel: direct.DemoExpr]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/direct/DemoExpr.java"}
@@ -206,14 +224,16 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 [[Hinweis: Implementierungsdetail Traversierung]{.ex}]{.slides}
 
 :::: notes
-Das Entwurfsmuster "Besucher" (*Visitor Pattern*) lagert die Aktion beim Besuchen eines Knotens in eine separate Klasse
-aus.
+Das Entwurfsmuster "Besucher" (*Visitor Pattern*) lagert die Aktion beim Besuchen
+eines Knotens in eine separate Klasse aus.
 
-Dazu bekommt jeder Knoten im Baum eine neue Methode, die einen Besucher akzeptiert. Dieser Besucher kümmert sich dann um
-die entsprechende Verarbeitung des Knotens, also um das Auswerten oder Ausgeben im obigen Beispiel.
+Dazu bekommt jeder Knoten im Baum eine neue Methode, die einen Besucher akzeptiert.
+Dieser Besucher kümmert sich dann um die entsprechende Verarbeitung des Knotens, also
+um das Auswerten oder Ausgeben im obigen Beispiel.
 
-Die Besucher haben eine Methode, die für jeden zu bearbeitenden Knoten überladen wird. In dieser Methode findet dann die
-eigentliche Verarbeitung statt: Auswerten des Knotens oder Ausgeben des Knotens ...
+Die Besucher haben eine Methode, die für jeden zu bearbeitenden Knoten überladen
+wird. In dieser Methode findet dann die eigentliche Verarbeitung statt: Auswerten des
+Knotens oder Ausgeben des Knotens ...
 
 ``` java
 public interface Expr {
@@ -311,16 +331,20 @@ public class DemoExpr {
 
 ## Implementierungsdetail
 
-In den beiden Klasse `AddExpr` und `MulExpr` müssen auch die beiden Kindknoten besucht werden, d.h. hier muss der Baum
-weiter traversiert werden.
+In den beiden Klasse `AddExpr` und `MulExpr` müssen auch die beiden Kindknoten
+besucht werden, d.h. hier muss der Baum weiter traversiert werden.
 
-Man kann sich überlegen, diese Traversierung in den Klassen `AddExpr` und `MulExpr` selbst anzustoßen.
+Man kann sich überlegen, diese Traversierung in den Klassen `AddExpr` und `MulExpr`
+selbst anzustoßen.
 
-Alternativ könnte auch der Visitor die Traversierung vornehmen. Gerade bei der Traversierung von Datenstrukturen ist
-diese Variante oft von Vorteil, da man hier unterschiedliche Traversierungsarten haben möchte (Breitensuche
-vs. Tiefensuche, Pre-Order vs. Inorder vs. Post-Order, ...) und diese elegant in den Visitor verlagern kann.
+Alternativ könnte auch der Visitor die Traversierung vornehmen. Gerade bei der
+Traversierung von Datenstrukturen ist diese Variante oft von Vorteil, da man hier
+unterschiedliche Traversierungsarten haben möchte (Breitensuche vs. Tiefensuche,
+Pre-Order vs. Inorder vs. Post-Order, ...) und diese elegant in den Visitor verlagern
+kann.
 
-[Beispiel Traversierung intern (in den Knotenklassen): visitor.visit.intrav.DemoExpr]{.ex
+[Beispiel Traversierung intern (in den Knotenklassen):
+visitor.visit.intrav.DemoExpr]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/intrav/DemoExpr.java"}
 
 [Beispiel Traversierung extern (im Visitor): visitor.visit.extrav.DemoExpr]{.ex
@@ -329,29 +353,33 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 ## (Double-) Dispatch
 
 ::: tip
-Zur Laufzeit wird in `accept()` mit dem Aufruf von `visit()` der konkrete Typ des Visitors aufgelöst und dann für
-`visit(this)` durch den Typ der besuchten Klasse (`this`) die korrekte Überladung ausgewählt. Dies nennt man auch
+Zur Laufzeit wird in `accept()` mit dem Aufruf von `visit()` der konkrete Typ des
+Visitors aufgelöst und dann für `visit(this)` durch den Typ der besuchten Klasse
+(`this`) die korrekte Überladung ausgewählt. Dies nennt man auch
 "**Double-Dispatch**".
 :::
 
-In den `accept()`-Methoden der besuchten Klassen ist nur der gemeinsame Obertyp der Visitoren bekannt. Dies ist wichtig,
-weil man sonst ja für jeden neuen Visitor neue passende `accept()`-Methoden in allen zu besuchenden Klassen
-implementieren müsste!
+In den `accept()`-Methoden der besuchten Klassen ist nur der gemeinsame Obertyp der
+Visitoren bekannt. Dies ist wichtig, weil man sonst ja für jeden neuen Visitor neue
+passende `accept()`-Methoden in allen zu besuchenden Klassen implementieren müsste!
 
-Zur Laufzeit wird hier ein konkreter Visitor (also ein Objekt von einem Untertyp der Visitoren-Oberklasse) als Parameter
-übergeben.
+Zur Laufzeit wird hier ein konkreter Visitor (also ein Objekt von einem Untertyp der
+Visitoren-Oberklasse) als Parameter übergeben.
 
-Beim Aufruf von `visit(this)` in der `accept()`-Methode des besuchten Objekts wird durch die Laufzeitumgebung der
-tatsächliche konkrete Typ des Visitors bestimmt und die in der Typhierarchie in Bezug auf den Typ des Visitors "tiefste"
-Implementierung der `visit`-Methode (also die Implementierung in der Visitorklasse selbst oder, falls dort nicht
-vorhanden, in der jeweils nächsthöheren Elternklasse). Über das Argument `this` wird die tatsächliche konkrete Klasse
-des besuchten Objekts ermittelt, so dass die passende Überladung der `visit`-Methode im konkreten Visitor ausgewählt und
+Beim Aufruf von `visit(this)` in der `accept()`-Methode des besuchten Objekts wird
+durch die Laufzeitumgebung der tatsächliche konkrete Typ des Visitors bestimmt und
+die in der Typhierarchie in Bezug auf den Typ des Visitors "tiefste" Implementierung
+der `visit`-Methode (also die Implementierung in der Visitorklasse selbst oder, falls
+dort nicht vorhanden, in der jeweils nächsthöheren Elternklasse). Über das Argument
+`this` wird die tatsächliche konkrete Klasse des besuchten Objekts ermittelt, so dass
+die passende Überladung der `visit`-Methode im konkreten Visitor ausgewählt und
 aufgerufen werden kann.
 
 ## Hinweis I
 
-Man könnte nun versucht sein, eine dieser zwei Stufen zu überspringen - man könnte ja die `visit`-Methode des
-`EvalVisitors` direkt aufrufen und dabei die Wurzel des Baums (das Objekt `e`) übergeben.
+Man könnte nun versucht sein, eine dieser zwei Stufen zu überspringen - man könnte ja
+die `visit`-Methode des `EvalVisitors` direkt aufrufen und dabei die Wurzel des Baums
+(das Objekt `e`) übergeben.
 
 ``` java
 // Beispiel von oben (Ausschnitt)
@@ -367,7 +395,8 @@ Fragen Sie sich selbst: Kann das funktionieren? Was ist die Begründung?
 
 ## Hinweis II
 
-Man könnte versucht sein, die `accept()`-Methode aus den Knotenklassen in die gemeinsame Basisklasse zu verlagern: Statt
+Man könnte versucht sein, die `accept()`-Methode aus den Knotenklassen in die
+gemeinsame Basisklasse zu verlagern: Statt
 
 ``` java
     public void accept(ExprVisitor v) {
@@ -375,7 +404,8 @@ Man könnte versucht sein, die `accept()`-Methode aus den Knotenklassen in die g
     }
 ```
 
-in *jeder* Knotenklasse einzeln zu definieren, könnte man das doch *einmalig* in der Basisklasse definieren:
+in *jeder* Knotenklasse einzeln zu definieren, könnte man das doch *einmalig* in der
+Basisklasse definieren:
 
 ``` java
 public abstract class Expr {
@@ -386,14 +416,15 @@ public abstract class Expr {
 }
 ```
 
-Dies wäre tatsächlich schön, weil man so Code-Duplizierung vermeiden könnte. Aber es funktioniert in Java leider nicht.
-(Warum?)
+Dies wäre tatsächlich schön, weil man so Code-Duplizierung vermeiden könnte. Aber es
+funktioniert in Java leider nicht. (Warum?)
 
 ## Hinweis III
 
-Während die `accept()`-Methode nicht in die Basisklasse der besuchten Typen (im Bild oben die Klasse `Elem` bzw. im
-Beispiel oben die Klasse `Expr`) verlagert werden kann, kann man die `visit()`-Methoden im Interface `Visitor` durchaus
-als Default-Methoden im Interface implementieren.
+Während die `accept()`-Methode nicht in die Basisklasse der besuchten Typen (im Bild
+oben die Klasse `Elem` bzw. im Beispiel oben die Klasse `Expr`) verlagert werden
+kann, kann man die `visit()`-Methoden im Interface `Visitor` durchaus als
+Default-Methoden im Interface implementieren.
 ::::
 
 # Ausrechnen des Ausdrucks mit einem Visitor
@@ -406,22 +437,28 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 ::: notes
 # Diskussion
 
-In der typischen OO-Denkweise geht man davon aus, dass man eher neue Klassen über Vererbung hinzufügt als dass man in
-einer bestehenden Vererbungshierarchie in jeder der beteiligten Klassen neue Methoden einbaut. Man leitet einfach von
-der gewünschten Klasse ab und definiert mittels Überschreiben von Methoden o.ä. das geänderte Verhalten und erbt den
-Rest - es wird also nur eine neue Klasse hinzugefügt samt den überschriebenen Teilen.
+In der typischen OO-Denkweise geht man davon aus, dass man eher neue Klassen über
+Vererbung hinzufügt als dass man in einer bestehenden Vererbungshierarchie in jeder
+der beteiligten Klassen neue Methoden einbaut. Man leitet einfach von der gewünschten
+Klasse ab und definiert mittels Überschreiben von Methoden o.ä. das geänderte
+Verhalten und erbt den Rest - es wird also nur eine neue Klasse hinzugefügt samt den
+überschriebenen Teilen.
 
-Wenn man allerdings in einer solchen Hierarchie in allen Klassen eine neue Methode einbauen muss, die dann auch noch in
-den einzelnen Klassen individuell implementiert werden muss, dann kommt das Visitor-Pattern zur Hilfe und erspart
-Arbeit. Es muss nämlich in der Klassenhierarchie nur einmal die Schnittstelle für den Visitor einbaut werden (pro Klasse
-eine `accept`-Methode). Danach kann man von außen sehr einfach neue Methoden (also neue Visitoren) erstellen und nutzen,
-ohne die Klassenhierarchie noch einmal ändern zu müssen.
+Wenn man allerdings in einer solchen Hierarchie in allen Klassen eine neue Methode
+einbauen muss, die dann auch noch in den einzelnen Klassen individuell implementiert
+werden muss, dann kommt das Visitor-Pattern zur Hilfe und erspart Arbeit. Es muss
+nämlich in der Klassenhierarchie nur einmal die Schnittstelle für den Visitor einbaut
+werden (pro Klasse eine `accept`-Methode). Danach kann man von außen sehr einfach
+neue Methoden (also neue Visitoren) erstellen und nutzen, ohne die Klassenhierarchie
+noch einmal ändern zu müssen.
 
-Siehe auch [When should I use the Visitor Design Pattern?](https://stackoverflow.com/a/478672).
+Siehe auch [When should I use the Visitor Design
+Pattern?](https://stackoverflow.com/a/478672).
 
-Ein anderer Blick ist auf die Rolle der jeweiligen Klassen: Es gibt Objekte für/in Datenstrukturen, und es gibt
-Algorithmen, die auf diesen Objekten bzw. Datenstrukturen arbeiten. Im Sinne des sauberen OO-Designs würde man diese
-Strukturen trennen: "Trenne Algorithmen von den Objekten, auf denen die Algorithmen arbeiten."
+Ein anderer Blick ist auf die Rolle der jeweiligen Klassen: Es gibt Objekte für/in
+Datenstrukturen, und es gibt Algorithmen, die auf diesen Objekten bzw.
+Datenstrukturen arbeiten. Im Sinne des sauberen OO-Designs würde man diese Strukturen
+trennen: "Trenne Algorithmen von den Objekten, auf denen die Algorithmen arbeiten."
 
 Vergleiche auch die Darstellung des Visitor-Patterns in [Visitor (Refactoring
 Guru)](https://refactoring.guru/design-patterns/visitor).
@@ -442,13 +479,14 @@ Guru)](https://refactoring.guru/design-patterns/visitor).
 
 -   Visitor
     -   hat für jede Klasse eine Überladung der `visit()`-Methode
-    -   Rückgabewerte schwierig: Intern halten oder per `return` [(dann aber unterschiedliche `visit()`-Methoden für die
-        verschiedenen Rückgabetypen!)]{.notes}
+    -   Rückgabewerte schwierig: Intern halten oder per `return` [(dann aber
+        unterschiedliche `visit()`-Methoden für die verschiedenen
+        Rückgabetypen!)]{.notes}
 
 \smallskip
 
--   (Double-) Dispatch: Zur Laufzeit wird in `accept()` der Typ des Visitors und in `visit()` der Typ der zu besuchenden
-    Klasse aufgelöst
+-   (Double-) Dispatch: Zur Laufzeit wird in `accept()` der Typ des Visitors und in
+    `visit()` der Typ der zu besuchenden Klasse aufgelöst
 
 ::: readings
 -   @Eilebrecht2013
@@ -456,7 +494,8 @@ Guru)](https://refactoring.guru/design-patterns/visitor).
 :::
 
 ::: outcomes
--   k2: Ich verstehe den Aufbau des Visitor-Patterns und kann den Double-Dispatch erklären
+-   k2: Ich verstehe den Aufbau des Visitor-Patterns und kann den Double-Dispatch
+    erklären
 -   k3: Ich kann das Visitor-Pattern auf konkrete Beispiele anwenden
 :::
 
@@ -492,8 +531,8 @@ public class FruitBasketDirect {
 3x Apple, 1x Banana, 0x Orange, 1x Foo
 -->
 
-Das Verwenden von `instanceof` ist unschön und fehleranfällig. Schreiben Sie den Code unter Einsatz des Visitor-Patterns
-um.
+Das Verwenden von `instanceof` ist unschön und fehleranfällig. Schreiben Sie den Code
+unter Einsatz des Visitor-Patterns um.
 
 <!--
 ```java

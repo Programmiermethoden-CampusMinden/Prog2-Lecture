@@ -4,18 +4,23 @@ title: Reguläre Ausdrücke
 ---
 
 ::: tldr
-Mit Hilfe von regulären Ausdrücken kann man den Aufbau von Zeichenketten formal beschreiben. Dabei lassen sich direkt
-die gewünschten Zeichen einsetzen, oder man nutzt Zeichenklassen oder vordefinierte Ausdrücke. Teilausdrücke lassen sich
-gruppieren und über *Quantifier* kann definiert werden, wie oft ein Teilausdruck vorkommen soll. Die Quantifier sind per
-Default **greedy** und versuchen so viel wie möglich zu matchen.
+Mit Hilfe von regulären Ausdrücken kann man den Aufbau von Zeichenketten formal
+beschreiben. Dabei lassen sich direkt die gewünschten Zeichen einsetzen, oder man
+nutzt Zeichenklassen oder vordefinierte Ausdrücke. Teilausdrücke lassen sich
+gruppieren und über *Quantifier* kann definiert werden, wie oft ein Teilausdruck
+vorkommen soll. Die Quantifier sind per Default **greedy** und versuchen so viel wie
+möglich zu matchen.
 
-Auf der Java-Seite stellt man reguläre Ausdrücke zunächst als `String` dar. Dabei muss darauf geachtet werden, dass ein
-Backslash im regulären Ausdruck im Java-String geschützt (*escaped*) werden muss, indem jeweils ein weiterer Backslash
-voran gestellt wird. Mit Hilfe der Klasse `java.util.regex.Pattern` lässt sich daraus ein Objekt mit dem kompilierten
-regulären Ausdruck erzeugen, was insbesondere bei mehrfacher Verwendung günstiger in der Laufzeit ist. Dem
-Pattern-Objekt kann man dann den Suchstring übergeben und bekommt ein Objekt der Klasse `java.util.regex.Matcher` (dort
-sind regulärer Ausdruck/Pattern und der Suchstring kombiniert). Mit den Methoden `Matcher#find` und `Matcher#matches`
-kann dann geprüft werden, ob das Pattern auf den Suchstring passt: `find` sucht dabei nach dem ersten Vorkommen des
+Auf der Java-Seite stellt man reguläre Ausdrücke zunächst als `String` dar. Dabei
+muss darauf geachtet werden, dass ein Backslash im regulären Ausdruck im Java-String
+geschützt (*escaped*) werden muss, indem jeweils ein weiterer Backslash voran
+gestellt wird. Mit Hilfe der Klasse `java.util.regex.Pattern` lässt sich daraus ein
+Objekt mit dem kompilierten regulären Ausdruck erzeugen, was insbesondere bei
+mehrfacher Verwendung günstiger in der Laufzeit ist. Dem Pattern-Objekt kann man dann
+den Suchstring übergeben und bekommt ein Objekt der Klasse `java.util.regex.Matcher`
+(dort sind regulärer Ausdruck/Pattern und der Suchstring kombiniert). Mit den
+Methoden `Matcher#find` und `Matcher#matches` kann dann geprüft werden, ob das
+Pattern auf den Suchstring passt: `find` sucht dabei nach dem ersten Vorkommen des
 Patterns im Suchstring, `match` prüft, ob der gesamte String zum Pattern passt.
 :::
 
@@ -39,8 +44,8 @@ Gesucht ist ein Programm zum Extrahieren von Telefonnummern aus E-Mails.
 \pause
 
 ::: notes
-Leider gibt es unzählig viele Varianten, wie man eine Telefonnummer (samt Vorwahl und ggf. Ländervorwahl) aufschreiben
-kann:
+Leider gibt es unzählig viele Varianten, wie man eine Telefonnummer (samt Vorwahl und
+ggf. Ländervorwahl) aufschreiben kann:
 :::
 
     030 - 123 456 789, 030-123456789, 030/123456789,
@@ -48,7 +53,8 @@ kann:
 
 # Definition Regulärer Ausdruck
 
-> Ein **regulärer Ausdruck** ist eine Zeichenkette, die zur Beschreibung von Zeichenketten dient.
+> Ein **regulärer Ausdruck** ist eine Zeichenkette, die zur Beschreibung von
+> Zeichenketten dient.
 
 ::: notes
 ## Anwendungen
@@ -81,8 +87,9 @@ kann:
 ::: notes
 ## Anmerkung
 
-In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein. Deshalb muss der Backslash i.d.R.
-geschützt ("escaped") werden. =\> Statt "`\n`" müssen Sie im Java-Code "`\\n`" schreiben!
+In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein.
+Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden. =\> Statt "`\n`"
+müssen Sie im Java-Code "`\\n`" schreiben!
 :::
 
 # Zeichenklassen
@@ -97,23 +104,27 @@ geschützt ("escaped") werden. =\> Statt "`\n`" müssen Sie im Java-Code "`\\n`"
 | `[a-z&&[^m-p]]`  | "a" bis "z", außer "m" bis "p": `[a-lq-z]` (Subtraktion) |
 
 ::: notes
-Zeichenklassen werden über eine Zeichenkette formuliert, die in `[` und `]` eingeschlossen wird. Dabei werden alle
-Zeichen aufgezählt, die in dieser Zeichenklasse enthalten sein sollen. Die Zeichenklasse verhält sich von außen
+Zeichenklassen werden über eine Zeichenkette formuliert, die in `[` und `]`
+eingeschlossen wird. Dabei werden alle Zeichen aufgezählt, die in dieser
+Zeichenklasse enthalten sein sollen. Die Zeichenklasse verhält sich von außen
 betrachtet wie ein beliebiges Zeichen aus der Menge der aufgezählten Zeichen.
 
 Beispiel: `[abc]` meint ein "a" oder "b" oder "c" ...
 
-Wenn dem ersten Zeichen der so geformten Zeichenklasse ein `^` vorangestellt wird, sind alle Zeichen *außer* den in der
-Zeichenklasse bezeichneten Zeichen gemeint (Negation). In der Tabelle oben (erste Zeile) könnte man dem `abc` noch ein
-`^` voranstellen und hätte dann *alle* Zeichen *außer* "a", "b" und "c".
+Wenn dem ersten Zeichen der so geformten Zeichenklasse ein `^` vorangestellt wird,
+sind alle Zeichen *außer* den in der Zeichenklasse bezeichneten Zeichen gemeint
+(Negation). In der Tabelle oben (erste Zeile) könnte man dem `abc` noch ein `^`
+voranstellen und hätte dann *alle* Zeichen *außer* "a", "b" und "c".
 
-Für den Schnitt kann als zweite Zeichenklasse eine Negation verwendet werden, damit würde eine Subtraktion erreicht
-werden: Alle Zeichen in der vorderen Zeichenklasse abzüglich der Zeichen in der zweiten Zeichenklasse. In der Tabelle
-oben (vierte Zeile) würde man dem `def` noch ein `^` voranstellen und hätte dann die Zeichen "a" bis "z" *ohne* "d", "e"
-und "f".
+Für den Schnitt kann als zweite Zeichenklasse eine Negation verwendet werden, damit
+würde eine Subtraktion erreicht werden: Alle Zeichen in der vorderen Zeichenklasse
+abzüglich der Zeichen in der zweiten Zeichenklasse. In der Tabelle oben (vierte
+Zeile) würde man dem `def` noch ein `^` voranstellen und hätte dann die Zeichen "a"
+bis "z" *ohne* "d", "e" und "f".
 
-*Anmerkung*: Das Minus-Zeichen hat in der Zeichenklasse eine besondere Bedeutung (es bildet einen Range). Deshalb muss
-es escaped werden, wenn es sich selbst darstellen soll.
+*Anmerkung*: Das Minus-Zeichen hat in der Zeichenklasse eine besondere Bedeutung (es
+bildet einen Range). Deshalb muss es escaped werden, wenn es sich selbst darstellen
+soll.
 :::
 
 ::: notes
@@ -169,10 +180,11 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
     ```
 
     ::: notes
-    -   Schritt 1: Ein Pattern compilieren (erzeugen) mit `Pattern#compile` =\> liefert ein Pattern-Objekt für den
-        regulären Ausdruck zurück
-    -   Schritt 2: Dem Pattern-Objekt den zu untersuchenden Zeichenstrom übergeben mit `Pattern#matcher` =\> liefert ein
-        Matcher-Objekt zurück, darin gebunden: Pattern (regulärer Ausdruck) und die zu untersuchende Zeichenkette
+    -   Schritt 1: Ein Pattern compilieren (erzeugen) mit `Pattern#compile` =\>
+        liefert ein Pattern-Objekt für den regulären Ausdruck zurück
+    -   Schritt 2: Dem Pattern-Objekt den zu untersuchenden Zeichenstrom übergeben
+        mit `Pattern#matcher` =\> liefert ein Matcher-Objekt zurück, darin gebunden:
+        Pattern (regulärer Ausdruck) und die zu untersuchende Zeichenkette
     :::
 
 \smallskip
@@ -187,25 +199,25 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
     ```
 
     ::: notes
-    -   Schritt 3: Mit dem Matcher-Objekt kann man die Ergebnisse der Anwendung des regulären Ausdrucks auf eine
-        Zeichenkette auswerten
+    -   Schritt 3: Mit dem Matcher-Objekt kann man die Ergebnisse der Anwendung des
+        regulären Ausdrucks auf eine Zeichenkette auswerten
 
         Bedeutung der unterschiedlichen Methoden siehe folgende Folien
 
-        `Matcher#group`: Liefert die Sub-Sequenz des Suchstrings zurück, die erfolgreich gematcht wurde (siehe unten
-        "Fangende Gruppierungen")
+        `Matcher#group`: Liefert die Sub-Sequenz des Suchstrings zurück, die
+        erfolgreich gematcht wurde (siehe unten "Fangende Gruppierungen")
     :::
 
 ::: notes
 **Hinweis**:
 
-In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein. Deshalb muss der Backslash i.d.R.
-extra geschützt ("escaped") werden.
+In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein.
+Deshalb muss der Backslash i.d.R. extra geschützt ("escaped") werden.
 
 =\> Statt "`\n`" (regulärer Ausdruck) müssen Sie im Java-String "`\\n`" schreiben!
 
-=\> Statt "`a\\bc`" (regulärer Ausdruck, passt auf die Zeichenkette "a\\bc") müssen Sie im Java-String "`a\\\\bc`"
-schreiben!
+=\> Statt "`a\\bc`" (regulärer Ausdruck, passt auf die Zeichenkette "a\\bc") müssen
+Sie im Java-String "`a\\\\bc`" schreiben!
 :::
 
 [Demo: regexp.MatchFind]{.ex
@@ -215,7 +227,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 
 -   `Matcher#find`:
 
-    Regulärer Ausdruck muss im Suchstring **enthalten** sein. `\newline`{=tex} =\> Suche nach **erstem Vorkommen**
+    Regulärer Ausdruck muss im Suchstring **enthalten** sein. `\newline`{=tex} =\>
+    Suche nach **erstem Vorkommen**
 
 \smallskip
 
@@ -265,13 +278,16 @@ if (m.matches())
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/regexp/Quantifier.java"}
 
 ::: notes
-`Matcher#group` liefert die Inputsequenz, auf die der Matcher angesprochen hat. Mit `Matcher#start` und `Matcher#end`
-kann man sich die Indizes des ersten und letzten Zeichens des Matches im Eingabezeichenstrom geben lassen. D.h. für
-einen Matcher `m` und eine Eingabezeichenkette `s` ist `m.group()` und `s.substring(m.start(), m.end())` äquivalent.
+`Matcher#group` liefert die Inputsequenz, auf die der Matcher angesprochen hat. Mit
+`Matcher#start` und `Matcher#end` kann man sich die Indizes des ersten und letzten
+Zeichens des Matches im Eingabezeichenstrom geben lassen. D.h. für einen Matcher `m`
+und eine Eingabezeichenkette `s` ist `m.group()` und
+`s.substring(m.start(), m.end())` äquivalent.
 
-Da bei `Matcher#matches` das Pattern immer auf den gesamten Suchstring passen muss, verwundert das Ergebnis für
-`Matcher#group` nicht. Bei `Matcher#find` wird im Beispiel allerdings ebenfalls der gesamte Suchstring "gefunden" ...
-Dies liegt am "*greedy*" Verhalten der Quantifizierer.
+Da bei `Matcher#matches` das Pattern immer auf den gesamten Suchstring passen muss,
+verwundert das Ergebnis für `Matcher#group` nicht. Bei `Matcher#find` wird im
+Beispiel allerdings ebenfalls der gesamte Suchstring "gefunden" ... Dies liegt am
+"*greedy*" Verhalten der Quantifizierer.
 :::
 
 # Nicht gierige Quantifizierung mit "?"
@@ -300,7 +316,8 @@ Dies liegt am "*greedy*" Verhalten der Quantifizierer.
         -   passt auf "A 12 A 45 A" (!)
 
         ::: notes
-        **non-greedy** Variante der Quantifizierung; `Matcher#matches` muss trotzdem auf den gesamten Suchstring passen!
+        **non-greedy** Variante der Quantifizierung; `Matcher#matches` muss trotzdem
+        auf den gesamten Suchstring passen!
         :::
 
 # (Fangende) Gruppierungen
@@ -308,7 +325,8 @@ Dies liegt am "*greedy*" Verhalten der Quantifizierer.
 `Studi{2}` passt nicht auf "StudiStudi" (!)
 
 ::: notes
-Quantifizierung bezieht sich auf das direkt davor stehende Zeichen. Ggf. Gruppierungen durch Klammern verwenden!
+Quantifizierung bezieht sich auf das direkt davor stehende Zeichen. Ggf.
+Gruppierungen durch Klammern verwenden!
 :::
 
 \pause
@@ -341,20 +359,23 @@ Quantifizierung bezieht sich auf das direkt davor stehende Zeichen. Ggf. Gruppie
 ::: notes
 Die Gruppen heißen auch "fangende" Gruppen (engl.: *"capturing groups"*).
 
-Damit erreicht man eine Segmentierung des gesamten regulären Ausdrucks, der in seiner Wirkung aber nicht durch die
-Gruppierungen geändert wird. Durch die Gruppierungen von Teilen des regulären Ausdrucks erhält man die Möglichkeit, auf
-die entsprechenden Teil-Matches (der Unterausdrücke der einzelnen Gruppen) zuzugreifen:
+Damit erreicht man eine Segmentierung des gesamten regulären Ausdrucks, der in seiner
+Wirkung aber nicht durch die Gruppierungen geändert wird. Durch die Gruppierungen von
+Teilen des regulären Ausdrucks erhält man die Möglichkeit, auf die entsprechenden
+Teil-Matches (der Unterausdrücke der einzelnen Gruppen) zuzugreifen:
 
 -   `Matcher#groupCount`: Anzahl der "fangenden" Gruppen im regulären Ausdruck
 
--   `Matcher#group(i)`: Liefert die Subsequenz der Eingabezeichenkette zurück, auf die die jeweilige Gruppe gepasst hat.
-    Dabei wird von links nach rechts durchgezählt, beginnend bei 1(!).
+-   `Matcher#group(i)`: Liefert die Subsequenz der Eingabezeichenkette zurück, auf
+    die die jeweilige Gruppe gepasst hat. Dabei wird von links nach rechts
+    durchgezählt, beginnend bei 1(!).
 
     Konvention: Gruppe 0 ist das gesamte Pattern, d.h. `m.group(0) == m.group();` ...
 
-*Hinweis*: Damit der Zugriff auf die Gruppen klappt, muss auch erst ein Match gemacht werden, d.h. das Erzeugen des
-Matcher-Objekts reicht noch nicht, sondern es muss auch noch ein `matcher.find()` oder `matcher.matches()` ausgeführt
-werden. Danach kann man bei Vorliegen eines Matches auf die Gruppen zugreifen.
+*Hinweis*: Damit der Zugriff auf die Gruppen klappt, muss auch erst ein Match gemacht
+werden, d.h. das Erzeugen des Matcher-Objekts reicht noch nicht, sondern es muss auch
+noch ein `matcher.find()` oder `matcher.matches()` ausgeführt werden. Danach kann man
+bei Vorliegen eines Matches auf die Gruppen zugreifen.
 :::
 
 \pause
@@ -385,7 +406,8 @@ Matche zwei Ziffern, gefolgt von den selben zwei Ziffern
     =\> Verweist nicht auf regulären Ausdruck, sondern auf jeweiligen Match!
 
     ::: notes
-    *Anmerkung*: Laut Literatur/Doku nur 1 ... 9, in Praxis geht auch mehr per Backreference ...
+    *Anmerkung*: Laut Literatur/Doku nur 1 ... 9, in Praxis geht auch mehr per
+    Backreference ...
     :::
 
 \smallskip
@@ -401,7 +423,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 
 # Beispiel Gruppen und Backreferences
 
-Regulärer Ausdruck: Namen einer Person matchen, wenn Vor- und Nachname identisch sind.
+Regulärer Ausdruck: Namen einer Person matchen, wenn Vor- und Nachname identisch
+sind.
 
 \pause
 \bigskip
@@ -434,7 +457,8 @@ Lösung: `([A-Z][a-zA-Z]*)\s\1`
     System.out.println("helloü\u0041".matches(".*?A"));
     ```
 
--   RegExp vordefinieren und mit Variablen zusammenbauen ala Perl nicht möglich =\> Umweg String-Repräsentation
+-   RegExp vordefinieren und mit Variablen zusammenbauen ala Perl nicht möglich =\>
+    Umweg String-Repräsentation
 :::
 
 # Wrap-Up
@@ -449,9 +473,11 @@ Lösung: `([A-Z][a-zA-Z]*)\s\1`
 :::
 
 ::: outcomes
--   k1: Ich kenne die wichtigsten Methoden von java.util.regex.Pattern und java.util.regex.Matcher
+-   k1: Ich kenne die wichtigsten Methoden von java.util.regex.Pattern und
+    java.util.regex.Matcher
 -   k2: Ich kann den Unterschied zwischen Matcher#find und Matcher#matches erklären
--   k2: Ich kann zwischen greedy und non-greedy Verhalten bei regulären Ausdrücken unterscheiden
+-   k2: Ich kann zwischen greedy und non-greedy Verhalten bei regulären Ausdrücken
+    unterscheiden
 -   k3: Ich kann einfache reguläre Ausdrücke bilden
 -   k3: Ich kann Zeichenklassen und deren Negation einsetzen
 -   k3: Ich kann die vordefinierten regulären Ausdrücke einsetzen
@@ -460,8 +486,8 @@ Lösung: `([A-Z][a-zA-Z]*)\s\1`
 :::
 
 :::: challenges
-Schreiben Sie eine Methode, die mit Hilfe von regulären Ausdrücken überprüft, ob der eingegebene String eine nach dem
-folgenden Schema gebildete EMail-Adresse ist:
+Schreiben Sie eine Methode, die mit Hilfe von regulären Ausdrücken überprüft, ob der
+eingegebene String eine nach dem folgenden Schema gebildete EMail-Adresse ist:
 
 ::: center
 `name@firma.domain`
@@ -469,10 +495,11 @@ folgenden Schema gebildete EMail-Adresse ist:
 
 Dabei sollen folgende Regeln gelten:
 
--   Die Bestandteile `name` und `firma` können aus Buchstaben, Ziffern, Unter- und Bindestrichen bestehen.
+-   Die Bestandteile `name` und `firma` können aus Buchstaben, Ziffern, Unter- und
+    Bindestrichen bestehen.
 -   Der Bestandteil `name` muss mindestens ein Zeichen lang sein.
--   Der Bestandteil `firma` kann entfallen, dann entfällt auch der nachfolgende Punkt (`.`) und der Teil `domain` folgt
-    direkt auf das `@`-Zeichen.
+-   Der Bestandteil `firma` kann entfallen, dann entfällt auch der nachfolgende Punkt
+    (`.`) und der Teil `domain` folgt direkt auf das `@`-Zeichen.
 -   Der Bestandteil `domain` besteht aus 2 oder 3 Kleinbuchstaben.
 
 Hinweis: Sie dürfen keinen Oder-Operator verwenden.

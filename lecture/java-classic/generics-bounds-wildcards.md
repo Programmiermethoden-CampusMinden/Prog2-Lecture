@@ -4,16 +4,18 @@ title: "Generics: Bounds & Wildcards"
 ---
 
 ::: tldr
-Typ-Variablen können weiter eingeschränkt werden, in dem man einen verpflichtenden Ober- oder Untertyp angibt mit
-`extends` bzw. `super`. Damit muss der später bei der Instantiierung verwendete Typ-Parameter entweder die Oberklasse
-selbst sein oder davon ableiten (bei `extends`) bzw. der Typ-Parameter muss eine Oberklasse der angegebenen Schranke
-sein (`super`).
+Typ-Variablen können weiter eingeschränkt werden, in dem man einen verpflichtenden
+Ober- oder Untertyp angibt mit `extends` bzw. `super`. Damit muss der später bei der
+Instantiierung verwendete Typ-Parameter entweder die Oberklasse selbst sein oder
+davon ableiten (bei `extends`) bzw. der Typ-Parameter muss eine Oberklasse der
+angegebenen Schranke sein (`super`).
 
-Durch die Einschränkung mit `extends` können in der Klasse/Methode auf der Typ-Variablen alle Methoden des angegebenen
-Obertyps verwendet werden.
+Durch die Einschränkung mit `extends` können in der Klasse/Methode auf der
+Typ-Variablen alle Methoden des angegebenen Obertyps verwendet werden.
 
-Ein Wildcard (`?`) als Typ-Parameter steht für einen beliebigen Typ, wobei die Typ-Variable keinen Namen bekommt und
-damit innerhalb der Klasse/Methode nicht zugreifbar ist.
+Ein Wildcard (`?`) als Typ-Parameter steht für einen beliebigen Typ, wobei die
+Typ-Variable keinen Namen bekommt und damit innerhalb der Klasse/Methode nicht
+zugreifbar ist.
 :::
 
 ::: youtube
@@ -38,7 +40,8 @@ Cps<String> c;  // Fehler!!!
 
 -   Schlüsselwort `extends` gilt hier auch für Interfaces
 
--   Mehrere Interfaces: nach `extends` Klasse oder Interface, danach mit "`&`" getrennt die restlichen Interfaces:
+-   Mehrere Interfaces: nach `extends` Klasse oder Interface, danach mit "`&`"
+    getrennt die restlichen Interfaces:
 
     ``` java
     class Cps<E extends KlasseOderInterface & I1 & I2 & I3> {}
@@ -68,11 +71,12 @@ public class Wuppie {
 }
 ```
 
--   `m1`: `List` beliebig parametrisierbar `\newline`{=tex} =\> In `m1` für Objekte in Liste `a` nur Methoden von
-    `Object` nutzbar!
+-   `m1`: `List` beliebig parametrisierbar `\newline`{=tex} =\> In `m1` für Objekte
+    in Liste `a` nur Methoden von `Object` nutzbar!
 
--   `m2`: `List` muss mit `Number` oder Subklasse parametrisiert werden. `\newline`{=tex} =\> Dadurch für Objekte in
-    Liste `b` alle Methoden von `Number` nutzbar ...
+-   `m2`: `List` muss mit `Number` oder Subklasse parametrisiert werden.
+    `\newline`{=tex} =\> Dadurch für Objekte in Liste `b` alle Methoden von `Number`
+    nutzbar ...
 
 ::: notes
 Weitere Eigenschaften:
@@ -89,8 +93,8 @@ Weitere Eigenschaften:
 
 # Hands-On: Ausgabe für generische Listen
 
-Ausgabe für Listen gesucht, die sowohl Elemente der Klasse `A` als auch Elemente der Klasse `B` enthalten
-[können]{.notes}
+Ausgabe für Listen gesucht, die sowohl Elemente der Klasse `A` als auch Elemente der
+Klasse `B` enthalten [können]{.notes}
 
 \bigskip
 
@@ -110,8 +114,9 @@ public class X {
 }
 ```
 
-[**Hinweis**: Dieses Beispiel beinhaltet auch Polymorphie bei/mit generischen Datentypen, bitte vorher auch das Video
-zum vierten Teil "Generics und Polymorphie" anschauen]{.notes}
+[**Hinweis**: Dieses Beispiel beinhaltet auch Polymorphie bei/mit generischen
+Datentypen, bitte vorher auch das Video zum vierten Teil "Generics und Polymorphie"
+anschauen]{.notes}
 
 ::: notes
 ## Erster Versuch (*A* und *B* und *main()* wie oben)
@@ -124,8 +129,8 @@ public class X {
 }
 ```
 
-=\> **So gehts nicht!** Eine `List<B>` ist **keine** `List<A>` (auch wenn ein `B` ein `A` ist, vgl. spätere Sitzung zu
-Generics und Vererbung ...)!
+=\> **So gehts nicht!** Eine `List<B>` ist **keine** `List<A>` (auch wenn ein `B` ein
+`A` ist, vgl. spätere Sitzung zu Generics und Vererbung ...)!
 
 [Beispiel wildcards.v1.X]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/wildcards/v1/X.java"}
@@ -140,10 +145,11 @@ public class X {
 }
 ```
 
-=\> **So gehts auch nicht!** Im Prinzip passt das jetzt für `List<A>` und `List<B>`. Dummerweise hat man durch das
-Wildcard keinen Zugriff mehr auf den Typ-Parameter und muss für den Typ der Laufvariablen in der `for`-Schleife dann
-`Object` nehmen. Aber `Object` kennt unser `printInfo` nicht ... Außerdem könnte man die Methode `X#printInfo` dank des
-Wildcards auch mit allen anderen Typen aufrufen ...
+=\> **So gehts auch nicht!** Im Prinzip passt das jetzt für `List<A>` und `List<B>`.
+Dummerweise hat man durch das Wildcard keinen Zugriff mehr auf den Typ-Parameter und
+muss für den Typ der Laufvariablen in der `for`-Schleife dann `Object` nehmen. Aber
+`Object` kennt unser `printInfo` nicht ... Außerdem könnte man die Methode
+`X#printInfo` dank des Wildcards auch mit allen anderen Typen aufrufen ...
 
 [Beispiel wildcards.v2.X]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/wildcards/v2/X.java"}
@@ -158,9 +164,10 @@ public class X {
 }
 ```
 
-Das ist die Lösung. Man erlaubt als Argument nur `List`-Objekte und fordert, dass sie mit `A` oder einer Unterklasse von
-`A` parametrisiert sind. D.h. in der Schleife kann man sich auf den gemeinsamen Obertyp `A` abstützen und hat dann auch
-wieder die `printInfo`-Methode zur Verfügung ...
+Das ist die Lösung. Man erlaubt als Argument nur `List`-Objekte und fordert, dass sie
+mit `A` oder einer Unterklasse von `A` parametrisiert sind. D.h. in der Schleife kann
+man sich auf den gemeinsamen Obertyp `A` abstützen und hat dann auch wieder die
+`printInfo`-Methode zur Verfügung ...
 :::
 
 [Konsole wildcards.v3.X]{.ex
@@ -173,8 +180,10 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/mas
 
 \smallskip
 
--   Mit Bounds kann man Typ-Parameter nach oben oder nach unten einschränken (im Sinne einer Vererbungshierarchie)
-    -   `extends`: Der Typ-Parameter muss eine Unterklasse eines bestimmten Typen sein
+-   Mit Bounds kann man Typ-Parameter nach oben oder nach unten einschränken (im
+    Sinne einer Vererbungshierarchie)
+    -   `extends`: Der Typ-Parameter muss eine Unterklasse eines bestimmten Typen
+        sein
     -   `super`: Der Typ-Parameter muss eine Oberklasse eines bestimmten Typen sein
 
 ::: readings
@@ -189,8 +198,9 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/mas
 :::
 
 ::: challenges
-**Spieler, Mannschaften und Ligen** Modellieren Sie in Java verschiedene Spielertypen sowie generische Mannschaften und
-Ligen, die jeweils bestimmte Spieler (-typen) bzw. Mannschaften aufnehmen können.
+**Spieler, Mannschaften und Ligen** Modellieren Sie in Java verschiedene Spielertypen
+sowie generische Mannschaften und Ligen, die jeweils bestimmte Spieler (-typen) bzw.
+Mannschaften aufnehmen können.
 
 1.  Implementieren Sie die Klasse `Spieler`, die das Interface `ISpieler` erfüllt.
 
@@ -200,12 +210,14 @@ Ligen, die jeweils bestimmte Spieler (-typen) bzw. Mannschaften aufnehmen könne
     }
     ```
 
-2.  Implementieren Sie die beiden Klassen `FussballSpieler` und `BasketballSpieler` und sorgen Sie dafür, dass beide
-    Klassen vom Compiler als Spieler betrachtet werden (geeignete Vererbungshierarchie).
+2.  Implementieren Sie die beiden Klassen `FussballSpieler` und `BasketballSpieler`
+    und sorgen Sie dafür, dass beide Klassen vom Compiler als Spieler betrachtet
+    werden (geeignete Vererbungshierarchie).
 
-3.  Betrachten Sie das nicht-generische Interface `IMannschaft`. Erstellen Sie daraus ein generisches Interface
-    `IMannschaft` mit einer Typ-Variablen. Stellen Sie durch geeignete Beschränkung der Typ-Variablen sicher, dass nur
-    Mannschaften mit von `ISpieler` abgeleiteten Spielern gebildet werden können.
+3.  Betrachten Sie das nicht-generische Interface `IMannschaft`. Erstellen Sie daraus
+    ein generisches Interface `IMannschaft` mit einer Typ-Variablen. Stellen Sie
+    durch geeignete Beschränkung der Typ-Variablen sicher, dass nur Mannschaften mit
+    von `ISpieler` abgeleiteten Spielern gebildet werden können.
 
     ``` java
     public interface IMannschaft {
@@ -214,9 +226,10 @@ Ligen, die jeweils bestimmte Spieler (-typen) bzw. Mannschaften aufnehmen könne
     }
     ```
 
-4.  Betrachten Sie das nicht-generische Interface `ILiga`. Erstellen Sie daraus ein generisches Interface `ILiga` mit
-    einer Typvariablen. Stellen Sie durch geeignete Beschränkung der Typvariablen sicher, dass nur Ligen mit von
-    `IMannschaft` abgeleiteten Mannschaften angelegt werden können.
+4.  Betrachten Sie das nicht-generische Interface `ILiga`. Erstellen Sie daraus ein
+    generisches Interface `ILiga` mit einer Typvariablen. Stellen Sie durch geeignete
+    Beschränkung der Typvariablen sicher, dass nur Ligen mit von `IMannschaft`
+    abgeleiteten Mannschaften angelegt werden können.
 
     ``` java
     public interface ILiga {
@@ -225,9 +238,11 @@ Ligen, die jeweils bestimmte Spieler (-typen) bzw. Mannschaften aufnehmen könne
     }
     ```
 
-5.  Leiten Sie von `ILiga` das **generische** Interface `IBundesLiga` ab. Stellen Sie durch geeignete Formulierung der
-    Typvariablen sicher, dass nur Ligen mit Mannschaften angelegt werden können, deren Spieler vom Typ `FussballSpieler`
+5.  Leiten Sie von `ILiga` das **generische** Interface `IBundesLiga` ab. Stellen Sie
+    durch geeignete Formulierung der Typvariablen sicher, dass nur Ligen mit
+    Mannschaften angelegt werden können, deren Spieler vom Typ `FussballSpieler`
     (oder abgeleitet) sind.
 
-    Realisieren Sie nun noch die Funktionalität von `IBundesLiga` als **nicht-generisches** Interface `IBundesLiga2`.
+    Realisieren Sie nun noch die Funktionalität von `IBundesLiga` als
+    **nicht-generisches** Interface `IBundesLiga2`.
 :::
