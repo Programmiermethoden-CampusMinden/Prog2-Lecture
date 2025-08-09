@@ -160,8 +160,8 @@ Typinformationen, die aber durch die Typ-Löschung entfernt werden.
 
 # Wrap-Up
 
--   Generics: Vererbung und Überladen möglich, aber: `\newline`{=tex} **Aus
-    "`U extends O`" folgt** nicht\*\* "`A<U> extends A<O>`"\*\*
+-   Generics: Vererbung und Überladen möglich, aber: `\newline`{=tex} Aus
+    "`U extends O`" folgt **nicht** "`A<U> extends A<O>`"
 
 \smallskip
 
