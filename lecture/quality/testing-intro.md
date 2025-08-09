@@ -73,7 +73,7 @@ herumärgern - vermutlich sogar Sie selbst ;)
 > Always code as if the guy who ends up maintaining your code will be a violent
 > psychopath who knows where you live. Code for readability.
 >
-> `\hfill`{=tex}-- [John F.
+> `\hfill`{=tex} -- [John F.
 > Woods](https://groups.google.com/g/comp.lang.c++/c/rYCO5yn4lXw/m/oITtSkZOtoUJ)
 
 ::: notes
