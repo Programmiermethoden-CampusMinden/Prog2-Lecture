@@ -1,54 +1,42 @@
 ---
+author: Carsten Gips (HSBI)
 title: "Build-Systeme: Apache Ant"
-author: "Carsten Gips (HSBI)"
-readings:
-  - "@Inden2013 [Abschnitt 2.5.2]"
-tldr: |
-    Zum Automatisieren von Arbeitsabläufen (Kompilieren, Testen, ...) stehen in der Java-Welt
-    verschiedene Tools zur Verfügung: Apache Ant, Apache Maven und Gradle sind sicher die am
-    bekanntesten darunter.
-
-    In Apache Ant werden die Build-Skripte in XML definiert. Die äußere Klammer ist dabei das
-    `<project>`. In einem Projekt kann es ein oder mehrere Teilziele (_Targets_) geben, die
-    untereinander abhängig sein können. Die Targets können quasi "aufgerufen" werden bzw. in
-    der IDE selektiert und gestartet werden.
-
-    In einem Target kann man schließlich mit _Tasks_ Aufgaben wie Kompilieren, Testen, Aufräumen,
-    ... erledigen lassen. Dazu gibt es eine breite Palette an vordefinierten Tasks. Zusätzlich
-    sind umfangreiche Operationen auf dem Filesystem möglich (Ordner erstellen, löschen, Dinge
-    kopieren, ...).
-
-    Über _Properties_ können Werte und Namen definiert werden, etwa für bestimmte Ordner. Die
-    Properties sind unveränderliche Variablen (auch wenn man sie im Skript scheinbar neu setzen
-    kann).
-
-    Über Apache Ivy können analog zu Maven und Gradle definierte Abhängigkeiten aus Maven-Central
-    aufgelöst werden.
-
-    Im Unterschied zu Maven und Gradle ist in Ant _kein_ Java-Entwicklungsmodell eingebaut. Man
-    muss sämtliche Targets selbst definieren.
-outcomes:
-  - k3: "Schreiben einfacher Ant-Skripte mit Abhängigkeiten zwischen den Targets"
-  - k3: "Nutzung von Ant-Filesets (Dateisystemoperationen, Classpath)"
-  - k3: "Nutzung von Ant-Properties"
-  - k3: "Ausführen von Ant-Targets aus der IDE heraus"
-#quizzes:
-#  - link: "https://www.hsbi.de/elearning/goto.php?target=tst_1106214&client_id=FH-Bielefeld"
-#    name: "Quiz Apache Ant (ILIAS)"
-youtube:
-  - link: "https://youtu.be/LRA1PeQ2pR0"
-    name: "VL Apache Ant"
-  - link: "https://youtu.be/EnAQOU_zL1M"
-    name: "Demo Aufruf von Ant (Konsole, IDE: hello.xml)"
-  - link: "https://youtu.be/ip8xFcSZC1c"
-    name: "Demo Properties, Targets, Dependencies (build.xml)"
-  - link: "https://youtu.be/jizh0bi2TnU"
-    name: "Demo Abhängigkeiten mit Ivy auflösen (ivydemo.xml)"
-fhmedia:
-  - link: "https://www.hsbi.de/medienportal/m/31f6228dac399ec8151484367499e975959f23e6ebaf61e1869b959f903aeea256af0c2cdca66bf249862deebba48e660107feb880267017b798e0b1ee10870f"
-    name: "VL Apache Ant"
 ---
 
+::: tldr
+Zum Automatisieren von Arbeitsabläufen (Kompilieren, Testen, ...) stehen in der
+Java-Welt verschiedene Tools zur Verfügung: Apache Ant, Apache Maven und Gradle sind
+sicher die am bekanntesten darunter.
+
+In Apache Ant werden die Build-Skripte in XML definiert. Die äußere Klammer ist
+dabei das `<project>`. In einem Projekt kann es ein oder mehrere Teilziele
+(*Targets*) geben, die untereinander abhängig sein können. Die Targets können quasi
+"aufgerufen" werden bzw. in der IDE selektiert und gestartet werden.
+
+In einem Target kann man schließlich mit *Tasks* Aufgaben wie Kompilieren, Testen,
+Aufräumen, ... erledigen lassen. Dazu gibt es eine breite Palette an vordefinierten
+Tasks. Zusätzlich sind umfangreiche Operationen auf dem Filesystem möglich (Ordner
+erstellen, löschen, Dinge kopieren, ...).
+
+Über *Properties* können Werte und Namen definiert werden, etwa für bestimmte
+Ordner. Die Properties sind unveränderliche Variablen (auch wenn man sie im Skript
+scheinbar neu setzen kann).
+
+Über Apache Ivy können analog zu Maven und Gradle definierte Abhängigkeiten aus
+Maven-Central aufgelöst werden.
+
+Im Unterschied zu Maven und Gradle ist in Ant *kein* Java-Entwicklungsmodell
+eingebaut. Man muss sämtliche Targets selbst definieren.
+:::
+
+::: youtube
+-   [VL Apache Ant](https://youtu.be/LRA1PeQ2pR0)
+-   [Demo Aufruf von Ant (Konsole, IDE: hello.xml)](https://youtu.be/EnAQOU_zL1M)
+-   [Demo Properties, Targets, Dependencies
+    (build.xml)](https://youtu.be/ip8xFcSZC1c)
+-   [Demo Abhängigkeiten mit Ivy auflösen
+    (ivydemo.xml)](https://youtu.be/jizh0bi2TnU)
+:::
 
 # Automatisieren von Arbeitsabläufen
 
@@ -60,29 +48,28 @@ Works on my machine ...
 \bigskip
 \pause
 
-*   Build-Tools:
-    *  **Apache Ant**
-    *   Apache Maven
-    *   Gradle
+-   Build-Tools:
+    -   **Apache Ant**
+    -   Apache Maven
+    -   Gradle
 
 \bigskip
 
 ::: notes
-*   Aufgaben:
-    *   Übersetzen des Quellcodes
-    *   Ausführen der Unit-Tests
-    *   Generieren der Dokumentation
-    *   Packen der Distribution
-    *   Aufräumen temporärer Dateien
-    *   ...
+-   Aufgaben:
+    -   Übersetzen des Quellcodes
+    -   Ausführen der Unit-Tests
+    -   Generieren der Dokumentation
+    -   Packen der Distribution
+    -   Aufräumen temporärer Dateien
+    -   ...
 
-=> Automatisieren mit Apache Ant: [ant.apache.org](https://ant.apache.org/)
+=\> Automatisieren mit Apache Ant: [ant.apache.org](https://ant.apache.org/)
 :::
-
 
 # Aufbau von Ant-Skripten: Projekte und Targets
 
-```xml
+``` xml
 <project name="Vorlesung" default="clean" basedir=".">
     <target name="init" />
     <target name="compile" depends="init" />
@@ -93,21 +80,20 @@ Works on my machine ...
 ```
 
 ::: notes
-*   Ein Hauptziel: `project`
-*   Ein oder mehrere Teilziele: `target`
-    *   Abhängigkeiten der Teilziele untereinander möglich: `depends`
-    *   Vorbedingung für Targets mit `if` oder `unless`
+-   Ein Hauptziel: `project`
+-   Ein oder mehrere Teilziele: `target`
+    -   Abhängigkeiten der Teilziele untereinander möglich: `depends`
+    -   Vorbedingung für Targets mit `if` oder `unless`
 :::
-
 
 # Aufgaben erledigen: Tasks
 
 ::: notes
-*   **Tasks**: Aufgaben bzw. Befehle ("Methodenaufruf"), in Targets auszuführen
-*   Struktur: `<taskname attr1="value1" attr2="value2" />`
+-   **Tasks**: Aufgaben bzw. Befehle ("Methodenaufruf"), in Targets auszuführen
+-   Struktur: `<taskname attr1="value1" attr2="value2" />`
 :::
 
-```xml
+``` xml
 <target name="simplecompile" depends="clean,init">
     <javac srcdir="src" destdir="build" classpath="." />
 </target>
@@ -115,21 +101,22 @@ Works on my machine ...
 
 \bigskip
 
-*   Beispiele: `echo`, `javac`, `jar`, `javadoc`, `junit`, ...
-*   Je Target mehrere Tasks möglich
-*   Quellen:
-    *   Eingebaute Tasks
-    *   Optionale Task-Bibliotheken
-    *   Selbst definierte Tasks
+-   Beispiele: `echo`, `javac`, `jar`, `javadoc`, `junit`, ...
+-   Je Target mehrere Tasks möglich
+-   Quellen:
+    -   Eingebaute Tasks
+    -   Optionale Task-Bibliotheken
+    -   Selbst definierte Tasks
 
-=> Überblick: [ant.apache.org/manual/tasksoverview.html](https://ant.apache.org/manual/tasksoverview.html)
+=\> Überblick:
+[ant.apache.org/manual/tasksoverview.html](https://ant.apache.org/manual/tasksoverview.html)
 
-[Konsole/IDE: ant -f hello.xml]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/hello.xml"}
-
+[Konsole/IDE: ant -f hello.xml]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/hello.xml"}
 
 # Properties: Name-Wert-Paare
 
-```xml
+``` xml
 <property name="app"       value="MyProject" />
 <property name="build.dir" location="build" />
 
@@ -139,27 +126,27 @@ Works on my machine ...
 ```
 
 ::: notes
-*   Setzen von Eigenschaften: `<property name="wuppie" value="fluppie" />`
-    *   Properties lassen sich nur einmal setzen ("immutable")
-        *   Erneute Definition ist wirkungslos, erzeugt aber leider keinen Fehler
-*   Nutzung von Properties: `<property name="db" value="${wuppie}.db" />`
-*   Pfade: "`location`" statt "`value`" nutzen:
+-   Setzen von Eigenschaften: `<property name="wuppie" value="fluppie" />`
+    -   Properties lassen sich nur einmal setzen ("immutable")
+        -   Erneute Definition ist wirkungslos, erzeugt aber leider keinen Fehler
+-   Nutzung von Properties: `<property name="db" value="${wuppie}.db" />`
+-   Pfade: "`location`" statt "`value`" nutzen:
     `<property name="ziel" location="${p}/bla/blub" />`
 :::
 
 \bigskip
 
-*   Properties beim Aufruf setzen mit Option "`-D`": \newline
+-   Properties beim Aufruf setzen mit Option "`-D`": `\newline`{=tex}
     `ant -Dwuppie=fluppie`
 
 ::: notes
-[Beispiel build.xml, Properties]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/build.xml"}
+[Beispiel build.xml, Properties]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/build.xml"}
 :::
-
 
 # Tasks zum Umgang mit Dateien und Ordnern
 
-```xml
+``` xml
 <target name="demo">
     <mkdir dir="${build.dir}/lib" />
 
@@ -172,21 +159,21 @@ Works on my machine ...
 ```
 
 ::: notes
-*   `<mkdir dir="${dist}/lib" />`
-    *   Legt auch direkte Unterverzeichnisse an
-    *   Keine Aktion, falls Verzeichnis existiert
-*   `<delete dir="${builddir}" />`
-    *   Löscht eine Datei ("`file`") oder ein Verzeichnis ("`dir`") (rekursiv!)
-*   `<copy file="myfile.txt" tofile="../bak/mycopy.txt" />`
-*   `<move file="src/file.orig" tofile="bak/file.moved" />`
+-   `<mkdir dir="${dist}/lib" />`
+    -   Legt auch direkte Unterverzeichnisse an
+    -   Keine Aktion, falls Verzeichnis existiert
+-   `<delete dir="${builddir}" />`
+    -   Löscht eine Datei ("`file`") oder ein Verzeichnis ("`dir`") (rekursiv!)
+-   `<copy file="myfile.txt" tofile="../bak/mycopy.txt" />`
+-   `<move file="src/file.orig" tofile="bak/file.moved" />`
 
-[Beispiel build.xml, init und clean]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/build.xml"}
+[Beispiel build.xml, init und clean]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/build.xml"}
 :::
-
 
 # Nutzung von Filesets in Tasks
 
-```xml
+``` xml
 <copy todir="archive">
     <fileset dir="src">
         <include name="**/*.java" />
@@ -201,21 +188,19 @@ Works on my machine ...
 
 \bigskip
 
-*   "`*`" für beliebig viele Zeichen
-*   "`?`" für genau ein Zeichen
-*   "`**`" alle Unterverzeichnisse
+-   "`*`" für beliebig viele Zeichen
+-   "`?`" für genau ein Zeichen
+-   "`**`" alle Unterverzeichnisse
 
 ::: notes
-Es gibt auch die Variante `<dirset dir="...">`, um Verzeichnisse zu
-gruppieren.
+Es gibt auch die Variante `<dirset dir="...">`, um Verzeichnisse zu gruppieren.
 :::
-
 
 # Pfade und externe Bibliotheken
 
-*   Als Element direkt im Task:
+-   Als Element direkt im Task:
 
-    ```xml
+    ``` xml
     <classpath>
         <pathelement location="${lib}/helper.jar" />
         <pathelement path="${project.classpath}" />
@@ -225,7 +210,7 @@ gruppieren.
     ::: notes
     D.h. die Einbettung in den `javac`-Task würde etwa so erfolgen:
 
-    ```xml
+    ``` xml
     <target ... >
         <javac ...>
             <classpath>
@@ -236,15 +221,15 @@ gruppieren.
     </target>
     ```
 
-    _Anmerkung_: Neben dem `pathelement` können Sie hier auch (wie im nächsten
+    *Anmerkung*: Neben dem `pathelement` können Sie hier auch (wie im nächsten
     Beispiel gezeigt) ein oder mehrere `fileset` nutzen.
     :::
 
 \bigskip
 
-*   Wiederverwendbar durch ID und "`refid`":
+-   Wiederverwendbar durch ID und "`refid`":
 
-    ```xml
+    ``` xml
     <path id="java.class.path">
         <fileset dir="${lib}">
             <include name="**/*.jar" />
@@ -257,7 +242,7 @@ gruppieren.
     ::: notes
     Die Einbettung in den `javac`-Task würde hier etwa so erfolgen:
 
-    ```xml
+    ``` xml
     <path id="java.class.path">
         <fileset dir="${lib}">
             <include name="**/*.jar" />
@@ -271,28 +256,28 @@ gruppieren.
     </target>
     ```
 
-    _Anmerkung_: Neben dem `fileset` können Sie hier auch (wie oben gezeigt)
-    ein oder mehrere `pathelement` nutzen.
+    *Anmerkung*: Neben dem `fileset` können Sie hier auch (wie oben gezeigt) ein
+    oder mehrere `pathelement` nutzen.
     :::
 
 \bigskip
 
 ::: notes
-_Anmerkung_: Laut [ant.apache.org/manual/Tasks/junit.html](https://ant.apache.org/manual/Tasks/junit.html)
-benötigt man neben der aktuellen `junit.jar` noch die `ant-junit.jar` im Classpath, um mit dem `junit`-Ant-Task
-entsprechende JUnit4-Testfälle ausführen zu können.
+*Anmerkung*: Laut
+[ant.apache.org/manual/Tasks/junit.html](https://ant.apache.org/manual/Tasks/junit.html)
+benötigt man neben der aktuellen `junit.jar` noch die `ant-junit.jar` im Classpath,
+um mit dem `junit`-Ant-Task entsprechende JUnit4-Testfälle ausführen zu können.
 
 Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 [ant.apache.org/manual/Tasks/junitlauncher.html](https://ant.apache.org/manual/Tasks/junitlauncher.html)).
 :::
 
-
-::::::::: notes
+::: notes
 # Beispiele
 
 ## Beispiel-Task: Kompilieren
 
-```xml
+``` xml
 <path id="project.classpath">
     <fileset dir="${lib.dir}" includes="**/*.jar" />
 </path>
@@ -306,7 +291,7 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 
 ## Beispiel-Task: Packen
 
-```xml
+``` xml
 <target name="dist" depends="compile" description="generate the distribution" >
     <mkdir dir="${dist.dir}" />
     <jar jarfile="${dist.dir}/${app}.jar" basedir="${build.dir}">
@@ -319,26 +304,26 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 
 ## Beispiel-Task: Testen
 
-*   Tests einer Testklasse ausführen:
+-   Tests einer Testklasse ausführen:
 
-    ```xml
+    ``` xml
     <junit>
         <test name="my.test.TestCase" />
     </junit>
     ```
 
-*   Test ausführen und XML mit Ergebnissen erzeugen:
+-   Test ausführen und XML mit Ergebnissen erzeugen:
 
-    ```xml
+    ``` xml
     <junit printsummary="yes" fork="yes" haltonfailure="yes">
         <formatter type="xml" />
         <test name="my.test.TestCase" />
     </junit>
     ```
 
-*   Verschiedene Tests als Batch ausführen:
+-   Verschiedene Tests als Batch ausführen:
 
-    ```xml
+    ``` xml
     <junit printsummary="yes" haltonfailure="yes">
         <classpath>
             <pathelement location="${build.tests}" />
@@ -360,9 +345,9 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
     </junit>
     ```
 
-*   Aus Testergebnis (XML) einen Report generieren:
+-   Aus Testergebnis (XML) einen Report generieren:
 
-    ```xml
+    ``` xml
     <junitreport todir="${reportdir}">
         <fileset dir="...">
             <include name="TEST-*.xml" />
@@ -371,19 +356,19 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
     </junitreport>
     ```
 
-*   Abbruch bei Fehler:
+-   Abbruch bei Fehler:
 
-    ```xml
+    ``` xml
     <junit ... failureproperty="tests.failed" ... >
         <fail if="tests.failed" />
     </junit>
     ```
 
-=> `junit.jar` und `ant-junit.jar` (JUnit4.x) im Pfad!
+=\> `junit.jar` und `ant-junit.jar` (JUnit4.x) im Pfad!
 
 ## Programme ausführen
 
-```xml
+``` xml
 <target name="run">
     <java jar="build/jar/HelloWorld.jar" fork="true" classname ="test.Main">
         <arg value ="-h" />
@@ -393,8 +378,7 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
     </ java>
 </target>
 ```
-:::::::::
-
+:::
 
 # Ausblick: Laden von Abhängigkeiten mit Apache Ivy
 
@@ -404,7 +388,7 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 
 \bigskip
 
-```xml
+``` xml
 <!-- build.xml -->
 <project xmlns:ivy="antlib:org.apache.ivy.ant">
     <target name="resolve">
@@ -414,14 +398,15 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 ```
 
 ::: notes
-Wenn Ivy installiert ist, kann man durch den Eintrag `xmlns:ivy="antlib:org.apache.ivy.ant"`
-in der Projekt-Deklaration im Ant-Skript die Ivy-Tasks laden. Der wichtigste Task ist dabei
-`ivy:retrieve`, mit dem externe Projektabhängigkeiten heruntergeladen werden können.
+Wenn Ivy installiert ist, kann man durch den Eintrag
+`xmlns:ivy="antlib:org.apache.ivy.ant"` in der Projekt-Deklaration im Ant-Skript die
+Ivy-Tasks laden. Der wichtigste Task ist dabei `ivy:retrieve`, mit dem externe
+Projektabhängigkeiten heruntergeladen werden können.
 :::
 
 \bigskip
 
-```xml
+``` xml
 <!-- ivy.xml -->
 <ivy-module version="2.0">
     <dependencies>
@@ -432,14 +417,15 @@ in der Projekt-Deklaration im Ant-Skript die Ivy-Tasks laden. Der wichtigste Tas
 ```
 
 ::: notes
-Zur Steuerung von Ivy legt man eine weitere Datei `ivy.xml` an. Das Wurzelelement ist `ivy-module`,
-wobei die `version` die niedrigste kompatible Ivy-Version angibt.
+Zur Steuerung von Ivy legt man eine weitere Datei `ivy.xml` an. Das Wurzelelement
+ist `ivy-module`, wobei die `version` die niedrigste kompatible Ivy-Version angibt.
 
-Der `dependencies`-Abschnitt definiert dann die Abhängigkeiten, die Ivy auflösen muss. Die Schreibweise
-ist dabei wie im Maven2 Repository ([mvnrepository.com](https://mvnrepository.com/)) angelegt. Dort
-findet man beispielsweise für Apache Commons CLI den Eintrag für Maven ("POM"-Datei):
+Der `dependencies`-Abschnitt definiert dann die Abhängigkeiten, die Ivy auflösen
+muss. Die Schreibweise ist dabei wie im Maven2 Repository
+([mvnrepository.com](https://mvnrepository.com/)) angelegt. Dort findet man
+beispielsweise für Apache Commons CLI den Eintrag für Maven ("POM"-Datei):
 
-```xml
+``` xml
 <!-- https://mvnrepository.com/artifact/commons-cli/commons-cli -->
 <dependency>
     <groupId>commons-cli</groupId>
@@ -448,16 +434,18 @@ findet man beispielsweise für Apache Commons CLI den Eintrag für Maven ("POM"-
 </dependency>
 ```
 
-Für die Ivy-Konfiguration übernimmt man die `groupId` als `org`, die `artifactId` als `name` und die
-`version` als `rev` im Eintrag `dependency`.
+Für die Ivy-Konfiguration übernimmt man die `groupId` als `org`, die `artifactId`
+als `name` und die `version` als `rev` im Eintrag `dependency`.
 
-Damit kann Ivy diese Bibliothek über den Ant-Task `ivy:retrieve` vor dem Bauen herunterladen, sofern
-die Bibliothek noch nicht lokal vorhanden ist. Eventuelle Abhängigkeiten werden dabei ebenfalls aufgelöst.
+Damit kann Ivy diese Bibliothek über den Ant-Task `ivy:retrieve` vor dem Bauen
+herunterladen, sofern die Bibliothek noch nicht lokal vorhanden ist. Eventuelle
+Abhängigkeiten werden dabei ebenfalls aufgelöst.
 
-Im Detail: Der Ant-Task `ivy:retrieve` löst zunächst die Abhängigkeiten auf und lädt die Dateien (sofern
-sie noch nicht vorhanden oder veraltet sind) in den Ivy-Cache (per Default: `~/.ivy2/cache/`). Danach
-werden die Dateien in den Default-Library-Order im Projekt kopiert (per Defaul: `./lib/`). Die Ordner kann
-man über Optionen im `ivy:retrieve`-Task einstellen.
+Im Detail: Der Ant-Task `ivy:retrieve` löst zunächst die Abhängigkeiten auf und lädt
+die Dateien (sofern sie noch nicht vorhanden oder veraltet sind) in den Ivy-Cache
+(per Default: `~/.ivy2/cache/`). Danach werden die Dateien in den
+Default-Library-Order im Projekt kopiert (per Defaul: `./lib/`). Die Ordner kann man
+über Optionen im `ivy:retrieve`-Task einstellen.
 :::
 
 <!--
@@ -465,29 +453,27 @@ ivy-2.5.0.jar von /usr/share/java/ivy.jar nach ~/.ant/lib/ kopieren
 Ivy-Cache unter ~/.ivy2/cache/
 -->
 
-[Demo: ivydemo.xml]{.ex href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/ivydemo.xml"}
-
+[Demo: ivydemo.xml]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/ivydemo.xml"}
 
 # Ausblick: Weitere Build-Systeme
 
-*   [Maven](https://maven.apache.org/)
-    *   War als Nachfolger von Ant gedacht
-    *   Statt wie bei Ant explizit Targets zu formulieren, geht Maven
-        von einem Standardprojekt aus - nur noch Abweichungen müssen
-        formuliert werden
-    *   Zieht Abhängigkeiten in zentralen `.maven`-Ordner
+-   [Maven](https://maven.apache.org/)
+    -   War als Nachfolger von Ant gedacht
+    -   Statt wie bei Ant explizit Targets zu formulieren, geht Maven von einem
+        Standardprojekt aus - nur noch Abweichungen müssen formuliert werden
+    -   Zieht Abhängigkeiten in zentralen `.maven`-Ordner
 
 \bigskip
 
-*   [Gradle](https://gradle.org/)
-    *   Eine Art Mischung aus Ant und Maven unter Nutzung der Sprache Groovy
+-   [Gradle](https://gradle.org/)
+    -   Eine Art Mischung aus Ant und Maven unter Nutzung der Sprache Groovy
 
 \bigskip
 
-*   [Make](https://www.gnu.org/software/make/)
-    *   DER Klassiker, stammt aus der C-Welt. Kann aber natürlich auch Java.
-    *   Analog zu Ant: Aktionen und Ziele müssen explizit definiert werden
-
+-   [Make](https://www.gnu.org/software/make/)
+    -   DER Klassiker, stammt aus der C-Welt. Kann aber natürlich auch Java.
+    -   Analog zu Ant: Aktionen und Ziele müssen explizit definiert werden
 
 # Wrap-Up
 
@@ -495,10 +481,21 @@ Apache Ant: [ant.apache.org](https://ant.apache.org/)
 
 \bigskip
 
-*   Automatisieren von Arbeitsabläufen
-*   Apache Ant: Targets, Tasks, Properties
-    *   Targets sind auswählbare Teilziele
-    *   Abhängigkeiten zwischen Targets möglich
-    *   Tasks erledigen Aufgaben (innerhalb Targets)
-    *   Properties sind nicht änderbare Variablen
-    *   Umfangreiche Operationen auf Filesystem möglich
+-   Automatisieren von Arbeitsabläufen
+-   Apache Ant: Targets, Tasks, Properties
+    -   Targets sind auswählbare Teilziele
+    -   Abhängigkeiten zwischen Targets möglich
+    -   Tasks erledigen Aufgaben (innerhalb Targets)
+    -   Properties sind nicht änderbare Variablen
+    -   Umfangreiche Operationen auf Filesystem möglich
+
+::: readings
+-   @Inden2013 [Abschnitt 2.5.2]
+:::
+
+::: outcomes
+-   k3: Schreiben einfacher Ant-Skripte mit Abhängigkeiten zwischen den Targets
+-   k3: Nutzung von Ant-Filesets (Dateisystemoperationen, Classpath)
+-   k3: Nutzung von Ant-Properties
+-   k3: Ausführen von Ant-Targets aus der IDE heraus
+:::
