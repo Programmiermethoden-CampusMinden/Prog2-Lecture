@@ -4,14 +4,15 @@ title: Aufzählungen (Enumerations)
 ---
 
 ::: tldr
-Mit Hilfe von `enum` lassen sich Aufzählungstypen definieren (der Compiler erzeugt intern passende Klassen). Dabei wird
-den Konstanten eine fortlaufende Nummer zugeordnet, auf die mit `ordinal()` zugegriffen werden kann. Mit der Methode
-`values()` kann über die Konstanten iteriert werden, und mit `name()` kann eine Stringrepräsentation einer Konstanten
-erzeugt werden. Es sind keine Instanzen von Enum-Klassen erzeugbar, und die Enum-Konstanten sind implizit `final` und
-`static`.
+Mit Hilfe von `enum` lassen sich Aufzählungstypen definieren (der Compiler erzeugt
+intern passende Klassen). Dabei wird den Konstanten eine fortlaufende Nummer
+zugeordnet, auf die mit `ordinal()` zugegriffen werden kann. Mit der Methode
+`values()` kann über die Konstanten iteriert werden, und mit `name()` kann eine
+Stringrepräsentation einer Konstanten erzeugt werden. Es sind keine Instanzen von
+Enum-Klassen erzeugbar, und die Enum-Konstanten sind implizit `final` und `static`.
 
-Es lassen sich auch komplexe Enumerations analog zu Klassendefinition definieren, die eigene Konstruktoren, Felder und
-Methoden enthalten.
+Es lassen sich auch komplexe Enumerations analog zu Klassendefinition definieren,
+die eigene Konstruktoren, Felder und Methoden enthalten.
 :::
 
 ::: youtube
@@ -43,7 +44,8 @@ public class Studi {
 **Probleme**:
 
 -   Keine Typsicherheit
--   Konstanten gehören zur Klasse `Studi`, obwohl sie in anderem Kontext vermutlich auch interessant sind
+-   Konstanten gehören zur Klasse `Studi`, obwohl sie in anderem Kontext vermutlich
+    auch interessant sind
 :::
 
 [[Probleme: Typsicherheit, Kontext]{.ex}]{.slides} [[Beispiel enums.v1.Studi]{.ex
@@ -95,16 +97,16 @@ public enum Fach {
 -   Gelten in jedem von der Klasse erzeugten Objekt
 -   Unterschiedliche Lebensdauer:
     -   Objektattribute (Instanzvariablen): ab `new` bis zum Garbage Collector
-    -   Statische Variablen: Laufzeitumgebung (JVM) lädt und initialisiert die Klasse (`static` Attribute existieren,
-        bis die JVM die Klasse entfernt)
+    -   Statische Variablen: Laufzeitumgebung (JVM) lädt und initialisiert die
+        Klasse (`static` Attribute existieren, bis die JVM die Klasse entfernt)
 
 **Methoden**:
 
 -   `static` deklarierte Methoden sind **Klassenmethoden**
 -   Können direkt auf der Klasse aufgerufen werden
 -   Beispiele: `Math.max()`, `Math.sin()`, `Integer.parseInt()`
--   **Achtung**: In Klassenmethoden nur Klassenattribute nutzbar (keine Instanzattribute!), d.h. keine `this`-Referenz
-    nutzbar
+-   **Achtung**: In Klassenmethoden nur Klassenattribute nutzbar (keine
+    Instanzattribute!), d.h. keine `this`-Referenz nutzbar
 
 ## Wiederholung *final*: Attribute/Methoden/Klassen nicht änderbar
 
@@ -125,9 +127,11 @@ public enum Fach {
     [Beispiel enums.FinalDemo]{.ex
     href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/enums/FinalDemo.java"}
 
--   Methoden: `final` deklarierte Methoden können bei Vererbung nicht überschrieben werden
+-   Methoden: `final` deklarierte Methoden können bei Vererbung nicht überschrieben
+    werden
 
--   Klassen: von `final` deklarierten Klassen können keine Unterklassen gebildet werden
+-   Klassen: von `final` deklarierten Klassen können keine Unterklassen gebildet
+    werden
 :::
 
 # Einfache Aufzählungen: Eigenschaften (cnt.)
@@ -157,7 +161,8 @@ switch (f) {
 Außerdem können wir folgende Eigenschaften nutzen (u.a., s.u.):
 
 -   Enumerations haben Methode `String toString()` für die Konstanten
--   Enumerations haben Methode `final T[] values()` für die Iteration über die Konstanten
+-   Enumerations haben Methode `final T[] values()` für die Iteration über die
+    Konstanten
 :::
 
 [Demo: enums.v2.Studi]{.ex
@@ -223,8 +228,10 @@ public enum Fach {
     -   `public String toString()` =\> Ruft `name()` auf, überschreibbar
 -   Konstanten:
     -   `public final T[] values()` =\> Alle Konstanten der Aufzählung
-    -   `public final int ordinal()` =\> Interne Nummer der Konstanten (Reihenfolge des Anlegens der Konstanten!)
-    -   `public static T valueOf(String)` =\> Zum String passende Konstante (via `name()`)
+    -   `public final int ordinal()` =\> Interne Nummer der Konstanten (Reihenfolge
+        des Anlegens der Konstanten!)
+    -   `public static T valueOf(String)` =\> Zum String passende Konstante (via
+        `name()`)
 
 **Hinweis**: Diese Methoden gibt es auch bei den "einfachen" Enumerationen (s.o.).
 :::
@@ -238,8 +245,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/mas
 
 \smallskip
 
--   Komplexe Enumerations analog zu Klassendefinition: Konstruktoren, Felder und Methoden `\newline`{=tex} (keine
-    Instanzen von Enum-Klassen erzeugbar)
+-   Komplexe Enumerations analog zu Klassendefinition: Konstruktoren, Felder und
+    Methoden `\newline`{=tex} (keine Instanzen von Enum-Klassen erzeugbar)
 
 \bigskip
 
@@ -267,13 +274,16 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/mas
 ::: challenges
 Im
 [Dungeon](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/contrib/configuration/KeyboardConfig.java)
-sollen Key-Codes aus libGDX (Integer-Werte) als Konstanten zugreifbar sein. Zusätzlich soll es es noch einen String
-geben, der beschreibt, wo und wie diese Taste im Spiel eingesetzt wird. Aus historischen Gründen ist dies im Dungeon
-recht komplex gelöst.
+sollen Key-Codes aus libGDX (Integer-Werte) als Konstanten zugreifbar sein.
+Zusätzlich soll es es noch einen String geben, der beschreibt, wo und wie diese
+Taste im Spiel eingesetzt wird. Aus historischen Gründen ist dies im Dungeon recht
+komplex gelöst.
 
-Definieren Sie eine neue Enum-Klasse, die Konstanten für Tasten aufzählt (beispielsweise `ESCAPE`, `W`, `A` oder
-`LEFT`). Jede dieser Konstanten soll den der Taste zugeordneten Integerwert speichern können und einen String haben, der
-als Hilfestring verstanden werden könnte (nutzen Sie hier einfach Phantasiewerte). Zeigen Sie in einer kleinen Demo, wie
-Sie mit diesem Enum arbeiten würden: Zugriff auf die Konstanten, Zugriff auf den Zahlenwert und/oder den String,
-Übergabe als Funktionsparameter.
+Definieren Sie eine neue Enum-Klasse, die Konstanten für Tasten aufzählt
+(beispielsweise `ESCAPE`, `W`, `A` oder `LEFT`). Jede dieser Konstanten soll den der
+Taste zugeordneten Integerwert speichern können und einen String haben, der als
+Hilfestring verstanden werden könnte (nutzen Sie hier einfach Phantasiewerte).
+Zeigen Sie in einer kleinen Demo, wie Sie mit diesem Enum arbeiten würden: Zugriff
+auf die Konstanten, Zugriff auf den Zahlenwert und/oder den String, Übergabe als
+Funktionsparameter.
 :::

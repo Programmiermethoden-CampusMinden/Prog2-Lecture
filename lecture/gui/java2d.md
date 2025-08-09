@@ -4,23 +4,27 @@ title: Einführung in Graphics und Java 2D
 ---
 
 ::: tldr
-Swing-Komponenten zeichnen mit `paintComponent()` auf einem `Graphics`-Objekt. Die Methode wird von Swing selbst
-aufgerufen; man kann sie durch den Aufruf von `repaint()` auf einer Swing-Komponente aber manuell triggern.
+Swing-Komponenten zeichnen mit `paintComponent()` auf einem `Graphics`-Objekt. Die
+Methode wird von Swing selbst aufgerufen; man kann sie durch den Aufruf von
+`repaint()` auf einer Swing-Komponente aber manuell triggern.
 
-Die Klasse `Graphics` bietet verschiedene einfache Methoden zum Zeichnen von Linien, Rechtecken, Ovalen und Texten ...
-Die davon ableitende Klasse `Graphics2D` bietet deutlich mehr Möglichkeiten, und das Argument beim Aufruf von
-`paintComponent()` ist zwar formal vom Typ `Graphics`, in der Praxis aber oft vom Typ `Graphics2D` (Typprüfung und
-anschließender Cast nötig).
+Die Klasse `Graphics` bietet verschiedene einfache Methoden zum Zeichnen von Linien,
+Rechtecken, Ovalen und Texten ... Die davon ableitende Klasse `Graphics2D` bietet
+deutlich mehr Möglichkeiten, und das Argument beim Aufruf von `paintComponent()` ist
+zwar formal vom Typ `Graphics`, in der Praxis aber oft vom Typ `Graphics2D`
+(Typprüfung und anschließender Cast nötig).
 
 Das Koordinatensystem in Java2D hat den Ursprung in der linken oberen Ecke.
 
-Geometrische Primitive und Text werden in der aktuell ausgewählten Zeichenfarbe gerendert. Die Rechtecke, Ovale und
-Polygone existieren auch als "gefüllte" Variante.
+Geometrische Primitive und Text werden in der aktuell ausgewählten Zeichenfarbe
+gerendert. Die Rechtecke, Ovale und Polygone existieren auch als "gefüllte"
+Variante.
 
-Da bei einem Aufruf von `paintComponent()` stets das komplette Objekt neu gezeichnet wird, kann man dies in einer
-Game-Loop nutzen: Pro Schritt berechnet man für alle Objekte die neue Position, lässt ggf. weitere Interaktion o.ä.
-berechnen und zeichnet anschließend die Objekte über den Aufruf von `repaint()` neu. In der Game-Loop werden also keine
-Threads benötigt.
+Da bei einem Aufruf von `paintComponent()` stets das komplette Objekt neu gezeichnet
+wird, kann man dies in einer Game-Loop nutzen: Pro Schritt berechnet man für alle
+Objekte die neue Position, lässt ggf. weitere Interaktion o.ä. berechnen und
+zeichnet anschließend die Objekte über den Aufruf von `repaint()` neu. In der
+Game-Loop werden also keine Threads benötigt.
 :::
 
 ::: youtube
@@ -56,8 +60,9 @@ public void paintComponent(Graphics g)
 -   Oder "von Hand" mit `void repaint()`
 
     ::: notes
-    Methode `repaint()` der Swing-Komponente aufrufen =\> dadurch wird dann intern die Methode `paintComponent()` der
-    Komponente aufgerufen zum Neuzeichnen auf dem Graphics-Objekt.
+    Methode `repaint()` der Swing-Komponente aufrufen =\> dadurch wird dann intern
+    die Methode `paintComponent()` der Komponente aufgerufen zum Neuzeichnen auf dem
+    Graphics-Objekt.
     :::
 
 Objekt vom Typ `Graphics` stellt graphischen Kontext dar
@@ -81,7 +86,8 @@ Objekt vom Typ `Graphics` stellt graphischen Kontext dar
 -   Methode zum Zeichnen: `paintComponent()`
 -   Umgang mit Farben: `java.awt.Color`
 -   Umgang mit Zeichen und Fonts: `java.awt.Font`
--   Geom. Primitive: `java.awt.Polygon`, `java.awt.geom.{Line2D, Rectangle2D, Ellipse2D}`, ...
+-   Geom. Primitive: `java.awt.Polygon`,
+    `java.awt.geom.{Line2D, Rectangle2D, Ellipse2D}`, ...
 :::
 
 # Java2D Koordinatensystem
@@ -213,7 +219,8 @@ Beobachtung: `paintComponent()` schreibt `Graphics`-Objekt komplett neu!
 
 ::: notes
 -   Kein Löschen von Objekten nötig
--   Es müssen alle im nächsten Schritt sichtbaren Objekte stets neu gezeichnet werden
+-   Es müssen alle im nächsten Schritt sichtbaren Objekte stets neu gezeichnet
+    werden
 :::
 
 \bigskip
@@ -225,18 +232,21 @@ Idee: Je Zeitschritt:
 3.  Objekte mit `paintComponent()` neu in GUI zeichnen
 
 ::: notes
--   Möglichkeit 1: Alle Objekte in zentraler Datenstruktur halten und die Bewegung im Hauptprogramm berechnen
-    -   Unschön: Das Hauptprogramm muss Hintergrundwissen über die Objekte und deren Bewegung haben
+-   Möglichkeit 1: Alle Objekte in zentraler Datenstruktur halten und die Bewegung
+    im Hauptprogramm berechnen
+    -   Unschön: Das Hauptprogramm muss Hintergrundwissen über die Objekte und deren
+        Bewegung haben
 
 \smallskip
 
--   Möglichkeit 2: Die Objekte wissen selbst, wie sie sich bewegen und haben eine Methode, deren Aufruf die Bewegung
-    durchführt
+-   Möglichkeit 2: Die Objekte wissen selbst, wie sie sich bewegen und haben eine
+    Methode, deren Aufruf die Bewegung durchführt
     -   Objekte als Listener im Hauptprogramm registrieren
-    -   Hauptprogramm gibt Zeittakt vor und ruft je Schritt für alle Listener die Bewege-Methode auf =\> Listener
-        berechnen ihre neue Position
+    -   Hauptprogramm gibt Zeittakt vor und ruft je Schritt für alle Listener die
+        Bewege-Methode auf =\> Listener berechnen ihre neue Position
     -   Hauptprogramm kann weitere Prüfungen (Kollision etc) auslösen
-    -   Hauptprogramm ruft für alle Listener eine Paint-Methode auf =\> Listener stellen sich auf GUI dar ...
+    -   Hauptprogramm ruft für alle Listener eine Paint-Methode auf =\> Listener
+        stellen sich auf GUI dar ...
 
     =\> Observer-Pattern nutzen
 :::
@@ -253,9 +263,10 @@ Idee: Je Zeitschritt:
 -   Anzahl der Observer muss nicht bekannt sein - zur Laufzeit erweiterbar!
 -   Verschiedene Update-Methoden für unterschiedliche Observer denkbar
 -   **Push-Modell**: Benötigte Daten werden der Update-Methode mitgegeben
--   **Pull-Modell**: Update-Methode nur als Trigger, Observer holen sich die Daten selbst
--   Referenz auf Observable mitgeben - Observer braucht dann keine Referenz auf das Observable halten und kann sich bei
-    verschiedenen Observables registrieren
+-   **Pull-Modell**: Update-Methode nur als Trigger, Observer holen sich die Daten
+    selbst
+-   Referenz auf Observable mitgeben - Observer braucht dann keine Referenz auf das
+    Observable halten und kann sich bei verschiedenen Observables registrieren
 -   `Observer` werden (vor allem im Swing-Umfeld) manchmal auch `Listener` genannt
 :::
 
@@ -306,7 +317,8 @@ Weitere evtl. nützliche Methoden:
 ::: notes
 **Pro Schritt**:
 
-1.  `move()` für alle Objekte aufrufen: Objekte setzen ihren Ursprung weiter (**ohne Aktualisierung des Bildes!**)
+1.  `move()` für alle Objekte aufrufen: Objekte setzen ihren Ursprung weiter (**ohne
+    Aktualisierung des Bildes!**)
 
 2.  Prüfungen: Kollision/Berührung, aus dem Bild wandern ...
 
@@ -325,8 +337,9 @@ Weitere evtl. nützliche Methoden:
     -   Sammelt der Held etwas auf?
     -   ...
 
-4.  `repaint()` im Spielfeld aufrufen =\> damit wird `paintComponent()` aufgerufen, in `paintComponent()` wird für alle
-    Spielobjekte deren `paintTo()` aufgerufen und damit ein Neuzeichnen aller Objekte ausgelöst
+4.  `repaint()` im Spielfeld aufrufen =\> damit wird `paintComponent()` aufgerufen,
+    in `paintComponent()` wird für alle Spielobjekte deren `paintTo()` aufgerufen
+    und damit ein Neuzeichnen aller Objekte ausgelöst
 :::
 
 [Demo: java2d.simplegame.J2DTeaser]{.ex
@@ -357,7 +370,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 -   k2: Unterschied und Zusammenhang zwischen Swing und AWT
 -   k2: Swing-Komponenten erben paintComponent(Graphics)
 -   k2: paintComponent(Graphics) wird durch Events oder durch repaint() aufgerufen
--   k3: Auf Graphics-Objekt zeichnen mit geometrischen Primitiven: Nutzung von draw(), fill(), drawString()
+-   k3: Auf Graphics-Objekt zeichnen mit geometrischen Primitiven: Nutzung von
+    draw(), fill(), drawString()
 -   k3: Einstellung von Farbe und Font
 -   k3: Erzeugen von Bewegung ohne Nutzung von Threads
 :::

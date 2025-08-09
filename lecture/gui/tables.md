@@ -4,11 +4,13 @@ title: "Swing: Tabellen"
 ---
 
 ::: tldr
-In Swing kann man komplexe Daten mit `JTable` in einer tabellenartigen Struktur darstellen.
+In Swing kann man komplexe Daten mit `JTable` in einer tabellenartigen Struktur
+darstellen.
 
-Swing-Komponenten (nicht nur `JTable`!) nutzen das MVC-Pattern und trennen Daten und Anzeige. Allerdings werden in Swing
-die Teile "Controller" und "View" miteinander verschmolzen (etwa im `JTable`) und nur das "Model" wird separat erzeugt
-zur Verwaltung der Daten.
+Swing-Komponenten (nicht nur `JTable`!) nutzen das MVC-Pattern und trennen Daten und
+Anzeige. Allerdings werden in Swing die Teile "Controller" und "View" miteinander
+verschmolzen (etwa im `JTable`) und nur das "Model" wird separat erzeugt zur
+Verwaltung der Daten.
 :::
 
 ::: youtube
@@ -42,9 +44,9 @@ zur Verwaltung der Daten.
 
 ::: notes
 Damit der Tabellenkopf angezeigt wird, muss die Tabelle lt.
-[Dokumentation](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html) entweder in eine `JScrollPane`
-verpackt werden oder der Tabellenkopf muss manuell geeignet untergebracht werden, beispielsweise über ein
-`BorderLayout`:
+[Dokumentation](https://docs.oracle.com/javase/tutorial/uiswing/components/table.html)
+entweder in eine `JScrollPane` verpackt werden oder der Tabellenkopf muss manuell
+geeignet untergebracht werden, beispielsweise über ein `BorderLayout`:
 
 ``` java
 JTable table = new JTable(data, columns);
@@ -67,12 +69,13 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
     ```
 
     ::: notes
-    Damit kann man im Tabellenkopf auf eine Spalte klicken und die Tabelle wird entsprechend dieser Spalte sortiert.
+    Damit kann man im Tabellenkopf auf eine Spalte klicken und die Tabelle wird
+    entsprechend dieser Spalte sortiert.
 
     *Hinweis*: Dazu muss der Tabellenkopf sichtbar sein.
 
-    *Hinweis*: Man kann auch eigene Sortierer implementieren. Diese leiten von `TableRowSorter` ab und werden über
-    `table.setRowSorter()` gesetzt.
+    *Hinweis*: Man kann auch eigene Sortierer implementieren. Diese leiten von
+    `TableRowSorter` ab und werden über `table.setRowSorter()` gesetzt.
     :::
 
 -   Selektion erkennen und reagieren mit MouseListener:
@@ -95,19 +98,23 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 ![](images/mvc.png){width="60%"}
 
 ::: notes
-Das [Model-View-Controller-Pattern (MVC)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) ist vor
+Das [Model-View-Controller-Pattern
+(MVC)](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) ist vor
 allem im Bereich User-Interfaces anzutreffen.
 
-Das "Model" kennt und verwaltet die Daten. Es ist unabhängig von der konkreten Darstellung der Daten und kann neben den
-Daten auch Teile der Geschäftslogik beinhalten. Änderungen im Model werden per Observer-Pattern an den View
+Das "Model" kennt und verwaltet die Daten. Es ist unabhängig von der konkreten
+Darstellung der Daten und kann neben den Daten auch Teile der Geschäftslogik
+beinhalten. Änderungen im Model werden per Observer-Pattern an den View
 weitergereicht.
 
-Der "View" ist für die Darstellung der Daten zuständig und für die Benutzerinteraktion. Der View kennt das Model, ist
-aber nicht für die Verwaltung der Daten zuständig. Benutzerinteraktion wird über das Observer-Pattern an den Controller
-weitergeleitet.
+Der "View" ist für die Darstellung der Daten zuständig und für die
+Benutzerinteraktion. Der View kennt das Model, ist aber nicht für die Verwaltung der
+Daten zuständig. Benutzerinteraktion wird über das Observer-Pattern an den
+Controller weitergeleitet.
 
-Der "Controller" verwaltet das Model und den View und kümmert sich um die Verarbeitung der Nutzerinteraktion. Bei
-User-Interaktion mit dem View wird der Controller über das Observer-Pattern vom View benachrichtigt, verarbeitet die
+Der "Controller" verwaltet das Model und den View und kümmert sich um die
+Verarbeitung der Nutzerinteraktion. Bei User-Interaktion mit dem View wird der
+Controller über das Observer-Pattern vom View benachrichtigt, verarbeitet die
 Interaktion und kann entsprechende Änderungen an das Model weitergeben.
 
 Dieses Pattern findet sich mittlerweile in diversen (leichten) Variationen.
@@ -118,7 +125,8 @@ Dieses Pattern findet sich mittlerweile in diversen (leichten) Variationen.
 -   Modell muss von `AbstractTableModel` ableiten
 -   Methoden zur Interaktion mit Tabelle implementieren!
 -   Tabelle wird über Instanz von diesem Modell erzeugt
--   Tabelle ist View und Controller zugleich, trägt sich bei Erzeugung als Listener beim Modell ein
+-   Tabelle ist View und Controller zugleich, trägt sich bei Erzeugung als Listener
+    beim Modell ein
 
 \smallskip
 
@@ -152,7 +160,8 @@ Dieses Pattern findet sich mittlerweile in diversen (leichten) Variationen.
 
 -   Kontrolle über Änderung der Daten in `setValueAt()`
 
--   Daten können in beliebigem Format vorliegen! Interface nach "außen" dennoch tabellenartig.
+-   Daten können in beliebigem Format vorliegen! Interface nach "außen" dennoch
+    tabellenartig.
 
 ::: notes
 # Eigene Listener beim Modell registrieren
@@ -170,10 +179,11 @@ m.addTableModelListener(new TableModelListener() {
 });
 ```
 
-Wenn Daten geändert werden, wird automatisch die Methode `setValueAt()` des Modells aufgerufen.
+Wenn Daten geändert werden, wird automatisch die Methode `setValueAt()` des Modells
+aufgerufen.
 
-Zusätzlich kann man beim Modell eigene Listener registrieren, die auf Events durch Änderungen der Tabelle reagieren
-können.
+Zusätzlich kann man beim Modell eigene Listener registrieren, die auf Events durch
+Änderungen der Tabelle reagieren können.
 :::
 
 [Demo: tables.ModelTable]{.ex
@@ -183,8 +193,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 
 -   Fortgeschrittene Swing-Komponenten
     -   Komplexe Daten mit `JTable` anzeigen
-    -   Swing-Komponenten (nicht nur `JTable`!) haben Datenmodelle `\newline`{=tex} (können separat erzeugt werden,
-        haben eigene Listener, ...)
+    -   Swing-Komponenten (nicht nur `JTable`!) haben Datenmodelle `\newline`{=tex}
+        (können separat erzeugt werden, haben eigene Listener, ...)
 -   Trennung Daten und Anzeige: MVC-Pattern
 
 ::: readings
