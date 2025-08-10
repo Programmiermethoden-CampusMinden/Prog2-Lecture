@@ -4,19 +4,25 @@ title: Reguläre Ausdrücke
 ---
 
 ::: tldr
-Mit Hilfe von regulären Ausdrücken kann man den Aufbau von Zeichenketten formal beschreiben. Dabei lassen sich direkt
-die gewünschten Zeichen einsetzen, oder man nutzt Zeichenklassen oder vordefinierte Ausdrücke. Teilausdrücke lassen sich
-gruppieren und über *Quantifier* kann definiert werden, wie oft ein Teilausdruck vorkommen soll. Die Quantifier sind per
-Default **greedy** und versuchen so viel wie möglich zu matchen.
+Mit Hilfe von regulären Ausdrücken kann man den Aufbau von Zeichenketten formal
+beschreiben. Dabei lassen sich direkt die gewünschten Zeichen einsetzen, oder man
+nutzt Zeichenklassen oder vordefinierte Ausdrücke. Teilausdrücke lassen sich
+gruppieren und über *Quantifier* kann definiert werden, wie oft ein Teilausdruck
+vorkommen soll. Die Quantifier sind per Default **greedy** und versuchen so viel wie
+möglich zu matchen.
 
-Auf der Java-Seite stellt man reguläre Ausdrücke zunächst als `String` dar. Dabei muss darauf geachtet werden, dass ein
-Backslash im regulären Ausdruck im Java-String geschützt (*escaped*) werden muss, indem jeweils ein weiterer Backslash
-voran gestellt wird. Mit Hilfe der Klasse `java.util.regex.Pattern` lässt sich daraus ein Objekt mit dem kompilierten
-regulären Ausdruck erzeugen, was insbesondere bei mehrfacher Verwendung günstiger in der Laufzeit ist. Dem
-Pattern-Objekt kann man dann den Suchstring übergeben und bekommt ein Objekt der Klasse `java.util.regex.Matcher` (dort
-sind regulärer Ausdruck/Pattern und der Suchstring kombiniert). Mit den Methoden `Matcher#find` und `Matcher#matches`
-kann dann geprüft werden, ob das Pattern auf den Suchstring passt: `find` sucht dabei nach dem ersten Vorkommen des
-Patterns im Suchstring, `match` prüft, ob der gesamte String zum Pattern passt.
+Auf der Java-Seite stellt man reguläre Ausdrücke zunächst als `String` dar. Dabei
+muss darauf geachtet werden, dass ein Backslash im regulären Ausdruck im Java-String
+geschützt (*escaped*) werden muss, indem jeweils ein weiterer Backslash voran
+gestellt wird. Mit Hilfe der Klasse `java.util.regex.Pattern` lässt sich daraus ein
+Objekt mit dem kompilierten regulären Ausdruck erzeugen, was insbesondere bei
+mehrfacher Verwendung günstiger in der Laufzeit ist. Dem Pattern-Objekt kann man
+dann den Suchstring übergeben und bekommt ein Objekt der Klasse
+`java.util.regex.Matcher` (dort sind regulärer Ausdruck/Pattern und der Suchstring
+kombiniert). Mit den Methoden `Matcher#find` und `Matcher#matches` kann dann geprüft
+werden, ob das Pattern auf den Suchstring passt: `find` sucht dabei nach dem ersten
+Vorkommen des Patterns im Suchstring, `match` prüft, ob der gesamte String zum
+Pattern passt.
 :::
 
 ::: youtube
@@ -39,8 +45,8 @@ Gesucht ist ein Programm zum Extrahieren von Telefonnummern aus E-Mails.
 \pause
 
 ::: notes
-Leider gibt es unzählig viele Varianten, wie man eine Telefonnummer (samt Vorwahl und ggf. Ländervorwahl) aufschreiben
-kann:
+Leider gibt es unzählig viele Varianten, wie man eine Telefonnummer (samt Vorwahl
+und ggf. Ländervorwahl) aufschreiben kann:
 :::
 
     030 - 123 456 789, 030-123456789, 030/123456789,
@@ -48,14 +54,16 @@ kann:
 
 # Definition Regulärer Ausdruck
 
-> Ein **regulärer Ausdruck** ist eine Zeichenkette, die zur Beschreibung von Zeichenketten dient.
+> Ein **regulärer Ausdruck** ist eine Zeichenkette, die zur Beschreibung von
+> Zeichenketten dient.
 
 ::: notes
 ## Anwendungen
 
 -   Finden von Bestandteilen in Zeichenketten
 -   Aufteilen von Strings in Tokens
--   Validierung von textuellen Eingaben =\> "Eine Postleitzahl besteht aus 5 Ziffern"
+-   Validierung von textuellen Eingaben =\> "Eine Postleitzahl besteht aus 5
+    Ziffern"
 -   Compilerbau: Erkennen von Schlüsselwörtern und Strukturen und Syntaxfehlern
 :::
 
@@ -81,8 +89,9 @@ kann:
 ::: notes
 ## Anmerkung
 
-In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein. Deshalb muss der Backslash i.d.R.
-geschützt ("escaped") werden. =\> Statt "`\n`" müssen Sie im Java-Code "`\\n`" schreiben!
+In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein.
+Deshalb muss der Backslash i.d.R. geschützt ("escaped") werden. =\> Statt "`\n`"
+müssen Sie im Java-Code "`\\n`" schreiben!
 :::
 
 # Zeichenklassen
@@ -149,10 +158,11 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
     ```
 
     ::: notes
-    -   Schritt 1: Ein Pattern compilieren (erzeugen) mit `Pattern#compile` =\> liefert ein Pattern-Objekt für den
-        regulären Ausdruck zurück
-    -   Schritt 2: Dem Pattern-Objekt den zu untersuchenden Zeichenstrom übergeben mit `Pattern#matcher` =\> liefert ein
-        Matcher-Objekt zurück, darin gebunden: Pattern (regulärer Ausdruck) und die zu untersuchende Zeichenkette
+    -   Schritt 1: Ein Pattern compilieren (erzeugen) mit `Pattern#compile` =\>
+        liefert ein Pattern-Objekt für den regulären Ausdruck zurück
+    -   Schritt 2: Dem Pattern-Objekt den zu untersuchenden Zeichenstrom übergeben
+        mit `Pattern#matcher` =\> liefert ein Matcher-Objekt zurück, darin gebunden:
+        Pattern (regulärer Ausdruck) und die zu untersuchende Zeichenkette
     :::
 
 \smallskip
@@ -167,25 +177,25 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
     ```
 
     ::: notes
-    -   Schritt 3: Mit dem Matcher-Objekt kann man die Ergebnisse der Anwendung des regulären Ausdrucks auf eine
-        Zeichenkette auswerten
+    -   Schritt 3: Mit dem Matcher-Objekt kann man die Ergebnisse der Anwendung des
+        regulären Ausdrucks auf eine Zeichenkette auswerten
 
         Bedeutung der unterschiedlichen Methoden siehe folgende Folien
 
-        `Matcher#group`: Liefert die Sub-Sequenz des Suchstrings zurück, die erfolgreich gematcht wurde (siehe unten
-        "Fangende Gruppierungen")
+        `Matcher#group`: Liefert die Sub-Sequenz des Suchstrings zurück, die
+        erfolgreich gematcht wurde (siehe unten "Fangende Gruppierungen")
     :::
 
 ::: notes
 **Hinweis**:
 
-In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein. Deshalb muss der Backslash i.d.R.
-extra geschützt ("escaped") werden.
+In Java-Strings leitet der Backslash eine zu interpretierende Befehlssequenz ein.
+Deshalb muss der Backslash i.d.R. extra geschützt ("escaped") werden.
 
 =\> Statt "`\n`" (regulärer Ausdruck) müssen Sie im Java-String "`\\n`" schreiben!
 
-=\> Statt "`a\\bc`" (regulärer Ausdruck, passt auf die Zeichenkette "a\\bc") müssen Sie im Java-String "`a\\\\bc`"
-schreiben!
+=\> Statt "`a\\bc`" (regulärer Ausdruck, passt auf die Zeichenkette "a\\bc") müssen
+Sie im Java-String "`a\\\\bc`" schreiben!
 :::
 
 [Demo: regexp.MatchFind]{.ex
@@ -195,7 +205,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 
 -   `Matcher#find`:
 
-    Regulärer Ausdruck muss im Suchstring **enthalten** sein. `\newline`{=tex} =\> Suche nach **erstem Vorkommen**
+    Regulärer Ausdruck muss im Suchstring **enthalten** sein. `\newline`{=tex} =\>
+    Suche nach **erstem Vorkommen**
 
 \smallskip
 
@@ -245,13 +256,16 @@ if (m.matches())
 href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/regexp/Quantifier.java"}
 
 ::: notes
-`Matcher#group` liefert die Inputsequenz, auf die der Matcher angesprochen hat. Mit `Matcher#start` und `Matcher#end`
-kann man sich die Indizes des ersten und letzten Zeichens des Matches im Eingabezeichenstrom geben lassen. D.h. für
-einen Matcher `m` und eine Eingabezeichenkette `s` ist `m.group()` und `s.substring(m.start(), m.end())` äquivalent.
+`Matcher#group` liefert die Inputsequenz, auf die der Matcher angesprochen hat. Mit
+`Matcher#start` und `Matcher#end` kann man sich die Indizes des ersten und letzten
+Zeichens des Matches im Eingabezeichenstrom geben lassen. D.h. für einen Matcher `m`
+und eine Eingabezeichenkette `s` ist `m.group()` und
+`s.substring(m.start(), m.end())` äquivalent.
 
-Da bei `Matcher#matches` das Pattern immer auf den gesamten Suchstring passen muss, verwundert das Ergebnis für
-`Matcher#group` nicht. Bei `Matcher#find` wird im Beispiel allerdings ebenfalls der gesamte Suchstring "gefunden" ...
-Dies liegt am "*greedy*" Verhalten der Quantifizierer.
+Da bei `Matcher#matches` das Pattern immer auf den gesamten Suchstring passen muss,
+verwundert das Ergebnis für `Matcher#group` nicht. Bei `Matcher#find` wird im
+Beispiel allerdings ebenfalls der gesamte Suchstring "gefunden" ... Dies liegt am
+"*greedy*" Verhalten der Quantifizierer.
 :::
 
 # Nicht gierige Quantifizierung mit "?"
@@ -280,7 +294,8 @@ Dies liegt am "*greedy*" Verhalten der Quantifizierer.
         -   passt auf "A 12 A 45 A" (!)
 
         ::: notes
-        **non-greedy** Variante der Quantifizierung; `Matcher#matches` muss trotzdem auf den gesamten Suchstring passen!
+        **non-greedy** Variante der Quantifizierung; `Matcher#matches` muss trotzdem
+        auf den gesamten Suchstring passen!
         :::
 
 # (Fangende) Gruppierungen
@@ -288,7 +303,8 @@ Dies liegt am "*greedy*" Verhalten der Quantifizierer.
 `Studi{2}` passt nicht auf "StudiStudi" (!)
 
 ::: notes
-Quantifizierung bezieht sich auf das direkt davor stehende Zeichen. Ggf. Gruppierungen durch Klammern verwenden!
+Quantifizierung bezieht sich auf das direkt davor stehende Zeichen. Ggf.
+Gruppierungen durch Klammern verwenden!
 :::
 
 \pause
@@ -321,20 +337,24 @@ Quantifizierung bezieht sich auf das direkt davor stehende Zeichen. Ggf. Gruppie
 ::: notes
 Die Gruppen heißen auch "fangende" Gruppen (engl.: *"capturing groups"*).
 
-Damit erreicht man eine Segmentierung des gesamten regulären Ausdrucks, der in seiner Wirkung aber nicht durch die
-Gruppierungen geändert wird. Durch die Gruppierungen von Teilen des regulären Ausdrucks erhält man die Möglichkeit, auf
-die entsprechenden Teil-Matches (der Unterausdrücke der einzelnen Gruppen) zuzugreifen:
+Damit erreicht man eine Segmentierung des gesamten regulären Ausdrucks, der in
+seiner Wirkung aber nicht durch die Gruppierungen geändert wird. Durch die
+Gruppierungen von Teilen des regulären Ausdrucks erhält man die Möglichkeit, auf die
+entsprechenden Teil-Matches (der Unterausdrücke der einzelnen Gruppen) zuzugreifen:
 
 -   `Matcher#groupCount`: Anzahl der "fangenden" Gruppen im regulären Ausdruck
 
--   `Matcher#group(i)`: Liefert die Subsequenz der Eingabezeichenkette zurück, auf die die jeweilige Gruppe gepasst hat.
-    Dabei wird von links nach rechts durchgezählt, beginnend bei 1(!).
+-   `Matcher#group(i)`: Liefert die Subsequenz der Eingabezeichenkette zurück, auf
+    die die jeweilige Gruppe gepasst hat. Dabei wird von links nach rechts
+    durchgezählt, beginnend bei 1(!).
 
-    Konvention: Gruppe 0 ist das gesamte Pattern, d.h. `m.group(0) == m.group();` ...
+    Konvention: Gruppe 0 ist das gesamte Pattern, d.h. `m.group(0) == m.group();`
+    ...
 
-*Hinweis*: Damit der Zugriff auf die Gruppen klappt, muss auch erst ein Match gemacht werden, d.h. das Erzeugen des
-Matcher-Objekts reicht noch nicht, sondern es muss auch noch ein `matcher.find()` oder `matcher.matches()` ausgeführt
-werden. Danach kann man bei Vorliegen eines Matches auf die Gruppen zugreifen.
+*Hinweis*: Damit der Zugriff auf die Gruppen klappt, muss auch erst ein Match
+gemacht werden, d.h. das Erzeugen des Matcher-Objekts reicht noch nicht, sondern es
+muss auch noch ein `matcher.find()` oder `matcher.matches()` ausgeführt werden.
+Danach kann man bei Vorliegen eines Matches auf die Gruppen zugreifen.
 :::
 
 \pause
@@ -365,7 +385,8 @@ Matche zwei Ziffern, gefolgt von den selben zwei Ziffern
     =\> Verweist nicht auf regulären Ausdruck, sondern auf jeweiligen Match!
 
     ::: notes
-    *Anmerkung*: Laut Literatur/Doku nur 1 ... 9, in Praxis geht auch mehr per Backreference ...
+    *Anmerkung*: Laut Literatur/Doku nur 1 ... 9, in Praxis geht auch mehr per
+    Backreference ...
     :::
 
 \smallskip
@@ -381,7 +402,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 
 # Beispiel Gruppen und Backreferences
 
-Regulärer Ausdruck: Namen einer Person matchen, wenn Vor- und Nachname identisch sind.
+Regulärer Ausdruck: Namen einer Person matchen, wenn Vor- und Nachname identisch
+sind.
 
 \pause
 \bigskip
@@ -414,7 +436,8 @@ Lösung: `([A-Z][a-zA-Z]*)\s\1`
     System.out.println("helloü\u0041".matches(".*?A"));
     ```
 
--   RegExp vordefinieren und mit Variablen zusammenbauen ala Perl nicht möglich =\> Umweg String-Repräsentation
+-   RegExp vordefinieren und mit Variablen zusammenbauen ala Perl nicht möglich =\>
+    Umweg String-Repräsentation
 :::
 
 # Wrap-Up
@@ -440,44 +463,51 @@ Lösung: `([A-Z][a-zA-Z]*)\s\1`
 :::
 
 ::: quizzes
--   [Quiz RegExp (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106518&client_id=FH-Bielefeld)
+-   [Quiz RegExp
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106518&client_id=FH-Bielefeld)
 :::
 
 ::: challenges
 In den
 [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/java-jvm/src/challenges/regexp)
 finden Sie in der Klasse `Lexer` eine einfache Implementierung eines
-[Lexers](https://de.wikipedia.org/wiki/Lexikalische_Analyse), worin ein einfaches Syntax-Highlighting für Java-Code
-realisiert ist.
+[Lexers](https://de.wikipedia.org/wiki/Lexikalische_Analyse), worin ein einfaches
+Syntax-Highlighting für Java-Code realisiert ist.
 
-Dazu arbeitet der Lexer mit sogenannten "Token" (Instanzen der Klasse `Token`). Diese haben einen regulären Ausdruck, um
-bestimmte Teile im Code zu erkennen, beispielsweise Keywords oder Kommentare und anderes. Der Lexer wendet alle Token
-auf den aktuellen Eingabezeichenstrom an (Methode `Token#test()`), und die Token prüfen mit "ihrem" regulären Ausdruck,
-ob die jeweils passende Eingabesequenz vorliegt. Die regulären Ausdrücke übergeben Sie dem `Token`-Konstruktor als
-entsprechendes `Pattern`-Objekt.
+Dazu arbeitet der Lexer mit sogenannten "Token" (Instanzen der Klasse `Token`).
+Diese haben einen regulären Ausdruck, um bestimmte Teile im Code zu erkennen,
+beispielsweise Keywords oder Kommentare und anderes. Der Lexer wendet alle Token auf
+den aktuellen Eingabezeichenstrom an (Methode `Token#test()`), und die Token prüfen
+mit "ihrem" regulären Ausdruck, ob die jeweils passende Eingabesequenz vorliegt. Die
+regulären Ausdrücke übergeben Sie dem `Token`-Konstruktor als entsprechendes
+`Pattern`-Objekt.
 
-Neben dem jeweiligen Pattern kennt jedes Token noch eine `matchingGroup`: Dies ist ein Integer, der die relevante
-Matching-Group im regulären Ausdruck bezeichnet. Wenn Sie keine eigenen Gruppen in einem regulären Ausdruck eingebaut
-haben, nutzen Sie hier einfach den Wert 0.
+Neben dem jeweiligen Pattern kennt jedes Token noch eine `matchingGroup`: Dies ist
+ein Integer, der die relevante Matching-Group im regulären Ausdruck bezeichnet. Wenn
+Sie keine eigenen Gruppen in einem regulären Ausdruck eingebaut haben, nutzen Sie
+hier einfach den Wert 0.
 
-Zusätzlich kennt jedes Token noch die Farbe für das Syntax-Highlighting in der von uns als Vorgabe realisierten
-Swing-GUI (Instanz von `Color`).
+Zusätzlich kennt jedes Token noch die Farbe für das Syntax-Highlighting in der von
+uns als Vorgabe realisierten Swing-GUI (Instanz von `Color`).
 
-Erstellen Sie passende `Token`-Instanzen mit entsprechenden Pattern für die folgenden Token:
+Erstellen Sie passende `Token`-Instanzen mit entsprechenden Pattern für die
+folgenden Token:
 
 -   Einzeiliger Kommentar: beginnend mit `//` bis zum Zeilenende
 -   Mehrzeiliger Kommentar: alles zwischen `/*` und dem nächsten `*/`
 -   Javadoc-Kommentar: alles zwischen `/**` und dem nächsten `*/`
 -   Strings: alles zwischen `"` und dem nächsten `"`
 -   Character: genau ein Zeichen zwischen `'` und `'`
--   Keywords: `package`, `import`, `class`, `public`, `private`, `final`, `return`, `null`, `new` (jeweils freistehend,
-    also nicht "newx" o.ä.)
+-   Keywords: `package`, `import`, `class`, `public`, `private`, `final`, `return`,
+    `null`, `new` (jeweils freistehend, also nicht "newx" o.ä.)
 -   Annotation: beginnt mit `@`, enthält Buchstaben oder Minuszeichen
 
-Die Token-Objekte fügen Sie im Konstruktor der Klasse `Lexer` durch den Aufruf der Methode `tokenizer.add(mytoken)`
-hinzu. Sie können Sich an den Kommentaren im `Lexer`-Konstruktor orientieren.
+Die Token-Objekte fügen Sie im Konstruktor der Klasse `Lexer` durch den Aufruf der
+Methode `tokenizer.add(mytoken)` hinzu. Sie können Sich an den Kommentaren im
+`Lexer`-Konstruktor orientieren.
 
-Sollten Token ineinander geschachtelt sein, erkennt der Lexer dies automatisch. Sie brauchen sich keine Gedanken dazu
-machen, in welcher Reihenfolge die Token eingefügt und abgearbeitet werden. Beispiel: Im regulären Ausdruck für den
-einzeiligen Kommentar brauchen Sie keine Keywords, Annotationen, Strings usw. erkennen.
+Sollten Token ineinander geschachtelt sein, erkennt der Lexer dies automatisch. Sie
+brauchen sich keine Gedanken dazu machen, in welcher Reihenfolge die Token eingefügt
+und abgearbeitet werden. Beispiel: Im regulären Ausdruck für den einzeiligen
+Kommentar brauchen Sie keine Keywords, Annotationen, Strings usw. erkennen.
 :::

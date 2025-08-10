@@ -4,21 +4,24 @@ title: High-Level Concurrency
 ---
 
 ::: tldr
-Das Erzeugen von Threads über die Klasse `Thread` oder das Interface `Runnable` und das Hantieren mit `synchronized` und
-`wait()`/`notify()` zählt zu den grundlegenden Dingen beim Multi-Threading mit Java. Auf diesen Konzepten bauen viele
-weitere Konzepte auf, die ein flexibleres Arbeiten mit Threads in Java ermöglichen.
+Das Erzeugen von Threads über die Klasse `Thread` oder das Interface `Runnable` und
+das Hantieren mit `synchronized` und `wait()`/`notify()` zählt zu den grundlegenden
+Dingen beim Multi-Threading mit Java. Auf diesen Konzepten bauen viele weitere
+Konzepte auf, die ein flexibleres Arbeiten mit Threads in Java ermöglichen.
 
-Dazu zählt unter anderem das Arbeiten mit `Lock`-Objekten und dazugehörigen `Conditions`, was `synchronized` und
-`wait()`/`notify()` entspricht, aber feingranulareres und flexibleres Locking bietet.
+Dazu zählt unter anderem das Arbeiten mit `Lock`-Objekten und dazugehörigen
+`Conditions`, was `synchronized` und `wait()`/`notify()` entspricht, aber
+feingranulareres und flexibleres Locking bietet.
 
-Statt Threads immer wieder neu anzulegen (das Anlegen von Objekten bedeutet einen gewissen Aufwand zur Laufzeit), kann
-man Threads über sogenannte Thread-Pools wiederverwenden und über das Executor-Interface benutzen.
+Statt Threads immer wieder neu anzulegen (das Anlegen von Objekten bedeutet einen
+gewissen Aufwand zur Laufzeit), kann man Threads über sogenannte Thread-Pools
+wiederverwenden und über das Executor-Interface benutzen.
 
-Schließlich bietet sich das Fork/Join-Framework zum rekursiven Zerteilen von Aufgaben und zur parallelen Bearbeitung der
-Teilaufgaben an.
+Schließlich bietet sich das Fork/Join-Framework zum rekursiven Zerteilen von
+Aufgaben und zur parallelen Bearbeitung der Teilaufgaben an.
 
-Die in Swing integrierte Klasse `SwingWorker` ermöglicht es, in Swing Berechnungen in einen parallel ausgeführten Thread
-auszulagern.
+Die in Swing integrierte Klasse `SwingWorker` ermöglicht es, in Swing Berechnungen
+in einen parallel ausgeführten Thread auszulagern.
 :::
 
 ::: youtube
@@ -52,8 +55,8 @@ public int incrVal() {
 }
 ```
 
-Dabei wird implizit ein Lock über ein Objekt (das eigene Objekt im ersten Fall, das Sperrobjekt im zweiten Fall)
-benutzt.
+Dabei wird implizit ein Lock über ein Objekt (das eigene Objekt im ersten Fall, das
+Sperrobjekt im zweiten Fall) benutzt.
 
 Seit Java5 kann man alternativ auch explizite Lock-Objekte nutzen:
 :::
@@ -73,20 +76,21 @@ public int incrVal() {
 ```
 
 ::: notes
-Locks aus dem Paket `java.util.concurrent.locks` arbeiten analog zum impliziten Locken über `synchronized`. Sie haben
-darüber hinaus aber einige Vorteile:
+Locks aus dem Paket `java.util.concurrent.locks` arbeiten analog zum impliziten
+Locken über `synchronized`. Sie haben darüber hinaus aber einige Vorteile:
 
 -   Methoden zum Abfragen, ob ein Lock möglich ist: `Lock#tryLock`
 -   Methoden zum Abfragen der aktuellen Warteschlangengröße: `Lock#getQueueLength`
 -   Verfeinerung `ReentrantReadWriteLock` mit Methoden `readLock` und `writeLock`
     -   Locks nur zum Lesen bzw. nur zum Schreiben
--   `Lock#newCondition` liefert ein Condition-Objekt zur Benachrichtigung ala `wait`/`notify`: `await`/`signal` =\>
-    zusätzliches Timeout beim Warten möglich
+-   `Lock#newCondition` liefert ein Condition-Objekt zur Benachrichtigung ala
+    `wait`/`notify`: `await`/`signal` =\> zusätzliches Timeout beim Warten möglich
 
 Nachteile:
 
--   Bei Exceptions werden implizite Locks durch `synchronized` automatisch durch das Verlassen der Methode freigegeben.
-    Explizite Locks müssen **durch den Programmierer** freigegeben werden! =\> Nutzung des `finally`-Block!
+-   Bei Exceptions werden implizite Locks durch `synchronized` automatisch durch das
+    Verlassen der Methode freigegeben. Explizite Locks müssen **durch den
+    Programmierer** freigegeben werden! =\> Nutzung des `finally`-Block!
 :::
 
 [Demo: lock.\*]{.ex
@@ -97,8 +101,9 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master
 ::: notes
 ## Wiederverwendung von Threads
 
--   Normale Threads sind immer Einmal-Threads: Man kann sie nur **einmal** in ihrem Leben starten (auch wenn das Objekt
-    anschließend noch auf Nachrichten bzw. Methodenaufrufe reagiert)
+-   Normale Threads sind immer Einmal-Threads: Man kann sie nur **einmal** in ihrem
+    Leben starten (auch wenn das Objekt anschließend noch auf Nachrichten bzw.
+    Methodenaufrufe reagiert)
 
 -   Zusätzliches Problem: Threads sind Objekte:
 
@@ -106,7 +111,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master
     -   Erzeugen und Entsorgen von Threads kostet Ressourcen
     -   Zu viele Threads: Gesamte Anwendung hält an
 
--   Idee: Threads wiederverwenden und Thread-Management auslagern =\> **Executor-Interface** und **Thread-Pool**
+-   Idee: Threads wiederverwenden und Thread-Management auslagern =\>
+    **Executor-Interface** und **Thread-Pool**
 
 ## Executor-Interface
 
@@ -117,15 +123,18 @@ public interface Executor {
 ```
 
 -   Neue Aufgaben als Runnable an einen Executor via `execute` übergeben
--   Executor könnte damit sofort neuen Thread starten (oder alten wiederverwenden): `e.execute(r);` =\> entspricht in
-    der Wirkung `(new Thread(r)).start();`
+-   Executor könnte damit sofort neuen Thread starten (oder alten wiederverwenden):
+    `e.execute(r);` =\> entspricht in der Wirkung `(new Thread(r)).start();`
 
 ## Thread-Pool hält Menge von "Worker-Threads"
 
--   Statische Methoden von `java.util.concurrent.Executors` erzeugen Thread-Pools mit verschiedenen Eigenschaften:
+-   Statische Methoden von `java.util.concurrent.Executors` erzeugen Thread-Pools
+    mit verschiedenen Eigenschaften:
 
-    -   `Executors#newFixedThreadPool` erzeugt ExecutorService mit spezifizierter Anzahl von Worker-Threads
-    -   `Executors#newCachedThreadPool` erzeugt Pool mit Threads, die nach 60 Sekunden Idle wieder entsorgt werden
+    -   `Executors#newFixedThreadPool` erzeugt ExecutorService mit spezifizierter
+        Anzahl von Worker-Threads
+    -   `Executors#newCachedThreadPool` erzeugt Pool mit Threads, die nach 60
+        Sekunden Idle wieder entsorgt werden
 
 -   Rückgabe: `ExecutorService` (Thread-Pool)
 
@@ -133,10 +142,12 @@ public interface Executor {
     public interface ExecutorService extends Executor { ... }
     ```
 
--   `Executor#execute` übergibt Runnable dem nächsten freien Worker-Thread (oder erzeugt ggf. neuen Worker-Thread bzw.
-    hängt Runnable in Warteschlange, je nach erzeugtem Pool)
+-   `Executor#execute` übergibt Runnable dem nächsten freien Worker-Thread (oder
+    erzeugt ggf. neuen Worker-Thread bzw. hängt Runnable in Warteschlange, je nach
+    erzeugtem Pool)
 
--   Methoden zum Beenden eines Thread-Pools (Freigabe): `shutdown()`, `isShutdown()`, ...
+-   Methoden zum Beenden eines Thread-Pools (Freigabe): `shutdown()`,
+    `isShutdown()`, ...
 :::
 
 ``` java
@@ -157,18 +168,21 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 ::: notes
 ## Hintergrund (vereinfacht)
 
-Der Thread-Pool reserviert sich "nackten" Speicher, der der Größe von $n$ Threads entspricht, und "prägt" die
-Objektstruktur durch einen Cast direkt auf (ohne wirkliche neue Objekte zu erzeugen). Dieses Vorgehen ist in der C-Welt
-wohlbekannt und schnell (vgl. Thema Speicherverwaltung in der LV "Systemprogrammierung"). In Java wird dies durch eine
-wohldefinierte Schnittstelle vor dem Nutzer verborgen.
+Der Thread-Pool reserviert sich "nackten" Speicher, der der Größe von $n$ Threads
+entspricht, und "prägt" die Objektstruktur durch einen Cast direkt auf (ohne
+wirkliche neue Objekte zu erzeugen). Dieses Vorgehen ist in der C-Welt wohlbekannt
+und schnell (vgl. Thema Speicherverwaltung in der LV "Systemprogrammierung"). In
+Java wird dies durch eine wohldefinierte Schnittstelle vor dem Nutzer verborgen.
 
 ## Ausblick
 
-Hier haben wir nur die absoluten Grundlagen angerissen. Wir können auch `Callables` anstatt von `Runnables` übergeben,
-auf Ergebnisse aus der Zukunft warten (`Futures`), Dinge zeitgesteuert (immer wieder) starten, ...
+Hier haben wir nur die absoluten Grundlagen angerissen. Wir können auch `Callables`
+anstatt von `Runnables` übergeben, auf Ergebnisse aus der Zukunft warten
+(`Futures`), Dinge zeitgesteuert (immer wieder) starten, ...
 
-Schauen Sie sich bei Interesse die weiterführende Literatur an, beispielsweise die Oracle-Dokumentation oder auch
-[@Ullenboom2021] (insbesondere den Abschnitt 16.4 ["Der Ausführer (Executor)
+Schauen Sie sich bei Interesse die weiterführende Literatur an, beispielsweise die
+Oracle-Dokumentation oder auch [@Ullenboom2021] (insbesondere den Abschnitt 16.4
+["Der Ausführer (Executor)
 kommt"](https://openbook.rheinwerk-verlag.de/javainsel/16_004.html#u16.4)).
 :::
 
@@ -216,34 +230,40 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 ::: notes
 ## Lange Berechnungen in Listenern blockieren Swing-GUI
 
--   Problem: Events werden durch **einen** *Event Dispatch Thread* (EDT) **sequentiell** bearbeitet
+-   Problem: Events werden durch **einen** *Event Dispatch Thread* (EDT)
+    **sequentiell** bearbeitet
 -   Lösung: Berechnungen in neuen Thread auslagern
--   **Achtung**: Swing ist **nicht Thread-safe**! Komponenten nicht durch verschiedene Threads manipulieren!
+-   **Achtung**: Swing ist **nicht Thread-safe**! Komponenten nicht durch
+    verschiedene Threads manipulieren!
 
 ## Lösung
 
-=\> `javax.swing.SwingWorker` ist eine spezielle Thread-Klasse, eng mit Swing/Event-Modell verzahnt.
+=\> `javax.swing.SwingWorker` ist eine spezielle Thread-Klasse, eng mit
+Swing/Event-Modell verzahnt.
 :::
 
 -   Implementieren:
-    -   `SwingWorker#doInBackground`: Für die langwierige Berechnung (muss man selbst implementieren)
-    -   `SwingWorker#done`: Wird vom EDT aufgerufen, wenn `doInBackground` fertig ist
+    -   `SwingWorker#doInBackground`: Für die langwierige Berechnung (muss man
+        selbst implementieren)
+    -   `SwingWorker#done`: Wird vom EDT aufgerufen, wenn `doInBackground` fertig
+        ist
 
 \bigskip
 
 -   Aufrufen:
-    -   `SwingWorker#execute`: Started neuen Thread nach Anlegen einer Instanz und führt dann automatisch
-        `doInBackground` aus
+    -   `SwingWorker#execute`: Started neuen Thread nach Anlegen einer Instanz und
+        führt dann automatisch `doInBackground` aus
     -   `SwingWorker#get`: Return-Wert von `doInBackground` abfragen
 
 ::: notes
 ## Anmerkungen
 
 -   `SwingWorker#done` ist optional: *kann* überschrieben werden
-    -   Beispielweise, wenn nach Beendigung der langwierigen Berechnung GUI-Bestandteile mit dem Ergebnis aktualisiert
-        werden sollen
+    -   Beispielweise, wenn nach Beendigung der langwierigen Berechnung
+        GUI-Bestandteile mit dem Ergebnis aktualisiert werden sollen
 -   `SwingWorker<T, V>` ist eine generische Klasse:
-    -   `T` Typ für das Ergebnis der Berechnung, d.h. Rückgabetyp für `doInBackground` und `get`
+    -   `T` Typ für das Ergebnis der Berechnung, d.h. Rückgabetyp für
+        `doInBackground` und `get`
     -   `V` Typ für Zwischenergebnisse
 :::
 
@@ -284,8 +304,10 @@ Multi-Threading auf höherem Level: Thread-Pools und Fork/Join-Framework
 \bigskip
 
 -   Feingranulareres und flexibleres Locking mit Lock-Objekten und Conditions
--   Wiederverwendung von Threads: Thread-Management mit Executor-Interface und Thread-Pools
--   Fork/Join-Framework zum rekursiven Zerteilen von Aufgaben und zur parallelen Bearbeitung der Teilaufgaben
+-   Wiederverwendung von Threads: Thread-Management mit Executor-Interface und
+    Thread-Pools
+-   Fork/Join-Framework zum rekursiven Zerteilen von Aufgaben und zur parallelen
+    Bearbeitung der Teilaufgaben
 -   `SwingWorker` für die parallele Bearbeitung von Aufgaben in Swing
 
 ::: readings
@@ -295,8 +317,8 @@ Multi-Threading auf höherem Level: Thread-Pools und Fork/Join-Framework
 :::
 
 ::: outcomes
--   k3: Umgang mit High-Level-Abstraktionen: Lock-Objekten und Conditions, Executor-Interface und Thread-Pools,
-    Fork/Join-Framework, SwingWorker
+-   k3: Umgang mit High-Level-Abstraktionen: Lock-Objekten und Conditions,
+    Executor-Interface und Thread-Pools, Fork/Join-Framework, SwingWorker
 :::
 
 ::: quizzes

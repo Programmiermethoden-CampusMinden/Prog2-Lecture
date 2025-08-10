@@ -4,17 +4,21 @@ title: Testen mit JUnit (JUnit-Basics)
 ---
 
 ::: tldr
-In JUnit 4 und 5 werden Testmethoden mit Hilfe der Annotation `@Test` ausgezeichnet. Über die verschiedenen
-`assert*()`-Methoden kann das Testergebnis mit dem erwarteten Ergebnis verglichen werden und entsprechend ist der Test
-"grün" oder "rot". Mit den verschiedenen `assume*()`-Methoden kann dagegen geprüft werden, ob eventuelle Vorbedingungen
-für das Ausführen eines Testfalls erfüllt sind - anderenfalls wird der Testfall dann übersprungen.
+In JUnit 4 und 5 werden Testmethoden mit Hilfe der Annotation `@Test` ausgezeichnet.
+Über die verschiedenen `assert*()`-Methoden kann das Testergebnis mit dem erwarteten
+Ergebnis verglichen werden und entsprechend ist der Test "grün" oder "rot". Mit den
+verschiedenen `assume*()`-Methoden kann dagegen geprüft werden, ob eventuelle
+Vorbedingungen für das Ausführen eines Testfalls erfüllt sind - anderenfalls wird
+der Testfall dann übersprungen.
 
-Mit Hilfe von `@Before` und `@After` können Methoden gekennzeichnet werden, die jeweils vor jeder Testmethode und nach
-jeder Testmethode aufgerufen werden. Damit kann man seine Testumgebung auf- und auch wieder abbauen (JUnit 4).
+Mit Hilfe von `@Before` und `@After` können Methoden gekennzeichnet werden, die
+jeweils vor jeder Testmethode und nach jeder Testmethode aufgerufen werden. Damit
+kann man seine Testumgebung auf- und auch wieder abbauen (JUnit 4).
 
-Erwartete Exceptions lassen sich in JUnit 4 mit einem Parameter `expected` in der Annotation `@Test` automatisch prüfen:
-`@Test(expected=package.Exception.class)`. In JUnit 4 besteht die Möglichkeit, Testklassen zu Testsuiten
-zusammenzufassen und gemeinsam laufen zu lassen.
+Erwartete Exceptions lassen sich in JUnit 4 mit einem Parameter `expected` in der
+Annotation `@Test` automatisch prüfen: `@Test(expected=package.Exception.class)`. In
+JUnit 4 besteht die Möglichkeit, Testklassen zu Testsuiten zusammenzufassen und
+gemeinsam laufen zu lassen.
 :::
 
 ::: youtube
@@ -151,8 +155,9 @@ public void testBsp() {
 :::
 :::::
 
-In JUnit 5 wird statt der Annotation `@Ignore` die Annotation `@Disabled` mit der selben Bedeutung verwendet. Auch hier
-lässt sich als Parameter ein String mit dem Grund für das Ignorieren des Tests hinterlegen.
+In JUnit 5 wird statt der Annotation `@Ignore` die Annotation `@Disabled` mit der
+selben Bedeutung verwendet. Auch hier lässt sich als Parameter ein String mit dem
+Grund für das Ignorieren des Tests hinterlegen.
 ::::::
 
 # Vermeidung von Endlosschleifen: Timeout
@@ -160,8 +165,8 @@ lässt sich als Parameter ein String mit dem Grund für das Ignorieren des Tests
 ::: notes
 -   Testfälle werden nacheinander ausgeführt
 -   Test mit Endlosschleife würde restliche Tests blockieren
--   Erweitern der `@Test`-Annotation mit Parameter "`timeout`": `\newline`{=tex} =\> `@Test(timeout=2000)` (Zeitangabe
-    in Millisekunden)
+-   Erweitern der `@Test`-Annotation mit Parameter "`timeout`": `\newline`{=tex} =\>
+    `@Test(timeout=2000)` (Zeitangabe in Millisekunden)
 :::
 
 ::::: columns
@@ -182,9 +187,10 @@ void testTestDauerlaeufer() {
 :::::
 
 ::: notes
-In JUnit 5 hat die Annotation `@Test` keinen `timeout`-Parameter mehr. Als Alternative bietet sich der Einsatz von
-`org.junit.jupiter.api.Assertions.assertTimeout` an. Dabei benötigt man allerdings *Lambda-Ausdrücke* (Verweis auf
-spätere VL):
+In JUnit 5 hat die Annotation `@Test` keinen `timeout`-Parameter mehr. Als
+Alternative bietet sich der Einsatz von
+`org.junit.jupiter.api.Assertions.assertTimeout` an. Dabei benötigt man allerdings
+*Lambda-Ausdrücke* (Verweis auf spätere VL):
 
 ``` java
 @Test
@@ -222,8 +228,9 @@ public void testExceptTradit() {
 \bigskip
 
 ::: notes
-Der `expected`-Parameter für die `@Test`-Annotation in JUnit 4 macht dies deutlich einfacher:
-`@Test(expected = MyException.class)` =\> Test scheitert, wenn diese Exception **nicht** geworfen wird
+Der `expected`-Parameter für die `@Test`-Annotation in JUnit 4 macht dies deutlich
+einfacher: `@Test(expected = MyException.class)` =\> Test scheitert, wenn diese
+Exception **nicht** geworfen wird
 :::
 
 ``` java
@@ -234,9 +241,10 @@ public void testExceptAnnot() {
 ```
 
 ::: notes
-In JUnit 5 hat die Annotation `@Test` keinen `expected`-Parameter mehr. Als Alternative bietet sich der Einsatz von
-`org.junit.jupiter.api.Assertions.assertThrows` an. Dabei benötigt man allerdings *Lambda-Ausdrücke* (Verweis auf
-spätere VL):
+In JUnit 5 hat die Annotation `@Test` keinen `expected`-Parameter mehr. Als
+Alternative bietet sich der Einsatz von
+`org.junit.jupiter.api.Assertions.assertThrows` an. Dabei benötigt man allerdings
+*Lambda-Ausdrücke* (Verweis auf spätere VL):
 
 ``` java
 @Test
@@ -253,7 +261,8 @@ public void testExceptAnnot() {
 # Parametrisierte Tests
 
 ::: notes
-Manchmal möchte man den selben Testfall mehrfach mit anderen Werten (Parametern) durchführen.
+Manchmal möchte man den selben Testfall mehrfach mit anderen Werten (Parametern)
+durchführen.
 :::
 
 ``` java
@@ -274,34 +283,41 @@ class SumTest {
 ```
 
 ::: notes
-Prinzipiell könnte man dafür entweder in einem Testfall eine Schleife schreiben, die über die verschiedenen Parameter
-iteriert. In der Schleife würde dann jeweils der Aufruf der zu testenden Methode und das gewünschte Assert passieren.
-Alternativ könnte man den Testfall entsprechend oft duplizieren mit jeweils den gewünschten Werten.
+Prinzipiell könnte man dafür entweder in einem Testfall eine Schleife schreiben, die
+über die verschiedenen Parameter iteriert. In der Schleife würde dann jeweils der
+Aufruf der zu testenden Methode und das gewünschte Assert passieren. Alternativ
+könnte man den Testfall entsprechend oft duplizieren mit jeweils den gewünschten
+Werten.
 
-Beide Vorgehensweisen haben Probleme: Im ersten Fall würde die Schleife bei einem Fehler oder unerwarteten Ergebnis
-abbrechen, ohne dass die restlichen Tests (Werte) noch durchgeführt würden. Im zweiten Fall bekommt man eine unnötig
-große Anzahl an Testmethoden, die bis auf die jeweiligen Werte identisch sind (Code-Duplizierung).
+Beide Vorgehensweisen haben Probleme: Im ersten Fall würde die Schleife bei einem
+Fehler oder unerwarteten Ergebnis abbrechen, ohne dass die restlichen Tests (Werte)
+noch durchgeführt würden. Im zweiten Fall bekommt man eine unnötig große Anzahl an
+Testmethoden, die bis auf die jeweiligen Werte identisch sind (Code-Duplizierung).
 :::
 
 ::: notes
 ## Parametrisierte Tests mit JUnit 4
 
-JUnit 4 bietet für dieses Problem sogenannte "parametrisierte Tests" an. Dafür muss eine Testklasse in JUnit 4 folgende
-Bedingungen erfüllen:
+JUnit 4 bietet für dieses Problem sogenannte "parametrisierte Tests" an. Dafür muss
+eine Testklasse in JUnit 4 folgende Bedingungen erfüllen:
 
-1.  Die Testklasse wird mit der Annotation `@RunWith(Parameterized.class)` ausgezeichnet.
-2.  Es muss eine öffentliche statische Methode geben mit der Annotation `@Parameters`. Diese Methode liefert eine
-    Collection zurück, wobei jedes Element dieser Collection ein Array mit den Parametern für einen Durchlauf der
+1.  Die Testklasse wird mit der Annotation `@RunWith(Parameterized.class)`
+    ausgezeichnet.
+2.  Es muss eine öffentliche statische Methode geben mit der Annotation
+    `@Parameters`. Diese Methode liefert eine Collection zurück, wobei jedes Element
+    dieser Collection ein Array mit den Parametern für einen Durchlauf der
     Testmethoden ist.
 3.  Die Parameter müssen gesetzt werden. Dafür gibt es zwei Varianten:
-    a)  Für jeden Parameter gibt es ein öffentliches Attribut. Diese Attribute müssen mit der Annotation `@Parameter`
-        markiert sein und können in den Testmethoden normal genutzt werden. JUnit sorgt dafür, dass für jeden Eintrag in
-        der Collection aus der statischen `@Parameters`-Methode diese Felder gesetzt werden und die Testmethoden
-        aufgerufen werden.
-    b)  Alternativ gibt es einen Konstruktor, der diese Werte setzt. Die Anzahl der Parameter im Konstruktor muss dabei
-        exakt der Anzahl (und Reihenfolge) der Werte in jedem Array in der von der statischen `@Parameters`-Methode
-        gelieferten Collection entsprechen. Der Konstruktor wird für jeden Parametersatz einmal aufgerufen und die
-        Testmethoden einmal durchgeführt.
+    a)  Für jeden Parameter gibt es ein öffentliches Attribut. Diese Attribute
+        müssen mit der Annotation `@Parameter` markiert sein und können in den
+        Testmethoden normal genutzt werden. JUnit sorgt dafür, dass für jeden
+        Eintrag in der Collection aus der statischen `@Parameters`-Methode diese
+        Felder gesetzt werden und die Testmethoden aufgerufen werden.
+    b)  Alternativ gibt es einen Konstruktor, der diese Werte setzt. Die Anzahl der
+        Parameter im Konstruktor muss dabei exakt der Anzahl (und Reihenfolge) der
+        Werte in jedem Array in der von der statischen `@Parameters`-Methode
+        gelieferten Collection entsprechen. Der Konstruktor wird für jeden
+        Parametersatz einmal aufgerufen und die Testmethoden einmal durchgeführt.
 
 Letztlich wird damit das Kreuzprodukt aus Testmethoden und Testdaten durchgeführt.
 :::
@@ -359,10 +375,12 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master
 ::: notes
 ## Parametrisierte Tests mit JUnit 5
 
-In JUnit 5 werden parametrisierte Tests mit der Annotation `@ParameterizedTest` gekennzeichnet (statt mit `@Test`).
+In JUnit 5 werden parametrisierte Tests mit der Annotation `@ParameterizedTest`
+gekennzeichnet (statt mit `@Test`).
 
-Mit Hilfe von `@ValueSource` kann man ein einfaches Array von Werten (Strings oder primitive Datentypen) angeben, mit
-denen der Test ausgeführt wird. Dazu bekommt die Testmethode einen entsprechenden passenden Parameter:
+Mit Hilfe von `@ValueSource` kann man ein einfaches Array von Werten (Strings oder
+primitive Datentypen) angeben, mit denen der Test ausgeführt wird. Dazu bekommt die
+Testmethode einen entsprechenden passenden Parameter:
 
 ``` java
 @ParameterizedTest
@@ -372,9 +390,11 @@ void testWuppie(String candidate) {
 }
 ```
 
-Alternativ lassen sich als Parameterquelle u.a. Aufzählungen (`@EnumSource`) oder Methoden (`@MethodSource`) angeben.
+Alternativ lassen sich als Parameterquelle u.a. Aufzählungen (`@EnumSource`) oder
+Methoden (`@MethodSource`) angeben.
 
-*Hinweis*: Parametrisierte Tests werden in JUnit 5 derzeit noch als "*experimentell*" angesehen!
+*Hinweis*: Parametrisierte Tests werden in JUnit 5 derzeit noch als
+"*experimentell*" angesehen!
 
 [Beispiel: junit5.TestValueSource, junit5.TestMethodSource]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/testing/src/junit5/"}
@@ -408,8 +428,10 @@ public class MyTestSuite {
 
 In JUnit 5 gibt es zwei Möglichkeiten, Testsuiten zu erstellen:
 
--   `@SelectPackages`: Angabe der Packages, die für die Testsuite zusammengefasst werden sollen
--   `@SelectClasses`: Angabe der Klassen, die für die Testsuite zusammengefasst werden sollen
+-   `@SelectPackages`: Angabe der Packages, die für die Testsuite zusammengefasst
+    werden sollen
+-   `@SelectClasses`: Angabe der Klassen, die für die Testsuite zusammengefasst
+    werden sollen
 
 ``` java
 @RunWith(JUnitPlatform.class)
@@ -419,15 +441,18 @@ public class MyTestSuite5 {
 }
 ```
 
-Zusätzlich kann man beispielsweise mit `@IncludeTags` oder `@ExcludeTags` Testmethoden mit bestimmten Tags einbinden
-oder ausschließen. Beispiel: Schließe alle Tests mit Tag "develop" aus: `@ExcludeTags("develop")`. Dabei wird an den
+Zusätzlich kann man beispielsweise mit `@IncludeTags` oder `@ExcludeTags`
+Testmethoden mit bestimmten Tags einbinden oder ausschließen. Beispiel: Schließe
+alle Tests mit Tag "develop" aus: `@ExcludeTags("develop")`. Dabei wird an den
 Testmethoden zusätzlich das Tag `@Tag` verwendet, etwas `@Tag("develop")`.
 
 **Achtung**: Laut der offiziellen Dokumentation [(Abschnitt "4.4.4. Test
-Suite")](https://junit.org/junit5/docs/current/user-guide/#running-tests-junit-platform-runner-test-suite) gilt
-zumindest bei der Selection über `@SelectPackages` der Zwang zu einer Namenskonvention: Es werden dabei nur Klassen
-gefunden, deren Name mit `Test` beginnt oder endet! Weiterhin werden Testsuites mit der Annotation
-`@RunWith(JUnitPlatform.class)` **nicht** auf der "JUnit 5"-Plattform ausgeführt, sondern mit der JUnit 4-Infrastuktur!
+Suite")](https://junit.org/junit5/docs/current/user-guide/#running-tests-junit-platform-runner-test-suite)
+gilt zumindest bei der Selection über `@SelectPackages` der Zwang zu einer
+Namenskonvention: Es werden dabei nur Klassen gefunden, deren Name mit `Test`
+beginnt oder endet! Weiterhin werden Testsuites mit der Annotation
+`@RunWith(JUnitPlatform.class)` **nicht** auf der "JUnit 5"-Plattform ausgeführt,
+sondern mit der JUnit 4-Infrastuktur!
 :::
 
 # Wrap-Up
@@ -458,35 +483,45 @@ JUnit als Framework für (Unit-) Tests; hier JUnit 4 (mit Ausblick auf JUnit 5)
 :::
 
 ::: quizzes
--   [Quiz JUnit-Basics (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld)
+-   [Quiz JUnit-Basics
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106545&client_id=FH-Bielefeld)
 :::
 
 ::: challenges
-Schreiben Sie eine JUnit-Testklasse (JUnit 4.x oder 5.x) und testen Sie eine `ArrayList<String>`. Prüfen Sie dabei, ob
-das Einfügen und Entfernen wie erwartet funktioniert.
+Schreiben Sie eine JUnit-Testklasse (JUnit 4.x oder 5.x) und testen Sie eine
+`ArrayList<String>`. Prüfen Sie dabei, ob das Einfügen und Entfernen wie erwartet
+funktioniert.
 
-1.  Initialisieren Sie in einer `setUp()`-Methode das Testobjekt und fügen Sie zwei Elemente ein. Stellen Sie mit einer
-    passenden `assume*`-Methode sicher, dass die Liste genau diese beiden Elemente enthält. Die `setUp()`-Methode soll
-    vor jedem Testfall ausgeführt werden.
-
-2.  Setzen Sie in einer `tearDown()`-Methode das Testobjekt wieder auf `null` und stellen Sie mit einer passenden
-    `assume*`-Methode sicher, dass das Testobjekt tatsächlich `null` ist. Die `tearDown()`-Methode soll nach jedem
+1.  Initialisieren Sie in einer `setUp()`-Methode das Testobjekt und fügen Sie zwei
+    Elemente ein. Stellen Sie mit einer passenden `assume*`-Methode sicher, dass die
+    Liste genau diese beiden Elemente enthält. Die `setUp()`-Methode soll vor jedem
     Testfall ausgeführt werden.
 
-3.  Schreiben Sie eine Testmethode `testAdd()`. Fügen Sie ein weiteres Element zum Testobjekt hinzu und prüfen Sie mit
-    einer passenden `assert*`-Methode, ob die Liste nach dem Einfügen den gewünschten Zustand hat: Die Länge der Liste
-    muss 3 Elemente betragen und alle Elemente müssen in der richtigen Reihenfolge in der Liste stehen.
+2.  Setzen Sie in einer `tearDown()`-Methode das Testobjekt wieder auf `null` und
+    stellen Sie mit einer passenden `assume*`-Methode sicher, dass das Testobjekt
+    tatsächlich `null` ist. Die `tearDown()`-Methode soll nach jedem Testfall
+    ausgeführt werden.
 
-4.  Schreiben Sie eine Testmethode `testRemoveObject()`. Entfernen Sie ein vorhandenes Element (über die Referenz auf
-    das Objekt) aus dem Testobjekt und prüfen Sie mit einer passenden `assert*`-Methode, ob die Liste nach dem Entfernen
-    den gewünschten Zustand hat: Die Liste darf nur noch das verbleibende Element enthalten.
+3.  Schreiben Sie eine Testmethode `testAdd()`. Fügen Sie ein weiteres Element zum
+    Testobjekt hinzu und prüfen Sie mit einer passenden `assert*`-Methode, ob die
+    Liste nach dem Einfügen den gewünschten Zustand hat: Die Länge der Liste muss 3
+    Elemente betragen und alle Elemente müssen in der richtigen Reihenfolge in der
+    Liste stehen.
 
-5.  Schreiben Sie eine Testmethode `testRemoveIndex()`. Entfernen Sie ein vorhandenes Element über dessen *Index* in der
-    Liste und prüfen Sie mit einer passenden `assert*`-Methode, ob die Liste nach dem Entfernen den gewünschten Zustand
-    hat: Die Liste darf nur noch das verbleibende Element enthalten. (Nutzen Sie zum Entfernen die `remove(int)`-Methode
-    der Liste.)
+4.  Schreiben Sie eine Testmethode `testRemoveObject()`. Entfernen Sie ein
+    vorhandenes Element (über die Referenz auf das Objekt) aus dem Testobjekt und
+    prüfen Sie mit einer passenden `assert*`-Methode, ob die Liste nach dem
+    Entfernen den gewünschten Zustand hat: Die Liste darf nur noch das verbleibende
+    Element enthalten.
 
-6.  Schreiben Sie zusätzlich einen **parametrisierten JUnit-Test** für die folgende Klasse:
+5.  Schreiben Sie eine Testmethode `testRemoveIndex()`. Entfernen Sie ein
+    vorhandenes Element über dessen *Index* in der Liste und prüfen Sie mit einer
+    passenden `assert*`-Methode, ob die Liste nach dem Entfernen den gewünschten
+    Zustand hat: Die Liste darf nur noch das verbleibende Element enthalten. (Nutzen
+    Sie zum Entfernen die `remove(int)`-Methode der Liste.)
+
+6.  Schreiben Sie zusätzlich einen **parametrisierten JUnit-Test** für die folgende
+    Klasse:
 
     ``` java
     import java.util.ArrayList;
@@ -498,9 +533,9 @@ das Einfügen und Entfernen wie erwartet funktioniert.
     }
     ```
 
-    Testen Sie, ob die Methode `concatAddStrings` der Klasse `SpecialArrayList` die beiden übergebenen Strings korrekt
-    konkateniert und das Ergebnis richtig in die Liste einfügt. Testen Sie dabei mit mindestens den folgenden
-    Parameter-Tripeln:
+    Testen Sie, ob die Methode `concatAddStrings` der Klasse `SpecialArrayList` die
+    beiden übergebenen Strings korrekt konkateniert und das Ergebnis richtig in die
+    Liste einfügt. Testen Sie dabei mit mindestens den folgenden Parameter-Tripeln:
 
     |   a   |   b   | expected |
     |:-----:|:-----:|:--------:|

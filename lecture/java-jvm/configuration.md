@@ -4,16 +4,20 @@ title: Konfiguration eines Programms
 ---
 
 ::: tldr
-Zu Konfiguration von Programmen kann man beim Aufruf Kommandozeilenparameter mitgeben. Diese sind in der über den
-Parameter`String[] args` in der `main(String[] args)`-Methode zugreifbar.
+Zu Konfiguration von Programmen kann man beim Aufruf Kommandozeilenparameter
+mitgeben. Diese sind in der über den Parameter`String[] args` in der
+`main(String[] args)`-Methode zugreifbar.
 
-Es gibt oft eine Kurzversion ("-x") und/oder eine Langversion ("--breite"). Zusätzlich können Parameter noch ein
-Argument haben ("-x 12" oder "--breite=12"). Parameter können optional oder verpflichtend sein.
+Es gibt oft eine Kurzversion ("-x") und/oder eine Langversion ("--breite").
+Zusätzlich können Parameter noch ein Argument haben ("-x 12" oder "--breite=12").
+Parameter können optional oder verpflichtend sein.
 
-Um dies nicht manuell auswerten zu müssen, kann man beispielsweise die Bibliothkek Apache Commons CLI benutzen.
+Um dies nicht manuell auswerten zu müssen, kann man beispielsweise die Bibliothkek
+Apache Commons CLI benutzen.
 
-Ein anderer Weg zur Konfiguration sind Konfigurationsdateien, die man entsprechend einliest. Hier findet man häufig das
-"Ini-Format", also zeilenweise "Key=Value"-Paare. Diese kann man mit der Klasse `java.util.Properties` einlesen,
+Ein anderer Weg zur Konfiguration sind Konfigurationsdateien, die man entsprechend
+einliest. Hier findet man häufig das "Ini-Format", also zeilenweise
+"Key=Value"-Paare. Diese kann man mit der Klasse `java.util.Properties` einlesen,
 bearbeiten und speichern (auch als XML).
 :::
 
@@ -56,30 +60,33 @@ bearbeiten und speichern (auch als XML).
 Häufig Mischung von Kurz- und Langformen
 
 ::: notes
-Häufig hat man eine Kurzform der Optionen, also etwa "-x". Dabei ist der Name der Option in der Regel ein Zeichen lang.
-Es gibt aber auch Abweichungen von dieser Konvention, denken Sie beispielsweise an `java -version`.
+Häufig hat man eine Kurzform der Optionen, also etwa "-x". Dabei ist der Name der
+Option in der Regel ein Zeichen lang. Es gibt aber auch Abweichungen von dieser
+Konvention, denken Sie beispielsweise an `java -version`.
 
-In der Langform nutzt man dann einen aussagekräftigen Namen und stellt zwei Bindestriche voran, also beispielsweise
-"--breite" (als Alternative für "-x").
+In der Langform nutzt man dann einen aussagekräftigen Namen und stellt zwei
+Bindestriche voran, also beispielsweise "--breite" (als Alternative für "-x").
 
-Wenn Optionen Parameter haben, schreibt man in der Kurzform üblicherweise "-x 10" (trennt also den Parameter mit einem
-Leerzeichen von der Option) und in der Langform "--breite=10" (also mit einem "=" zwischen Option und Parameter). Das
-sind ebenfalls Konventionen, d.h. man kann prinzipiell auch in der Kurzform das "=" nutzen, also "-x=10", oder in der
-Langform mit einem Leerzeichen trennen, also "--breite 10".
+Wenn Optionen Parameter haben, schreibt man in der Kurzform üblicherweise "-x 10"
+(trennt also den Parameter mit einem Leerzeichen von der Option) und in der Langform
+"--breite=10" (also mit einem "=" zwischen Option und Parameter). Das sind ebenfalls
+Konventionen, d.h. man kann prinzipiell auch in der Kurzform das "=" nutzen, also
+"-x=10", oder in der Langform mit einem Leerzeichen trennen, also "--breite 10".
 :::
 
 [Demo IDE und CLI]{.ex href="https://youtu.be/a3XUfDbD9uo"}
 
 ::: notes
-Hinweis IntelliJ: "`Edit Configurations`" =\> Kommandozeilenparameter unter "`Build and run`" im entsprechenden Feld
-eintragen
+Hinweis IntelliJ: "`Edit Configurations`" =\> Kommandozeilenparameter unter
+"`Build and run`" im entsprechenden Feld eintragen
 
 ![](images/ide-cli.png)
 :::
 
 # Auswertung Kommandozeilenparameter
 
--   Kommandozeilenparameter [werden]{.notes} als String-Array [an `main()`-Methode übergeben:]{.notes}
+-   Kommandozeilenparameter [werden]{.notes} als String-Array [an `main()`-Methode
+    übergeben:]{.notes}
 
     ``` java
     public static void main(String[] args) { }
@@ -127,8 +134,8 @@ public static void main(String[] args) {
 
 **Rad nicht neu erfinden!**
 
--   Apache Commons bietet die CLI-Bibliothek zum Umgang mit Kommandozeilenparametern an:
-    [commons.apache.org/cli](https://commons.apache.org/proper/commons-cli/)
+-   Apache Commons bietet die CLI-Bibliothek zum Umgang mit Kommandozeilenparametern
+    an: [commons.apache.org/cli](https://commons.apache.org/proper/commons-cli/)
 
 \pause
 \bigskip
@@ -146,30 +153,36 @@ Annäherung an fremde API:
 ::: notes
 ## Eclipse
 
--   Lib von [commons.apache.org](https://commons.apache.org/proper/commons-cli/download_cli.cgi) herunterladen und
-    auspacken
+-   Lib von
+    [commons.apache.org](https://commons.apache.org/proper/commons-cli/download_cli.cgi)
+    herunterladen und auspacken
 -   Neuen Unterordner im Projekt anlegen: `libs/`
 -   Bibliothek (`.jar`-Files) hinein kopieren
 -   Projektexplorer, Kontextmenü auf `.jar`-File: "`Add as Library`"
--   Alternativ Menü-Leiste: "`Project > Properties > Java Build Path > Libraries > Add JARs`"
+-   Alternativ Menü-Leiste:
+    "`Project > Properties > Java Build Path > Libraries > Add JARs`"
 
 ## IntelliJ
 
 -   Variante 1:
-    -   Lib von [commons.apache.org](https://commons.apache.org/proper/commons-cli/download_cli.cgi) herunterladen und
-        auspacken
+    -   Lib von
+        [commons.apache.org](https://commons.apache.org/proper/commons-cli/download_cli.cgi)
+        herunterladen und auspacken
     -   Neuen Unterordner im Projekt anlegen: `libs/`
     -   Bibliothek (`.jar`-Files) hinein kopieren
-    -   Variante 1 (a):Projektexplorer, Kontextmenü auf `.jar`-File: "`Build Path > Add to Build Path`"
-    -   Variante 1 (b): Projekteigenschaften, Eintrag "Libraries", "+", "New Project Library", "Java" und Jar-File
-        auswählen
+    -   Variante 1 (a):Projektexplorer, Kontextmenü auf `.jar`-File:
+        "`Build Path > Add to Build Path`"
+    -   Variante 1 (b): Projekteigenschaften, Eintrag "Libraries", "+", "New Project
+        Library", "Java" und Jar-File auswählen
 -   Variante 2:
-    -   Projekteigenschaften, Eintrag "Libraries", "+", "New Project Library", "From Maven" und
-        "commons-cli:commons-cli:1.5.0" als Suchstring eingeben und die Suche abschließen
+    -   Projekteigenschaften, Eintrag "Libraries", "+", "New Project Library", "From
+        Maven" und "commons-cli:commons-cli:1.5.0" als Suchstring eingeben und die
+        Suche abschließen
 
 ## Gradle oder Ant oder Maven
 
--   Lib auf [Maven Central](https://search.maven.org/) suchen: "commons-cli:commons-cli" als Suchstring eingeben
+-   Lib auf [Maven Central](https://search.maven.org/) suchen:
+    "commons-cli:commons-cli" als Suchstring eingeben
 -   Passenden Dependency-Eintrag in das Build-Skript kopieren
 :::
 
@@ -180,20 +193,22 @@ Annäherung an fremde API:
     -   Windows: `java -cp .;<jarfile>;<jarfile> <mainclass>`
 
     ::: notes
-    Achtung: Unter Unix (Linux, MacOS) wird ein Doppelpunkt zum Trennen der Jar-Files eingesetzt, unter Windows ein
-    Semikolon!
+    Achtung: Unter Unix (Linux, MacOS) wird ein Doppelpunkt zum Trennen der
+    Jar-Files eingesetzt, unter Windows ein Semikolon!
     :::
 
 Beispiel: `java -classpath .:/home/user/wuppy.jar MyApp`
 
 ::: notes
-Vorgriff auf Build-Skripte (spätere VL): Im hier gezeigten Vorgehen werden die Abhängigkeiten manuell aufgelöst, d.h.
-die Jar-Files werden manuell heruntergeladen (oder selbst kompiliert) und dem Projekt hinzugefügt.
+Vorgriff auf Build-Skripte (spätere VL): Im hier gezeigten Vorgehen werden die
+Abhängigkeiten manuell aufgelöst, d.h. die Jar-Files werden manuell heruntergeladen
+(oder selbst kompiliert) und dem Projekt hinzugefügt.
 
-Alle später besprochenen Build-Skripte (Ant, Gradle) beherrschen die automatische Auflösung von Abhängigkeiten. Dazu
-muss im Skript die Abhängigkeit auf geeignete Weise beschrieben werden und wird dann beim Kompilieren des Programms
-automatisch von spezialisierten Servern in der im Skript definierten Version heruntergeladen. Dies funktioniert auch bei
-rekursiven Abhängigkeiten ...
+Alle später besprochenen Build-Skripte (Ant, Gradle) beherrschen die automatische
+Auflösung von Abhängigkeiten. Dazu muss im Skript die Abhängigkeit auf geeignete
+Weise beschrieben werden und wird dann beim Kompilieren des Programms automatisch
+von spezialisierten Servern in der im Skript definierten Version heruntergeladen.
+Dies funktioniert auch bei rekursiven Abhängigkeiten ...
 :::
 
 # Überblick Umgang mit Apache Commons CLI
@@ -210,8 +225,8 @@ rekursiven Abhängigkeiten ...
 4.  Formatierte Hilfe ausgeben: `HelpFormatter`
 
 ::: notes
-Die Funktionsweise der einzelnen Klassen wird in der Demo kurz angerissen. Schauen Sie bitte zusätzlich in die
-Dokumentation.
+Die Funktionsweise der einzelnen Klassen wird in der Demo kurz angerissen. Schauen
+Sie bitte zusätzlich in die Dokumentation.
 :::
 
 [Demo: Einbinden von Libs, cli.Args]{.ex
@@ -277,16 +292,18 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/cli/Props.java"}
 
 ::: notes
-`java.util.Properties` sind eine einfache und im JDK bereits eingebaute Möglichkeit, mit Konfigurationsdateien zu
-hantieren. Deutlich umfangreichere Möglichkeiten bieten aber externe Bibliotheken, beispielsweise "Apache Commons
-Configuration" ([commons.apache.org/configuration](https://commons.apache.org/proper/commons-configuration/)).
+`java.util.Properties` sind eine einfache und im JDK bereits eingebaute Möglichkeit,
+mit Konfigurationsdateien zu hantieren. Deutlich umfangreichere Möglichkeiten bieten
+aber externe Bibliotheken, beispielsweise "Apache Commons Configuration"
+([commons.apache.org/configuration](https://commons.apache.org/proper/commons-configuration/)).
 :::
 
 # Wrap-Up
 
 -   Kommandozeilenparameter als `String[]` in `main()`-Methode
 -   Manuelle Auswertung komplex =\> *Apache Commons CLI*
--   Schlüssel-Wert-Paare mit `java.util.Properties` [aus/in Dateien laden/speichern]{.notes}
+-   Schlüssel-Wert-Paare mit `java.util.Properties` [aus/in Dateien
+    laden/speichern]{.notes}
 
 ::: readings
 -   @Java-SE-Tutorial
@@ -299,5 +316,6 @@ Configuration" ([commons.apache.org/configuration](https://commons.apache.org/pr
 :::
 
 ::: quizzes
--   [Quiz Konfiguration (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106514&client_id=FH-Bielefeld)
+-   [Quiz Konfiguration
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106514&client_id=FH-Bielefeld)
 :::

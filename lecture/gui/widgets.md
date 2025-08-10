@@ -4,17 +4,21 @@ title: "Swing: Nützliche Widgets"
 ---
 
 ::: tldr
-Neben den Standardkomponenenten `JFrame` für ein Fenster, `JPanel` für ein Panel (auch zum Gruppieren anderer
-Komponenten), `JButton` (Button) und `JTextArea` (Texteingabe) gibt es eine Reihe weiterer nützlicher Swing-Komponenten:
+Neben den Standardkomponenenten `JFrame` für ein Fenster, `JPanel` für ein Panel
+(auch zum Gruppieren anderer Komponenten), `JButton` (Button) und `JTextArea`
+(Texteingabe) gibt es eine Reihe weiterer nützlicher Swing-Komponenten:
 
--   `JRadioButton` für Radio-Buttons und `JCheckBox` für Checkbox-Buttons sowie \`ButtonGroup\`\` für die logische
-    Verbindung von diesen Buttons (es kann nur ein Button einer ButtonGroup aktiv sein - wenn ein anderer Button
-    aktiviert wird, wird der zuletzt aktive Button automatisch deaktiviert)
--   Dateiauswahldialoge mit `JFileChooser` und `FileFilter` zum Vorfiltern der Anzeige
+-   `JRadioButton` für Radio-Buttons und `JCheckBox` für Checkbox-Buttons sowie
+    `ButtonGroup` für die logische Verbindung von diesen Buttons (es kann nur
+    ein Button einer ButtonGroup aktiv sein - wenn ein anderer Button aktiviert
+    wird, wird der zuletzt aktive Button automatisch deaktiviert)
+-   Dateiauswahldialoge mit `JFileChooser` und `FileFilter` zum Vorfiltern der
+    Anzeige
 -   Einfache (modale) Dialoge mit `JOptionPane`
 -   `JTabbedPane` als Panel mit Tabs
 -   `JScrollPane`, um Eingabefelder bei Bedarf scrollbar zu machen
--   Anlegen einer Menüleiste mit `JMenuBar`, dabei sind die Menüs `JMenu` und die Einträge \`JMenuItem\`\`
+-   Anlegen einer Menüleiste mit `JMenuBar`, dabei sind die Menüs `JMenu` und die
+    Einträge `JMenuItem`
 -   Kontextmenüs mit `JPopupMenu`
 :::
 
@@ -79,7 +83,8 @@ if (fc.showOpenDialog() == JFileChooser.APPROVE_OPTION)
 ::: notes
 -   `fc.setFileSelectionMode()`: Dateien, Ordner oder beides auswählbar
 -   Anzeigen mit `fc.showOpenDialog()`
--   Rückgabewert vergleichen mit `JFileChooser.APPROVE_OPTION`: Datei/Ordner wurde ausgewählt =\> Prüfen!
+-   Rückgabewert vergleichen mit `JFileChooser.APPROVE_OPTION`: Datei/Ordner wurde
+    ausgewählt =\> Prüfen!
 -   Selektierte Datei als `File` bekommen: `fc.getSelectedFile()`
 
 **Filtern der Anzeige**: `FileFilter`
@@ -151,12 +156,14 @@ JOptionPane.showMessageDialog(
 ```
 
 ::: notes
-Ein Dialog ist ein eigenes Top-Level-Fenster, welches zumindest eine Message zeigt. Zusätzlich kann man den
-Fenster-Titel einstellen und ein kleines Icon anzeigen lassen, was verdeutlichen soll, ob es sich um eine Bestätigung
-oder Frage oder Warnung etc. handelt.
+Ein Dialog ist ein eigenes Top-Level-Fenster, welches zumindest eine Message zeigt.
+Zusätzlich kann man den Fenster-Titel einstellen und ein kleines Icon anzeigen
+lassen, was verdeutlichen soll, ob es sich um eine Bestätigung oder Frage oder
+Warnung etc. handelt.
 
-Damit der Dialog auch wirklich bedient werden muss, ist er "modal", d.h. er liegt "vor" der Elternkomponente. Diese wird
-als Referenz übergeben und bekommt erst wieder den Fokus, wenn der Dialog geschlossen wurde.
+Damit der Dialog auch wirklich bedient werden muss, ist er "modal", d.h. er liegt
+"vor" der Elternkomponente. Diese wird als Referenz übergeben und bekommt erst
+wieder den Fokus, wenn der Dialog geschlossen wurde.
 :::
 
 [Demo: widgets.DialogDemo]{.ex
@@ -179,13 +186,14 @@ frame.setJMenuBar(menuBar);
 ```
 
 ::: notes
-Eine Menüleiste wird über das Objekt `JMenuBar` realisiert. Diese ist eine Eigenschaft des Frames und kann nur dort
-hinzugefügt werden.
+Eine Menüleiste wird über das Objekt `JMenuBar` realisiert. Diese ist eine
+Eigenschaft des Frames und kann nur dort hinzugefügt werden.
 
-In der Menüleiste kann es mehrere Menüs geben, diese werden mit Objekten vom Typ `JMenu` erstellt.
+In der Menüleiste kann es mehrere Menüs geben, diese werden mit Objekten vom Typ
+`JMenu` erstellt.
 
-Wenn man mit der Maus ein Menü ausklappt, wird eine Liste der Menüeinträge angezeigt. Diese sind vom Typ `JMenuItem` und
-verhalten sich wie Buttons.
+Wenn man mit der Maus ein Menü ausklappt, wird eine Liste der Menüeinträge
+angezeigt. Diese sind vom Typ `JMenuItem` und verhalten sich wie Buttons.
 :::
 
 [Demo: widgets.MenuDemo]{.ex
@@ -211,14 +219,16 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 ### Details zu *JMenuItem*
 
 -   Erweitert `AbstractButton`
--   Reagiert auf `ActionEvent` =\> `ActionListener` implementieren für Reaktion auf Menüauswahl
+-   Reagiert auf `ActionEvent` =\> `ActionListener` implementieren für Reaktion auf
+    Menüauswahl
 
 ### Details zum Kontextmenü
 
 **Triggern der Anzeige eines `JPopupMenu`**
 
 -   Beispielsweise über `MouseListener` einer (anderen!) Komponente
--   Darin Reaktion auf `MouseEvent.isPopupTrigger()` =\> `JPopupMenu.show()` aufrufen
+-   Darin Reaktion auf `MouseEvent.isPopupTrigger()` =\> `JPopupMenu.show()`
+    aufrufen
 
 ``` java
 JFrame myFrame = new JFrame();
@@ -253,10 +263,12 @@ Nützliche Swing-Komponenten:
 :::
 
 ::: outcomes
--   k3: Umgang mit komplexeren Swing-Komponenten: JRadioButton, JFileChooser, JOptionPane, JTabbedPane, JScrollPane, JMenuBar, JPopupMenu
+-   k3: Umgang mit komplexeren Swing-Komponenten: JRadioButton, JFileChooser,
+    JOptionPane, JTabbedPane, JScrollPane, JMenuBar, JPopupMenu
 -   k3: Nutzung von ActionListener, MouseListener, KeyListener, FocusListener
 :::
 
 ::: quizzes
--   [Quiz Swing (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld)
+-   [Quiz Swing
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld)
 :::

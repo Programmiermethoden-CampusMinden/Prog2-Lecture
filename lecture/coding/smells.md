@@ -4,14 +4,16 @@ title: Code Smells
 ---
 
 ::: tldr
-Code entsteht nicht zum Selbstzweck, er muss von anderen Menschen leicht verstanden und gewartet werden können:
-Entwickler verbringen einen wesentlichen Teil ihrer Zeit mit dem **Lesen** von (fremdem) Code. Dabei helfen "Coding
-Conventions", die eine gewisse einheitliche äußerliche Erscheinung des Codes vorgeben (Namen, Einrückungen, ...). Die
-Beachtung von grundlegenden Programmierprinzipien hilft ebenso, die Lesbarkeit und Verständlichkeit zu verbessern.
+Code entsteht nicht zum Selbstzweck, er muss von anderen Menschen leicht verstanden
+und gewartet werden können: Entwickler verbringen einen wesentlichen Teil ihrer Zeit
+mit dem **Lesen** von (fremdem) Code. Dabei helfen "Coding Conventions", die eine
+gewisse einheitliche äußerliche Erscheinung des Codes vorgeben (Namen, Einrückungen,
+...). Die Beachtung von grundlegenden Programmierprinzipien hilft ebenso, die
+Lesbarkeit und Verständlichkeit zu verbessern.
 
-Code, der diese Konventionen und Regeln verletzt, zeigt sogenannte "**Code Smells**" oder "Bad Smells". Das sind
-Probleme im Code, die noch nicht direkt zu einem Fehler führen, die aber im Laufe der Zeit die Chance für echte Probleme
-deutlich erhöht.
+Code, der diese Konventionen und Regeln verletzt, zeigt sogenannte "**Code Smells**"
+oder "Bad Smells". Das sind Probleme im Code, die noch nicht direkt zu einem Fehler
+führen, die aber im Laufe der Zeit die Chance für echte Probleme deutlich erhöht.
 :::
 
 ::: youtube
@@ -45,7 +47,8 @@ for(i=0;i<10;i++) // fuer alle i
 ```
 
 ::: notes
-Der Code im obigen Beispiel lässt sich möglicherweise kompilieren. Und möglicherweise tut er sogar das, was er tun soll.
+Der Code im obigen Beispiel lässt sich möglicherweise kompilieren. Und
+möglicherweise tut er sogar das, was er tun soll.
 
 Dennoch: **Der Code "stinkt"** (zeigt **Code Smells**):
 
@@ -55,14 +58,15 @@ Dennoch: **Der Code "stinkt"** (zeigt **Code Smells**):
 -   Fehlende Datenkapselung
 -   Zweifelhafte Namen
 -   Duplizierter Code
--   "Langer" Code: Lange Methoden, Klassen, Parameterlisten, tief verschachtelte `if/then`-Bedingungen, ...
+-   "Langer" Code: Lange Methoden, Klassen, Parameterlisten, tief verschachtelte
+    `if/then`-Bedingungen, ...
 -   Feature Neid
 -   `switch/case` oder `if/else` statt Polymorphie
 -   Globale Variablen, lokale Variablen als Attribut
 -   Magic Numbers
 
-Diese Liste enthält die häufigsten "Smells" und ließe sich noch beliebig fortsetzen. Schauen Sie mal in die unten
-angegebene Literatur :-)
+Diese Liste enthält die häufigsten "Smells" und ließe sich noch beliebig fortsetzen.
+Schauen Sie mal in die unten angegebene Literatur :-)
 
 **Stinkender Code führt zu möglichen (späteren) Problemen.**
 :::
@@ -70,8 +74,9 @@ angegebene Literatur :-)
 # Was ist guter ("sauberer") Code ("Clean Code")?
 
 ::: notes
-Im Grunde bezeichnet "sauberer Code" ("Clean Code") die Abwesenheit von Smells. D.h. man könnte Code als "sauberen" Code
-bezeichnen, wenn die folgenden Eigenschaften erfüllt sind (keine vollständige Aufzählung!):
+Im Grunde bezeichnet "sauberer Code" ("Clean Code") die Abwesenheit von Smells. D.h.
+man könnte Code als "sauberen" Code bezeichnen, wenn die folgenden Eigenschaften
+erfüllt sind (keine vollständige Aufzählung!):
 :::
 
 -   Gut ("angenehm") lesbar
@@ -81,8 +86,8 @@ bezeichnen, wenn die folgenden Eigenschaften erfüllt sind (keine vollständige 
 -   Ist gut getestet
 
 ::: notes
-In [@Martin2009] lässt der Autor Robert Martin verschiedene Ikonen der SW-Entwicklung zu diesem Thema zu Wort kommen -
-eine sehr lesenswerte Lektüre!
+In [@Martin2009] lässt der Autor Robert Martin verschiedene Ikonen der
+SW-Entwicklung zu diesem Thema zu Wort kommen - eine sehr lesenswerte Lektüre!
 :::
 
 \bigskip
@@ -92,26 +97,31 @@ eine sehr lesenswerte Lektüre!
 
 # Warum ist guter ("sauberer") Code so wichtig?
 
-> Any fool can write code that a computer can understand. Good programmers write code that humans can understand.
+> Any fool can write code that a computer can understand. Good programmers write
+> code that humans can understand.
 >
 > `\hfill`{=tex} [[@Fowler2011, p. 15]]{.origin}
 
 ::: notes
-Auch wenn das zunächst seltsam klingt, aber Code muss auch von Menschen gelesen und verstanden werden können. Klar, der
-Code muss inhaltlich korrekt sein und die jeweilige Aufgabe erfüllen, er muss kompilieren etc. ... aber er muss auch von
-anderen Personen weiter entwickelt werden und dazu gelesen und verstanden werden. Guter Code ist nicht einfach nur
-inhaltlich korrekt, sondern kann auch einfach verstanden werden.
+Auch wenn das zunächst seltsam klingt, aber Code muss auch von Menschen gelesen und
+verstanden werden können. Klar, der Code muss inhaltlich korrekt sein und die
+jeweilige Aufgabe erfüllen, er muss kompilieren etc. ... aber er muss auch von
+anderen Personen weiter entwickelt werden und dazu gelesen und verstanden werden.
+Guter Code ist nicht einfach nur inhaltlich korrekt, sondern kann auch einfach
+verstanden werden.
 
-Code, der nicht einfach lesbar ist oder nur schwer verständlich ist, wird oft in der Praxis später nicht gut gepflegt:
-Andere Entwickler haben (die berechtigte) Angst, etwas kaputt zu machen und arbeiten "um den Code herum". Nur leider
-wird das Konstrukt dann nur noch schwerer verständlich ...
+Code, der nicht einfach lesbar ist oder nur schwer verständlich ist, wird oft in der
+Praxis später nicht gut gepflegt: Andere Entwickler haben (die berechtigte) Angst,
+etwas kaputt zu machen und arbeiten "um den Code herum". Nur leider wird das
+Konstrukt dann nur noch schwerer verständlich ...
 
 ## Code Smells
 
-Verstöße gegen die Prinzipien von *Clean Code* nennt man auch *Code Smells*: Der Code "stinkt" gewissermaßen. Dies
-bedeutet nicht unbedingt, dass der Code nicht funktioniert (d.h. er kann dennoch compilieren und die Anforderungen
-erfüllen). Er ist nur nicht sauber formuliert, schwer verständlich, enthält Doppelungen etc., was im Laufe der Zeit die
-Chance für tatsächliche Probleme deutlich erhöht.
+Verstöße gegen die Prinzipien von *Clean Code* nennt man auch *Code Smells*: Der
+Code "stinkt" gewissermaßen. Dies bedeutet nicht unbedingt, dass der Code nicht
+funktioniert (d.h. er kann dennoch compilieren und die Anforderungen erfüllen). Er
+ist nur nicht sauber formuliert, schwer verständlich, enthält Doppelungen etc., was
+im Laufe der Zeit die Chance für tatsächliche Probleme deutlich erhöht.
 :::
 
 \pause
@@ -127,34 +137,41 @@ Chance für tatsächliche Probleme deutlich erhöht.
 ::: notes
 ## "Broken Windows" Phänomen
 
-Wenn ein Gebäude leer steht, wird es eine gewisse Zeit lang nur relativ langsam verfallen: Die Fenster werden nicht mehr
-geputzt, es sammelt sich Graffiti, Gras wächst in der Dachrinne, Putz blättert ab ...
+Wenn ein Gebäude leer steht, wird es eine gewisse Zeit lang nur relativ langsam
+verfallen: Die Fenster werden nicht mehr geputzt, es sammelt sich Graffiti, Gras
+wächst in der Dachrinne, Putz blättert ab ...
 
-Irgendwann wird dann eine Scheibe eingeworfen. Wenn dieser Punkt überschritten ist, beschleunigt sich der Verfall
-rasant: Über Nacht werden alle erreichbaren Scheiben eingeworfen, Türen werden zerstört, es werden sogar Brände gelegt
-...
+Irgendwann wird dann eine Scheibe eingeworfen. Wenn dieser Punkt überschritten ist,
+beschleunigt sich der Verfall rasant: Über Nacht werden alle erreichbaren Scheiben
+eingeworfen, Türen werden zerstört, es werden sogar Brände gelegt ...
 
-Das passiert auch bei Software! Wenn man als Entwickler das Gefühl bekommt, die Software ist nicht gepflegt, wird man
-selbst auch nur relativ schlechte Arbeit abliefern. Sei es, weil man nicht versteht, was der Code macht und sich nicht
-an die Überarbeitung der richtigen Stellen traut und stattdessen die Änderungen als weiteren "Erker" einfach dran pappt.
-Seit es, weil man keine Lust hat, Zeit in ordentliche Arbeit zu investieren, weil der Code ja eh schon schlecht ist ...
-Das wird mit der Zeit nicht besser ...
+Das passiert auch bei Software! Wenn man als Entwickler das Gefühl bekommt, die
+Software ist nicht gepflegt, wird man selbst auch nur relativ schlechte Arbeit
+abliefern. Sei es, weil man nicht versteht, was der Code macht und sich nicht an die
+Überarbeitung der richtigen Stellen traut und stattdessen die Änderungen als
+weiteren "Erker" einfach dran pappt. Seit es, weil man keine Lust hat, Zeit in
+ordentliche Arbeit zu investieren, weil der Code ja eh schon schlecht ist ... Das
+wird mit der Zeit nicht besser ...
 :::
 
-["Broken Windows" Phänomen]{.ex href="https://en.wikipedia.org/wiki/Broken_windows_theory"}
+["Broken Windows" Phänomen]{.ex
+href="https://en.wikipedia.org/wiki/Broken_windows_theory"}
 
 ::: notes
 ## Maßeinheit für Code-Qualität ;-)
 
-Es gibt eine "praxisnahe" (und nicht ganz ernst gemeinte) Maßeinheit für Code-Qualität: Die "WTF/m" (*What the Fuck per
-minute*): [Thom Holwerda: www.osnews.com/story/19266/WTFs\_](https://www.osnews.com/story/19266/wtfsm/).
+Es gibt eine "praxisnahe" (und nicht ganz ernst gemeinte) Maßeinheit für
+Code-Qualität: Die "WTF/m" (*What the Fuck per minute*): [Thom Holwerda:
+www.osnews.com/story/19266/WTFs\_](https://www.osnews.com/story/19266/wtfsm/).
 
-Wenn beim Code-Review durch Kollegen viele "WTF" kommen, ist der Code offenbar nicht in Ordnung ...
+Wenn beim Code-Review durch Kollegen viele "WTF" kommen, ist der Code offenbar nicht
+in Ordnung ...
 :::
 
 # Code Smells: Nichtbeachtung von Coding Conventions
 
--   Richtlinien für einheitliches Aussehen =\> Andere Programmierer sollen Code schnell lesen können
+-   Richtlinien für einheitliches Aussehen =\> Andere Programmierer sollen Code
+    schnell lesen können
     -   Namen, Schreibweisen
     -   Kommentare (Ort, Form, Inhalt)
     -   Einrückungen und Spaces vs. Tabs
@@ -163,8 +180,9 @@ Wenn beim Code-Review durch Kollegen viele "WTF" kommen, ist der Code offenbar n
 
 \smallskip
 
--   Beispiele: [Sun Code Conventions](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf), [Google Java
-    Style](https://google.github.io/styleguide/javaguide.html)
+-   Beispiele: [Sun Code
+    Conventions](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf),
+    [Google Java Style](https://google.github.io/styleguide/javaguide.html)
 
 \bigskip
 
@@ -182,13 +200,14 @@ Wenn beim Code-Review durch Kollegen viele "WTF" kommen, ist der Code offenbar n
     ```
 
     ::: notes
-    Der Programmierer hat selbst nicht verstanden (und macht sich auch nicht die Mühe zu verstehen), was er da tut!
-    Fehler sind vorprogrammiert!
+    Der Programmierer hat selbst nicht verstanden (und macht sich auch nicht die
+    Mühe zu verstehen), was er da tut! Fehler sind vorprogrammiert!
     :::
 
 \bigskip
 
--   Redundante Kommentare: Erklären Sie, was der Code **inhaltlich** tun sollte (und warum)!
+-   Redundante Kommentare: Erklären Sie, was der Code **inhaltlich** tun sollte (und
+    warum)!
 
     ``` java
     public int i; // neues i
@@ -197,10 +216,11 @@ Wenn beim Code-Review durch Kollegen viele "WTF" kommen, ist der Code offenbar n
     ```
 
     ::: notes
-    Was würden Sie Ihrem Kollegen erklären (müssen), wenn Sie ihm/ihr den Code vorstellen?
+    Was würden Sie Ihrem Kollegen erklären (müssen), wenn Sie ihm/ihr den Code
+    vorstellen?
 
-    Wiederholen Sie nicht, was der Code tut (das kann ich ja selbst lesen), sondern beschreiben Sie, was der Code tun
-    *sollte* und *warum*.
+    Wiederholen Sie nicht, was der Code tut (das kann ich ja selbst lesen), sondern
+    beschreiben Sie, was der Code tun *sollte* und *warum*.
 
     Beschreiben Sie dabei auch das Konzept hinter einem Codebaustein.
     :::
@@ -210,33 +230,38 @@ Wenn beim Code-Review durch Kollegen viele "WTF" kommen, ist der Code offenbar n
 -   Veraltete Kommentare
 
     ::: notes
-    Hinweis auf unsauberes Arbeiten: Oft wird im Zuge der Überarbeitung von Code-Stellen vergessen, auch den Kommentar
-    anzupassen! Sollte beim Lesen extrem misstrauisch machen.
+    Hinweis auf unsauberes Arbeiten: Oft wird im Zuge der Überarbeitung von
+    Code-Stellen vergessen, auch den Kommentar anzupassen! Sollte beim Lesen extrem
+    misstrauisch machen.
     :::
 
 -   Auskommentierter Code
 
     ::: notes
-    Da ist jemand seiner Sache unsicher bzw. hat eine Überarbeitung nicht abgeschlossen. Die Chance, dass sich der
-    restliche Code im Laufe der Zeit so verändert, dass der auskommentierte Code nicht mehr (richtig) läuft, ist groß!
-    Auskommentierter Code ist gefährlich und dank Versionskontrolle absolut überflüssig!
+    Da ist jemand seiner Sache unsicher bzw. hat eine Überarbeitung nicht
+    abgeschlossen. Die Chance, dass sich der restliche Code im Laufe der Zeit so
+    verändert, dass der auskommentierte Code nicht mehr (richtig) läuft, ist groß!
+    Auskommentierter Code ist gefährlich und dank Versionskontrolle absolut
+    überflüssig!
     :::
 
 -   Kommentare erscheinen zwingend nötig
 
     ::: notes
-    Häufig ein Hinweis auf ungeeignete Wahl der Namen (Klassen, Methoden, Attribute) und/oder auf ein ungeeignetes
-    Abstraktionsniveau (beispielsweise Nichtbeachtung des Prinzips der "*Single Responsibility*")!
+    Häufig ein Hinweis auf ungeeignete Wahl der Namen (Klassen, Methoden, Attribute)
+    und/oder auf ein ungeeignetes Abstraktionsniveau (beispielsweise Nichtbeachtung
+    des Prinzips der "*Single Responsibility*")!
 
-    Der Code soll im **Normalfall** für sich selbst sprechen: **WAS** wird gemacht. Der Kommentar erklärt im Normalfall,
-    **WARUM** der Code das machen soll.
+    Der Code soll im **Normalfall** für sich selbst sprechen: **WAS** wird gemacht.
+    Der Kommentar erklärt im Normalfall, **WARUM** der Code das machen soll.
     :::
 
 -   Unangemessene Information, z.B. Änderungshistorien
 
     ::: notes
-    Hinweise wie "wer hat wann was geändert" gehören in das Versionskontroll- oder ins Issue-Tracking-System. Die
-    Änderung ist im Code sowieso nicht mehr sichtbar/nachvollziehbar!
+    Hinweise wie "wer hat wann was geändert" gehören in das Versionskontroll- oder
+    ins Issue-Tracking-System. Die Änderung ist im Code sowieso nicht mehr
+    sichtbar/nachvollziehbar!
     :::
 
 # Code Smells: Schlechte Namen und fehlende Kapselung
@@ -251,12 +276,14 @@ public class Studi extends Person {
 ```
 
 ::: notes
-Nach drei Wochen fragen Sie sich, was `n` oder `c` oder `Studi#prtIf()` wohl sein könnte! (Ein anderer Programmierer
-fragt sich das schon beim **ersten** Lesen.) Klassen und Methoden sollten sich erwartungsgemäß verhalten.
+Nach drei Wochen fragen Sie sich, was `n` oder `c` oder `Studi#prtIf()` wohl sein
+könnte! (Ein anderer Programmierer fragt sich das schon beim **ersten** Lesen.)
+Klassen und Methoden sollten sich erwartungsgemäß verhalten.
 
-Wenn Dinge öffentlich angeboten werden, muss man damit rechnen, dass andere darauf zugreifen. D.h. man kann nicht mehr
-so einfach Dinge wie die interne Repräsentation oder die Art der Berechnung austauschen! Öffentliche Dinge gehören zur
-Schnittstelle und damit Teil des "Vertrags" mit den Nutzern!
+Wenn Dinge öffentlich angeboten werden, muss man damit rechnen, dass andere darauf
+zugreifen. D.h. man kann nicht mehr so einfach Dinge wie die interne Repräsentation
+oder die Art der Berechnung austauschen! Öffentliche Dinge gehören zur Schnittstelle
+und damit Teil des "Vertrags" mit den Nutzern!
 :::
 
 \bigskip
@@ -295,8 +322,8 @@ public class Studi {
 -   Programmierprinzip "**DRY**" =\> "Don't repeat yourself!"
 
 ::: notes
-Im Beispiel wird das Formatieren der Adresse mehrfach identisch implementiert, d.h. duplizierter Code. Auslagern in
-eigene Methode und aufrufen!
+Im Beispiel wird das Formatieren der Adresse mehrfach identisch implementiert, d.h.
+duplizierter Code. Auslagern in eigene Methode und aufrufen!
 
 Kopierter/duplizierter Code ist problematisch:
 
@@ -332,11 +359,15 @@ Kopierter/duplizierter Code ist problematisch:
 ## Lesbarkeit und Übersichtlichkeit leiden
 
 -   Der Mensch kann sich nur begrenzt viele Dinge im Kurzzeitgedächtnis merken
--   Klassen, die länger als 5 Bildschirmseiten sind, erfordern viel Hin- und Her-Scrollen, dito für lange Methoden
+-   Klassen, die länger als 5 Bildschirmseiten sind, erfordern viel Hin- und
+    Her-Scrollen, dito für lange Methoden
 -   Lange Methoden sind schwer verständlich (erledigen viele Dinge?)
--   Mehr als 3 Parameter kann sich kaum jemand merken, vor allem beim Aufruf von Methoden
--   Die Testbarkeit wird bei zu komplexen Methoden/Klassen und vielen Parametern sehr erschwert
--   Große Dateien verleiten (auch mangels Übersichtlichkeit) dazu, neuen Code ebenfalls schluderig zu gliedern
+-   Mehr als 3 Parameter kann sich kaum jemand merken, vor allem beim Aufruf von
+    Methoden
+-   Die Testbarkeit wird bei zu komplexen Methoden/Klassen und vielen Parametern
+    sehr erschwert
+-   Große Dateien verleiten (auch mangels Übersichtlichkeit) dazu, neuen Code
+    ebenfalls schluderig zu gliedern
 
 ## Langer Code deutet auch auf eine Verletzung des Prinzips der Single Responsibility hin
 
@@ -355,8 +386,9 @@ Kopierter/duplizierter Code ist problematisch:
     }
     ```
 
-    Warum sollte sich die Klasse `Student` um die Einzelheiten des Aufbaus einer Telefonnummer kümmern? Das Prinzip der
-    "*Single Responsibility*" wird hier verletzt!
+    Warum sollte sich die Klasse `Student` um die Einzelheiten des Aufbaus einer
+    Telefonnummer kümmern? Das Prinzip der "*Single Responsibility*" wird hier
+    verletzt!
 
 -   Methoden erledigen vermutlich mehr als nur eine Aufgabe
 
@@ -373,8 +405,8 @@ Kopierter/duplizierter Code ist problematisch:
     // Diese Methode erledigt 4 Dinge: Iteration, Abfrage, Berechnung, Setzen ...
     ```
 
-    =\> Erklären Sie die Methode jemandem. Wenn dabei das Wort "und" vorkommt, macht die Methode höchstwahrscheinlich zu
-    viel!
+    =\> Erklären Sie die Methode jemandem. Wenn dabei das Wort "und" vorkommt, macht
+    die Methode höchstwahrscheinlich zu viel!
 
 -   Viele Parameter bedeuten oft fehlende Datenabstraktion
 
@@ -404,13 +436,15 @@ public class CreditsCalculator {
 
 ::: notes
 -   Zugriff auf (viele) Interna der anderen Klasse! =\> Hohe Kopplung der Klassen!
--   Methode `CreditsCalculator#calculateEcts()` "möchte" eigentlich in `Student` sein ...
+-   Methode `CreditsCalculator#calculateEcts()` "möchte" eigentlich in `Student`
+    sein ...
 :::
 
 ::: notes
 # Weiterführende Links
 
--   ["Foundations: Clean Code" (The Odin Project)](https://www.theodinproject.com/lessons/foundations-clean-code)
+-   ["Foundations: Clean Code" (The Odin
+    Project)](https://www.theodinproject.com/lessons/foundations-clean-code)
 -   ["Documentation Best Practices" (Google
     Styleguide)](https://github.com/google/styleguide/blob/gh-pages/docguide/best_practices.md)
 :::
@@ -426,8 +460,8 @@ public class CreditsCalculator {
     -   Richtiges Kommentieren und Dokumentieren
 
         ::: notes
-        In dieser Sitzung haben wir vor allem auf Kommentare geschaut. Zum Thema Dokumentieren siehe die Einheit zu
-        ["Javadoc"](javadoc.md).
+        In dieser Sitzung haben wir vor allem auf Kommentare geschaut. Zum Thema
+        Dokumentieren siehe die Einheit zu ["Javadoc"](javadoc.md).
         :::
 
     -   Einhalten von Coding Conventions
@@ -442,7 +476,8 @@ public class CreditsCalculator {
     -   Einhalten von Prinzipien des objektorientierten Programmierens
 
         ::: notes
-        -   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich. (*Single Responsibility*)
+        -   Jede Klasse ist für genau **einen** Aspekt des Systems verantwortlich.
+            (*Single Responsibility*)
         -   Keine Code-Duplizierung! (*DRY* - Don't repeat yourself)
         -   Klassen und Methoden sollten sich erwartungsgemäß verhalten
         -   Kapselung: Möglichst wenig öffentlich zugänglich machen
@@ -462,5 +497,6 @@ public class CreditsCalculator {
 :::
 
 ::: quizzes
--   [Quiz Code Smells (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106230&client_id=FH-Bielefeld)
+-   [Quiz Code Smells
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106230&client_id=FH-Bielefeld)
 :::

@@ -4,15 +4,18 @@ title: Factory-Method-Pattern
 ---
 
 ::: tldr
-Oft ist es wünschenswert, dass Nutzer nicht direkt Objekte von bestimmten Klassen anlegen (können). Hier kann eine
-"Fabrik-Methode" (**Factory-Method**) helfen, der man die gewünschten Parameter übergibt und die daraus dann das
-passende Objekt (der richtigen Klasse) erzeugt und zurückliefert.
+Oft ist es wünschenswert, dass Nutzer nicht direkt Objekte von bestimmten Klassen
+anlegen (können). Hier kann eine "Fabrik-Methode" (**Factory-Method**) helfen, der
+man die gewünschten Parameter übergibt und die daraus dann das passende Objekt (der
+richtigen Klasse) erzeugt und zurückliefert.
 
-Dadurch erreicht man eine höhere Entkoppelung, die Nutzer müssen nur noch das Interface oder die abstrakte Klasse, also
-den Obertyp des Ergebnisses kennen. Außerdem lassen sich so leicht die konkreten Klassen austauschen.
+Dadurch erreicht man eine höhere Entkoppelung, die Nutzer müssen nur noch das
+Interface oder die abstrakte Klasse, also den Obertyp des Ergebnisses kennen.
+Außerdem lassen sich so leicht die konkreten Klassen austauschen.
 
-Dieses Entwurfsmuster kommt häufig zusammen mit dem *Singleton-Pattern* vor, wo es nur eine einzige Instanz einer Klasse
-geben soll. Über eine Fabrik-Methode kann man diese Instanz ggf. erzeugen und dann die Referenz darauf zurückliefern.
+Dieses Entwurfsmuster kommt häufig zusammen mit dem *Singleton-Pattern* vor, wo es
+nur eine einzige Instanz einer Klasse geben soll. Über eine Fabrik-Methode kann man
+diese Instanz ggf. erzeugen und dann die Referenz darauf zurückliefern.
 :::
 
 ::: youtube
@@ -33,7 +36,8 @@ geben soll. Über eine Fabrik-Methode kann man diese Instanz ggf. erzeugen und d
 \bigskip
 \bigskip
 
-=\> **Factory-Method-Pattern**: Objekte sollen nicht direkt durch den Nutzer erzeugt werden
+=\> **Factory-Method-Pattern**: Objekte sollen nicht direkt durch den Nutzer erzeugt
+werden
 
 # Factory-Method-Pattern
 
@@ -41,7 +45,8 @@ geben soll. Über eine Fabrik-Methode kann man diese Instanz ggf. erzeugen und d
 
 # Hands-On: Ticket-App
 
-Implementieren Sie eine Ticket-App, die verschiedene Tickets mit Hilfe des Factory-Method Entwurfsmusters generiert.
+Implementieren Sie eine Ticket-App, die verschiedene Tickets mit Hilfe des
+Factory-Method Entwurfsmusters generiert.
 
 [UML; Konsole: factory.FactoryBeispiel]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/pattern/src/factory/FactoryBeispiel.java"}
@@ -73,26 +78,31 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 :::
 
 ::: challenges
-Ein Kunde kommt in unser Computergeschäft und möchte bei uns einen Computer bestellen. Dabei gibt er an, wie er diesen
-vorwiegend nutzen möchte bzw. für welchen Zweck er gedacht ist ("*stationär*" oder "*mobil*"). Nach reichlicher
-Überlegung, ob er den neuen Rechner zu Hause stehen haben möchte oder lieber keinen weiteren Rechner, egal ob "*mobil*"
-oder "*stationär*", bei sich im Weg herumstehen haben will, teilt er Ihnen seine Entscheidung darüber mit ("*stationär*"
-oder "*mobil*" vs. "*nicht daheim*"). Bei diesem Gespräch merkt er beiläufig an, dass es ein Rechner mit "*viel Wumms*"
-sein könnte oder vielleicht doch besser etwas Kleines, was leise vor sich hin schnurrt ("*viel Wumms*" vs. "*leise
-schnurrend*").
+Ein Kunde kommt in unser Computergeschäft und möchte bei uns einen Computer
+bestellen. Dabei gibt er an, wie er diesen vorwiegend nutzen möchte bzw. für welchen
+Zweck er gedacht ist ("*stationär*" oder "*mobil*"). Nach reichlicher Überlegung, ob
+er den neuen Rechner zu Hause stehen haben möchte oder lieber keinen weiteren
+Rechner, egal ob "*mobil*" oder "*stationär*", bei sich im Weg herumstehen haben
+will, teilt er Ihnen seine Entscheidung darüber mit ("*stationär*" oder "*mobil*"
+vs. "*nicht daheim*"). Bei diesem Gespräch merkt er beiläufig an, dass es ein
+Rechner mit "*viel Wumms*" sein könnte oder vielleicht doch besser etwas Kleines,
+was leise vor sich hin schnurrt ("*viel Wumms*" vs. "*leise schnurrend*").
 
-Je nach gewünschter Konfiguration soll ein den oben genannten Auswahlkriterien entsprechender Rechner mit den aus der
-unten stehenden Konfigurationsmatrix zu entnehmenden Eigenschaften automatisch erzeugt werden. Die Größe des
-installierten `RAM`, die Anzahl der eingebauten `CPU`-Kerne mit ihrer jeweiligen Taktrate, sowie die Art und Größe der
-installierten Festplatte (`HDD` oder `SSD`) sollte dabei zu dem gewählten Paket passend gesetzt werden.
+Je nach gewünschter Konfiguration soll ein den oben genannten Auswahlkriterien
+entsprechender Rechner mit den aus der unten stehenden Konfigurationsmatrix zu
+entnehmenden Eigenschaften automatisch erzeugt werden. Die Größe des installierten
+`RAM`, die Anzahl der eingebauten `CPU`-Kerne mit ihrer jeweiligen Taktrate, sowie
+die Art und Größe der installierten Festplatte (`HDD` oder `SSD`) sollte dabei zu
+dem gewählten Paket passend gesetzt werden.
 
-Implementieren Sie eine "Computerfabrik" (Klasse `ComputerFactory`), die Ihnen den richtig konfigurierten Rechner
-zusammenbaut. Nutzen Sie dabei das "Factory-Method-Pattern" zum Erzeugen der Objekte der einzelnen Subklassen. Dabei
-soll Ihre Computerfabrik anhand der ihr übergebenen Konfiguration eigenständig entscheiden, welche Art von Computer
-dabei erstellt werden soll.
+Implementieren Sie eine "Computerfabrik" (Klasse `ComputerFactory`), die Ihnen den
+richtig konfigurierten Rechner zusammenbaut. Nutzen Sie dabei das
+"Factory-Method-Pattern" zum Erzeugen der Objekte der einzelnen Subklassen. Dabei
+soll Ihre Computerfabrik anhand der ihr übergebenen Konfiguration eigenständig
+entscheiden, welche Art von Computer dabei erstellt werden soll.
 
-Implementieren Sie dazu in Ihrer Factory die Factory-Methode `buildComputer`, welche das jeweils passend konfigurierte
-Objekt zurückgibt.
+Implementieren Sie dazu in Ihrer Factory die Factory-Methode `buildComputer`, welche
+das jeweils passend konfigurierte Objekt zurückgibt.
 
 ``` java
 public class ComputerFactory {
@@ -107,8 +117,8 @@ public class ComputerFactory {
 
 **Konfigurationsmatrix**
 
-|                    |    "stationär" (`DesktopComputer`)     |      "mobil" (`LaptopComputer`)      |      "nicht daheim" (`CloudComputer`)      |
-|:------------------:|:--------------------------------------:|:------------------------------------:|:------------------------------------------:|
-| "leise schnurrend" | 8 Cores, 1.21GHZ, 16GB RAM, 256GB HDD  | 4 Cores, 1.21GHZ, 8GB RAM, 256GB HDD |   8 Cores, 1.21GHZ, 24GB RAM, 1000GB HDD   |
-|    "viel Wumms"    | 16 Cores, 4.2GHZ, 32GB RAM, 2000GB SSD | 8 Cores, 2.4GHZ, 16GB RAM, 256GB SSD | 42 Cores, 9.001GHZ, 128GB RAM, 10000GB SSD |
+|  | "stationär" (`DesktopComputer`) | "mobil" (`LaptopComputer`) | "nicht daheim" (`CloudComputer`) |
+|:------------:|:----------------------:|:---------------------:|:-----------------------:|
+| "leise schnurrend" | 8 Cores, 1.21GHZ, 16GB RAM, 256GB HDD | 4 Cores, 1.21GHZ, 8GB RAM, 256GB HDD | 8 Cores, 1.21GHZ, 24GB RAM, 1000GB HDD |
+| "viel Wumms" | 16 Cores, 4.2GHZ, 32GB RAM, 2000GB SSD | 8 Cores, 2.4GHZ, 16GB RAM, 256GB SSD | 42 Cores, 9.001GHZ, 128GB RAM, 10000GB SSD |
 :::

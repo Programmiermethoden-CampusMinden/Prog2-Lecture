@@ -4,16 +4,19 @@ title: Swing Events
 ---
 
 ::: tldr
-In Swing-Komponenten werden Events ausgelöst, wenn der User mit den Komponenten interagiert.
+In Swing-Komponenten werden Events ausgelöst, wenn der User mit den Komponenten
+interagiert.
 
-Zur Bearbeitung der Events kann man Listener bei den Komponenten registrieren, die bei Auftreten eines Events
-benachrichtigt werden (Observer-Pattern: Die Observer werden in Swing "Listener" genannt).
+Zur Bearbeitung der Events kann man Listener bei den Komponenten registrieren, die
+bei Auftreten eines Events benachrichtigt werden (Observer-Pattern: Die Observer
+werden in Swing "Listener" genannt).
 
-Es gibt für alle möglichen Formen von Interaktion mit Komponenten vordefinierte Interfaces für die Event-Listener. Da
-man hier wie üblich immer alle Methoden implementieren muss, selbst wenn man nur auf wenige Events reagieren möchte,
-gibt es zusätzlich sogenannte "Adapter": Dies sind Klassen, die das jeweilige Event-Listener-Interface mit leeren
-Methodenrümpfen implementieren. Bei Nutzung der Adapter-Klassen müssen dann nur noch die benötigten Methoden
-überschrieben werden.
+Es gibt für alle möglichen Formen von Interaktion mit Komponenten vordefinierte
+Interfaces für die Event-Listener. Da man hier wie üblich immer alle Methoden
+implementieren muss, selbst wenn man nur auf wenige Events reagieren möchte, gibt es
+zusätzlich sogenannte "Adapter": Dies sind Klassen, die das jeweilige
+Event-Listener-Interface mit leeren Methodenrümpfen implementieren. Bei Nutzung der
+Adapter-Klassen müssen dann nur noch die benötigten Methoden überschrieben werden.
 :::
 
 ::: youtube
@@ -54,8 +57,9 @@ component.addMouseListener(MouseListener);
 ![](images/EventListener.png){width="80%"}
 
 ::: notes
-Es gibt für alle möglichen Input-Arten eine Ableitung von `java.util.EventListener`, beispielsweise für Maus- oder
-Tastaturereignisse oder wenn ein Element den Fokus bekommt und viele weitere.
+Es gibt für alle möglichen Input-Arten eine Ableitung von `java.util.EventListener`,
+beispielsweise für Maus- oder Tastaturereignisse oder wenn ein Element den Fokus
+bekommt und viele weitere.
 :::
 
 # Details zu Listenern
@@ -97,8 +101,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 -   Oft nur wenige Methoden, u.U. aber viele Methoden
 :::
 
-=\> Bei Nutzung eines Event-Listeners müssen immer **alle** Methoden implementiert werden [(auch nicht
-benötigte)!]{.notes}
+=\> Bei Nutzung eines Event-Listeners müssen immer **alle** Methoden implementiert
+werden [(auch nicht benötigte)!]{.notes}
 
 \bigskip
 
@@ -130,10 +134,12 @@ Observer-Pattern in Swing-Komponenten:
 
 ::: outcomes
 -   k2: Unterschied zwischen den Listenern und den entsprechenden Adaptern
--   k3: Anwendung des Observer-Pattern, beispielsweise als Listener in Swing, aber auch in eigenen Programmen
+-   k3: Anwendung des Observer-Pattern, beispielsweise als Listener in Swing, aber
+    auch in eigenen Programmen
 -   k3: Nutzung von ActionListener, MouseListener, KeyListener, FocusListener
 :::
 
 ::: quizzes
--   [Quiz Swing (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld)
+-   [Quiz Swing
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106248&client_id=FH-Bielefeld)
 :::

@@ -4,31 +4,38 @@ title: "Build-Systeme: Apache Ant"
 ---
 
 ::: tldr
-Zum Automatisieren von Arbeitsabläufen (Kompilieren, Testen, ...) stehen in der Java-Welt verschiedene Tools zur
-Verfügung: Apache Ant, Apache Maven und Gradle sind sicher die am bekanntesten darunter.
+Zum Automatisieren von Arbeitsabläufen (Kompilieren, Testen, ...) stehen in der
+Java-Welt verschiedene Tools zur Verfügung: Apache Ant, Apache Maven und Gradle sind
+sicher die am bekanntesten darunter.
 
-In Apache Ant werden die Build-Skripte in XML definiert. Die äußere Klammer ist dabei das `<project>`. In einem Projekt
-kann es ein oder mehrere Teilziele (*Targets*) geben, die untereinander abhängig sein können. Die Targets können quasi
+In Apache Ant werden die Build-Skripte in XML definiert. Die äußere Klammer ist
+dabei das `<project>`. In einem Projekt kann es ein oder mehrere Teilziele
+(*Targets*) geben, die untereinander abhängig sein können. Die Targets können quasi
 "aufgerufen" werden bzw. in der IDE selektiert und gestartet werden.
 
-In einem Target kann man schließlich mit *Tasks* Aufgaben wie Kompilieren, Testen, Aufräumen, ... erledigen lassen. Dazu
-gibt es eine breite Palette an vordefinierten Tasks. Zusätzlich sind umfangreiche Operationen auf dem Filesystem möglich
-(Ordner erstellen, löschen, Dinge kopieren, ...).
+In einem Target kann man schließlich mit *Tasks* Aufgaben wie Kompilieren, Testen,
+Aufräumen, ... erledigen lassen. Dazu gibt es eine breite Palette an vordefinierten
+Tasks. Zusätzlich sind umfangreiche Operationen auf dem Filesystem möglich (Ordner
+erstellen, löschen, Dinge kopieren, ...).
 
-Über *Properties* können Werte und Namen definiert werden, etwa für bestimmte Ordner. Die Properties sind
-unveränderliche Variablen (auch wenn man sie im Skript scheinbar neu setzen kann).
+Über *Properties* können Werte und Namen definiert werden, etwa für bestimmte
+Ordner. Die Properties sind unveränderliche Variablen (auch wenn man sie im Skript
+scheinbar neu setzen kann).
 
-Über Apache Ivy können analog zu Maven und Gradle definierte Abhängigkeiten aus Maven-Central aufgelöst werden.
+Über Apache Ivy können analog zu Maven und Gradle definierte Abhängigkeiten aus
+Maven-Central aufgelöst werden.
 
-Im Unterschied zu Maven und Gradle ist in Ant *kein* Java-Entwicklungsmodell eingebaut. Man muss sämtliche Targets
-selbst definieren.
+Im Unterschied zu Maven und Gradle ist in Ant *kein* Java-Entwicklungsmodell
+eingebaut. Man muss sämtliche Targets selbst definieren.
 :::
 
 ::: youtube
 -   [VL Apache Ant](https://youtu.be/LRA1PeQ2pR0)
 -   [Demo Aufruf von Ant (Konsole, IDE: hello.xml)](https://youtu.be/EnAQOU_zL1M)
--   [Demo Properties, Targets, Dependencies (build.xml)](https://youtu.be/ip8xFcSZC1c)
--   [Demo Abhängigkeiten mit Ivy auflösen (ivydemo.xml)](https://youtu.be/jizh0bi2TnU)
+-   [Demo Properties, Targets, Dependencies
+    (build.xml)](https://youtu.be/ip8xFcSZC1c)
+-   [Demo Abhängigkeiten mit Ivy auflösen
+    (ivydemo.xml)](https://youtu.be/jizh0bi2TnU)
 :::
 
 # Automatisieren von Arbeitsabläufen
@@ -101,7 +108,8 @@ Works on my machine ...
     -   Optionale Task-Bibliotheken
     -   Selbst definierte Tasks
 
-=\> Überblick: [ant.apache.org/manual/tasksoverview.html](https://ant.apache.org/manual/tasksoverview.html)
+=\> Überblick:
+[ant.apache.org/manual/tasksoverview.html](https://ant.apache.org/manual/tasksoverview.html)
 
 [Konsole/IDE: ant -f hello.xml]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/building/src/ant/hello.xml"}
@@ -122,12 +130,14 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
     -   Properties lassen sich nur einmal setzen ("immutable")
         -   Erneute Definition ist wirkungslos, erzeugt aber leider keinen Fehler
 -   Nutzung von Properties: `<property name="db" value="${wuppie}.db" />`
--   Pfade: "`location`" statt "`value`" nutzen: `<property name="ziel" location="${p}/bla/blub" />`
+-   Pfade: "`location`" statt "`value`" nutzen:
+    `<property name="ziel" location="${p}/bla/blub" />`
 :::
 
 \bigskip
 
--   Properties beim Aufruf setzen mit Option "`-D`": `\newline`{=tex} `ant -Dwuppie=fluppie`
+-   Properties beim Aufruf setzen mit Option "`-D`": `\newline`{=tex}
+    `ant -Dwuppie=fluppie`
 
 ::: notes
 [Beispiel build.xml, Properties]{.ex
@@ -211,8 +221,8 @@ Es gibt auch die Variante `<dirset dir="...">`, um Verzeichnisse zu gruppieren.
     </target>
     ```
 
-    *Anmerkung*: Neben dem `pathelement` können Sie hier auch (wie im nächsten Beispiel gezeigt) ein oder mehrere
-    `fileset` nutzen.
+    *Anmerkung*: Neben dem `pathelement` können Sie hier auch (wie im nächsten
+    Beispiel gezeigt) ein oder mehrere `fileset` nutzen.
     :::
 
 \bigskip
@@ -246,15 +256,17 @@ Es gibt auch die Variante `<dirset dir="...">`, um Verzeichnisse zu gruppieren.
     </target>
     ```
 
-    *Anmerkung*: Neben dem `fileset` können Sie hier auch (wie oben gezeigt) ein oder mehrere `pathelement` nutzen.
+    *Anmerkung*: Neben dem `fileset` können Sie hier auch (wie oben gezeigt) ein
+    oder mehrere `pathelement` nutzen.
     :::
 
 \bigskip
 
 ::: notes
-*Anmerkung*: Laut [ant.apache.org/manual/Tasks/junit.html](https://ant.apache.org/manual/Tasks/junit.html) benötigt man
-neben der aktuellen `junit.jar` noch die `ant-junit.jar` im Classpath, um mit dem `junit`-Ant-Task entsprechende
-JUnit4-Testfälle ausführen zu können.
+*Anmerkung*: Laut
+[ant.apache.org/manual/Tasks/junit.html](https://ant.apache.org/manual/Tasks/junit.html)
+benötigt man neben der aktuellen `junit.jar` noch die `ant-junit.jar` im Classpath,
+um mit dem `junit`-Ant-Task entsprechende JUnit4-Testfälle ausführen zu können.
 
 Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 [ant.apache.org/manual/Tasks/junitlauncher.html](https://ant.apache.org/manual/Tasks/junitlauncher.html)).
@@ -386,9 +398,10 @@ Für JUnit5 gibt es einen neuen Task `JUnitLauncher` (vgl.
 ```
 
 ::: notes
-Wenn Ivy installiert ist, kann man durch den Eintrag `xmlns:ivy="antlib:org.apache.ivy.ant"` in der Projekt-Deklaration
-im Ant-Skript die Ivy-Tasks laden. Der wichtigste Task ist dabei `ivy:retrieve`, mit dem externe Projektabhängigkeiten
-heruntergeladen werden können.
+Wenn Ivy installiert ist, kann man durch den Eintrag
+`xmlns:ivy="antlib:org.apache.ivy.ant"` in der Projekt-Deklaration im Ant-Skript die
+Ivy-Tasks laden. Der wichtigste Task ist dabei `ivy:retrieve`, mit dem externe
+Projektabhängigkeiten heruntergeladen werden können.
 :::
 
 \bigskip
@@ -404,12 +417,13 @@ heruntergeladen werden können.
 ```
 
 ::: notes
-Zur Steuerung von Ivy legt man eine weitere Datei `ivy.xml` an. Das Wurzelelement ist `ivy-module`, wobei die `version`
-die niedrigste kompatible Ivy-Version angibt.
+Zur Steuerung von Ivy legt man eine weitere Datei `ivy.xml` an. Das Wurzelelement
+ist `ivy-module`, wobei die `version` die niedrigste kompatible Ivy-Version angibt.
 
-Der `dependencies`-Abschnitt definiert dann die Abhängigkeiten, die Ivy auflösen muss. Die Schreibweise ist dabei wie im
-Maven2 Repository ([mvnrepository.com](https://mvnrepository.com/)) angelegt. Dort findet man beispielsweise für Apache
-Commons CLI den Eintrag für Maven ("POM"-Datei):
+Der `dependencies`-Abschnitt definiert dann die Abhängigkeiten, die Ivy auflösen
+muss. Die Schreibweise ist dabei wie im Maven2 Repository
+([mvnrepository.com](https://mvnrepository.com/)) angelegt. Dort findet man
+beispielsweise für Apache Commons CLI den Eintrag für Maven ("POM"-Datei):
 
 ``` xml
 <!-- https://mvnrepository.com/artifact/commons-cli/commons-cli -->
@@ -420,16 +434,18 @@ Commons CLI den Eintrag für Maven ("POM"-Datei):
 </dependency>
 ```
 
-Für die Ivy-Konfiguration übernimmt man die `groupId` als `org`, die `artifactId` als `name` und die `version` als `rev`
-im Eintrag `dependency`.
+Für die Ivy-Konfiguration übernimmt man die `groupId` als `org`, die `artifactId`
+als `name` und die `version` als `rev` im Eintrag `dependency`.
 
-Damit kann Ivy diese Bibliothek über den Ant-Task `ivy:retrieve` vor dem Bauen herunterladen, sofern die Bibliothek noch
-nicht lokal vorhanden ist. Eventuelle Abhängigkeiten werden dabei ebenfalls aufgelöst.
+Damit kann Ivy diese Bibliothek über den Ant-Task `ivy:retrieve` vor dem Bauen
+herunterladen, sofern die Bibliothek noch nicht lokal vorhanden ist. Eventuelle
+Abhängigkeiten werden dabei ebenfalls aufgelöst.
 
-Im Detail: Der Ant-Task `ivy:retrieve` löst zunächst die Abhängigkeiten auf und lädt die Dateien (sofern sie noch nicht
-vorhanden oder veraltet sind) in den Ivy-Cache (per Default: `~/.ivy2/cache/`). Danach werden die Dateien in den
-Default-Library-Order im Projekt kopiert (per Defaul: `./lib/`). Die Ordner kann man über Optionen im
-`ivy:retrieve`-Task einstellen.
+Im Detail: Der Ant-Task `ivy:retrieve` löst zunächst die Abhängigkeiten auf und lädt
+die Dateien (sofern sie noch nicht vorhanden oder veraltet sind) in den Ivy-Cache
+(per Default: `~/.ivy2/cache/`). Danach werden die Dateien in den
+Default-Library-Order im Projekt kopiert (per Defaul: `./lib/`). Die Ordner kann man
+über Optionen im `ivy:retrieve`-Task einstellen.
 :::
 
 <!--
@@ -444,8 +460,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 
 -   [Maven](https://maven.apache.org/)
     -   War als Nachfolger von Ant gedacht
-    -   Statt wie bei Ant explizit Targets zu formulieren, geht Maven von einem Standardprojekt aus - nur noch
-        Abweichungen müssen formuliert werden
+    -   Statt wie bei Ant explizit Targets zu formulieren, geht Maven von einem
+        Standardprojekt aus - nur noch Abweichungen müssen formuliert werden
     -   Zieht Abhängigkeiten in zentralen `.maven`-Ordner
 
 \bigskip
@@ -485,5 +501,6 @@ Apache Ant: [ant.apache.org](https://ant.apache.org/)
 :::
 
 ::: quizzes
--   [Quiz Apache Ant (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106214&client_id=FH-Bielefeld)
+-   [Quiz Apache Ant
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106214&client_id=FH-Bielefeld)
 :::

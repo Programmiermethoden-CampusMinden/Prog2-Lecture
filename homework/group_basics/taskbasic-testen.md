@@ -7,8 +7,8 @@ title: JUnit (Gruppe Basics)
 
 # Ziel
 
-In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe ["Fallen"](taskbasic-fallen.md)
-implementierten Klassen und Methoden erstellen.
+In dieser Aufgabe sollen Sie eine gründliche Testabdeckung für Ihre in der Aufgabe
+["Fallen"](taskbasic-fallen.md) implementierten Klassen und Methoden erstellen.
 
 # JUnit
 

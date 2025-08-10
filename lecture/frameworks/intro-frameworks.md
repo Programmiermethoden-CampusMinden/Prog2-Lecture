@@ -4,11 +4,12 @@ title: "Frameworks: Einstieg"
 ---
 
 ::: tldr
-Frameworks sind ein Softwaregerüst, um wiederkehrende Softwarestrukturen schnell und einfach um die eigene
-Funktionalität zu erweitern.
+Frameworks sind ein Softwaregerüst, um wiederkehrende Softwarestrukturen schnell und
+einfach um die eigene Funktionalität zu erweitern.
 
-Im Gegensatz zu Libraries stellen sie keine einzelnen Funktionen bereits, die im eigenen Code aufgerufen werden, sondern
-geben Strukturen vor, in denen der eigenen Code eingearbeitet werden muss.
+Im Gegensatz zu Libraries stellen sie keine einzelnen Funktionen bereits, die im
+eigenen Code aufgerufen werden, sondern geben Strukturen vor, in denen der eigenen
+Code eingearbeitet werden muss.
 :::
 
 ::: youtube
@@ -25,25 +26,28 @@ geben Strukturen vor, in denen der eigenen Code eingearbeitet werden muss.
 ![](images/checklisteMotivationFarbig.png){width="60%"}
 
 ::: notes
-Neben der eigentlichen Funktionalität werden an Softwareprodukte viele weitere Randbedingungen gestellt.
+Neben der eigentlichen Funktionalität werden an Softwareprodukte viele weitere
+Randbedingungen gestellt.
 
-Dies können Sicherheitsbedingungen sein oder Anforderungen an die Art und Weise der Bereitstellung des Produktes, zum
-Beispiel als Webservice. Viele dieser Anforderungen ähneln sich von Produkt zu Produkt und müssen dennoch immer wieder
-neu programmiert werden.
+Dies können Sicherheitsbedingungen sein oder Anforderungen an die Art und Weise der
+Bereitstellung des Produktes, zum Beispiel als Webservice. Viele dieser
+Anforderungen ähneln sich von Produkt zu Produkt und müssen dennoch immer wieder neu
+programmiert werden.
 
-Für einen Webservice muss beispielsweise eine HTML-Schnittstelle bereitgestellt werden, die Anfragen annimmt, bearbeitet
-und die Antworten wieder zurückliefert.
+Für einen Webservice muss beispielsweise eine HTML-Schnittstelle bereitgestellt
+werden, die Anfragen annimmt, bearbeitet und die Antworten wieder zurückliefert.
 :::
 
 # Was sind Frameworks?
 
 ::: notes
-Frameworks liefern die Rahmenstruktur und Architektur, um Programme für die verschiedenen Anwendungszwecke einfacher und
-effizient zu entwickeln. Sie legen dabei fest, WIE programmiert werden soll.
+Frameworks liefern die Rahmenstruktur und Architektur, um Programme für die
+verschiedenen Anwendungszwecke einfacher und effizient zu entwickeln. Sie legen
+dabei fest, WIE programmiert werden soll.
 
-Frameworks stellen Code bereit, der an entsprechenden Stellen mit eigenen Klassen und Funktionen erweitert werden muss,
-um die eigentliche Funktion der Anwendung zu implementieren, sind dabei aber selbst keine eigenen Programme (vgl.
-PM-Dungeon).
+Frameworks stellen Code bereit, der an entsprechenden Stellen mit eigenen Klassen
+und Funktionen erweitert werden muss, um die eigentliche Funktion der Anwendung zu
+implementieren, sind dabei aber selbst keine eigenen Programme (vgl. PM-Dungeon).
 
 "Frameworks sind die Lückentexte der Programmierung."
 :::
@@ -51,7 +55,8 @@ PM-Dungeon).
 ::: notes
 # Unterschied zu Libraries
 
--   Libraries stellen Funktionen bereit, die frei in der eigenen Implementierung genutzt werden können.
+-   Libraries stellen Funktionen bereit, die frei in der eigenen Implementierung
+    genutzt werden können.
 -   Beispiele für Libraries
     -   Auswerten von regulären Ausdrücken
     -   Verwenden von Netzwerkprotokollen
@@ -59,7 +64,8 @@ PM-Dungeon).
 
 \smallskip
 
--   Frameworks geben eine Implementierung vor, die mit eigenen Verhalten erweitert werden kann/muss.
+-   Frameworks geben eine Implementierung vor, die mit eigenen Verhalten erweitert
+    werden kann/muss.
 -   Beispiele für Frameworks
     -   Web Anwendungssysteme
     -   GUI-Systeme
@@ -95,15 +101,16 @@ PM-Dungeon).
 -   Fokus oft nicht mehr nur auf einem Anwendungsbereich (z.B. Spring)
 -   Schließen sich oft gegenseitig aus
 -   Nicht alles, was sich Framework nennt, ist auch wirklich eins
--   Hype-Gefahr: Frameworks werden stark angepriesen, um dann fallen gelassen zu werden [(das kann aber auch für
-    Libraries gelten ...)]{.notes}
+-   Hype-Gefahr: Frameworks werden stark angepriesen, um dann fallen gelassen zu
+    werden [(das kann aber auch für Libraries gelten ...)]{.notes}
 
 ::: notes
 # Frameworks finden
 
 ## Wann sollte man Frameworks verwenden?
 
-Wenn man bereits etablierte Anwendungen (wie Webservices) mit eigener Funktionalität anbieten möchte.
+Wenn man bereits etablierte Anwendungen (wie Webservices) mit eigener Funktionalität
+anbieten möchte.
 
 ## Wie/Wo findet man passende Frameworks?
 
@@ -115,21 +122,23 @@ Wenn man bereits etablierte Anwendungen (wie Webservices) mit eigener Funktional
 # Wie starte ich mit einem Framework?
 
 ::: notes
-Beispielproblem: Es soll eine interne Webanwendung bereitgestellt werden, die bei jedem Aufruf eine zufällige Zahl
-zurückgibt.
+Beispielproblem: Es soll eine interne Webanwendung bereitgestellt werden, die bei
+jedem Aufruf eine zufällige Zahl zurückgibt.
 
-Für Webanwendungen gibt es eine Vielzahl an Frameworks. Für dieses kleine Problem ist ein einfaches und schlankes
-Framework zu bevorzugen.
+Für Webanwendungen gibt es eine Vielzahl an Frameworks. Für dieses kleine Problem
+ist ein einfaches und schlankes Framework zu bevorzugen.
 :::
 
-1.  [Webseite des Frameworks](https://javalin.io/) besuchen und prüfen, ob es für die eigenen Zwecke geeignet ist
+1.  [Webseite des Frameworks](https://javalin.io/) besuchen und prüfen, ob es für
+    die eigenen Zwecke geeignet ist
     -   Beschreibung auf der Webseite analysieren
     -   [Dokumentation](https://javalin.io/documentation) überfliegen
     -   Beispielprojekte anschauen
-2.  [Hello World](https://javalin.io/tutorials/gradle-setup) programmieren [(Achtung: In der Doku fehlt:
+2.  [Hello World](https://javalin.io/tutorials/gradle-setup) programmieren
+    [(Achtung: In der Doku fehlt:
     `implementation 'org.slf4j:slf4j-simple:1.8.0-beta4'`!)]{.notes}
-3.  Schrittweises Erweitern der Startanwendung, bis ein Verständnis für das Framework erlangt wurde
-    `\newline `{=tex}(MWE: *Minimal Working Example*):
+3.  Schrittweises Erweitern der Startanwendung, bis ein Verständnis für das
+    Framework erlangt wurde `\newline`{=tex}(MWE: *Minimal Working Example*):
     [JavalinHelloWorld](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/frameworks/src/javalin/src/main/java/JavalinHelloWorld.java)
 4.  Anwendung erweitern:
     [JavalinRandomNumber](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/frameworks/src/javalin/src/main/java/JavalinRandomNumber.java)
@@ -143,7 +152,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master
 
 # Wrap-Up
 
--   Frameworks stellen einen Rahmen und eine Architektur für wiederkehrende Softwarestrukturen bereit
+-   Frameworks stellen einen Rahmen und eine Architektur für wiederkehrende
+    Softwarestrukturen bereit
 -   Frameworks sind keine Libraries
 
 ::: outcomes
@@ -151,5 +161,6 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master
 :::
 
 ::: quizzes
--   [Quiz Frameworks (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106234&client_id=FH-Bielefeld)
+-   [Quiz Frameworks
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106234&client_id=FH-Bielefeld)
 :::

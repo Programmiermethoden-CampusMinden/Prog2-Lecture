@@ -4,17 +4,19 @@ title: Annotationen
 ---
 
 ::: tldr
-Annotationen sind Metadaten zum Programm: Sie haben keinen (direkten) Einfluss auf die Ausführung des annotierten Codes,
-sondern enthalten Zusatzinformationen über ein Programm, die selbst nicht Teil des Programms sind. Verschiedene Tools
-werten Annotationen aus, beispielsweise der Compiler, Javadoc, JUnit, ...
+Annotationen sind Metadaten zum Programm: Sie haben keinen (direkten) Einfluss auf
+die Ausführung des annotierten Codes, sondern enthalten Zusatzinformationen über ein
+Programm, die selbst nicht Teil des Programms sind. Verschiedene Tools werten
+Annotationen aus, beispielsweise der Compiler, Javadoc, JUnit, ...
 
-Annotationen können auf Deklarationen (Klassen, Felder, Methoden) angewendet werden und werden meist auf eine eigene
-Zeile geschrieben (Konvention).
+Annotationen können auf Deklarationen (Klassen, Felder, Methoden) angewendet werden
+und werden meist auf eine eigene Zeile geschrieben (Konvention).
 
-Annotationen können relativ einfach selbst erstellt werden: Die Definition ist fast wie bei einem Interface. Zusätzlich
-kann man noch über Meta-Annotationen die Sichtbarkeit, Verwendbarkeit und Dokumentation einschränken. Annotationen
-können zur Übersetzungszeit mit einem Annotation-Processor verarbeitet werden oder zur Laufzeit über Reflection
-ausgewertet werden.
+Annotationen können relativ einfach selbst erstellt werden: Die Definition ist fast
+wie bei einem Interface. Zusätzlich kann man noch über Meta-Annotationen die
+Sichtbarkeit, Verwendbarkeit und Dokumentation einschränken. Annotationen können zur
+Übersetzungszeit mit einem Annotation-Processor verarbeitet werden oder zur Laufzeit
+über Reflection ausgewertet werden.
 :::
 
 ::: youtube
@@ -52,14 +54,16 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 **Hilft `@Override`?**
 
 ::: notes
-Tja, da sollte wohl die Methode `B#getInfo` die geerbte Methode `A#getInfo` **überschreiben**. Dummerweise wird hier die
-Methode aber nur **überladen** (mit entsprechenden Folgen beim Aufruf)!
+Tja, da sollte wohl die Methode `B#getInfo` die geerbte Methode `A#getInfo`
+**überschreiben**. Dummerweise wird hier die Methode aber nur **überladen** (mit
+entsprechenden Folgen beim Aufruf)!
 
-Ein leider relativ häufiges Versehen, welches u.U. schwer zu finden ist. Annotationen (hier `@Override`) können dagegen
-helfen - der Compiler "weiß" dann, dass wir überschreiben wollen und meckert, wenn wir das nicht tun.
+Ein leider relativ häufiges Versehen, welches u.U. schwer zu finden ist.
+Annotationen (hier `@Override`) können dagegen helfen - der Compiler "weiß" dann,
+dass wir überschreiben wollen und meckert, wenn wir das nicht tun.
 
-IDEs wie Eclipse können diese Annotation bereits beim Erstellen einer Klasse generieren:
-`Preferences > Java > Code Style > Add @Override annotation ...`.
+IDEs wie Eclipse können diese Annotation bereits beim Erstellen einer Klasse
+generieren: `Preferences > Java > Code Style > Add @Override annotation ...`.
 :::
 
 # Annotationen: Metadaten für Dritte
@@ -73,10 +77,12 @@ IDEs wie Eclipse können diese Annotation bereits beim Erstellen einer Klasse ge
     -   Compiler (JDK): `@Override`, `@Deprecated`, ...
     -   Javadoc: `@author`, `@version`, `@see`, `@param`, `@return`, ...
     -   JUnit: `@Test`, `@Before`, `@BeforeClass`, `@After`, `@AfterClass`
-    -   [IntelliJ](https://www.jetbrains.com/help/idea/annotating-source-code.html#jetbrains-annotations): `@NotNull`,
-        `@Nullable`
-    -   [Checker Framework](https://github.com/typetools/checker-framework): `@NonNull`, `@Nullable`, ...
-    -   [Project Lombok](https://github.com/projectlombok/lombok): `@Getter`, `@Setter`, `@NonNull`, ...
+    -   [IntelliJ](https://www.jetbrains.com/help/idea/annotating-source-code.html#jetbrains-annotations):
+        `@NotNull`, `@Nullable`
+    -   [Checker Framework](https://github.com/typetools/checker-framework):
+        `@NonNull`, `@Nullable`, ...
+    -   [Project Lombok](https://github.com/projectlombok/lombok): `@Getter`,
+        `@Setter`, `@NonNull`, ...
     -   Webservices: `@WebService`, `@WebMethod`
     -   ...
 
@@ -84,35 +90,43 @@ IDEs wie Eclipse können diese Annotation bereits beim Erstellen einer Klasse ge
 href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/java-jvm/src/annotations/B.java"}
 
 ::: notes
-Jetzt schauen wir uns erst einmal die Auswirkungen von `@Override` und `@Deprecated` auf den Compiler (via Eclipse) an.
-Anschließend lernen Sie die Dokumentation mittels Javadoc-Annotationen kennen.
+Jetzt schauen wir uns erst einmal die Auswirkungen von `@Override` und `@Deprecated`
+auf den Compiler (via Eclipse) an. Anschließend lernen Sie die Dokumentation mittels
+Javadoc-Annotationen kennen.
 
-Das Thema JUnit ist in einer anderen VL dran. Webservices ereilen Sie dann in späteren Semestern :-)
+Das Thema JUnit ist in einer anderen VL dran. Webservices ereilen Sie dann in
+späteren Semestern :-)
 
 ## \@Override
 
-Die mit `@Override` annotierte Methode überschreibt eine Methode aus der Oberklasse oder implementiert eine Methode
-einer Schnittstelle. Dies wird durch den Compiler geprüft und ggf. mit einer Fehlermeldung quittiert.
+Die mit `@Override` annotierte Methode überschreibt eine Methode aus der Oberklasse
+oder implementiert eine Methode einer Schnittstelle. Dies wird durch den Compiler
+geprüft und ggf. mit einer Fehlermeldung quittiert.
 
 `@Override` ist eine im JDK im Paket `java.lang` enthaltene Annotation.
 
 ## \@Deprecated
 
-Das mit `@Deprecated` markierte Element ist veraltet ("*deprecated*") und sollte nicht mehr benutzt werden.
-Typischerweise werden so markierte Elemente in zukünftigen Releases aus der API entfernt ...
+Das mit `@Deprecated` markierte Element ist veraltet ("*deprecated*") und sollte
+nicht mehr benutzt werden. Typischerweise werden so markierte Elemente in
+zukünftigen Releases aus der API entfernt ...
 
-Die Annotation `@Deprecated` wird direkt im Code verwendet und entspricht der Annotation `@deprecated` im Javadoc.
-Allerdings kann letzteres nur von Javadoc ausgewertet werden.
+Die Annotation `@Deprecated` wird direkt im Code verwendet und entspricht der
+Annotation `@deprecated` im Javadoc. Allerdings kann letzteres nur von Javadoc
+ausgewertet werden.
 
 `@Deprecated` ist eine im JDK im Paket `java.lang` enthaltene Annotation.
 
 ## Weitere Annotationen aus *java.lang*
 
-Im Paket `java.lang` finden sich weitere Annotationen. Mit Hilfe von `@SuppressWarnings` lassen sich bestimmte
-Compilerwarnungen unterdrücken (**so etwas sollte man NIE tun!**), und mit `@FunctionalInterface` lassen sich
-Schnittstellen auszeichnen, die genau eine (abstrakte) Methode besitzen (Verweis auf spätere Vorlesung).
+Im Paket `java.lang` finden sich weitere Annotationen. Mit Hilfe von
+`@SuppressWarnings` lassen sich bestimmte Compilerwarnungen unterdrücken (**so etwas
+sollte man NIE tun!**), und mit `@FunctionalInterface` lassen sich Schnittstellen
+auszeichnen, die genau eine (abstrakte) Methode besitzen (Verweis auf spätere
+Vorlesung).
 
-Weitere Annotationen aus dem JDK finden sich in den Paketen `java.lang.annotation` und `javax.annotation`.
+Weitere Annotationen aus dem JDK finden sich in den Paketen `java.lang.annotation`
+und `javax.annotation`.
 :::
 
 # Dokumentation mit Javadoc
@@ -132,9 +146,11 @@ public boolean setDate(int date) {
 ```
 
 ::: notes
-Die Dokumentation mit Javadoc hatten wir uns bereits in der Einheit ["Javadoc"](../coding/javadoc.md) angesehen.
+Die Dokumentation mit Javadoc hatten wir uns bereits in der Einheit
+["Javadoc"](../coding/javadoc.md) angesehen.
 
-Hier noch einmal exemplarisch die wichtigsten Elemente, die an "`public`" sichtbaren Methoden verwendet werden.
+Hier noch einmal exemplarisch die wichtigsten Elemente, die an "`public`" sichtbaren
+Methoden verwendet werden.
 :::
 
 [[Beispiel: annotations.B (Javadoc)]{.ex
@@ -143,22 +159,25 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 # \@NotNull mit IntelliJ
 
 ::: notes
-[IntelliJ](https://www.jetbrains.com/help/idea/annotating-source-code.html) bietet im Paket `org.jetbrains.annotations`
-u.a. die Annotation `@NotNull` an.
+[IntelliJ](https://www.jetbrains.com/help/idea/annotating-source-code.html) bietet
+im Paket `org.jetbrains.annotations` u.a. die Annotation `@NotNull` an.
 
-Damit lassen sich Rückgabewerte von Methoden sowie Variablen (Attribute, lokale Variablen, Parameter) markieren: Diese
-dürfen nicht `null` werden.
+Damit lassen sich Rückgabewerte von Methoden sowie Variablen (Attribute, lokale
+Variablen, Parameter) markieren: Diese dürfen nicht `null` werden.
 
-IntelliJ prüft beim Compilieren, dass diese Elemente nicht `null` werden und warnt gegebenenfalls (zur Compilezeit).
-Zusätzlich baut IntelliJ entsprechende Assertions in den Code ein, die zur Laufzeit einen `null`-Wert abfangen und dann
-das Programm abbrechen.
+IntelliJ prüft beim Compilieren, dass diese Elemente nicht `null` werden und warnt
+gegebenenfalls (zur Compilezeit). Zusätzlich baut IntelliJ entsprechende Assertions
+in den Code ein, die zur Laufzeit einen `null`-Wert abfangen und dann das Programm
+abbrechen.
 
-Dadurch können entsprechende Dokumentationen im Javadoc und/oder manuelle Überprüfungen im Code entfallen. Außerdem hat
-man durch die Annotation gewissermaßen einen sichtbaren Vertrag (*Contract*) mit den Nutzern der Methode. Bei einem
-Aufruf mit `null` würde dieser Contract verletzt und eine entsprechende Exception geworfen (automatisch) statt einfach
-das Programm und die JVM "abzuschießen".
+Dadurch können entsprechende Dokumentationen im Javadoc und/oder manuelle
+Überprüfungen im Code entfallen. Außerdem hat man durch die Annotation gewissermaßen
+einen sichtbaren Vertrag (*Contract*) mit den Nutzern der Methode. Bei einem Aufruf
+mit `null` würde dieser Contract verletzt und eine entsprechende Exception geworfen
+(automatisch) statt einfach das Programm und die JVM "abzuschießen".
 
-Nachteil: Die entsprechende Bibliothek muss bei allen Entwicklern vorhanden und in das Projekt eingebunden sein.
+Nachteil: Die entsprechende Bibliothek muss bei allen Entwicklern vorhanden und in
+das Projekt eingebunden sein.
 :::
 
 ``` java
@@ -217,17 +236,21 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 ::: notes
 ## Definition einer Annotation
 
-Definition einer Annotation wie Interface, aber mit "`@`"-Zeichen vor dem `interface`-Schlüsselwort
+Definition einer Annotation wie Interface, aber mit "`@`"-Zeichen vor dem
+`interface`-Schlüsselwort
 
 ## Parameter für Annotation
 
 Parameter für Annotation werden über entsprechende Methoden-Deklaration realisiert
 
--   "Rückgabetyp" der deklarierten "Methode" ist der erlaubte Typ der später verwendeten Parameter
+-   "Rückgabetyp" der deklarierten "Methode" ist der erlaubte Typ der später
+    verwendeten Parameter
 
--   Name der "Methoden" wird bei der Belegung der Parameter verwendet, beispielsweise `author = ...`
+-   Name der "Methoden" wird bei der Belegung der Parameter verwendet,
+    beispielsweise `author = ...`
 
--   Vereinfachung: "Methodenname" `value` erlaubt das Weglassen des Schlüsselworts bei der Verwendung:
+-   Vereinfachung: "Methodenname" `value` erlaubt das Weglassen des Schlüsselworts
+    bei der Verwendung:
 
     ``` java
     public @interface MySecondAnnotation {
@@ -241,31 +264,38 @@ Parameter für Annotation werden über entsprechende Methoden-Deklaration realis
     public class E {}
     ```
 
--   Defaultwerte mit dem nachgestellten Schlüsselwort `default` sowie dem Defaultwert selbst
+-   Defaultwerte mit dem nachgestellten Schlüsselwort `default` sowie dem
+    Defaultwert selbst
 
 ## Javadoc
 
-Soll die Annotation in der Javadoc-Doku dargestellt werden, muss sie mit der Meta-Annotation `@Documented` ausgezeichnet
-werden (aus `java.lang.annotation.Documented`)
+Soll die Annotation in der Javadoc-Doku dargestellt werden, muss sie mit der
+Meta-Annotation `@Documented` ausgezeichnet werden (aus
+`java.lang.annotation.Documented`)
 
-*Hinweis*: Die Annotation wird lediglich in die Doku aufgenommen, d.h. es erfolgt keine weitere Verarbeitung oder
-Hervorhebung o.ä.
+*Hinweis*: Die Annotation wird lediglich in die Doku aufgenommen, d.h. es erfolgt
+keine weitere Verarbeitung oder Hervorhebung o.ä.
 
 ## Wann ist eine Annotation sichtbar (Beschränkung der Sichtbarkeit)
 
-Annotationen werden vom Compiler und/oder anderen Tools ausgewertet. Man kann entsprechend die Sichtbarkeit einer
-Annotation beschränken: Sie kann ausschließlich im Source-Code verfügbar sein, sie kann in der generierten Class-Datei
-eingebettet sein oder sie kann sogar zur Laufzeit (mittels *Reflection*, vgl. spätere Vorlesung) ausgelesen werden.
+Annotationen werden vom Compiler und/oder anderen Tools ausgewertet. Man kann
+entsprechend die Sichtbarkeit einer Annotation beschränken: Sie kann ausschließlich
+im Source-Code verfügbar sein, sie kann in der generierten Class-Datei eingebettet
+sein oder sie kann sogar zur Laufzeit (mittels *Reflection*, vgl. spätere Vorlesung)
+ausgelesen werden.
 
-Beschränkung der Sichtbarkeit: Meta-Annotation `@Retention` aus `java.lang.annotation.Retention`
+Beschränkung der Sichtbarkeit: Meta-Annotation `@Retention` aus
+`java.lang.annotation.Retention`
 
--   `RetentionPolicy.SOURCE`: Nur Bestandteil der Source-Dateien, wird nicht in kompilierten Code eingebettet
--   `RetentionPolicy.CLASS`: Wird vom Compiler in die Class-Datei eingebettet, steht aber zur Laufzeit *nicht* zur
-    Verfügung (Standardwert, wenn nichts angegeben)
--   `RetentionPolicy.RUNTIME`: Wird vom Compiler in die Class-Datei eingebettet und steht zur Laufzeit zur Verfügung und
-    kann via *Reflection*[^1] ausgelesen werden
+-   `RetentionPolicy.SOURCE`: Nur Bestandteil der Source-Dateien, wird nicht in
+    kompilierten Code eingebettet
+-   `RetentionPolicy.CLASS`: Wird vom Compiler in die Class-Datei eingebettet, steht
+    aber zur Laufzeit *nicht* zur Verfügung (Standardwert, wenn nichts angegeben)
+-   `RetentionPolicy.RUNTIME`: Wird vom Compiler in die Class-Datei eingebettet und
+    steht zur Laufzeit zur Verfügung und kann via *Reflection*[^1] ausgelesen werden
 
-Ohne explizite Angabe gilt für die selbst definierte Annotation die Einstellung `RetentionPolicy.CLASS`.
+Ohne explizite Angabe gilt für die selbst definierte Annotation die Einstellung
+`RetentionPolicy.CLASS`.
 
 ## Wo darf eine Annotation verwendet werden
 
@@ -292,44 +322,55 @@ public class Wuppie {
 
 ## Einschränkung des Einsatzes eines Annotation
 
-Für jede Annotation kann eingeschränkt werden, wo (an welchen Java-Elementen) sie verwendet werden darf.
+Für jede Annotation kann eingeschränkt werden, wo (an welchen Java-Elementen) sie
+verwendet werden darf.
 
-Beschränkung der Verwendung: Meta-Annotation `@Target` aus `java.lang.annotation.Target`
+Beschränkung der Verwendung: Meta-Annotation `@Target` aus
+`java.lang.annotation.Target`
 
--   `ElementType.TYPE`: alle Typdeklarationen: Klassen, Interfaces, Enumerations, ...
+-   `ElementType.TYPE`: alle Typdeklarationen: Klassen, Interfaces, Enumerations,
+    ...
 -   `ElementType.CONSTRUCTOR`: nur Konstruktoren
 -   `ElementType.METHOD`: nur Methoden
 -   `ElementType.FIELD`: nur statische Variablen und Objektvariablen
 -   `ElementType.PARAMETER`: nur Parametervariablen
 -   `ElementType.PACKAGE`: nur an Package-Deklarationen
 
-Ohne explizite Angabe ist die selbst definierte Annotation für alle Elemente verwendbar.
+Ohne explizite Angabe ist die selbst definierte Annotation für alle Elemente
+verwendbar.
 :::
 
 # Annotationen [bei Compilieren]{.notes} bearbeiten: Java Annotation-Prozessoren
 
 ::: notes
-Der dem `javac`-Compiler vorgelegte Source-Code wird eingelesen und in einen entsprechenden Syntax-Tree (*AST*)
-transformiert (dazu mehr im Master im Modul "Compilerbau" :)
+Der dem `javac`-Compiler vorgelegte Source-Code wird eingelesen und in einen
+entsprechenden Syntax-Tree (*AST*) transformiert (dazu mehr im Master im Modul
+"Compilerbau" :)
 
-Anschließend können sogenannte "Annotation Processors" über den AST laufen und ihre Analysen machen und/oder den AST
-modifizieren. (Danach kommen die üblichen weiteren Analysen und die Code-Generierung.)
+Anschließend können sogenannte "Annotation Processors" über den AST laufen und ihre
+Analysen machen und/oder den AST modifizieren. (Danach kommen die üblichen weiteren
+Analysen und die Code-Generierung.)
 
-(Vgl. [OpenJDK: Compilation Overview](https://openjdk.java.net/groups/compiler/doc/compilation-overview/index.html).)
+(Vgl. [OpenJDK: Compilation
+Overview](https://openjdk.java.net/groups/compiler/doc/compilation-overview/index.html).)
 
-An dieser Stelle kann man sich einklinken und einen eigenen Annotation-Prozessor ausführen lassen. Zur Abgrenzung: Diese
-Auswertung der Annotationen findet zur **Compile-Zeit** statt! In einer späteren Vorlesung werden wir noch über die
+An dieser Stelle kann man sich einklinken und einen eigenen Annotation-Prozessor
+ausführen lassen. Zur Abgrenzung: Diese Auswertung der Annotationen findet zur
+**Compile-Zeit** statt! In einer späteren Vorlesung werden wir noch über die
 Auswertung zur **Laufzeit** sprechen: *Reflection*.
 
-Im Prinzip muss man lediglich das Interface `javax.annotation.processing.Processor` implementieren oder die abstrakte
-Klasse `javax.annotation.processing.AbstractProcessor` erweitern. Für die Registrierung im `javac` muss im Projekt (oder
-Jar-File) die Datei `META-INF/services/javax.annotation.processing.Processor` angelegt werden, die den vollständigen
-Namen des Annotation-Prozessors enthält. Dieser Annotation-Prozessor wird dann vom `javac` aufgerufen und läuft in einer
-eigenen JVM. Er kann die Annotationen, für die er registriert ist, auslesen und verarbeiten und neue Java-Dateien
-schreiben, die wiederum eingelesen und compiliert werden.
+Im Prinzip muss man lediglich das Interface `javax.annotation.processing.Processor`
+implementieren oder die abstrakte Klasse
+`javax.annotation.processing.AbstractProcessor` erweitern. Für die Registrierung im
+`javac` muss im Projekt (oder Jar-File) die Datei
+`META-INF/services/javax.annotation.processing.Processor` angelegt werden, die den
+vollständigen Namen des Annotation-Prozessors enthält. Dieser Annotation-Prozessor
+wird dann vom `javac` aufgerufen und läuft in einer eigenen JVM. Er kann die
+Annotationen, für die er registriert ist, auslesen und verarbeiten und neue
+Java-Dateien schreiben, die wiederum eingelesen und compiliert werden.
 
-Im nachfolgenden Beispiel beschränke ich mich auf das Definieren und Registrieren eines einfachen Annotation-Prozessors,
-der lediglich die Annotationen liest.
+Im nachfolgenden Beispiel beschränke ich mich auf das Definieren und Registrieren
+eines einfachen Annotation-Prozessors, der lediglich die Annotationen liest.
 :::
 
 ``` java
@@ -354,46 +395,55 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master
 
 ::: notes
 1.  Der Annotation-Processor sollte von `AbstractProcessor` ableiten
-2.  Über `@SupportedAnnotationTypes` teilt man mit, für welche Annotationen sich der Prozessor interessiert (d.h. für
-    welche er aufgerufen wird); "`*`" oder eine Liste mit String ist auch möglich
-3.  Mit `@SupportedSourceVersion` wird die (höchste) unterstützte Java-Version angegeben (neuere Versionen führen zu
-    einer Warnung)
+2.  Über `@SupportedAnnotationTypes` teilt man mit, für welche Annotationen sich der
+    Prozessor interessiert (d.h. für welche er aufgerufen wird); "`*`" oder eine
+    Liste mit String ist auch möglich
+3.  Mit `@SupportedSourceVersion` wird die (höchste) unterstützte Java-Version
+    angegeben (neuere Versionen führen zu einer Warnung)
 4.  Die Methode `process` erledigt die Arbeit:
-    -   Der erste Parameter enthält alle gefundenen Annotationen, für die der Processor registriert ist
+    -   Der erste Parameter enthält alle gefundenen Annotationen, für die der
+        Processor registriert ist
     -   Der zweite Parameter enthält die damit annotierten Elemente
-    -   Iteration: Die äußere Schleife läuft über alle gefundenen Annotationen, die innere über die mit der jeweiligen
-        Annotation versehenen Elemente
-    -   Jetzt könnte man mit den Elementen etwas sinnvolles anfangen, beispielsweise alle Attribute sammeln, die mit
-        `@Getter` markiert sind und für diese neuen Code generieren
-    -   Im Beispiel wird lediglich der eigene Logger (`processingEnv.getMessager()`) aufgerufen, um beim
-        Compiliervorgang eine Konsolenmeldung zu erzeugen ...
-5.  Der Annotation-Processor darf keine Exception werfen, da sonst der Compiliervorgang abgebrochen würde. Zudem wäre
-    der Stack-Trace der des Annotation-Processors und nicht der des compilierten Programms ... Stattdessen wird ein
-    Boolean zurückgeliefert, um anzudeuten, ob die Verarbeitung geklappt hat.
+    -   Iteration: Die äußere Schleife läuft über alle gefundenen Annotationen, die
+        innere über die mit der jeweiligen Annotation versehenen Elemente
+    -   Jetzt könnte man mit den Elementen etwas sinnvolles anfangen, beispielsweise
+        alle Attribute sammeln, die mit `@Getter` markiert sind und für diese neuen
+        Code generieren
+    -   Im Beispiel wird lediglich der eigene Logger (`processingEnv.getMessager()`)
+        aufgerufen, um beim Compiliervorgang eine Konsolenmeldung zu erzeugen ...
+5.  Der Annotation-Processor darf keine Exception werfen, da sonst der
+    Compiliervorgang abgebrochen würde. Zudem wäre der Stack-Trace der des
+    Annotation-Processors und nicht der des compilierten Programms ... Stattdessen
+    wird ein Boolean zurückgeliefert, um anzudeuten, ob die Verarbeitung geklappt
+    hat.
 
-Für ein umfangreicheres Beispiel mit Code-Erzeugung vergleiche beispielsweise die Artikelserie unter
+Für ein umfangreicheres Beispiel mit Code-Erzeugung vergleiche beispielsweise die
+Artikelserie unter
 [cloudogu.com/en/blog/Java-Annotation-Processors_1-Intro](https://cloudogu.com/en/blog/Java-Annotation-Processors_1-Intro).
 Siehe auch [OpenJDK: Compilation
 Overview](https://openjdk.java.net/groups/compiler/doc/compilation-overview/index.html).
 
-Im Projekt muss jetzt noch der Ordner `META-INF/services/` angelegt werden mit der Datei
-`javax.annotation.processing.Processor`. Deren Inhalt ist für das obige Beispiel die Zeile `annotations.Foo`. Damit ist
-der Annotation-Processor `annotations.Foo` für das Übersetzen im eigenen Projekt registriert.
+Im Projekt muss jetzt noch der Ordner `META-INF/services/` angelegt werden mit der
+Datei `javax.annotation.processing.Processor`. Deren Inhalt ist für das obige
+Beispiel die Zeile `annotations.Foo`. Damit ist der Annotation-Processor
+`annotations.Foo` für das Übersetzen im eigenen Projekt registriert.
 
-Zum Compilieren des Annotation-Processors selbst ruft man beispielsweise folgenden Befehl auf:
+Zum Compilieren des Annotation-Processors selbst ruft man beispielsweise folgenden
+Befehl auf:
 
     javac -cp . -proc:none annotations/Foo.java
 
-Die Option `-proc:none` sorgt für das Beispiel dafür, dass beim Compilieren des Annotation-Processors dieser nicht
-bereits aufgerufen wird (was sonst wg. der Registrierung über `META-INF/services/javax.annotation.processing.Processor`
+Die Option `-proc:none` sorgt für das Beispiel dafür, dass beim Compilieren des
+Annotation-Processors dieser nicht bereits aufgerufen wird (was sonst wg. der
+Registrierung über `META-INF/services/javax.annotation.processing.Processor`
 passieren würde).
 
 Zum Compilieren der Klasse `C` kann man wie sonst auch den Befehl nutzen:
 
     javac -cp . annotations/C.java
 
-Dabei läuft dann der Annotation-Processor `annotations.Foo` und erzeugt beim Verarbeiten von `annotations.C` die
-folgende Ausgabe:
+Dabei läuft dann der Annotation-Processor `annotations.Foo` und erzeugt beim
+Verarbeiten von `annotations.C` die folgende Ausgabe:
 
     Note: found @MySecondAnnotation at main(java.lang.String[])
 :::
@@ -403,7 +453,8 @@ folgende Ausgabe:
 -   Annotationen: Metadaten zum Programm
 
     ::: notes
-    -   **Zusatzinformationen** über ein Programm, aber nicht selbst Teil des Programms
+    -   **Zusatzinformationen** über ein Programm, aber nicht selbst Teil des
+        Programms
     -   **Kein (direkter) Einfluss** auf die **Ausführung** des annotierten Codes
     :::
 
@@ -412,8 +463,8 @@ folgende Ausgabe:
 -   Typische Anwendungen: Compiler-Hinweise, Javadoc, Tests
 
     ::: notes
-    -   Compiler: Erkennen von logischen Fehlern, Unterdrücken von Warnungen =\> `java.lang`: `@Override`,
-        `@Deprecated`, `@SuppressWarnings`
+    -   Compiler: Erkennen von logischen Fehlern, Unterdrücken von Warnungen =\>
+        `java.lang`: `@Override`, `@Deprecated`, `@SuppressWarnings`
     -   Javadoc: Erkennen von Schlüsselwörtern (`@author`, `@return`, `@param`, ...)
     -   JUnit: Erkennen von Tests-Methoden (`@Test`)
     -   ...
@@ -421,10 +472,12 @@ folgende Ausgabe:
 
 \bigskip
 
--   Annotationen können auf Deklarationen (Klassen, Felder, Methoden) angewendet werden
+-   Annotationen können auf Deklarationen (Klassen, Felder, Methoden) angewendet
+    werden
 -   Annotationen können relativ einfach selbst erstellt werden
     -   Definition fast wie ein Interface
-    -   Einstellung der Sichtbarkeit und Verwendbarkeit und Dokumentation über Meta-Annotationen
+    -   Einstellung der Sichtbarkeit und Verwendbarkeit und Dokumentation über
+        Meta-Annotationen
 -   Verarbeitung von Annotationen zur Compilier-Zeit mit Annotation-Processor
 -   Verarbeitung von Annotationen zur Laufzeit mit Reflection (siehe spätere VL)
 
@@ -437,23 +490,28 @@ folgende Ausgabe:
 ::: outcomes
 -   k2: Begriff der Annotation erklären können am Beispiel
 -   k3: Anwendung von `@Override` sowie der Javadoc-Annotationen
--   k3: Erstellen eigener Annotationen sowie Einstellen der Sichtbarkeit und Verwendbarkeit
+-   k3: Erstellen eigener Annotationen sowie Einstellen der Sichtbarkeit und
+    Verwendbarkeit
 -   k3: Erstellen eigener einfacher Annotation-Processors
 :::
 
 ::: quizzes
--   [Quiz Annotationen (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106512&client_id=FH-Bielefeld)
+-   [Quiz Annotationen
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106512&client_id=FH-Bielefeld)
 :::
 
 ::: challenges
 Schreiben Sie drei eigene Annotationen:
 
--   `@MeineKlasse` darf nur an Klassendefinitionen stehen und speichert den Namen des Autoren ab.
+-   `@MeineKlasse` darf nur an Klassendefinitionen stehen und speichert den Namen
+    des Autoren ab.
 -   `@MeineMethode` darf nur an Methoden stehen.
--   `@TODO` darf an Methoden und Klassen stehen, ist aber nur in den Source-Dateien sichtbar.
+-   `@TODO` darf an Methoden und Klassen stehen, ist aber nur in den Source-Dateien
+    sichtbar.
 
-Implementieren Sie einen Annotation-Prozessor, welcher Ihren Quellcode nach der `@MeineKlasse`-Annotation durchsucht und
-dann den Namen der Klasse und den Namen des Autors ausgibt.
+Implementieren Sie einen Annotation-Prozessor, welcher Ihren Quellcode nach der
+`@MeineKlasse`-Annotation durchsucht und dann den Namen der Klasse und den Namen des
+Autors ausgibt.
 
 Zeigen Sie die Funktionen anhand einer Demo.
 :::

@@ -4,41 +4,52 @@ title: Visitor-Pattern
 ---
 
 ::: tldr
-Häufig bietet es sich bei Datenstrukturen an, die Traversierung nicht direkt in den Klassen der Datenstrukturen zu
-implementieren, sondern in Hilfsklassen zu verlagern. Dies gilt vor allem dann, wenn die Datenstruktur aus mehreren
-Klassen besteht (etwa ein Baum mit verschiedenen Knotentypen) und/oder wenn man nicht nur eine Traversierungsart
-ermöglichen will oder/und wenn man immer wieder neue Arten der Traversierung ergänzen will. Das würde nämlich bedeuten,
-dass man für jede weitere Form der Traversierung in *allen* Klassen eine entsprechende neue Methode implementieren
-müsste.
+Häufig bietet es sich bei Datenstrukturen an, die Traversierung nicht direkt in den
+Klassen der Datenstrukturen zu implementieren, sondern in Hilfsklassen zu verlagern.
+Dies gilt vor allem dann, wenn die Datenstruktur aus mehreren Klassen besteht (etwa
+ein Baum mit verschiedenen Knotentypen) und/oder wenn man nicht nur eine
+Traversierungsart ermöglichen will oder/und wenn man immer wieder neue Arten der
+Traversierung ergänzen will. Das würde nämlich bedeuten, dass man für jede weitere
+Form der Traversierung in *allen* Klassen eine entsprechende neue Methode
+implementieren müsste.
 
 Das Visitor-Pattern lagert die Traversierung in eigene Klassenstruktur aus.
 
-Die Klassen der Datenstruktur bekommen nur noch eine `accept()`-Methode, in der ein Visitor übergeben wird und rufen auf
-diesem Visitor einfach dessen `visit()`-Methode auf (mit einer Referenz auf sich selbst als Argument).
+Die Klassen der Datenstruktur bekommen nur noch eine `accept()`-Methode, in der ein
+Visitor übergeben wird und rufen auf diesem Visitor einfach dessen `visit()`-Methode
+auf (mit einer Referenz auf sich selbst als Argument).
 
-Der Visitor hat für jede Klasse der Datenstruktur eine Überladung der `visit()`-Methode. In diesen kann er je nach
-Klasse die gewünschte Verarbeitung vornehmen. Üblicherweise gibt es ein Interface oder eine abstrakte Klasse für die
+Der Visitor hat für jede Klasse der Datenstruktur eine Überladung der
+`visit()`-Methode. In diesen kann er je nach Klasse die gewünschte Verarbeitung
+vornehmen. Üblicherweise gibt es ein Interface oder eine abstrakte Klasse für die
 Visitoren, von denen dann konkrete Visitoren ableiten.
 
-Bei Elementen mit "Kindern" muss man sich entscheiden, wie die Traversierung implementiert werden soll. Man könnte in
-der `accept()`-Methode den Visitor an die Kinder weiter reichen (also auf den Kindern `accept()` mit dem Visitor
-aufrufen), bevor man die `visit()`-Methode des Visitors mit sich selbst als Referenz aufruft. Damit ist die Form der
-Traversierung in den Klassen der Datenstruktur fest verankert und über den Visitor findet "nur" noch eine
-unterschiedliche Form der Verarbeitung statt. Alternativ überlässt man es dem Visitor, die Traversierung durchzuführen:
-Hier muss in den `visit()`-Methoden für die einzelnen Elemente entsprechend auf mögliche Kinder reagiert werden.
+Bei Elementen mit "Kindern" muss man sich entscheiden, wie die Traversierung
+implementiert werden soll. Man könnte in der `accept()`-Methode den Visitor an die
+Kinder weiter reichen (also auf den Kindern `accept()` mit dem Visitor aufrufen),
+bevor man die `visit()`-Methode des Visitors mit sich selbst als Referenz aufruft.
+Damit ist die Form der Traversierung in den Klassen der Datenstruktur fest verankert
+und über den Visitor findet "nur" noch eine unterschiedliche Form der Verarbeitung
+statt. Alternativ überlässt man es dem Visitor, die Traversierung durchzuführen:
+Hier muss in den `visit()`-Methoden für die einzelnen Elemente entsprechend auf
+mögliche Kinder reagiert werden.
 
-In diesem Pattern findet ein sogenannter "Double-Dispatch" statt: Zur Laufzeit wird ein konkreter Visitor instantiiert
-und über `accept()` an ein Element der Datenstruktur übergeben. Dort ist zur Compile-Zeit aber nur der Obertyp der
-Visitoren bekannt, d.h. zur Laufzeit wird hier der konkrete Typ bestimmt und entsprechend die richtige `visit()`-Methode
-auf der "echten" Klasse des Visitors aufgerufen (erster Dispatch). Da im Visitor die `visit()`-Methoden für jeden Typ
-der Datenstrukur überladen sind, findet nun zur Laufzeit die Auflösung der korrekten Überladung statt (zweiter
-Dispatch).
+In diesem Pattern findet ein sogenannter "Double-Dispatch" statt: Zur Laufzeit wird
+ein konkreter Visitor instantiiert und über `accept()` an ein Element der
+Datenstruktur übergeben. Dort ist zur Compile-Zeit aber nur der Obertyp der
+Visitoren bekannt, d.h. zur Laufzeit wird hier der konkrete Typ bestimmt und
+entsprechend die richtige `visit()`-Methode auf der "echten" Klasse des Visitors
+aufgerufen (erster Dispatch). Da im Visitor die `visit()`-Methoden für jeden Typ der
+Datenstrukur überladen sind, findet nun zur Laufzeit die Auflösung der korrekten
+Überladung statt (zweiter Dispatch).
 :::
 
 ::: youtube
 -   [VL Visitor-Pattern](https://youtu.be/zW_2oQmjp8M)
--   [Demo Visitor-Pattern (Part I: Traversierung ohne Visitor)](https://youtu.be/9dvcufpyQdw)
--   [Demo Visitor-Pattern (Part II: Traversierung mit Visitor)](https://youtu.be/4rBRkXKhuN4)
+-   [Demo Visitor-Pattern (Part I: Traversierung ohne
+    Visitor)](https://youtu.be/9dvcufpyQdw)
+-   [Demo Visitor-Pattern (Part II: Traversierung mit
+    Visitor)](https://youtu.be/4rBRkXKhuN4)
 :::
 
 # Motivation: Parsen von "5\*4+3"
@@ -46,8 +57,9 @@ Dispatch).
 ::::::: columns
 :::: {.column width="50%"}
 ::: notes
-Zum Parsen von Ausdrücken (*Expressions*) könnte man diese einfache Grammatik einsetzen. Ein Ausdruck ist dabei entweder
-ein einfacher Integer oder eine Addition oder Multiplikation zweier Ausdrücke.
+Zum Parsen von Ausdrücken (*Expressions*) könnte man diese einfache Grammatik
+einsetzen. Ein Ausdruck ist dabei entweder ein einfacher Integer oder eine Addition
+oder Multiplikation zweier Ausdrücke.
 :::
 
 ``` yacc
@@ -72,11 +84,13 @@ Beim Parsen von "5\*4+3" würde dabei der folgende Parsetree entstehen:
 ![](images/parsetree_classes_uml.png){width="70%"}
 
 ::: notes
-Der Parsetree für diese einfache Grammatik ist ein Binärbaum. Die Regeln werden auf Knoten im Baum zurückgeführt. Es
-gibt Knoten mit zwei Kindknoten, und es gibt Knoten ohne Kindknoten ("Blätter").
+Der Parsetree für diese einfache Grammatik ist ein Binärbaum. Die Regeln werden auf
+Knoten im Baum zurückgeführt. Es gibt Knoten mit zwei Kindknoten, und es gibt Knoten
+ohne Kindknoten ("Blätter").
 
-Entsprechend kann man sich einfache Klassen definieren, die die verschiedenen Knoten in diesem Parsetree repräsentieren.
-Als Obertyp könnte es ein (noch leeres) Interface `Expr` geben.
+Entsprechend kann man sich einfache Klassen definieren, die die verschiedenen Knoten
+in diesem Parsetree repräsentieren. Als Obertyp könnte es ein (noch leeres)
+Interface `Expr` geben.
 
 ``` java
 public interface Expr {}
@@ -118,15 +132,17 @@ public class DemoExpr {
 # Ergänzung I: Ausrechnen des Ausdrucks
 
 ::: notes
-Es wäre nun schön, wenn man mit dem Parsetree etwas anfangen könnte. Vielleicht möchte man den Ausdruck ausrechnen?
+Es wäre nun schön, wenn man mit dem Parsetree etwas anfangen könnte. Vielleicht
+möchte man den Ausdruck ausrechnen?
 :::
 
 ![](images/parsetree_eval_uml.png){width="70%"}
 
 ::: notes
-Zum Ausrechnen des Ausdrucks könnte man dem Interface eine `eval()`-Methode spendieren. Jeder Knoten kann für sich
-entscheiden, wie die entsprechende Operation ausgewertet werden soll: Bei einer `NumExpr` ist dies einfach der
-gespeicherte Wert, bei Addition oder Multiplikation entsprechend die Addition oder Multiplikation der
+Zum Ausrechnen des Ausdrucks könnte man dem Interface eine `eval()`-Methode
+spendieren. Jeder Knoten kann für sich entscheiden, wie die entsprechende Operation
+ausgewertet werden soll: Bei einer `NumExpr` ist dies einfach der gespeicherte Wert,
+bei Addition oder Multiplikation entsprechend die Addition oder Multiplikation der
 Auswertungsergebnisse der beiden Kindknoten.
 
 ``` java
@@ -176,15 +192,16 @@ public class DemoExpr {
 # Ergänzung II: Pretty-Print des Ausdrucks
 
 ::: notes
-Nachdem das Ausrechnen so gut geklappt hat, will der Chef nun noch flink eine Funktion, mit der man den Ausdruck hübsch
-ausgeben kann:
+Nachdem das Ausrechnen so gut geklappt hat, will der Chef nun noch flink eine
+Funktion, mit der man den Ausdruck hübsch ausgeben kann:
 :::
 
 ![](images/parsetree_eval_print_uml.png){width="70%"}
 
 ::: notes
-Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche Strukturen, mit denen wir diesen Parsetree
-traversieren ... Und wir müssen für *jede* Erweiterung immer *alle* Expression-Klassen anpassen!
+Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche
+Strukturen, mit denen wir diesen Parsetree traversieren ... Und wir müssen für
+*jede* Erweiterung immer *alle* Expression-Klassen anpassen!
 
 [Beispiel: direct.DemoExpr]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/pattern/src/visitor/direct/DemoExpr.java"}
@@ -201,14 +218,16 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 [[Hinweis: Implementierungsdetail Traversierung]{.ex}]{.slides}
 
 ::: notes
-Das Entwurfsmuster "Besucher" (*Visitor Pattern*) lagert die Aktion beim Besuchen eines Knotens in eine separate Klasse
-aus.
+Das Entwurfsmuster "Besucher" (*Visitor Pattern*) lagert die Aktion beim Besuchen
+eines Knotens in eine separate Klasse aus.
 
-Dazu bekommt jeder Knoten im Baum eine neue Methode, die einen Besucher akzeptiert. Dieser Besucher kümmert sich dann um
-die entsprechende Verarbeitung des Knotens, also um das Auswerten oder Ausgeben im obigen Beispiel.
+Dazu bekommt jeder Knoten im Baum eine neue Methode, die einen Besucher akzeptiert.
+Dieser Besucher kümmert sich dann um die entsprechende Verarbeitung des Knotens,
+also um das Auswerten oder Ausgeben im obigen Beispiel.
 
-Die Besucher haben eine Methode, die für jeden zu bearbeitenden Knoten überladen wird. In dieser Methode findet dann die
-eigentliche Verarbeitung statt: Auswerten des Knotens oder Ausgeben des Knotens ...
+Die Besucher haben eine Methode, die für jeden zu bearbeitenden Knoten überladen
+wird. In dieser Methode findet dann die eigentliche Verarbeitung statt: Auswerten
+des Knotens oder Ausgeben des Knotens ...
 
 ``` java
 public interface Expr {
@@ -306,16 +325,20 @@ public class DemoExpr {
 
 ## Implementierungsdetail
 
-In den beiden Klasse `AddExpr` und `MulExpr` müssen auch die beiden Kindknoten besucht werden, d.h. hier muss der Baum
-weiter traversiert werden.
+In den beiden Klasse `AddExpr` und `MulExpr` müssen auch die beiden Kindknoten
+besucht werden, d.h. hier muss der Baum weiter traversiert werden.
 
-Man kann sich überlegen, diese Traversierung in den Klassen `AddExpr` und `MulExpr` selbst anzustoßen.
+Man kann sich überlegen, diese Traversierung in den Klassen `AddExpr` und `MulExpr`
+selbst anzustoßen.
 
-Alternativ könnte auch der Visitor die Traversierung vornehmen. Gerade bei der Traversierung von Datenstrukturen ist
-diese Variante oft von Vorteil, da man hier unterschiedliche Traversierungsarten haben möchte (Breitensuche
-vs. Tiefensuche, Pre-Order vs. Inorder vs. Post-Order, ...) und diese elegant in den Visitor verlagern kann.
+Alternativ könnte auch der Visitor die Traversierung vornehmen. Gerade bei der
+Traversierung von Datenstrukturen ist diese Variante oft von Vorteil, da man hier
+unterschiedliche Traversierungsarten haben möchte (Breitensuche vs. Tiefensuche,
+Pre-Order vs. Inorder vs. Post-Order, ...) und diese elegant in den Visitor
+verlagern kann.
 
-[Beispiel Traversierung intern (in den Knotenklassen): visitor.visit.intrav.DemoExpr]{.ex
+[Beispiel Traversierung intern (in den Knotenklassen):
+visitor.visit.intrav.DemoExpr]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/pattern/src/visitor/visit/intrav/DemoExpr.java"}
 
 [Beispiel Traversierung extern (im Visitor): visitor.visit.extrav.DemoExpr]{.ex
@@ -323,12 +346,13 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 
 ## (Double-) Dispatch
 
-Zur Laufzeit wird in `accept()` der Typ des Visitors aufgelöst und dann in `visit()` der Typ der zu besuchenden Klasse.
-Dies nennt man auch "Double-Dispatch".
+Zur Laufzeit wird in `accept()` der Typ des Visitors aufgelöst und dann in `visit()`
+der Typ der zu besuchenden Klasse. Dies nennt man auch "Double-Dispatch".
 
 ## Hinweis I
 
-Man könnte versucht sein, die `accept()`-Methode aus den Knotenklassen in die gemeinsame Basisklasse zu verlagern: Statt
+Man könnte versucht sein, die `accept()`-Methode aus den Knotenklassen in die
+gemeinsame Basisklasse zu verlagern: Statt
 
 ``` java
     public void accept(ExprVisitor v) {
@@ -336,7 +360,8 @@ Man könnte versucht sein, die `accept()`-Methode aus den Knotenklassen in die g
     }
 ```
 
-in *jeder* Knotenklasse einzeln zu definieren, könnte man das doch *einmalig* in der Basisklasse definieren:
+in *jeder* Knotenklasse einzeln zu definieren, könnte man das doch *einmalig* in der
+Basisklasse definieren:
 
 ``` java
 public abstract class Expr {
@@ -347,14 +372,15 @@ public abstract class Expr {
 }
 ```
 
-Dies wäre tatsächlich schön, weil man so Code-Duplizierung vermeiden könnte. Aber es funktioniert in Java leider nicht.
-(Warum?)
+Dies wäre tatsächlich schön, weil man so Code-Duplizierung vermeiden könnte. Aber es
+funktioniert in Java leider nicht. (Warum?)
 
 ## Hinweis II
 
-Während die `accept()`-Methode nicht in die Basisklasse der besuchten Typen (im Bild oben die Klasse `Elem` bzw. im
-Beispiel oben die Klasse `Expr`) verlagert werden kann, kann man aber die `visit()`-Methoden im Interface `Visitor`
-durchaus als Default-Methoden im Interface implementieren.
+Während die `accept()`-Methode nicht in die Basisklasse der besuchten Typen (im Bild
+oben die Klasse `Elem` bzw. im Beispiel oben die Klasse `Expr`) verlagert werden
+kann, kann man aber die `visit()`-Methoden im Interface `Visitor` durchaus als
+Default-Methoden im Interface implementieren.
 :::
 
 # Ausrechnen des Ausdrucks mit einem Visitor
@@ -379,13 +405,14 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 
 -   Visitor
     -   hat für jede Klasse eine Überladung der `visit()`-Methode
-    -   Rückgabewerte schwierig: Intern halten oder per `return` [(dann aber unterschiedliche `visit()`-Methoden für die
-        verschiedenen Rückgabetypen!)]{.notes}
+    -   Rückgabewerte schwierig: Intern halten oder per `return` [(dann aber
+        unterschiedliche `visit()`-Methoden für die verschiedenen
+        Rückgabetypen!)]{.notes}
 
 \smallskip
 
--   (Double-) Dispatch: Zur Laufzeit wird in `accept()` der Typ des Visitors und in `visit()` der Typ der zu besuchenden
-    Klasse aufgelöst
+-   (Double-) Dispatch: Zur Laufzeit wird in `accept()` der Typ des Visitors und in
+    `visit()` der Typ der zu besuchenden Klasse aufgelöst
 
 ::: readings
 -   @Eilebrecht2013
@@ -398,7 +425,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 :::
 
 ::: quizzes
--   [Quiz Visitor-Pattern (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106543&client_id=FH-Bielefeld)
+-   [Quiz Visitor-Pattern
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106543&client_id=FH-Bielefeld)
 :::
 
 ::: challenges
@@ -406,44 +434,52 @@ In den
 [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/pattern/src/challenges/visitor)
 finden Sie Code zur Realisierung von (rudimentären) binären Suchbäumen.
 
-1.  Betrachten Sie die Klassen `BinaryNode` und `Main`. Die Klasse `BinaryNode` dient zur einfachen Repräsentierung von
-    binären Suchbäumen, in `Main` ist ein Versuchsaufbau vorbereitet.
+1.  Betrachten Sie die Klassen `BinaryNode` und `Main`. Die Klasse `BinaryNode`
+    dient zur einfachen Repräsentierung von binären Suchbäumen, in `Main` ist ein
+    Versuchsaufbau vorbereitet.
 
-    -   Implementieren Sie das Visitor-Pattern für den Binärbaum (in den Klassen `BinaryNode` und `Main`). Der
-        `nodeVisitor` soll einen Binärbaum *inorder* traversieren.
+    -   Implementieren Sie das Visitor-Pattern für den Binärbaum (in den Klassen
+        `BinaryNode` und `Main`). Der `nodeVisitor` soll einen Binärbaum *inorder*
+        traversieren.
     -   Führen Sie in `Main` die Aufrufe auf `binaryTree` aus (3a).
-    -   Worin besteht der Unterschied zwischen den Aufrufen `binaryTree.accept(nodeVisitor)` und
-        `nodeVisitor.visit(binaryTree)` (3a)?
+    -   Worin besteht der Unterschied zwischen den Aufrufen
+        `binaryTree.accept(nodeVisitor)` und `nodeVisitor.visit(binaryTree)` (3a)?
 
-2.  In `BinaryNode` wird ein Blatt aktuell durch einen Knoten repräsentiert, der für beide Kindbäume den Wert `null`
-    hat. Um Blätter besser zu repräsentieren, gibt es die Klasse `UnaryNode`.
+2.  In `BinaryNode` wird ein Blatt aktuell durch einen Knoten repräsentiert, der für
+    beide Kindbäume den Wert `null` hat. Um Blätter besser zu repräsentieren, gibt
+    es die Klasse `UnaryNode`.
 
-    -   Passen Sie `BinaryNode` so an, dass die Kindbäume auch `UnaryNode` sein können.
-    -   Entfernen Sie in `Main` die Auskommentierung um die Definition von `mixedTree`.
-    -   Führen Sie in `Main` die Aufrufe auf `mixedTree` aus (3b). Passen Sie dazu ggf. Ihre Implementierung des
-        Visitor-Patterns an.
-    -   Worin besteht der Unterschied zwischen den Aufrufen `mixedTree.accept(nodeVisitor)` und
-        `nodeVisitor.visit(mixedTree)` (3b)?
+    -   Passen Sie `BinaryNode` so an, dass die Kindbäume auch `UnaryNode` sein
+        können.
+    -   Entfernen Sie in `Main` die Auskommentierung um die Definition von
+        `mixedTree`.
+    -   Führen Sie in `Main` die Aufrufe auf `mixedTree` aus (3b). Passen Sie dazu
+        ggf. Ihre Implementierung des Visitor-Patterns an.
+    -   Worin besteht der Unterschied zwischen den Aufrufen
+        `mixedTree.accept(nodeVisitor)` und `nodeVisitor.visit(mixedTree)` (3b)?
 
-3.  Sowohl `binaryTree` als auch `mixedTree` werden in `Main` als `BinaryNode<String>` deklariert. Das ist eine unschöne
-    Praxis: Es soll nach Möglichkeit der Obertyp genutzt werden. Dies ist in diesem Fall `Node<String>`.
+3.  Sowohl `binaryTree` als auch `mixedTree` werden in `Main` als
+    `BinaryNode<String>` deklariert. Das ist eine unschöne Praxis: Es soll nach
+    Möglichkeit der Obertyp genutzt werden. Dies ist in diesem Fall `Node<String>`.
 
     -   Entfernen Sie in `Main` die Auskommentierung um die Definition von `tree`.
-    -   Führen Sie in `Main` die Aufrufe auf `tree` aus (3c). Passen Sie dazu ggf. Ihre Implementierung des
-        Visitor-Patterns an.
-    -   Worin besteht der Unterschied zwischen den Aufrufen `tree.accept(nodeVisitor)` und `nodeVisitor.visit(tree)`
-        (3c)?
+    -   Führen Sie in `Main` die Aufrufe auf `tree` aus (3c). Passen Sie dazu ggf.
+        Ihre Implementierung des Visitor-Patterns an.
+    -   Worin besteht der Unterschied zwischen den Aufrufen
+        `tree.accept(nodeVisitor)` und `nodeVisitor.visit(tree)` (3c)?
 
-4.  Implementieren Sie analog zu `nodeVisitor` einen weiteren Visitor, der die Bäume *postorder* traversiert und
-    wiederholen Sie für diesen neuen Visitor die Aufrufe in (3a) bis (3c).
+4.  Implementieren Sie analog zu `nodeVisitor` einen weiteren Visitor, der die Bäume
+    *postorder* traversiert und wiederholen Sie für diesen neuen Visitor die Aufrufe
+    in (3a) bis (3c).
 
-5.  Erklären Sie, wieso im Visitor-Pattern für den Start der Traversierung statt `visitor.visit(tree)` der Aufruf
-    `tree.accept(visitor)` genutzt wird.
+5.  Erklären Sie, wieso im Visitor-Pattern für den Start der Traversierung statt
+    `visitor.visit(tree)` der Aufruf `tree.accept(visitor)` genutzt wird.
 
-6.  Erklären Sie, wieso im Visitor-Pattern in der `accept`-Methode der Knoten der Aufruf `visitor.visit(this)` genutzt
-    wird. Erklären Sie, wieso dieser Aufruf nicht in der Oberklasse bzw. im gemeinsamen Interface der Knoten
-    implementiert werden kann.
+6.  Erklären Sie, wieso im Visitor-Pattern in der `accept`-Methode der Knoten der
+    Aufruf `visitor.visit(this)` genutzt wird. Erklären Sie, wieso dieser Aufruf
+    nicht in der Oberklasse bzw. im gemeinsamen Interface der Knoten implementiert
+    werden kann.
 
-7.  Erklären Sie, wieso im Visitor-Pattern in der `visit`-Methode der Visitoren statt `visit(node.left())` der Aufruf
-    `node.left().accept(this)` genutzt wird.
+7.  Erklären Sie, wieso im Visitor-Pattern in der `visit`-Methode der Visitoren
+    statt `visit(node.left())` der Aufruf `node.left().accept(this)` genutzt wird.
 :::

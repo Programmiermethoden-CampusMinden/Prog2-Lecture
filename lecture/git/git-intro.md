@@ -4,21 +4,25 @@ title: "Intro: Versionskontrolle in der Softwareentwicklung"
 ---
 
 ::: tldr
-In der Softwareentwicklung wird häufig ein Versionsmanagementsystem (VCS) eingesetzt, welches die Verwaltung von
-Versionsständen und Änderungen ermöglicht. Ein Repository sammelt dabei die verschiedenen Änderungen (quasi wie eine
-Datenbank der Software-Versionsstände). Die Software *Git* ist verbreiteter Vertreter und arbeitet mit dezentralen
-Repositories.
+In der Softwareentwicklung wird häufig ein Versionsmanagementsystem (VCS)
+eingesetzt, welches die Verwaltung von Versionsständen und Änderungen ermöglicht.
+Ein Repository sammelt dabei die verschiedenen Änderungen (quasi wie eine Datenbank
+der Software-Versionsstände). Die Software *Git* ist verbreiteter Vertreter und
+arbeitet mit dezentralen Repositories.
 
-Ein neues lokales Repository kann man mit `git init` anlegen. Der Befehl legt den Unterordner `.git/` im aktuellen
-Ordner an, darin befindet sich das lokale Repository und weitere von Git benötigte Dateien (FINGER WEG!). Die Dateien
-und anderen Unterordner im aktuellen Ordner können nun der Versionskontrolle hinzugefügt werden.
+Ein neues lokales Repository kann man mit `git init` anlegen. Der Befehl legt den
+Unterordner `.git/` im aktuellen Ordner an, darin befindet sich das lokale
+Repository und weitere von Git benötigte Dateien (FINGER WEG!). Die Dateien und
+anderen Unterordner im aktuellen Ordner können nun der Versionskontrolle hinzugefügt
+werden.
 
-Den lokal vorliegenden (Versions-) Stand der Dateien im aktuellen Ordner nennt man auch "Workingcopy".
+Den lokal vorliegenden (Versions-) Stand der Dateien im aktuellen Ordner nennt man
+auch "Workingcopy".
 
 Ein bereits existierendes Repo kann mit `git clone <url>` geklont werden.
 
-[GitHub](https://github.com) ist nicht Git, sondern ein kommerzieller Anbieter, der das Hosten von Git-Repositories und
-weitere Features anbietet.
+[GitHub](https://github.com) ist nicht Git, sondern ein kommerzieller Anbieter, der
+das Hosten von Git-Repositories und weitere Features anbietet.
 :::
 
 ::: youtube
@@ -41,11 +45,13 @@ weitere Features anbietet.
 ![](images/screenshot_zusammenarbeit_ohne_vcs.png){width="80%"}
 
 ::: notes
--   Filesystem müllt voll mit manuell versionierten Dateien/Sicherungen ala `file_20120507_version2_cagi.txt`
+-   Filesystem müllt voll mit manuell versionierten Dateien/Sicherungen ala
+    `file_20120507_version2_cagi.txt`
 -   Ordner/Projekte müssen dupliziert werden für neue Ideen
 -   Code müllt voll mit auskommentierten Zeilen ("Könnte ja noch gebraucht werden")
 -   Unklar, wann welche Änderung von wem warum eingeführt wurde
--   Unbeabsichtigtes Überschreiben mit älteren Versionen beim Upload in gemeinsamen Filesharing-Bereich
+-   Unbeabsichtigtes Überschreiben mit älteren Versionen beim Upload in gemeinsamen
+    Filesharing-Bereich
 :::
 
 # Prinzip Versionsverwaltung
@@ -58,7 +64,8 @@ weitere Features anbietet.
 ::: {.column width="50%"}
 \vspace{10mm}
 
--   **Repository:** **Datenbank** mit verschiedenen Versionsständen, Kommentaren, Tags etc.
+-   **Repository:** **Datenbank** mit verschiedenen Versionsständen, Kommentaren,
+    Tags etc.
 
 \bigskip
 
@@ -71,11 +78,12 @@ weitere Features anbietet.
 ![](images/centralised.png){width="80%"}
 
 ::: notes
-Es gibt ein zentrales Repository (typischerweise auf einem Server), von dem die Developer einen bestimmten Versionsstand
-"auschecken" (sich lokal kopieren) und in welches sie Änderungen wieder zurück "pushen".
+Es gibt ein zentrales Repository (typischerweise auf einem Server), von dem die
+Developer einen bestimmten Versionsstand "auschecken" (sich lokal kopieren) und in
+welches sie Änderungen wieder zurück "pushen".
 
-Zur Abfrage der Historie und zum Veröffentlichen von Änderungen benötigt man entsprechend immer eine Verbindung zum
-Server.
+Zur Abfrage der Historie und zum Veröffentlichen von Änderungen benötigt man
+entsprechend immer eine Verbindung zum Server.
 :::
 
 # Varianten: Verteilte Versionsverwaltung (Beispiel Git)
@@ -83,20 +91,24 @@ Server.
 ![](images/distributed.png){width="80%"}
 
 ::: notes
-In diesem Szenario hat jeder Developer nicht nur die Workingcopy, sondern auch noch eine Kopie des Repositories.
-Zusätzlich kann es einen oder mehrere Server geben, auf denen dann nur das Repository vorgehalten wird, d.h. dort gibt
-es normalerweise keine Workingcopy. Damit kann unabhängig voneinander gearbeitet werden.
+In diesem Szenario hat jeder Developer nicht nur die Workingcopy, sondern auch noch
+eine Kopie des Repositories. Zusätzlich kann es einen oder mehrere Server geben, auf
+denen dann nur das Repository vorgehalten wird, d.h. dort gibt es normalerweise
+keine Workingcopy. Damit kann unabhängig voneinander gearbeitet werden.
 
-Allerdings besteht nun die Herausforderung, die geänderten Repositories miteinander abzugleichen. Das kann zwischen dem
-lokalen Rechner und dem Server passieren, aber auch zwischen zwei "normalen" Rechnern (also zwischen den Developern).
+Allerdings besteht nun die Herausforderung, die geänderten Repositories miteinander
+abzugleichen. Das kann zwischen dem lokalen Rechner und dem Server passieren, aber
+auch zwischen zwei "normalen" Rechnern (also zwischen den Developern).
 
-**Hinweis**: *GitHub ain't no Git!* Git ist eine Technologie zur Versionsverwaltung. Es gibt verschiedene
-Implementierungen und Plugins für IDEs und Editoren. [GitHub](https://github.com) ist dagegen *ein* Dienstleister, wo
-man Git-Repositories ablegen kann und auf diese mit Git (von der Konsole oder aus der IDE) zugreifen kann. Darüber
-hinaus bietet der Service aber zusätzliche Features an, beispielsweise ein Issue-Management oder sogenannte
-*Pull-Requests*. Dies hat aber zunächst mit Git nichts zu tun. Weitere populäre Anbieter sind beispielsweise
-[Bitbucket](https://bitbucket.org/) oder [Gitlab](https://gitlab.com) oder [Gitea](https://gitea.io/en-us/), wobei
-einige auch selbst gehostet werden können.
+**Hinweis**: *GitHub ain't no Git!* Git ist eine Technologie zur Versionsverwaltung.
+Es gibt verschiedene Implementierungen und Plugins für IDEs und Editoren.
+[GitHub](https://github.com) ist dagegen *ein* Dienstleister, wo man
+Git-Repositories ablegen kann und auf diese mit Git (von der Konsole oder aus der
+IDE) zugreifen kann. Darüber hinaus bietet der Service aber zusätzliche Features an,
+beispielsweise ein Issue-Management oder sogenannte *Pull-Requests*. Dies hat aber
+zunächst mit Git nichts zu tun. Weitere populäre Anbieter sind beispielsweise
+[Bitbucket](https://bitbucket.org/) oder [Gitlab](https://gitlab.com) oder
+[Gitea](https://gitea.io/en-us/), wobei einige auch selbst gehostet werden können.
 :::
 
 # Versionsverwaltung mit Git: Typische Arbeitsschritte
@@ -130,10 +142,11 @@ einige auch selbst gehostet werden können.
 ::: notes
 Diese Konfiguration muss man nur einmal machen.
 
-Wenn man den Schalter `--global` weglässt, gelten die Einstellungen nur für das aktuelle Projekt/Repo.
+Wenn man den Schalter `--global` weglässt, gelten die Einstellungen nur für das
+aktuelle Projekt/Repo.
 
-Zumindest Namen und EMail-Adresse **muss** man setzen, da Git diese Information beim Anlegen der Commits speichert (==
-benötigt!).
+Zumindest Namen und EMail-Adresse **muss** man setzen, da Git diese Information beim
+Anlegen der Commits speichert (== benötigt!).
 :::
 
 \bigskip
@@ -148,14 +161,17 @@ benötigt!).
 -   `git config --global alias.ll 'log --all --graph --decorate --oneline'`
 
 ::: notes
-Zusätzlich kann man weitere Einstellungen vornehmen, etwa auf bunte Ausgabe umschalten:
-`git config --global color.ui auto` oder Abkürzungen (Aliase) für Befehle definieren:
+Zusätzlich kann man weitere Einstellungen vornehmen, etwa auf bunte Ausgabe
+umschalten: `git config --global color.ui auto` oder Abkürzungen (Aliase) für
+Befehle definieren:
 `git config --global alias.ll 'log --all --oneline --graph --decorate'` ...
 
-Git (und auch GitHub) hat kürzlich den Namen des Default-Branches von `master` auf `main` geändert. Dies kann man in Git
-ebenfalls selbst einstellen: `git config --global init.defaultBranch <name>`.
+Git (und auch GitHub) hat kürzlich den Namen des Default-Branches von `master` auf
+`main` geändert. Dies kann man in Git ebenfalls selbst einstellen:
+`git config --global init.defaultBranch <name>`.
 
-Anschauen kann man sich die Einstellungen in der Textdatei `~/.gitconfig` oder per Befehl `git config --global -l`.
+Anschauen kann man sich die Einstellungen in der Textdatei `~/.gitconfig` oder per
+Befehl `git config --global -l`.
 :::
 
 [[Konsole]{.ex}]{.slides}
@@ -195,5 +211,6 @@ Anschauen kann man sich die Einstellungen in der Textdatei `~/.gitconfig` oder p
 :::
 
 ::: quizzes
--   [Quiz Git Intro (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106239&client_id=FH-Bielefeld)
+-   [Quiz Git Intro
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106239&client_id=FH-Bielefeld)
 :::

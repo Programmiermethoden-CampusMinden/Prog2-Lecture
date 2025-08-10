@@ -4,31 +4,37 @@ title: Lambda-Ausdrücke und funktionale Interfaces
 ---
 
 ::: tldr
-Mit einer anonymen inneren Klasse erstellt man gewissermaßen ein Objekt einer "Wegwerf"-Klasse: Man leitet *on-the-fly*
-von einem Interface ab oder erweitert eine Klasse und implementiert die benötigten Methoden und erzeugt von dieser
-Klasse sofort eine Instanz (Objekt). Diese neue Klasse ist im restlichen Code nicht sichtbar.
+Mit einer anonymen inneren Klasse erstellt man gewissermaßen ein Objekt einer
+"Wegwerf"-Klasse: Man leitet *on-the-fly* von einem Interface ab oder erweitert eine
+Klasse und implementiert die benötigten Methoden und erzeugt von dieser Klasse
+sofort eine Instanz (Objekt). Diese neue Klasse ist im restlichen Code nicht
+sichtbar.
 
-Anonyme innere Klassen sind beispielsweise in Swing recht nützlich, wenn man einer Komponente einen Listener mitgeben
-will: Hier erzeugt man eine anonyme innere Klasse basierend auf dem passenden Listener-Interface, implementiert die
-entsprechenden Methoden und übergibt das mit dieser Klasse erzeugte Objekt als neuen Listener der Swing-Komponente.
+Anonyme innere Klassen sind beispielsweise in Swing recht nützlich, wenn man einer
+Komponente einen Listener mitgeben will: Hier erzeugt man eine anonyme innere Klasse
+basierend auf dem passenden Listener-Interface, implementiert die entsprechenden
+Methoden und übergibt das mit dieser Klasse erzeugte Objekt als neuen Listener der
+Swing-Komponente.
 
-Mit Java 8 können unter gewissen Bedingungen diese anonymen inneren Klassen zu Lambda-Ausdrücken (und
-Methoden-Referenzen) vereinfacht werden. Dazu muss die anonyme innere Klasse ein sogenanntes **funktionales Interface**
-implementieren.
+Mit Java 8 können unter gewissen Bedingungen diese anonymen inneren Klassen zu
+Lambda-Ausdrücken (und Methoden-Referenzen) vereinfacht werden. Dazu muss die
+anonyme innere Klasse ein sogenanntes **funktionales Interface** implementieren.
 
-Funktionale Interfaces sind Interfaces mit *genau einer abstrakten Methode*. Es können beliebig viele Default-Methoden
-im Interface enthalten sein, und es können `public` sichtbare abstrakte Methoden von `java.lang.Object`
-geerbt/überschrieben werden.
+Funktionale Interfaces sind Interfaces mit *genau einer abstrakten Methode*. Es
+können beliebig viele Default-Methoden im Interface enthalten sein, und es können
+`public` sichtbare abstrakte Methoden von `java.lang.Object` geerbt/überschrieben
+werden.
 
-Die Lambda-Ausdrücke entsprechen einer anonymen Methode: Die Parameter werden aufgelistet (in Klammern), und hinter
-einem Pfeil kommt entweder *ein* Ausdruck (Wert - gleichzeitig Rückgabewert des Lambda-Ausdrucks) oder beliebig viele
+Die Lambda-Ausdrücke entsprechen einer anonymen Methode: Die Parameter werden
+aufgelistet (in Klammern), und hinter einem Pfeil kommt entweder *ein* Ausdruck
+(Wert - gleichzeitig Rückgabewert des Lambda-Ausdrucks) oder beliebig viele
 Anweisungen (in geschweiften Klammern, mit Semikolon):
 
 -   Form 1: `(parameters)  ->  expression`
 -   Form 2: `(parameters)  ->  { statements; }`
 
-Der Lambda-Ausdruck muss von der Signatur her genau der einen abstrakten Methode im unterliegenden funktionalen
-Interface entsprechen.
+Der Lambda-Ausdruck muss von der Signatur her genau der einen abstrakten Methode im
+unterliegenden funktionalen Interface entsprechen.
 :::
 
 ::: youtube
@@ -66,15 +72,18 @@ sl.sort(mc);
 ```
 
 ::: notes
-Da `Comparator<T>` ein Interface ist, muss man eine extra Klasse anlegen, die die abstrakte Methode aus dem Interface
-implementiert und ein Objekt von dieser Klasse erzeugen und dieses dann der `sort()`-Methode übergeben.
+Da `Comparator<T>` ein Interface ist, muss man eine extra Klasse anlegen, die die
+abstrakte Methode aus dem Interface implementiert und ein Objekt von dieser Klasse
+erzeugen und dieses dann der `sort()`-Methode übergeben.
 
-Die Klasse bekommt wie in Java üblich eine eigene Datei und ist damit in der Package-Struktur offen sichtbar und
-"verstopft" mir damit die Strukturen: Diese Klasse ist doch nur eine Hilfsklasse ... Noch schlimmer: Ich brauche einen
-Namen für diese Klasse!
+Die Klasse bekommt wie in Java üblich eine eigene Datei und ist damit in der
+Package-Struktur offen sichtbar und "verstopft" mir damit die Strukturen: Diese
+Klasse ist doch nur eine Hilfsklasse ... Noch schlimmer: Ich brauche einen Namen für
+diese Klasse!
 
-Den ersten Punkt könnte man über verschachtelte Klassen lösen: Die Hilfsklasse wird innerhalb der Klasse definiert, die
-das Objekt benötigt. Für den zweiten Punkt brauchen wir mehr Anlauf ...
+Den ersten Punkt könnte man über verschachtelte Klassen lösen: Die Hilfsklasse wird
+innerhalb der Klasse definiert, die das Objekt benötigt. Für den zweiten Punkt
+brauchen wir mehr Anlauf ...
 :::
 
 ::: notes
@@ -87,7 +96,8 @@ Man kann Klassen innerhalb von Klassen definieren: Verschachtelte Klassen.
     -   "normale" innere Klassen: "*inner classes*"
     -   statische innere Klassen: "*static nested classes*"
 -   Einsatzzweck:
-    -   Hilfsklassen: Zusätzliche Funktionalität kapseln; Nutzung **nur** in äußerer Klasse
+    -   Hilfsklassen: Zusätzliche Funktionalität kapseln; Nutzung **nur** in äußerer
+        Klasse
     -   Kapselung von Rückgabewerten
 
 Sichtbarkeit: Wird u.U. von äußerer Klasse "überstimmt"
@@ -153,14 +163,16 @@ sl.sort(
 ```
 
 ::: notes
-=\> Instanz einer anonymen inneren Klasse, die das Interface `Comparator<Studi>` implementiert
+=\> Instanz einer anonymen inneren Klasse, die das Interface `Comparator<Studi>`
+implementiert
 
 -   Für spezielle, einmalige Aufgabe: nur eine Instanz möglich
 -   Kein Name, kein Konstruktor, oft nur eine Methode
 -   Müssen Interface implementieren oder andere Klasse erweitern
     -   Achtung Schreibweise: ohne `implements` oder `extends`!
 -   Konstruktor kann auch Parameter aufweisen
--   Zugriff auf alle Attribute der äußeren Klasse plus alle `final` lokalen Variablen
+-   Zugriff auf alle Attribute der äußeren Klasse plus alle `final` lokalen
+    Variablen
 -   Nutzung typischerweise bei GUIs: Event-Handler etc.
 :::
 
@@ -189,8 +201,9 @@ sl.sort( (Studi o1, Studi o2) -> o1.getCredits() - o2.getCredits() );
 [[Hinweis auf funktionales Interface]{.ex}]{.slides}
 
 ::: notes
-**Anmerkung**: Damit für den Parameter alternativ auch ein Lambda-Ausdruck verwendet werden kann, muss der erwartete
-Parameter vom Typ her ein "**funktionales Interface**" (s.u.) sein!
+**Anmerkung**: Damit für den Parameter alternativ auch ein Lambda-Ausdruck verwendet
+werden kann, muss der erwartete Parameter vom Typ her ein "**funktionales
+Interface**" (s.u.) sein!
 :::
 
 [Demo: nested.DemoLambda]{.ex
@@ -209,10 +222,12 @@ Ein Lambda-Ausdruck ist eine Funktion ohne Namen und besteht aus drei Teilen:
 2.  Pfeil
 3.  Funktionskörper (rechte Seite)
 
-Falls es *genau einen* Parameter gibt, *können* die runden Klammern um den Parameter entfallen.
+Falls es *genau einen* Parameter gibt, *können* die runden Klammern um den Parameter
+entfallen.
 
-Dabei kann der Funktionskörper aus *einem Ausdruck* ("*expression*") bestehen oder einer *Menge von Anweisungen*
-("*statements"*), die dann in geschweifte Klammern eingeschlossen werden müssen (Block mit Anweisungen).
+Dabei kann der Funktionskörper aus *einem Ausdruck* ("*expression*") bestehen oder
+einer *Menge von Anweisungen* ("*statements"*), die dann in geschweifte Klammern
+eingeschlossen werden müssen (Block mit Anweisungen).
 
 Der Wert des Ausdrucks ist zugleich der Rückgabewert des Lambda-Ausdrucks.
 :::
@@ -247,8 +262,9 @@ Varianten:
 ::: details
 Auflösung:
 
-(4) und (5): `return` ist eine Anweisung, d.h. bei (4) fehlen die geschweiften Klammern. `"foo"` ist ein String und als
-    solcher ein Ausdruck, d.h. hier sind die geschweiften Klammern zu viel (oder man ergänze den String mit einem
+(4) und (5): `return` ist eine Anweisung, d.h. bei (4) fehlen die geschweiften
+    Klammern. `"foo"` ist ein String und als solcher ein Ausdruck, d.h. hier sind
+    die geschweiften Klammern zu viel (oder man ergänze den String mit einem
     `return`, also `return "foo";` ...).
 :::
 ::::
@@ -266,31 +282,39 @@ public interface Wuppie<T> {
 
 \bigskip
 
-`Wuppie<T>` ist ein **funktionales Interface** ("*functional interface*") [(seit Java 8)]{.notes}
+`Wuppie<T>` ist ein **funktionales Interface** ("*functional interface*") [(seit
+Java 8)]{.notes}
 
 -   Hat **genau *eine* abstrakte Methode**
 -   Hat evtl. weitere Default-Methoden
--   Hat evtl. weitere abstrakte Methoden, die `public` Methoden von `java.lang.Object` überschreiben
+-   Hat evtl. weitere abstrakte Methoden, die `public` Methoden von
+    `java.lang.Object` überschreiben
 
 ::: notes
-Die Annotation `@FunctionalInterface` selbst ist nur für den Compiler: Falls das Interface *kein* funktionales Interface
-ist, würde er beim Vorhandensein dieser Annotation einen Fehler werfen. Oder anders herum: Allein durch das Annotieren
-mit `@FunctionalInterface` wird aus einem Interface noch kein funktionales Interface! Vergleichbar mit `@Override` ...
+Die Annotation `@FunctionalInterface` selbst ist nur für den Compiler: Falls das
+Interface *kein* funktionales Interface ist, würde er beim Vorhandensein dieser
+Annotation einen Fehler werfen. Oder anders herum: Allein durch das Annotieren mit
+`@FunctionalInterface` wird aus einem Interface noch kein funktionales Interface!
+Vergleichbar mit `@Override` ...
 
-**Während man für eine anonyme Klasse lediglich ein "normales" Interface (oder eine Klasse) benötigt, braucht man für
-Lambda-Ausdrücke zwingend ein passendes funktionales Interface!**
+**Während man für eine anonyme Klasse lediglich ein "normales" Interface (oder eine
+Klasse) benötigt, braucht man für Lambda-Ausdrücke zwingend ein passendes
+funktionales Interface!**
 
-*Anmerkung*: Es scheint keine einheitliche deutsche Übersetzung für den Begriff *functional interface* zu geben. Es wird
-häufig mit "funktionales Interface", manchmal aber auch mit "Funktionsinterface" übersetzt.
+*Anmerkung*: Es scheint keine einheitliche deutsche Übersetzung für den Begriff
+*functional interface* zu geben. Es wird häufig mit "funktionales Interface",
+manchmal aber auch mit "Funktionsinterface" übersetzt.
 
-Das in den obigen Beispielen eingesetzte Interface `java.util.Comparator<T>` ist also ein funktionales Interface: Es hat
-nur *eine* eigene abstrakte Methode `int compare(T o1, T o2);`.
+Das in den obigen Beispielen eingesetzte Interface `java.util.Comparator<T>` ist
+also ein funktionales Interface: Es hat nur *eine* eigene abstrakte Methode
+`int compare(T o1, T o2);`.
 
 Im Package
 [java.util.function](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)
-sind einige wichtige funktionale Interfaces bereits vordefiniert, beispielsweise `Predicate` (Test, ob eine Bedingung
-erfüllt ist) und `Function` (verarbeite einen Wert und liefere einen passenden Ergebniswert). Diese kann man auch in
-eigenen Projekten nutzen!
+sind einige wichtige funktionale Interfaces bereits vordefiniert, beispielsweise
+`Predicate` (Test, ob eine Bedingung erfüllt ist) und `Function` (verarbeite einen
+Wert und liefere einen passenden Ergebniswert). Diese kann man auch in eigenen
+Projekten nutzen!
 :::
 
 # Quiz: Welches ist kein funktionales Interface?
@@ -319,7 +343,8 @@ Auflösung:
 -   `Wuppie` hat *genau eine* abstrakte Methode =\> funktionales Interface
 -   `Fluppie` hat zwei abstrakte Methoden =\> **kein** funktionales Interface
 -   `Foo` hat gar keine abstrakte Methode =\> **kein** funktionales Interface
--   `Bar` hat *genau eine* abstrakte Methode (und eine Default-Methode) =\> funktionales Interface
+-   `Bar` hat *genau eine* abstrakte Methode (und eine Default-Methode) =\>
+    funktionales Interface
 :::
 ::::
 
@@ -342,17 +367,20 @@ Comparator<Studi> c2 = (o1, o2) -> o1.getCredits() - o2.getCredits();
 ```
 
 ::: notes
-Der Compiler prüft in etwa folgende Schritte, wenn er über einen Lambda-Ausdruck stolpert:
+Der Compiler prüft in etwa folgende Schritte, wenn er über einen Lambda-Ausdruck
+stolpert:
 
 1.  In welchem Kontext habe ich den Lambda-Ausdruck gesehen?
 2.  OK, der Zieltyp ist hier `Comparator<Studi>`.
 3.  Wie lautet die **eine** abstrakte Methode im `Comparator<T>`-Interface?
 4.  OK, das ist `int compare(T o1, T o2);`
-5.  Da `T` hier an `Studi` gebunden ist, muss der Lambda-Ausdruck der Methode `int compare(Studi o1, Studi o2);`
-    entsprechen: 2x `Studi` als Parameter und als Ergebnis ein `int`
+5.  Da `T` hier an `Studi` gebunden ist, muss der Lambda-Ausdruck der Methode
+    `int compare(Studi o1, Studi o2);` entsprechen: 2x `Studi` als Parameter und als
+    Ergebnis ein `int`
 6.  Ergebnis:
     a)  Cool, passt zum Lambda-Ausdruck `c1`. Fertig.
-    b)  D.h. in `c2` müssen `o1` und `o2` vom Typ `Studi` sein. Cool, passt zum Lambda-Ausdruck `c2`. Fertig.
+    b)  D.h. in `c2` müssen `o1` und `o2` vom Typ `Studi` sein. Cool, passt zum
+        Lambda-Ausdruck `c2`. Fertig.
 :::
 
 # Wrap-Up
@@ -362,13 +390,15 @@ Der Compiler prüft in etwa folgende Schritte, wenn er über einen Lambda-Ausdru
 
 \smallskip
 
--   Java8: **Lambda-Ausdrücke** statt anonymer Klassen (**funktionales Interface nötig**)
+-   Java8: **Lambda-Ausdrücke** statt anonymer Klassen (**funktionales Interface
+    nötig**)
     -   Zwei mögliche Formen:
         -   Form 1: `(parameters)  ->  expression`
         -   Form 2: `(parameters)  ->  { statements; }`
-    -   Im jeweiligen Kontext muss ein **funktionales Interface** verwendet werden, d.h. ein Interface mit **genau**
-        einer abstrakten Methode
-    -   Der Lambda-Ausdruck muss von der Signatur her dieser einen abstrakten Methode entsprechen
+    -   Im jeweiligen Kontext muss ein **funktionales Interface** verwendet werden,
+        d.h. ein Interface mit **genau** einer abstrakten Methode
+    -   Der Lambda-Ausdruck muss von der Signatur her dieser einen abstrakten
+        Methode entsprechen
 
 ::: readings
 -   @Java-SE-Tutorial
@@ -389,7 +419,8 @@ Der Compiler prüft in etwa folgende Schritte, wenn er über einen Lambda-Ausdru
 :::
 
 ::: challenges
-**Beispiel aus einem Code-Review im [Dungeon-CampusMinden/Dungeon](https://github.com/Dungeon-CampusMinden/Dungeon)**
+**Beispiel aus einem Code-Review im
+[Dungeon-CampusMinden/Dungeon](https://github.com/Dungeon-CampusMinden/Dungeon)**
 
 Erklären Sie folgenden Code:
 
@@ -433,50 +464,58 @@ auf diese eine methode im interface deutlich.
 
 In den
 [Vorgaben](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/tree/master/markdown/modern-java/src/challenges/lambda)
-finden Sie die Klassen `Student` und `StudentSort` mit vorgefertigten Methoden zu den Teilaufgaben sowie eine Testsuite
-`SortTest` mit einzelnen Testfälllen zu den Teilaufgaben, mit der Ihre Implementierung aufgerufen und getestet wird.
+finden Sie die Klassen `Student` und `StudentSort` mit vorgefertigten Methoden zu
+den Teilaufgaben sowie eine Testsuite `SortTest` mit einzelnen Testfälllen zu den
+Teilaufgaben, mit der Ihre Implementierung aufgerufen und getestet wird.
 
-Ziel dieser Aufgabe ist es, eine Liste von Studierenden mithilfe verschiedener syntaktischer Strukturen
-(Lambda-Ausdrücke, Methoden-Referenzen) zu sortieren. Dabei soll bei allen Teilaufgaben die Methode
+Ziel dieser Aufgabe ist es, eine Liste von Studierenden mithilfe verschiedener
+syntaktischer Strukturen (Lambda-Ausdrücke, Methoden-Referenzen) zu sortieren. Dabei
+soll bei allen Teilaufgaben die Methode
 [java.util.List#sort](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html#sort(java.util.Comparator))
 für das eigentliche Sortieren verwendet werden.
 
-1.  In dieser Teilaufgabe sollen Sie der Methode `List#sort` das Sortierkriterium mithilfe eines **Lambda-Ausdrucks**
-    übergeben. Greifen Sie im Lambda-Ausdruck für den Vergleich der Objekte auf die Getter der Objekte zu.
+1.  In dieser Teilaufgabe sollen Sie der Methode `List#sort` das Sortierkriterium
+    mithilfe eines **Lambda-Ausdrucks** übergeben. Greifen Sie im Lambda-Ausdruck
+    für den Vergleich der Objekte auf die Getter der Objekte zu.
 
-    *Hinweis*: Erstellen Sie hierzu keine neuen Methoden, sondern verwenden Sie nur Lambda-Ausdrücke innerhalb des
-    Aufrufs von `List#sort`.
+    *Hinweis*: Erstellen Sie hierzu keine neuen Methoden, sondern verwenden Sie nur
+    Lambda-Ausdrücke innerhalb des Aufrufs von `List#sort`.
 
-    **1a** Sortieren Sie die Studierendenliste aufsteigend nach dem Geburtsdatum (`sort_1a()`).
+    **1a** Sortieren Sie die Studierendenliste aufsteigend nach dem Geburtsdatum
+    (`sort_1a()`).
 
-    **1b** Sortieren Sie die Studierendenliste absteigend nach dem Namen (`sort_1b()`).
+    **1b** Sortieren Sie die Studierendenliste absteigend nach dem Namen
+    (`sort_1b()`).
 
-2.  Erweitern Sie die Klasse `Student` um eine *statische* Methode, die zwei `Student`-Objekte anhand des Alters
-    miteinander vergleicht. Die Methode soll die Signatur `static int compareByAge(Student a, Student b)` besitzen und
-    die folgenden Werte zurückliefern:
+2.  Erweitern Sie die Klasse `Student` um eine *statische* Methode, die zwei
+    `Student`-Objekte anhand des Alters miteinander vergleicht. Die Methode soll die
+    Signatur `static int compareByAge(Student a, Student b)` besitzen und die
+    folgenden Werte zurückliefern:
 
     -   a \> b -\> -1
     -   a \< b -\> 1
     -   a == b -\> 0
 
-    Verwenden Sie die neue statische Methode `compareByAge` zum Sortieren der Liste in `sort_2a()`. Nutzen Sie dabei
-    einen **Lambda-Ausdruck**.
+    Verwenden Sie die neue statische Methode `compareByAge` zum Sortieren der Liste
+    in `sort_2a()`. Nutzen Sie dabei einen **Lambda-Ausdruck**.
 
-3.  Erweitern Sie die Klasse `Student` um eine Instanz-Methode, die das `Student`-Objekt mit einem anderen (als
-    Parameter übergebenen) `Student`-Objekt vergleicht. Die Methode soll die Signatur `int compareByName(Student other)`
+3.  Erweitern Sie die Klasse `Student` um eine Instanz-Methode, die das
+    `Student`-Objekt mit einem anderen (als Parameter übergebenen) `Student`-Objekt
+    vergleicht. Die Methode soll die Signatur `int compareByName(Student other)`
     besitzen und die folgenden Werte zurückliefern:
 
     -   self \> other -\> -1
     -   self \< other -\> 1
     -   self == other -\> 0
 
-    Verwenden Sie die neue Methode `compareByName` zum Sortieren der Liste in `sort_3a()`. Nutzen Sie dabei einen
-    **Lambda-Ausdruck**.
+    Verwenden Sie die neue Methode `compareByName` zum Sortieren der Liste in
+    `sort_3a()`. Nutzen Sie dabei einen **Lambda-Ausdruck**.
 
-4.  Erstellen Sie ein generisches Funktionsinterface, dass die Methode `compare` definiert und zum Vergleichen von zwei
-    Objekten mit generischen Typen dient.
+4.  Erstellen Sie ein generisches Funktionsinterface, dass die Methode `compare`
+    definiert und zum Vergleichen von zwei Objekten mit generischen Typen dient.
 
-    Erzeugen Sie mithilfe eines **Lambda-Ausdrucks** eine **Instanz** Ihres Interfaces, um damit zwei Objekte vom Typ
-    `Student` in Bezug auf ihr Alter vergleichen zu können. Verwenden Sie die erzeugte Instanz, um die Studierendenliste
-    absteigend zu sortieren (`sort_4a()`).
+    Erzeugen Sie mithilfe eines **Lambda-Ausdrucks** eine **Instanz** Ihres
+    Interfaces, um damit zwei Objekte vom Typ `Student` in Bezug auf ihr Alter
+    vergleichen zu können. Verwenden Sie die erzeugte Instanz, um die
+    Studierendenliste absteigend zu sortieren (`sort_4a()`).
 :::

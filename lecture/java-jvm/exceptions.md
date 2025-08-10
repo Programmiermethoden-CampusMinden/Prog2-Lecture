@@ -4,30 +4,38 @@ title: Exception-Handling
 ---
 
 ::: tldr
-Man unterscheidet in Java zwischen **Exceptions** und **Errors**. Ein Error ist ein Fehler im System (OS, JVM), von dem
-man sich nicht wieder erholen kann. Eine Exception ist ein Fehlerfall innerhalb des Programmes, auf den man innerhalb
-des Programms reagieren kann.
+Man unterscheidet in Java zwischen **Exceptions** und **Errors**. Ein Error ist ein
+Fehler im System (OS, JVM), von dem man sich nicht wieder erholen kann. Eine
+Exception ist ein Fehlerfall innerhalb des Programmes, auf den man innerhalb des
+Programms reagieren kann.
 
-Mit Hilfe von Exceptions lassen sich Fehlerfälle im Programmablauf deklarieren und behandeln. Methoden können/müssen mit
-dem Keyword `throws` gefolgt vom Namen der Exception deklarieren, dass sie im Fehlerfall diese spezifische Exception
-werfen (und nicht selbst behandeln).
+Mit Hilfe von Exceptions lassen sich Fehlerfälle im Programmablauf deklarieren und
+behandeln. Methoden können/müssen mit dem Keyword `throws` gefolgt vom Namen der
+Exception deklarieren, dass sie im Fehlerfall diese spezifische Exception werfen
+(und nicht selbst behandeln).
 
-Zum Exception-Handling werden die Keywords `try`, `catch` und `finally` verwendet. Dabei wird im `try`-Block der Code
-geschrieben, der einen potenziellen Fehler wirft. Im `catch`-Block wird das Verhalten implementiert, dass im Fehlerfall
-ausgeführt werden soll, und im `finally`-Block kann optional Code geschrieben werden, der sowohl im Erfolgs- als auch
-Fehlerfall ausgeführt wird.
+Zum Exception-Handling werden die Keywords `try`, `catch` und `finally` verwendet.
+Dabei wird im `try`-Block der Code geschrieben, der einen potenziellen Fehler wirft.
+Im `catch`-Block wird das Verhalten implementiert, dass im Fehlerfall ausgeführt
+werden soll, und im `finally`-Block kann optional Code geschrieben werden, der
+sowohl im Erfolgs- als auch Fehlerfall ausgeführt wird.
 
-Es wird zwischen **checked** Exceptions und **unchecked** Exceptions unterschieden. Checked Exceptions sind für
-erwartbare Fehlerfälle gedacht, die nicht vom Programm ausgeschlossen werden können, wie das Fehlen einer Datei, die
-eingelesen werden soll. Checked Exceptions müssen deklariert oder behandelt werden. Dies wird vom Compiler überprüft.
+Es wird zwischen **checked** Exceptions und **unchecked** Exceptions unterschieden.
+Checked Exceptions sind für erwartbare Fehlerfälle gedacht, die nicht vom Programm
+ausgeschlossen werden können, wie das Fehlen einer Datei, die eingelesen werden
+soll. Checked Exceptions müssen deklariert oder behandelt werden. Dies wird vom
+Compiler überprüft.
 
-Unchecked Exceptions werden für Fehler in der Programmlogik verwendet, etwa das Teilen durch 0 oder Index-Fehler. Sie
-deuten auf fehlerhafte Programmierung, fehlerhafte Logik oder beispielsweise mangelhafte Eingabeprüfung in. Unchecked
-Exceptions müssen nicht deklariert oder behandelt werden. Unchecked Exceptions leiten von `RuntimeException` ab.
+Unchecked Exceptions werden für Fehler in der Programmlogik verwendet, etwa das
+Teilen durch 0 oder Index-Fehler. Sie deuten auf fehlerhafte Programmierung,
+fehlerhafte Logik oder beispielsweise mangelhafte Eingabeprüfung in. Unchecked
+Exceptions müssen nicht deklariert oder behandelt werden. Unchecked Exceptions
+leiten von `RuntimeException` ab.
 
-Als Faustregel gilt: Wenn der Aufrufer sich von einer Exception-Situation erholen kann, sollte man eine checked
-Exception nutzen. Wenn der Aufrufer vermutlich nichts tun kann, um sich von dem Problem zu erholen, dann sollte man eine
-unchecked Exception einsetzen.
+Als Faustregel gilt: Wenn der Aufrufer sich von einer Exception-Situation erholen
+kann, sollte man eine checked Exception nutzen. Wenn der Aufrufer vermutlich nichts
+tun kann, um sich von dem Problem zu erholen, dann sollte man eine unchecked
+Exception einsetzen.
 :::
 
 ::: youtube
@@ -69,10 +77,11 @@ if (x.isPresent()) {
 ::: notes
 **Probleme**:
 
--   Da `int` nicht `null` sein kann, muss ein `Integer` Objekt erzeugt und zurückgegeben werden: Overhead wg.
-    Auto-Boxing und -Unboxing!
+-   Da `int` nicht `null` sein kann, muss ein `Integer` Objekt erzeugt und
+    zurückgegeben werden: Overhead wg. Auto-Boxing und -Unboxing!
 -   Der Aufrufer muss auf `null` prüfen.
--   Es wird nicht kommuniziert, warum `null` zurückgegeben wird. Was ist das Problem?
+-   Es wird nicht kommuniziert, warum `null` zurückgegeben wird. Was ist das
+    Problem?
 -   Was ist, wenn `null` ein gültiger Rückgabewert sein soll?
 :::
 
@@ -103,7 +112,8 @@ if (x.isPresent()) {
         -   `FileNotFoundException`
         -   `IOException`
     -   Alle nicht von `RuntimeException` ableitende Exceptions
-    -   Müssen entweder behandelt (`try`/`catch`) oder deklariert (`throws`) werden: Dies wird vom Compiler überprüft!
+    -   Müssen entweder behandelt (`try`/`catch`) oder deklariert (`throws`) werden:
+        Dies wird vom Compiler überprüft!
 -   "Unchecked" Exceptions:
     -   Logische Programmierfehler ("Versagen" des Programmcodes)
         -   `IndexOutOfBoundException`
@@ -115,20 +125,24 @@ if (x.isPresent()) {
 
 Beispiele checked Exception:
 
--   Es soll eine Abfrage an eine externe API geschickt werden. Diese ist aber aktuell nicht zu erreichen. "Erholung":
-    Anfrage noch einmal schicken.
--   Es soll eine Datei geöffnet werden. Diese ist aber nicht unter dem angegebenen Pfad zu finden oder die
-    Berechtigungen stimmen nicht. "Erholung": Aufrufer öffnet neuen File-Picker, um es noch einmal mit einer anderen
-    Datei zu versuchen.
+-   Es soll eine Abfrage an eine externe API geschickt werden. Diese ist aber
+    aktuell nicht zu erreichen. "Erholung": Anfrage noch einmal schicken.
+-   Es soll eine Datei geöffnet werden. Diese ist aber nicht unter dem angegebenen
+    Pfad zu finden oder die Berechtigungen stimmen nicht. "Erholung": Aufrufer
+    öffnet neuen File-Picker, um es noch einmal mit einer anderen Datei zu
+    versuchen.
 
 Beispiele unchecked Exception:
 
--   Eine `for`-Loop über ein Array ist falsch programmiert und will auf einen Index im Array zugreifen, der nicht
-    existiert. Hier kann der Aufrufer nicht Sinnvolles tun, um sich von dieser Situation zu erholen.
--   Argumente oder Rückgabewerte einer Methode können `null` sein. Wenn man das nicht prüft, sondern einfach Methoden
-    auf dem vermeintlichen Objekt aufruft, wird eine `NullPointerException` ausgelöst, die eine Unterklasse von
-    `RuntimeException` ist und damit eine unchecked Exception. Auch hier handelt es sich um einen Fehler in der
-    Programmlogik, von dem sich der Aufrufer nicht sinnvoll erholen kann.
+-   Eine `for`-Loop über ein Array ist falsch programmiert und will auf einen Index
+    im Array zugreifen, der nicht existiert. Hier kann der Aufrufer nicht Sinnvolles
+    tun, um sich von dieser Situation zu erholen.
+-   Argumente oder Rückgabewerte einer Methode können `null` sein. Wenn man das
+    nicht prüft, sondern einfach Methoden auf dem vermeintlichen Objekt aufruft,
+    wird eine `NullPointerException` ausgelöst, die eine Unterklasse von
+    `RuntimeException` ist und damit eine unchecked Exception. Auch hier handelt es
+    sich um einen Fehler in der Programmlogik, von dem sich der Aufrufer nicht
+    sinnvoll erholen kann.
 :::
 
 # *Throws*
@@ -153,31 +167,37 @@ int div(int a, int b) throws IllegalArgumentException {
 ```
 
 ::: notes
-Exception können an an den Aufrufer weitergeleitet werden oder selbst geworfen werden.
+Exception können an an den Aufrufer weitergeleitet werden oder selbst geworfen
+werden.
 
-Wenn wie im ersten Beispiel bei einer Operation eine Exception entsteht und nicht gefangen wird, dann wird sie
-automatisch an den Aufrufer weitergeleitet. Dies wird über die `throws`-Klausel deutlich gemacht (Keyword `throws` plus
-den/die Namen der Exception(s), angefügt an die Methodensignatur). Bei unchecked Exceptions *kann* man das tun, bei
-checked Exceptions *muss* man dies tun.
+Wenn wie im ersten Beispiel bei einer Operation eine Exception entsteht und nicht
+gefangen wird, dann wird sie automatisch an den Aufrufer weitergeleitet. Dies wird
+über die `throws`-Klausel deutlich gemacht (Keyword `throws` plus den/die Namen der
+Exception(s), angefügt an die Methodensignatur). Bei unchecked Exceptions *kann* man
+das tun, bei checked Exceptions *muss* man dies tun.
 
-Wenn man wie im zweiten Beispiel selbst eine neue Exception werfen will, erzeugt man mit `new` ein neues Objekt der
-gewünschten Exception und "wirft" diese mit `throw`. Auch diese Exception kann man dann entweder selbst fangen und
-bearbeiten (siehe nächste Folie) oder an den Aufrufer weiterleiten und dies dann entsprechend über die `throws`-Klausel
-deklarieren: nicht gefangene checked Exceptions *müssen* deklariert werden, nicht gefangene unchecked Exceptions
-*können* deklariert werden.
+Wenn man wie im zweiten Beispiel selbst eine neue Exception werfen will, erzeugt man
+mit `new` ein neues Objekt der gewünschten Exception und "wirft" diese mit `throw`.
+Auch diese Exception kann man dann entweder selbst fangen und bearbeiten (siehe
+nächste Folie) oder an den Aufrufer weiterleiten und dies dann entsprechend über die
+`throws`-Klausel deklarieren: nicht gefangene checked Exceptions *müssen* deklariert
+werden, nicht gefangene unchecked Exceptions *können* deklariert werden.
 
-Wenn mehrere Exceptions an den Aufrufer weitergeleitet werden, werden sie in der `throws`-Klausel mit Komma getrennt:
-`throws Exception1, Exception2, Exception3`.
+Wenn mehrere Exceptions an den Aufrufer weitergeleitet werden, werden sie in der
+`throws`-Klausel mit Komma getrennt: `throws Exception1, Exception2, Exception3`.
 
-**Anmerkung**: In beiden obigen Beispielen wurde zur Verdeutlichung, dass die Methode `div()` eine Exception wirft,
-diese per `throws`-Klausel deklariert. Da es sich bei den beiden Beispielen aber jeweils um **unchecked Exceptions**
-handelt, ist dies im obigen Beispiel *nicht notwendig*. Der Aufrufer *muss* auch nicht ein passendes Exception-Handling
-einsetzen!
+**Anmerkung**: In beiden obigen Beispielen wurde zur Verdeutlichung, dass die
+Methode `div()` eine Exception wirft, diese per `throws`-Klausel deklariert. Da es
+sich bei den beiden Beispielen aber jeweils um **unchecked Exceptions** handelt, ist
+dies im obigen Beispiel *nicht notwendig*. Der Aufrufer *muss* auch nicht ein
+passendes Exception-Handling einsetzen!
 
-Wenn wir stattdessen eine **checked Exception** werfen würden oder in `div()` eine Methode aufrufen würden, die eine
-checked Exception deklariert hat, *muss* diese checked Exception entweder in `div()` gefangen und bearbeitet werden oder
-aber per `throws`-Klausel deklariert werden. Im letzteren Fall *muss* dann der Aufrufer analog damit umgehen (fangen
-oder selbst auch deklarieren). **Dies wird vom Compiler geprüft!**
+Wenn wir stattdessen eine **checked Exception** werfen würden oder in `div()` eine
+Methode aufrufen würden, die eine checked Exception deklariert hat, *muss* diese
+checked Exception entweder in `div()` gefangen und bearbeitet werden oder aber per
+`throws`-Klausel deklariert werden. Im letzteren Fall *muss* dann der Aufrufer
+analog damit umgehen (fangen oder selbst auch deklarieren). **Dies wird vom Compiler
+geprüft!**
 :::
 
 [[Hinweis: throws und checked vs. unchecked]{.ex}]{.slides}
@@ -201,9 +221,10 @@ try {
 -   Im `try` Block wird der Code ausgeführt, der einen Fehler werfen könnte.
 -   Mit `catch` kann eine Exception gefangen und im `catch` Block behandelt werden.
 
-**Anmerkung**: Das bloße Ausgeben des Stacktrace via `e.printStackTrace()` ist noch **kein sinnvolles
-Exception-Handling**! Hier sollte auf die jeweilige Situation eingegangen werden und versucht werden, den Fehler zu
-beheben oder dem Aufrufer geeignet zu melden!
+**Anmerkung**: Das bloße Ausgeben des Stacktrace via `e.printStackTrace()` ist noch
+**kein sinnvolles Exception-Handling**! Hier sollte auf die jeweilige Situation
+eingegangen werden und versucht werden, den Fehler zu beheben oder dem Aufrufer
+geeignet zu melden!
 :::
 
 # *Try* und mehrstufiges *Catch*
@@ -219,18 +240,21 @@ try {
 ```
 
 ::: notes
-Eine im `try`-Block auftretende Exception wird der Reihe nach mit den `catch`-Blöcken gematcht (vergleichbar mit
-`switch case`).
+Eine im `try`-Block auftretende Exception wird der Reihe nach mit den
+`catch`-Blöcken gematcht (vergleichbar mit `switch case`).
 
-**Wichtig**: Dabei muss die Vererbungshierarchie beachtet werden. Die spezialisierteste Klasse muss ganz oben stehen,
-die allgemeinste Klasse als letztes. Sonst wird eine Exception u.U. zu früh in einem nicht dafür gedachten `catch`-Zweig
+**Wichtig**: Dabei muss die Vererbungshierarchie beachtet werden. Die
+spezialisierteste Klasse muss ganz oben stehen, die allgemeinste Klasse als letztes.
+Sonst wird eine Exception u.U. zu früh in einem nicht dafür gedachten `catch`-Zweig
 aufgefangen.
 
-**Wichtig**: Wenn eine Exception nicht durch die `catch`-Zweige aufgefangen wird, dann wird sie an den Aufrufer weiter
-geleitet. Im Beispiel würde eine `IOException` nicht durch die `catch`-Zweige gefangen (`IllegalArgumentException` und
-`NullPointerException` sind im falschen Vererbungszweig, und `FileNotFoundException` ist spezieller als `IOException`)
-und entsprechend an den Aufrufer weiter gereicht. Da es sich obendrein um eine checked Exception handelt, müsste man
-diese per `throws IOException` an der Methode deklarieren.
+**Wichtig**: Wenn eine Exception nicht durch die `catch`-Zweige aufgefangen wird,
+dann wird sie an den Aufrufer weiter geleitet. Im Beispiel würde eine `IOException`
+nicht durch die `catch`-Zweige gefangen (`IllegalArgumentException` und
+`NullPointerException` sind im falschen Vererbungszweig, und `FileNotFoundException`
+ist spezieller als `IOException`) und entsprechend an den Aufrufer weiter gereicht.
+Da es sich obendrein um eine checked Exception handelt, müsste man diese per
+`throws IOException` an der Methode deklarieren.
 :::
 
 [[Hinweis: catch und Vererbungshierarchie]{.ex}]{.slides}
@@ -251,8 +275,9 @@ try {
 ```
 
 ::: notes
-Der `finally` Block wird sowohl im Fehlerfall als auch im Normalfall aufgerufen. Dies wird beispielsweise für
-Aufräumarbeiten genutzt, etwa zum Schließen von Verbindungen oder Input-Streams.
+Der `finally` Block wird sowohl im Fehlerfall als auch im Normalfall aufgerufen.
+Dies wird beispielsweise für Aufräumarbeiten genutzt, etwa zum Schließen von
+Verbindungen oder Input-Streams.
 :::
 
 # *Try*-with-Resources
@@ -266,8 +291,8 @@ try (Scanner myScanner = new Scanner(System.in)) {
 ```
 
 ::: notes
-Im `try`-Statement können Ressourcen deklariert werden, die am Ende sicher geschlossen werden. Diese Ressourcen müssen
-`java.io.Closeable` implementieren.
+Im `try`-Statement können Ressourcen deklariert werden, die am Ende sicher
+geschlossen werden. Diese Ressourcen müssen `java.io.Closeable` implementieren.
 :::
 
 # Eigene Exceptions
@@ -293,13 +318,16 @@ public class MyUncheckedException extends RuntimeException {
 ```
 
 ::: notes
-Eigene Exceptions können durch Spezialisierung anderer Exception-Klassen realisiert werden. Dabei kann man direkt von
-`Exception` oder `RuntimeException` ableiten oder bei Bedarf von spezialisierteren Exception-Klassen.
+Eigene Exceptions können durch Spezialisierung anderer Exception-Klassen realisiert
+werden. Dabei kann man direkt von `Exception` oder `RuntimeException` ableiten oder
+bei Bedarf von spezialisierteren Exception-Klassen.
 
-Wenn die eigene Exception in der Vererbungshierarchie unter `RuntimeException` steht, handelt es sich um eine *unchecked
-Exception*, sonst um eine *checked Exception*.
+Wenn die eigene Exception in der Vererbungshierarchie unter `RuntimeException`
+steht, handelt es sich um eine *unchecked Exception*, sonst um eine *checked
+Exception*.
 
-In der Benutzung (werfen, fangen, deklarieren) verhalten sich eigene Exception-Klassen wie die Exceptions aus dem JDK.
+In der Benutzung (werfen, fangen, deklarieren) verhalten sich eigene
+Exception-Klassen wie die Exceptions aus dem JDK.
 :::
 
 # Stilfrage: Wie viel Code im *Try*?
@@ -332,13 +360,14 @@ int getFirstLineAsIntV1(String pathToFile) throws FileNotFoundException, IOExcep
 }
 ```
 
-Der Aufrufer hat den Pfad als String übergeben und ist vermutlich in der Lage, auf Probleme mit dem Pfad sinnvoll zu
-reagieren. Also könnte man in der Methode selbst auf ein `try`/`catch` verzichten und stattdessen die
-`FileNotFoundException` (vom `FileReader`) und die `IOException` (vom `bufferedReader.readLine()`) per `throws`
+Der Aufrufer hat den Pfad als String übergeben und ist vermutlich in der Lage, auf
+Probleme mit dem Pfad sinnvoll zu reagieren. Also könnte man in der Methode selbst
+auf ein `try`/`catch` verzichten und stattdessen die `FileNotFoundException` (vom
+`FileReader`) und die `IOException` (vom `bufferedReader.readLine()`) per `throws`
 deklarieren.
 
-*Anmerkung*: Da `FileNotFoundException` eine Spezialisierung von `IOException` ist, reicht es aus, lediglich die
-`IOException` zu deklarieren.
+*Anmerkung*: Da `FileNotFoundException` eine Spezialisierung von `IOException` ist,
+reicht es aus, lediglich die `IOException` zu deklarieren.
 
 ## Jede Exception einzeln fangen und bearbeiten
 
@@ -370,19 +399,22 @@ int getFirstLineAsIntV2(String pathToFile) {
 }
 ```
 
-In dieser Variante wird jede Operation, die eine Exception werfen kann, separat in ein `try`/`catch` verpackt und
-jeweils separat auf den möglichen Fehler reagiert.
+In dieser Variante wird jede Operation, die eine Exception werfen kann, separat in
+ein `try`/`catch` verpackt und jeweils separat auf den möglichen Fehler reagiert.
 
 Dadurch kann man die Fehler sehr einfach dem jeweiligen Statement zuordnen.
 
-Allerdings muss man nun mit Behelfsinitialisierungen arbeiten und der Code wird sehr in die Länge gezogen und man
-erkennt die eigentlichen funktionalen Zusammenhänge nur noch schwer.
+Allerdings muss man nun mit Behelfsinitialisierungen arbeiten und der Code wird sehr
+in die Länge gezogen und man erkennt die eigentlichen funktionalen Zusammenhänge nur
+noch schwer.
 
-*Anmerkung*: Das "Behandeln" der Exceptions ist im obigen Beispiel kein gutes Beispiel für das Behandeln von Exceptions.
-Einfach nur einen Stacktrace zu printen und weiter zu machen, als ob nichts passiert wäre, ist **kein sinnvolles
-Exception-Handling**. Wenn Sie solchen Code schreiben oder sehen, ist das ein Anzeichen, dass auf dieser Ebene nicht
-sinnvoll mit dem Fehler umgegangen werden kann und dass man ihn besser an den Aufrufer weiter reichen sollte (siehe
-nächste Folie).
+*Anmerkung*: Das "Behandeln" der Exceptions ist im obigen Beispiel kein gutes
+Beispiel für das Behandeln von Exceptions. Einfach nur einen Stacktrace zu printen
+und weiter zu machen, als ob nichts passiert wäre, ist **kein sinnvolles
+Exception-Handling**. Wenn Sie solchen Code schreiben oder sehen, ist das ein
+Anzeichen, dass auf dieser Ebene nicht sinnvoll mit dem Fehler umgegangen werden
+kann und dass man ihn besser an den Aufrufer weiter reichen sollte (siehe nächste
+Folie).
 
 ## Funktionaler Teil in gemeinsames *Try* und mehrstufiges *Catch*
 
@@ -405,12 +437,14 @@ int getFirstLineAsIntV3(String pathToFile) {
 }
 ```
 
-Hier wurde der eigentliche funktionale Kern der Methode in ein gemeinsames `try`/`catch` verpackt und mit einem
-mehrstufigen `catch` auf die einzelnen Fehler reagiert. Durch die Art der Exceptions sieht man immer noch, wo der Fehler
-herkommt. Zusätzlich wird die eigentliche Funktionalität so leichter erkennbar.
+Hier wurde der eigentliche funktionale Kern der Methode in ein gemeinsames
+`try`/`catch` verpackt und mit einem mehrstufigen `catch` auf die einzelnen Fehler
+reagiert. Durch die Art der Exceptions sieht man immer noch, wo der Fehler herkommt.
+Zusätzlich wird die eigentliche Funktionalität so leichter erkennbar.
 
-*Anmerkung*: Auch hier ist das gezeigte Exception-Handling kein gutes Beispiel. Entweder man macht hier sinnvollere
-Dinge, oder man überlässt dem Aufrufer die Reaktion auf den Fehler.
+*Anmerkung*: Auch hier ist das gezeigte Exception-Handling kein gutes Beispiel.
+Entweder man macht hier sinnvollere Dinge, oder man überlässt dem Aufrufer die
+Reaktion auf den Fehler.
 :::
 
 # Stilfrage: Wo fange ich die Exception?
@@ -438,11 +472,13 @@ public static void main(String... args) {
 ```
 
 ::: notes
-Prinzipiell steht es einem frei, wo man eine Exception fängt und behandelt. Wenn im `main()` eine nicht behandelte
-Exception auftritt (weiter nach oben geleitet wird), wird das Programm mit einem Fehler beendet.
+Prinzipiell steht es einem frei, wo man eine Exception fängt und behandelt. Wenn im
+`main()` eine nicht behandelte Exception auftritt (weiter nach oben geleitet wird),
+wird das Programm mit einem Fehler beendet.
 
-Letztlich scheint es eine gute Idee zu sein, eine Exception so nah wie möglich am Ursprung der Fehlerursache zu
-behandeln. Man sollte sich dabei die Frage stellen: Wo kann ich sinnvoll auf den Fehler reagieren?
+Letztlich scheint es eine gute Idee zu sein, eine Exception so nah wie möglich am
+Ursprung der Fehlerursache zu behandeln. Man sollte sich dabei die Frage stellen: Wo
+kann ich sinnvoll auf den Fehler reagieren?
 :::
 
 # Stilfrage: Wann checked, wann unchecked
@@ -482,8 +518,8 @@ Controversy"](https://dev.java/learn/exceptions/unchecked-exception-controversy/
 
 \smallskip
 
--   Eigene Exceptions durch Ableiten von anderen Exceptions [(werden je nach Vererbungshierarchie automatisch checked
-    oder unchecked)]{.notes}
+-   Eigene Exceptions durch Ableiten von anderen Exceptions [(werden je nach
+    Vererbungshierarchie automatisch checked oder unchecked)]{.notes}
 
 ::: readings
 -   @LernJava
@@ -499,7 +535,8 @@ Controversy"](https://dev.java/learn/exceptions/unchecked-exception-controversy/
 :::
 
 ::: quizzes
--   [Quiz Exceptions (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106516&client_id=FH-Bielefeld)
+-   [Quiz Exceptions
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106516&client_id=FH-Bielefeld)
 :::
 
 ::: challenges
@@ -508,40 +545,44 @@ Betrachten Sie die
 
 **Verbessern Sie das Exception-Handling**
 
-Im package `better_try_catch` finden Sie die Klasse `BetterTryCatchMain`, in der verschiedene Methoden der Klasse
-`MyFunctions` aufgerufen werden.
+Im package `better_try_catch` finden Sie die Klasse `BetterTryCatchMain`, in der
+verschiedene Methoden der Klasse `MyFunctions` aufgerufen werden.
 
-Erklären Sie, warum das dort implementierte Exception-Handling nicht gut ist und verbessern Sie es.
+Erklären Sie, warum das dort implementierte Exception-Handling nicht gut ist und
+verbessern Sie es.
 
 **Checked vs. unckecked Exceptions**
 
 Erklären Sie den Unterschied zwischen checked und unchecked Exceptions.
 
-Im Folgenden werden verschiedene Exceptions beschrieben. Erklären Sie, ob diese jeweils "checked" oder "unchecked" sein
-sollten.
+Im Folgenden werden verschiedene Exceptions beschrieben. Erklären Sie, ob diese
+jeweils "checked" oder "unchecked" sein sollten.
 
--   `IntNotBetweenException` soll geworfen werden, wenn ein Integer-Parameter nicht im definierten Wertebereich liegt.
--   `NoPicturesFoundException` soll geworfen werden, wenn in einem übergebenen Verzeichnis keine Bilddateien gefunden
-    werden konnten.
--   `NotAPrimeNumberException` soll geworfen werden, wenn eine vom User eingegebene Zahl keine Primzahl ist.
+-   `IntNotBetweenException` soll geworfen werden, wenn ein Integer-Parameter nicht
+    im definierten Wertebereich liegt.
+-   `NoPicturesFoundException` soll geworfen werden, wenn in einem übergebenen
+    Verzeichnis keine Bilddateien gefunden werden konnten.
+-   `NotAPrimeNumberException` soll geworfen werden, wenn eine vom User eingegebene
+    Zahl keine Primzahl ist.
 
 **Freigeben von Ressourcen**
 
 Im Package `finally_resources` finden Sie die Klasse `MyResource`.
 
-Rufen Sie die Methode `MyResource#doSomething` auf, im Anschluss müssen Sie **immer** die Methode `MyResource#close`
-aufrufen.
+Rufen Sie die Methode `MyResource#doSomething` auf, im Anschluss müssen Sie
+**immer** die Methode `MyResource#close` aufrufen.
 
 1.  Zeigen Sie den Aufruf mit `try-catch-finally`.
-2.  Verändern Sie die Vorgaben so, dass Sie den Aufruf mit der "try-with-resources"-Technik ausführen können.
+2.  Verändern Sie die Vorgaben so, dass Sie den Aufruf mit der
+    "try-with-resources"-Technik ausführen können.
 
 **Where to catch?**
 
 Erklären Sie, wann und wo eine Exception gefangen und bearbeitet werden sollte.
 
-Im Package `where_to_catch` finden Sie die Klasse `JustThrow`. Alle Methoden in der Klasse werfen aufkommende Exceptions
-bis zur `main` hoch.
+Im Package `where_to_catch` finden Sie die Klasse `JustThrow`. Alle Methoden in der
+Klasse werfen aufkommende Exceptions bis zur `main` hoch.
 
-Verändern Sie die Vorgaben so, dass die Exceptions an den passenden Stellen gefangen und sinnvoll bearbeitet werden.
-Begründen Sie Ihre Entscheidungen.
+Verändern Sie die Vorgaben so, dass die Exceptions an den passenden Stellen gefangen
+und sinnvoll bearbeitet werden. Begründen Sie Ihre Entscheidungen.
 :::

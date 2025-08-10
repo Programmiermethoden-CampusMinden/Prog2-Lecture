@@ -4,13 +4,14 @@ title: Generics und Polymorphie
 ---
 
 ::: tldr
-Auch mit generischen Klassen stehen die Mechanismen Vererbung und Überladen zur Verfügung. Dabei muss aber beachtet
-werden, dass generische Klassen sich **"invariant"** verhalten: Der Typ selbst folgt der Vererbungsbeziehung, eine
-Vererbung des Typ-Parameters begründet *keine* Vererbungsbeziehung! D.h. aus `U extends O` folgt **nicht**
-`A<U> extends A<O>`.
+Auch mit generischen Klassen stehen die Mechanismen Vererbung und Überladen zur
+Verfügung. Dabei muss aber beachtet werden, dass generische Klassen sich
+**"invariant"** verhalten: Der Typ selbst folgt der Vererbungsbeziehung, eine
+Vererbung des Typ-Parameters begründet *keine* Vererbungsbeziehung! D.h. aus
+`U extends O` folgt **nicht** `A<U> extends A<O>`.
 
-Bei Arrays ist es genau anders herum: Wenn `U extends O` dann gilt auch `U[] extends O[]` ... (Dies nennt man
-"*kovariantes*" Verhalten.)
+Bei Arrays ist es genau anders herum: Wenn `U extends O` dann gilt auch
+`U[] extends O[]` ... (Dies nennt man "*kovariantes*" Verhalten.)
 :::
 
 ::: youtube
@@ -49,8 +50,8 @@ Vector<String> vs = new Stack<String>();
 =\> Polymorphie bei Generics bezieht sich auf **Typ** (nicht Typ-Parameter)
 
 ::: notes
-**Invarianz**: Generics sind *invariant*, d.h. ein `HashSet<String>` ist ein Untertyp von `Set<String>`. Bei der
-Vererbung muss der Typ-Parameter identisch sein.
+**Invarianz**: Generics sind *invariant*, d.h. ein `HashSet<String>` ist ein
+Untertyp von `Set<String>`. Bei der Vererbung muss der Typ-Parameter identisch sein.
 :::
 
 # Polymorphie bei Generics bezieht sich nur auf Typ!
@@ -108,15 +109,16 @@ String[] y = x;  // String[] ist KEIN Object[]!!!
 href="https://openbook.rheinwerk-verlag.de/javainsel/11_002.html#u11.2.2"}
 
 ::: notes
-Arrays gab es sehr früh, Generics erst relativ spät (ab Java6) =\> bei Arrays fand man das Verhalten natürlich und
-pragmatisch (trotz der Laufzeit-Überprüfung).
+Arrays gab es sehr früh, Generics erst relativ spät (ab Java6) =\> bei Arrays fand
+man das Verhalten natürlich und pragmatisch (trotz der Laufzeit-Überprüfung).
 
-Bei der Einführung von Generics musste man Kompatibilität sicherstellen (alter Code soll auch mit neuen Compilern
-übersetzt werden können - obwohl im alten Code Raw-Types verwendet werden). Außerdem wollte man von Laufzeit-Prüfung hin
-zu Compiler-Prüfung. Da würde das von Arrays bekannte Verhalten Probleme machen ...
+Bei der Einführung von Generics musste man Kompatibilität sicherstellen (alter Code
+soll auch mit neuen Compilern übersetzt werden können - obwohl im alten Code
+Raw-Types verwendet werden). Außerdem wollte man von Laufzeit-Prüfung hin zu
+Compiler-Prüfung. Da würde das von Arrays bekannte Verhalten Probleme machen ...
 
-**Kovarianz**: Arrays sind *kovariant*, d.h. ein Array vom Typ `String[]` ist wegen `String extends Object` ein Untertyp
-von `Object[]`.
+**Kovarianz**: Arrays sind *kovariant*, d.h. ein Array vom Typ `String[]` ist wegen
+`String extends Object` ein Untertyp von `Object[]`.
 
 [Beispiel arrays.X]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/markdown/generics/src/arrays/X.java"}
@@ -136,8 +138,8 @@ Foo<String[]> y = new Foo<String[]>();  // OK :)
 ```
 
 ::: notes
-Arrays mit parametrisierten Klassen sind nicht erlaubt! Arrays brauchen zur Laufzeit Typinformationen, die aber durch
-die Typ-Löschung entfernt werden.
+Arrays mit parametrisierten Klassen sind nicht erlaubt! Arrays brauchen zur Laufzeit
+Typinformationen, die aber durch die Typ-Löschung entfernt werden.
 :::
 
 # Diskussion Vererbung vs. Generics
@@ -158,12 +160,13 @@ die Typ-Löschung entfernt werden.
 
 # Wrap-Up
 
--   Generics: Vererbung und Überladen möglich, aber: `\newline`{=tex} Aus "`U extends O`" folgt **nicht**
-    "`A<U> extends A<O>`"
+-   Generics: Vererbung und Überladen möglich, aber: `\newline`{=tex} Aus
+    "`U extends O`" folgt **nicht** "`A<U> extends A<O>`"
 
 \smallskip
 
--   Achtung: Bei Arrays gilt aber: Wenn "`U extends O`" dann gilt auch "`U[] extends O[]`" ...
+-   Achtung: Bei Arrays gilt aber: Wenn "`U extends O`" dann gilt auch
+    "`U[] extends O[]`" ...
 
 ::: readings
 -   @Ullenboom2021 [Kap. 11.5]

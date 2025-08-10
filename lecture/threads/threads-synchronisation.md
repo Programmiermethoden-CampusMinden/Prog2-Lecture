@@ -4,37 +4,48 @@ title: "Synchronisation: Verteilter Zugriff auf gemeinsame Ressourcen"
 ---
 
 ::: tldr
-Bei verteiltem Zugriff auf gemeinsame Ressourcen besteht Synchronisierungsbedarf, insbesondere sollten nicht mehrere
-Threads gleichzeitig geteilte Daten modifizieren. Dazu kommt das Problem, dass ein Thread in einer komplexen Folge von
-Aktionen die Zeitscheibe verlieren kann und dann später mit veralteten Daten weiter macht.
+Bei verteiltem Zugriff auf gemeinsame Ressourcen besteht Synchronisierungsbedarf,
+insbesondere sollten nicht mehrere Threads gleichzeitig geteilte Daten modifizieren.
+Dazu kommt das Problem, dass ein Thread in einer komplexen Folge von Aktionen die
+Zeitscheibe verlieren kann und dann später mit veralteten Daten weiter macht.
 
-Um den Zugriff auf gemeinsame Ressourcen oder den Eintritt in kritische Bereiche zu schützen und zu synchronisieren,
-kann man diese Zugriffe oder Bereiche in einen `synchronized`-Block legen. Dazu benötigt man noch ein beliebiges
-(gemeinsam sichtbares) Objekt, welches als Wächter- oder Sperr-Objekt fungiert. Beim Eintritt in den geschützten Block
-muss ein Thread einen Lock auf dem Sperr-Objekt erlangen. Hat bereits ein anderer Thread den Lock, wird der neue Thread
-so lange blockiert, bis der Lock wieder "frei" ist. Beim Eintritt in den Bereich wird dann durch den Thread auf dem
-Sperr-Objekt der Lock gesetzt und beim Austritt automatisch wieder aufgehoben. Dies nennt man auch **mehrseitige
-Synchronisierung** (mehrere Threads "stimmen" sich quasi untereinander über den Zugriff auf eine Ressource ab).
+Um den Zugriff auf gemeinsame Ressourcen oder den Eintritt in kritische Bereiche zu
+schützen und zu synchronisieren, kann man diese Zugriffe oder Bereiche in einen
+`synchronized`-Block legen. Dazu benötigt man noch ein beliebiges (gemeinsam
+sichtbares) Objekt, welches als Wächter- oder Sperr-Objekt fungiert. Beim Eintritt
+in den geschützten Block muss ein Thread einen Lock auf dem Sperr-Objekt erlangen.
+Hat bereits ein anderer Thread den Lock, wird der neue Thread so lange blockiert,
+bis der Lock wieder "frei" ist. Beim Eintritt in den Bereich wird dann durch den
+Thread auf dem Sperr-Objekt der Lock gesetzt und beim Austritt automatisch wieder
+aufgehoben. Dies nennt man auch **mehrseitige Synchronisierung** (mehrere Threads
+"stimmen" sich quasi untereinander über den Zugriff auf eine Ressource ab).
 
-Um auf den Eintritt eines Ereignisses oder die Erfüllung einer Bedingung zu warten, kann man `wait` und `notify` nutzen.
-In einem `synchronized`-Block prüft man, ob die Bedingung erfüllt oder ein Ereignis eingetreten ist, und falls ja
-arbeitet man damit normal weiter. Falls die Bedingung nicht erfüllt ist oder das Ereignis nicht eingetreten ist, kann
-man auf dem im `synchronized`-Block genutzten Sperr-Objekt die Methode `wait()` aufrufen. Damit wird der Thread in die
-entsprechende Schlange auf dem Sperr-Objekt eingereiht und blockiert. Zusätzlich wird der Lock auf dem Sperr-Objekt
-freigegeben. Zum "Aufwecken" nutzt man an geeigneter Stelle auf dem **selben Sperr-Objekt** die Methode `notify()` oder
-`notifyALl()` (erstere weckt einen in der Liste des Sperr-Objekts wartenden Thread, die letztere alle). Nach dem
-Aufwachen macht der Thread nach seinem `wait()` weiter. Es ist also wichtig, dass die Bedingung, wegen der ursprünglich
-das `wait()` aufgerufen wurde, erneut abgefragt wird und ggf. erneut in das `wait()` gegangen wird. Dies nennt man
+Um auf den Eintritt eines Ereignisses oder die Erfüllung einer Bedingung zu warten,
+kann man `wait` und `notify` nutzen. In einem `synchronized`-Block prüft man, ob die
+Bedingung erfüllt oder ein Ereignis eingetreten ist, und falls ja arbeitet man damit
+normal weiter. Falls die Bedingung nicht erfüllt ist oder das Ereignis nicht
+eingetreten ist, kann man auf dem im `synchronized`-Block genutzten Sperr-Objekt die
+Methode `wait()` aufrufen. Damit wird der Thread in die entsprechende Schlange auf
+dem Sperr-Objekt eingereiht und blockiert. Zusätzlich wird der Lock auf dem
+Sperr-Objekt freigegeben. Zum "Aufwecken" nutzt man an geeigneter Stelle auf dem
+**selben Sperr-Objekt** die Methode `notify()` oder `notifyALl()` (erstere weckt
+einen in der Liste des Sperr-Objekts wartenden Thread, die letztere alle). Nach dem
+Aufwachen macht der Thread nach seinem `wait()` weiter. Es ist also wichtig, dass
+die Bedingung, wegen der ursprünglich das `wait()` aufgerufen wurde, erneut
+abgefragt wird und ggf. erneut in das `wait()` gegangen wird. Dies nennt man
 **einseitige Synchronisierung**.
 
-Es gibt darüber hinaus viele weitere Mechanismen und Probleme, die aber den Rahmen dieser Lehrveranstaltung deutlich
-übersteigen. Diese werden teilweise in den Veranstaltungen "Betriebssysteme" und/oder "Verteilte Systeme" besprochen.
+Es gibt darüber hinaus viele weitere Mechanismen und Probleme, die aber den Rahmen
+dieser Lehrveranstaltung deutlich übersteigen. Diese werden teilweise in den
+Veranstaltungen "Betriebssysteme" und/oder "Verteilte Systeme" besprochen.
 :::
 
 ::: youtube
 -   [VL Threads Synchronisation](https://youtu.be/FtVaobn4NqA)
--   [Demo Teaser: Falscher Zugriff auf gemeinsame Ressourcen](https://youtu.be/SB1ngVkQdLM)
--   [Demo Mehrseitige Synchronisation (Sperr-Objekt, synchronisierte Methode)](https://youtu.be/YTV-oT-vmpE)
+-   [Demo Teaser: Falscher Zugriff auf gemeinsame
+    Ressourcen](https://youtu.be/SB1ngVkQdLM)
+-   [Demo Mehrseitige Synchronisation (Sperr-Objekt, synchronisierte
+    Methode)](https://youtu.be/YTV-oT-vmpE)
 -   [Demo Mehrseitige Synchronisation: Deadlock](https://youtu.be/D4B5xHqCZ-0)
 -   [Demo Einseitige Synchronisation](https://youtu.be/akCl01ZAaGo)
 :::
@@ -89,16 +100,17 @@ Fallunterscheidung: Thread T1 führt `synchronized`-Anweisung aus:
     2.  löst Sperre beim Verlassen **nicht**
 -   Sperre durch T2 gesetzt: =\> T1 wird blockiert, bis T2 die Sperre löst
 
-*Anmerkung*: Das für die Synchronisierung genutzte Objekt nennt man "Wächter-Objekt" oder auch "Sperr-Objekt" oder auch
-"Synchronisations-Objekt".
+*Anmerkung*: Das für die Synchronisierung genutzte Objekt nennt man "Wächter-Objekt"
+oder auch "Sperr-Objekt" oder auch "Synchronisations-Objekt".
 :::
 
 \pause
 \bigskip
 
 ::: notes
-Damit könnte man den relevanten Teil der Methode `incrVal()` beispielsweise in einen geschützten Bereich einschließen
-und als Sperr-Objekt das eigene Objekt (`this`) einsetzen:
+Damit könnte man den relevanten Teil der Methode `incrVal()` beispielsweise in einen
+geschützten Bereich einschließen und als Sperr-Objekt das eigene Objekt (`this`)
+einsetzen:
 :::
 
 ``` java
@@ -146,7 +158,8 @@ synchronized void f() {
 :::::::
 
 ::: notes
-Kurzschreibweise: Man spart das separate Wächter-Objekt und synchronisiert auf sich selbst ...
+Kurzschreibweise: Man spart das separate Wächter-Objekt und synchronisiert auf sich
+selbst ...
 :::
 
 \pause
@@ -188,20 +201,24 @@ public class Deadlock {
 ```
 
 ::: notes
-Viel hilft hier nicht viel! Durch zu großzügige mehrseitige Synchronisierung kann es passieren, dass Threads gegenseitig
-aufeinander warten: Thread A belegt eine Ressource, die ein anderer Thread B haben möchte und Thread B belegt eine
-Ressource, die A gerne bekommen würde. Da es dann nicht weitergeht, nennt man diese Situation auch "Deadlock"
-("Verklemmung").
+Viel hilft hier nicht viel! Durch zu großzügige mehrseitige Synchronisierung kann es
+passieren, dass Threads gegenseitig aufeinander warten: Thread A belegt eine
+Ressource, die ein anderer Thread B haben möchte und Thread B belegt eine Ressource,
+die A gerne bekommen würde. Da es dann nicht weitergeht, nennt man diese Situation
+auch "Deadlock" ("Verklemmung").
 
-Im Beispiel ruft der erste Thread für das Objekt `a` die `foo()`-Methode auf und holt sich damit den Lock auf `a`. Um
-die Methode beenden zu können, muss noch die `getName()`-Methode vom Objekt `b` durch diesen ersten Thread aufgerufen
-werden. Dafür muss der erste Thread den Lock auf `b` bekommen.
+Im Beispiel ruft der erste Thread für das Objekt `a` die `foo()`-Methode auf und
+holt sich damit den Lock auf `a`. Um die Methode beenden zu können, muss noch die
+`getName()`-Methode vom Objekt `b` durch diesen ersten Thread aufgerufen werden.
+Dafür muss der erste Thread den Lock auf `b` bekommen.
 
-Dummerweise hat parallel der zweite Thread auf dem Objekt `b` die `foo()`-Methode aufgerufen und sich damit den Lock auf
-`b` geholt. Damit muss der erste Thread so lange warten, bis der zweite Thread den Lock auf `b` freigibt.
+Dummerweise hat parallel der zweite Thread auf dem Objekt `b` die `foo()`-Methode
+aufgerufen und sich damit den Lock auf `b` geholt. Damit muss der erste Thread so
+lange warten, bis der zweite Thread den Lock auf `b` freigibt.
 
-Das wird allerdings nicht passieren, da der zweite Thread zur Beendigung der `foo()`-Methode noch `getName()` auf `a`
-ausführen muss und dazu den Lock auf `b` holen, den aber aktuell der erste Thread hält.
+Das wird allerdings nicht passieren, da der zweite Thread zur Beendigung der
+`foo()`-Methode noch `getName()` auf `a` ausführen muss und dazu den Lock auf `b`
+holen, den aber aktuell der erste Thread hält.
 
 Und schon geht's nicht mehr weiter :-)
 :::
@@ -277,11 +294,13 @@ href="https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master
 ::: notes
 ## Eigenschaften von *notify* bzw. *notifyAll*
 
--   Thread ruft auf einem Synchronisations-Objekt die Methode `notify` oder `notifyAll` auf
+-   Thread ruft auf einem Synchronisations-Objekt die Methode `notify` oder
+    `notifyAll` auf
 -   Falls Thread(s) in Warteschlange des Objekts vorhanden, dann
-    -   `notify`: Ein *zufälliger* Thread wird aus Warteschlange entfernt und in den Zustand "ausführungsbereit"
-        versetzt
-    -   `notifyAll`: Alle Threads werden aus Warteschlange entfernt und in den Zustand "ausführungsbereit" versetzt
+    -   `notify`: Ein *zufälliger* Thread wird aus Warteschlange entfernt und in den
+        Zustand "ausführungsbereit" versetzt
+    -   `notifyAll`: Alle Threads werden aus Warteschlange entfernt und in den
+        Zustand "ausführungsbereit" versetzt
 
 =\> Geht nur innerhalb der `synchronized`-Anweisung für das Synchronisations-Objekt!
 :::
@@ -296,12 +315,13 @@ Synchronisierungsbedarf bei verteiltem Zugriff auf gemeinsame Ressourcen:
 \bigskip
 \smallskip
 
--   Vorsicht mit konkurrierendem Ressourcenzugriff: `\newline`{=tex} Synchronisieren mit `synchronized` =\>
-    **Mehrseitige Synchronisierung**
+-   Vorsicht mit konkurrierendem Ressourcenzugriff: `\newline`{=tex} Synchronisieren
+    mit `synchronized` =\> **Mehrseitige Synchronisierung**
 
 \smallskip
 
--   Warten auf Ereignisse mit `wait` und `notify`/`notifyAll` =\> **Einseitige Synchronisierung**
+-   Warten auf Ereignisse mit `wait` und `notify`/`notifyAll` =\> **Einseitige
+    Synchronisierung**
 
 ::: readings
 -   @Java-SE-Tutorial
@@ -326,26 +346,33 @@ finden Sie eine Modellierung für ein Bankensystem.
 
 Erweitern Sie die Vorgaben um Multithreading.
 
-Erweitern Sie die Klasse `Kunde` so, dass sie in einem eigenen Thread ausgeführt werden kann. In der `run()`-Methode
-soll der `Kunde` eine `Rechnung` aus der Queue `offeneRechnungen` herausnehmen und sie bezahlen. Nutzen Sie dafür die
-statische Methode `Bank#ueberweisen`. Ist die Queue leer, soll der Thread so lange warten, bis eine neue Rechnung
-eingegangen ist. Nutzen Sie dafür einseitige Synchronisation.
+Erweitern Sie die Klasse `Kunde` so, dass sie in einem eigenen Thread ausgeführt
+werden kann. In der `run()`-Methode soll der `Kunde` eine `Rechnung` aus der Queue
+`offeneRechnungen` herausnehmen und sie bezahlen. Nutzen Sie dafür die statische
+Methode `Bank#ueberweisen`. Ist die Queue leer, soll der Thread so lange warten, bis
+eine neue Rechnung eingegangen ist. Nutzen Sie dafür einseitige Synchronisation.
 
-Erweitern Sie die Klasse `Transaktion` so, dass sie in einem eigenen Thread ausgeführt werden kann. In der
-`run()`-Methode soll die `Transaktion` ausgeführt werden. Dabei soll vom Konto `von` der in der Rechnung hinterlegte
-Betrag abgezogen werden. Nutzen Sie dafür die Methode `Konto#sendeGeld`. Wenn das Geld erfolgreich abgezogen worden ist,
-soll das Geld auf das Empfängerkonto überwiesen werden. Nutzen Sie dafür die Methode `Konto#empfangeGeld`. Verwenden Sie
-mehrseitige Synchronisation.
+Erweitern Sie die Klasse `Transaktion` so, dass sie in einem eigenen Thread
+ausgeführt werden kann. In der `run()`-Methode soll die `Transaktion` ausgeführt
+werden. Dabei soll vom Konto `von` der in der Rechnung hinterlegte Betrag abgezogen
+werden. Nutzen Sie dafür die Methode `Konto#sendeGeld`. Wenn das Geld erfolgreich
+abgezogen worden ist, soll das Geld auf das Empfängerkonto überwiesen werden. Nutzen
+Sie dafür die Methode `Konto#empfangeGeld`. Verwenden Sie mehrseitige
+Synchronisation.
 
-Passen Sie die Methode `Bank#ueberweisen` so an, dass diese einen `Transaktion`-Thread erstellt und startet. Verwenden
-Sie dafür eine passende Struktur und setzen Sie die Executor-API ein.
+Passen Sie die Methode `Bank#ueberweisen` so an, dass diese einen
+`Transaktion`-Thread erstellt und startet. Verwenden Sie dafür eine passende
+Struktur und setzen Sie die Executor-API ein.
 
-Implementieren Sie die Klasse `Geldeintreiber`. Diese bekommt einen `Kunden` als Auftraggeber und eine Liste mit
-weiteren Kunden als Rechnungsempfänger übergeben. Implementieren Sie den `Geldeintreber` so, dass dieser in einem
-eigenen Thread ausgeführt werden kann. In der `run()`-Methode soll der `Geldeintreiber` eine Rechnung generieren und an
-einen der `Kunden` in der Liste schicken. Verwenden Sie dafür die Methode `Kunde#empfangeRechnung`. Das Ziel-`Konto` der
-`Rechnung` soll das `Konto` des Auftraggebers sein. Der `Geldeintreiber` macht nach jeder versendeten Rechnung fünf
-Sekunden Pause.
+Implementieren Sie die Klasse `Geldeintreiber`. Diese bekommt einen `Kunden` als
+Auftraggeber und eine Liste mit weiteren Kunden als Rechnungsempfänger übergeben.
+Implementieren Sie den `Geldeintreber` so, dass dieser in einem eigenen Thread
+ausgeführt werden kann. In der `run()`-Methode soll der `Geldeintreiber` eine
+Rechnung generieren und an einen der `Kunden` in der Liste schicken. Verwenden Sie
+dafür die Methode `Kunde#empfangeRechnung`. Das Ziel-`Konto` der `Rechnung` soll das
+`Konto` des Auftraggebers sein. Der `Geldeintreiber` macht nach jeder versendeten
+Rechnung fünf Sekunden Pause.
 
-**Hinweis**: Achten Sie darauf, nur die nötigsten Ressourcen zu blockieren und auch nur so lange wie unbedingt nötig.
+**Hinweis**: Achten Sie darauf, nur die nötigsten Ressourcen zu blockieren und auch
+nur so lange wie unbedingt nötig.
 :::

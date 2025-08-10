@@ -4,25 +4,32 @@ title: "Testfallermittlung: Wie viel und was muss man testen?"
 ---
 
 ::: tldr
-Mit Hilfe der Äquivalenzklassenbildung kann man Testfälle bestimmen. Dabei wird der Eingabebereich für jeden Parameter
-einer Methode in Bereiche mit gleichem Verhalten der Methode eingeteilt (die sogenannten "Äquivalenzklassen"). Dabei
-können einige Äquivalenzklassen (ÄK) gültigen Eingabebereichen entsprechen ("gültige ÄK"), also erlaubten/erwarteten
-Eingaben (die zum gewünschten Verhalten führen), und die restlichen ÄK entsprechen dann ungültigen Eingabebereichen
-("ungültige ÄK"), also nicht erlaubten Eingaben, die von der Methode zurückgewiesen werden sollten. Jede dieser ÄK muss
-in mindestens einem Testfall vorkommen, d.h. man bestimmt einen oder mehrere zufällige Werte in den ÄK. Dabei können
-über mehrere Parameter hinweg verschiedene gültige ÄK in einem Testfall kombiniert werden. Bei den ungültigen ÄK kann
-dagegen immer nur ein Parameter eine ungültige ÄK haben, für die restlichen Parameter müssen gültige ÄK genutzt werden,
-und diese werden dabei als durch diesen Testfall "nicht getestet" betrachtet.
+Mit Hilfe der Äquivalenzklassenbildung kann man Testfälle bestimmen. Dabei wird der
+Eingabebereich für jeden Parameter einer Methode in Bereiche mit gleichem Verhalten
+der Methode eingeteilt (die sogenannten "Äquivalenzklassen"). Dabei können einige
+Äquivalenzklassen (ÄK) gültigen Eingabebereichen entsprechen ("gültige ÄK"), also
+erlaubten/erwarteten Eingaben (die zum gewünschten Verhalten führen), und die
+restlichen ÄK entsprechen dann ungültigen Eingabebereichen ("ungültige ÄK"), also
+nicht erlaubten Eingaben, die von der Methode zurückgewiesen werden sollten. Jede
+dieser ÄK muss in mindestens einem Testfall vorkommen, d.h. man bestimmt einen oder
+mehrere zufällige Werte in den ÄK. Dabei können über mehrere Parameter hinweg
+verschiedene gültige ÄK in einem Testfall kombiniert werden. Bei den ungültigen ÄK
+kann dagegen immer nur ein Parameter eine ungültige ÄK haben, für die restlichen
+Parameter müssen gültige ÄK genutzt werden, und diese werden dabei als durch diesen
+Testfall "nicht getestet" betrachtet.
 
-Zusätzlich entstehen häufig Fehler bei den Grenzen der Bereiche, etwa in Schleifen. Deshalb führt man zusätzlich noch
-eine Grenzwertanalyse durch und bestimmt für jede ÄK den unteren und den oberen Grenzwert und erzeugt aus diesen Werten
-zusätzliche Testfälle.
+Zusätzlich entstehen häufig Fehler bei den Grenzen der Bereiche, etwa in Schleifen.
+Deshalb führt man zusätzlich noch eine Grenzwertanalyse durch und bestimmt für jede
+ÄK den unteren und den oberen Grenzwert und erzeugt aus diesen Werten zusätzliche
+Testfälle.
 
-Wenn in der getesteten Methode der Zustand des Objekts eine Rolle spielt, wird dieser wie ein weiterer Eingabeparameter
-für die Methode betrachtet und entsprechend in die ÄK-Bildung bzw. GW-Analyse einbezogen.
+Wenn in der getesteten Methode der Zustand des Objekts eine Rolle spielt, wird
+dieser wie ein weiterer Eingabeparameter für die Methode betrachtet und entsprechend
+in die ÄK-Bildung bzw. GW-Analyse einbezogen.
 
-Wenn ein Testfall sich aus den gültigen ÄK/GW speist, spricht man auch von einem "Positiv-Test"; wenn ungültige ÄK/GW
-genutzt werden, spricht man auch von einem "Negativ-Test".
+Wenn ein Testfall sich aus den gültigen ÄK/GW speist, spricht man auch von einem
+"Positiv-Test"; wenn ungültige ÄK/GW genutzt werden, spricht man auch von einem
+"Negativ-Test".
 :::
 
 ::: youtube
@@ -62,10 +69,11 @@ public class Studi {
 ## Praxis
 
 -   Je kritischer eine Klasse/Methode/Artefakt ist, um so intensiver testen!
--   Suche nach Kompromissen: Testkosten vs. Kosten von Folgefehlern; beispielsweise kein Test generierter Methoden
+-   Suche nach Kompromissen: Testkosten vs. Kosten von Folgefehlern; beispielsweise
+    kein Test generierter Methoden
 
-=\> "Erzeugen" der Testfälle über die Äquivalenzklassenbildung und Grenzwertanalyse (siehe nächste Folien). Mehr dann
-später im Wahlfach "Softwarequalität" ...
+=\> "Erzeugen" der Testfälle über die Äquivalenzklassenbildung und Grenzwertanalyse
+(siehe nächste Folien). Mehr dann später im Wahlfach "Softwarequalität" ...
 :::
 
 # Äquivalenzklassenbildung
@@ -92,39 +100,45 @@ Beispiel: Zu testende Methode mit Eingabewert *x*, der zw. 10 und 100 liegen sol
 ::: notes
 ## Bemerkungen
 
-Hintergrund: Da die Werte einer ÄK zu gleichartigem Verhalten führen, ist es egal, *welchen* Wert man aus einer ÄK für
-den Test nimmt.
+Hintergrund: Da die Werte einer ÄK zu gleichartigem Verhalten führen, ist es egal,
+*welchen* Wert man aus einer ÄK für den Test nimmt.
 
-Formal hat man *eine* ungültige ÄK (d.h. die Menge aller ungültigen Werte). In der Programmierpraxis macht es aber einen
-Unterschied, ob es sich um Werte unterhalb oder oberhalb des erlaubten Wertebereichs handelt (Fallunterscheidung).
-Beispiel: Eine Funktion soll Werte zwischen 10 und 100 verarbeiten. Dann sind alle Werte kleiner 10 oder größer 100
-mathematisch gesehen in der selben ÄK "ungültig". Praktisch macht es aber Sinn, eine ungültige ÄK für "kleiner 10" und
-eine weitere ungültige ÄK für "größer 100" zu betrachten ...
+Formal hat man *eine* ungültige ÄK (d.h. die Menge aller ungültigen Werte). In der
+Programmierpraxis macht es aber einen Unterschied, ob es sich um Werte unterhalb
+oder oberhalb des erlaubten Wertebereichs handelt (Fallunterscheidung). Beispiel:
+Eine Funktion soll Werte zwischen 10 und 100 verarbeiten. Dann sind alle Werte
+kleiner 10 oder größer 100 mathematisch gesehen in der selben ÄK "ungültig".
+Praktisch macht es aber Sinn, eine ungültige ÄK für "kleiner 10" und eine weitere
+ungültige ÄK für "größer 100" zu betrachten ...
 
-Traditionell betrachtet man nur die Eingabeparameter. Es kann aber Sinn machen, auch die Ausgabeseite zu berücksichtigen
-(ist aber u.U. nur schwierig zu realisieren).
+Traditionell betrachtet man nur die Eingabeparameter. Es kann aber Sinn machen, auch
+die Ausgabeseite zu berücksichtigen (ist aber u.U. nur schwierig zu realisieren).
 
 ## Faustregeln bei der Bildung von ÄK
 
--   Falls eine Beschränkung einen Wertebereich spezifiziert: Aufteilung in eine gültige und zwei ungültige ÄK
+-   Falls eine Beschränkung einen Wertebereich spezifiziert: Aufteilung in eine
+    gültige und zwei ungültige ÄK
 
     Beispiel: Eingabewert *x* soll zw. 10 und 100 liegen
 
     -   Gültige ÄK: $[10, 100]$
     -   Ungültige ÄKs: $x < 10$ und $100 < x$
 
--   Falls eine Beschränkung eine minimale und maximale Anzahl von Werten spezifiziert: Aufteilung in eine gültige und
-    zwei ungültige ÄK
+-   Falls eine Beschränkung eine minimale und maximale Anzahl von Werten
+    spezifiziert: Aufteilung in eine gültige und zwei ungültige ÄK
 
-    Beispiel: Jeder Studi muss pro Semester an mindestens einer LV teilnehmen, maximal sind 5 LVs erlaubt.
+    Beispiel: Jeder Studi muss pro Semester an mindestens einer LV teilnehmen,
+    maximal sind 5 LVs erlaubt.
 
     -   Gültige ÄK: $1 \le x \le 5$
     -   Ungültige ÄKs: $x = 0$ (keine Teilnahme) und $5 < x$ (mehr als 5 Kurse)
 
--   Falls eine Beschränkung eine Menge von Werten spezifiziert, die möglicherweise unterschiedlich behandelt werden: Für
-    jeden Wert dieser Menge eine eigene gültige ÄK erstellen und zusätzlich insgesamt eine ungültige ÄK
+-   Falls eine Beschränkung eine Menge von Werten spezifiziert, die möglicherweise
+    unterschiedlich behandelt werden: Für jeden Wert dieser Menge eine eigene
+    gültige ÄK erstellen und zusätzlich insgesamt eine ungültige ÄK
 
-    Beispiel: Das Hotel am Urlaubsort ermöglicht verschiedene Freizeitaktivitäten: Segway-fahren, Tauchen, Tennis, Golf
+    Beispiel: Das Hotel am Urlaubsort ermöglicht verschiedene Freizeitaktivitäten:
+    Segway-fahren, Tauchen, Tennis, Golf
 
     -   Gültige ÄKs:
         -   Segway-fahren
@@ -133,14 +147,16 @@ Traditionell betrachtet man nur die Eingabeparameter. Es kann aber Sinn machen, 
         -   Golf
     -   Ungültige ÄK: "alles andere"
 
--   Falls eine Beschränkung eine Situation spezifiziert, die zwingend erfüllt sein muss: Aufteilung in eine gültige und
-    eine ungültige ÄK
+-   Falls eine Beschränkung eine Situation spezifiziert, die zwingend erfüllt sein
+    muss: Aufteilung in eine gültige und eine ungültige ÄK
 
-*Hinweis*: Werden Werte einer ÄK vermutlich nicht gleichwertig behandelt, dann erfolgt die Aufspaltung der ÄK in
-kleinere ÄKs. Das ist im Grunde die analoge Überlegung zu mehreren ungültigen ÄKs.
+*Hinweis*: Werden Werte einer ÄK vermutlich nicht gleichwertig behandelt, dann
+erfolgt die Aufspaltung der ÄK in kleinere ÄKs. Das ist im Grunde die analoge
+Überlegung zu mehreren ungültigen ÄKs.
 
-ÄKs sollten für die weitere Arbeit einheitlich und eindeutig benannt werden. Typisches Namensschema: "gÄKn" und "uÄKn"
-für gültige bzw. ungültige ÄKs mit der laufenden Nummer $n$.
+ÄKs sollten für die weitere Arbeit einheitlich und eindeutig benannt werden.
+Typisches Namensschema: "gÄKn" und "uÄKn" für gültige bzw. ungültige ÄKs mit der
+laufenden Nummer $n$.
 :::
 
 # ÄK: Erstellung der Testfälle
@@ -151,21 +167,25 @@ für gültige bzw. ungültige ÄKs mit der laufenden Nummer $n$.
 
 -   Dabei pro Testfall
     -   *mehrere gültige ÄKs* kombinieren, oder
-    -   genau *eine ungültige ÄK* untersuchen [(restl. Werte aus gültigen ÄK auffüllen; diese gelten dann aber nicht als
-        getestet!)]{.notes}
+    -   genau *eine ungültige ÄK* untersuchen [(restl. Werte aus gültigen ÄK
+        auffüllen; diese gelten dann aber nicht als getestet!)]{.notes}
 
 ::: notes
-Im Prinzip muss man zur Erstellung der Testfälle (TF) eine paarweise vollständige Kombination über die ÄK bilden, d.h.
-jede ÄK kommt mit jeder anderen ÄK in einem TF zur Ausführung.
+Im Prinzip muss man zur Erstellung der Testfälle (TF) eine paarweise vollständige
+Kombination über die ÄK bilden, d.h. jede ÄK kommt mit jeder anderen ÄK in einem TF
+zur Ausführung.
 
-*Erinnerung*: Annahme: Eingabeparameter sind untereinander unabhängig! =\> Es reicht, wenn *jede* gültige ÄK *einmal* in
-einem TF zur Ausführung kommt. =\> Kombination verschiedener gültiger ÄK in *einem TF*.
+*Erinnerung*: Annahme: Eingabeparameter sind untereinander unabhängig! =\> Es
+reicht, wenn *jede* gültige ÄK *einmal* in einem TF zur Ausführung kommt. =\>
+Kombination verschiedener gültiger ÄK in *einem TF*.
 
-**Achtung**: Dies gilt nur für die **gültigen** ÄK! Bei den ungültigen ÄKs dürfen diese nicht miteinander in einem TF
-kombiniert werden! Bei gleichzeitiger Behandlung verschiedener ungültiger ÄK bleiben u.U. Fehler unentdeckt, da sich die
-Wirkungen der ungültigen ÄK überlagern!
+**Achtung**: Dies gilt nur für die **gültigen** ÄK! Bei den ungültigen ÄKs dürfen
+diese nicht miteinander in einem TF kombiniert werden! Bei gleichzeitiger Behandlung
+verschiedener ungültiger ÄK bleiben u.U. Fehler unentdeckt, da sich die Wirkungen
+der ungültigen ÄK überlagern!
 
-**Für jeden Testfall (TF) wird aus den zu kombinierenden ÄK ein zufälliger Repräsentant ausgewählt.**
+**Für jeden Testfall (TF) wird aus den zu kombinierenden ÄK ein zufälliger
+Repräsentant ausgewählt.**
 :::
 
 # ÄK: Beispiel: Eingabewert *x* soll zw. 10 und 100 liegen
@@ -201,7 +221,8 @@ Beobachtung: Grenzen in Verzweigungen/Schleifen kritisch
     -   "ungültige Grenzwerte" (*uGW*): Grenzwerte von ungültigen ÄK
 
 ::: notes
-Zusätzlich sinnvoll: Weitere grenznahe Werte, d.h. weitere Werte "rechts" und "links" der Grenze nutzen.
+Zusätzlich sinnvoll: Weitere grenznahe Werte, d.h. weitere Werte "rechts" und
+"links" der Grenze nutzen.
 
 Bildung der Testfälle:
 :::
@@ -209,8 +230,9 @@ Bildung der Testfälle:
 -   Jeder GW muss in mind. einem TF vorkommen
 
 ::: notes
-**Pro TF darf ein GW (gültig oder ungültig) verwendet werden, die restlichen Parameter werden (mit zufälligen Werten)
-aus gültigen ÄK aufgefüllt, um mögliche Grenzwertprobleme nicht zu überlagern.**
+**Pro TF darf ein GW (gültig oder ungültig) verwendet werden, die restlichen
+Parameter werden (mit zufälligen Werten) aus gültigen ÄK aufgefüllt, um mögliche
+Grenzwertprobleme nicht zu überlagern.**
 :::
 
 [[Beispiel: Eingabeparameter x zw. 10 und 100]{.ex}]{.slides}
@@ -226,7 +248,8 @@ aus gültigen ÄK aufgefüllt, um mögliche Grenzwertprobleme nicht zu überlage
 
 ## Grenzwertanalyse
 
-[Zusätzliche Testdaten:]{.notes} 9 (uÄK2o) und 10 (gÄK1u) sowie 100 (gÄK1o) und 101 (uÄK3u)
+[Zusätzliche Testdaten:]{.notes} 9 (uÄK2o) und 10 (gÄK1u) sowie 100 (gÄK1o) und 101
+(uÄK3u)
 
 \pause
 
@@ -239,8 +262,9 @@ aus gültigen ÄK aufgefüllt, um mögliche Grenzwertprobleme nicht zu überlage
 | Erwartetes Ergebnis | OK    | OK    | Exception | Exception |
 
 ::: notes
-**Hinweis**: Die Ergebnisse der GW-Analyse werden **zusätzlich** zu den Werten aus der ÄK-Analyse eingesetzt. Für das
-obige Beispiel würde man also folgende Tests aus der kombinierten ÄK- und GW-Analyse erhalten:
+**Hinweis**: Die Ergebnisse der GW-Analyse werden **zusätzlich** zu den Werten aus
+der ÄK-Analyse eingesetzt. Für das obige Beispiel würde man also folgende Tests aus
+der kombinierten ÄK- und GW-Analyse erhalten:
 
 | Testnummer          | 1    | 2         | 3         | 4     | 5     | 6         | 7         |
 |:--------------------|:-----|:----------|:----------|:------|:------|:----------|:----------|
@@ -252,16 +276,20 @@ obige Beispiel würde man also folgende Tests aus der kombinierten ÄK- und GW-A
 ::: notes
 # Anmerkung: Analyse abhängiger Parameter
 
-Wenn das Ergebnis von der Kombination der Eingabewerte abhängt, dann sollte man dies bei der Äquivalenzklassenbildung
-berücksichtigen: Die ÄK sind in diesem Fall in Bezug auf die Kombinationen zu bilden!
+Wenn das Ergebnis von der Kombination der Eingabewerte abhängt, dann sollte man dies
+bei der Äquivalenzklassenbildung berücksichtigen: Die ÄK sind in diesem Fall in
+Bezug auf die Kombinationen zu bilden!
 
-Schauen Sie sich dazu das Beispiel im @Kleuker2019, Abschnitt "4.3 Analyse abhängiger Parameter" an.
+Schauen Sie sich dazu das Beispiel im @Kleuker2019, Abschnitt "4.3 Analyse
+abhängiger Parameter" an.
 
-Die einfache ÄK-Bildung würde in diesem Fall versagen, da die Eingabewerte nicht unabhängig sind. Leider ist die
-Betrachtung der möglichen Kombinationen u.U. eine sehr komplexe Aufgabe ...
+Die einfache ÄK-Bildung würde in diesem Fall versagen, da die Eingabewerte nicht
+unabhängig sind. Leider ist die Betrachtung der möglichen Kombinationen u.U. eine
+sehr komplexe Aufgabe ...
 
-Analoge Überlegungen gelten auch für die ÄK-Bildung im Zusammenhang mit objektorientierter Programmierung. Die
-Eingabewerte und der Objektzustand müssen dann *gemeinsam* bei der ÄK-Bildung betrachtet werden!
+Analoge Überlegungen gelten auch für die ÄK-Bildung im Zusammenhang mit
+objektorientierter Programmierung. Die Eingabewerte und der Objektzustand müssen
+dann *gemeinsam* bei der ÄK-Bildung betrachtet werden!
 
 Vergleiche @Kleuker2019, Abschnitt "4.4 Äquivalenzklassen und Objektorientierung".
 :::
@@ -283,16 +311,19 @@ Vergleiche @Kleuker2019, Abschnitt "4.4 Äquivalenzklassen und Objektorientierun
 ::: outcomes
 -   k2: Merkmale schlecht testbaren Codes erklären
 -   k2: Merkmale guter Unit-Tests erklären
--   k3: Erstellen von Testfällen mittels Äquivalenzklassenbildung und Grenzwertanalyse
+-   k3: Erstellen von Testfällen mittels Äquivalenzklassenbildung und
+    Grenzwertanalyse
 :::
 
 ::: quizzes
--   [Quiz Testfallermittlung (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106546&client_id=FH-Bielefeld)
+-   [Quiz Testfallermittlung
+    (ILIAS)](https://www.hsbi.de/elearning/goto.php?target=tst_1106546&client_id=FH-Bielefeld)
 :::
 
 ::: challenges
-Der RSV Flotte Speiche hat in seiner Mitgliederverwaltung (`MitgliederVerwaltung`) die Methode `testBeitritt`
-implementiert. Mit dieser Methode wird geprüft, ob neue Mitglieder in den Radsportverein aufgenommen werden können.
+Der RSV Flotte Speiche hat in seiner Mitgliederverwaltung (`MitgliederVerwaltung`)
+die Methode `testBeitritt` implementiert. Mit dieser Methode wird geprüft, ob neue
+Mitglieder in den Radsportverein aufgenommen werden können.
 
 ``` java
 public class MitgliederVerwaltung {
@@ -316,17 +347,22 @@ public class MitgliederVerwaltung {
 }
 ```
 
-1.  Führen Sie eine Äquivalenzklassenbildung durch und geben Sie die gefundenen Äquivalenzklassen (*ÄK*) an: laufende
-    Nummer, Definition (Wertebereiche o.ä.), kurze Beschreibung (gültige/ungültige ÄK, Bedeutung).
+1.  Führen Sie eine Äquivalenzklassenbildung durch und geben Sie die gefundenen
+    Äquivalenzklassen (*ÄK*) an: laufende Nummer, Definition (Wertebereiche o.ä.),
+    kurze Beschreibung (gültige/ungültige ÄK, Bedeutung).
 
-2.  Führen Sie zusätzlich eine Grenzwertanalyse durch und geben Sie die jeweiligen Grenzwerte (*GW*) an.
+2.  Führen Sie zusätzlich eine Grenzwertanalyse durch und geben Sie die jeweiligen
+    Grenzwerte (*GW*) an.
 
-3.  Erstellen Sie aus den ÄK und GW wie in der Vorlesung diskutiert Testfälle. Geben Sie pro Testfall (*TF*) an, welche
-    ÄK und/oder GW abgedeckt sind, welche Eingaben Sie vorsehen und welche Ausgabe Sie erwarten.
+3.  Erstellen Sie aus den ÄK und GW wie in der Vorlesung diskutiert Testfälle. Geben
+    Sie pro Testfall (*TF*) an, welche ÄK und/oder GW abgedeckt sind, welche
+    Eingaben Sie vorsehen und welche Ausgabe Sie erwarten.
 
-    *Hinweis*: Erstellen Sie separate (zusätzliche) TF für die GW, d.h. integrieren Sie diese *nicht* in die ÄK-TF.
+    *Hinweis*: Erstellen Sie separate (zusätzliche) TF für die GW, d.h. integrieren
+    Sie diese *nicht* in die ÄK-TF.
 
-4.  Implementieren Sie die Testfälle in JUnit (JUnit 4 oder 5). Fassen Sie die Testfälle der gültigen ÄK in einem
-    parametrisierten Test zusammen. Für die ungültigen ÄKs erstellen Sie jeweils eine eigene JUnit-Testmethode. Beachten
+4.  Implementieren Sie die Testfälle in JUnit (JUnit 4 oder 5). Fassen Sie die
+    Testfälle der gültigen ÄK in einem parametrisierten Test zusammen. Für die
+    ungültigen ÄKs erstellen Sie jeweils eine eigene JUnit-Testmethode. Beachten
     Sie, dass Sie auch die Exceptions testen müssen.
 :::
