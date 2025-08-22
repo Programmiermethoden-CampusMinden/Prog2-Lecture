@@ -100,7 +100,7 @@ SW-Entwicklung zu diesem Thema zu Wort kommen - eine sehr lesenswerte Lektüre!
 > Any fool can write code that a computer can understand. Good programmers write
 > code that humans can understand.
 >
-> `\hfill`{=tex} ["*Any fool...*": [@Fowler2011, p. 15]]{.origin}
+> `\hfill`{=tex} ["*Any fool...*": [@Fowler2011, p. 15]]{.credits}
 
 ::: notes
 Auch wenn das zunächst seltsam klingt, aber Code muss auch von Menschen gelesen und
