@@ -48,7 +48,7 @@ jeder IDE vorkommen. Zu den häufig genutzten Methoden zählen *Rename*, *Extrac
 > easier to understand and cheaper to modify without changing its observable
 > behaviour.
 >
-> `\hfill`{=tex} [@Fowler2011, p. 53]
+> `\hfill`{=tex} ["*Refactoring*": [@Fowler2011, p. 53]]{.origin}
 
 ::: notes
 **Refactoring:** Änderungen an der **inneren Struktur** einer Software
@@ -104,7 +104,7 @@ jeder IDE vorkommen. Zu den häufig genutzten Methoden zählen *Rename*, *Extrac
 ::: center
 > "Three strikes and you refactor."
 >
-> `\hfill`{=tex} [@Fowler2011, p. 58]: "The Rule of Three"
+> `\hfill`{=tex} ["*Three strikes...*": [@Fowler2011, p. 58]]{.origin}
 :::
 
 ::: notes
