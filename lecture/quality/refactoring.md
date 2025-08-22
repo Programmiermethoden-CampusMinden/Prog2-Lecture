@@ -38,7 +38,7 @@ jeder IDE vorkommen. Zu den häufig genutzten Methoden zählen *Rename*, *Extrac
 > `\hfill`{=tex} [["356:
 > Refactoring"](http://altlasten.lutz.donnerhacke.de/mitarb/lutz/usenet/Fachbegriffe.der.Informatik.html#356)
 > by [Andreas Bogk](mailto:andreas@andreas.org) on Lutz Donnerhacke: "Fachbegriffe
-> der Informatik"]{.origin}
+> der Informatik"]{.credits}
 
 \pause
 \bigskip
@@ -48,7 +48,7 @@ jeder IDE vorkommen. Zu den häufig genutzten Methoden zählen *Rename*, *Extrac
 > easier to understand and cheaper to modify without changing its observable
 > behaviour.
 >
-> `\hfill`{=tex} ["*Refactoring*": [@Fowler2011, p. 53]]{.origin}
+> `\hfill`{=tex} ["*Refactoring*": [@Fowler2011, p. 53]]{.credits}
 
 ::: notes
 **Refactoring:** Änderungen an der **inneren Struktur** einer Software
@@ -104,7 +104,7 @@ jeder IDE vorkommen. Zu den häufig genutzten Methoden zählen *Rename*, *Extrac
 ::: center
 > "Three strikes and you refactor."
 >
-> `\hfill`{=tex} ["*Three strikes...*": [@Fowler2011, p. 58]]{.origin}
+> `\hfill`{=tex} ["*Three strikes...*": [@Fowler2011, p. 58]]{.credits}
 :::
 
 ::: notes
