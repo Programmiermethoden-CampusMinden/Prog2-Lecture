@@ -275,7 +275,7 @@ Grund: Es gibt nur `List.class` (und kein `List<String>.class` bzw.
     -   Transparent für User; Auswirkungen beachten!
 
 ::: readings
--   @Ullenboom2021 [Kap. 11.2 und 11.6]
+-   @Ullenboom2021 [Kap. 12.2 und 12.6]
 -   @LernJava
 -   @Java-SE-Tutorial
 -   @Bloch2018
