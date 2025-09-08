@@ -1,7 +1,0 @@
-Diesen Source-Tree in das Sub-Projekt "game" vom Dungeon-Projekt legen zum Ausführen. 
-
-Zusätzlich muss noch die Konstante FIRST_SKILL in game/src/core/configuration/KeyboardConfig.java ergänzt werden: 
-
-public static final ConfigKey<Integer> FIRST_SKILL = new ConfigKey<>(new String[] {"foo", "bar"}, new ConfigIntValue(Input.Keys.Q));
-
-
