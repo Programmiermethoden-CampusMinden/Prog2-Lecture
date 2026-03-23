@@ -10,5 +10,4 @@ jobs:
     uses: ./.github/workflows/_build-materials.yaml
     with:
       mktarget: handout
-      metadata: pm.yaml
-      build_dir: _s26
+      publish_branch: _s26

@@ -10,5 +10,4 @@ jobs:
     uses: ./.github/workflows/_build-materials.yaml
     with:
       mktarget: beamer
-      metadata: pm.yaml
-      build_dir: _beamer
+      publish_branch: _beamer

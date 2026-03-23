@@ -9,22 +9,13 @@ jobs:
     uses: ./.github/workflows/_build-materials.yaml
     with:
       mktarget: beamer
-      metadata: pm.yaml
-      build_dir: _beamer
-      publish: false
 
   test_docsify:
     uses: ./.github/workflows/_build-materials.yaml
     with:
       mktarget: docsify
-      metadata: pm.yaml
-      build_dir: _docsify
-      publish: false
 
   test_pdf:
     uses: ./.github/workflows/_build-materials.yaml
     with:
       mktarget: pdf
-      metadata: pm.yaml
-      build_dir: _pdf
-      publish: false

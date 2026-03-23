@@ -7,34 +7,11 @@ on:
         description: 'Make target to run'
         type: string
         required: true
-      pandoc_data:
-        description: 'Temporary folder for Pandoc filters: Will be overwritten!'
-        default: '.pandoc'
+      publish_branch:
+        description: 'Name for orphan branch to push (__NO_PUBLISH__ for no publishing)'
         type: string
         required: false
-      metadata:
-        description: 'Metadata file (.yaml)'
-        type: string
-        required: true
-      book_src:
-        description: 'Name of book.md'
-        default: 'book.md'
-        type: string
-        required: false
-      build_dir:
-        description: 'Prefix for output, also name for target orphan branch'
-        type: string
-        required: true
-      image_dark_suffix:
-        description: 'Suffix for inverted images (dark mode)'
-        default: '_inv'
-        type: string
-        required: false
-      publish:
-        description: 'shall we push results to orphan branch'
-        type: boolean
-        required: false
-        default: true
+        default: "__NO_PUBLISH__"
     secrets: {}
 
 jobs:
@@ -46,32 +23,28 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Fetch cagix/pandoc-lecture-zen@master
+        run: make update_tooling
+
       - name: Build materials
-        uses: cagix/pandoc-lecture-zen@master
-        with:
-          mktarget: ${{ inputs.mktarget }}
-          pandoc_data: ${{ inputs.pandoc_data }}
-          metadata: ${{ inputs.metadata }}
-          book_src: ${{ inputs.book_src }}
-          build_dir: ${{ inputs.build_dir }}
-          image_dark_suffix: ${{ inputs.image_dark_suffix }}
+        run: make  ${{ inputs.mktarget }}  BUILD_DIR=${{ inputs.publish_branch }}
 
       - name: Upload build artifact
-        if: ${{ inputs.publish }}
+        if: ${{ inputs.publish_branch != '__NO_PUBLISH__' }}
         uses: actions/upload-artifact@v7
         with:
-          name: materials-${{ inputs.build_dir }}
-          path: ${{ inputs.build_dir }}
+          name: materials-${{ inputs.publish_branch }}
+          path: ${{ inputs.publish_branch }}
           overwrite: true
           retention-days: 1
 
       - name: Check/Debug
         run: |
           ls -lags
-          ls -lags "${{ inputs.build_dir }}"
+          ls -lags "${{ inputs.publish_branch }}"
 
   publish:
-    if: ${{ inputs.publish }}
+    if: ${{ inputs.publish_branch != '__NO_PUBLISH__' }}
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -102,8 +75,8 @@ jobs:
         run: |
           git reset --hard
           git clean -fd
-          git branch -D "${{ inputs.build_dir }}" 2>/dev/null || true
-          git switch --orphan "${{ inputs.build_dir }}"
+          git branch -D "${{ inputs.publish_branch }}" 2>/dev/null || true
+          git switch --orphan "${{ inputs.publish_branch }}"
           git rm -r --cached . || true
 
       - name: Clean working tree
@@ -115,13 +88,13 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v8
         with:
-          name: materials-${{ inputs.build_dir }}
-          path: ${{ inputs.build_dir }}
+          name: materials-${{ inputs.publish_branch }}
+          path: ${{ inputs.publish_branch }}
 
       - name: Copy files over
         run: |
-          mv "${{ inputs.build_dir }}"/* .
-          rm -rf "${{ inputs.build_dir }}"
+          mv "${{ inputs.publish_branch }}"/* .
+          rm -rf "${{ inputs.publish_branch }}"
 
       - name: Commit and push
         env:
@@ -133,7 +106,7 @@ jobs:
 
             git add -f .
             git commit -m "$COMMIT_MESSAGE"
-            git push --force origin "${{ inputs.build_dir }}"
+            git push --force origin "${{ inputs.publish_branch }}"
           else
             echo "no changes to push"
           fi
@@ -143,7 +116,7 @@ jobs:
         uses: actions/github-script@v8
         with:
           script: |
-            const artifactName = 'materials-${{ inputs.build_dir }}';
+            const artifactName = 'materials-${{ inputs.publish_branch }}';
             const { owner, repo } = context.repo;
             const run_id = context.runId;
 
