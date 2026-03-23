@@ -224,4 +224,4 @@ Gips](https://github.com/cagix) and
 [contributors](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/graphs/contributors)
 is licensed under [CC BY-SA
 4.0](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/LICENSE.md).
-See the [credits](CREDITS.md) for a detailed list of contributing projects.
+See the [credits](https://github.com/Programmiermethoden-CampusMinden/PM-Lecture/blob/master/CREDITS.md) for a detailed list of contributing projects.
