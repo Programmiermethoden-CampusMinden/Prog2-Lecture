@@ -11,4 +11,4 @@ jobs:
     with:
       mktarget: handout
       metadata: pm.yaml
-      build_dir: _handout
+      build_dir: _s26
