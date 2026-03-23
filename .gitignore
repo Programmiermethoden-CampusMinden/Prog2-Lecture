@@ -37,7 +37,7 @@ local.yaml
 .pandoc
 build
 deps.mk
-pm-book.md
+book.md
 _sidebar.md
 
 
