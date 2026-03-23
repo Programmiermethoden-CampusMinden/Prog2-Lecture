@@ -1,6 +1,8 @@
 ## Source files of our project
 METADATA               ?= pm.yaml
-OUTPUT_DIR             ?= _gfm
+BOOK_SRC               ?= pm-book.md
+BUILD_DIR              ?= build
+IMAGE_DARK_SUFFIX      ?= _inv
 
 ## Folder to contain the Pandoc-Lecture-Zen project tooling
 PANDOC_DATA            ?= .pandoc
