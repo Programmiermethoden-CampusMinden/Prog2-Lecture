@@ -1,6 +1,6 @@
 ## Source files of our project
 METADATA               ?= pm.yaml
-BOOK_SRC               ?= pm-book.md
+BOOK_SRC               ?= book.md
 BUILD_DIR              ?= build
 IMAGE_DARK_SUFFIX      ?= _inv
 
