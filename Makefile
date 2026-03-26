@@ -1,10 +1,22 @@
 ## Source files of our project
 METADATA               ?= pm.yaml
+BIB_FILE               ?= pm.bib
+ROOT_DOC               ?= readme.md
+
+## Generated output files and directories
 BOOK_SRC               ?= book.md
 BUILD_DIR              ?= build
-IMAGE_DARK_SUFFIX      ?= _inv
 
-## Folder to contain the Pandoc-Lecture-Zen project tooling
+## Image settings for dark and light themes
+IMAGE_DARK_SUFFIX      ?= _inv
+BASE_URL               ?= https://raw.githubusercontent.com/Programmiermethoden-CampusMinden/PM-Lecture/_s23/
+
+## Publishing settings for the output branch
+PUBLISH_BRANCH         ?= _s23
+GIT_AUTHOR_NAME        ?= cagix
+GIT_AUTHOR_EMAIL       ?= cagix@users.noreply.github.com
+
+## Folder containing the Pandoc-Lecture-Zen project tooling
 PANDOC_DATA            ?= .pandoc
 
 
