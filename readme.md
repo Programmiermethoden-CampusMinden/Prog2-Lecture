@@ -4,6 +4,8 @@ no_beamer: true
 title: "IFM 2.1: Programmieren 2 (Sommer 2025)"
 ---
 
+# Syllabus
+
 > ... And, lastly, there's the explosive growth in demand, which has led to many
 > people doing it who aren't any good at it. Code is merely a means to an end.
 > **Programming is an art and code is merely its medium.** Pointing a camera at a
@@ -13,7 +15,7 @@ title: "IFM 2.1: Programmieren 2 (Sommer 2025)"
 > `\hfill`{=tex} -- John Gruber auf
 > [daringfireball.net](https://daringfireball.net/2020/04/cobol_programming_coding)
 
-# Kursbeschreibung
+## Kursbeschreibung
 
 Sie haben letztes Semester in **Prog1** die *wichtigsten* Elemente und Konzepte der
 Programmiersprache Java kennen gelernt.
@@ -27,7 +29,7 @@ Refactoring, Einsatz von Build-Tools und Logging auseinander setzen. Wenn uns da
 ein Entwurfsmuster "über den Weg läuft", werden wir die Gelegenheit nutzen und uns
 dieses genauer anschauen.
 
-# Überblick Modulinhalte
+## Überblick Modulinhalte
 
 1.  Fortgeschrittene Konzepte in Java ("Classic Java")
     -   Reguläre Ausdrücke, Annotationen, Reflection
@@ -49,7 +51,7 @@ dieses genauer anschauen.
 
 (*durchgestrichene Themen nicht im Sommersemester 2025*)
 
-# Team
+## Team
 
 -   [Carsten
     Gips](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips)
@@ -59,7 +61,7 @@ dieses genauer anschauen.
     (Sprechstunde nach Vereinbarung)
 -   Tutoren (siehe ILIAS-Mitgliederliste)
 
-# Kursformat
+## Kursformat
 
 ![](admin/images/fahrplan.png){width="80%"}
 
@@ -74,7 +76,7 @@ Online-Sitzungen per Zoom (**Zugangsdaten siehe
 [ILIAS](https://www.hsbi.de/elearning/goto.php?target=crs_1486054&client_id=FH-Bielefeld)**).
 Sie *können* hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
 
-# Fahrplan
+## Fahrplan
 
 Hier finden Sie einen abonnierbaren [Google
 Kalender](https://calendar.google.com/calendar/ical/69ecbae80c817d60571a6ec968890b9b7ef0ffea5ce5dad1ef06c46eef7c530f%40group.calendar.google.com/public/basic.ics)
@@ -104,7 +106,7 @@ Vorstellung der Lösung im zugehörigen Praktikum. Bearbeitung der Quizzes jewei
 **Sa, 00:00 Uhr (Vorwoche) bis Fr, 08:00 Uhr** [im
 ILIAS](https://www.hsbi.de/elearning/goto.php?target=fold_1514843&client_id=FH-Bielefeld).
 
-# Prüfungsform, Note und Credits
+## Prüfungsform, Note und Credits
 
 **Parcoursprüfung**, 5 ECTS (PO23)
 
@@ -113,7 +115,7 @@ Rahmen dieser Lehrveranstaltung noch keine KI-gestützten Assistenten benutzen.
 Lösungen, die dennoch ganz oder teilweise unter Zuhilfenahme von KI-Unterstützung
 erstellt wurden, werden wie nicht abgegeben behandelt.
 
-## Prüfung im ersten Zeitraum
+### Prüfung im ersten Zeitraum
 
 1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte)
     (Einzelbearbeitung, fristgerecht bis zur jeweiligen Vorlesung, je Quiz bis zu 3x
@@ -144,7 +146,7 @@ verbessert sich die Gesamtnote um eine Teilnote.
 
 (Hinweise zur [Prüfungsvorbereitung](admin/exams.md) für Station I bis III)
 
-## Prüfung im zweiten Zeitraum
+### Prüfung im zweiten Zeitraum
 
 1.  **Station IV**: Schriftliche Prüfung (digitale Klausur) 90 Minuten in Minden im
     B40 (Termin lt. Bekanntgabe vom Prüfungsamt: voraussichtlich 24.09.)
@@ -153,9 +155,9 @@ verbessert sich die Gesamtnote um eine Teilnote.
 
 (Hinweise zur [Prüfungsvorbereitung](admin/exams.md) für Station IV)
 
-# Materialien
+## Materialien
 
-## Literatur
+### Literatur
 
 1.  ["**Java ist auch eine
     Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html). Ullenboom,
@@ -168,7 +170,7 @@ verbessert sich die Gesamtnote um eine Teilnote.
     Corporation, 2024.
 4.  ["Learn Java"](https://dev.java/learn/). Oracle Corporation, 2025.
 
-## Tools
+### Tools
 
 -   JDK: **Java SE 21 (LTS)**
     ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder
@@ -180,9 +182,9 @@ verbessert sich die Gesamtnote um eine Teilnote.
     [Vim](https://www.vim.org/) oder ...
 -   [Git](https://git-scm.com/)
 
-# Förderungen und Kooperationen
+## Förderungen und Kooperationen
 
-## Förderung durch DH.NRW (Digi Fellowships)
+### Förderung durch DH.NRW (Digi Fellowships)
 
 Die Überarbeitung dieser Lehrveranstaltung wurde vom Ministerium für Kultur und
 Wissenschaft (MKW) in NRW im Einvernehmen mit der Digitalen Hochschule NRW (DH.NRW)
@@ -190,7 +192,7 @@ gefördert: ["Fellowships für Innovationen in der digitalen
 Hochschulbildung"](https://www.dh.nrw/kooperationen/Digi-Fellows-2) (*Digi
 Fellowships*).
 
-## Kooperation mit dem DigikoS-Projekt
+### Kooperation mit dem DigikoS-Projekt
 
 Diese Vorlesung wurde vom Projekt ["Digitalbaukasten für kompetenzorientiertes
 Selbststudium"](https://www.digikos.de) (*DigikoS*) unterstützt. Ein vom
@@ -201,7 +203,7 @@ Verbundprojekt von der Stiftung Innovation in der Hochschullehre gefördert.
 
 ------------------------------------------------------------------------------------
 
-# LICENSE
+## LICENSE
 
 ![](https://licensebuttons.net/l/by-sa/4.0/88x31.png)
 
