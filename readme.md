@@ -56,10 +56,7 @@ dieses genauer anschauen.
 -   [Carsten
     Gips](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips)
     (Sprechstunde nach Vereinbarung)
--   [BC
-    George](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/birgit-christina-george)
-    (Sprechstunde nach Vereinbarung)
--   Tutoren (siehe ILIAS-Mitgliederliste)
+-   Alesia Herbertz (Tutorin)
 
 ## Kursformat
 
