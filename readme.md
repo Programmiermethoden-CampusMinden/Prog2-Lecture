@@ -62,16 +62,15 @@ dieses genauer anschauen.
 
 ![](admin/images/fahrplan.png){width="80%"}
 
-| Vorlesung (2 SWS)              | Praktikum (2 SWS)                           |
-|:-------------------------------|:--------------------------------------------|
-| Fr, 08:00 - 09:30 Uhr (online) | G1: Fr, 09:45 - 11:15 Uhr (online, Carsten) |
-| (Carsten: *Flipped Classroom*) | G2: Fr, 11:30 - 13:00 Uhr (online, Carsten) |
-|                                | G3: Fr, 09:45 - 11:15 Uhr (online, BC)      |
-|                                | G4: Fr, 11:30 - 13:00 Uhr (online, BC)      |
+| Vorlesung (2 SWS)     | Praktikum (2 SWS)         |
+|:----------------------|:--------------------------|
+| Mo, 08:00 - 09:30 Uhr | G1: Mo, 11:30 - 13:00 Uhr |
+| (*Flipped Classroom*) | G2: Mo, 14:00 - 15:30 Uhr |
+|                       | G3: Mo, 09:45 - 11:15 Uhr |
+|                       | G4: Mi, 08:00 - 09:30 Uhr |
 
-Online-Sitzungen per Zoom (**Zugangsdaten siehe
-[ILIAS](https://www.hsbi.de/elearning/goto.php?target=crs_1486054&client_id=FH-Bielefeld)**).
-Sie *können* hierzu den Raum J101 bzw. J104 (vgl. Stundenplan) nutzen.
+Alle Sitzungen online per Zoom (**Zugangsdaten siehe
+[ILIAS](https://www.hsbi.de/elearning/goto.php/crs/1634793)**).
 
 ## Fahrplan
 
