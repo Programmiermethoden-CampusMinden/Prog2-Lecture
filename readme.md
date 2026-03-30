@@ -1,7 +1,7 @@
 ---
 has_license: true
 no_beamer: true
-title: "IFM 2.1: Programmieren 2 (Sommer 2025)"
+title: "IFM 2.1: Programmieren 2 (Sommer 2026)"
 ---
 
 # Syllabus
@@ -49,7 +49,7 @@ dieses genauer anschauen.
 6.  Bauen von Software
     -   Gradle, Docker, Continuous Integration (GitHub Workflows)
 
-(*durchgestrichene Themen nicht im Sommersemester 2025*)
+(*durchgestrichene Themen nicht im Sommersemester 2026*)
 
 ## Team
 
@@ -168,7 +168,7 @@ verbessert sich die Gesamtnote um eine Teilnote.
     [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
 3.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/). Oracle
     Corporation, 2024.
-4.  ["Learn Java"](https://dev.java/learn/). Oracle Corporation, 2025.
+4.  ["Learn Java"](https://dev.java/learn/). Oracle Corporation, 2026.
 
 ### Tools
 
