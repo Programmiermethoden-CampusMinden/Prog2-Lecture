@@ -12,7 +12,7 @@ Ergebnis nutzen können.
 `Optional` schließt elegant den Fall "kein Wert vorhanden" ein: Es kann mit der
 Methode `Optional.ofNullable()` das Argument in ein Optional verpacken (Argument !=
 `null`) oder ein `Optional.empty()` zurückliefern ("leeres" Optional, wenn Argument
-== `null`).
+\== `null`).
 
 Man kann Optionals prüfen mit `isEmpty()` und `ifPresent()` und dann direkt mit
 `ifPresent()`, `orElse()` und `orElseThrow()` auf den verpackten Wert zugreifen.
@@ -430,7 +430,7 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
 
 -   `Optional.ofNullable()`: Erzeugen eines `Optional`
     -   Entweder Objekt "verpackt" (Argument != `null`)
-    -   Oder `Optional.empty()` (Argument == `null`)
+    -   Oder `Optional.empty()` (Argument \== `null`)
 -   Prüfen mit `isEmpty()` und `ifPresent()`
 -   Direkter Zugriff mit `ifPresent()`, `orElse()` und `orElseThrow()`
 -   Stream-API: `map()`, `filter()`, `flatMap()`, ...

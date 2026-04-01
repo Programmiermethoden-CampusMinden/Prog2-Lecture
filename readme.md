@@ -79,7 +79,7 @@ Kalender](https://calendar.google.com/calendar/ical/69ecbae80c817d60571a6ec96889
 mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
 | Monat | Tag | Vorlesung | VL-Quiz | Praktikum |
-|:-----|:---|:---------------------------------------------------|:---------------|:------|
+|:-------|:-----|:---------------------------------------------|:---------------|:--------|
 | April | 20\. | [Orga](readme.md), [FAQ](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a) |  |  |
 |  | 27\. | [Einführung Versionierung](lecture/git/git-intro.md), [Git Basics](lecture/git/git-basics.md); [Lambda-Ausdrücke](lecture/java-modern/lambdas.md); [Gradle](lecture/building/gradle.md) | [Q01](https://www.hsbi.de/elearning/goto.php?target=tst_1527333&client_id=FH-Bielefeld) | [B01](homework/b01.md) |
 | Mai | 04\. | [Git-Branches](lecture/git/branches.md), [Branching-Strategien](lecture/git/branching-strategies.md); [Methodenreferenzen](lecture/java-modern/methodreferences.md); [Logging](lecture/quality/logging.md) | [Q02](https://www.hsbi.de/elearning/goto.php?target=tst_1527338&client_id=FH-Bielefeld) | [B02](homework/b02.md) |

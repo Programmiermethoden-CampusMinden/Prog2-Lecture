@@ -146,7 +146,7 @@ Wenn man den Schalter `--global` weglässt, gelten die Einstellungen nur für da
 aktuelle Projekt/Repo.
 
 Zumindest Namen und EMail-Adresse **muss** man setzen, da Git diese Information beim
-Anlegen der Commits speichert (== benötigt!).
+Anlegen der Commits speichert (\== benötigt!).
 :::
 
 \bigskip

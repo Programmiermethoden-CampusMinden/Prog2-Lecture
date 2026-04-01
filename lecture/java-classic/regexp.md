@@ -44,7 +44,6 @@ Gesucht ist ein Programm zum Extrahieren von Telefonnummern aus E-Mails.
 
 \bigskip
 \bigskip
-
 \pause
 
 ::: notes
