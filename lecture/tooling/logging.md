@@ -80,7 +80,7 @@ nach weiteren Kriterien filtern kann.
 :::
 
 [Konsole: logging.LoggingDemo]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/logging/LoggingDemo.java"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/logging/LoggingDemo.java"}
 
 # Erzeugen neuer Logger
 
@@ -150,7 +150,7 @@ public void log(Level level, String msg);
     -   Setzen mit `public void setLevel(Level)`
 
 [Konsole: logging.LoggingLevel]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/logging/LoggingLevel.java"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/logging/LoggingLevel.java"}
 
 ::: notes
 =\> Warum wird im Beispiel nach `log.setLevel(Level.ALL);` trotzdem nur ab `INFO`
@@ -182,7 +182,7 @@ geloggt? Wer erzeugt eigentlich die Ausgaben?!
 -   Standard-Formatter: `SimpleFormatter` und `XMLFormatter`
 
 [Konsole: logging.LoggingHandler]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/logging/LoggingHandler.java"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/logging/LoggingHandler.java"}
 
 ::: notes
 =\> Warum wird im Beispiel nach dem Auskommentieren von
@@ -209,7 +209,7 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
         (unabhängig von Log-Level!)
 
 [Konsole: logging.LoggingParent; Tafel: Skizze Logger-Baum]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/logging/LoggingParent.java"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/logging/LoggingParent.java"}
 
 # Wrap-Up
 
