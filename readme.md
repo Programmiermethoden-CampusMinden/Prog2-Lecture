@@ -83,7 +83,7 @@ mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 | April | 20\. | [Orga](readme.md)                                                                                                                                                                                                                                   |                                         |
 |       | 27\. | [Git1: Basics](lecture/git/git1-basics.md); [Gradle](lecture/tooling/gradle.md), [Packages](lecture/tooling/packages.md)                                                                                                                            |                                         |
 | Mai   | 04\. | [Git2: Branches](lecture/git/git2-branches.md), [Git4: Worktree](lecture/git/git4-worktree.md); [JUnit1: Basics](lecture/junit/junit1-basics.md); [CI](lecture/tooling/ci.md)                                                                       | [B01](homework/b01.md)                  |
-|       | 11\. | [Lambdas](lecture/java-modern/lambdas.md), [Methodenrefs](lecture/java-modern/methodreferences.md); [Observer](lecture/pattern/observer.md), [Swing Events](lecture/gui/swing4-events.md)                                                                  | [B02](homework/b02.md)                  |
+|       | 11\. | [Lambdas](lecture/java-modern/lambdas.md), [Methodenrefs](lecture/java-modern/methodreferences.md); [Observer](lecture/pattern/observer.md), [Swing Events](lecture/gui/swing4-events.md)                                                           | [B02](homework/b02.md)                  |
 |       | 18\. | [Git3: Workflows](lecture/git/git3-workflows.md); [RegExp](lecture/java-classic/regexp.md); [Template-Method](lecture/pattern/template-method.md)                                                                                                   | [B03](homework/b03.md)                  |
 |       | 25\. | **Feiertag**                                                                                                                                                                                                                                        | **Feiertag**                            |
 | Juni  | 01\. | [ANTLR](lecture/tooling/antlr.md); [Visitor](lecture/pattern/visitor.md); [Debugging](lecture/tooling/debugging.md)                                                                                                                                 | [B04](homework/b04.md)                  |
@@ -116,7 +116,7 @@ erstellt wurden, werden wie nicht abgegeben behandelt.
 2.  **Praktikum**: mind. 5 der 9 Übungsblätter bestanden (ohne Note/Punkte) (bis zu
     3er Teams, alle Aufgaben eines Blattes bearbeitet, individuelle(!) fristgerechte
     Abgabe der Lösungen im ILIAS als aussagekräftiges [*Post
-    Mortem*](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981)[^3],
+    Mortem*](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981)[^1],
     Vorstellung der Lösungen im Praktikum durch jedes Teammitglied, aktive
     Beteiligung an der Diskussion im Praktikum)
 3.  **Station I**: ILIAS-Test (30 Minuten in Minden im B40)
@@ -129,7 +129,7 @@ Station III im ersten Prüfungszeitraum (Termin lt. Bekanntgabe vom Prüfungsamt
 09.07., [Aufteilung siehe separate
 Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1032)).
 Die Punkte der beiden besseren Stationen werden summiert bzw. es wird der Mittelwert
-der beiden besten prozentualen Ergebnisse ermittelt zur die Berechnung der Note.[^4]
+der beiden besten prozentualen Ergebnisse ermittelt zur die Berechnung der Note.[^2]
 
 **Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95% (jeweils nur wenn
 Quizzes bestanden und Praktikum bestanden)
@@ -210,8 +210,7 @@ See the
 [credits](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md)
 for a detailed list of contributing projects.
 
-
-[^3]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe individuell(!) die
+[^1]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe individuell(!) die
     Bearbeitung des jeweiligen Aufgabenblattes zurückblickend mit 200 bis 400
     Wörtern. Gehen Sie dabei aussagekräftig und nachvollziehbar auf folgende Punkte
     ein: (a) Zusammenfassung: Was wurde gemacht? (b) Implementierungsdetails: Kurze
@@ -222,7 +221,7 @@ for a detailed list of contributing projects.
     Blatt 04). Siehe auch
     https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
 
-[^4]: Wenn die Maximalzahl der Punkte für Station I, II und III identisch ist, wird
+[^2]: Wenn die Maximalzahl der Punkte für Station I, II und III identisch ist, wird
     einfach die Summe der Punkte der beiden besseren Stationen berechnet und für die
     Bildung der Gesamtnote genutzt. Wenn die Maximalzahl der Punkte für Station I,
     II und III voneinander abweicht, dann wird jeweils das erreichte prozentuale

@@ -336,7 +336,8 @@ damit neue Commit-IDs bekommen. Das verursacht bei der Zusammenarbeit in Projekt
 massive Probleme! Als Vorteil gilt, dass man mögliche Merge-Konflikte bereits beim
 Rebasen auflösen muss, d.h. hier muss derjenige, der den Merge "beantragt", durch
 einen vorherigen Rebase den konfliktfreien Merge sicherstellen. Mehr dazu in
-["Branching-Strategien"](branching-strategies.md) und ["Workflows"](git3-workflows.md).
+["Branching-Strategien"](branching-strategies.md) und
+["Workflows"](git3-workflows.md).
 :::
 
 \pause

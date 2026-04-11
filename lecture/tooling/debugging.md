@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Debugging"
+title: Debugging
 ---
 
 ::: tldr

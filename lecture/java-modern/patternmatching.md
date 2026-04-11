@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Sealed Classes & Pattern Matching"
+title: Sealed Classes & Pattern Matching
 ---
 
 ::: tldr

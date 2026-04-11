@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Dependency Injection"
+title: Dependency Injection
 ---
 
 ::: tldr

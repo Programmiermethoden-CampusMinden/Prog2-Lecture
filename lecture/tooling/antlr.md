@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "ANTLR"
+title: ANTLR
 ---
 
 ::: tldr

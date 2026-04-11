@@ -9,9 +9,9 @@ Neben den Standardkomponenenten `JFrame` für ein Fenster, `JPanel` für ein Pan
 (Texteingabe) gibt es eine Reihe weiterer nützlicher Swing-Komponenten:
 
 -   `JRadioButton` für Radio-Buttons und `JCheckBox` für Checkbox-Buttons sowie
-    `ButtonGroup` für die logische Verbindung von diesen Buttons (es kann nur
-    ein Button einer ButtonGroup aktiv sein - wenn ein anderer Button aktiviert
-    wird, wird der zuletzt aktive Button automatisch deaktiviert)
+    `ButtonGroup` für die logische Verbindung von diesen Buttons (es kann nur ein
+    Button einer ButtonGroup aktiv sein - wenn ein anderer Button aktiviert wird,
+    wird der zuletzt aktive Button automatisch deaktiviert)
 -   Dateiauswahldialoge mit `JFileChooser` und `FileFilter` zum Vorfiltern der
     Anzeige
 -   Einfache (modale) Dialoge mit `JOptionPane`

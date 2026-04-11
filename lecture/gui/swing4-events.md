@@ -122,9 +122,12 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 ::: notes
 # Exkurs: Nützliches zu Swing
 
-Über Swing wurde prinzipiell bereits im ersten Semester gesprochen, deshalb wird in Prog2 nur der Zusammenhang mit dem [Observer-Pattern](../pattern/observer.md) hergestellt.
+Über Swing wurde prinzipiell bereits im ersten Semester gesprochen, deshalb wird
+hier in Prog2 nur der Zusammenhang mit dem
+[Observer-Pattern](../pattern/observer.md) hergestellt.
 
-Wenn Sie Ihr Wissen zu Swing auffrischen wollen, hier drei nützliche Sessions zu Swing:
+Wenn Sie Ihr Wissen zu Swing auffrischen wollen, hier vier nützliche Sessions zu
+Swing:
 
 -   [Swing Basics](swing1-basics.md)
 -   [Nützliche Widgets](swing2-widgets.md)

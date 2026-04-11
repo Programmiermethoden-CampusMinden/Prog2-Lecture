@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Property based Testing & Approval Testing"
+title: Property based Testing & Approval Testing
 ---
 
 ::: tldr
