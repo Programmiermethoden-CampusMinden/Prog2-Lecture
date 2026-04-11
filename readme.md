@@ -79,7 +79,7 @@ Kalender](https://calendar.google.com/calendar/ical/69ecbae80c817d60571a6ec96889
 mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
 Abgabe der Post Mortems jeweils **Montag bis 09:00 Uhr** im
-[ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1582799). Vorstellung der Lösung
+[ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1664006). Vorstellung der Lösung
 im jeweiligen Praktikum in der Abgabewoche.
 
 | Monat | Tag  | Vorlesung (Mo)                                                                                                                                                                                                                                      | Praktikum (Mo/Mi)                       |
@@ -135,7 +135,7 @@ im jeweiligen Praktikum in der Abgabewoche.
     5.  Link zu Ihrem Repo/Branch/PR mit den relevanten Artefakten.
 
     Die Post Mortems geben Sie bitte pro Person bis spätestens zur jeweiligen
-    Deadline im [ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1582799) ab.
+    Deadline im [ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1664006) ab.
 
     Siehe auch
     https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
