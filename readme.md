@@ -159,14 +159,12 @@ Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
 
 ### Tools
 
--   JDK: **Java SE 21 (LTS)**
-    ([Oracle](https://www.oracle.com/java/technologies/downloads/) oder
+-   JDK: **Java SE 25 (LTS)**
+    ([Oracle](https://www.oracle.com/java/technologies/downloads/#java25) oder
     [Alternativen](https://code.visualstudio.com/docs/languages/java#_install-a-java-development-kit-jdk),
     bitte 64-bit Version nutzen)
--   IDE: [Eclipse IDE for Java Developers](https://www.eclipse.org/downloads/) oder
-    [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/) oder
-    [Visual Studio Code](https://code.visualstudio.com/) oder
-    [Vim](https://www.vim.org/) oder ...
+-   IDE: [Eclipse IDE for Java Developers](hhttps://www.eclipse.org/downloads/) oder
+    [IntelliJ IDEA (Community Edition)](https://www.jetbrains.com/idea/)
 -   [Git](https://git-scm.com/)
 
 ## Förderungen und Kooperationen
