@@ -211,7 +211,7 @@ Vergleich **`o1.cmpCpsInstance(o2)`** aufgerufen.
 
 ::: notes
 Erinnerung an bzw. Vorgriff auf ["Threads:
-Intro"](../java-classic/threads-intro.md):
+Intro"](../java-classic/threads1-basics.md):
 
 ``` java
 public interface Runnable {

@@ -253,7 +253,7 @@ Darstellung.
 
 *Hinweis:* Die Methoden `wait()`, `notify()`/`notifyAll()` und die
 "`synchronized`-Sperre" werden in der Sitzung ["Threads:
-Synchronisation"](threads-synchronisation.md) besprochen.
+Synchronisation"](threads2-synchronisation.md) besprochen.
 :::
 
 [Demo: intro.Join]{.ex

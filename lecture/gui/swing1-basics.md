@@ -143,7 +143,7 @@ ein neuer, noch nicht gestarteter Thread mit der Hauptmethode `run()`. Dieses
 Runnable wird mit `SwingUtilities.invokeLater()` dem EDT zu Ausführung übergeben.
 Wir werden uns das Thema Erzeugen und Starten von Threads in der Einheit
 ["Einführung in die nebenläufige Programmierung mit
-Threads"](../java-classic/threads-intro.md) genauer ansehen.
+Threads"](../java-classic/threads1-basics.md) genauer ansehen.
 
 Siehe auch ["Concurrency in
 Swing"](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/index.html).
