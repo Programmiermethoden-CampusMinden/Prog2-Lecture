@@ -78,21 +78,21 @@ Hier finden Sie einen abonnierbaren [Google
 Kalender](https://calendar.google.com/calendar/ical/69ecbae80c817d60571a6ec968890b9b7ef0ffea5ce5dad1ef06c46eef7c530f%40group.calendar.google.com/public/basic.ics)
 mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
-| Monat | Tag | Vorlesung | VL-Quiz | Praktikum |
-|:-------|:-----|:---------------------------------------------|:---------------|:--------|
-| April | 20\. | [Orga](readme.md), [FAQ](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a) |  |  |
-|  | 27\. | [Einführung Versionierung](lecture/git/git-intro.md), [Git Basics](lecture/git/git-basics.md); [Lambda-Ausdrücke](lecture/java-modern/lambdas.md); [Gradle](lecture/building/gradle.md) | [Q01](https://www.hsbi.de/elearning/goto.php?target=tst_1527333&client_id=FH-Bielefeld) | [B01](homework/b01.md) |
-| Mai | 04\. | [Git-Branches](lecture/git/branches.md), [Branching-Strategien](lecture/git/branching-strategies.md); [Methodenreferenzen](lecture/java-modern/methodreferences.md); [Logging](lecture/quality/logging.md) | [Q02](https://www.hsbi.de/elearning/goto.php?target=tst_1527338&client_id=FH-Bielefeld) | [B02](homework/b02.md) |
-|  | 11\. | [Git-Remotes](lecture/git/remotes.md), [Git-Workflows](lecture/git/workflows.md); [Stream-API](lecture/java-modern/stream-api.md); [Record-Klassen](lecture/java-modern/records.md) | [Q03](https://www.hsbi.de/elearning/goto.php?target=tst_1527339&client_id=FH-Bielefeld) | [B03](homework/b03.md) |
-|  | 18\. | [Einführung Testen](lecture/quality/testing-intro.md), [JUnit-Basics](lecture/quality/junit-basics.md); [Optional](lecture/java-modern/optional.md); [Visitor-Pattern](lecture/pattern/visitor.md) | [Q04](https://www.hsbi.de/elearning/goto.php?target=tst_1527340&client_id=FH-Bielefeld) | [B04](homework/b04.md) |
-|  | 25\. | **Feiertag** | **Feiertag** | **Feiertag** |
-| Juni | 01\. | [Testfallermittlung](lecture/quality/testcases.md), [Mocking](lecture/quality/mockito.md); [Default-Methoden](lecture/java-modern/defaultmethods.md); [Observer-Pattern](lecture/pattern/observer.md); [Continuous Integration (CI)](lecture/building/ci.md) | [Q05](https://www.hsbi.de/elearning/goto.php?target=tst_1527341&client_id=FH-Bielefeld) | [B05](homework/b05.md) |
-|  | 08\. | [Code-Smells](lecture/quality/smells.md), [Coding-Rules](lecture/quality/codingrules.md), [Refactoring](lecture/quality/refactoring.md); [Javadoc](lecture/quality/javadoc.md) | [Q06](https://www.hsbi.de/elearning/goto.php?target=tst_1527342&client_id=FH-Bielefeld) | [B06](homework/b06.md) |
-|  | 15\. | [RegExp](lecture/java-classic/regexp.md); [Template-Method-Pattern](lecture/pattern/template-method.md), [Command-Pattern](lecture/pattern/command.md); [Annotationen](lecture/java-classic/annotations.md) | [Q07](https://www.hsbi.de/elearning/goto.php?target=tst_1527343&client_id=FH-Bielefeld) | [B07](homework/b07.md) |
-|  | 22\. | Generics: [Klassen und Methoden](lecture/java-classic/generics-classes-methods.md), [Bounds und Wildcards](lecture/java-classic/generics-bounds-wildcards.md), [Type Erasure](lecture/java-classic/generics-type-erasure.md), [Polymorphie](lecture/java-classic/generics-polymorphism.md); [Docker](lecture/building/docker.md) | [Q08](https://www.hsbi.de/elearning/goto.php?target=tst_1527344&client_id=FH-Bielefeld) | [B08](homework/b08.md) |
-|  | 29\. |  |  |  |
-| Juli | 06\. | [Intro Threads](lecture/java-classic/threads-intro.md), [Synchronisierung](lecture/java-classic/threads-synchronisation.md), [Highlevel Threadkonzepte](lecture/java-classic/threads-highlevel.md); [Reflection](lecture/java-classic/reflection.md) | [Q09](https://www.hsbi.de/elearning/goto.php?target=tst_1527345&client_id=FH-Bielefeld) | [B09](homework/b09.md) |
-|  | 13\. | Rückblick, [Prüfungsvorbereitung](admin/exams.md) |  |  |
+| Monat | Tag  | Vorlesung                                                                                                              | Praktikum              |
+|:------|:-----|:-----------------------------------------------------------------------------------------------------------------------|:-----------------------|
+| April | 20\. | [Orga](readme.md), [FAQ](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a) |                        |
+|       | 27\. | [Git1: Basics](lecture/git/git1-basics.md); [Gradle](lecture/building/gradle.md), [Packages]()                         | [B01](homework/b01.md) |
+| Mai   | 04\. | [Git2: Branches](lecture/git/git2-branches.md), [Git4: Worktree](lecture/git/git4-worktree.md)                         | [B02](homework/b02.md) |
+|       | 11\. |                                                                                                                        | [B03](homework/b03.md) |
+|       | 18\. | [Git3: Workflows](lecture/git/git3-workflows.md)                                                                       | [B04](homework/b04.md) |
+|       | 25\. | **Feiertag**                                                                                                           | **Feiertag**           |
+| Juni  | 01\. |                                                                                                                        | [B05](homework/b05.md) |
+|       | 08\. |                                                                                                                        | [B06](homework/b06.md) |
+|       | 15\. |                                                                                                                        | [B07](homework/b07.md) |
+|       | 22\. |                                                                                                                        | [B08](homework/b08.md) |
+|       | 29\. |                                                                                                                        |                        |
+| Juli  | 06\. |                                                                                                                        | [B09](homework/b09.md) |
+|       | 13\. | Rückblick, [Prüfungsvorbereitung](admin/exams.md)                                                                      |                        |
 
 Abgabe der Übungsblätter jeweils **bis Mo, 08:00 Uhr** [im
 ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1664006), Vorstellung der Lösung
