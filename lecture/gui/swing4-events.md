@@ -119,6 +119,19 @@ Abhilfe: **Adapter**-Klassen:
 [Demo: events.MouseAdapterDemo]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/gui/src/events/MouseAdapterDemo.java"}
 
+::: notes
+# Exkurs: Nützliches zu Swing
+
+Über Swing wurde prinzipiell bereits im ersten Semester gesprochen, deshalb wird in Prog2 nur der Zusammenhang mit dem [Observer-Pattern](../pattern/observer.md) hergestellt.
+
+Wenn Sie Ihr Wissen zu Swing auffrischen wollen, hier drei nützliche Sessions zu Swing:
+
+-   [Swing Basics](swing1-basics.md)
+-   [Nützliche Widgets](swing6-java2d.md)
+-   [Layouts und -Manager](swing3-layouts.md)
+-   [Java2D](swing6-java2d.md)
+:::
+
 # Wrap-Up
 
 Observer-Pattern in Swing-Komponenten:

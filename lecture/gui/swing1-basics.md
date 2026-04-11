@@ -112,7 +112,7 @@ dargestellt.
 
 Leider ist die Welt nicht ganz so einfach. In Swing werden Events wie das Drücken
 eines Buttons durch den *Event Dispatch Thread* (EDT) abgearbeitet. (Zum Thema
-Events in Swing siehe Einheit ["Swing Events"](events.md).) Der EDT wird mit dem
+Events in Swing siehe Einheit ["Swing Events"](swing4-events.md).) Der EDT wird mit dem
 Erzeugen der visuellen Komponenten für die Swing-Objekte durch den Aufruf der
 Swing-Methoden `show()`, `setVisible()` und `pack()` erstellt. Bereits beim
 Realisieren der Komponenten könnten diese Events auslösen, die dann durch den EDT
