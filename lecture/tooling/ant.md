@@ -112,7 +112,7 @@ Works on my machine ...
 [ant.apache.org/manual/tasksoverview.html](https://ant.apache.org/manual/tasksoverview.html)
 
 [Konsole/IDE: ant -f hello.xml]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/hello.xml"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/ant/hello.xml"}
 
 # Properties: Name-Wert-Paare
 
@@ -141,7 +141,7 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 
 ::: notes
 [Beispiel build.xml, Properties]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/build.xml"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/ant/build.xml"}
 :::
 
 # Tasks zum Umgang mit Dateien und Ordnern
@@ -168,7 +168,7 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 -   `<move file="src/file.orig" tofile="bak/file.moved" />`
 
 [Beispiel build.xml, init und clean]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/build.xml"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/ant/build.xml"}
 :::
 
 # Nutzung von Filesets in Tasks
@@ -454,7 +454,7 @@ Ivy-Cache unter ~/.ivy2/cache/
 -->
 
 [Demo: ivydemo.xml]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/ant/ivydemo.xml"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/ant/ivydemo.xml"}
 
 # Ausblick: Weitere Build-Systeme
 

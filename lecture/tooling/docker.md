@@ -278,7 +278,7 @@ enthält.
 :::
 
 [Beispiel: debian-latex.df]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/docker/debian-latex.df"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/docker/debian-latex.df"}
 
 # CI-Pipeline (GitLab)
 

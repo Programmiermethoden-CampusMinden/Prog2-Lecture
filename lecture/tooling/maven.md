@@ -203,7 +203,7 @@ werden, ein erster Einstieg ist die
 :::
 
 [Demo: pom.xml]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/building/src/maven/pom.xml"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/maven/pom.xml"}
 
 # Wrap-Up
 
