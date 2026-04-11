@@ -127,7 +127,7 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 Wenn Sie Ihr Wissen zu Swing auffrischen wollen, hier drei nützliche Sessions zu Swing:
 
 -   [Swing Basics](swing1-basics.md)
--   [Nützliche Widgets](swing6-java2d.md)
+-   [Nützliche Widgets](swing2-widgets.md)
 -   [Layouts und -Manager](swing3-layouts.md)
 -   [Java2D](swing6-java2d.md)
 :::
