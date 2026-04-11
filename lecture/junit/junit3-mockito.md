@@ -218,7 +218,7 @@ müsste man einen weiteren Stub anlegen ...
 :::
 
 [Demo hsbi.StudiStubTest]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/mockito/src/test/java/hsbi/StudiStubTest.java"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/junit/src/mockito/src/test/java/hsbi/StudiStubTest.java"}
 
 # Mockito: Mocking von ganzen Klassen
 
@@ -272,7 +272,7 @@ Mit Hilfe der Argument-Matcher `anyString()` wird jedes String-Argument akzeptie
 :::
 
 [Demo hsbi.StudiMockTest]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/mockito/src/test/java/hsbi/StudiMockTest.java"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/junit/src/mockito/src/test/java/hsbi/StudiMockTest.java"}
 
 # Mockito: Spy = Wrapper um ein Objekt
 
@@ -331,7 +331,7 @@ Auch hier können Argument-Matcher wie `anyString()` eingesetzt werden.
 :::
 
 [Demo hsbi.StudiSpyTest]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/mockito/src/test/java/hsbi/StudiSpyTest.java"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/junit/src/mockito/src/test/java/hsbi/StudiSpyTest.java"}
 
 # Wurde eine Methode aufgerufen?
 
@@ -395,7 +395,7 @@ Mocks/Spies in eine zeitliche Reihenfolge bringen und so überprüfen.
 :::
 
 [Demo hsbi.VerifyTest]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/mockito/src/test/java/hsbi/VerifyTest.java"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/junit/src/mockito/src/test/java/hsbi/VerifyTest.java"}
 
 # Fangen von Argumenten
 
@@ -443,7 +443,7 @@ Argumente in gemockten Methoden zu reagieren. Schauen Sie sich dazu die Javadoc 
 :::
 
 [Demo hsbi.MatcherTest]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/mockito/src/test/java/hsbi/MatcherTest.java"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/junit/src/mockito/src/test/java/hsbi/MatcherTest.java"}
 
 # Ausblick: PowerMock
 
@@ -468,7 +468,7 @@ Mockito sehr mächtig, aber unterstützt (u.a.) keine
 an [\@jedi101](https://github.com/jedi101).
 
 [Demo: WuppiWarenlager (wuppie.stub)]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/mockito/src/test/java/wuppie/stub/"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/junit/src/mockito/src/test/java/wuppie/stub/"}
 
 Bei dem gezeigten Beispiel unseres `WuppiStores` sieht man, dass dieser
 normalerweise von einem fertigen Warenlager die Wuppis beziehen möchte. Da dieses
@@ -495,7 +495,7 @@ Aber es gibt da einen Ausweg. Wenn es komplexer wird, verwenden wir Mocks.
 Bislang haben wir noch keinen Gebrauch von Mockito gemacht. Das ändern wir nun.
 
 [Demo: WuppiWarenlager (wuppie.mock)]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/mockito/src/test/java/wuppie/mock/"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/junit/src/mockito/src/test/java/wuppie/mock/"}
 
 Wie in diesem Beispiel gezeigt, müssen wir nun keinen Stub mehr von Hand erstellen,
 sondern überlassen dies Mockito.
@@ -544,7 +544,7 @@ Richtung von [BDD - Behavior Driven
 Development](https://de.wikipedia.org/wiki/Behavior_Driven_Development).
 
 [Demo: WuppiWarenlager (wuppie.spy)]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/mockito/src/test/java/wuppie/spy/"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/junit/src/mockito/src/test/java/wuppie/spy/"}
 
 ``` java
 // Spion erstellen, der unser wuppiWarenlager überwacht.
@@ -689,7 +689,7 @@ public void testVerify_InteraktionenMitHilfeDesArgumentCaptor() {
 ```
 
 [Demo: WuppiWarenlager (wuppie.verify)]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/mockito/src/test/java/wuppie/verify/"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/junit/src/mockito/src/test/java/wuppie/verify/"}
 :::
 
 # Wrap-Up

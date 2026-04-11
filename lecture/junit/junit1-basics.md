@@ -61,7 +61,7 @@ void fail();
     -   Prüfen von Vorbedingungen: Ist der Test hier ausführbar/anwendbar?
 
 [Beispiel: junit4.TestAssume]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/quality/src/junit4/TestAssume.java"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/junit/src/junit4/TestAssume.java"}
 
 ::: notes
 Im JUnit-Kontext nutzen wir `assume*` für das **Überprüfen von *Annahmen*** (im
@@ -558,7 +558,7 @@ public class SumTestParameters {
 ```
 
 [Beispiel: junit4.SumTestConstructor, junit4.SumTestParameters]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/junit4/"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/junit/src/junit4/"}
 
 ::: notes
 ## Parametrisierte Tests mit JUnit 5
@@ -611,7 +611,7 @@ public class SumTest {
 ```
 
 [Beispiel: junit5.TestValueSource, junit5.TestMethodSource]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/junit5/"}
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/junit/src/junit5/"}
 :::
 
 # Testsuiten: Tests gemeinsam ausführen (JUnit 4)
