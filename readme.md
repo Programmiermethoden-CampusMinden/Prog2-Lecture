@@ -153,9 +153,9 @@ Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
 2.  ["**Pro Git** (Second Edition)"](https://git-scm.com/book/en/v2). Chacon, S. und
     Straub, B., Apress, 2014. ISBN
     [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
-3.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/). Oracle
+3.  ["Learn Java"](https://dev.java/learn/). Oracle Corporation, 2026.
+4.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/). Oracle
     Corporation, 2024.
-4.  ["Learn Java"](https://dev.java/learn/). Oracle Corporation, 2026.
 
 ### Tools
 
