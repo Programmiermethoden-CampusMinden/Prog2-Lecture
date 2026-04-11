@@ -32,24 +32,24 @@ dieses genauer anschauen.
 ## Überblick Modulinhalte
 
 1.  Fortgeschrittene Konzepte in Java ("Classic Java")
-    -   Reguläre Ausdrücke, Annotationen, Reflection
-    -   Generische Programmierung: Generics
-    -   Parallele Programmierung: Threads
-    -   ~~CLI~~, ~~Konfiguration~~, fremde APIs nutzen[^1]
-    -   Graphische Oberflächen mit Swing[^2]
+    -   Reguläre Ausdrücke, Generics, Depencendy Injection
+    -   Fremde APIs nutzen: ANTLR
+    -   Graphische Oberflächen mit Swing
+    -   Fehlerbehandlungskonzepte
 2.  Fortgeschrittene Konzepte in Java ("FP")
     -   Default-Methoden, Funktionsinterfaces, Methodenreferenzen, Lambdas,
         Optional, Stream-API
+    -   Records, Sealed Classes, Pattern Matching
 3.  Versionierung mit Git
 4.  Softwarequalität
-    -   Testen, Coding Conventions & Smells, Refactoring, Javadoc, Logging
+    -   Testen mit JUnit und Mockito
+    -   Coding Conventions & Smells, Refactoring
 5.  Entwurfsmuster
-    -   ~~Strategy~~, Template-Method, ~~Factory-Method~~, ~~Singleton~~, Observer,
-        Visitor, Command, ...
-6.  Bauen von Software
+    -   Observer, Visitor, Template-Method, Command
+6.  Tooling und Bauen von Software
+    -   Packages
+    -   Logging, Debugging
     -   Gradle, Docker, Continuous Integration (GitHub Workflows)
-
-(*durchgestrichene Themen nicht im Sommersemester 2026*)
 
 ## Team
 
@@ -210,9 +210,6 @@ See the
 [credits](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md)
 for a detailed list of contributing projects.
 
-[^1]: als Teilaufgabe im Praktikum
-
-[^2]: nur als Wiederholung im Praktikum
 
 [^3]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe individuell(!) die
     Bearbeitung des jeweiligen Aufgabenblattes zurückblickend mit 200 bis 400
