@@ -78,6 +78,10 @@ Hier finden Sie einen abonnierbaren [Google
 Kalender](https://calendar.google.com/calendar/ical/69ecbae80c817d60571a6ec968890b9b7ef0ffea5ce5dad1ef06c46eef7c530f%40group.calendar.google.com/public/basic.ics)
 mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
+Abgabe der Post Mortems jeweils **Montag bis 09:00 Uhr** im
+[ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1582799).
+Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
+
 | Monat | Tag  | Vorlesung (Mo)                                                                                                                                                                                                                                      | Praktikum (Mo/Mi)                       |
 |:------|:-----|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------|
 | April | 20\. | [Orga](readme.md)                                                                                                                                                                                                                                   |                                         |
@@ -94,59 +98,49 @@ mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 | Juli  | 06\. | [Bad Smells](lecture/quality/smells.md), [Coding Rules](lecture/quality/codingrules.md), [Refactoring](lecture/quality/refactoring.md); [Docker](lecture/tooling/docker.md)                                                                         | [B08](homework/b08.md)                  |
 |       | 13\. | Rückblick, [Prüfungsvorbereitung](admin/exams.md)                                                                                                                                                                                                   |                                         |
 
-Abgabe der Übungsblätter jeweils **bis Mo, 08:00 Uhr** [im
-ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1664006), Vorstellung der Lösung
-im zugehörigen Praktikum. Bearbeitung der Quizzes jeweils **Mi, 00:00 Uhr (Vorwoche)
-bis Mo, 08:00 Uhr** [im ILIAS](https://www.hsbi.de/elearning/goto.php/fold/1663994).
-
 ## Prüfungsform, Note und Credits
 
-**Parcoursprüfung**, 5 ECTS (PO23)
+**(Digitale) Klausur plus Studienleistung (Portfolio)**, 5 ECTS
 
-Da Sie das Programmierhandwerk erlernen und üben und vertiefen sollen, dürfen Sie im
-Rahmen dieser Lehrveranstaltung noch keine KI-gestützten Assistenten benutzen.
-Lösungen, die dennoch ganz oder teilweise unter Zuhilfenahme von KI-Unterstützung
-erstellt wurden, werden wie nicht abgegeben behandelt.
+-   **Studienleistung**: "Portfolio":
 
-### Prüfung im ersten Zeitraum
+    Mindestens 6 der Übungsblätter B01..B08 erfolgreich bearbeitet.
 
-1.  **Quizzes**: mind. 5 der 9 Quizzes bestanden (ohne Note/Punkte)
-    (Einzelbearbeitung, fristgerecht bis zur jeweiligen Vorlesung, je Quiz bis zu 3x
-    wiederholbar, 60% pro Quiz zum Bestehen nötig)
-2.  **Praktikum**: mind. 5 der 9 Übungsblätter bestanden (ohne Note/Punkte) (bis zu
-    3er Teams, alle Aufgaben eines Blattes bearbeitet, individuelle(!) fristgerechte
-    Abgabe der Lösungen im ILIAS als aussagekräftiges [*Post
-    Mortem*](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981)[^1],
-    Vorstellung der Lösungen im Praktikum durch jedes Teammitglied, aktive
-    Beteiligung an der Diskussion im Praktikum)
-3.  **Station I**: ILIAS-Test (30 Minuten in Minden im B40)
-4.  **Station II**: ILIAS-Test (30 Minuten in Minden im B40)
-5.  **Station III**: ILIAS-Test (30 Minuten in Minden im B40)
+-   **Gesamtnote**: (Digitale) Klausur im B40 (90 Minuten)
 
-Station I und II finden im Vorlesungsslot statt ([Aufteilung siehe separate
-Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1025)),
-Station III im ersten Prüfungszeitraum (Termin lt. Bekanntgabe vom Prüfungsamt: Mi,
-09.07., [Aufteilung siehe separate
-Ankündigung](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/1032)).
-Die Punkte der beiden besseren Stationen werden summiert bzw. es wird der Mittelwert
-der beiden besten prozentualen Ergebnisse ermittelt zur die Berechnung der Note.[^2]
+::: {.details title="Hinweise"}
 
-**Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95% (jeweils nur wenn
-Quizzes bestanden und Praktikum bestanden)
+-   Die Bearbeitung der Übungsblätter erfolgt individuell.
+-   Ein Team umfasst 1 Person.
+-   Die Post Mortems sind individuell zu erstellen und fristgerecht abzugeben.
+-   "Aktive Beteiligung" umfasst Anwesenheit und sachbezogene Beiträge;
+    Anwesenheit/Beteiligung werden dokumentiert.
+-   "Erfolgreiche Bearbeitung" eines Blattes umfasst die Bearbeitung aller Aufgaben des Blattes sowie die fristgerechte Abgabe des ausreichenden
+    Post Mortems im ILIAS. Die intensive Beschäftigung mit den Aufgaben muss
+    erkennbar sein.
 
-Bei mind. drei über das Minimum hinaus bestandenen Quizzes und/oder Aufgabenblättern
-verbessert sich die Gesamtnote um eine Teilnote.
+\smallskip
 
-(Hinweise zur [Prüfungsvorbereitung](admin/exams.md) für Station I bis III)
+-   **Post Mortem**: Jede Person beschreibt individuell(!) die Bearbeitung des
+    jeweiligen Übungsblattes
+    zurückblickend mit mind. 150 bis max. 400 Wörtern (Nutzlast; Überschriften und
+    Links zählen nicht mit). Gehen Sie dabei aussagekräftig und nachvollziehbar auf
+    folgende Punkte ein:
 
-### Prüfung im zweiten Zeitraum
+    1.  Zusammenfassung: Was wurde gemacht?
+    2.  Details: Kurze Beschreibung besonders interessanter Aspekte.
+    3.  Reflexion: Was war der schwierigste Teil? Wie haben Sie dieses Problem
+        gelöst?
+    4.  Reflexion: Was haben Sie gelernt oder (besser) verstanden?
+    5.  Link zu Ihrem Repo/Branch/PR mit den relevanten Artefakten.
 
-1.  **Station IV**: Schriftliche Prüfung (digitale Klausur) 90 Minuten in Minden im
-    B40 (Termin lt. Bekanntgabe vom Prüfungsamt: voraussichtlich 24.09.)
+    Die Post Mortems geben Sie bitte pro Person bis spätestens zur jeweiligen
+    Deadline im [ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1582799) ab.
 
-**Gesamtnote**: 4.0: ab 50%, alle 5% nächste Teilnote, 1.0: ab 95%
+    Siehe auch
+    https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
 
-(Hinweise zur [Prüfungsvorbereitung](admin/exams.md) für Station IV)
+:::
 
 ## Materialien
 
@@ -209,21 +203,3 @@ is licensed under [CC BY-SA
 See the
 [credits](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/CREDITS.md)
 for a detailed list of contributing projects.
-
-[^1]: **Post Mortem**: Jede Person beschreibt in der ILIAS-Abgabe individuell(!) die
-    Bearbeitung des jeweiligen Aufgabenblattes zurückblickend mit 200 bis 400
-    Wörtern. Gehen Sie dabei aussagekräftig und nachvollziehbar auf folgende Punkte
-    ein: (a) Zusammenfassung: Was wurde gemacht? (b) Implementierungsdetails: Kurze
-    Beschreibung besonders interessanter Aspekte der Umsetzung. (c) Was war der
-    schwierigste Teil bei der Bearbeitung? Wie haben Sie dieses Problem gelöst? (d)
-    Was haben Sie gelernt oder (besser) verstanden? (e) Team: Mit wem haben Sie
-    zusammengearbeitet? (f) Links zu Ihren Pull-Requests mit der Lösung (erst ab
-    Blatt 04). Siehe auch
-    https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
-
-[^2]: Wenn die Maximalzahl der Punkte für Station I, II und III identisch ist, wird
-    einfach die Summe der Punkte der beiden besseren Stationen berechnet und für die
-    Bildung der Gesamtnote genutzt. Wenn die Maximalzahl der Punkte für Station I,
-    II und III voneinander abweicht, dann wird jeweils das erreichte prozentuale
-    Ergebnis berechnet und die Gesamtnote über den Mittelwert der beiden besseren
-    Ergebnisse berechnet.
