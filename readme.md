@@ -78,21 +78,21 @@ Hier finden Sie einen abonnierbaren [Google
 Kalender](https://calendar.google.com/calendar/ical/69ecbae80c817d60571a6ec968890b9b7ef0ffea5ce5dad1ef06c46eef7c530f%40group.calendar.google.com/public/basic.ics)
 mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
-| Monat | Tag  | Vorlesung                                                                                                              | Praktikum              |
-|:------|:-----|:-----------------------------------------------------------------------------------------------------------------------|:-----------------------|
-| April | 20\. | [Orga](readme.md), [FAQ](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/categories/q-a) |                        |
-|       | 27\. | [Git1: Basics](lecture/git/git1-basics.md); [Gradle](lecture/building/gradle.md), [Packages]()                         | [B01](homework/b01.md) |
-| Mai   | 04\. | [Git2: Branches](lecture/git/git2-branches.md), [Git4: Worktree](lecture/git/git4-worktree.md)                         | [B02](homework/b02.md) |
-|       | 11\. |                                                                                                                        | [B03](homework/b03.md) |
-|       | 18\. | [Git3: Workflows](lecture/git/git3-workflows.md)                                                                       | [B04](homework/b04.md) |
-|       | 25\. | **Feiertag**                                                                                                           | **Feiertag**           |
-| Juni  | 01\. |                                                                                                                        | [B05](homework/b05.md) |
-|       | 08\. |                                                                                                                        | [B06](homework/b06.md) |
-|       | 15\. |                                                                                                                        | [B07](homework/b07.md) |
-|       | 22\. |                                                                                                                        | [B08](homework/b08.md) |
-|       | 29\. |                                                                                                                        |                        |
-| Juli  | 06\. |                                                                                                                        | [B09](homework/b09.md) |
-|       | 13\. | Rückblick, [Prüfungsvorbereitung](admin/exams.md)                                                                      |                        |
+| Monat | Tag  | Vorlesung                                                                                                                                                                                                                        | Praktikum              |
+|:------|:-----|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------|
+| April | 20\. | [Orga](readme.md)                                                                                                                                                                                                                |                        |
+|       | 27\. | [Git1: Basics](lecture/git/git1-basics.md); [Gradle](lecture/tooling/gradle.md), [Packages](lecture/tooling/packages.md)                                                                                                         |                        |
+| Mai   | 04\. | [Git2: Branches](lecture/git/git2-branches.md), [Git4: Worktree](lecture/git/git4-worktree.md); [JUnit1: Basics](lecture/junit/junit1-basics.md); [CI](lecture/tooling/ci.md)                                                    | [B01](homework/b01.md) |
+|       | 11\. | [Lambdas](lecture/java-modern/lambdas.md), [Methodenrefs](lecture/java-modern/methodreferences.md); [Observer](lecture/pattern/observer.md), [Swing Events](lecture/gui/events.md)                                               | [B02](homework/b02.md) |
+|       | 18\. | [Git3: Workflows](lecture/git/git3-workflows.md); [RegExp](lecture/java-classic/regexp.md); [Template-Method](lecture/pattern/template-method.md)                                                                                | [B03](homework/b03.md) |
+|       | 25\. | **Feiertag**                                                                                                                                                                                                                     | **Feiertag**           |
+| Juni  | 01\. | [ANTLR](lecture/tooling/antlr.md); [Visitor](lecture/pattern/visitor.md); [Debugging](lecture/tooling/debugging.md)                                                                                                              | [B04](homework/b04.md) |
+|       | 08\. | [JUnit2: Testfälle](lecture/junit/junit2-testcases.md), [JUnit3: Mocking](lecture/junit/junit3-mockito.md); [Dependency Injection](lecture/java-classic/dependency.md), [Defaultmethoden](lecture/java-modern/defaultmethods.md) | **Kein Praktikum (Parcoursprüfung BC)**                       |
+|       | 15\. | [Records](lecture/java-modern/records.md), [Pattern Matching](lecture/java-modern/patternmatching.md), [Stream-API](lecture/java-modern/stream-api.md); [JUnit4: Property Testing](lecture/junit/junit4-property.md)                                                                                                                                                                                                                                 | [B05](homework/b05.md) |
+|       | 22\. |                                                                                                                                                                                                                                  | [B06](homework/b06.md) |
+|       | 29\. |                                                                                                                                                                                                                                  | [B07](homework/b07.md) |
+| Juli  | 06\. |                                                                                                                                                                                                                                  | [B08](homework/b08.md) |
+|       | 13\. | Rückblick, [Prüfungsvorbereitung](admin/exams.md)                                                                                                                                                                                |                        |
 
 Abgabe der Übungsblätter jeweils **bis Mo, 08:00 Uhr** [im
 ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1664006), Vorstellung der Lösung
