@@ -148,7 +148,7 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 \bigskip
 
 | Constraint | Bedeutung |
-|:------------|:----------------------------------------------------------------------|
+|:-------------|:---------------------------------------------------------------------|
 | `gridx` | **Spalte** für Komponente (linke obere Ecke) |
 | `gridy` | **Zeile** für Komponente (linke obere Ecke) |
 | `gridwidth` | **Anzahl der Spalten** für Komponente |

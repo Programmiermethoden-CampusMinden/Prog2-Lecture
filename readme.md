@@ -79,8 +79,8 @@ Kalender](https://calendar.google.com/calendar/ical/69ecbae80c817d60571a6ec96889
 mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
 
 Abgabe der Post Mortems jeweils **Montag bis 09:00 Uhr** im
-[ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1582799).
-Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
+[ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1582799). Vorstellung der Lösung
+im jeweiligen Praktikum in der Abgabewoche.
 
 | Monat | Tag  | Vorlesung (Mo)                                                                                                                                                                                                                                      | Praktikum (Mo/Mi)                       |
 |:------|:-----|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------|
@@ -104,28 +104,28 @@ Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
 
 -   **Studienleistung**: "Portfolio":
 
-    Mindestens 6 der Übungsblätter B01..B08 erfolgreich bearbeitet.
+    Mindestens 6 der Übungsblätter B01..B08 erfolgreich bearbeitet (inkl. Post
+    Mortem).
 
 -   **Gesamtnote**: (Digitale) Klausur im B40 (90 Minuten)
 
 ::: {.details title="Hinweise"}
-
 -   Die Bearbeitung der Übungsblätter erfolgt individuell.
 -   Ein Team umfasst 1 Person.
 -   Die Post Mortems sind individuell zu erstellen und fristgerecht abzugeben.
 -   "Aktive Beteiligung" umfasst Anwesenheit und sachbezogene Beiträge;
     Anwesenheit/Beteiligung werden dokumentiert.
--   "Erfolgreiche Bearbeitung" eines Blattes umfasst die Bearbeitung aller Aufgaben des Blattes sowie die fristgerechte Abgabe des ausreichenden
-    Post Mortems im ILIAS. Die intensive Beschäftigung mit den Aufgaben muss
-    erkennbar sein.
+-   "Erfolgreiche Bearbeitung" eines Blattes umfasst die individuelle Bearbeitung
+    aller Aufgaben des Blattes sowie die fristgerechte Abgabe des ausreichenden Post
+    Mortems im ILIAS. Die intensive Beschäftigung mit den Aufgaben muss erkennbar
+    sein.
 
 \smallskip
 
 -   **Post Mortem**: Jede Person beschreibt individuell(!) die Bearbeitung des
-    jeweiligen Übungsblattes
-    zurückblickend mit mind. 150 bis max. 400 Wörtern (Nutzlast; Überschriften und
-    Links zählen nicht mit). Gehen Sie dabei aussagekräftig und nachvollziehbar auf
-    folgende Punkte ein:
+    jeweiligen Übungsblattes zurückblickend mit mind. 150 bis max. 400 Wörtern
+    (Nutzlast; Überschriften und Links zählen nicht mit). Gehen Sie dabei
+    aussagekräftig und nachvollziehbar auf folgende Punkte ein:
 
     1.  Zusammenfassung: Was wurde gemacht?
     2.  Details: Kurze Beschreibung besonders interessanter Aspekte.
@@ -139,21 +139,20 @@ Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
 
     Siehe auch
     https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
-
 :::
 
 ## Materialien
 
 ### Literatur
 
-1.  ["**Java ist auch eine
-    Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html). Ullenboom,
-    C., Rheinwerk-Verlag, 2021. ISBN
-    [978-3-8362-8745-6](https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6).
+1.  ["Learn Java"](https://dev.java/learn/). Oracle Corporation, 2026.
 2.  ["**Pro Git** (Second Edition)"](https://git-scm.com/book/en/v2). Chacon, S. und
     Straub, B., Apress, 2014. ISBN
     [978-1-4842-0077-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-4842-0077-3).
-3.  ["Learn Java"](https://dev.java/learn/). Oracle Corporation, 2026.
+3.  ["**Java ist auch eine
+    Insel**"](https://openbook.rheinwerk-verlag.de/javainsel/index.html). Ullenboom,
+    C., Rheinwerk-Verlag, 2021. ISBN
+    [978-3-8362-8745-6](https://fhb-bielefeld.digibib.net/openurl?isbn=978-3-8362-8745-6).
 4.  ["The Java Tutorials"](https://docs.oracle.com/javase/tutorial/). Oracle
     Corporation, 2024.
 
