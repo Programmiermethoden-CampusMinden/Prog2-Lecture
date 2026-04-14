@@ -132,7 +132,7 @@ im jeweiligen Praktikum in der Abgabewoche.
     Deadline im [ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1664006) ab.
 
     Siehe auch
-    https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/discussions/981.
+    https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture-S26/discussions/2.
 :::
 
 ## Materialien
