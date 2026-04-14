@@ -60,8 +60,6 @@ dieses genauer anschauen.
 
 ## Kursformat
 
-![](admin/images/fahrplan.png){width="80%"}
-
 | Vorlesung (2 SWS)     | Praktikum (2 SWS)         |
 |:----------------------|:--------------------------|
 | Mo, 08:00 - 09:30 Uhr | G1: Mo, 11:30 - 13:00 Uhr |
