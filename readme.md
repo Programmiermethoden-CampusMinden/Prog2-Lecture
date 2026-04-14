@@ -72,7 +72,7 @@ Alle Sitzungen online per Zoom (**Zugangsdaten siehe
 
 ## Fahrplan
 
-Abgabe der Post Mortems jeweils **Montag bis 09:00 Uhr** im
+Abgabe der Post Mortems jeweils **Montag bis 08:00 Uhr** im
 [ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1664006). Vorstellung der Lösung
 im jeweiligen Praktikum in der Abgabewoche.
 
