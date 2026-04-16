@@ -1,9 +1,22 @@
 ---
 author: Carsten Gips (HSBI)
-title: Basics der Versionsverwaltung mit Git (lokale Repos)
+title: "Git1: Basics der Versionsverwaltung mit Git"
 ---
 
 ::: tldr
+In der Softwareentwicklung wird häufig ein Versionsmanagementsystem (VCS)
+eingesetzt, welches die Verwaltung von Versionsständen und Änderungen ermöglicht.
+Ein Repository sammelt dabei die verschiedenen Änderungen (quasi wie eine Datenbank
+der Software-Versionsstände). Die Software *Git* ist verbreiteter Vertreter und
+arbeitet mit dezentralen Repositories.
+
+Ein neues lokales Repository kann man mit `git init`anlegen.Der Befehl legt im
+aktuellen Projektordner einen versteckten Unterordner `.git/` an (FINGER WEG!).
+anderen Unterordner im aktuellen Ordner können nun der Versionskontrolle hinzugefügt
+werden. Der Projektordner selbst (mit Ihren Quelltexten) ist die *Workingcopy*.
+
+Ein bereits existierendes Repo kann mit `git clone <url>` geklont werden.
+
 Änderungen an Dateien (in der Workingcopy) werden mit `git add` zum "Staging"
 (Index) hinzugefügt. Dies ist eine Art Sammelbereich für Änderungen, die mit dem
 nächsten Commit in das Repository überführt werden. Neue (bisher nicht versionierte
@@ -26,7 +39,10 @@ Kommentar länger sein soll, folgt eine Leerzeile auf die erste Zeile
 :::
 
 ::: youtube
+-   [VL Git Intro](https://youtu.be/Ac3-pZhVf_c)
 -   [VL Git Basics](https://youtu.be/GxJI8nmZVE8)
+-   [Demo Config](https://youtu.be/0noYvZvQhic)
+-   [Demo Repo](https://youtu.be/ZaWEwIpER-U)
 -   [Demo New Files](https://youtu.be/ITF8wj8GluM)
 -   [Demo Arbeitsablauf: Datei ändern - stagen -
     committen](https://youtu.be/SFIVudlVUhg)
@@ -34,6 +50,136 @@ Kommentar länger sein soll, folgt eine Leerzeile auf die erste Zeile
 -   [Demo Log](https://youtu.be/vmb-PZ1Efkg)
 -   [Demo Diff](https://youtu.be/XB8lfGuU6ZI)
 -   [Demo Tag](https://youtu.be/F1W0RqrxCho)
+:::
+
+# Prinzip Versionsverwaltung
+
+::::: columns
+::: {.column width="48%"}
+![](images/local.png){width="60%" web_width="40%"}
+:::
+
+::: {.column width="50%"}
+\vspace{10mm}
+
+-   **Repository:** (interne) **Datenbank** mit verschiedenen Versionsständen,
+    Kommentaren, Tags etc.
+
+    ::: notes
+    -   Technisch ist das das Verzeichnis `.git` im Projektordner
+    -   Unterscheidung:
+        -   Lokales Repository: Das `.git`-Verzeichnis auf dem lokalen Rechner
+        -   Remote-Repository: Kopie der Historie auf einem Server (z.B. GitHub,
+            GitLab, Codeberg), Zugriff über Web-GUI oder Netzwerk
+
+    Enthält u.a. alle Commits (Schnappschüsse), alle Blobs (Dateiinhalte), Trees
+    (Verzeichnisstrukturen), Referenzen wie Branches, Tags, HEAD, (lokale)
+    Konfigurationen (z.B. `.git/config`).
+
+    Das Repository selbst enthält keine "normalen" Dateien, die Sie mit einem Editor
+    öffnen (sollten); es ist ein interner Speicher, den Git verwaltet.
+
+    `git clone <url>` erstellt aus einem Remote‑Repository eine lokale Kopie
+    (Workingcopy + lokales Repository).
+    :::
+
+-   **Workingcopy / Arbeitskopie**: Projektordner mit bestimmtem Versionsstand
+
+    ::: notes
+    Das ist der Projektordner, das Sie in der IDE oder im Editor öffnen, z.B.
+    `~/projekte/shop-system/`.
+
+    Der Projektordner, in dem Sie tatsächlich arbeiten (editieren, kompilieren,
+    testen). Nach einem `git clone` oder `git checkout` entspricht der Inhalt einem
+    bestimmten Commit. Danach können Sie beliebig neue Dateien anlegen und
+    bestehende Dateien ändern -- diese Änderungen existieren zunächst nur in der
+    Workingcopy, nicht im Repository.
+
+    Die Dateien in der Working Copy können sein:
+    -   unverändert (entsprechen genau dem letzten Commit),
+    -   modifiziert (geändert seit dem letzten Commit),
+    -   neu/untracked (Git kennt sie noch nicht).
+
+    In der Workingcopy gibt es den `.git`-Ordner (Repository), welcher i.d.R. die
+    gesamte Historie beinhaltet.
+    :::
+
+-   **Staging Area / Index**: Zwischenablage für Dateistände, Vormerkung für Commit
+
+    ::: notes
+    Dies ist eine Art Zwischenstufe zw. Arbeitsverzeichnis und Repository, in der
+    Änderungen festgehalten werden, die beim nächsten Commit gemeinsam ins
+    Repository geschrieben werden.
+
+    Änderungen landen hier durch das Hinzufügen mit `git add`. Erst nach einem
+    Commit (`git commit`) landen diese Änderungen tatsächlich im Repository.
+
+    Eine Datei kann gleichzeitig in drei Ständen existieren:
+    -   Im letzten Commit (Repository): "offiziell gespeicherter" Stand
+    -   Im Index (Staging Area): Stand, der für den nächsten Commit vorgemerkt ist
+    -   In der Workingcopy: aktueller Arbeitsstand im Editor (kann weiter verändert
+        sein)
+    :::
+
+-   **Tracked / Untracked Files**: versionierte vs. nicht-versionierte Dateien im
+    Arbeitsverzeichnis
+
+    ::: notes
+    -   "Tracked": Dateien, die Git (im Repository) bereits kennt und versioniert
+    -   "Untracked": neue Dateien im Arbeitsverzeichnis, von Git (noch) ignoriert
+    -   `git status` zeigt diese Unterscheidung sehr gut
+    :::
+
+-   **Commit**\*: "Schnappschuss" von Änderungen zu einem bestimmten Zeitpunkt
+
+    ::: notes
+    Enthält Änderungen (Delta) im Vergleich zum Vorgänger-Commit sowie Metadaten
+    (Autor, Datum, Commit-Message, Hash-ID).
+
+    Jeder Commit erhält eine eindeutige **Commit-ID** (SHA-1-Hash, z.B.
+    `a1b2c3d...`). Mit dieser ID kann man sich gezielt bestimmte Commits anschauen.
+
+    Bildet einen Knoten im Versionsgraphen - Folgen von Commits nennt man auch
+    "Branch" (das schauen wir uns in der Sitzung [Git Branches](git2-branches.md)
+    genauer an).
+    :::
+:::
+:::::
+
+::: notes
+# Varianten: Zentrale Versionsverwaltung (Beispiel SVN)
+
+![](images/centralised.png){width="80%" web_width="40%"}
+
+Es gibt ein zentrales Repository (typischerweise auf einem Server), von dem die
+Developer einen bestimmten Versionsstand "auschecken" (sich lokal kopieren) und in
+welches sie Änderungen wieder zurück "pushen".
+
+Zur Abfrage der Historie und zum Veröffentlichen von Änderungen benötigt man
+entsprechend immer eine Verbindung zum Server.
+
+# Varianten: Verteilte Versionsverwaltung (Beispiel Git)
+
+![](images/distributed.png){width="80%" web_width="60%"}
+
+In diesem Szenario hat jeder Developer nicht nur die Workingcopy, sondern auch noch
+eine Kopie des Repositories. Zusätzlich kann es einen oder mehrere Server geben, auf
+denen dann nur das Repository vorgehalten wird, d.h. dort gibt es normalerweise
+keine Workingcopy. Damit kann unabhängig voneinander gearbeitet werden.
+
+Allerdings besteht nun die Herausforderung, die geänderten Repositories miteinander
+abzugleichen. Das kann zwischen dem lokalen Rechner und dem Server passieren, aber
+auch zwischen zwei "normalen" Rechnern (also zwischen den Developern).
+
+**Hinweis**: *GitHub ain't no Git!* Git ist eine Technologie zur Versionsverwaltung.
+Es gibt verschiedene Implementierungen und Plugins für IDEs und Editoren.
+[GitHub](https://github.com) ist dagegen *ein* Dienstleister, wo man
+Git-Repositories ablegen kann und auf diese mit Git (von der Konsole oder aus der
+IDE) zugreifen kann. Darüber hinaus bietet der Service aber zusätzliche Features an,
+beispielsweise ein Issue-Management oder sogenannte *Pull-Requests*. Dies hat aber
+zunächst mit Git nichts zu tun. Weitere populäre Anbieter sind beispielsweise
+[Bitbucket](https://bitbucket.org/) oder [Gitlab](https://gitlab.com) oder
+[Gitea](https://gitea.io/en-us/), wobei einige auch selbst gehostet werden können.
 :::
 
 # Versionsverwaltung mit Git: Typische Arbeitsschritte
@@ -56,6 +202,60 @@ Kommentar länger sein soll, folgt eine Leerzeile auf die erste Zeile
 \bigskip
 
 9.  Änderungen verteilen (verteiltes Arbeiten, Workflows)
+
+::: notes
+# (Globale) Konfiguration
+
+**Minimum**:
+
+-   `git config --global user.name <name>`
+-   `git config --global user.email <email>`
+
+Diese Konfiguration muss man nur einmal machen.
+
+Wenn man den Schalter `--global` weglässt, gelten die Einstellungen nur für das
+aktuelle Projekt/Repo.
+
+Zumindest Namen und EMail-Adresse **muss** man setzen, da Git diese Information beim
+Anlegen der Commits speichert (\== benötigt!).
+
+\bigskip
+\bigskip
+
+**Aliase**:
+
+-   `git config --global alias.ci commit`
+-   `git config --global alias.co checkout`
+-   `git config --global alias.br branch`
+-   `git config --global alias.st status`
+-   `git config --global alias.ll 'log --all --graph --decorate --oneline'`
+
+Zusätzlich kann man weitere Einstellungen vornehmen, etwa auf bunte Ausgabe
+umschalten: `git config --global color.ui auto` oder Abkürzungen (Aliase) für
+Befehle definieren:
+`git config --global alias.ll 'log --all --oneline --graph --decorate'` ...
+
+Git (und auch GitHub) hat kürzlich den Namen des Default-Branches von `master` auf
+`main` geändert. Dies kann man in Git ebenfalls selbst einstellen:
+`git config --global init.defaultBranch <name>`.
+
+Anschauen kann man sich die Einstellungen in der Textdatei `~/.gitconfig` oder per
+Befehl `git config --global -l`.
+:::
+
+# Neues Repo anlegen
+
+-   `git init`
+
+    =\> Erzeugt neues Repository im akt. Verzeichnis
+
+\bigskip
+
+-   `git clone <url>`
+
+    =\> Erzeugt (verlinkte) Kopie [des Repos unter `<url>`]{.notes}
+
+[[Konsole]{.ex}]{.slides}
 
 # Dateien unter Versionskontrolle stellen
 
@@ -502,6 +702,8 @@ einem professionellen Umfeld wäre ich hier aber sehr ... vorsichtig.*)
 
 # Wrap-Up
 
+-   Anlegen eines lokalen Repos mit `git init`
+-   Clonen eines existierenden Repos mit `git clone <url>`
 -   Änderungen einpflegen zweistufig (`add`, `commit`)
 -   Status der Workingcopy mit `status` ansehen
 -   Logmeldungen mit `log` ansehen
@@ -510,12 +712,18 @@ einem professionellen Umfeld wäre ich hier aber sehr ... vorsichtig.*)
 -   Ignorieren von Dateien/Ordnern: Datei `.gitignore`
 
 ::: readings
--   @Chacon2014 [Kap. 2]
--   @AtlassianGit
--   @GitCheatSheet
+-   Sie finden den Inhalt dieser Sitzung im @Chacon2014 [Kap. 1 und 2]. Zusätzlich
+    finden Sie weitere hilfreiche Informationen rund um Git sowie Cheat-Sheets in
+    @AtlassianGit und @GitCheatSheet.
 :::
 
 ::: outcomes
+-   k1: Ich kenne verschiedene Varianten der Versionierung
+-   k1: Ich kann die Begriffe 'Workingcopy' und 'Repository' und 'Index' erklären
+-   k2: Ich kann zwischen 'Github' und 'Git' unterscheiden
+-   k2: Ich kann auf meinem Rechner lokale Git-Repositories anlegen
+-   k3: Ich kann mit den Git-Befehlen zum Anlegen von lokalen Repos auf der Konsole
+    umgehen
 -   k3: Ich kann Dateien zur Versionskontrolle hinzufügen bzw. aus der Versionierung
     löschen
 -   k3: Ich kann Änderungen (geänderte Dateien) zum Staging hinzufügen und committen
