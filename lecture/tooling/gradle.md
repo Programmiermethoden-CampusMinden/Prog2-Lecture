@@ -212,6 +212,10 @@ verwendet werden soll.
 
 Damit wird die eingangs gezeigte Konfiguration angelegt.
 
+*Anmerkung*: Die hier dargestellten Auswahloptionen und ggf. die Reihenfolge der
+Schritte können sich mit neueren Gradle-Versionen durchaus ändern. Das prinzipielle
+Vorgehen bleibt aber identisch.
+
 # Ordner
 
 Durch `gradle init` wird ein neuer Ordner `wuppie/` mit folgender Ordnerstruktur
@@ -291,6 +295,7 @@ sourceSets {
         resources {
             srcDirs = ['res']
         }
+    }
     test {
         java {
             srcDirs = ['test']
@@ -386,21 +391,29 @@ plugins {
     id 'checkstyle'
 }
 
-
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.apache.poi', name: 'poi', version: '5.5.1'
 }
 
 application {
     mainClass = 'hangman.Main'
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+// use current LTS release: Java 25
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+java.sourceCompatibility = JavaVersion.VERSION_25
+java.targetCompatibility = JavaVersion.VERSION_25
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 25
 }
 
-run {
+tasks.named('run') {
     standardInput = System.in
 }
 
@@ -416,12 +429,8 @@ sourceSets {
 }
 
 checkstyle {
-    configFile = file(“${rootDir}/google_checks.xml”)
-    toolVersion = '10.19.0'
-}
-
-dependencies {
-    implementation group: 'org.apache.poi', name: 'poi', version: '4.1.2'
+    configFile = file("${rootDir}/google_checks.xml")
+    toolVersion = '13.4.0'
 }
 
 javadoc {
@@ -431,8 +440,8 @@ javadoc {
 
 Hier sehen Sie übrigens noch eine weitere mögliche Schreibweise für das Notieren von
 Abhängigkeiten:
-`implementation group: 'org.apache.poi', name: 'poi', version: '4.1.2'` und
-`implementation 'org.apache.poi:poi:4.1.2'` sind gleichwertig, wobei die letztere
+`implementation group: 'org.apache.poi', name: 'poi', version: '5.5.1'` und
+`implementation 'org.apache.poi:poi:5.5.1'` sind gleichwertig, wobei die letztere
 Schreibweise sowohl in den generierten Builds-Skripten und in der offiziellen
 Dokumentation bevorzugt wird.
 
@@ -473,7 +482,7 @@ diese lokale (nicht "installierte") `gradle`-Version zurück.
 
 `gradle init` erzeugt den Wrapper automatisch in der verwendeten Gradle-Version mit.
 Alternativ kann man den Wrapper nachträglich über
-`gradle wrapper --gradle-version 6.5` in einer bestimmten (gewünschten) Version
+`gradle wrapper --gradle-version 9.4.1` in einer bestimmten (gewünschten) Version
 anlegen lassen.
 
 Da der Gradle-Wrapper im Repository eingecheckt ist, benutzen alle Entwickler damit
@@ -521,6 +530,8 @@ vorzuziehen!
 :::
 
 ::: challenges
+**Analyse komplexeres Build-Skript**
+
 Betrachten Sie das Buildskript `gradle.build` aus
 [Dungeon-CampusMinden/Dungeon](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/build.gradle).
 
@@ -528,4 +539,11 @@ Erklären Sie, in welche Abschnitte das Buildskript unterteilt ist und welche
 Aufgaben diese Abschnitte jeweils erfüllen. Gehen Sie dabei im *Detail* auf das
 Plugin `java` und die dort bereitgestellten Tasks und deren Abhängigkeiten
 untereinander ein.
+
+**Praktische Übungen**
+
+-   Bauen Sie ein Minimalprojekt mit Gradle-Wrapper.
+-   Importieren Sie das Projekt in IntelliJ.
+-   Fügen Sie Abhängigkeiten hinzu: JUnit 6 und lassen Sie die IDE einen einfachen
+    Test schreiben.
 :::
