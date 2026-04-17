@@ -519,12 +519,6 @@ vorzuziehen!
     projects"](https://docs.gradle.org/current/userguide/building_java_projects.html)
 :::
 
-::: readings
--   @Gradle
--   @Ullenboom2021
--   @Inden2013
-:::
-
 ::: outcomes
 -   k3: Ich kann einfache Gradle-Skripte schreiben und verstehen
 :::
