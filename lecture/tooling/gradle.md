@@ -131,7 +131,7 @@ per Default die Klasse `App` mit einer `main()`-Methode an. Entsprechend kann ma
 über den Eintrag `application` den Einsprungpunkt in die Applikation konfigurieren.
 :::
 
-::: notes
+:::: notes
 # Gradle-DSL
 
 <!-- Für die Demos:
@@ -145,7 +145,7 @@ Ein Gradle-Skript ist letztlich ein in Groovy geschriebenes Skript.
 ausgeführte Skriptsprache. Seit einigen Versionen kann man die Gradle-Build-Skripte
 auch in der Sprache Kotlin schreiben.
 
-# Dateien
+# Konfigurationsdateien
 
 Für das Bauen mit Gradle benötigt man drei Dateien im Projektordner:
 
@@ -162,7 +162,7 @@ Für das Bauen mit Gradle benötigt man drei Dateien im Projektordner:
 -   `gradle.properties`: Eine weitere optionale Datei, in der projektspezifische
     Properties für den Gradle-Build spezifizieren kann.
 
-# Gradle Init
+# Neues Gradle-Projekt mit Gradle Init anlegen
 
 Um eine neue Gradle-Konfiguration anlegen zu lassen, geht man in einen Ordner und
 führt darin `gradle init` aus. Gradle fragt der Reihe nach einige Einstellungen ab:
@@ -216,7 +216,75 @@ Damit wird die eingangs gezeigte Konfiguration angelegt.
 Schritte können sich mit neueren Gradle-Versionen durchaus ändern. Das prinzipielle
 Vorgehen bleibt aber identisch.
 
-# Ordner
+::: notes
+# Gradle und IntelliJ
+
+Installieren bzw. Aktivieren Sie in den IntelliJ-Einstellungen die Plugins für
+Gradle, derzeit "Gradle" und "Gradle for Java". Ggf. haben diese Plugins weitere
+Abhängigkeiten, die auf Nachfrage der IDE aktiviert werden sollten.
+
+![](images/screenshot_idea_gradleplugin.png){width="60%"}
+
+## Neues Gradle-Projekt in IntelliJ anlegen
+
+Legen Sie ein neues Projekt an (`File > New > Project`) und wählen Sie im
+Einstellungsdialog als Projekttyp "Java" und bei "Build System" entsprechend
+"Gradle" und als "Gradle DSL" die Variante "Groovy" aus. Unter "Advanced Settings"
+können Sie dann noch direkt "Wrapper" auswählen, das erspart die spätere Korrektur.
+
+![](images/screenshot_idea_newproject.png){width="60%"}
+
+Passen Sie anschließend die Einstellungen in der `build.gradle` an.
+
+## Existierendes Gradle-Projekt in IntelliJ importieren
+
+Importieren Sie ein existierendes Gradle-Projekt über den Dialog
+`File > New > Project from Existing Sources` (wenn das Projekt lokal auf Ihrem
+Rechner liegt) bzw. `File > New > Project from Version Control` (wenn das Projekt
+beispielsweise auf GitHub liegt und noch keine lokale Kopie erzeugt wurde).
+
+Wählen Sie im nächsten Dialog "Import project from external model" und "Gradle" aus:
+
+![](images/screenshot_idea_importproject.png){width="40%"}
+
+Passen Sie anschließend die Einstellungen in der `build.gradle` an.
+
+## Einstellungen für IntelliJ rund um Gradle
+
+Prinzipiell lädt IntelliJ die Gradle-Einstellungen und übernimmt diese. Damit werden
+dann externe Abhängigkeiten (Bibliotheken wie JUnit o.ä.) automatisch aufgelöst und
+heruntergeladen, Sourcecode-Pfade und sonstige Projekteinstellungen werden
+übernommen und der Build-Prozess wird von IntelliJ an Gradle delegiert. In der Regel
+klappt das zuverlässig und sehr reibungsarm.
+
+Manchmal hakt das leider aber ziemlich.
+
+1.  Check, ob die **Projekteinstellungen** in IntelliJ passen:
+
+    i.  Menü `File > Project Structure > Project Settings > Project` sollte für Ihr
+        Projekt als SDK ein "Java 25" zeigen:
+
+    ![](images/screenshot_idea_project.png){width="50%"}
+
+    ii. Menü `File > Project Structure > Project Settings > Libraries` sollte für
+        Ihr Projekt die Jar-Files für die konfigurierten Abhängigkeiten (etwa JUnit)
+        zeigen:
+
+    ![](images/screenshot_idea_dependencies.png){width="50%"}
+
+2.  Check, ob **IntelliJ mit Gradle baut**:
+
+    Menü `IDEA > Settings > Build, Execution, Deployment > Build Tools > Gradle`
+    sollte auf Gradle umgestellt sein:
+
+    ![](images/screenshot_idea_settings_gradle.png){width="60%"}
+
+    Unter **"Build & Run" sollte "Gradle"** ausgewählt sein, die **"Distribution"
+    sollte auf "Wrapper"** stehen, und als **"Gradle JVM"** sollte die für das
+    Projekt verwendete JVM eingestellt sein, d.h. aktuell Java 25 (LTS).
+:::
+
+# Ordner in einem Gradle-Projekt
 
 Durch `gradle init` wird ein neuer Ordner `wuppie/` mit folgender Ordnerstruktur
 angelegt:
@@ -303,7 +371,7 @@ sourceSets {
     }
 }
 ```
-:::
+::::
 
 ::: slides
 # Wichtige Gradle-Tasks
@@ -470,8 +538,8 @@ Diese sollte für i.d.R. alle User, die das Projekt bauen wollen, identisch sein
 Leider ist dies oft nicht gegeben bzw. nicht einfach lösbar.
 
 Zur Vereinfachung gibt es den Gradle-Wrapper `gradlew` (bzw. `gradlew.bat` für
-Windows). Dies ist ein kleines Shellskript, welches zusammen mit einigen kleinen
-`.jar`-Dateien im Unterordner `gradle/` mit ins Repo eingecheckt wird und welches
+Windows). Dies ist ein kleines Shellskript, welches zusammen mit einer kleinen
+`.jar`-Datei im Unterordner `gradle/` mit ins Repo eingecheckt wird und welches
 direkt die Rolle des `gradle`-Befehls einer Gradle-Installation übernehmen kann. Man
 kann also in Konfigurationskripten, beispielsweise für Gitlab CI, alle Aufrufe von
 `gradle` durch Aufrufe von `gradlew` ersetzen.
@@ -504,10 +572,6 @@ vorzuziehen!
     -   Konfiguration der Abweichungen (Abhängigkeiten, Namen, ...)
     -   Gradle-Wrapper: Ersetzt eine feste Installation
 
-::: outcomes
--   k3: Ich kann einfache Gradle-Skripte schreiben und verstehen
-:::
-
 ::: readings
 -   ["Getting
     Started"](https://docs.gradle.org/current/userguide/getting_started.html)
@@ -519,6 +583,10 @@ vorzuziehen!
     Sample"](https://docs.gradle.org/current/samples/sample_building_java_libraries.html)
 -   ["Building Java & JVM
     projects"](https://docs.gradle.org/current/userguide/building_java_projects.html)
+:::
+
+::: outcomes
+-   k3: Ich kann einfache Gradle-Skripte schreiben und verstehen
 :::
 
 ::: challenges
