@@ -130,7 +130,7 @@ Kommentar länger sein soll, folgt eine Leerzeile auf die erste Zeile
     -   `git status` zeigt diese Unterscheidung sehr gut
     :::
 
--   **Commit**\*: "Schnappschuss" von Änderungen zu einem bestimmten Zeitpunkt
+-   **Commit**: "Schnappschuss" von Änderungen zu einem bestimmten Zeitpunkt
 
     ::: notes
     Enthält Änderungen (Delta) im Vergleich zum Vorgänger-Commit sowie Metadaten
