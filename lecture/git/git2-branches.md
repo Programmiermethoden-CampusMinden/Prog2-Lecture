@@ -31,6 +31,8 @@ werden. Dies wird später bei Workflows eine Rolle spielen.
 -   [Demo Anlegen und Mergen von Branches](https://youtu.be/B8sesK1GyiE)
 -   [Demo Auflösen von Merge-Konflikten](https://youtu.be/iEr9i8auF7c)
 -   [Demo HEAD](https://youtu.be/U4gd0FBBqZQ)
+
+[Introduction to Git with Scott Chacon of GitHub (zweiter Teil, ab ca. Minute 45)](https://youtu.be/ZDR433b0HJY)
 :::
 
 # Neues Feature entwickeln/ausprobieren

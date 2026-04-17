@@ -50,6 +50,8 @@ Kommentar länger sein soll, folgt eine Leerzeile auf die erste Zeile
 -   [Demo Log](https://youtu.be/vmb-PZ1Efkg)
 -   [Demo Diff](https://youtu.be/XB8lfGuU6ZI)
 -   [Demo Tag](https://youtu.be/F1W0RqrxCho)
+
+[Introduction to Git with Scott Chacon of GitHub (erster Teil, bis ca. Minute 45)](https://youtu.be/ZDR433b0HJY)
 :::
 
 # Prinzip Versionsverwaltung
