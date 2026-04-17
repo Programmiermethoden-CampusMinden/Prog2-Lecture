@@ -51,7 +51,8 @@ Kommentar länger sein soll, folgt eine Leerzeile auf die erste Zeile
 -   [Demo Diff](https://youtu.be/XB8lfGuU6ZI)
 -   [Demo Tag](https://youtu.be/F1W0RqrxCho)
 
-[Introduction to Git with Scott Chacon of GitHub (erster Teil, bis ca. Minute 45)](https://youtu.be/ZDR433b0HJY)
+[Introduction to Git with Scott Chacon of GitHub (erster Teil, bis ca. Minute
+45)](https://youtu.be/ZDR433b0HJY)
 :::
 
 # Prinzip Versionsverwaltung
@@ -715,8 +716,8 @@ einem professionellen Umfeld wäre ich hier aber sehr ... vorsichtig.*)
 
 ::: readings
 -   Sie finden den Inhalt dieser Sitzung im @Chacon2014 [Kap. 1 und 2]. Zusätzlich
-    finden Sie weitere hilfreiche Informationen rund um Git sowie Cheat-Sheets in
-    @AtlassianGit und @GitCheatSheet.
+    finden Sie weitere hilfreiche Tutorial rund um Git in @AtlassianGit sowie
+    Cheat-Sheets auf @GitCheatSheet.
 :::
 
 ::: outcomes
