@@ -504,9 +504,11 @@ vorzuziehen!
     -   Konfiguration der Abweichungen (Abhängigkeiten, Namen, ...)
     -   Gradle-Wrapper: Ersetzt eine feste Installation
 
-::: notes
-# Link-Sammlung Gradle
+::: outcomes
+-   k3: Ich kann einfache Gradle-Skripte schreiben und verstehen
+:::
 
+::: readings
 -   ["Getting
     Started"](https://docs.gradle.org/current/userguide/getting_started.html)
 -   ["Building Java Applications
@@ -517,10 +519,6 @@ vorzuziehen!
     Sample"](https://docs.gradle.org/current/samples/sample_building_java_libraries.html)
 -   ["Building Java & JVM
     projects"](https://docs.gradle.org/current/userguide/building_java_projects.html)
-:::
-
-::: outcomes
--   k3: Ich kann einfache Gradle-Skripte schreiben und verstehen
 :::
 
 ::: challenges
