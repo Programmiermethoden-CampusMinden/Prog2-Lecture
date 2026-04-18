@@ -32,7 +32,8 @@ werden. Dies wird später bei Workflows eine Rolle spielen.
 -   [Demo Auflösen von Merge-Konflikten](https://youtu.be/iEr9i8auF7c)
 -   [Demo HEAD](https://youtu.be/U4gd0FBBqZQ)
 
-[Introduction to Git with Scott Chacon of GitHub (zweiter Teil, ab ca. Minute 45)](https://youtu.be/ZDR433b0HJY)
+[Introduction to Git with Scott Chacon of GitHub (zweiter Teil, ab ca. Minute
+45)](https://youtu.be/ZDR433b0HJY)
 :::
 
 # Neues Feature entwickeln/ausprobieren
@@ -338,8 +339,7 @@ damit neue Commit-IDs bekommen. Das verursacht bei der Zusammenarbeit in Projekt
 massive Probleme! Als Vorteil gilt, dass man mögliche Merge-Konflikte bereits beim
 Rebasen auflösen muss, d.h. hier muss derjenige, der den Merge "beantragt", durch
 einen vorherigen Rebase den konfliktfreien Merge sicherstellen. Mehr dazu in
-["Branching-Strategien"](branching-strategies.md) und
-["Workflows"](git3-workflows.md).
+["Branching-Strategien & Git-Workflows"](git3-workflows.md).
 :::
 
 \pause

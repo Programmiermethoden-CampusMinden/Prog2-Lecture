@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Zusammenarbeit: Git-Workflows und Merge-/Pull-Requests"
+title: Branching-Strategien & Git-Workflows
 ---
 
 ::: tldr
@@ -168,10 +168,9 @@ Merge in den Feature-Branch holt, also sinngemäß:
 Das funktioniert rein technisch betrachtet.
 
 Allerdings spielt in den meisten Git-Projekten der `master` (bzw. `main`)
-üblicherweise eine besondere Rolle (vgl.
-[Branching-Strategien](branching-strategies.md)) und ist üblicherweise stets das
-**Ziel** eines Merge, aber nie die *Quelle*! D.h. per Konvention geht der Fluß von
-Änderungen stets **in** den `master` (und nicht heraus).
+üblicherweise eine besondere Rolle und ist üblicherweise stets das **Ziel** eines
+Merge, aber nie die *Quelle*! D.h. per Konvention geht der Fluß von Änderungen stets
+**in** den `master` (und nicht heraus).
 
 Wenn man sich nicht an diese Konvention hält, hat man später möglicherweise
 Probleme, die Merge-Historie zu verstehen (welche Änderung kam von woher)!
