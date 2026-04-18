@@ -561,6 +561,159 @@ vorzuziehen!
 
 [[Live-Demo Gradle/Gradlew]{.ex}]{.slides}
 
+::: notes
+# Ausblick: Maven
+
+Wie oben erwähnt, gibt es neben Gradle in der Java-Welt zwei weitere verbreitete
+Build-Tools: [Ant](https://ant.apache.org/) und [Maven](https://maven.apache.org)
+(beide von Apache).
+
+In Ant werden alle Dinge (Ziele, Regeln, ...) manuell definiert und konfiguriert
+(und das in XML), Dependencies müssen manuell oder über ein extra Tool (Ivy)
+aufgelöst werden. Dagegen ist in Maven ähnlich wie bei Gralde ein Lebenszyklus für
+Java-Anwendungen eingebaut und es müssen nur noch Abweichungen davon sowie die
+Festlegung von Versionen und Dependencies in XML formuliert werden ("*Convention
+over Configuration*"). In Maven nennt man die Ziele "Goals", was den Gradle-Tasks
+entspricht.
+
+Im Gegensatz zu Gradle haben sich Maven-Konfigurationen als sehr stabil erwiesen.
+Projektkonfigurationen funktionieren oft über einen sehr langen Zeitraum hinweg, und
+auch bei den eher seltenen Versionssprüngen von Maven gibt es deutlich weniger
+Pflegeaufwand im Vergleich zu Gradle, wo teilweise im Halbjahrestakt oft deutliche
+Änderungen an der DSL vorgenommen werden und man früher oder später immer wieder
+gezwungen ist, die Projektkonfiguration entsprechend nachzuziehen. Der Nachteil von
+Maven ist, dass die Konfiguration in XML erfolgt und für moderne Lesegewohnheiten
+eher sperrig aussieht. Die Formulierung von "Extra-Wünschen" geht in Gradle über die
+Groovy-DSL meist relativ einfach, in Maven muss man dafür eigene Plugins schreiben.
+
+Das obige `build.gradle` mit der Apache-POI-Abhängigkeit und der konfigurierten
+Java-Version und dem Checkstyle-Plugin könnte man ungefähr in folgende `pom.xml` (so
+nennt man die Maven-Konfigurationsdatei) übersetzen:
+
+``` xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>hangman</groupId>
+    <artifactId>hangman</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.release>25</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- nötig für das Exec-Plugin (Main-Klasse) -->
+        <exec.mainClass>hangman.Main</exec.mainClass>
+    </properties>
+
+    <!-- Entspricht dependencies { implementation 'org.apache.poi:poi:5.5.1' } -->
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.5.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!-- Entspricht sourceSets: src = Java, res = Ressourcen -->
+        <sourceDirectory>src</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>res</directory>
+            </resource>
+        </resources>
+
+        <plugins>
+            <!-- Compiler-Einstellungen: Java 25, UTF-8 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>${maven.compiler.release}</release>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- Entspricht application { mainClass = 'hangman.Main' } -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <mainClass>${exec.mainClass}</mainClass>
+                    <!-- StandardInput von der Konsole wird standardmäßig durchgereicht -->
+                </configuration>
+
+            </plugin>
+
+            <!-- Entspricht checkstyle { ... } -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <configLocation>google_checks.xml</configLocation>
+                </configuration>
+            </plugin>
+
+            <!-- Grobe Entsprechung zu javadoc { options.showAll() } -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.10.0</version>
+                <configuration>
+                    <show>public</show>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+Gradle nutzt einen `plugins`-Block zur Spezifikation der Plugins, bei Maven werden
+Plugins im `<build>`-Bereich eingetragen. Die Projekt-Identität (`groupId`,
+`artifactId`, `version`) steht bei Maven oben im `project`-Block - das sind die
+typischen Maven-Koordinaten `groupId:artifactId:version`.
+
+Die Deklaration der Dependencies ist im Prinzip wie bei Gradle (nur eben in XML
+statt in der Groovy-DSL). Die Einträge kann man sich direkt für die jeweilige
+Bibliothek von [Maven Central](https://mvnrepository.com/repos/central) kopieren.
+Das Repository Maven Central ist in Maven der Default und muss (im Gegensatz zu
+Gradle) nicht extra angegeben werden.
+
+Gradle bekommt mit dem `application`-Plugin einen `run`-Task. In Maven nutzten wir
+dafür das Plugin `exec-maven-plugin`, das beim Befehl `mvn exec:java` die
+konfigurierte Main-Klasse startet. Vorsicht: Während ein `gradle run` das Projekt
+bei Bedarf automatisch baut und dann die konfigurierte Klasse startet, wird in Maven
+mit `mvn exec:java` tatsächlich nur die konfigurierte Klasse ausgeführt - für das
+Bauen muss man selbst sorgen. Oft wird deshalb `mvn compile exec:java` (Kompilieren
+und Ausführen) oder `mvn verify exec:java` (Kompilieren, Tests, Ausführen) genutzt
+oder alternativ eine zusätzliche `<executions>`-Konfiguration für das Plugin
+`exec-maven-plugin` angelegt. Die Konsoleneingabe wird in Maven automatisch ans
+Programm weitergereicht, in Gradle war dafür eine extra Konfiguration notwendig.
+
+Sowohl in Gradle als auch in Maven sind die Standardpfade im Projekt `src/main/java`
+und `src/main/resources`, aber man kann diese Pfade bei Bedarf relativ frei
+anpassen.
+
+Inzwischen gibt es auch für Maven einen sogenannten Wrapper. Beim Maven-Wrapper wird
+jedoch nur eine schlanke, rein textbasierte Konfiguration im Projekt mitversioniert
+(`mvnw`, `mvnw.cmd` und das Verzeichnis `.mvn/` mit Konfigurations-/Textdateien).
+Beim Gradle-Wrapper gehört hingegen immer auch eine Binärdatei
+(`gradle-wrapper.jar`) ins Versionskontrollsystem. Da Git für Binärdateien keinen
+inhaltlichen Diff berechnen kann, wird bei Änderungen an diesem JAR intern jedes Mal
+die komplette Datei als Änderung gespeichert. Das kann sich im Laufe der Zeit
+nachteilig auf die Größe des Git-Repositorys auswirken.
+
+Der [Maven Getting Started
+Guide](https://maven.apache.org/guides/getting-started/index.html) ist eine gute
+Einstiegshilfe über den hier vorgestellten Ausblick hinaus.
+:::
+
 # Wrap-Up
 
 -   Automatisieren von Arbeitsabläufen mit Build-Tools/-Skripten
