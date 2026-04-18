@@ -686,7 +686,7 @@ Das Repository Maven Central ist in Maven der Default und muss (im Gegensatz zu
 Gradle) nicht extra angegeben werden.
 
 Gradle bekommt mit dem `application`-Plugin einen `run`-Task. In Maven nutzten wir
-dafür das Plugin `exec-maven-plugin`, das beim Befehl `mvn exec:java` die
+dafür das Plugin `exec-maven-plugin`, welches beim Befehl `mvn exec:java` die
 konfigurierte Main-Klasse startet. Vorsicht: Während ein `gradle run` das Projekt
 bei Bedarf automatisch baut und dann die konfigurierte Klasse startet, wird in Maven
 mit `mvn exec:java` tatsächlich nur die konfigurierte Klasse ausgeführt - für das
