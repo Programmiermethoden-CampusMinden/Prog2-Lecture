@@ -715,9 +715,11 @@ einem professionellen Umfeld wäre ich hier aber sehr ... vorsichtig.*)
 -   Ignorieren von Dateien/Ordnern: Datei `.gitignore`
 
 ::: readings
--   Sie finden den Inhalt dieser Sitzung im @Chacon2014 [Kap. 1 und 2]. Zusätzlich
-    finden Sie weitere hilfreiche Tutorial rund um Git in @AtlassianGit sowie
-    Cheat-Sheets auf @GitCheatSheet.
+Sie finden den Inhalt dieser Sitzung im @Chacon2014 [Kap. 1 und 2].
+
+Zusätzlich gibt es viele hilfreiche Tutorials wie beispielsweise die [Atlassian Git
+Tutorials](https://www.atlassian.com/git/tutorials). Auf [GitHub Training
+Kit](https://training.github.com/) finden Sie ein gutes Cheat-Sheet.
 :::
 
 ::: outcomes
