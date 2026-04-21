@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Git Branches: Features unabhängig entwickeln und mit Git verwalten"
+title: "Git2: Branches und Remotes"
 ---
 
 ::: tldr
