@@ -39,17 +39,28 @@ Kommentar länger sein soll, folgt eine Leerzeile auf die erste Zeile
 :::
 
 ::: youtube
--   [VL Git Intro](https://youtu.be/Ac3-pZhVf_c)
--   [VL Git Basics](https://youtu.be/GxJI8nmZVE8)
--   [Demo Config](https://youtu.be/0noYvZvQhic)
--   [Demo Repo](https://youtu.be/ZaWEwIpER-U)
--   [Demo New Files](https://youtu.be/ITF8wj8GluM)
--   [Demo Arbeitsablauf: Datei ändern - stagen -
-    committen](https://youtu.be/SFIVudlVUhg)
--   [Demo Amend](https://youtu.be/0uczjI7wsrQ)
--   [Demo Log](https://youtu.be/vmb-PZ1Efkg)
--   [Demo Diff](https://youtu.be/XB8lfGuU6ZI)
--   [Demo Tag](https://youtu.be/F1W0RqrxCho)
+Vorlesung \[[YT](https://youtu.be/u9waO_WrHMc)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-git1-basics/34a91e0ed6f50d799b0316568f6e21d6)\]
+
+Demos:
+
+-   Konfiguration \[[YT](https://youtu.be/3AIkaVJXEm0)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-git1-basics-demo-config/a905d2081f5a49a0a5f4fff49a26a21e)\]
+-   Erstellung Repo \[[YT](https://youtu.be/TfnaZpoxM08)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-git1-basics-demo-repo/f921295f508b433c59dac34ae93a9fa1)\]
+-   Dateien hinzufügen \[[YT](https://youtu.be/w5pZfUZAGiQ)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-git1-basics-demo-new-files/c6f9f44d048490996679b2d8d62578e9)\]
+-   Arbeitsablauf: Datei ändern - stagen - committen
+    \[[YT](https://youtu.be/QbOhgsmrA7M)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-git1-basics-demo-arbeitsablauf/cedd3b801f51cf369b4f33a91548602b)\]
+-   Hinzufügen zu Commits (Amend) \[[YT](https://youtu.be/N8jHLbN9oZE)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-git1-basics-demo-amend/da3e40922f28383a9f31e7665aa3a6aa)\]
+-   Anschauen von Änderungen (Log) \[[YT](https://youtu.be/EaEIPb9341s)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-git1-basics-demo-log/f7f3ac504da920235a903352ebcd7d9a)\]
+-   Anschauen von Unterschieden (Diff) \[[YT](https://youtu.be/_sTgpdKkALE)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-git1-basics-demo-diff/3044e0740c7e61bacdc8680fe7e93276)\]
+-   Umgang mit Tags \[[YT](https://youtu.be/ZElXK-uQsSs)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-git1-basics-demo-tag/c656b1bc4b06ccadab66857679097164)\]
 
 [Introduction to Git with Scott Chacon of GitHub (erster Teil, bis ca. Minute
 45)](https://youtu.be/ZDR433b0HJY)
