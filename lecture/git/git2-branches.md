@@ -52,7 +52,6 @@ werden.
 
 -   [Demo HEAD](https://youtu.be/U4gd0FBBqZQ)
 
-
 -   [VL Git Remotes](https://youtu.be/_uhEseblDYU)
 
 -   [Demo Fetch, Pull und Push](https://youtu.be/moqywsxtEy8)
@@ -60,7 +59,6 @@ werden.
 -   [Demo Tracking-Branches](https://youtu.be/0RoqM5Wmxfc)
 
 -   [Demo Verknüpfen weiterer Remotes](https://youtu.be/jL4AvSsjjKg)
-
 
 [Introduction to Git with Scott Chacon of GitHub (zweiter Teil, ab ca. Minute
 45)](https://youtu.be/ZDR433b0HJY)
@@ -531,23 +529,21 @@ Branches!
 
 ## *master*-Branch nach "git fetch origin" zusammenführen
 
-1.  Mit `git checkout master` Workingcopy auf eigenen `master` umstellen
-2.  Mit `git merge origin/master` Änderungen am `origin/master` in eigenen `master`
-    mergen
-
-[]{.notes}
-
     https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
 
     ---C---D---E---F---G  master
 
-[]{.notes}
+
 
     ./Prog2-Lecture/  (lokaler Rechner)
 
     ---C---D---E---H---I  master
                 \     /
                  F---G  origin/master
+
+1.  Mit `git checkout master` Workingcopy auf eigenen `master` umstellen
+2.  Mit `git merge origin/master` Änderungen am `origin/master` in eigenen `master`
+    mergen
 
 *Anmerkung*: Schritt (2) kann man auch direkt per `git pull origin master` erledigen
 ... Ein `pull` fasst `fetch` und `merge` zusammen.
@@ -559,9 +555,9 @@ wird bei `pull` ein "merge" ausgeführt).
 
 ## *master*-Branch ins Remote pushen
 
-1.  Mit `git push origin master` eigene Änderungen ins Remote-Repo pushen
+Mit `git push origin master` eigene Änderungen ins Remote-Repo pushen
 
-[]{.notes}
+\bigskip
 
     https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
 
@@ -569,7 +565,7 @@ wird bei `pull` ein "merge" ausgeführt).
                 \     /
                  F---G
 
-[]{.notes}
+
 
     ./Prog2-Lecture/  (lokaler Rechner)
 
