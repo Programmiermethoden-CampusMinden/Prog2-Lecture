@@ -393,8 +393,7 @@ Im Browser in den Repo-Einstellungen arbeiten:
 -   Aktionen können von anderen Aktionen abhängen
 
 ::: readings
--   @GitlabCI
--   @GitHubCI
+Eine gute Quelle zum Nachlesen bietet der Blog [What is CI/CD? (GitHub)](https://resources.github.com/ci-cd/).
 :::
 
 ::: outcomes
