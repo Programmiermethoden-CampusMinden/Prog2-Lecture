@@ -25,8 +25,11 @@ Java-spezifische Tasks wie `classes` mitbringt, oder das Plugin `checkstyle` zum
 :::
 
 ::: youtube
--   [VL Build-Systeme: Gradle](https://youtu.be/aVtDkFpwd_E)
--   [Demo Gradle](https://youtu.be/OhQRGaNO4iA)
+Vorlesung \[[YT](https://youtu.be/z_UHK4Iiz1A)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-gradle/bd30dd1963ca16a513c5d2b55359b125)\]
+
+Demo \[[YT](https://youtu.be/umF5SDOK9pw)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-gradle-demo-build-tool-gradle/afc60e964c7c9baf491974851c49271c)\]
 :::
 
 # Automatisieren von Arbeitsabläufen
