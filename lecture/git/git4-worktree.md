@@ -76,7 +76,7 @@ verschiedenen Branches zu arbeiten.
 
 # How to use Git Worktree
 
-![](images/linkedworktrees.png){width="80%"}
+![](images/linkedworktrees.png){width="80%" web_width="60%"}
 
 # Worktree anlegen
 
