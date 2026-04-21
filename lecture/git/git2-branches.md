@@ -41,12 +41,6 @@ Personen an einem Branch arbeiten, will man die eigenen Arbeiten in dem Branch
 vermutlich eher auf den aktuellen Stand des Remote **rebasen** statt mergen!) Eigene
 Änderungen können mit `git push <remote> <branch>` in das Remote-Repo geschoben
 werden.
-
-Um den Umgang mit den Remote-Branches und den davon abgeleiteten lokalen Branches zu
-vereinfachen, gibt es das Konzept der "Tracking Branches". Dabei "folgt" ein lokaler
-Branch einem Remote-Branch. Ein einfaches `git pull` oder `git push` holt dann
-Änderungen aus dem Remote-Branch in den ausgecheckten lokalen Branch bzw. schiebt
-Änderungen im lokalen Branch in den Remote-Branch.
 :::
 
 ::: youtube
@@ -58,6 +52,7 @@ Branch einem Remote-Branch. Ein einfaches `git pull` oder `git push` holt dann
 
 -   [Demo HEAD](https://youtu.be/U4gd0FBBqZQ)
 
+
 -   [VL Git Remotes](https://youtu.be/_uhEseblDYU)
 
 -   [Demo Fetch, Pull und Push](https://youtu.be/moqywsxtEy8)
@@ -65,6 +60,7 @@ Branch einem Remote-Branch. Ein einfaches `git pull` oder `git push` holt dann
 -   [Demo Tracking-Branches](https://youtu.be/0RoqM5Wmxfc)
 
 -   [Demo Verknüpfen weiterer Remotes](https://youtu.be/jL4AvSsjjKg)
+
 
 [Introduction to Git with Scott Chacon of GitHub (zweiter Teil, ab ca. Minute
 45)](https://youtu.be/ZDR433b0HJY)

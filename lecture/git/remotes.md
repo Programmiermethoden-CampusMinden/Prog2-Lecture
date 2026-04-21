@@ -3,6 +3,14 @@ author: Carsten Gips (HSBI)
 title: Arbeiten mit Git Remotes (dezentrale Repos)
 ---
 
+::: tldr
+Um den Umgang mit den Remote-Branches und den davon abgeleiteten lokalen Branches zu
+vereinfachen, gibt es das Konzept der "Tracking Branches". Dabei "folgt" ein lokaler
+Branch einem Remote-Branch. Ein einfaches `git pull` oder `git push` holt dann
+Änderungen aus dem Remote-Branch in den ausgecheckten lokalen Branch bzw. schiebt
+Änderungen im lokalen Branch in den Remote-Branch.
+:::
+
 
 # Vereinfachung: Tracking Branches
 
