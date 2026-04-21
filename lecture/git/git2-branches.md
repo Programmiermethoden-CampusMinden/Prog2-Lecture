@@ -68,13 +68,10 @@ Eigenen Entwicklungszweig für die Entwicklung des Features anlegen:
 2.  [Neuen Branch auschecken:]{.notes} `git checkout wuppie` oder
     `git switch wuppie`
 
-\bigskip
-
+::: notes
 Alternativ: `git checkout -b wuppie` oder `git switch -c wuppie` [(neuer Branch und
 auschecken in einem Schritt)]{.notes}
-
-\bigskip
-\bigskip
+:::
 
     A---B---C  master, wuppie
 
@@ -89,14 +86,28 @@ Startpunkt; hier kann jeder beliebige Branch, Tag oder Commit genutzt werden).
 
 Nach Anlegen des neuen Branches zeigen beide Pointer auf den selben Commit.
 
+`git switch <branchname>` bzw. `git checkout <branchname>`holt den aktuellen Stand des jeweiligen Branches in die
+Workingcopy. Man kann also jederzeit in der Workingcopy die Branches wechseln und
+entsprechend weiterarbeiten.
+
 *Anmerkung*: In neueren Git-Versionen wurde der Befehl "`switch`" eingeführt, mit
 dem Sie in der Workingcopy auf einen anderen Branch wechseln können. Der bisherige
 Befehl "`checkout`" funktioniert aber weiterhin.
+Während der neue `git switch`-Befehl allerdings nur Branches umschalten kann,
+funktioniert `git checkout` sowohl mit Branchnamen und Dateinamen - damit kann man
+also auch eine andere Version einer Datei in der Workingcopy "auschecken". Falls
+gleiche Branch- und Dateinamen existieren, muss man für das Auschecken einer Datei
+noch "`--`" nutzen: `git checkout -- <dateiname>`.
 :::
 
-[[Konsole]{.ex}]{.slides}
+\bigskip
 
-# Arbeiten im Entwicklungszweig ...
+...
+
+::: notes
+Commit(s) auf `wuppie` ...
+:::
+
 
               D  wuppie
              /
@@ -111,13 +122,9 @@ Befehl "`checkout`" funktioniert aber weiterhin.
     d.h. der `master` würde sich ab Commit `C` parallel zu `wuppie` entwickeln
 :::
 
+[[Konsole]{.ex}]{.slides}
+
 # Problem: Fehler im ausgelieferten Produkt
-
-              D  wuppie
-             /
-    A---B---C  master
-
-\bigskip
 
 ::: notes
 Fix für `master` nötig:
@@ -128,17 +135,18 @@ Fix für `master` nötig:
 3.  Änderungen in `fix` vornehmen ...
 
 \bigskip
-\bigskip
+\smallskip
 
 ::: notes
 Das führt zu dieser Situation:
 :::
 
-              D  wuppie
-             /
-    A---B---C  master
-             \
-              E  fix
+
+              D  wuppie                                D  wuppie
+             /                                        /
+    A---B---C  master              =>        A---B---C  master
+                                                      \
+                                                       E  fix
 
 ::: notes
 `git checkout <branchname>` holt den aktuellen Stand des jeweiligen Branches in die
@@ -151,14 +159,6 @@ von `wuppie` anlegen ...
 
 # Fix ist stabil: Integration in *master*
 
-              D  wuppie
-             /
-    A---B---C  master
-             \
-              E  fix
-
-\bigskip
-
 1.  `git checkout master`
 2.  `git merge fix` =\> **fast forward** von `master`
 3.  `git branch -d fix`
@@ -168,11 +168,13 @@ Der letzte Schritt entfernt den Branch `fix`.
 :::
 
 \bigskip
-\bigskip
+\smallskip
 
-              D  wuppie
-             /
-    A---B---C---E  master
+              D  wuppie                                D  wuppie
+             /                                        /
+    A---B---C  master              =>        A---B---C---E  master
+             \
+              E  fix
 
 ::: notes
 -   Allgemein: `git merge <branchname>` führt die Änderungen im angegebenen Branch
@@ -199,41 +201,18 @@ Der letzte Schritt entfernt den Branch `fix`.
     angelegt.
 :::
 
-# Feature weiter entwickeln ...
+# Feature weiter entwickeln und Integration in *master*
 
-              D---F  wuppie
-             /
-    A---B---C---E  master
+1.  `git checkout master`
+2.  `git merge wuppie` `\newline`{=tex}=\> Kein *fast forward* möglich: Git sucht
+    nach gemeinsamen Vorgänger + neuer Commit
 
 \bigskip
-
-1.  `git switch wuppie`
-2.  Weitere Änderungen im Branch `wuppie` ...
-
-::: notes
-`git switch <branchname>` holt den aktuellen Stand des jeweiligen Branches in die
-Workingcopy. Man kann also jederzeit in der Workingcopy die Branches wechseln und
-entsprechend weiterarbeiten.
-
-*Hinweis*: Während der neue `git switch`-Befehl nur Branches umschalten kann,
-funktioniert `git checkout` sowohl mit Branchnamen und Dateinamen - damit kann man
-also auch eine andere Version einer Datei in der Workingcopy "auschecken". Falls
-gleiche Branch- und Dateinamen existieren, muss man für das Auschecken einer Datei
-noch "`--`" nutzen: `git checkout -- <dateiname>`.
-:::
-
-# Feature ist stabil: Integration in *master*
+\smallskip
 
               D---F  wuppie                            D---F  wuppie
              /                     =>                 /     \
     A---B---C---E  master                    A---B---C---E---G  master
-
-\bigskip
-\bigskip
-
-1.  `git checkout master`
-2.  `git merge wuppie` `\newline`{=tex}=\> Kein *fast forward* möglich: Git sucht
-    nach gemeinsamen Vorgänger
 
 ::: notes
 Hier im Beispiel ist der Standardfall beim Mergen dargestellt: Die beiden Branches
@@ -266,7 +245,7 @@ Merge-Commit ist in `A`!
 # Konflikte beim Mergen
 
 ::: notes
-(Parallele) Änderungen an selber Stelle =\> Merge-Konflikte
+Merksatz: (Parallele) Änderungen an selber Stelle =\> Merge-Konflikte
 :::
 
     $ git merge wuppie
@@ -375,6 +354,7 @@ Man beachte aber die Änderung der Commit-IDs von `wuppie`: Aus `D` wird `D'`!
 (Datum, Ersteller und Message bleiben aber erhalten.)
 :::
 
+::: notes
 # Don't lose your HEAD
 
 -   Branches sind wie Zeiger auf letzten Stand (Commit) eines Zweiges
@@ -401,6 +381,11 @@ Man beachte aber die Änderung der Commit-IDs von `wuppie`: Aus `D` wird `D'`!
         :::
 
 [[Konsole: Commit auschecken]{.ex}]{.slides}
+:::
+
+
+
+
 
 # Wrap-Up
 
