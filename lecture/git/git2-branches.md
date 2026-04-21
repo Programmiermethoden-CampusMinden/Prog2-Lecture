@@ -395,9 +395,10 @@ Man beachte aber die Änderung der Commit-IDs von `wuppie`: Aus `D` wird `D'`!
 -   Verschieben von Branches mit `git rebase`
 
 ::: readings
--   @Chacon2014 [Kap. 3]
--   @AtlassianGit
--   @GitCheatSheet
+Sie finden den Inhalt dieser Sitzung im @Chacon2014 [Kap. 2].
+
+Zusätzlich gibt es viele hilfreiche Tutorials wie beispielsweise die [Atlassian Git
+Tutorials](https://www.atlassian.com/git/tutorials).
 :::
 
 ::: outcomes
