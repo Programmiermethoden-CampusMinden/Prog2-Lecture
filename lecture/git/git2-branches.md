@@ -51,13 +51,19 @@ Branch einem Remote-Branch. Ein einfaches `git pull` oder `git push` holt dann
 
 ::: youtube
 -   [VL Git Branches](https://youtu.be/WXPJOsgeR10)
+
 -   [Demo Anlegen und Mergen von Branches](https://youtu.be/B8sesK1GyiE)
+
 -   [Demo Auflösen von Merge-Konflikten](https://youtu.be/iEr9i8auF7c)
+
 -   [Demo HEAD](https://youtu.be/U4gd0FBBqZQ)
 
 -   [VL Git Remotes](https://youtu.be/_uhEseblDYU)
+
 -   [Demo Fetch, Pull und Push](https://youtu.be/moqywsxtEy8)
+
 -   [Demo Tracking-Branches](https://youtu.be/0RoqM5Wmxfc)
+
 -   [Demo Verknüpfen weiterer Remotes](https://youtu.be/jL4AvSsjjKg)
 
 [Introduction to Git with Scott Chacon of GitHub (zweiter Teil, ab ca. Minute
@@ -114,18 +120,18 @@ Startpunkt; hier kann jeder beliebige Branch, Tag oder Commit genutzt werden).
 
 Nach Anlegen des neuen Branches zeigen beide Pointer auf den selben Commit.
 
-`git switch <branchname>` bzw. `git checkout <branchname>`holt den aktuellen Stand des jeweiligen Branches in die
-Workingcopy. Man kann also jederzeit in der Workingcopy die Branches wechseln und
-entsprechend weiterarbeiten.
+`git switch <branchname>` bzw. `git checkout <branchname>`holt den aktuellen Stand
+des jeweiligen Branches in die Workingcopy. Man kann also jederzeit in der
+Workingcopy die Branches wechseln und entsprechend weiterarbeiten.
 
 *Anmerkung*: In neueren Git-Versionen wurde der Befehl "`switch`" eingeführt, mit
 dem Sie in der Workingcopy auf einen anderen Branch wechseln können. Der bisherige
-Befehl "`checkout`" funktioniert aber weiterhin.
-Während der neue `git switch`-Befehl allerdings nur Branches umschalten kann,
-funktioniert `git checkout` sowohl mit Branchnamen und Dateinamen - damit kann man
-also auch eine andere Version einer Datei in der Workingcopy "auschecken". Falls
-gleiche Branch- und Dateinamen existieren, muss man für das Auschecken einer Datei
-noch "`--`" nutzen: `git checkout -- <dateiname>`.
+Befehl "`checkout`" funktioniert aber weiterhin. Während der neue
+`git switch`-Befehl allerdings nur Branches umschalten kann, funktioniert
+`git checkout` sowohl mit Branchnamen und Dateinamen - damit kann man also auch eine
+andere Version einer Datei in der Workingcopy "auschecken". Falls gleiche Branch-
+und Dateinamen existieren, muss man für das Auschecken einer Datei noch "`--`"
+nutzen: `git checkout -- <dateiname>`.
 :::
 
 \bigskip
@@ -135,7 +141,6 @@ noch "`--`" nutzen: `git checkout -- <dateiname>`.
 ::: notes
 Commit(s) auf `wuppie` ...
 :::
-
 
               D  wuppie
              /
@@ -168,7 +173,6 @@ Fix für `master` nötig:
 ::: notes
 Das führt zu dieser Situation:
 :::
-
 
               D  wuppie                                D  wuppie
              /                                        /
@@ -411,10 +415,7 @@ Man beachte aber die Änderung der Commit-IDs von `wuppie`: Aus `D` wird `D'`!
 [[Konsole: Commit auschecken]{.ex}]{.slides}
 :::
 
-
-
-
-# Erinnerung: Clonen kann sich lohnen => Remote-Branches
+# Erinnerung: Clonen kann sich lohnen =\> Remote-Branches
 
     https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture
 
@@ -432,7 +433,8 @@ Man beachte aber die Änderung der Commit-IDs von `wuppie`: Aus `D` wird `D'`!
                ^origin/master
 
 ::: notes
-Erinnerung: Git-Repository mit der URL `<URL-Repo>` in lokalen Ordner `<directory>` auschecken: `git clone <URL-Repo> [<directory>]`.
+Erinnerung: Git-Repository mit der URL `<URL-Repo>` in lokalen Ordner `<directory>`
+auschecken: `git clone <URL-Repo> [<directory>]`.
 
 Für die URL sind verschiedene Protokolle möglich, beispielsweise:
 
@@ -443,9 +445,14 @@ Für die URL sind verschiedene Protokolle möglich, beispielsweise:
     Variante wird im Praktikum im Zusammenspiel mit dem Gitlab-Server im SW-Labor
     verwendet)
 
-Neue Beobachtung: Die Workingcopy ist automatisch über den Namen `origin` mit dem Remote-Repo (gern auch "Remote" oder "Upstream" genannt) auf dem Server verbunden. Der lokale Branch `master` ist automatisch mit dem Remote-Branch `origin/master` verbunden, der den Stand des `master`-Branches auf dem Server spiegelt.
+Neue Beobachtung: Die Workingcopy ist automatisch über den Namen `origin` mit dem
+Remote-Repo (gern auch "Remote" oder "Upstream" genannt) auf dem Server verbunden.
+Der lokale Branch `master` ist automatisch mit dem Remote-Branch `origin/master`
+verbunden, der den Stand des `master`-Branches auf dem Server spiegelt.
 
-Mit `git remote add <name> <url>` kann man beliebig viele weitere Remotes hinzufügen. Das Arbeiten mit den weiteren Remotes unterscheidet sich nicht von dem hier gezeigten Vorgehen mit dem Default-Remote `origin`.
+Mit `git remote add <name> <url>` kann man beliebig viele weitere Remotes
+hinzufügen. Das Arbeiten mit den weiteren Remotes unterscheidet sich nicht von dem
+hier gezeigten Vorgehen mit dem Default-Remote `origin`.
 :::
 
 # Eigener und entfernter *master* entwickeln sich weiter ...
@@ -546,8 +553,8 @@ Branches!
                 \     /
                  F---G  origin/master
 
-*Anmerkung*: Schritt (2) kann man auch direkt per `git pull origin master` erledigen ...
-Ein `pull` fasst `fetch` und `merge` zusammen.
+*Anmerkung*: Schritt (2) kann man auch direkt per `git pull origin master` erledigen
+... Ein `pull` fasst `fetch` und `merge` zusammen.
 
 *Anmerkung* Statt dem `merge` in Schritt (2) kann man auch den lokalen `master` auf
 den aktualisierten `origin/master` rebasen und vermeidet damit die "Raute". Der
@@ -592,7 +599,8 @@ werden).
 ::: notes
 # Branches und Remotes
 
-Das Arbeiten mit Remote-Branches ist nicht nur bereits beim Klonen vorhandene Branches beschränkt.
+Das Arbeiten mit Remote-Branches ist nicht nur bereits beim Klonen vorhandene
+Branches beschränkt.
 
 1.  Neue lokale Branches pushen mit `git push <remote> <branch>`.
 2.  Neue remote Branches fetchen:
@@ -625,11 +633,6 @@ indem Sie beim Initialisieren den Schalter `--bare` mitgeben: `git init --bare` 
     git push origin master     # lokalen Master auf Server schicken
 :::
 
-
-
-
-
-
 # Wrap-Up
 
 -   Anlegen von Branches mit `git branch`
@@ -654,8 +657,7 @@ Tutorials](https://www.atlassian.com/git/tutorials).
 -   k3: Ich kann Änderungen vom fremden Repo holen
 -   k2: Ich kann den Unterschied zwischen lokalen Branches und entfernten Branches
 -   k3: Ich kann meine lokale Branches aktualisieren
--   k3: Ich kann lokale Änderungen ins fremde Repo pushen
-    erklären
+-   k3: Ich kann lokale Änderungen ins fremde Repo pushen erklären
 :::
 
 ::: challenges
