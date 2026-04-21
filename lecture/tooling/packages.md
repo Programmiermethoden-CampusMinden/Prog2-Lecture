@@ -19,7 +19,8 @@ sollten Sie es nicht in Projekten verwenden.
 :::
 
 ::: youtube
-TODO
+Vorlesung \[[YT](https://youtu.be/db3SGcxJxT8)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-packages/17abeff70beaf81a631314cb0207613f)\]
 :::
 
 # Typisches Java-Projekt
