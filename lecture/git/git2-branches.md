@@ -44,21 +44,25 @@ werden.
 :::
 
 ::: youtube
--   [VL Git Branches](https://youtu.be/WXPJOsgeR10)
+Vorlesung:
 
--   [Demo Anlegen und Mergen von Branches](https://youtu.be/B8sesK1GyiE)
+-   Teil 1: Branches \[[YT](https://youtu.be/JKiiPjbmxt4)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/album/video/pr2-git2-branches-und-remotes-teil-1/e22f97bf0f89fc53478219e9ec6b6b38/250)\]
+-   Teil 2: Remotes \[[YT](https://youtu.be/VeNOCZChSyE)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/album/video/pr2-git2-branches-und-remotes-teil-2/a1c74b85480b25fcf127b61ff5273cc2/250)\]
 
--   [Demo Auflösen von Merge-Konflikten](https://youtu.be/iEr9i8auF7c)
+Demos:
 
--   [Demo HEAD](https://youtu.be/U4gd0FBBqZQ)
-
--   [VL Git Remotes](https://youtu.be/_uhEseblDYU)
-
--   [Demo Fetch, Pull und Push](https://youtu.be/moqywsxtEy8)
-
--   [Demo Tracking-Branches](https://youtu.be/0RoqM5Wmxfc)
-
--   [Demo Verknüpfen weiterer Remotes](https://youtu.be/jL4AvSsjjKg)
+-   Anlegen und Mergen von Branches \[[YT](https://youtu.be/K5PgV_OYdDU)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/album/video/pr2-git2-demo-branches/e69299753000844af4923979dba2c740/250)\]
+-   Auflösen von Merge-Konflikten \[[YT](https://youtu.be/i-rQ8r1bL5o)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/album/video/pr2-git2-demo-merge-konflikt/b74469b393bb2fd3780745a567481c9b/250)\]
+-   HEAD \[[YT](https://youtu.be/zuJh-4tzCz0)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/album/video/pr2-git2-demo-head/4265fd790530b9d3cb708a40679116d0/250)\]
+-   Fetch, Pull und Push \[[YT](https://youtu.be/FN5gfxJwgr8)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/album/video/pr2-git2-demo-fetch-push/2da581076c33a4f642f41ffbf5a01b63/250)\]
+-   Verknüpfen weiterer Remotes \[[YT](https://youtu.be/-rDCWRGR85I)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/album/video/pr2-git2-demo-remotes/efff6edb6e7ae8b3bb3e4bcb272444d9/250)\]
 
 [Introduction to Git with Scott Chacon of GitHub (zweiter Teil, ab ca. Minute
 45)](https://youtu.be/ZDR433b0HJY)
