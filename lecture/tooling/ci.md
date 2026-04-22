@@ -33,9 +33,15 @@ einsetzen zu können, benötigt man Kenntnisse über Build-Tools. "CI" tritt
 :::
 
 ::: youtube
--   [VL Continuous Integration](https://youtu.be/NCWxo-PN4gs)
--   [Demo GitHub Actions](https://youtu.be/rpkZvuiyvTU)
--   [Demo Demo GitLab CI/CD](https://youtu.be/2ydDA4WY1wA)
+Vorlesung CI \[[YT](https://youtu.be/Ai2XxvB52MI)\],
+\[[HSBI](https://www.hsbi.de/medienportal/album/video/pr2-continuous-integration-ci/5e965fe15c6acbd1a45f17de3d2c8225/250)\]
+
+Demos:
+
+-   GitHub Actions \[[YT](https://youtu.be/1NPnx8vyIrU)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/album/video/pr2-ci-demo-github-actions/582d7e53b5ea76b688e6dc7b799892b8/250)\]
+-   GitLab CI/CD \[[YT](https://youtu.be/4qEgrEd58PE)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/album/video/pr2-ci-demo-gitlab-cicd/2ae38833b8283c1efed3818b8008e0b4/250)\]
 :::
 
 ::: notes
