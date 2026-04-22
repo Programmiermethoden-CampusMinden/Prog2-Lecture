@@ -169,9 +169,10 @@ Git Worktree: Auschecken von Branches in separate Ordner
 -   Anschauen: `git worktree list`
 -   Löschen: `git worktree remove <worktree>`
 
-\bigskip
-
--   Dokumentation: https://git-scm.com/docs/git-worktree
+::: readings
+Eine gute Quelle zum Nachlesen bietet die
+[Git-Dokumentation](https://git-scm.com/docs/git-worktree).
+:::
 
 ::: outcomes
 -   k2: Vorteile von Git Worktree
