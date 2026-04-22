@@ -14,8 +14,11 @@ verschiedenen Branches zu arbeiten.
 :::
 
 ::: youtube
--   [VL Git Worktree](https://youtu.be/nDkg6WvA0bk)
--   [Demo Git Worktree](https://youtu.be/RtXrv0oK3-w)
+Vorlesung Git Worktree \[[YT](https://youtu.be/5jI9MTKIKTs)\],
+\[[HSBI](https://www.hsbi.de/medienportal/album/video/pr2-git4-worktree/80984d064888d7ed2cff5b3bd4f5e62e/250)\]
+
+Demo Git Worktree \[[YT](https://youtu.be/aCyvKii19yQ)\],
+\[[HSBI](https://www.hsbi.de/medienportal/album/video/pr2-git4-demo-git-worktree/d72f222248f9a91aa34db97007456750/250)\]
 :::
 
 # Git Worktree - Mehrere Branches parallel auschecken
