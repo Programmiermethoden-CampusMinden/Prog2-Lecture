@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Swing: Tabellen"
+title: "Swing 5: Tabellen"
 ---
 
 ::: tldr

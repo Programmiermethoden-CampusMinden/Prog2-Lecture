@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Swing: Nützliche Widgets"
+title: "Swing 2: Nützliche Widgets"
 ---
 
 ::: tldr

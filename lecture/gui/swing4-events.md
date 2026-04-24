@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: Swing Events
+title: "Swing 4: Events"
 ---
 
 ::: tldr

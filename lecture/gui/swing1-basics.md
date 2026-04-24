@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Swing 101: Basics"
+title: "Swing 1: Basics"
 ---
 
 ::: tldr

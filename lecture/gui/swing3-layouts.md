@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Swing: Layout-Manager"
+title: "Swing 3: Layout-Manager"
 ---
 
 ::: tldr
