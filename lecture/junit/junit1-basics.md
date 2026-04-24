@@ -241,7 +241,7 @@ lohnenswert.
 :::
 
 ::: {.column width="50%"}
-![](images/newJUnit.png){width="80%" web_width="40%"}
+![](images/newJUnit.png){web_width="40%"}
 :::
 :::::
 
@@ -336,30 +336,20 @@ static <V> V fail(String message);
 
 # Mögliche Testausgänge bei JUnit: rot/grün/ignoriert
 
-::::: columns
-::: {.column width="55%"}
-![](images/junitErgebnis.png){web_width="60%"}
-:::
+![](images/junitErgebnis.png){width="80%" web_width="60%"}
 
-::: {.column width="44%"}
+::: notes
 1.  **grün**: Testausgang positiv ("passed")
     -   Alle Assertions sind erfolgreich
     -   Es gibt keine unbehandelte Exception
-
-\bigskip
-
 2.  **rot**: Testausgang negativ ("failed")
     -   Ein Assert ist fehlgeschlagen
     -   `Assert.fail()` wurde aufgerufen
     -   Unbehandelte Exception aufgetreten
-
-\bigskip
-
 3.  **ignoriert**: Testausgang "ignored"
     -   Vorbedingung via `assume()` nicht erfüllt
     -   Test mit `@Disabled` annotiert
 :::
-:::::
 
 [[Anmerkung zu Asserts pro Testmethode]{.ex}]{.slides}
 
