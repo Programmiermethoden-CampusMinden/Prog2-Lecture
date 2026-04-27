@@ -23,13 +23,23 @@ Neben den Standardkomponenenten `JFrame` für ein Fenster, `JPanel` für ein Pan
 :::
 
 ::: youtube
--   [VL Swing Widgets](https://youtu.be/cUtK-yL5Wpw)
--   [Demo JRadioButton](https://youtu.be/auu5wr0lr3w)
--   [Demo JFileChooser](https://youtu.be/HEm7ATvdYJo)
--   [Demo JOptionPane](https://youtu.be/kfTVZ_W8u6o)
--   [Demo JTabbedPane und JScrollPane](https://youtu.be/EAuT4n5mfAg)
--   [Demo JMenuBar](https://youtu.be/zMlrKRV8WIY)
--   [Demo JPopupMenu](https://youtu.be/ftHDFIkaC-E)
+Vorlesung \[[YT](https://youtu.be/qjKAIAqsFtA)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-swing-2-ntzliche-widgets/7064e0a8080c052676f88e096fcb5c26)\]
+
+Demos:
+
+-   JRadioButton \[[YT](https://youtu.be/IHEiinwRvcg)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-jradiobutton/448ff17582e4aa55c1c88d6e6e78b701)\]
+-   JFileChooser \[[YT](https://youtu.be/9-ECtlFuRWY)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-jfilechooser/495b9bd49d942961ab3905ce766b2abc)\]
+-   JOptionPane \[[YT](https://youtu.be/rYRuDbZmeMk)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-joptionpane/f2328dc05a9d30b14ed17deb677ae6b0)\]
+-   JTabbedPane und JScrollPane \[[YT](https://youtu.be/LtT6fzVtYbU)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-jtabbedpane-und-jscrollpane/b39670f201f71ad0b4bae98cfd75bb1e)\]
+-   JMenuBar \[[YT](https://youtu.be/f9fg27yAQRg)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-jmenubar/108f274f948752ed382eaa9b89b73d32)\]
+-   JPopupMenu \[[YT](https://youtu.be/IzEgsP41y5U)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-jpopupmenu/5a403d718e5918db2f736c7f16afeef9)\]
 :::
 
 # Radiobuttons: *JRadioButton*
