@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: Einführung in Graphics und Java 2D
+title: "Swing 6: Einführung in Graphics und Java 2D"
 ---
 
 ::: tldr
@@ -28,11 +28,19 @@ Game-Loop werden also keine Threads benötigt.
 :::
 
 ::: youtube
--   [VL Java2D](https://youtu.be/LDE_Kbc9w7k)
--   [Demo geometrische Objekte](https://youtu.be/vzBH0MjJ0rM)
--   [Demo Fonts](https://youtu.be/F-6fIGeGAcY)
--   [Demo Polygone](https://youtu.be/BLTZ3XhbvkY)
--   [Demo Bewegung und 2D-Spiel](https://youtu.be/wfVwSyTgm-w)
+Vorlesung \[[YT](https://youtu.be/a07lUyJRX3g)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-swing-6-einfhrung-in-graphics-und-java-2d/3caa2dad5870b4e08cf01ee9d20f05fc)\]
+
+Demos:
+
+-   Geometrische Objekte \[[YT](https://youtu.be/Cw2TZmIuI14)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-java2d-polygone/4934d8b7629f29f437ef5ba1524b2221)\]
+-   Fonts \[[YT](https://youtu.be/z8pz3ZnYkFk)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-java2d-fonts/8a3d5ac6b1bb55323ef4881ef3dea1cf)\]
+-   Polygone \[[YT](https://youtu.be/2-Le4ONlt08)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-java2d-polygone/6f4b1e0e38dd3cbba925755102b49150)\]
+-   Bewegung und 2D-Spiel \[[YT](https://youtu.be/Ke-I8q4taQI)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-java2d-bewegung-und-2d-spiel/dfdb1c3b7f8e8713bf97b53f48c03573)\]
 :::
 
 # GUIs mit Java
