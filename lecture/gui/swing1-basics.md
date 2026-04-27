@@ -176,8 +176,9 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
         `\newline`{=tex} =\> Aufpassen mit Multithreading!
 
 ::: readings
--   @Java-SE-Tutorial
--   @Ullenboom2021 [Kap. 18]
+Zum Thema Swing Basics können Sie im Tutorial ["Using Top-Level Containers"
+(Oracle)](https://docs.oracle.com/javase/tutorial/uiswing/components/toplevel.html)
+nachlesen.
 :::
 
 ::: outcomes
