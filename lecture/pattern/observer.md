@@ -117,8 +117,10 @@ Observer-Pattern: Benachrichtige registrierte Objekte über Statusänderungen
 -   `update()` kann auch Parameter haben
 
 ::: readings
--   @Nystrom2014 [Kap. 4]
--   @Gamma2011
+Auch wenn es für C++ geschrieben ist, lässt sich zum Thema Observer-Pattern das
+Kapitel 4 "Observer" im @Nystrom2014 sehr gut lesen. Der Verweis auf @Gamma2011 der
+["Gang of Four"](https://en.wikipedia.org/wiki/Design_Patterns) darf natürlich nicht
+fehlen.
 :::
 
 ::: outcomes
