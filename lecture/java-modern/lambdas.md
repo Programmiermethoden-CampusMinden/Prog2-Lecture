@@ -38,11 +38,20 @@ unterliegenden funktionalen Interface entsprechen.
 :::
 
 ::: youtube
--   [VL Lambda-Ausdrücke und funktionale Interfaces](https://youtu.be/Wd8KG7xtp4c)
--   [Demo Anonyme innere Klasse](https://youtu.be/QEXpQwRYoYc)
--   [Demo Lambda-Ausdruck](https://youtu.be/2LJIxsVw4pM)
--   [Demo Funktionale Interfaces selbst definiert](https://youtu.be/93O1oDL5_5c)
--   [Demo Vordefinierte funktionale Interfaces im JDK](https://youtu.be/jzEw8IH8Mfc)
+Vorlesung \[[YT](https://youtu.be/F1uv2bZgGOU)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-lambda-ausdrcke-und-funktionale-interfaces/017c7be527599311dd6763eacb2f0d9b)\]
+
+Demos:
+
+-   Anonyme innere Klassen \[[YT](https://youtu.be/5AGdWQxH6WQ)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-anonyme-innere-klassen/3db31de96e28d147703a16c55190249f)\]
+-   Lambda-Ausdrücke \[[YT](https://youtu.be/X6FpoIzCxGQ)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-lambda-ausdrcke/16a8d9e2dd74e7aa34fd98f884773cbc)\]
+-   Funktionale Interfaces selbst definiert \[[YT](https://youtu.be/gEmK8sDjBu0)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-funktionale-interfaces-selbst-definiert/9cf03bce9778161791bc04da6e55588d)\]
+-   Vordefinierte funktionale Interfaces im JDK
+    \[[YT](https://youtu.be/Ed6yck5Gvwk)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-vordefinierte-funktionale-interfaces-im-jdk/068208f0b3272fd18dbf092ff376bf76)\]
 :::
 
 # Problem: Sortieren einer Studi-Liste
