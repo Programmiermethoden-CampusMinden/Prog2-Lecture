@@ -359,4 +359,7 @@ Lesen Sie zu Packages im [Packages Tutorial
 ::: challenges
 Nehmen Sie Ihr letztes Prog1-Projekt und überlegen Sie: Wie würden Sie es in 3..4
 Packages aufteilen?
+
+Bearbeiten Sie die [Package
+Challenge](https://github.com/Programmiermethoden-CampusMinden/prog2_challenge_packages).
 :::
