@@ -370,8 +370,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
     -   Zeichne Objekte neu
 
 ::: readings
--   @Java-SE-Tutorial
--   @Ullenboom2021 [Kap. 18]
+Zum Thema Java2D können Sie im Tutorial ["Trail: 2D Graphics"
+(Oracle)](https://docs.oracle.com/javase/tutorial/2d/index.html) nachlesen.
 :::
 
 ::: outcomes
