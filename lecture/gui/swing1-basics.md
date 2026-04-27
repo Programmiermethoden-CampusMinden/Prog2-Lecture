@@ -26,8 +26,11 @@ Thread ("Runnable") dem EDT übergeben werden.
 :::
 
 ::: youtube
--   [VL Swing 101](https://youtu.be/ynwu6LuSLgQ)
--   [Demo Einfaches Fenster](https://youtu.be/L3Y2mB7-jRQ)
+Vorlesung \[[YT](https://youtu.be/UNTMWHEbnYs)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-swing-1-basics/426b0e66bbe4a2d940655a40341002f2)\]
+
+Demo Einfaches Fenster \[[YT](https://youtu.be/IKsptx69iTM)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-einfaches-fenster/f221a9c89a1f8c12d494171967fc3b8e)\]
 :::
 
 # Wiederholung GUI in Java
