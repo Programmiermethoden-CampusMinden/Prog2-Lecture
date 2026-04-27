@@ -268,8 +268,9 @@ Nützliche Swing-Komponenten:
 -   Radiobuttons und Checkboxen, logische Gruppierung
 
 ::: readings
--   @Java-SE-Tutorial
--   @Ullenboom2021 [Kap. 18]
+Zum Thema Swing Widgets können Sie im Tutorial ["Lesson: Using Swing Components"
+(Oracle)](https://docs.oracle.com/javase/tutorial/uiswing/components/index.html)
+nachlesen.
 :::
 
 ::: outcomes
