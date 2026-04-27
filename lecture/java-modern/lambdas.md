@@ -319,7 +319,7 @@ also ein funktionales Interface: Es hat nur *eine* eigene abstrakte Methode
 `int compare(T o1, T o2);`.
 
 Im Package
-[java.util.function](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/package-summary.html)
+[java.util.function](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/function/package-summary.html)
 sind einige wichtige funktionale Interfaces bereits vordefiniert, beispielsweise
 `Predicate` (Test, ob eine Bedingung erfüllt ist) und `Function` (verarbeite einen
 Wert und liefere einen passenden Ergebniswert). Diese kann man auch in eigenen
@@ -410,9 +410,10 @@ stolpert:
         Methode entsprechen
 
 ::: readings
--   @Java-SE-Tutorial
--   @Urma2014 [Kap. 3]
--   @Ullenboom2021 [Kap. 12]
+Lesen Sie zu diesem Thema auch in den Oracle-Tutorials ["Writing Your First Lambda
+Expression" (Oracle)](https://dev.java/learn/lambdas/first-lambdas/) und ["Using
+Lambdas Expressions in Your Application"
+(Oracle)](https://dev.java/learn/lambdas/functional-interfaces/) nach.
 :::
 
 ::: outcomes
