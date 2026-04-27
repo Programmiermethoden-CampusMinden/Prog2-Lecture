@@ -20,9 +20,15 @@ Adapter-Klassen müssen dann nur noch die benötigten Methoden überschrieben we
 :::
 
 ::: youtube
--   [VL Swing Events](https://youtu.be/Un-FS88__VU)
--   [Demo Swing Events und Listener](https://youtu.be/hjchoDaqcWY)
--   [Demo MouseListener vs. MouseAdapter](https://youtu.be/GaKMBAXY19w)
+Vorlesung \[[YT](https://youtu.be/TuL8NUQfKWo)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-swing-4-events/b2f0f0ca1af3969dc3ff2ff4a20c2b8c)\]
+
+Demos:
+
+-   Swing Events und Listener \[[YT](https://youtu.be/gR6uHmMG4rk)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-events-und-listener/fcbd66f8c1cdf3e0e4f0f76bc4d1ffb9)\]
+-   MouseListener vs. MouseAdapter \[[YT](https://youtu.be/8GGUpSOFWjE)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-mouselistener-vs-mouseadapter/c7633620d72a1eee218d99995d5fd14d)\]
 :::
 
 # Reaktion auf Events: Anwendung Observer-Pattern
