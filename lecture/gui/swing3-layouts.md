@@ -21,11 +21,19 @@ Hier gibt es viele verschiedene Ausprägungen und Spielarten. Es gibt beispielsw
 :::
 
 ::: youtube
--   [VL Swing: Layout-Manager](https://youtu.be/An7tQMW1A3E)
--   [Demo BorderLayout](https://youtu.be/tifXSKXSUYw)
--   [Demo FlowLayout](https://youtu.be/tYTDhv6lwT8)
--   [Demo GridLayout](https://youtu.be/JyN_Wozg3ms)
--   [Demo GridBagLayout](https://youtu.be/95PG2alVTSo)
+Vorlesung \[[YT](https://youtu.be/qpnTTP7FSm8)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-swing-3-layout-manager/0683986ffdeef59177cf546268505f15)\]
+
+Demos:
+
+-   BorderLayout \[[YT](https://youtu.be/a8K96BOw89c)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-borderlayout/0008c0637bf3bc562bd7e4b2e1cc626a)\]
+-   FlowLayout \[[YT](https://youtu.be/8Nl6aRD9TpA)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-flowlayout/d75b9f29ca08f42a29991aca02dec89f)\]
+-   GridLayout \[[YT](https://youtu.be/DYyjxb4kWMo)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-gridlayout/af5bf8e49bcbb37b78a027569e6f24d5)\]
+-   GridBagLayout \[[YT](https://youtu.be/NDfO_OLrwxI)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-swing-gridbaglayout/adcb5b8aa539f9e4e1b7fa506a8f8495)\]
 :::
 
 # Überblick
@@ -148,7 +156,7 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 \bigskip
 
 | Constraint | Bedeutung |
-|:-------------|:---------------------------------------------------------------------|
+|:--------------|:--------------------------------------------------------------------|
 | `gridx` | **Spalte** für Komponente (linke obere Ecke) |
 | `gridy` | **Zeile** für Komponente (linke obere Ecke) |
 | `gridwidth` | **Anzahl der Spalten** für Komponente |
