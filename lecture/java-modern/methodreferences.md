@@ -306,8 +306,10 @@ nötig**)
     [(d.h. ein Interface mit **genau** einer abstrakten Methode)]{.notes}
 
 ::: readings
--   @Java-SE-Tutorial
--   @Urma2014 [Kap. 3]
+Lesen Sie zu diesem Thema auch in den Oracle-Tutorials ["Writing Lambda Expressions
+as Method References" (Oracle)](https://dev.java/learn/lambdas/method-references/)
+und ["Combining Lambda Expressions"
+(Oracle)](https://dev.java/learn/lambdas/combining-chaining-composing/) nach.
 :::
 
 ::: outcomes
