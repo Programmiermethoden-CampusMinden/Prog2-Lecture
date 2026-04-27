@@ -150,8 +150,9 @@ Observer-Pattern in Swing-Komponenten:
 -   Adapter: Listener mit leeren Methodenrümpfen
 
 ::: readings
--   @Java-SE-Tutorial
--   @Ullenboom2021 [Kap. 18]
+Zum Thema Swing Events können Sie im Tutorial ["Lesson: Writing Event Listeners"
+(Oracle)](https://docs.oracle.com/javase/tutorial/uiswing/events/index.html)
+nachlesen.
 :::
 
 ::: outcomes
