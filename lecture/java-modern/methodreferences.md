@@ -25,10 +25,17 @@ Form wird die Methode auf dem ersten Parameter aufgerufen).
 :::
 
 ::: youtube
--   [VL Methoden-Referenzen](https://youtu.be/z0mfvvrsRzc)
--   [Demo Referenz auf statische Methode](https://youtu.be/YFdPcxE_1Eo)
--   [Demo Referenz auf Instanz-Methode (Objekt)](https://youtu.be/ImJTywhXrJo)
--   [Demo Referenz auf Instanz-Methode (Typ)](https://youtu.be/DVz2x27WHU8)
+Vorlesung \[[YT](https://youtu.be/q5gptwHDJEM)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-methoden-referenzen/6a9ab0c3e5af8ace9ddb62e5a5506e0a)\]
+
+Demos:
+
+-   Referenz auf statische Methode \[[YT](https://youtu.be/WI8GKC42zZg)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-referenz-auf-statische-methode/9b18f6efb5bf54d4e98a8dbf8469fcfd)\]
+-   Referenz auf Instanz-Methode (Objekt) \[[YT](https://youtu.be/u4OiqmBQEYY)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-referenz-auf-instanz-methode-objekt/1a92bdbab9c7572518e0f453073e08a5)\]
+-   Referenz auf Instanz-Methode (Typ) \[[YT](https://youtu.be/57ngXQsEtTU)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-referenz-auf-instanz-methode-typ/db406dfb1389a90f4399bfdd5cc7c6f4)\]
 :::
 
 # Beispiel: Sortierung einer Liste
