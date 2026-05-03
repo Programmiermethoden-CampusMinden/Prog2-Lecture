@@ -23,7 +23,8 @@ Varianten.
 :::
 
 ::: youtube
--   [VL Template-Method-Pattern](https://youtu.be/EE-n2T6AO-g)
+Vorlesung \[[YT](https://youtu.be/3rdlr4n2Hsc)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-template-method-pattern/0bb25b0a96c0d39d9f271e55687f37f3)\]
 :::
 
 # Motivation: Syntax-Highlighting im Tokenizer
