@@ -573,9 +573,8 @@ Zusätzliche kurze Video-Anleitungen von GitHub:
 -   Erstellen von Beiträgen zu einem Projekt über Pull-/Merge-Requests
 
 ::: readings
--   @Chacon2014 [Kap. 5, 4.8, 6]
--   @AtlassianGit
--   @GitCheatSheet
+Sie finden den Inhalt dieser Sitzung im @Chacon2014 in den Kapiteln 3 (Branching)
+und 5 (Zusammenarbeit) sowie 4.8 und 6 (GitLab und GitHub).
 :::
 
 ::: outcomes
