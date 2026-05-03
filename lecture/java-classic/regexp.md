@@ -481,9 +481,10 @@ Expressions"
 :::
 
 ::: outcomes
--   k1: Ich kenne die wichtigsten Methoden von java.util.regex.Pattern und
-    java.util.regex.Matcher
--   k2: Ich kann den Unterschied zwischen Matcher#find und Matcher#matches erklären
+-   k1: Ich kenne die wichtigsten Methoden von `java.util.regex.Pattern` und
+    `java.util.regex.Matcher`
+-   k2: Ich kann den Unterschied zwischen `Matcher#find` und `Matcher#matches`
+    erklären
 -   k2: Ich kann zwischen greedy und non-greedy Verhalten bei regulären Ausdrücken
     unterscheiden
 -   k3: Ich kann einfache reguläre Ausdrücke bilden
