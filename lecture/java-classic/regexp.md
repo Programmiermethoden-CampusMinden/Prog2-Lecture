@@ -474,7 +474,10 @@ Lösung: `([A-Z][a-zA-Z]*)\s\1`
 -   Quantifizierung ist möglich, aber **greedy** (Default)
 
 ::: readings
--   @Java-SE-Tutorial
+Zum Thema Regular Expressions können Sie in den Tutorials ["Lesson: Regular
+Expressions"
+(Oracle)](https://docs.oracle.com/javase/tutorial/essential/regex/index.html) und
+["Regular Expressions" (Oracle)](https://dev.java/learn/regex/) nachlesen.
 :::
 
 ::: outcomes
