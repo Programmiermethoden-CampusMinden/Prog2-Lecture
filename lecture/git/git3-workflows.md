@@ -49,12 +49,18 @@ Git erlaubt unterschiedliche Formen der Zusammenarbeit.
 :::
 
 ::: youtube
--   [VL Git Workflows](https://youtu.be/3xqmNGN39wE)
+Vorlesung \[[YT](https://youtu.be/S1GeoIIHt_E)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-git3-branching-strategien-git-workflows/03751c7ceace4b4a5bfc81c489599558)\]
 
--   [Demo Anlegen eines Forks, Erstellen eines Pull-Requests
-    (PR)](https://youtu.be/-8NOia7k0WI)
+Demos:
 
--   [Demo Arbeiten mit einem PR, Review eines PR](https://youtu.be/4LaZc080Ajo)
+-   Anlegen eines Forks, Erstellen eines Pull-Requests (PR)
+    \[[YT](https://youtu.be/G0FKMH1Ad-0)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-git-workflows-demo-fork-open-pr/abec52c9cb57af35caf46722735568a7)\]
+-   Arbeiten mit einem PR, Review eines PR \[[YT](https://youtu.be/w35ZCQqcyLc)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-git-workflows-demo-working-with-pr/8fb3fc4e47aab1f7290fb7813886a0a2)\]
+-   `pull merge` vs. `pull rebase` \[[YT](https://youtu.be/LEppPX0Fl88)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-git-unterschied-pull-merge-vs-pull-rebase/14893dbc7aae015c9736c66fd049b5ab)\]
 :::
 
 # Nutzung von Git in Projekten: Verteiltes Git (und Workflows)
