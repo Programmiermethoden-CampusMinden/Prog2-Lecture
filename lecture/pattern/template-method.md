@@ -226,8 +226,10 @@ Template-Method-Pattern: Verhaltensänderung durch Vererbungsbeziehungen
     tatsächlichen Typ des Objekts implementierten Hilfsmethoden
 
 ::: readings
--   @Eilebrecht2013
--   @Gamma2011
+Der [Refactoring.Guru](https://refactoring.guru/design-patterns/template-method) hat
+eine schöne Zusammenfassung des Template-Method-Patterns. Der Verweis auf @Gamma2011
+der ["Gang of Four"](https://en.wikipedia.org/wiki/Design_Patterns) darf natürlich
+nicht fehlen.
 :::
 
 ::: outcomes
