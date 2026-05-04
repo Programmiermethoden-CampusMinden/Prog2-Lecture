@@ -396,6 +396,28 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 
 -   Inhalt eines Commits: `git show`
 
+::: notes
+**Anmerkung**: Ausgewählte interessante Optionen für `git log`:
+
+Für `git log` gibt es eine schöne Option `-p`, die einen "Patch" ausgibt: Gelöschte
+Zeilen werden mit einem "-" und hinzugefügte Zeilen werden mit einem "+" angezeigt.
+Zusätzlich werden jeweils noch ein bis drei ungeänderte Zeile jeweils vor und nach
+der Änderung angezeigt.
+
+Mit der Option `-S<SUCHSTRING>` zeigt `git log` alle Änderungen an, die diesen
+Suchstring in einer Datei betreffen.
+
+Die Option `--all` zeigt alle Branches an, also nicht nur die Änderungen auf dem
+aktuell ausgecheckten Branch. Mit der zusätzlichen Option `--graph` bekommt man in
+der Konsole eine hübsche kleine baumartige Struktur angezeigt.
+
+Mit der Option `--oneline` wird der ausgegebene Log abgekürzt und pro Commit nur die
+wichtigsten Dinge (SHA-ID und abgekürzte Commit-Message) ausgegeben.
+
+Ich persönlich nutze häufig `git log --all --graph --oneline` und habe mir dazu
+einen Alias (s.o.) angelegt.
+:::
+
 [[Konsole]{.ex}]{.slides}
 
 # Änderungen und Logs betrachten
