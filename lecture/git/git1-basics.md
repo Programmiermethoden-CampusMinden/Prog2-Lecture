@@ -718,11 +718,11 @@ einem professionellen Umfeld wäre ich hier aber sehr ... vorsichtig.*)
 
 -   Anlegen eines lokalen Repos mit `git init`
 -   Clonen eines existierenden Repos mit `git clone <url>`
--   Änderungen einpflegen zweistufig (`add`, `commit`)
--   Status der Workingcopy mit `status` ansehen
--   Logmeldungen mit `log` ansehen
--   Änderungen auf einem File mit `diff` bzw. `blame` ansehen
--   Projektstand markieren mit `tag`
+-   Änderungen einpflegen zweistufig (`git add`, `git commit`)
+-   Status der Workingcopy mit `git status` ansehen
+-   Logmeldungen mit `git log` ansehen
+-   Änderungen auf einem File mit `git diff` bzw. `git blame` ansehen
+-   Projektstand markieren mit `git tag`
 -   Ignorieren von Dateien/Ordnern: Datei `.gitignore`
 
 ::: readings
