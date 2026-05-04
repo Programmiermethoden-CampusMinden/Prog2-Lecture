@@ -160,7 +160,7 @@ formatieren lassen. Hier einige Möglichkeiten:
     ``` groovy
     plugins {
         id "java"
-        id "com.diffplug.spotless" version "7.0.3"
+        id "com.diffplug.spotless" version "8.4.0"
     }
 
     spotless {
