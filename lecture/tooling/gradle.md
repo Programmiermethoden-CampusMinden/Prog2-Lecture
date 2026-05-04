@@ -203,7 +203,7 @@ führt darin `gradle init` aus. Gradle fragt der Reihe nach einige Einstellungen
       2: TestNG
       3: Spock
       4: JUnit Jupiter
-    Enter selection (default: JUnit Jupiter) [1..4] 1
+    Enter selection (default: JUnit Jupiter) [1..4] 4
 
     Project name (default: tmp): wuppie
     Source package (default: tmp): fluppie
@@ -218,6 +218,11 @@ Damit wird die eingangs gezeigte Konfiguration angelegt.
 *Anmerkung*: Die hier dargestellten Auswahloptionen und ggf. die Reihenfolge der
 Schritte können sich mit neueren Gradle-Versionen durchaus ändern. Das prinzipielle
 Vorgehen bleibt aber identisch.
+
+*Anmerkung*: Man kann die schrittweise Konfiguration auch durch einen einzigen
+Befehl zusammenfassen, beispielsweise
+`gradle init --type java-application --dsl groovy --test-framework junit-jupiter`
+ö.ä. ...
 
 ::: notes
 # Gradle und IntelliJ
