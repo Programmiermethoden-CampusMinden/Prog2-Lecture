@@ -508,7 +508,7 @@ sourceSets {
 
 checkstyle {
     configFile = file("${rootDir}/google_checks.xml")
-    toolVersion = '13.4.0'
+    toolVersion = '13.4.2'
 }
 
 javadoc {
