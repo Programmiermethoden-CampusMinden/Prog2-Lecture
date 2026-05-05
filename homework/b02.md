@@ -1,0 +1,105 @@
+# Blatt 02: Git Branches, JUnit Basics; CI-Pipeline
+
+## Zusammenfassung
+
+Auf diesem Blatt üben Sie den Umgang mit Git (Branches und Mergen -
+zunächst auf der Konsole) sowie das Erstellen erster JUnit-Tests.
+Weiterhin definieren Sie eine erste einfache CI-Pipeline für Ihr Repo.
+
+## Aufgaben
+
+### Git-Spiel
+
+Betrachten Sie erneut die [Vorgaben zur
+"Git-Quest"](https://github.com/Programmiermethoden-CampusMinden/prog2_ybel_gitquest).
+Die Geschichte des Helden Markus findet im `master`-Branch kein Ende,
+sondern erst im Hilfsbranch `end`.
+
+Machen Sie nun verschiedene Experimente mit Branches in Git, und starten
+Sie dabei jeweils mit einem frischen Klon der Vorgaben.
+
+1.  Ändern Sie eine Datei, die im Branch `end` nicht verändert wurde.
+    Erzeugen Sie mit diesen Änderungen auf dem `master` einen neuen
+    Commit. Mergen Sie danach den Branch `end` in den `master`-Branch.
+2.  Ändern Sie nun eine Datei, die auch im Branch `end` verändert wurde.
+    Achten Sie dabei darauf, die Änderung an einer anderen Stelle in der
+    Datei vorzunehmen. Erzeugen Sie mit diesen Änderungen auf dem
+    `master` einen neuen Commit. Mergen Sie danach den Branch `end` in
+    den `master`-Branch.
+3.  Wie (2), aber ändern Sie nun eine Stelle, die auch im Branch `end`
+    verändert wurde. Erzeugen Sie mit diesen Änderungen auf dem `master`
+    einen neuen Commit. Mergen Sie danach den Branch `end` in den
+    `master`-Branch. Was passiert, wenn die Änderung im `master`
+    identisch zu der in `end` ist? Was passiert, wenn die Änderung im
+    `master` anders ist als in `end`?
+4.  Wie (2), aber setzen Sie bitte den Branch `end` auf die Spitze von
+    `master`, bevor Sie `end` in `master` mergen.
+
+Was beobachten Sie jeweils? Erklären Sie Ihre Beobachtungen. Wenn es
+Konflikte gibt: Wie lösen Sie diese auf? Demonstrieren Sie das Vorgehen
+im Praktikum live.
+
+### Katzen-Café
+
+Forken Sie das
+["Cat-Cafe"](https://github.com/Programmiermethoden-CampusMinden/prog2_ybel_catcafe)-Repo
+und erzeugen Sie sich eine lokale Arbeitskopie von Ihrem Fork.
+
+#### Gradle
+
+Erstellen Sie eine Gradle-Konfiguration für das Java-Projekt und fügen
+Sie als externe Abhängigkeiten **JUnit** (Version 6.x) sowie das
+Gradle-Plugin **Spotless** hinzu. Passen Sie die Konfiguration so an,
+dass Sie
+
+-   `main()` in `catcafe.Main` über Gradle ausführen können, und
+-   JUnit-Tests mit Gradle ausführen können, und
+-   den Code mit `google-java-format` formatieren können. Können Sie für
+    den Google-Java-Formatter die Einrückung auf 4 Leerzeichen (statt
+    der Default 2 Leerzeichen) anpassen? Lange Strings sollen ebenfalls
+    umgebrochen werden (falls nötig).
+
+#### JUnit
+
+Erstellen Sie mit JUnit mindestens 10 unterschiedliche Testfälle für die
+Klasse `CatCafe`. Achten Sie auf den Aufbau der Testfälle und nutzen Sie
+das Muster "given - when - then". Achten Sie auch auf passende
+Methodennamen.
+
+Diskutieren Sie folgende Fragen:
+
+-   Warum sind die von Ihnen formulierten Testfälle relevant?
+-   Warum halten Sie die formulierten Testfälle für unterschiedlich?
+
+### Remotes und CI-Pipeline
+
+Erstellen Sie auf GitHub (oder einem anderen kostenlosen Git-Anbieter)
+ein öffentlich einsehbares Repo.
+
+Verbinden Sie Ihr Repo auf dem Server mit Ihrem lokalen Repo und pushen
+Sie ihre Branches aus der Bearbeitung der vorigen Aufgabe "Katzen-Café"
+auf den Server.
+
+Erstellen Sie eine einfache CI-Pipeline, die bei jedem Commit/Push auf
+dem Hauptbranch das Projekt
+
+1.  baut (kompiliert), und in einem zweiten Schritt
+2.  die JUnit-Tests aus der vorigen Aufgabe "Katzen-Café" ausführt, und
+    in einem dritten Schritt
+3.  die korrekte Formatierung überprüft.
+
+## Bearbeitung und Abgabe
+
+-   Bearbeitung: Einzelbearbeitung
+-   Abgabe Post Mortem [im
+    ILIAS](https://www.hsbi.de/elearning/goto.php/exc/1664006): bis
+    **11. Mai, 08:00 Uhr**
+-   Vorstellung im Praktikum: 11./13. Mai
+
+------------------------------------------------------------------------
+
+<p align="center"><img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png"  /></p>
+
+Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
+
+<blockquote><p><sup><sub><strong>Last modified:</strong> 476a1df 2026-04-22 finalize b02 (S26: git, junit, ci)<br></sub></sup></p></blockquote>
