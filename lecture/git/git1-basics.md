@@ -513,6 +513,36 @@ der Änderung angezeigt.
 
 [man 5 gitignore]{.ex href="https://linux.die.net/man/5/gitignore"}
 
+::: notes
+# Zeilenenden: Windows vs. der Rest der Welt
+
+Windows nutzt `CRLF` (`\r\n`) als Zeilenende, der Rest der Welt arbeitet mit `LF`
+(`\n`). Git versucht das zu erkennen und beim Commit bzw. Checkout automatisch zu
+konvertieren (z.B. alles im Repository als `LF` zu speichern und lokal auf Windows
+mit `CRLF` auszuchecken). Da es dabei oft Schwierigkeiten gibt und Warnungen wie
+"*LF will be replaced by CRLF the next time Git touches it*" auftauchen, kann man im
+Projekt eine Datei `.gitattributes` anlegen.
+
+Hier ein Beispiel mit einer minimalen Konfiguration, die ich häufig verwende:
+
+    * text=auto eol=lf
+
+    *.cmd text eol=crlf
+    *.bat text eol=crlf
+
+Das sagt Git, dass es Text-Dateien automatisch erkennen soll und sie im Repository
+mit `LF` (`\n`) als Zeilentrenner speichern soll. In der Workingcopy werden diese
+Dateien dann ebenfalls mit `LF` (`\n`) ausgecheckt - auch unter Windows. Für
+Dateien, die für Windows wichtig sind (beispielsweise die `gradlew.bat`), geben die
+letzten beiden Zeilen explizit an, dass Git sie in der Workingcopy mit
+Windows-üblichen Zeilenenden `CRLF` (`\r\n`) auschecken soll. Im Repository liegen
+sie trotzdem normalisiert mit `LF` (`\n`). So bleiben die Skripte unter Windows
+funktionsfähig, ohne dass jede:r Entwickler:in die eigene Git-Konfiguration anpassen
+muss.
+
+Siehe auch [man 5 gitattributes](https://linux.die.net/man/5/gitattributes).
+:::
+
 # Zeitmaschine
 
 -   Änderungen in Workingcopy rückgängig machen
