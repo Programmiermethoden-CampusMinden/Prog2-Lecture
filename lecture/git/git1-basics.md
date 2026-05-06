@@ -383,7 +383,7 @@ Letztlich ist dies nur eine Abkürzung für die Folge `git rm --cached <fileAlt>
 manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 :::
 
-# Commits betrachten
+# Commits suchen und betrachten
 
 -   Liste aller Commits: `git log`
     -   `git log -<n>` oder `git log --since="3 days ago"` [Meldungen eingrenzen
@@ -401,11 +401,40 @@ manuelles Umbenennen der Datei in der Workingcopy und `git add <fileNeu>`.
 
 Für `git log` gibt es eine schöne Option `-p`, die einen "Patch" ausgibt: Gelöschte
 Zeilen werden mit einem "-" und hinzugefügte Zeilen werden mit einem "+" angezeigt.
-Zusätzlich werden jeweils noch ein bis drei ungeänderte Zeile jeweils vor und nach
-der Änderung angezeigt.
+Zusätzlich werden jeweils noch ein paar ungeänderte Zeilen vor und nach der Änderung
+angezeigt.
 
-Mit der Option `-S<SUCHSTRING>` zeigt `git log` alle Änderungen an, die diesen
-Suchstring in einer Datei betreffen.
+Mit der Option `-S'<SUCHSTRING>'` zeigt `git log` alle Commits an, in deren Diff
+sich die Anzahl der Vorkommen des Suchstrings ändert. Beispielsweise wenn in einem
+Commit der Suchstring neu eingefügt wurde, ändert sich die Anzahl von 0 auf 1.
+Beispiel: Wir suchen nach allen Commits, in denen der Begriff "foobar" neu
+hinzukommt oder verschwindet oder sich verdoppelt: `git log -p -S'foobar'`.
+
+Oft hilft `-S` nicht richtig, weil man Commits haben möchte, in deren Diff sich
+etwas in der selben *Zeile* ändert, in der der Suchstring vorkommt, aber nicht der
+Suchbegriff selbst. Da sich hier die Anzahl des Suchstrings im Diff nicht unbedingt
+ändert, würden diese Commits nicht angezeigt. Beispiel: Wir suchen nach allen
+Commits mit Änderungen des Zahlenwerts in der Zeile `foobar 10`. Hier hilft die
+Option `-G'<REGEX>'`: Damit werden alle Commits gefunden, in deren Diff sich in den
+Zeilen mit dem Suchausdruck etwas ändert: `git log -p -G'foobar'` findet alle Zeilen
+im Diff, wo "foobar" vorkommt, d.h. wenn sich beispielsweise die Zeile von
+`foobar  3` auf `foobar 10` ändert. Vorsicht: Im Unterschied zu `-S` ist hier der
+Suchstring ein regulärer Ausdruck (Regex). Git verwendet dabei eine etwas spezielle
+Regex-Syntax (siehe Git-Dokumentation).
+
+Wenn man nicht nach Änderungen im Diff, sondern stattdessen nach Begriffen in den
+Commit-Messages suchen möchte, kann man die Option `--grep='<SUCHSTRING>'` nutzen.
+Auch hier ist `<SUCHSTRING>` ein regulärer Ausdruck.
+
+Wenn man die gefundenen Stellen auf einen bestimmten Pfad (Datei) begrenzen möchte,
+kann man `--  pfad/zur/datei.md` hinten an den Log-Befehl anhängen. Beispielsweise
+würde `git log -p -G'foobar'  --  foo/bar.txt` alle Commits finden, in deren Diff
+"foobar" vorkommt und die die Datei `foo/bar.txt` betreffen.
+
+Normalerweise arbeitet sich `git log` vom jüngsten zum ältesten Commit durch, geht
+also in der Geschichte zurück. Wenn man die Reihenfolge umkehren möchte, kann man
+noch `--reverse` als zusätzliche Option nutzen. Man kann auch einen "Commit-Range"
+angeben, etwa `5c73aca..cb73f92`.
 
 Die Option `--all` zeigt alle Branches an, also nicht nur die Änderungen auf dem
 aktuell ausgecheckten Branch. Mit der zusätzlichen Option `--graph` bekommt man in
