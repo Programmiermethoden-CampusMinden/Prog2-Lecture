@@ -463,11 +463,21 @@ einen Alias (s.o.) angelegt.
     Änderungen an!
     :::
 
-\bigskip
+\smallskip
 
 -   `git diff commitA commitB`
 
     Änderungen zwischen Commits
+
+::: notes
+Git arbeitet zeilenbasiert. Änderungen an einem Wort tauchen also im Diff immer als
+ganze geänderte Zeile auf. (Das ist auch ein guter Grund, die Zeilenlänge zu
+begrenzen!)
+
+Gelöschte Zeilen werden mit einem "-" und hinzugefügte Zeilen werden mit einem "+"
+angezeigt. Zusätzlich werden jeweils noch ein paar ungeänderte Zeilen vor und nach
+der Änderung angezeigt.
+:::
 
 \bigskip
 
