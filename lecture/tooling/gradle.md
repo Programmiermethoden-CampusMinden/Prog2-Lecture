@@ -542,7 +542,7 @@ Gradle"](https://docs.gradle.org/current/userguide/ant.html).
             |-- gradle-wrapper.jar
             `-- gradle-wrapper.properties
 
-::: notes
+::::: notes
 Zur Ausführung von Gradle-Skripten benötigt man eine lokale Gradle-Installation.
 Diese sollte für i.d.R. alle User, die das Projekt bauen wollen, identisch sein.
 Leider ist dies oft nicht gegeben bzw. nicht einfach lösbar.
@@ -568,6 +568,7 @@ automatisch die selbe Version, ohne diese auf ihrem System zuvor installieren zu
 müssen. Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle
 vorzuziehen!
 
+::: important
 **Wichtig**: Oft findet sich im `.gitignore` der Eintrag `*.jar`, d.h. Jar-Files
 werden üblicherweise als generierte Binärdateien nicht mit ins Repo eingecheckt.
 Dadurch wird aber auch der Gradle-Wrapper oft vergessen, und beim Build in der
@@ -575,9 +576,11 @@ CI-Pipeline schlägt das dann fehl. Entweder definieren Sie für
 `gradle/wrapper/gradle-wrapper.jar` eine Ausnahme im `.gitignore`, oder fügen Sie
 den Wrapper mit Hilfe des Force-Flags der Versionskontrolle hinzu:
 `git add  -f  gradle/wrapper/gradle-wrapper.jar`.
+:::
 
-**Wichtig**: Der Gradle-Wrapper `gradlew` muss ausführbar sein! Wenn Sie auf einem
-POSIX-System arbeiten (Linux, macOS, BSD), dann wird das `x`-Bit
+::: caution
+**Wichtig** (Windows-User): Der Gradle-Wrapper `gradlew` muss ausführbar sein! Wenn
+Sie auf einem POSIX-System arbeiten (Linux, macOS, BSD), dann wird das `x`-Bit
 (Unix-Executable-Bit) bereits beim Initialisieren des Projekts durch `gradle init`
 oder über IntelliJ automatisch korrekt gesetzt und bei einem `git add` mit ins Repo
 eingecheckt. Windows und Windows-Dateisysteme kennen das Unix-Executable-Bit nicht,
@@ -586,6 +589,7 @@ gesetzten `x`-Bit im Git-Repo einchecken: `git add --chmod=+x gradlew`. Alternat
 arbeiten Sie auf Ihrem Windows-Rechner einfach in einer WSL-Umgebung und damit in
 einem virtualisierten Linux.
 :::
+:::::
 
 [[Live-Demo Gradle/Gradlew]{.ex}]{.slides}
 
