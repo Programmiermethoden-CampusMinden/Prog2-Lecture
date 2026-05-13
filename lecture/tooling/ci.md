@@ -370,6 +370,22 @@ am besten aus einer Registry (etwa von Docker-Hub oder aus der GitHub-Registry)
 "gezogen" wird, weil das Bauen des Docker-Containers aus einem Docker-File in der
 Action u.U. relativ lange dauert.
 
+### Der Gradle-Wrapper muss ausführbar sein
+
+Im Step `- run: ./gradlew test` wird der Gradle-Wrapper ausgeführt, der im Repo
+eingecheckt ist. Genauer gesagt wird das Shell-Skript `gradlew` gestartet. Dies ist
+unter POSIX-Systemen (u.a. Linux) nur möglich, wenn das sogenannte `x`-Bit
+(Unix-Executable-Bit) gesetzt ist. Entweder setzen Sie dieses im Workflow *jedes Mal
+als extra Step* vor einem Aufruf von `gradlew`, etwa per `- run: chmod +x gradlew`,
+oder Sie checken das Shell-Skript einmalig mit dem gesetzten `x`-Bit im Git-Repo
+ein: `git add --chmod=+x gradlew`.
+
+*Randnotiz*: Wenn Sie auf einem POSIX-System arbeiten (Linux, macOS, BSD), dann wird
+das `x`-Bit bereits beim Initialisieren des Projekts durch `gradle init` oder über
+IntelliJ automatisch korrekt gesetzt und ins Repo eingecheckt. Windows-Dateisysteme
+kennen das Unix-Executable-Bit nicht, deshalb muss man hier von Hand nacharbeiten.
+Alternativ arbeiten Sie auf Ihrem Windows-Rechner am besten in einer WSL-Umgebung.
+
 ## Hinweise zur Konfiguration von GitHub Actions
 
 Im Browser in den Repo-Einstellungen arbeiten:
