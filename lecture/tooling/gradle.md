@@ -575,6 +575,16 @@ CI-Pipeline schlägt das dann fehl. Entweder definieren Sie für
 `gradle/wrapper/gradle-wrapper.jar` eine Ausnahme im `.gitignore`, oder fügen Sie
 den Wrapper mit Hilfe des Force-Flags der Versionskontrolle hinzu:
 `git add  -f  gradle/wrapper/gradle-wrapper.jar`.
+
+**Wichtig**: Der Gradle-Wrapper `gradlew` muss ausführbar sein! Wenn Sie auf einem
+POSIX-System arbeiten (Linux, macOS, BSD), dann wird das `x`-Bit
+(Unix-Executable-Bit) bereits beim Initialisieren des Projekts durch `gradle init`
+oder über IntelliJ automatisch korrekt gesetzt und bei einem `git add` mit ins Repo
+eingecheckt. Windows und Windows-Dateisysteme kennen das Unix-Executable-Bit nicht,
+deshalb muss man hier manuell nacharbeiten und das Shell-Skript einmalig mit dem
+gesetzten `x`-Bit im Git-Repo einchecken: `git add --chmod=+x gradlew`. Alternativ
+arbeiten Sie auf Ihrem Windows-Rechner einfach in einer WSL-Umgebung und damit in
+einem virtualisierten Linux.
 :::
 
 [[Live-Demo Gradle/Gradlew]{.ex}]{.slides}
