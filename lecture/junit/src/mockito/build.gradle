@@ -2,7 +2,7 @@ plugins {
     id "java"
     id "checkstyle"
     id "com.diffplug.spotless" version "8.4.0"
-    id "com.github.spotbugs" version "6.0.15"
+    id "com.github.spotbugs" version "6.5.4"
 }
 
 repositories {
@@ -30,7 +30,6 @@ spotless {
 spotbugs {
     ignoreFailures = true
     showStackTraces = false
-    toolVersion = '4.8.5'
 }
 spotbugsMain {
     reports {

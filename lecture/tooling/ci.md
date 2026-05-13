@@ -290,11 +290,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v5
         with:
-          java-version: '17'
+          java-version: '25'
           distribution: 'temurin'
-      - uses: gradle/wrapper-validation-action@v1
+      - uses: gradle/actions/wrapper-validation@v3
       - run: echo "Hello"
       - run: ./gradlew compileJava
       - run: echo "wuppie!"
@@ -304,11 +304,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v5
         with:
-          java-version: '17'
+          java-version: '25'
           distribution: 'temurin'
-      - uses: gradle/wrapper-validation-action@v1
+      - uses: gradle/actions/wrapper-validation@v3
       - run: ./gradlew test
 
   job3:
@@ -337,8 +337,8 @@ definieren jeweils einen Job.
 
     Es wird zunächst das Repo mit Hilfe der Checkout-Action ausgecheckt
     (`uses: actions/checkout@v6`), das JDK eingerichtet/installiert
-    (`uses: actions/setup-java@v3`) und der im Repo enthaltene Gradle-Wrapper auf
-    Unversehrtheit geprüft (`uses: gradle/wrapper-validation-action@v1`).
+    (`uses: actions/setup-java@v5`) und der im Repo enthaltene Gradle-Wrapper auf
+    Unversehrtheit geprüft (`uses: gradle/actions/wrapper-validation@v3`).
 
     Die Actions sind vordefinierte Actions und im Github unter `github.com/` +
     Action zu finden, d.h. [`actions/checkout`](https://github.com/actions/checkout)
@@ -436,10 +436,10 @@ jobs:
         steps:
         - name: Checkout
           uses: actions/checkout@v6
-        - name: Set up JDK 21
-          uses: actions/setup-java@v4
+        - name: Set up JDK 25
+          uses: actions/setup-java@v5
           with:
-              java-version: '21'
+              java-version: '25'
               distribution: 'temurin'
         - name: Build with Gradle
           run: cd java/ && ./gradlew assemble
@@ -451,10 +451,10 @@ jobs:
         steps:
         - name: Checkout
           uses: actions/checkout@v6
-        - name: Set up JDK 21
-          uses: actions/setup-java@v4
+        - name: Set up JDK 25
+          uses: actions/setup-java@v5
           with:
-              java-version: '21'
+              java-version: '25'
               distribution: 'temurin'
         - name: JUnit
           run: cd java/ && ./gradlew test

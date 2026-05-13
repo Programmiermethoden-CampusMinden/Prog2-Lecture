@@ -1,7 +1,7 @@
 plugins {
     id "java"
     id "application"
-    id "com.github.spotbugs" version "6.0.15"
+    id "com.github.spotbugs" version "6.5.4"
 }
 
 repositories {
@@ -14,7 +14,6 @@ dependencies {
 spotbugs {
     ignoreFailures = true
     showStackTraces = false
-    toolVersion = '4.8.5'
 }
 spotbugsMain {
     reports {

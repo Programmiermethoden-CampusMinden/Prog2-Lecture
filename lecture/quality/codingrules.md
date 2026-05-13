@@ -343,7 +343,7 @@ mit.
 
     checkstyle {
         configFile file('checkstyle.xml')
-        toolVersion '10.23.0'
+        toolVersion '13.4.2'
     }
     ```
 
@@ -441,7 +441,7 @@ href="https://youtu.be/0ny6e6CNTF8"}
     ``` groovy
     plugins {
         id "java"
-        id "com.github.spotbugs" version "5.0.6"
+        id "com.github.spotbugs" version "6.5.4"
     }
     spotbugs {
         ignoreFailures = true
