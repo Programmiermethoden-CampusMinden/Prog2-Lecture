@@ -560,13 +560,21 @@ diese lokale (nicht "installierte") `gradle`-Version zurück.
 
 `gradle init` erzeugt den Wrapper automatisch in der verwendeten Gradle-Version mit.
 Alternativ kann man den Wrapper nachträglich über
-`gradle wrapper --gradle-version 9.4.1` in einer bestimmten (gewünschten) Version
+`gradle wrapper --gradle-version 9.5.1` in einer bestimmten (gewünschten) Version
 anlegen lassen.
 
 Da der Gradle-Wrapper im Repository eingecheckt ist, benutzen alle Entwickler damit
 automatisch die selbe Version, ohne diese auf ihrem System zuvor installieren zu
 müssen. Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle
 vorzuziehen!
+
+**Wichtig**: Oft findet sich im `.gitignore` der Eintrag `*.jar`, d.h. Jar-Files
+werden üblicherweise als generierte Binärdateien nicht mit ins Repo eingecheckt.
+Dadurch wird aber auch der Gradle-Wrapper oft vergessen, und beim Build in der
+CI-Pipeline schlägt das dann fehl. Entweder definieren Sie für
+`gradle/wrapper/gradle-wrapper.jar` eine Ausnahme im `.gitignore`, oder fügen Sie
+den Wrapper mit Hilfe des Force-Flags der Versionskontrolle hinzu:
+`git add  -f  gradle/wrapper/gradle-wrapper.jar`.
 :::
 
 [[Live-Demo Gradle/Gradlew]{.ex}]{.slides}
