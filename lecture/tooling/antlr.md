@@ -141,7 +141,7 @@ Mit der obigen Konfiguration wird ANTLR in den Gradle-Build-Prozess eingebunden.
 
 Das bedeutet aber auch, dass nach einem `./gradlew clean` die generierten Klassen auch mit entfernt werden (liegen ja im Build-Ordner). Damit fehlen dann in Ihrem Source-Code die Importe für Lexer, Parser, Visitor etc. und die IDE zeigt eine Menge Fehler an. Führen Sie dann einmal einen `./gradlew build` oder `./gradlew generateGrammarSource` aus, um die generierten ANTLR-Dateien wieder neu zu generieren.
 
-Sie arbeiten dann nur noch mit den Lexer-/Parser-Klassen wie etwa `FooParser`, den Context-Klasse wie `FooParser.StatementContext` und erweitern den generierten Basis-Visitor wie `FooBaseVisitor`. (Der Präfix "`Foo`" kommt von der betrachteten Grammatik, diese würde hier also `Foo.g4` heissen.)
+Sie arbeiten dann nur noch mit den Lexer-/Parser-Klassen wie etwa `FooParser`, den Kontext-Klasse wie `FooParser.StatementContext` und erweitern den generierten Basis-Visitor wie `FooBaseVisitor`. (Der Präfix "`Foo`" kommt von der betrachteten Grammatik, diese würde hier also `Foo.g4` heissen.)
 :::
 
 
@@ -171,18 +171,19 @@ WS    : [ \t\r\n]+ -> skip ;
 ```
 
 ::: notes
-Die gezeigte Grammatik besteht aus verschiedenen Teilen. Als erste Zeile findet man immer die Deklaration `grammar <NAME>;`, wobei der Name `NAME` auch der Dateiname ist (`NAME.g4`).
+Die gezeigte Grammatik besteht aus verschiedenen Teilen. Als erste Zeile findet man immer die Deklaration `grammar <NAME>;`, wobei der Name `NAME` auch der Dateiname ist (`NAME.g4`) und später den Präfix für die generierten Lexer-/Parser-/Visitoren-Klassen bildet.
 
 Darunter finden sich verschiedene Regeln, die die betrachtete Sprache beschreiben. Es gibt zwei Arten von Regeln:
 
 1. Lexer-Regeln: Diese beginnen mit einem Großbuchstaben und definieren einen regulären Ausdruck, der auf den Eingabetext angewendet wird.
+
+    Jede Lexer-Regel entspricht einem Token. Im Beispiel gibt es die Regel `INT`, die den regulären Ausdruck `[0-9]+` anwendet. Damit matcht das Token `INT` alle Zeichenfolgen, die aus einer oder mehreren Ziffern bestehen. Zusätzlich gibt es noch nicht-benannte Token, das sind die in `'` eingeschlossenen Zeichenketten, beispielsweise `'"'` oder "';'". Die Whitespace-Token (`WS`) werden im Beispiel oben zwar gematcht, aber danach verworfen (`-> skip`) - wir brauchen diese nicht für die Prüfung der Strukturen.
+
 2. Parser-Regeln: Diese beginnen mit einem Kleinbuchstaben und können andere Parser-Regeln "aufrufen" und auch Lexer-Regeln beinhalten.
 
-Jede Lexer-Regel entspricht einem Token. Im Beispiel gibt es die Regel `INT`, die den regulären Ausdruck `[0-9]+` anwendet. Damit matcht das Token `INT` alle Zeichenfolgen, die aus einer oder mehreren Ziffern bestehen. Zusätzlich gibt es noch nicht-benannte Token, das sind die in `'` eingeschlossenen Zeichenketten, beispielsweise `'"'` oder "';'". Die Whitespace-Token (`WS`) werden im Beispiel oben zwar gematcht, aber danach verworfen (`-> skip`) - wir brauchen diese nicht für die Prüfung der Strukturen.
+    Die Parser-Regeln nutzen auch die aus regulären Ausdrücken bekannten Operatoren `+` (einmal oder öfter) und `*` (beliebig oft). Damit kann man die Regel `prog` so lesen: Ein Programm `prog` besteht aus beliebig vielen Statements (`stmt`), gefolgt von einem `EOF` (die Eingabe ist zuende, "End Of File").
 
-Die Parser-Regeln nutzen auch die aus regulären Ausdrücken bekannten Operatoren `+` (einmal oder öfter) und `*` (beliebig oft). Damit kann man die Regel `prog` so lesen: Ein Programm `prog` besteht aus beliebig vielen Statements (`stmt`), gefolgt von einem `EOF` (die Eingabe ist zuende, "End Of File").
-
-Die erste Parser-Regel ist die sogenannte "Start-Regel", die wir auf dem generierten Parser aufrufen können.
+    Die erste Parser-Regel ist die sogenannte "Start-Regel", die wir auf dem generierten Parser aufrufen können.
 :::
 
 
@@ -191,13 +192,13 @@ Die erste Parser-Regel ist die sogenannte "Start-Regel", die wir auf dem generie
 
 ```java
 var input = CharStreams.fromString(text);
-var lexer = new FooLexer(input);
+var lexer = new MiniCalcLexer(input);
 var tokens = new CommonTokenStream(lexer);
 
 tokens.fill(); // fill stream (fetch all tokens from lexer)
 
 for (var t : tokens.getTokens()) {
-    var tokenName = FooLexer.VOCABULARY.getSymbolicName(t.getType());
+    var tokenName = MiniCalcLexer.VOCABULARY.getSymbolicName(t.getType());
     System.out.printf(
         "%-10s line=%d col=%d text='%s'%n",
         tokenName, t.getLine(), t.getCharPositionInLine(), t.getText());
@@ -205,17 +206,25 @@ for (var t : tokens.getTokens()) {
 ```
 
 ::: notes
-Eingabe `a = 1 + 2;` liefert:
+Aus einer Grammatik `MiniCalc.g4` wurde ein Lexer generiert, der über `MiniCalcLexer` zur Verfügung steht. Der Lexer erwartet als Input einen `CharStream`, den wir aus dem Input (String) erzeugen und dem Konstruktor für `MiniCalcLexer` übergeben. Das Lexer-Objekt wird wiederum in den Konstruktor für `CommonTokenStream` übergeben und stellt den Tokenstream dar, den der aus der Grammatik `MiniCalc` generierte Lexer für den Eingabe-String erzeugt.
+
+Normalerweise arbeiten wir nicht direkt mit dem Tokenstream, sondern übergeben diesen dem Parser. Im Beispiel wird demonstriert, wie man beispielsweise alle gefundenen Token der Reihe nach ausgeben kann. Dazu muss einmalig `tokens.fill()` aufgerufen werden (dies übernimmt sonst der Parser).
+
+Die Eingabe `a = 1 + 2;` liefert bei der gezeigten Grammatik:
 
 ```
 ID         line=1 col=0 text='a'
 null       line=1 col=2 text='='
-NUM        line=1 col=4 text='1'
+INT        line=1 col=4 text='1'
 null       line=1 col=6 text='+'
-NUM        line=1 col=8 text='2'
+INT        line=1 col=8 text='2'
 null       line=1 col=9 text=';'
 EOF        line=1 col=10 text='<EOF>'
 ```
+
+Man erkennt, wie die Eingabe in einzelne Wörter (Token) zerlegt wurde. Leerzeichen wurden entfernt. Für benannte Token, d.h. Lexer-Regeln wie `ID` und `INT` wird der Tokenname mit ausgegeben. Für die impliziten Token, die in der Grammatik nur über `'='` angelegt sind, gibt es keinen Namen (`null`). Weiterhin sieht man für jedes Token, in welcher Zeile es gefunden wurde und an welcher Position es startet. `EOF` ist ein vordefiniertes Token, welches das Ende der Eingabe kennzeichnet.
+
+Der gesamte Eingabetext muss in gültige Token überführt werden können, sonst gibt es eine Exception vom Lexer.
 :::
 
 
@@ -224,200 +233,180 @@ EOF        line=1 col=10 text='<EOF>'
 
 ```java
 var input = CharStreams.fromString(text);
-var lexer = new FooLexer(input);
+var lexer = new MiniCalcLexer(input);
 var tokens = new CommonTokenStream(lexer);
 
-var parser = new FooParser(tokens);
-var tree = parser.program(); // Wurzelknoten des Baums (Startregel der Grammatik)
+var parser = new MiniCalcParser(tokens);
+var tree = parser.prog(); // Wurzelknoten des Baums (Startregel der Grammatik)
 
 IO.println(tree.toStringTree(parser));
 ```
 
 ::: notes
-Eingabe `a = 1 + 2;` liefert:
+Hier wird das übliche Vorgehen gezeigt, wenn man mit dem Parse-Tree arbeiten möchte. Aus dem Eingabetext wird ein `CharStream` erzeugt und damit ein `MiniCalcLexer`. Mit diesem wird der `CommonTokenStream` angelegt und in einen neuen `MiniCalcParser` gesteckt. Damit haben wir einen Parser, der von ANTLR beim Kompilieren über Gradle aus der Grammatik generiert wurde und der für den übergebenen Eingabetext die vom Lexer gebildeten Token in einen Baum übersetzt. Da unsere Grammatik mit der Regel `prog` anfängt ("Start-Regel"), können wir uns den Baum mit Hilfe von `parser.prog()` zurückgeben lassen und damit weiter arbeiten. Die Baumwurzel `tree` ist ein Objekt vom Typ `MiniCalcParser.ProgContext`.
+
+Wenn die Token nicht entsprechend den Regeln in der Grammatik auftauchen, wirft der Parser eine Exception.
+
+Die Eingabe `a = 1 + 2;` liefert bei der gezeigten Grammatik:
 
 ```
-(program (stmt a = (expr (term (atom 1)) + (term (atom 2))) ;))
+(prog (stmt a = (expr 1 + 2) ;) <EOF>)
 ```
+
+Dabei wird jeder Knoten in Klammern ausgegeben: Zuerst der Knotenname, danach die Kinder (die selbst Knoten sind). Die Token bilden die Blätter des Baumes, hier wird nur der Wert ausgegeben (nicht der Name).
+
+Diesen Code können Sie als Schablone verwenden. Ab hier arbeiten wir normalerweise nur noch mit `tree`.
 :::
-
--   `FooLexer` und `FooParser` sind aus Grammatik `Foo.g4` generiert (durch ANTLR).
--   `parser.program()` entspricht der Startregel `program`.
--   `tree` ist ein Objekt vom Typ `FooParser.ProgramContext`.
-
-Diesen Code können Sie als Schablone verwenden. Ab da arbeiten wir nur noch mit `tree`.
-
-
 
 
 # Der Parse-Baum: Klassenhierarchie & Struktur
 
-Wie sieht der erzeugte Baum in Java aus?
-
--   Grundprinzip:
-    -   Jeder Knoten im Baum ist eine Instanz einer **Context-Klasse**:
-    -   Es gibt generierte **Kontext-Klassen** für Sprachkonstrukte (Grammatik-Regeln):
-        -   z.B. `FooParser.ProgramContext` (Regel "program"), `FooParser.StmtContext` (Regel "stmt"), `FooParser.ExprContext` (Regel "expr"), ...
-
--   Typische Vererbung:
-    -   Alle Baumknoten erben von einer gemeinsamen Basisklasse (`ParserRuleContext`).
-    -   Spezifische Kontexte bilden eine Klassenhierarchie.
-
--   Baumstruktur:
-    -   Jeder Knoten hat Kinderknoten (andere Kontexte oder Tokens).
-    -   Vergleich zu eigenen Baumklassen aus "Programmieren 1/2":
-        -   Ähnlich wie selbst geschriebene `Node`-Klassen, nur automatisch generiert.
-
--   Beispiel, visuelle Darstellung:
-    -   Grammatik: Regel für Expressions
-    -   Eingabe z.B. für `x = 1 + 2;`
-    -   Generierter Baum:
-        -   grafisch, Screenshot
-        -   generierte Klassen und Methoden: `ExprContext expr()`, `List<StmtContext> stmt()`, ...
-
+:::::: columns
+::: column
 ```antlr
-grammar Foo;
+grammar MiniCalc;
 
-program : stmt* ;
+prog  : stmt* EOF ;
+stmt  : ID '=' expr ';'
+      | expr ';'
+      ;
+expr  : INT ('+' INT)* ;
 
-stmt    : ID '=' expr ';' | expr ';' ;
-
-expr    : term ('+' term)* ;
-term    : atom ('*' atom)* ;
-atom    : ID | NUM ;
-
-ID      : [a-z][a-zA-Z]* ;
-NUM     : [0-9]+ ;
-WS      : [ \t\n]+ -> skip ;
+ID    : [a-z][a-zA-Z0-9_]* ;
+INT   : [0-9]+ ;
+WS    : [ \t\r\n]+ -> skip ;
 ```
+:::
 
+::: column
 Eingabe `a = 1 + 2;` liefert:
 
 ```
-(program (stmt a = (expr (term (atom 1)) + (term (atom 2))) ;))
+(prog (stmt a = (expr 1 + 2) ;) <EOF>)
 ```
 
-![](images/screenshot_parsetree.png){width="60%" web_width="30%"}
+![](images/screenshot_parsetree.png){width="80%" web_width="40%"}
+:::
+::::::
 
-```java
-public static class ProgramContext extends ParserRuleContext {
-    public List<StmtContext> stmt() {
-        return getRuleContexts(StmtContext.class);
-    }
-    public StmtContext stmt(int i) {
-        return getRuleContext(StmtContext.class,i);
-    }
-...
-}
+---
 
-public static class StmtContext extends ParserRuleContext {
-    public TerminalNode ID() { return getToken(FooParser.ID, 0); }
-    public ExprContext expr() {
-        return getRuleContext(ExprContext.class,0);
-    }
-    ...
-}
+:::::: columns
+::: column
+```antlr
+grammar MiniCalc;
 
-public static class ExprContext extends ParserRuleContext {
-    public List<TermContext> term() {
-        return getRuleContexts(TermContext.class);
-    }
-    public TermContext term(int i) {
-        return getRuleContext(TermContext.class,i);
-    }
-    ...
-}
+prog  : stmt* EOF ;
+stmt  : ID '=' expr ';'
+      | expr ';'
+      ;
+expr  : INT ('+' INT)* ;
 
-public static class TermContext extends ParserRuleContext {
-    public List<AtomContext> atom() {
-        return getRuleContexts(AtomContext.class);
-    }
-    public AtomContext atom(int i) {
-        return getRuleContext(AtomContext.class,i);
-    }
-    ...
-}
-
-
-public static class AtomContext extends ParserRuleContext {
-    public TerminalNode ID() { return getToken(FooParser.ID, 0); }
-    public TerminalNode NUM() { return getToken(FooParser.NUM, 0); }
-    ...
-}
+ID    : [a-z][a-zA-Z0-9_]* ;
+INT   : [0-9]+ ;
+WS    : [ \t\r\n]+ -> skip ;
 ```
+:::
 
-![](images/FooParserUML.png)
+::: column
+
+![](images/MiniCalcParserUML.png){width="80%" web_width="40%"}
+:::
+::::::
+
+::: notes
+Wie sieht der erzeugte Baum in Java aus?
+
+-   Grundprinzip:
+    -   Jeder Knoten im Baum ist eine Instanz einer generierten **Kontext-Klasse**
+    -   Jede **Kontext-Klasse** entspricht einer Grammatik-Regel (nur Parser-Regeln):
+        -   z.B. `MiniCalcParser.ProgContext` (Regel "prog"), `MiniCalcParser.StmtContext` (Regel "stmt"), `MiniCalcParser.ExprContext` (Regel "expr"), ...
+    -   Alle Baumknoten erben von einer gemeinsamen Basisklasse (`ParserRuleContext`)
+
+-   Baumstruktur:
+    -   Jeder Knoten hat Kinderknoten (andere Kontexte oder Tokens)
+    -   Zugriff auf Elemente: Regel `stmt  : ID '=' expr ';' | expr ';' ;`:
+        - Kontext-Klasse `MiniCalcParser.StmtContext``
+        - Zugriff auf Token `ID`: `TerminalNode ID()`
+        - Zugriff auf Kontext `expr`: `ExprContext expr()`
+    -   Zusätzlich gibt es aus der Basisklasse für jede Kontext-Klasse noch
+        -   `int getChildCount()`: wieviele Kinder hat dieser Knoten?
+        -   `ParseTree getChild(int i)`: liefere das Kindknoten mit Index `i` zurück
+        -   `String getText()`: liefere den gematchten Text aus dem Eingabetext zurück
+:::
+
+
+
+
 
 
 # Traversierung mit Visitor-Pattern
 
-Den Baum "besuchen" - Visitor in ANTLR
+::: notes
+Den Baum "besuchen" - Visitor-Pattern in ANTLR
+:::
 
-![](images/FooVisitorUML.png)
+![](images/MiniCalcVisitorUML.png){width="80%"}
 
--   Aufgabe:
-    -   Wir wollen den generierten Baum verarbeiten (z.B. für Syntax-Highlighting, Auswertung, Umwandlung in AST).
-
+::: notes
 -   ANTLR‑Visitor:
-    -   ANTLR generiert ein `FooVisitor<T>`-Interface und eine `FooBaseVisitor<T>` Basisklasse mit leeren Standard-Implementierungen.
+    -   ANTLR generiert ein `MiniCalcVisitor<T>`-Interface und eine `MiniCalcBaseVisitor<T>` Basisklasse mit leeren Standard-Implementierungen
     -   Jede Regel `xxx` in der Grammatik erzeugt:
-        -   eine Kontext-Klasse `XxxContext`
-        -   und eine Methode `T visitXxx(XxxContext ctx)`
+        -   eine Kontext-Klasse `XxxContext`, und
+        -   eine Methode `T visitXxx(XxxContext ctx)`
     -   Jede Knotentyp hat eine eigene `visitXxx`‑Methode, z.B.:
-        -   `visitProgram(ProgramContext ctx)`
-        -   `visitExpr(ExprContext ctx)`
+        -   `T visitProg(MiniCalcParser.ProgContext ctx)`
+        -   `T visitStmt(MiniCalcParser.StmtContext ctx)`
+        -   `T visitExpr(MiniCalcParser.ExprContext ctx)`
 
 -   Vorgehen:
-    -   Eigene Visitor‑Klasse schreiben, die von `FooBaseVisitor<...>` erbt.
+    -   Eigene Visitor‑Klasse schreiben, die von `MiniCalcBaseVisitor<T>` ableitet
+
         ```java
-        public class MyVisitor extends FooBaseVisitor<Void> {}
+        public class EvalVisitor extends MiniCalcBaseVisitor<Integer> {}
         ```
-    -   Nur die Methoden überschreiben, die relevant sind.
+
+    -   Nur die Methoden überschreiben, die relevant sind, z.B.
+
         ```java
+        /** stmt : ID '=' expr ';' | expr ';' */
         @Override
-        public Void visitExpr(FooParser.ExprContext ctx) {
-            // hier: Farbe wählen, Tokenposition auslesen, etc.
-            return null;
+        public Integer visitStmt(MiniCalcParser.StmtContext ctx) {
+            if (ctx.ID() != null) { // ID '=' expr ';'
+                String name = ctx.ID().getText();
+                Integer value = visit(ctx.expr());
+                memory.put(name, value);
+                return value;
+            } else
+                return visit(ctx.expr()); // expr ';'
         }
         ```
+
     -   Visitor anwenden:
+
         ```java
-        var visitor = new MyVisitor();
-        visitor.visit(tree);
+        var tree = parser.prog();
+        var eval = new EvalVisitor();
+        var result = eval.visit(tree);
+
+        IO.println("Umgebung: " + eval.getMemory());
         ```
+
 -   Vorteile:
     -   Klare Trennung: Struktur (Baum) vs. Verarbeitung (Visitor).
     -   Erleichtert spätere Erweiterungen (weitere Visitor für andere Aufgaben).
 
 
-Didaktisch interessant:
+**Beobachtungen**:
 
-visitExpr zeigt explizit, dass INT hier nur ein Token ist:
-Zugriff über ctx.INT(i) statt über einen INTContext.
-
-
-visitStmt zeigt eine Alternative:
-if (ctx.ID() != null) als sehr direkte, anschauliche Abfrage.
+- `visitStmt` zeigt explizit, dass `ID` hier nur ein Token ist und dass hier direkt über `ctx.ID().getText()` zugegriffen wird. Für Token gibt es keine Kontext-Objekte, d.h. es gibt kein `IDContext`.
+- `visitStmt` zeigt den Umgang mit einer Alternative: Entweder gilt `ID '=' expr ';'` *oder* `expr ';'`. D.h. man fragt in diesem Fall ab, ob es eine `ID` gibt und reagiert entsprechend: `if (ctx.ID() != null)` -> wenn es keine `ID` gibt, liefert `ctx.ID()` den Wert `null`.
+- Wenn man die Kindknoten nicht direkt per Methode aufrufen will (oder kann, wenn es mehrere Kindknoten mit nicht vorher bekannter Anzahl wie in der Regel `expr  : INT ('+' INT)* ;`), kann man die tatsächliche Anzahl der Kindknoten per Aufruf `ctx.getChildCount()` abfragen und dann mit `ctx.getChild(i)` gezielt auf ein Kind zugreifen (Indexbereich `0` bis `i-1`).
+:::
 
 
-visitProg zeigt eine Liste von Kindknoten (stmt*):
-
-prog→stmt1,stmt2,…,stmtn\text{prog} \rightarrow \text{stmt}_1, \text{stmt}_2, \dots, \text{stmt}_nprog→stmt1​,stmt2​,…,stmtn​
-
-Die generierten Klassen zeigen (MiniCalcLexer, MiniCalcParser, ProgContext, StmtContext, ExprContext).
-Einmal durchsteppen, was visit(...) macht.
-„Randfälle“ besprechen:
-Leer-Programm: prog mit 0 stmts ⇒ Rückgabewert null.
-Zuweisung vs. nackter Ausdruck.
-Zugriff auf Token (INT) vs. Parser-Regel (expr).
 
 
-ctx.INT(i)
-ctx.getText()
-ctx.getChildCount() und ctx.getChild(i) exemplarisch an prog oder stmt.
-
-
-Optional: eine Folie mit der erweiterten +/--Variante, um zu zeigen, dass man mit getChild() Operatoren auswerten kann – ohne dass die Studis das direkt im Übungsblatt brauchen.
 
 
 
@@ -433,53 +422,51 @@ switch (node) {
 ```
 
 
-# Vergleich: Regex-Ansatz vs. ANTLR-Ansatz
+::: notes
+# Syntaxhighlighting: Vergleich Regex-Ansatz vs. ANTLR-Ansatz
 
 -   Regex-Ansatz:
-    -   Arbeitet rein textbasiert (Zeile für Zeile, Zeichenketten).
-    -   Schwer, verschachtelte Strukturen korrekt zu behandeln.
-    -   Kaum Information über Kontext (z.B. ob etwas eine Variable, ein Keyword oder Teil eines Strings ist).
-
+    -   Arbeitet rein textbasiert (Zeile für Zeile, Zeichenketten)
+    -   Schwer, verschachtelte Strukturen korrekt zu behandeln
+    -   Kaum Information über Kontext (z.B. ob etwas eine Variable, ein Keyword oder Teil eines Strings ist)
 
 -   ANTLR-Ansatz:
     -   Erstellt einen strukturierten Baum:
         -   Kennt Blöcke, Ausdrücke, Anweisungen, ...
     -   Kontextabhängige Verarbeitung wird möglich:
-        -   Unterschiedliche Behandlung je nach Position im Baum.
+        -   Unterschiedliche Behandlung je nach Position im Baum
 
 -   Für das Syntax-Highlighting-Beispiel:
-    -   Visitor über den Parse-Baum:
-        -   Highlighting abhängig von Knoten-Typ statt vagen Textmustern.
+    -   Nutzung des Tokenstreams vom Lexer für das reine Syntaxhighlighting
+    -   Alternativ Traverierung des Parse-Tree mit einem Visitor:
+        -   Highlighting abhängig von Knoten-Typ statt vagen Textmustern
+        -   Achtung: Token mit `-> skip` tauchen nicht mehr im Baum auf, d.h. üblicherweise sind das Whitespaces und Kommentare
+:::
 
--   Didaktischer Punkt:
-    -   Vorbereitung auf sprachbasierte Werkzeuge:
-        -   Interpreter, Compiler, Linter, Code-Formatter.
-
-
+::: notes
 # Ausblick auf das 3. Semester (Compilerbau)
 
 Wie es weitergeht: Vom Parse-Baum zum Compiler
 
 -   Sie arbeiten in Prog2 nur mit `FooLexer`, `FooParser`, `XxxContext`-Klassen, `FooBaseVisitor`:
-    -   den Standard-Code, um `tree = parser.program()` zu bekommen.
-    -   das Wissen: Knoten sind `XxxContext`‑Objekte.
-    -   einen eigenen Visitor, der von `FooBaseVisitor<...>` erbt.
-    -   Überschreiben der passenden `visitXxx`‑Methoden.
+    -   den Standard-Code, um `tree = parser.program()` zu bekommen
+    -   das Wissen: Knoten sind `XxxContext`‑Objekte
+    -   einen eigenen Visitor, der von `FooBaseVisitor<...>` erbt
+    -   Überschreiben der passenden `visitXxx`‑Methoden
 
 -   Was Sie heute "unter der Haube" ignorieren durften:
-    -   Wie die Grammatik aufgebaut ist.
-    -   Wie Lexer und Parser intern funktionieren.
-    -   Unterschied Parse‑Baum vs. abstrakter Syntaxbaum (AST).
+    -   Wie die Grammatik aufgebaut ist und warum
+    -   Wie Lexer und Parser intern funktionieren
+    -   Unterschied Parse‑Baum vs. abstrakter Syntaxbaum (AST)
 
 -   Im 3. Semester (Compilerbau) vertiefen wir:
-    -   Definition eigener Grammatiken.
-    -   Schreiben und Erweitern eigener Sprachen.
-    -   Konstruktion von Lexer und Parser (inkl. ANTLR‑Details).
-    -   Systematische AST‑Konstruktion, semantische Analyse, Interpreter.
+    -   Definition eigener Grammatiken
+    -   Schreiben und Erweitern eigener Sprachen
+    -   Konstruktion von Lexer und Parser (inkl. ANTLR‑Details)
+    -   Systematische AST‑Konstruktion, semantische Analyse, Interpreter, Compiler, Linter, Code-Formatter
 
-
--   Verbindung zu heute: Alles, was Sie jetzt zu Baumstrukturen, Visitor und Pattern Matching lernen, ist direkt wiederverwendbar:
-
+Verbindung zu heute: Alles, was Sie jetzt zu Baumstrukturen, Visitor und Pattern Matching gelernt haben, wird im nächsten Semester direkt wiederverwendet!
+:::
 
 
 # Wrap-Up
