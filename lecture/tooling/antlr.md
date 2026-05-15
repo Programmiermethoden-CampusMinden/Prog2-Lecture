@@ -703,10 +703,7 @@ Betrachten Sie die folgende ANTLR-Grammatik:
 grammar OneTwo;
 
 s  : a EOF ;
-
-a  : '1' a '1'
-   | '2'
-   ;
+a  : '1' a '1' | '2' ;
 ```
 
 1.  Welche Token können Sie hier vom Lexer erwarten?
