@@ -64,7 +64,7 @@ usw. näher anschauen.
 
 # ANTLR als Blackbox-Pipeline
 
-![](images/antlr_overview.png){width="80%"}
+![](images/antlr_overview.png)
 
 :::: notes
 Wir nutzen ANTLR als:
@@ -190,7 +190,6 @@ Sie sie in diesem Kurs als Template und passen Sie sie bei Bedarf an.
 ``` antlr
 grammar MiniCalc;
 
-
 // Programm besteht aus beliebig vielen Statements
 prog  : stmt* EOF ;
 
@@ -201,7 +200,6 @@ stmt  : ID '=' expr ';'
 
 // Ausdruck: eine oder mehrere Zahlen, addiert
 expr  : INT ('+' INT)* ;
-
 
 // LEXER-Regeln (Token)
 ID    : [a-z][a-zA-Z0-9_]* ;
@@ -383,7 +381,7 @@ Eingabe `a = 1 + 2;` liefert:
 
     (prog (stmt a = (expr 1 + 2) ;) <EOF>)
 
-![](images/screenshot_parsetree.png){width="80%" web_width="40%"}
+![](images/screenshot_parsetree.png){width="40%" web_width="40%"}
 :::
 :::::
 
@@ -407,7 +405,8 @@ WS    : [ \t\r\n]+ -> skip ;
 :::
 
 ::: column
-![](images/MiniCalcParserUML.png){width="80%" web_width="40%"}
+\bigskip
+![](images/MiniCalcParserUML.png){web_width="80%"}
 :::
 :::::
 
@@ -449,7 +448,7 @@ Anwendung des Patterns an; zur Funktionsweise des Patterns siehe Lektion
 [Visitor-Pattern](../pattern/visitor.md).
 :::
 
-![](images/MiniCalcVisitorUML.png){width="80%"}
+![](images/MiniCalcVisitorUML.png){width="60%"}
 
 ::: notes
 ## ANTLR-Visitor:
