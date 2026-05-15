@@ -442,28 +442,30 @@ Anwendung des Patterns an; zur Funktionsweise des Patterns siehe Lektion
 ![](images/MiniCalcVisitorUML.png){width="80%"}
 
 ::: notes
--   ANTLR-Visitor:
-    -   ANTLR generiert ein `MiniCalcVisitor<T>`-Interface und eine
-        `MiniCalcBaseVisitor<T>`-Basisklasse mit leeren Standard-Implementierungen
-    -   Jede Regel `xxx` in der Grammatik erzeugt:
-        -   eine Kontext-Klasse `XxxContext`, und
-        -   eine Methode `T visitXxx(XxxContext ctx)`
-    -   Jeder Knotentyp hat eine eigene `visitXxx`-Methode, z.B.:
-        -   `T visitProg(MiniCalcParser.ProgContext ctx)`
-        -   `T visitStmt(MiniCalcParser.StmtContext ctx)`
-        -   `T visitExpr(MiniCalcParser.ExprContext ctx)`
--   Vorgehen:
-    -   Eigene Visitor-Klasse schreiben, die von `MiniCalcBaseVisitor<T>` ableitet,
-        z.B.
+## ANTLR-Visitor:
 
-        ``` java
-        public class EvalVisitor extends MiniCalcBaseVisitor<Integer> {}
-        ```
+-   ANTLR generiert ein `MiniCalcVisitor<T>`-Interface und eine
+    `MiniCalcBaseVisitor<T>`-Basisklasse mit leeren Standard-Implementierungen
+-   Jede Regel `xxx` in der Grammatik erzeugt:
+    -   eine Kontext-Klasse `XxxContext`, und
+    -   eine Methode `T visitXxx(XxxContext ctx)`
+-   Jeder Knotentyp hat eine eigene `visitXxx`-Methode, z.B.:
+    -   `T visitProg(MiniCalcParser.ProgContext ctx)`
+    -   `T visitStmt(MiniCalcParser.StmtContext ctx)`
+    -   `T visitExpr(MiniCalcParser.ExprContext ctx)`
 
-    -   Nur die Methoden überschreiben, die relevant sind, z.B. `visitProg`,
-        `visitStmt`, `visitExpr`, ...
+## Vorgehen:
 
-        Beispielidee für `visitStmt` (informell):
+1.  Eigene Visitor-Klasse schreiben, die von `MiniCalcBaseVisitor<T>` ableitet, z.B.
+
+    ``` java
+    public class EvalVisitor extends MiniCalcBaseVisitor<Integer> {}
+    ```
+
+2.  Nur die Methoden überschreiben, die relevant sind, z.B. `visitProg`,
+    `visitStmt`, `visitExpr`, ...
+
+    -   Beispielidee für `visitStmt` (informell):
 
         ``` java
         /** stmt : ID '=' expr ';' | expr ';' */
@@ -489,26 +491,28 @@ Anwendung des Patterns an; zur Funktionsweise des Patterns siehe Lektion
         -   Sonst handelt es sich um ein einfaches `expr ';'`:
             -   nur den Wert `visit(ctx.expr())` zurückgeben.
 
-    -   Visitor anwenden:
+3.  Visitor anwenden:
 
-        ``` java
-        var tree = parser.prog();
-        var eval = new EvalVisitor();
-        var result = eval.visit(tree);
+    ``` java
+    var tree = parser.prog();
+    var eval = new EvalVisitor();
+    var result = eval.visit(tree);
 
-        IO.println("Umgebung: " + eval.getMemory());
-        ```
+    IO.println("Umgebung: " + eval.getMemory());
+    ```
 
-        -   Mit `var tree = parser.prog();` den Wurzelknoten holen,
-        -   Visitor-Objekt erzeugen, z.B. `var eval = new EvalVisitor();`,
-        -   `var result = eval.visit(tree);` aufrufen,
-        -   z.B. die Umgebung mit `eval.getMemory()` ausgeben.
--   Vorteile:
-    -   Klare Trennung: Struktur (Baum) vs. Verarbeitung (Visitor)
-    -   Erleichtert spätere Erweiterungen (weitere Visitors für andere Aufgaben,
-        z.B. Auswertung, Pretty-Printer, Linter)
+    -   Mit `var tree = parser.prog();` den Wurzelknoten holen,
+    -   Visitor-Objekt erzeugen, z.B. `var eval = new EvalVisitor();`,
+    -   `var result = eval.visit(tree);` aufrufen,
+    -   z.B. die Umgebung mit `eval.getMemory()` ausgeben.
 
-**Beobachtungen**:
+## Vorteile:
+
+-   Klare Trennung: Struktur (Baum) vs. Verarbeitung (Visitor)
+-   Erleichtert spätere Erweiterungen (weitere Visitors für andere Aufgaben, z.B.
+    Auswertung, Pretty-Printer, Linter)
+
+## Beobachtungen:
 
 -   `visitStmt` zeigt explizit, dass `ID` hier nur ein Token ist und dass hier
     direkt über `ctx.ID().getText()` zugegriffen wird. Für Token gibt es keine
