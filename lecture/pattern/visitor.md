@@ -380,12 +380,12 @@ Funktion, mit der man den Ausdruck hübsch ausgeben kann:
 ![](images/parsetree_eval_print_uml.png){width="70%"}
 
 ::: notes
+[Beispiel: direct.DemoExpr]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/direct/DemoExpr.java"}
+
 Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche
 Strukturen, mit denen wir diesen Parse-Tree traversieren ... Und wir müssen für
 *jede* Erweiterung immer *alle* Expression-Klassen anpassen!
-
-[Beispiel: direct.DemoExpr]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/direct/DemoExpr.java"}
 :::
 
 ::: slides
@@ -727,7 +727,7 @@ Das Visitor‑Pattern nutzt also zwei Stufen:
 
 Diese Kombination bezeichnet man im Kontext des Visitor‑Patterns als
 **Double‑Dispatch**: Die endgültige Methode entsteht aus dem Zusammenwirken beider
-Typen -- des Typs des Elements und des Typs des Visitors.
+Typen - des Typs des Elements und des Typs des Visitors.
 
 ## Hinweis I
 
