@@ -132,7 +132,7 @@ Dies sind einige ausgewählte Testarten - man kann ohne große Probleme noch vie
 genauer hinschauen und viele weitere Arten und Stufen unterscheiden.
 :::
 
-::: notes
+:::::: notes
 # JUnit: Test-Framework für Java
 
 **JUnit** - Open Source Java Test-Framework zur Erstellung und Durchführung
@@ -174,17 +174,26 @@ wiederholbarer Tests
     Das Teilprojekt "JUnit Vintage" beinhaltet eine TestEngine zum Ausführen von
     Tests, die in JUnit 3 oder JUnit 4 geschrieben sind.
 
+::: tip
 *Anmerkung*: Wie der Name schon sagt, ist das Framework für Modultests
 ("Unit-Tests") gedacht. Man kann damit aber auch prima auf anderen Teststufen
 arbeiten und beispielsweise Systemtests definieren.
-
-*Anmerkung*: Im Folgenden besprechen wir JUnit am Beispiel **JUnit 6**. Mit JUnit 3
-sollte definitiv nicht mehr aktiv gearbeitet werden, d.h. insbesondere keine neuen
-Tests mehr erstellt werden, da diese Version nicht mehr weiterentwickelt wird. Es
-kann sein, dass Ihnen in Produktivumgebungen noch häufig Testsuiten in JUnit 4
-begegnen - achten Sie dort auf die verwendeten Annotationen, die sich teilweise
-leicht von der modernen Variante unterscheiden.
 :::
+
+::: caution
+*Wichtig*: In dieser Lehrveranstaltung besprechen wir JUnit am Beispiel **JUnit 6**.
+**Sofern nicht explizit etwas anderes vermerkt ist, meint die Angabe "JUnit" immer
+"JUnit (Version 6.x)".**
+:::
+
+::: tip
+*Anmerkung*: Mit JUnit 3 sollte definitiv nicht mehr aktiv gearbeitet werden, d.h.
+insbesondere keine neuen Tests mehr erstellt werden, da diese Version nicht mehr
+weiterentwickelt wird. Es kann sein, dass Ihnen in Produktivumgebungen noch häufig
+Testsuiten in JUnit 4 begegnen - achten Sie dort auf die verwendeten Annotationen,
+die sich teilweise leicht von der modernen Variante unterscheiden.
+:::
+::::::
 
 ::: notes
 # Einbinden von JUnit (Gradle)
