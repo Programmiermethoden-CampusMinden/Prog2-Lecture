@@ -411,7 +411,8 @@ Wie sieht der erzeugte Baum in Java aus?
         -   Kontext-Klasse `MiniCalcParser.StmtContext`
         -   Zugriff auf Token `ID`: `TerminalNode ID()`
         -   Zugriff auf Kontext `expr`: `ExprContext expr()`
-    -   Zusätzlich gibt es aus der Basisklasse für jede Kontext-Klasse noch z.B.:
+    -   Zusätzlich gibt es aus der Basisklasse `ParserRuleContext` für jede
+        Kontext-Klasse noch z.B.:
         -   `int getChildCount()`: Wie viele Kinder hat dieser Knoten?
         -   `ParseTree getChild(int i)`: liefere den Kindknoten mit Index `i` zurück
             (Indexbereich `0` bis `getChildCount() - 1`)
@@ -422,7 +423,12 @@ Wie sieht der erzeugte Baum in Java aus?
 # Traversierung mit Visitor-Pattern
 
 ::: notes
-Den Baum "besuchen" - Visitor-Pattern in ANTLR.
+Den Baum "besuchen" - Visitor-Pattern in ANTLR angewendet.
+
+ANTLR generiert auf Anfordung die nötigen Klassen und Strukturen, um das
+Visitor-Pattern einfach implementieren zu können. Wir schauen uns hier nur die
+Anwendung des Patterns an; zur Funktionsweise des Patterns siehe Lektion
+[Visitor-Pattern](../pattern/visitor.md).
 :::
 
 ![](images/MiniCalcVisitorUML.png){width="80%"}
@@ -510,7 +516,11 @@ Den Baum "besuchen" - Visitor-Pattern in ANTLR.
     auf ein Kind zugreifen (Indexbereich `0` bis `getChildCount() - 1`).
 :::
 
+::: notes
 # Pattern Matching auf Bäumen (neuere Java-Versionen)
+
+Ausblick auf eine spätere Lesson [Sealed Classes & Pattern
+Matching](../java-modern/patternmatching.md):
 
 ``` java
 Object node = ...;
@@ -520,6 +530,12 @@ switch (node) {
     // ...
 }
 ```
+
+Statt mit dem Visitor-Pattern durch den Baum zu iterieren, kann man das in neueren
+Java-Versionen auch mit Pattern Matching auf Typen machen. Dies schauen wir uns in
+der Sitzung [Sealed Classes & Pattern Matching](../java-modern/patternmatching.md)
+genauer an, hier nur der Ausblick.
+:::
 
 ::: notes
 # Syntaxhighlighting: Vergleich Regex-Ansatz vs. ANTLR-Ansatz
@@ -605,5 +621,34 @@ TODO
 :::
 
 ::: challenges
-TODO
+Betrachten Sie die folgende ANTLR-Grammatik:
+
+``` antlr
+grammar OneTwo;
+
+s  : a EOF ;
+
+a  : '1' a '1'
+   | '2'
+   ;
+```
+
+1.  Welche Token können Sie hier vom Lexer erwarten?
+2.  Welche Eingaben würde der Parser akzeptieren?
+3.  Wie sieht der Parse-Tree aus, welche Knoten und Blätter gibt es und wie sehen
+    die zugehörigen (generierten) Klassen und Methoden aus?
+
+<!--
+Es gibt nur die beiden impliziten Token `1` und `2` sowie das vordefinierte `EOF`.
+
+Die akzeptierte Sprache: ein oder mehrere "1", eine "2", danach nochmal genauso
+viele "1" wie am Anfang.
+
+Klassen: Es gibt `SContext` und `AContext` für die beiden Regeln.
+
+-   `SContext` hat die Methoden `AContext a()` und `TerminalNode EOF()`.
+-   `AContext` hat die Methoden `AContext a()`.
+-   Zusätzlich die geerbten Methoden aus der Basisklasse `ParserRuleContext`:
+    `int getChildCount()`, `ParseTree getChild(int i)`, `String getText()`
+-->
 :::
