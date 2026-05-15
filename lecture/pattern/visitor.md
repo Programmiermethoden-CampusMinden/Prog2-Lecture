@@ -108,7 +108,7 @@ und werden das Visitor-Pattern nutzen, um den Parse-Tree zu traversieren.
 # Erinnerung: Baumstrukturen
 
 ::: notes
-## Begriffe
+**Begriffe**
 
 -   Ein Baum ist eine **hierarchische Datenstruktur**
     -   besteht aus **Knoten** (Nodes) und **Kanten** (Edges)
@@ -121,7 +121,7 @@ und werden das Visitor-Pattern nutzen, um den Parse-Tree zu traversieren.
     -   **Höhe** des Baums = maximale Tiefe eines Knotens
     -   **Pfad**: Folge von Knoten von der Wurzel zu einem Knoten
 
-## Beispiel
+**Beispiel**
 :::
 
                             (Root)
@@ -137,21 +137,21 @@ und werden das Visitor-Pattern nutzen, um den Parse-Tree zu traversieren.
 -   Innere Knoten: `Root`, `A`, `B`
 -   Blätter: `C`, `D`, `E`
 
-::: notes
-## Typische Einsatzgebiete
+:::: notes
+**Typische Einsatzgebiete**
 
 -   Dateisystem
 -   GUI‑Komponentenbäume
 -   **Parsebäume** für Programme/Sprachen
 
-## Brücke zu ANTLR
-
-[ANTLR](../tooling/antlr.md) sind genau solche Bäume:
+::: tip
+Die Parse-Trees in [ANTLR](../tooling/antlr.md) sind genau solche Bäume:
 
 -   Wurzel = kompletter Input
 -   innere Knoten = Grammatikregeln / Sprachkonstrukte
--   Blätter = Tokens
+-   Blätter = Token
 :::
+::::
 
 # Erinnerung: Varianten der Datenhaltung
 
@@ -227,13 +227,11 @@ public class Leaf implements Tree {
 
 :::: notes
 ::: tip
-Brücke zu ANTLR:
+Die ANTLR‑Parsebäume sind im Wesentlichen **allgemeine (n‑äre) Bäume mit
+Kinderliste**. Die Knoten enthalten typischerweise:
 
--   ANTLR‑Parsebäume sind im Wesentlichen **allgemeine (n‑äre) Bäume mit
-    Kinderliste**
--   Knoten enthalten typischerweise:
-    -   Kontext für eine Grammatikregel (für innere Knoten), oder
-    -   ein Token (für Blätter)
+-   Kontext für eine Grammatikregel (für innere Knoten), oder
+-   ein Token (für Blätter)
 :::
 ::::
 
@@ -383,6 +381,8 @@ Funktion, mit der man den Ausdruck hübsch ausgeben kann:
 [Beispiel: direct.DemoExpr]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/direct/DemoExpr.java"}
 
+------------------------------------------------------------------------------------
+
 Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche
 Strukturen, mit denen wir diesen Parse-Tree traversieren ... Und wir müssen für
 *jede* Erweiterung immer *alle* Expression-Klassen anpassen!
@@ -403,7 +403,7 @@ Strukturen, mit denen wir diesen Parse-Tree traversieren ... Und wir müssen fü
 
 [[Hinweis: Implementierungsdetails (Traversierung, visit-Methoden)]{.ex}]{.slides}
 
-::::: notes
+:::::: notes
 Das Entwurfsmuster "Besucher" (*Visitor Pattern*) lagert die Aktion beim Besuchen
 eines Knotens in eine separate Klasse aus.
 
@@ -572,7 +572,7 @@ immer noch das gleiche Visitor‑Pattern:
 
 ### Vor‑ und Nachteile der beiden Varianten
 
-#### Variante A: Überladene `visit(...)`‑Methoden
+**Variante A**: Überladene `visit(...)`‑Methoden
 
 ``` java
 void visit(NumExpr e);
@@ -588,7 +588,7 @@ void visit(AddExpr e);
     -   im Code muss man genauer auf den Parametertyp achten, um zu sehen, welche
         Variante gemeint ist
 
-#### Variante B: Unterschiedlich benannte Methoden
+**Variante B**: Unterschiedlich benannte Methoden
 
 ``` java
 void visitNumExpr(NumExpr e);
@@ -606,8 +606,7 @@ void visitAddExpr(AddExpr e);
     -   die Verbindung zum abstrakten Pattern ("eine `visit`‑Operation,
         spezialisiert für jede Unterklasse") ist weniger direkt sichtbar
 
-### Bezug zu ANTLR
-
+::: tip
 ANTLR generiert typischerweise Visitor‑Interfaces mit **eigenen Namen pro
 Grammatikregel**, z.B.:
 
@@ -626,6 +625,7 @@ Das entspricht genau der zweiten Variante oben. Wichtig ist für Sie:
     Operationen (`Visitor`) bleiben unverändert.
 -   Die Wahl der Namenskonvention ist eine Design‑Entscheidung bzw. durch das
     verwendete Tool (wie ANTLR) vorgegeben.
+:::
 
 ## Double-Dispatch
 
@@ -779,7 +779,7 @@ Während die `accept()`-Methode nicht in die Basisklasse der besuchten Typen (im
 UML-Diagramm zum Visitor-Pattern oben das Interface `Elem` bzw. im Beispiel oben das
 Interface `Expr`) verlagert werden kann, kann man die `visit()`-Methoden im
 Interface `Visitor` durchaus als Default-Methoden im Interface implementieren.
-:::::
+::::::
 
 # Ausrechnen des Ausdrucks mit einem Visitor
 
