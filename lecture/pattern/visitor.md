@@ -507,7 +507,7 @@ public class DemoExpr {
 }
 ```
 
-## Implementierungsdetail
+## Implementierungsdetail 1: externe vs. interne Traversierung
 
 In den beiden Klasse `AddExpr` und `MulExpr` müssen auch die beiden Kindknoten
 besucht werden, d.h. hier muss der Baum weiter traversiert werden.
@@ -527,6 +527,101 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 
 [Beispiel Traversierung extern (im Visitor): visitor.visit.extrav.DemoExpr]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/extrav/DemoExpr.java"}
+
+## Implementierungsdetail 2: Überladene vs. unterschiedlich benannte `visit`‑Methoden
+
+Bisher haben wir das Visitor‑Interface so definiert:
+
+``` java
+public interface ExprVisitor {
+    void visit(NumExpr e);
+    void visit(MulExpr e);
+    void visit(AddExpr e);
+}
+```
+
+Hier wird **eine Methode** `visit(...)` mehrfach mit unterschiedlichen
+Parameter‑Typen überladen. Der Methodenname transportiert die *Aktion* ("besuche
+dieses Element"), der Parametertyp transportiert die *Variante* (welche konkrete
+Unterklasse von `Expr`).
+
+In vielen Bibliotheken und Frameworks (und auch bei ANTLR) findet man aber häufig
+eine andere Schreibweise:
+
+``` java
+public interface ExprVisitor {
+    void visitNumExpr(NumExpr e);
+    void visitMulExpr(MulExpr e);
+    void visitAddExpr(AddExpr e);
+}
+```
+
+Hier haben die `visit`-Methoden **unterschiedliche Namen**. Technisch ist das aber
+immer noch das gleiche Visitor‑Pattern:
+
+-   Auf den besuchten Objekten gibt es weiterhin eine `accept(...)`‑Methode.
+-   Der Visitor hat pro konkretem Typ eine eigene `visit`-Methode (nur nicht mehr
+    überladen).
+-   Über `e.accept(v)` wird zuerst die passende `accept`‑Implementierung und darin
+    dann die passende Visitormethode aufgerufen (Double‑Dispatch‑Prinzip bleibt
+    gleich).
+
+### Vor‑ und Nachteile der beiden Varianten
+
+#### Variante A: Überladene `visit(...)`‑Methoden
+
+``` java
+void visit(NumExpr e);
+void visit(MulExpr e);
+void visit(AddExpr e);
+```
+
+-   Vorteile:
+    -   kompakte, einheitliche Benennung (`visit` überall)
+    -   der Typ des Arguments sagt, was besucht wird
+-   Nachteile:
+    -   lange Liste von Überladungen kann unübersichtlich werden
+    -   im Code muss man genauer auf den Parametertyp achten, um zu sehen, welche
+        Variante gemeint ist
+
+#### Variante B: Unterschiedlich benannte Methoden
+
+``` java
+void visitNumExpr(NumExpr e);
+void visitMulExpr(MulExpr e);
+void visitAddExpr(AddExpr e);
+```
+
+-   Vorteile:
+    -   schon am Methodennamen erkennbar, welcher Typ behandelt wird (`visitMulExpr`
+        vs. `visitAddExpr`)
+    -   gut geeignet, wenn man viele verschiedene Knotentypen hat (z.B. in großen
+        Grammatiken)
+-   Nachteile:
+    -   etwas mehr Schreibarbeit
+    -   die Verbindung zum abstrakten Pattern ("eine `visit`‑Operation,
+        spezialisiert für jede Unterklasse") ist weniger direkt sichtbar
+
+### Bezug zu ANTLR
+
+ANTLR generiert typischerweise Visitor‑Interfaces mit **eigenen Namen pro
+Grammatikregel**, z.B.:
+
+``` java
+public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
+    T visitAdd(ExprParser.AddContext ctx);
+    T visitMul(ExprParser.MulContext ctx);
+    T visitNum(ExprParser.NumContext ctx);
+}
+```
+
+Das entspricht genau der zweiten Variante oben. Wichtig ist für Sie:
+
+-   Beides sind gültige Implementierungen des **gleichen** Visitor‑Patterns.
+-   Das **Double‑Dispatch‑Prinzip** und die Trennung von Datenstruktur (`Expr`) und
+    Operationen (`Visitor`) bleiben unverändert.
+-   Die Wahl der Namenskonvention ist eine Design‑Entscheidung bzw. durch das
+    verwendete Tool (wie ANTLR) vorgegeben.
 
 ## (Double-) Dispatch
 
@@ -724,17 +819,25 @@ Guru)](https://refactoring.guru/design-patterns/visitor).
 
 **Visitor-Pattern**: Auslagern der Traversierung in eigene Klassenstruktur
 
+:::: notes
+::: tip
+Wir haben das Visitor-Pattern am Beispiel von Bäumen kennengelernt. Das Pattern
+beschränkt sich aber nicht auf Bäume, sondern kann allgemein für Traversierung von
+Datenstrukturen eingesetzt werden.
+:::
+::::
+
 \bigskip
 \smallskip
 
--   Klassen der Datenstruktur
+-   Klassen der traversierten Datenstruktur
     -   bekommen eine `accept()`-Methode für einen Visitor
-    -   rufen den Visitor mit sich selbst als Argument auf
+    -   rufen darin den Visitor mit sich selbst als Argument auf
 
 \smallskip
 
 -   Visitor
-    -   hat für jede Klasse eine Überladung der `visit()`-Methode
+    -   hat für jede Klasse der Datenstruktur eine `visit()`-Methode
     -   Rückgabewerte schwierig: Intern halten oder per `return` [(dann aber
         unterschiedliche `visit()`-Methoden für die verschiedenen
         Rückgabetypen!)]{.notes}
@@ -747,8 +850,10 @@ Guru)](https://refactoring.guru/design-patterns/visitor).
         Elementtyp)
 
 ::: readings
--   @Eilebrecht2013
--   @Gamma2011
+Der [Refactoring.Guru](https://refactoring.guru/design-patterns/visitor) hat eine
+schöne Zusammenfassung des Visitor-Patterns. Der Verweis auf @Gamma2011 der ["Gang
+of Four"](https://en.wikipedia.org/wiki/Design_Patterns) darf natürlich nicht
+fehlen.
 :::
 
 ::: outcomes
