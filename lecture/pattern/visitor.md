@@ -125,10 +125,10 @@ und werden das Visitor-Pattern nutzen, um den Parse-Tree zu traversieren.
 :::
 
                             (Root)
-                            /   \
-                          (A)   (B)
-                         /  \     \
-                       (C)  (D)   (E)
+                            /    \
+                          (A)    (B)
+                          / \      \
+                        (C) (D)    (E)
 
 \bigskip
 \smallskip
@@ -388,16 +388,20 @@ Strukturen, mit denen wir diesen Parse-Tree traversieren ... Und wir müssen fü
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/direct/DemoExpr.java"}
 :::
 
-\vfill
-\pause
+::: slides
 
+------------------------------------------------------------------------------------
+:::
+
+::: center
 **Das geht besser!**
+:::
 
 # Visitor-Pattern (Besucher-Entwurfsmuster)
 
 ![](images/visitor.png){web_width="80%"}
 
-[[Hinweis: Implementierungsdetail Traversierung]{.ex}]{.slides}
+[[Hinweis: Implementierungsdetails (Traversierung, visit-Methoden)]{.ex}]{.slides}
 
 ::::: notes
 Das Entwurfsmuster "Besucher" (*Visitor Pattern*) lagert die Aktion beim Besuchen
@@ -623,7 +627,7 @@ Das entspricht genau der zweiten Variante oben. Wichtig ist für Sie:
 -   Die Wahl der Namenskonvention ist eine Design‑Entscheidung bzw. durch das
     verwendete Tool (wie ANTLR) vorgegeben.
 
-## (Double-) Dispatch
+## Double-Dispatch
 
 ::: tip
 Im Visitor-Pattern spricht man oft von "**Double‑Dispatch**". Gemeint ist damit,
