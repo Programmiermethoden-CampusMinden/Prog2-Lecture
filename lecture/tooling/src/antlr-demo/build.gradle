@@ -1,0 +1,74 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'antlr'
+    id 'com.diffplug.spotless' version '8.4.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:6.0.3')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    testImplementation 'org.mockito:mockito-core:5.23.0'
+
+    antlr 'org.antlr:antlr4:4.13.2'
+    implementation 'org.antlr:antlr4-runtime:4.13.2'
+}
+
+
+// use current LTS release: Java 25
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+java.sourceCompatibility = JavaVersion.VERSION_25
+java.targetCompatibility = JavaVersion.VERSION_25
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 25
+}
+
+
+// main()
+application {
+    // TODO: Define your main class here
+    mainClass = 'visitordemo.Main'
+}
+
+
+// ANTLR and IntelliJ
+def antlrGenDir = layout.buildDirectory.dir('generated-src/antlr/main')
+
+sourceSets {
+    main {
+        java.srcDir(antlrGenDir)
+    }
+}
+
+tasks.named('generateGrammarSource') {
+    maxHeapSize = '64m'
+    arguments.addAll(['-visitor', '-long-messages'])
+    outputDirectory = antlrGenDir.get().asFile
+}
+
+
+// misc settings
+tasks.named('run') {
+    standardInput = System.in
+}
+
+test {
+    useJUnitPlatform()
+}
+
+spotless {
+    java {
+        googleJavaFormat().reflowLongStrings()
+
+        target '**/*.java'
+        targetExclude('build/generated-src/**')
+    }
+}
