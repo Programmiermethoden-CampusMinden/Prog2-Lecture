@@ -406,6 +406,7 @@ WS    : [ \t\r\n]+ -> skip ;
 
 ::: column
 \bigskip
+
 ![](images/MiniCalcParserUML.png){web_width="80%"}
 :::
 :::::
@@ -630,11 +631,13 @@ Matching gelernt haben, wird im nächsten Semester direkt wiederverwendet!
 
 ::: readings
 Sie finden auf der [ANTLR-Homepage](https://www.antlr.org) Links zur Dokumentation
-und auch zum [ANTLR-Projekt](https://github.com/antlr/antlr4) auf GitHub. Eine
-ältere, aber dennoch interessante Quelle vom "Kopf" hinter ANTLR (Terence Parr) ist
-@Parr2014, die auch online verfügbar ist. Die
-[ANTLR-Dokumentation](https://github.com/antlr/antlr4/blob/4.6/doc/index.md) und die
-[ANTLR-FAQ](https://github.com/antlr/antlr4/blob/master/doc/faq/index.md) bieten
+und auch zum [ANTLR-Projekt](https://github.com/antlr/antlr4) auf GitHub.
+
+Eine ältere, aber dennoch interessante Quelle vom "Kopf" hinter ANTLR (Terence Parr)
+ist [@Parr2014], die auch online verfügbar ist.
+
+Die [ANTLR-Dokumentation](https://github.com/antlr/antlr4/blob/4.6/doc/index.md) und
+die [ANTLR-FAQ](https://github.com/antlr/antlr4/blob/master/doc/faq/index.md) bieten
 ebenfalls interessante Einstiegspunkte zur Vertiefung für Fortgeschrittene.
 :::
 
