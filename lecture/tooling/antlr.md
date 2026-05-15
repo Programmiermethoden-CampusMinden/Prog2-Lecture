@@ -593,18 +593,17 @@ Matching gelernt haben, wird im nächsten Semester direkt wiederverwendet!
 -   Einbettung in ein Java/Gradle-Projekt:
     -   `antlr`-Plugin in `build.gradle`
     -   `.g4`-Dateien unter `src/main/antlr/`
-    -   generierte Sourcen im Build-Ordner, bei Bedarf explizit als Source-Ordner
-        registrieren
+    -   generierte Sourcen im Build-Ordner
 -   Üblicher Workflow: Eingabetext -\> CharStream -\> Lexer -\> TokenStream -\>
     Parser -\> Parse-Tree
 -   Struktur des Parse-Baums:
     -   jedes Knotenobjekt ist eine `XxxContext`-Klasse
     -   Blätter sind Token
-    -   Whitespaces/Kommentare werden oft "geskippt"
--   Visitor-Pattern:
-    -   eigene Klasse von `FooBaseVisitor<T>` ableiten
-    -   `visitXxx`-Methoden für interessante Regeln überschreiben,´
-    -   Baum mit `visitor.visit(tree)` traversieren.´
+    -   Whitespaces/Kommentare werden i.d.R. übersprungen/entfernt
+-   Visitor-Pattern in ANTLR:
+    -   eigene Klasse von generiertem `FooBaseVisitor<T>` ableiten
+    -   `visitXxx`-Methoden bei Bedarf überschreiben
+    -   Baum mit `visitor.visit(tree)` traversieren.
 
 ::: readings
 TODO
