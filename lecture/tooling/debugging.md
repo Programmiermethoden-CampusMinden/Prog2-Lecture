@@ -276,7 +276,7 @@ beobachten.
         ein paar Methoden, auch wenn (scheinbar) alles funktioniert.
 
 ::: readings
-https://www.cs.cornell.edu/courses/cs4120/2019sp/
+https://www.cs.cornell.edu/courses/cs4120/2019sp/ > Resources > Debugging
 
 https://github.com/uds-se/debuggingbook
 :::
