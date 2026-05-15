@@ -819,6 +819,27 @@ Vergleiche auch die Darstellung des Visitor-Patterns in [Visitor (Refactoring
 Guru)](https://refactoring.guru/design-patterns/visitor).
 :::
 
+::: notes
+# Ausblick: Pattern Matching auf Bäumen (neuere Java-Versionen)
+
+Ausblick auf eine spätere Lesson [Sealed Classes & Pattern
+Matching](../java-modern/patternmatching.md):
+
+``` java
+Object node = ...;
+switch (node) {
+    case NumberNode n -> ...
+    case BinaryOpNode b -> ...
+    // ...
+}
+```
+
+Statt mit dem Visitor-Pattern durch den Baum zu iterieren, kann man das in neueren
+Java-Versionen auch mit Pattern Matching auf Typen machen. Dies schauen wir uns in
+der Sitzung [Sealed Classes & Pattern Matching](../java-modern/patternmatching.md)
+genauer an, hier nur der Ausblick.
+:::
+
 # Wrap-Up
 
 **Visitor-Pattern**: Auslagern der Traversierung in eigene Klassenstruktur
