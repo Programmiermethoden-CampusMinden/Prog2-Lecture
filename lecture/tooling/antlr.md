@@ -381,7 +381,7 @@ Eingabe `a = 1 + 2;` liefert:
 
     (prog (stmt a = (expr 1 + 2) ;) <EOF>)
 
-![](images/screenshot_parsetree.png){width="40%" web_width="25%"}
+![](images/screenshot_parsetree.png){width="40%" web_width="20%"}
 :::
 :::::
 
