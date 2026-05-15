@@ -15,14 +15,16 @@ public class PrintVisitor implements ExprVisitor {
 
     @Override
     public void visit(MulExpr e) {
-        e.getE1().accept(this);
+        // rechte Seite zuerst in den Stack, damit beim pop() als zweites Argument in die Operation
+        // (hier nicht relevant, aber bei nicht-kommutativen Operationen wichtig)
+        e.getE2().accept(this);
         e.getE1().accept(this);
         erg.push("MulExpr(" + erg.pop() + ", " + erg.pop() + ")");
     }
 
     @Override
     public void visit(AddExpr e) {
-        e.getE1().accept(this);
+        e.getE2().accept(this);
         e.getE1().accept(this);
         erg.push("AddExpr(" + erg.pop() + ", " + erg.pop() + ")");
     }
