@@ -85,6 +85,134 @@ Beim Parsen von "5\*4+3" würde dabei der folgende Parsetree entstehen:
 ::::
 :::::::
 
+# Erinnerung: Baumstrukturen
+
+::: notes
+## Begriffe
+
+-   Ein Baum ist eine **hierarchische Datenstruktur**
+    -   besteht aus **Knoten** (Nodes) und **Kanten** (Edges)
+    -   es gibt genau **eine Wurzel** (Root)
+    -   jeder Knoten (außer der Wurzel) hat **genau einen Elternknoten**
+-   Knoten mit Kindern: **innere Knoten**, ohne Kinder: **Blätter**
+-   Wichtige Begriffe:
+    -   **Tiefe** eines Knotens = Länge des Pfads von der Wurzel bis zu diesem
+        Knoten
+    -   **Höhe** des Baums = maximale Tiefe eines Knotens
+    -   **Pfad**: Folge von Knoten von der Wurzel zu einem Knoten
+
+## Beispiel
+:::
+
+                            (Root)
+                            /   \
+                          (A)   (B)
+                         /  \     \
+                       (C)  (D)   (E)
+
+::: notes
+-   Root: `Root`
+-   Innere Knoten: `Root`, `A`, `B`
+-   Blätter: `C`, `D`, `E`
+
+## Typische Einsatzgebiete
+
+-   Dateisystem
+-   GUI‑Komponentenbäume
+-   **Parsebäume** für Programme/Sprachen
+
+## Brücke zu [ANTLR](../tooling/antlr.md)
+
+ANTLR‑Parsebäume sind genau solche Bäume:
+
+-   Wurzel = kompletter Input
+-   innere Knoten = Grammatikregeln / Sprachkonstrukte
+-   Blätter = Tokens
+:::
+
+# Erinnerung: Baumvarianten und Modellierung
+
+::: notes
+## Datenablage im Baum
+:::
+
+-   **Daten nur in den Blättern**
+
+<!-- -->
+
+                            (+)
+                           /   \
+                         (*)    3
+                         / \
+                        2   4
+
+-   **Daten in allen Knoten**
+
+::: notes
+## Struktur / Implementierungsvarianten
+:::
+
+\pause
+
+-   **Binäre Bäume (explizite Felder)** ::: notes
+    -   zwei Kinder: `left`, `right`
+    -   typisch für: Binärbäume, Binärsuchbäume, Heaps, ... :::
+
+    ``` java
+    public class BinaryTreeNode {
+        public BinaryTreeNode left;
+        public BinaryTreeNode right;
+
+        public Object value; // Payload
+    }
+    ```
+-   **Allgemeine (n‑äre) Bäume (Kinderliste)** ::: notes
+    -   beliebig viele Kinder: Speicherung in einer Liste
+    -   typisch für: **Parsebäume / ASTs**, XML/HTML‑DOM, GUI‑Hierarchien, ... :::
+
+    ``` java
+    public class TreeNode {
+        public List<TreeNode> children ;
+
+        public Object value; // Payload
+    }
+    ```
+
+:::: notes
+::: tip
+Brücke zu ANTLR:
+
+-   ANTLR‑Parsebäume sind im Wesentlichen **allgemeine (n‑äre) Bäume mit
+    Kinderliste**
+-   Knoten enthalten typischerweise:
+    -   eine Grammatikregel (für innere Knoten) oder
+    -   ein Token (für Blätter)
+:::
+::::
+
+::: notes
+# Erinnerung: Algorithmische Varianten bei Bäumen
+
+-   **Suchbäume**
+    -   Binäre Suchbäume (BST):
+        -   Invariante: links $<$ Wert $<$ rechts
+    -   Selbstbalancierende Bäume:
+        -   **AVL‑Bäume**
+        -   **Rot‑Schwarz‑Bäume**
+-   **Mehrweg‑Suchbäume**
+    -   **B‑Bäume, B+-Bäume**
+        -   mehrere Schlüssel und mehrere Kinder pro Knoten
+-   **Heaps**
+    -   Min‑Heap, Max‑Heap
+    -   Grundlage für Prioritätswarteschlangen
+-   Einordnung:
+    -   Diese Varianten optimieren v.a. **Laufzeiten** (Suchen, Einfügen, Löschen)
+    -   Für das **Visitor‑Pattern** heute wichtig:
+        -   Wir brauchen "nur" eine Baumstruktur, über die wir systematisch laufen
+        -   Ob der Baum balanciert ist oder nicht, ist für das Traversieren
+            zweitrangig
+:::
+
 # Strukturen für den Parsetree
 
 ![](images/parsetree_classes_uml.png){width="70%"}
