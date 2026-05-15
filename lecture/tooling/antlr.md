@@ -385,6 +385,51 @@ Eingabe `a = 1 + 2;` liefert:
 :::
 :::::
 
+::: notes
+Der Parse-Tree spiegelt in seiner Struktur direkt die Regeln der Grammatik wider.
+Jede verwendete Parserregel bildet einen (inneren) Knoten im Baum, die konkreten
+Eingabetokens bilden die Blätter.
+
+-   Wir starten mit `prog` als Startregel und damit als Wurzelknoten. Die Regel
+    `prog` erlaubt beliebig viele `stmt` gefolgt von `EOF`. In unserer Eingabe gibt
+    es genau ein `stmt`, deshalb hat `prog` zwei Kinder:
+
+    -   einen `stmt`-Knoten, und
+    -   ein `EOF`-Token als Blattknoten.
+
+-   Die Regel `stmt` hat zwei Alternativen:
+
+    -   `ID '=' expr ';'`, oder
+    -   `expr ';'`.
+
+    Unsere Eingabe `a = 1 + 2;` passt zur ersten Alternative. Entsprechend hat der
+    `stmt`-Knoten die folgenden Kinder:
+
+    -   ein `ID`-Token mit dem Wert `a`,
+    -   das (implizite) Token `=`,
+    -   einen `expr`-Knoten, und
+    -   das (implizite) Token `;`.
+
+-   Die Regel `expr` lautet:
+
+    ``` antlr
+    expr : INT ('+' INT)* ;
+    ```
+
+    Das bedeutet: ein `INT`, gefolgt von beliebig vielen Wiederholungen von `+ INT`.
+    In der Eingabe `1 + 2` ist das:
+
+    -   ein erstes `INT`-Token mit dem Wert `1`,
+    -   das (implizite) Token `+`, und
+    -   ein zweites `INT`-Token mit dem Wert `2`.
+
+    Diese drei Tokens bilden die Blätter unterhalb des `expr`-Knotens.
+
+Wenn der Parser am Ende beim `<EOF>`-Token angekommen ist und alle Regeln
+erfolgreich angewendet wurden, ist die komplette Eingabe abgedeckt und der
+Parse-Tree vollständig.
+:::
+
 # Der Parse-Tree: Klassenhierarchie
 
 ::::: columns
