@@ -34,7 +34,7 @@ TODO
 
 Von regulären Ausdrücken zu "richtigen" Bäumen: ANTLR
 
-::: notes
+:::: notes
 Kurzer Rückblick auf das Übungsblatt mit Syntax-Highlighting via Regex: Regex
 erkennt Muster im Text, aber kennt keine Struktur.
 
@@ -49,22 +49,24 @@ ist ein recht beliebtes Standardtool und kann die generierten Artefakte (Lexer,
 Parser, ...) nicht nur in Java, sondern in verschiedenen weiteren Sprachen erzeugen,
 beispielsweise Python, C++, CSharp, JavaScript, Go, ...
 
+::: important
 **Wichtig**: Man kann ANTLR als eigenständiges Tool installieren und/oder über das
 Gradle-Plugin nutzen und/oder das IntelliJ-Plugin einsetzen. Wir gehen hier den Weg
 über das Gradle-Plugin, d.h. es gibt keinen (guten) Grund für eine "richtige"
 Installation von ANTLR.
+:::
 
 Einordnung ins Curriculum: Wir betrachten jetzt im 2. Semester nur die rein
 praktische Nutzung als Bibliothek. Später im 3. Semester werden wir tiefer in die
 Grundlagen des Compilerbaus einsteigen und uns Grammatiken, Lexer und Parser, AST
 usw. näher anschauen.
-:::
+::::
 
 # ANTLR als Blackbox-Pipeline
 
 ![](images/antlr_overview.png){width="80%"}
 
-::: notes
+:::: notes
 Wir nutzen ANTLR als:
 
 -   Java-Bibliothek + Codegenerator, den wir über Gradle einbinden
@@ -72,6 +74,7 @@ Wir nutzen ANTLR als:
 -   Ausgabe: automatisch erzeugte Java-Klassen, die einen zum eingegebenen Quelltext
     passenden Baum repräsentieren
 
+::: important
 Wichtige Begriffe:
 
 -   **Lexer**: zerteilt Zeichenstrom (Eingabe) in eine Folge von Wörtern (Token)
@@ -84,11 +87,12 @@ Wichtige Begriffe:
     Beschreibung der Wörter und Sätze)
 -   **ANTLR** generiert aus der Grammatik einen Lexer und Parser plus diverse
     Hilfsklassen.
+:::
 
 Wie ein Lexer oder Parser funktioniert, was genau eine Grammatik ist usw. schauen
 wir uns in Compilerbau an. Für Prog2 brauchen Sie nur ein grundlegendes Bild und die
 Begriffe.
-:::
+::::
 
 # Technische Einbindung (Gradle, Projektstruktur)
 
@@ -115,7 +119,7 @@ dependencies {
 }
 ```
 
-::: notes
+:::: notes
 In der Gradle-Konfiguration `build.gradle` wird das ANTLR-Plugin für Gradle
 aktiviert und zusätzlich werden die Dependencies für die ANTLR-Bibliothek
 konfiguriert. Die Grammatik-Dateien liegen dann im Source-Tree unterhalb von
@@ -175,9 +179,11 @@ Kontext-Klassen wie `FooParser.StatementContext` und erweitern den generierten
 Basis-Visitor wie `FooBaseVisitor`. (Der Präfix `Foo` kommt von der betrachteten
 Grammatik, diese würde hier also `Foo.g4` heissen.)
 
+::: tip
 Wichtig: Diese Gradle-Konfiguration müssen Sie sich nicht im Detail merken. Nutzen
-Sie sie in diesem Kurs als Schablone und passen Sie sie bei Bedarf an.
+Sie sie in diesem Kurs als Template und passen Sie sie bei Bedarf an.
 :::
+::::
 
 # Beispielgrammatik
 
@@ -268,7 +274,7 @@ for (var t : tokens.getTokens()) {
 }
 ```
 
-::: notes
+:::: notes
 Aus einer Grammatik `MiniCalc.g4` wurde ein Lexer generiert, der über
 `MiniCalcLexer` zur Verfügung steht. Der Lexer erwartet als Input einen
 `CharStream`, den wir aus dem Input (String) erzeugen und dem Konstruktor von
@@ -300,12 +306,14 @@ Namen - `VOCABULARY.getSymbolicName()` liefert dafür `null`. Weiterhin sieht ma
 jedes Token, in welcher Zeile es gefunden wurde und an welcher Position es startet.
 `EOF` ist ein vordefiniertes Token, welches das Ende der Eingabe kennzeichnet.
 
+::: note
 Wichtig: Der gesamte Eingabetext muss so in gültige Token überführt werden können,
 dass jede Zeichenposition zu einem Token gehört. Wenn der Lexer auf Zeichen stösst,
 die zu keiner der definierten Token-Regeln passen, meldet er einen Fehler (über
 seine Error-Listener) und je nach Konfiguration kann dies auch zu einer Exception
 führen.
 :::
+::::
 
 # Minimaler Java-Code: Text -\> Baum
 
@@ -320,7 +328,7 @@ var tree = parser.prog(); // Wurzelknoten des Baums (Startregel der Grammatik)
 IO.println(tree.toStringTree(parser));
 ```
 
-::: notes
+:::: notes
 Hier wird das übliche Vorgehen gezeigt, wenn man mit dem Parse-Tree arbeiten möchte.
 Aus dem Eingabetext wird ein `CharStream` erzeugt und damit ein `MiniCalcLexer`. Mit
 diesem wird der `CommonTokenStream` angelegt und in einen neuen `MiniCalcParser`
@@ -331,10 +339,12 @@ Lexer gebildeten Token in einen Baum übersetzt. Da unsere Grammatik mit der Reg
 `parser.prog()` zurückgeben lassen und damit weiter arbeiten. Die Baumwurzel `tree`
 ist ein Objekt vom Typ `MiniCalcParser.ProgContext`.
 
+::: note
 Wenn die Token nicht entsprechend den Regeln in der Grammatik auftauchen, meldet der
 Parser Syntaxfehler. Standardmässig versucht ANTLR4, sich von Fehlern zu erholen und
 weiterzuparsen; je nach Konfiguration (z.B. mit einer "Bail-Strategie") kann der
 Parser aber auch mit einer Exception abbrechen.
+:::
 
 Die Eingabe `a = 1 + 2;` liefert bei der gezeigten Grammatik und dem Beispiel-Code
 die folgende Ausgabe:
@@ -347,7 +357,7 @@ hier wird nur der Wert ausgegeben (nicht der Tokenname).
 
 Diesen Code können Sie als Schablone verwenden. Ab hier arbeiten wir normalerweise
 nur noch mit `tree` ...
-:::
+::::
 
 # Der Parse-Tree: Struktur
 
@@ -529,7 +539,7 @@ Anwendung des Patterns an; zur Funktionsweise des Patterns siehe Lektion
 :::
 
 ::: notes
-# Pattern Matching auf Bäumen (neuere Java-Versionen)
+# Ausblick: Pattern Matching auf Bäumen (neuere Java-Versionen)
 
 Ausblick auf eine spätere Lesson [Sealed Classes & Pattern
 Matching](../java-modern/patternmatching.md):
@@ -572,7 +582,7 @@ genauer an, hier nur der Ausblick.
             Quelltext-Rekonstruktion müssen diese ggf. separat behandelt werden
 :::
 
-::: notes
+:::: notes
 # Ausblick auf das 3. Semester (Compilerbau)
 
 Wie es weitergeht: Vom Parse-Baum zum Compiler
@@ -594,9 +604,11 @@ Wie es weitergeht: Vom Parse-Baum zum Compiler
     -   Systematische AST-Konstruktion, semantische Analyse, Interpreter, Compiler,
         Linter, Code-Formatter
 
+::: tip
 Verbindung zu heute: Alles, was Sie jetzt zu Baumstrukturen, Visitor und Pattern
 Matching gelernt haben, wird im nächsten Semester direkt wiederverwendet!
 :::
+::::
 
 # Wrap-Up
 
