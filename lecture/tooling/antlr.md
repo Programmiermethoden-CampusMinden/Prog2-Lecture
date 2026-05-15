@@ -44,7 +44,15 @@ Problemstellung:
 -   Wie kann ich gültigen Java-Code von ungültiger Syntax unterscheiden?
 
 ANTLR4 als Lösung: [ANTLR](https://www.antlr.org) ist ein in Java geschriebenes Tool
-und eine Bibliothek, welche aus Text eine Struktur (einen Parse-Baum) erzeugt.
+und eine Bibliothek, welche aus Text eine Struktur (einen Parse-Baum) erzeugt. ANTLR
+ist ein recht beliebtes Standardtool und kann die generierten Artefakte (Lexer,
+Parser, ...) nicht nur in Java, sondern in verschiedenen weiteren Sprachen erzeugen,
+beispielsweise Python, C++, CSharp, JavaScript, Go, ...
+
+**Wichtig**: Man kann ANTLR als eigenständiges Tool installieren und/oder über das
+Gradle-Plugin nutzen und/oder das IntelliJ-Plugin einsetzen. Wir gehen hier den Weg
+über das Gradle-Plugin, d.h. es gibt keinen (guten) Grund für eine "richtige"
+Installation von ANTLR.
 
 Einordnung ins Curriculum: Wir betrachten jetzt im 2. Semester nur die rein
 praktische Nutzung als Bibliothek. Später im 3. Semester werden wir tiefer in die
@@ -608,8 +616,11 @@ Matching gelernt haben, wird im nächsten Semester direkt wiederverwendet!
 ::: readings
 Sie finden auf der [ANTLR-Homepage](https://www.antlr.org) Links zur Dokumentation
 und auch zum [ANTLR-Projekt](https://github.com/antlr/antlr4) auf GitHub. Eine
-ältere, aber dennoch interessante Quelle vom "Kopf" hinter ANTLR ist @Parr2014, die
-auch online verfügbar ist.
+ältere, aber dennoch interessante Quelle vom "Kopf" hinter ANTLR (Terence Parr) ist
+@Parr2014, die auch online verfügbar ist. Die
+[ANTLR-Dokumentation](https://github.com/antlr/antlr4/blob/4.6/doc/index.md) und die
+[ANTLR-FAQ](https://github.com/antlr/antlr4/blob/master/doc/faq/index.md) bieten
+ebenfalls interessante Einstiegspunkte zur Vertiefung für Fortgeschrittene.
 :::
 
 ::: outcomes
