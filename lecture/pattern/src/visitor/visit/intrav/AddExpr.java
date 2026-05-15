@@ -13,8 +13,10 @@ public class AddExpr implements Expr {
 
     @Override
     public void accept(ExprVisitor v) {
-        e1.accept(v);
+        // rechte Seite zuerst in den Stack, damit beim pop() als zweites Argument in die Operation
+        // (hier nicht relevant, aber bei nicht-kommutativen Operationen wichtig)
         e2.accept(v);
+        e1.accept(v);
         v.visit(this);
     }
 }

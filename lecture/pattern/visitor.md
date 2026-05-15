@@ -34,14 +34,23 @@ statt. Alternativ überlässt man es dem Visitor, die Traversierung durchzuführ
 Hier muss in den `visit()`-Methoden für die einzelnen Elemente entsprechend auf
 mögliche Kinder reagiert werden.
 
-In diesem Pattern findet ein sogenannter "Double-Dispatch" statt: Zur Laufzeit wird
-ein konkreter Visitor instantiiert und über `accept()` an ein Element der
-Datenstruktur übergeben. Dort ist zur Compile-Zeit aber nur der Obertyp der
-Visitoren bekannt, d.h. zur Laufzeit wird hier der konkrete Typ bestimmt und
-entsprechend die richtige `visit()`-Methode auf der "echten" Klasse des Visitors
-aufgerufen (erster Dispatch). Da im Visitor die `visit()`-Methoden für jeden Typ der
-Datenstrukur überladen sind, findet nun zur Laufzeit die Auflösung der korrekten
-Überladung statt (zweiter Dispatch).
+In diesem Pattern spricht man von "Double-Dispatch":
+
+-   Zur Compile‑Zeit ist bei einem Aufruf wie `e.accept(v)` nur der Obertyp `Expr`
+    bekannt. Zur **Laufzeit** entscheidet der tatsächliche Typ von `e` (z.B.
+    `AddExpr`), welche konkrete `accept`‑Methode ausgeführt wird. -\> *erster
+    Dispatch*: dynamischer Dispatch auf das **Element**.
+-   In der jeweiligen `accept`‑Methode steht dann z.B. `v.visit(this)`. Der
+    **statische** Typ von `this` ist dort z.B. `AddExpr`, dadurch ist zur
+    Compile‑Zeit klar, welche `visit`‑Überladung gemeint ist (`visit(AddExpr)`). Zur
+    **Laufzeit** entscheidet der tatsächliche Typ von `v` (z.B. `EvalVisitor`
+    vs. `PrintVisitor`), welche Implementierung dieser `visit(AddExpr)`‑Methode
+    aufgerufen wird. -\> *zweiter Dispatch*: dynamischer Dispatch auf den
+    **Visitor**.
+
+Zusammen: Die endgültige Methode ergibt sich aus dem Zusammenspiel des Laufzeittyps
+des Elements (welche `accept`‑Methode) und des Laufzeittyps des Visitors (welche
+`visit`‑Implementierung für den konkreten Elementtyp).
 
 Das Pattern wird traditionell gern für die Traversierung von Datenstrukturen
 eingesetzt. Es hilft aber auch, wenn man einer gewissen Anzahl von Klassen je eine
@@ -60,7 +69,7 @@ Hilfsmethoden implementiert werden.
 
 # Motivation: Parsen von "5\*4+3"
 
-::::::: columns
+::::::::: columns
 :::: {.column width="50%"}
 ::: notes
 Zum Parsen von Ausdrücken (*Expressions*) könnte man diese einfache Grammatik
@@ -69,33 +78,199 @@ oder Multiplikation zweier Ausdrücke.
 :::
 
 ``` yacc
-expr : e1=expr '*' e2=expr      # MUL
-     | e1=expr '+' e2=expr      # ADD
-     | INT                      # NUM
-     ;
+add : mul ('+' mul)* ;
+mul : num ('*' num)* ;
+num : INT ;
 ```
 ::::
 
-:::: {.column width="40%"}
+:::::: {.column width="40%"}
 ::: notes
-Beim Parsen von "5\*4+3" würde dabei der folgende Parsetree entstehen:
+Beim Parsen von "5\*4+3" würde dabei der folgende Parse-Tree entstehen:
 :::
 
 ![](images/parsetree.png){width="50%" web_width="20%"}
+
+:::: notes
+::: tip
+Anmerkung: Wer genau hinschaut und sich schon die
+[ANTLR-Session](../tooling/antlr.md) angeschaut hat, wird merken, dass dieser Baum
+tatsächlich *kein* Parse-Tree von ANTRL basierend auf der Grammatik ist. Hier habe
+ich schon etwas vorgearbeitet und den Parse-Tree vereinfacht - das nennt man dann
+auch oft "Abstract Syntax Tree" (*AST*). Wir werden so eine Transformation von einem
+vollständigen Parse-Tree hin zu einem AST auch noch als Übungsaufgabe programmieren
+und werden das Visitor-Pattern nutzen, um den Parse-Tree zu traversieren.
+:::
+::::
+::::::
+:::::::::
+
+# Erinnerung: Baumstrukturen
+
+::: notes
+## Begriffe
+
+-   Ein Baum ist eine **hierarchische Datenstruktur**
+    -   besteht aus **Knoten** (Nodes) und **Kanten** (Edges)
+    -   es gibt genau **eine Wurzel** (Root)
+    -   jeder Knoten (außer der Wurzel) hat **genau einen Elternknoten**
+-   Knoten mit Kindern: **innere Knoten**, ohne Kinder: **Blätter**
+-   Wichtige Begriffe:
+    -   **Tiefe** eines Knotens = Länge des Pfads von der Wurzel bis zu diesem
+        Knoten
+    -   **Höhe** des Baums = maximale Tiefe eines Knotens
+    -   **Pfad**: Folge von Knoten von der Wurzel zu einem Knoten
+
+## Beispiel
+:::
+
+                            (Root)
+                            /    \
+                          (A)    (B)
+                          / \      \
+                        (C) (D)    (E)
+
+\bigskip
+\smallskip
+
+-   Root: `Root`
+-   Innere Knoten: `Root`, `A`, `B`
+-   Blätter: `C`, `D`, `E`
+
+::: notes
+## Typische Einsatzgebiete
+
+-   Dateisystem
+-   GUI‑Komponentenbäume
+-   **Parsebäume** für Programme/Sprachen
+
+## Brücke zu ANTLR
+
+[ANTLR](../tooling/antlr.md) sind genau solche Bäume:
+
+-   Wurzel = kompletter Input
+-   innere Knoten = Grammatikregeln / Sprachkonstrukte
+-   Blätter = Tokens
+:::
+
+# Erinnerung: Varianten der Datenhaltung
+
+Variante A: **Daten nur in den Blättern**
+
+                            (+)
+                           /   \
+                         (*)    3
+                         / \
+                        2   4
+
+\bigskip
+
+Variante B: **Daten in allen Knoten**
+
+# Erinnerung: Implementierungsvarianten
+
+::::::: columns
+:::: column
+::: notes
+**Binäre Bäume (explizite Felder)**
+
+-   zwei Kinder: `left`, `right`
+-   typisch für: Binärbäume, Binärsuchbäume, Heaps, ...
+:::
+
+``` java
+public class BinaryTreeNode {
+    public BinaryTreeNode left;
+    public BinaryTreeNode right;
+
+    public Object value; // Payload
+}
+```
+::::
+
+:::: column
+::: notes
+**Allgemeine (n‑äre) Bäume (Kinderliste)**
+
+-   beliebig viele Kinder: Speicherung in einer Liste
+-   typisch für: **Parsebäume / ASTs**, XML/HTML‑DOM, GUI‑Hierarchien, ...
+:::
+
+``` java
+public class TreeNode {
+    public List<TreeNode> children;
+
+    public Object value; // Payload
+}
+```
 ::::
 :::::::
 
-# Strukturen für den Parsetree
+\bigskip
+\pause
+
+::: notes
+Oder auch mit **getrennten Typen für Knoten und Blätter** (hier im Beispiel: Daten
+nur in den Blättern):
+:::
+
+``` java
+public interface Tree {}
+public class Node implements Tree {
+    Tree leftChild;
+    Tree rightChild;
+}
+public class Leaf implements Tree {
+    Object data;
+}
+```
+
+:::: notes
+::: tip
+Brücke zu ANTLR:
+
+-   ANTLR‑Parsebäume sind im Wesentlichen **allgemeine (n‑äre) Bäume mit
+    Kinderliste**
+-   Knoten enthalten typischerweise:
+    -   Kontext für eine Grammatikregel (für innere Knoten), oder
+    -   ein Token (für Blätter)
+:::
+::::
+
+::: notes
+# Erinnerung: Algorithmische Varianten bei Bäumen
+
+-   **Suchbäume**
+    -   Binäre Suchbäume (BST):
+        -   Invariante: links $<$ Wert $<$ rechts
+    -   Selbstbalancierende Bäume:
+        -   **AVL‑Bäume**
+        -   **Rot‑Schwarz‑Bäume**
+-   **Mehrweg‑Suchbäume**
+    -   **B‑Bäume, B+-Bäume**
+        -   mehrere Schlüssel und mehrere Kinder pro Knoten
+-   **Heaps**
+    -   Min‑Heap, Max‑Heap
+    -   Grundlage für Prioritätswarteschlangen
+-   Einordnung:
+    -   Diese Varianten optimieren v.a. **Laufzeiten** (Suchen, Einfügen, Löschen)
+    -   Für das **Visitor‑Pattern** heute wichtig:
+        -   Wir brauchen "nur" eine Baumstruktur, über die wir systematisch laufen
+        -   Ob der Baum balanciert ist oder nicht, ist für das Traversieren
+            zweitrangig
+:::
+
+# Strukturen für den Parse-Tree
 
 ![](images/parsetree_classes_uml.png){width="70%"}
 
 ::: notes
-Der Parsetree für diese einfache Grammatik ist ein Binärbaum. Die Regeln werden auf
+Der Parse-Tree für diese einfache Grammatik ist ein Binärbaum. Die Regeln werden auf
 Knoten im Baum zurückgeführt. Es gibt Knoten mit zwei Kindknoten, und es gibt Knoten
 ohne Kindknoten ("Blätter").
 
 Entsprechend kann man sich einfache Klassen definieren, die die verschiedenen Knoten
-in diesem Parsetree repräsentieren. Als Obertyp könnte es ein (noch leeres)
+in diesem Parse-Tree repräsentieren. Als Obertyp könnte es ein (noch leeres)
 Interface `Expr` geben.
 
 ``` java
@@ -138,7 +313,7 @@ public class DemoExpr {
 # Ergänzung I: Ausrechnen des Ausdrucks
 
 ::: notes
-Es wäre nun schön, wenn man mit dem Parsetree etwas anfangen könnte. Vielleicht
+Es wäre nun schön, wenn man mit dem Parse-Tree etwas anfangen könnte. Vielleicht
 möchte man den Ausdruck ausrechnen?
 :::
 
@@ -205,25 +380,30 @@ Funktion, mit der man den Ausdruck hübsch ausgeben kann:
 ![](images/parsetree_eval_print_uml.png){width="70%"}
 
 ::: notes
-Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche
-Strukturen, mit denen wir diesen Parsetree traversieren ... Und wir müssen für
-*jede* Erweiterung immer *alle* Expression-Klassen anpassen!
-
 [Beispiel: direct.DemoExpr]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/direct/DemoExpr.java"}
+
+Das fängt an, sich zu wiederholen. Wir implementieren immer wieder ähnliche
+Strukturen, mit denen wir diesen Parse-Tree traversieren ... Und wir müssen für
+*jede* Erweiterung immer *alle* Expression-Klassen anpassen!
 :::
 
-\vfill
+::: slides
 
-**Das geht besser.**
+------------------------------------------------------------------------------------
+:::
+
+::: center
+**Das geht besser!**
+:::
 
 # Visitor-Pattern (Besucher-Entwurfsmuster)
 
 ![](images/visitor.png){web_width="80%"}
 
-[[Hinweis: Implementierungsdetail Traversierung]{.ex}]{.slides}
+[[Hinweis: Implementierungsdetails (Traversierung, visit-Methoden)]{.ex}]{.slides}
 
-:::: notes
+::::: notes
 Das Entwurfsmuster "Besucher" (*Visitor Pattern*) lagert die Aktion beim Besuchen
 eines Knotens in eine separate Klasse aus.
 
@@ -287,11 +467,13 @@ public class EvalVisitor implements ExprVisitor {
 
     public void visit(NumExpr e) { erg.push(e.getValue()); }
     public void visit(MulExpr e) {
-        e.getE1().accept(this);  e.getE2().accept(this);
+        // rechte Seite zuerst in den Stack, damit beim pop() als zweites Argument in die Operation
+        // (hier nicht relevant, aber bei nicht-kommutativen Operationen wichtig)
+        e.getE2().accept(this); e.getE1().accept(this);
         erg.push(erg.pop() * erg.pop());
     }
     public void visit(AddExpr e) {
-        e.getE1().accept(this);  e.getE2().accept(this);
+        e.getE2().accept(this); e.getE1().accept(this);
         erg.push(erg.pop() + erg.pop());
     }
     public int getResult() { return erg.peek(); }
@@ -302,11 +484,11 @@ public class PrintVisitor implements ExprVisitor {
 
     public void visit(NumExpr e) { erg.push("NumExpr(" + e.getValue() + ")"); }
     public void visit(MulExpr e) {
-        e.getE1().accept(this);  e.getE2().accept(this);
+        e.getE2().accept(this); e.getE1().accept(this);
         erg.push("MulExpr(" + erg.pop() + ", " + erg.pop() + ")");
     }
     public void visit(AddExpr e) {
-        e.getE1().accept(this);  e.getE2().accept(this);
+        e.getE2().accept(this); e.getE1().accept(this);
         erg.push("AddExpr(" + erg.pop() + ", " + erg.pop() + ")");
     }
     public String getResult() { return erg.peek(); }
@@ -329,7 +511,7 @@ public class DemoExpr {
 }
 ```
 
-## Implementierungsdetail
+## Implementierungsdetail 1: externe vs. interne Traversierung
 
 In den beiden Klasse `AddExpr` und `MulExpr` müssen auch die beiden Kindknoten
 besucht werden, d.h. hier muss der Baum weiter traversiert werden.
@@ -350,30 +532,202 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 [Beispiel Traversierung extern (im Visitor): visitor.visit.extrav.DemoExpr]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/extrav/DemoExpr.java"}
 
-## (Double-) Dispatch
+## Implementierungsdetail 2: Überladene vs. unterschiedlich benannte `visit`‑Methoden
+
+Bisher haben wir das Visitor‑Interface so definiert:
+
+``` java
+public interface ExprVisitor {
+    void visit(NumExpr e);
+    void visit(MulExpr e);
+    void visit(AddExpr e);
+}
+```
+
+Hier wird **eine Methode** `visit(...)` mehrfach mit unterschiedlichen
+Parameter‑Typen überladen. Der Methodenname transportiert die *Aktion* ("besuche
+dieses Element"), der Parametertyp transportiert die *Variante* (welche konkrete
+Unterklasse von `Expr`).
+
+In vielen Bibliotheken und Frameworks (und auch bei ANTLR) findet man aber häufig
+eine andere Schreibweise:
+
+``` java
+public interface ExprVisitor {
+    void visitNumExpr(NumExpr e);
+    void visitMulExpr(MulExpr e);
+    void visitAddExpr(AddExpr e);
+}
+```
+
+Hier haben die `visit`-Methoden **unterschiedliche Namen**. Technisch ist das aber
+immer noch das gleiche Visitor‑Pattern:
+
+-   Auf den besuchten Objekten gibt es weiterhin eine `accept(...)`‑Methode.
+-   Der Visitor hat pro konkretem Typ eine eigene `visit`-Methode (nur nicht mehr
+    überladen).
+-   Über `e.accept(v)` wird zuerst die passende `accept`‑Implementierung und darin
+    dann die passende Visitormethode aufgerufen (Double‑Dispatch‑Prinzip bleibt
+    gleich).
+
+### Vor‑ und Nachteile der beiden Varianten
+
+#### Variante A: Überladene `visit(...)`‑Methoden
+
+``` java
+void visit(NumExpr e);
+void visit(MulExpr e);
+void visit(AddExpr e);
+```
+
+-   Vorteile:
+    -   kompakte, einheitliche Benennung (`visit` überall)
+    -   der Typ des Arguments sagt, was besucht wird
+-   Nachteile:
+    -   lange Liste von Überladungen kann unübersichtlich werden
+    -   im Code muss man genauer auf den Parametertyp achten, um zu sehen, welche
+        Variante gemeint ist
+
+#### Variante B: Unterschiedlich benannte Methoden
+
+``` java
+void visitNumExpr(NumExpr e);
+void visitMulExpr(MulExpr e);
+void visitAddExpr(AddExpr e);
+```
+
+-   Vorteile:
+    -   schon am Methodennamen erkennbar, welcher Typ behandelt wird (`visitMulExpr`
+        vs. `visitAddExpr`)
+    -   gut geeignet, wenn man viele verschiedene Knotentypen hat (z.B. in großen
+        Grammatiken)
+-   Nachteile:
+    -   etwas mehr Schreibarbeit
+    -   die Verbindung zum abstrakten Pattern ("eine `visit`‑Operation,
+        spezialisiert für jede Unterklasse") ist weniger direkt sichtbar
+
+### Bezug zu ANTLR
+
+ANTLR generiert typischerweise Visitor‑Interfaces mit **eigenen Namen pro
+Grammatikregel**, z.B.:
+
+``` java
+public interface ExprVisitor<T> extends ParseTreeVisitor<T> {
+    T visitAdd(ExprParser.AddContext ctx);
+    T visitMul(ExprParser.MulContext ctx);
+    T visitNum(ExprParser.NumContext ctx);
+}
+```
+
+Das entspricht genau der zweiten Variante oben. Wichtig ist für Sie:
+
+-   Beides sind gültige Implementierungen des **gleichen** Visitor‑Patterns.
+-   Das **Double‑Dispatch‑Prinzip** und die Trennung von Datenstruktur (`Expr`) und
+    Operationen (`Visitor`) bleiben unverändert.
+-   Die Wahl der Namenskonvention ist eine Design‑Entscheidung bzw. durch das
+    verwendete Tool (wie ANTLR) vorgegeben.
+
+## Double-Dispatch
 
 ::: tip
-Zur Laufzeit wird in `accept()` mit dem Aufruf von `visit()` der konkrete Typ des
-Visitors aufgelöst und dann für `visit(this)` durch den Typ der besuchten Klasse
-(`this`) die korrekte Überladung ausgewählt. Dies nennt man auch
-"**Double-Dispatch**".
+Im Visitor-Pattern spricht man oft von "**Double‑Dispatch**". Gemeint ist damit,
+dass bei einem Aufruf wie
+
+``` java
+e.accept(v);
+```
+
+zwei verschiedene Typinformationen benutzt werden, um zur passenden Methode zu
+gelangen:
+
+1.  der tatsächliche Typ des besuchten Objekts (also von `e`), und
+2.  der tatsächliche Typ des Visitors (also von `v`).
 :::
 
-In den `accept()`-Methoden der besuchten Klassen ist nur der gemeinsame Obertyp der
-Visitoren bekannt. Dies ist wichtig, weil man sonst ja für jeden neuen Visitor neue
-passende `accept()`-Methoden in allen zu besuchenden Klassen implementieren müsste!
+Schauen wir uns das Schritt für Schritt an.
 
-Zur Laufzeit wird hier ein konkreter Visitor (also ein Objekt von einem Untertyp der
-Visitoren-Oberklasse) als Parameter übergeben.
+### 1. Erster Dispatch: Auswahl der richtigen `accept`‑Methode
 
-Beim Aufruf von `visit(this)` in der `accept()`-Methode des besuchten Objekts wird
-durch die Laufzeitumgebung der tatsächliche konkrete Typ des Visitors bestimmt und
-die in der Typhierarchie in Bezug auf den Typ des Visitors "tiefste" Implementierung
-der `visit`-Methode (also die Implementierung in der Visitorklasse selbst oder,
-falls dort nicht vorhanden, in der jeweils nächsthöheren Elternklasse). Über das
-Argument `this` wird die tatsächliche konkrete Klasse des besuchten Objekts
-ermittelt, so dass die passende Überladung der `visit`-Methode im konkreten Visitor
-ausgewählt und aufgerufen werden kann.
+Im Code steht z.B.:
+
+``` java
+Expr e = new AddExpr(...);
+ExprVisitor v = new EvalVisitor();
+
+e.accept(v);
+```
+
+-   Der **statische Typ** von `e` ist `Expr`.
+-   Der **dynamische Typ** von `e` ist hier `AddExpr`.
+
+Zur **Compile‑Zeit** weiß der Compiler nur: "`e` ist irgendetwas vom Typ `Expr`".
+Zur **Laufzeit** sieht die JVM aber, dass `e` tatsächlich ein `AddExpr` ist und ruft
+deshalb die `accept`‑Methode von `AddExpr` auf:
+
+``` java
+public class AddExpr implements Expr {
+    public void accept(ExprVisitor v) {
+        v.visit(this);
+    }
+}
+```
+
+Das ist der **erste Dispatch**: Die konkrete `accept`‑Implementierung wird anhand
+des **Laufzeittyps des Elements** (hier `AddExpr`) bestimmt.
+
+### 2. Zweiter Dispatch: Auswahl der passenden `visit`‑Methode
+
+Innerhalb von `AddExpr.accept` steht:
+
+``` java
+public void accept(ExprVisitor v) {
+    v.visit(this);
+}
+```
+
+-   Der **statische Typ** von `v` ist `ExprVisitor` (Interface).
+-   Der **dynamische Typ** von `v` ist hier `EvalVisitor` (konkrete
+    Implementierung).
+-   Der **statische Typ** von `this` in dieser Methode ist `AddExpr`.
+
+Damit passiert Folgendes:
+
+1.  Über den **dynamischen Typ des Visitors** (`EvalVisitor`) wird entschieden,
+    welche Implementierung von `visit(AddExpr)` in der Visitor‑Hierarchie aufgerufen
+    wird (falls `EvalVisitor` diese Methode überschreibt, dann diese, sonst evtl.
+    eine Implementierung in einer Oberklasse).
+2.  Welche **Überladung** von `visit(...)` gemeint ist (`visit(NumExpr)`,
+    `visit(AddExpr)`, `visit(MulExpr)`, ...) hängt am **statischen Typ** des
+    Arguments `this`. In der Methode `AddExpr.accept` ist das statisch der Typ
+    `AddExpr`, deshalb wird dort immer die Überladung `visit(AddExpr)` ausgewählt.
+
+::: important
+Wichtig: In Java wird die Auswahl der passenden *Überladung* (`visit(AddExpr)`
+vs. `visit(MulExpr)` ...) **zur Compile‑Zeit** anhand des statischen Typs des
+Arguments getroffen - hier also anhand des Typs `AddExpr` in der jeweiligen
+`accept`‑Methode. Zur Laufzeit wird dann über den Typ des Visitors entschieden,
+welche konkrete Implementierung dieser Methode ausgeführt wird.
+:::
+
+### 3. Warum braucht das Pattern diesen Mechanismus?
+
+In den `accept()`‑Methoden der besuchten Klassen ist nur der gemeinsame Obertyp der
+Visitors bekannt (`ExprVisitor`). Das ist wichtig, weil Sie so später beliebig viele
+verschiedene konkrete Visitor-Klassen (z.B. `EvalVisitor`, `PrintVisitor`,
+`TypeCheckVisitor`, ...) ergänzen/nutzen können, ohne die Klassen der Datenstruktur
+noch einmal anpassen zu müssen.
+
+Das Visitor‑Pattern nutzt also zwei Stufen:
+
+1.  **Dynamischer Dispatch** auf das besuchte Objekt -\> "`e` ist zur Laufzeit ein
+    `AddExpr`, also nutze `AddExpr.accept`."
+2.  **Auswahl der passenden `visit`-Methode** anhand
+    -   des **statischen Typs** des Elements in `accept` (`visit(AddExpr e)`), und
+    -   des **dynamischen Typs** des Visitors (`EvalVisitor`, `PrintVisitor`, ...).
+
+Diese Kombination bezeichnet man im Kontext des Visitor‑Patterns als
+**Double‑Dispatch**: Die endgültige Methode entsteht aus dem Zusammenwirken beider
+Typen - des Typs des Elements und des Typs des Visitors.
 
 ## Hinweis I
 
@@ -399,9 +753,9 @@ Man könnte versucht sein, die `accept()`-Methode aus den Knotenklassen in die
 gemeinsame Basisklasse zu verlagern: Statt
 
 ``` java
-    public void accept(ExprVisitor v) {
-        v.visit(this);
-    }
+public void accept(ExprVisitor v) {
+    v.visit(this);
+}
 ```
 
 in *jeder* Knotenklasse einzeln zu definieren, könnte man das doch *einmalig* in der
@@ -421,11 +775,11 @@ funktioniert in Java leider nicht. (Warum?)
 
 ## Hinweis III
 
-Während die `accept()`-Methode nicht in die Basisklasse der besuchten Typen (im Bild
-oben die Klasse `Elem` bzw. im Beispiel oben die Klasse `Expr`) verlagert werden
-kann, kann man die `visit()`-Methoden im Interface `Visitor` durchaus als
-Default-Methoden im Interface implementieren.
-::::
+Während die `accept()`-Methode nicht in die Basisklasse der besuchten Typen (im
+UML-Diagramm zum Visitor-Pattern oben das Interface `Elem` bzw. im Beispiel oben das
+Interface `Expr`) verlagert werden kann, kann man die `visit()`-Methoden im
+Interface `Visitor` durchaus als Default-Methoden im Interface implementieren.
+:::::
 
 # Ausrechnen des Ausdrucks mit einem Visitor
 
@@ -469,29 +823,41 @@ Guru)](https://refactoring.guru/design-patterns/visitor).
 
 **Visitor-Pattern**: Auslagern der Traversierung in eigene Klassenstruktur
 
+:::: notes
+::: tip
+Wir haben das Visitor-Pattern am Beispiel von Bäumen kennengelernt. Das Pattern
+beschränkt sich aber nicht auf Bäume, sondern kann allgemein für Traversierung von
+Datenstrukturen eingesetzt werden.
+:::
+::::
+
 \bigskip
 \smallskip
 
--   Klassen der Datenstruktur
+-   Klassen der traversierten Datenstruktur
     -   bekommen eine `accept()`-Methode für einen Visitor
-    -   rufen den Visitor mit sich selbst als Argument auf
+    -   rufen darin den Visitor mit sich selbst als Argument auf
 
 \smallskip
 
 -   Visitor
-    -   hat für jede Klasse eine Überladung der `visit()`-Methode
+    -   hat für jede Klasse der Datenstruktur eine `visit()`-Methode
     -   Rückgabewerte schwierig: Intern halten oder per `return` [(dann aber
         unterschiedliche `visit()`-Methoden für die verschiedenen
         Rückgabetypen!)]{.notes}
 
 \smallskip
 
--   (Double-) Dispatch: Zur Laufzeit wird in `accept()` der Typ des Visitors und in
-    `visit()` der Typ der zu besuchenden Klasse aufgelöst
+-   (Double-) Dispatch: Kombination aus
+    -   dynamischem Dispatch auf das **Element** (`accept`) und
+    -   dynamischem Dispatch auf den **Visitor** (`visit` für den konkreten
+        Elementtyp)
 
 ::: readings
--   @Eilebrecht2013
--   @Gamma2011
+Der [Refactoring.Guru](https://refactoring.guru/design-patterns/visitor) hat eine
+schöne Zusammenfassung des Visitor-Patterns. Der Verweis auf @Gamma2011 der ["Gang
+of Four"](https://en.wikipedia.org/wiki/Design_Patterns) darf natürlich nicht
+fehlen.
 :::
 
 ::: outcomes
