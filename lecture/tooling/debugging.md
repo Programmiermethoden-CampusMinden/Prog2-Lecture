@@ -4,7 +4,24 @@ title: Debugging
 ---
 
 ::: tldr
-TODO
+Der Debugger ist ein zentrales Werkzeug in der Softwareentwicklung. Man kann ihn
+einsetzen, um sowohl Exceptions als auch Logikfehler systematisch zu finden, statt
+mit im Code strategisch verstreuten `IO.println` den Zustand des ausgeführten
+Programms zu erraten.
+
+Man kann im Debugger an den zu untersuchenden Stellen **Breakpoints** setzen und die
+Programmausführung dort stoppen lassen. Mit **Step Over** kann eine Anweisung
+ausgeführt werden, mit **Step Into** kann in die Anweisung hineingesprungen werden
+(etwa in einen Methodenaufruf), und mit **Step Out** führe ich die aktuelle Methode
+aus und kehre zum Aufrufer zurück. Mit dem **Variablenfenster** und dem **Call
+Stack** kann ich gezielt beobachten, was mein Programm wirklich tut und sogar
+Variablenwerte verändern und Ausdrücke live evaluieren. Mit bedingten Breakpoints
+kann man dynamisch auf Programmzustände reagieren.
+
+Man versucht Fehler zu beobachten und zu reproduzieren, um sich eine Hypothese zu
+bilden. Mit Breakpoints hält man den Debugger bei der Programmausführung an den
+"interessanten" Stellen an und kann den Code dann schrittweise ausführen, um ihn
+kontrolliert analysieren und verbessern zu können.
 :::
 
 ::: youtube
@@ -49,7 +66,7 @@ Warum Debugger statt `IO.println`:
 -   **Run / Debug**
     -   Programm im **Debug-Modus** starten (statt normalem Run)
 -   **Step Over**
-    -   Nächste Zeile ausführen, Methodenaufrufe werden "übersprungen"
+    -   Nächste Zeile ausführen, Methodenaufrufe werden "übersprungen" (ausgeführt)
 -   **Step Into**
     -   In den aufgerufenen Methoden-Body hineinspringen
 -   **Step Out**
