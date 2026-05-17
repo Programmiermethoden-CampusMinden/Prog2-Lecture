@@ -276,10 +276,10 @@ beobachten.
         ein paar Methoden, auch wenn (scheinbar) alles funktioniert.
 
 ::: readings
-https://www.cs.cornell.edu/courses/cs4120/2019sp/ > Resources > Debugging
+https://www.cs.cornell.edu/courses/cs4120/2019sp/ \> Resources \> Debugging
 
-- https://www.cs.man.ac.uk/~johns/npe.html
-- https://dl.acm.org/doi/10.1145/792548.611956
+-   https://www.cs.man.ac.uk/\~johns/npe.html
+-   https://dl.acm.org/doi/10.1145/792548.611956
 
 https://github.com/uds-se/debuggingbook
 :::
