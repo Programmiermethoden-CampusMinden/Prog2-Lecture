@@ -11,106 +11,38 @@ TODO
 TODO
 :::
 
-# Java-Beispiel für die Debugging-Demo
-
-Ziel: In der Demo sollen Studierende lernen,
-
-1.  einen Crash (Exception) mit Stacktrace und Breakpoints zu analysieren und
-2.  einen stillen Logikfehler mit Breakpoints, Steppen und Variablen-Inspektion
-    aufzudecken.
-
-``` java
-import java.util.Collections;
-import java.util.List;
-import java.util.ArrayList;
-
-public class DebugDemo {
-
-    public static void main(String[] args) {
-        // Moderne Syntax: unveränderliche Liste
-        List<Integer> numbers = List.of(2, 4, 6, 8, 10);
-
-        int sum = sumEvenNumbers(numbers);
-        System.out.println("Erwartete Summe: 30, berechnet: " + sum);
-
-        int median = median(numbers);
-        System.out.println("Erwarteter Median: 6, berechnet: " + median);
-    }
-
-    /**
-     * Summiert alle geraden Zahlen in der Liste.
-     * BUG: Die Schleife startet erst bei Index 1, Element mit Index 0 wird übersprungen.
-     */
-    static int sumEvenNumbers(List<Integer> numbers) {
-        int sum = 0;
-        // BUG: i startet bei 1, nicht bei 0
-        for (int i = 1; i < numbers.size(); i++) {
-            int n = numbers.get(i);
-            if (n % 2 == 0) {
-                sum += n;
-            }
-        }
-        return sum;
-    }
-
-    /**
-     * Berechnet den Median der Liste (vereinfachte Variante für ungerade Anzahl).
-     * BUG: Es wird versucht, die unveränderliche List.of()-Liste zu sortieren.
-     */
-    static int median(List<Integer> numbers) {
-        // BUG: numbers ist unveränderlich (List.of), sort führt zu UnsupportedOperationException
-        Collections.sort(numbers);
-
-        int middle = numbers.size() / 2;
-        return numbers.get(middle);
-    }
-}
-```
-
-1.  Einen Crash (Exception + Stacktrace) zum Zeigen von:
-    -   Stacktrace lesen
-    -   Breakpoint in der Problem-Methode
-    -   Call Stack im Debugger
-    -   Schrittweises Ausführen (Step Over)
-2.  Einen Logikfehler zum Zeigen von:
-    -   Breakpoints in Schleifen
-    -   Schrittweise Ausführung (Step Into, Step Over)
-    -   Variablen-Werte beobachten (lokale Variablen, Watch/Expressions)
-    -   ggf. bedingte Breakpoints (z.B. Bedingung auf `i`)
-
-------------------------------------------------------------------------------------
-
-# Ziele der Einheit
-
-Nach dieser kurzen Einheit können Sie:
-
--   einen Fehler gezielt **reproduzieren**
--   eine **Exception** mit Hilfe des **Stacktraces** und des Debuggers analysieren
--   einen **Logikfehler** (falsches Ergebnis) mit Breakpoints und
-    Schrittweise-Ausführung finden
--   die wichtigsten Debugger-Funktionen in Ihrer IDE benennen
-
 # Warum Debuggen?
 
 Typische Fehlerarten:
 
--   **Exceptions** (Programm bricht ab)
+-   **Exceptions**: Programm bricht ab
+
+    ::: notes
     -   z.B. `NullPointerException`, `IndexOutOfBoundsException`,
         `UnsupportedOperationException`
--   **Logikfehler**
-    -   Programm läuft durch, Ergebnis ist aber falsch
+    :::
 
-Warum der Debugger besser ist als nur `System.out.println`:
+-   **Logikfehler**: Programm läuft durch, Ergebnis ist aber falsch
 
--   Sie sehen **alle Variablenwerte** in einem Zustand
--   Sie können das Programm **Schritt für Schritt** ausführen
--   Sie sehen den **Call Stack** (Wer hat wen aufgerufen?)
--   Sie können komplexe Bedingungen setzen (z.B. **bedingte Breakpoints**)
+\bigskip
+
+Warum Debugger statt `IO.println`:
+
+-   **Alle Variablenwerte** in einem Zustand sichtbar
+-   Programm **Schritt für Schritt** ausführbar
+-   **Call Stack** (Wer hat wen aufgerufen?)
+-   Komplexe Bedingungen (z.B. **bedingte Breakpoints**)
+
+::: notes
+... und man muss auch nicht daran denken, dass man die ganzen `IO.println`, die
+überall im Code verstreut sind, auch alle wieder entfernen muss :)
+:::
 
 # Die wichtigsten Debugger-Werkzeuge
 
-Begriffe können je nach IDE (IntelliJ, Eclipse, VS Code, ...) leicht variieren.
+![](images/screenshot_debugger.png){web_width="80%"}
 
+::: notes
 -   **Breakpoint**
     -   Rotes Markierungssymbol an einer Codezeile
     -   Programm hält an dieser Stelle an
@@ -122,12 +54,16 @@ Begriffe können je nach IDE (IntelliJ, Eclipse, VS Code, ...) leicht variieren.
     -   In den aufgerufenen Methoden-Body hineinspringen
 -   **Step Out**
     -   Aktuelle Methode bis zum Ende ausführen und zurück zur Aufrufer:in
+-   **Resume**
+    -   Setze das Programm fort (bis zum nächsten Breakpoint oder bis zum
+        Programmende - was von beidem als erstes auftritt)
 -   **Variables / Watches**
-    -   Aktuelle Werte von Variablen und Ausdrücken ansehen
+    -   Aktuelle Werte von Variablen und Ausdrücken ansehen und (bei Bedarf) ändern
 -   **Call Stack**
     -   Liste der aktuell verschachtelten Methodenaufrufe
 
-\[Hier Screenshot der Debug-Ansicht der IDE einfügen\]
+Die Begriffe können je nach IDE (IntelliJ, Eclipse, VS Code, ...) leicht variieren.
+:::
 
 # Standard-Vorgehen beim Debuggen
 
@@ -146,26 +82,29 @@ Begriffe können je nach IDE (IntelliJ, Eclipse, VS Code, ...) leicht variieren.
 7.  **Fehler lokalisieren und fixen**
     -   Code korrigieren, dann wieder bei Schritt 1 beginnen
 
-## Demo 1: Exception beim Median (Crash)
+# Demo 1: Exception beim Median (Crash)
 
-Beispielmethode:
+::: notes
+## Beispielmethode:
+:::
 
 ``` java
 static int median(List<Integer> numbers) {
-    Collections.sort(numbers);  // hier: UnsupportedOperationException
-    int middle = numbers.size() / 2;
+    Collections.sort(numbers);  // BUG: UnsupportedOperationException
+    var middle = numbers.size() / 2;
     return numbers.get(middle);
 }
 ```
 
-Situation:
+::: notes
+## Situation:
 
 -   `numbers` kommt aus `List.of(2, 4, 6, 8, 10);`
 -   `List.of` liefert eine **unveränderliche** Liste
 -   `Collections.sort(numbers)` versucht, die Liste zu ändern
 -   -\> `java.lang.UnsupportedOperationException`
 
-**Schritte in der Demo:**
+## Schritte in der Demo:
 
 1.  Programm normal ausführen -\> Absturz, Stacktrace ansehen
 2.  Im Stacktrace die Zeile in `median` finden
@@ -175,8 +114,14 @@ Situation:
     -   Prüfen: Was ist der Typ von `numbers`?
     -   `Step Over` auf `Collections.sort(numbers);` -\> Exception tritt auf
     -   Call Stack ansehen (Wer hat `median` aufgerufen?)
+:::
 
-**Anschließender Fix (live in der Demo):**
+\smallskip
+
+![](images/screenshot_debug_breakpoint.png){width="70%" web_width="80%"}
+
+::: notes
+## Anschließender Fix (live in der Demo):
 
 ``` java
 static int median(List<Integer> numbers) {
@@ -184,45 +129,44 @@ static int median(List<Integer> numbers) {
     List<Integer> copy = new ArrayList<>(numbers);
     Collections.sort(copy);
 
-    int middle = copy.size() / 2;
+    var middle = copy.size() / 2;
     return copy.get(middle);
 }
 ```
 
 Dann Programm erneut im Debug-Modus starten und prüfen, ob der Crash behoben ist.
-
-\[Hier 1-2 Screenshots: Stacktrace & Breakpoint in `median` einfügen\]
+:::
 
 # Demo 2: Logikfehler bei der Summe (falsches Ergebnis)
 
-Beispielmethode:
+::: notes
+## Beispielmethode:
+:::
 
 ``` java
 static int sumEvenNumbers(List<Integer> numbers) {
-    int sum = 0;
+    var sum = 0;
     // BUG: Schleife startet bei 1, Element mit Index 0 (Wert 2) wird nie besucht
     for (int i = 1; i < numbers.size(); i++) {
-        int n = numbers.get(i);
-        if (n % 2 == 0) {
-            sum += n;
-        }
+        var n = numbers.get(i);  if (n % 2 == 0)  sum += n;
     }
     return sum;
 }
 ```
 
-Ausgabe in `main`:
+::: notes
+## Ausgabe in `main`:
 
 ``` java
-int sum = sumEvenNumbers(numbers);
-System.out.println("Erwartete Summe: 30, berechnet: " + sum);
+var sum = sumEvenNumbers(numbers);
+IO.println("Erwartete Summe: 30, berechnet: " + sum);
 ```
 
 Ergebnis: `Erwartete Summe: 30, berechnet: 28`
 
-**Schritte in der Demo:**
+## Schritte in der Demo:
 
-1.  Breakpoint in der Zeile mit `int n = numbers.get(i);` (in der Schleife) setzen
+1.  Breakpoint in der Zeile mit `var n = numbers.get(i);` (in der Schleife) setzen
 2.  Programm im Debug-Modus starten
 3.  Bei jedem Halt:
     -   `i`, `n` und `sum` im Variablenfenster beobachten
@@ -231,31 +175,32 @@ Ergebnis: `Erwartete Summe: 30, berechnet: 28`
     -   Welche Werte nimmt `i` an?
     -   Welche Elemente der Liste werden tatsächlich besucht?
     -   Warum wird die 2 (Index 0) nicht berücksichtigt?
+:::
 
-**Fix (live in der Demo):**
+\smallskip
+
+![](images/screenshot_debug_loop.png){width="50%" web_width="80%"}
+
+::: notes
+## Anschließender Fix (live in der Demo):
 
 ``` java
 for (int i = 0; i < numbers.size(); i++) {  // i startet jetzt bei 0
-    int n = numbers.get(i);
-    if (n % 2 == 0) {
-        sum += n;
-    }
+    var n = numbers.get(i);
+    if (n % 2 == 0)  sum += n;
 }
 ```
 
 Danach erneut im Debug-Modus ausführen und die Werte von `i`, `n` und `sum`
 beobachten.
-
-\[Hier Screenshot mit Variablenansicht und Breakpoint in der Schleife einfügen\]
+:::
 
 # Tipps zum selbstständigen Üben
 
--   Probieren Sie in Ihrer IDE (z.B. IntelliJ, Eclipse, VS Code):
-    -   Einen **Bedingten Breakpoint**
-        -   z.B. in der Schleife von `sumEvenNumbers` nur halten, wenn `i == 0` oder
-            `n > 5`
-    -   Das **Ändern von Variablenwerten** im Debugger (wenn von der IDE
-        unterstützt)
+-   Probieren Sie in Ihrer IDE:
+    -   Einen **Bedingten Breakpoint**: z.B. in der Schleife von `sumEvenNumbers`
+        nur halten, wenn `i == 0` oder `n > 5`
+    -   Das **Ändern von Variablenwerten** im Debugger
     -   Das **Auswerten von Ausdrücken** (Evaluate Expression)
 -   Ersetzen Sie in `main` die Beispiel-Liste durch andere Daten:
     -   z.B. leere Liste, eine Liste mit nur einem Element, ungerade/gerade Anzahl
@@ -264,30 +209,31 @@ beobachten.
 
 # Wrap-Up
 
--   Debugger sind zentrale Werkzeuge für Informatik-Studierende und
-    -Studierende:innen.
--   Wichtige Bausteine:
-    -   Breakpoints, Step Over/Into/Out, Variablenansicht, Call Stack
+-   Debugger ist zentrales Werkzeug:
+    -   Breakpoints, Step Over/Into/Out, Variablen, Call Stack
+
+\smallskip
+
 -   Vorgehen:
     -   Fehler beobachten -\> reproduzieren -\> Hypothese -\> Breakpoint -\>
         schrittweise ausführen -\> fixen
--   Übungsidee:
-    -   Nehmen Sie Ihren eigenen Code aus Übungen/Projekten und debuggen Sie bewusst
-        ein paar Methoden, auch wenn (scheinbar) alles funktioniert.
 
 ::: readings
-https://www.cs.cornell.edu/courses/cs4120/2019sp/ \> Resources \> Debugging
-
--   https://www.cs.man.ac.uk/\~johns/npe.html
--   https://dl.acm.org/doi/10.1145/792548.611956
-
-https://github.com/uds-se/debuggingbook
+Zum Weiterlesen für Interessierte kann ich das Online-Buch meines Kollegen Andreas
+Zeller empfehlen: [The Debugging Book](https://www.debuggingbook.org/). Das Buch
+geht aber deutlich über den hier besprochenen Inhalt hinaus ...
 :::
 
 ::: outcomes
--   k2: Ich kann den Einsatz von Packages in Java erklären
+-   k3: Ich kann einen Fehler gezielt **reproduzieren**
+-   k3: Ich kann eine **Exception** mit Hilfe des **Stacktraces** und des Debuggers
+    analysieren
+-   k3: Ich kann einen **Logikfehler** (falsches Ergebnis) mit Breakpoints und
+    schrittweiser Ausführung finden
+-   k2: Ich kann die wichtigsten Debugger-Funktionen in meiner IDE benennen
 :::
 
 ::: challenges
-TODO
+Nehmen Sie Ihren eigenen Code aus Übungen/Projekten und debuggen Sie bewusst ein
+paar Methoden, auch wenn (scheinbar) alles funktioniert.
 :::
