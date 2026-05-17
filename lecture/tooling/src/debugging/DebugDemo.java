@@ -6,7 +6,7 @@ import java.util.List;
 public class DebugDemo {
 
   public static void main(String[] args) {
-    List<Integer> numbers = List.of(2, 4, 6, 8, 10);
+    var numbers = List.of(2, 4, 6, 8, 10);
 
     var sum = sumEvenNumbers(numbers);
     IO.println("Erwartete Summe: 30, berechnet: " + sum);
@@ -20,7 +20,6 @@ public class DebugDemo {
     var sum = 0;
     for (int i = 1; i < numbers.size(); i++) {
       var n = numbers.get(i);
-      int x = 9;
       if (n % 2 == 0) sum += n;
     }
     return sum;
