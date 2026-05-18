@@ -121,7 +121,8 @@ aber sauber trennen und definiert sich dazu ein *separates* Interface `Observer`
 der Methode `update()`, die dann alle "interessierten" Klassen (zusätzlich zur
 bestehenden Vererbungshierarchie) implementieren.
 
-Ein mögliches, sehr einfaches Java-Skelett sähe folgendermaßen aus:
+Ein mögliches, sehr einfaches Java-Skelett für unser LSF-/Student-Beispiel sähe
+entsprechend folgendermaßen aus:
 
 ``` java
 public interface Observer {
@@ -151,7 +152,7 @@ public class LSF {
     }
 }
 
-public class Student implements Observer {
+public class Student extends Person implements Observer {
     @Override
     public void update() {
         System.out.println("Student: Ich schaue mir die neuen Noten an.");
@@ -192,7 +193,7 @@ am Observer-Pattern!
 ::: important
 **Wichtig**: In der Standarddefinition des Observer-Patterns nach [@Gamma2011]
 werden beim Aufruf der Methode `update()` **keine Werte** an die Observer
-mitgegeben. Jder Observer muss sich entsprechend eine eigene Referenz auf das
+mitgegeben. Jeder Observer muss sich entsprechend eine eigene Referenz auf das
 beobachtete Objekt halten, um von dort dann weitere Informationen erhalten zu
 können.
 
@@ -223,7 +224,7 @@ Dies muss dann natürlich im `Observer`-Interface nachgezogen werden.
 :::
 
 ::: caution
-Die typische Implementierung von `notifyObservers` sieht so aus:
+Die typische Implementierung von `notifyObservers` sieht ungefähr so aus:
 
 ``` java
 void notifyObservers() {
