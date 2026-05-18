@@ -12,8 +12,8 @@ Mit dem Observer-Pattern kann man das aktive Polling vermeiden und in ein
 Push-Modell umbauen. Die interessierten Objekte "registrieren" sich beim "zentralen"
 Objekt. Sobald dieses eine Änderung erfährt oder Informationen bereitstehen o.ä.,
 wird das "zentrale" Objekt alle registrierten Objekte durch den Aufruf einer Methode
-benachrichtigen. Dafür müssen registrierten Objekte eine gemeinsame Schnittstelle
-implementieren.
+benachrichtigen. Dafür müssen die registrierten Objekte eine gemeinsame
+Schnittstelle implementieren.
 
 Das "zentrale" Objekt, welches abgefragt wird, nennt man "*Observable*" (oder
 manchmal auch "*Subject*"). Die Objekte, die die Information abfragen möchten, nennt
@@ -81,8 +81,8 @@ while (true) {
 -   Meistens gibt es **nichts Neues**, trotzdem werden immer wieder Methoden
     aufgerufen.
 -   Das kostet Zeit/Ressourcen!
--   Das koppelt alle Objekte (hier Personen) direkt an die konkrete Abfragemethode
-    von `LSF`.
+-   Das gezeigte Vorgehen koppelt zudem alle Objekte (hier Personen) direkt an die
+    konkrete Abfragemethode von `LSF`.
 :::
 
 # Elegantere Lösung: Observer-Entwurfsmuster
@@ -237,7 +237,7 @@ Für jeden Observer wird die Methode `update()` aufgerufen (ob nun mit oder ohne
 Argumente). Damit geht der Kontrollfluss an den jeweiligen Observer und dessen
 Implementation von `update()` über und kehrt erst hier in die Schleife zurück, wenn
 `update()` im aktuellen Observer fertig ist. Das setzt voraus, dass sich alle
-Oberserver vernünftig verhalten!
+Observer vernünftig verhalten!
 :::
 
 ::: tip
@@ -257,7 +257,7 @@ Observer-Pattern: Benachrichtige registrierte Objekte über Statusänderungen
 -   Interface `Observer` mit Methode `update()`
 -   Interessierte Objekte als "Beobachter":
     1.  implementieren das Interface `Observer`
-    2.  registrieren sich beim zu beobachteten Objekt (`Observable` / `Subject`)
+    2.  registrieren sich beim beobachteten Objekt (`Observable` / `Subject`)
 -   Beobachtetes Objekt ruft auf allen registrierten Objekten `update()` auf
 -   `update()` kann auch Parameter haben (z.B. Quelle oder neue Daten)
 
