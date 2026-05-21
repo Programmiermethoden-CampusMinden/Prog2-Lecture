@@ -294,7 +294,7 @@ jobs:
         with:
           java-version: '25'
           distribution: 'temurin'
-      - uses: gradle/actions/wrapper-validation@v3
+      - uses: gradle/actions/wrapper-validation@v6
       - run: echo "Hello"
       - run: ./gradlew compileJava
       - run: echo "wuppie!"
@@ -308,7 +308,7 @@ jobs:
         with:
           java-version: '25'
           distribution: 'temurin'
-      - uses: gradle/actions/wrapper-validation@v3
+      - uses: gradle/actions/wrapper-validation@v6
       - run: ./gradlew test
 
   job3:
@@ -338,7 +338,7 @@ definieren jeweils einen Job.
     Es wird zunächst das Repo mit Hilfe der Checkout-Action ausgecheckt
     (`uses: actions/checkout@v6`), das JDK eingerichtet/installiert
     (`uses: actions/setup-java@v5`) und der im Repo enthaltene Gradle-Wrapper auf
-    Unversehrtheit geprüft (`uses: gradle/actions/wrapper-validation@v3`).
+    Unversehrtheit geprüft (`uses: gradle/actions/wrapper-validation@v6`).
 
     Die Actions sind vordefinierte Actions und im Github unter `github.com/` +
     Action zu finden, d.h. [`actions/checkout`](https://github.com/actions/checkout)
