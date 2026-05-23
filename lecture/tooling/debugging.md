@@ -90,6 +90,10 @@ Warum Debugger statt `IO.println`:
     -   Aktuelle Werte von Variablen und Ausdrücken ansehen und (bei Bedarf) ändern
     -   Watches: können Variablen und komplexere Ausdrücke halten, werden ganz oben
         in der Variablenliste angezeigt
+-   **Evaluate Expressions**
+    -   Ausdrücke im laufenden Programm auswerten, auch mit Nebeneffekten
+    -   Ausdrücke können auch als "Watch" angelegt werden und bleiben dauerhaft im
+        Blick
 -   **Call Stack**
     -   Liste der aktuell verschachtelten Methodenaufrufe (Stack Frames)
 
