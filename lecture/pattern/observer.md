@@ -194,10 +194,14 @@ mitgegeben. Jeder Observer muss sich entsprechend eine eigene Referenz auf das
 beobachtete Objekt halten, um von dort dann weitere Informationen erhalten zu
 können.
 
-Wir nutzen im Rahmen dieses Moduls in der Regel eine **praktischere Variante**, bei
-der `update()` einen oder mehrere Parameter mitbekommt, z.B. eine Referenz auf das
-`Observable` oder (meist besser) direkt die relevanten Daten. Ein angepasstes
-Interface könnte z.B. so aussehen:
+Wir nutzen im Rahmen dieses Moduls in der Regel eine **erweiterte Variante**, bei
+der `update()` einen oder mehrere Parameter mitbekommt, z.B.
+
+-   eine Referenz auf das `Observable`, oder (meist besser)
+-   direkt die relevanten Daten.
+
+Ein angepasstes Interface für das obige Beispiel könnte beispielsweise so aussehen,
+wenn wir eine Referenz auf das Observable übergeben:
 
 ``` java
 public interface Observer {
@@ -205,7 +209,7 @@ public interface Observer {
 }
 ```
 
-Oder noch besser:
+Oder noch besser, wir geben direkt die relevanten Daten mit:
 
 ``` java
 public interface Observer {
