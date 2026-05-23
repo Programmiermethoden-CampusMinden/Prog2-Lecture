@@ -25,7 +25,11 @@ Compilerbau im 3. Semester.
 :::
 
 ::: youtube
-TODO
+Vorlesung \[[YT](https://youtu.be/06sG5gdasmw)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-einfhrung-in-antlr/46b1a5a3082d9095bdf88e06fc805762)\]
+
+Demo: \[[YT](https://youtu.be/DMvugCk86Jo)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-antlr/aa234e8b5cbc2162c92965ca5485b277)\]
 :::
 
 # Motivation & Einordnung
