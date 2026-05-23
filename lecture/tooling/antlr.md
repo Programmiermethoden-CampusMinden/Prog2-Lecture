@@ -464,14 +464,19 @@ WS    : [ \t\r\n]+ -> skip ;
 Wie sieht der erzeugte Baum in Java aus?
 
 -   Grundprinzip:
-    -   Jeder Knoten im Baum ist eine Instanz einer generierten **Kontext-Klasse**
+    -   Jeder (nicht-Blatt-) Knoten im Baum ist eine Instanz einer generierten
+        **Kontext-Klasse**
     -   Jede **Kontext-Klasse** entspricht einer Grammatik-Regel (nur
         Parser-Regeln), z.B.:
         -   `MiniCalcParser.ProgContext` (Regel `prog`),
         -   `MiniCalcParser.StmtContext` (Regel `stmt`),
         -   `MiniCalcParser.ExprContext` (Regel `expr`), ...
-    -   Alle Baumknoten erben von einer gemeinsamen Basisklasse
-        (`ParserRuleContext`)
+    -   Basisklassen (nicht im UML-Diagramm oben gezeigt):
+        -   Alle Baumknoten (Kontext-Klassen, Parser-Regeln) erben von einer
+            gemeinsamen Basisklasse `ParserRuleContext` (und dieser wiederum in
+            einer längeren Vererbungskette von `ParseTree`)
+        -   Alle Blätter (Token, Lexer-Regeln) erben von einer gemeinsamen
+            Basisklasse `TerminalNode` (und dieser wiederum von `ParseTree`)
 -   Baumstruktur:
     -   Jeder Knoten hat Kinderknoten (andere Kontexte oder Tokens)
     -   Zugriff auf Elemente: Beispiel Regel `stmt : ID '=' expr ';' | expr ';' ;`:
@@ -483,8 +488,8 @@ Wie sieht der erzeugte Baum in Java aus?
         -   `int getChildCount()`: Wie viele Kinder hat dieser Knoten?
         -   `ParseTree getChild(int i)`: liefere den Kindknoten mit Index `i` zurück
             (Indexbereich `0` bis `getChildCount() - 1`)
-        -   `String getText()`: liefere den gematchten Text aus dem Eingabetext
-            zurück
+        -   `String getText()`: liefere den gematchten Text für die Regel zurück
+            (bei Token ist es der gematchte Input für das Token)
 :::
 
 # Traversierung mit Visitor-Pattern
