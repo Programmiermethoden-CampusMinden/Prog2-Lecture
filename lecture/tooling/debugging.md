@@ -104,6 +104,9 @@ Die Begriffe können je nach IDE (IntelliJ, Eclipse, VS Code, ...) leicht variie
 
 ::: notes
 ## Beispielmethode:
+
+[Beispiel: debugging.DebugDemo#median]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/debugging/DebugDemo.java#L29"}
 :::
 
 ``` java
@@ -159,6 +162,9 @@ Dann Programm erneut im Debug-Modus starten und prüfen, ob der Crash behoben is
 
 ::: notes
 ## Beispielmethode:
+
+[Beispiel: debugging.DebugDemo#sumEvenNumbers]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/debugging/DebugDemo.java#L19"}
 :::
 
 ``` java
