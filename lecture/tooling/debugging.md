@@ -86,6 +86,8 @@ Warum Debugger statt `IO.println`:
         Programmende - was von beidem als erstes auftritt)
 -   **Variables / Watches**
     -   Aktuelle Werte von Variablen und Ausdrücken ansehen und (bei Bedarf) ändern
+    -   Watches: können Variablen und komplexere Ausdrücke halten, werden ganz oben
+        in der Variablenliste angezeigt
 -   **Call Stack**
     -   Liste der aktuell verschachtelten Methodenaufrufe (Stack Frames)
 
