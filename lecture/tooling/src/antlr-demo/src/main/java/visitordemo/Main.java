@@ -5,7 +5,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 
 public class Main {
   void main() {
-    String text = "a = 1 + 2;";
+    String text = "a = 1 + 2; b=5;";
 
     // show all token
     System.out.printf("Token for '%s':\n", text);
