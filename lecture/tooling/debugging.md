@@ -79,14 +79,15 @@ Warum Debugger statt `IO.println`:
 -   **Step Into**
     -   In den aufgerufenen Methoden-Body hineinspringen
 -   **Step Out**
-    -   Aktuelle Methode bis zum Ende ausführen und zurück zur Aufrufer:in
+    -   Aktuellen Stack-Frame (laufender Aufruf einer Methode/Funktion) bis zum Ende
+        ausführen und zurück zum Aufrufer
 -   **Resume**
     -   Setze das Programm fort (bis zum nächsten Breakpoint oder bis zum
         Programmende - was von beidem als erstes auftritt)
 -   **Variables / Watches**
     -   Aktuelle Werte von Variablen und Ausdrücken ansehen und (bei Bedarf) ändern
 -   **Call Stack**
-    -   Liste der aktuell verschachtelten Methodenaufrufe
+    -   Liste der aktuell verschachtelten Methodenaufrufe (Stack Frames)
 
 Die Begriffe können je nach IDE (IntelliJ, Eclipse, VS Code, ...) leicht variieren.
 :::
