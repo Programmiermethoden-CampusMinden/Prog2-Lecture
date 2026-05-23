@@ -532,12 +532,71 @@ unterschiedliche Traversierungsarten haben möchte (Breitensuche vs. Tiefensuch
 Pre-Order vs. Inorder vs. Post-Order, ...) und diese elegant in den Visitor
 verlagern kann.
 
-[Beispiel Traversierung intern (in den Knotenklassen):
-visitor.visit.intrav.DemoExpr]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/intrav/DemoExpr.java"}
+### Beispiel: Externe Traversierung
+
+Bei der externen Traversierung liegt die Verantwortung für das Ablaufen der
+Datenstruktur beim Visitor. Im nachfolgenden Beispiel muss der Visitor zunächst die
+Kinder des `AddExpr` auswerten, bevor die Auswertung des Knotens selbst erfolgen
+kann (nur relevante Ausschnitte gezeigt):
+
+``` java
+public class AddExpr implements Expr {
+  private final Expr e1;
+  private final Expr e2;
+
+  @Override
+  public void accept(ExprVisitor v) {
+    v.visit(this);                      // akzeptiere Visitor zur Verarbeitung des Knotens
+  }
+}
+
+public class EvalVisitor implements ExprVisitor {
+  private final Stack<Integer> erg = new Stack<>();
+
+  @Override
+  public void visit(AddExpr e) {
+    e.getE2().accept(this);             // Traversierung im Visitor ("extern")
+    e.getE1().accept(this);
+    erg.push(erg.pop() + erg.pop());    // Verarbeitung des Knotens selbst
+  }
+}
+```
 
 [Beispiel Traversierung extern (im Visitor): visitor.visit.extrav.DemoExpr]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/extrav/DemoExpr.java"}
+
+### Beispiel: Interne Traversierung
+
+Bei der internen Traversierung liegt die Verantwortung für das Ablaufen der
+Datenstruktur bei der Datenstruktur selbst und nicht beim Visitor (nur relevante
+Ausschnitte gezeigt):
+
+``` java
+public class AddExpr implements Expr {
+  private final Expr e1;
+  private final Expr e2;
+
+  @Override
+  public void accept(ExprVisitor v) {
+    e2.accept(v);                       // Traversierung in Datenstruktur ("intern")
+    e1.accept(v);
+    v.visit(this);                      // akzeptiere Visitor zur Verarbeitung des Knotens
+  }
+}
+
+public class EvalVisitor implements ExprVisitor {
+  private final Stack<Integer> erg = new Stack<>();
+
+  @Override
+  public void visit(AddExpr e) {
+    erg.push(erg.pop() + erg.pop());    // Verarbeitung des Knotens selbst
+  }
+}
+```
+
+[Beispiel Traversierung intern (in den Knotenklassen):
+visitor.visit.intrav.DemoExpr]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/visitor/visit/intrav/DemoExpr.java"}
 
 ## Implementierungsdetail 2: Überladene vs. unterschiedlich benannte `visit`‑Methoden
 
