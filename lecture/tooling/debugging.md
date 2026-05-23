@@ -72,6 +72,8 @@ Warum Debugger statt `IO.println`:
 -   **Breakpoint**
     -   Rotes Markierungssymbol an einer Codezeile
     -   Programm hält an dieser Stelle an
+    -   Bedingte Breakpoints prüfen einen Ausdruck und halten nur an, wenn die
+        Bedingung erfüllt ist
 -   **Run / Debug**
     -   Programm im **Debug-Modus** starten (statt normalem Run)
 -   **Step Over**
