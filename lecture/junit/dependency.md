@@ -5,7 +5,8 @@ title: Dependency Injection
 
 ::: tldr
 Dependency Injection (DI) ist ein Prinzip, mit dem Klassen ihre Abhängigkeiten nicht
-selbst mit `new` erzeugen, sondern sie von außen übergeben bekommen.
+selbst mit `new` erzeugen (oder hart kodiert verwenden), sondern sie von außen
+übergeben bekommen.
 
 Statt direkt eine konkrete Klasse wie `Lsf` zu verwenden, programmieren wir gegen
 eine Abstraktion, zum Beispiel ein Interface wie `GradeService`. Die dazugehörigen
@@ -24,80 +25,48 @@ und Erweiterbarkeit des Codes, weil Implementierungen leicht ausgetauscht oder
 ergänzt werden können. Frameworks wie Spring automatisieren DI im Hintergrund,
 setzen aber genau dieses einfache Grundprinzip um, das wir hier manuell angewendet
 haben.
+
+Die Einordnung ist schwierig: Manche betrachten DI als "Pattern", andere sehen es
+als Technik für testbaren Code ...
 :::
 
 ::: youtube
 TODO
 :::
 
-# Motivation aus Tests: Warum stoßen wir auf DI?
-
--   Ausgangspunkt: bekannte Welt
-    -   Personen: Studenten, Tutoren, Dozenten
-    -   Prüfungsverwaltungssystem: `Lsf` (Notenabfrage)
--   Bisher:
-    -   JUnit-Basics (Arrange -- Act -- Assert)
-    -   Was ist ein Unit Test? (Isolation, Determinismus, keine echten
-        I/O-Abhängigkeiten)
-    -   Test Doubles: Stubs, Fakes, Mocks
-
-Frage: Warum ist es manchmal so schwer, gute Unit Tests zu schreiben, obwohl wir
-JUnit und Mocks kennen?
+# Motivation aus Tests: Ich kann nicht mocken
 
 ::: notes
-Ziel der Mini-Lektion:
+Wir wollen das Verhalten von `Student#printGradeFor` testen:
 
--   an ein reales Test-Problem anknüpfen,
--   die Ursache als Strukturproblem im Code identifizieren (harte Kopplung),
--   Dependency Injection als Lösung für testbaren Code kennenlernen.
-
-Wichtiger Punkt für die Dramaturgie: Wir starten bewusst aus der Test-Perspektive.
-DI ist hier nicht ein abstraktes Architekturthema, sondern eine sehr konkrete
-Antwort auf ein Testproblem.
-:::
-
-# Problem: Ich kann nicht mocken
-
-::: notes
-Wir wollen testen:
-
--   Klasse `Student`
 -   ohne das echte `Lsf` anzusprechen
--   mit einem Fake/Stub für die Noten
-
-Wunsch im Test:
-
--   `Student` benutzen
--   eigenes `GradeService`-Testdouble injizieren
--   Note kontrollieren
+-   stattdessen mit einem Fake/Stub für die Noten (eigenes `Lsf`-Testdouble
+    injizieren)
 
 Problem: Der Produktivcode sieht bisher so aus:
 :::
 
 ``` java
 public class Lsf {
-    public double getGrade(String matrikelnummer, String modulName) {
-        return 1.7; // Dummy-Wert
-    }
+  public double getGrade(String matrikelnummer, String modulName) {
+    return 1.7; // Dummy-Wert (und Dummy-Typ!)
+  }
 }
 ```
 
 ``` java
 public class Student {
-    private final String matrikelnummer;
-    private final String name;
+  private final String matrikelnummer;
+  private final String name;
 
-    public Student(String matrikelnummer, String name) {
-        this.matrikelnummer = matrikelnummer;
-        this.name = name;
-    }
-
-    public void printGradeFor(String modulName) {
-        Lsf lsf = new Lsf();  // Harte Kopplung
-        double grade = lsf.getGrade(matrikelnummer, modulName);
-        // do something with grade ...
-        System.out.println(name + " hat im Modul " + modulName + " die Note " + grade);
-    }
+  public Student(String matrikelnummer, String name) {
+    this.matrikelnummer = matrikelnummer; this.name = name;
+  }
+  public String printGradeFor(String modulName) {
+    Lsf lsf = new Lsf(); // Harte Kopplung!
+    double grade = lsf.getGrade(matrikelnummer, modulName);
+    return String.format("%s hat im Modul %s die Note %s erreicht", name, modulName, grade);
+  }
 }
 ```
 
@@ -113,7 +82,7 @@ Wichtige Beobachtung:
 > ruft, kommen wir mit sauberen Unit Tests nicht weit."
 :::
 
-# Was ist eine 'Dependency'?
+# Was ist eine "Dependency"?
 
 ::: notes
 Begriffsklärung:
@@ -156,7 +125,7 @@ gehandhabte Dependency.
 # Warum ist Kopplung schlecht? (speziell für Tests)
 
 -   Schlechte Testbarkeit
-    -   Unit Tests müssen mit dem 'echten' `Lsf` arbeiten
+    -   Unit Tests müssen mit dem "echten" `Lsf` arbeiten
     -   Externe Systeme (Datenbank, Netzwerk, ...) machen Tests langsam/fragil
     -   Test Doubles lassen sich nicht (oder nur sehr schwer) aufbauen
 -   Verletzung von Verantwortlichkeiten
@@ -169,8 +138,8 @@ gehandhabte Dependency.
 
 In größeren Projekten führt dieses Muster oft schnell zu:
 
--   schwer wartbarem Code ('Spaghetti-Code'),
--   Klassen, die 'alles wissen und alles können',
+-   schwer wartbarem Code ("Spaghetti-Code"),
+-   Klassen, die "alles wissen und alles können",
 -   Problemen beim Refactoring.
 
 Aus Sicht von Unit Tests ist der zentrale Punkt:
@@ -184,13 +153,15 @@ Aus Sicht von Unit Tests ist der zentrale Punkt:
 Grundprinzip:
 
 -   Statt: Klasse erstellt ihre Abhängigkeiten selbst mit `new`
--   Besser: Klasse bekommt ihre Abhängigkeiten von außen 'injiziert'
+-   Besser: Klasse bekommt ihre Abhängigkeiten von außen "injiziert"
 
 Typische Formen:
 
 -   Konstruktor-Injektion
 -   Setter-Injektion
 -   Interface-basierte Injektion (z.B. über Frameworks)
+
+\bigskip
 
 ::: tip
 Don't call `new` all over the place - ask for what you need.
@@ -202,7 +173,7 @@ In unserem Beispiel:
 -   `Student` soll nicht mehr selbst `new Lsf()` aufrufen.
 -   Stattdessen soll er ein Objekt bekommen, das Noten liefern kann.
 
-'Injection' bedeutet hier nur: Jemand anderes (z.B. `main`, ein Framework, ein
+"Injection" bedeutet hier nur: Jemand anderes (z.B. `main`, ein Framework, ein
 DI-Container) steckt die passende Abhängigkeit in die Klasse hinein, z.B. über den
 Konstruktor.
 
@@ -211,28 +182,42 @@ Wir betrachten nachfolgend die einfachste Variante: Konstruktor-Injektion.
 
 # Schritt 1: Abstraktion der Abhängigkeit
 
-Ein Interface für Notenabfragen:
+Wir führen zunächst ein neues Interface für Notenabfragen ein:
 
 ``` java
 public interface GradeService {
-    double getGrade(String matrikelnummer, String modulName);
+  double getGrade(String matrikelnummer, String modulName);
 }
 ```
 
-Konkrete Implementierung für das LSF:
+:::: notes
+::: tip
+*Anmerkung*: Ein `double` zur Repräsentation einer Note zu nehmen ist ... nicht sooo
+toll. Hier sollte man sich besser was anderes überlegen, beispielsweise ein Enum
+oder etwas anderes. Ein `double` kann zwar technisch auch die typischen Noten-Werte
+wie "1.3" halten, aber eben auch noch viele andere Werte, die wir hier nicht haben
+wollen. Um also später unnötige Checks und Operationen zu vermeiden, sollte man den
+Datentyp `Grade` lieber vernünftig modellieren (Enum o.ä.).
+
+Das `double` habe ich hier im Beispielszenario nur genommen, um nicht unnötig von
+den wesentlichen Details abzulenken!
+:::
+::::
+
+Das alte `Lsf` verpacken wir jetzt in einen `GradeService`:
 
 ``` java
 public class LsfGradeService implements GradeService {
-    private final Lsf lsf;
+  private final Lsf lsf;
 
-    public LsfGradeService(Lsf lsf) {
-        this.lsf = lsf;
-    }
+  public LsfGradeService(Lsf lsf) {
+    this.lsf = lsf;
+  }
 
-    @Override
-    public double getGrade(String matrikelnummer, String modulName) {
-        return lsf.getGrade(matrikelnummer, modulName);
-    }
+  @Override
+  public double getGrade(String matrikelnummer, String modulName) {
+    return lsf.getGrade(matrikelnummer, modulName);
+  }
 }
 ```
 
@@ -252,31 +237,31 @@ Wichtig:
 
 # Schritt 2: Student mit Dependency Injection
 
-Konstruktor-Injektion:
+Nun erweitern wir `Student` und eleminieren das feste `new Lsf()`. Stattdessen
+übergeben wir ein Objekt vom Typ `GradeService` im Konstruktor
+("Konstruktor-Injektion"):
 
 ``` java
 public class Student {
+  private final String matrikelnummer;
+  private final String name;
+  private final GradeService gradeService; // Dependency
 
-    private final String matrikelnummer;
-    private final String name;
-    private final GradeService gradeService; // Dependency
+  // Dependency Injection
+  public Student(String matrikelnummer, String name, GradeService gradeService) {
+    this.matrikelnummer = matrikelnummer;
+    this.name = name;
+    this.gradeService = gradeService;
+  }
 
-    // Dependency Injection
-    public Student(String matrikelnummer, String name, GradeService gradeService) {
-        this.matrikelnummer = matrikelnummer;
-        this.name = name;
-        this.gradeService = gradeService;
-    }
-
-    public void printGradeFor(String modulName) {
-        double grade = gradeService.getGrade(matrikelnummer, modulName);
-        // do something with grade ...
-        System.out.println(name + " hat im Modul " + modulName + " die Note " + grade);
-    }
+  public String printGradeFor(String modulName) {
+    double grade = gradeService.getGrade(matrikelnummer, modulName);
+    return String.format("%s hat im Modul %s die Note %s erreicht", name, modulName, grade);
+  }
 }
 ```
 
-::: notes
+:::: notes
 Hier passiert **Dependency Injection**:
 
 -   `Student` **erzeugt** kein `Lsf` mehr
@@ -291,22 +276,31 @@ Vorteile:
     -   echte LSF-Anbindung
     -   Dummy für eine Demo
     -   Fake für Tests
-:::
 
-# Schritt 3: Verdrahtung im 'Composition Root'
+::: tip
+**Anmerkung**: Die Übergabe eines konkreten `GradeService`-Objekts im Konstruktor
+funktioniert technisch und löst unser Kopplungsproblem ausreichend gut. Man darf
+sich aber schon die Frage stellen, ob ein `Student` wirklich ein festes Feld für
+einen `GradeService` haben muss, oder ob man das nicht einfach jeweils dynamisch
+beim Aufruf der Methode `Student#printGradeFor` mitgeben könnte ... Auch das wäre
+"Dependency Injection" (nur eben keine "Konstruktor-Injektion").
+:::
+::::
+
+# Schritt 3: Verdrahtung im "Composition Root"
 
 Wo kommen die Objekte her?
 
 ``` java
-public class Main {
-    public static void main(String[] args) {
-        // Echtes LSF
-        Lsf lsf = new Lsf();
-        GradeService gradeService = new LsfGradeService(lsf);
+public class Demo {
+  public static void main(String[] args) throws InterruptedException {
+    // Echtes LSF
+    Lsf lsf = new Lsf();
+    GradeService gradeService = new LsfGradeService(lsf);
 
-        Student alex = new Student("123456", "Alex Muster", gradeService);
-        alex.printGradeFor("Programmieren 2");
-    }
+    Student alex = new Student("123456", "Alex Muster", gradeService);
+    alex.printGradeFor("Programmieren 2");
+  }
 }
 ```
 
@@ -314,26 +308,26 @@ Alternative Implementierung (z.B. Demo/Test):
 
 ``` java
 public class DummyGradeService implements GradeService {
-
-    @Override
-    public double getGrade(String matrikelnummer, String modulName) {
-        return 1.0; // immer sehr gut :)
-    }
+  @Override
+  public double getGrade(String matrikelnummer, String modulName) {
+    return 1.0; // immer sehr gut :)
+  }
 }
 ```
 
 ``` java
-public class Main {
-    public static void main(String[] args) {
-        GradeService dummy = new DummyGradeService();
-        Student chris = new Student("654321", "Chris Beispiel", dummy);
-        chris.printGradeFor("Programmieren 2");
-    }
+public class Demo {
+  public static void main(String[] args) throws InterruptedException {
+    // Dummy-LSF
+    GradeService dummy = new DummyGradeService();
+    Student chris = new Student("654321", "Chris Beispiel", dummy);
+    chris.printGradeFor("Programmieren 2");
+  }
 }
 ```
 
 ::: notes
-Der Ort, an dem Sie alle Objekte 'verdrahten' (also erstellen und zusammenstecken),
+Der Ort, an dem Sie alle Objekte "verdrahten" (also erstellen und zusammenstecken),
 wird oft **Composition Root** genannt.
 
 -   In kleinen Programmen ist das die `main`-Methode
@@ -352,59 +346,35 @@ müssen.
 
 # DI und Testbarkeit (JUnit)
 
-Fake-Implementierung für Tests:
+JUnit-Test mit Fake-Implementierung (hier als Lambda-Ausdruck):
 
 ``` java
-public class FakeGradeService implements GradeService {
-    @Override
-    public double getGrade(String matrikelnummer, String modulName) {
-        if (modulName.equals("Programmieren 2"))  return 1.3;
-        return 4.0;
-    }
-}
-```
-
-Leicht angepasster `Student` für Tests:
-
-``` java
-public class Student {
-    // ... wie zuvor
-
-    public String createGradeMessage(String modulName) {
-        double grade = gradeService.getGrade(matrikelnummer, modulName);
-        return name + " hat im Modul " + modulName + " die Note " + grade;
-    }
-}
-```
-
-JUnit-Test:
-
-``` java
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Test;
-
 class StudentTest {
+  @Test
+  void createGradeMessage_usesInjectedGradeService() {
+    // given
+    GradeService fake = (_, modulName) -> modulName.equals("Programmieren 2") ? 1.3 : 4.0;
+    Student student = new Student("123456", "Alex Muster", fake);
 
-    @Test
-    void createGradeMessage_usesInjectedGradeService() {
-        GradeService fake = new FakeGradeService();
-        Student student = new Student("123456", "Alex Muster", fake);
+    // when
+    String message = student.printGradeFor("Programmieren 2");
 
-        String message = student.createGradeMessage("Programmieren 2");
-
-        assertEquals("Alex Muster hat im Modul Programmieren 2 die Note 1.3",
-                        message);
-    }
+    // then
+    assertEquals("Alex Muster hat im Modul Programmieren 2 die Note 1.3 erreicht", message);
+  }
 }
 ```
 
 ::: notes
 Durch DI:
 
--   können wir im Test gezielt kontrollierte Implementierungen verwenden
-    (`FakeGradeService`),
+-   können wir im Test gezielt kontrollierte Implementierungen verwenden (z.B. als
+    Lambda-Ausdruck `fake`),
 -   sind wir nicht vom echten `Lsf` abhängig,
 -   werden Tests schneller, stabiler und einfacher in CI/CD-Pipelines integrierbar.
+
+[Demo Dependency Injection]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/pattern/src/dependency/using_di/Demo.java"}
 :::
 
 ::: notes
@@ -428,7 +398,7 @@ Grundprinzip bleibt aber genau das gleiche wie im Beispiel:
 
 Wichtig fürs Verständnis:
 
--   Was Sie hier 'per Hand' gebaut haben (Interfaces, Konstruktor-Injektion,
+-   Was Sie hier "per Hand" gebaut haben (Interfaces, Konstruktor-Injektion,
     Composition Root), ist das Kernprinzip von Dependency Injection.
 -   Frameworks nehmen Ihnen nur die "Fleißarbeit" ab:
     -   Instanzen erzeugen
@@ -448,7 +418,7 @@ Kerngedanken von Dependency Injection:
 -   Eine Klasse soll **nicht selbst** ihre Abhängigkeiten mit `new` erzeugen
 -   Stattdessen soll sie **deklarieren**, was sie braucht (z.B. im Konstruktor)
 -   Abhängigkeiten werden über **Abstraktionen** (Interfaces) modelliert
--   Konkrete Implementierungen werden von außen 'injiziert':
+-   Konkrete Implementierungen werden von außen "injiziert":
     -   in kleinen Programmen durch Sie selbst (z.B. in `main`)
     -   in größeren durch DI-Container/Frameworks
 
@@ -465,11 +435,11 @@ Vorteile (insbesondere aus Testsicht):
 ::: tip
 Merksätze zum Mitnehmen:
 
-1.  'Don't call new all over the place - ask for what you need.'
-2.  'Programmiere gegen Interfaces, nicht gegen konkrete Klassen.'
-3.  'Dependency Injection ist kein Magie-Werkzeug der Frameworks, sondern ein
-    simples Prinzip, das Sie auch ohne Framework anwenden können.'
-4.  'Guter Testcode braucht guten Produktivcode: DI ist ein Schlüssel dazu.'
+1.  "Don't call new all over the place - ask for what you need."
+2.  "Programmiere gegen Interfaces, nicht gegen konkrete Klassen."
+3.  "Dependency Injection ist kein Magie-Werkzeug der Frameworks, sondern ein
+    simples Prinzip, das Sie auch ohne Framework anwenden können."
+4.  "Guter Testcode braucht guten Produktivcode: DI ist ein Schlüssel dazu."
 
 Diese Prinzipien werden Ihnen in vielen weiteren Themen begegnen: Design Patterns,
 Architektur, Testing, Microservices etc.
@@ -477,7 +447,9 @@ Architektur, Testing, Microservices etc.
 ::::
 
 ::: readings
-TODO
+Der Blog [Dependency Injection Pattern in Java: Boosting Maintainability with Loose
+Coupling](https://java-design-patterns.com/patterns/dependency-injection/) ist ganz
+nett und hat noch eine schöne Visualisierung.
 :::
 
 ::: outcomes
@@ -510,21 +482,21 @@ Ausgangsversion ohne DI: `CurrencyConverter` erzeugt sich den Provider selbst:
 
 ``` java
 public class OnlineExchangeRateProvider {
-    public double getRate(String from, String to) {
-        // Hier könnte z.B. ein HTTP-Call stehen
-        System.out.println("Frage Online-Dienst nach Wechselkurs " + from + " -> " + to);
-        return 1.1; // Dummy-Wert
-    }
+  public double getRate(String from, String to) {
+    // Hier könnte z.B. ein HTTP-Call stehen
+    IO.println("Frage Online-Dienst nach Wechselkurs " + from + " -> " + to);
+    return 1.1; // Dummy-Wert
+  }
 }
 ```
 
 ``` java
 public class CurrencyConverter {
-    public double convert(String from, String to, double amount) {
-        OnlineExchangeRateProvider provider = new OnlineExchangeRateProvider();
-        double rate = provider.getRate(from, to);
-        return amount * rate;
-    }
+  public static double convert(String from, String to, double amount) {
+    OnlineExchangeRateProvider provider = new OnlineExchangeRateProvider();
+    double rate = provider.getRate(from, to);
+    return amount * rate;
+  }
 }
 ```
 
@@ -543,62 +515,29 @@ public class CurrencyConverter {
 public interface ExchangeRateProvider {
     double getRate(String from, String to);
 }
-```
 
-``` java
 public class OnlineExchangeRateProvider implements ExchangeRateProvider {
-
     @Override
     public double getRate(String from, String to) {
-        System.out.println("Frage Online-Dienst nach Wechselkurs " + from + " -> " + to);
+        IO.println("Frage Online-Dienst nach Wechselkurs " + from + " -> " + to);
         return 1.1; // Dummy-Wert
     }
 }
-```
 
-``` java
 public class CurrencyConverter {
-
-    private final ExchangeRateProvider provider;
-
-    public CurrencyConverter(ExchangeRateProvider provider) {
-        this.provider = provider;
-    }
-
-    public double convert(String from, String to, double amount) {
+    public static double convert(String from, String to, double amount, ExchangeRateProvider provider) {
         double rate = provider.getRate(from, to);
         return amount * rate;
     }
 }
-```
 
-``` java
 public class Main {
     public static void main(String[] args) {
         ExchangeRateProvider provider = new OnlineExchangeRateProvider();
-        CurrencyConverter converter = new CurrencyConverter(provider);
 
-        double result = converter.convert("EUR", "USD", 100.0);
-        System.out.println("100 EUR sind " + result + " USD");
+        double result = CurrencyConverter.convert("EUR", "USD", 100.0, provider);
+        IO.println("100 EUR sind " + result + " USD");
     }
-}
-```
-
-``` java
-public class FakeExchangeRateProvider
-implements ExchangeRateProvider {
-
-        @Override
-        public double getRate(String from, String to) {
-            if (from.equals("EUR") && to.equals("USD")) {
-                return 1.2;
-            }
-            if (from.equals("USD") && to.equals("EUR")) {
-                return 0.8;
-            }
-            return 1.0;
-        }
-
 }
 ```
 
@@ -607,15 +546,25 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 class CurrencyConverterTest {
-
     @Test
     void convert_usesInjectedExchangeRateProvider() {
+        // given
         ExchangeRateProvider fake = new FakeExchangeRateProvider();
-        CurrencyConverter converter = new CurrencyConverter(fake);
 
-        double result = converter.convert("EUR", "USD", 100.0);
+        // when
+        double result = CurrencyConverter.convert("EUR", "USD", 100.0, fake);
 
+        // then
         assertEquals(120.0, result, 0.0001);
+    }
+
+    static class FakeExchangeRateProvider implements ExchangeRateProvider {
+        @Override
+        public double getRate(String from, String to) {
+            if (from.equals("EUR") && to.equals("USD"))  return 1.2;
+            if (from.equals("USD") && to.equals("EUR"))  return 0.8;
+            return 1.0;
+        }
     }
 }
 ```
