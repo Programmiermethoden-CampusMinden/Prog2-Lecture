@@ -450,6 +450,11 @@ Architektur, Testing, Microservices etc.
 Der Blog [Dependency Injection Pattern in Java: Boosting Maintainability with Loose
 Coupling](https://java-design-patterns.com/patterns/dependency-injection/) ist ganz
 nett und hat noch eine schöne Visualisierung.
+
+Auch interessant:
+
+-   https://www.digitalocean.com/community/tutorials/java-dependency-injection-design-pattern-example-tutorial
+-   https://youtu.be/GATSXm7WAxU
 :::
 
 ::: outcomes
