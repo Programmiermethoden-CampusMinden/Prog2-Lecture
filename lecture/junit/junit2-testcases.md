@@ -297,7 +297,27 @@ Vergleiche @Kleuker2019, Abschnitt "4.4 Äquivalenzklassen und Objektorientierun
 # Wrap-Up
 
 -   Gründliches Testen ist ebenso viel Aufwand wie Coden
--   Äquivalenzklassenbildung und Grenzwertanalyse
+
+\bigskip
+
+-   **Äquivalenzklassenbildung**:
+    -   Eingabebereiche (inkl. Objektzustand) in disjunkte gültige und ungültige
+        Äquivalenzklassen zerlegen
+    -   Alle Eingabewerte einer ÄK werden vom Testobjekt gleich behandelt und führen
+        zum gleichen Verhalten/Ergebnis
+
+\smallskip
+
+-   **Grenzwertanalyse**: Für jede ÄK untere/obere Grenze und angrenzende ungültige
+    Werte zusätzlich testen (gültige/ungültige Grenzwerte)
+
+\smallskip
+
+-   **Testfallstrategie**:
+    -   **Positiv-Tests**: Kombination mehrerer gültiger ÄK in einem Testfall
+        erlaubt
+    -   **Negativ-Tests**: Pro Testfall **genau eine ungültige ÄK**, alle anderen
+        Parameter aus gültigen ÄK - diese gelten dabei noch nicht als getestet
 
 ::: readings
 -   @vogellaJUnit
