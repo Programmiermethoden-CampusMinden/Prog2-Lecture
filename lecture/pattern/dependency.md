@@ -453,8 +453,10 @@ nett und hat noch eine schöne Visualisierung.
 
 Auch interessant:
 
--   https://www.digitalocean.com/community/tutorials/java-dependency-injection-design-pattern-example-tutorial
--   https://youtu.be/GATSXm7WAxU
+-   [Java Dependency Injection: Design Pattern Tutorial
+    (DigitalOcean)](https://www.digitalocean.com/community/tutorials/java-dependency-injection-design-pattern-example-tutorial)
+-   [Dependency Injection Made Simple with Java Examples
+    (Geekific)](https://youtu.be/GATSXm7WAxU)
 :::
 
 ::: outcomes
