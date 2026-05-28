@@ -29,13 +29,17 @@ Zustand** haben, d.h. keine Attribute/Felder.
 :::
 
 ::: youtube
-Vorlesung \[[YT](https://youtu.be/MyWyaACCNx0)\], \[[HSBI](TODO)\]
+Vorlesung \[[YT](https://youtu.be/MyWyaACCNx0)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-interfaces-default-methoden/9e4996b2a5454f2e5ac43e78d2302975)\]
 
 Demo:
 
--   Demo Regel 1 \[[YT](https://youtu.be/U9VuBWEN2Jo)\], \[[HSBI](TODO)\]
--   Demo Regel 2 \[[YT](https://youtu.be/h3C22pZTvss)\], \[[HSBI](TODO)\]
--   Demo Regel 3 \[[YT](https://youtu.be/sasHrVFl4HE)\], \[[HSBI](TODO)\]
+-   Demo Regel 1 \[[YT](https://youtu.be/U9VuBWEN2Jo)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-default-methoden-demo-regel-1/fabcf1f776332be2e4d60610f7e09d1b)\]
+-   Demo Regel 2 \[[YT](https://youtu.be/h3C22pZTvss)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-default-methoden-demo-regel-2/ce049fff51743019e560ada17338a836)\]
+-   Demo Regel 3 \[[YT](https://youtu.be/sasHrVFl4HE)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-default-methoden-demo-regel-3/c24c8c8abaa9f426619ab876b047b7d1)\]
 :::
 
 # Problem: Etablierte API (Interfaces) erweitern
