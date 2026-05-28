@@ -31,7 +31,8 @@ als Technik für testbaren Code ...
 :::
 
 ::: youtube
-Vorlesung \[[YT](https://youtu.be/gEeDt-FmrGc)\], \[[HSBI](TODO)\]
+Vorlesung \[[YT](https://youtu.be/gEeDt-FmrGc)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-dependency-injection/f4f07da39b11d17bc4cbd6c5756592cf)\]
 :::
 
 # Motivation aus Tests: Ich kann nicht mocken
