@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Testfallermittlung: Wie viel und was muss man testen?"
+title: "JUnit2 Testfallermittlung: Wie viel und was muss man testen?"
 ---
 
 ::: tldr
@@ -33,7 +33,8 @@ Wenn ein Testfall sich aus den gültigen ÄK/GW speist, spricht man auch von ein
 :::
 
 ::: youtube
-Vorlesung \[[YT](https://youtu.be/5Y_liQnxcPo)\], \[[HSBI](TODO)\]
+Vorlesung \[[YT](https://youtu.be/5Y_liQnxcPo)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-junit2-testfallermittlung-wie-viel-und-was-muss-man-testen/7dc965fb744d5165f20ae69552e35c35)\]
 :::
 
 # Hands-On (10 Minuten): Wieviel und was muss man testen?
