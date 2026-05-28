@@ -734,8 +734,8 @@ Mockito.
 -   k2: Ich kann die Begriffe: Mocking, Mock, Stub, Spy unterscheiden und erklären
 -   k3: Ich kann Mocks in Mockito anlegen und nutzen
 -   k3: Ich kann Spies in Mockito anlegen und nutzen
--   k3: Ich kann die Interaktion mit Mocks/Spies über verify() prüfen
--   k3: Ich kann den ArgumentMatcher praktisch einsetzen
+-   k3: Ich kann die Interaktion mit Mocks/Spies über `verify()` prüfen
+-   k3: Ich kann den `ArgumentMatcher` praktisch einsetzen
 :::
 
 ::: challenges
