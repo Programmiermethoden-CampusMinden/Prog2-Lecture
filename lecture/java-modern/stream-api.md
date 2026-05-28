@@ -424,15 +424,10 @@ Operation den Stream abschließt.
 -   Intermediäre Operationen laufen erst bei Abschluss des Streams los
 -   Terminale Operation führt zur Verarbeitung und Abschluss des Streams
 
-::: notes
+::: readings
 Schöne Doku: ["The Stream API"](https://dev.java/learn/api/streams/), und auch
 ["Package
-java.util.stream"](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/package-summary.html).
-:::
-
-::: readings
--   @LernJava
--   @Ullenboom2021 [Kap. 17.3-17.6]
+java.util.stream"](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/package-summary.html).
 :::
 
 ::: outcomes
