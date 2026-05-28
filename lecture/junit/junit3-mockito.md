@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: Mocking mit Mockito
+title: "JUnit3: Mocking mit Mockito"
 ---
 
 ::: tldr
@@ -21,16 +21,21 @@ aufgerufen wurde und wie oft.
 :::
 
 ::: youtube
-Vorlesung \[[YT](https://youtu.be/M1dv5M9sjFE)\], \[[HSBI](TODO)\]
+Vorlesung \[[YT](https://youtu.be/M1dv5M9sjFE)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-junit3-mocking-mit-mockito/fa20f5401f05145170c1f4df1af2ef46)\]
 
 Demo:
 
--   Demo Mocking: Stubs \[[YT](https://youtu.be/xj7-4_faxXA)\], \[[HSBI](TODO)\]
--   Demo Mocking: Mocks \[[YT](https://youtu.be/o0SwiRuutNA)\], \[[HSBI](TODO)\]
--   Demo Mocking: Spy \[[YT](https://youtu.be/S6_bYfrSiqg)\], \[[HSBI](TODO)\]
+-   Demo Mocking: Stubs \[[YT](https://youtu.be/xj7-4_faxXA)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-mocking-demo-stubs/c0e1d8d3e6f070f5efd37b7e4aaa5317)\]
+-   Demo Mocking: Mocks \[[YT](https://youtu.be/o0SwiRuutNA)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-mocking-demo-mocks/8a220db10ccdec4139b0e8fe8b6f1185)\]
+-   Demo Mocking: Spy \[[YT](https://youtu.be/S6_bYfrSiqg)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-mocking-demo-spy/99bd32bb2cec08d25fec82ba41e3eece)\]
 -   Demo Mocking: `verify()` \[[YT](https://youtu.be/96xav9QqEzE)\],
-    \[[HSBI](TODO)\]
--   Demo Mocking: Matcher \[[YT](https://youtu.be/3ta3eQZW28Q)\], \[[HSBI](TODO)\]
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-mocking-demo-verify/7b40c56580399561d0a1de3bf8135efc)\]
+-   Demo Mocking: Matcher \[[YT](https://youtu.be/3ta3eQZW28Q)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-mocking-demo-matcher/d66a9073299da8615f2379e4737e57e2)\]
 :::
 
 # Motivation: Entwicklung einer Studi-/Prüfungsverwaltung
