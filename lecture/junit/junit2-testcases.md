@@ -320,12 +320,8 @@ Vergleiche @Kleuker2019, Abschnitt "4.4 Äquivalenzklassen und Objektorientierun
         Parameter aus gültigen ÄK - diese gelten dabei noch nicht als getestet
 
 ::: readings
--   @vogellaJUnit
--   @junit4
--   @Kleuker2019
--   @Osherove2014
--   @Spillner2012
--   @fernunihagenJunit
+Zum Nachlesen möchte ich Ihnen Kapitel 4 "Testfallerstellung mit Äquivalenzklassen"
+im Buch meines Kollegen Stephan Kleuker ans Herz legen: @Kleuker2026.
 :::
 
 ::: outcomes
