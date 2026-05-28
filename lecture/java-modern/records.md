@@ -220,13 +220,9 @@ Gleichzeitig wurde die Les- und Wartbarkeit deutlich verbessert.
 -   Konstruktoren und Methoden können ergänzt/überschrieben werden
 -   Keine Vererbung von Klassen möglich (kein `extends`)
 
-::: notes
-Schöne Doku: ["Using Record to Model Immutable
-Data"](https://dev.java/learn/using-record-to-model-immutable-data/).
-:::
-
 ::: readings
--   @LernJava
+Schöne Doku: ["Using Record to Model Immutable
+Data"](https://dev.java/learn/records/).
 :::
 
 ::: outcomes
