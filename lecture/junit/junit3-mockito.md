@@ -724,6 +724,12 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/mas
     -   Auswerten, wie häufig Methoden aufgerufen wurden (`verify()`)
     -   Auswerten, mit welchen Argumenten Methoden aufgerufen wurden (`anyString`)
 
+::: readings
+Sie finden beispielsweise in den Baelding-Tutorials ["Mockito
+Series"](https://www.baeldung.com/mockito-series) weitere Informationen zum Thema
+Mockito.
+:::
+
 ::: outcomes
 -   k2: Ich kann die Begriffe: Mocking, Mock, Stub, Spy unterscheiden und erklären
 -   k3: Ich kann Mocks in Mockito anlegen und nutzen
