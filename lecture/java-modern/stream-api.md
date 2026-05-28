@@ -34,9 +34,13 @@ groß und mächtig und lohnt die weitere selbstständige Auseinandersetzung :-)
 :::
 
 ::: youtube
--   [VL Stream-API](https://youtu.be/zZMyk0u5hJk)
--   [Demo Stream-API](https://youtu.be/KBP72tCkBt8)
--   [Demo Vordefinierte funktionale Interfaces im JDK](https://youtu.be/jzEw8IH8Mfc)
+Vorlesung \[[YT](https://youtu.be/G6Ks_HDQDtQ)\], \[[HSBI](TODO)\]
+
+Demo:
+
+-   Demo Stream-API \[[YT](https://youtu.be/e9hR5NKf2qo)\], \[[HSBI](TODO)\]
+-   Vordefinierte funktionale Interfaces im JDK
+    \[[YT](https://youtu.be/5rYhsnPTGig)\], \[[HSBI](TODO)\]
 :::
 
 # Motivation
