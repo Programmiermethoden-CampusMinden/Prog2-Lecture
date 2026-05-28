@@ -29,10 +29,13 @@ Zustand** haben, d.h. keine Attribute/Felder.
 :::
 
 ::: youtube
--   [VL Default-Methoden](https://youtu.be/qQ8BPkL9X5o)
--   [Demo Regel 1](https://youtu.be/gm6ttKlAEJc)
--   [Demo Regel 2](https://youtu.be/3j9i7iMVmMM)
--   [Demo Regel 3](https://youtu.be/J3gJnwz8Rf0)
+Vorlesung \[[YT](https://youtu.be/MyWyaACCNx0)\], \[[HSBI](TODO)\]
+
+Demo:
+
+-   Demo Regel 1 \[[YT](https://youtu.be/U9VuBWEN2Jo)\], \[[HSBI](TODO)\]
+-   Demo Regel 2 \[[YT](https://youtu.be/h3C22pZTvss)\], \[[HSBI](TODO)\]
+-   Demo Regel 3 \[[YT](https://youtu.be/sasHrVFl4HE)\], \[[HSBI](TODO)\]
 :::
 
 # Problem: Etablierte API (Interfaces) erweitern
