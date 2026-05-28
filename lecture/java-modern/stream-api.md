@@ -433,9 +433,9 @@ java.util.stream"](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/
 ::: outcomes
 -   k2: Ich verstehe, dass Streams die Daten nicht sofort verarbeiten ('lazy'
     Verarbeitung)
--   k2: Ich verstehe, dass ich mit map() den Typ (und Inhalt) von Objekten im
+-   k2: Ich verstehe, dass ich mit `map()` den Typ (und Inhalt) von Objekten im
     Stream, aber nicht die Anzahl verändere
--   k2: Ich verstehe, dass ich mit filter() die Anzahl der Objekte im Stream, aber
+-   k2: Ich verstehe, dass ich mit `filter()` die Anzahl der Objekte im Stream, aber
     nicht deren Typ (und Inhalt) verändere
 -   k2: Ich verstehe, warum Streams nicht in Attributen gehalten oder als Parameter
     herumgereicht werden sollten
@@ -443,7 +443,7 @@ java.util.stream"](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/
 -   k3: Ich kann verschiedene intermediäre Operationen verketten
 -   k3: Ich kann mit einer terminalen Operation einen Stream abschließen und damit
     die Berechnung durchführen
--   k3: Ich kann flatMap() einsetzen
+-   k3: Ich kann `flatMap()` einsetzen
 :::
 
 ::: challenges
