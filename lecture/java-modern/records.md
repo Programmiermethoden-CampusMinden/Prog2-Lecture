@@ -34,8 +34,9 @@ man nicht von Record-Klassen erben.
 :::
 
 ::: youtube
--   [VL Record-Klassen](https://youtu.be/5RMhdCsZL6Y)
--   [Demo Record-Klassen](https://youtu.be/jWBAXWH0MUc)
+Vorlesung \[[YT](https://youtu.be/zpJUQf4A5JM)\], \[[HSBI](TODO)\]
+
+Demo: \[[YT](https://youtu.be/8Yn1yNQBG2Q)\], \[[HSBI](TODO)\]
 :::
 
 # Motivation; Klasse Studi
