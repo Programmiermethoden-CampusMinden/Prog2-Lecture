@@ -50,8 +50,7 @@ Demos:
 -   Funktionale Interfaces selbst definiert \[[YT](https://youtu.be/gEmK8sDjBu0)\],
     \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-funktionale-interfaces-selbst-definiert/9cf03bce9778161791bc04da6e55588d)\]
 -   Vordefinierte funktionale Interfaces im JDK
-    \[[YT](https://youtu.be/Ed6yck5Gvwk)\],
-    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-vordefinierte-funktionale-interfaces-im-jdk/068208f0b3272fd18dbf092ff376bf76)\]
+    \[[YT](https://youtu.be/5rYhsnPTGig)\], \[[HSBI](TODO)\]
 :::
 
 # Problem: Sortieren einer Studi-Liste
