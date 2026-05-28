@@ -327,8 +327,10 @@ Seit Java8: Interfaces mit Implementierung: **Default-Methoden**
 -   Unterschied zu abstrakten Klassen: **Kein Zustand**
 
 ::: readings
--   @Java-SE-Tutorial
--   @Urma2014 [Kap. 9]
+Lesen Sie zu diesem Thema auch in den Oracle-Tutorials ["Default
+Methods"](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html)
+und ["Implementing an
+Interface"](https://dev.java/learn/interfaces/examples/#default-methods) nach.
 :::
 
 ::: outcomes
