@@ -31,7 +31,7 @@ als Technik für testbaren Code ...
 :::
 
 ::: youtube
-TODO
+Vorlesung \[[YT](https://youtu.be/gEeDt-FmrGc)\], \[[HSBI](TODO)\]
 :::
 
 # Motivation aus Tests: Ich kann nicht mocken
