@@ -33,7 +33,7 @@ Wenn ein Testfall sich aus den gültigen ÄK/GW speist, spricht man auch von ein
 :::
 
 ::: youtube
--   [VL Testfallermittlung](https://youtu.be/AR1WWt4AFqI)
+Vorlesung \[[YT](https://youtu.be/5Y_liQnxcPo)\], \[[HSBI](TODO)\]
 :::
 
 # Hands-On (10 Minuten): Wieviel und was muss man testen?
