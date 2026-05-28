@@ -34,9 +34,11 @@ man nicht von Record-Klassen erben.
 :::
 
 ::: youtube
-Vorlesung \[[YT](https://youtu.be/zpJUQf4A5JM)\], \[[HSBI](TODO)\]
+Vorlesung \[[YT](https://youtu.be/zpJUQf4A5JM)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-record-klassen/be8c6dda8d2a3cb873d1705a04fbcf00)\]
 
-Demo: \[[YT](https://youtu.be/8Yn1yNQBG2Q)\], \[[HSBI](TODO)\]
+Demo: \[[YT](https://youtu.be/8Yn1yNQBG2Q)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-record-klassen-demo/ba7e94145e4f7515334eaf7541807cea)\]
 :::
 
 # Motivation; Klasse Studi
