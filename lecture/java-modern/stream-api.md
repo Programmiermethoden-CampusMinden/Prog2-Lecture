@@ -34,11 +34,13 @@ groß und mächtig und lohnt die weitere selbstständige Auseinandersetzung :-)
 :::
 
 ::: youtube
-Vorlesung \[[YT](https://youtu.be/G6Ks_HDQDtQ)\], \[[HSBI](TODO)\]
+Vorlesung \[[YT](https://youtu.be/G6Ks_HDQDtQ)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-stream-api/26f9a785b774603807dfe90dcb5d8020)\]
 
 Demo:
 
--   Demo Stream-API \[[YT](https://youtu.be/e9hR5NKf2qo)\], \[[HSBI](TODO)\]
+-   Demo Stream-API \[[YT](https://youtu.be/e9hR5NKf2qo)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-stream-api-demo/96eec03e28b165e12991724e65a5dccc)\]
 -   Vordefinierte funktionale Interfaces im JDK
     \[[YT](https://youtu.be/5rYhsnPTGig)\],
     \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-vordefinierte-funktionale-interfaces-im-jdk/731c225a980d6e875e15c2ee73683e3c)\]
