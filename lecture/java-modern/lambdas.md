@@ -410,8 +410,10 @@ stolpert:
 
 ::: readings
 Lesen Sie zu diesem Thema auch in den Oracle-Tutorials ["Writing Your First Lambda
-Expression" (Oracle)](https://dev.java/learn/lambdas/first-lambdas/) und ["Using
-Lambdas Expressions in Your Application"
+Expression" (Oracle)](https://dev.java/learn/lambdas/first-lambdas/), ["When to Use
+Nested Classes, Local Classes, Anonymous Classes, and Lambda
+Expressions"](https://dev.java/learn/classes-objects/design-best-practices/) und
+["Using Lambdas Expressions in Your Application"
 (Oracle)](https://dev.java/learn/lambdas/functional-interfaces/) nach.
 :::
 
