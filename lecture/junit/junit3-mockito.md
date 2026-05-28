@@ -21,12 +21,16 @@ aufgerufen wurde und wie oft.
 :::
 
 ::: youtube
--   [VL Mocking](https://youtu.be/8deFZKtjXSk)
--   [Demo Mocking: Stubs](https://youtu.be/WNEedC7PrVQ)
--   [Demo Mocking: Mocks](https://youtu.be/avUyYVePFCI)
--   [Demo Mocking: Spy](https://youtu.be/dj3pmOZfS_A)
--   [Demo Mocking: verify()](https://youtu.be/CPGqhyC8BjU)
--   [Demo Mocking: Matcher](https://youtu.be/JNouzOd0s-w)
+Vorlesung \[[YT](https://youtu.be/M1dv5M9sjFE)\], \[[HSBI](TODO)\]
+
+Demo:
+
+-   Demo Mocking: Stubs \[[YT](https://youtu.be/xj7-4_faxXA)\], \[[HSBI](TODO)\]
+-   Demo Mocking: Mocks \[[YT](https://youtu.be/o0SwiRuutNA)\], \[[HSBI](TODO)\]
+-   Demo Mocking: Spy \[[YT](https://youtu.be/S6_bYfrSiqg)\], \[[HSBI](TODO)\]
+-   Demo Mocking: `verify()` \[[YT](https://youtu.be/96xav9QqEzE)\],
+    \[[HSBI](TODO)\]
+-   Demo Mocking: Matcher \[[YT](https://youtu.be/3ta3eQZW28Q)\], \[[HSBI](TODO)\]
 :::
 
 # Motivation: Entwicklung einer Studi-/Prüfungsverwaltung
