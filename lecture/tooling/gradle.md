@@ -758,6 +758,8 @@ Einstiegshilfe über den hier vorgestellten Ausblick hinaus.
     -   Gradle-Wrapper: Ersetzt eine feste Installation
 
 ::: readings
+Hier einige nützliche Einsprungpunkte in die offizielle Gradle-Dokumentation:
+
 -   ["Getting
     Started"](https://docs.gradle.org/current/userguide/getting_started.html)
 -   ["Building Java Applications
