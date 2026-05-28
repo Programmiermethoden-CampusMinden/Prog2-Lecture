@@ -40,7 +40,8 @@ Demo:
 
 -   Demo Stream-API \[[YT](https://youtu.be/e9hR5NKf2qo)\], \[[HSBI](TODO)\]
 -   Vordefinierte funktionale Interfaces im JDK
-    \[[YT](https://youtu.be/5rYhsnPTGig)\], \[[HSBI](TODO)\]
+    \[[YT](https://youtu.be/5rYhsnPTGig)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-vordefinierte-funktionale-interfaces-im-jdk/731c225a980d6e875e15c2ee73683e3c)\]
 :::
 
 # Motivation
