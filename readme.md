@@ -70,6 +70,11 @@ dieses genauer anschauen.
 Alle Sitzungen online per Zoom (**Zugangsdaten siehe
 [ILIAS](https://www.hsbi.de/elearning/goto.php/crs/1634793)**).
 
+## Sprechstunde
+
+-   Dienstag, 10:00 - 11:00 Uhr
+-   Freitag, 10:00 - 11:00 Uhr
+
 ## Fahrplan
 
 Abgabe der Post Mortems jeweils **Montag bis 08:00 Uhr** im
