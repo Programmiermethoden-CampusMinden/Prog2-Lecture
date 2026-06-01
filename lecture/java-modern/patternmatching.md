@@ -1,19 +1,27 @@
 ---
 author: Carsten Gips (HSBI)
-title: Sealed Classes & Pattern Matching
+title: Sealed‑Typen & Pattern Matching
 ---
 
 ::: tldr
-TODO
+Pattern Matching in modernem Java nimmt Ihnen viel typischen Boilerplate ab: Statt
+erst mit `instanceof` den Typ zu prüfen und dann manuell zu casten, können Sie
+**Type Patterns** verwenden (`if (obj instanceof String s) {...}` oder
+`case IntLiteral lit -> ...` im `switch`). Mit **`switch`-Expressions**
+(`switch (...) { case ... -> ... }`) wird `switch` selbst zu einem Ausdruck, der
+einen Wert liefert, ohne `break` und Fall‑Through, was den Code kürzer, sicherer und
+leichter lesbar macht.
 
--   verstehen, warum Pattern Matching eingeführt wurde (Lesbarkeit, Sicherheit,
-    weniger Boilerplate),
--   Pattern Matching für
-    -   instanceof
-    -   switch (Switch-Expression, Type-Patterns, Guarded Patterns)anwenden können,
--   wissen, wie sealed Klassen/Interfaces mit Pattern Matching zusammenspielen
-    (Exhaustiveness-Check),
--   ein erstes Gefühl für Record-Patterns / Dekonstruktion bekommen.
+Besonders stark wird das in Kombination mit **sealed Interfaces/Klassen und
+Records**: Sealed‑Typen legen eine abgeschlossene Menge erlaubter Untertypen fest,
+sodass der Compiler prüfen kann, ob ein `switch` wirklich alle Fälle abdeckt
+(exhaustive). Records modellieren reine Daten, und mit **Record-Patterns** können
+Sie diese Daten direkt im `switch` dekonstruieren
+(`case Point(int x, int y) -> ...`), ohne explizite Getter-Aufrufe.
+
+Zusammen ermöglichen Ihnen `record` + `sealed` + Pattern Matching einen
+deklarativen, gut typgesicherten Stil - ähnlich wie algebraische Datentypen in
+funktionalen Sprachen - mit deutlich weniger Fehlerquellen und Redundanz im Code.
 :::
 
 ::: youtube
@@ -31,13 +39,13 @@ record Negate(Expr inner) implements Expr {}
 int evalOld(Expr e) {
     if (e instanceof IntLiteral) {
         IntLiteral lit = (IntLiteral) e;
-        return lit.value;
+        return lit.value();
     } else if (e instanceof Add) {
         Add add = (Add) e;
-        return evalOld(add.left) + evalOld(add.right);
+        return evalOld(add.left()) + evalOld(add.right());
     } else if (e instanceof Negate) {
         Negate neg = (Negate) e;
-        return -evalOld(neg.inner);
+        return -evalOld(neg.inner());
     } else {
         throw new IllegalArgumentException("Unknown expression: " + e);
     }
@@ -47,6 +55,24 @@ int evalOld(Expr e) {
 ::: notes
 Cast-Boilerplate, fehlende Compiler-Unterstützung (alle Fälle abgedeckt???), fragile
 `else`-Kette mit vielen `instanceof`, Redundanzen (Typprüfung plus Cast)
+
+... die modernere Variante würde so gehen:
+
+``` java
+int evalWithInstanceofPattern(Expr e) {
+    if (e instanceof IntLiteral lit) {
+        return lit.value();
+    } else if (e instanceof Add add) {
+        return evalWithInstanceofPattern(add.left()) + evalWithInstanceofPattern(add.right());
+    } else if (e instanceof Negate neg) {
+        return -evalWithInstanceofPattern(neg.inner());
+    } else {
+        throw new IllegalArgumentException("Unknown expression: " + e);
+    }
+}
+```
+
+(Erklärung folgt in den nächsten Folien) ... und es geht noch besser!
 :::
 
 # Pattern Matching für `instanceof`
@@ -56,13 +82,17 @@ Cast-Boilerplate, fehlende Compiler-Unterstützung (alle Fälle abgedeckt???), f
 if (obj instanceof String) {
     String s = (String) obj;
     if (s.length() > 5) {
-        System.out.println(s.toUpperCase());
+        IO.println(s.toUpperCase());
     }
 }
+```
 
+\bigskip
+
+``` java
 // modern:
 if (obj instanceof String s && s.length() > 5) {
-    System.out.println(s.toUpperCase());
+    IO.println(s.toUpperCase());
 }
 ```
 
@@ -79,14 +109,13 @@ Rückblick: Das sollte Ihnen bekannt vorkommen:
 :::
 
 ``` java
-// klassisch:
 switch (day) {
     case MONDAY:
     case FRIDAY:
-        System.out.println("Almost weekend");
+        IO.println("Almost weekend");
         break;
     default:
-        System.out.println("Another day");
+        IO.println("Another day");
 }
 ```
 
@@ -98,7 +127,6 @@ Moderne Variante als **switch-Expression**:
 :::
 
 ``` java
-// modern:
 String message = switch (day) {
     case MONDAY, FRIDAY -> "Almost weekend";
     case SATURDAY, SUNDAY -> "Weekend!";
@@ -109,22 +137,22 @@ String message = switch (day) {
 ::: notes
 **Beobachtungen**:
 
--   Klassisch: `case xyz: ... break;`
+-   Klassische Fall-Through-Variante: `case xyz: ... break;`
 
     ``` java
     switch (x) {
         case 1:
-            System.out.println("eins");
+            IO.println("eins");
             // Gefahr: Fall-Through, wenn break fehlt
         case 2:
-            System.out.println("zwei");
+            IO.println("zwei");
             break;
         default:
-            System.out.println("andere Zahl");
+            IO.println("andere Zahl");
     }
     ```
 
--   Modern: `case xyz -> ...`
+-   Moderne Expression-Variante: `case xyz -> ...`
 
     ``` java
     String result = switch (x) {
@@ -136,8 +164,8 @@ String message = switch (day) {
 
     -   Kann **Expression** sein: `switch (...) { ... }` liefert einen **Wert**
 
-    -   Kein Fall-Through: jeder `case` steht für sich; wenn Sie mehrere Werte
-        zusammenfassen wollen:
+    -   Kein Fall-Through: jeder `case` steht für sich; mehrere Werte können
+        zusammengefasst werden:
 
         ``` java
         String result = switch (x) {
@@ -156,7 +184,7 @@ String message = switch (day) {
         ``` java
         String result = switch (x) {
             case 1 -> {
-                System.out.println("Seiteneffekt");
+                IO.println("Seiteneffekt");
                 yield "eins";  // 'yield' ist das 'return' für Switch-Expressions
             }
             default -> "andere Zahl";
@@ -205,16 +233,26 @@ int eval(Expr e) {
 }
 ```
 
-:::: notes
+::::: notes
 ## Wichtige Punkte:
 
 -   `case IntLiteral lit` ist ein **Type Pattern**: Typprüfung + Cast + Bindung in
     einem Schritt
--   Kein `default` nötig: wegen `sealed`-Hierarchy kann der Compiler prüfen, ob alle
-    erlaubten Subtypen (`IntLiteral`, `Add`, `Negate`) abgedeckt sind -\>
+    -   Type Patterns funktionieren für alle Referenztypen (nicht nur für Records)
+    -   Auch `case null` funktioniert wie erwartet
+-   Kein `default` nötig wegen `sealed`-Hierarchy: Hier kann der Compiler prüfen, ob
+    alle erlaubten Subtypen (`IntLiteral`, `Add`, `Negate`) abgedeckt sind -\>
     **exhaustive switch**
 -   Begrenzte Vererbung: Nur die angegebenen Typen (`IntLiteral`, `Add`, `Negate`)
     dürfen `Expr` implementieren/erweitern
+
+::: tip
+**Type Pattern** (z.B. `case IntLiteral lit -> ...`) kann für **alle Referenztypen**
+verwendet werden, auch ohne `sealed`.
+
+**Exhaustive switch** bekommt man nur, wenn die Hierarchie "geschlossen" ist
+(`sealed`/`enum`/`record`).
+:::
 
 Wenn Sie eine neue `record Multiply(Expr left, Expr right) implements Expr {}`
 hinzufügen, wird der Compiler meckern:
@@ -259,26 +297,31 @@ sealed interface Expr {
 ```
 
 Nachteil: Statt `case Add add ->` muss es dann `case Expr.Add add ->` heissen ...
-::::
+:::::
 
 # Guarded Patterns im `switch`
 
 ``` java
 int sign(Expr e) {
     return switch (e) {
-        case IntLiteral lit && lit.value() > 0 -> 1;
-        case IntLiteral lit && lit.value() < 0 -> -1;
-        case IntLiteral lit -> 0;
+        case Expr.IntLiteral lit when lit.value() > 0 -> 1;
+        case Expr.IntLiteral lit when lit.value() < 0 -> -1;
+        case Expr.IntLiteral lit -> 0;
         default -> throw new IllegalArgumentException("Not a literal: " + e);
     };
 }
 ```
 
-::: notes
--   `case IntLiteral lit && lit.value() > 0` ist ein Pattern mit zusätzlicher
+:::: notes
+-   `case Expr.IntLiteral lit when lit.value() > 0` ist ein Pattern mit zusätzlicher
     Bedingung (*Guard*)
 -   Lesbarkeit oft besser als verschachtelte `if`-Blöcke.
+
+::: caution
+Achtung: Im `switch`-Pattern-Matching wird die Zusatzbedingung mit `when`
+geschrieben, nicht mit `&&` wie bei `if`.
 :::
+::::
 
 # Record-Patterns / Dekonstruktion
 
@@ -304,7 +347,7 @@ static int manhattan(Object o) {
         Point p = (Point) o;
         return Math.abs(p.x()) + Math.abs(p.y());
     }
-    throw new IllegalArgumentException();
+    throw new IllegalArgumentException("Not a point: " + o);
 }
 ```
 
@@ -349,12 +392,9 @@ Nun ein Switch mit verschachtelten Record-Patterns:
 ``` java
 void handle(Command cmd) {
     switch (cmd) {
-        case Move(Point(int x, int y)) ->
-            System.out.println("Move cursor to " + x + "," + y);
-        case DrawLine(Point(int x1, int y1), Point(int x2, int y2)) ->
-            System.out.println("Draw line from " + x1 + "," + y1 + " to " + x2 + "," + y2);
-        case SetColor(int r, int g, int b) ->
-            System.out.println("Set color to RGB(" + r + "," + g + "," + b + ")");
+        case Move(Point(int x, int y)) -> IO.println("Move cursor to " + x + "," + y);
+        case DrawLine(Point(int x1, int y1), Point(int x2, int y2)) -> IO.println("Draw line from " + x1 + "," + y1 + " to " + x2 + "," + y2);
+        case SetColor(int r, int g, int b) -> IO.println("Set color to RGB(" + r + "," + g + "," + b + ")");
     }
 }
 ```
@@ -367,28 +407,11 @@ Hier sieht man:
 :::
 
 ::: important
-Kurzfassung für Java 25:
+Record-Patterns dekonstruieren tatsächlich nur Records (also Klassen, die mit
+`record` deklariert wurden)
 
--   Record-Patterns dekonstruieren tatsächlich nur Records (also Klassen, die mit
-    `record` deklariert wurden)
-
--   Zusätzlich gibt es Array-Patterns (Elemente eines Arrays "entpacken")
-
-    ``` java
-    static String describe(int[] a) {
-        return switch (a) {
-            case null        -> "null";
-            case []          -> "leer";
-            case [int x]     -> "ein Element: " + x;
-            case [int x, int y] -> "zwei Elemente: " + x + ", " + y;
-            case [int x, int ... rest] -> "mindestens eins, erstes: " + x;
-        };
-    }
-    ```
-
--   Für "normale" Klassen (klassisches `class`) gibt es noch keine allgemeine
-    Dekonstruktion per Pattern
-
+Die Pattern-Match-Fähigkeiten werden kontinuierlich ausgebaut: Für "normale" Klassen
+(klassisches `class`) gibt es noch keine allgemeine Dekonstruktion per Pattern.
 (Stand Java 25)
 :::
 :::::
@@ -415,10 +438,9 @@ List<Expr> exprs = List.of(
 );
 
 int sumOfLiterals = exprs.stream()
-    .filter(e -> e instanceof IntLiteral)
     .mapToInt(e -> switch (e) {
         case IntLiteral lit -> lit.value();
-        default -> 0; // wird durch Filter kaum erreicht, aber illustriert das Pattern
+        default -> 0; // neutrales Element bzgl. der Summe
     })
     .sum();
 ```
@@ -440,7 +462,10 @@ TODO
 :::
 
 ::: outcomes
--   k2: Ich kann den Einsatz von Packages in Java erklären
+-   k2: Ich kann erklären, was `sealed` Typen, Records und Pattern Matching in Java
+    leisten.
+-   k3: Ich kann einfache `sealed` Hierarchien mit Records modellieren und per
+    `switch`-Expression auswerten.
 :::
 
 ::: challenges
@@ -466,6 +491,4 @@ double area(Shape s) {
 }
 ```
 -->
-
-TODO
 :::
