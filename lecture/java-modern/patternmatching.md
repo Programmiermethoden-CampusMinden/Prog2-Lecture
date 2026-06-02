@@ -431,8 +431,8 @@ Die Pattern-Match-Fähigkeiten werden kontinuierlich ausgebaut: Für "normale" K
 -   Die Kombination aus:
     -   `record` (für Daten),
     -   `sealed` (für abgeschlossene Hierarchien),
-    -   Pattern Matching (`instanceof`, `switch`, Record-Patterns)erzeugt einen sehr
-        deklarativen Stil, ideal um z.B. mit Streams/Optionals zusammenzuspielen
+    -   Pattern Matching (`instanceof`, `switch`, Record-Patterns) erlaubt einen
+        deklarativen Stil, ideal z.B. in Kombination mit Streams/Optionals
 
 Beispiel: Liste von `Expr` filtern und auswerten (nur Literale):
 
