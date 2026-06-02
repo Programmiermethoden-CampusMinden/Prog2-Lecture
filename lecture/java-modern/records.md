@@ -195,6 +195,83 @@ werden!
 :::
 
 ::: notes
+# Weitere Eigenschaften von Records
+
+Für Record-Klassen wird automatisch die Vergleichbarkeit implementiert, d.h. es wird
+automatisch eine passende Überschreibung für die von `Object` geerbten Methoden
+`equals` und `hashCode` erzeugt.
+
+Die folgende Record-Klasse `Position`
+
+``` java
+public record Position(int x, int y) {}
+```
+
+würde sich im traditionellen Java so als `class` formulieren lassen:
+
+``` java
+public final class Position {
+    private final int x;
+    private final int y;
+
+    public Position(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int x() {
+        return x;
+    }
+
+    public int y() {
+        return y;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+        var that = (Position) obj;
+        return this.x == that.x && this.y == that.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
+}
+```
+
+D.h. wir sparen uns durch die Deklaration als `record` ziemlich viel
+Boilerplate-Code und bekommen u.a. diese Dinge "geschenkt":
+
+-   Felder `x` und `y`
+-   Standardkonstruktor zum Setzen beider Felder
+-   Getter `x()` und `y()`
+-   Überschreibung für `equals`, welche die Objekt-IDs, den Typ der Objekte und die
+    Felder berücksichtigt
+-   Überschreibung für `hashCode`, welche die Felder der Klasse berücksichtigt
+
+Dadurch funktioniert dann auch so etwas ohne Probleme:
+
+``` java
+List<Position> body;
+
+...
+
+public boolean occupies(Position position) {
+    return body.contains(position);
+}
+```
+
+Ohne korrekt überschriebenes `equals` würde sonst in der Liste bei
+`body.contains(position)` nur nach den Objekt-IDs verglichen, was in dem Fall
+ungünstig wäre - wir suchen ja nicht nur nach exakt dem selben Objekt, sondern
+allgemein nach einer identischen Position, also auch anderen Objekten mit identisch
+gesetzten Feldern `x` und `y`.
+:::
+
+::: notes
 # Beispiel aus den Challenges
 
 In den Challenges zum Thema Optional gibt es die Klasse `Katze` in den
