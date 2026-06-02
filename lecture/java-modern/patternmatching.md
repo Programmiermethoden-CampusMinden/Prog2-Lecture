@@ -119,7 +119,6 @@ switch (day) {
 }
 ```
 
-\pause
 \bigskip
 
 ::: notes
@@ -352,6 +351,7 @@ static int manhattan(Object o) {
 ```
 
 \pause
+\bigskip
 
 ::: notes
 Mit Pattern Matching und Record-Pattern kann ich das alles elegant in einem `switch`
@@ -453,15 +453,12 @@ int sumOfLiterals = exprs.stream()
 
 # Wrap-Up
 
--   Kombination `record` + `sealed` + Pattern Matching -\> "ADTs in Java"
--   Hinweis auf weiterführende Themen (z.B. Pattern Matching für `switch` mit
-    `null`, `enum` + Patterns, zukünftige Pattern-Arten)
--   Für Datenhierarchien (z.B. `Expr`, `Shape`, `Command`) nutzen Sie heute:
-    -   `record` für Daten,
-    -   `sealed` für eine abgeschlossene Variantenmenge,
-    -   Pattern Matching im modernen `switch` (mit Arrow-Syntax), um knappen,
-        sicheren und gut wartbaren Code im (teilweise) funktionalen Stil zu
-        schreiben.
+Für Datenhierarchien (z.B. `Expr`, `Shape`, `Command`) nutzen Sie heute:
+
+-   `record` für Daten,
+-   `sealed` für eine abgeschlossene Variantenmenge, und
+-   Pattern Matching im modernen `switch` (mit Arrow-Syntax) für knappen,
+    typsicheren und gut wartbaren Code im (teilweise) funktionalen Stil.
 
 :::: readings
 Lesen Sie zu diesem Thema auch in den Oracle-Tutorials ["Using Pattern Matching"
