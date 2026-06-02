@@ -12,14 +12,14 @@ erst mit `instanceof` den Typ zu prüfen und dann manuell zu casten, können Sie
 einen Wert liefert, ohne `break` und Fall‑Through, was den Code kürzer, sicherer und
 leichter lesbar macht.
 
-Besonders stark wird das in Kombination mit **sealed Interfaces/Klassen und
+Besonders nützlich wird das in Kombination mit **sealed Interfaces/Klassen und
 Records**: Sealed‑Typen legen eine abgeschlossene Menge erlaubter Untertypen fest,
 sodass der Compiler prüfen kann, ob ein `switch` wirklich alle Fälle abdeckt
 (exhaustive). Records modellieren reine Daten, und mit **Record-Patterns** können
 Sie diese Daten direkt im `switch` dekonstruieren
 (`case Point(int x, int y) -> ...`), ohne explizite Getter-Aufrufe.
 
-Zusammen ermöglichen Ihnen `record` + `sealed` + Pattern Matching einen
+Zusammen ermöglichen Ihnen `record` + `sealed` + Pattern Matching in Java einen
 deklarativen, gut typgesicherten Stil - ähnlich wie algebraische Datentypen in
 funktionalen Sprachen - mit deutlich weniger Fehlerquellen und Redundanz im Code.
 :::
@@ -97,8 +97,8 @@ if (obj instanceof String s && s.length() > 5) {
 ```
 
 ::: notes
--   Pattern: `String s` ist direkt Teil der `instanceof`-Abfrage
--   Variable `s` ist nur im `true`-Zweig sichtbar -\> weniger Fehler, kein
+-   Type Pattern: `String s` ist direkt Teil der `instanceof`-Abfrage
+-   Pattern Variable `s` ist nur im `true`-Zweig sichtbar -\> weniger Fehler, kein
     expliziter Cast
 :::
 
@@ -375,6 +375,10 @@ static int manhattan(Object o) {
     -   Verwendet implizit den Konstruktor von `Point`
     -   Felder werden direkt in lokale Variablen gemappt
     -   Kein expliziter Getter-Aufruf mehr im Body nötig
+-   Das De-Konstruieren klappt für Record-Typen auch im `instanceof`:
+    `o instanceof Point(int x, int y)`
+-   Derzeit klappt das leider nur mit den **kanonischen Konstruktoren** der
+    Record-Klassen!
 
 ::: tip
 Das geht auch verschachtelt:
@@ -416,6 +420,7 @@ Die Pattern-Match-Fähigkeiten werden kontinuierlich ausgebaut: Für "normale" K
 :::
 :::::
 
+::: notes
 # Verbindung zu "funktionalem Stil"
 
 -   Pattern Matching + Switch-Expressions ermöglichen **ausdrucksbasierten** Stil,
@@ -444,6 +449,7 @@ int sumOfLiterals = exprs.stream()
     })
     .sum();
 ```
+:::
 
 # Wrap-Up
 
@@ -457,9 +463,19 @@ int sumOfLiterals = exprs.stream()
         sicheren und gut wartbaren Code im (teilweise) funktionalen Stil zu
         schreiben.
 
-::: readings
-TODO
+:::: readings
+Lesen Sie zu diesem Thema auch in den Oracle-Tutorials ["Using Pattern Matching"
+(Oracle)](https://dev.java/learn/pattern-matching/) nach.
+
+::: important
+Das Thema Pattern Matching ist aktuell in aktiver Entwicklung. Einige Features haben
+es bereits in die verschiedenen Releases geschafft, andere stecken aktuell noch in
+der Pipeline. Halten Sie die Augen offen - es kann auch passieren, dass bereits
+verabschiedete Syntax nachträglich noch einmal zurückgenommen und geändert wird. Das
+[Project Amber](https://openjdk.org/projects/amber/) ist die zentrale Stelle für
+alle Entwicklungen rund um Pattern Matching in Java.
 :::
+::::
 
 ::: outcomes
 -   k2: Ich kann erklären, was `sealed` Typen, Records und Pattern Matching in Java
