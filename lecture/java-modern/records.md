@@ -88,9 +88,9 @@ public record StudiR(String name, int credits) {}
 Record-Klassen wurden in Java14 eingeführt und werden immer wieder in neuen Releases
 erweitert/ergänzt.
 
-Der kanonische Konstruktor hat das Aussehen wie die Record-Deklaration, im Beispiel
-also `public StudiR(String name, int credits)`. Dabei werden die Komponenten über
-eine Kopie der Werte initialisiert.
+Der **kanonische Konstruktor** hat das Aussehen wie die Record-Deklaration, im
+Beispiel also `public StudiR(String name, int credits)`. Dabei werden die
+Komponenten über eine Kopie der Werte initialisiert.
 
 Für die Komponenten werden automatisch private Attribute mit dem selben Namen
 angelegt.
@@ -104,11 +104,11 @@ entsprechen denen der Komponenten, es fehlt also der übliche "get"-Präfix!
 -   Records erweitern implizit die Klasse `java.lang.Record`: `\newline`{=tex} Keine
     andere Klassen mehr erweiterbar! (Interfaces kein Problem)
 
--   Record-Klassen sind implizit final
+-   Record-Klassen sind implizit `final`
 
 -   Keine weiteren (Instanz-) Attribute definierbar (nur die Komponenten)
 
--   Keine Setter definierbar für die Komponenten: Attribute sind final
+-   Keine Setter definierbar für die Komponenten: Attribute sind `final`
 
 -   Statische Attribute mit Initialisierung erlaubt
 
