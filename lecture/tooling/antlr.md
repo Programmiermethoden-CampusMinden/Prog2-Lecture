@@ -781,6 +781,16 @@ Matching gelernt haben, wird im nächsten Semester direkt wiederverwendet!
     -   `visitXxx`-Methoden bei Bedarf überschreiben
     -   Baum mit `visitor.visit(tree)` traversieren.
 
+:::: notes
+::: tip
+Die gezeigten Beispiele (Grammatik, Visitor, Main-Klasse) sowie die Einbindung von
+ANTLR in Ihre `build.gradle` finden Sie als fertig eingerichtetes Gradle-Projekt im
+[Haupt-Repo]{.ex
+href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/tooling/src/antlr-demo"}.
+Importieren Sie den Ordner `antlr-demo` als neues Gradle-Projekt in Ihre IDE.
+:::
+::::
+
 ::: readings
 Sie finden auf der [ANTLR-Homepage](https://www.antlr.org) Links zur Dokumentation
 und auch zum [ANTLR-Projekt](https://github.com/antlr/antlr4) auf GitHub.
