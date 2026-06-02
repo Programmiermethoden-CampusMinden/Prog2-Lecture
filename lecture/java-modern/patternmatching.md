@@ -52,9 +52,11 @@ int evalOld(Expr e) {
 }
 ```
 
-::: notes
+:::: notes
+::: details
 Cast-Boilerplate, fehlende Compiler-Unterstützung (alle Fälle abgedeckt???), fragile
 `else`-Kette mit vielen `instanceof`, Redundanzen (Typprüfung plus Cast)
+:::
 
 ... die modernere Variante würde so gehen:
 
@@ -73,7 +75,7 @@ int evalWithInstanceofPattern(Expr e) {
 ```
 
 (Erklärung folgt in den nächsten Folien) ... und es geht noch besser!
-:::
+::::
 
 # Pattern Matching für `instanceof`
 
