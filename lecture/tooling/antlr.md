@@ -784,10 +784,13 @@ Matching gelernt haben, wird im nächsten Semester direkt wiederverwendet!
 :::: notes
 ::: tip
 Die gezeigten Beispiele (Grammatik, Visitor, Main-Klasse) sowie die Einbindung von
-ANTLR in Ihre `build.gradle` finden Sie als fertig eingerichtetes Gradle-Projekt im
-[Haupt-Repo]{.ex
-href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/tooling/src/antlr-demo"}.
-Importieren Sie den Ordner `antlr-demo` als neues Gradle-Projekt in Ihre IDE.
+ANTLR in Ihre `build.gradle` finden Sie als **fertig eingerichtetes Gradle-Projekt**
+im
+[Haupt-Repo](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/tooling/src/antlr-demo).
+
+Importieren Sie den Ordner
+[`antlr-demo`](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/tooling/src/antlr-demo)
+als neues Gradle-Projekt in Ihre IDE.
 :::
 ::::
 
