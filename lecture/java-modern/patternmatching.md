@@ -15,7 +15,7 @@ leichter lesbar macht.
 Besonders nützlich wird das in Kombination mit **sealed Interfaces/Klassen und
 Records**: Sealed‑Typen legen eine abgeschlossene Menge erlaubter Untertypen fest,
 sodass der Compiler prüfen kann, ob ein `switch` wirklich alle Fälle abdeckt
-(exhaustive). Records modellieren reine Daten, und mit **Record-Patterns** können
+(*exhaustive*). Records modellieren reine Daten, und mit **Record-Patterns** können
 Sie diese Daten direkt im `switch` dekonstruieren
 (`case Point(int x, int y) -> ...`), ohne explizite Getter-Aufrufe.
 
@@ -195,7 +195,7 @@ String message = switch (day) {
 -   Kein `break` mehr, kein Fall-Through
 -   Switch liefert einen **Wert** (im Beispiel: `String message`)
 -   Scoping ist klarer: der Body hinter `->` ist ein eigener Block (besonders gut
-    sichtbar bei `{ ... }`), lokale Variablen sind sauber begrenzt
+    sichtbar bei `{ ... }`), lokale Variablen sind entsprechend begrenzt sichtbar
 -   Arrow-Syntax `->` fördert Expression-Style (passt gut zu Lambdas/Streams)
 :::
 
@@ -215,10 +215,10 @@ record Negate(Expr inner) implements Expr {}
 
 ::: notes
 Bei einem **sealed Interface** kann ich angeben, **wer dieses Interface
-implementiert**. Andere Klassen als die in der `permits`-Klausel angegeben Klassen
+implementiert**. Andere Klassen als die in der `permits`-Klausel angegebenen Klassen
 dürfen das Interface nicht implementieren (und die angegebenen **müssen**).
 
-Mit **sealed Interfaces** kann ich nun einen Switch über den **Typ** von `Expr`
+Mit **sealed Interfaces** kann ich nun ein `switch` über den **Typ** von `Expr`
 machen:
 :::
 
@@ -253,6 +253,7 @@ verwendet werden, auch ohne `sealed`.
 (`sealed`/`enum`/`record`).
 :::
 
+::: tip
 Wenn Sie eine neue `record Multiply(Expr left, Expr right) implements Expr {}`
 hinzufügen, wird der Compiler meckern:
 
@@ -260,15 +261,17 @@ hinzufügen, wird der Compiler meckern:
     Vererbung**)
 -   wenn Sie das Pattern im `switch` nicht ergänzen (**exhaustive switch**)
 
+:::
+
 Damit bekommen wir eine deutlich bessere Compiler-Unterstützung bei Änderungen: Wenn
 neue Varianten hinzugefügt werden, werden alle relevanten `switch`-Stellen gefunden
 und geprüft. Das resultiert in einem besseren Typsicherheits-Check im Vergleich mit
-einem `default`-Case, der stillschweigen die neuen Varianten subsummieren würde.
+einem `default`-Case, der stillschweigend die neuen Varianten subsummieren würde.
 (Dies ist ähnlich wie bei Algebraischen Datentypen in funktionalen Sprachen.)
 
 ## Weiterer Nutzen von `sealed` (jenseits von `switch`)
 
--   Modellierung: Sie drücken im Typensystem aus: "Diese Menge von Subtypen ist
+-   Modellierung: Sie drücken im Typ-System aus: "Diese Menge von Subtypen ist
     abgeschlossen." Das ist fachlich sinnvoll (z.B.
     `Shape = Circle | Rectangle | Square`), nicht nur ein Compiler-Trick.
 -   Sicherheit/Kapselung: Bibliotheksautoren können verhindern, dass fremder Code
@@ -286,7 +289,7 @@ endlichen Menge von Varianten.
 ## Hinweis:
 
 Wenn Sie die lange `permits`-Aufzählung stört, können Sie die Klassen auch direkt im
-sealed-Interface definieren:
+`sealed`-Interface definieren:
 
 ``` java
 sealed interface Expr {
@@ -315,11 +318,11 @@ int sign(Expr e) {
 :::: notes
 -   `case Expr.IntLiteral lit when lit.value() > 0` ist ein Pattern mit zusätzlicher
     Bedingung (*Guard*)
--   Lesbarkeit oft besser als verschachtelte `if`-Blöcke.
+-   Lesbarkeit oft besser als verschachtelte `if`-Blöcke
 
 ::: caution
 Achtung: Im `switch`-Pattern-Matching wird die Zusatzbedingung mit `when`
-geschrieben, nicht mit `&&` wie bei `if`.
+geschrieben (nicht mit `&&` wie bei `if`).
 :::
 ::::
 
@@ -372,8 +375,8 @@ static int manhattan(Object o) {
 -   Im `switch` wird nach dem konkreten Typ von `o` geschaut:
     -   kein separates `instanceof` notwendig
     -   kein separater Cast notwendig
--   `case Point(int x, int y)` de-strukturiert das Record:
-    -   Verwendet implizit den Konstruktor von `Point`
+-   `case Point(int x, int y)` de-konstruiert das Record:
+    -   Verwendet implizit den (kanonischen) Konstruktor von `Point`
     -   Felder werden direkt in lokale Variablen gemappt
     -   Kein expliziter Getter-Aufruf mehr im Body nötig
 -   Das De-Konstruieren klappt für Record-Typen auch im `instanceof`:
@@ -467,7 +470,7 @@ Lesen Sie zu diesem Thema auch in den Oracle-Tutorials ["Using Pattern Matching"
 
 ::: important
 Das Thema Pattern Matching ist aktuell in aktiver Entwicklung. Einige Features haben
-es bereits in die verschiedenen Releases geschafft, andere stecken aktuell noch in
+es bereits in die verschiedenen Java-Releases geschafft, andere stecken aktuell noch in
 der Pipeline. Halten Sie die Augen offen - es kann auch passieren, dass bereits
 verabschiedete Syntax nachträglich noch einmal zurückgenommen und geändert wird. Das
 [Project Amber](https://openjdk.org/projects/amber/) ist die zentrale Stelle für
@@ -486,6 +489,7 @@ alle Entwicklungen rund um Pattern Matching in Java.
 Definieren Sie eine kleine Shape-Hierarchie mit `sealed` und berechnen Sie
 Fläche/Umfang per `switch` + Record-Patterns
 
+<!--
 ``` java
 sealed interface Shape permits Circle, Rectangle, Square {}
 
@@ -494,7 +498,6 @@ record Rectangle(double width, double height) implements Shape {}
 record Square(double side) implements Shape {}
 ```
 
-<!--
 ```java
 double area(Shape s) {
     return switch (s) {
