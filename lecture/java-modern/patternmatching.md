@@ -278,8 +278,9 @@ einem `default`-Case, der stillschweigen die neuen Varianten subsummieren würde
 
 ::: tip
 Sealed-Typen sind die Java-Variante von "abgeschlossenen Summentypen" / ADTs
-(*algebraic data types*). Sie helfen dem Compiler beim Pattern Matching und helfen
-Ihnen beim Modellieren einer endlichen Menge von Varianten.
+([*algebraic data types*](https://en.wikipedia.org/wiki/Algebraic_data_type)). Sie
+helfen dem Compiler beim Pattern Matching und helfen Ihnen beim Modellieren einer
+endlichen Menge von Varianten.
 :::
 
 ## Hinweis:
