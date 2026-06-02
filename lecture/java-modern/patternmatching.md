@@ -417,9 +417,8 @@ Hier sieht man:
 Record-Patterns de-konstruieren tatsächlich nur Records (also Klassen, die mit
 `record` deklariert wurden)
 
-Die Pattern-Match-Fähigkeiten werden kontinuierlich ausgebaut: Für "normale" Klassen
-(klassisches `class`) gibt es noch keine allgemeine Dekonstruktion per Pattern.
-(Stand Java 25)
+Für "normale" Klassen (klassisches `class`) gibt es noch keine allgemeine
+Dekonstruktion per Pattern. (Stand Java 25)
 :::
 :::::
 
@@ -463,11 +462,10 @@ Für Datenhierarchien (z.B. `Expr`, `Shape`, `Command`) nutzen Sie heute:
 -   Pattern Matching im modernen `switch` (mit Arrow-Syntax) für knappen,
     typsicheren und gut wartbaren Code im (teilweise) funktionalen Stil.
 
-:::: readings
+::: readings
 Lesen Sie zu diesem Thema auch in den Oracle-Tutorials ["Using Pattern Matching"
 (Oracle)](https://dev.java/learn/pattern-matching/) nach.
 
-::: important
 Das Thema Pattern Matching ist aktuell in aktiver Entwicklung. Einige Features haben
 es bereits in die verschiedenen Java-Releases geschafft, andere stecken aktuell noch
 in der Pipeline. Halten Sie die Augen offen - es kann auch passieren, dass bereits
@@ -475,7 +473,6 @@ verabschiedete Syntax nachträglich noch einmal zurückgenommen und geändert wi
 [Project Amber](https://openjdk.org/projects/amber/) ist die zentrale Stelle für
 alle Entwicklungen rund um Pattern Matching in Java.
 :::
-::::
 
 ::: outcomes
 -   k2: Ich kann erklären, was `sealed` Typen, Records und Pattern Matching in Java
