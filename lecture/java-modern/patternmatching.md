@@ -15,8 +15,8 @@ leichter lesbar macht.
 Besonders nützlich wird das in Kombination mit **sealed Interfaces/Klassen und
 Records**: Sealed‑Typen legen eine abgeschlossene Menge erlaubter Untertypen fest,
 sodass der Compiler prüfen kann, ob ein `switch` wirklich alle Fälle abdeckt
-(*exhaustive*). Records modellieren reine Daten, und mit **Record-Patterns** können
-Sie diese Daten direkt im `switch` dekonstruieren
+(*exhaustive check*). Records modellieren reine Daten, und mit **Record-Patterns**
+können Sie diese Daten direkt im `switch` de-konstruieren
 (`case Point(int x, int y) -> ...`), ohne explizite Getter-Aufrufe.
 
 Zusammen ermöglichen Ihnen `record` + `sealed` + Pattern Matching in Java einen
@@ -232,7 +232,7 @@ int eval(Expr e) {
 }
 ```
 
-::::: notes
+:::::: notes
 ## Wichtige Punkte:
 
 -   `case IntLiteral lit` ist ein **Type Pattern**: Typprüfung + Cast + Bindung in
@@ -260,7 +260,6 @@ hinzufügen, wird der Compiler meckern:
 -   wenn sie die `permits`-Klausel des sealed Interface nicht ergänzen (**begrenzte
     Vererbung**)
 -   wenn Sie das Pattern im `switch` nicht ergänzen (**exhaustive switch**)
-
 :::
 
 Damit bekommen wir eine deutlich bessere Compiler-Unterstützung bei Änderungen: Wenn
@@ -300,7 +299,7 @@ sealed interface Expr {
 ```
 
 Nachteil: Statt `case Add add ->` muss es dann `case Expr.Add add ->` heissen ...
-:::::
+::::::
 
 # Guarded Patterns im `switch`
 
@@ -415,7 +414,7 @@ Hier sieht man:
 :::
 
 ::: important
-Record-Patterns dekonstruieren tatsächlich nur Records (also Klassen, die mit
+Record-Patterns de-konstruieren tatsächlich nur Records (also Klassen, die mit
 `record` deklariert wurden)
 
 Die Pattern-Match-Fähigkeiten werden kontinuierlich ausgebaut: Für "normale" Klassen
@@ -470,8 +469,8 @@ Lesen Sie zu diesem Thema auch in den Oracle-Tutorials ["Using Pattern Matching"
 
 ::: important
 Das Thema Pattern Matching ist aktuell in aktiver Entwicklung. Einige Features haben
-es bereits in die verschiedenen Java-Releases geschafft, andere stecken aktuell noch in
-der Pipeline. Halten Sie die Augen offen - es kann auch passieren, dass bereits
+es bereits in die verschiedenen Java-Releases geschafft, andere stecken aktuell noch
+in der Pipeline. Halten Sie die Augen offen - es kann auch passieren, dass bereits
 verabschiedete Syntax nachträglich noch einmal zurückgenommen und geändert wird. Das
 [Project Amber](https://openjdk.org/projects/amber/) ist die zentrale Stelle für
 alle Entwicklungen rund um Pattern Matching in Java.
@@ -487,7 +486,7 @@ alle Entwicklungen rund um Pattern Matching in Java.
 
 ::: challenges
 Definieren Sie eine kleine Shape-Hierarchie mit `sealed` und berechnen Sie
-Fläche/Umfang per `switch` + Record-Patterns
+Fläche/Umfang per `switch` + Record-Patterns.
 
 <!--
 ``` java
