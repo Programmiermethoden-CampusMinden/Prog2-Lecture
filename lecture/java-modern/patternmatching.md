@@ -25,7 +25,8 @@ funktionalen Sprachen - mit deutlich weniger Fehlerquellen und Redundanz im Code
 :::
 
 ::: youtube
-TODO
+Vorlesung \[[YT](https://youtu.be/EPYlfLpGx8U)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-sealedtypen-pattern-matching/b522d19630912bee3ac07b490ffb4a65)\]
 :::
 
 # Was nervt Sie an diesem Code?
