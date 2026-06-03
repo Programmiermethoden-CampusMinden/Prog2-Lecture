@@ -16,7 +16,7 @@ Besonders nützlich wird das in Kombination mit **sealed Interfaces/Klassen und
 Records**: Sealed‑Typen legen eine abgeschlossene Menge erlaubter Untertypen fest,
 sodass der Compiler prüfen kann, ob ein `switch` wirklich alle Fälle abdeckt
 (*exhaustive check*). Records modellieren reine Daten, und mit **Record-Patterns**
-können Sie diese Daten direkt im `switch` de-konstruieren
+können Sie diese Daten direkt im `switch` dekonstruieren
 (`case Point(int x, int y) -> ...`), ohne explizite Getter-Aufrufe.
 
 Zusammen ermöglichen Ihnen `record` + `sealed` + Pattern Matching in Java einen
@@ -376,11 +376,11 @@ static int manhattan(Object o) {
 -   Im `switch` wird nach dem konkreten Typ von `o` geschaut:
     -   kein separates `instanceof` notwendig
     -   kein separater Cast notwendig
--   `case Point(int x, int y)` de-konstruiert das Record:
+-   `case Point(int x, int y)` dekonstruiert das Record:
     -   Verwendet implizit den (kanonischen) Konstruktor von `Point`
     -   Felder werden direkt in lokale Variablen gemappt
     -   Kein expliziter Getter-Aufruf mehr im Body nötig
--   Das De-Konstruieren klappt für Record-Typen auch im `instanceof`:
+-   Das Dekonstruieren klappt für Record-Typen auch im `instanceof`:
     `o instanceof Point(int x, int y)`
 -   Derzeit klappt das leider nur mit den **kanonischen Konstruktoren** der
     Record-Klassen!
@@ -416,7 +416,7 @@ Hier sieht man:
 :::
 
 ::: important
-Record-Patterns de-konstruieren tatsächlich nur Records (also Klassen, die mit
+Record-Patterns dekonstruieren tatsächlich nur Records (also Klassen, die mit
 `record` deklariert wurden)
 
 Für "normale" Klassen (klassisches `class`) gibt es noch keine allgemeine
