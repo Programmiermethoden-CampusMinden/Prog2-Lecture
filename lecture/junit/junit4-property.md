@@ -447,7 +447,13 @@ helfen Ihnen, robusteren und besser geprüften Code zu schreiben.
     deutlich robusteren Tests.
 
 ::: readings
-TODO
+Approval Testing: schönes Video: https://youtu.be/YAXGU2J7XjM (ab 17:12)
+
+Property based Testing:
+- schönes Video (letzter Teil): https://youtu.be/MWsk1h8pv2Q
+- talk: https://github.com/stfnw/talk-introduction-to-property-based-testing
+- Blog von Johannes Link (Maintainer von jqwik): [Property-based Testing in Java: Jqwik - a JUnit 5 Test Engine](https://blog.johanneslink.net/2018/03/29/jqwik-on-junit5/)
+- Doku vom [jqwik-Projekt](https://jqwik.net)
 :::
 
 ::: outcomes
