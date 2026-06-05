@@ -14,11 +14,12 @@ ideal auch als Sicherheitsnetz vor und nach Refactorings.
 
 Property-Based Testing ergänzt klassische Beispieltests, indem es allgemeine
 Eigenschaften ("Für alle Eingaben aus diesem Bereich muss X gelten") über viele
-automatisch generierte Eingaben prüft. Die Äquivalenzklassenanalyse bleibt dabei das
-zentrale Denkwerkzeug: Sie strukturieren damit den Eingaberaum, wählen Beispiele für
-klassische JUnit-Tests und formulieren daraus Properties für jqwik. Beispieltests
-dokumentieren Verhalten an konkreten Fällen, Properties suchen systematisch nach
-Gegenbeispielen - zusammen ergeben sie ein deutlich robusteres Test-Set.
+automatisch generierte Eingaben prüft. Die Äquivalenzklassenanalyse dient dabei als
+zentrales Denkwerkzeug: Sie strukturieren damit den Eingaberaum und formulieren
+daraus Properties für jqwik.
+
+Während die Idee von Approval Testing sehr überschaubar ist, können wir nur einen
+allerersten Blick in das Thema Property-Based Testing werfen.
 :::
 
 ::: youtube
@@ -243,12 +244,13 @@ class OrderReportGeneratorTest {
 ::: notes
 Der Approval-Test ruft die normale Produktionsmethode auf, erzeugt einen kompletten
 Report und übergibt diesen an `Approvals.verify(report)`. Beim ersten Lauf wird ein
-"received"-File erzeugt, das Sie prüfen und als "approved"-File übernehmen. Die
-Namenskonvention ist `<TESTCLASS>.<TESTMETHOD>.approved.txt` und muss strict
-eingehalten werden. Die "approved"-Datei muss "neben" der Test-Klasse liegen, also
-im selben Ordner. Spätere Testläufe vergleichen den aktuellen Output mit der
-"approved"-Version; bei Änderungen zeigt ein Diff genau, was sich im Verhalten
-geändert hat. So müssen Sie keinen langen `expected`-String im Test pflegen.
+"received"-File erzeugt, das Sie manuell überprüfen und (falls ok) als
+"approved"-File übernehmen. Die Namenskonvention ist
+`<TESTCLASS>.<TESTMETHOD>.approved.txt` und muss strict eingehalten werden. Die
+"approved"-Datei muss "neben" der Test-Klasse liegen, also im selben Ordner. Spätere
+Testläufe vergleichen dann den aktuellen Output mit der "approved"-Version; bei
+Änderungen zeigt ein Diff genau, was sich im Verhalten geändert hat. So müssen Sie
+keinen langen `expected`-String im Test pflegen.
 :::
 
 # Approval Testing & Git
@@ -272,34 +274,38 @@ dokumentieren damit die neue, korrekte Ausgabe.
     -   "Für Eingabe X erwarte ich Ergebnis Y"
 -   Property-Based Test:
     -   "Für alle Eingaben mit Eigenschaft E muss Eigenschaft P gelten"
--   Das Framework (z.B. jqwik) generiert viele Eingaben automatisch
+-   Ein Framework (z.B. jqwik) generiert viele Eingaben automatisch
 -   Fokus: Allgemeine Eigenschaften / Invarianten statt einzelner Beispiele
 
+::: notes
 Beim Property-Based Testing überlegen Sie nicht mehr nur konkrete Beispielwerte,
 sondern formulieren allgemeine Gesetze. Zum Beispiel: "Sortieren liefert immer eine
 aufsteigend geordnete Liste mit denselben Elementen" oder "Die Steuer steigt nie,
 wenn das Einkommen sinkt". jqwik erzeugt dann viele unterschiedliche Testdaten,
 inklusive Grenzfällen, und versucht aktiv, Gegenbeispiele zu finden. So werden mehr
 Teile des Eingaberaums automatisch abgedeckt.
+:::
 
 # Anknüpfung: Äquivalenzklassenanalyse
 
 -   Äquivalenzklassenanalyse:
     -   Eingaberaum in Bereiche mit ähnlichem Verhalten aufteilen
     -   Je Klasse einige repräsentative Testfälle + Grenzwerte wählen
--   Property-Based Testing:
+-   Property-Based Testing (PBT):
     -   Nutzt dieselben Bereiche/Eigenschaften
     -   Aber: Framework erzeugt viele Werte innerhalb der Bereiche
 -   Kein "doppelt genäht", sondern:
     -   Äquivalenzklassen = Denkwerkzeug
     -   PBT = automatisierte Stichproben über diese Klassen
 
+::: notes
 Sie kennen bereits die Idee, den Eingaberaum in Äquivalenzklassen aufzuteilen und
-pro Klasse typische sowie Grenzfälle zu testen. Property-Based Testing baut genau
-darauf auf: Sie formulieren Eigenschaften, die für ganze Klassen (z.B. "Einkommen
-zwischen 10k und 20k") gelten müssen, und überlassen dem Framework die Auswahl
-vieler konkreter Werte in diesen Bereichen. Das Denken in Bereichen und Grenzwerten
-bleibt, wird aber automatisiert "ausgerollt".
+pro Klasse typische sowie Grenzfälle zu testen. Property-Based Testing (PBT) baut
+genau darauf auf: Sie formulieren Eigenschaften, die für ganze Klassen (z.B.
+"Einkommen zwischen 10k und 20k") gelten müssen, und überlassen dem Framework die
+Auswahl vieler konkreter Werte in diesen Bereichen. Das Denken in Bereichen und
+Grenzwerten bleibt, wird aber automatisiert "ausgerollt".
+:::
 
 # Durchgängiges Beispiel: Steuerfunktion - Spezifikation
 
@@ -316,59 +322,47 @@ bleibt, wird aber automatisiert "ausgerollt".
     -   > 50 000: zusätzlich 30 % auf den Teil über 50 000
 -   Negative Einkünfte: `IllegalArgumentException`
 
+::: notes
 ``` java
 public class TaxCalculator {
-
     public static int calculateTax(int income) {
-        if (income < 0) {
-            throw new IllegalArgumentException("Income must be >= 0");
-        }
+        if (income < 0) throw new IllegalArgumentException("Income must be >= 0");
 
         double tax = 0.0;
 
-        if (income <= 10_000) {
-            tax = 0.0;
-        } else if (income <= 20_000) {
-            tax = 0.10 * (income - 10_000);
-        } else if (income <= 50_000) {
-            tax = 0.10 * 10_000
-                    + 0.20 * (income - 20_000);
-        } else {
-            tax = 0.10 * 10_000
-                    + 0.20 * 30_000
-                    + 0.30 * (income - 50_000);
-        }
+        if (income <= 10_000) tax = 0.0;
+        else if (income <= 20_000) tax = 0.10 * (income - 10_000);
+        else if (income <= 50_000) tax = 0.10 * 10_000 + 0.20 * (income - 20_000);
+        else tax = 0.10 * 10_000 + 0.20 * 30_000 + 0.30 * (income - 50_000);
 
         return (int) Math.floor(tax);
     }
 }
 ```
-
-Diese vereinfachte Steuerfunktion eignet sich gut als Übungsbeispiel: Die Regeln
-sind klar strukturiert (verschiedene "Steuerklassen"), es gibt Grenzwerte und das
-Ergebnis ist deterministisch und leicht nachzurechnen. Negative Eingaben behandeln
-wir explizit als Fehler. Damit haben wir ein Setting, in dem sich
-Äquivalenzklassenanalyse und Property-Based Testing sehr gut demonstrieren lassen.
+:::
 
 # Steuerfunktion: Äquivalenzklassen & Grenzwerte
 
 -   Äquivalenzklassen:
     -   E1: `income < 0` (ungültig)
-    -   E2: `0 <= income < 10_000`
-    -   E3: `10_000 <= income <= 20_000`
-    -   E4: `20_000 < income <= 50_000`
-    -   E5: `income > 50_000`
+    -   E2: `0 <= income < 10000`
+    -   E3: `10000 <= income <= 20000`
+    -   E4: `20000 < income <= 50000`
+    -   E5: `income > 50000`
+
+\bigskip
+
 -   Wichtige Grenzwerte:
     -   Rund um 0: `-1`, `0`, `1`
-    -   Rund um 10 000: `9_999`, `10_000`, `10_001`
-    -   Rund um 20 000: `19_999`, `20_000`, `20_001`
-    -   Rund um 50 000: `49_999`, `50_000`, `50_001`
+    -   Rund um 10000: `9999`, `10000`, `10001`
+    -   Rund um 20000: `19999`, `20000`, `20001`
+    -   Rund um 50000: `49999`, `50000`, `50001`
 
-Hier zerlegen Sie gemeinsam mit den Student:innen den Eingabebereich in sinnvolle
-Klassen. Jede Klasse beschreibt Bereiche, in denen die Steuerfunktion dasselbe
-Rechenmuster nutzt. Um diese Klassen herum identifizieren Sie Grenzwerte, an denen
-das Verhalten wechselt (z.B. 9 999 vs. 10 000). Das ist die klassische Vorbereitung
-für systematische Tests - und gleichzeitig eine hervorragende Basis für Properties.
+::: **Jede Äquivalenzklasse beschreibt Bereiche, in denen die Steuerfunktion
+dasselbe Rechenmuster nutzt.** Um diese Klassen herum identifizieren wir Grenzwerte,
+an denen das Verhalten wechselt (z.B. 9999 vs. 10000). Das ist die klassische
+Vorbereitung für systematische Tests - und gleichzeitig eine gute Basis für
+Properties. :::
 
 # Klassische JUnit-Tests: Beispiele aus den Klassen
 
@@ -377,163 +371,143 @@ für systematische Tests - und gleichzeitig eine hervorragende Basis für Proper
 -   Negative Eingaben: Exception erwarten
 
 ``` java
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
-class TaxCalculatorTest {
-
-    @Test
-    void negativeIncomeThrowsException() {
-        assertThrows(IllegalArgumentException.class,
-            () -> TaxCalculator.calculateTax(-1));
-    }
-
-    @Test
-    void incomeBelow10kIsTaxFree() {
-        assertEquals(0, TaxCalculator.calculateTax(0));
-        assertEquals(0, TaxCalculator.calculateTax(5_000));
-        assertEquals(0, TaxCalculator.calculateTax(9_999));
-    }
-
-    @Test
-    void incomeBetween10kAnd20kTaxedAt10PercentAbove10k() {
-        assertEquals(0, TaxCalculator.calculateTax(10_000));
-        assertEquals(500, TaxCalculator.calculateTax(15_000));
-        assertEquals(1_000, TaxCalculator.calculateTax(20_000));
-    }
-
-    @Test
-    void incomeBetween20kAnd50kHasTwoBrackets() {
-        assertEquals(1_000, TaxCalculator.calculateTax(20_001));
-        assertEquals(3_000, TaxCalculator.calculateTax(30_000));
-        assertEquals(7_000, TaxCalculator.calculateTax(50_000));
-    }
-
-    @Test
-    void incomeAbove50kHasThirdBracket() {
-        assertEquals(7_000, TaxCalculator.calculateTax(50_001));
-        assertEquals(16_000, TaxCalculator.calculateTax(80_000));
-    }
+// E1: Ungültige Eingabe
+@Test
+void negativeIncomeThrowsException() {
+    assertThrows(IllegalArgumentException.class, () -> TaxCalculator.calculateTax(-1));
 }
+
+// E2: 0 <= income < 10_000
+@Test
+void incomeBelow10kIsTaxFree() {
+    assertEquals(0, TaxCalculator.calculateTax(0));
+    assertEquals(0, TaxCalculator.calculateTax(5_000));
+    assertEquals(0, TaxCalculator.calculateTax(9_999));
+}
+
+// ...
 ```
 
+::: notes
 Diese klassischen Tests setzen direkt die Äquivalenzklassenanalyse um: Für jede
-Klasse und jeden Grenzbereich wählen Sie einige typische Einkünfte und erwarten
+Klasse und jeden Grenzbereich wählen wir einige typische Einkünfte und erwarten
 einen exakt berechneten Steuerbetrag. Diese Tests dokumentieren das Verhalten in
-verständlichen Beispielen und sind eine gute Grundlage, bevor Sie mit Property-Based
-Testing in die Breite gehen.
+verständlichen Beispielen.
+:::
 
 # jqwik: Einfache Property - Steuer nie negativ
 
--   Ziel-Eigenschaft:
-    -   Für alle gültigen Einkommen gilt: Steuerbetrag $\ge 0$
--   Nutzung von jqwik:
-    -   `@Property` statt `@Test`
-    -   `@ForAll` generiert viele ganzzahlige Einkommen
+Ziel-Eigenschaft: Für alle gültigen Einkommen gilt: Steuerbetrag $\ge 0$
+
+\bigskip
+
+::: notes
+Nutzung von jqwik:
+
+-   Einbindung in Gradle:
+
+    ``` groovy
+    dependencies {
+        testImplementation 'net.jqwik:jqwik:1.10.1'
+    }
+    ```
+
+-   Testfall: Annotation `@Property` statt `@Test`
+
+-   Generieren von Werten: Annotation`@ForAll` an Parametern generiert viele
+    ganzzahlige Einkommen
+:::
 
 ``` java
-import net.jqwik.api.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 class TaxCalculatorProperties {
-
     @Property
-    void taxIsNeverNegative(
-            @ForAll @IntRange(min = 0, max = 1_000_000) int income) {
-
+    void taxIsNeverNegative(@ForAll @IntRange(min = 0, max = 1_000_000) int income) {
         int tax = TaxCalculator.calculateTax(income);
-
         assertTrue(tax >= 0);
     }
 }
 ```
 
-Hier formulieren Sie eine sehr allgemeine Eigenschaft: Bei keinem gültigen Einkommen
-darf eine negative Steuer herauskommen. jqwik generiert viele Einkommen im Bereich 0
-bis 1 000 000 und wendet die Funktion darauf an. Mit der einfachen JUnit-Assertion
-`assertTrue(tax >= 0)` prüfen Sie die Eigenschaft ohne zusätzliche Bibliotheken. Die
-Studierenden sehen: Der Test beschreibt nicht konkrete Zahlen, sondern ein
-generelles Gesetz.
+::: notes
+Hier formulieren wir eine sehr allgemeine Eigenschaft unserer Steuerberechnung: Bei
+keinem gültigen Einkommen darf eine negative Steuer herauskommen. Die
+Java-Bibliothej jqwik generiert viele Einkommen im Bereich 0 bis 1000000 und wendet
+die Funktion darauf an. Mit der einfachen JUnit-Assertion `assertTrue(tax >= 0)`
+prüfen wir die Eigenschaft wie gewohnt.
+
+Der Test beschreibt nicht konkrete Zahlen, sondern ein generelles Gesetz.
+:::
 
 # jqwik: Monotonie-Eigenschaft für die Steuer
 
--   Intuition:
-    -   Wenn Einkommen steigt, darf Steuer nicht sinken
--   Formale Property:
-    -   Für alle `a`, `b` mit `a <= b` gilt:
-        -   `tax(a) <= tax(b)`
+-   Intuition: Wenn Einkommen steigt, darf Steuer nicht sinken
+-   Formale Property: Für alle `a`, `b` mit `a <= b` gilt: `tax(a) <= tax(b)`
 
 ``` java
-class TaxCalculatorMonotonicityProperties {
+@Property
+void taxIsMonotoneNonDecreasing(
+        @ForAll @IntRange(min = 0, max = 1_000_000) int a,
+        @ForAll @IntRange(min = 0, max = 1_000_000) int b) {
 
-    @Property
-    void taxIsMonotoneNonDecreasing(
-            @ForAll @IntRange(min = 0, max = 1_000_000) int a,
-            @ForAll @IntRange(min = 0, max = 1_000_000) int b) {
+    int lower = Math.min(a, b);
+    int higher = Math.max(a, b);
 
-        int lower = Math.min(a, b);
-        int higher = Math.max(a, b);
+    int taxLower = TaxCalculator.calculateTax(lower);
+    int taxHigher = TaxCalculator.calculateTax(higher);
 
-        int taxLower = TaxCalculator.calculateTax(lower);
-        int taxHigher = TaxCalculator.calculateTax(higher);
-
-        assertTrue(taxLower <= taxHigher);
-    }
+    assertTrue(taxLower <= taxHigher);
 }
 ```
 
+::: notes
 Diese Property fasst eine wesentliche Anforderung an ein Steuersystem zusammen: Wer
 mehr verdient, soll nicht weniger Steuer zahlen. jqwik erzeugt viele Zahlenpaare,
-sortiert sie (`lower`, `higher`) und vergleicht die entsprechenden Steuerbeträge.
+die wir im Test sortieren (`lower`, `higher`) und für die wir jeweils die
+entsprechenden Steuerbeträge vergleichen.
+
 Ein Verstoß gegen diese Monotonie würde auf inkonsistente Steuerregeln oder
 Implementierungsfehler hinweisen - und jqwik würde automatisch ein Gegenbeispiel
 liefern.
+:::
 
 # jqwik: Verbindung zu Äquivalenzklassen (Bracket-Property)
 
--   Idee:
-    -   Innerhalb einer Steuerklasse (z.B. 10 000 - 20 000) gilt ein "fast" linearer
-        Zusammenhang
--   Property-Beispiel:
-    -   Innerhalb 10 000 - 20 000 steigt die Steuer ungefähr mit 10 % der
-        Einkommensdifferenz
--   Praktisch:
-    -   `@IntRange` beschränkt generierte Werte auf diesen Bereich
+-   Idee: Innerhalb einer Steuerklasse (z.B. 10000 - 20000) gilt ein linearer
+    Zusammenhang
+-   Property-Beispiel: Innerhalb 10000 - 20000 steigt die Steuer mit 10 % der
+    Einkommensdifferenz
 
 ``` java
-class TaxCalculatorBracketProperties {
+@Property
+void withinBracket10kTo20kTaxGrowsWithRoughly10Percent(
+        @ForAll @IntRange(min = 10_000, max = 19_000) int base,
+        @ForAll @IntRange(min = 0, max = 1_000) int delta) {
 
-    @Property
-    void withinBracket10kTo20kTaxGrowsWithRoughly10Percent(
-            @ForAll @IntRange(min = 10_000, max = 19_000) int base,
-            @ForAll @IntRange(min = 0, max = 1_000) int delta) {
+    int income1 = base;
+    int income2 = base + delta;
+    if (income2 > 20_000) income2 = 20_000;
 
-        int income1 = base;
-        int income2 = base + delta;
-        if (income2 > 20_000) {
-            income2 = 20_000;
-        }
+    int tax1 = TaxCalculator.calculateTax(income1);
+    int tax2 = TaxCalculator.calculateTax(income2);
 
-        int tax1 = TaxCalculator.calculateTax(income1);
-        int tax2 = TaxCalculator.calculateTax(income2);
+    int diffIncome = income2 - income1;
+    int diffTax = tax2 - tax1;
 
-        int diffIncome = income2 - income1;
-        int diffTax = tax2 - tax1;
+    int expected = (int) Math.floor(0.10 * diffIncome);
 
-        int expected = (int) Math.floor(0.10 * diffIncome);
-
-        // Wegen Rundung erlauben wir +/- 1 Euro Toleranz
-        assertTrue(diffTax >= expected - 1 && diffTax <= expected + 1);
-    }
+    // Wegen Rundung erlauben wir +/- 1 Euro Toleranz
+    assertTrue(diffTax >= expected - 1 && diffTax <= expected + 1);
 }
 ```
 
-In dieser Property verbinden Sie explizit die Äquivalenzklasse "Einkommen zwischen
-10 000 und 20 000" mit einer Eigenschaft: In diesem Bereich gilt eine konstante
-Steuerquote von 10 %. Die Eingaben werden von jqwik auf diesen Bereich beschränkt,
-und Sie prüfen, ob die Steuerdifferenz ungefähr 10 % der Einkommensdifferenz
-entspricht. Runden kann zu Abweichungen um 1 Euro führen, was Sie durch eine kleine
-Toleranz berücksichtigen.
+::: notes
+In dieser Property verbinden wir explizit die Äquivalenzklasse "Einkommen zwischen
+10000 und 20000" mit einer Eigenschaft (*Property*): In diesem Bereich gilt eine
+konstante Steuerquote von 10 %. Die Eingaben werden von jqwik auf diesen Bereich
+beschränkt, und wir prüfen, ob die Steuerdifferenz ungefähr 10 % der
+Einkommensdifferenz entspricht. Runden kann zu Abweichungen um 1 Euro führen, was
+durch eine kleine Toleranz berücksichtigt wird.
+:::
 
 # Wrap-Up
 
@@ -556,20 +530,23 @@ allgemeine Invarianten absichern. Wenn zusätzlich komplexe Text- oder
 Datenstrukturen zu testen sind, kann Approval Testing helfen, Outputs als
 referenzierte Goldstandards zu verwalten. Alle drei Techniken ergänzen sich und
 helfen Ihnen, robusteren und besser geprüften Code zu schreiben.
+
+Das Thema Property-Based Testing geht sehr tief, wir können hier nur einen ersten
+Einstieg machen und die wichtigsten Ideen betrachten.
 :::
 
 ::: readings
 Approval Testing:
 
--   schönes Video: https://youtu.be/YAXGU2J7XjM (ab 17:12)
+-   Schönes Video: https://youtu.be/YAXGU2J7XjM (ab 17:12 Approval testing ft. Emily
+    Bache)
 -   Bibliothek [ApprovalTests.Java](https://github.com/approvals/ApprovalTests.Java)
 -   [ApprovalTests Getting
     Started](https://github.com/approvals/ApprovalTests.Java/blob/master/approvaltests/docs/tutorials/GettingStarted.md)
 
 Property based Testing:
 
--   schönes Video (letzter Teil): https://youtu.be/MWsk1h8pv2Q
--   talk: https://github.com/stfnw/talk-introduction-to-property-based-testing
+-   Schönes Video (letzter Teil): https://youtu.be/MWsk1h8pv2Q (ab 37:33 FizzBuzz)
 -   Blog von Johannes Link (Maintainer von jqwik): [Property-based Testing in Java:
     Jqwik - a JUnit 5 Test
     Engine](https://blog.johanneslink.net/2018/03/29/jqwik-on-junit5/)
