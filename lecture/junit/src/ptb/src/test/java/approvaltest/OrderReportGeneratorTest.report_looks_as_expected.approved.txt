@@ -1,0 +1,20 @@
+=== ORDER REPORT ===
+Order: A-001
+Customer: Alice
+Items:
+ - Keyboard
+ - Mouse
+
+Order: B-002
+Customer: Bob
+Items:
+ - Laptop
+
+Order: C-003
+Customer: Charlie
+Items:
+ - Monitor
+ - HDMI Cable
+ - USB Hub
+
+Total orders: 3
