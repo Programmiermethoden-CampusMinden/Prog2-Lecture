@@ -12,7 +12,7 @@ dagegen vergleichen. Änderungen sehen Sie als Diff im Repository und können be
 entscheiden, ob das Verhalten gewollt angepasst wurde oder ein Fehler vorliegt -
 ideal auch als Sicherheitsnetz vor und nach Refactorings.
 
-Property-Based Testing ergänzt klassische Beispieltests, indem es allgemeine
+Property-Based Testing (PTB) ergänzt klassische Beispieltests, indem es allgemeine
 Eigenschaften ("Für alle Eingaben aus diesem Bereich muss X gelten") über viele
 automatisch generierte Eingaben prüft. Die Äquivalenzklassenanalyse dient dabei als
 zentrales Denkwerkzeug: Sie strukturieren damit den Eingaberaum und formulieren
@@ -135,6 +135,7 @@ class OrderReportGeneratorTest {
                     new Order("A-001", "Alice", List.of("Keyboard", "Mouse")),
                     new Order("B-002", "Bob", List.of("Laptop")),
                     new Order("C-003", "Charlie", List.of("HDMI Cable", "USB Hub")));
+        // 1. Test absichtlich fehlschlagen lassen, 2. Ausgabe übernehmen
         String expected = "..."; // ???!
 
         // when
@@ -241,17 +242,22 @@ class OrderReportGeneratorTest {
 }
 ```
 
-::: notes
+:::: notes
 Der Approval-Test ruft die normale Produktionsmethode auf, erzeugt einen kompletten
-Report und übergibt diesen an `Approvals.verify(report)`. Beim ersten Lauf wird ein
-"received"-File erzeugt, das Sie manuell überprüfen und (falls ok) als
-"approved"-File übernehmen. Die Namenskonvention ist
-`<TESTCLASS>.<TESTMETHOD>.approved.txt` und muss strict eingehalten werden. Die
+Report und übergibt diesen an `Approvals.verify(report)`. Beim ersten Lauf wird eine
+"received"-Datei erzeugt, das Sie manuell überprüfen und (falls ok) als
+"approved"-Datei übernehmen. Die Namenskonvention ist
+`<TESTCLASS>.<TESTMETHOD>.approved.txt` und muss strikt eingehalten werden. Die
 "approved"-Datei muss "neben" der Test-Klasse liegen, also im selben Ordner. Spätere
 Testläufe vergleichen dann den aktuellen Output mit der "approved"-Version; bei
 Änderungen zeigt ein Diff genau, was sich im Verhalten geändert hat. So müssen Sie
 keinen langen `expected`-String im Test pflegen.
+
+::: tip
+Beachten Sie die Ausgabe in der Konsole bei der Ausführung des Tests - dort steht,
+wo Sie die zu prüfende Ausgabedatei `<TESTCLASS>.<TESTMETHOD>.received.txt` finden!
 :::
+::::
 
 # Approval Testing & Git
 
@@ -373,13 +379,13 @@ Properties. :::
 ``` java
 // E1: Ungültige Eingabe
 @Test
-void negativeIncomeThrowsException() {
+void negative_income_throws_exception() {
     assertThrows(IllegalArgumentException.class, () -> TaxCalculator.calculateTax(-1));
 }
 
 // E2: 0 <= income < 10_000
 @Test
-void incomeBelow10kIsTaxFree() {
+void income_below_10k_is_tax_free() {
     assertEquals(0, TaxCalculator.calculateTax(0));
     assertEquals(0, TaxCalculator.calculateTax(5_000));
     assertEquals(0, TaxCalculator.calculateTax(9_999));
@@ -421,7 +427,7 @@ Nutzung von jqwik:
 ``` java
 class TaxCalculatorProperties {
     @Property
-    void taxIsNeverNegative(@ForAll @IntRange(min = 0, max = 1_000_000) int income) {
+    void tax_is_never_negative(@ForAll @IntRange(min = 0, max = 1_000_000) int income) {
         int tax = TaxCalculator.calculateTax(income);
         assertTrue(tax >= 0);
     }
@@ -431,7 +437,7 @@ class TaxCalculatorProperties {
 ::: notes
 Hier formulieren wir eine sehr allgemeine Eigenschaft unserer Steuerberechnung: Bei
 keinem gültigen Einkommen darf eine negative Steuer herauskommen. Die
-Java-Bibliothej jqwik generiert viele Einkommen im Bereich 0 bis 1000000 und wendet
+Java-Bibliothek jqwik generiert viele Einkommen im Bereich 0 bis 1000000 und wendet
 die Funktion darauf an. Mit der einfachen JUnit-Assertion `assertTrue(tax >= 0)`
 prüfen wir die Eigenschaft wie gewohnt.
 
@@ -445,7 +451,7 @@ Der Test beschreibt nicht konkrete Zahlen, sondern ein generelles Gesetz.
 
 ``` java
 @Property
-void taxIsMonotoneNonDecreasing(
+void tax_is_monotone_non_decreasing(
         @ForAll @IntRange(min = 0, max = 1_000_000) int a,
         @ForAll @IntRange(min = 0, max = 1_000_000) int b) {
 
@@ -479,7 +485,7 @@ liefern.
 
 ``` java
 @Property
-void withinBracket10kTo20kTaxGrowsWithRoughly10Percent(
+void within_bracket_10k_to_20k_tax_grows_with_roughly_10_percent(
         @ForAll @IntRange(min = 10_000, max = 19_000) int base,
         @ForAll @IntRange(min = 0, max = 1_000) int delta) {
 
@@ -489,10 +495,8 @@ void withinBracket10kTo20kTaxGrowsWithRoughly10Percent(
 
     int tax1 = TaxCalculator.calculateTax(income1);
     int tax2 = TaxCalculator.calculateTax(income2);
-
     int diffIncome = income2 - income1;
     int diffTax = tax2 - tax1;
-
     int expected = (int) Math.floor(0.10 * diffIncome);
 
     // Wegen Rundung erlauben wir +/- 1 Euro Toleranz
@@ -504,9 +508,10 @@ void withinBracket10kTo20kTaxGrowsWithRoughly10Percent(
 In dieser Property verbinden wir explizit die Äquivalenzklasse "Einkommen zwischen
 10000 und 20000" mit einer Eigenschaft (*Property*): In diesem Bereich gilt eine
 konstante Steuerquote von 10 %. Die Eingaben werden von jqwik auf diesen Bereich
-beschränkt, und wir prüfen, ob die Steuerdifferenz ungefähr 10 % der
-Einkommensdifferenz entspricht. Runden kann zu Abweichungen um 1 Euro führen, was
-durch eine kleine Toleranz berücksichtigt wird.
+beschränkt, und wir prüfen, ob die Steuerdifferenz 10 % der Einkommensdifferenz
+entspricht. Weil in der Implementierung mit `double` gearbeitet und mit `Math.floor`
+gerundet wird, kann es zu Abweichungen um 1 Euro kommen, was durch eine kleine
+Toleranz berücksichtigt wird.
 :::
 
 # Wrap-Up
@@ -531,8 +536,10 @@ Datenstrukturen zu testen sind, kann Approval Testing helfen, Outputs als
 referenzierte Goldstandards zu verwalten. Alle drei Techniken ergänzen sich und
 helfen Ihnen, robusteren und besser geprüften Code zu schreiben.
 
-Das Thema Property-Based Testing geht sehr tief, wir können hier nur einen ersten
-Einstieg machen und die wichtigsten Ideen betrachten.
+Das Thema Property-Based Testing geht sehr tief, wir schaffen hier nur einen ersten
+Einblick in die Grundideen. Frameworks wie jqwik suchen beispielsweise bei der
+Ausführung nach "kleinen Gegenbeispiele" (sogenanntes *Shrinking*), d.h. es wir
+haben hier nicht einfach nur eine Spielart von "Random Testing".
 :::
 
 ::: readings
