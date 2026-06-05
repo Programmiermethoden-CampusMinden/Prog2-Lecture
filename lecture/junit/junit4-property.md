@@ -5,11 +5,12 @@ title: Property based Testing & Approval Testing
 
 ::: tldr
 Approval Testing hilft Ihnen, komplexe Ausgaben wie Reports, HTML oder JSON
-praktikabel zu testen. Statt im Test einen riesigen `expected`-String zu pflegen,
-frieren Sie einmal einen geprüften Output als "approved" ein und lassen künftige
-Testläufe automatisch dagegen vergleichen. Änderungen sehen Sie als Diff im
-Repository und können bewusst entscheiden, ob das Verhalten gewollt angepasst wurde
-oder ein Fehler vorliegt - ideal auch als Sicherheitsnetz vor und nach Refactorings.
+praktikabel zu testen. Statt im Test einen riesigen `expected`-String manuell
+zusammenzubauen und zu pflegen, frieren Sie einmal einen geprüften Output als
+"approved" (in einer Textdatei) ein und lassen künftige Testläufe automatisch
+dagegen vergleichen. Änderungen sehen Sie als Diff im Repository und können bewusst
+entscheiden, ob das Verhalten gewollt angepasst wurde oder ein Fehler vorliegt -
+ideal auch als Sicherheitsnetz vor und nach Refactorings.
 
 Property-Based Testing ergänzt klassische Beispieltests, indem es allgemeine
 Eigenschaften ("Für alle Eingaben aus diesem Bereich muss X gelten") über viele
@@ -29,105 +30,226 @@ TODO
 -   Bisher: klassische Unit-Tests mit JUnit (`@Test`, `assertEquals`, ...)
 -   Problem 1: Komplexe/umfangreiche Outputs sind schwer "per Hand" zu vergleichen
 -   Problem 2: Einzelne Beispieltests decken nur wenige Eingaben ab
+
+\bigskip
+
 -   Idee: Zwei Ergänzungen
     -   Approval Testing
     -   Property-Based Testing (PBT)
 
+::: notes
 In klassischen Tests formulieren wir für ein paar ausgewählte Beispiele "Eingabe X
 -\> erwartete Ausgabe Y". Das ist gut für Dokumentation und einfache Funktionen,
 stößt aber an Grenzen, wenn Outputs lang/komplex sind oder wenn wir viele
 verschiedene Eingaben testen wollen. Approval Testing hilft beim Umgang mit
 komplexen Ausgaben, Property-Based Testing beim automatisierten Durchprobieren
 vieler Eingaben anhand allgemeiner Eigenschaften.
+:::
 
 # Approval Testing: Idee und Einsatzgebiete
+
+``` java
+@Test
+void report_looks_as_expected() {
+    // given
+    List<Order> orders = List.of(...); // !!!!
+    String expected = "..."; // ???!
+
+    // when
+    String report = OrderReportGenerator.generateReport(orders);
+
+    // then
+    assertEquals(expected, report);
+}
+```
+
+\bigskip
 
 -   Grundidee:
     -   Einmal gültigen Output als "Goldstandard" abspeichern (`approved`)
     -   Zukünftig generierten Output automatisch dagegen vergleichen
+
+\bigskip
+
+::: notes
 -   Gut geeignet für:
     -   Reports, Tabellen, formatierten Text
     -   HTML, JSON, Logs, Konsolen-Output
 -   Typischer Einsatz:
     -   Refactoring ohne Verhaltensänderung absichern
 
-Beim Approval Testing wird nicht im Test ein erwarteter String manuell
-zusammengebaut. Stattdessen prüft man einmalig einen generierten Output, "segnet ihn
-ab" und speichert ihn als "approved"-Datei. Künftige Testläufe erzeugen einen
-"received"-Output und vergleichen ihn mit der "approved"-Version. Unterschiede
-fallen als Diffs auf. Besonders beim Refactoring ist das hilfreich: Wenn sich der
-Output nicht ändert, war das Refactoring verhaltensgleich.
+Beim Approval Testing wird nicht im Test ein erwarteter String **manuell**
+zusammengebaut. Stattdessen **prüft man einmalig einen generierten Output**, "segnet
+ihn ab" und speichert ihn als "approved" in einem String oder einer Datei. Künftige
+Testläufe erzeugen einen "received"-Output und vergleichen ihn mit der
+"approved"-Version. Unterschiede fallen als Diffs auf. Besonders beim Refactoring
+ist das hilfreich: Wenn sich der Output nicht ändert, war das Refactoring
+verhaltensgleich.
+:::
 
-# Beispiel: Order-Report mit ApprovalTests
+# Beispiel: Order-Report mit manuellen Approval-Tests
 
--   Produktionscode: Textreport aus Bestellungen erzeugen
--   Approval-Test: vergleicht gesamten Report-String mit `*.approved`-Datei
--   Kein manuelles Zusammensetzen eines langen "expected"-Strings nötig
+::: notes
+Produktionscode: Textreport aus Bestellungen erzeugen:
+:::
 
 ``` java
-public class Order {
-    private final String id;
-    private final String customer;
-    private final List<String> items;
-
-    public Order(String id, String customer, List<String> items) {
-        this.id = id;
-        this.customer = customer;
-        this.items = items;
-    }
-
-    public String getId() { return id; }
-    public String getCustomer() { return customer; }
-    public List<String> getItems() { return items; }
-}
+public record Order(String id, String customer, List<String> items) {}
 
 public class OrderReportGenerator {
-
-    public String generateReport(List<Order> orders) {
-        StringBuilder sb = new StringBuilder();
+    public static String generateReport(List<Order> orders) {
+        var sb = new StringBuilder();
         sb.append("=== ORDER REPORT ===\n");
-        for (Order o : orders) {
-            sb.append("Order: ").append(o.getId()).append("\n");
-            sb.append("Customer: ").append(o.getCustomer()).append("\n");
-            sb.append("Items:\n");
-            for (String item : o.getItems()) {
-                sb.append(" - ").append(item).append("\n");
-            }
-            sb.append("\n");
-        }
+        orders.forEach( o -> {
+                sb.append("Order: ").append(o.id()).append("\n");
+                sb.append("Customer: ").append(o.customer()).append("\n");
+                sb.append("Items:\n");
+                o.items().forEach(item -> sb.append(" - ").append(item).append("\n"));
+                sb.append("\n");
+            });
         sb.append("Total orders: ").append(orders.size()).append("\n");
         return sb.toString();
     }
 }
+```
 
-import org.approvaltests.Approvals;
-import org.junit.jupiter.api.Test;
-import java.util.List;
+::: notes
+Approval-Test:
 
-class OrderReportGeneratorApprovalTest {
+1.  Test laufen lassen und Vergleich mit leerem String -\> rot
+2.  Ausgabe von JUnit prüfen und als Erwartung übernehmen -\> grün
+:::
+
+------------------------------------------------------------------------------------
+
+Erster Lauf mit leerem "expected"-String:
+
+``` java
+class OrderReportGeneratorTest {
 
     @Test
-    void reportLooksAsExpected() {
-        OrderReportGenerator gen = new OrderReportGenerator();
+    void report_looks_as_expected() {
+        // given
         List<Order> orders = List.of(
-            new Order("A-001", "Alice", List.of("Keyboard", "Mouse")),
-            new Order("B-002", "Bob", List.of("Laptop")),
-            new Order("C-003", "Charlie", List.of("Monitor", "HDMI Cable", "USB Hub"))
-        );
+                    new Order("A-001", "Alice", List.of("Keyboard", "Mouse")),
+                    new Order("B-002", "Bob", List.of("Laptop")),
+                    new Order("C-003", "Charlie", List.of("HDMI Cable", "USB Hub")));
+        String expected = "..."; // ???!
 
-        String report = gen.generateReport(orders);
+        // when
+        String report = OrderReportGenerator.generateReport(orders);
 
+        // then
+        assertEquals(expected, report);
+    }
+}
+```
+
+------------------------------------------------------------------------------------
+
+Nach dem ersten Lauf Ergänzen des "expected"-Strings zu:
+
+``` java
+class OrderReportGeneratorTest {
+
+    @Test
+    void report_looks_as_expected() {
+        // given
+        List<Order> orders = List.of(
+                    new Order("A-001", "Alice", List.of("Keyboard", "Mouse")),
+                    new Order("B-002", "Bob", List.of("Laptop")),
+                    new Order("C-003", "Charlie", List.of("HDMI Cable", "USB Hub")));
+        String expected = """
+            === ORDER REPORT ===
+            Order: A-001
+            Customer: Alice
+            Items:
+             - Keyboard
+             - Mouse
+
+            Order: B-002
+            Customer: Bob
+            Items:
+             - Laptop
+
+            Order: C-003
+            Customer: Charlie
+            Items:
+             - HDMI Cable
+             - USB Hub
+
+            Total orders: 3
+            """;
+
+        // when
+        String report = OrderReportGenerator.generateReport(orders);
+
+        // then
+        assertEquals(expected, report);
+    }
+}
+```
+
+# Beispiel: Order-Report mit Bibliothek "ApprovalTests"
+
+::: notes
+Java-Bibliothek
+[ApprovalTests.Java](https://github.com/approvals/ApprovalTests.Java) zur
+Unterstützung von Approval Tests
+
+-   vergleicht gesamten Report-String mit `*.approved`-Datei
+-   kein manuelles Zusammensetzen eines langen "expected"-Strings nötig
+
+Einbindung in Gradle:
+
+``` groovy
+dependencies {
+    testImplementation 'com.approvaltests:approvaltests:30.1.1'
+}
+```
+
+Assert im Test über den Aufruf `Approvals.verify(actual);`:
+
+-   Legt die Ausgabe `actual` in einer Datei im Build-Ordner an:
+    `<TESTCLASS>.<TESTMETHOD>.received.txt`
+-   Inhalt einmalig manuell prüfen
+-   Wenn ok: Datei verschieben in Testordner (parallel zur Test-Klasse):
+    `<TESTCLASS>.<TESTMETHOD>.approved.txt`
+-   Diese "\*.approved.txt"-Datei mit in Git einchecken
+-   Folgende Testläufe vergleichen Output mit der "\*.approved.txt"-Datei
+:::
+
+``` java
+class OrderReportGeneratorTest {
+
+    @Test
+    void report_looks_as_expected() {
+        // given
+        List<Order> orders = List.of(
+                    new Order("A-001", "Alice", List.of("Keyboard", "Mouse")),
+                    new Order("B-002", "Bob", List.of("Laptop")),
+                    new Order("C-003", "Charlie", List.of("HDMI Cable", "USB Hub")));
+
+        // when
+        String report = OrderReportGenerator.generateReport(orders);
+
+        // then
+        // ApprovalTests.Java: vergleicht gegen <TESTCLASS>.<TESTMETHOD>.approved.txt
         Approvals.verify(report);
     }
 }
 ```
 
+::: notes
 Der Approval-Test ruft die normale Produktionsmethode auf, erzeugt einen kompletten
 Report und übergibt diesen an `Approvals.verify(report)`. Beim ersten Lauf wird ein
-"received"-File erzeugt, das Sie prüfen und als "approved"-File übernehmen. Spätere
-Testläufe vergleichen den aktuellen Output mit der "approved"-Version; bei
-Änderungen zeigt ein Diff genau, was sich im Verhalten geändert hat. So müssen Sie
-keinen langen `expected`-String im Test pflegen.
+"received"-File erzeugt, das Sie prüfen und als "approved"-File übernehmen. Die
+Namenskonvention ist `<TESTCLASS>.<TESTMETHOD>.approved.txt` und muss strict
+eingehalten werden. Die "approved"-Datei muss "neben" der Test-Klasse liegen, also
+im selben Ordner. Spätere Testläufe vergleichen den aktuellen Output mit der
+"approved"-Version; bei Änderungen zeigt ein Diff genau, was sich im Verhalten
+geändert hat. So müssen Sie keinen langen `expected`-String im Test pflegen.
+:::
 
 # Approval Testing & Git
 
@@ -136,11 +258,13 @@ keinen langen `expected`-String im Test pflegen.
 -   Workflow bei legitimer Änderung:
     -   Test schlägt fehl -\> Diff prüfen -\> neue Version als "approved" übernehmen
 
+::: notes
 Da die "approved"-Ausgabedateien im Versionskontrollsystem liegen, können Sie bei
 jedem Pull-Request sehen, wie genau sich der Output geändert hat. Das ist besonders
 wertvoll, wenn formatiertes Text- oder HTML-Output betroffen ist. Wenn sich eine
 Änderung als gewollt herausstellt, aktualisieren Sie einfach die Approved-Datei und
 dokumentieren damit die neue, korrekte Ausgabe.
+:::
 
 # Property-Based Testing: Grundidee
 
@@ -411,7 +535,7 @@ und Sie prüfen, ob die Steuerdifferenz ungefähr 10 % der Einkommensdifferenz
 entspricht. Runden kann zu Abweichungen um 1 Euro führen, was Sie durch eine kleine
 Toleranz berücksichtigen.
 
-# Fazit: Zusammenspiel der Techniken
+# Wrap-Up
 
 -   Klassische Unit-Tests:
     -   Dokumentieren Verhalten an Beispielen
@@ -424,6 +548,7 @@ Toleranz berücksichtigen.
     -   Nutzt Äquivalenzklassen als Denkgrundlage, generiert aber viele Fälle
         automatisch
 
+::: notes
 Für die Praxis bedeutet das: Sie starten bei der gedanklichen Strukturierung mit
 Äquivalenzklassenanalyse, schreiben daraus ein paar klassische JUnit-Tests zur
 Dokumentation und Verständlichkeit und ergänzen diese dann durch Properties, die
@@ -431,51 +556,45 @@ allgemeine Invarianten absichern. Wenn zusätzlich komplexe Text- oder
 Datenstrukturen zu testen sind, kann Approval Testing helfen, Outputs als
 referenzierte Goldstandards zu verwalten. Alle drei Techniken ergänzen sich und
 helfen Ihnen, robusteren und besser geprüften Code zu schreiben.
-
-# Wrap-Up
-
--   Approval Testing eignet sich für komplexe Outputs (Reports, HTML, JSON): Einmal
-    als "approved" akzeptieren, danach automatisch dagegen vergleichen und
-    Änderungen per Diff sehen.
--   Property-Based Testing prüft nicht einzelne Beispiele, sondern allgemeine
-    Eigenschaften ("Gesetze") über viele automatisch generierte Eingaben.
--   Äquivalenzklassenanalyse bleibt das zentrale Denkwerkzeug: Sie strukturiert den
-    Eingaberaum und liefert die Grundlage sowohl für Beispieltests als auch für
-    Properties.
--   Beispieltests erklären Verhalten an konkreten Fällen, Properties suchen
-    systematisch nach Gegenbeispielen - beides ergänzt sich und führt zusammen zu
-    deutlich robusteren Tests.
+:::
 
 ::: readings
-Approval Testing: schönes Video: https://youtu.be/YAXGU2J7XjM (ab 17:12)
+Approval Testing:
+
+-   schönes Video: https://youtu.be/YAXGU2J7XjM (ab 17:12)
+-   Bibliothek [ApprovalTests.Java](https://github.com/approvals/ApprovalTests.Java)
+-   [ApprovalTests Getting
+    Started](https://github.com/approvals/ApprovalTests.Java/blob/master/approvaltests/docs/tutorials/GettingStarted.md)
 
 Property based Testing:
-- schönes Video (letzter Teil): https://youtu.be/MWsk1h8pv2Q
-- talk: https://github.com/stfnw/talk-introduction-to-property-based-testing
-- Blog von Johannes Link (Maintainer von jqwik): [Property-based Testing in Java: Jqwik - a JUnit 5 Test Engine](https://blog.johanneslink.net/2018/03/29/jqwik-on-junit5/)
-- Doku vom [jqwik-Projekt](https://jqwik.net)
+
+-   schönes Video (letzter Teil): https://youtu.be/MWsk1h8pv2Q
+-   talk: https://github.com/stfnw/talk-introduction-to-property-based-testing
+-   Blog von Johannes Link (Maintainer von jqwik): [Property-based Testing in Java:
+    Jqwik - a JUnit 5 Test
+    Engine](https://blog.johanneslink.net/2018/03/29/jqwik-on-junit5/)
+-   Doku vom [jqwik-Projekt](https://jqwik.net)
 :::
 
 ::: outcomes
-k2: Ich kann das Grundprinzip von Approval Testing an einem selbst gewählten
-Beispiel erklären (Goldstandard/"approved"-Output, Vergleich mit "received"-Output,
-Rolle von Diff-Ansichten). k2: Ich kann den Unterschied zwischen klassischen
-Beispieltests und Property-Based Testing in eigenen Worten erläutern (Beispiele
-vs. allgemeine Eigenschaften über viele Eingaben). k2: Ich kann erklären, wie
-Äquivalenzklassenanalyse die Auswahl von Testfällen strukturiert und warum sie auch
-für Property-Based Testing wichtig ist. k2: Ich kann typische Einsatzszenarien für
-Approval Testing und Property-Based Testing nennen und begründen, warum diese
-Techniken dort sinnvoll sind. k3: Ich kann für eine gegebene Funktion sinnvolle
-Äquivalenzklassen formulieren und daraus konkrete JUnit-Beispieltests ableiten. k3:
-Ich kann für eine gegebene Funktion mindestens eine geeignete Property formulieren
-und diese mit jqwik als `@Property`-Test umsetzen. k3: Ich kann für eine Funktion
-mit komplexem String-Output (z.B. Report oder formatierte Liste) einen einfachen
-Approval-Test schreiben und den Approved-Output im Projekt verwalten. k3: Ich kann
-in einem bestehenden Test-Set begründet entscheiden, ob Beispieltests, Approval
-Tests oder Property-Based Tests (oder eine Kombination) sinnvoll sind, und dies kurz
-begründen.
-:::
-
-::: challenges
-TODO
+-   k2: Ich kann das Grundprinzip von Approval Testing an einem selbst gewählten
+    Beispiel erklären (Goldstandard/"approved"-Output, Vergleich mit
+    "received"-Output, Rolle von Diff-Ansichten).
+-   k2: Ich kann den Unterschied zwischen klassischen Beispieltests und
+    Property-Based Testing in eigenen Worten erläutern (Beispiele vs. allgemeine
+    Eigenschaften über viele Eingaben).
+-   k2: Ich kann erklären, wie Äquivalenzklassenanalyse die Auswahl von Testfällen
+    strukturiert und warum sie auch für Property-Based Testing wichtig ist.
+-   k2: Ich kann typische Einsatzszenarien für Approval Testing und Property-Based
+    Testing nennen und begründen, warum diese Techniken dort sinnvoll sind.
+-   k3: Ich kann für eine gegebene Funktion sinnvolle Äquivalenzklassen formulieren
+    und daraus konkrete JUnit-Beispieltests ableiten.
+-   k3: Ich kann für eine Funktion mit komplexem String-Output (z.B. Report oder
+    formatierte Liste) einen einfachen Approval-Test schreiben und den
+    Approved-Output im Projekt verwalten.
+-   k3: Ich kann für eine gegebene Funktion mindestens eine geeignete Property
+    formulieren und diese mit jqwik als `@Property`-Test umsetzen.
+-   k3: Ich kann in einem bestehenden Test-Set begründet entscheiden, ob
+    Beispieltests, Approval Tests oder Property-Based Tests (oder eine Kombination)
+    sinnvoll sind, und dies kurz begründen.
 :::
