@@ -526,7 +526,7 @@ Toleranz berücksichtigt wird.
     -   Nutzt Äquivalenzklassen als Denkgrundlage, generiert aber viele Fälle
         automatisch
 
-::: notes
+:::: notes
 Für die Praxis bedeutet das: Sie starten bei der gedanklichen Strukturierung mit
 Äquivalenzklassenanalyse, schreiben daraus ein paar klassische JUnit-Tests zur
 Dokumentation und Verständlichkeit und ergänzen diese dann durch Properties, die
@@ -539,7 +539,12 @@ Das Thema Property-Based Testing geht sehr tief, wir schaffen hier nur einen ers
 Einblick in die Grundideen. Frameworks wie jqwik suchen beispielsweise bei der
 Ausführung nach "kleinen Gegenbeispiele" (sogenanntes *Shrinking*), d.h. es wir
 haben hier nicht einfach nur eine Spielart von "Random Testing".
+
+::: tip
+Sie finden den Beispielcode in einem vorkonfigurierten Gradle-Projekt im Ordner
+[ptb](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/junit/src/ptb).
 :::
+::::
 
 ::: readings
 Approval Testing:
