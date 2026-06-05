@@ -300,6 +300,9 @@ Teile des Eingaberaums automatisch abgedeckt.
 -   Property-Based Testing (PBT):
     -   Nutzt dieselben Bereiche/Eigenschaften
     -   Aber: Framework erzeugt viele Werte innerhalb der Bereiche
+
+\smallskip
+
 -   Kein "doppelt genäht", sondern:
     -   Äquivalenzklassen = Denkwerkzeug
     -   PBT = automatisierte Stichproben über diese Klassen
@@ -320,12 +323,9 @@ Grenzwerten bleibt, wird aber automatisiert "ausgerollt".
     -   Rückgabe: Steuerbetrag (ganze Euro, abgerundet)
 -   Steuerregeln (vereinfacht):
     -   \< 10 000: 0 %
-
     -   10 000 - 20 000: 10 % auf den Teil über 10 000
-
     -   20 000 - 50 000: zusätzlich 20 % auf den Teil über 20 000
-
-    -   > 50 000: zusätzlich 30 % auf den Teil über 50 000
+    -   \> 50 000: zusätzlich 30 % auf den Teil über 50 000
 -   Negative Einkünfte: `IllegalArgumentException`
 
 ::: notes
@@ -364,11 +364,12 @@ public class TaxCalculator {
     -   Rund um 20000: `19999`, `20000`, `20001`
     -   Rund um 50000: `49999`, `50000`, `50001`
 
-::: **Jede Äquivalenzklasse beschreibt Bereiche, in denen die Steuerfunktion
-dasselbe Rechenmuster nutzt.** Um diese Klassen herum identifizieren wir Grenzwerte,
-an denen das Verhalten wechselt (z.B. 9999 vs. 10000). Das ist die klassische
-Vorbereitung für systematische Tests - und gleichzeitig eine gute Basis für
-Properties. :::
+::: notes
+**Jede Äquivalenzklasse beschreibt Bereiche, in denen die Steuerfunktion dasselbe
+Rechenmuster nutzt.** Um diese Klassen herum identifizieren wir Grenzwerte, an denen
+das Verhalten wechselt (z.B. 9999 vs. 10000). Das ist die klassische Vorbereitung
+für systematische Tests - und gleichzeitig eine gute Basis für Properties.
+:::
 
 # Klassische JUnit-Tests: Beispiele aus den Klassen
 
@@ -488,9 +489,7 @@ liefern.
 void within_bracket_10k_to_20k_tax_grows_with_roughly_10_percent(
         @ForAll @IntRange(min = 10_000, max = 19_000) int base,
         @ForAll @IntRange(min = 0, max = 1_000) int delta) {
-
-    int income1 = base;
-    int income2 = base + delta;
+    int income1 = base;  int income2 = base + delta;
     if (income2 > 20_000) income2 = 20_000;
 
     int tax1 = TaxCalculator.calculateTax(income1);
