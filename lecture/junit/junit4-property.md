@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: Property based Testing & Approval Testing
+title: "JUnit4: Property based Testing & Approval Testing"
 ---
 
 ::: tldr
@@ -23,7 +23,8 @@ allerersten Blick in das Thema Property-Based Testing werfen.
 :::
 
 ::: youtube
-TODO
+Vorlesung \[[YT](https://youtu.be/vuvnmz58fIU)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-junit4-property-based-testing-approval-testing/6f97fdeb6ff90c7de8b5c6488baaf270)\]
 :::
 
 # Motivation: Mehr als nur Beispieltests
