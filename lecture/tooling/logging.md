@@ -9,7 +9,7 @@ Im Paket `java.util.logging` findet sich eine einfache Logging-API.
 Über die Methode `getLogger()` der Klasse `Logger` (*Factory-Method-Pattern*) kann
 ein (neuer) Logger erzeugt werden, dabei wird über den String-Parameter eine
 Logger-Hierarchie aufgebaut analog zu den Java-Package-Strukturen. Der oberste
-Logger (der "Root-Logger") hat den leeren Namen.
+Logger (der "Basis-Logger" bzw. "Root-Logger") hat den leeren Namen.
 
 Jeder Logger kann mit einem Log-Level (Klasse `Level`) eingestellt werden;
 Log-Meldungen unterhalb des eingestellten Levels werden verworfen.
@@ -25,7 +25,7 @@ Console-Handler) "`Info`" eingestellt.
 
 Nachrichten, die durch Weiterleitung nach oben empfangen wurden, werden nicht am
 Log-Level des empfangenden Loggers gemessen, sondern akzeptiert und an die Handler
-des Loggers und (sofern nicht deaktiviert) an den Elternlogger weitergereicht.
+des Loggers und (sofern nicht deaktiviert) an den Eltern-Logger weitergereicht.
 :::
 
 ::: youtube
@@ -33,7 +33,7 @@ des Loggers und (sofern nicht deaktiviert) an den Elternlogger weitergereicht.
 -   [Demo Logging (Überblick)](https://youtu.be/fWSc5A_CPL8)
 -   [Demo Log-Level](https://youtu.be/0UUVQCVYNHo)
 -   [Demo Logging: Handler und Formatter](https://youtu.be/dYOYA99EfrY)
--   [Demo Weiterleitung an den Elternlogger](https://youtu.be/19Bki4IglWQ)
+-   [Demo Weiterleitung an den Eltern-Logger](https://youtu.be/19Bki4IglWQ)
 :::
 
 # Wie prüfen Sie die Werte von Variablen/Objekten?
@@ -41,12 +41,12 @@ des Loggers und (sofern nicht deaktiviert) an den Elternlogger weitergereicht.
 1.  Debugging
     -   Beeinflusst Code nicht
     -   Kann schnell komplex und umständlich werden
-    -   Sitzung transient - nicht wiederholbar
+    -   Sitzung transient - nicht reproduzierbar/speicherbar
 
 \bigskip
 
-2.  "Poor-man's-debugging" (Ausgaben mit `System.out.println`)
-    -   Müssen irgendwann entfernt werden
+2.  "Poor-man's-debugging" (Ausgaben mit `IO.println`)
+    -   Müssen irgendwann vor Release/Produktivbetrieb entfernt werden
     -   Ausgabe nur auf einem Kanal (Konsole)
     -   Keine Filterung nach Problemgrad - keine Unterscheidung zwischen Warnungen,
         einfachen Informationen, ...
@@ -98,8 +98,8 @@ Logger l = Logger.getLogger(MyClass.class.getName());
     =\> Methode liefert bereits **vorhandenen Logger** mit diesem Namen [(sonst
     neuen Logger)]{.notes}
 
--   **Best Practice**: `\newline`{=tex} Nutzung des voll-qualifizierten
-    Klassennamen: `MyClass.class.getName()`
+-   **Best Practice**: `\newline`{=tex} Nutzung des vollqualifizierten Klassennamen:
+    `MyClass.class.getName()`
 
     -   Leicht zu implementieren
     -   Leicht zu erklären
@@ -137,7 +137,7 @@ public void log(Level level, String msg);
 
 # Wichtigkeit von Logmeldungen: Stufen
 
--   `java.util.logger.Level` definiert 7 Stufen:
+-   `java.util.logging.Level` definiert 7 Stufen:
     -   `SEVERE`, `WARNING`, `INFO`, `CONFIG`, `FINE`, `FINER`, `FINEST`
         `\newline`{=tex} (von höchster zu niedrigster Prio)
     -   Zusätzlich `ALL` und `OFF`
@@ -254,9 +254,41 @@ gebraucht wird. Wenn die Log-Methode tatsächlich loggen kann (die verschiedenen
 Level werden erreicht), dann und nur dann wertet sie den übergebenen Lambda-Ausdruck
 aus und erzeugt dabei die auszugebende Message. (Anmerkung: Im obigen Beispiel ist
 das egal, da der String ohnehin fest ist und stets bekannt/berechnet ist. Aber
-stellen Sie sich statt `"Hello World`" einen Funktionsaufruf vor, der mehr oder
-wenig aufwändig einen String produziert ...)
+stellen Sie sich statt `"Hello World"` einen Funktionsaufruf vor, der mehr oder
+weniger aufwändig einen String produziert ...)
 :::
+
+:::: notes
+# Best Practices
+
+-   Pro Klasse ein
+    `private static final Logger LOG = Logger.getLogger(MyClass.class.getName());`
+-   Keine Log-Ausgaben in Bibliotheken mit `System.out`/`System.err`, sondern immer
+    ein Logging-Framework verwenden
+-   Log-Meldungen:
+    -   Klar, kurz, technisch brauchbar ("Was ist passiert? Wo? Welche Daten/IDs?")
+    -   Keine sensiblen Daten (Passwörter, Tokens, personenbezogene Daten)
+-   Log-Level-Richtlinien:
+    -   `SEVERE`: Fehler, nach denen fachlich nicht sinnvoll weitergearbeitet werden
+        kann
+    -   `WARNING`: Unerwartete Situationen, aber das System läuft weiter
+    -   `INFO`: Wichtige Statusmeldungen
+    -   `CONFIG`: Konfigurationsdetails
+    -   `FINE`, `FINER`, `FINEST`: eher für detaillierte Diagnose/Entwicklung
+
+Wir haben in den Beispielen den Logger immer mit `setLevel(...)` und
+`setUseParentHandlers(false)` etc. im Code konfiguriert. Es gibt aber - analog zu
+größeren Frameworks wie SLF4J - auch bei `java.util.logging` die Möglichkeit, die
+Konfiguration von außen über eine Properties-Datei vorzunehmen
+(`logging.properties`).
+
+::: tip
+*Hinweis*: In vielen professionellen Projekten werden heute (für flexible
+Konfiguration und bessere Integrationen) Logging-Frameworks wie SLF4J mit Logback
+genutzt. Die hier vorgestellte Logik (Logger, Level, Handler/Appender,
+Formatter/Layouts, Hierarchie) überträgt sich jedoch nahezu 1:1 darauf.
+:::
+::::
 
 # Wrap-Up
 
