@@ -269,22 +269,25 @@ ebenfalls ein schönes Tutorial zum Command-Pattern.
 :::
 
 ::: challenges
-Schreiben Sie für den `Dwarf` in den
-[Vorgaben](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/pattern/src/challenges/command)
-einen Controller, welcher das Command-Pattern verwendet.
+**Command-Pattern im Restaurant**
 
--   "W" führt Springen aus
--   "A" bewegt den Zwerg nach links
--   "D" bewegt den Zwerg nach rechts
--   "S" führt Ducken aus
+**Problem**: In einem Restaurant gibt es folgende Rollen:
 
-Schreiben Sie zusätzlich für den `Cursor` einen Controller, welcher das
-Command-Pattern mit Historie umsetzt (ebenfalls über die Tasten "W", "A", "S" und
-"D").
+-   Gast (bestellt Essen/Getränke)
+-   Kellner (nimmt Bestellungen entgegen und leitet sie weiter)
+-   Koch (bereitet Essen zu)
+-   Barkeeper (mischt Getränke)
 
-Schreiben Sie eine Demo, um die Funktionalität Ihres Programmes zu demonstrieren.
+**Ziel**: Implementieren Sie das Command-Pattern für dieses Szenario. Der Gast soll
+Bestellungen beim Kellner aufgeben, die dieser an den Koch bzw. den Barkeeper
+weitergibt. Bestellungen sollen auch storniert werden können.
 
-<!--
-Lösung siehe https://github.com/Programmiermethoden-CampusMinden/prog2_intern_solutions/blob/solution_challenge_commandpattern/src/main/java/commandpattern/Main.java
--->
+**Aufgabe**: Diskutieren Sie in 10 Minuten:
+
+-   Wie modellieren Sie die Rollen (Gast, Kellner, Koch, Barkeeper)?
+-   Wie sieht das Command-Interface aus? Soll es `execute()` oder
+    `execute(Receiver)` heißen?
+-   Wie übergibt der Kellner den `Receiver` an das Command?
+-   Wie implementieren Sie Undo/Redo?
+-   Wie ist die Klassenstruktur (Wer kennt wen?)?
 :::
