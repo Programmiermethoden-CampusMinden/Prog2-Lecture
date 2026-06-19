@@ -218,8 +218,10 @@ Buchhaltung ...
 **Objektorientierte Antwort auf Callback-Funktionen**
 
 ::: readings
--   @Gamma2011
--   @Nystrom2014 [Kap. 2]
+Auch wenn es für C++ geschrieben ist, lässt sich zum Thema Command-Pattern das
+Kapitel 2 "Command" im @Nystrom2014 sehr gut lesen. Der Verweis auf @Gamma2011 der
+["Gang of Four"](https://en.wikipedia.org/wiki/Design_Patterns) darf natürlich nicht
+fehlen.
 :::
 
 ::: outcomes
