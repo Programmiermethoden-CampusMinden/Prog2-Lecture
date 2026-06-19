@@ -86,8 +86,8 @@ public class InputHandler {
 ```
 
 ::: notes
-Die starre Zuordnung "Button : Aktion" wird aufgelöst und über Zwischenobjekte
-konfigurierbar gemacht.
+Die starre Zuordnung "Button : Aktion" wird durch das Command-Pattern aufgelöst und
+über Zwischenobjekte konfigurierbar gemacht.
 
 Für die Zwischenobjekte wird ein Typ `Command` eingeführt, der nur eine
 `execute()`-Methode hat. Für jede gewünschte Aktion wird eine Klasse davon
@@ -124,8 +124,8 @@ aufgerufen wird. Diese Klasse kennt nur das `Command`-Interface und keine
 spezifischen Kommandos (also keine der Sub-Klassen). Es kann zusätzlich eine gewisse
 Buchführung übernehmen, etwa um eine Undo-Funktionalität zu realisieren.
 
-Der Client ist ein Programmteil, der ein Command-Objekt aufbaut und dabei einen
-passenden Receiver übergibt und der das Command-Objekt dann zum Aufruf an den
+Der Client ist ein Programmteil, der die Command-Objekte aufbaut und dabei einen
+passenden Receiver übergibt und der die Command-Objekte dann zum Aufruf an den
 Invoker weiterreicht.
 
 In unserem Beispiel lassen sich die einzelnen Teile so sortieren:
@@ -157,7 +157,7 @@ Wir könnten das `Command`-Interface um ein paar Methoden erweitern:
 public interface Command {
     void execute();
     void undo();
-    Command newCommand(Entity e);
+    Command newCmd(Entity e);
 }
 ```
 
@@ -172,19 +172,19 @@ public class Move implements Command {
 
     public void execute() { oldX = e.getX();  oldY = e.getY();  x = oldX + 42;  y = oldY;  e.moveTo(x, y); }
     public void undo() { e.moveTo(oldX, oldY); }
-    public Command newCommand(Entity e) { return new Move(e); }
+    public Command newCmd(Entity e) { return new Move(e); }
 }
 
 public class InputHandler {
     private final Command wbutton;
     private final Command abutton;
-    private final Stack<Command> s = new Stack<>();
+    private final Deque<Command> s = new ArrayDeque<>();
 
     public void handleInput() {
         Entity e = getSelectedEntity();
         switch (keyPressed()) {
-            case BUTTON_W -> { s.push(wbutton.newCommand(e)); s.peek().execute(); }
-            case BUTTON_A -> { s.push(abutton.newCommand(e)); s.peek().execute(); }
+            case BUTTON_W -> { s.push(wbutton.newCmd(e)); s.peek().execute(); }
+            case BUTTON_A -> { s.push(abutton.newCmd(e)); s.peek().execute(); }
             case BUTTON_U -> s.pop().undo();
             case ...
             default -> { ... }
@@ -231,16 +231,24 @@ sich Commands einzeln testen, indem man beispielsweise den Receiver mockt.
 
 # Wrap-Up
 
-**Command-Pattern**: Kapsele Befehle in ein Objekt
+**Command-Pattern**: Kapselt Befehle als Objekte, um
+
+-   Aktionen entkoppelt und konfigurierbar zu machen,
+-   Undo/Redo-Funktionalität zu ermöglichen,
+-   Befehle zu speichern, zu loggen oder asynchron auszuführen.
 
 \bigskip
 
--   `Command`-Objekte haben eine Methode `execute()` und führen darin Aktion auf
-    Receiver aus
+::: notes
+Aufbau:
+:::
+
+-   `Command`-Objekte haben eine Methode `execute()` und führen darin die Aktion auf
+    dem Receiver aus
 -   `Receiver` sind Objekte, auf denen Aktionen ausgeführt werden (Hero, Monster,
     ...)
 -   `Invoker` hat `Command`-Objekte und ruft darauf `execute()` auf
--   `Client` kennt alle und baut alles zusammen
+-   `Client` kennt alle Klassen und baut alles zusammen
 
 \bigskip
 \bigskip
@@ -251,7 +259,8 @@ sich Commands einzeln testen, indem man beispielsweise den Receiver mockt.
 Auch wenn es für C++ geschrieben ist, lässt sich zum Thema Command-Pattern das
 Kapitel 2 "Command" im @Nystrom2014 sehr gut lesen. Der Verweis auf @Gamma2011 der
 ["Gang of Four"](https://en.wikipedia.org/wiki/Design_Patterns) darf natürlich nicht
-fehlen.
+fehlen. Der [refactoring.guru](https://refactoring.guru/design-patterns/command) hat
+ebenfalls ein schönes Tutorial zum Command-Pattern.
 :::
 
 ::: outcomes
