@@ -307,11 +307,13 @@ Formatter/Layouts, Hierarchie) überträgt sich jedoch nahezu 1:1 darauf.
         weiter (rekursiv)
 
 ::: readings
--   @JDK-Doc [Kap. 8]
+Lesen Sie in der Dokumentation von Oracle zu den JDK Core Libraries nach: [Java
+Logging
+Overview](https://docs.oracle.com/en/java/javase/25/core/java-logging-overview.html).
 :::
 
 ::: outcomes
--   k3: Ich kann die Java Logging API im Paket java.util.logging aktiv einsetzen
+-   k3: Ich kann die Java Logging API im Paket `java.util.logging` aktiv einsetzen
 -   k3: Ich kann eigene Handler und Formatter schreiben
 :::
 
