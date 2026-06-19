@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Generics: Generics und Polymorphie"
+title: "Generics3: Generics und Polymorphie"
 ---
 
 ::: tldr

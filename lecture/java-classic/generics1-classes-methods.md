@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Generics: Generische Klassen & Methoden"
+title: "Generics1: Generische Klassen & Methoden"
 ---
 
 ::: tldr

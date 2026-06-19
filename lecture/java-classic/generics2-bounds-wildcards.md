@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Generics: Bounds & Wildcards"
+title: "Generics2: Bounds & Wildcards"
 ---
 
 ::: tldr
