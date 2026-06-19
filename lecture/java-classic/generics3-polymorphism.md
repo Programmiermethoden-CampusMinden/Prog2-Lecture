@@ -18,6 +18,158 @@ Bei Arrays ist es genau anders herum: Wenn `U extends O` dann gilt auch
 -   [VL Generics und Polymorphie](https://youtu.be/RiTA43wTixQ)
 :::
 
+
+<!-- TODO
+Slide 1: Typ-Erasure (TE) und PECS – kompakt erklärt + zwei Beispiele
+
+
+TE/PECS – kompakt erklärt
+
+
+
+Typparameter (Generics) werden zur Laufzeit durch Type Erasure gelöscht. Zur Laufzeit existiert nur der Rohtyp (z. B. List), nicht der konkrete Typparameter.
+
+PECS-Regel: Producer extends, Consumer super.
+
+Producer extends T: Du liest aus einer Struktur; die konkrete Unterklasse bleibt unbekannt.
+
+Consumer super T: Du schreibst in eine Struktur hinein; beim Lesen erhältst du nur Object.
+
+
+
+Warum das sinnvoll ist: Typ-Sicherheit bei Zugriffen, flexible Schnittstellen, dennoch Laufzeittypinformationen begrenzt.
+
+
+
+Beispiel 1: Typerasure (TE)
+
+
+
+
+Code:
+public class Box<T> { T value; }
+
+
+public class TEExample {
+public static void main(String[] args) {
+Box<Integer> bi = new Box<>();
+Box<String> bs = new Box<>();
+// Zur Laufzeit existiert nur Box, nicht Box<Integer> vs Box<String>
+System.out.println(bi.getClass() == bs.getClass()); // true
+}
+}
+
+
+
+
+Erläuterung:
+
+
+
+Beide Box-Instanzen haben zur Laufzeit denselben parametrisierten Typ-Typ (Box), daher ist der Vergleich true.
+
+Hinweis für Teilnehmende: TYPPARAMETER-Informationen existieren zur Laufzeit nicht mehr; generische Typen wirken wie der Rohtyp.
+
+
+
+
+
+Beispiel 2: PECS – zwei kompakte Fälle
+
+
+
+
+Producer extends (lesen, aber nicht sicher hinzufügen)
+
+
+
+
+Code:
+import java.util.List;
+import java.util.ArrayList;
+
+
+public class PECSProducer extends Object {
+public static void main(String[] args) {
+List<? extends Number> nums = new ArrayList<Integer>(); // erlaubt
+Number n = nums.get(0); // Lesen als Number ist möglich
+
+
+    // nums.add(1); // Kompilierfehler: Kann nicht sicher typisieren
+
+    // Consumer super (schreiben, aber Lesen nur als Object)
+    List<? super Integer> ints = new ArrayList<Number>();
+    ints.add(1); // Hinzufügen von Integer klappt
+    Object o = ints.get(0); // Lesen liefert Object (kein konkreter Typ bekannt)
+}
+Kopieren
+
+}
+
+
+
+
+Erläuterung:
+
+
+
+Bei List<? extends Number> darf man nichts Spezifisches in die Liste einfügen, außer null; man kann aber Elemente sicher als Number lesen.
+
+Bei List<? super Integer> darf man Integer oder Untertypen hineinlegen; beim Lesen erhält man ein Objekt (Object), da der konkrete Typ unten nicht bekannt ist.
+
+
+
+
+Praktischer Take-away: PECS hilft, Typ-Sicherheit zu wahren, wenn man sowohl lesen als auch schreiben will, je nach Kontext den passenden Bound wählen.
+
+
+
+
+Slide 2: Zusatzfolie – Kurzfassung für Studierende
+
+Kernbegriffe
+
+Wildcard ? steht für einen unbekannten Typ.
+
+Ungebundene Wildcard: List<?> – Zugriff auf Elemente ist eingeschränkt; konkret Typ unbekannt.
+
+Extends-Bound: List<? extends T> – lese- wie „kovariant“, du kannst Elemente als T lesen, aber nichts sicher hinein schreiben (außer null).
+
+Super-Bound: List<? super T> – schreibe- wie „kontravarient“, du kannst Werte vom Typ T hineinlegen, beim Lesen erhältst du Object.
+
+Typherasure (TE): Generische Typen werden zur Laufzeit gelöscht; Laufzeit kennt nur den Rohtyp (z. B. List), nicht List<Integer>.
+
+
+PECS in Kürze
+
+Producer extends: Du liest aus der Struktur; Bound wählen, der Obertyp liefern kann.
+
+Consumer super: Du schreibst in die Struktur hinein; Bound wählen, der Werte vom Typ T aufnehmen kann.
+
+
+Schnell-Checkliste
+
+Möchten Sie aus einer Struktur lesen, aber nicht sicher schreiben? Extends-Bound verwenden.
+
+Möchten Sie in eine Struktur schreiben, aber nicht sicher lesen? Super-Bound verwenden.
+
+Benutzen Sie ungebundene Wildcards sparsam, nur wenn der konkrete Typ wirklich egal ist.
+
+
+Kleine Merkhilfen
+
+List<? extends T> ist read-only in Bezug auf konkrete Typinformation.
+
+List<? super T> ist write-only in Bezug auf konkrete Typinformation; Lesen ergibt Object.
+
+
+Hinweise für den Unterricht
+
+TE ist konzeptionell wichtig, aber zur Laufzeit nicht sichtbar; PECS hilft bei API-Design, wenn Sie Flexibilität und Typ-Sicherheit zusammenbringen möchten.
+
+Achten Sie darauf, Studierende an konkreten Beispielen durch die drei Varianten von Hands-On zu führen (invariante Listen, List<?>, List<? extends T>, List<? super T>).
+-->
+
 # Generische Polymorphie
 
 ::: center
