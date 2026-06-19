@@ -369,9 +369,9 @@ Default-Formatierung). Alle beteiligten Logger und Handler akzeptieren das Level
 
 **Analyse eines Live-Beispiels aus dem Dungeon**
 
-Analysieren Sie die Konfiguration des Loggers im Dungeon-Projekt:
+Analysieren Sie die Konfiguration des Loggings im Dungeon-Projekt:
 [Dungeon-CampusMinden/Dungeon:
-core/utils/logging/LoggerConfig.java](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/game/src/core/utils/logging/LoggerConfig.java).
+core.utils.logging.DungeonLoggerConfig](https://github.com/Dungeon-CampusMinden/Dungeon/blob/master/dungeon/src/core/utils/logging/DungeonLoggerConfig.java).
 
 <!--
 - Code Qualität, Kommentar-Qualität?
