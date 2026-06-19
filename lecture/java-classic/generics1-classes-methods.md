@@ -12,6 +12,8 @@ Typen konkretisiert werden ("Typ-Parameter").
 Syntaktisch definiert man die Typ-Variablen in spitzen Klammern hinter dem
 Klassennamen bzw. vor dem Rückgabetyp einer Methode: `public class Stack<E> { }` und
 `public <T> T foo(T m) { }`.
+
+**Generics = Compile-Time-Typsicherheit**
 :::
 
 ::: youtube
@@ -21,36 +23,61 @@ Klassennamen bzw. vor dem Rückgabetyp einer Methode: `public class Stack<E> { }
 
 # Generische Strukturen
 
+::: notes
+## Naive Verwendung des Vectors als "raw type"
+:::
+
 ``` java
 Vector speicher = new Vector();
 speicher.add(1); speicher.add(2); speicher.add(3);
-speicher.add("huhu");
+speicher.add("huhu");   // Laufzeitfehler
 
 int summe = 0;
 for (Object i : speicher) { summe += (Integer)i; }
 ```
 
-::: notes
-Problem: Nutzung des "*raw*" Typs `Vector` ist nicht typsicher!
+::::: notes
+Hier nutzen wir den sogenannten **Raw Type** `Vector`: Die Klasse ist eigentlich
+generisch (`Vector<E>`), wir geben aber kein Typargument an. Dadurch gehen die
+Informationen über den Elementtyp verloren. Effektiv werden Elemente beim Auslesen
+als `Object` behandelt (und es entstehen Compiler-Warnungen).
 
--   Mögliche Fehler fallen erst zur Laufzeit und u.U. erst sehr spät auf: Offenbar
-    werden im obigen Beispiel `int`-Werte erwartet, d.h. das Hinzufügen von `"huhu"`
-    ist vermutlich ein Versehen (wird vom Compiler aber nicht bemerkt)
+::: important
+**Problem**: Nutzung des "*raw*" Typs `Vector` ist nicht typsicher!
+:::
+
+-   Mögliche Fehler fallen erst zur Laufzeit und damit u.U. erst sehr spät auf:
+    Offenbar werden im obigen Beispiel `int`-Werte erwartet, d.h. das Hinzufügen von
+    `"huhu"` ist vermutlich ein Versehen (wird vom Compiler aber nicht bemerkt)
 -   Die Iteration über `speicher` kann nur allgemein als `Object` erfolgen, d.h. in
     der Schleife muss auf den vermuteten/gewünschten Typ gecastet werden: Hier würde
     dann der String `"huhu"` Probleme zur Laufzeit machen
-:::
 
+::: tip
+*Anmerkung*: `Vector` ist streng genommen historisch ("Legacy"). Die Klasse ist für
+Multithreading/Nebenläufigkeit ausgelegt (Methoden sind synchronisiert) und
+verursacht dadurch in klassischen nicht nebenläufigen Programmen einen unnötigen
+Synchronisations-Overhead. Nutzen Sie für neuen, nicht nebenläufigen Code meist
+lieber `ArrayList`.
+:::
+:::::
+
+::: slides
 \pause
 \bigskip
 \smallskip
 \hrule
 \bigskip
+:::
+
+::: notes
+## Korrekte Nutzung des Vectors als generischen Typ
+:::
 
 ``` java
 Vector<Integer> speicher = new Vector<Integer>();
 speicher.add(1); speicher.add(2); speicher.add(3);
-speicher.add("huhu");
+speicher.add("huhu");   // Compilerfehler
 
 int summe = 0;
 for (Integer i : speicher) { summe += i; }
@@ -64,6 +91,8 @@ Vorteile beim Einsatz von Generics:
 -   Keine Vererbungshierarchie nötig
 -   Nutzung ist typsicher, Casting unnötig
 -   Geht nur für Referenztypen
+    -   Für primitive Typen gibt es Wrapper (`Integer`, `Double`, ...) und
+        Auto-Boxing/-Unboxing
 -   Beispiel: Collections-API
 :::
 
@@ -74,7 +103,7 @@ Vorteile beim Einsatz von Generics:
     ``` java
     public class Stack<E> {
         public E push(E item) {
-            addElement(item);
+            ...
             return item;
         }
     }
@@ -82,7 +111,8 @@ Vorteile beim Einsatz von Generics:
 
     -   `Stack<E>` =\> Generische (parametrisierte) Klasse (auch: "*generischer
         Typ*")
-    -   `E` =\> Formaler Typ-Parameter (auch: "*Typ-Variable*")
+    -   `E` =\> Formaler Typ-Parameter (auch: "*Typ-Variable*") [=\> Platzhalter in
+        der Definition (hier `E`)]{.notes}
 
 \pause
 \bigskip
@@ -94,7 +124,8 @@ Vorteile beim Einsatz von Generics:
     Stack<Integer> stack = new Stack<Integer>();
     ```
 
-    -   `Integer` =\> Typ-Parameter
+    -   `Integer` =\> Typ-Parameter [=\> Typ-Argument/konkreter Typ beim Nutzen
+        (hier `String`)]{.notes}
     -   `Stack<Integer>` =\> Parametrisierter Typ
 
 ::: notes
@@ -162,7 +193,7 @@ class PM<X, Y, Z> implements Fach<X, Z> {
 }
 
 class Studi<A,B> extends Person { ... }
-class Properties extends Hashtable<Object,Object> { ... }
+class MyProperties extends Hashtable<Object,Object> { ... }
 ```
 
 ::: notes
@@ -184,13 +215,27 @@ class Studi<T extends Mensch> {
     public void f(T t) { ... }
 }
 
-class Prof<T> extends Mensch { ... }
-
 class Tutor extends Studi<Mensch> {
     public void f(Mensch t) { ... }      // Ueberschreiben
     public void f(Tutor t) { ... }       // Ueberladen
 }
+
+class Prof<T> extends Mensch { ... }
 ```
+
+::: notes
+**Überschreiben** bedeutet, dass eine geerbte Methode in der Unterklasse neu
+definiert wird. In `Studi` gibt es die Methode `public void f(T t)`, die `Tutor`
+erbt. Da `Tutor extends Studi<Mensch>` gilt, wird `T` zu `Mensch` konkretisiert:
+`Tutor` erbt damit eine Methode mit der Signatur `public void f(Mensch t)` und
+definiert diese anschließend neu (überschreiben).
+
+**Überladen** bedeutet, eine Methode mit gleichem Namen zusätzlich mit anderer
+Parameterliste zu definieren (hier: `public void f(Tutor t)`).
+
+Überschreiben erfordert gleiche Parameterliste (nach Substitution) und kompatiblen
+Rückgabetyp; Überladen unterscheidet sich in der Parameterliste.
+:::
 
 # Vorsicht: So geht es nicht!
 
@@ -243,8 +288,8 @@ class Fluppie<T> extends Wuppie<S> { ... }
 ## Finden der richtigen Methode durch den Compiler
 
 1.  Zuerst Suche nach exakt passender Methode,
-2.  danach passend mit Konvertierungen =\> Compiler sucht gemeinsame Oberklasse in
-    Typhierarchie
+2.  danach passend mit Konvertierungen =\> Compiler sucht gemeinsame Oberklasse
+    ("least upper bound") in Typhierarchie
 
 ## Beispiel
 :::
@@ -316,6 +361,10 @@ public class GenericMethods {
 :::
 
 # Wrap-Up
+
+::: center
+**Generics = Compile-Time-Typsicherheit**
+:::
 
 -   Begriffe:
     -   Generischer Typ: `Stack<T>`
