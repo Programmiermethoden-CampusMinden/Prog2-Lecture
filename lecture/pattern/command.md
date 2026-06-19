@@ -243,8 +243,8 @@ sich Commands einzeln testen, indem man beispielsweise den Receiver mockt.
 Aufbau:
 :::
 
--   `Command`-Objekte haben eine Methode `execute()` und führen darin die Aktion auf
-    dem Receiver aus
+-   `Command`-Objekte haben [eine]{.notes} Methode `execute()`, führen darin
+    [die]{.notes} Aktion auf [dem]{.notes} Receiver aus
 -   `Receiver` sind Objekte, auf denen Aktionen ausgeführt werden (Hero, Monster,
     ...)
 -   `Invoker` hat `Command`-Objekte und ruft darauf `execute()` auf
