@@ -241,10 +241,12 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/mas
     -   `super`: Der Typ-Parameter muss eine Oberklasse eines bestimmten Typen sein
 
 ::: readings
--   @Ullenboom2021 [Kap. 11.3]
--   @LernJava
--   @Java-SE-Tutorial
--   @Bloch2018
+Lesen Sie zu diesem Thema auch in den Oracle-Tutorials
+["Wildcards"](https://docs.oracle.com/javase/tutorial/extra/generics/wildcards.html)
+und ["More Fun with
+Wildcards"](https://docs.oracle.com/javase/tutorial/extra/generics/morefun.html)
+sowie im dev.java-Tutorial ["Wildcards"](https://dev.java/learn/generics/wildcards/)
+nach.
 :::
 
 ::: outcomes
