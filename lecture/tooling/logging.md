@@ -211,6 +211,53 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 [Konsole: logging.LoggingParent; Tafel: Skizze Logger-Baum]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/tooling/src/logging/LoggingParent.java"}
 
+::: notes
+# Ausgabe von Logmeldungen - revisited
+
+Bei genauerem Hinschauen auf die API von `java.util.logging` erkennt man, dass es
+die `log`-Funktion in zwei Varianten gibt: Einmal mit einem String (der Message) als
+Parameter, und einmal mit einem *Supplier* (funktionales Interface aus dem JDK):
+
+``` java
+public void log(Level level, String msg);
+public void log(Level level, Supplier<String> msgSupplier);
+```
+
+Das gilt auch für die meisten Convenience-Log-Funktionen:
+
+``` java
+public void warning(String msg)
+public void warning(Supplier<String> msgSupplier)
+
+public void info(String msg)
+public void info(Supplier<String> msgSupplier)
+```
+
+Damit kann man den Aufruf auch mit einem Lambda-Ausdruck gestalten:
+
+``` java
+import java.util.logging.Logger;
+Logger l = Logger.getLogger(MyClass.class.getName());
+
+l.info("Hello World");        // String
+l.info(() -> "Hello World");  // Supplier
+```
+
+Das Logging mit `java.util.logging` ist an sich bereits sehr effizient: Wenn bei
+einem Aufruf einer Log-Funktion die eingestellten Level beim Logger, den Handlern
+und den Elternloggern nicht erreicht werden, wird nichts ausgegeben. Um noch
+effizienter zu werden, kann man auch das Bauen der Message selbst davon abhängig
+machen, ob man sie wirklich braucht: Während bei der ersten Aufruf-Variante mit dem
+String-Parameter die Message bereits vor dem Aufruf der Log-Methode berechnet werden
+muss, wird sie in der zweiten Variante erst dann wirklich berechnet, wenn sie
+gebraucht wird. Wenn die Log-Methode tatsächlich loggen kann (die verschiedenen
+Level werden erreicht), dann und nur dann wertet sie den übergebenen Lambda-Ausdruck
+aus und erzeugt dabei die auszugebende Message. (Anmerkung: Im obigen Beispiel ist
+das egal, da der String ohnehin fest ist und stets bekannt/berechnet ist. Aber
+stellen Sie sich statt `"Hello World`" einen Funktionsaufruf vor, der mehr oder
+wenig aufwändig einen String produziert ...)
+:::
+
 # Wrap-Up
 
 -   Java Logging API im Paket `java.util.logging`
