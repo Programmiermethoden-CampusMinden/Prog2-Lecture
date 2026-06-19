@@ -278,7 +278,7 @@ class Mensch {
         return m;
     }
 
-    // NICHT gleichzeitig erlaubt wg. Typ-Löschung (s.u.):
+    // NICHT gleichzeitig erlaubt wg. Typ-Löschung (siehe spätere Sitzung):
 /*
     public <T1, T2> T1 myst(T1 m, T2 n) {
         System.out.println("X#myst: T");
@@ -335,10 +335,13 @@ public class GenericMethods {
     -   "`<Typ>`" vor Rückgabewert
 
 ::: readings
--   @Ullenboom2021 [Kap. 11.1]
--   @LernJava
--   @Java-SE-Tutorial
--   @Bloch2018
+Lesen Sie zu diesem Thema auch in den Oracle-Tutorials ["Defining Simple
+Generics"](https://docs.oracle.com/javase/tutorial/extra/generics/simple.html) und
+["Generic
+Methods"](https://docs.oracle.com/javase/tutorial/extra/generics/methods.html) sowie
+in den dev.java-Tutorials ["Introducing
+Generics"](https://dev.java/learn/generics/intro/) und ["Type
+Inference"](https://dev.java/learn/generics/type-inference/) nach.
 :::
 
 ::: outcomes
