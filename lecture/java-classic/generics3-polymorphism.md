@@ -19,6 +19,25 @@ Bei Arrays ist es genau anders herum: Wenn `U extends O` dann gilt auch
 :::
 
 
+
+
+<!-- TODO
+hey, ich unterrichte das modul "programmieren 2" für studis im zweiten semester informatik an einer hochschule. es geht um vertiefende und fortgeschrittene kenntnisse in der programmiersprache java (moderne version: java 25) sowie um kenntnisse in git, testen (junit), loggen, debuggen, ...
+
+ich habe zu generics drei einheiten gebaut: (a) eine einführung,  (b) wildcards und bounds, (c) type erasure und polymorphie (varianz-diskussion).
+
+kannst du bitte einmal über mein skript zu wildcards und bounds (teil b) schauen und mir feedback geben? sind irgendwo fehler (inhaltlich, tippfehler, grammatik, ...)? ist das material für ein zweites semester verständlich genug? fehlt eventuell noch etwas?
+
+```markdown
+
+```
+-->
+
+
+
+
+
+
 <!-- TODO
 Slide 1: Typ-Erasure (TE) und PECS – kompakt erklärt + zwei Beispiele
 
@@ -169,6 +188,10 @@ TE ist konzeptionell wichtig, aber zur Laufzeit nicht sichtbar; PECS hilft bei A
 
 Achten Sie darauf, Studierende an konkreten Beispielen durch die drei Varianten von Hands-On zu führen (invariante Listen, List<?>, List<? extends T>, List<? super T>).
 -->
+
+
+
+
 
 # Generische Polymorphie
 
