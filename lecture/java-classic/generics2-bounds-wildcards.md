@@ -234,11 +234,11 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/mas
 
 \smallskip
 
--   Mit Bounds kann man Typ-Parameter nach oben oder nach unten einschränken (im
-    Sinne einer Vererbungshierarchie)
-    -   `extends`: Der Typ-Parameter muss eine Unterklasse eines bestimmten Typen
-        sein
-    -   `super`: Der Typ-Parameter muss eine Oberklasse eines bestimmten Typen sein
+-   Mit Bounds kann man Typ-Parameter/Wildcards nach oben oder nach unten
+    einschränken (im Sinne einer Vererbungshierarchie)
+    -   `extends`: Der Typ-Parameter bzw. die Wildcard muss eine Unterklasse eines
+        bestimmten Typen sein
+    -   `super`: Die Wildcard muss eine Oberklasse eines bestimmten Typen sein
 
 ::: readings
 Lesen Sie zu diesem Thema auch in den Oracle-Tutorials
