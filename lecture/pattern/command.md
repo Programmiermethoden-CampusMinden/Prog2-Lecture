@@ -7,8 +7,10 @@ title: Command-Pattern
 Das **Command-Pattern** ist die objektorientierte Antwort auf Callback-Funktionen:
 Man kapselt Befehle in einem Objekt.
 
-1.  Die `Command`-Objekte haben eine Methode `execute()` und führen dabei Aktion auf
-    einem bzw. "ihrem" Receiver aus.
+Ziel: Eingaben/Aktionen entkoppeln und konfigurierbar machen (und optional "Undo").
+
+1.  Die `Command`-Objekte haben eine Methode `execute()` und führen dabei eine
+    Aktion auf einem bzw. "ihrem" Receiver aus.
 
 2.  `Receiver` sind Objekte, auf denen Aktionen ausgeführt werden, im Dungeon
     könnten dies etwa Hero, Monster, ... sein. Receiver müssen keine der anderen
@@ -20,7 +22,7 @@ Man kapselt Befehle in einem Objekt.
     kennen (nur die `Command`-Schnittstelle).
 
 4.  Zusätzlich gibt es einen `Client`, der die anderen Akteure kennt und alles
-    zusammen baut.
+    zusammenbaut.
 :::
 
 ::: youtube
@@ -104,20 +106,20 @@ ausgeführt werden soll. Im Beispiel oben wurde dafür der `hero` genutzt.
 
 ![](images/command.png){web_width="80%"}
 
-::: notes
+:::: notes
 Im Command-Pattern gibt es vier beteiligte Parteien: Client, Receiver, Command und
 Invoker.
 
 Ein Command ist die objektorientierte Abstraktion eines Befehls. Es hat
-möglicherweise einen Zustand, und und kennt "seinen" Receiver und kann beim Aufruf
-der `execute()`-Methode eine vorher verabredete Methode auf diesem Receiver-Objekt
+möglicherweise einen Zustand, und kennt "seinen" Receiver und kann beim Aufruf der
+`execute()`-Methode eine vorher verabredete Methode auf diesem Receiver-Objekt
 ausführen.
 
 Ein Receiver ist eine Klasse, die Aktionen durchführen kann. Sie kennt die anderen
 Akteure nicht.
 
 Der Invoker (manchmal auch "Caller" genannt) ist eine Klasse, die Commands
-aggregiert und die die Commandos "ausführt", indem hier die `execute()`-Methode
+aggregiert und die die Kommandos "ausführt", indem hier die `execute()`-Methode
 aufgerufen wird. Diese Klasse kennt nur das `Command`-Interface und keine
 spezifischen Kommandos (also keine der Sub-Klassen). Es kann zusätzlich eine gewisse
 Buchführung übernehmen, etwa um eine Undo-Funktionalität zu realisieren.
@@ -135,7 +137,16 @@ In unserem Beispiel lassen sich die einzelnen Teile so sortieren:
     ausgeführt)
 -   Command: `Jump` und `Move`
 -   Invoker: `InputHandler` (in der Methode `handleInput()`)
+
+::: tip
+**Client** = die Stelle, wo verkabelt wird (z.B. `main`), **Invoker** = Ausführen
+der Commands.
+
+Die Rollen dürfen in der Praxis zusammenfallen: Eine Klasse kann mehrere Rollen
+übernehmen; hier in unserem Beispiel ist der `InputHandler` zugleich `Client` und
+`Invoker`.
 :::
+::::
 
 # Undo
 
@@ -199,6 +210,25 @@ angelegt wird und dieses nur einmal benutzt wird, braucht man keine weitere
 Buchhaltung ...
 :::
 
+::: notes
+# Abgrenzung zum Strategy-Pattern
+
+Beide Entwurfsmuster (Strategy-Pattern und Command-Pattern) kann man schnell
+verwechseln. Beide nutzen "irgendwie" Interfaces mit "irgendwelchen" Methoden ...
+
+**Strategy-Pattern**: Wir tauschen den Algorithmus aus, mit dem der Empfänger seine
+Aktion durchführt.
+
+**Command-Pattern**: Wir kapseln eine Aktion als Objekt. Dieses kann dann
+herumgereicht, gespeichert oder in eine Queue gesteckt werden. Es kann auch über
+eine undo-Fähigkeit verfügen, d.h. man kann die Aktion über das Objekt rückgängig
+machen.
+
+Das Command-Pattern ist besonders nützlich, wenn Sie Befehle speichern, loggen,
+replayen, undoen oder asynchron ausführen wollen. Im Zusammenhang mit JUnit lassen
+sich Commands einzeln testen, indem man beispielsweise den Receiver mockt.
+:::
+
 # Wrap-Up
 
 **Command-Pattern**: Kapsele Befehle in ein Objekt
@@ -240,7 +270,7 @@ einen Controller, welcher das Command-Pattern verwendet.
 -   "S" führt Ducken aus
 
 Schreiben Sie zusätzlich für den `Cursor` einen Controller, welcher das
-Command-Pattern mit Historie erfüllt (ebenfalls über die Tasten "W", "A", "S" und
+Command-Pattern mit Historie umsetzt (ebenfalls über die Tasten "W", "A", "S" und
 "D").
 
 Schreiben Sie eine Demo, um die Funktionalität Ihres Programmes zu demonstrieren.
