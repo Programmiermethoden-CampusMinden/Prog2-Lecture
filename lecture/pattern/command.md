@@ -226,8 +226,7 @@ fehlen.
 
 ::: outcomes
 -   k2: Ich kann den Aufbau des Command-Patterns erklären
--   k3: Ich kann das Command-Pattern auf konkrete Beispiele, etwa den PM-Dungeon,
-    anwenden
+-   k3: Ich kann das Command-Pattern auf konkrete Beispiele anwenden
 :::
 
 ::: challenges
