@@ -17,8 +17,11 @@ Klassennamen bzw. vor dem Rückgabetyp einer Methode: `public class Stack<E> { }
 :::
 
 ::: youtube
--   [VL Generische Klassen & Methoden](https://youtu.be/k6MFPW-shh8)
--   [Demo Generische Methoden](https://youtu.be/ekXBXge6VvE)
+Vorlesung \[[YT](https://youtu.be/zDphaqgkQ7o)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-generics1-generische-klassen-methoden/9b962d9dc71ad09eeb699d7d7530d121)\]
+
+Demo Generische Methoden \[[YT](https://youtu.be/qQubsV86ex4)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-generics-generische-methoden/2192f5afde0e931c75cf77a886cf4ea2)\]
 :::
 
 # Generische Strukturen
