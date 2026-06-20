@@ -29,11 +29,19 @@ des Loggers und (sofern nicht deaktiviert) an den Eltern-Logger weitergereicht.
 :::
 
 ::: youtube
--   [VL Logging](https://youtu.be/_jYWJzr1rkA)
--   [Demo Logging (Überblick)](https://youtu.be/fWSc5A_CPL8)
--   [Demo Log-Level](https://youtu.be/0UUVQCVYNHo)
--   [Demo Logging: Handler und Formatter](https://youtu.be/dYOYA99EfrY)
--   [Demo Weiterleitung an den Eltern-Logger](https://youtu.be/19Bki4IglWQ)
+Vorlesung \[[YT](https://youtu.be/aWayP0yztrs)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-logging/d6a401118a171270cd72651853eaaaf0)\]
+
+Demo:
+
+-   Logging (Überblick) \[[YT](https://youtu.be/SZVjKv_Li-0)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-logging-berblick/8df804d86f2d71adf5485520c01c9316)\]
+-   Log-Level \[[YT](https://youtu.be/DqAgCsyzgAY)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-logging-log-level/69645259c2bad49c6a21b9f6a452d92a)\]
+-   Handler und Formatter \[[YT](https://youtu.be/l3vCNtBBARc)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-logging-log-handler/4ee95e75c580e33d7987949a152922ee)\]
+-   Weiterleitung an den Eltern-Logger \[[YT](https://youtu.be/3JsuOpdDIcg)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-logging-weiterleitung-an-eltern-logger/36b8346d36b0a7e381d3d5b7b77e368d)\]
 :::
 
 # Wie prüfen Sie die Werte von Variablen/Objekten?
