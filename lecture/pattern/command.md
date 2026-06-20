@@ -26,7 +26,8 @@ Ziel: Eingaben/Aktionen entkoppeln und konfigurierbar machen (und optional "Undo
 :::
 
 ::: youtube
--   [VL Command-Pattern](https://youtu.be/F7RJ7YCVMS4)
+Vorlesung \[[YT](https://youtu.be/bvsmpVHKtNU)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-command-pattern/e3f939297cc131a7db2716c47d98491d)\]
 :::
 
 # Motivation
