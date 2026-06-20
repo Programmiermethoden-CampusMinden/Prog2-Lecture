@@ -6,17 +6,17 @@ title: "Generics2: Bounds & Wildcards"
 ::: tldr
 Typ-Parameter können durch **Bounds** eingeschränkt werden: `<T extends ...>`
 bedeutet, dass der Typ-Parameter `T` nach oben eingeschränkt wird ("upper bound").
-Durch `extends`-Bounds kann in einer Klasse bzw. Methode der Typ-Parameter so
-eingeschränkt werden, dass alle Methoden des Obertyps verwendet werden können.
+Durch `extends`-Bounds des Typ-Parameters können in der generischen Klasse/Methode
+dann alle Methoden der Schranke (Bound) verwendet werden.
 
 Ein **Wildcard** (`?`) steht für einen unbestimmten Typ. Ein Wildcard-Typ hat keinen
 Namen / ist nicht benennbar und ist innerhalb der Klasse/Methode nicht direkt
 zugreifbar. Wildcards können mit `? extends ...` nach oben ("upper bound") oder
 `? super ...` nach unten ("lower bound") eingeschränkt werden.
 
-Bei `? extends Bound` muss der konkrete Typ die Schranke selbst oder ein Subtyp
-davon sein. Bei `? super Bound` muss der konkrete Typ ein Supertyp (Obertyp) der
-angegebenen Schranke sein.
+Bei der Nutzung mit `? extends Bound` muss der konkrete Typ die Schranke selbst oder
+ein Subtyp davon sein. Analog muss bei der Nutzung mit `? super Bound` der konkrete
+Typ die Schranke selbst oder ein Supertyp (Obertyp) der angegebenen Schranke sein.
 :::
 
 ::: youtube
@@ -52,16 +52,14 @@ Cps<String> c;  // Fehler!!!
     ```
 
 :::: notes
-Falls eine Klasse einem gemeinsamen Obertyp folgen soll, können mehrere Bound-Typen
-durch `&` verbunden werden. Der erste Bound kann eine Klasse (z.B. `Number`) sein;
-alle weiteren Bound-Typen müssen Interfaces sein. Wenn kein Klassen-Bound existiert,
+Falls eine Klasse mehreren Obertypen folgen soll, können mehrere Bound-Typen durch
+`&` verbunden werden. Der erste Bound kann eine Klasse (z.B. `Number`) sein; alle
+weiteren Bound-Typen müssen Interfaces sein. Wenn kein Klassen-Bound existiert,
 können alle Bound-Typen Interfaces sein.
 
 ::: tip
-*Anmerkung*: Der Typ-Parameter ist analog auch mit `super` (nach unten)
-einschränkbar. Das schauen wir uns im Zusammenhang mit Vererbungsbeziehungen und
-Polymorphie im dritten Teil ["Generics3: Generics und
-Polymorphie"](generics3-polymorphism.md) noch genauer an.
+*Anmerkung*: Der Typ-Parameter ist **nur** mit `extends` nach oben beschränkbar. Für
+die Wildcards gibt es zusätzlich auch noch die Beschränkung mit `super` nach unten.
 :::
 
 [Beispiel bounds.Cps]{.ex
@@ -95,8 +93,8 @@ public class Wuppie {
 ::: notes
 Die Wildcard `?` steht für einen unbekannten Typ. `List<?>` erlaubt `List`-Objekte
 jedes Typs, aber innerhalb der Methode kann man nicht sicher auf spezifische
-Eigenschaften des konkreten Typs zugreifen. `List<?>` ist also **nicht** eine "Liste
-von `Object`", sondern "Liste von unbekanntem Typ".
+Eigenschaften des konkreten Typs zugreifen. **Wichtig**: `List<?>` ist also
+**nicht** eine "Liste von `Object`", sondern eine Liste von "unbekanntem Typ".
 
 -   Typvariable: "ich benenne den Typ und kann ihn mehrfach verwenden"
 -   Wildcard: "ich akzeptiere etwas Unbekanntes, kann es aber nicht benennen"
@@ -104,13 +102,13 @@ von `Object`", sondern "Liste von unbekanntem Typ".
 Mit `List<? extends A>` erlaubt man Listen von Elementen, die `A` oder eine
 Unterklasse von `A` sind (*kovariant*, siehe auch Diskussion in ["Generics3:
 Generics und Polymorphie"](generics3-polymorphism.md)); man kann Elemente als `A`
-lesen/nutzen, aber nicht sicher als `A` hinzufügen (weil der echte Typ wg. des
-Wildcards unbekannt ist - es könnte ein beliebiger Untertyp von `A` sein).
+lesen/nutzen, aber nicht sicher als `A` der Liste hinzufügen (weil der echte Typ wg.
+des Wildcards unbekannt ist - es könnte ein beliebiger Untertyp von `A` sein).
 
 Weitere Eigenschaften:
 
 -   Durch Wildcard kein Zugriff auf den Typ
--   Wildcard kann durch upper bound eingeschränkt werden
+-   Wildcard kann durch upper bound oder lower bound eingeschränkt werden
 -   Geht nicht bei Klassen-/Interface-Definitionen, hier wird eine Typ-Variable
     benötigt
 
