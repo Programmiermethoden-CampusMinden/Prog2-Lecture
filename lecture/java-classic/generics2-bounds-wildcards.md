@@ -20,8 +20,11 @@ angegebenen Schranke sein.
 :::
 
 ::: youtube
--   [VL Generics: Bounds & Wildcards](https://youtu.be/OV2vEn2EkWo)
--   [Demo Wildcards](https://youtu.be/D2hIicsho7I)
+Vorlesung \[[YT](https://youtu.be/RldFHSKeRgk)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-generics2-bounds-wildcards/b7e0a752fa21c7176b7fad5a8636a780)\]
+
+Demo Wildcards \[[YT](https://youtu.be/vBi5wSMPJRI)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-generics-wildcards/c8a1c9525ec8bdd3b0811f31f63eb45d)\]
 :::
 
 # Bounds: Einschränken der generischen Typen
