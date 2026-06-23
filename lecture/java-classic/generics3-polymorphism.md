@@ -197,19 +197,69 @@ Achten Sie darauf, Studierende an konkreten Beispielen durch die drei Varianten 
 -->
 
 
-
-
-
-# Generische Polymorphie
-
-::: center
-`B<E> extends A<E>`
-:::
-
-\bigskip
-\bigskip
+# Motivation: Wie verhalten sich generische Typen zueinander
 
 ::: notes
+Wir haben uns schon angeschaut:
+
+- generische Klassen/Methoden: `class Box<T> { ... }`, `static <T> void m(T x) {...}`
+- Bounds: `T extends Number`
+- Wildcards: `List<? extends Number>`
+
+Die Frage für heute: **Wie verhalten sich generische Typen zueinander**?
+:::
+
+```java
+interface Animal {
+    default void eat() {};
+}
+record Dog() extends Animal {}
+record Cat() extends Animal {}
+```
+
+\bigskip
+
+Da `Cat` eine Unterklasse von `Animal` ist: Ist `List<Cat>` dann auch eine Unterklasse von `List<Animal>`?
+
+```java
+List<Animal> animals = new ArrayList<Cat>();  // ???
+```
+
+# Invarianz generischer Klassen in Java
+
+::: notes
+Angenommen, `List<Animal> animals = new ArrayList<Cat>();` wäre erlaubt. Dann würde das Folgende auch erlaubt sein:
+:::
+
+
+```java
+List<Cat> cats = new ArrayList<>();
+List<Animal> animals = cats;  // hypothetisch erlaubt
+
+animals.add(new Dog());       // erlaubt, weil animals: List<Animal>
+Cat c = cats.getFirst();      // aber jetzt steckt ein Dog in cats!
+```
+
+\pause
+
+**Widerspruch zur Typ­sicherheit**
+
+\bigskip
+
+::: important
+Java: generische Klassen sind **invariant**
+
+Wenn `A` $\subseteq$ `B` (A Untertyp von B), dann folgt **nicht** `List<A>` $\subseteq$ `List<B>`.
+:::
+
+::: notes
+=\> Polymorphie bei Generics bezieht sich auf **Typ** (nicht Typ-Parameter)
+
+**Invarianz**: Generics sind *invariant*, d.h. ein `HashSet<String>` ist ein
+Untertyp von `Set<String>`. Bei der Vererbung muss der Typ-Parameter identisch sein.
+
+Beispiele:
+
 ``` java
 class A<E> { ... }
 class B<E> extends A<E> { ... }
@@ -217,7 +267,6 @@ class B<E> extends A<E> { ... }
 A<Double> ad = new B<Double>();
 A<String> as = new B<String>();
 ```
-:::
 
 ``` java
 class Vector<E> { ... }
@@ -226,45 +275,104 @@ class Stack<E> extends Vector<E> { ... }
 Vector<Double> vd = new Stack<Double>();
 Vector<String> vs = new Stack<String>();
 ```
+:::
 
-\bigskip
 
-=\> Polymorphie bei Generics bezieht sich auf **Typ** (nicht Typ-Parameter)
+# Kovarianz mit `? extends` (Producer)
+
 
 ::: notes
-**Invarianz**: Generics sind *invariant*, d.h. ein `HashSet<String>` ist ein
-Untertyp von `Set<String>`. Bei der Vererbung muss der Typ-Parameter identisch sein.
+Motivation:
+
+Wir wollen lesen können: Eine Methode soll alle "Listen von Tieren" akzeptieren, egal ob `List<Dog>`, `List<Cat>` oder `List<Animal>`.
 :::
 
-# Polymorphie bei Generics bezieht sich nur auf Typ!
+```java
+static void feedAll(List<? extends Animal> animals) {
+    for (Animal a : animals) { a.eat(); }
 
-\bigskip
-
-::: center
-"`B extends A`" **bedeutet nicht** "`C<B> extends C<A>`"
-:::
-
-\bigskip
-\bigskip
-
-``` java
-Stack<Number> s = new Stack<Integer>(); // DAS GEHT SO NICHT!
-
-// Folgen (wenn obiges gehen wuerde):
-s.push(new Integer(3)); // das ginge sowieso ...
-
-// Folgen (wenn obiges gehen wuerde):
-// Stack<Number> waere Oberklasse auch von Stack<Double>
-s.push(new Double(2.0)); // waere dann auch erlaubt ...
-
-// Das Objekt (Stack<Integer>) kann aber keine Double speichern!
-// Zur Laufzeit keine Typ-Informationen mehr!
+    // animals.add(new Cat()); // Compiler-Fehler
+}
 ```
 
 ::: notes
--   Typ-Löschung =\> zur Laufzeit keine Typinformationen vorhanden
--   Compiler muss Typen prüfen (können)!
+Erklärung:
+
+-   `animals` ist eine Liste von **irgendetwas**, das **mindestens** ein `Animal` ist
+-   Wir wissen deshalb: Jeder Eintrag hat die Schnittstelle von `Animal` $\to$ `a.eat()` ist also sicher
+
+=> Diese Liste ist ein *"Producer"* von `Animal`‑Objekten (wir holen nur raus, wir lesen nur).
+
+Darf man auch Elemente der Liste `animals` hinzufügen? => NEIN!
+
+- Zur Laufzeit könnte es z.B. eine `List<Dog>` sein
+- Dann wäre `animals.add(new Cat())` nicht typ­sicher
+
+=> Konsequenz: Bei `List<? extends Animal>` ist **lesen sicher**, **schreiben (`add`) verboten**.
 :::
+
+\pause
+
+::: important
+**Kovarianz** durch `? extends T`:
+
+- "Ich akzeptiere Listen von Untertypen von `T`."
+- Nur sicher als **Producer** von `T` (lesen erlaubt).
+
+\smallskip
+
+- `List<Cat>` ist **kein** Untertyp von `List<Animal>`
+- Aber: `List<Cat>` ist ein Untertyp von `List<? extends Animal>`
+:::
+
+
+# Kontravarianz mit `? super` (Consumer)
+
+::: notes
+Jetzt die andere Richtung:
+
+Wir wollen eine Methode, die hinzufügen kann: z.B. alle `Cat` in irgendeine Liste stecken, die "`Cat` oder allgemeiner“ ist.
+:::
+
+```java
+static void addCats(List<? super Cat> cats) {
+    cats.add(new Cat());         // erlaubt
+    // Cat c = cats.getFirst();  // geht nicht: Rückgabetyp ist Object
+}
+```
+
+::: notes
+Erklärung:
+
+- `cats` ist eine Liste von `Cat` oder einem Supertyp (`Cat`, `Animal`, `Object`)
+- Es ist immer sicher, eine `Cat` hinzuzufügen, denn:
+    - Eine Liste von `Cat` darf Cats enthalten
+    - Eine Liste von `Animal` darf Cats (als Untertyp) enthalten
+    - Eine Liste von `Object` sowieso
+
+Aber:
+
+-   Beim Lesen weiß der Compiler nicht, ob wirklich eine `List<Cat>` übergeben wurde - er kennt nur `? super Cat`
+-   Sicherer gemeinsamer Nenner: `Object`
+:::
+
+
+\pause
+
+::: important
+**Kontravarianz** durch `? super T`:
+
+- "Ich akzeptiere Listen von Supertypen von `T`."
+- Nur sicher als **Consumer** von `T` (schreiben/hinzufügen erlaubt).
+
+\smallskip
+
+`List<? extends Animal>` ist ein Supertyp von `List<Cat>`
+:::
+
+
+
+
 
 # Abgrenzung: Polymorphie bei Arrays
 
@@ -623,7 +731,9 @@ Grund: Es gibt nur `List.class` (und kein `List<String>.class` bzw.
 :::
 
 ::: outcomes
--   k2: Ich verstehe 'Typ-Löschung' bei Generics und kann die Auswirkungen erklären
+- k2: Ich verstehe, warum `List<Dog>` kein Untertyp von `List<Animal>` ist (Invarianz)
+-   k2: Ich verstehe, was Type Erasure bedeutet und kann erklären, welche praktischen Folgen das hat
 -   k3: Ich kann Vererbungsbeziehungen mit generischen Klassen bilden
+- k3: Ich kann erklären, wann `? extends` und wann `? super passt` (PECS)
 -   k3: Ich kann mit Arrays und generischen Typen umgehen
 :::
