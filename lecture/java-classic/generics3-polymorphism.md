@@ -8,10 +8,10 @@ Auch mit generischen Klassen stehen die Mechanismen Vererbung und Überladen zur
 Verfügung. Dabei muss aber beachtet werden, dass generische Klassen sich
 **"invariant"** verhalten: Der Typ selbst folgt der Vererbungsbeziehung, eine
 Vererbung des Typ-Parameters begründet *keine* Vererbungsbeziehung! D.h. aus
-`U extends O` folgt **nicht** `A<U> extends A<O>`.
+`U <: O` folgt **nicht** `A<U> <: A<O>`.
 
-Bei Arrays ist es genau anders herum: Wenn `U extends O` dann gilt auch
-`U[] extends O[]` ... (Dies nennt man "*kovariantes*" Verhalten.)
+Bei Arrays ist es genau anders herum: Wenn `U <: O` dann gilt auch `U[] <: O[]` ...
+(Dies nennt man "*kovariantes*" Verhalten.)
 
 Generics existieren eigentlich nur auf Quellcode-Ebene. Nach der Typ-Prüfung etc.
 entfernt der Compiler alle generischen Typ-Parameter und alle `<...>` (=\>
@@ -40,10 +40,10 @@ Die Frage für heute: **Wie verhalten sich generische Typen zueinander**?
 
 ``` java
 interface Animal {
-    default void eat() {};
+    default void eat() {}
 }
-record Dog() extends Animal {}
-record Cat() extends Animal {}
+record Dog() implements Animal {}
+record Cat() implements Animal {}
 ```
 
 \bigskip
@@ -92,7 +92,8 @@ Wenn `A <: B` (`A` Untertyp von `B`), dann folgt **nicht** `List<A> <: List<B>`.
 Es gilt zwar: `Cat <: Animal`, aber nicht `List<Cat> <: List<Animal>` (und auch
 nicht `List<Animal> <: List<Cat>`).
 
-=\> Polymorphie bei Generics bezieht sich auf **Typ** (nicht Typ-Parameter)
+=\> Polymorphie bei Generics bezieht sich auf den **Klassen‑/Schnittstellentyp**
+selbst, nicht auf den Typ‑Parameter.
 
 **Invarianz**: Generics sind *invariant*, d.h. ein `HashSet<String>` ist ein
 Untertyp von `Set<String>`. Bei der Vererbung muss der Typ-Parameter identisch sein.
@@ -166,15 +167,15 @@ Darf man auch Elemente der Liste `animals` hinzufügen? NEIN!
 ::: important
 **Kovarianz** durch `? extends T`:
 
--   "Ich akzeptiere Listen von Untertypen von `T`."
+-   "Ich akzeptiere Listen von Untertypen von `T`"
 -   Nur sicher als **Producer** von `T` (lesen erlaubt).
 
 \smallskip
 
 -   `List<Cat>` ist **kein** Untertyp von `List<Animal>`
--   Aber: `List<Cat>` ist ein Untertyp von `List<? extends Animal>`
+-   Aber: `List<Cat>  <:  List<? extends Animal>`
 -   "Kovarianz-Leiter":
-    `List<Integer> <: List<? extends Integer> <: List<? extends Number> <: List<?>`
+    `List<Integer>  <:  List<? extends Integer>  <:  List<? extends Number>  <:  List<?>`
 :::
 
 # Kontravarianz mit `? super` (Consumer: nur schreiben)
@@ -214,14 +215,15 @@ Aber:
 ::: important
 **Kontravarianz** durch `? super T`:
 
--   "Ich akzeptiere Listen von Supertypen von `T`."
+-   "Ich akzeptiere Listen von Supertypen von `T`"
 -   Nur sicher als **Consumer** von `T` (schreiben/hinzufügen erlaubt).
 
 \smallskip
 
--   `List<? extends Animal>` ist ein Supertyp von `List<Cat>`
+-   `? super Cat` bedeutet: Typ‑Argument ist `Cat`, `Animal` oder `Object`
+-   `List<Animal>  <:  List<? super Cat>`
 -   "Kontravarianz-Leiter":
-    `List<Number> <: List<? super Number> <: List<? super Integer> <: List<?>`
+    `List<Number>  <:  List<? super Number>  <:  List<? super Integer>  <:  List<?>`
 :::
 
 # PECS: Producer Extends, Consumer Super
@@ -265,13 +267,13 @@ void bar(List<? super T> ys)     { ... }  // "super"-Fall
 Die PECS‑Merksätze sagen: "Was kann ich mit diesem Parameter **sicher** machen?"
 
 -   `List<? extends T> xs`: **Producer** von `T`
-    -   Die Liste `xs` "produziert" Objekte vom (Unter-) Typ `T`
-    -   "Ich kann aus `xs` Dinge vom Typ `T` herausbekommen" "-"Die Liste `xs` gibt
-        Objekte vom (Unter-) Typ `T` heraus"
+    -   Die Liste `xs` "produziert" Objekte vom Typ `T`
+    -   "Ich kann aus `xs` Dinge vom Typ `T` herausbekommen"
+    -   "Die Liste `xs` gibt Objekte vom Typ `T` heraus"
 -   `List<? super T> ys`: **Consumer** von `T`
-    -   Die Liste `ys` "konsumiert" Objekte vom (Super-) Typ `T`
+    -   Die Liste `ys` "konsumiert" Objekte vom Typ `T`
     -   "Ich kann in `ys` Dinge vom Typ `T` hineinstecken"
-    -   "Die Liste `ys` nimmt Objekte vom (Super-) Typ `T` an"
+    -   "Die Liste `ys` nimmt Objekte vom Typ `T` an"
 
 "Producer/Consumer" meint hier die Liste (bzw. den Parametertyp), nicht die Methode!
 :::
@@ -421,7 +423,7 @@ den Byte-Code schreibt. Da hat er vorher bereits die Typsicherheit geprüft und 
 baut auch die passenden Casts ein.
 
 Das Thema ist eigentlich nur noch aus Kompatibilität zu Java5 oder früher da, weil
-es dort noch keine Generics gab (wurden erst mit Java6 eingeführt).
+es dort noch keine Generics gab (wurden erst mit Java5 eingeführt).
 :::
 ::::
 
@@ -480,7 +482,15 @@ Attribute teilen `\newline`{=tex} (Typ zur Laufzeit unklar!).
 
 \smallskip
 
-*Hinweis*: Generische (statische) Methoden sind erlaubt. (Warum?)
+**Hinweis**: Generische (statische) Methoden sind erlaubt. (Warum?)
+
+::: notes
+``` java
+class Fach<T> {
+    static <U> Fach<U> createEmpty() { ... } // generische statische Methode ist ok
+}
+```
+:::
 
 ::::::: notes
 # Folgen der Typ-Löschung: *instanceof*
@@ -559,10 +569,10 @@ Laufzeit**.
 
 ``` java
 String[] sa = new String[10];
-Object[]  oa = sa;       // erlaubt: Array-Kovarianz
+Object[] oa = sa;         // erlaubt: Array-Kovarianz
 
-x[0] = "Hallo";          // ok
-x[0] = new Double(2.0);  // Laufzeitfehler
+oa[0] = "Hallo";          // ok
+oa[0] = new Double(2.0);  // Laufzeitfehler
 ```
 
 \bigskip
@@ -657,6 +667,11 @@ generischen Typen entfernt werden.
 
 # Wrap-Up
 
+::: center
+**Generics gibt es nur im Compiler, Arrays gibt es auch in der JVM mit vollem
+Typwissen.**
+:::
+
 -   **Invarianz**: Generische Typen wie `List<T>` sind **invariant**
     -   `List<Cat>` ist **kein** Untertyp von `List<Animal>`
     -   `List<Animal>` ist **kein** Untertyp von `List<Cat>`
@@ -693,6 +708,6 @@ Subtyping"](https://dev.java/learn/generics/wildcards/#subtyping) nach.
 -   k2: Ich verstehe, was Type Erasure bedeutet und kann erklären, welche
     praktischen Folgen das hat
 -   k3: Ich kann Vererbungsbeziehungen mit generischen Klassen bilden
--   k3: Ich kann erklären, wann `? extends` und wann `? super passt` (PECS)
+-   k3: Ich kann erklären, wann `? extends` und wann `? super` passt (PECS)
 -   k3: Ich kann mit Arrays und generischen Typen umgehen
 :::
