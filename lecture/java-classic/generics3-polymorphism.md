@@ -25,191 +25,20 @@ wegen der Auswirkungen aber auf dem Radar haben!
 -   [VL Generics und Polymorphie](https://youtu.be/RiTA43wTixQ)
 :::
 
-
-
-
-<!-- TODO
-hey, ich unterrichte das modul "programmieren 2" für studis im zweiten semester informatik an einer hochschule. es geht um vertiefende und fortgeschrittene kenntnisse in der programmiersprache java (moderne version: java 25) sowie um kenntnisse in git, testen (junit), loggen, debuggen, ...
-
-ich habe zu generics drei einheiten gebaut: (a) eine einführung,  (b) wildcards und bounds, (c) type erasure und polymorphie (varianz-diskussion).
-
-kannst du bitte einmal über mein skript zu wildcards und bounds (teil b) schauen und mir feedback geben? sind irgendwo fehler (inhaltlich, tippfehler, grammatik, ...)? ist das material für ein zweites semester verständlich genug? fehlt eventuell noch etwas?
-
-```markdown
-
-```
--->
-
-
-
-
-
-
-<!-- TODO
-Slide 1: Typ-Erasure (TE) und PECS - kompakt erklärt + zwei Beispiele
-
-
-TE/PECS - kompakt erklärt
-
-
-
-Typparameter (Generics) werden zur Laufzeit durch Type Erasure gelöscht. Zur Laufzeit existiert nur der Rohtyp (z. B. List), nicht der konkrete Typparameter.
-
-PECS-Regel: Producer extends, Consumer super.
-
-Producer extends T: Du liest aus einer Struktur; die konkrete Unterklasse bleibt unbekannt.
-
-Consumer super T: Du schreibst in eine Struktur hinein; beim Lesen erhältst du nur Object.
-
-
-
-Warum das sinnvoll ist: Typ-Sicherheit bei Zugriffen, flexible Schnittstellen, dennoch Laufzeittypinformationen begrenzt.
-
-
-
-Beispiel 1: Typerasure (TE)
-
-
-
-
-Code:
-public class Box<T> { T value; }
-
-
-public class TEExample {
-public static void main(String[] args) {
-Box<Integer> bi = new Box<>();
-Box<String> bs = new Box<>();
-// Zur Laufzeit existiert nur Box, nicht Box<Integer> vs Box<String>
-System.out.println(bi.getClass() == bs.getClass()); // true
-}
-}
-
-
-
-
-Erläuterung:
-
-
-
-Beide Box-Instanzen haben zur Laufzeit denselben parametrisierten Typ-Typ (Box), daher ist der Vergleich true.
-
-Hinweis für Teilnehmende: TYPPARAMETER-Informationen existieren zur Laufzeit nicht mehr; generische Typen wirken wie der Rohtyp.
-
-
-
-
-
-Beispiel 2: PECS - zwei kompakte Fälle
-
-
-
-
-Producer extends (lesen, aber nicht sicher hinzufügen)
-
-
-
-
-Code:
-import java.util.List;
-import java.util.ArrayList;
-
-
-public class PECSProducer extends Object {
-public static void main(String[] args) {
-List<? extends Number> nums = new ArrayList<Integer>(); // erlaubt
-Number n = nums.get(0); // Lesen als Number ist möglich
-
-
-    // nums.add(1); // Kompilierfehler: Kann nicht sicher typisieren
-
-    // Consumer super (schreiben, aber Lesen nur als Object)
-    List<? super Integer> ints = new ArrayList<Number>();
-    ints.add(1); // Hinzufügen von Integer klappt
-    Object o = ints.get(0); // Lesen liefert Object (kein konkreter Typ bekannt)
-}
-Kopieren
-
-}
-
-
-
-
-Erläuterung:
-
-
-
-Bei List<? extends Number> darf man nichts Spezifisches in die Liste einfügen, außer null; man kann aber Elemente sicher als Number lesen.
-
-Bei List<? super Integer> darf man Integer oder Untertypen hineinlegen; beim Lesen erhält man ein Objekt (Object), da der konkrete Typ unten nicht bekannt ist.
-
-
-
-
-Praktischer Take-away: PECS hilft, Typ-Sicherheit zu wahren, wenn man sowohl lesen als auch schreiben will, je nach Kontext den passenden Bound wählen.
-
-
-
-
-Slide 2: Zusatzfolie - Kurzfassung für Studierende
-
-Kernbegriffe
-
-Wildcard ? steht für einen unbekannten Typ.
-
-Ungebundene Wildcard: List<?> - Zugriff auf Elemente ist eingeschränkt; konkret Typ unbekannt.
-
-Extends-Bound: List<? extends T> - lese- wie „kovariant“, du kannst Elemente als T lesen, aber nichts sicher hinein schreiben (außer null).
-
-Super-Bound: List<? super T> - schreibe- wie „kontravarient“, du kannst Werte vom Typ T hineinlegen, beim Lesen erhältst du Object.
-
-Typherasure (TE): Generische Typen werden zur Laufzeit gelöscht; Laufzeit kennt nur den Rohtyp (z. B. List), nicht List<Integer>.
-
-
-PECS in Kürze
-
-Producer extends: Du liest aus der Struktur; Bound wählen, der Obertyp liefern kann.
-
-Consumer super: Du schreibst in die Struktur hinein; Bound wählen, der Werte vom Typ T aufnehmen kann.
-
-
-Schnell-Checkliste
-
-Möchten Sie aus einer Struktur lesen, aber nicht sicher schreiben? Extends-Bound verwenden.
-
-Möchten Sie in eine Struktur schreiben, aber nicht sicher lesen? Super-Bound verwenden.
-
-Benutzen Sie ungebundene Wildcards sparsam, nur wenn der konkrete Typ wirklich egal ist.
-
-
-Kleine Merkhilfen
-
-List<? extends T> ist read-only in Bezug auf konkrete Typinformation.
-
-List<? super T> ist write-only in Bezug auf konkrete Typinformation; Lesen ergibt Object.
-
-
-Hinweise für den Unterricht
-
-TE ist konzeptionell wichtig, aber zur Laufzeit nicht sichtbar; PECS hilft bei API-Design, wenn Sie Flexibilität und Typ-Sicherheit zusammenbringen möchten.
-
-Achten Sie darauf, Studierende an konkreten Beispielen durch die drei Varianten von Hands-On zu führen (invariante Listen, List<?>, List<? extends T>, List<? super T>).
--->
-
-
 # Motivation: Wie verhalten sich generische Typen zueinander
 
 ::: notes
 Wir haben uns schon angeschaut:
 
-- generische Klassen/Methoden: `class Box<T> { ... }`, `static <T> void m(T x) {...}`
-- Bounds: `T extends Number`
-- Wildcards: `List<? extends Number>`
+-   generische Klassen/Methoden: `class Box<T> { ... }`,
+    `static <T> void m(T x) {...}`
+-   Bounds: `T extends Number`
+-   Wildcards: `List<? extends Number>`
 
 Die Frage für heute: **Wie verhalten sich generische Typen zueinander**?
 :::
 
-```java
+``` java
 interface Animal {
     default void eat() {};
 }
@@ -221,24 +50,25 @@ record Cat() extends Animal {}
 
 Da `Cat <: Animal` gilt: Ist dann auch `List<Cat> <: List<Animal>`?
 
-::: notes
+:::: notes
 ::: tip
-Den `<:`-Operator lesen Sie bitte als "Subtyp-Relation", d.h. `A <: B` heißt: "`A` ist ein Untertyp von `B`" bzw. "`A` ist Subtyp von `B`".
+Den `<:`-Operator lesen Sie bitte als "Subtyp-Relation", d.h. `A <: B` heißt: "`A`
+ist ein Untertyp von `B`" bzw. "`A` ist Subtyp von `B`".
 :::
+::::
 
-
-```java
+``` java
 List<Animal> animals = new ArrayList<Cat>();  // ???
 ```
 
 # Invarianz generischer Klassen in Java
 
 ::: notes
-Angenommen, `List<Animal> animals = new ArrayList<Cat>();` wäre erlaubt. Dann würde das Folgende auch erlaubt sein:
+Angenommen, `List<Animal> animals = new ArrayList<Cat>();` wäre erlaubt. Dann würde
+das Folgende auch erlaubt sein:
 :::
 
-
-```java
+``` java
 List<Cat> cats = new ArrayList<>();
 List<Animal> animals = cats;  // hypothetisch erlaubt
 
@@ -259,7 +89,8 @@ Wenn `A <: B` (`A` Untertyp von `B`), dann folgt **nicht** `List<A> <: List<B>`.
 :::
 
 ::: notes
-Es gilt zwar: `Cat <: Animal`, aber nicht `List<Cat> <: List<Animal>` (und auch nicht `List<Animal> <: List<Cat>`).
+Es gilt zwar: `Cat <: Animal`, aber nicht `List<Cat> <: List<Animal>` (und auch
+nicht `List<Animal> <: List<Cat>`).
 
 =\> Polymorphie bei Generics bezieht sich auf **Typ** (nicht Typ-Parameter)
 
@@ -285,18 +116,18 @@ Vector<String> vs = new Stack<String>();
 ```
 :::
 
-
 # Kovarianz mit `? extends` (Producer: nur lesen)
 
 ::: notes
 Problem:
 
-Wir wollen lesen können: Eine Methode soll alle "Listen von Tieren" akzeptieren, egal ob `List<Dog>`, `List<Cat>` oder `List<Animal>`.
+Wir wollen lesen können: Eine Methode soll alle "Listen von Tieren" akzeptieren,
+egal ob `List<Dog>`, `List<Cat>` oder `List<Animal>`.
 
 Lösung: `? extends Animal`:
 :::
 
-```java
+``` java
 static void feedAll(List<? extends Animal> animals) {
     for (Animal a : animals) { a.eat(); }
 
@@ -313,17 +144,21 @@ feedAll(cats);
 ::: notes
 Erklärung:
 
--   `animals` ist eine Liste von **irgendetwas**, das **mindestens** ein `Animal` ist
--   Wir wissen deshalb: Jedes Element der Liste hat die Schnittstelle von `Animal` $\to$ `a.eat()` ist also sicher
+-   `animals` ist eine Liste von **irgendetwas**, das **mindestens** ein `Animal`
+    ist
+-   Wir wissen deshalb: Jedes Element der Liste hat die Schnittstelle von `Animal`
+    $\to$ `a.eat()` ist also sicher
 
-=> Diese Liste ist ein **"Producer"** von `Animal`‑Objekten (wir holen nur raus, wir lesen nur).
+=\> Diese Liste ist ein **"Producer"** von `Animal`‑Objekten (wir holen nur raus,
+wir lesen nur).
 
 Darf man auch Elemente der Liste `animals` hinzufügen? NEIN!
 
-- Zur Laufzeit könnte es z.B. eine `List<Dog>` sein
-- Dann wäre `animals.add(new Cat())` nicht typ­sicher
+-   Zur Laufzeit könnte es z.B. eine `List<Dog>` sein
+-   Dann wäre `animals.add(new Cat())` nicht typ­sicher
 
-=> Konsequenz: Bei `List<? extends Animal>` ist **lesen sicher**, **schreiben (`add`) verboten**.
+=\> Konsequenz: Bei `List<? extends Animal>` ist **lesen sicher**, **schreiben
+(`add`) verboten**.
 :::
 
 \pause
@@ -331,26 +166,27 @@ Darf man auch Elemente der Liste `animals` hinzufügen? NEIN!
 ::: important
 **Kovarianz** durch `? extends T`:
 
-- "Ich akzeptiere Listen von Untertypen von `T`."
-- Nur sicher als **Producer** von `T` (lesen erlaubt).
+-   "Ich akzeptiere Listen von Untertypen von `T`."
+-   Nur sicher als **Producer** von `T` (lesen erlaubt).
 
 \smallskip
 
-- `List<Cat>` ist **kein** Untertyp von `List<Animal>`
-- Aber: `List<Cat>` ist ein Untertyp von `List<? extends Animal>`
-- "Kovarianz-Leiter": `List<Integer> <: List<? extends Integer> <: List<? extends Number> <: List<?>`
+-   `List<Cat>` ist **kein** Untertyp von `List<Animal>`
+-   Aber: `List<Cat>` ist ein Untertyp von `List<? extends Animal>`
+-   "Kovarianz-Leiter":
+    `List<Integer> <: List<? extends Integer> <: List<? extends Number> <: List<?>`
 :::
-
 
 # Kontravarianz mit `? super` (Consumer: nur schreiben)
 
 ::: notes
 Jetzt die andere Richtung:
 
-Wir wollen eine Methode, die hinzufügen kann: z.B. alle `Cat` in irgendeine Liste stecken, die "`Cat` oder allgemeiner“ ist.
+Wir wollen eine Methode, die hinzufügen kann: z.B. alle `Cat` in irgendeine Liste
+stecken, die "`Cat` oder allgemeiner" ist.
 :::
 
-```java
+``` java
 static void addCats(List<? super Cat> cats) {
     cats.add(new Cat());         // erlaubt
     // Cat c = cats.getFirst();  // Compiler-Fehler: Rückgabetyp ist Object
@@ -360,42 +196,42 @@ static void addCats(List<? super Cat> cats) {
 ::: notes
 Erklärung:
 
-- `cats` ist eine Liste von `Cat` oder einem Supertyp (`Cat`, `Animal`, `Object`)
-- Es ist immer sicher, eine `Cat` hinzuzufügen, denn:
-    - Eine Liste von `Cat` darf Cats enthalten
-    - Eine Liste von `Animal` darf Cats (als Untertyp) enthalten
-    - Eine Liste von `Object` sowieso
+-   `cats` ist eine Liste von `Cat` oder einem Supertyp (`Cat`, `Animal`, `Object`)
+-   Es ist immer sicher, eine `Cat` hinzuzufügen, denn:
+    -   Eine Liste von `Cat` darf Cats enthalten
+    -   Eine Liste von `Animal` darf Cats (als Untertyp) enthalten
+    -   Eine Liste von `Object` sowieso
 
 Aber:
 
--   Beim Lesen weiß der Compiler nicht, ob wirklich eine `List<Cat>` übergeben wurde - er kennt nur `? super Cat`
+-   Beim Lesen weiß der Compiler nicht, ob wirklich eine `List<Cat>` übergeben
+    wurde - er kennt nur `? super Cat`
 -   Sicherer gemeinsamer Nenner: `Object`
 :::
-
 
 \pause
 
 ::: important
 **Kontravarianz** durch `? super T`:
 
-- "Ich akzeptiere Listen von Supertypen von `T`."
-- Nur sicher als **Consumer** von `T` (schreiben/hinzufügen erlaubt).
+-   "Ich akzeptiere Listen von Supertypen von `T`."
+-   Nur sicher als **Consumer** von `T` (schreiben/hinzufügen erlaubt).
 
 \smallskip
 
-- `List<? extends Animal>` ist ein Supertyp von `List<Cat>`
-- "Kontravarianz-Leiter": `List<Number> <: List<? super Number> <: List<? super Integer> <: List<?>`
+-   `List<? extends Animal>` ist ein Supertyp von `List<Cat>`
+-   "Kontravarianz-Leiter":
+    `List<Number> <: List<? super Number> <: List<? super Integer> <: List<?>`
 :::
-
 
 # PECS: Producer Extends, Consumer Super
 
 ::: notes
 Beide Aspekte zusammen betrachtet:
 
-- Wenn ein Parameter nur gelesen wird $\to$ `? extends T`
-- Wenn ein Parameter nur geschrieben (konsumiert) wird $\to$ `? super T`
-- Wenn beides passiert $\to$ konkrete Typvariable, etwa `List<T>`
+-   Wenn ein Parameter nur gelesen wird $\to$ `? extends T`
+-   Wenn ein Parameter nur geschrieben (konsumiert) wird $\to$ `? super T`
+-   Wenn beides passiert $\to$ konkrete Typvariable, etwa `List<T>`
 :::
 
 ::: center
@@ -404,39 +240,40 @@ Beide Aspekte zusammen betrachtet:
 
 \bigskip
 
-- **Producer** (liefert Elemente, **kovariant**): `List<? extends Animal>`
-- **Consumer** (nimmt Elemente auf, **kontravariant**): `List<? super Cat>`
+-   **Producer** (liefert Elemente, **kovariant**): `List<? extends Animal>`
+-   **Consumer** (nimmt Elemente auf, **kontravariant**): `List<? super Cat>`
 
 \smallskip
 
-- Ohne Wildcard `List<Cat>`: Typ ist **invariant**; Lesen und Schreiben für genau diesen Typ
+-   Ohne Wildcard `List<Cat>`: Typ ist **invariant**; Lesen und Schreiben für genau
+    diesen Typ
 
 ::: notes
-Die Begriffe können verwirrend sein - wenn man die Begriffe Producer/Consumer als Ergebnis der Methode begreift.
+Die Begriffe können verwirrend sein - wenn man die Begriffe Producer/Consumer als
+Ergebnis der Methode begreift.
 
-**PECS benennt die Rolle des Parameters (der Collection), nicht die Aktion, die Ihre Methode ausführt.**
+**PECS benennt die Rolle des Parameters (der Collection), nicht die Aktion, die Ihre
+Methode ausführt.**
 
 Hier eine bildliche Eselsbrücke:
 
-```java
+``` java
 void foo(List<? extends T> xs) { ... }    // "extends"-Fall
 void bar(List<? super T> ys)     { ... }  // "super"-Fall
 ```
 
 Die PECS‑Merksätze sagen: "Was kann ich mit diesem Parameter **sicher** machen?"
 
-- `List<? extends T> xs`: **Producer** von `T`
+-   `List<? extends T> xs`: **Producer** von `T`
     -   Die Liste `xs` "produziert" Objekte vom (Unter-) Typ `T`
-    -   "Ich kann aus `xs` Dinge vom Typ `T` herausbekommen"
-    "-   "Die Liste `xs` gibt Objekte vom (Unter-) Typ `T` heraus"
-
-- `List<? super T> ys`: **Consumer** von `T`
+    -   "Ich kann aus `xs` Dinge vom Typ `T` herausbekommen" "-"Die Liste `xs` gibt
+        Objekte vom (Unter-) Typ `T` heraus"
+-   `List<? super T> ys`: **Consumer** von `T`
     -   Die Liste `ys` "konsumiert" Objekte vom (Super-) Typ `T`
     -   "Ich kann in `ys` Dinge vom Typ `T` hineinstecken"
     -   "Die Liste `ys` nimmt Objekte vom (Super-) Typ `T` an"
 
 "Producer/Consumer" meint hier die Liste (bzw. den Parametertyp), nicht die Methode!
-
 :::
 
 # Bezug zu funktionalen Interfaces
@@ -445,26 +282,20 @@ Die PECS‑Merksätze sagen: "Was kann ich mit diesem Parameter **sicher** mache
 Beispiele aus der Java-Standard‑Bibliothek: (JDK):
 :::
 
-- `Function<? super T, ? extends R>`
-    - Input (konsumiert `T`): `? super T`
-    - Output (produziert `R`): `? extends R`
+-   `Function<? super T, ? extends R>`
+    -   Input (konsumiert `T`): `? super T`
+    -   Output (produziert `R`): `? extends R`
 
 \bigskip
 
-- `Comparator<? super T>`
+-   `Comparator<? super T>`
     -   Ein `Comparator` vergleicht `T`‑Objekte, "konsumiert" also `T`: `? super T`
-
-
-
-
-
-
-
 
 # Typ-Löschung (*Type Erasure*)
 
-::: notes
-Generics sind ein **Compile‑Time‑Feature**.  Zur Laufzeit werden Typ‑Parameter **gelöscht** ("*erased*").
+:::: notes
+Generics sind ein **Compile‑Time‑Feature**. Zur Laufzeit werden Typ‑Parameter
+**gelöscht** ("*erased*").
 
 Der Compiler ersetzt nach Prüfung der Typen und ihrer Verwendung alle Typ-Parameter
 durch
@@ -487,9 +318,8 @@ Generics mehr!**
 Instantiierung die passende Klasse.
 :::
 
-
 **Beispiel**: Aus dem folgenden harmlosen Code-Fragment:
-:::
+::::
 
 ``` java
 class Studi<T> {
@@ -526,7 +356,7 @@ class Studi {
 Die obere Schranke meist `Object` =\> `new T()` verboten/sinnfrei (s.u.)!
 :::
 
-::: notes
+:::::: notes
 # Type-Erasure bei Nutzung von Bounds
 
 ::::: columns
@@ -564,10 +394,9 @@ class Cps {
 ```
 :::
 :::::
-:::
+::::::
 
-
-::: notes
+:::: notes
 # Raw-Types: Ich mag meine Generics "well done" :-)
 
 Raw-Types: Instanziierung ohne Typ-Parameter =\> `Object`
@@ -580,8 +409,6 @@ Stack s = new Stack(); // Stack von Object-Objekten
 -   Nutzung wird nicht empfohlen! (Warum?)
 
 ::: tip
-## Anmerkung
-
 Raw-Types darf man zwar selbst im Quellcode verwenden (so wie im Beispiel hier),
 **sollte** die Verwendung aber vermeiden wegen der Typ-Unsicherheit: Der Compiler
 sieht im Beispiel nur noch einen Stack für `Object`, d.h. dort dürfen Objekte aller
@@ -596,8 +423,7 @@ baut auch die passenden Casts ein.
 Das Thema ist eigentlich nur noch aus Kompatibilität zu Java5 oder früher da, weil
 es dort noch keine Generics gab (wurden erst mit Java6 eingeführt).
 :::
-:::
-
+::::
 
 # Folgen der Typ-Löschung: *new*
 
@@ -656,7 +482,7 @@ Attribute teilen `\newline`{=tex} (Typ zur Laufzeit unklar!).
 
 *Hinweis*: Generische (statische) Methoden sind erlaubt. (Warum?)
 
-::: notes
+::::::: notes
 # Folgen der Typ-Löschung: *instanceof*
 
 ::: center
@@ -695,10 +521,9 @@ void printType(Fach p) {
 ```
 :::
 :::::
-:::
+:::::::
 
-
-::: notes
+:::: notes
 # Folgen der Typ-Löschung: *.class*
 
 ::: center
@@ -721,15 +546,13 @@ x = (a.getClass() == b.getClass());               // true
 
 Grund: Es gibt nur `List.class` (und kein `List<String>.class` bzw.
 `List<Integer>.class`)!
-:::
+::::
 
-
-
-# Abgrenzung: Arrays vs. Generics: Reifizierung
+# Abgrenzung: Arrays vs. Generics: Reifizierung
 
 ::: important
-Arrays sind **reifiziert** (engl. *reified*):
-Sie "kennen" ihren Elementtyp **zur Laufzeit**.
+Arrays sind **reifiziert** (engl. *reified*): Sie "kennen" ihren Elementtyp **zur
+Laufzeit**.
 :::
 
 \bigskip
@@ -747,8 +570,12 @@ x[0] = new Double(2.0);  // Laufzeitfehler
 -   Arrays besitzen Typinformationen über gespeicherte Elemente
 -   Prüfung auf Typ-Kompatibilität zur **Laufzeit** (nicht Kompilierzeit!)
 
-::: notes
-Im Vergleich sind generische Typen **nicht reifiziert** (engl. *not reified*) - die Typ-Parameter existieren nur zur **Compile-Time** und werden nach der Prüfung durch den Compiler entfernt. Zur Laufzeit wird aus `List<String>` und `List<Integer>` einfach nur `List` (plus notwendige Casts, vom Compiler nach dem Type-Check automatisch eingefügt).
+:::: notes
+Im Vergleich sind generische Typen **nicht reifiziert** (engl. *not reified*) - die
+Typ-Parameter existieren nur zur **Compile-Time** und werden nach der Prüfung durch
+den Compiler entfernt. Zur Laufzeit wird aus `List<String>` und `List<Integer>`
+einfach nur `List` (plus notwendige Casts, vom Compiler nach dem Type-Check
+automatisch eingefügt).
 
 ::: tip
 Hintergrund:
@@ -767,7 +594,7 @@ Compiler-Prüfung. Da würde das von Arrays bekannte Verhalten Probleme machen .
 
 [Beispiel arrays.X]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-classic/src/arrays/X.java"}
-:::
+::::
 
 # Generics + Arrays: Warum passt das nicht gut?
 
@@ -778,13 +605,14 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 ::: notes
 **Arrays sind reifiziert & kovariant**
 
-- Arrays kennen ihren Elementtyp zur **Laufzeit**
-- Sie sind außerdem kovariant: `Object[] oa = new String[10];` ist erlaubt
+-   Arrays kennen ihren Elementtyp zur **Laufzeit**
+-   Sie sind außerdem kovariant: `Object[] oa = new String[10];` ist erlaubt
 
 **Generics sind gelöscht & invariant**
 
-- `List<T>` ist zur Laufzeit nur `List` - ohne `<T>`, die Information über `T` ist weg
-- Generische Typen sind **invariant** (kein automatischer Upcast)
+-   `List<T>` ist zur Laufzeit nur `List` - ohne `<T>`, die Information über `T` ist
+    weg
+-   Generische Typen sind **invariant** (kein automatischer Upcast)
 
 **Kombination führt zu Problemen und ist nicht erlaubt**:
 :::
@@ -803,19 +631,19 @@ class Box<T> {
 
 ::: notes
 Arrays mit parametrisierten Klassen sind nicht erlaubt! Arrays brauchen zur Laufzeit
-Typinformationen über den Elementtyp, die aber durch die Typ-Löschung bei generischen Typen entfernt werden.
+Typinformationen über den Elementtyp, die aber durch die Typ-Löschung bei
+generischen Typen entfernt werden.
 :::
-
-
-
 
 ::: notes
 # Diskussion Vererbung vs. Generics
 
 **Vererbung:**
 
--   *IS-A*-Beziehung: Die abgeleitete Klasse ist wie die Basisklasse und kann überall dort verwendet werden
--   Anwendung: Vererbungsbeziehung vorliegend, Eigenschaften weitergeben und verfeinern
+-   *IS-A*-Beziehung: Die abgeleitete Klasse ist wie die Basisklasse und kann
+    überall dort verwendet werden
+-   Anwendung: Vererbungsbeziehung vorliegend, Eigenschaften weitergeben und
+    verfeinern
 -   Beispiel: Ein Student *ist eine* Person
 
 \bigskip
@@ -826,8 +654,6 @@ Typinformationen über den Elementtyp, die aber durch die Typ-Löschung bei gene
 -   Anwendung: Identischer Code für unterschiedliche Typen
 -   Beispiel: Datenstrukturen, Algorithmen generisch realisieren
 :::
-
-
 
 # Wrap-Up
 
@@ -846,24 +672,27 @@ Typinformationen über den Elementtyp, die aber durch die Typ-Löschung bei gene
 \smallskip
 
 -   **Type Erasure**:
-    - Generics gelten nur zur Compile‑Time; Typ‑Parameter werden zur Laufzeit gelöscht
-    - Folgen: keine generischen Arrays, eingeschränktes instanceof, Bounds als Laufzeit‑Ersatz
+    -   Generics gelten nur zur Compile‑Time; Typ‑Parameter werden zur Laufzeit
+        gelöscht
+    -   Folgen: keine generischen Arrays, eingeschränktes instanceof, Bounds als
+        Laufzeit‑Ersatz
 
 \smallskip
 
--   Arrays sind **reifiziert** und **kovariant** $\to$ Laufzeit‑Checks + `ArrayStoreException`
-
-
+-   Arrays sind **reifiziert** und **kovariant** $\to$ Laufzeit‑Checks +
+    `ArrayStoreException`
 
 ::: readings
-Lesen Sie zu diesem Thema im dev.java-Tutorial ["Wildcards and Subtyping"](https://dev.java/learn/generics/wildcards/#subtyping)
-nach.
+Lesen Sie zu diesem Thema im dev.java-Tutorial ["Wildcards and
+Subtyping"](https://dev.java/learn/generics/wildcards/#subtyping) nach.
 :::
 
 ::: outcomes
-- k2: Ich verstehe, warum `List<Dog>` kein Untertyp von `List<Animal>` ist (Invarianz)
--   k2: Ich verstehe, was Type Erasure bedeutet und kann erklären, welche praktischen Folgen das hat
+-   k2: Ich verstehe, warum `List<Dog>` kein Untertyp von `List<Animal>` ist
+    (Invarianz)
+-   k2: Ich verstehe, was Type Erasure bedeutet und kann erklären, welche
+    praktischen Folgen das hat
 -   k3: Ich kann Vererbungsbeziehungen mit generischen Klassen bilden
-- k3: Ich kann erklären, wann `? extends` und wann `? super passt` (PECS)
+-   k3: Ich kann erklären, wann `? extends` und wann `? super passt` (PECS)
 -   k3: Ich kann mit Arrays und generischen Typen umgehen
 :::
