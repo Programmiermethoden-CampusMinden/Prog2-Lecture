@@ -12,6 +12,13 @@ Vererbung des Typ-Parameters begründet *keine* Vererbungsbeziehung! D.h. aus
 
 Bei Arrays ist es genau anders herum: Wenn `U extends O` dann gilt auch
 `U[] extends O[]` ... (Dies nennt man "*kovariantes*" Verhalten.)
+
+Generics existieren eigentlich nur auf Quellcode-Ebene. Nach der Typ-Prüfung etc.
+entfernt der Compiler alle generischen Typ-Parameter und alle `<...>` (=\>
+"Type-Erasure"), d.h. im Byte-Code stehen nur noch Raw-Typen bzw. die oberen
+Typ-Schranken der Typ-Parameter, in der Regel `Object`. Zusätzlich baut der Compiler
+die nötigen Casts ein. Als Anwender merkt man davon nichts, muss das "Type-Erasure"
+wegen der Auswirkungen aber auf dem Radar haben!
 :::
 
 ::: youtube
@@ -317,6 +324,260 @@ Arrays mit parametrisierten Klassen sind nicht erlaubt! Arrays brauchen zur Lauf
 Typinformationen, die aber durch die Typ-Löschung entfernt werden.
 :::
 
+
+
+
+# Typ-Löschung (*Type-Erasure*)
+
+::: notes
+Der Compiler ersetzt nach Prüfung der Typen und ihrer Verwendung alle Typ-Parameter
+durch
+
+1.  deren obere (Typ-)Schranke und
+2.  passende explizite Cast-Operationen (im Byte-Code).
+
+Die obere Typ-Schranke ist in der Regel der Typ der ersten Bounds-Klausel oder
+`Object`, wenn keine Einschränkungen formuliert sind.
+
+Bei parametrisierten Typen wie `List<T>` wird der Typ-Parameter entfernt, es
+entsteht ein sogenannter *Raw*-Typ (`List`, quasi implizit mit `Object`
+parametrisiert).
+
+=\> Ergebnis: Nur **eine** (untypisierte) Klasse! Zur Laufzeit gibt es keine
+Generics mehr!
+
+**Hinweis**: In C++ ist man den anderen möglichen Weg gegangen und erzeugt für jede
+Instantiierung die passende Klasse. Siehe Modul "Systemprogrammierung" :)
+
+**Beispiel**: Aus dem folgenden harmlosen Code-Fragment:
+:::
+
+``` java
+class Studi<T> {
+    T myst(T m, T n) { return n; }
+
+    public static void main(String[] args) {
+        Studi<Integer> a = new Studi<>();
+        int i = a.myst(1, 3);
+    }
+}
+```
+
+\pause
+\bigskip
+\hrule
+\smallskip
+
+::: notes
+wird nach der Typ-Löschung durch Compiler (das steht dann quasi im Byte-Code):
+:::
+
+``` java
+class Studi {
+    Object myst(Object m, Object n) { return n; }
+
+    public static void main(String[] args) {
+        Studi a = new Studi();
+        int i = (Integer) a.myst(1, 3);
+    }
+}
+```
+
+::: notes
+Die obere Schranke meist `Object` =\> `new T()` verboten/sinnfrei (s.u.)!
+:::
+
+# Type-Erasure bei Nutzung von Bounds
+
+::::: columns
+::: column
+[vor der Typ-Löschung durch Compiler:]{.notes}
+
+``` java
+class Cps<T extends Number> {
+    T myst(T m, T n) {
+        return n;
+    }
+
+    public static void main(String[] args) {
+        Cps<Integer> a = new Cps<>();
+        int i = a.myst(1, 3);
+    }
+}
+```
+:::
+
+::: column
+[nach der Typ-Löschung durch Compiler:]{.notes}
+
+``` java
+class Cps {
+    Number myst(Number m, Number n) {
+        return n;
+    }
+
+    public static void main(String[] args) {
+        Cps a = new Cps();
+        int i = (Integer) a.myst(1, 3);
+    }
+}
+```
+:::
+:::::
+
+# Raw-Types: Ich mag meine Generics "well done" :-)
+
+Raw-Types: Instanziierung ohne Typ-Parameter =\> `Object`
+
+``` java
+Stack s = new Stack(); // Stack von Object-Objekten
+```
+
+\bigskip
+
+-   Wegen Abwärtskompatibilität zu früheren Java-Versionen noch erlaubt.
+-   Nutzung wird nicht empfohlen! (Warum?)
+
+::: notes
+## Anmerkung
+
+Raw-Types darf man zwar selbst im Quellcode verwenden (so wie im Beispiel hier),
+**sollte** die Verwendung aber vermeiden wegen der Typ-Unsicherheit: Der Compiler
+sieht im Beispiel nur noch einen Stack für `Object`, d.h. dort dürfen Objekte aller
+Typen abgelegt werden - es kann keine Typprüfung durch den Compiler stattfinden. Auf
+einem `Stack<String>` kann der Compiler prüfen, ob dort wirklich nur
+`String`-Objekte abgelegt werden und ggf. entsprechend Fehler melden.
+
+Etwas anderes ist es, dass der Compiler im Zuge von Type-Erasure selbst Raw-Types in
+den Byte-Code schreibt. Da hat er vorher bereits die Typsicherheit geprüft und er
+baut auch die passenden Casts ein.
+
+Das Thema ist eigentlich nur noch aus Kompatibilität zu Java5 oder früher da, weil
+es dort noch keine Generics gab (wurden erst mit Java6 eingeführt).
+:::
+
+# Folgen der Typ-Löschung: *new*
+
+::: center
+`new` mit parametrisierten Klassen ist nicht erlaubt!
+:::
+
+\bigskip
+\bigskip
+
+``` java
+class Fach<T> {
+    public T foo() {
+        return new T();  // nicht erlaubt!!!
+    }
+}
+```
+
+\bigskip
+
+Grund: Zur Laufzeit keine Klasseninformationen über `T` mehr
+
+::: notes
+Im Code steht `return (CAST) new Object();`. Das neue Object kann man anlegen, aber
+ein Cast nach irgendeinem anderen Typ ist sinnfrei: Jede Klasse ist ein Untertyp von
+`Object`, aber eben nicht andersherum. Außerdem fehlt dem Objekt vom Typ `Object`
+auch sämtliche Information und Verhalten, die der Cast-Typ eigentlich mitbringt ...
+:::
+
+# Folgen der Typ-Löschung: *static*
+
+::: center
+`static` mit generischen Typen ist nicht erlaubt!
+:::
+
+\bigskip
+\bigskip
+
+``` java
+class Fach<T> {
+    static T t;                    // nicht erlaubt!!!
+    static Fach<T> c;              // nicht erlaubt!!!
+    static void foo(T t) { ... };  // nicht erlaubt!!!
+}
+
+Fach<String>  a;
+Fach<Integer> b;
+```
+
+\bigskip
+
+Grund: Compiler generiert nur eine Klasse! Beide Objekte würden sich die statischen
+Attribute teilen `\newline`{=tex} (Typ zur Laufzeit unklar!).
+
+\smallskip
+
+*Hinweis*: Generische (statische) Methoden sind erlaubt.
+
+# Folgen der Typ-Löschung: *instanceof*
+
+::: center
+`instanceof` mit parametrisierten Klassen ist nicht erlaubt!
+:::
+
+\bigskip
+\bigskip
+
+::::: columns
+::: {.column width="60%"}
+``` java
+class Fach<T> {
+    void printType(Fach<?> p) {
+        if (p instanceof Fach<Number>)
+            ...
+        else if (p instanceof Fach<String>)
+            ...
+    }
+}
+```
+:::
+
+::: {.column width="40%"}
+[Grund: Unsinniger Code nach Typ-Löschung:]{.notes}
+
+``` java
+class Fach {
+void printType(Fach p) {
+    if (p instanceof Fach)
+        ...
+    else if (p instanceof Fach)
+        ...
+    }
+}
+```
+:::
+:::::
+
+# Folgen der Typ-Löschung: *.class*
+
+::: center
+`.class` mit parametrisierten Klassen ist nicht erlaubt!
+:::
+
+\bigskip
+\bigskip
+
+``` java
+boolean x;
+List<String>  a = new ArrayList<String>();
+List<Integer> b = new ArrayList<Integer>();
+
+x = (List<String>.class == List<Integer>.class);  // Compiler-Fehler
+x = (a.getClass() == b.getClass());               // true
+```
+
+\bigskip
+
+Grund: Es gibt nur `List.class` (und kein `List<String>.class` bzw.
+`List<Integer>.class`)!
+
+
+
+
 # Diskussion Vererbung vs. Generics
 
 **Vererbung:**
@@ -337,20 +598,32 @@ Typinformationen, die aber durch die Typ-Löschung entfernt werden.
 
 -   Generics: Vererbung und Überladen möglich, aber: `\newline`{=tex} Aus
     "`U extends O`" folgt **nicht** "`A<U> extends A<O>`"
+-   Generics existieren eigentlich nur auf Quellcode-Ebene
 
 \smallskip
 
 -   Achtung: Bei Arrays gilt aber: Wenn "`U extends O`" dann gilt auch
     "`U[] extends O[]`" ...
 
+\smallskip
+
+-   "Type-Erasure":
+    -   Compiler entfernt [nach Typ-Prüfungen etc.]{.notes} generische Typ-Parameter
+        [etc.]{.notes} =\> im Byte-Code nur noch Raw-Typen [bzw. die oberen
+        Typ-Schranken der Typ-Parameter, in der Regel `Object`]{.notes}
+    -   Compiler baut passende Casts in Byte-Code ein
+    -   Transparent für User; Auswirkungen beachten!
+
+
 ::: readings
--   @Ullenboom2021 [Kap. 11.5]
+-   @Ullenboom2021 [Kap. 11.5 und Kap. 12.2 und 12.6]
 -   @LernJava
 -   @Java-SE-Tutorial
 -   @Bloch2018
 :::
 
 ::: outcomes
+-   k2: Ich verstehe 'Typ-Löschung' bei Generics und kann die Auswirkungen erklären
 -   k3: Ich kann Vererbungsbeziehungen mit generischen Klassen bilden
 -   k3: Ich kann mit Arrays und generischen Typen umgehen
 :::
