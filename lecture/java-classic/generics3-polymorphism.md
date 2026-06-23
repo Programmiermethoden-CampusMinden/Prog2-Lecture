@@ -77,6 +77,7 @@ Cat c = cats.getFirst();      // aber jetzt steckt ein Dog in cats!
 ```
 
 \pause
+\bigskip
 
 **Widerspruch zur Typ­sicherheit**
 
@@ -134,12 +135,6 @@ static void feedAll(List<? extends Animal> animals) {
 
     // animals.add(new Cat()); // Compiler-Fehler
 }
-
-List<Dog> dogs = ...;
-List<Cat> cats = ...;
-
-feedAll(dogs);
-feedAll(cats);
 ```
 
 ::: notes
@@ -163,6 +158,7 @@ Darf man auch Elemente der Liste `animals` hinzufügen? NEIN!
 :::
 
 \pause
+\bigskip
 
 ::: important
 **Kovarianz** durch `? extends T`:
@@ -211,6 +207,7 @@ Aber:
 :::
 
 \pause
+\bigskip
 
 ::: important
 **Kontravarianz** durch `? super T`:
@@ -240,6 +237,7 @@ Beide Aspekte zusammen betrachtet:
 **PECS: Producer Extends, Consumer Super**
 :::
 
+\bigskip
 \bigskip
 
 -   **Producer** (liefert Elemente, **kovariant**): `List<? extends Animal>`
@@ -628,6 +626,7 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 :::
 
 \bigskip
+\smallskip
 
 ``` java
 Foo<String>[] x = new Foo<String>[2];   // Compilerfehler
@@ -671,6 +670,8 @@ generischen Typen entfernt werden.
 **Generics gibt es nur im Compiler, Arrays gibt es auch in der JVM mit vollem
 Typwissen.**
 :::
+
+\bigskip
 
 -   **Invarianz**: Generische Typen wie `List<T>` sind **invariant**
     -   `List<Cat>` ist **kein** Untertyp von `List<Animal>`
