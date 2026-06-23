@@ -711,3 +711,101 @@ Subtyping"](https://dev.java/learn/generics/wildcards/#subtyping) nach.
 -   k3: Ich kann erklären, wann `? extends` und wann `? super` passt (PECS)
 -   k3: Ich kann mit Arrays und generischen Typen umgehen
 :::
+
+::: challenges
+**Aufgabe: Tierlisten "füttern" und "einsammeln"**
+
+Basis wie oben:
+
+``` java
+interface Animal {
+    default void eat() {}
+}
+record Dog() implements Animal {
+    @Override public void eat() { IO.println("Dog eats"); }
+}
+record Cat() implements Animal {
+    @Override public void eat() { IO.println("Cat eats"); }
+}
+```
+
+Betrachten Sie:
+
+``` java
+// (1) Füttert alle Tiere in der übergebenen Liste
+static void feedAll(List<Animal> animals) { /* ... */ }
+
+// (2) Fügt einen Dog in die übergebene Liste ein
+static void addDog(List<Animal> animals) { /* ... */ }
+
+// (3) Kopiert alle Elemente von source in dest
+static void copy(List<Animal> source, List<Animal> dest) { /* ... */ }
+```
+
+**Arbeitsauftrag**
+
+1.  Für welche konkreten Listentypen sollten diese Methoden aufrufbar sein?
+    `List<Animal>`, `List<Dog>`, `List<Cat>`, `List<Object>`, ...?
+
+    Welche der drei Methoden funktionieren so, welche sind zu einschränkend?
+
+2.  Passen Sie die Signaturen mit `? extends` / `? super` so an, dass sie zu Ihrer
+    Intuition passen: Wo brauchen Sie `? extends`, wo `? super`, wo eine konkrete
+    Typvariable?
+
+3.  Versuchen Sie jeweils **kurz zu begründen**, warum Ihre Variante typ­sicher ist.
+
+<!--
+``` java
+// Nur lesen → ? extends Animal
+// Wir wollen z.B. auch List<Dog> und List<Cat> füttern können
+static void feedAll(List<? extends Animal> animals) {
+    for (Animal a : animals) {
+        a.eat();
+    }
+    // animals.add(new Dog()); // nicht erlaubt – und das ist gut so
+}
+
+List<Dog> dogs = ...;
+List<Cat> cats = ...;
+feedAll(dogs);
+feedAll(cats);
+```
+
+``` java
+// Nur schreiben → ? super Dog
+// Wir wollen einen Dog in verschiedene Listen einfügen können:
+static void addDog(List<? super Dog> dogs) {
+    dogs.add(new Dog());       // sicher
+    // Dog d = dogs.get(0);    // nur Object sicher, also verboten
+}
+
+List<Dog>    ld = new ArrayList<>();
+List<Animal> la = new ArrayList<>();
+List<Object> lo = new ArrayList<>();
+
+addDog(ld);  // erlaubt?
+addDog(la);  // erlaubt?
+addDog(lo);  // erlaubt?
+```
+
+``` java
+// Kopieren → Producer & Consumer
+// Kopiert alle Elemente aus source nach dest
+static <T> void copy(List<? extends T> source,
+                     List<? super T> dest) {
+    for (T x : source) {
+        dest.add(x);
+    }
+}
+
+List<Dog>    dogs    = ...;
+List<Animal> animals = ...;
+List<Object> objects = ...;
+
+copy(dogs, animals);  // sinnvoll?
+copy(dogs, objects);  // sinnvoll?
+copy(animals, dogs);  // erlaubt? (Sollte es sein?)
+```
+-->
+:::
