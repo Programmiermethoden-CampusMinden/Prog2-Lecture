@@ -823,7 +823,7 @@ public sealed interface Result<E, R> permits Result.Ok, Result.Err {
 
     // ---------- Functor: apply function R -> B ----------
     default <B> Result<E, B> map(Function<? super R, ? extends B> f) {
-        // return flatMap(a -> ok(f.apply(a)));  // für Fortgeschrittene: das würde reichen ...
+        // return flatMap(a -> Result.ok(f.apply(a)));  // für Fortgeschrittene: das würde reichen ...
         return switch (this) {
             case Ok<E, R> ok -> Result.ok(f.apply(ok.value));
             case Err<E, R> e -> Result.err(e.error);
@@ -834,7 +834,7 @@ public sealed interface Result<E, R> permits Result.Ok, Result.Err {
     default <B> Result<E, B> flatMap(Function<? super R, ? extends Result<E, B>> f) {
         return switch (this) {
             case Ok<E, R> ok -> f.apply(ok.value);
-            case Err<E, R> e -> err(e.error);
+            case Err<E, R> e -> Result.err(e.error);
         };
     }
 
@@ -861,7 +861,7 @@ die Funktion darauf an und verpacken das Ergebnis in ein `Ok` und liefern das
 zurück. Im Fehlerfall (`Err`) geben wir einfach unseren Fehlerwert neu verpackt
 zurück - d.h. es wird nichts weiter berechnet. (*Anmerkung*: Man könnte diese
 Implementierung der `map`-Funktion auf ein einfaches
-`return flatMap(a -> ok(f.apply(a)));` zurückführen. Warum?)
+`return flatMap(a -> Result.ok(f.apply(a)));` zurückführen. Warum?)
 
 `flatMap` übernimmt die ganze Arbeit. Im Fehlerfall geben wir einfach unseren
 Fehlerwert neu verpackt zurück - d.h. es wird nichts weiter berechnet. Das
@@ -902,9 +902,11 @@ Das Konzept nennt sich "Monade" und ist in der funktionalen Programmierung seit
 langer Zeit bekannt und wird erfolgreich angewendet. Man sieht an den Typen, dass es
 hier entweder einen Wert oder einen Fehler geben kann. Die Fehlerbehandlung mit
 `try`/`catch` erfolgt an der Stelle, wo der Fehler auftritt. Die Aufrufer können ein
-`try`/`catch` nicht "vergessen", sondern müssen dank der Signatur reagieren. Dank
-`map` und `flatMap` und `orElse` lassen sich die Aufrufe elegant verketten, mit
-identischer Funktionalität wie in der ersten Variante.
+`try`/`catch` nicht "vergessen", sondern müssen dank der Signatur reagieren. Man
+braucht als Aufrufer kein umständliches `try`/`catch` mehr, welches den
+Kontrollfluss ändert; das Bearbeiten von "guten Werten" und "Fehlern" ist
+vereinheitlicht. Dank `map` und `flatMap` und `orElse` lassen sich die Aufrufe
+elegant verketten, mit identischer Funktionalität wie in der ersten Variante.
 :::
 ::::
 
@@ -915,7 +917,7 @@ identischer Funktionalität wie in der ersten Variante.
     -   "Defensive" Fehlerfälle: I/O‑Fehler, Netzwerk weg, Datenbank down
 
     \smallskip
-    *Ich habe nicht erwartet, dass das passiert.*
+    *"Ich habe nicht erwartet, dass das passiert."*
 
 \bigskip
 \smallskip
@@ -926,7 +928,7 @@ identischer Funktionalität wie in der ersten Variante.
     -   Validierungsfehler, Suchergebnisse nicht gefunden, ungültige User‑Eingaben
 
     \smallskip
-    *Das gehört zum normalen Verhalten meiner Funktion.*
+    *"Das gehört zum normalen Verhalten meiner Funktion."*
 
 ::: notes
 In funktionalen Sprachen wie Haskell, Scala oder auch Rust sind solche Typen
