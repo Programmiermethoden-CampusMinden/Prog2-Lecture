@@ -16,9 +16,9 @@ Methode `Optional.ofNullable()` das Argument in ein Optional verpacken (Argument
 
 Man kann Optionals prüfen mit `isEmpty()` und `ifPresent()` und dann direkt mit
 `ifPresent()`, `orElse()` und `orElseThrow()` auf den verpackten Wert zugreifen.
-Besser ist aber der Zugriff über die Stream-API von `Optional`: `map()`, `filter`,
-`flatMap()`, ... Dabei gibt es keine terminalen Operationen - es handelt sich ja
-auch nicht um einen Stream, nur die Optik erinnert daran.
+Besser ist aber der Zugriff über die stream-ähnlichen Methoden von `Optional`:
+`map()`, `filter`, `flatMap()`, ... Dabei gibt es keine terminalen Operationen - es
+handelt sich ja auch nicht um einen Stream, nur die Optik erinnert daran.
 
 `Optional` ist vor allem für Rückgabewerte gedacht, die den Fall "kein Wert
 vorhanden" einschließen sollen. Attribute, Parameter und Sammlungen sollten nicht
@@ -212,7 +212,7 @@ Stattdessen sollte stets `Optional.ofNullable()` verwendet werden.
 \smallskip
 
 ::: important
-**`null` kann nicht nicht in `Optional<T>` verpackt werden!** [(Das wäre dann eben
+**`null` kann nicht in `Optional<T>` verpackt werden!** [(Das wäre dann eben
 `Optional.empty()`.)]{.notes}
 :::
 
@@ -224,7 +224,7 @@ public class LSF {
 
     public Optional<Studi> getBestStudi() throws NullPointerException {
         // Fehler: Es gibt noch keine Sammlung
-        if (sl == null) throw new NullPointerException("There ain't any collection");
+        if (sl == null) throw new IllegalStateException("There ain't any collection");
 
         Studi best = null;
         for (Studi s : sl) {
@@ -292,9 +292,10 @@ best = lsf.getBestStudi().orElseThrow();
 ```
 
 :::: notes
-Es gibt noch eine Methode `get()`, die so verhält wie `orElseThrow()`. Da man diese
-Methode vom Namen her schnell mit einem Getter verwechselt, ist sie mittlerweile
-*deprecated*.
+Es gibt noch eine Methode `get()`, die so verhält wie `orElseThrow()`. Vom Namen her
+wirkt sie wie ein "normaler Getter", deshalb ist sie leicht zu missbrauchen (Aufruf
+ohne vorherige Prüfung). Verwenden Sie besser explizit `orElseThrow()` bzw.
+`orElse(...)`.
 
 ::: tip
 *Anmerkung*: Da `getBestStudi()` eine `NullPointerException` werfen kann (vgl.
@@ -396,8 +397,11 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
     `Optional.empty()`, wenn das Argument `null` ist. Es gibt also keinen Grund,
     dies mit einer Fallunterscheidung selbst erledigen zu wollen.
 
-    Bevorzugen Sie `Optional.ofNullable()` vor einer manuellen Fallunterscheidung
-    und dem entsprechenden Einsatz von `Optional.of()` und `Optional.empty()`.
+    Beim Erzeugen von Optionals aus vorhandenen Werten verwenden Sie in der Regel
+    `Optional.ofNullable(...)` statt selbst
+    `if (x == null) ... Optional.empty() ... Optional.of(x)` zu formulieren. Für
+    Rückgabewerte, bei denen klar ist "hier gibt es gerade keinen Wert", ist
+    `return Optional.empty();` natürlich sinnvoll.
     :::
 
 4.  Erzeuge keine `Optional` als Ersatz für die Prüfung auf `null`
@@ -422,14 +426,24 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
     speichern!
     :::
 
-6.  Vermeide den direkten Zugriff (`ifPresent()`, `orElseThrow()` ...)
+6.  Vermeiden Sie Muster wie `if (opt.isPresent()) { T v = opt.get(); ... }`.
 
     ::: notes
+    Häufig sieht man (leider) das folgende Muster:
+
+    ``` java
+    if (opt.isPresent()) {
+        T v = opt.get();
+        // ...
+    }
+    ```
+
     Der direkte Zugriff auf ein `Optional` entspricht dem Prüfen auf `null` und dann
     dem Auspacken. Dies ist nicht nur Overhead, sondern auch schlechter lesbar.
 
     Vermeiden Sie den direkten Zugriff und nutzen Sie `Optional` mit den
-    Stream-Methoden. So ist dies von den Designern gedacht.
+    Stream-Methoden `map`/`flatMap`/`filter` und am Ende der Verarbeitungskette
+    `orElse(...)` oder `orElseThrow(...)`. So ist dies von den Designern gedacht.
     :::
 
 ::: important
@@ -469,7 +483,7 @@ public static int parsePort(String input) {
 **Gibt es eine Möglichkeit, Fehler so zu modellieren, dass sie im Typ sichtbar
 sind?**
 
-::: notes
+:::: notes
 Wir könnten überlegen, ein `Optional<Integer>` als Ergebnis zu liefern: Wenn es
 einen Fehler gab, dann haben wir nur ein `Optional.empty()`:
 
@@ -492,11 +506,17 @@ Damit hätten wir hier aber nicht wirklich etwas gewonnen:
 3.  Das Handling auf der Aufrufer-Seite wird zu einem etwas umständlichen
     `ifPresentOrElse` (Port vorhanden oder Reaktion auf falsche Portnummer)
 
-=\> Wir haben hier **nicht** den Fall, dass wir kein Ergebnis (einen Port) als
-normalen Fall haben können. Stattdessen missbrauchen wir `Optional<T>`, was uns
-tatsächlich nicht wirklicht weiter hilft. `Optional<T>` trägt keinerlei Information
+=\> Wir haben hier **nicht** den Fall, dass wir "kein Ergebnis" (keinen Port) als
+normales Ergebnis haben können. Stattdessen missbrauchen wir `Optional<T>`, was uns
+tatsächlich nicht wirklich weiter hilft. `Optional<T>` trägt keinerlei Information
 mit sich, warum es zu `Optional.empty()` gekommen ist.
+
+::: tip
+**Merke:** `Optional<T>` eignet sich schlecht für Fälle, in denen Sie die Art des
+Fehlers unterscheiden wollen. Dafür brauchen Sie einen **Fehlertyp** $\to$
+`Result<E,R>`.
 :::
+::::
 
 # `Result<E,R>`: Fehler als Datentyp modellieren
 
@@ -600,8 +620,8 @@ elegant Pattern Matching einsetzen, und durch die sealed Hierarchie wird auch ei
 mit `Err` passiert.
 
 ::: tip
-Für Fortgeschrittene: Das kann man noch ausbauen und in die Stream-Verarbeitung
-einbinden ...
+**Exkurs für Fortgeschrittene**: Das kann man noch ein wenig ausbauen und in die
+Stream-Verarbeitung einbinden ...
 
 ## Schritt 1: Szenario erweitern
 
@@ -797,7 +817,11 @@ public sealed interface Result<E, R> permits Result.Ok, Result.Err {
 
     // ---------- Functor: apply function R -> B ----------
     default <B> Result<E, B> map(Function<? super R, ? extends B> f) {
-        return flatMap(a -> ok(f.apply(a)));
+        // return flatMap(a -> ok(f.apply(a)));  // für Fortgeschrittene: das würde reichen ...
+        return switch (this) {
+            case Ok<E, R> ok -> Result.ok(f.apply(ok.value));
+            case Err<E, R> e -> Result.err(e.error);
+        };
     }
 
     // ---------- Monad: apply function R -> Result<E,B> ----------
@@ -864,6 +888,9 @@ public void runWithResult(String userInput) {
     }
 }
 ```
+
+In einem weiteren Schritt könnte man auch den verwendeten Fehler-Typ ergänzen, so
+dass man die Message aus dem `try`/`catch` mit hochreichen kann ...
 
 Das Konzept nennt sich "Monade" und ist in der funktionalen Programmierung seit
 langer Zeit bekannt und wird erfolgreich angewendet. Man sieht an den Typen, dass es
