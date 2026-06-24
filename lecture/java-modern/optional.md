@@ -28,6 +28,13 @@ Methoden-Parametern (nutzen Sie hier beispielsweise passende Annotationen).
 `Optional` ist auch kein Ersatz für vernünftiges Exception-Handling im Fall, dass
 etwas Unerwartetes passiert ist. Liefern Sie **niemals** `null` zurück, wenn der
 Rückgabetyp der Methode ein `Optional` ist!
+
+`Result<E,R>` kapselt entweder ein erfolgreiches Ergebnis `R` oder einen Fehler `E`
+und macht damit im Typ explizit sichtbar, dass und welche Fehler auftreten können.
+Im Unterschied zu `Optional<T>`, das nur zwischen "Wert da" und "kein Wert"
+unterscheidet, erlaubt `Result<E,R>` die genaue Modellierung und Weitergabe von
+Fehlersituationen und lässt sich mit `map`/`flatMap` sehr elegant ähnlich wie ein
+Stream verketten.
 :::
 
 ::: youtube
@@ -471,8 +478,12 @@ public static int parsePort(String input) {
     Aus dem Typ `int parsePort(String)` sehen Sie nicht, dass hier ein Fehlerfall
     möglich ist. Sie müssen Javadoc, Doku oder Implementation lesen.
 
-    Selbst bei checked-Exceptions hat sich oft die Praxis verbreitet, diese zu
-    fangen und als `RunTimeException` neu zu werfen.
+    Selbst bei checked-Exceptions hat sich leider oft die Praxis verbreitet, diese
+    zu fangen und einfach als `RunTimeException` neu zu werfen. Damit spart man sich
+    das "lästige" `throws` an der Methode ... Der einzige Vorteil(?) daran ist, dass
+    dann alle Exceptions auf unchecked Exceptions zurückgeführt werden und der Code
+    lesbarer wird (keine erzwungenen `try`/`catch`mehr). Trotzdem: Keine gute
+    Praxis!
 
 2.  Verstreute Fehlerbehandlung
 
@@ -850,12 +861,12 @@ public sealed interface Result<E, R> permits Result.Ok, Result.Err {
 ```
 
 Die `map`-Funktion nimmt eine Funktion `f`: `R` $\to$ `B` entgegen. Im Erfolgsfall
-(d.h. `map` arbeitet auf einem `Ok`), verwenden wir die `flatMap`-Funktion zur
-weiteren Berechnung. Dabei übergeben wir einen Lambda-Ausdruck, der die Funktion `f`
-auf das Argument anwendet und mit der Convenience-Funktion `ok` ein neues `Ok`
-erzeugt (das ist von der Signatur jetzt genau
-`Function<? super R, ? extends Result<E, B>>`). Im Fehlerfall (`Err`) passiert
-nichts - das Ergebnis ist einfach das bestehende `Err`-Objekt.
+(d.h. `map` arbeitet auf einem `Ok`), packen wir den Wert mit `value()` aus, wenden
+die Funktion darauf an und verpacken das Ergebnis in ein `Ok` und liefern das
+zurück. Im Fehlerfall (`Err`) geben wir einfach unseren Fehlerwert neu verpackt
+zurück - d.h. es wird nichts weiter berechnet. (*Anmerkung*: Man könnte diese
+Implementierung der `map`-Funktion auf ein einfaches
+`return flatMap(a -> ok(f.apply(a)));` zurückführen. Warum?)
 
 `flatMap` übernimmt die ganze Arbeit. Im Fehlerfall geben wir einfach unseren
 Fehlerwert neu verpackt zurück - d.h. es wird nichts weiter berechnet. Das
