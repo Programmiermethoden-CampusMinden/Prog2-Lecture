@@ -95,7 +95,7 @@ Wenn `A <: B` (`A` Untertyp von `B`), dann folgt **nicht** `List<A> <: List<B>`.
 nicht auf den Typ‑Parameter. Bei der Vererbung von generischen Typen muss der
 Typ-Parameter identisch sein.
 
-<!-- TODO Bild -->
+![](images/generics_invariant.png){width="60%"}
 
 -   Ungültige Beispiele:
 
@@ -196,7 +196,7 @@ Damit bildet sich die sogenannte "Kovarianz-Leiter":
 -   `Integer` und `Number` aus dem JDK:
     `List<Integer>  <:  List<? extends Integer>  <:  List<? extends Number>  <:  List<?>`
 
-<!-- TODO Bild -->
+![](images/generics_kovariant.png){width="60%"}
 :::
 
 # Kontravarianz mit `? super` (Consumer: nur schreiben)
@@ -258,7 +258,7 @@ Damit bildet sich die sogenannte "Kontravarianz-Leiter":
 -   `Integer` und `Number` aus dem JDK:
     `List<Number>  <:  List<? super Number>  <:  List<? super Integer>  <:  List<?>`
 
-<!-- TODO Bild -->
+![](images/generics_kontravariant.png){width="45%"}
 :::
 
 # PECS: Producer Extends, Consumer Super
