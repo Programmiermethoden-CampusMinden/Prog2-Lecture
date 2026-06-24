@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: Optional
+title: "Fehlerbehandlung mit Optional und Result"
 ---
 
 ::: tldr
@@ -31,13 +31,16 @@ Rückgabetyp der Methode ein `Optional` ist!
 :::
 
 ::: youtube
+TODO
+<!--
 -   [VL Optional](https://youtu.be/JDG_hUSBfSA)
 -   [Demo Optional](https://youtu.be/vL2c0iB4uSk)
 -   [Demo Optional: Beispiel aus der Praxis im
     PM-Dungeon](https://youtu.be/vyN-vOV9_CU)
+-->
 :::
 
-# Motivation
+# `Optional<T>` - "Vielleicht gibt es einen Wert"
 
 ``` java
 public class LSF {
@@ -71,18 +74,23 @@ public static void main(String... args) {
 ::: notes
 ## Problem: `null` wird an (zu) vielen Stellen genutzt
 
+`null` wird sehr gern für diese Situationen genutzt (Aufzählung nicht vollständig):
 -   Es gibt keinen Wert ("not found")
 -   Felder wurden (noch) nicht initialisiert
 -   Es ist ein Problem oder etwas Unerwartetes aufgetreten
 
-=\> Parameter und Rückgabewerte müssen stets auf `null` geprüft werden (oder
+Problem: `null` ist "unsichtbar" im Typ (Rückgabetyp, Parametertyp, ...)!
+
+=\> Parameter und Rückgabewerte müssen **stets** auf `null` geprüft werden (oder
 Annotationen wie `@NotNull` eingesetzt werden ...)
 
 ## Lösung
 
+`Optional<T>` bedeutet: Entweder ein Wert vom Typ `T` oder kein Wert (`empty`). Damit wird im Typ signalisiert, dass es möglicherweise keine Werte gibt und dass die Nutzenden sich mit diesem Fall aktiv auseinander setzen müssen.
+
 -   `Optional<T>` für Rückgabewerte, die "kein Wert vorhanden" mit einschließen
     (statt `null` bei Abwesenheit von Werten)
--   `@NotNull`/`@Nullable` für Parameter einsetzen (oder separate Prüfung)
+-   `@NotNull`/`@Nullable` für Parameter einsetzen (oder separate Prüfung mit `Objects.notNull()`)
 -   Exceptions werfen in Fällen, wo ein Problem aufgetreten ist
 
 ## Anmerkungen
@@ -196,8 +204,14 @@ Es sollte in der Praxis eigentlich nur wenige Fälle geben, wo ein Aufruf von
 Stattdessen sollte stets `Optional.ofNullable()` verwendet werden.
 :::
 
+\bigskip
+\smallskip
+
+::: important
 **`null` kann nicht nicht in `Optional<T>` verpackt werden!** [(Das wäre dann eben
 `Optional.empty()`.)]{.notes}
+:::
+
 
 # LSF liefert jetzt *Optional* zurück
 
@@ -242,19 +256,19 @@ reagieren.
 
 In Java gibt es die Methode `Optional#isEmpty()`, die einen Boolean zurückliefert
 und prüft, ob es sich um ein leeres `Optional` handelt oder ob hier ein Wert
-"verpackt" ist.
+"verpackt" ist. Die Methode `Optional#isPresent()` hat die invertierte Semantik.
 
 Für den direkten Zugriff auf die Werte gibt es die Methoden `Optional#orElseThrow()`
 und `Optional#orElse()`. Damit kann man auf den verpackten Wert zugreifen, oder es
 wird eine Exception geworfen bzw. ein Ersatzwert geliefert.
 
-Zusätzlich gibt es `Optional#isPresent()`, die als Parameter ein
+Zusätzlich gibt es `Optional#ifPresent()`, die als Parameter ein
 `java.util.function.Consumer` erwartet, also ein funktionales Interface mit einer
-Methode `void accept(T)`, die das Objekt verarbeitet.
+Methode `void accept(T)`, die das Objekt verarbeitet (sofern vorhanden).
 :::
 
 ``` java
-Studi best;
+Studi best, anne;
 
 // Testen und dann verwenden
 if (!lsf.getBestStudi().isEmpty()) {
@@ -279,8 +293,10 @@ Es gibt noch eine Methode `get()`, die so verhält wie `orElseThrow()`. Da man d
 Methode vom Namen her schnell mit einem Getter verwechselt, ist sie mittlerweile
 *deprecated*.
 
-*Anmerkung*: Da `getBestStudi()` eine `NullPointerException` werfen kann, sollte der
-Aufruf möglicherweise in ein `try/catch` verpackt werden. Dito für `orElseThrow()`.
+::: tip
+*Anmerkung*: Da `getBestStudi()` eine `NullPointerException` werfen kann (vgl. Implementierung am Anfang), sollte der
+Aufruf möglicherweise in ein `try/catch` verpackt werden.
+:::
 
 [Beispiel: optional.traditional.Demo]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/optional/traditional/Demo.java"}
@@ -295,15 +311,15 @@ public class LSF {
         if (sl == null) throw new NullPointerException("There ain't any collection");
         return sl.stream()
                  .sorted((s1, s2) -> s2.credits() - s1.credits())
-                 .findFirst();
+                 .findFirst();  // Optional<Studi>
     }
 }
 
 
 public static void main(String... args) {
     ...
-    String name = lsf.getBestStudi()
-                     .map(Studi::name)
+    String name = lsf.getBestStudi()    // Optional<Studi>
+                     .map(Studi::name)  // Optional<String>
                      .orElseThrow();
 }
 ```
@@ -352,7 +368,9 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
 
     ::: notes
     `Optional` ist nicht als Ersatz für eine `null`-Prüfung o.ä. gedacht, sondern
-    als Repräsentation, um auch ein "kein Wert vorhanden" zurückliefern zu können.
+    als Repräsentation, um auch ein legitimes "kein Wert vorhanden" zurückliefern zu können.
+
+    **Wichtig**: Nicht als Ersatz für eine Exception o.ä. missbrauchen!
     :::
 
 \bigskip
@@ -409,18 +427,15 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
     Stream-Methoden. So ist dies von den Designern gedacht.
     :::
 
-::: notes
-# Interessante Links
-
--   ["Using Optionals"](https://dev.java/learn/api/streams/optionals/)
--   ["What You Might Not Know About
-    Optional"](https://medium.com/javarevisited/what-you-might-not-know-about-optional-7238e3c05f63)
--   ["Experienced Developers Use These 7 Java Optional Tips to Remove Code
-    Clutter"](https://medium.com/javarevisited/experienced-developers-use-these-7-java-optional-tips-to-remove-code-clutter-6e8b1a639861)
--   ["Code Smells: Null"](https://blog.jetbrains.com/idea/2017/08/code-smells-null/)
--   ["Class
-    Optional"](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html)
+::: important
+`Optional<T>` für (normale) Abwesenheit eines Wertes, nicht für Fehler mit Erklärung!
 :::
+
+
+
+
+
+
 
 # Wrap-Up
 
@@ -445,8 +460,17 @@ Schöne Doku: ["Using Optionals"](https://dev.java/learn/api/streams/optionals/)
 :::
 
 ::: readings
--   @LernJava
--   @Ullenboom2021 [Kap. 12.6]
+Lesen Sie zu diesem Thema im Dev.java-Tutorial von Oracle ["Using Optionals"](https://dev.java/learn/api/streams/optionals/) nach.
+
+Weitere interessante Links:
+
+-   ["What You Might Not Know About
+    Optional"](https://medium.com/javarevisited/what-you-might-not-know-about-optional-7238e3c05f63)
+-   ["Experienced Developers Use These 7 Java Optional Tips to Remove Code
+    Clutter"](https://medium.com/javarevisited/experienced-developers-use-these-7-java-optional-tips-to-remove-code-clutter-6e8b1a639861)
+-   ["Code Smells: Null"](https://blog.jetbrains.com/idea/2017/08/code-smells-null/)
+-   ["Class
+    Optional"](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Optional.html)
 :::
 
 ::: outcomes
