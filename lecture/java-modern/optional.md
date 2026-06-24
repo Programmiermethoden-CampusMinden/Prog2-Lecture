@@ -431,33 +431,426 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
 `Optional<T>` für (normale) Abwesenheit eines Wertes, nicht für Fehler mit Erklärung!
 :::
 
+# Was ist das Problem mit Exceptions?
+
+
+```java
+public static int parsePort(String input) {
+    int port = Integer.parseInt(input);
+    if (port < 1024 || port > 65535) {
+        throw new IllegalArgumentException("Port out of range");
+    }
+    return port;
+}
+```
+
+::: notes
+**Problempunkte**:
+
+1.  Fehler sind "unsichtbar" im Typ
+
+    Aus dem Typ `int parsePort(String)` sehen Sie nicht, dass hier ein Fehlerfall möglich ist.
+    Sie müssen Javadoc, Doku oder Implementation lesen.
+
+    Selbst bei checked-Exceptions hat sich oft die Praxis verbreitet, diese zu fangen und als `RunTimeException` neu zu werfen.
+
+2. Verstreute Fehlerbehandlung
+
+    `try`/`catch` oft weit entfernt vom Ort, an dem der Fehler entstehen kann.
+    Gefahr, Exceptions zu "verschlucken".
+:::
+
+**Gibt es eine Möglichkeit, Fehler so zu modellieren, dass sie im Typ sichtbar sind?**
+
+::: notes
+Wir könnten überlegen, ein `Optional<Integer>` als Ergebnis zu liefern: Wenn es einen Fehler gab, dann haben wir nur ein `Optional.empty()`:
+
+```java
+public static Optional<Integer> parsePort(String input) {
+    int port = Integer.parseInt(input);
+    if (port < 1024 || port > 65535) {
+        return Optional.empty();
+    }
+    return Optional.of(port);
+}
+```
+
+Damit hätten wir hier aber nicht wirklich etwas gewonnen:
+
+1. `Integer.parseInt(input)` kann immer noch eine `NumberFormatException` liefern, die der Aufrufer fangen müsste
+2. Im Fehlerfall (Ports außerhalb des Bereichs) bekommen wir zwar nun ein `Optional.empty()`, wissen aber nicht *warum*
+3. Das Handling auf der Aufrufer-Seite wird zu einem etwas umständlichen `ifPresentOrElse` (Port vorhanden oder Reaktion auf falsche Portnummer)
+
+=> Wir haben hier **nicht** den Fall, dass wir kein Ergebnis (einen Port) als normalen Fall haben können. Stattdessen missbrauchen wir `Optional<T>`, was uns tatsächlich nicht wirklicht weiter hilft. `Optional<T>` trägt keinerlei Information mit sich, warum es zu `Optional.empty()` gekommen ist.
+:::
 
 
 
+# `Result<E,R>`: Fehler als Datentyp modellieren
+
+::: notes
+Wir wollen das Ergebnis und den Fehler in einem gemeinsamen Typ kapseln. Dazu können wir uns einen generischen Typ `Result<E,R>`
+definieren, der entweder ein Ergebnis vom Typ `R` mit sich führt oder einen Fehler vom Typ `E` (samt Informationen über den Fehler).
+:::
+
+```java
+public sealed interface Result<E, R> permits Result.Ok, Result.Err {
+
+    record Ok<E, R>(R value) implements Result<E, R> {}
+    record Err<E, R>(E error) implements Result<E, R> {}
+
+    static <E, R> Result<E, R> ok(R value)  {  return new Ok<>(value);  }
+    static <E, R> Result<E, R> err(E error) {  return new Err<>(error);  }
+}
+```
+
+::: notes
+Der Typ `Result<E,R>` wird als sealed Typ definiert mit exakt zwei Ausprägungen:
+
+- `Ok<E, R>`: kapselt das normale Ergebnis, welches über `value()` abrufbar ist
+- `Err<E, R>`: kapselt den Fehlerfall, welcher über `error()` abrufbar ist
+
+Die statischen Hilfsmethoden `ok(R value)` und `err(E error)` sind lediglich Convenience-Methoden, um die Ergebnisse leichter erzeugen zu können.
+:::
+
+
+# Umbau unseres Beispiels auf `Result<E,R>`
+
+::: notes
+Jetzt können wir uns einen Typ für unsere Fehler definieren und unser Beispiel umbauen:
+:::
+
+```java
+public enum PortError {
+    NOT_A_NUMBER,
+    OUT_OF_RANGE
+}
+```
+
+```java
+public static Result<PortError, Integer> parsePort(String input) {
+    try {
+        int port = Integer.parseInt(input);
+        if (port < 1024 || port > 65535) {
+            return Result.err(PortError.OUT_OF_RANGE);
+        }
+        return Result.ok(port);
+    } catch (NumberFormatException e) {
+        return Result.err(PortError.NOT_A_NUMBER);
+    }
+}
+```
+
+::: notes
+In der Methode haben wir zwei Stellen, wo ein Fehler auftreten kann: das `Integer.parseInt(input)` kann eine `NumberFormatException` werfen, und der Port könnte außerhalb des zulässigen Bereichs liegen. Zur Modellierung unseres Fehler bauen wir uns ein Enum, welches genau diese beiden Fälle über Konstanten repräsentiert. Im Fehlerfall geben wir dann ein `Err(ENUMKONSTANTE)` zurück (über die Convenience-Methode `Result.err()`), und im Erfolgsfall müssen wir unseren Port in ein `Ok` kapseln und nutzen hier die Convenience-Methode `Result.ok()`.
+:::
+
+
+# Handling auf Aufrufer-Seite
+
+```java
+public static void main(String[] args) {
+    String userInput = args.length > 0 ? args[0] : "abc";
+
+    Result<PortError, Integer> result = PortParser.parsePort(userInput);
+
+    switch (result) {
+        case Result.Ok<PortError, Integer> ok -> {
+            int port = ok.value();
+            IO.println("Starte Server auf Port " + port);
+        }
+        case Result.Err<PortError, Integer> err -> handleError(err.error());
+    }
+}
+
+private static void handleError(PortError err) {
+    switch (err) {
+        case NOT_A_NUMBER -> System.err.println("Eingabe ist keine Zahl.");
+        case OUT_OF_RANGE -> System.err.println("Port muss zwischen 1024 und 65535 liegen.");
+    }
+}
+```
+
+::: notes
+Der Fehlertyp ist jetzt Teil des Methodentyps: `Result<PortError, Integer>` $\to$ klar sichtbar, welche Art Fehler vorkommen kann. Auf der Aufruferseite kann man elegant Pattern Matching einsetzen, und durch die sealed Hierarchie wird auch ein `default`-Zweig unnötig.
+Kein `throws` mehr nötig, kein versehentliches "Durchrutschen" von Exceptions, und die aufrufenden Methoden müssen entscheiden, was mit `Err` passiert.
+
+::: tip
+Für Fortgeschrittene:
+Das kann man noch ausbauen und in die Stream-Verarbeitung einbinden ...
+
+## Schritt 1: Szenario erweitern
+
+Erweitern wir unser Szenario von oben um einige Verarbeitungsstufen:
+
+``` java
+public int parsePort(String input) throws NumberFormatException, IllegalArgumentException {
+    int port = Integer.parseInt(input);
+    if (port < 1024 || port > 65535) {
+        throw new IllegalArgumentException("Port out of range");
+    }
+    return port;
+}
+
+public Socket openSocket(int port) throws IOException {
+    return new Socket("localhost", port);
+}
+
+public String sendHello(Socket socket) throws IOException {
+    socket.getOutputStream().write("HELLO".getBytes());
+    byte[] buffer = new byte[1024];
+    int n = socket.getInputStream().read(buffer);
+    return new String(buffer, 0, n);
+}
+```
+
+Das würde zusammengebaut mit traditionellem Exception-Handling irgendwie so aussehen:
+
+```java
+public void connectToServerAndPrintAnswer(String userInput) {
+    try {
+        int port = parsePort(userInput);
+        Socket socket = openSocket(port);
+        String response = sendHello(socket);
+        IO.println("Antwort: " + response);
+    } catch (NumberFormatException e) {
+        System.err.println("Port ist keine Zahl.");
+    } catch (IllegalArgumentException e) {
+        System.err.println("Ungültiger Portbereich.");
+    } catch (IOException e) {
+        System.err.println("Netzwerkfehler: " + e.getMessage());
+    }
+}
+```
+
+## Schritt 2: Umbauen auf `Result<E,R>`
+
+Wir haben drei verschiedene Fehlersituationen im erweiterten Szenario. Diese können wir über ein Enum modellieren:
+
+```java
+public enum ConnectionError {
+    INVALID_PORT_FORMAT,
+    PORT_OUT_OF_RANGE,
+    NETWORK_ERROR
+}
+```
+
+Nun können wir hingehen und die drei Hilfsfunktionen `parsePort`, `openSocket` und `sendHello` auf passende `Result<E,R>` umbauen:
+
+```java
+public Result<ConnectionError, Integer> parsePort(String input) {
+    try {
+        int port = Integer.parseInt(input);
+        if (port < 1024 || port > 65535) {
+            return Result.err(ConnectionError.PORT_OUT_OF_RANGE);
+        }
+        return Result.ok(port);
+    } catch (NumberFormatException e) {
+        return Result.err(ConnectionError.INVALID_PORT_FORMAT);
+    }
+}
+
+public Result<ConnectionError, Socket> openSocket(int port) {
+    try {
+        Socket socket = new Socket("localhost", port);
+        return Result.ok(socket);
+    } catch (IOException e) {
+        return Result.err(ConnectionError.NETWORK_ERROR);
+    }
+}
+
+public Result<ConnectionError, String> sendHello(Socket socket) {
+    try {
+        socket.getOutputStream().write("HELLO".getBytes());
+        byte[] buffer = new byte[1024];
+        int n = socket.getInputStream().read(buffer);
+        return Result.ok(new String(buffer, 0, n));
+    } catch (IOException e) {
+        return Result.err(ConnectionError.NETWORK_ERROR);
+    }
+}
+```
+
+
+Bitte beachten Sie die unterschiedlichen Rückgabe-Typen: Wir haben immer unseren `ConnectionError` als Fehlertyp dabei, aber der Ergebnistyp unterscheidet sich von Funktion zu Funktion: `Integer`, `Socket`, `String`. Das wird jetzt "interessant" beim Zusammenbauen und Aufrufen:
+
+```java
+public void connectToServerAndPrintAnswer(String userInput) {
+    Result<ConnectionError, Integer> port = parsePort(userInput);
+    switch (port) {
+        case Result.Ok<ConnectionError, Integer> okp -> {
+            Result<ConnectionError, Socket> socket = openSocket(okp.value());
+            switch (socket) {
+                case Result.Ok<ConnectionError, Socket> oks -> {
+                    Result<ConnectionError, String> response = sendHello(oks.value());
+                    switch (response) {
+                        case Result.Ok<ConnectionError, String> okr -> IO.println("Antwort: " + okr.value());
+                        case Result.Err<ConnectionError, String> errr -> handleError(errr.error());
+                    }
+                }
+                case Result.Err<ConnectionError, Socket> errs -> handleError(errs.error());
+            }
+        }
+        case Result.Err<ConnectionError, Integer> errp -> handleError(errp.error());
+    }
+}
+
+private static void handleError(ConnectionError err) {
+    switch (err) {
+        case INVALID_PORT_FORMAT -> System.err.println("Port ist keine Zahl.");
+        case PORT_OUT_OF_RANGE -> System.err.println("Port muss zwischen 1024 und 65535 liegen.");
+        case NETWORK_ERROR -> System.err.println("Netzwerkfehler (keine Message)");
+    }
+}
+```
+
+Wir bekommen bei jedem Aufruf ein anderes `Result<ConnectionError, T>`. Mit Pattern Matching und `switch`/`case` kann das halbwegs elegant auseinander nehmen, und da der Error-Typ überall gleich ist, reicht uns eine gemeinsame Funktion für den Fehlerfall.
+
+Das funktioniert. Lesbar ist aber anders ...
+
+
+## Schritt 3: Blick in die Java Stream-API
+
+Unser Problem ist, dass jede der drei Funktionen ein anderes `Result<ConnectionError, T>` zurückliefert. Bevor wir jeweils die nächste Funktion aufrufen können (im Erfolgsfall), müssen wir das `Ok<ConnectionError, T>` auspacken und den Wert vom Typ `T` in die nächste Funktion übergeben. Im Fehlerfall haben wir ein `Err<ConnectionError, T>`, packen den Fehlerwert vom Typ `ConnectionError` aus, erzeugen die Reaktion (hier nur eine simple Ausgabe) und brechen die weitere Verarbeitung ab.
+
+Unsere drei Hilfsfunktionen `parsePort`, `openSocket` und `sendHello` haben in der ersten Version (mit traditionellen Exceptions) eine Abbildung `T` $\to$ `R` implementiert (mit passenden Typen). In der zweiten Version wurden daraus Abbildungen `T` $\to$ `Result<ConnectionError, R>`.
+
+Aus der Java Stream-API kennen wir die beiden Funktionen `map` und `flatMap`, die auf einem `Stream<T>` arbeiten:
+
+1.  `<R> Stream<R> map(Function<? super T, ? extends R> mapper)` ist eine Funktion, mit einer übergebenen Funktion `mapper`: `T` $\to$ `R` über die Elemente des `Stream<T>` iteriert und für jedes Element die  `mapper`-Funktion aufruft, d.h. aus Elementen vom Typ `T` werden neue Elemente vom Typ `R` erzeugt. Diese werden in den Stream gelegt, so dass wir im Ergebnis einen `Stream<R>` zurück erhalten.
+
+2. `<R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper)` ist analog zu `map` eine Funktion, die über alle Elemente des `Stream<T>` läuft und auf jedes Element vom Typ `T` die `mapper`-Funktion anwendet. Diesmal erzeugt `mapper` aber nicht einfach ein "normales" Ergebnis vom Typ `R`, sondern gibt selbst ein `Stream<? extends R>` zurück, d.h. `mapper`: `T` $\to$ `Stream<? extends R>`. Die `flatMap`-Funktion muss entsprechend das Ergebnis der `mapper`-Funktion "auspacken" und in das eigene Ergebnis "umverpacken", um wir im Ergebnis einen `Stream<R>` bekommen.
+
+
+Wenn wir jetzt `Stream` mit `Result` ersetzen und `T` mit den jeweiligen Eingabetypen unserer Hilfsfunktionen, haben wir
+
+- `Function<? super String, ? extends Result<ConnectionError, Integer>> parsePort`
+- `Function<? super Integer, ? extends Result<ConnectionError, Socket>> openSocket`
+- `Function<? super Socket, ? extends Result<ConnectionError, String>> sendHello`
+
+=> Was wir brauchen, ist eine Art `flatMap` für unser `Result<E,R>`!
+
+(Ja, wir bauen uns hier eine Art Monade in Java nach ...)
+
+## Schritt 4: Ergänzen von `map` und `flatMap` in `Result<E,R>`
+
+```java
+public sealed interface Result<E, R> permits Result.Ok, Result.Err {
+
+    record Ok<E, R>(R value) implements Result<E, R> {}
+    record Err<E, R>(E error) implements Result<E, R> {}
+
+    static <E, R> Result<E, R> ok(R value)  {  return new Ok<>(value);  }
+    static <E, R> Result<E, R> err(E error) {  return new Err<>(error);  }
+
+    // ---------- Functor: apply function R -> B ----------
+    default <B> Result<E, B> map(Function<? super R, ? extends B> f) {
+        return flatMap(a -> ok(f.apply(a)));
+    }
+
+    // ---------- Monad: apply function R -> Result<E,B> ----------
+    default <B> Result<E, B> flatMap(Function<? super R, ? extends Result<E, B>> f) {
+        return switch (this) {
+            case Ok<E, R> ok -> f.apply(ok.value);
+            case Err<E, R> e -> err(e.error);
+        };
+    }
+
+    // ---------- unwrap like in Optional<T> ----------
+    default R orElseThrow(Function<? super E, ? extends RuntimeException> f) {
+        return switch (this) {
+            case Ok<E, R> ok -> ok.value;
+            case Err<E, R> e -> throw f.apply(e.error);
+        };
+    }
+
+    default R orElse(R fallback) {
+        return switch (this) {
+            case Ok<E, R> ok -> ok.value;
+            case Err<E, R> _ -> fallback;
+        };
+    }
+}
+```
+
+Die `map`-Funktion nimmt eine Funktion `f`: `R` $\to$ `B` entgegen. Im Erfolgsfall (d.h. `map` arbeitet auf einem `Ok`), verwenden wir die `flatMap`-Funktion zur weiteren Berechnung. Dabei übergeben wir einen Lambda-Ausdruck, der die Funktion `f` auf das Argument anwendet und mit der Convenience-Funktion `ok` ein neues `Ok` erzeugt (das ist von der Signatur jetzt genau `Function<? super R, ? extends Result<E, B>>`). Im Fehlerfall (`Err`) passiert nichts - das Ergebnis ist einfach das bestehende `Err`-Objekt.
+
+`flatMap` übernimmt die ganze Arbeit. Im Fehlerfall geben wir einfach unseren Fehlerwert neu verpackt zurück - d.h. es wird nichts weiter berechnet. Das Umverpacken ist ausschließlich notwendig, um den Typ-Signaturen zu genügen. Im Erfolgsfall holen wir mit `value()` den Wert vom Typ `R` heraus, wenden die übergebene Funktion `Function<? super R, ? extends Result<E, B>>` an und bekommen ein `Result<E, B>` zurück, welches wir direkt zurückgeben können.
+
+Zusätzlich habe ich zwei Funktionen definiert, die sich analog zu den `orElse`-Methoden von `Optional<T>` verhalten.
+
+## Schritt 5: Vereinfachen der Aufrufkette
+
+Was wir gesucht haben, war `flatMap`: Jede der drei Hilfsfunktionen `parsePort`, `openSocket` und `sendHello` ist eine Abbildung `T` $\to$ `Result<ConnectionError, R>`. D.h. wir müssen nach dem Aufruf einer solchen Funktion die weitere Berechnung "kurzschließen", wenn es ein `Err` ist. Im `Ok`-Fall packen wir den Wert aus und übergeben ihn an die nächste Funktion.
+
+```java
+public void runWithResult(String userInput) {
+    Result<ConnectionError, String> result =
+            parsePort(userInput)        // Result<ConnectionError, Integer>
+            .flatMap(this::openSocket)  // Result<ConnectionError, Socket>
+            .flatMap(this::sendHello);  // Result<ConnectionError, String>
+
+    switch (result) {
+        case Result.Ok<ConnectionError, String> ok -> IO.println("Antwort: " + ok.value());
+        case Result.Err<ConnectionError, String> err -> handleError(err.error());
+    }
+}
+```
+
+Das Konzept nennt sich "Monade" und ist in der funktionalen Programmierung seit langer Zeit bekannt und wird erfolgreich angewendet. Man sieht an den Typen, dass es hier entweder einen Wert oder einen Fehler geben kann. Die Fehlerbehandlung mit `try`/`catch` erfolgt an der Stelle, wo der Fehler auftritt. Die Aufrufer können ein `try`/`catch` nicht "vergessen", sondern müssen dank der Signatur reagieren. Dank `map` und `flatMap` und `orElse` lassen sich die Aufrufe elegant verketten, mit identischer Funktionalität wie in der ersten Variante.
+:::
+:::
+
+
+
+
+# Diskussion
+
+- Wann sind Exceptions sinnvoll?
+    -   Unerwartete, außergewöhnliche oder technische Fehler
+    -   "Defensive" Fehlerfälle: I/O‑Fehler, Netzwerk weg, Datenbank down
+
+    *Ich habe nicht erwartet, dass das passiert.*
+
+\smallskip
+
+-   Wann Result/Optional?
+    - `Optional` für "Wert fehlt, aber es ist kein Fehler"
+    - `Result` für erwartbare, domänenspezifische Fehlerfälle mit Bedeutung
+    -   Validierungsfehler, Suchergebnisse nicht gefunden, ungültige User‑Eingaben
+
+    *Das gehört zum normalen Verhalten meiner Funktion.*
+
+::: notes
+In funktionalen Sprachen wie Haskell, Scala oder auch Rust sind solche Typen (`Maybe`, `Option`, `Result`) schon lange Standard.
+In Java müssen wir sie uns selber bauen bzw. bewusst einsetzen.
+:::
 
 
 
 # Wrap-Up
 
-`Optional` als Rückgabe für "kein Wert vorhanden"
+1.  `Optional<T>`:
+    - Vermeidet `null` und `NullPointerException`
+    -   Macht normale "kein Wert"-Fälle im Typ sichtbar
+    -   Nicht als universeller Ersatz für jedes `null`, sondern vor allem als Rückgabewert
+    -   Bietet mit `map`, `flatMap`, `orElse*`, `ifPresent` bequeme Werkzeuge, in die Stream-API integriert
 
-\bigskip
+\smallskip
 
--   `Optional.ofNullable()`: Erzeugen eines `Optional`
-    -   Entweder Objekt "verpackt" (Argument != `null`)
-    -   Oder `Optional.empty()` (Argument \== `null`)
--   Prüfen mit `isEmpty()` und `ifPresent()`
--   Direkter Zugriff mit `ifPresent()`, `orElse()` und `orElseThrow()`
--   Stream-API: `map()`, `filter()`, `flatMap()`, ...
+2.  `Result<E, R>` (oder ähnliche Typen):
+    -   Modelliert Erfolg **oder** Fehler explizit
+    -   Typ zeigt: Funktion kann ein Ergebnis oder einen Fehler liefern
+    -   Vereinfacht Testing: Kein `try`/`catch` nötig, Fehler sind nur Daten
+    -   Mit `map` und `flatMap` lassen sich Pipelines elegant schreiben
 
-\bigskip
+\smallskip
 
--   Attribute, Parameter und Sammlungen: nicht `Optional` nutzen
--   Kein Ersatz für `null`-Prüfung!
+3.  Designentscheidungen:
+    Fragen Sie sich: Ist dies ein normaler Fehlerfall?
+    -   Ja $\to$ `Optional`/`Result`
+    -   Nein $\to$ Exception
 
-::: notes
-Schöne Doku: ["Using Optionals"](https://dev.java/learn/api/streams/optionals/).
-:::
 
 ::: readings
 Lesen Sie zu diesem Thema im Dev.java-Tutorial von Oracle ["Using Optionals"](https://dev.java/learn/api/streams/optionals/) nach.
@@ -475,12 +868,13 @@ Weitere interessante Links:
 
 ::: outcomes
 -   k2: Ich kann erklären, warum Optionals vor allem für Rückgabewerte gedacht sind
--   k2: Ich kann erklären, warum kein null zurückgeliefert werden darf, wenn der
-    Rückgabetyp ein Optional\<T\> ist
--   k3: Ich kann (ggf. leere) Optionals mit Optional.ofNullable() erzeugen
+-   k2: Ich kann erklären, warum kein `null` zurückgeliefert werden darf, wenn der
+    Rückgabetyp ein `Optional<T>` ist
+-   k3: Ich kann (ggf. leere) Optionals mit `Optional.ofNullable()` erzeugen
 -   k3: Ich kann auf Optionals klassisch über die direkten Hilfsmethoden der Klasse
     zugreifen
 -   k3: Ich kann auf Optionals elegant per Stream-API zugreifen
+-   k3: Ich kann Fehlerzustände über das Typsystem mit `Result<E,R>` modellieren
 :::
 
 ::: challenges
