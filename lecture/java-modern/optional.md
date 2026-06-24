@@ -54,7 +54,6 @@ public class LSF {
 
     public Studi getBestStudi() {
         if (sl == null) return null;  // Fehler: Es gibt noch keine Sammlung
-
         Studi best = null;
         for (Studi s : sl) {
             if (best == null) best = s;
@@ -63,16 +62,11 @@ public class LSF {
         return best;
     }
 }
-
 public static void main(String... args) {
-    LSF lsf = new LSF();
-
-    Studi best = lsf.getBestStudi();
+    LSF lsf = new LSF();  Studi best = lsf.getBestStudi();
     if (best != null) {
         String name = best.name();
-        if (name != null) {
-            // mach was mit dem Namen ...
-        }
+        if (name != null) { /* mach was mit dem Namen ... */ }
     }
 }
 ```
@@ -216,7 +210,7 @@ Stattdessen sollte stets `Optional.ofNullable()` verwendet werden.
 :::
 
 \bigskip
-\smallskip
+\bigskip
 
 ::: important
 **`null` kann nicht in `Optional<T>` verpackt werden!** [(Das wäre dann eben
@@ -453,6 +447,9 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
     `orElse(...)` oder `orElseThrow(...)`. So ist dies von den Designern gedacht.
     :::
 
+\bigskip
+\bigskip
+
 ::: important
 `Optional<T>` für (normale) Abwesenheit eines Wertes, nicht für Fehler mit
 Erklärung!
@@ -600,10 +597,8 @@ in ein `Ok` kapseln und nutzen hier die Convenience-Methode `Result.ok()`.
 # Handling auf Aufrufer-Seite
 
 ``` java
-public static void main(String[] args) {
-    String userInput = args.length > 0 ? args[0] : "abc";
-
-    Result<PortError, Integer> result = PortParser.parsePort(userInput);
+public static void foo(String input) {
+    Result<PortError, Integer> result = PortParser.parsePort(input);
 
     switch (result) {
         case Result.Ok<PortError, Integer> ok -> {
@@ -919,8 +914,10 @@ identischer Funktionalität wie in der ersten Variante.
     -   Unerwartete, außergewöhnliche oder technische Fehler
     -   "Defensive" Fehlerfälle: I/O‑Fehler, Netzwerk weg, Datenbank down
 
+    \smallskip
     *Ich habe nicht erwartet, dass das passiert.*
 
+\bigskip
 \smallskip
 
 -   Wann Result/Optional?
@@ -928,6 +925,7 @@ identischer Funktionalität wie in der ersten Variante.
     -   `Result` für erwartbare, domänenspezifische Fehlerfälle mit Bedeutung
     -   Validierungsfehler, Suchergebnisse nicht gefunden, ungültige User‑Eingaben
 
+    \smallskip
     *Das gehört zum normalen Verhalten meiner Funktion.*
 
 ::: notes
