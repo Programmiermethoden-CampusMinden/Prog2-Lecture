@@ -1,6 +1,6 @@
 ---
 author: Carsten Gips (HSBI)
-title: "Fehlerbehandlung mit Optional und Result"
+title: Fehlerbehandlung mit Optional und Result
 ---
 
 ::: tldr
@@ -35,8 +35,7 @@ TODO
 <!--
 -   [VL Optional](https://youtu.be/JDG_hUSBfSA)
 -   [Demo Optional](https://youtu.be/vL2c0iB4uSk)
--   [Demo Optional: Beispiel aus der Praxis im
-    PM-Dungeon](https://youtu.be/vyN-vOV9_CU)
+-   [Demo Optional: Beispiel aus der Praxis im PM-Dungeon](https://youtu.be/vyN-vOV9_CU)
 -->
 :::
 
@@ -75,6 +74,7 @@ public static void main(String... args) {
 ## Problem: `null` wird an (zu) vielen Stellen genutzt
 
 `null` wird sehr gern für diese Situationen genutzt (Aufzählung nicht vollständig):
+
 -   Es gibt keinen Wert ("not found")
 -   Felder wurden (noch) nicht initialisiert
 -   Es ist ein Problem oder etwas Unerwartetes aufgetreten
@@ -86,11 +86,14 @@ Annotationen wie `@NotNull` eingesetzt werden ...)
 
 ## Lösung
 
-`Optional<T>` bedeutet: Entweder ein Wert vom Typ `T` oder kein Wert (`empty`). Damit wird im Typ signalisiert, dass es möglicherweise keine Werte gibt und dass die Nutzenden sich mit diesem Fall aktiv auseinander setzen müssen.
+`Optional<T>` bedeutet: Entweder ein Wert vom Typ `T` oder kein Wert (`empty`).
+Damit wird im Typ signalisiert, dass es möglicherweise keine Werte gibt und dass die
+Nutzenden sich mit diesem Fall aktiv auseinander setzen müssen.
 
 -   `Optional<T>` für Rückgabewerte, die "kein Wert vorhanden" mit einschließen
     (statt `null` bei Abwesenheit von Werten)
--   `@NotNull`/`@Nullable` für Parameter einsetzen (oder separate Prüfung mit `Objects.notNull()`)
+-   `@NotNull`/`@Nullable` für Parameter einsetzen (oder separate Prüfung mit
+    `Objects.requireNonNull()`)
 -   Exceptions werfen in Fällen, wo ein Problem aufgetreten ist
 
 ## Anmerkungen
@@ -169,10 +172,11 @@ zu untersuchen.
 **Allein in dieser einen kurzen Methode macht `null` so viele extra Prüfungen
 notwendig und den Code dadurch schwerer lesbar und fehleranfälliger! `null` wird als
 (unvollständige) Initialisierung und als Rückgabewert und für den Fehlerfall
-genutzt, zusätzlich ist die Semantik von `null` nicht immer klar.** (*Anmerkung*:
-Der Gebrauch von `null` hat nicht wirklich etwas mit "der Natur eines ECS" zu tun.
-Die Methode wurde mittlerweile komplett überarbeitet und ist in der hier gezeigten
-Form glücklicherweise nicht mehr zu finden.)
+genutzt, zusätzlich ist die Semantik von `null` nicht immer klar.**
+
+(*Anmerkung*: Der Gebrauch von `null` hat nicht wirklich etwas mit "der Natur eines
+ECS" zu tun. Die Methode wurde mittlerweile komplett überarbeitet und ist in der
+hier gezeigten Form glücklicherweise nicht mehr zu finden.)
 
 Entsprechend hat sich in diesem
 [Review](https://github.com/Dungeon-CampusMinden/Dungeon/pull/128#pullrequestreview-1254025874)
@@ -211,7 +215,6 @@ Stattdessen sollte stets `Optional.ofNullable()` verwendet werden.
 **`null` kann nicht nicht in `Optional<T>` verpackt werden!** [(Das wäre dann eben
 `Optional.empty()`.)]{.notes}
 :::
-
 
 # LSF liefert jetzt *Optional* zurück
 
@@ -288,19 +291,20 @@ best = lsf.getBestStudi().orElse(anne);
 best = lsf.getBestStudi().orElseThrow();
 ```
 
-::: notes
+:::: notes
 Es gibt noch eine Methode `get()`, die so verhält wie `orElseThrow()`. Da man diese
 Methode vom Namen her schnell mit einem Getter verwechselt, ist sie mittlerweile
 *deprecated*.
 
 ::: tip
-*Anmerkung*: Da `getBestStudi()` eine `NullPointerException` werfen kann (vgl. Implementierung am Anfang), sollte der
-Aufruf möglicherweise in ein `try/catch` verpackt werden.
+*Anmerkung*: Da `getBestStudi()` eine `NullPointerException` werfen kann (vgl.
+Implementierung am Anfang), sollte der Aufruf möglicherweise in ein `try/catch`
+verpackt werden.
 :::
 
 [Beispiel: optional.traditional.Demo]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/master/lecture/java-modern/src/optional/traditional/Demo.java"}
-:::
+::::
 
 # Einsatz mit Stream-API
 
@@ -368,7 +372,8 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
 
     ::: notes
     `Optional` ist nicht als Ersatz für eine `null`-Prüfung o.ä. gedacht, sondern
-    als Repräsentation, um auch ein legitimes "kein Wert vorhanden" zurückliefern zu können.
+    als Repräsentation, um auch ein legitimes "kein Wert vorhanden" zurückliefern zu
+    können.
 
     **Wichtig**: Nicht als Ersatz für eine Exception o.ä. missbrauchen!
     :::
@@ -428,13 +433,13 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
     :::
 
 ::: important
-`Optional<T>` für (normale) Abwesenheit eines Wertes, nicht für Fehler mit Erklärung!
+`Optional<T>` für (normale) Abwesenheit eines Wertes, nicht für Fehler mit
+Erklärung!
 :::
 
 # Was ist das Problem mit Exceptions?
 
-
-```java
+``` java
 public static int parsePort(String input) {
     int port = Integer.parseInt(input);
     if (port < 1024 || port > 65535) {
@@ -449,23 +454,26 @@ public static int parsePort(String input) {
 
 1.  Fehler sind "unsichtbar" im Typ
 
-    Aus dem Typ `int parsePort(String)` sehen Sie nicht, dass hier ein Fehlerfall möglich ist.
-    Sie müssen Javadoc, Doku oder Implementation lesen.
+    Aus dem Typ `int parsePort(String)` sehen Sie nicht, dass hier ein Fehlerfall
+    möglich ist. Sie müssen Javadoc, Doku oder Implementation lesen.
 
-    Selbst bei checked-Exceptions hat sich oft die Praxis verbreitet, diese zu fangen und als `RunTimeException` neu zu werfen.
+    Selbst bei checked-Exceptions hat sich oft die Praxis verbreitet, diese zu
+    fangen und als `RunTimeException` neu zu werfen.
 
-2. Verstreute Fehlerbehandlung
+2.  Verstreute Fehlerbehandlung
 
     `try`/`catch` oft weit entfernt vom Ort, an dem der Fehler entstehen kann.
-    Gefahr, Exceptions zu "verschlucken".
+    Gefahr, Exceptions zu "verschlucken" oder zu "vergessen".
 :::
 
-**Gibt es eine Möglichkeit, Fehler so zu modellieren, dass sie im Typ sichtbar sind?**
+**Gibt es eine Möglichkeit, Fehler so zu modellieren, dass sie im Typ sichtbar
+sind?**
 
 ::: notes
-Wir könnten überlegen, ein `Optional<Integer>` als Ergebnis zu liefern: Wenn es einen Fehler gab, dann haben wir nur ein `Optional.empty()`:
+Wir könnten überlegen, ein `Optional<Integer>` als Ergebnis zu liefern: Wenn es
+einen Fehler gab, dann haben wir nur ein `Optional.empty()`:
 
-```java
+``` java
 public static Optional<Integer> parsePort(String input) {
     int port = Integer.parseInt(input);
     if (port < 1024 || port > 65535) {
@@ -477,23 +485,29 @@ public static Optional<Integer> parsePort(String input) {
 
 Damit hätten wir hier aber nicht wirklich etwas gewonnen:
 
-1. `Integer.parseInt(input)` kann immer noch eine `NumberFormatException` liefern, die der Aufrufer fangen müsste
-2. Im Fehlerfall (Ports außerhalb des Bereichs) bekommen wir zwar nun ein `Optional.empty()`, wissen aber nicht *warum*
-3. Das Handling auf der Aufrufer-Seite wird zu einem etwas umständlichen `ifPresentOrElse` (Port vorhanden oder Reaktion auf falsche Portnummer)
+1.  `Integer.parseInt(input)` kann immer noch eine `NumberFormatException` liefern,
+    die der Aufrufer fangen müsste
+2.  Im Fehlerfall (Ports außerhalb des Bereichs) bekommen wir zwar nun ein
+    `Optional.empty()`, wissen aber nicht *warum*
+3.  Das Handling auf der Aufrufer-Seite wird zu einem etwas umständlichen
+    `ifPresentOrElse` (Port vorhanden oder Reaktion auf falsche Portnummer)
 
-=> Wir haben hier **nicht** den Fall, dass wir kein Ergebnis (einen Port) als normalen Fall haben können. Stattdessen missbrauchen wir `Optional<T>`, was uns tatsächlich nicht wirklicht weiter hilft. `Optional<T>` trägt keinerlei Information mit sich, warum es zu `Optional.empty()` gekommen ist.
+=\> Wir haben hier **nicht** den Fall, dass wir kein Ergebnis (einen Port) als
+normalen Fall haben können. Stattdessen missbrauchen wir `Optional<T>`, was uns
+tatsächlich nicht wirklicht weiter hilft. `Optional<T>` trägt keinerlei Information
+mit sich, warum es zu `Optional.empty()` gekommen ist.
 :::
-
-
 
 # `Result<E,R>`: Fehler als Datentyp modellieren
 
 ::: notes
-Wir wollen das Ergebnis und den Fehler in einem gemeinsamen Typ kapseln. Dazu können wir uns einen generischen Typ `Result<E,R>`
-definieren, der entweder ein Ergebnis vom Typ `R` mit sich führt oder einen Fehler vom Typ `E` (samt Informationen über den Fehler).
+Wir wollen das Ergebnis und den Fehler in einem gemeinsamen Typ kapseln. Dazu können
+wir uns einen generischen Typ `Result<E,R>` definieren, der entweder ein Ergebnis
+vom Typ `R` mit sich führt oder einen Fehler vom Typ `E` (samt Informationen über
+den Fehler).
 :::
 
-```java
+``` java
 public sealed interface Result<E, R> permits Result.Ok, Result.Err {
 
     record Ok<E, R>(R value) implements Result<E, R> {}
@@ -507,27 +521,28 @@ public sealed interface Result<E, R> permits Result.Ok, Result.Err {
 ::: notes
 Der Typ `Result<E,R>` wird als sealed Typ definiert mit exakt zwei Ausprägungen:
 
-- `Ok<E, R>`: kapselt das normale Ergebnis, welches über `value()` abrufbar ist
-- `Err<E, R>`: kapselt den Fehlerfall, welcher über `error()` abrufbar ist
+-   `Ok<E, R>`: kapselt das normale Ergebnis, welches über `value()` abrufbar ist
+-   `Err<E, R>`: kapselt den Fehlerfall, welcher über `error()` abrufbar ist
 
-Die statischen Hilfsmethoden `ok(R value)` und `err(E error)` sind lediglich Convenience-Methoden, um die Ergebnisse leichter erzeugen zu können.
+Die statischen Hilfsmethoden `ok(R value)` und `err(E error)` sind lediglich
+Convenience-Methoden, um die Ergebnisse leichter erzeugen zu können.
 :::
-
 
 # Umbau unseres Beispiels auf `Result<E,R>`
 
 ::: notes
-Jetzt können wir uns einen Typ für unsere Fehler definieren und unser Beispiel umbauen:
+Jetzt können wir uns einen Typ für unsere Fehler definieren und unser Beispiel
+umbauen:
 :::
 
-```java
+``` java
 public enum PortError {
     NOT_A_NUMBER,
     OUT_OF_RANGE
 }
 ```
 
-```java
+``` java
 public static Result<PortError, Integer> parsePort(String input) {
     try {
         int port = Integer.parseInt(input);
@@ -542,13 +557,18 @@ public static Result<PortError, Integer> parsePort(String input) {
 ```
 
 ::: notes
-In der Methode haben wir zwei Stellen, wo ein Fehler auftreten kann: das `Integer.parseInt(input)` kann eine `NumberFormatException` werfen, und der Port könnte außerhalb des zulässigen Bereichs liegen. Zur Modellierung unseres Fehler bauen wir uns ein Enum, welches genau diese beiden Fälle über Konstanten repräsentiert. Im Fehlerfall geben wir dann ein `Err(ENUMKONSTANTE)` zurück (über die Convenience-Methode `Result.err()`), und im Erfolgsfall müssen wir unseren Port in ein `Ok` kapseln und nutzen hier die Convenience-Methode `Result.ok()`.
+In der Methode haben wir zwei Stellen, wo ein Fehler auftreten kann: das
+`Integer.parseInt(input)` kann eine `NumberFormatException` werfen, und der Port
+könnte außerhalb des zulässigen Bereichs liegen. Zur Modellierung unseres Fehler
+bauen wir uns ein Enum, welches genau diese beiden Fälle über Konstanten
+repräsentiert. Im Fehlerfall geben wir dann ein `Err(ENUMKONSTANTE)` zurück (über
+die Convenience-Methode `Result.err()`), und im Erfolgsfall müssen wir unseren Port
+in ein `Ok` kapseln und nutzen hier die Convenience-Methode `Result.ok()`.
 :::
-
 
 # Handling auf Aufrufer-Seite
 
-```java
+``` java
 public static void main(String[] args) {
     String userInput = args.length > 0 ? args[0] : "abc";
 
@@ -571,13 +591,17 @@ private static void handleError(PortError err) {
 }
 ```
 
-::: notes
-Der Fehlertyp ist jetzt Teil des Methodentyps: `Result<PortError, Integer>` $\to$ klar sichtbar, welche Art Fehler vorkommen kann. Auf der Aufruferseite kann man elegant Pattern Matching einsetzen, und durch die sealed Hierarchie wird auch ein `default`-Zweig unnötig.
-Kein `throws` mehr nötig, kein versehentliches "Durchrutschen" von Exceptions, und die aufrufenden Methoden müssen entscheiden, was mit `Err` passiert.
+:::: notes
+Der Fehlertyp ist jetzt Teil des Methodentyps: `Result<PortError, Integer>` $\to$
+klar sichtbar, welche Art Fehler vorkommen kann. Auf der Aufruferseite kann man
+elegant Pattern Matching einsetzen, und durch die sealed Hierarchie wird auch ein
+`default`-Zweig unnötig. Kein `throws` mehr nötig, kein versehentliches
+"Durchrutschen" von Exceptions, und die aufrufenden Methoden müssen entscheiden, was
+mit `Err` passiert.
 
 ::: tip
-Für Fortgeschrittene:
-Das kann man noch ausbauen und in die Stream-Verarbeitung einbinden ...
+Für Fortgeschrittene: Das kann man noch ausbauen und in die Stream-Verarbeitung
+einbinden ...
 
 ## Schritt 1: Szenario erweitern
 
@@ -604,9 +628,10 @@ public String sendHello(Socket socket) throws IOException {
 }
 ```
 
-Das würde zusammengebaut mit traditionellem Exception-Handling irgendwie so aussehen:
+Das würde zusammengebaut mit traditionellem Exception-Handling irgendwie so
+aussehen:
 
-```java
+``` java
 public void connectToServerAndPrintAnswer(String userInput) {
     try {
         int port = parsePort(userInput);
@@ -625,9 +650,10 @@ public void connectToServerAndPrintAnswer(String userInput) {
 
 ## Schritt 2: Umbauen auf `Result<E,R>`
 
-Wir haben drei verschiedene Fehlersituationen im erweiterten Szenario. Diese können wir über ein Enum modellieren:
+Wir haben drei verschiedene Fehlersituationen im erweiterten Szenario. Diese können
+wir über ein Enum modellieren:
 
-```java
+``` java
 public enum ConnectionError {
     INVALID_PORT_FORMAT,
     PORT_OUT_OF_RANGE,
@@ -635,9 +661,10 @@ public enum ConnectionError {
 }
 ```
 
-Nun können wir hingehen und die drei Hilfsfunktionen `parsePort`, `openSocket` und `sendHello` auf passende `Result<E,R>` umbauen:
+Nun können wir hingehen und die drei Hilfsfunktionen `parsePort`, `openSocket` und
+`sendHello` auf passende `Result<E,R>` umbauen:
 
-```java
+``` java
 public Result<ConnectionError, Integer> parsePort(String input) {
     try {
         int port = Integer.parseInt(input);
@@ -671,10 +698,12 @@ public Result<ConnectionError, String> sendHello(Socket socket) {
 }
 ```
 
+Bitte beachten Sie die unterschiedlichen Rückgabe-Typen: Wir haben immer unseren
+`ConnectionError` als Fehlertyp dabei, aber der Ergebnistyp unterscheidet sich von
+Funktion zu Funktion: `Integer`, `Socket`, `String`. Das wird jetzt "interessant"
+beim Zusammenbauen und Aufrufen:
 
-Bitte beachten Sie die unterschiedlichen Rückgabe-Typen: Wir haben immer unseren `ConnectionError` als Fehlertyp dabei, aber der Ergebnistyp unterscheidet sich von Funktion zu Funktion: `Integer`, `Socket`, `String`. Das wird jetzt "interessant" beim Zusammenbauen und Aufrufen:
-
-```java
+``` java
 public void connectToServerAndPrintAnswer(String userInput) {
     Result<ConnectionError, Integer> port = parsePort(userInput);
     switch (port) {
@@ -704,37 +733,60 @@ private static void handleError(ConnectionError err) {
 }
 ```
 
-Wir bekommen bei jedem Aufruf ein anderes `Result<ConnectionError, T>`. Mit Pattern Matching und `switch`/`case` kann das halbwegs elegant auseinander nehmen, und da der Error-Typ überall gleich ist, reicht uns eine gemeinsame Funktion für den Fehlerfall.
+Wir bekommen bei jedem Aufruf ein anderes `Result<ConnectionError, T>`. Mit Pattern
+Matching und `switch`/`case` kann das halbwegs elegant auseinander nehmen, und da
+der Error-Typ überall gleich ist, reicht uns eine gemeinsame Funktion für den
+Fehlerfall.
 
-Das funktioniert. Lesbar ist aber anders ...
-
+Huh. Das funktioniert. Lesbar ist aber anders ...
 
 ## Schritt 3: Blick in die Java Stream-API
 
-Unser Problem ist, dass jede der drei Funktionen ein anderes `Result<ConnectionError, T>` zurückliefert. Bevor wir jeweils die nächste Funktion aufrufen können (im Erfolgsfall), müssen wir das `Ok<ConnectionError, T>` auspacken und den Wert vom Typ `T` in die nächste Funktion übergeben. Im Fehlerfall haben wir ein `Err<ConnectionError, T>`, packen den Fehlerwert vom Typ `ConnectionError` aus, erzeugen die Reaktion (hier nur eine simple Ausgabe) und brechen die weitere Verarbeitung ab.
+Unser Problem ist, dass jede der drei Funktionen ein anderes
+`Result<ConnectionError, T>` zurückliefert. Bevor wir jeweils die nächste Funktion
+aufrufen können (im Erfolgsfall), müssen wir das `Ok<ConnectionError, T>` auspacken
+und den Wert vom Typ `T` in die nächste Funktion übergeben. Im Fehlerfall haben wir
+ein `Err<ConnectionError, T>`, packen den Fehlerwert vom Typ `ConnectionError` aus,
+erzeugen die Reaktion (hier nur eine simple Ausgabe) und brechen die weitere
+Verarbeitung ab.
 
-Unsere drei Hilfsfunktionen `parsePort`, `openSocket` und `sendHello` haben in der ersten Version (mit traditionellen Exceptions) eine Abbildung `T` $\to$ `R` implementiert (mit passenden Typen). In der zweiten Version wurden daraus Abbildungen `T` $\to$ `Result<ConnectionError, R>`.
+Unsere drei Hilfsfunktionen `parsePort`, `openSocket` und `sendHello` haben in der
+ersten Version (mit traditionellen Exceptions) eine Abbildung `T` $\to$ `R`
+implementiert (mit passenden Typen). In der zweiten Version wurden daraus
+Abbildungen `T` $\to$ `Result<ConnectionError, R>`.
 
-Aus der Java Stream-API kennen wir die beiden Funktionen `map` und `flatMap`, die auf einem `Stream<T>` arbeiten:
+Aus der Java Stream-API kennen wir die beiden Funktionen `map` und `flatMap`, die
+auf einem `Stream<T>` arbeiten:
 
-1.  `<R> Stream<R> map(Function<? super T, ? extends R> mapper)` ist eine Funktion, mit einer übergebenen Funktion `mapper`: `T` $\to$ `R` über die Elemente des `Stream<T>` iteriert und für jedes Element die  `mapper`-Funktion aufruft, d.h. aus Elementen vom Typ `T` werden neue Elemente vom Typ `R` erzeugt. Diese werden in den Stream gelegt, so dass wir im Ergebnis einen `Stream<R>` zurück erhalten.
+1.  `<R> Stream<R> map(Function<? super T, ? extends R> mapper)` ist eine Funktion,
+    mit einer übergebenen Funktion `mapper`: `T` $\to$ `R` über die Elemente des
+    `Stream<T>` iteriert und für jedes Element die `mapper`-Funktion aufruft, d.h.
+    aus Elementen vom Typ `T` werden neue Elemente vom Typ `R` erzeugt. Diese werden
+    in den Stream gelegt, so dass wir im Ergebnis einen `Stream<R>` zurück erhalten.
 
-2. `<R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper)` ist analog zu `map` eine Funktion, die über alle Elemente des `Stream<T>` läuft und auf jedes Element vom Typ `T` die `mapper`-Funktion anwendet. Diesmal erzeugt `mapper` aber nicht einfach ein "normales" Ergebnis vom Typ `R`, sondern gibt selbst ein `Stream<? extends R>` zurück, d.h. `mapper`: `T` $\to$ `Stream<? extends R>`. Die `flatMap`-Funktion muss entsprechend das Ergebnis der `mapper`-Funktion "auspacken" und in das eigene Ergebnis "umverpacken", um wir im Ergebnis einen `Stream<R>` bekommen.
+2.  `<R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper)`
+    ist analog zu `map` eine Funktion, die über alle Elemente des `Stream<T>` läuft
+    und auf jedes Element vom Typ `T` die `mapper`-Funktion anwendet. Diesmal
+    erzeugt `mapper` aber nicht einfach ein "normales" Ergebnis vom Typ `R`, sondern
+    gibt selbst ein `Stream<? extends R>` zurück, d.h. `mapper`: `T` $\to$
+    `Stream<? extends R>`. Die `flatMap`-Funktion muss entsprechend das Ergebnis der
+    `mapper`-Funktion "auspacken" und in das eigene Ergebnis "umverpacken", um wir
+    im Ergebnis einen `Stream<R>` bekommen.
 
+Wenn wir jetzt `Stream` mit `Result` ersetzen und `T` mit den jeweiligen
+Eingabetypen unserer Hilfsfunktionen, haben wir
 
-Wenn wir jetzt `Stream` mit `Result` ersetzen und `T` mit den jeweiligen Eingabetypen unserer Hilfsfunktionen, haben wir
+-   `Function<? super String, ? extends Result<ConnectionError, Integer>> parsePort`
+-   `Function<? super Integer, ? extends Result<ConnectionError, Socket>> openSocket`
+-   `Function<? super Socket, ? extends Result<ConnectionError, String>> sendHello`
 
-- `Function<? super String, ? extends Result<ConnectionError, Integer>> parsePort`
-- `Function<? super Integer, ? extends Result<ConnectionError, Socket>> openSocket`
-- `Function<? super Socket, ? extends Result<ConnectionError, String>> sendHello`
-
-=> Was wir brauchen, ist eine Art `flatMap` für unser `Result<E,R>`!
+=\> Was wir brauchen, ist eine Art `flatMap` für unser `Result<E,R>`!
 
 (Ja, wir bauen uns hier eine Art Monade in Java nach ...)
 
 ## Schritt 4: Ergänzen von `map` und `flatMap` in `Result<E,R>`
 
-```java
+``` java
 public sealed interface Result<E, R> permits Result.Ok, Result.Err {
 
     record Ok<E, R>(R value) implements Result<E, R> {}
@@ -773,17 +825,33 @@ public sealed interface Result<E, R> permits Result.Ok, Result.Err {
 }
 ```
 
-Die `map`-Funktion nimmt eine Funktion `f`: `R` $\to$ `B` entgegen. Im Erfolgsfall (d.h. `map` arbeitet auf einem `Ok`), verwenden wir die `flatMap`-Funktion zur weiteren Berechnung. Dabei übergeben wir einen Lambda-Ausdruck, der die Funktion `f` auf das Argument anwendet und mit der Convenience-Funktion `ok` ein neues `Ok` erzeugt (das ist von der Signatur jetzt genau `Function<? super R, ? extends Result<E, B>>`). Im Fehlerfall (`Err`) passiert nichts - das Ergebnis ist einfach das bestehende `Err`-Objekt.
+Die `map`-Funktion nimmt eine Funktion `f`: `R` $\to$ `B` entgegen. Im Erfolgsfall
+(d.h. `map` arbeitet auf einem `Ok`), verwenden wir die `flatMap`-Funktion zur
+weiteren Berechnung. Dabei übergeben wir einen Lambda-Ausdruck, der die Funktion `f`
+auf das Argument anwendet und mit der Convenience-Funktion `ok` ein neues `Ok`
+erzeugt (das ist von der Signatur jetzt genau
+`Function<? super R, ? extends Result<E, B>>`). Im Fehlerfall (`Err`) passiert
+nichts - das Ergebnis ist einfach das bestehende `Err`-Objekt.
 
-`flatMap` übernimmt die ganze Arbeit. Im Fehlerfall geben wir einfach unseren Fehlerwert neu verpackt zurück - d.h. es wird nichts weiter berechnet. Das Umverpacken ist ausschließlich notwendig, um den Typ-Signaturen zu genügen. Im Erfolgsfall holen wir mit `value()` den Wert vom Typ `R` heraus, wenden die übergebene Funktion `Function<? super R, ? extends Result<E, B>>` an und bekommen ein `Result<E, B>` zurück, welches wir direkt zurückgeben können.
+`flatMap` übernimmt die ganze Arbeit. Im Fehlerfall geben wir einfach unseren
+Fehlerwert neu verpackt zurück - d.h. es wird nichts weiter berechnet. Das
+Umverpacken ist ausschließlich notwendig, um den Typ-Signaturen zu genügen. Im
+Erfolgsfall holen wir mit `value()` den Wert vom Typ `R` heraus, wenden die
+übergebene Funktion `Function<? super R, ? extends Result<E, B>>` an und bekommen
+ein `Result<E, B>` zurück, welches wir direkt zurückgeben können.
 
-Zusätzlich habe ich zwei Funktionen definiert, die sich analog zu den `orElse`-Methoden von `Optional<T>` verhalten.
+Zusätzlich habe ich zwei Funktionen definiert, die sich analog zu den
+`orElse`-Methoden von `Optional<T>` verhalten.
 
 ## Schritt 5: Vereinfachen der Aufrufkette
 
-Was wir gesucht haben, war `flatMap`: Jede der drei Hilfsfunktionen `parsePort`, `openSocket` und `sendHello` ist eine Abbildung `T` $\to$ `Result<ConnectionError, R>`. D.h. wir müssen nach dem Aufruf einer solchen Funktion die weitere Berechnung "kurzschließen", wenn es ein `Err` ist. Im `Ok`-Fall packen wir den Wert aus und übergeben ihn an die nächste Funktion.
+Was wir gesucht haben, war `flatMap`: Jede der drei Hilfsfunktionen `parsePort`,
+`openSocket` und `sendHello` ist eine Abbildung `T` $\to$
+`Result<ConnectionError, R>`. D.h. wir müssen nach dem Aufruf einer solchen Funktion
+die weitere Berechnung "kurzschließen", wenn es ein `Err` ist. Im `Ok`-Fall packen
+wir den Wert aus und übergeben ihn an die nächste Funktion.
 
-```java
+``` java
 public void runWithResult(String userInput) {
     Result<ConnectionError, String> result =
             parsePort(userInput)        // Result<ConnectionError, Integer>
@@ -797,16 +865,19 @@ public void runWithResult(String userInput) {
 }
 ```
 
-Das Konzept nennt sich "Monade" und ist in der funktionalen Programmierung seit langer Zeit bekannt und wird erfolgreich angewendet. Man sieht an den Typen, dass es hier entweder einen Wert oder einen Fehler geben kann. Die Fehlerbehandlung mit `try`/`catch` erfolgt an der Stelle, wo der Fehler auftritt. Die Aufrufer können ein `try`/`catch` nicht "vergessen", sondern müssen dank der Signatur reagieren. Dank `map` und `flatMap` und `orElse` lassen sich die Aufrufe elegant verketten, mit identischer Funktionalität wie in der ersten Variante.
+Das Konzept nennt sich "Monade" und ist in der funktionalen Programmierung seit
+langer Zeit bekannt und wird erfolgreich angewendet. Man sieht an den Typen, dass es
+hier entweder einen Wert oder einen Fehler geben kann. Die Fehlerbehandlung mit
+`try`/`catch` erfolgt an der Stelle, wo der Fehler auftritt. Die Aufrufer können ein
+`try`/`catch` nicht "vergessen", sondern müssen dank der Signatur reagieren. Dank
+`map` und `flatMap` und `orElse` lassen sich die Aufrufe elegant verketten, mit
+identischer Funktionalität wie in der ersten Variante.
 :::
-:::
-
-
-
+::::
 
 # Diskussion
 
-- Wann sind Exceptions sinnvoll?
+-   Wann sind Exceptions sinnvoll?
     -   Unerwartete, außergewöhnliche oder technische Fehler
     -   "Defensive" Fehlerfälle: I/O‑Fehler, Netzwerk weg, Datenbank down
 
@@ -815,26 +886,27 @@ Das Konzept nennt sich "Monade" und ist in der funktionalen Programmierung seit 
 \smallskip
 
 -   Wann Result/Optional?
-    - `Optional` für "Wert fehlt, aber es ist kein Fehler"
-    - `Result` für erwartbare, domänenspezifische Fehlerfälle mit Bedeutung
+    -   `Optional` für "Wert fehlt, aber es ist kein Fehler"
+    -   `Result` für erwartbare, domänenspezifische Fehlerfälle mit Bedeutung
     -   Validierungsfehler, Suchergebnisse nicht gefunden, ungültige User‑Eingaben
 
     *Das gehört zum normalen Verhalten meiner Funktion.*
 
 ::: notes
-In funktionalen Sprachen wie Haskell, Scala oder auch Rust sind solche Typen (`Maybe`, `Option`, `Result`) schon lange Standard.
-In Java müssen wir sie uns selber bauen bzw. bewusst einsetzen.
+In funktionalen Sprachen wie Haskell, Scala oder auch Rust sind solche Typen
+(`Maybe`, `Option`, `Result`) schon lange Standard. In Java müssen wir sie uns
+selber bauen bzw. bewusst einsetzen.
 :::
-
-
 
 # Wrap-Up
 
 1.  `Optional<T>`:
-    - Vermeidet `null` und `NullPointerException`
+    -   Vermeidet `null` und `NullPointerException`
     -   Macht normale "kein Wert"-Fälle im Typ sichtbar
-    -   Nicht als universeller Ersatz für jedes `null`, sondern vor allem als Rückgabewert
-    -   Bietet mit `map`, `flatMap`, `orElse*`, `ifPresent` bequeme Werkzeuge, in die Stream-API integriert
+    -   Nicht als universeller Ersatz für jedes `null`, sondern vor allem als
+        Rückgabewert
+    -   Bietet mit `map`, `flatMap`, `orElse*`, `ifPresent` bequeme Werkzeuge, in
+        die Stream-API integriert
 
 \smallskip
 
@@ -846,14 +918,13 @@ In Java müssen wir sie uns selber bauen bzw. bewusst einsetzen.
 
 \smallskip
 
-3.  Designentscheidungen:
-    Fragen Sie sich: Ist dies ein normaler Fehlerfall?
+3.  Designentscheidungen: Fragen Sie sich: Ist dies ein normaler Fehlerfall?
     -   Ja $\to$ `Optional`/`Result`
     -   Nein $\to$ Exception
 
-
 ::: readings
-Lesen Sie zu diesem Thema im Dev.java-Tutorial von Oracle ["Using Optionals"](https://dev.java/learn/api/streams/optionals/) nach.
+Lesen Sie zu diesem Thema im Dev.java-Tutorial von Oracle ["Using
+Optionals"](https://dev.java/learn/api/streams/optionals/) nach.
 
 Weitere interessante Links:
 
