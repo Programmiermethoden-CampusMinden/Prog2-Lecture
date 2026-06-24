@@ -22,7 +22,7 @@ wegen der Auswirkungen aber auf dem Radar haben!
 :::
 
 ::: youtube
--   [VL Generics und Polymorphie](https://youtu.be/RiTA43wTixQ)
+TODO
 :::
 
 # Motivation: Wie verhalten sich generische Typen zueinander
