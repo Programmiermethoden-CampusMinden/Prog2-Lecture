@@ -223,7 +223,7 @@ Stattdessen sollte stets `Optional.ofNullable()` verwendet werden.
 public class LSF {
     private Set<Studi> sl;
 
-    public Optional<Studi> getBestStudi() throws NullPointerException {
+    public Optional<Studi> getBestStudi() throws IllegalStateException {
         // Fehler: Es gibt noch keine Sammlung
         if (sl == null) throw new IllegalStateException("There ain't any collection");
 
@@ -313,8 +313,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 ``` java
 public class LSF {
     ...
-    public Optional<Studi> getBestStudi() throws NullPointerException {
-        if (sl == null) throw new NullPointerException("There ain't any collection");
+    public Optional<Studi> getBestStudi() throws IllegalStateException {
+        if (sl == null) throw new IllegalStateException("There ain't any collection");
         return sl.stream()
                  .sorted((s1, s2) -> s2.credits() - s1.credits())
                  .findFirst();  // Optional<Studi>
