@@ -258,7 +258,7 @@ Damit bildet sich die sogenannte "Kontravarianz-Leiter":
 -   `Integer` und `Number` aus dem JDK:
     `List<Number>  <:  List<? super Number>  <:  List<? super Integer>  <:  List<?>`
 
-![](images/generics_kontravariant.png){width="45%"}
+![](images/generics_kontravariant.png){width="40%"}
 :::
 
 # PECS: Producer Extends, Consumer Super
