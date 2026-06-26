@@ -451,8 +451,8 @@ Datentypen repräsentieren Werte - diese können nicht `null` sein.
 \bigskip
 
 ::: important
-`Optional<T>` für (normale) Abwesenheit eines Wertes, nicht für Fehler mit
-Erklärung!
+**`Optional<T>` für (normale) Abwesenheit eines Wertes, nicht für Fehler mit
+Erklärung!**
 :::
 
 # Was ist das Problem mit Exceptions?
