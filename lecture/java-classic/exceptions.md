@@ -39,7 +39,8 @@ Exception einsetzen.
 :::
 
 ::: youtube
-TODO
+Vorlesung \[[YT](https://youtu.be/HcFAUI6s3LE)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-exception-handling/25b98aa13064a150caf1a5898e458a32)\]
 :::
 
 # Was kann schiefgehen?
