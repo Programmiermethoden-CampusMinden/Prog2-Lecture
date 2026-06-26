@@ -611,7 +611,7 @@ oa[0] = new Double(2.0);  // Laufzeitfehler
 
 -   Arrays besitzen Typinformationen über gespeicherte Elemente
 -   Prüfung auf Typ-Kompatibilität zur **Laufzeit** (nicht Kompilierzeit!)
--   Arrays sind **kovariant**: `String[]  <:  Object[]` wg. \`String \<: Object\`\`
+-   Arrays sind **kovariant**: `String[]  <:  Object[]` wg. `String <: Object`
 
 :::: notes
 Im Vergleich sind generische Typen **nicht reifiziert** (engl. *not reified*) - die
