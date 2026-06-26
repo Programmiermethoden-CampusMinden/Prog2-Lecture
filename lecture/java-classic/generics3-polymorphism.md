@@ -22,7 +22,8 @@ wegen der Auswirkungen aber auf dem Radar haben!
 :::
 
 ::: youtube
-TODO
+Vorlesung \[[YT](https://youtu.be/4rZgxI_ACRs)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-generics3-generics-und-polymorphie/bc977054a6a3491cd50e18e29b7b56bb)\]
 :::
 
 # Motivation: Wie verhalten sich generische Typen zueinander
