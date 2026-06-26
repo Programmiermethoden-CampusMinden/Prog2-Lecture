@@ -376,11 +376,21 @@ Problem: Fängt auch Programmierfehler (z.B. `NullPointerException`), die Sie ga
 nicht "heilen" sollten. Besser: So spezifisch wie möglich fangen.
 :::
 
-\pause
-
+::: notes
 ## Best Practices: Fehlerbilder bewusst aufgreifen
 
 Wenn Sie im Code `catch (Exception e)` sehen, sollte bei Ihnen ein Alarm losgehen.
+Damit fangen Sie zwar "alles", aber Sie können nicht mehr gezielt und spezifisch auf
+einen bestimmten Fehler reagieren. Außerdem verdecken Sie Fehler, an die Sie
+vielleicht gar nicht gedacht haben.
+
+1.  Fangen Sie immer möglichst präzise die Fehler, die Sie erwarten.
+2.  Behandeln Sie die Fehler möglichst früh (sofern das möglich ist). Wenn eine
+    Behandlung nicht möglich/sinnvoll ist, reichen Sie die Exception "hoch" an den
+    Aufrufer.
+3.  Wenn Sie Exceptions nicht fangen oder selbst welche werfen, deklarieren Sie das
+    möglichst (auch für unchecked Exceptions) an Ihrer Methode.
+:::
 
 ::: notes
 # Stilfrage A: Wann checked, wann unchecked
