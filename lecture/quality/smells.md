@@ -442,15 +442,6 @@ public class CreditsCalculator {
     sein ...
 :::
 
-::: notes
-# Weiterführende Links
-
--   ["Foundations: Clean Code" (The Odin
-    Project)](https://www.theodinproject.com/lessons/foundations-clean-code)
--   ["Documentation Best Practices" (Google
-    Styleguide)](https://github.com/google/styleguide/blob/gh-pages/docguide/best_practices.md)
-:::
-
 # Wrap-Up
 
 -   Code entsteht nicht zum Selbstzweck =\> Lesbarkeit ist wichtig
@@ -486,9 +477,12 @@ public class CreditsCalculator {
         :::
 
 ::: readings
--   @Martin2009
--   @Passig2013
--   @Inden2013 [Kap. 10]
+Gute Werke zum Nachlesen sind @Martin2009 (ein Klassiker) und @Passig2013. Im
+Odin-Projet hat man sich viele Gedanken gemacht: ["Foundations: Clean Code" (The
+Odin Project)](https://www.theodinproject.com/lessons/foundations-clean-code), und
+Google hat einen vielbeachteten Style-Guide für Java geschrieben: ["Documentation
+Best Practices" (Google
+Styleguide)](https://github.com/google/styleguide/blob/gh-pages/docguide/best_practices.md)
 :::
 
 ::: outcomes
