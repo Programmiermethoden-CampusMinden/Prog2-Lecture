@@ -472,24 +472,141 @@ public static int parsePort(String input) {
 ```
 
 ::: notes
-**Problempunkte**:
+**Problempunkte des traditionellen Exception Handlings in Java**
 
 1.  Fehler sind "unsichtbar" im Typ
 
-    Aus dem Typ `int parsePort(String)` sehen Sie nicht, dass hier ein Fehlerfall
-    möglich ist. Sie müssen Javadoc, Doku oder Implementation lesen.
+    Aus der Signatur `int parsePort(String)` sehen Sie nicht, dass hier ein
+    Fehlerfall möglich ist - etwa wenn der String kein gültiger Port ist. Ob und
+    welche Fehler auftreten können, erfahren Sie nur über Javadoc, externe
+    Dokumentation oder durch Blick in die Implementierung.
 
-    Selbst bei checked-Exceptions hat sich leider oft die Praxis verbreitet, diese
-    zu fangen und einfach als `RunTimeException` neu zu werfen. Damit spart man sich
-    das "lästige" `throws` an der Methode ... Der einzige Vorteil(?) daran ist, dass
-    dann alle Exceptions auf unchecked Exceptions zurückgeführt werden und der Code
-    lesbarer wird (keine erzwungenen `try`/`catch`mehr). Trotzdem: Keine gute
-    Praxis!
+    Selbst bei checked Exceptions hat sich leider oft die Praxis etabliert, diese
+    sehr früh zu fangen und als `RuntimeException` (oder eine andere unchecked
+    Exception) neu zu werfen. Damit spart man sich das "lästige" `throws` an der
+    Methode und die Aufrufer müssen keinen `try`/`catch`-Block schreiben.
+
+    Auswirkungen dieser Praxis:
+
+    -   Der Typsignatur ist nicht mehr anzusehen, dass hier ein Fehlerfall existiert
+    -   Die Compiler-Unterstützung beim Erinnern an Fehlerfälle geht verloren
+    -   Fehlerpfade werden "versteckt" und auftretende Laufzeitfehler wirken
+        plötzlich überraschend
+
+    Der scheinbare Vorteil ist, dass der Code "aufgeräumter" wirkt (weniger
+    `throws`, weniger `try`/`catch`), aber erkauft wird das mit geringerer
+    Transparenz und schlechterer Wartbarkeit. Das ist in der Regel **keine gute
+    Praxis**.
 
 2.  Verstreute Fehlerbehandlung
 
-    `try`/`catch` oft weit entfernt vom Ort, an dem der Fehler entstehen kann.
-    Gefahr, Exceptions zu "verschlucken" oder zu "vergessen".
+    `try`/`catch`-Blöcke befinden sich oft weit entfernt von dem Ort, an dem der
+    Fehler tatsächlich entstehen kann. Eine Methode wirft z.B. eine Exception, diese
+    wird nach "oben" durchgereicht und irgendwo weiter oben in der Aufrufkette
+    gefangen.
+
+    Probleme dabei:
+
+    -   Wer eine Methode aufruft, sieht an der Stelle oft nicht, **wie** der Fehler
+        später behandelt wird
+    -   Es besteht die Gefahr, Exceptions zu "verschlucken"
+        (`catch (Exception e) {}`) oder sie zu vergessen (ein `catch`-Block, der
+        zwar da ist, aber nur ein kommentarloses Logging macht)
+    -   Verantwortlichkeiten verschwimmen: Wo gehört die Behandlung des Fehlers
+        wirklich hin? Zur aufrufenden Methode? Zur Geschäftslogik? Zur GUI?
+
+    Ergebnis: Die Fehlerszenarien sind schwer nachzuvollziehen und häufig erst nach
+    mehreren Ebenen im Call-Stack erkennbar.
+
+3.  Zusätzlicher (nicht offensichtlicher) Kontrollfluss
+
+    `try`/`catch` stellt neben `if`, `while`, `for`, `switch` einen weiteren
+    Kontrollflussmechanismus dar. Gerade bei verschachtelten Strukturen kann das zu
+    komplexem und fehleranfälligem Code führen:
+
+    -   Der "normale" Kontrollfluss (z.B. per `if`/`else`) und der Kontrollfluss im
+        Fehlerfall (`throw` $\to$ Sprung in einen `catch`-Block) sind vermischt
+    -   Eine Exception kann den Kontrollfluss an ganz andere Stellen springen
+        lassen, ohne dass dies in der Signatur sichtbar ist
+    -   `finally`-Blöcke kommen als **weiterer Spezialfall** hinzu und machen eine
+        "mentale Simulation" des Programmablaufs noch anspruchsvoller
+
+    Gerade für Einsteiger (aber auch in großen Projekten) erschwert das Verstehen,
+    Testen und formale Argumentieren über den Programmablauf.
+
+4.  Zusammenspiel mit Stream-API und Lambdas/Methodenreferenzen
+
+    In der Stream-API werden Operationen auf einer Folge von Daten durchgeführt
+    (z.B. `map`, `filter`, `flatMap`). Meist kommen dabei Lambda-Ausdrücke oder
+    Methodenreferenzen zum Einsatz.
+
+    Probleme mit Exceptions:
+
+    -   Funktionsschnittstellen wie `Function<T, R>` oder `Predicate<T>` deklarieren
+        keine checked Exceptions. Lambdas, die checked Exceptions werfen, "passen"
+        nicht ohne Weiteres hinein.
+
+    -   Das Einbauen von `try`/`catch` in Lambdas führt schnell zu unübersichtlichem
+        und schwer lesbarem Code:
+
+        ``` java
+        list.stream()
+            .map(s -> {
+                try {
+                    return parsePort(s);
+                } catch (NumberFormatException e) {
+                    // Fehlerbehandlung mitten im Lambda
+                    return DEFAULT_PORT;
+                }
+            })
+            .forEach(IO::println);
+        ```
+
+    -   Alternativen wie "wrappe jede Exception in eine `RuntimeException`"
+        verschieben das Problem nur: Die eigentlichen Fehlerfälle sind weiterhin
+        nicht Typ-sichtbar und schwer gezielt behandelbar.
+
+    Moderne Alternativen wie `Optional<T>` oder Result-Typen (z.B. `Result<T, E>`)
+    lassen sich dagegen sehr gut mit Streams kombinieren, weil sie Fehler als
+    **normale Werte im Typ** ausdrücken und mit den üblichen Funktionsoperationen
+    (`map`, `flatMap`, `filter`, ...) bearbeitet werden können.
+
+5.  Erschwerte Komposition und Wiederverwendung
+
+    Methoden, die Exceptions werfen, lassen sich schlechter zu größeren
+    Funktionalitäten zusammensetzen als Methoden, die ihren Fehlerzustand explizit
+    im Typ ausdrücken:
+
+    -   Wenn jede Methode "irgendetwas" wirft, wird `throws` schnell sehr allgemein
+        (`throws Exception`), was die Information für Aufrufer entwertet
+    -   Wiederverwendbare Hilfsfunktionen müssen sich an den kleinsten gemeinsamen
+        Nenner anpassen (z.B. alles in `RuntimeException` verpacken), damit sie
+        überall einsetzbar sind
+    -   Eine explizite Modellierung von Fehlern als Teil des Rückgabetyps (z.B.
+        `Optional<T>`, `Result<T, E>`) zwingt zur bewussten Entscheidung:
+        -   Was ist ein "normaler" Fehlerrückgabewert?
+        -   Was ist wirklich ein außergewöhnlicher Zustand, der eine Exception
+            rechtfertigt?
+
+6.  Vermischung von "erwartbaren" Fehlern und echten Ausnahmen
+
+    In vielen Codebasen werden Exceptions sowohl für erwartbare Situationen (z.B.
+    "Datei nicht gefunden", "Eingabe nicht parsbar") als auch für wirklich
+    außergewöhnliche Fälle (z.B. Programmierfehler, Invarianten verletzt) genutzt.
+    Das führt zu:
+
+    -   Unklarheit: Muss ich als Aufrufer diesen Fehlerfall aktiv behandeln, oder
+        ist das ein Programmierfehler?
+    -   Überbenutzung von Exceptions als "normaler" Kontrollfluss: Exceptions werden
+        geworfen, obwohl das Verhalten eigentlich Teil der üblichen Logik ist (z.B.
+        "Nutzer existiert nicht").
+
+    Besser:
+
+    -   Erwartbare Alternativen im Typ ausdrücken (`Optional`, `Result`,
+        Domänen-Typen)
+    -   Exceptions für wirklich unerwartete / in der aktuellen Schicht nicht
+        sinnvoll behandelbare Situationen reservieren
 :::
 
 **Gibt es eine Möglichkeit, Fehler so zu modellieren, dass sie im Typ sichtbar
