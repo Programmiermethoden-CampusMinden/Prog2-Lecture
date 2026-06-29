@@ -1031,39 +1031,90 @@ elegant verketten, mit identischer Funktionalität wie in der ersten Variante.
 :::
 ::::
 
-# Diskussion
+# Diskussion: Exceptions vs. Result/Optional
 
--   Wann sind Exceptions sinnvoll?
-    -   Unerwartete, außergewöhnliche oder technische Fehler
-    -   "Defensive" Fehlerfälle: I/O‑Fehler, Netzwerk weg, Datenbank down
+-   **Wann sind Exceptions sinnvoll?**
 
-    \smallskip
-    *"Ich habe nicht erwartet, dass das passiert."*
-
-\bigskip
-\smallskip
-
--   Wann Result/Optional?
-    -   `Optional` für "Wert fehlt, aber es ist kein Fehler"
-    -   `Result` für erwartbare, domänenspezifische Fehlerfälle mit Bedeutung
-    -   Validierungsfehler, Suchergebnisse nicht gefunden, ungültige User‑Eingaben
+    -   Unerwartete, außergewöhnliche oder technische Fehler:
+        -   I/O‑Fehler (Dateisystem, Netzwerk, Datenbank nicht erreichbar)
+        -   Ressourcenprobleme (`OutOfMemoryError`, zu wenig Speicher, kaputte
+            Umgebung)
+        -   Programmierfehler / Invarianten verletzt (z.B. `IllegalStateException`)
+    -   Fehler, die in der aktuellen Schicht **nicht sinnvoll behandelbar** sind:
+        -   Konfigurationsfehler beim Start
+        -   interne Konsistenzverletzungen
 
     \smallskip
-    *"Das gehört zum normalen Verhalten meiner Funktion."*
+
+    *"Ich habe nicht erwartet, dass das passiert - und kann hier auch nicht sinnvoll
+    darauf reagieren."*
+
+    ::: notes
+    **Richtlinie:**
+
+    -   Exceptions nur nutzen für **Ausnahmesituationen**, die *nicht* zum normalen
+        Verhalten gehören
+    -   Exceptions dürfen das Programm abbrechen oder in eine übergeordnete
+        Fehlerbehandlung führen (z.B. globale Fehlerseite, Log + Exit)
+    :::
+
+-   **Wann `Result` / `Optional`?**
+
+    -   `Optional`:
+        -   "Wert fehlt, aber das ist ein normaler Fall" Beispiele:
+            -   Suche liefert eventuell nichts (`findUserByEmail` $\to$ `Optional`)
+            -   Konfigurationseintrag ist optional
+        -   Kein Fehler, nur "es gibt nichts zu liefern"
+    -   `Result`:
+        -   Erwartbare, domänenspezifische Fehlerfälle **mit Bedeutung**:
+            -   Validierungsfehler (Passwort zu kurz, E‑Mail ungültig)
+            -   Suchergebnis nicht eindeutig (`UserNichtEindeutig`,
+                `UserNichtGefunden`)
+            -   Domänenregeln verletzt (z.B. "Kontostand reicht nicht aus")
+        -   Aufrufer *sollen* diese Fälle explizit behandeln (z.B. Fehlermeldung
+            anzeigen, Eingabe erneut abfragen)
+
+    \smallskip
+
+    *"Das gehört zum normalen Verhalten meiner Funktion - ich möchte explizit damit
+    umgehen."*
+
+    ::: notes
+    **Richtlinie:**
+
+    -   Domänenlogik bevorzugt mit `Result`/`Optional` modellieren
+    -   Exceptions eher an den "Rändern" des Systems (I/O, Frameworks, technische
+        Schicht)
+    :::
 
 :::: notes
 In funktionalen Sprachen wie Haskell, Scala oder auch Rust sind solche Typen
-(`Maybe`, `Option`, `Result`) schon lange Standard. In Java müssen wir sie uns
-selber bauen bzw. bewusst einsetzen.
+(`Maybe`, `Option`, `Result`) Standard. In Java müssen wir sie uns bewusst bauen
+bzw. einsetzen.
+
+Typische **Schichtenaufteilung**:
+
+-   **Ganz außen (I/O, Framework)**: Exceptions (z.B. Spring Controller,
+    Datenbanktreiber)
+-   **In der Domänenlogik**: `Result` / `Optional` für erwartbare Fälle
+-   **Bei schwerwiegenden Invariantenbrüchen**: gezielte Runtime-Exceptions
+
+Dadurch:
+
+-   bleibt der Kontrollfluss in der Domänenlogik "normal" (keine versteckten
+    Sprünge),
+-   sind Fehlerfälle im Typ sichtbar,
+-   lassen sich Streams, Lambdas und Methodenreferenzen gut nutzen.
 
 ::: important
-Exceptions führen einen zweiten Kontrollfluss ein. Das kann schnell zu
+Exceptions führen einen **zweiten Kontrollfluss** ein. Das kann schnell zu
 unübersichtlichen Strukturen und Abläufen führen.
 
-Exceptions passen nicht zu moderner Verarbeitung mit der Stream-API und
-Lambda-Ausdrücken oder Methodenreferenzen.
+Exceptions passen zudem schlecht zur modernen Verarbeitung mit der Stream‑API,
+Lambda‑Ausdrücken und Methodenreferenzen.
 
-Nutzen Sie (wenn möglich) `Optional` und `Result`.
+Nutzen Sie - **wo immer es fachlich passt** - `Optional` und `Result`. Reservieren
+Sie Exceptions für wirklich außergewöhnliche oder unvorhersehbare Fälle.
 :::
 ::::
 
