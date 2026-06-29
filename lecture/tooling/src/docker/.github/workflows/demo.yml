@@ -7,7 +7,7 @@ on:
 jobs:
     job1:
         runs-on: ubuntu-latest
-        container: eclipse-temurin:25
+        container: eclipse-temurin:25-jdk
         steps:
             - uses: actions/checkout@v7
             - run: java -version

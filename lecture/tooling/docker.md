@@ -329,7 +329,7 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 
 ``` yaml
 default:
-    image: eclipse-temurin:17
+    image: eclipse-temurin:25-jdk
 
 job1:
     stage: build
@@ -344,12 +344,12 @@ job1:
 In den Gitlab-CI-Pipelines (analog wie in den GitHub-Actions) kann man
 Docker-Container für die Ausführung der Pipeline nutzen.
 
-Mit `image: eclipse-temurin:17` wird das Docker-Image `eclipse-temurin:17` vom
-DockerHub geladen und durch den Runner für die Stages als Container ausgeführt. Die
-Aktionen im `script`-Teil, wie beispielsweise `javac Hello.java` werden vom Runner
-an die Standard-Eingabe der Shell des Containers gesendet. Im Prinzip entspricht das
-dem Aufruf auf dem lokalen Rechner:
-`docker run eclipse-temurin:17 javac Hello.java`.
+Mit `image: eclipse-temurin:25-jdk` wird das Docker-Image `eclipse-temurin:25-jdk`
+vom DockerHub geladen und durch den Runner für die Stages als Container ausgeführt.
+Die Aktionen im `script`-Teil, wie beispielsweise `javac Hello.java` werden vom
+Runner an die Standard-Eingabe der Shell des Containers gesendet. Im Prinzip
+entspricht das dem Aufruf auf dem lokalen Rechner:
+`docker run eclipse-temurin:25-jdk javac Hello.java`.
 :::
 
 [Demo: GitLab CI/CD und Docker]{.ex href="https://youtu.be/3Tj3lhcoKro"}
@@ -366,7 +366,7 @@ on:
 jobs:
     job1:
         runs-on: ubuntu-latest
-        container: eclipse-temurin:25
+        container: eclipse-temurin:25-jdk
         steps:
             - uses: actions/checkout@v7
             - run: java -version
@@ -382,42 +382,92 @@ https://docs.github.com/en/actions/using-jobs/running-jobs-in-a-container
 In den GitHub-Actions kann man Docker-Container für die Ausführung der Pipeline
 nutzen.
 
-Mit `container: eclipse-temurin:25` wird das Docker-Image `eclipse-temurin:25` vom
-DockerHub geladen und auf dem Ubuntu-Runner als Container ausgeführt. Die Aktionen
-im `steps`-Teil, wie beispielsweise `javac Hello.java` werden vom Runner an die
-Standard-Eingabe der Shell des Containers gesendet. Im Prinzip entspricht das dem
-Aufruf auf dem lokalen Rechner: `docker run eclipse-temurin:25 javac Hello.java`.
+Mit `container: eclipse-temurin:25-jdk` wird das Docker-Image
+`eclipse-temurin:25-jdk` vom DockerHub geladen und auf dem Ubuntu-Runner als
+Container ausgeführt. Die Aktionen im `steps`-Teil, wie beispielsweise
+`javac Hello.java` werden vom Runner an die Standard-Eingabe der Shell des
+Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen Rechner:
+`docker run eclipse-temurin:25-jdk javac Hello.java`.
 :::
 
 [Demo: GitHub Actions und Docker]{.ex href="https://youtu.be/jrxoax2fPRI"}
 
-::: notes
-# Bonus: VSCode und das Plugin "Remote - Containers"
+::::: notes
+# Bonus/Ausblick: VSCode und DevContainers (früher "Remote - Containers")
 
 ![](images/vscode-remote.png){width="80%"}
 
-1.  VSCode (Host): Plugin "Remote - Containers" installieren
-2.  Docker (Host): Container starten mit Workspace gemountet
-3.  VSCode (Host): Attach to Container =\> neues Fenster (Container)
-4.  VSCode (Container): Plugin "Java Extension Pack" installieren
-5.  VSCode (Container): Dateien editieren, kompilieren, debuggen, ...
+1.  VSCode (Host): DevContainers Extension installieren installieren
+2.  VSCode (Host): Projektordner öffnen und eine DevContainer-Konfiguration
+    hinzufügen
+3.  VSCode (Host): "Reopen in Container" =\> neues Fenster (Container)
+4.  VSCode (Container): Java-Extensions (z.B. "Java Extension Pack") installieren
+    lassen
+5.  VSCode (Container): Dateien editieren, kompilieren, debuggen, testen ...
 
-Mit Visual Studio Code (VSC) kann man über SSH oder in einem Container arbeiten.
-Dazu installiert man sich VSC lokal auf dem Host und installiert dort das Plugin
-"Remote - Containers". VSC kann darüber vordefinierte Docker-Images herunterladen
-und darin arbeiten oder man kann alternativ einen Container selbst starten und
-diesen mit VSC verbinden ("attachen").
+Mit Visual Studio Code (VSCode) können Sie direkt **in einem Container** entwickeln.
+Dazu installieren Sie sich VSCode lokal auf dem Host und dort die Extension "Dev
+Containers" (sie ist Teil des "Remote Development"-Pakets).
 
-Beim Verbinden öffnet VSC ein neues Fenster, welches mit dem Container verbunden
-ist. Nun kann man in diesem neuen Fenster ganz normal arbeiten, allerdings werden
-alle Dinge in dem Container erledigt. Man öffnet also Dateien in diesem Container,
-editiert sie im Container, übersetzt und testet im Container und nutzt dabei die im
-Container installierten Tools. Sogar die entsprechenden VSC-Plugins kann man im
-Container installieren.
+Für ein Projekt gehen Sie typischerweise so vor:
 
-Damit benötigt man auf einem Host eigentlich nur noch VSC und Docker, aber keine
-Java-Tools o.ä. und kann diese über einen im Projekt definierten Container (über ein
-mit versioniertes Dockerfile) nutzen.
+-   Sie öffnen den Projektordner in VSCode.
+-   Über die Command Palette (z.B. `F1`) wählen Sie "**Dev Containers: Add Dev
+    Container Configuration File ...**" und fügen eine Konfiguration hinzu (entweder
+    aus einem Java-Template oder als eigene `devcontainer.json`).
+-   VSCode legt dann im Projekt den Ordner `.devcontainer/` mit einer
+    `devcontainer.json` (und ggf. einem Dockerfile) an.
+-   Anschließend können Sie den Befehl "**Reopen in Container**" auswählen. VSCode
+    baut und startet den Container automatisch und öffnet ein neues VS-Code-Fenster,
+    das mit diesem Dev Container verbunden ist.
+
+In diesem neuen Fenster arbeiten Sie ganz normal, aber **alle Aktionen** (Editieren,
+Kompilieren, Testen, Debuggen, Tools, Extensions) **laufen im Container**. Sie
+öffnen also Dateien im Container, übersetzen und testen dort, und nutzen die im
+Container installierten Tools. Über die Dev-Container-Konfiguration können sogar
+VSCode-Extensions direkt im Container installiert werden.
+
+Damit benötigen Sie auf dem Host eigentlich nur noch VSCode und Docker (oder
+Podman), aber keine lokalen Java-Tools o.ä. mehr. Die gesamte Entwicklungsumgebung
+(JDK-Version, Build-Tools, Java-Extensions in VSCode, zusätzliche Pakete) ist über
+die DevContainer-Konfiguration im Projekt definiert und versioniert.
+
+::: tip
+**Beispiel: Dev Container für Java 25 mit Temurin**
+
+Ein typischer, schlanker DevContainer für ein Java‑Projekt mit OpenJDK 25 (Temurin)
+könnte z.B. so aussehen:
+
+``` json
+// .devcontainer/devcontainer.json
+{
+    "name": "Java 25 DevContainer",
+    "image": "eclipse-temurin:25-jdk",
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack"
+            ]
+        }
+    }
+}
+```
+
+Erläuterungen dazu:
+
+-   `"image": "eclipse-temurin:25-jdk"` nutzt ein Docker-Image mit einem
+    OpenJDK‑25‑Build von Eclipse Temurin.
+-   `"workspaceFolder": "/workspace"` und `"workspaceMount": "..."` binden den
+    lokalen Projektordner in den Container unter `/workspace` ein. Das ist der
+    Ordner, in dem Sie im Container arbeiten.
+-   Unter `"customizations.vscode.extensions"` wird das Java Extension Pack
+    automatisiert im Container installiert. Beim ersten Start des DevContainers
+    sorgt VSCode dafür, dass diese Extensions in der Container-Instanz von VSCode
+    zur Verfügung stehen (Sprache‑Support, Debugging, Test‑Integration, ...).
+:::
 
 *Anmerkung*: IntelliJ kann remote nur debuggen, d.h. das Editieren, Übersetzen,
 Testen läuft lokal auf dem Host (und benötigt dort den entsprechenden Tool-Stack).
@@ -436,9 +486,27 @@ in den Container gemountet, so dass die Dateien entsprechend zur Verfügung steh
 docker run -it --name code-server -p 127.0.0.1:8080:8080 -v "$HOME/.config:/home/coder/.config" -v "$PWD:/home/coder/project" codercom/code-server:latest
 ```
 
-Auf diesem Konzept setzt auch der kommerzielle Service [GitHub
-Codespaces](https://github.com/features/codespaces) von GitHub auf.
+Auf diesem Konzept setzt auch der kommerzielle Service [**GitHub
+Codespaces**](https://github.com/features/codespaces) von GitHub auf.
+
+::: tip
+Diese Entwicklung hat in den letzten Jahren Fahrt aufgenommen und ist mittlerweile
+unter dem Namen "DevContainer" (besser) bekannt:
+
+-   Die Extension heißt "Dev Containers" (bzw. ist Teil des "Remote
+    Development"-Pakets)
+-   Der zentrale Begriff ist der "Dev Container" bzw. die Konfiguration über eine
+    `devcontainer.json`
+-   Im VS-Code-UI finden Sie z.B.:
+    -   "Open Folder in Container ..."
+    -   "Add Dev Container Configuration File ..."
+    -   "Reopen in Container"
+
+Dazu gibt es auch das eigenständige Projekt:
+
+https://containers.dev/ https://code.visualstudio.com/docs/devcontainers/containers
 :::
+:::::
 
 [Demo: VSCode und Docker]{.ex href="https://youtu.be/Rs1W_rXkoNM"}
 
