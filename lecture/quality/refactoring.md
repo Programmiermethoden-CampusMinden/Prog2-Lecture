@@ -22,12 +22,21 @@ jeder IDE vorkommen. Zu den häufig genutzten Methoden zählen *Rename*, *Extrac
 :::
 
 ::: youtube
--   [VL Refactoring](https://youtu.be/n0RaQ_Qve0Y)
--   [Demo Refactoring: Rename](https://youtu.be/zZ2RGKRBVz4)
--   [Demo Refactoring: Encapsulate](https://youtu.be/PR4mEjBl_No)
--   [Demo Refactoring: Extract Method](https://youtu.be/4VbxgqZ68ng)
--   [Demo Refactoring: Move Method](https://youtu.be/Wr92Oboh05E)
--   [Demo Refactoring: Pull up](https://youtu.be/t24c88RshL8)
+Vorlesung \[[YT](https://youtu.be/v1rFf_szb4w)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-refactoring/e443d2643d1fbc10e4d1c2a257ccc4c8)\]
+
+Demo:
+
+-   Rename \[[YT](https://youtu.be/E8yg9sXo-l8)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-refactoring-demo-rename/011c2ac19ff4850db6c9278342878ecd)\]
+-   Encapsulate \[[YT](https://youtu.be/7FHWg61vihM)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-refactoring-demo-encapsulate/ebe1131e6e2446d4b21ee8f58c430a8f)\]
+-   Extract Method \[[YT](https://youtu.be/ILEh-OI46us)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-refactoring-demo-extract-method/9f73f3c4230ab85fcffab220a1bd1622)\]
+-   Move Method \[[YT](https://youtu.be/o-MR_nPokJM)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-refactoring-demo-move-method/4e94e7d4435a92257722df4effb088aa)\]
+-   Pull up \[[YT](https://youtu.be/3hfHbv4FkLY)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-refactoring-demo-pull-up/449937f8c6a9202349b53a19a3e54caa)\]
 :::
 
 # Was ist Refactoring?
