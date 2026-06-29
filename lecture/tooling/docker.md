@@ -391,11 +391,11 @@ Aufruf auf dem lokalen Rechner: `docker run eclipse-temurin:25 javac Hello.java`
 
 [Demo: GitHub Actions und Docker]{.ex href="https://youtu.be/jrxoax2fPRI"}
 
-# VSCode und das Plugin "Remote - Containers"
+::: notes
+# Bonus: VSCode und das Plugin "Remote - Containers"
 
 ![](images/vscode-remote.png){width="80%"}
 
-::: notes
 1.  VSCode (Host): Plugin "Remote - Containers" installieren
 2.  Docker (Host): Container starten mit Workspace gemountet
 3.  VSCode (Host): Attach to Container =\> neues Fenster (Container)
@@ -482,5 +482,4 @@ Codespaces](https://github.com/features/codespaces) von GitHub auf.
 -   k3: Ich kann Container starten
 -   k3: Ich kann eigene Container definieren und bauen
 -   k3: Ich kann Container in GitLab CI/CD und/oder GitHub Actions einsetzen
--   k3: Ich kann VSCode mit Containern einsetzen
 :::
