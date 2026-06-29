@@ -18,7 +18,7 @@ Prinzipiell kann man Refactoring manuell mit Search&Replace durchführen, aber e
 bietet sich an, hier die IDE-Unterstützung zu nutzen. Es stehen verschiedene
 Methoden zur Verfügung, die nicht unbedingt einheitlich benannt sein müssen oder in
 jeder IDE vorkommen. Zu den häufig genutzten Methoden zählen *Rename*, *Extract*,
-*Move* und *Push Up/Pull Down*.
+*Move* und *Pull Up/Push Down*.
 :::
 
 ::: youtube
@@ -59,7 +59,7 @@ Demo:
 >
 > `\hfill`{=tex} ["*Refactoring*": [@Fowler2011, p. 53]]{.credits}
 
-::: notes
+:::: notes
 **Refactoring:** Änderungen an der **inneren Struktur** einer Software
 
 -   Beobachtbares (äußeres) Verhalten ändert sich dabei **nicht**
@@ -68,7 +68,13 @@ Demo:
     -   Keine öffentliche Schnittstelle ändern (*Anmerkung*: Bis auf Umbenennungen
         oder Verschiebungen von Elementen innerhalb der Software)
 -   Ziel: Verbesserung von Verständlichkeit und Änderbarkeit
+
+::: tip
+*Anmerkung*: In der Praxis können natürlich Bugfix + Refactoring in einem
+Pull-Request zusammen auftreten, wenn das inhaltlich sinnvoll ist, aber begrifflich
+sollten wir es trennen.
 :::
+::::
 
 # Anzeichen, dass Refactoring jetzt eine gute Idee wäre
 
@@ -140,7 +146,7 @@ ist.
 \bigskip
 \smallskip
 
-3.  Haben Sie die fragliche Codestelle auch wirklich verstanden?!
+3.  **Haben Sie die fragliche Codestelle auch wirklich verstanden?!**
 
 # Vorgehen beim Refactoring
 
@@ -177,6 +183,15 @@ einzelnen Refactoring-Schritt immer grün sein (oder Sie haben einen Fehler gema
     =\> Nächster Refactoring-Schritt erst, wenn alle Tests wieder "grün"
 
 -   Versionskontrolle nutzen: **Jeden** Schritt **einzeln** committen
+
+:::: notes
+::: tip
+Refactoring ist nicht: Alles neu schreiben.
+
+Refactoring ist: Viele kleine, zielgerichtete, durch Tests abgesicherte Umbauten an
+der Struktur (nicht Funktion).
+:::
+::::
 
 # Refactoring-Methode: Rename Method/Class/Field
 
@@ -245,7 +260,7 @@ int getCps() { return cps; }
 void setCps(int cps) {  this.cps = cps;  }
 
 public void printDetails() {
-    System.out.println("credits: " + getCps());
+    System.out.println("Credits: " + getCps());
 }
 ```
 
@@ -414,7 +429,7 @@ public class Studi extends Person {
 
 # Wrap-Up
 
-Behebung von **Bad Smells** durch **Refactoring**
+Behebung von **Code Smells** durch **Refactoring**
 
 \smallskip
 
@@ -425,7 +440,7 @@ Behebung von **Bad Smells** durch **Refactoring**
 -   Verbessert Lesbarkeit, Verständlichkeit, Wartbarkeit
 -   Immer nur kleine Schritte machen
 -   Nach jedem Schritt Testsuite laufen lassen
--   Katalog von Maßnahmen, beispielsweise *Rename*, *Extract*, *Move*, *Push Up/Pull
+-   Katalog von Maßnahmen, beispielsweise *Rename*, *Extract*, *Move*, *Pull Up/Push
     Down*, ...
 -   Unterstützung durch IDEs wie Eclipse, Idea, ...
 
@@ -442,7 +457,7 @@ Behebung von **Bad Smells** durch **Refactoring**
 -   k2: Ich habe verstanden, dass 'Refactoring' bedeutet: Nur die innere Struktur
     ändern, nicht das von außen sichtbare Verhalten!
 -   k3: Ich kann die wichtigsten Refactoring-Methoden anwenden: Rename, Extract,
-    Move, Push Up/Pull Down
+    Move, Pull Up/Push Down
 :::
 
 ::: challenges
@@ -452,7 +467,7 @@ finden Sie im Unterordner
 [java/](https://github.com/emilybache/Theatrical-Players-Refactoring-Kata/tree/main/java)
 einige Klassen mit unübersichtlichem und schlecht strukturierten Code.
 
-Welche *Bad Smells* können Sie hier identifizieren?
+Welche *Code Smells* können Sie hier identifizieren?
 
 Beheben Sie die Smells durch die *schrittweise Anwendung* von den aus der Vorlesung
 bekannten Refactoring-Methoden. Denken Sie auch daran, dass Refactoring immer durch
