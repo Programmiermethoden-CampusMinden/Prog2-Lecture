@@ -41,11 +41,19 @@ Praxis bereits mit den hier vermittelten Basiskenntnissen erstaunlich weit ...
 :::
 
 ::: youtube
--   [VL Einführung in Docker](https://youtu.be/yERVMfUAano)
--   [Demo Container in der Konsole](https://youtu.be/LE_QcHqUg9Y)
--   [Demo GitLab CI/CD und Docker](https://youtu.be/3Tj3lhcoKro)
--   [Demo GitHub Actions und Docker](https://youtu.be/jrxoax2fPRI)
--   [Demo VSCode und Docker](https://youtu.be/Rs1W_rXkoNM)
+Vorlesung \[[YT](https://youtu.be/Q-kBGUasT1U)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-einfhrung-in-docker/9b15db5b76ffd7510f4ce2db8d3aeb36)\]
+
+Demo:
+
+-   Container in der Konsole \[[YT](https://youtu.be/pbEheqQRVTU)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-dockercontainer-in-der-konsole/4357644d6aa8c4be98330a8e5daf3ebe)\]
+-   GitHub Actions und Docker \[[YT](https://youtu.be/8uXzAQpD3zo)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-github-actions-und-docker/5a8447a533a3d23589ea9f80a0f2ae79)\]
+-   GitLab CI/CD und Docker \[[YT](https://youtu.be/DqcCTQguZT4)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-gitlab-cicd-und-docker/6efe5c6910cba7078b5acd8ce06cec11)\]
+-   VSCode und Docker \[[YT](https://youtu.be/EwGvsU1xLug)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-vscode-und-docker/8110bd7f85925bac316cf27ea4c05fa1)\]
 :::
 
 # Motivation CI/CD: WFM (*Works For Me*)
