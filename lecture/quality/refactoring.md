@@ -445,8 +445,8 @@ Behebung von **Code Smells** durch **Refactoring**
 -   Unterstützung durch IDEs wie Eclipse, Idea, ...
 
 ::: readings
--   @Fowler2011
--   @Inden2013 [Kap. 11]
+Zum Thema Refactoring gibt es den Klassiker @Fowler2011, aber auch gute
+Tutorial-Seiten wie [Refactoring Guru](https://refactoring.guru/refactoring).
 :::
 
 ::: outcomes
