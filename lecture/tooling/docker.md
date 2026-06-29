@@ -442,8 +442,20 @@ Codespaces](https://github.com/features/codespaces) von GitHub auf.
 
 [Demo: VSCode und Docker]{.ex href="https://youtu.be/Rs1W_rXkoNM"}
 
-::: notes
-# Link-Sammlung
+# Wrap-Up
+
+-   Schlanke Virtualisierung mit Containern (kein eigenes OS)
+-   *Kein* echter Sandbox-Effekt
+
+\smallskip
+
+-   Begriffe: Docker-File vs. Image vs. Container
+-   Ziehen von vordefinierten Images
+-   Definition eines eigenen Images
+-   Arbeiten mit Containern: lokal, CI/CD, VSCode ...
+
+::: readings
+**Link-Sammlung**
 
 -   [Wikipedia: Docker](https://en.wikipedia.org/wiki/Docker_(software))
 -   [Wikipedia: Virtuelle Maschinen](https://en.wikipedia.org/wiki/Virtual_machine)
@@ -459,23 +471,6 @@ Codespaces](https://github.com/features/codespaces) von GitHub auf.
 -   [VSCode: Entwickeln in
     Docker-Containern](https://code.visualstudio.com/docs/remote/containers)
 -   @DockerInAction und @DockerInPractice
-:::
-
-# Wrap-Up
-
--   Schlanke Virtualisierung mit Containern (kein eigenes OS)
--   *Kein* echter Sandbox-Effekt
-
-\smallskip
-
--   Begriffe: Docker-File vs. Image vs. Container
--   Ziehen von vordefinierten Images
--   Definition eines eigenen Images
--   Arbeiten mit Containern: lokal, CI/CD, VSCode ...
-
-::: readings
--   @Ullenboom2021
--   @Inden2013
 :::
 
 ::: outcomes
