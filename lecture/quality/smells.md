@@ -17,7 +17,8 @@ führen, die aber im Laufe der Zeit die Chance für echte Probleme deutlich erh�
 :::
 
 ::: youtube
--   [VL Code Smells](https://youtu.be/ALDuLxm71tg)
+Vorlesung \[[YT](https://youtu.be/gec7VnlFbLg)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-code-smells/5f811598f9fb5b081be3dda9b9ba3a20)\]
 :::
 
 # Code Smells: Ist das Code oder kann das weg?
