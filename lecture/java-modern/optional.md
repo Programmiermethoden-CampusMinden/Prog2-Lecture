@@ -934,11 +934,21 @@ elegant verketten, mit identischer Funktionalität wie in der ersten Variante.
     \smallskip
     *"Das gehört zum normalen Verhalten meiner Funktion."*
 
-::: notes
+:::: notes
 In funktionalen Sprachen wie Haskell, Scala oder auch Rust sind solche Typen
 (`Maybe`, `Option`, `Result`) schon lange Standard. In Java müssen wir sie uns
 selber bauen bzw. bewusst einsetzen.
+
+::: important
+Exceptions führen einen zweiten Kontrollfluss ein. Das kann schnell zu
+unübersichtlichen Strukturen und Abläufen führen.
+
+Exceptions passen nicht zu moderner Verarbeitung mit der Stream-API und
+Lambda-Ausdrücken oder Methodenreferenzen.
+
+Nutzen Sie (wenn möglich) `Optional` und `Result`.
 :::
+::::
 
 # Wrap-Up
 
