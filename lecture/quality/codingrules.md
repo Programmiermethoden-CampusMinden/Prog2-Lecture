@@ -665,9 +665,15 @@ oder Fehler beinhalten, die SpotBugs melden würde.
     **SpotBugs**
 
 ::: readings
--   @Martin2009
--   @Inden2013 [Kap. 13]
--   @googlestyleguide
+Der Klassiker zu diesem Thema ist sicher @Martin2009.
+
+**Wichtig**: Bitte nicht als "Gesetz" betrachten, sondern als starke *Empfehlung*.
+Die formulierten Grenzwerte sollten zumindest zum Nachdenken über das eigene Tun
+anregen.
+
+Der [Google Java Style](https://google.github.io/styleguide/javaguide.html) ist
+ebenfalls ein guter Startpunkt, da viele Java-Projekte diesen Standard anwenden und
+es eine relativ gute Tooling-Unterstützung gibt.
 :::
 
 ::: outcomes
