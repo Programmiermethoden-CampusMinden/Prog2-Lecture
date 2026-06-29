@@ -596,7 +596,7 @@ Exception-Klassen wie die Exceptions aus dem JDK.
 
 # Wrap-Up
 
--   Exceptions trennen **Normalfall** und **Fehlerfall** im Kontrollfluss
+-   Exceptions trennen **Normalfall** und **Fehlerfall** im *Kontrollfluss*
 
 \smallskip
 
@@ -610,6 +610,16 @@ Exception-Klassen wie die Exceptions aus dem JDK.
     -   `try`: "gefährlicher" Code
     -   `catch`: definierte Reaktion
     -   `finally`: Aufräumarbeiten
+
+:::: notes
+::: important
+Exceptions führen einen zweiten Kontrollfluss ein. Das kann schnell zu
+unübersichtlichen Strukturen und Abläufen führen.
+
+Exceptions passen nicht zu moderner Verarbeitung mit der Stream-API und
+Lambda-Ausdrücken oder Methodenreferenzen.
+:::
+::::
 
 ::: readings
 Lesen Sie zu diesem Thema auch in den dev.java-Tutorials von Oracle
