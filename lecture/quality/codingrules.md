@@ -82,6 +82,16 @@ Conventions](https://www.oracle.com/technetwork/java/codeconventions-150003.pdf)
 Code Style for
 Contributors](https://source.android.com/docs/setup/contribute/code-style)
 
+::: notes
+Das Thema Tabs vs. Spaces ist in Java nicht so extrem wichtig wie in Python, dennoch
+sollte in einem Projekt ein einheitlicher Standard verfolgt werden. Hilfreich ist
+hier Toolunterstützung über eine im Projekt mit versionierte `.editorconfig`, welche
+über ein Plugin in der IDE gelesen wird und beim Speichern von Dateien dann
+angewendet wird. Das Projekt [EditorConfig](https://editorconfig.org) bietet eine
+Erklärung für das Dateiformat und Links zu zahlreichen Plugins für IDEs und
+Editoren.
+:::
+
 # Beispiel nach Google Java Style/AOSP formatiert
 
 ``` java
@@ -108,7 +118,7 @@ public class MyWuppieStudi implements Comparable<MyWuppieStudi> {
 
     @Override
     public int compareTo(MyWuppieStudi o) {
-        return lastName.compareTo(lastName);
+        return lastName.compareTo(o.lastName);
     }
 }
 ```
@@ -164,7 +174,7 @@ formatieren lassen. Hier einige Möglichkeiten:
     ``` groovy
     plugins {
         id "java"
-        id "com.diffplug.spotless" version "8.4.0"
+        id "com.diffplug.spotless" version "8.7.0"
     }
 
     spotless {
@@ -178,7 +188,12 @@ formatieren lassen. Hier einige Möglichkeiten:
     [Prüfen mit]{.notes} `./gradlew spotlessCheck` (Teil von `./gradlew check`) und
     [Formatieren mit]{.notes} `./gradlew spotlessApply`
 
-::: notes
+:::: notes
+::: important
+Die Versionsnummern in den Beispielen sind Momentaufnahmen. In eigenen Projekten
+bitte immer die aktuelle empfohlene Version aus der offiziellen Doku nachschlagen.
+:::
+
 ## Einstellungen der IDE's
 
 -   Eclipse:
@@ -231,7 +246,7 @@ etwas hakelig: Man muss alle Regeln selbst einstellen (und es gibt *einige* dies
 Einstellungen), und gerade IntelliJ "greift" manchmal nicht alle Code-Stellen beim
 Formatieren. Nutzen Sie Spotless und bauen Sie die Konfiguration in Ihr Build-Skript
 ein und konfigurieren Sie über den Build-Prozess.
-:::
+::::
 
 <!-- Für die Demo:
 docker pull gradle
@@ -249,9 +264,9 @@ Metriken kann man beispielsweise die Einhaltung der Coding Rules (Formate, ...)
 prüfen, aber auch die Einhaltung verschiedener Regeln des objektorientierten
 Programmierens.
 
-## Beispiele für wichtige Metriken (jeweils Max-Werte für PM)
+## Beispiele für wichtige Metriken (jeweils Max-Werte für PR2)
 
-Die folgenden Metriken und deren Maximal-Werte sind gute Erfahrungswerte aus der
+Die folgenden Metriken und deren Maximal-Werte sind gute **Erfahrungswerte** aus der
 Praxis und helfen, den Code Smell "Langer Code" (vgl. ["Code Smells"](smells.md)) zu
 erkennen und damit zu vermeiden. Über die Metriken *BEC*, *McCabe* und *DAC* wird
 auch die Einhaltung elementarer Programmierregeln gemessen.
@@ -263,17 +278,22 @@ auch die Einhaltung elementarer Programmierregeln gemessen.
 -   **Anzahl der Methoden** pro Klasse: 10
 -   **Parameter** pro Methode: 3
 -   **BEC** (*Boolean Expression Complexity*) `\newline`{=tex} Anzahl boolescher
-    Ausdrücke in `if` etc.: 3
+    Ausdrücke in `if` etc.: 3 [(Anzahl von Verknüpfungen mit `&&` bzw. `||`:
+    `if (a && b && c)` hat eine BEC von 3)]{.notes}
 -   **McCabe** (*Cyclomatic Complexity*)
     -   Anzahl der möglichen Verzweigungen (Pfade) pro Methode + 1
     -   1-4 gut, 5-7 noch OK
 -   **DAC** (*Class Data Abstraction Coupling*)
-    -   Anzahl der genutzten (instantiierten) "Fremdklassen"
+    -   Anzahl verschiedener Fremdtypen, die eine Klasse verwendet [(z.B. als
+        Attribute, Parameter, lokale Variablen) - Hohe Werte bedeuten: Die Klasse
+        "kennt" sehr viele andere Klassen $\to$ starke Kopplung.]{.notes}
     -   Werte kleiner 7 werden i.A. als normal betrachtet
 
-::: notes
-Die obigen Grenzwerte sind typische Standardwerte, die sich in der Praxis allgemein
-bewährt haben (vergleiche u.a. [@Martin2009] oder auch in [AOSP: Write short
+:::: notes
+::: important
+Die obigen Grenzwerte sind typische **Standardwerte**, die sich in der Praxis
+allgemein bewährt haben (vergleiche u.a. [@Martin2009] oder auch in [AOSP: Write
+short
 methods](https://source.android.com/docs/setup/contribute/code-style#write-short-methods)
 und [AOSP: Limit line
 length](https://source.android.com/docs/setup/contribute/code-style#limit-line-length)).
@@ -281,6 +301,7 @@ length](https://source.android.com/docs/setup/contribute/code-style#limit-line-l
 Dennoch sind das keine absoluten Werte an sich. Ein Übertreten der Grenzen ist ein
 **Hinweis** darauf, dass **höchstwahrscheinlich** etwas nicht stimmt, muss aber im
 konkreten Fall hinterfragt und diskutiert und begründet werden!
+:::
 
 ## Metriken im Beispiel von oben
 
@@ -306,7 +327,7 @@ konkreten Fall hinterfragt und diskutiert und begründet werden!
 *Anmerkung*: In Checkstyle werden für einige häufig verwendete Standard-Klassen
 Ausnahmen definiert, d.h. `String` würde im obigen Beispiel *nicht* bei DAC
 mitgezählt/angezeigt.
-:::
+::::
 
 [[Beispiel: Metriken an MyWuppieStudi#getMyWuppieStudi]{.ex}]{.slides}
 
@@ -314,7 +335,7 @@ mitgezählt/angezeigt.
 
 =\> Verweis auf LV Softwareengineering
 
-# Tool-Support: Checkstyle
+# Stil & Metriken: Checkstyle
 
 ::: notes
 Metriken und die Einhaltung von Coding-Conventions werden sinnvollerweise nicht
@@ -347,7 +368,7 @@ mit.
 
     checkstyle {
         configFile file('checkstyle.xml')
-        toolVersion '13.4.2'
+        toolVersion '13.7.0'
     }
     ```
 
@@ -356,6 +377,11 @@ mit.
     -   Konfiguration: `<projectDir>/config/checkstyle/checkstyle.xml` (Default)
         [bzw. mit der obigen Konfiguration direkt im Projektordner]{.notes}
     -   Report: `<projectDir>/build/reports/checkstyle/main.html`
+
+::: important
+Die Versionsnummern in den Beispielen sind Momentaufnahmen. In eigenen Projekten
+bitte immer die aktuelle empfohlene Version aus der offiziellen Doku nachschlagen.
+:::
 
 <!-- Für die Demo:
 docker pull gradle
@@ -445,7 +471,7 @@ href="https://youtu.be/0ny6e6CNTF8"}
     ``` groovy
     plugins {
         id "java"
-        id "com.github.spotbugs" version "6.5.4"
+        id "com.github.spotbugs" version "6.5.8"
     }
     spotbugs {
         ignoreFailures = true
@@ -460,14 +486,21 @@ docker pull gradle
 docker run --rm -it  -v "$PWD":/data -w /data  --entrypoint "bash"  gradle
 -->
 
+:::: notes
+::: important
+Die Versionsnummern in den Beispielen sind Momentaufnahmen. In eigenen Projekten
+bitte immer die aktuelle empfohlene Version aus der offiziellen Doku nachschlagen.
+:::
+::::
+
 [Demo: SpotBugs/Gradle]{.ex
 href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/spotbugs/"}
 
-# Konfiguration für das PM-Praktikum (Format, Metriken, Checkstyle, SpotBugs)
+# Konfiguration für das PR2-Praktikum (Format, Metriken, Checkstyle, SpotBugs)
 
 ::: notes
-Im PM-Praktikum beachten wir die obigen Coding Conventions und Metriken mit den dort
-definierten Grenzwerten. Diese sind bereits in der bereit gestellten
+Im PR2-Praktikum beachten wir die obigen Coding Conventions und Metriken mit den
+dort definierten Grenzwerten. Diese sind bereits in der bereit gestellten
 Minimal-Konfiguration für Checkstyle (s.u.) konfiguriert.
 :::
 
@@ -583,6 +616,23 @@ Setzen Sie zusätzlich **SpotBugs** mit ein. Ihre Lösungen dürfen keine Warnun
 oder Fehler beinhalten, die SpotBugs melden würde.
 :::
 
+::: notes
+# Coding Conventions: Einige zentrale Grundsätze
+
+## Kommentieren vs. sauberen Code schreiben
+
+-   Kommentare ersetzen keinen guten Code
+-   Kommentare erklären **Warum**, nicht *Was* (Das "Was" steht im Code selbst)
+-   Keine "Selbstbeschreibungen" wie `x++;  // erhöht x um 1`
+
+## Typische Regeln für den Einstieg
+
+-   Keine "magischen Zahlen" $\to$ Konstanten (UPPER_SNAKE_CASE)
+-   Methoden sollten eine klar erkennbare Aufgabe haben (Verweis auf Single
+    Responsibility)
+-   Möglichst wenige `public`-Member, Kapselung betonen
+:::
+
 # Wrap-Up
 
 -   Code entsteht nicht zum Selbstzweck =\> Regeln nötig!
@@ -594,8 +644,6 @@ oder Fehler beinhalten, die SpotBugs melden würde.
         -   Zeilenlänge, Umbrüche
         -   Kommentare
         :::
-
-    -   Formatieren mit **Spotless**
 
     -   Prinzipien des objektorientierten Programmierens [(vgl. ["Code
         Smells"](smells.md))]{.notes}
@@ -610,12 +658,11 @@ oder Fehler beinhalten, die SpotBugs melden würde.
 
 \bigskip
 
--   Metriken: Einhaltung von Regeln in Zahlen ausdrücken
--   Prüfung manuell durch Code Reviews oder durch Tools wie **Checkstyle** oder
+-   Formatieren mit **Spotless**
+-   Stil & Metriken: Prüfung manuell durch Code Reviews oder durch Tools wie
+    **Checkstyle**
+-   Bugs & Anti-Pattern: Prüfung manuell durch Code Reviews oder durch Tools wie
     **SpotBugs**
--   Definition des
-    ["PM-Styles"](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/checkstyle.xml)
-    [(siehe Folie "Konfiguration für das PM-Praktikum")]{.notes}
 
 ::: readings
 -   @Martin2009
