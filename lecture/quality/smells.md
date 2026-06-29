@@ -23,6 +23,11 @@ Vorlesung \[[YT](https://youtu.be/gec7VnlFbLg)\],
 
 # Code Smells: Ist das Code oder kann das weg?
 
+::: notes
+In dieser Sitzung geht es nicht um Fehler im Sinne von "Programm stürzt ab", sondern
+um strukturelle Probleme, die die Wartbarkeit verschlechtern.
+:::
+
 ``` java
 class checker {
     static public void CheckANDDO(DATA1 inp, int c, FH.Studi
@@ -48,28 +53,26 @@ for(i=0;i<10;i++) // fuer alle i
 ```
 
 ::: notes
-Der Code im obigen Beispiel lässt sich möglicherweise kompilieren. Und
-möglicherweise tut er sogar das, was er tun soll.
+Der Code im obigen Beispiel ist bewusst überzogen und nicht vollständig korrekt. Er
+lässt sich möglicherweise kompilieren. Und möglicherweise tut er sogar das, was er
+tun soll.
 
 Dennoch: **Der Code "stinkt"** (zeigt **Code Smells**):
 
--   Nichtbeachtung üblicher Konventionen (Coding Rules)
--   Schlechte Kommentare
--   Auskommentierter Code
--   Fehlende Datenkapselung
--   Zweifelhafte Namen
--   Duplizierter Code
--   "Langer" Code: Lange Methoden, Klassen, Parameterlisten, tief verschachtelte
-    `if/then`-Bedingungen, ...
--   Feature Neid
--   `switch/case` oder `if/else` statt Polymorphie
--   Globale Variablen, lokale Variablen als Attribut
--   Magic Numbers
+-   Oberflächliche Smells: Formatierung, schlechte Kommentare, schlechte Namen,
+    auskommentierter Code
+-   Struktur-Smells: duplizierter Code, lange Methoden/Klassen, lange
+    Parameterlisten, tiefe Verschachtelung
+-   OO‑Smells: fehlende Kapselung, Feature Neid, globale Variablen, Magic Numbers
 
 Diese Liste enthält die häufigsten "Smells" und ließe sich noch beliebig fortsetzen.
 Schauen Sie mal in die unten angegebene Literatur :-)
 
 **Stinkender Code führt zu möglichen (späteren) Problemen.**
+
+Diese Smells (z.B. "duplizierter Code") werden wir in der
+[Refactoring‑Sitzung](refactoring.md) mit Techniken wie "Extract Method" etc.
+angehen.
 :::
 
 # Was ist guter ("sauberer") Code ("Clean Code")?
@@ -135,7 +138,7 @@ im Laufe der Zeit die Chance für tatsächliche Probleme deutlich erhöht.
 **Stinkender Code führt zu möglichen (späteren) Problemen.**
 :::
 
-::: notes
+:::: notes
 ## "Broken Windows" Phänomen
 
 Wenn ein Gebäude leer steht, wird es eine gewisse Zeit lang nur relativ langsam
@@ -153,7 +156,12 @@ abliefern. Sei es, weil man nicht versteht, was der Code macht und sich nicht an
 weiteren "Erker" einfach dran pappt. Seit es, weil man keine Lust hat, Zeit in
 ordentliche Arbeit zu investieren, weil der Code ja eh schon schlecht ist ... Das
 wird mit der Zeit nicht besser ...
+
+::: tip
+In Code-Basen sind "eingeworfene Fenster" z.B. auskommentierter Code, wilde
+Formatierung, ungenutzte Variablen.
 :::
+::::
 
 ["Broken Windows" Phänomen]{.ex
 href="https://en.wikipedia.org/wiki/Broken_windows_theory"}
@@ -371,7 +379,7 @@ Kopierter/duplizierter Code ist problematisch:
 -   Große Dateien verleiten (auch mangels Übersichtlichkeit) dazu, neuen Code
     ebenfalls schluderig zu gliedern
 
-## Langer Code deutet auch auf eine Verletzung des Prinzips der Single Responsibility hin
+## Langer Code deutet auch auf eine Verletzung des Prinzips der Single Responsibility hin (engl. Single Responsibility Principle (SRP))
 
 -   Klassen fassen evtl. nicht zusammengehörende Dinge zusammen
 
@@ -416,20 +424,40 @@ Kopierter/duplizierter Code ist problematisch:
     Circle makeCircle(int x, int y, int radius);
     Circle makeCircle(Point center, int radius);  // besser!
     ```
+
+    Damit verwandt sind "Primitive Obsession": überall `int`, `String` statt eigener
+    und passenderer Typen (`PhoneNumber`, `Ects`, `Address`, o.ä.), und "Data
+    Clumps": immer wieder dieselben Parametergruppen (`x`, `y`, `radius` statt
+    `Point center`).
+
+## Problem: Passende Abstraktionsebene finden
+
+Smell: Schlecht gewählte Abstraktionsebene
+
+Wenn eine Methode 20 Zeilen Implementation mit vielen Details enthält (also passend
+zur Faustregel der Länge einer Methode ist), aber aufrufende Methoden kaum lesbar
+sind, weil sie 6-8 dieser Low‑Level‑Methoden minutengenau orchestrieren.
 :::
 
-# Code Smells: Feature Neid
+::: notes
+# Code Smells: Fehlender Umgang mit Fehlerfällen
+
+-   Ignorieren von Fehlersituationen (z.B. `null`-Rückgaben, leere Listen)
+-   Mischen von Geschäftslogik und Fehlerbehandlung so, dass nichts mehr lesbar ist
+:::
+
+# Code Smells: Feature Neid (engl. Feature Envy)
 
 ``` java
 public class CreditsCalculator {
     public ECTS calculateEcts(Student s) {
         int semester = s.getSemester();
         int workload = s.getCurrentWorkload();
-        int nrModuls = s.getNumberOfModuls();
+        int nrModules = s.getNumberOfModuls();
         int total = Math.min(30, workload);
         int extra = Math.max(0, total - 30);
         if (semester < 5) {
-             extra = extra * nrModuls;
+             extra = extra * nrModules;
         }
         return new ECTS(total + extra);
     }
@@ -478,7 +506,7 @@ public class CreditsCalculator {
 
 ::: readings
 Gute Werke zum Nachlesen sind @Martin2009 (ein Klassiker) und @Passig2013. Im
-Odin-Projet hat man sich viele Gedanken gemacht: ["Foundations: Clean Code" (The
+Odin-Project hat man sich viele Gedanken gemacht: ["Foundations: Clean Code" (The
 Odin Project)](https://www.theodinproject.com/lessons/foundations-clean-code), und
 Google hat einen vielbeachteten Style-Guide für Java geschrieben: ["Documentation
 Best Practices" (Google
@@ -490,6 +518,6 @@ Styleguide)](https://github.com/google/styleguide/blob/gh-pages/docguide/best_pr
     'Single Responsibility' erklären
 -   k3: Ich kann typische Code Smells erkennen und vermeiden
 -   k3: Ich kann leicht lesbaren von schwer lesbarem Code unterscheiden
--   k3: Ich kann Programmierprinzipien anwenden, um den Code sauberer zu gestalten
+-   k34 Ich kann Programmierprinzipien anwenden, um den Code sauberer zu gestalten
 -   k3: Ich kann sinnvolle Kommentare schreiben
 :::
