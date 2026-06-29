@@ -16,9 +16,10 @@ die Dockerfiles (Anweisungen zum Erzeugen eines Images) im Projekt verteilen.
 Tatsächlich ist es nicht unüblich, ein Dockerfile in das Projekt-Repo mit
 einzuchecken.
 
-Durch Container hat man allerdings im Gegensatz zu herkömmlichen VMs keinen
-Sicherheitsgewinn, da die im Container laufende Software ja direkt auf dem
-Host-Betriebssystem ausgeführt wird.
+Im Gegensatz zu herkömmlichen VMs bieten Container keine starke zusätzliche
+Sicherheitsschicht, da die im Container laufende Software direkt im Kernel des
+Host-Betriebssystems ausgeführt wird. Container isolieren Prozesse voneinander, sind
+aber keine vollwertigen "Sandboxes" wie separate VMs.
 
 Es gibt auf DockerHub fertige Images, die man sich ziehen und starten kann. Ein
 solches gestartetes Image nennt sich dann Container und enthält beispielsweise
@@ -91,7 +92,7 @@ In diesen Fällen kann eine Virtualisierung helfen.
 
 ![](images/virtualisierung.png){width="80%" web_width="50%"}
 
-::: notes
+:::: notes
 Wenn man über Virtualisierung auf dem Desktop spricht, kann man grob zwei Varianten
 unterscheiden. In beiden Fällen ist die Basis die Hardware (Laptop, Desktop-Rechner)
 und das darauf laufende (Host-) Betriebssystem (Linux, FreeBSD, macOS, Windows,
@@ -129,12 +130,28 @@ Linux-Layer (*WSL*) genutzt; für macOS wurde bisher eine Linux-VM im Hintergrun
 hochgefahren, mittlerweile wird aber eine eigene schlanke Virtualisierung
 eingesetzt). Außerdem steht im Container üblicherweise kein graphisches
 Benutzerinterface zur Verfügung. Da die Prozesse direkt im Host-Betriebssystem
-laufen, stellen Container keine Sicherheitsschicht ("Sandboxen") dar!
+laufen, stellen Container keine wirkliche Sicherheitsschicht ("Sandboxen") dar!
 
 In allen Fällen muss die Hardwarearchitektur beachtet werden: Auf einer
 Intel-Maschine können normalerweise keine VMs/Container basierend auf
 ARM-Architektur ausgeführt werden und umgekehrt.
+
+::: tip
+-   Container bieten **Isolation**, aber keine starke **Sicherheitsgrenze** wie eine
+    vollwertige VM.
+-   Praktisch heißt das:
+    -   Ja, ein Container-Prozess kann nicht "einfach so" andere Host-Prozesse sehen
+        (namespaces etc.).
+    -   Aber: Wenn der Container-Prozess ausbricht (Kernel-Lücke,
+        Docker-Misskonfiguration, `--privileged` etc.), ist der Host direkt
+        betroffen.
+
+**Durch Container entsteht im Vergleich zu herkömmlichen VMs keine starke
+zusätzliche Sicherheitsschicht: Die Prozesse laufen im Kernel des Host-Systems.
+Container isolieren Prozesse zwar voneinander (namespaces, cgroups), sind aber keine
+harte Sandbox wie eine eigenständige VM.**
 :::
+::::
 
 # Getting started
 
@@ -146,17 +163,23 @@ ARM-Architektur ausgeführt werden und umgekehrt.
 -   Image downloaden: `docker pull <IMAGE>`
 -   Image starten: `docker run <IMAGE>`
 
-::: notes
+:::: notes
 ## Begriffe
 
 -   **Docker-File**: Beschreibungsdatei, wie Docker ein Image erzeugen soll.
--   **Image**: Enthält die Dinge, die lt. dem Docker-File in das Image gepackt
-    werden sollen. Kann gestartet werden und erzeugt damit einen Container.
+-   **Image**: Enthält die read-only Schichten, die lt. dem Docker-File in das Image
+    gepackt werden sollen. Liegen als Dateien auf dem Host. Kann gestartet werden
+    und erzeugt damit einen Container.
 -   **Container**: Ein laufendes Images (genauer: eine laufende Instanz eines
-    Images). Kann dann auch zusätzliche Daten enthalten.
+    Images + Schreib-Layer + Metadaten). Kann dann auch zusätzliche Daten enthalten.
+
+::: tip
+Ein Container basiert auf einem Image. Das Image liegt als Dateien vor, der
+Container selbst ist eine laufende Instanz + zusätzlicher Schreib-Layer.
+:::
 
 ## Beispiele
-:::
+::::
 
 ::: slides
 \bigskip
@@ -192,18 +215,32 @@ anzugeben. Im obigen Beispiel ist das `/bin/sh`, also eine Shell ...
 
 \smallskip
 
-    docker pull openjdk:latest
-    docker run  --rm  -v "$PWD":/data -w /data  openjdk:latest  javac Hello.java
-    docker run  --rm  -v "$PWD":/data -w /data  openjdk:latest  java Hello
+    docker pull eclipse-temurin:latest
+    docker run  --rm  -v "$PWD":/data -w /data  eclipse-temurin:latest  javac Hello.java
+    docker run  --rm  -v "$PWD":/data -w /data  eclipse-temurin:latest  java Hello
 
-::: notes
+::::: notes
 Auch für Java gibt es vordefinierte Images mit einem JDK. Das Tag "`latest`" zeigt
-dabei auf die letzte stabile Version des `openjdk`-Images. Üblicherweise wird
-"`latest`" von den Entwicklern immer wieder weiter geschoben, d.h. auch bei anderen
-Images gibt es ein "`latest`"-Tag. Gleichzeitig ist es die Default-Einstellung für
-die Docker-Befehle, d.h. es kann auch weggelassen werden:
-`docker run openjdk:latest` und `docker run openjdk` sind gleichwertig. Alternativ
-kann man hier auch hier wieder eine konkrete Version angeben.
+dabei auf die letzte stabile Version des `eclipse-temurin`-Images. Üblicherweise
+wird "`latest`" von den Entwicklern immer wieder weiter geschoben, d.h. auch bei
+anderen Images gibt es ein "`latest`"-Tag. Gleichzeitig ist es die
+Default-Einstellung für die Docker-Befehle, d.h. es kann auch weggelassen werden:
+`docker run eclipse-temurin:latest` und `docker run eclipse-temurin` sind
+gleichwertig. Alternativ (und besser!) kann man hier auch hier wieder eine konkrete
+Version angeben.
+
+::: tip
+In CI/CD-Pipelines sollte man `latest` möglichst vermeiden, weil sich das Image
+unbemerkt ändern kann. Besser: eine konkrete Version taggen (z.B.
+`eclipse-temurin:25.0.3_9-jdk-ubi10-minimal`).
+:::
+
+::: important
+Früher gab es offizielle `openjdk`-Images auf Docker Hub. Diese sind inzwischen
+*deprecated* und werden nicht mehr gepflegt. Stattdessen nutzen wir hier die
+offiziellen Eclipse-Temurin-Images (`eclipse-temurin:<version>`), die aktuelle
+OpenJDK-Builds bereitstellen.
+:::
 
 Über die Option `-v` wird ein Ordner auf dem Host (hier durch `"$PWD"` dynamisch
 ermittelt) in den Container eingebunden ("gemountet"), hier auf den Ordner `/data`.
@@ -216,7 +253,7 @@ Ordner des Hosts liegt (und in den Container gemountet wurde). Das Ergebnis
 (`Hello.class`) wird ebenfalls in den Ordner `/data/` im Container geschrieben und
 erscheint dann im Arbeitsverzeichnis auf dem Host ... Analog kann dann mit
 `java Hello` die Klasse ausgeführt werden.
-:::
+:::::
 
 [Demo: Container in der Konsole]{.ex href="https://youtu.be/LE_QcHqUg9Y"}
 
@@ -292,7 +329,7 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 
 ``` yaml
 default:
-    image: openjdk:17
+    image: eclipse-temurin:17
 
 job1:
     stage: build
@@ -307,11 +344,12 @@ job1:
 In den Gitlab-CI-Pipelines (analog wie in den GitHub-Actions) kann man
 Docker-Container für die Ausführung der Pipeline nutzen.
 
-Mit `image: openjdk:17` wird das Docker-Image `openjdk:17` vom DockerHub geladen und
-durch den Runner für die Stages als Container ausgeführt. Die Aktionen im
-`script`-Teil, wie beispielsweise `javac Hello.java` werden vom Runner an die
-Standard-Eingabe der Shell des Containers gesendet. Im Prinzip entspricht das dem
-Aufruf auf dem lokalen Rechner: `docker run openjdk:17 javac Hello.java`.
+Mit `image: eclipse-temurin:17` wird das Docker-Image `eclipse-temurin:17` vom
+DockerHub geladen und durch den Runner für die Stages als Container ausgeführt. Die
+Aktionen im `script`-Teil, wie beispielsweise `javac Hello.java` werden vom Runner
+an die Standard-Eingabe der Shell des Containers gesendet. Im Prinzip entspricht das
+dem Aufruf auf dem lokalen Rechner:
+`docker run eclipse-temurin:17 javac Hello.java`.
 :::
 
 [Demo: GitLab CI/CD und Docker]{.ex href="https://youtu.be/3Tj3lhcoKro"}
@@ -328,9 +366,9 @@ on:
 jobs:
     job1:
         runs-on: ubuntu-latest
-        container: docker://openjdk:17
+        container: eclipse-temurin:25
         steps:
-            - uses: actions/checkout@v6
+            - uses: actions/checkout@v7
             - run: java -version
             - run: javac Hello.java
             - run: java Hello
@@ -344,11 +382,11 @@ https://docs.github.com/en/actions/using-jobs/running-jobs-in-a-container
 In den GitHub-Actions kann man Docker-Container für die Ausführung der Pipeline
 nutzen.
 
-Mit `docker://openjdk:17` wird das Docker-Image `openjdk:17` vom DockerHub geladen
-und auf dem Ubuntu-Runner als Container ausgeführt. Die Aktionen im `steps`-Teil,
-wie beispielsweise `javac Hello.java` werden vom Runner an die Standard-Eingabe der
-Shell des Containers gesendet. Im Prinzip entspricht das dem Aufruf auf dem lokalen
-Rechner: `docker run openjdk:17 javac Hello.java`.
+Mit `container: eclipse-temurin:25` wird das Docker-Image `eclipse-temurin:25` vom
+DockerHub geladen und auf dem Ubuntu-Runner als Container ausgeführt. Die Aktionen
+im `steps`-Teil, wie beispielsweise `javac Hello.java` werden vom Runner an die
+Standard-Eingabe der Shell des Containers gesendet. Im Prinzip entspricht das dem
+Aufruf auf dem lokalen Rechner: `docker run eclipse-temurin:25 javac Hello.java`.
 :::
 
 [Demo: GitHub Actions und Docker]{.ex href="https://youtu.be/jrxoax2fPRI"}
@@ -426,7 +464,7 @@ Codespaces](https://github.com/features/codespaces) von GitHub auf.
 # Wrap-Up
 
 -   Schlanke Virtualisierung mit Containern (kein eigenes OS)
--   *Kein* Sandbox-Effekt
+-   *Kein* echter Sandbox-Effekt
 
 \smallskip
 
@@ -444,7 +482,7 @@ Codespaces](https://github.com/features/codespaces) von GitHub auf.
 -   k2: Ich kann zwischen Containern und VMs unterscheiden
 -   k1: Ich kenne typische Einsatzgebiete für Container
 -   k2: Ich verstehe, dass Container als abgeschottete Prozesse auf dem Host
-    laufen - kein Sandbox-Effekt
+    laufen - kein echter Sandbox-Effekt
 -   k3: Ich kann Container von DockerHub ziehen
 -   k3: Ich kann Container starten
 -   k3: Ich kann eigene Container definieren und bauen
