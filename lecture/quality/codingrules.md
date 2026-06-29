@@ -40,19 +40,23 @@ Um typische Anti-Pattern zu vermeiden, kann man den Code mit sogenannten *Linter
 prüfen. Ein Beispiel für die Java-Entwicklung ist **SpotBugs**, welches sich in den
 Build-Prozess einbinden lässt und über 400 typische problematische Muster im Code
 erkennt.
-
-Für die Praktika in der Veranstaltung Programmiermethoden wird der Google Java Style
-oder AOSP genutzt. Für die passende Checkstyle-Konfiguration wird eine minimale
-[checkstyle.xml](https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/master/lecture/quality/src/checkstyle.xml)
-bereitgestellt (vgl. Folie "Konfiguration für das PM-Praktikum").
 :::
 
 ::: youtube
--   [VL Coding Conventions](https://youtu.be/nLAEak6Fwfk)
--   [Demo Formatter und Spotless](https://youtu.be/oCMwyDrPkFI)
--   [Demo Checkstyle](https://youtu.be/NR070ZimbH4)
--   [Demo Checkstyle: Konfiguration mit Eclipse-CS](https://youtu.be/0ny6e6CNTF8)
--   [Demo SpotBugs](https://youtu.be/tSczcf_EOwI)
+Vorlesung \[[YT](https://youtu.be/8jUMpkbbDPk)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-coding-conventions-und-metriken/d4eec4f5538590e2ad83f5324f02589c)\]
+
+Demo:
+
+-   Formatter und Spotless \[[YT](https://youtu.be/3brrZQa2gi8)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-coding-conventions-demo-formatter-und-spotless/2416a54b9c4fe66112f38fcbf54153d9)\]
+-   Checkstyle \[[YT](https://youtu.be/L9b5dFiP8e8)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-coding-conventions-demo-checkstyle/b3554999ed7060d3c7bc604e5c64eae7)\]
+-   Checkstyle-Konfiguration mit Eclipse-CS erzeugen
+    \[[YT](https://youtu.be/KRaLblV1SQ0)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-coding-conventions-demo-checkstyleeclipse-cs-konfiguration/af64dcefa7646ab35cc24e42fa20c0f8)\]
+-   SpotBugs \[[YT](https://youtu.be/fQCfP9whNRk)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-coding-conventions-demo-spotbugs/b202ee5329369fecec4b678c2f66045e)\]
 :::
 
 # Coding Conventions: Richtlinien für einheitliches Aussehen von Code
