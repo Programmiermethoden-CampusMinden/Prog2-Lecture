@@ -198,10 +198,10 @@ public static void main(String[] args) throws IOException {
     muss die Methode entsprechend gekennzeichnet werden.
 
 ::: important
-**Anmerkung**: Das bloße Ausgeben des Stacktrace via `e.printStackTrace()` ist noch
-**kein sinnvolles Exception-Handling**! Hier sollte auf die jeweilige Situation
-eingegangen werden und versucht werden, den Fehler zu beheben oder dem Aufrufer
-geeignet zu melden!
+Das bloße Ausgeben des Stacktrace via `e.printStackTrace()` ist noch **kein
+sinnvolles Exception-Handling**! Hier sollte auf die jeweilige Situation eingegangen
+werden und versucht werden, den Fehler zu beheben oder dem Aufrufer geeignet zu
+melden!
 :::
 ::::
 
@@ -227,25 +227,24 @@ Eine im `try`-Block auftretende Exception wird der Reihe nach mit den
 `catch`-Blöcken gematcht (vergleichbar mit `switch case`).
 
 ::: important
-**Wichtig**: Dabei muss die Vererbungshierarchie beachtet werden. Die
-spezialisierteste Klasse muss ganz oben stehen, die allgemeinste Klasse als letztes.
-Sonst wird eine Exception u.U. zu früh in einem nicht dafür gedachten `catch`-Zweig
-aufgefangen.
+Dabei muss die Vererbungshierarchie beachtet werden. Die spezialisierteste Klasse
+muss ganz oben stehen, die allgemeinste Klasse als letztes. Sonst wird eine
+Exception u.U. zu früh in einem nicht dafür gedachten `catch`-Zweig aufgefangen.
 :::
 
 ::: important
-**Wichtig**: Wenn eine Exception nicht durch die `catch`-Zweige aufgefangen wird,
-dann wird sie an den Aufrufer weiter geleitet. Im Beispiel würde eine `IOException`
-nicht durch die `catch`-Zweige gefangen (`NumberFormatException` und
-`ArithmeticException` sind im falschen Vererbungszweig, und `FileNotFoundException`
-ist spezieller als `IOException`) und entsprechend an den Aufrufer weiter gereicht.
-Da es sich obendrein um eine checked Exception handelt, müsste man diese per
+Wenn eine Exception nicht durch die `catch`-Zweige aufgefangen wird, dann wird sie
+an den Aufrufer weiter geleitet. Im Beispiel würde eine `IOException` nicht durch
+die `catch`-Zweige gefangen (`NumberFormatException` und `ArithmeticException` sind
+im falschen Vererbungszweig, und `FileNotFoundException` ist spezieller als
+`IOException`) und entsprechend an den Aufrufer weiter gereicht. Da es sich
+obendrein um eine checked Exception handelt, müsste man diese per
 `throws IOException` an der Methode deklarieren.
 :::
 
 ::: tip
-**Hinweis**: Nur `IOException` ist *checked*. `NumberFormatException` und
-`ArithmeticException` sind *unchecked* - Fangen ist optional, aber oft sinnvoll.
+Nur `IOException` ist *checked*. `NumberFormatException` und `ArithmeticException`
+sind *unchecked* - Fangen ist optional, aber oft sinnvoll.
 :::
 ::::::
 
@@ -269,7 +268,7 @@ Dies wird beispielsweise für Aufräumarbeiten genutzt, etwa zum Schließen von
 Verbindungen oder Input-Streams.
 
 ::: tip
-**Hinweis**: `finally` wird auch dann ausgeführt, wenn im `try` ein `return` steht.
+`finally` wird auch dann ausgeführt, wenn im `try` ein `return` steht.
 :::
 ::::
 
