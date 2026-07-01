@@ -303,9 +303,8 @@ ohne vorherige Prüfung). Verwenden Sie besser explizit `orElseThrow()` bzw.
 `orElse(...)`.
 
 ::: tip
-*Anmerkung*: Da `getBestStudi()` eine `NullPointerException` werfen kann (vgl.
-Implementierung am Anfang), sollte der Aufruf möglicherweise in ein `try/catch`
-verpackt werden.
+Da `getBestStudi()` eine `NullPointerException` werfen kann (vgl. Implementierung am
+Anfang), sollte der Aufruf möglicherweise in ein `try/catch` verpackt werden.
 :::
 
 [Beispiel: optional.traditional.Demo]{.ex
