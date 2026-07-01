@@ -58,8 +58,8 @@ weiteren Bound-Typen müssen Interfaces sein. Wenn kein Klassen-Bound existiert,
 können alle Bound-Typen Interfaces sein.
 
 ::: tip
-*Anmerkung*: Der Typ-Parameter ist **nur** mit `extends` nach oben beschränkbar. Für
-die Wildcards gibt es zusätzlich auch noch die Beschränkung mit `super` nach unten.
+Der Typ-Parameter ist **nur** mit `extends` nach oben beschränkbar. Für die
+Wildcards gibt es zusätzlich auch noch die Beschränkung mit `super` nach unten.
 :::
 
 [Beispiel bounds.Cps]{.ex
