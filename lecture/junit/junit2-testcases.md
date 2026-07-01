@@ -281,7 +281,7 @@ Wenn das Ergebnis von der Kombination der Eingabewerte abhängt, dann sollte man
 bei der Äquivalenzklassenbildung berücksichtigen: Die ÄK sind in diesem Fall in
 Bezug auf die Kombinationen zu bilden!
 
-Schauen Sie sich dazu das Beispiel im @Kleuker2019, Abschnitt "4.3 Analyse
+Schauen Sie sich dazu das Beispiel im @Kleuker2026, Abschnitt "4.3 Analyse
 abhängiger Parameter" an.
 
 Die einfache ÄK-Bildung würde in diesem Fall versagen, da die Eingabewerte nicht
@@ -292,7 +292,7 @@ Analoge Überlegungen gelten auch für die ÄK-Bildung im Zusammenhang mit
 objektorientierter Programmierung. Die Eingabewerte und der Objektzustand müssen
 dann *gemeinsam* bei der ÄK-Bildung betrachtet werden!
 
-Vergleiche @Kleuker2019, Abschnitt "4.4 Äquivalenzklassen und Objektorientierung".
+Vergleiche @Kleuker2026, Abschnitt "4.4 Äquivalenzklassen und Objektorientierung".
 :::
 
 # Wrap-Up
