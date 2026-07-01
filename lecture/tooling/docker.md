@@ -504,7 +504,8 @@ unter dem Namen "DevContainer" (besser) bekannt:
 
 Dazu gibt es auch das eigenständige Projekt:
 
-https://containers.dev/ https://code.visualstudio.com/docs/devcontainers/containers
+[containers.dev](https://containers.dev/) und
+[code.visualstudio.com/docs/devcontainers/containers](https://code.visualstudio.com/docs/devcontainers/containers)
 :::
 :::::
 
