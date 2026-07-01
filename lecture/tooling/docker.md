@@ -539,7 +539,6 @@ Dazu gibt es auch das eigenständige Projekt:
     Docker](http://git03-ifm-min.ad.hsbi.de/help/ci/docker/using_docker_images.md#overriding-the-entrypoint-of-an-image)
 -   [VSCode: Entwickeln in
     Docker-Containern](https://code.visualstudio.com/docs/remote/containers)
--   @DockerInAction und @DockerInPractice
 :::
 
 ::: outcomes
