@@ -180,7 +180,7 @@ Der typische Lebenszyklus eines Observers sieht also so aus:
 \bigskip
 
 ::: tip
-**Hinweis**: Im obigen Beispiel wurde für die Observer eine Liste verwendet:
+Im obigen Beispiel wurde für die Observer eine Liste verwendet:
 `List<Observer> observers`. Je nach Anwendungsfall kann das aber auch eine andere
 Datenstruktur sein - beispielsweise könnte man mit einer Menge (`Set`) vermeiden,
 dass sich Observer mehrfach registrieren können. Der verwendete Datentyp hängt nicht
@@ -188,11 +188,10 @@ am Observer-Pattern!
 :::
 
 ::: important
-**Wichtig**: In der Standarddefinition des Observer-Patterns nach [@Gamma2011]
-werden beim Aufruf der Methode `update()` **keine Werte** an die Observer
-mitgegeben. Jeder Observer muss sich entsprechend eine eigene Referenz auf das
-beobachtete Objekt halten, um von dort dann weitere Informationen erhalten zu
-können.
+In der Standarddefinition des Observer-Patterns nach [@Gamma2011] werden beim Aufruf
+der Methode `update()` **keine Werte** an die Observer mitgegeben. Jeder Observer
+muss sich entsprechend eine eigene Referenz auf das beobachtete Objekt halten, um
+von dort dann weitere Informationen erhalten zu können.
 
 Wir nutzen im Rahmen dieses Moduls in der Regel eine **erweiterte Variante**, bei
 der `update()` einen oder mehrere Parameter mitbekommt, z.B.
@@ -243,10 +242,10 @@ Observer vernünftig verhalten!
 :::
 
 ::: tip
-**Hinweis**: Es gibt in der Java-Standardbibliothek (`java.util`) bereits die
-Klassen `Observer` und `Observable`, die aber als "deprecated" gekennzeichnet sind.
-Sinnvollerweise nutzen Sie nicht diese vorgegebene Variante, sondern implementieren
-Ihre eigenen Interfaces/Klassen, wenn Sie das Observer-Pattern einsetzen wollen!
+Es gibt in der Java-Standardbibliothek (`java.util`) bereits die Klassen `Observer`
+und `Observable`, die aber als "deprecated" gekennzeichnet sind. Sinnvollerweise
+nutzen Sie nicht diese vorgegebene Variante, sondern implementieren Ihre eigenen
+Interfaces/Klassen, wenn Sie das Observer-Pattern einsetzen wollen!
 :::
 :::::::
 
