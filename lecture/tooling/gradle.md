@@ -569,18 +569,18 @@ müssen. Deshalb ist der Einsatz des Wrappers einem fest installierten Gradle
 vorzuziehen!
 
 ::: important
-**Wichtig**: Oft findet sich im `.gitignore` der Eintrag `*.jar`, d.h. Jar-Files
-werden üblicherweise als generierte Binärdateien nicht mit ins Repo eingecheckt.
-Dadurch wird aber auch der Gradle-Wrapper oft vergessen, und beim Build in der
-CI-Pipeline schlägt das dann fehl. Entweder definieren Sie für
+Oft findet sich im `.gitignore` der Eintrag `*.jar`, d.h. Jar-Files werden
+üblicherweise als generierte Binärdateien nicht mit ins Repo eingecheckt. Dadurch
+wird aber auch der Gradle-Wrapper oft vergessen, und beim Build in der CI-Pipeline
+schlägt das dann fehl. Entweder definieren Sie für
 `gradle/wrapper/gradle-wrapper.jar` eine Ausnahme im `.gitignore`, oder fügen Sie
 den Wrapper mit Hilfe des Force-Flags der Versionskontrolle hinzu:
 `git add  -f  gradle/wrapper/gradle-wrapper.jar`.
 :::
 
 ::: caution
-**Wichtig** (Windows-User): Der Gradle-Wrapper `gradlew` muss ausführbar sein! Wenn
-Sie auf einem POSIX-System arbeiten (Linux, macOS, BSD), dann wird das `x`-Bit
+**Windows-User**: Der Gradle-Wrapper `gradlew` muss ausführbar sein! Wenn Sie auf
+einem POSIX-System arbeiten (Linux, macOS, BSD), dann wird das `x`-Bit
 (Unix-Executable-Bit) bereits beim Initialisieren des Projekts durch `gradle init`
 oder über IntelliJ automatisch korrekt gesetzt und bei einem `git add` mit ins Repo
 eingecheckt. Windows und Windows-Dateisysteme kennen das Unix-Executable-Bit nicht,
