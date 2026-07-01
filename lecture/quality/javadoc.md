@@ -105,8 +105,8 @@ public int setDate(int date) {
         ist und möglicherweise mit der nächsten Version o.ä. entfernt wird. (siehe
         nächste Folie)
 
-=\> Dies sind die Basis-Regeln aus dem populären Google-Java-Style
-[@googlestyleguide].
+=\> Dies sind die Basis-Regeln aus dem populären
+[Google-Java-Style](https://google.github.io/styleguide/javaguide.html).
 :::
 
 # Veraltete Elemente
@@ -188,9 +188,7 @@ Versuchen Sie, dieses zu erreichen!
 Etwas technisch, aber ebenfalls sehr lesenswert ist der Style-Guide für
 Java-Software [How to Write Doc Comments for the Javadoc
 Tool](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html)
-von
-
-1.  
+von Oracle.
 :::
 
 # Wrap-Up
@@ -207,9 +205,9 @@ von
 -   Faustregel: Alle `public` und `protected` Elemente mit Javadoc kommentieren!
 
 ::: readings
--   @Ullenboom2021 [Kap. 23.4]
--   @googlestyleguide [Kap. 7]
--   1
+Schauen Sie sich den
+[Google-Java-Style](https://google.github.io/styleguide/javaguide.html) an. Dieser
+ist sehr ausführlich dokumentiert.
 :::
 
 ::: outcomes
