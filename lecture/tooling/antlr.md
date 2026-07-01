@@ -61,10 +61,10 @@ Parser, ...) nicht nur in Java, sondern in verschiedenen weiteren Sprachen erzeu
 beispielsweise Python, C++, CSharp, JavaScript, Go, ...
 
 ::: important
-**Wichtig**: Man kann ANTLR als eigenständiges Tool installieren und/oder über das
-Gradle-Plugin nutzen und/oder das IntelliJ-Plugin einsetzen. Wir gehen hier den Weg
-über das Gradle-Plugin, d.h. es gibt keinen (guten) Grund für eine "richtige"
-Installation von ANTLR.
+Man kann ANTLR als eigenständiges Tool installieren und/oder über das Gradle-Plugin
+nutzen und/oder das IntelliJ-Plugin einsetzen. Wir gehen hier den Weg über das
+Gradle-Plugin, d.h. es gibt keinen (guten) Grund für eine "richtige" Installation
+von ANTLR.
 :::
 
 Einordnung ins Curriculum: Wir betrachten jetzt im 2. Semester nur die rein
@@ -191,8 +191,8 @@ Basis-Visitor wie `FooBaseVisitor`. (Der Präfix `Foo` kommt von der betrachtete
 Grammatik, diese würde hier also `Foo.g4` heissen.)
 
 ::: tip
-Wichtig: Diese Gradle-Konfiguration müssen Sie sich nicht im Detail merken. Nutzen
-Sie sie in diesem Kurs als Template und passen Sie sie bei Bedarf an.
+Diese Gradle-Konfiguration müssen Sie sich nicht im Detail merken. Nutzen Sie sie in
+diesem Kurs als Template und passen Sie sie bei Bedarf an.
 :::
 ::::
 
@@ -316,11 +316,10 @@ jedes Token, in welcher Zeile es gefunden wurde und an welcher Position es start
 `EOF` ist ein vordefiniertes Token, welches das Ende der Eingabe kennzeichnet.
 
 ::: note
-Wichtig: Der gesamte Eingabetext muss so in gültige Token überführt werden können,
-dass jede Zeichenposition zu einem Token gehört. Wenn der Lexer auf Zeichen stösst,
-die zu keiner der definierten Token-Regeln passen, meldet er einen Fehler (über
-seine Error-Listener) und je nach Konfiguration kann dies auch zu einer Exception
-führen.
+Der gesamte Eingabetext muss so in gültige Token überführt werden können, dass jede
+Zeichenposition zu einem Token gehört. Wenn der Lexer auf Zeichen stösst, die zu
+keiner der definierten Token-Regeln passen, meldet er einen Fehler (über seine
+Error-Listener) und je nach Konfiguration kann dies auch zu einer Exception führen.
 :::
 ::::
 
@@ -512,7 +511,7 @@ Anwendung des Patterns an; zur Funktionsweise des Patterns siehe Lektion
 
 ![](images/MiniCalcVisitorUML.png){width="60%"}
 
-:::: notes
+::: notes
 ## ANTLR-Visitor:
 
 -   ANTLR generiert ein `MiniCalcVisitor<T>`-Interface und eine
@@ -605,8 +604,7 @@ Anwendung des Patterns an; zur Funktionsweise des Patterns siehe Lektion
     per Aufruf `ctx.getChildCount()` abfragen und dann mit `ctx.getChild(i)` gezielt
     auf ein Kind zugreifen (Indexbereich `0` bis `getChildCount() - 1`).
 
-::: important
-## Visitor-Rückgaben und Aggregation in ANTLR vs. zustandsbehaftete Visitoren
+## Hinweis: Visitor-Rückgaben und Aggregation in ANTLR vs. zustandsbehaftete Visitoren
 
 Wir nutzen hier in Prog2 einfach einen **zustandsbehafteten Visitor**: Die
 `visitXYZ`-Methoden arbeiten mit einer internen **Hilfsdatenstruktur** wie `Stack`,
@@ -663,7 +661,7 @@ Deshalb muss man für `String` meist `defaultResult()` und `aggregateResult()`
 
 Beispiel für Fortgeschrittene: Pretty-Printing für arithmetische Ausdrücke mit
 ANTLR-Aggregation mit Typ-Variablen/Rückgabetyp `String` (mehr "Magie", aber
-sauber):
+sauberer):
 
 ``` java
 class PrettyVisitorAggregation extends MiniCalcBaseVisitor<String> {
@@ -695,7 +693,6 @@ Merke: `StringBuilder` ist oft die beste Wahl für den Einstieg. Die eingebaute
 Aggregation ist praktisch, aber nur dann gut nutzbar, wenn man die Sammellogik
 (`defaultResult`/`aggregateResult`) passend definiert.
 :::
-::::
 
 ::: notes
 # Ausblick: Pattern Matching auf Bäumen (neuere Java-Versionen)
