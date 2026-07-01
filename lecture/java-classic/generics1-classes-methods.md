@@ -57,7 +57,7 @@ als `Object` behandelt (und es entstehen Compiler-Warnungen).
     dann der String `"huhu"` Probleme zur Laufzeit machen
 
 ::: tip
-*Anmerkung*: `Vector` ist streng genommen historisch ("Legacy"). Die Klasse ist für
+`Vector` ist streng genommen historisch ("Legacy"). Die Klasse ist für
 Multithreading/Nebenläufigkeit ausgelegt (Methoden sind synchronisiert) und
 verursacht dadurch in klassischen nicht nebenläufigen Programmen einen unnötigen
 Synchronisations-Overhead. Nutzen Sie für neuen, nicht nebenläufigen Code meist
