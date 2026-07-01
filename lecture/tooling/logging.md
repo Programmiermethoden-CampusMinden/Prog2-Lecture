@@ -291,10 +291,10 @@ Konfiguration von außen über eine Properties-Datei vorzunehmen
 (`logging.properties`).
 
 ::: tip
-*Hinweis*: In vielen professionellen Projekten werden heute (für flexible
-Konfiguration und bessere Integrationen) Logging-Frameworks wie SLF4J mit Logback
-genutzt. Die hier vorgestellte Logik (Logger, Level, Handler/Appender,
-Formatter/Layouts, Hierarchie) überträgt sich jedoch nahezu 1:1 darauf.
+In vielen professionellen Projekten werden heute (für flexible Konfiguration und
+bessere Integrationen) Logging-Frameworks wie SLF4J mit Logback genutzt. Die hier
+vorgestellte Logik (Logger, Level, Handler/Appender, Formatter/Layouts, Hierarchie)
+überträgt sich jedoch nahezu 1:1 darauf.
 :::
 ::::
 
