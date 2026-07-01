@@ -359,7 +359,7 @@ parametrisiert).
 Generics mehr!**
 
 ::: tip
-**Hinweis**: In C++ ist man den anderen möglichen Weg gegangen und erzeugt für jede
+In C++ ist man den anderen möglichen Weg gegangen und erzeugt für jede
 Instantiierung die passende Klasse.
 :::
 
@@ -622,8 +622,6 @@ einfach nur `List` (plus notwendige Casts, vom Compiler nach dem Type-Check
 automatisch eingefügt).
 
 ::: tip
-Hintergrund:
-
 Arrays gab es bereits sehr früh, Generics wurden erst viel später nachträglich
 hinzugefügt (in Java 5). Bei Arrays fand man das Verhalten damals natürlich und
 pragmatisch (trotz der Laufzeit-Überprüfung).
