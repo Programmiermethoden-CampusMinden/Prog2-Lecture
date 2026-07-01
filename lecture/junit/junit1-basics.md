@@ -175,23 +175,23 @@ wiederholbarer Tests
     Tests, die in JUnit 3 oder JUnit 4 geschrieben sind.
 
 ::: tip
-*Anmerkung*: Wie der Name schon sagt, ist das Framework für Modultests
-("Unit-Tests") gedacht. Man kann damit aber auch prima auf anderen Teststufen
-arbeiten und beispielsweise Systemtests definieren.
+Wie der Name schon sagt, ist das Framework für Modultests ("Unit-Tests") gedacht.
+Man kann damit aber auch prima auf anderen Teststufen arbeiten und beispielsweise
+Systemtests definieren.
 :::
 
 ::: caution
-*Wichtig*: In dieser Lehrveranstaltung besprechen wir JUnit am Beispiel **JUnit 6**.
-**Sofern nicht explizit etwas anderes vermerkt ist, meint die Angabe "JUnit" immer
-"JUnit (Version 6.x)".**
+In dieser Lehrveranstaltung besprechen wir JUnit am Beispiel **JUnit 6**. **Sofern
+nicht explizit etwas anderes vermerkt ist, meint die Angabe "JUnit" immer "JUnit
+(Version 6.x)".**
 :::
 
 ::: tip
-*Anmerkung*: Mit JUnit 3 sollte definitiv nicht mehr aktiv gearbeitet werden, d.h.
-insbesondere keine neuen Tests mehr erstellt werden, da diese Version nicht mehr
-weiterentwickelt wird. Es kann sein, dass Ihnen in Produktivumgebungen noch häufig
-Testsuiten in JUnit 4 begegnen - achten Sie dort auf die verwendeten Annotationen,
-die sich teilweise leicht von der modernen Variante unterscheiden.
+Mit JUnit 3 sollte definitiv nicht mehr aktiv gearbeitet werden, d.h. insbesondere
+keine neuen Tests mehr erstellt werden, da diese Version nicht mehr weiterentwickelt
+wird. Es kann sein, dass Ihnen in Produktivumgebungen noch häufig Testsuiten in
+JUnit 4 begegnen - achten Sie dort auf die verwendeten Annotationen, die sich
+teilweise leicht von der modernen Variante unterscheiden.
 :::
 ::::::
 
@@ -456,10 +456,9 @@ Aufruf manuell über die Option `-enableassertions` bzw. `-ea` (Kurzschreibweise
 aktivieren (`java -ea main`)! Dies gilt auch beim Start über die IDE oder Gradle ...
 
 ::: warning
-Wichtig: Die Assertions sind per Default deaktiviert und müssen erst manuell
-aktiviert werden. Außerdem wird bei Verletzung der Bedingung eine *unchecked
-exception* (ein Error) geworfen, der auf einen nicht korrigierbaren Programmzustand
-hindeutet.
+Die Assertions sind per Default deaktiviert und müssen erst manuell aktiviert
+werden. Außerdem wird bei Verletzung der Bedingung eine *unchecked exception* (ein
+Error) geworfen, der auf einen nicht korrigierbaren Programmzustand hindeutet.
 
 1.  Nutzen Sie das Java-`assert` deshalb nicht als Ersatz für das normale Prüfen von
     Parametern von `public` Methoden (also Methoden der Schnittstelle, die Ihre
