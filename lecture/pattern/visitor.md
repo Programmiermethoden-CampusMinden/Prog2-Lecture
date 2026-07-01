@@ -100,13 +100,13 @@ Beim Parsen von "5\*4+3" würde dabei der folgende Parse-Tree entstehen:
 
 :::: notes
 ::: tip
-Anmerkung: Wer genau hinschaut und sich schon die
-[ANTLR-Session](../tooling/antlr.md) angeschaut hat, wird merken, dass dieser Baum
-tatsächlich *kein* Parse-Tree von ANTRL basierend auf der Grammatik ist. Hier habe
-ich schon etwas vorgearbeitet und den Parse-Tree vereinfacht - das nennt man dann
-auch oft "Abstract Syntax Tree" (*AST*). Wir werden so eine Transformation von einem
-vollständigen Parse-Tree hin zu einem AST auch noch als Übungsaufgabe programmieren
-und werden das Visitor-Pattern nutzen, um den Parse-Tree zu traversieren.
+Wer genau hinschaut und sich schon die [ANTLR-Session](../tooling/antlr.md)
+angeschaut hat, wird merken, dass dieser Baum tatsächlich *kein* Parse-Tree von
+ANTRL basierend auf der Grammatik ist. Hier habe ich schon etwas vorgearbeitet und
+den Parse-Tree vereinfacht - das nennt man dann auch oft "Abstract Syntax Tree"
+(*AST*). Wir werden so eine Transformation von einem vollständigen Parse-Tree hin zu
+einem AST auch noch als Übungsaufgabe programmieren und werden das Visitor-Pattern
+nutzen, um den Parse-Tree zu traversieren.
 :::
 ::::
 ::::::
@@ -774,7 +774,7 @@ Damit passiert Folgendes:
     `AddExpr`, deshalb wird dort immer die Überladung `visit(AddExpr)` ausgewählt.
 
 ::: important
-Wichtig: In Java wird die Auswahl der passenden *Überladung* (`visit(AddExpr)`
+In Java wird die Auswahl der passenden *Überladung* (`visit(AddExpr)`
 vs. `visit(MulExpr)` ...) **zur Compile-Zeit** anhand des statischen Typs des
 Arguments getroffen - hier also anhand des Typs `AddExpr` in der jeweiligen
 `accept`-Methode. Zur Laufzeit wird dann über den Typ des Visitors entschieden,
