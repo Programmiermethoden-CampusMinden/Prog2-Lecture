@@ -266,9 +266,11 @@ Lesen Sie zu diesem Thema auch in den dev.java-Tutorials von Oracle
 :::
 
 ::: outcomes
--   k2: Vorgänge beim Initialisieren von Enum-Klassen (Hinweis: static)
--   k3: Erstellung komplexer Enumerationen mit Feldern und Konstruktoren
--   k3: Nutzung von name(), ordinal() und values() in Enum-Klassen
+-   k2: Ich kann die Vorgänge beim Initialisieren von Enum-Klassen erklären
+    (Hinweis: `static`)
+-   k3: Ich kann komplexe Enumerationen mit Feldern und Konstruktoren erstellen
+-   k3: Ich kann die speziellen Methoden wie `name()`, `ordinal()` und
+    `values()` in Enum-Klassen einsetzen
 :::
 
 ::: challenges
