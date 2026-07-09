@@ -16,8 +16,11 @@ die eigene Konstruktoren, Felder und Methoden enthalten.
 :::
 
 ::: youtube
--   [VL Enumerations](https://youtu.be/qoeT9jVuQZc)
--   [Demo Enumerations](https://youtu.be/ZCE9AmTluyk)
+Vorlesung \[[YT](https://youtu.be/lfe7hiuhfEs)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-aufzhlungen-enumerations/bb6b9bae09bae3d4333e79bb0f1ecb75)\]
+
+Demo: \[[YT](https://youtu.be/OzYoxNn8Yws)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-enumerations/28971ea07bfdd808aee8984c1fe246bb)\]
 :::
 
 # Motivation
