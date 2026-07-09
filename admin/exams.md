@@ -112,9 +112,12 @@ In Ihrem ILIAS-Kurs finden Sie eine
 [**Fragetypen-Demo**](https://www.hsbi.de/elearning/goto.php/tst/1352273) mit den
 wichtigsten Fragetypen. Machen Sie sich mit der Mechanik der Fragetypen vertraut und
 schauen Sie sich die Kommentare bei den einzelnen Aufgaben an. Sie können die Demo
-bei Bedarf beliebig oft wiederholen. - Schauen Sie sich die Praktikumsaufgaben an
-... - Überlegen Sie sich, was zu einem Themengebiet im Rahmen einer Prüfung möglich
-ist und (wie) gefragt werden könnte :)
+bei Bedarf beliebig oft wiederholen.
+
+-   Schauen Sie sich die Challenges an ...
+-   Schauen Sie sich die Praktikumsaufgaben an ...
+-   Überlegen Sie sich, was zu einem Themengebiet im Rahmen einer Prüfung möglich
+    ist und (wie) gefragt werden könnte :)
 
 ::: center
 **Können vor Kennen :-)**
@@ -147,33 +150,6 @@ Geben Sie alle Ausgaben, die das obige Programm produziert, an.
 Begründen Sie Ihre Antwort kurz und stichhaltig (für *jede* Ausgabe!). Was
 geschieht, bzw. wieso kommt es zu der jeweiligen Ausgabe?
 
-## Multithreading und Synchronisierung
-
-``` java
-public class StaffelKaputt extends Thread {
-    private Object stab;
-    StaffelKaputt(Object stab) { this.stab = stab; }
-    public void run() {nimmStab(); laufen(); stabAbgeben();}
-    private void stabAbgeben() {
-        synchronized (stab) { stab.notifyAll(); }
-    }
-    private void nimmStab() {
-        synchronized (stab) {
-            try { stab.wait(); } catch (Exception e) { }
-        }}
-    void laufen() { System.out.println("laufe ... "); }
-    public static void main(String[] args) {
-        Object stab = new Object();
-        StaffelKaputt l1 = new StaffelKaputt(stab);
-        StaffelKaputt l2 = new StaffelKaputt(stab);
-        l1.start(); l2.start();
-    }}
-```
-
-Das Programm enthält einen Fehler, der sich zur Laufzeit offenbart. Welche Ausgabe
-erwarten Sie (angenommen, das Programm wäre fehlerfrei; eine mögliche Variante
-reicht)? Welche Ausgabe erhalten Sie stattdessen? Korrigieren Sie den Fehler.
-
 ## Reguläre Ausdrücke
 
 Auf welche Strings passt (im Sinne von "match") der folgende reguläre Ausdruck:
@@ -201,31 +177,6 @@ Auf welche Strings passt (im Sinne von "match") der folgende reguläre Ausdruck:
     d.  `git commit`
 
 -   Was würde `git diff` jeweils nach Schritt 2 anzeigen?
-
-## Kommandozeilenparameter
-
-Schreiben Sie ein Programm, welches auf zwei Kommandozeilenparameter reagieren kann.
-Die erkannten Parameter sollen auf der Konsole ausgegeben werden. Nutzen Sie Apache
-Commons CLI (API siehe Anhang).
-
--   Beim Aufruf ohne Parameter soll eine Hilfe zum korrekten Aufruf ausgegeben
-    werden und das Programm soll sich anschließend beenden.
--   Das Programm soll den Parameter `-debug` erkennen.
--   Das Programm soll den Parameter `-x=10` erkennen, wobei der Wert beim Aufruf
-    variieren kann (Integer).
--   Die Parameter können in unterschiedlicher Reihenfolge auftreten.
--   Es kann auch nur ein Parameter angegeben werden.
-
-## Build mit Ant
-
--   Was ist der Unterschied zwischen Ant-Targets und Ant-Tasks?
--   Wie kann man Ant-Properties von außen (beim Aufruf) setzen?
--   Schreiben Sie ein Ant-Target, welches alle `.class`-Dateien in einem Ordner
-    umbenennt.
--   Schreiben Sie ein Ant-Target, mit dem Sie die Javadoc-Dokumentation erzeugen,
-    packen und das resultierende `.zip`-File in den Ordner `dist/` verschieben.
--   Schreiben Sie Ant-Targets, mit denen Sie JUnit-Testfälle ausführen und auswerten
-    können.
 
 ## Generics
 
