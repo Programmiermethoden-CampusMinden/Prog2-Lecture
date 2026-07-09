@@ -17,7 +17,8 @@ Objekt erst dann anlegen ("Lazy").
 :::
 
 ::: youtube
--   [VL Singleton-Pattern](https://youtu.be/ZT3rl1t85aY)
+Vorlesung \[[YT](https://youtu.be/t-Twv49Ar34)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-singleton-pattern/cfdb711ca2d2e0e777ef39ce9753b1c8)\]
 :::
 
 # Motivation
