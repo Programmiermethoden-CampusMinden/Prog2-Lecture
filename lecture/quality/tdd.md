@@ -28,8 +28,11 @@ nötigen Code, da ja immer nur die Tests erfüllt werden sollen.
 :::
 
 ::: youtube
--   [VL TDD](https://youtu.be/oqiESd5N1lY)
--   [Demo TDD](https://youtu.be/4NAcu8I8fJk)
+Vorlesung \[[YT](https://youtu.be/Amof5uZC7wg)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-testbarkeit-und-testdriven-development-tdd/cab565818a5a801ab7aa3ba20c552daa)\]
+
+Demo: \[[YT](https://youtu.be/NFutjqbuwlw)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-tdd/d070f20f290354f9d2f0f8afdf064aa8)\]
 :::
 
 # Design für Testbarkeit
