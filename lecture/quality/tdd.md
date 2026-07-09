@@ -227,5 +227,5 @@ Begleitend zum TDD sind auch @Martin2009 und @Fowler2011 relevant.
 :::
 
 ::: outcomes
--   k3: Einsatz von TDD bei der Softwareentwicklung
+-   k2: Ich kann das Grundprinzip von TDD an einem Beispiel erklären
 :::
