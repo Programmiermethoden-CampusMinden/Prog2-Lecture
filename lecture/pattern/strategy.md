@@ -167,9 +167,9 @@ Strategy-Pattern: Verhaltensänderung durch Delegation an passendes Objekt
 -   ... und nutzen (Delegation)
 
 ::: readings
--   @Eilebrecht2013
--   @Gamma2011
--   @Kleuker2018
+Der [refactoring.guru](https://refactoring.guru/design-patterns/strategy) hat ein
+schönes Tutorial zum Strategy-Pattern. Der Verweis auf @Gamma2011 der ["Gang of
+Four"](https://en.wikipedia.org/wiki/Design_Patterns) darf natürlich nicht fehlen.
 :::
 
 ::: outcomes
