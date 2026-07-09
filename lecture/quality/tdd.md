@@ -221,9 +221,9 @@ viele Rot/Grün/Refactoring-Zyklen!]{.notes}
 -   *Test first*: Test-Driven Development (*TDD*)
 
 ::: readings
--   @Beck2014
--   @Martin2009
--   @Fowler2011
+Zum Thema TDD gibt es viel Literatur, der @Beck2014 ist sicher der Klassiker.
+
+Begleitend zum TDD sind auch @Martin2009 und @Fowler2011 relevant.
 :::
 
 ::: outcomes
