@@ -117,13 +117,21 @@ wichtigsten Fragetypen. Machen Sie sich mit der Mechanik der Fragetypen vertraut
 schauen Sie sich die Kommentare bei den einzelnen Aufgaben an. Sie können die Demo
 bei Bedarf beliebig oft wiederholen.
 
--   Schauen Sie sich die Challenges an ...
--   Schauen Sie sich die Praktikumsaufgaben an ...
--   Überlegen Sie sich, was zu einem Themengebiet im Rahmen einer Prüfung möglich
-    ist und (wie) gefragt werden könnte :)
+# Hinweise zu den Inhalten
+
+-   Klausurrelevant: Vorlesung und Praktikum
+-   Für Verständnis u.U. hilfreich: Studium der vertiefenden Literaturangaben
+
+\smallskip
+
+-   **Fragen**:
+    -   Schauen Sie sich die Challenges an ...
+    -   Schauen Sie sich die Praktikumsaufgaben an ...
+    -   Überlegen Sie sich, was zu einem Themengebiet im Rahmen einer Prüfung
+        möglich ist und (wie) gefragt werden könnte ...
 
 ::: center
-**Können vor Kennen :-)**
+**Können vor Kennen**
 :::
 
 # Beispiele für mögliche Fragen
