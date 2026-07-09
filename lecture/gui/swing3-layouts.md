@@ -156,14 +156,14 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
 \bigskip
 
 | Constraint | Bedeutung |
-|:---------------|:-------------------------------------------------------------------|
+|:----------------------------|:------------------------------------------------------|
 | `gridx` | **Spalte** für Komponente (linke obere Ecke) |
 | `gridy` | **Zeile** für Komponente (linke obere Ecke) |
 | `gridwidth` | **Anzahl der Spalten** für Komponente |
 | `gridheight` | **Anzahl der Zeilen** für Komponente |
 | `fill` | Vergrößert **Komponente** in Richtung: `NONE`, `HORIZONTAL`, `VERTICAL`, `BOTH` |
-| `weightx` | Platz in x-Richtung wird unter den **Grid-Slots** entsprechend ihrem "Gewicht" aufgeteilt |
-| `weighty` | Platz in y-Richtung wird unter den **Grid-Slots** entsprechend ihrem "Gewicht" aufgeteilt |
+| `weightx` | Platz in x-Richtung unter **Grid-Slots** nach "Gewicht" aufteilen |
+| `weighty` | Platz in y-Richtung unter **Grid-Slots** nach "Gewicht" aufteilen |
 
 ::: notes
 Beim Hinzufügen einer Komponente wird eine Instanz der Klasse `GridBagConstraints`
