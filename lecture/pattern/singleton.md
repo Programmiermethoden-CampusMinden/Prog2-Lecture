@@ -35,7 +35,7 @@ Logger l = Logger.getLogger(MyClass.class.getName());
 ::: notes
 Von den Enum-Konstanten soll es nur genau eine Instantiierung, also jeweils nur
 genau ein Objekt geben. Ähnlich war es beim Logging: Für jeden Namen soll/darf es
-nur einen tatsächlichen Logger (== Objekt) geben.
+nur einen tatsächlichen Logger (\== Objekt) geben.
 
 Dies nennt man "**Singleton Pattern**".
 
@@ -132,7 +132,11 @@ Singleton-Pattern: Klasse, von der nur genau ein Objekt instantiiert werden kann
     Aufruf der Zugriffsmethode ("Lazy")
 
 ::: readings
--   @Nystrom2014 [Kap. 6]
+Auch wenn es für C++ geschrieben ist, lässt sich zum Thema Singleton-Pattern das
+Kapitel 6 "Singleton" im @Nystrom2014 sehr gut lesen. Der Verweis auf @Gamma2011 der
+["Gang of Four"](https://en.wikipedia.org/wiki/Design_Patterns) darf natürlich nicht
+fehlen. Der [refactoring.guru](https://refactoring.guru/design-patterns/singleton)
+hat ebenfalls ein schönes Tutorial zum Singleton-Pattern.
 :::
 
 ::: outcomes
