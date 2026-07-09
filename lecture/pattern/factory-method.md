@@ -63,9 +63,10 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/blob/mas
     -   Konkrete Klassen lassen sich leicht austauschen
 
 ::: readings
--   @Eilebrecht2013
--   @Gamma2011
--   @Kleuker2018
+Der [refactoring.guru](https://refactoring.guru/design-patterns/factory-method) hat
+ein schönes Tutorial zum Factory-Method-Pattern. Der Verweis auf @Gamma2011 der
+["Gang of Four"](https://en.wikipedia.org/wiki/Design_Patterns) darf natürlich nicht
+fehlen.
 :::
 
 ::: outcomes
@@ -113,7 +114,7 @@ public class ComputerFactory {
 **Konfigurationsmatrix**
 
 |  | "stationär" (`DesktopComputer`) | "mobil" (`LaptopComputer`) | "nicht daheim" (`CloudComputer`) |
-|:-----------:|:----------------------:|:--------------------:|:------------------------:|
+|:------------:|:----------------------:|:--------------------:|:------------------------:|
 | "leise schnurrend" | 8 Cores, 1.21GHZ, 16GB RAM, 256GB HDD | 4 Cores, 1.21GHZ, 8GB RAM, 256GB HDD | 8 Cores, 1.21GHZ, 24GB RAM, 1000GB HDD |
 | "viel Wumms" | 16 Cores, 4.2GHZ, 32GB RAM, 2000GB SSD | 8 Cores, 2.4GHZ, 16GB RAM, 256GB SSD | 42 Cores, 9.001GHZ, 128GB RAM, 10000GB SSD |
 :::
