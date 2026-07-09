@@ -261,8 +261,8 @@ href="https://github.com/Programmiermethoden-CampusMinden/Prog2-Lecture/tree/mas
     :::
 
 ::: readings
--   @Java-SE-Tutorial
--   @Ullenboom2021 [Kap. 6.4.3 und 10.7]
+Lesen Sie zu diesem Thema auch in den dev.java-Tutorials von Oracle
+["Enums"](https://dev.java/learn/classes-objects/enums/) nach.
 :::
 
 ::: outcomes
