@@ -140,7 +140,7 @@ hat ebenfalls ein schönes Tutorial zum Singleton-Pattern.
 :::
 
 ::: outcomes
--   k2: Was ist ein Singleton? Was ist der Unterschied zw. einem Lazy und einem
-    Eager Singleton?
--   k3: Anwendung des Singleton-Patterns
+-   k2: Ich kann an einem Beispiel erklären: Was ist ein Singleton? Was ist der
+    Unterschied zw. einem Lazy und einem Eager Singleton?
+-   k3: Ich kann das Singleton-Patterns praktisch anwenden
 :::
