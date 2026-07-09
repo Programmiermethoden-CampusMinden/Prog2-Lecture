@@ -58,7 +58,8 @@ beschrieben sein kann.
 
 Ich möchte Sie hier noch einmal ermuntern, diesen Zettel tatsächlich manuell zu
 erstellen (also ganz traditionell zu **schreiben**), da bereits der Schreibvorgang
-einen gewissen Lerneffekt bewirkt!
+einen gewissen Lerneffekt bewirkt! (Wenn Sie sich bewusst dafür entscheiden, können
+Sie den Spickzettel natürlich auch ausdrucken.)
 
 ## Einsicht
 
@@ -231,9 +232,9 @@ public class MoreLogging {
 
 ## Methodenreferenzen
 
--   Was bedeutet der folgende Code?
+Was bedeutet der folgende Code?
 
-    ``` java
-    List<String> str = Arrays.asList("a", "b", "A", "B");
-    str.sort(String::compareToIgnoreCase);
-    ```
+``` java
+List<String> str = Arrays.asList("a", "b", "A", "B");
+str.sort(String::compareToIgnoreCase);
+```
