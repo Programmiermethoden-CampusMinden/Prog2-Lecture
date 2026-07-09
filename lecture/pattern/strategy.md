@@ -173,7 +173,7 @@ Four"](https://en.wikipedia.org/wiki/Design_Patterns) darf natürlich nicht fehl
 :::
 
 ::: outcomes
--   k3: Strategie-Entwurfsmuster praktisch anwenden
+-   k3: Ich kann das Strategie-Entwurfsmuster praktisch anwenden
 :::
 
 ::: challenges
