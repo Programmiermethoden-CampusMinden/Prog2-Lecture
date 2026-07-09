@@ -19,8 +19,11 @@ diese Instanz ggf. erzeugen und dann die Referenz darauf zurückliefern.
 :::
 
 ::: youtube
--   [VL Factory-Method-Pattern](https://youtu.be/mJWe-2BS2W0)
--   [Demo Factory-Method-Pattern](https://youtu.be/14rt1YIoiME)
+Vorlesung \[[YT](https://youtu.be/yKRAx8xmqf0)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-factory-method-pattern/8f7350ae5177472e5fd0cf0673c5762e)\]
+
+Demo: \[[YT](https://youtu.be/U06qQ-kf_oE)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-factory-method-pattern/426bc6bd841a10bf6cb78c2f9bae3cb4)\]
 :::
 
 # Motivation: Ticket-App
