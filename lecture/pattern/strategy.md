@@ -25,8 +25,11 @@ gereicht (delegiert) wurde.
 :::
 
 ::: youtube
--   [VL Strategy-Pattern](https://youtu.be/WI2riW7yOSE)
--   [Demo Strategy-Pattern](https://youtu.be/IgjlFr2ZcW4)
+Vorlesung \[[YT](https://youtu.be/Rf81I7HhcFc)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-strategy-pattern/bf31966d4d3cbda2f18a28434dfac1bf)\]
+
+Demo: \[[YT](https://youtu.be/TZMtMNYdHyc)\],
+\[[HSBI](https://www.hsbi.de/medienportal/video/pr2-demo-strategy-pattern/708fdfc53403531ac411c096abd47081)\]
 :::
 
 # Wie kann man das Verhalten einer Klasse dynamisch ändern?
