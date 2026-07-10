@@ -28,7 +28,7 @@ in einer Zoom-Sitzung zur Verfügung stehen, in der Sie Fragen stellen können.
 Als Hilfsmittel ist ein Spickzettel (DIN A4, beidseitig beschrieben) zugelassen.
 
 Es wird keines der behandelten Themen ausgeschlossen, allerdings eignen sich manche
-Themen etwas besser für Klausurfragen als andere ;-)
+Themen etwas besser für Klausurfragen als andere ...
 :::
 
 ::: youtube
@@ -37,6 +37,8 @@ Themen etwas besser für Klausurfragen als andere ;-)
         \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-prfungsvorbereitung-fragendemo/51dbc795071ecf07dabb595a946f519d)\]
     -   [**Fragetypen-Demo** im
         ILIAS](https://www.hsbi.de/elearning/goto.php/tst/1352273)
+2.  Hinweise zur Prüfung: \[[YT](https://youtu.be/Oi3Y_tnIlJg)\],
+    \[[HSBI](https://www.hsbi.de/medienportal/video/pr2-prfungsvorbereitung-hinweise-zur-prfung/7d6462b1b7257c84392184c91743a2e5)\]
 :::
 
 # Elektronische Klausur: Termin, Materialien
