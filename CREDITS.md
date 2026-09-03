@@ -12,7 +12,6 @@ not part of the CC BY-SA 4.0 licence of this project.
 ## Building the Lecture Slides
 
 -   [Pandoc](https://github.com/jgm/pandoc)
--   [Pandoc-Lecture](https://github.com/cagix/pandoc-lecture)
 -   [Pandoc-Lecture-Zen](https://github.com/cagix/pandoc-lecture-zen)
 -   [TeX Live](http://tug.org/texlive/)
 -   [Beamer](https://github.com/josephwright/beamer)
@@ -21,7 +20,8 @@ not part of the CC BY-SA 4.0 licence of this project.
 ## Building the Lecture GitHub Preview
 
 -   [Pandoc](https://github.com/jgm/pandoc)
--   [Pandoc-Lecture](https://github.com/cagix/pandoc-lecture)
+-   [Pandoc-Lecture-Zen](https://github.com/cagix/pandoc-lecture-zen)
+
 
 ## Further Tools used
 
