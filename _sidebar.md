@@ -1,0 +1,62 @@
+- [**Syllabus**](readme.md)
+- **Vorlesungsunterlagen**
+  - **Versionierung mit Git**
+    - [Git1: Basics der Versionsverwaltung mit Git](lecture/git/git1-basics.md)
+    - [Git2: Branches und Remotes](lecture/git/git2-branches.md)
+    - [Git4: Worktree](lecture/git/git4-worktree.md)
+    - [Branching-Strategien & Git-Workflows](lecture/git/git3-workflows.md)
+  - **Bauen von Programmen, Automatisierung, Continuous Integration**
+    - [Build-Systeme: Gradle](lecture/tooling/gradle.md)
+    - [Java: Strukturieren mit Packages](lecture/tooling/packages.md)
+    - [Continuous Integration (CI)](lecture/tooling/ci.md)
+    - [Einführung in ANTLR](lecture/tooling/antlr.md)
+    - [Debugging](lecture/tooling/debugging.md)
+    - [Logging](lecture/tooling/logging.md)
+    - [Einführung in Docker](lecture/tooling/docker.md)
+  - **Testen mit JUnit und Mockito**
+    - [Testen mit JUnit (JUnit-Basics)](lecture/junit/junit1-basics.md)
+    - [JUnit2 Testfallermittlung: Wie viel und was muss man testen?](lecture/junit/junit2-testcases.md)
+    - [JUnit3: Mocking mit Mockito](lecture/junit/junit3-mockito.md)
+    - [JUnit4: Property based Testing & Approval Testing](lecture/junit/junit4-property.md)
+  - **Modern Java: Funktionaler Stil und Stream-API**
+    - [Lambda-Ausdrücke und funktionale Interfaces](lecture/java-modern/lambdas.md)
+    - [Methoden-Referenzen](lecture/java-modern/methodreferences.md)
+    - [Interfaces: Default-Methoden](lecture/java-modern/defaultmethods.md)
+    - [Record-Klassen](lecture/java-modern/records.md)
+    - [Sealed‑Typen & Pattern Matching](lecture/java-modern/patternmatching.md)
+    - [Stream-API](lecture/java-modern/stream-api.md)
+    - [Fehlerbehandlung mit Optional und Result](lecture/java-modern/optional.md)
+  - **Entwurfsmuster**
+    - [Observer-Pattern](lecture/pattern/observer.md)
+    - [Template-Method-Pattern](lecture/pattern/template-method.md)
+    - [Visitor-Pattern](lecture/pattern/visitor.md)
+    - [Dependency Injection](lecture/pattern/dependency.md)
+    - [Command-Pattern](lecture/pattern/command.md)
+  - **Graphische Oberflächen mit Swing und Java2D**
+    - [Swing 4: Events](lecture/gui/swing4-events.md)
+    - [Swing 1: Basics](lecture/gui/swing1-basics.md)
+    - [Swing 2: Nützliche Widgets](lecture/gui/swing2-widgets.md)
+    - [Swing 3: Layout-Manager](lecture/gui/swing3-layouts.md)
+    - [Swing 6: Einführung in Graphics und Java 2D](lecture/gui/swing6-java2d.md)
+  - **Fortgeschrittene Java-Themen und Umgang mit JVM**
+    - [Reguläre Ausdrücke](lecture/java-classic/regexp.md)
+    - [Generics1: Generische Klassen & Methoden](lecture/java-classic/generics1-classes-methods.md)
+    - [Generics2: Bounds & Wildcards](lecture/java-classic/generics2-bounds-wildcards.md)
+    - [Generics3: Generics und Polymorphie](lecture/java-classic/generics3-polymorphism.md)
+    - [Exception-Handling](lecture/java-classic/exceptions.md)
+  - **Clean Code - Smells, Rules, Refactoring**
+    - [Code Smells](lecture/quality/smells.md)
+    - [Coding Conventions und Metriken](lecture/quality/codingrules.md)
+    - [Refactoring](lecture/quality/refactoring.md)
+    - [Javadoc](lecture/quality/javadoc.md)
+- **Praktikum**
+  - [Blatt 01: Git Basics, Gradle](homework/b01.md)
+  - [Blatt 02: Git Branches, JUnit Basics; CI-Pipeline](homework/b02.md)
+  - [Blatt 03: Methodenrefs, Lambdas, Observer](homework/b03.md)
+  - [Blatt 04: RegEx, Template-Method; JUnit; PR](homework/b04.md)
+  - [Blatt 05: ANTLR, Visitor; Äquivalenzklassen & Grenzwerte, Mocking](homework/b05.md)
+  - [Blatt 06: Visitor vs. Pattern Matching, Records](homework/b06.md)
+  - [Blatt 07: Generics, Sealed Types, Stream-API, Logging](homework/b07.md)
+  - [Blatt 08: Command, Optional, Fehlermodell](homework/b08.md)
+- **Organisatorisches**
+  - [Prüfungsvorbereitung](admin/exams.md)
